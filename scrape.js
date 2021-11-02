@@ -8,24 +8,29 @@ const scrape = async (page, xpath) => {
   await page.waitForSelector(".ItemPreviewCover-module_root-3ZIH_");
   const arr = await page.$$(".ItemPreviewCover-module_root-3ZIH_");
 
+  const timeout = setTimeout(() => page.reload(), 3500);
+
   for (const el of arr) {
     var href = await el.getProperty("href");
     href = await href.jsonValue();
     urls.push(href);
   }
 
+  console.log(urls.length);
+
   if (urls.length > 1500) {
     fs.writeFile("./urls/less-urls.txt", JSON.stringify(urls), (err, res) =>
       console.error(err)
     );
-    return;
     browser.close();
+    return;
   }
 
   await page.waitForXPath(xpath);
   const next = await page.$x(xpath);
 
   next[0].click();
+  clearTimeout(timeout);
   setTimeout(() => {
     const newpath = '//*[@id="react-page"]/div[2]/div[2]/div[2]/nav/button[2]';
     scrape(page, newpath);
