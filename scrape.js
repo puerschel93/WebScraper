@@ -1,5 +1,6 @@
-const puppeteer = require("puppeteer-extra");
-const fs = require("fs");
+import { credentials } from "./credentials";
+import puppeteer from "puppeteer-extra";
+import fs from "fs";
 
 const urls = [];
 
@@ -43,8 +44,8 @@ const initialize = async () => {
   await page.goto(loginurl);
   await page.waitForSelector("#login-email-field");
   await page.waitForSelector("#login-password-field");
-  await page.type("#login-email-field", "****");
-  await page.type("#login-password-field", "****");
+  await page.type("#login-email-field", credentials.username);
+  await page.type("#login-password-field", credentials.password);
   await page.click("#log-in-button");
   setTimeout(async () => {
     const url = "https://codepen.io/search/pens?q=less";
