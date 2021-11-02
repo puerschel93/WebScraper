@@ -1,4 +1,4 @@
-import { credentials } from "./credentials";
+import { credentials } from "./credentials.js";
 import puppeteer from "puppeteer-extra";
 import fs from "fs";
 
