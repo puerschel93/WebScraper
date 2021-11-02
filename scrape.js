@@ -12,7 +12,7 @@ const scrape = async (page, xpath) => {
     href = await href.jsonValue();
     urls.push(href);
   }
-  console.log(urls.length);
+
   if (urls.length > 1500) {
     fs.writeFile("./urls/less-urls.txt", JSON.stringify(urls), (err, res) =>
       console.error(err)
@@ -31,6 +31,9 @@ const scrape = async (page, xpath) => {
   }, 1500);
 };
 
+/**
+ * Initializes the browser and performs login on codepen.io
+ */
 const initialize = async () => {
   const loginurl = "https://codepen.io/login";
   const browser = await puppeteer.launch({
@@ -40,8 +43,8 @@ const initialize = async () => {
   await page.goto(loginurl);
   await page.waitForSelector("#login-email-field");
   await page.waitForSelector("#login-password-field");
-  await page.type("#login-email-field", "puerschel93");
-  await page.type("#login-password-field", "office133737");
+  await page.type("#login-email-field", "****");
+  await page.type("#login-password-field", "****");
   await page.click("#log-in-button");
   setTimeout(async () => {
     const url = "https://codepen.io/search/pens?q=less";
