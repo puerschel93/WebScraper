@@ -22,11 +22,12 @@ const initialize = async () => {
 };
 
 const parse = async (page, array) => {
-	for (const url of array) {
+	await page.goto(array[0]);
+	/*for (const url of array) {
 		console.log(url);
 		await page.goto(url);
 		await validate(page);
-	}
+	}*/
 };
 
 const validate = async (page) => {
@@ -41,10 +42,10 @@ const validate = async (page) => {
 	const [code] = await page.$x(
 		'/html/body/div[2]/div/div[2]/div[4]/div[2]/div[1]/div[6]/div[1]/div/div/div/div[5]'
 	);
-	let inner = await code.getProperty('innerHTML');
-	inner = await inner.jsonValue();
-	inner = inner.replace(regex, '');
-	return console.log(inner);
+
+	await code.click();
+
+	return;
 };
 
 initialize();
