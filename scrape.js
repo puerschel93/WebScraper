@@ -5,7 +5,7 @@ import fs from 'fs';
 const FILETYPE = 'less';
 
 // SCHEDULE WAITTIME TO AVOID IP BAN
-const wait = 10000;
+const wait = 12500;
 
 const RANGES = [
 	'501..1000',
@@ -34,11 +34,11 @@ const RANGES = [
 ];
 
 const scrape = async () => {
-	const page = await initializeBrowser(urlbuilder(2, '0..500'));
+	const page = await initializeBrowser(urlbuilder(2, RANGES[0]));
 	page.setDefaultNavigationTimeout(wait);
 
 	for (const range of RANGES) {
-		for (let i = 3; i < 100; i++) {
+		for (let i = 2; i < 70; i++) {
 			await fetch(page, i, range);
 		}
 	}
