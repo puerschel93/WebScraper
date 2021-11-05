@@ -1,0 +1,341 @@
+@import styles/variables
+@import styles/extends
+
+=labelTransform
+    transform: scale(0.9) translate(0px, -26px)
+    transition: 0.2s ease all
+
+.sub-title
+    font-size: 14px
+    position: relative
+    text-align: center
+
+    br
+        display: none
+
+.content
+    color: var(--text-black-white)
+    background: var(--bg-white-black)
+
+.form
+    width: 55%
+    max-width: 1024px
+    padding: 75px 0 200px
+    margin: 0 auto
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: auto
+    gap: 44px 30px
+
+    fieldset
+        position: relative
+
+        &:not(.case):focus-within label
+            +labelTransform
+
+        &.with-value label
+            +labelTransform
+
+        &.error
+            input, textarea
+                border-color: $unme-red
+
+        &.textarea
+            grid-column: 1 / 3
+
+            label
+                position: static
+
+            textarea
+                margin-top: 20px
+
+    label
+        position: absolute
+        top: 10px
+        left: 0
+        transition: 0.2s ease all
+        transform-origin: top left
+        color: var(--black-white)
+
+    input
+        width: 100%
+        border: 0
+        outline: 0
+        border-bottom: 1px solid var(--text-black-white)
+        height: 40px
+        color: var(--black-white)
+        cursor: text
+
+        &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
+            background: transparent
+            -webkit-text-fill-color: var(--black-white)
+            -webkit-box-shadow: 0 0 0 1000px var(--bg-white-black) inset
+
+        &:input:-internal-autofill-selected
+            color: var(--black-white) !important
+
+        &::-webkit-calendar-picker-indicator
+            filter: var(--calendar)
+
+        &:focus
+            border-color: var(--black-white)
+
+            &::placeholder
+                color: $warm-grey
+
+        &::placeholder
+            color: transparent
+
+    textarea
+        width: 100%
+        resize: vertical
+        min-height: 160px
+        border: 1px solid var(--text-black-white)
+        padding: 30px 50px
+        border-radius: 0
+        line-height: 1.5
+        border-radius: 35px
+        color: var(--black-white)
+
+        &:focus
+            outline: 0
+
+    p
+        text-align: center
+        grid-column: 1 / 3
+        color: var(--black-white)
+        font-size: 16px
+
+    .error-msg
+        color: $unme-red
+        font-size: 12px
+        text-align: right
+        display: block
+        margin-top: 10px
+
+    .case
+        grid-column: 1 / 3
+
+        label
+            position: static
+
+        input
+            display: none
+
+        .options
+            margin-top: 20px
+            width: 100%
+            display: flex
+            justify-content: space-between
+            align-items: stretch
+            flex-wrap: wrap
+
+        .option
+            +flexCenter
+
+            width: calc(50% - 15px)
+            padding: 13px
+            height: 70px
+            text-align: center
+            border-radius: 35px
+            border: 1px solid var(--text-black-white)
+            cursor: pointer
+            margin-bottom: 24px
+
+            +cssVarTransition
+
+            .text
+                line-height: 1.5
+                color: var(--text-black-white)
+                transition: 0.4s ease color
+
+            +hover
+                border-color: $unme-red
+
+                +cssVarTransition
+
+                .text
+                    color: $unme-red
+
+                    +cssVarTransition
+
+
+            &.checked
+                border-color: $unme-red
+
+                +cssVarTransition
+
+                .text
+                    color: $unme-red
+
+                    +cssVarTransition
+
+    .note
+        background: var(--text-black-white)
+        height: 65px
+        border-radius: 35px
+        margin-top: 25px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 0 180px 0 50px
+        position: relative
+        transition: 0.3s ease all
+        line-height: 1.5
+        color: var(--white-black)
+
+        +hover
+            transition: 0.3s ease all
+            background: $unme-red
+
+
+        &:before, &:after
+            content: ""
+            position: absolute
+            right: 40px
+
+        &:before
+            height: 4px
+            width: 4px
+            transform: rotate(45deg)
+            border-top: 1px solid var(--white-black)
+            border-right: 1px solid var(--white-black)
+            transition: ease 0.4s border
+            top: calc(50% - 2px)
+
+        &:after
+            background: var(--white-black)
+            transition: ease 0.4s background
+            height: 1px
+            width: 115px
+            top: 50%
+
+    .finish_date
+        &::before
+            position: absolute
+            content: ""
+            top: -1px
+            height: 100%
+            width: 100px
+            left: 0
+            background: var(--bg-white-black)
+
+        &:focus-within, input:focus
+            &::before
+                content: none
+
+        &.with-value:before
+            content: none
+
+    .button
+        grid-column: 1 / 3
+        justify-self: center
+
+.mask
+    position: fixed
+    width: 100%
+    height: 100%
+    background: rgba($black, 0.5)
+    top: 0
+    left: 0
+    z-index: 100
+
+    +flexCenter
+
+.dialog
+    width: 300px
+    height: 300px
+    background: white
+    padding: 20px 40px
+    color: $black
+
+    +flexCenter
+
+    flex-direction: column
+    text-align: center
+
+    .title
+        font-size: 18px
+        margin-bottom: 20px
+
+    button
+        margin-top: 20px
+        border: 1px solid $black
+        transition: 0.2s ease all
+        text-align: center
+        height: 45px
+        border-radius: 30px
+        width: 200px
+        cursor: pointer
+        color: $black
+
+        +hover
+            color: white
+            background: $black
+            transition: 0.2s ease all
+
++padView
+    .form
+        width: 80%
+
+
++mobileView
+    .sub-title
+        br
+            display: inherit
+
+    .form
+        padding: 50px 40px
+        width: auto
+        margin: 0
+        display: block
+
+        fieldset
+            font-size: 14px
+            margin-bottom: 50px
+
+        textarea
+            padding: 20px 25px
+
+        .case
+            margin-bottom: 0
+
+            .options
+                margin-top: 20px
+                width: 100%
+                flex-direction: column
+
+            .option
+                width: 100%
+                margin: 0 0 20px
+
+                .text
+                    width: 100%
+
+        .note
+            height: auto
+            padding: 25px
+            margin-top: 0
+            margin-bottom: 40px
+            justify-content: center
+
+            &:before, &:after
+                content: none
+
+            & > div:last-of-type
+                display: none
+
+        .textarea
+            &.comment textarea
+                height: 200px
+
+        .start_date, .finish_date
+            &:before
+                height: 40px
+
+        .button
+            width: 50%
+            margin: 30px auto
+
+    .dialog
+        width: 80%

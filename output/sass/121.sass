@@ -1,0 +1,111 @@
+@import ../../styles/helpers
+
+.panel
+    position: relative
+    z-index: 5
+    margin: -120px 80px 0
+    padding: 20px 80px
+    +w
+        margin: -120px 40px 0
+    +d
+        margin-top: -100px
+    +t
+        margin: -90px 16px 0
+    +m
+        position: absolute
+        left: 24px
+        right: 24px
+        bottom: 24px
+        margin: 0
+        padding: 10px 20px
+
+.background
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    overflow: hidden
+    border-radius: 24px
+    box-shadow: 0px 40px 64px -32px rgba(15, 15, 15, 0.1)
+    +m
+        border-radius: 20px
+        box-shadow: 0px 16px 32px rgba(15, 15, 15, 0.1)
+    &:before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(44, 37, 63, 0.5)
+        border: 1px solid $n8
+        backdrop-filter: blur(32px)
+        border-radius: 24px
+        +m
+            border-radius: 20px
+        background: rgba(44, 37, 63, 0.5)
+        border-color: $n3
+
+.nav
+    position: relative
+    z-index: 2
+    display: flex
+    box-shadow: inset 0 -1px 0 0 $n6
+    +m
+        margin: 0 -20px
+        padding: 0 20px
+    +dark
+        box-shadow: inset 0 -1px 0 0 rgba($n4, .3)
+
+.link
+    padding-bottom: 30px
+    border-bottom: 1px solid transparent
+    +button-2
+    color: $n4
+    transition: all .2s
+    +d
+        padding-bottom: 24px
+    &:hover
+        color: $n2
+    &.active
+        border-color: $n2
+        color: $n2
+    +dark
+        color: $n5
+        &:hover
+            color: $n8
+        &.active
+            border-color: $n8
+            color: $n8
+    &:not(:last-child)
+        margin-right: 48px
+        +m
+            margin-right: auto
+
+.body
+    position: relative
+    z-index: 3 
+    display: flex
+    flex-direction: row
+    justify-content: center
+    padding-top: 1.5em
+    padding-right: 4rem
+    +a
+        padding-right: 5rem
+
+.search
+    position: absolute
+    top: 50%
+    right: 0
+    width: 64px
+    height: 64px
+    transform: translateY(-50%)
+    background: $p1
+    border-radius: 50%
+    transition: background .2s
+    
+    svg
+        fill: $n8
+    &:hover
+        background: darken($p1, 5)

@@ -1,0 +1,163 @@
+
+.uk-flex
+    top: 0 !important
+    height: auto
+    position: sticky
+    position: -webkit-sticky
+    z-index: 110
+.navi
+    padding: 0 rem(55px)
+    width: 100%
+    height: 100px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom: 1px solid #eeeeee31
+    z-index: 100
+    margin-left: 0
+    &__logo
+        padding: 0
+        &-image
+            //
+    &__dot1, &__dot2, &__dot3, &__dot4
+        display: none
+        height: 10px
+        width: 10px
+        background-color: #d3b98d
+        border-radius: 50%
+        position: absolute
+        top: 25px
+    &__item
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        margin-top: rem(5px)
+        &-text
+            font-family: "DM Sans"
+            font-size: 16px
+            font-weight: 500
+            color: #ffffff
+            letter-spacing: 0.017rem
+            line-height: normal
+            text-align: left
+    &__phone
+        display: flex
+        justify-content: center
+        align-items: center
+        &-text
+            font-family: "DM Sans"
+            font-size: 16px
+            font-weight: 700
+            color: #ffffff
+            letter-spacing: 0.017rem
+            line-height: normal
+            text-align: left
+        &-image
+            //
+    &__navigation
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: #009395
+        display: none
+        padding-left: 0
+        align-items: center
+    &__list
+        list-style: none
+        width: 100%
+        padding-left: 0
+        &-item
+            display: flex
+            flex-direction: column
+            flex-wrap: wrap
+            justify-content: center
+            align-items: center
+            margin: 30px auto
+            width: 300px
+
+    &__menu
+        width: 30px
+        height: 30px
+        border: 0
+        border-top: 2px solid #ffffff
+        background: transparent
+        position: absolute
+        top: 47px
+        right: rem(20px)
+        transition: 0.3s transform linear
+        display: none
+        z-index: 101
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            border-top: 2px solid #ffffff
+            transform: translateY(7px)
+            transition: 0.3s transform linear
+        &--active
+            transform: rotate(45deg) translateX(-10px) translateY(10px)
+            &::before
+                transform: rotate(-90deg) translateX(3.3px)
+
+.show 
+    display: flex !important
+
+.showK
+    background-image: linear-gradient(0deg,#d3b98d 50%,#d3b98d 0)
+
+.uk-flex.fixed
+  background: rgba(255,255,255,0.6)
+
+.kropka
+    position: relative
+    top: 4px
+    left: 6px
+    width: 0.8rem
+    height: 0.8rem
+    background-color: #d3b98d
+    background-size: 100% 200%
+    border-radius: 50%
+    transform: translate(-50%,-50%)
+    opacity: 1
+
+.kropka-2
+    position: relative
+    top: 4px
+    left: 9px
+    width: 0.8rem
+    height: 0.8rem
+    background-color: #d3b98d
+    background-size: 100% 200%
+    border-radius: 50%
+    transform: translate(-50%,-50%)
+    opacity: 1
+
+.active
+    opacity: 1
+
+
+
+
+@media (max-width: 1200px)
+    .navi
+        padding: 1.5rem
+    .navi__container
+        display: none
+    .navi__phone
+        display: none
+        position: absolute
+        margin-top: 30px
+    .navi__menu
+        display: inline
+        &:focus
+@media (max-width: 450px)
+    .navi
+        &__navigation
+            width: 100%
+            position: fixed

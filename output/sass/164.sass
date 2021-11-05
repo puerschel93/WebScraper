@@ -1,0 +1,105 @@
+.nutritions 
+    @include adaptiv-value('padding-top', 50, 20, 1)
+    @include adaptiv-value('padding-bottom', 50, 20, 1)
+    &__container
+    &__wrapper
+        display: flex
+        align-items: center
+        @media (max-width: $md3 + px) //Less 768
+           flex-direction: column
+    &__content
+        flex: 0 1 605px
+        display: flex
+        flex-direction: column
+        @media (max-width: $md3 + px) //Less 768
+           flex: none
+           align-items: flex-start
+           width: 100%
+
+
+
+    &__body
+        flex: 0 1 50%
+        @include adaptiv-value('padding-left', 58, 0, 1)
+    &__block-top
+        &:not(:last-child)
+            margin-bottom: 10px
+    &__label
+        text-align: left
+    &__title
+        text-align: left
+        color: $darkBlue
+    &__text
+        font-size: 15px
+        line-height: 200%
+        text-transform: capitalize
+        &:not(:last-child)
+            margin-bottom: 30px/15px * 1em
+        span
+            font-weight: 500
+            color: $darkBlue
+    &__btns
+        display: flex
+        flex-wrap: wrap
+    &__btn
+        min-width: 157px
+        font-weight: 500
+
+
+
+
+.item-nutritions
+    position: relative
+    display: flex
+    &_top
+        justify-content: center
+        @media (max-width: $md3 + px) //Less 768
+           align-self: flex-end
+        .item-nutritions__achive
+            top: 0
+            left: 0
+    &_bottom
+        bottom: 65px
+        @media (max-width: $md3 + px) //Less 768
+           @include adaptiv-value('bottom', 65, 20, 1)
+        .item-nutritions__achive
+            bottom: 0
+            right: 0
+    &__image
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        max-width: 472px
+        @media (min-width: $md3 + px)//More 768
+            @include adaptiv-value('max-width', 472, 100, 1)
+        img
+            border-radius: 10px
+            width: 100%
+    &__achive
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        z-index: 4
+        @include adaptiv-value('padding', 15, 10, 1)
+        background: $darkBlue
+        border-radius: 10px
+        @media (min-width: $md2 + px)//More 992
+           min-width: 200px
+    &__icon
+        max-width: 30px
+        max-height: 30px
+        @media (min-width: $md4 + px)//More 479
+            &:not(:last-child)
+                margin-right: 10px
+        img
+            width: 100%
+    &__label
+        font-weight: 400
+        font-size: 18px
+        line-height: 150%
+        text-align: center
+        text-transform: capitalize   
+        color: $white
+        @media (max-width: $md4 + px)//Less 479
+           display: none

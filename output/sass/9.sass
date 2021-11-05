@@ -1,0 +1,35 @@
+.navigation
+    background-color: $bg_fon_nav
+    padding: 25px 0px
+    font-size: 22px
+
+
+
+.nav
+    @include flex (row, center, flex-start, nowrap)
+    .nav_item
+        list-style-type: none
+        padding: 5px 25px
+        transition: all .5s
+        a
+            text-decoration: none
+            color: $color_text_main
+            cursor: pointer
+        &:hover,
+        &:focus
+            transform: scale(1.2)
+
+
+@media (max-width: $notebook)
+    .navigation
+        font-size: 20px
+
+@media (max-width: $tablet)
+    .navigation
+        padding: 15px 0px
+
+    .nav
+        @include flex (column, center, center, nowrap)
+            
+                
+                

@@ -1,0 +1,81 @@
+.feedback
+    h2
+        font-size: 56px
+        color: $color_text_up
+        text-align: center
+        position: relative
+        margin-bottom: 80px
+        &::after
+            position: absolute
+            left: calc(50% - 160px)
+            width: 320px
+            content: ""
+            border-bottom: 6px double #ff6b53
+            bottom: -20px
+
+.feedback_input
+    @include flex (row, space-around, flex-start, wrap)
+    label
+        width: 45%
+        color: $color_special
+    
+.input_phone,
+.input_name
+    height: 30px
+    width: 100%
+    margin-bottom: 40px
+    &:active,
+    &:focus,
+    &:hover
+        border: 3px solid $color_special
+        border-radius: 5px
+        outline: none
+
+.feedback_message
+    @include flex (column, center, flex-start, wrap) 
+    align-content: center
+    color: $color_special
+    .input_message
+        width: 95%
+        height: 100px
+        margin-bottom: 40px
+        &:active,
+        &:focus,
+        &:hover
+            border: 3px solid $color_special
+            border-radius: 5px
+            outline: none
+
+.feedback-button
+    text-align: center
+    margin-bottom: 40px
+    .inpit_button
+        background-color: $color_special
+        border: none
+        cursor: pointer
+        padding: 5px 10px
+        font-size: 18px
+        font-weight: 800
+        border-radius: 5px
+        color: $color_text_main
+        &:active,
+        &:focus,
+        &:hover
+            background-color: #fa472b
+
+
+
+    
+@media (max-width: $tablet)
+    .feedback
+        h2
+            font-size: 40px
+
+
+@media (max-width: $mobile)
+    .feedback
+        h2
+            font-size: 33px
+            &::after
+                left: calc(50% - 100px)
+                width: 200px

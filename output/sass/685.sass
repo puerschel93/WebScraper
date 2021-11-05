@@ -1,0 +1,217 @@
+@import "constants"
+@import "varibales"
+@import "input"
+@import "components"
+@import "components/tile_map"
+@import "components/sidebar"
+@import "components/inspector"
+
+@import "reset"
+@import "page"
+@import "resources"
+@import "location_map"
+@import "location_editor"
+@import "dialogue_editor"
+
+// default
+
+html
+  background: #fafaf9
+  font-size: 100%
+  color: $gray-700
+
+  *
+    box-sizing: border-box
+    font-family: verdana
+
+body
+  font-size: .8125rem
+  line-height: 1.2rem
+
+a
+  color: $blue-500
+  cursor: pointer
+
+  &:hover
+    text-decoration: underline
+
+//
+
+.graph
+  position: relative
+  height: 100%
+  width: 100%
+
+  &_is-dragging, &_is-dragging *, &_is-connecting, &_is-connecting *
+    cursor: -moz-grabbing !important
+    cursor: -webkit-grabbing !important
+    cursor: grabbing !important
+
+  &__scroll-content
+    min-width: 100%
+    min-height: 100%
+    overflow: hidden
+    position: relative
+
+  &__item
+    position: absolute
+    z-index: 2
+
+    &_is-dragging
+      z-index: 3
+
+      & > *
+        box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, .2)
+
+  &_is-connecting &__item:hover
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 0, .6)
+
+
+  &__connection-container
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    z-index: 1
+
+  &__connection
+    stroke: $gray-600
+    fill: transparent
+
+    &_is-connector
+      stroke-dasharray: 3, 3
+
+.actions
+  display: flex
+  flex-direction: row
+
+  .action
+    margin: 0
+    margin-right: 4px
+
+    &:last-child
+      margin: 0
+
+.actions_vertical
+  display: flex
+  flex-direction: column
+
+  .action
+    margin: 0
+    margin-bottom: 6px
+
+    &:last-child
+      margin: 0
+
+.action
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  width: 16px
+  color: $gray-400
+
+  &:hover
+    color: $gray-800
+    cursor: pointer
+
+  &_connect:hover
+    cursor: -moz-grab
+    cursor: -webkit-grab
+    cursor: grab
+
+#game
+  display: flex
+  width: 100%
+  height: 100%
+  flex-direction: column
+  align-items: center
+
+  &__view
+    user-select: none
+    margin: 40px 0 10px
+
+  &__help
+    p
+      margin-top: 10px
+      text-align: center
+
+    span
+      display: inline-block
+      border: 1px solid #dcdcdc
+      padding: 4px 10px 3px
+      box-shadow: inset 0px 1px 0px 0px #ffffff
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf))
+      background: -moz-linear-gradient(center top, #ededed 5%, #dfdfdf 100%)
+      border-radius: 4px
+      color: #777777
+      font-family: arial
+      font-size: .8rem
+      font-weight: bold
+      font-style: normal
+      line-height: 1rem
+      text-decoration: none
+      text-transform: uppercase
+      text-align: center
+      text-shadow: 1px 1px 0px #ffffff
+
+.color-picker
+  margin: 5px
+  display: grid
+  grid-gap: 5px
+  grid-template-columns: repeat(13, auto)
+  justify-content: space-between
+
+  &__color
+    border: 1px solid black
+    width: 20px
+    height: 20px
+
+    &_selected
+      border: 2px solid white
+      box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, .8)
+
+.condition-select
+  display: flex
+  flex-direction: row
+  margin-bottom: 8px
+
+  &__switch, &__value
+    width: 40%
+
+  &__operator
+    flex-grow: 1
+    margin: 0 8px
+
+  &__delete
+    width: 20px
+    text-align: right
+
+.switch-form
+  &__value
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+
+    .input:first-child
+      flex-grow: 1
+
+    a
+      margin-left: 8px
+      margin-bottom: $input-bottom-margin
+
+#default-dnd-ghost
+  position: absolute
+  top: -30px
+  left: -30px
+  height: 24px
+  width: 24px
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  font-size: 1.2rem
+  color: yellow
+  opacity: 1

@@ -1,0 +1,1173 @@
+$containerWidth: 743
+$mainFontFamily: Quicksand
+$mainFontColor: #8D96BD
+$mainFontSize: 14
+$background: #fff
+
+@import "nullStyle"
+@import "mixins"
+@import "header"
+@import "footer"
+@import "fonts"
+@import "_spoiler"
+
+body
+    height: 100%
+    color: $mainFontColor
+    font-family: $mainFontFamily
+    @include adaptive-property ('font-size',$mainFontSize,12)
+
+    &.fixed
+        overflow: hidden
+
+    button
+        color: #fff
+        @include adaptive-property ('font-size',$mainFontSize,12)
+
+.main
+    width: 100%
+
+    background: $background
+
+    &__body
+        background: $background
+
+.refs-block
+
+    &__ref
+        font-family: Quicksand bold
+        color: #fff
+
+        border: 1px solid #fff
+        border-right: none
+        padding: 13px 10px 13px 10px
+        transition: all 0.2s ease
+
+        &:first-child
+            border-top-left-radius: 3px
+            border-bottom-left-radius: 3px
+
+        &:last-child
+            border-right: 1px solid #fff
+            border-top-right-radius: 3px
+            border-bottom-right-radius: 3px
+
+        &:hover
+            background: #fff
+            color: #000
+
+        @media (max-width: 768px)
+            background: #fff
+            color: #000
+
+.adaptive-image
+    display: block
+    position: relative
+    padding: 0px 0px 100% 0px
+
+    img
+        position: absolute
+        top: 0
+        left: 0
+        @include size (100%,100%)
+        object-fit: cover
+
+.fs-block
+    min-height: 100vh
+    height: auto
+
+.title
+    color: #3D4F9F
+    font-family: Quicksand med
+    @include adaptive-property ('font-size',24, 18)
+
+.subtitle
+    display: inline-block
+    text-transform: uppercase
+    font-family: Roboto med
+    color: #3D4F9F
+    @include adaptive-property ('font-size',13, 12)
+
+.main-title
+    font-family: Quicksand light
+    @include adaptive-property ('font-size',30, 25)
+    color: #3D4F9F
+
+.second-main-title
+    @include adaptive-property ('font-size',36, 24)
+
+.content
+
+    &__body
+
+.fullscreen
+    position: relative
+    text-align: center
+    background: #ecf1ff
+
+    justify-content: center
+    align-items: center
+
+    @include size(auto, 100vh)
+    @include adaptive-property ('min-height',500, 500)
+
+    &__body
+        z-index: 1
+
+        padding: 0px 0px 0px 0px
+
+        *
+            z-index: 1
+
+    &__bg-image
+        height: 50%
+        width: 100%
+        position: absolute
+        left: 0
+        bottom: 0
+
+        @media (max-width: 1270px)
+            display: none
+
+        img
+            @include size (100%,100%)
+            object-fit: fill
+
+    &__subtitle
+        padding: 0px 0px 20px 0px
+
+    &__title
+        font-family: Quicksand light
+        padding: 0px 0px 20px 0px
+
+        span
+            font-family: Quicksand bold
+
+    &__text
+        line-height: 1.9
+        padding: 0px 0px 20px 0px
+
+    &__play-btn
+        background: #fff
+        border-radius: 50%
+        img
+            padding: 20px 20px 20px 20px
+
+    &__top-left-cloud
+        top: 25%
+        left: 23%
+
+    &__center-left-cloud
+        top: 40%
+        left: 0%
+        transform: translate(0, -50%)
+
+    &__top-right-cloud
+        top: 17%
+        right: 12%
+
+    &__bottom-left-cloud
+        bottom: 15%
+        left: 20%
+
+        @media (max-width: 426px)
+            left: 0
+
+    &__bottom-right-cloud
+        bottom: 0
+        right: 12%
+
+        @media (max-width: 426px)
+            right: 0%
+
+.mouse-event-point
+    position: absolute
+    z-index: 2
+    *
+        z-index: 2
+
+    @include adaptive-property ('width', 15, 12)
+    @include adaptive-property ('height', 15, 12)
+    border-radius: 50%
+    background: #fff
+    border: 3px solid #5E80FE
+
+    &:after
+        content: ''
+        display: inline-block
+
+        transform: translate(-43%,-120%)
+
+        height: 100px
+        width: 100px
+
+    &:hover
+        .mouse-event-point__content
+            visibility: visible
+            opacity: 1
+            pointer-events: all
+
+    &__content
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+
+        transition: all 0.2s ease
+        visibility: hidden
+        opacity: 0
+        pointer-events: none
+
+        padding: 15px 50px 15px 50px
+        background: #fff
+        border-radius: 3px
+        border: 2px solid #D8E0F7
+
+        transform: translate(-43%,-120%)
+
+        &::after
+            position: absolute
+            top: 100%
+            left: 50%
+            transform: translate(-50%, 0)
+
+            height: 100%
+            width: 100%
+
+            content: ''
+
+    @media (max-width: 1270px)
+        display: none
+
+.first-mouse-event-point
+    bottom: 5%
+    left: 5%
+
+.second-mouse-event-point
+    bottom: 10.3%
+    left: 40%
+
+.third-mouse-event-point
+    bottom: 29.7%
+    left: 65%
+
+.fourth-mouse-event-point
+    top: 50.4%
+    right: 5%
+
+.fs-slider
+    height: 100%
+
+    &__slide
+        display: flex
+        justify-content: center
+        align-items: center
+
+    &__pagination
+        bottom: 3% !important
+
+.customers
+
+    &__body
+        display: flex
+        flex-flow: row wrap
+        justify-content: space-between
+        padding: 30px 0px 30px 0px
+
+        @media (max-width: 768px)
+            justify-content: center
+
+    &__customer
+        padding: 20px 20px 20px 20px
+
+.customer
+    display: inline-block
+
+    @media (min-width: 768px)
+        &:hover
+            .customer__logo
+                fill: #5982E7
+
+    &__logo
+        fill: #D6DAE5
+
+        transition: all 0.2s ease
+
+        @media (max-width: 768px)
+            fill: #5982E7
+
+.blog
+    position: relative
+    background: #F5F8FF
+
+    &__body
+        text-align: center
+        @include adaptive-property ('padding-top',90,30)
+        @include adaptive-property ('padding-bottom',90,30)
+
+    &__subtitle
+        padding: 0px 0px 30px 0px
+
+    &__title
+        padding: 0px 0px 50px 0px
+        color: #3D4F9F
+
+    &__slider
+
+    &__slider-pagination
+        z-index: 1 !important
+        bottom: 7% !important
+
+        @media (max-width: 1270px)
+            bottom: 4% !important
+        @media (max-width: 768px)
+            bottom: 10px !important
+        @media (max-width: 426px)
+            display: none
+
+        span
+            margin: 0px 5px 0px 5px !important
+            &:before
+                display: inline-block
+                content: ''
+                padding: 15px 15px 15px 15px
+
+                transform: translate(-30%,-30%)
+
+    &__slider-button-prev
+        left: 9% !important
+        z-index: 1 !important
+
+        &:after
+            padding: 50px 0px 50px 0px !important
+
+            content: url('../img/icons/sliderArrowLeft.svg') !important
+
+        @media (max-width: 768px)
+            display: none !important
+
+    &__slider-button-next
+        @extend .blog__slider-button-prev
+
+        left: 90% !important
+
+        &:after
+            transform: rotate(180deg)
+
+.post
+    background: #fff
+    border: 1px solid #D8E3FE
+
+    &__body
+        display: flex
+
+        padding: 60px 35px 60px 35px
+
+        @media (max-width: 1270px)
+            flex-flow: column-reverse nowrap
+        @media (max-width: 768px)
+            @include adaptive-property ('padding-top',40,20)
+            @include adaptive-property ('padding-bottom',40,20)
+            @include adaptive-property ('padding-right',20,10)
+            @include adaptive-property ('padding-left',20,10)
+
+    &__images-block
+        display: grid
+        grid-template: 'image image image' auto 'image image image' auto / 1fr 1fr 1fr
+        gap: 12px
+
+        flex: 0 0 50%
+
+        @media (min-width: 1270px)
+            padding: 0px 30px 0px 0px
+
+        @media (max-width: 768px)
+            grid-template: 'image image' auto 'image image' auto / 1fr 1fr
+
+    &__big-image
+        @media (min-width: 768px)
+            grid-column: span 2
+            grid-row: span 2
+
+    &__image
+        position: relative
+        &:hover
+            cursor: pointer
+            &:after
+                visibility: visible
+                opacity: 1
+
+        &:after
+            transition: all 0.2s ease
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+            content: url('../img/icons/showTheImg.svg')
+            z-index: 1
+
+            visibility: hidden
+            opacity: 0
+            pointer-events: none
+
+        @media (max-width: 768px)
+            &:nth-child(2n + 1):first-child
+                grid-column: span 2
+
+        img
+            border-radius: 5px
+            &:hover
+
+    &__text-block
+        text-align: left
+        flex: 0 0 50%
+        padding: 0px 0px 0px 30px
+
+        @media (max-width: 1270px)
+            padding: 0px 0px 30px 0px
+
+    &__title
+        color: #3D4F9F
+        font-family: Quicksand
+        @include adaptive-property ('font-size',36, 24)
+        padding: 0px 0px 30px 0px
+
+    &__text
+        line-height: 1.9
+        font-family: Roboto
+        padding: 0px 0px 30px 0px
+
+    &__read-more-ref
+        color: #3A79FF
+        background: #D2E1FF
+        padding: 13px 16px 13px 16px
+        margin: 0px 5px 0px 0px
+        border-radius: 2px
+
+        transition: all 0.2s ease
+        &:hover
+            color: #D2E1FF
+            background: #3A79FF
+
+    &__add-to-book
+        color: #A6B6DA
+        padding: 13px 16px 13px 16px
+
+        transition: all 0.05s ease
+
+        &:hover
+            color: #303030
+            background: #D2E1FF
+
+.about-app
+    position: relative
+    text-align: center
+
+    &__body
+        *
+            z-index: 1
+        @include adaptive-property ('padding-top',90,30)
+        @include adaptive-property ('padding-bottom',90,30)
+
+    &__subtitle
+        margin: 0px 0px 30px 0px
+
+    &__title
+        color: #3D4F9F
+        margin: 0px 0px 20px 0px
+
+    &__benefits-block
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+
+        @media (min-width: 1220px)
+            align-items: center
+
+        @include adaptive-property ('padding-top',50,30)
+        @include adaptive-property ('padding-bottom',50,30)
+
+    &__refs
+        display: flex
+        justify-content: center
+        align-items: center
+
+        span
+            text-transform: uppercase
+            display: inline-block
+            padding: 0px 15px 0px 15px
+
+        .determinater
+            @media (max-width: 560px)
+                display: none
+
+    &__cloud-top-left
+        top: 15%
+        left: 15%
+
+    &__cloud-top-right
+        top: 20%
+        right: 5%
+
+        @media (max-width: 768px)
+            top: 50%
+            right: 10%
+
+    &__cloud-bottom-left
+        bottom: 17%
+        left: 5%
+
+        @media (max-width: 768px)
+            bottom: 3%
+
+.benefits-item
+    @include adaptive-property ('width',120,90)
+    padding: 15px 0px 15px 0px
+
+    @media (max-width: 1220px)
+        margin: 0px 15px 0px 15px
+
+    &__body
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        align-items: center
+
+    &__image
+        display: flex
+        justify-content: center
+        align-items: center
+        @include size (70px,70px)
+
+        background: #F1F5FF
+        border-radius: 50%
+        margin: 0px 0px 30px 0px
+
+        img
+
+    &__title
+        color: #4074F8
+        font-family: OpenSans bold
+        margin: 0px 0px 30px 0px
+
+    &__text
+        line-height: 1.7
+        font-family: OpenSans sbold
+        text-align: center
+
+.customers-quotes
+    position: relative
+    background: #EAF0FF
+
+    &__body
+        @include adaptive-property ('padding-top',50,30)
+        @include adaptive-property ('padding-bottom',50,30)
+
+    &__info
+        display: inline-block
+        width: 50%
+
+        @media (max-width: 1270px)
+            display: block
+            text-align: center
+            width: 100%
+
+    &__subtitle
+        padding: 0px 0px 40px 0px
+
+    &__title
+        padding: 0px 0px 25px 0px
+
+    &__text
+        width: 70%
+        line-height: 1.9
+
+        @media (max-width: 1270px)
+            width: 100%
+            margin: 0px 0px 30px 0px
+
+    &__slides
+        display: inline-block
+        width: 50%
+        position: absolute
+
+        @media (max-width: 1270px)
+            width: 100%
+            position: static
+
+    &__slider
+
+    &__pagination
+        bottom: 15% !important
+        width: 64% !important
+
+        @media (max-width: 1270px)
+            width: 100% !important
+
+    &-slide
+        cursor: grab
+        padding: 0px 0px 150px 0px
+        opacity: 45%
+
+        &:active
+            cursor: grabbing
+
+        &__body
+            position: relative
+            padding: 40px 70px 40px 70px
+            margin: 0px 30px 0px 30px
+            background: #fff
+
+            @media (max-width: 768px)
+                min-width: auto
+                padding: 20px 45px 40px 45px
+
+        &__text
+            font-family: Roboto
+            color: #676F95
+            line-height: 1.7
+
+        &__image
+            position: absolute
+            bottom: 0
+            left: 50%
+            transform: translate(-50%, 50%)
+            transition: all 0.5s ease
+
+            @include size (60px,60px)
+            padding: 0px 0px 60px 0px
+
+            visibility: hidden
+            opacity: 0
+            pointer-events: none
+
+            img
+                object-fit: contain
+
+        &.swiper-slide-active
+            transition: all 0.5s ease
+            opacity: 100%
+
+            .customers-quotes-slide__image
+                visibility: visible
+                opacity: 1
+                pointer-events: all
+
+            .customers-quotes-slide__body
+                box-shadow: 0 5px 30px rgba(0,0,0,0.2)
+
+.questions-answers
+
+    &__body
+        text-align: center
+        @include adaptive-property ('padding-top',60,20)
+        @include adaptive-property ('padding-bottom',50,20)
+
+    &__subtitle
+        margin: 0px 0px 20px 0px
+
+    &__title
+        margin: 0px 0px 60px 0px
+
+    &__spoilers
+
+    &__spoiler-wrapper
+        border-bottom: 1px solid #D8E3FE
+        text-align: left
+
+    &__sp-button
+        display: flex
+        width: 100%
+        justify-content: flex-start
+        color: #8E96B7
+
+        &:hover
+            color: #495274
+
+        &:after
+            content: '?'
+
+    &__sp-list
+
+    &__sp-content
+        display: flex
+        align-items: center
+        padding: 5px 0px 25px 0px
+
+        @media (max-width: 600px)
+            flex-flow: column nowrap
+
+        p
+            line-height: 1.9
+            padding: 0px 30px 0px 30px
+
+            @media (max-width: 600px)
+                padding-bottom: 15px
+
+        a
+            padding: 15px 20px 15px 20px
+            background: #E8ECF4
+            font-family: Quicksand med
+            color: #7382A3
+
+            &:hover
+                background: #7382A3
+                color: #E8ECF4
+
+.plan-and-manage
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    background: #F5F8FF
+
+    @media (max-width: 1270px)
+        &:before
+            display: inline-block
+            content: ''
+            background: #f5f8ffec
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            z-index: 1
+
+    &__body
+        display: flex
+        @include adaptive-property ('padding-top',90,20)
+        @include adaptive-property ('padding-bottom',90,20)
+
+    &__text-block
+        padding: 15px 15px 15px 15px
+        z-index: 1
+        flex: 0 0 45%
+        position: relative
+
+        @media (max-width: 1270px)
+            color: #3e4461
+            flex: 1 0 45%
+
+        @media (max-width: 768px)
+            color: #3e4461
+
+    &__subtitle
+        margin: 0px 0px 30px 0px
+
+    &__title
+        font-family: Quicksand med
+        margin: 0px 0px 30px 0px
+        span
+            font-family: Quicksand light
+
+    &__text
+        line-height: 1.9
+        margin: 0px 0px 70px 0px
+
+    &__refs-block
+
+    &__ref
+        color: #ADB4D2
+        border-color: #D1D1E4
+        border-right: 1px solid #D1D1E4
+        border-radius: 3px
+        margin: 0px 5px 0px 0px
+
+        &:last-child
+            border-right: 1px solid #D1D1E4
+            margin: 0px 0px 0px 0px
+
+        &:hover
+            background: #6f9af7
+            border-color: #6f9af7
+            color: #fff
+
+        @media (max-width: 1270px)
+            background: #f5f8ff
+
+        @media (max-width: 768px)
+            background: #4C85FF
+            border-color: #6f9af7
+            color: #fff
+
+    &__video-btn
+        &:after
+            content: url('../img/icons/playArrow-white.svg')
+
+        @media (max-width: 768px)
+            background: #4C85FF
+            border-color: #4C85FF
+            color: #fff
+
+    &__image
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translate(0, -50%)
+
+        @media (max-width: 1270px)
+            top: 50%
+            right: 55%
+            transform: translate(50%, -50%)
+
+        img
+            @include adaptive-property ('width', 550, 320)
+            @include adaptive-property ('height', 357, 208)
+
+.our-statistics
+
+    &__body
+        display: flex
+
+        @media (max-width: 670px)
+            flex-flow: column nowrap
+            text-align: center
+
+    &__block
+        @include adaptive-property ('padding-top',40,20)
+        @include adaptive-property ('padding-bottom',40,20)
+        padding-right: 90px
+        padding-left: 90px
+
+        flex: 0 1 50%
+
+        *
+            margin: 0px 0px 20px 0px
+            &:last-child
+                margin-bottom: 0
+
+    &__icon
+
+    &__numbers
+        display: block
+        @include adaptive-property ('font-size',48, 32)
+
+    &__text
+        line-height: 1.3
+
+    &__users
+        padding-right: 90px
+        padding-left: 90px
+        background: #D8E3FE
+        color: #5E80FF
+
+    &__productivity
+        background: #6384f9
+        color: #fff
+        text-align: right
+
+        @media (max-width: 670px)
+            text-align: center
+
+.get-started
+    background: #6384f9
+    position: relative
+
+    &__body
+        position: relative
+        *
+            z-index: 1
+        text-align: center
+        color: #fff
+        @include adaptive-property ('padding-top',50,30)
+        @include adaptive-property ('padding-bottom',60,40)
+
+    &__main-content
+        *
+            position: relative
+            z-index: 1
+
+    &__title
+        color: #fff
+        margin: 0px 0px 30px 0px
+        span
+            font-family: Quicksand med
+
+    &__subtitle
+        color: #fff
+        margin: 0px 0px 50px 0px
+
+    &__text
+        line-height: 1.9
+        margin: 0px 0px 80px 0px
+
+    &__ref
+        font-family: Quicksand bold
+        color: #fff
+
+        border: 1px solid #fff
+        border-right: none
+        padding: 13px 10px 13px 10px
+        transition: all 0.2s ease
+
+        @media (max-width: 768px)
+            border-right: 1px solid #000
+
+            &:last-child
+                border-right: 0px solid #000
+
+        &:last-child
+            border-right: 1px solid #fff
+
+        &:hover
+            background: #fff
+            color: #000
+
+        @media (max-width: 426px)
+            background: #fff
+            color: #000
+
+    &__clouds-left
+        left: 0
+        top: 50%
+        top: 50%
+        transform: translate(0, -50%)
+
+        @media (max-width: 426px)
+            @include size (200px,200px)
+
+            img
+                @include size (100%,100%)
+                object-fit: contain
+
+    &__clouds-right
+        right: 0
+        top: 70%
+        transform: translate(0, -50%)
+
+        @media (max-width: 426px)
+            @include size (100px,100px)
+
+            img
+                @include size (100%,100%)
+                object-fit: contain
+
+.newsletter
+
+    &__body
+        display: flex
+        justify-content: space-between
+        align-items: center
+        @include adaptive-property ('padding-top',50,20)
+        @include adaptive-property ('padding-bottom',50,20)
+
+        @media (max-width: 670px)
+            flex-flow: column nowrap
+
+    &__text-body
+        flex: 1 0 40%
+        margin: 0px 80px 0px 0px
+
+        @media (max-width: 670px)
+            margin: 0px 0px 15px 0px
+
+    &__title
+        font-family: Quicksand bold
+        @include adaptive-property ('font-size',18, 14)
+        color: #3D4F9F
+
+    &__text
+        margin: 15px 0px 0px 0px
+        line-height: 1.9
+        font-family: Roboto
+
+    &__signup-form
+        flex: 0 1 40%
+
+        @media (max-width: 670px)
+            width: 100%
+
+.signup-form
+    display: inline-flex
+
+    @media (max-width: 1250px)
+        flex-flow: row wrap
+
+    &__email-input
+        margin: 0px 15px 0px 0px
+        padding: 20px 10px 20px 20px
+
+        background: #EFEFF7
+        color: #7A85AD
+        border-radius: 5px
+        @include adaptive-property ('font-size',$mainFontSize,12)
+
+        transition: all 0.2s ease
+        &:focus
+            background: #e7e7ec
+
+        &::placeholder
+            color: #7A85AD
+
+        @media (max-width: 1250px)
+            margin: 0px 0px 15px 0px
+            flex: 1 0 auto
+        @media (max-width: 670px)
+            flex: 1 0 70%
+
+    &__submit
+        padding: 20px 60px 20px 60px
+        border-radius: 5px
+        min-width: 180px
+
+        background: #4D6CE1
+        color: #fff
+        flex: 1 0 auto
+
+        transition: all 0.05s ease
+
+        &:hover
+            background: #4663cc
+
+        &:active
+            transform: translate(0,5%)
+
+.head-foot-container
+    margin: auto
+
+    @media (min-width: 426px) and (min-width: 768px)
+        width: 85%
+
+    @media (max-width: 425px)
+        width: 95%
+
+.container
+    margin: auto
+    padding-right: 15px
+    padding-left: 15px
+
+    @media (min-width: 768px)
+        width: 55%
+
+    @media (min-width: 426px) and (max-width: 768px)
+        width: 70%
+
+    @media (max-width: 425px)
+        width: 95%
+
+.big-container
+    @extend .container
+
+    @media (min-width: 768px)
+        width: 70%
+
+    @media (min-width: 426px) and (max-width: 768px)
+        width: 80%
+
+    @media (max-width: 425px)
+        width: 95%
+
+.modal-window
+    position: fixed
+    z-index: 15
+    top: 0
+    left: 0
+    background: #00000046
+    @include size (100%,100%)
+
+    overflow: hidden
+    opacity: 0
+    pointer-events: none
+    transition: all 0.5s ease
+
+    &.active
+        overflow-y: scroll
+        opacity: 1
+        pointer-events: all
+
+    &__body
+        display: flex
+        height: 100%
+        justify-content: center
+        align-items: center
+
+    &__content
+
+    &__video
+        position: relative
+        padding: 0px 0px 57% 0px
+        width: 70vw
+
+        @media (max-width: 768px)
+            width: 85vw
+
+        video
+            position: absolute
+            top: 0
+            left: 0
+            @include size (100%,100%)
+
+    &__image
+        @include size (auto,60vh)
+
+        @media (max-width: 500px)
+            @include size (auto,50vh)
+
+.socials
+    display: flex
+
+    &__item
+        a
+            display: inline-block
+            @include adaptive-property ('padding-top',15,12)
+            @include adaptive-property ('padding-left',15,12)
+            @include adaptive-property ('padding-right',15,12)
+            @include adaptive-property ('padding-bottom',15,12)
+
+            &:hover
+                color: #565d76
+                img
+                    transform: scale(1.4)
+
+        img
+            transition: all 0.2s ease
+
+        &:first-child
+            a
+                padding-left: 35px
+        &:last-child
+            a
+                padding-right: 35px
+
+.read-more-btn
+    color: #D43F3F
+    font-family: Quicksand bold
+    padding: 13px 16px 13px 16px
+    background: #FFD7D7
+
+    transition: all 0.2s ease
+
+    &:hover
+        color: #c93535
+        background: #fdbebe
+    &:active
+        transform: translate(0,5%)
+
+.get-started-btn
+    color: #3A79FF
+    font-family: Quicksand bold
+    padding: 13px 16px 13px 16px
+    background: #D2E1FF
+
+    transition: all 0.2s ease
+
+    &:hover
+        color: #0037ad
+        background: #b7cfff
+    &:active
+        transform: translate(0,5%)
+
+.cloud
+    position: absolute
+    pointer-events: none
+
+.determinater
+    display: inline-block
+    height: 2px
+    width: 28px
+    margin: 0px 20px 0px 20px
+    background: #DAE4FE
+
+    @media (max-width: 1220px)
+        display: none

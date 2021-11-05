@@ -1,0 +1,79 @@
+.course-feedback-popup
+	z-index: 2000
+	visibility: hidden
+	pointer-events: none
+	position: fixed
+	bottom: calc(50% - 80px)
+	left: 50%
+	transform: translate(-50%, 50%)
+	transition: bottom $transition, opacity $transition
+	opacity: 0
+
+	+xs
+		bottom: -80px
+		width: 100%
+
+	&.is-active
+		pointer-events: all
+		bottom: 50%
+		opacity: 1
+
+		+xs
+			bottom: 0
+			transform: translate(-50%, 0)
+
+	&__inner
+		position: relative
+		display: flex
+		flex-direction: column
+		align-items: center
+		width: 935px
+		max-width: 100%
+		padding: 53px 48px 50px
+		border-radius: 16px
+		background: $popup-grey
+
+		+smd
+			width: 730px
+
+		+sm
+			width: 100%
+			border-radius: 16px 16px 0 0
+			padding: 50px 0px 50px
+
+	&__main
+		display: flex
+		width: 100%
+		justify-content: space-between
+		padding-top: 25px
+
+		+sm
+			flex-direction: column-reverse
+			padding-top: 25px
+
+
+	&__video 
+		position: relative
+		width: 100%
+		height: 0
+		padding-bottom: 56.25%
+      
+	iframe 
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+      
+
+	&__close
+		position: absolute
+		top: 28px
+		right: 34px
+		width: 30px
+		height: 30px
+
+		.icon
+			width: 30px
+			height: 30px
+			stroke: rgba(255, 255, 255, 0.3)

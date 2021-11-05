@@ -1,0 +1,81 @@
+.preloader
+	width: 100%
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background: $w
+	z-index: 8888
+	visibility: visible
+	opacity: 1
+	transition: opacity .3s ease, visibility .3s ease
+	&.done
+		visibility: hidden
+		opacity: 0
+
+	&__line
+		height: 0
+		background-color: #F5F5F5
+		position: absolute
+		top: 0
+		width: 100%
+		z-index: 8889
+		transition: .4s ease height
+
+	&__inner
+		position: relative
+		height: 100%
+		width: 100%
+		z-index: 9999
+
+	&__text
+		position: absolute
+		top: 60px
+		left: 60px
+		font-size: 20px
+		+r(1366)
+			top: 40px
+			right: 40px
+		+r(1024)
+			font-size: 16px
+		+r(768)
+			top: auto
+			left: 50%
+			bottom: 60px
+			transform: translateX(-50%)
+			width: 100%
+			text-align: center
+
+	&__percent
+		border-radius: 30px
+		border: 2px solid $b25
+		position: absolute
+		top: 60px
+		right: 60px
+		text-align: center
+		padding: 35px 25px
+		+r(1366)
+			top: 40px
+			right: 40px
+		+r(768)
+			top: 30px
+			right: 30px
+
+	&__percent--num
+		font-size: 200px
+		color: $b25
+		transition: .4s ease
+		padding-top: 10px
+		line-height: 80%
+		+r(1600)
+			font-size: 180px
+		+r(1024)
+			font-size: 120px
+
+	&__percent--text
+		font-size: 20px
+		margin-top: 40px
+		+r(1024)
+			font-size: 16px

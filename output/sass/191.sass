@@ -1,0 +1,107 @@
+.about
+    @include adaptiv-value('padding-top', 50, 20, 1)
+    @include adaptiv-value('padding-bottom', 50, 20, 1)
+    &__container
+    &__block-top
+    &__label
+    &__title
+    &__wrapper
+    &__info
+        display: grid
+        grid-template-columns: repeat(auto-fit, 255px)
+        grid-gap: 30px
+        justify-content: center
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 40, 30, 1)
+        @media (max-width: 855px)//Less 855
+            grid-template-columns: repeat(auto-fit, 210px)
+           
+    &__body
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(520px, 1fr))
+        @include adaptiv-value('gap', 30, 25, 1)
+        @media (max-width: $md3 + px) //Less 768
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr))
+        @media (max-width: $md4 + px)//Less 479
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+    &__item
+
+
+
+
+.info-about
+    &__item
+        position: relative
+        text-align: center
+        &:not(:last-child)        
+            &::after
+                position: absolute
+                top: 0
+                left: 100%
+                content: ''
+                height: 100px
+                width: 1px
+                display: block
+                background: $darkBlue
+                @media (max-width: $md4 + px)//Less 479
+                    top: 100%
+                    left: 50%
+                    transform: translateX(-50%)
+                    bottom: 0
+                    height: 1px
+                    width: 100px
+                   
+    &__number
+        font-family: Inter, sans-serif
+        font-weight: 800
+        @include adaptiv-value('font-size', 48, 30, 1)
+        line-height: 133%
+        font-feature-settings: 'salt' on, 'liga' off
+        color: $darkBlue
+    &__descr
+        font-weight: 400
+        font-size: 18px
+        line-height: 178%
+        font-feature-settings: 'salt' on, 'liga' off
+        color: $darkBlue
+		
+
+
+.item-about
+    display: flex
+    align-items: flex-start
+    @media (max-width: $md4 + px)//Less 479
+       flex-direction: column
+       align-items: center
+       text-align: center
+    &__icon
+        flex: 0 0 70px
+        height: 70px
+        padding: 10px
+        background: #C2D8FE
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        img
+            max-width: 40px
+            height: 40px
+        @media (max-width: $md4 + px)//Less 479
+            width: 70px
+            &:not(:last-child)
+                margin-bottom: 5px
+    &__body
+        @media (min-width: $md4 + px)//More 479
+            @include adaptiv-value('padding-left', 30, 10, 1)
+    &__title
+        font-weight: 600
+        font-size: 28px
+        line-height: 150%
+        text-transform: capitalize
+        color: $darkBlue
+        &:not(:last-child)
+            margin-bottom: 5px
+    &__text
+        line-height: 187%
+        text-transform: capitalize
+

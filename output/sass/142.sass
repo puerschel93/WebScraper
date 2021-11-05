@@ -1,0 +1,514 @@
+@charset "utf-8"
+
+@import mixins/_rwd
+@import mixins/_font
+
+@import partials/_base
+
+.card-header
+    +breakpoint(mobile-landscape)
+        position: fixed
+        top: 0
+        z-index: 1000
+        background: #ffffff
+
+    .mobile
+        position: relative
+        padding: 0 20px
+        display: none
+        align-items: center
+
+        +breakpoint(mobile-landscape)
+            display: flex
+
+        &.open
+            .mobile-logo .img
+                background-image: url('../images/mobile-logo-open.png')
+
+            .cart .img
+                background-image: url('../images/cart-icon-hover.png')
+
+        .img
+            background-repeat: no-repeat
+
+        .mobile-logo
+            margin: auto
+
+            .img
+                background-image: url('../images/mobile-logo.png')
+                width: 90px
+                height: 90px
+
+        .burger,
+        .cart
+            position: absolute
+
+        .burger
+            display: block
+            cursor: pointer
+            left: 20px
+
+        .cart
+            right: 20px
+
+            .img
+                width: 27px
+                height: 31px
+                background-size: contain
+                background-image: url('../images/cart-icon.png')
+
+            .badge
+                position: absolute
+                top: -3px
+                right: -3px
+
+            .num
+                position: relative
+                font-family: Spartan
+                font-weight: 500
+                font-size: .8rem
+                line-height: 12px
+                text-align: center
+                color: #000000
+                z-index: 1
+
+                &::before
+                    content: ''
+                    position: absolute
+                    background-image: url('../images/badge.png')
+                    background-repeat: no-repeat
+                    background-size: contain
+                    width: 13px
+                    height: 13px
+                    z-index: -1
+    .site-header__menu-btn
+        cursor: pointer
+        display: block
+        height: 3rem
+        overflow: hidden
+        pointer-events: all
+        position: relative
+        width: 4rem
+
+        &:hover,
+        &.hover
+            span
+                &:first-of-type,
+                &:nth-of-type(2)
+                    &:after
+                        transform: translateX(0)
+                        transition: transform .3s cubic-bezier(.34,.615,.4,.985)
+
+            span
+                &:first-of-type
+                    &:after
+                        transition-delay: 0s
+            span
+                &:nth-of-type(2)
+                    &:after
+                        transition-delay: .1s
+
+        span
+            height: .2rem
+            left: 0
+            overflow: hidden
+            position: absolute
+            right: 0
+
+            &:before
+                background-color: #000000
+                bottom: 0
+                content: ""
+                left: 0
+                position: absolute
+                right: 0
+                top: 0
+
+            &:after
+                background-color: #cccccc
+                bottom: 0
+                content: ""
+                left: 0
+                position: absolute
+                right: 0
+                top: 0
+
+            &:first-of-type,
+            &:nth-of-type(2)
+                transform: translateX(0)
+                transition: transform .75s cubic-bezier(.34,.615,.4,.985)
+
+                &:before
+                    transform: translateX(0) translateY(0)
+                    transition: transform .3s cubic-bezier(.34,.615,.4,.985)
+
+                &:after
+                    transform: translateX(101%)
+                    transition: transform .3s cubic-bezier(.65,.025,.67,.36)
+
+            &:first-of-type
+                top: .7rem
+                transition-delay: .8s
+
+                &:before
+                    transition-delay: .3s
+
+                &:after
+                    transition-delay: .2s
+
+            &:nth-of-type(2)
+                top: 1.6rem
+                transition-delay: .9s
+
+                &:before
+                    transition-delay: .4s
+
+                &:after
+                    transition-delay: .1s
+
+            &:nth-of-type(3),
+            &:nth-of-type(4)
+                display: none
+                top: 1.4rem
+
+            &:nth-of-type(3)
+                transform: rotate(-45deg)
+
+            &:nth-of-type(4)
+                transform: rotate(45deg)
+
+        &.open
+            span
+                &:before
+                    background-color: #ffffff
+
+            &:hover
+                span
+                    &:nth-of-type(3),
+                    &:nth-of-type(4)
+                        &:after
+                            transform: translateX(0)
+                            transition: transform .3s cubic-bezier(.34,.615,.4,.985)
+
+                    &:nth-of-type(3)
+                        &:after
+                            transition-delay: 0s
+
+                    &:nth-of-type(4)
+                        &:after
+                            transition-delay: .1s
+
+            span
+                &:first-of-type,
+                &:nth-of-type(2)
+                    display: none
+
+                &:nth-of-type(3),
+                &:nth-of-type(4)
+                    display: block
+
+                    &:before
+                        transform: translateX(0)
+                        transition: transform .3s cubic-bezier(.34,.615,.4,.985)
+
+                    &:after
+                        transform: translateX(101%)
+                        transition: transform .3s cubic-bezier(.65,.025,.67,.36)
+
+            &:nth-of-type(3)
+                &:before
+                    transition-delay: .5s
+
+            &:nth-of-type(4)
+                &:before
+                    transition-delay: .6s
+
+    .sidebar
+        width: 140px
+        position: fixed
+        left: 0
+        top: 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding-top: 17vh
+        z-index: 1
+        height: 100%
+        transition: .2s
+
+        &.open
+            .cart
+                border-color: rgba(255, 255, 255, 0.3) !important
+
+        +breakpoint(mobile-landscape)
+            display: none
+
+        .img
+            background-repeat: no-repeat
+
+        .logo
+            .img
+                width: 120px
+                padding-bottom: 120px
+                background-image: url('../images/sidebar_logo.png')
+
+        .burger
+            margin-bottom: 176px
+
+        .logo-txt
+            margin-bottom: 50px
+
+            .img
+                width: 26px
+                padding-bottom: 133px
+                background-image: url('../images/sidebar-txt.png')
+
+        &.open
+            .logo .img
+                background-image: url('../images/sidebar_logo_hover.png')
+
+            .logo-txt .img
+                background-image: url('../images/sidebar-txt-hover.png')
+
+            .cart .img
+                background-image: url('../images/cart-icon-hover.png')
+
+        .cart
+            padding: 50px 0
+            display: block
+            width: 140px
+            text-align: center
+            border-top: 1px solid rgba(0, 0, 0, 0.1)
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+            position: fixed
+            bottom: 0
+            transition: .2s
+
+            &:hover
+                opacity: .5
+
+            img
+                max-width: 34px
+
+            .img
+                width: 36px
+                padding-bottom: 41px
+                margin: auto
+                background-image: url('../images/cart-icon.png')
+
+    .sidebar,
+    .mobile
+        .burger
+            cursor: pointer
+
+            span.txt
+                &::before
+                    content: 'MENU'
+                    display: block
+                    font-size: 1.2rem
+                    line-height: 16px
+                    text-align: center
+                    letter-spacing: 0.08em
+
+        &.open
+            background: #000000
+
+            .burger
+                span.txt
+                    &::before
+                        content: 'CLOSE'
+                        color: #ffffff
+
+    .main-menu
+        // display: none
+        opacity: 0
+        position: fixed
+        width: 0
+        overflow: hidden
+        left: 140px
+        max-width: 100%
+        margin: auto
+        height: 100vh
+        background: rgba(255, 255, 255, 0.8)
+        backdrop-filter: blur(24px)
+        z-index: 100
+        border-left: 1px solid rgba(0, 0, 0, 0.1)
+        transition: .2s ease-in-out
+        pointer-events: none
+
+        &.open
+            opacity: 1
+            width: calc(100% - 140px)
+            overflow: initial
+            pointer-events: auto
+
+            +breakpoint(mobile-landscape)
+                width: 100%
+                height: calc(100vh - 90px)
+                overflow-y: auto
+
+            .menu-list
+                li
+                    opacity: 1
+                    transform: translateY(0)
+                    transition: opacity .2s cubic-bezier(.34,.615,.4,.985),transform .2s cubic-bezier(.34,.615,.4,.985)
+
+        +breakpoint(mobile-landscape)
+            width: 100%
+            left: 0
+            border-left: none
+
+        .menu-list
+            li
+                opacity: 0
+                transform: translateY(3rem)
+
+                &:first-child
+                    transition-delay: .55s
+
+                &:nth-child(2)
+                    transition-delay: .625s
+
+                &:nth-child(3)
+                    transition-delay: .7s
+
+                &:nth-child(4)
+                    transition-delay: .775s
+
+        .box
+            width: 100%
+            height: calc(100% - 141px)
+            display: flex
+            align-items: center
+
+            +breakpoint(pad-portrait-980)
+                height: auto
+
+        .menu-list
+            display: flex
+            justify-content: space-between
+            width: 625px
+            margin: auto
+
+            +breakpoint(pad-portrait-980)
+                display: block
+                width: 100%
+
+            +breakpoint(mobile-landscape)
+                padding: 25px 0
+
+            li
+                width: 157px
+
+                +breakpoint(pad-portrait-980)
+                    width: auto
+                    text-align: center
+                    margin-bottom: 30px
+
+                +breakpoint(mobile-landscape)
+                    margin-bottom: 15px
+
+                &:last-child
+                    +breakpoint(pad-portrait-980)
+                        margin-bottom: 0
+
+            a
+                display: flex
+
+                +breakpoint(pad-portrait-980)
+                    flex-direction: column
+
+                span
+                    display: block
+                    color: #000000
+
+                    &.cn
+                        width: 24px
+                        font-family: Noto Sans
+                        font-weight: bold
+                        font-size: 2.4rem
+                        line-height: 40px
+                        letter-spacing: 0.2em
+
+                        +breakpoint(pad-portrait-980)
+                            width: auto
+
+                        +breakpoint(mobile-landscape)
+                            font-size: 2rem
+
+                    &.en
+                        font-family: Spartan
+                        font-size: 2.1rem
+                        line-height: 32px
+                        transform: translate(34px, 10px) rotate(90deg)
+                        transform-origin: 0 0
+
+                        +breakpoint(pad-portrait-980)
+                            transform: initial
+                            transform-origin: initial
+
+                        +breakpoint(mobile-landscape)
+                            font-size: 1.8rem
+
+        .menu-info
+            display: flex
+            width: 100%
+            position: absolute
+            padding: 44px 52px 34px 100px
+            bottom: 0
+            border-top: 1px solid rgba(0, 0, 0, 0.3)
+
+            +breakpoint(pad-portrait)
+                padding: 44px 30px 34px 30px
+
+            +breakpoint(mobile-landscape)
+                width: 100%
+                position: relative
+                padding: 20px 30px
+
+            +breakpoint(mobile)
+                display: block
+
+            .info-box
+                li
+                    margin-bottom: 10px
+                    font-family: Noto Sans
+                    font-size: 1.4rem
+                    line-height: 21px
+                    letter-spacing: 0.2em
+                    color: #000000
+
+            .social-box
+                display: flex
+                margin-top: 20px
+                margin-left: auto
+
+                +breakpoint(mobile)
+                    margin-left: 0
+
+                a
+                    border: 1px solid rgba(0, 0, 0, 1)
+                    background: #000000
+                    border-radius: 50px
+                    width: 34px
+                    height: 34px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    margin-right: 14px
+
+                    &:last-child
+                        margin-right: 0
+
+                .social-icon
+                    background-repeat: no-repeat
+
+                    &.facebook-icon
+                        width: 10px
+                        height: 16px
+                        background-image: url('../images/fb-icon-white.png')
+
+                    &.instagram-icon
+                        width: 18px
+                        height: 17px
+                        background-image: url('../images/ig-icon-white.png')

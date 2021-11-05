@@ -1,0 +1,494 @@
+// Set uniform (but not relative) base font size
+html
+  font-size: $base-font-size
+
+.wy-affix
+  position: fixed
+  top: $gutter
+
+.wy-menu
+  a:hover
+    text-decoration: none
+
+.wy-menu-horiz
+  +clearfix
+  ul, li
+    display: inline-block
+  li:hover
+    background: rgba(255,255,255,.1)
+  li
+    &.divide-left
+      border-left: solid 1px hsl(0, 0%, 25%)
+    &.divide-right
+      border-right: solid 1px hsl(0, 0%, 25%)
+  a
+    height: $base-font-size * 2
+    display: inline-block
+    line-height: $base-font-size * 2
+    padding: 0 $base-font-size
+
+.wy-menu-vertical
+  width: $nav-desktop-width
+
+  header, p.caption
+    color: $nav-caption
+    height: $base-font-size * 2
+    line-height: $base-font-size * 2
+    padding: 0 $gutter
+    margin: $base-line-height / 2 0 0 0
+    display: block
+    font-weight: bold
+    text-transform: uppercase
+    font-size: 85%
+    white-space: nowrap
+
+  ul
+    margin-bottom: 0
+  li
+    &.divide-top
+      border-top: solid 1px hsl(0, 0%, 25%)
+    &.divide-bottom
+      border-bottom: solid 1px hsl(0, 0%, 25%)
+    &.current
+      background: darken($menu-vertical-background-color, 10%)
+      a
+        color: $menu-link-medium
+        border-right: solid 1px darken($menu-vertical-background-color, 20%)
+        padding: $gutter / 4 $gutter * 1.5
+        &:hover
+          background: darken($menu-vertical-background-color, 15%)
+    code
+      border: none
+      background: inherit
+      color: inherit
+      padding-left: 0
+      padding-right: 0
+    // Expand links
+    span.toctree-expand
+      display: block
+      float: left
+      margin-left: -1.2em
+      @extend .fa
+      @extend .fa-plus-square-o
+      font-size: .8em
+      line-height: 1.6em
+      color: darken($menu-link-medium, 20%)
+
+  // On state for the first level
+  li.on a, li.current > a
+    color: $menu-link-color
+    padding: $gutter / 4 $gutter
+    font-weight: bold
+    position: relative
+    background: $menu-vertical-background-color
+    border: none
+    padding-left: $gutter -4px
+    +font-smooth
+    &:hover
+      background: $menu-vertical-background-color
+      span.toctree-expand
+        color: $menu-link-medium
+    span.toctree-expand
+      @extend .fa
+      @extend .fa-minus-square-o
+      display: block
+      font-size: .8em
+      line-height: 1.6em
+      color: darken($menu-link-medium, 30%)
+
+  li.toctree-l1.current > a
+    border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
+    border-top: solid 1px darken($menu-vertical-background-color, 20%)
+
+  // This is the on state for pages beyond second level
+
+  %hide_show_toctree_ul
+    > ul
+      display: none
+    &.current > ul
+      display: block
+
+  %shrink_toctree_element
+    font-size: .9em
+
+  %toctree_link_color
+    color: $menu-link-color
+
+  %toctree_hover_link_color
+    color: $menu-link-medium
+
+  %display_current_toctree_element
+    display: block
+
+  @for $toc_level from 1 through 10
+    .toctree-l#{$toc_level}.current .toctree-l#{$toc_level + 1}
+      @extend %hide_show_toctree_ul
+
+    @if $toc_level > 1
+      li.toctree-l#{$toc_level}
+        a
+          @extend %toctree_link_color
+        &.current
+          > a
+            padding: $gutter / 4 $gutter * ($toc_level - 1 + .5)
+
+          li.toctree-l#{$toc_level + 1}  > a
+            @extend %display_current_toctree_element
+            padding-top: $gutter / 4
+            padding-bottom: $gutter / 4
+            padding-left: $gutter * ($toc_level + .5)
+            padding-right: $gutter
+        a:hover span.toctree-expand
+          @extend %toctree_hover_link_color
+    @if $toc_level > 2 and $toc_level < 5
+      li.toctree-l#{$toc_level}
+        @extend %shrink_toctree_element
+
+  li.toctree-l2
+    &.current
+      > a
+        background: darken($menu-vertical-background-color, 20%)
+      li.toctree-l3 > a
+        background: darken($menu-vertical-background-color, 20%)
+    span.toctree-expand
+      color: darken($menu-vertical-background-color, 35%)
+  li.toctree-l3
+    &.current
+      > a
+        background: darken($menu-vertical-background-color, 25%)
+      li.toctree-l4 > a
+        background: darken($menu-vertical-background-color, 25%)
+    span.toctree-expand
+      color: darken($menu-vertical-background-color, 40%)
+
+  li.current ul
+    display: block
+  li ul
+    margin-bottom: 0
+    display: none
+  li ul li a
+    margin-bottom: 0
+    color: $menu-link-light
+    font-weight: normal
+  a
+    line-height: 18px
+    padding: $gutter / 4 $gutter
+    display: block
+    position: relative
+    font-size: 90%
+    color: $menu-link-light
+    &:hover
+      background-color: darken($menu-background-color, 10%)
+      cursor: pointer
+      span.toctree-expand
+        color: $menu-link-light
+    &:active
+      background-color: $gray
+      cursor: pointer
+      color: $menu-link-active
+      span.toctree-expand
+        color: $menu-link-active
+
+.wy-side-nav-search
+  display: block
+  width: $nav-desktop-width
+  padding: $gutter $gutter / 2
+  z-index: $z-index-popover
+  background-color: $nav-search-background-color
+  text-align: center
+  color: $nav-search-color
+  input[type=text]
+    width: 100%
+    border-radius: 50px
+    padding: 6px 12px
+    border-color: darken($link-color, 5%)
+  img
+    display: block
+    margin: auto auto $gutter / 2 auto
+    height: 45px
+    width: 45px
+    background-color: $menu-logo-color
+    padding: 5px
+    border-radius: 100%
+  > a, .wy-dropdown > a
+    color: $nav-search-color
+    font-size: 100%
+    font-weight: bold
+    display: inline-block
+    padding: $base-line-height / 6 $base-line-height / 4
+    margin-bottom: $gutter / 2
+    +font-smooth
+    &:hover
+      background: rgba(255,255,255,.1)
+    img.logo
+      display: block  // display on its own line all the time
+      margin: 0 auto
+      height: auto  // undo badge styling above
+      width: auto
+      border-radius: 0
+      max-width: 100%  // shrink on mobile, if appropriate
+      background: rgba(0,0,0,0)  // make hover background of parent show up properly
+    &.icon
+      img.logo
+        margin-top: 0.85em  // space it away from the title text
+  > div.version
+    margin-top: -1 * ($gutter / 4)
+    margin-bottom: $gutter / 2
+    font-weight: normal
+    color: $gray
+
+.wy-nav .wy-menu-vertical
+  header
+    color: $link-color
+  a
+    color: $text-light
+    &:hover
+      background-color: $link-color
+      color: $white
+
+[data-menu-wrap]
+  +transition(all .2s ease-in)
+  position: absolute
+  opacity: 1
+  width: 100%
+  opacity: 0
+  &.move-center
+    left: 0
+    right: auto
+    opacity: 1
+  &.move-left
+    right: auto
+    left: -100%
+    opacity: 0
+  &.move-right
+    right: -100%
+    left: auto
+    opacity: 0
+
+.wy-body-for-nav
+  background: $section-background-color
+
+.wy-grid-for-nav
+  position: absolute
+  width: 100%
+  height: 100%
+
+.wy-nav-side
+  position: relative
+  top: 0
+  bottom: 0
+  width: $nav-desktop-width
+  overflow-x: hidden
+  overflow-y: hidden
+  color: $menu-medium
+  background: $nav-background-color
+  z-index: $z-index-popover
+  border-right: solid 1px darken($menu-vertical-background-color, 20%)
+  .wy-nav-side-inner
+    position: fixed
+    padding-bottom: 45px
+    width: $nav-desktop-width
+    top: $nav-top-height
+    bottom: 0
+    overflow-x: hidden
+
+.wy-side-scroll
+  width: $nav-desktop-width + 20px
+  position: relative
+  overflow-x: hidden
+  overflow-y: auto
+  height: 100%
+
+.wy-nav-top
+  background: $nav-top-background-color
+  color: $white
+  height: $nav-top-height
+  padding: .5rem 1rem
+  position: relative
+  width: 100%
+  font-size: 100%
+  z-index: $z-index-tray + 1
+  +clearfix
+  .wy-nav-top-inner
+    display: flex
+    width: 100%
+    max-width: $content-width
+    margin: 0 auto
+    padding: 0 15px
+  a
+    color: $white
+    font-weight: bold
+    +font-smooth
+    &.brand
+      display: inline-block
+      padding: .3125rem 0
+  img
+    max-height: 33px
+    width: auto
+    background-color: $menu-logo-color
+  .nav-menu-button
+    background: transparent
+    border: 1px solid hsla(0,0%,100%,.1)
+    border-radius: 3px
+    color: hsla(0,0%,100%,.5)
+    padding: .25rem .75rem
+    width: auto
+    font-size: 1.25rem
+    vertical-align: middle
+    cursor: pointer
+    &-icon
+      display: inline-block
+      width: 1.5em
+      height: 1.5em
+      vertical-align: middle
+      content: ""
+      background: no-repeat 50%
+      background-size: 100% 100%
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath stroke='rgba(255,255,255,0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+
+.wy-nav-content-wrap
+  display: flex
+  flex-direction: row
+  justify-content: center
+  background: $section-background-color
+
+.wy-nav-content
+  position: relative
+  padding: $gutter $gutter * 2
+  height: 100%
+  min-height: calc(100vh - #{$nav-top-height})
+  max-width: $content-width - $nav-desktop-width
+  width: calc(100% - #{$nav-desktop-width})
+  margin: auto
+
+.wy-body-mask
+  position: fixed
+  width: 100%
+  height: 100%
+  background: rgba(0,0,0,.2)
+  display: none
+  z-index: $z-index-modal - 1
+  &.on
+    display: block
+footer
+  color: $footer-color
+  p
+    margin-bottom: $base-line-height / 2
+  span.commit code
+    padding: 0px
+    font-family: $code-font-family
+    font-size: 1em
+    background: none
+    border: none
+    color: $footer-color
+
+.rst-footer-buttons
+  &:before, &:after
+    width: 100%
+  +clearfix
+
+.rst-breadcrumbs-buttons
+  margin-top: 12px
+  +clearfix
+
+#search-results
+  .search li
+    margin-bottom: $base-line-height
+    border-bottom: solid 1px $table_border_color
+    padding-bottom: $base-line-height
+  .search li:first-child
+    border-top: solid 1px $table_border_color
+    padding-top: $base-line-height
+  .search li a
+    font-size: 120%
+    margin-bottom: $base-line-height / 2
+    display: inline-block
+    overflow-wrap: break-word
+    line-break: anywhere
+  .context
+    color: $text-medium
+    font-size: 90%
+
+.genindextable li > ul
+  margin-left: $base-line-height
+
++media($tablet-wider)
+  .wy-body-for-nav
+    background: $section-background-color
+  .wy-nav-top
+    a.brand
+      padding: .3125rem 15px
+    .nav-menu-button
+      display: inline-block
+    .wy-nav-top-inner
+      padding: 0
+    &.shift
+      position: fixed
+      top: 0
+      left: 0
+  .wy-nav-side
+    position: absolute
+    top: 0
+    bottom: 0
+    left: -40%
+    width: 40%
+    height: calc(100% - #{$nav-top-height})
+    .wy-nav-side-inner
+      left: -40%
+      width: 40%
+    &.shift
+      left: 0
+      .wy-nav-side-inner
+        left: 0
+  .wy-side-scroll
+    width: 100%
+    max-height: initial
+  .wy-side-nav-search
+    width: auto
+  .wy-menu.wy-menu-vertical
+    width: auto
+  .wy-nav-content-wrap
+    margin-left: 0
+    min-width: 100%
+    .wy-nav-content
+      left: 0
+      width: 100%
+      max-width: 100%
+      padding: $gutter
+      margin: 0
+    &.shift
+      position: fixed
+      margin-top: $nav-top-height
+      top: 0
+      left: 0
+      right: 0
+      width: 100%
+      height: 100%
+      overflow: hidden
+      justify-content: flex-start
+      .wy-nav-content
+        left: 40%
+
++media($tablet)
+  .wy-nav-side
+    left: -85%
+    width: 85%
+    .wy-nav-side-inner
+      left: -85%
+      width: 85%
+  .wy-nav-content-wrap
+    &.shift .wy-nav-content
+      left: 85%
+
+@media screen and (min-width: $nav-media-query)
+  .wy-nav-content-wrap
+    background: rgba(0,0,0,.05)
+  .wy-nav-content
+    margin: 0
+    background: $section-background-color
+
+@media print
+  .rst-versions, footer, .wy-nav-side
+    display: none
+  .wy-nav-content-wrap
+    margin-left: 0

@@ -1,0 +1,195 @@
+@mixin sectionGrid
+  display: grid
+  justify-items: center
+  width: 100%
+  height: auto
+  align-items: center
+  max-width: 1500px
+  margin: 0 auto
+  row-gap: $space-medium
+  column-gap: 0
+  overflow: hidden
+  padding-bottom: $space-large
+  @include respond(desktop)
+    padding: 0 $space-large
+
+.sectionImg
+  object-fit: cover
+  max-height: 500px
+  padding: 0
+  margin: 0
+
+.text-box-section
+  width: 100%
+  text-align: left
+  padding: 0 $space-large
+  h1
+    color: $dark
+  h2
+    color: $gray
+  p
+    color: $white
+
+
+
+@mixin cardGrid()
+  display: grid
+  width: 100%
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+  row-gap: $space-large
+  column-gap: $space-medium
+  justify-items: center
+  align-items: center
+  margin: 0 auto
+  padding: 0
+  @include respond(tablet)
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+    column-gap: $space-x-large
+
+
+
+@mixin cardContentGrid()
+  display: grid
+  width: 100%
+  height: 100%
+  justify-items: center
+  align-items: center
+  row-gap: $space-small
+  color: $dark
+  padding: $space-medium $space-large
+  margin: 0
+
+@mixin button
+  width: auto
+  cursor: pointer
+  font-size: 1rem
+  font-family: $font
+  text-decoration: none
+  border: 0
+  font-weight: 400
+  text-align: center
+  padding: $space-x-small $space-small
+  border-radius: $space-small
+
+@mixin label
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 100%
+    color: $primary-dark
+    font-weight: 500
+    text-transform: capitalize
+
+@mixin field
+  text-transform: none
+  color: $dark-3
+  font-weight: 300
+  max-width: 100%
+  font-family: $font
+  width: 100%
+  height: auto
+  background-color: $white
+  border-radius: 16px
+  border: 2px solid $primary-dark
+  outline: 0
+  font-size: 1.2rem
+  padding: $space-x-small $space-small
+  margin-top: $space-small
+  margin-bottom: 0.2rem
+  display: grid
+  row-gap: $space-small
+  column-gap: $space-medium
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr))
+  @include respond(big-desktop)
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr))
+
+@mixin small
+  min-width: 100%
+  color: $dark-5
+  font-size: .8rem
+  padding: 0 $space-x-small
+  font-weight: 300
+  text-transform: none
+
+
+@mixin after($content: "", $pos: absolute)
+  position: relative
+  &::after
+    content: $content
+    position: $pos
+    @content
+
+
+@mixin hover-lift()
+  //box-shadow: 0em 0.3em 0.5em 0em rgba(black, 0.2)
+  transition: transform 250ms ease-in-out
+  @include after()
+    //box-shadow: 0em 0em 1.25em 0em rgba(black, 0.4)
+    transition: transform 250ms ease-in-out
+    opacity: 0
+  &:hover,
+  &:focus
+    transform: scale(.9)
+    &::after
+      opacity: 1
+
+@mixin keyframes($animationName)
+  @-webkit-keyframes #{$animationName}
+    @content
+  @-moz-keyframes #{$animationName}
+    @content
+  @-o-keyframes #{$animationName}
+    @content
+  @keyframes #{$animationName}
+    @content
+
+@mixin animate($name, $duration, $iteration, $direction)
+  -webkit-animation-duration: $duration
+  -moz-animation-duration: $duration
+  -o-animation-duration: $duration
+  animation-duration: $duration
+  -webkit-animation-iteration-count: $iteration
+  -moz-animation-iteration-count: $iteration
+  -o-animation-iteration-count: $iteration
+  animation-iteration-count: $iteration
+  -webkit-animation-name: $name
+  -moz-animation-name: $name
+  -o-animation-name: $name
+  animation-name: $name
+  -webkit-animation-direction: $direction
+  -moz-animation-direction: $direction
+  -o-animation-direction: $direction
+  animation-direction: $direction
+@include keyframes(spin)
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+@mixin spin
+  @include animate(spin, 0.6s, infinite, linear)
+
+@mixin respond($breakpoint)
+  @if $breakpoint== phablet
+    @media only screen and (min-width: 400px)
+      @content
+  @if $breakpoint== tablet
+    @media only screen and (min-width: 550px)
+      @content
+  @if $breakpoint== desktop
+    @media only screen and (min-width: 1000px)
+      @content
+  @if $breakpoint== ultra-wide
+    @media only screen and (min-width: 2000px)
+      @content
+
+@mixin adaptToToolbar
+  @include respond(tablet)
+    margin-left: 5rem
+
+@mixin adaptToToolbarDesktop
+  @include respond(desktop)
+    justify-content: center
+    justify-items: center
+    margin: 0 auto
+    padding: $space-x-large

@@ -1,0 +1,69 @@
+.block-top
+	margin: 0 auto
+	&:not(:last-child)
+		@include adaptiv-value('margin-bottom', 30, 17, 1)
+._label
+	text-transform: uppercase
+	font-weight: 400
+	font-size: 14px
+	line-height: 21px
+	text-align: center
+	color: #262626
+	&:not(:last-child)
+		margin-bottom: 10px
+._title
+	font-weight: 600
+	@include adaptiv-value('font-size', 40, 27, 1)
+	line-height: 150%
+
+	text-align: center
+	text-transform: capitalize
+	color: #222222
+
+		
+	
+.btn
+	display: inline-flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	text-align: center
+	padding: 15px 0
+	background: linear-gradient(97.1deg, #3043A9 11.99%, #1F629F 96.6%)
+	border-radius: 28px
+	transition: all 0.3s ease 0s
+
+	font-weight: 500
+	font-size: 18px
+	line-height: 150%
+	text-transform: capitalize
+	color: $white
+	@media (any-hover: hover )
+		&:hover
+			border-radius: 15px
+	
+	
+	
+
+._ibg 
+	position: relative
+	img 
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		object-fit: cover
+
+body.ie 
+	._ibg 
+		background-position: center
+		background-size: cover
+		background-repeat: no-repeat
+	
+	._ibg img 
+		width: 0
+		height: 0
+		opacity: 0
+		visibility: hidden
+	

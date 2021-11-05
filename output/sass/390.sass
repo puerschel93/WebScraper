@@ -1,0 +1,95 @@
+@import ../../assets/varibles.sass
+
+.header
+    height: 76px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    &-wrap
+        background: #fff
+        border-bottom: 1px solid #DBDBDD
+    &-logo
+        display: flex
+        align-items: center
+        &__img
+            margin-right: 15px
+    span,p,a,li
+        font-size: $size-m
+        font-family: $font-montserrat
+        font-weight: 600
+        transition: .5s
+    .nav-menu
+        margin-right: 150px
+
+.nav-menu
+    &__list
+        display: flex
+    &__item
+        margin-right: 40px
+        &:last-child
+            margin-right: 0
+.header
+    .burger-lang
+        position: relative
+    input
+        display: none
+
+    label
+        display: block
+        cursor: pointer
+        width: 50vw
+        height: 50vw
+        max-width: 150px
+        max-height: 150px
+        position: absolute
+        top: -65px
+        display: none
+    path
+        fill: none
+        stroke: #4F4F4F
+        stroke-width: 3
+        stroke-linecap: round
+        stroke-linejoin: round
+        stroke-dasharray: 24 111.22813415527344
+        stroke-dashoffset: -38
+        transition: all .8s cubic-bezier(.645, .045, .355, 1)
+
+    circle
+        fill: #fff3
+        opacity: 0
+
+    .cross input:checked+svg
+        path.line--1,
+        path.line--3
+            stroke-dasharray: 22.627416998 111.2281341552
+
+        path.line--2
+            stroke-dasharray: 0 111.2281341552
+
+    .menu--2
+        path.line--1,
+        path.line--3
+            stroke-dasharray: 24 111.22813415527344
+            stroke-dashoffset: -50.22813415527344
+
+        path.line--2
+            stroke-dasharray: 24 99
+
+        input:checked+svg
+            path
+                transform: translateX(30px)
+
+            path.line--1,
+            path.line--3
+                stroke-dashoffset: -16.9705627485
+
+            path.line--2
+                stroke-dashoffset: -20
+    .open
+        .menu--2
+            path
+                stroke: #fff
+        .lang-block__item
+            color: #fff
+            transition: .5s

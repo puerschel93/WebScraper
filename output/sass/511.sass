@@ -1,0 +1,111 @@
+.footer
+    &__container
+        @include adaptiv-value('padding-top', 50, 20, 1)
+        @include adaptiv-value('padding-bottom', 50, 20, 1)
+    &__body
+        display: grid
+        grid-template-columns: 445px 1fr
+        @media (max-width: $md2 + px)//Less 992
+            grid-template-columns: 1fr
+            grid-template-rows: auto auto
+    &__main
+        &:not(:last-child)
+            margin-right: 20px
+        @media (max-width: $md2 + px)//Less 992
+           margin: 0 0 20px 0
+    &__title
+        font-weight: 800
+        font-size: 24px
+        line-height: 150%
+        color: $darkBlue
+    &__text
+        font-size: 15px
+        line-height: 200%
+        text-transform: capitalize
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 10, 5, 1)
+    &__social
+        display: flex
+        flex-wrap: wrap
+    &__menu
+
+
+
+.social-footer
+    &__item
+        padding: 10px
+        background: #F3F3F3
+        border-radius: 50%
+        &:not(:last-child)
+            margin-right: 10px
+        &::before
+            font-size: 20px
+        &_youtube
+            color: #FF0000
+        &_facebook
+            color: #3180C8
+        &_instagram
+            color: #FF6262
+
+.menu-footer
+    display: flex
+    flex-wrap: wrap
+    @media (max-width: $md3 + px) //Less 768
+       flex-direction: column
+    &__column
+        flex: 0 1 33.333%
+        padding-right: 10px
+        @media (max-width: $md2 + px)//Less 992
+            flex: 0 1 25%   
+        @media (max-width: $md3 + px) //Less 768
+            padding: 0 0 0 0
+            flex: none
+            &:not(:last-child)
+                margin-bottom: 10px
+    &__title
+        background: none
+        font-weight: 600
+        font-size: 18px
+        line-height: 150%
+        color: $darkBlue
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 20, 5, 1)
+        ._init &
+            display: flex
+            width: 100%
+            flex-direction: row-reverse
+            justify-content: space-between
+            align-items: center
+            @extend ._icon-next
+            &::before
+                @extend %ic
+                font-size: 13px
+                transition: all 0.3s ease 0s
+                transform: rotate(90deg)
+        &._active
+            &::before
+                transform: rotate(-90deg)
+    &__list
+    &__item
+        &:not(:last-child)
+            margin-bottom: 10px
+    &__link
+        color: inherit
+        font-size: 16px
+        line-height: 150%
+        @media (any-hover: hover )
+           &:hover
+              text-decoration: underline
+
+
+
+ 
+.copy-footer
+    &__container
+        display: flex
+        justify-content: center
+    &__copy
+        text-align: center
+        margin-bottom: 5px
+        font-size: 13px
+        line-height: 186%

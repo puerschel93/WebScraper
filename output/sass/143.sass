@@ -1,0 +1,510 @@
+@charset "utf-8"
+
+@import mixins/_rwd
+@import mixins/_font
+
+@import partials/_base
+
+$sec: 's'
+
+@mixin slide($direction)
+    @for $i from 0 through 17
+        &.slide#{$i}
+            transition: $direction .7s ease 0s,opacity .7s ease #{$i*2/10}#{$sec}
+
+        &.slideT#{$i}
+            transition: $direction .7s ease 0s,opacity .7s ease #{$i*2/20}#{$sec}
+
+// reset css
+body
+    padding: 0 !important
+    margin: 0
+    height: auto
+
+    +breakpoint(mobile-landscape)
+        padding: 90px 0 0 0 !important
+
+a
+    text-decoration: none
+
+ul, ol
+    margin-left: 0
+    list-style: none
+
+// reset css end
+
+*[class*='card-']
+    width: 100%
+
+// public css start
+.wide-container
+    position: relative
+    width: 1920px
+    padding-left: 140px
+    max-width: 100%
+    margin: auto
+
+    +breakpoint(mobile-landscape)
+        width: 100%
+        padding-left: 0
+
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 140px
+        height: 100%
+        width: 1px
+        background: rgba(0, 0, 0, 0.1)
+
+        +breakpoint(mobile-landscape)
+            display: none
+
+    &.wide-1440-limmited
+        width: 1440px
+        padding-left: 140px
+
+.card-main-title
+    text-align: center
+    color: #000000
+    margin-bottom: 70px
+
+    +breakpoint(mobile-landscape)
+        margin-bottom: 40px
+
+    .cn
+        font-family: Noto Sans
+        font-weight: bold
+        font-size: 2.8rem
+        line-height: 48px
+        letter-spacing: 0.2em
+
+        +breakpoint(mobile-landscape)
+            font-size: 1.8rem
+            line-height: 28px
+
+        &::before,
+        &::after
+            content: ''
+            display: inline-block
+            width: 6px
+            height: 6px
+            border-radius: 50%
+            background: #000000
+            transform: translateY(-6px)
+
+            +breakpoint(mobile-landscape)
+                width: 4px
+                height: 4px
+                transform: translateY(-4px)
+
+        &::before
+            margin-right: 12px
+
+            +breakpoint(mobile-landscape)
+                margin-right: 10px
+
+        &::after
+            margin-left: 6px
+
+            +breakpoint(mobile-landscape)
+                margin-left: 5px
+
+    .en
+        font-family: Spartan
+        font-size: 2.1rem
+        line-height: 32px
+
+        +breakpoint(mobile-landscape)
+            font-size: 1.2rem
+            line-height: 18px
+
+.card-title
+    display: flex
+    align-items: baseline
+    color: #000000
+
+    .cn
+        font-family: Noto Sans
+        font-weight: bold
+        font-size: 3.6rem
+        line-height: 50px
+        letter-spacing: 0.2em
+
+        +breakpoint(mobile-landscape)
+            font-size: 2.4rem
+            line-height: 28px
+
+    .en
+        font-family: Spartan
+        font-size: 2.1rem
+        line-height: 32px
+        margin-left: 13px
+
+        +breakpoint(mobile-landscape)
+            font-size: 1.6rem
+            line-height: 32px
+
+input[type=number]
+    -moz-appearance: textfield
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button
+        -webkit-appearance: none
+        margin: 0
+
+.select-wrapper
+    position: relative
+
+    &:after
+        position: absolute
+        width: 17px
+        height: 9px
+        right: 16px
+        top: 2px
+        bottom: 0
+        margin: auto
+        background-repeat: no-repeat
+        background-image: url('../images/product/arrow_down.png')
+        pointer-events: none
+
+    select
+        -moz-appearance: none
+        -webkit-appearance: none
+        appearance: none
+
+.quantity
+    position: relative
+
+input
+    width: 45px
+    height: 42px
+    float: left
+    display: block
+    padding: 0
+    margin: 0
+    padding-left: 20px
+
+    &::focus
+        outline: 0
+
+.quantity-nav
+    float: left
+    position: relative
+
+.quantity-button
+    position: absolute
+    cursor: pointer
+    user-select: none
+    width: 17px
+    height: 9px
+    background-repeat: no-repeat
+    padding: 7px
+
+    &.quantity-up
+        background-image: url('../images/product/arrow_up.png')
+
+    &.quantity-down
+        background-image: url('../images/product/arrow_down.png')
+
+.swiper-slide-inner
+    position: relative
+    opacity: 0
+    transition: opacity 1s ease
+
+    &.slideLeft
+        left: 45px
+
+    &.slideUp
+        top: 35px
+
+[data-aos^=fade][data-aos^=fade].aos-animate
+    .swiper-slide-inner
+        opacity: 1
+
+        &.slideLeft
+            left: 0
+
+            +slide(left)
+
+        &.slideUp
+            top: 0
+
+            +slide(top)
+
+.js-block
+    background-color: transparent
+    border: 0.1rem solid #000000
+    border-radius: 0.4rem
+    color: #000000
+    display: table
+    overflow: hidden
+    letter-spacing: .2em
+    min-width: 25.6rem
+    padding: 0
+    position: relative
+    text-align: center
+    transition: color .3s cubic-bezier(.59,.08,.385,1)
+
+    +breakpoint(mobile-landscape)
+        min-width: 20rem
+
+    &:before
+        content: ''
+        background-image: url('../images/more-icon.png')
+        background-repeat: no-repeat
+        width: 11px
+        height: 18px
+        position: absolute
+        display: block
+        right: 20px
+        top: 0
+        bottom: 3px
+        margin: auto
+        z-index: 2
+
+    &:after
+        background-color: #000000
+        bottom: 0
+        content: ""
+        display: block
+        height: 6.8rem
+        left: 0
+        position: relative
+        right: 0
+        top: 0
+        transform: scaleY(0) translateY(0)
+        transform-origin: bottom center
+        width: 100%
+        z-index: 1
+
+        +breakpoint(mobile-landscape)
+            height: 5.8rem
+
+    &:hover
+        &::before
+            animation: BgIcon .3s cubic-bezier(.34,.615,.4,.985) 1 forwards
+            background-image: url('../images/more-icon-hover.png')
+
+        &:after
+            transform: scaleY(1) translateY(0)
+            transition: transform .43s cubic-bezier(.34,.615,.4,.985)
+
+        > span
+            z-index: 3
+
+            &:first-child
+                &:first-child
+                    transition-delay: .015s
+
+                &:nth-child(2)
+                    transition-delay: .03s
+
+                &:nth-child(3)
+                    transition-delay: .045s
+
+                &:nth-child(4)
+                    transition-delay: .06s
+
+                &:nth-child(5)
+                    transition-delay: .075s
+
+                &:nth-child(6)
+                    transition-delay: .09s
+
+                &:nth-child(7)
+                    transition-delay: .105s
+
+                &:nth-child(8)
+                    transition-delay: .12s
+
+                &:nth-child(9)
+                    transition-delay: .135s
+
+                &:nth-child(10)
+                    transition-delay: .15s
+
+                &:nth-child(11)
+                    transition-delay: .165s
+
+                &:nth-child(12)
+                    transition-delay: .18s
+
+            > span
+                opacity: 1
+                transform: translateY(-2rem)
+                transition: opacity .3s cubic-bezier(.65,.025,.67,.36),transform .3s cubic-bezier(.65,.025,.67,.36)
+
+            &:last-child
+                > span
+                    opacity: 1
+                    transform: translateY(0)
+                    transition: opacity .3s cubic-bezier(.34,.615,.4,.985),transform .3s cubic-bezier(.34,.615,.4,.985)
+
+                    &:first-child
+                        transition-delay: .015s
+
+                    &:nth-child(2)
+                        transition-delay: .03s
+
+                    &:nth-child(3)
+                        transition-delay: .045s
+
+                    &:nth-child(4)
+                        transition-delay: .06s
+
+                    &:nth-child(5)
+                        transition-delay: .075s
+
+                    &:nth-child(6)
+                        transition-delay: .09s
+
+                    &:nth-child(7)
+                        transition-delay: .105s
+
+                    &:nth-child(8)
+                        transition-delay: .12s
+
+                    &:nth-child(9)
+                        transition-delay: .135s
+
+                    &:nth-child(10)
+                        transition-delay: .15s
+
+                    &:nth-child(11)
+                        transition-delay: .165s
+
+                    &:nth-child(12)
+                        transition-delay: .18s
+
+    &[data-state="leave"]
+        &:after
+            transform: scaleY(1) translateY(-100%)
+            transition: transform .2s cubic-bezier(.65,.025,.67,.36) 25ms
+
+        > span
+            z-index: 3
+
+            &:first-child
+                > span
+                    animation: firstButtonSpanIn .3s cubic-bezier(.34,.615,.4,.985) 1 forwards
+                    opacity: 0
+
+                    &:first-child
+                        animation-delay: .015s
+
+                    &:nth-child(2)
+                        animation-delay: .03s
+
+                    &:nth-child(3)
+                        animation-delay: .045s
+
+                    &:nth-child(4)
+                        animation-delay: .06s
+
+                    &:nth-child(5)
+                        animation-delay: .075s
+
+                    &:nth-child(6)
+                        animation-delay: .09s
+
+                    &:nth-child(7)
+                        animation-delay: .105s
+
+                    &:nth-child(8)
+                        animation-delay: .12s
+
+                    &:nth-child(9)
+                        animation-delay: .135s
+
+                    &:nth-child(10)
+                        animation-delay: .15s
+
+                    &:nth-child(11)
+                        animation-delay: .165s
+
+                    &:nth-child(12)
+                        animation-delay: .18s
+
+            &:last-child
+                > span
+                    opacity: 0
+                    transform: translateY(-2rem)
+                    transition: opacity .17s cubic-bezier(.65,.025,.67,.36),transform .17s cubic-bezier(.65,.025,.67,.36)
+                    transition-delay: 0s
+
+    > span
+        left: 50%
+        pointer-events: none
+        position: absolute
+        top: 50%
+        transform: translateX(-50%) translateY(-50%)
+        white-space: nowrap
+        z-index: 3
+
+        > span
+            display: inline-block
+            position: relative
+            font-weight: bold
+            font-size: 1.6rem
+            line-height: 22px
+            letter-spacing: 0.2em
+
+        &:first-child
+            color: #000000
+
+            > span
+                opacity: 1
+                transform: translateY(0)
+
+        &:last-child
+            color: #ffffff
+            left: 50%
+            position: absolute
+            top: 50%
+            transform: translateX(-50%) translateY(-50%)
+
+            > span
+                opacity: 0
+                transform: translateY(2rem)
+
+#cta-text, .js-block, .secondary-link
+    font-weight: 700
+    font-size: 1.3rem
+    line-height: 1.23
+    text-decoration: none
+    text-transform: uppercase
+    user-select: none
+
+@keyframes firstButtonSpanIn
+    0%
+        opacity: 0
+        transform: translateY(2rem)
+
+    100%
+        opacity: 1
+        transform: translateY(0)
+
+@keyframes BgIcon
+    0%
+        opacity: 0
+        transform: translateY(50px)
+
+    100%
+        opacity: 1
+        ransform: translateY(0)
+
+// public css end
+
+body
+    &.index
+        .sidebar
+            // padding-top: 240px
+            // padding-top: 17vh
+            // top: 100vh
+
+            position: absolute
+            top: 100vh
+
+            .cart
+                // position: relative

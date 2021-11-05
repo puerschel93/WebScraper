@@ -1,0 +1,215 @@
+html
+	--c-poppa-close: #FF3B30
+	--transition-delay-base: 0.2s
+
+// .poppa-html--opened
+.poppa-block-scrolling
+	overflow: hidden
+
+@media (min-width: 781px)
+	.poppa-block-scrolling
+		padding-right: 17px
+
+@media (min-width: 1400px) and (max-width: 1500px)
+	.poppa-block-scrolling
+		margin-right: 15px
+
+.poppa-pops
+	display: none
+
+// __LAYOUT
+.poppa-overlay
+	visibility: hidden
+	position: fixed
+	top: 0
+	left: 0
+	width: 100vw
+	height: 100vh
+
+	background-color: rgba(0, 0, 0, 0.85)
+	transition: all var(--transition-delay-base)
+	opacity: 0
+	z-index: 100000000
+
+.poppa-overlay--opened
+	visibility: visible
+	opacity: 1
+
+.poppa-aligner
+	display: flex
+	justify-content: center
+	align-items: center
+	margin: 0 auto
+	width: 100%
+	height: 100%
+	padding: 30px
+
+.poppa-aligner--left
+	justify-content: flex-start
+
+.poppa-aligner--right
+	justify-content: flex-end
+
+.poppa-aligner--top
+	align-items: flex-start
+
+.poppa-aligner--bottom
+	align-items: flex-end
+
+// __CLOSERS
+.poppa__closer
+	font-family: sans-serif
+	border: none
+	border-radius: 0
+	line-height: 1
+	font-weight: 500
+	font-size: 28px
+	/* background: rgba(255,255,255, 0.3) */
+	background: none
+	color: #fff
+	position: absolute
+	cursor: pointer
+
+	display: grid
+	justify-content: center
+	align-items: center
+	background: #404040
+	border-radius: 4px
+	transition: all var(--transition-delay-base)
+	width: 50px
+	height: 50px
+	top: 20px
+	right: 20px
+	font-weight: 600
+	font-size: 40px
+
+.poppa__closer:hover
+	color: var(--c-poppa-close)
+	transition: all var(--transition-delay-base)
+
+.poppa__closer--outer
+	top: -40px
+	right: -40px
+
+.poppa__closer--inner
+	top: 10px
+	right: 10px
+
+.poppa__closer--none
+	display: none
+
+// POPS
+.poppa
+	transition: all 0.3s
+	border-radius: 10px
+	position: relative
+	background-color: #fff
+
+.poppa--zoom-in
+	transform: scale(0.2)
+
+.poppa--zoom-in.poppa--opened
+	transform: scale(1)
+
+.poppa--zoom-out
+	transform: scale(2.2)
+
+.poppa--zoom-out.poppa--opened
+	transform: scale(1)
+
+.poppa--zoom-pong
+	transform: scale(0.5)
+@keyframes zoom-pong
+	30%
+		transform: scale(1.4)
+	60%
+		transform: scale(0.9)
+	100%
+		transform: scale(1)
+
+.poppa--zoom-pong.poppa--opened
+	animation: zoom-pong 0.5s!important
+	transform: scale(1)
+
+.poppa--zoom-out.poppa--opened
+	transform: scale(1)
+
+.poppa--fade-in
+	opacity: 0
+
+.poppa--fade-in.poppa--opened
+	opacity: 1
+
+.poppa--slide-up
+	transform: translateY(300px)
+
+.poppa--slide-up.poppa--opened
+	transform: translateY(0)
+
+.poppa--slide-down
+	transform: translateY(-300px)
+
+.poppa--slide-down.poppa--opened
+	transform: translateY(0)
+
+.poppa--slide-left
+	transform: translateX(50vw)
+
+.poppa--slide-left.poppa--opened
+	transform: translateX(0)
+
+.poppa--slide-right
+	transform: translateX(-50vw)
+
+.poppa--slide-right.poppa--opened
+	transform: translateX(0)
+
+.poppa-overlay--opened
+	.poppa
+		transform: scale(1) !important
+
+// __TYPOGRAPHY
+.poppa--simple-text
+	box-sizing: border-box
+	padding: 40px 40px 20px 40px
+	max-width: 600px
+	background-color: #fff
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
+		font-size: 24px
+		margin-bottom: 14px
+		font-weight: bold
+		line-height: 1.45
+		color: #333333
+	p
+		font-size: 16px
+		line-height: 1.8
+		margin-bottom: 20px
+		color: #333333
+
+@media (max-width: 576px)
+	.poppa--simple-text
+		box-sizing: border-box
+		padding: 20px 20px 10px 20px
+		max-width: 600px
+		background-color: #fff
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6
+			font-size: 16px
+			margin-bottom: 14px
+			font-weight: bold
+			line-height: 1.25
+			color: #333333
+		p
+			font-size: 14px
+			line-height: 1.8
+			margin-bottom: 12px
+			color: #333333

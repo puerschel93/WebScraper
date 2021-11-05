@@ -1,0 +1,252 @@
+@import ./varibles.sass
+html,
+body
+    max-width: 100%
+    overflow-x: hidden
+body
+    background: #fff
+    &::-webkit-scrollbar
+        background: #fff
+        width: 10px
+        &-thumb
+            background: linear-gradient(94.26deg, #1D0525 17.38%, #420059 70.74%),#121212
+            border-radius: 10px
+
+*, *:after, *:before
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+    text-decoration: none
+    color: inherit
+    max-width: 100%
+    font-weight: 300
+    outline: none
+    cursor: default
+    &:hover
+        transition: .3s
+
+a
+    cursor: pointer
+
+input
+    cursor: auto
+
+.slick
+    &-slider
+        *
+            max-width: none
+    &-arrow
+        border: 0
+        font-size: 0
+        background: transparent
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        width: 10px
+        height: 10px
+        z-index: 1
+        cursor: pointer
+    &-dots
+        position: absolute
+        bottom: 80px
+        left: 50%
+        transform: translateX(-50%)
+        display: flex
+        li
+            font-size: 0
+            border: 1px solid #F1F1F1
+            border-radius: 50%
+            width: 20px
+            height: 20px
+            margin-right: 24px
+            list-style: none
+            cursor: pointer
+            &:last-child
+                margin-right: 0
+            button
+                background: none
+                font-size: 0
+                color: transparent
+                border: 0
+        .slick-active
+            background: #F1F1F1
+
+ul
+    li
+        list-style: none
+
+.wrap
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: relative
+
+.container
+    width: 95%
+    max-width: 1395px
+
+.btn
+    &_default
+        border-radius: 10px
+        padding: 12px 40px
+        display: inline-block
+        transition: .3s
+        &:hover
+            transform: scale(1.05)
+            cursor: pointer
+            transition: .3s
+    &_red
+        background: $red-color
+        color: #EBEBEB
+        font-weight: normal
+        font-size: 24px
+        line-height: 28px
+        text-align: center
+        font-family: $font-roboto
+        text-transform: uppercase
+    &_transp
+        border: 1px solid #BDBDBD
+        text-transform: uppercase
+        font-weight: normal
+        font-family: $font-roboto
+        font-size: 24px
+        line-height: 28px
+        text-align: center
+        color: #4F4F4F
+    &_center
+        margin: 0 auto
+        display: table
+
+.title
+    &_default
+        font-family: $font-roboto
+        font-weight: 900
+        font-size: $size-l
+        text-align: center
+        color: $black-collor
+        text-transform: uppercase
+    &_left
+        text-align: left
+        text-transform: none
+        font-size: 48px
+    &_del
+        position: relative
+        overflow: hidden
+        margin-bottom: 74px
+        letter-spacing: 0.06em
+        &::after
+            content: ''
+            position: absolute
+            width: 100%
+            height: 2px
+            background: #102B3E
+            bottom: 20%
+            transform: translateX(-5px)
+
+.origin
+    &-left
+        transform-origin: -200%
+        z-index: -1
+    &-right
+        transform-origin: 200%
+
+.news-list
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin-bottom: 100px
+    background: #fff
+    &__item
+        max-width: 23.7%
+        border-radius: 10px
+        overflow: hidden
+        transition: .3s
+        &:hover
+            transform: translateY(-10px)
+            transition: .3s
+
+    &__img
+        margin-bottom: $size-m
+        height: 220px
+    &__note-block
+        font-family: $font-roboto
+        display: flex
+        justify-content: space-between
+        color: $lightGray-collor
+        margin-bottom: $size-m
+    &__title
+        color: $lightBlack-collor
+        font-size: $size-m
+        font-family: $font-montserrat
+        font-weight: bold
+        line-height: 140%
+        margin-bottom: 10px
+    &__desc
+        color: $gray-collor
+        font-size: $size-xxs
+        font-family: $font-inter
+        line-height: 22px
+
+.popular-menu
+    max-width: 330px
+    border: 1px solid #E0E0E0
+    background: #fff
+    border-radius: 6px
+    padding: 62px 16px 23px
+    margin-bottom: 48px
+    position: relative
+    &__strip
+        background: linear-gradient(94.26deg, #1D0525 17.38%, #420059 70.74%), #121212
+        position: absolute
+        top: 20px
+        left: 0
+        padding: 4px 10px 4px 16px
+        border-radius: 0px 4px 4px 0px
+        &-text
+            font-family: $font-montserrat
+            font-size: $size-m
+            font-weight: bold
+            line-height: 24px
+            text-align: center
+            color: #fff
+    &__item
+        padding: 12px 0
+        border-bottom: 1px solid #E0E0E0
+        &-link
+            color: $darkGray-collor
+            font-family: $font-roboto
+            font-size: $size-s
+            font-weight: normal
+            line-height: 145%
+        &:last-child
+            border-bottom: 0
+
+.subscribe-block
+    background-size: cover
+    background-repeat: no-repeat
+    background-position-x: center
+    width: 100%
+    padding: 90px 20px
+    display: flex
+    flex-direction: column
+    align-items: center
+    border-radius: 20px
+    margin-bottom: 100px
+    &__title
+        font-family: $font-montserrat
+        font-size: $size-l
+        font-weight: bold
+        line-height: 109.19%
+        color: #F2F2F2
+        margin-bottom: 20px
+        max-width: 690px
+        text-align: center
+    &__desc
+        font-family: $font-roboto
+        font-size: $size-s
+        line-height: 24px
+        color: #E0E0E0
+        margin-bottom: 56px
+        max-width: 690px
+        text-align: center

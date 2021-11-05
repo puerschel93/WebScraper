@@ -1,0 +1,30 @@
+*, *::after, *::before 
+    margin: 0;padding: 0;box-sizing: border-box
+
+.container 
+    height: 100vh
+    display: grid
+    place-items: center
+        .box
+            width: 100px
+            height: 100px
+            background-color: #333
+            display: grid
+            place-items: center
+            color: #fff
+            transition-property: width, height
+            transition-duration: 2s
+            &:hover
+                width: 200px
+                height: 200px
+            
+            &:nth-child(1)
+                transition-timing-function: ease
+            .box-2
+                transition-timing-function: linear    
+            .box-3
+                transition-timing-function: ease-in
+            .box-4
+                transition-timing-function: ease-out
+            .box-5
+                transition-timing-function: ease-in-out    

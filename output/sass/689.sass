@@ -1,0 +1,66 @@
+@import "varibales"
+
+.resource_list
+  overflow-x: hidden
+  overflow-y: auto
+
+  &::-webkit-scrollbar
+    width: 10px
+
+  &::-webkit-scrollbar-track
+    background-color: $gray-200
+
+  &::-webkit-scrollbar-thumb
+    border: 2px solid $gray-200
+    border-radius: 20px
+    background-color: $gray-500
+
+.resource
+  $padding: 5px
+  $border-radius: 5px
+  display: flex
+  flex-direction: row
+  align-items: center
+  margin: 5px 3px
+
+  border: 1px solid $gray-500
+  border-radius: $border-radius
+
+  font-size: .8rem
+
+  cursor: pointer
+
+  &__drag_handle
+    cursor: -moz-grab
+    cursor: -webkit-grab
+    cursor: grab
+    padding: $padding
+    background: $gray-400
+    border-top-left-radius: $border-radius - 1
+    border-bottom-left-radius: $border-radius - 1
+    align-self: stretch
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $gray-500
+
+  &:hover .resource__drag_handle
+    color: $gray-700
+
+  &__icon
+    box-sizing: content-box
+    padding: $padding
+    padding-right: 0
+
+  &__label
+    padding: $padding
+    color: $gray-800
+    flex: 1
+
+  &__action
+    padding: $padding
+    padding-left: 0
+
+.drag-ghost
+  position: absolute
+  left: -9999999px

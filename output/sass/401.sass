@@ -1,0 +1,24 @@
+.index
+    background-image: url('../images/chouette/large-crop.png')
+    background-position: 100% 100px
+    background-repeat: no-repeat
+    header
+        @include grid(12)
+        padding-bottom: $grid-gutter * 8
+        > div
+            &:nth-child(1)
+                grid-column: 1/8
+            &:nth-child(2)
+                grid-column: 8/13
+                img
+                    position: absolute
+                    right: 0px
+    h1
+        @include media-breakpoint-up(lg)
+            font-size: px2rem(55)
+            line-height: px2rem(75)
+    @include media-breakpoint-down(lg)
+        background-size: 250px
+    @include media-breakpoint-down(md)
+        background-position: 100% 300px
+        background-size: 100px

@@ -1,0 +1,158 @@
+@import ../../../styles/helpers
+
+.container
+  margin-top: 6rem
+
+.carousel
+  margin-bottom: 2rem
+  display: none
+  overflow: hidden
+  padding: 5rem 6rem
+  background: #2B243F
+  border: 2px solid #353945
+  box-sizing: border-box
+  box-shadow: 0px 32px 64px -32px rgba(15, 15, 15, 0.1)
+  border-radius: 24px
+  position: relative
+  +t
+    padding: 4rem
+  +m
+    padding: 3rem
+  +s
+    padding: 2rem
+  h3
+    +jost
+    font-weight: 500
+    font-style: normal
+    font-weight: 500
+    font-size: 2.25rem
+    letter-spacing: -0.01em
+    color: white
+    margin-bottom: 2rem
+  p
+    +poppins
+    font-weight: normal
+    font-size: 1.1rem
+    line-height: 1.5rem
+    color: #777E91
+    max-width: 50%
+    margin-bottom: 1.5rem
+    +d
+      max-width: 30ch
+    +t
+      max-width: 100%
+  .ilustration
+    position: absolute
+    bottom: 0
+    +t
+      display: none
+    &.go
+      right: -4%
+      width: 60%
+      +d
+        width: 60%
+    &.jf
+      bottom: 0
+      right: 10%
+      height: 90%
+      +d
+        right: 5%
+    &.wb
+      right: 0
+      width: 55%
+      +d
+        width: 60%
+    &.ws
+      right: 2rem
+      width: 45%
+      +d
+        width: 45%
+    &.cv
+      right: 2rem
+      width: 45%
+      +d
+        width: 45%
+  &.active
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+.buttonWrapper
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr))
+  column-gap: 0.5rem
+  +t
+    display: flex
+    width: 100%
+    justify-content: center
+    flex-wrap: wrap
+    column-gap: 0
+  +m
+    display: none
+  .button
+    margin: auto
+    display: grid
+    grid-template-columns: 32px auto
+    width: fit-content
+    padding: 1rem
+    +t
+      grid-template-columns: 24px auto
+    .icon
+      fill: white
+      margin: auto
+    span
+      margin-top: auto
+      margin-bottom: auto
+      margin-left: 1rem
+      text-align: start
+      max-width: 14ch
+      +poppins
+      font-style: normal
+      font-weight: normal
+      font-size: 1rem
+      line-height: 1.5rem
+      color: white
+      +t
+        margin-left: 0.75rem
+    &.active
+      border-radius: 16px
+      background: #48405F
+
+.nextPrevWrapper
+  display: none
+  +m
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(1rem, 1fr))
+    column-gap: 2rem
+    margin-left: 2rem
+  +s
+    margin-left: 1rem
+  button
+    height: 40px
+    width: 40px
+    &:hover
+      box-shadow: inset 0 0 0 2px #353945
+      border-radius: 50%
+    .arrow
+      fill: #E6E8EC
+
+.modalContent
+  display: flex
+  flex-direction: column
+  align-items: center
+  h4
+    text-align: center
+    font-size: 1.8rem
+    margin-bottom: 2rem
+    +jost
+    font-weight: normal
+    +m
+      font-size: 1.7rem
+      margin-bottom: 2rem
+    +a
+      font-size: 1.6rem
+  .button
+    width: 100%
+    max-width: 16rem
+    +a
+      max-width: 12rem

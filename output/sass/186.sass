@@ -1,0 +1,92 @@
+.programs
+    position: relative
+    @include adaptiv-value('padding-top', 50, 20, 1)
+    @include adaptiv-value('padding-bottom', 50, 20, 1)
+    &__container
+    &__block-top
+        max-width: 600px
+    &__label
+    &__title
+    &__slider
+        position: relative
+    &__body
+        @include adaptiv-value('margin-left', -30, -15, 1)
+        @include adaptiv-value('margin-right', -30, -15, 1)
+        @include adaptiv-value('padding', 30, 15, 1)
+    &__item
+    &__arrows
+        position: absolute
+        top: 50%
+        left: -50px
+        width: calc( 100% + 100px )
+        z-index: 5
+        transform: translateY(-50%)
+        display: flex
+        justify-content: space-between
+        @media (max-width: $md1 + px) //Less than our container
+            left: 0
+            width: 100%
+        @media (max-width: $md4 + px)//Less 479
+           display: none
+    &__arrow
+        background: none
+        @media (max-width: $md2 + px)//Less 992
+            @include adaptiv-value('padding', 10, 7, 1)
+            background: #ffffff
+            border-radius: 50%
+        &::before
+            @include adaptiv-value('font-size', 30, 26, 1)
+        &_prev
+        &_next	
+		
+
+.item-programs
+    display: flex
+    flex-direction: column
+    padding-bottom: 10px
+    border-radius: 20px
+    transition: all 0.3s ease 0s
+    &__image
+            display: block
+            padding: 0 0 240/350 * 100% 0
+            img
+                border-radius: 12px
+    &__contnet
+        flex: 1 1 auto
+        display: flex
+        flex-direction: column
+        padding: 5px
+        @include adaptiv-value('padding-top', 20, 10, 1)
+    &__title
+        font-weight: 500
+        @include adaptiv-value('font-size', 30, 24, 1)
+        line-height: 150%
+    &__subtitle
+        font-weight: 400
+        font-size: 14px
+        line-height: 186%
+        &:not(:last-child)
+            margin-bottom: 10px
+    &__text
+        flex: 1 1 auto
+
+        font-size: 14px
+        line-height: 186%
+        color: #4B4B4B
+        &:not(:last-child)
+            margin-bottom: 20px
+    &__link
+        display: flex
+        flex-direction: row-reverse
+        justify-content: flex-end
+        align-items: center
+        font-weight: 400
+        font-size: 14px
+        line-height: 143%
+        font-feature-settings: 'salt' on, 'liga' off
+        color: #3043A9
+        &::before
+            margin-left: 10px
+    @media (any-hover: hover )
+       &:hover
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;

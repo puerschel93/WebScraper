@@ -1,0 +1,168 @@
+.crew
+  padding: 0 11%
+
+  &__picture--img
+    position: absolute
+    top: 0
+    left: 0
+
+    width: 100vw
+    height: 100vh
+
+    z-index: -10
+
+  &__container
+    margin-top: 74px
+
+  &__subtitle
+    margin-bottom: 60px
+
+    @include heading5
+    text-transform: uppercase
+    color: $colorWhite
+
+    & > span
+      opacity: .25
+
+  // &__pilot-wrapper
+  // &__pilot-info-wrapper
+  &__pilot-info-subheader
+    margin-top: 12%
+    margin-bottom: 15px
+
+    @include heading4
+    color: $colorWhite
+    text-transform: uppercase
+    opacity: .5
+
+  &__pilot-info-header
+    margin-bottom: 26px
+
+    @include heading3
+    color: $colorWhite
+    text-transform: uppercase
+
+  &__pilot-info-bio
+    height: 180px
+    max-width: 444px
+    margin-bottom: 30px
+
+    @include bodyText
+    color: $colorLight
+
+  &__pilot-info-slider
+    display: flex
+    list-style: none
+
+  &__pilot-info-tabs-button
+    width: 15px
+    height: 15px
+    margin-right: 24px
+
+    border-radius: 50%
+    background: $colorWhite
+    opacity: .15
+
+    cursor: pointer
+
+    &:hover
+      opacity: .5
+
+    &.active
+      opacity: 1
+
+  &__pilot-image
+    position: absolute
+    bottom: 0
+    right: 11%
+
+@media (max-width: 1024px)
+  .crew
+    padding: 0 38px
+
+    // &__picture--img
+    &__container
+      margin-top: 40px
+
+    &__subtitle
+      font-size: 20px
+
+    // &__pilot-wrapper
+    &__pilot-info-wrapper
+      display: flex
+      flex-direction: column
+      align-items: center
+      text-align: center
+
+    &__pilot-info-subheader
+      margin-top: 0px
+      margin-bottom: 8px
+      font-size: 24px
+
+    &__pilot-info-header
+      margin-bottom: 16px
+      font-size: 40px
+
+    &__pilot-info-bio
+      height: 130px
+      max-width: 600px
+      margin-bottom: 0px
+
+    // &__pilot-info-slider
+    &__pilot-info-tabs-button
+      width: 10px
+      height: 10px
+      margin: 0 8px
+
+    &__pilot-image
+      width: 50%
+      height: auto
+      max-height: 400px
+      max-width: 300px
+      transform: translateY(40px)
+      bottom: 0
+      right: 20%
+
+@media (max-width: 468px)
+  .crew
+    &__container
+      margin-top: 74px
+
+    &__subtitle
+      text-align: center
+      margin-bottom: 32px
+      font-size: 16px
+
+    &__pilot-wrapper
+      display: flex
+      flex-direction: column-reverse
+      align-items: center
+
+    // &__pilot-info-wrapper
+    &__pilot-info-subheader
+      font-size: 16px
+      order: 2
+
+    &__pilot-info-header
+      font-size: 24px
+      order: 3
+
+    &__pilot-info-bio
+      font-size: 15px
+      order: 4
+
+    &__pilot-info-slider
+      margin: 32px 0
+      order: 1
+
+    &__pilot-image
+      position: relative
+      transform: translateY(0px)
+      top: 0
+      right: 0
+
+      &-mobile
+        display: flex
+        justify-content: center
+        border-bottom: 2px solid $colorGray
+

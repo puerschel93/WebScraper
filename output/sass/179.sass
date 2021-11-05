@@ -1,0 +1,70 @@
+.member
+    @include adaptiv-value('padding-top', 50, 20, 1)
+    @include adaptiv-value('padding-bottom', 50, 20, 1)
+    &__container    
+    &__wrapper
+        display: flex
+        @include adaptiv-value('padding', 50, 20, 1)
+        background: $darkBlue
+        border-radius: 20px
+        @media (max-width: $md3 + px) //Less 768
+           flex-direction: column
+    &__body
+        @media (min-width: $md3 + px)//More 768
+            padding-right: 20px
+            flex: 0 1 570px
+    &__title
+        font-weight: 600
+        @include adaptiv-value('font-size', 40, 27, 1)
+        line-height: 135%
+        text-transform: capitalize
+        font-feature-settings: 'salt' on, 'liga' off
+        color: $white
+        &:not(:last-child)
+            margin-bottom: 30px/40px * 1em
+    &__form
+        display: flex
+        @media (max-width: $md2 + px)//Less 992
+           flex-direction: column
+    &__input
+        flex: 1 1 auto
+        padding: 16px 24px
+        border: 1px solid $white
+        border-radius: 34px
+        background: none
+
+        color: $white
+        &:not(:last-child)
+            @include adaptiv-value('margin-right', 30, -10, 1)
+        @media (max-width: $md2 + px)//Less 992
+            &:not(:last-child) 
+                margin: 0 0 10px 0
+    &__btn
+        @include adaptiv-value('min-width', 161, 120, 1)
+        @media (max-width: $md2 + px)//Less 992
+           padding: 9px 0
+    &__image
+
+
+
+.image-member
+    flex: 1 1 auto
+    display: grid
+    grid-template-columns: repeat(2, 138px) 
+    grid-gap: 10px
+    justify-content: end
+    @media (max-width: $md3 + px) //Less 768
+        padding-top: 30px 
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr))
+    &__img
+        display: block
+        padding: 0 0 100% 0
+        img
+            border-radius: 8px
+    &__block
+        display: grid
+        grid-gap: 10px
+        @media (min-width: $md3 + px)//More 768  
+            position: relative
+            &:first-child
+                @include adaptiv-value('top', 20, 15, 1)

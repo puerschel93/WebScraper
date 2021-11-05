@@ -1,0 +1,121 @@
+.pricing
+    position: relative
+    @include adaptiv-value('padding-top', 50, 20, 1)
+    @include adaptiv-value('padding-bottom', 50, 20, 1)
+    &__container
+    &__block-top
+        max-width: 490px
+    &__label
+        color: $white
+    &__title
+        color: $white
+    &__body
+        padding-top: 30px
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+        grid-gap: 30px
+    &__item
+        position: relative
+        overflow: hidden
+
+        display: flex
+        flex-direction: column
+        align-items: stretch
+        text-align: center
+        @include adaptiv-value('padding-top', 30, 15, 1)
+        @include adaptiv-value('padding-bottom', 20, 15, 1)
+        @include adaptiv-value('padding-left', 82, 21, 1)
+        @include adaptiv-value('padding-right', 82, 21, 1)
+    
+        background: $white
+        box-shadow: 0px 16px 35px rgba(112, 144, 176, 0.2)
+        border-radius: 35px
+        transition: all 0.2s ease 0s
+        @media (max-width: $md1 + px) //Less than our container
+            @include adaptiv-value('padding-top', 30, 10, 1)
+            @include adaptiv-value('padding-bottom', 20, 10, 1)
+            @include adaptiv-value('padding-left', 42, 21, 1)
+            @include adaptiv-value('padding-right', 42, 21, 1)
+        @media (any-hover: hover )
+           &:hover
+                box-shadow: rgba(38, 57, 77, 0.674) 0px 20px 30px -10px
+    &__option //"standard"
+        font-weight: 600
+        @include adaptiv-value('font-size', 30, 22, 1)
+        line-height: 150%
+        color: $darkBlue
+        &:not(:last-child)
+            margin-bottom: 10px
+    &__image
+        display: block
+        padding: 0 0 64% 0
+        &:not(:last-child)
+            margin-bottom: 10px
+        img
+            border-radius: 8px
+    &__name
+        font-weight: 400
+        font-size: 20px
+        line-height: 150%
+        &:not(:last-child)
+            margin-bottom: 10px
+    &__list
+        flex: 1 1 auto
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 50, 25, 1)
+    &__parrams
+        display: flex
+        text-align: left
+        font-size: 18px
+        line-height: 150%
+        &:not(:last-child)
+            margin-bottom: 10px
+        &::before
+            font-size: 24px
+            color: #63C776
+            margin-right: 10px
+    &__price
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+
+        font-weight: 600
+        font-size: 32px
+        line-height: 150%
+        color: $darkBlue
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 30, 15, 1)
+        span
+            font-weight: 300
+            font-size: 20px
+            line-height: 150%
+            color: $mainColor
+    &__btns
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+    &__btn
+        min-width: 170px
+        margin-bottom: 10px
+    &__status
+        position: absolute
+        top: 0
+        right: 0
+        padding: 27px 10px
+        background: #63C776
+        border-radius: 0px 35px
+        font-weight: 600
+        font-size: 14px
+        text-transform: capitalize
+        color: $white
+        @media (max-width: $md3 + px) //Less 768
+           padding: 20px 7px
+    &__color
+        position: absolute 
+        top: 0
+        left: 0
+        height: 58.3%
+        width: 100%
+        background: linear-gradient(90deg, #09203F 0%, #161D2F 100%)
+        z-index: -1

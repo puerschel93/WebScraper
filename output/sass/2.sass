@@ -1,0 +1,97 @@
+.help
+    background-image: url(../src/img/bg_second.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    background-attachment: fixed
+    padding: 250px 0px
+   
+
+.container
+    width: 1100px
+    margin: 0 auto
+
+
+.help_cont
+    padding: 0px 50px
+    text-align: center
+    h2
+        position: relative
+        color: $color_text_second
+        text-transform: uppercase
+        font-size: 56px
+        padding-bottom: 90px
+    p
+        color: $color_text_main
+        font-size: 44px
+        transform: scale(0)
+        opacity: 0
+        transition: all 1s ease
+        &._active
+            opacity: 1
+            transform: scale(1)
+
+.help_cont
+    h2
+        &:after  
+            position: absolute
+            left: calc(50% - 160px)
+            width: 320px
+            content: ""
+            border-bottom: 6px double $color_special
+            bottom: 30px
+
+
+@media (max-width: $pc)
+    .container
+        width: 900px
+
+    .help_cont
+        padding: 0px 50px
+        h2
+            font-size: 48px
+        p
+
+            font-size: 38px
+
+@media (max-width: $notebook)
+    .container
+        width: 720px
+
+    .help_cont
+        padding: 0px 50px
+        h2
+            font-size: 40px
+        p
+
+            font-size: 32px
+
+@media (max-width: $tablet)
+    .help
+        padding: 100px 0px
+    .container
+        width: 420px
+
+    .help_cont
+        padding: 0px 25px
+        h2
+            font-size: 28px
+            padding-bottom: 50px
+        p
+
+            font-size: 22px
+
+
+@media (max-width: $mobile)
+    .help
+        padding: 50px 0px
+
+    .container
+        width: 320px
+
+    .help_cont
+    h2
+        &:after  
+            left: calc(50% - 100px)
+            width: 200px
+
+

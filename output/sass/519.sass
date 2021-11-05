@@ -1,0 +1,83 @@
+@media (prefers-color-scheme: dark)
+    ::selection
+        background: rgba($white, .3)
+        color: $primary
+
+    ::-moz-selection
+        background: rgba($white, .3)
+        color: $primary
+
+    body,
+    body > main
+        background-color: $primary
+
+    body
+        color: $white
+
+    a
+        color: $white
+        text-decoration-color: rgba($white, 0.5)
+        &:hover
+            text-decoration-color: $white
+        @include media-breakpoint-up(md)
+            .is-menu-opened main &
+                color: $black
+                text-decoration-color: rgba($primary, 0.2)
+
+    .h1
+        &, a
+            color: $secondary-reverse
+            .is-menu-opened &
+                color: $secondary
+
+    blockquote
+        border-color: $border-color-reverse
+
+    aside
+        &.is-fixed
+            background: $bg-secondary-color-reverse
+            color: $white
+        &:hover, &.is-hovered
+            a
+                text-decoration-color: $white
+
+    body > header
+        > a
+            filter: invert(1)
+            @include media-breakpoint-up(md)
+                .is-menu-opened &
+                    filter: invert(0)
+
+    body > main
+        @include media-breakpoint-up(md)
+            .is-menu-opened &
+                background-color: $white
+                color: $black
+
+    .burger
+        i, &::after, &::before
+            background: $white
+        span
+            &::after, &::before
+                background: $white
+
+    .menu
+        background-color: $primary
+        a
+            color: $white
+        ul:hover
+            a
+                color: $secondary-reverse
+                .menu_burger_only_mobile &
+                    color: $white
+                &:hover
+                    color: $white
+
+    body > footer
+        background-color: $white
+        color: $primary
+        li span, a
+            color: $secondary
+        a
+            &:hover
+                color: $primary

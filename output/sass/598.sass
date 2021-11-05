@@ -1,0 +1,192 @@
+.course-match
+	a
+		background: linear-gradient(to right,#535353 0%,#2c2c2c 100%) 0 100%/1px 1px repeat-x
+		color: #7f7f7f
+
+		+hover
+			background: linear-gradient(to right,#fff 0%,#fff 100%) 0 100%/1px 1px repeat-x
+			color: #fff
+
+	h1
+		padding-top: 60px
+		padding-bottom: 40px
+		font-style: normal
+		font-family: 'TT Trailers Black', 'Arial', sans-serif
+		text-decoration: none
+		text-transform: none
+		font-size: 60px
+		font-weight: 500
+		color: $courses-white
+		letter-spacing: -1.2px
+		line-height: 1.1em
+
+	&__program
+		margin-top: 40px
+		margin-bottom: 70px
+		display: flex
+		justify-content: space-between
+
+		+sm
+			flex-direction: column
+			margin-top: 40px
+
+	&__program__desc
+		max-width: 35%
+		width: 100%
+
+		img
+			width: 220px
+			height: 265px
+			transform: scaleX(-1)
+			position: relative
+			top: -53px
+			left: -10px
+
+			+sm
+				width: 100%
+				height: 100%
+				padding: 0 20%
+				top: 0
+				left: 0
+
+		+sm
+			width: 100%
+			max-width: 100%
+			margin-bottom: 50px
+
+	&__program__list
+		position: relative
+		flex-shrink: 0
+		width: 50%
+		counter-reset: heading
+		padding-right: 20px
+
+		+md
+			width: 35%
+
+		+sm
+			width: 100%
+
+	&__program__requirements
+		position: relative
+		max-width: 185px
+		width: 100%
+
+		+sm
+			width: 100%
+			max-width: none
+
+	&__program-module
+		margin-bottom: 30px
+		position: relative
+		padding-right: 90px
+
+		+md
+			padding-right: 0
+
+	&__program-module:last-child
+		margin-bottom: 0
+
+	&__program-module:before
+		counter-increment: heading
+		content: "" counter(heading) " "
+		letter-spacing: 1.6px
+		font-size: 13px
+		color: rgba(142, 114, 42, 1)
+		text-transform: uppercase
+		font-style: normal
+		font-weight: 500
+		text-decoration: none
+		position: absolute
+		top: -4px
+		left: -23px
+
+		+sm
+			top: -26px
+			left: 0
+
+	&__program-module__items
+		padding-bottom: 20px
+
+	&__program-module__item
+		margin-bottom: 20px
+
+	&__program-module__item-title,
+	&__program-module__title
+		margin-bottom: 15px
+
+	&__title-reg
+		font-weight: 100
+
+	&__title-reg_big
+		font-size: 24px
+		letter-spacing: -0.4px
+
+	&__text_reg,
+	&__text_sm
+		font-size: 16px
+		line-height: 1.3
+
+	&__text
+		letter-spacing: -0.4px
+
+	&__text,
+	&__text a
+		font-weight: 500
+
+	&__text p
+		font-size: 14px
+		color: rgba(109, 117, 127, 1)
+		letter-spacing: -0.2px
+		vertical-align: top
+
+	&__program-module__item-desc li::before
+		content: "\2022"
+		color: $courses-brown
+		font-weight: bold
+		display: inline-block
+		width: 1em
+		margin-left: -1em
+
+	&__program__req-item
+		margin-bottom: 20px
+
+	&__program__req-item h3
+		color: #e8e8f4
+		font-size: 14px
+		font-weight: 600
+
+	&__program__req-decs
+		font-size: 14px
+		letter-spacing: -.2px
+		font-weight: 500
+		color: $courses-light-gray
+
+	&__bottom
+		// display: flex
+		// justify-content: center
+
+		// +sm
+		// 	justify-content: flex-start
+		// 	margin-top: 30px
+
+	&__consult-btn
+		position: relative
+		font-family: "Mont Semi Bold","Arial",sans-serif
+		background-color: transparent
+		border-radius: 40px
+		border: 3px solid #957236
+		color: #fff
+		padding: 12px 23px
+		font-weight: 500
+		font-size: 15px
+		letter-spacing: 0
+		top: -5px
+		left: -5px
+
+		+sm
+			display: none
+
+	&__consult-btn:hover
+		transition: .5s!important
+		border: 3px solid #fff

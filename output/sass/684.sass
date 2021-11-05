@@ -1,0 +1,160 @@
+@import "varibales"
+
+$graph-node-spacing: 7px
+$graph-node-border-radius: 5px
+
+.graph-node
+  position: relative
+  display: flex
+  flex-direction: column
+  box-sizing: border-box
+  min-height: 70px
+  border: 1px solid $gray-700
+  border-radius: $graph-node-border-radius
+  background: white
+  user-select: none
+
+  &__connector
+    width: 25px
+    height: 25px
+    right: -25px
+    padding: 5px 2px
+    border-radius: 12.5px
+    border: 1px solid $gray-700
+    border-left: none
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+    position: absolute
+    background: white
+
+  &__header
+    display: flex
+    flex-direction: row
+    align-items: flex-end
+    border-bottom: 1px solid $gray-300
+    border-top-left-radius: $graph-node-border-radius
+    border-top-right-radius: $graph-node-border-radius
+    background-color: $gray-100
+    padding: $graph-node-spacing
+
+    &__title
+      flex-grow: 1
+      color: $gray-600
+      font-size: .8rem
+      padding: 0 2px
+      cursor: grab
+
+    &__actions
+      justify-content: flex-end
+      align-self: center
+
+  &__content
+    display: flex
+    flex-direction: column
+
+    > *
+      flex-grow: 1
+
+.action-wrapper
+  display: flex
+  flext-direction: row
+
+  &__content
+    flex-grow: 1
+
+  &__actions
+    opacity: .3
+    margin: $graph-node-spacing
+    margin-left: 0
+
+  &:hover &__actions
+    opacity: 1
+
+.line
+  &__options
+    display: flex
+    flex-direction: column
+    width: 100%
+
+    > li
+      border-bottom: 1px solid $gray-200
+
+      &:last-child
+        border: none
+
+  &__state
+    position: absolute
+    top: -22px
+    left: 0
+
+  &__content-wrapper
+    padding: 7px
+
+  &__text
+    font-size: .9rem
+    line-height: 1.3rem
+    min-height: 1.3rem
+    user-select: none
+    -webkit-user-select: none
+
+    textarea
+      display: block
+      width: 100%
+      min-height: 3.6 * 1.3rem
+      resize: none
+      border: 1px solid #eee
+
+      &:focus
+        border: 1px solid #fafafa
+
+  &__condition
+    display: flex
+    flex-direction: row
+
+    background: $gray-200
+    border-radius: 5px
+    padding: 4px
+    margin-bottom: 5px
+
+    font-size: .7rem
+    color: $gray-600
+    font-size: .7rem
+
+    i
+      box-sizing: border-box
+      width: 20px
+      padding: 3px
+
+    > div
+      padding-right: 4px
+      text-transform: uppercase
+
+    > ul
+      flex-grow: 1
+
+      > li
+        user-select: none
+        margin-bottom: 2px
+
+        &:last-child
+          margin: 0
+
+  &__triggers
+    > li
+      padding: 7px
+      border-bottom: 1px solid $gray-300
+
+      &:last-child
+        border: none
+
+    &__switch-name
+      display: block
+      color: $gray-600
+      font-size: .7rem
+      line-height: 1rem
+      margin-bottom: 2px
+
+    &__switch-value
+      width: 100%
+      font-size: .9rem
+      box-sizing: border-box

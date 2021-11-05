@@ -1,0 +1,244 @@
+// variables -- colors
+$bgColor: #FBFCFC
+$mainColor: #3498DB
+$minorColor: #85C1E9
+$minor2Color: #f7DC6F
+$accentColor: #E67E22
+
+// variables -- font-family
+$ffDosis: 'Dosis', sans-serif
+$ffCaveat: 'Caveat', cursive
+
+// google font
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap')
+
+// other css
+@import "_reset.scss"
+@import "_lightbox.scss"
+
+// RWD
+@mixin phone
+    @media (max-width: 576px)
+        @content
+
+// layout
+html, body
+    font-family: $ffDosis
+    background: $bgColor
+    color: $mainColor
+
+a
+    display: block
+    text-decoration: none
+    color: $mainColor
+
+.container
+    max-width: 1220px
+    margin: 0 auto
+
+// header
+.header
+    background: $bgColor
+    opacity: 0.8
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+
+.header__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.header__logo
+    width: clamp(180px, 30vw, 285px)
+    margin-bottom: 8px
+
+.menu
+    display: flex
+    align-items: center
+    @include phone
+        height: 100vh
+        max-height: 0
+        overflow: hidden
+        transition: 0.8s
+        position: absolute
+        top: 52.21px
+        left: 0
+        right: 0
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        background: $bgColor
+        opacity: 0.8
+
+.menu__item
+    font-size: calc( 1.5vmin + 15px)
+    padding: 10px 20px
+    margin-left: 15px
+    border-radius: 20px
+    transition: all 0.5s
+    margin-top: 9.5px
+    &:hover
+        background: $mainColor
+        color: $bgColor
+        transition: all 0.5s
+    @include phone
+        width: 100%
+        margin: 0
+        padding: 20px 0
+        text-align: center
+        color: darken($mainColor, 10%)
+        &:hover
+            background: $bgColor
+            color: $mainColor
+
+.showmenu
+    display: none
+    @include phone
+        display: block
+        color: $mainColor
+        font-size: 30px
+        margin-right: 10px
+
+.menu-show .menu
+    max-height: calc( 100vh - 52.21px)
+
+// banner
+.banner
+    height: 100vh
+    background-image: url('../img/banner.jpg')
+    background-position: center center
+    background-size: cover
+    background-repeat: no-repeat
+
+// about
+.about
+    text-align: center
+    padding: 70px 10px
+
+    h1
+        font-size: 50px
+        margin-bottom: 20px
+        font-family: $ffCaveat
+
+    p
+        font-size: calc( 1.5vmin + 14px)
+        line-height: 1.5
+
+.accent
+    color: $accentColor
+    font-size: 20px
+
+// dinosaurs
+.dinosaurs__background
+    background: $mainColor
+    color: $bgColor
+    padding: 50px 0 10px
+
+    h2
+        text-align: center
+        font-size: 55px
+        font-family: $ffCaveat
+        color: $minor2Color
+
+    p
+        text-align: center
+        margin: 10px 0 30px
+        font-size: 20px
+
+.dinosaurs
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly
+
+.dinosaurs__item
+    text-align: center
+    padding: 10px 0
+    img
+        transition: all 0.3s
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)
+    img:hover
+        transform: scale(1.05, 1.05)
+        transition: all 0.3s
+        @include phone
+            transform: none
+    
+    h3
+        font-size: 30px
+        padding: 10px 0 20px
+
+.d-none
+    display: none
+
+// comment
+.comment
+    padding: 70px 20px 50px
+    color: #000
+
+.comment__title
+    text-align: center
+    font-size: 50px
+    font-family: $ffCaveat
+    color: $mainColor
+    margin-bottom: 30px
+
+.comment__cards
+    display: flex
+    justify-content: space-evenly
+    flex-wrap: wrap
+
+.comment__card
+    max-width: 550px
+    background: $minor2Color
+    padding: 20px
+    border-radius: 10px
+    display: flex
+    margin-bottom: 25px
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)
+    img
+        border-radius: 50%
+        width: 100px
+        height: 100px
+        margin-right: 20px
+
+.comment__name
+    font-size: 20px
+    padding: 10px 0 5px
+
+.comment__content
+    line-height: 1.3
+
+// footer
+.footer
+    background: $mainColor
+    color: $bgColor
+    a
+        color: $bgColor
+
+.footer__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 30px 10px
+    @include phone
+        display: block
+        text-align: center
+
+.footer__contact
+    p
+        line-height: 1.5
+        letter-spacing: 1px
+
+    a
+        display: inline-block
+
+        &:hover
+            color: $minor2Color
+
+.footer__logo
+    width: clamp(180px, 30vw, 285px)
+    margin-bottom: 5px
+    @include phone
+        margin-top: 20px
