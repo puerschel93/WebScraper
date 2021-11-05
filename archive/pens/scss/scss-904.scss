@@ -1,1 +1,0 @@
-1$numPoints:10;2​3@functionpolygon($points,$startPoint:0){4$angle:(360deg/$points);5$coords:'';6​7@for$pointfrom$startPointthrough($points+$startPoint-1){8$pointAngle:$angle*$point;9$x:50%+(percentage(sin($pointAngle))/2);10$y:50%-(percentage(cos($pointAngle))/2);11$coords:$coords+$x+''+$y;12​13@if$point!=$points+$startPoint-1{14$coords:$coords+',';15}16​17$point:$point+1;18}19​
