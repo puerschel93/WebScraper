@@ -2,53 +2,25 @@ import { initializeBrowser } from './setup.js';
 import https from 'https';
 import fs from 'fs';
 
-const FILETYPE = 'less';
+const FILETYPE = 'scss';
 
 // SCHEDULE WAITTIME TO AVOID IP BAN
-const wait = 10000;
-
-const RANGES = [
-	'501..1000',
-	'1001..1500',
-	'1501..2000',
-	'2001..2500',
-	'2501..3000',
-	'3001..3500',
-	'3501..4000',
-	'4001..4500',
-	'4501..5000',
-	'5001..5500',
-	'5501..6000',
-	'6001..6500',
-	'6501..7000',
-	'7001..7500',
-	'7501..8000',
-	'8001..8500',
-	'8501..9000',
-	'9001..9500',
-	'9501..10000',
-	'10001..11500',
-	'10501..11000',
-	'11001..11500',
-	'11501..12000',
-];
+const wait = 20000;
 
 const scrape = async () => {
-	const page = await initializeBrowser(urlbuilder(2, '0..500'));
+	const page = await initializeBrowser(urlbuilder(2));
 	page.setDefaultNavigationTimeout(wait);
 
-	for (const range of RANGES) {
-		for (let i = 3; i < 100; i++) {
-			await fetch(page, i, range);
-		}
+	for (let i = 3; i < 100; i++) {
+		await fetch(page, i);
 	}
 };
 
-const fetch = async (page, i, range) => {
+const fetch = async (page, i) => {
 	try {
 		await page.waitForSelector('.f4');
 	} catch (error) {
-		await page.goto(urlbuilder(i, range));
+		await page.goto(urlbuilder(i));
 		return;
 	}
 	let links = await page.$$('.f4');
@@ -65,7 +37,7 @@ const fetch = async (page, i, range) => {
 	const parsed = await parselinks(links);
 	await fetchParsed(parsed);
 	await sleep(wait);
-	await page.goto(urlbuilder(i, range));
+	await page.goto(urlbuilder(i));
 };
 
 const parselinks = async (links) => {
@@ -84,23 +56,13 @@ const parselinks = async (links) => {
 
 export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const urlbuilder = (page, range) => {
-	return `https://github.com/search?l=&p=${page}&q=extension%3A${FILETYPE}+size%3A${range}&type=Code&ref=advsearch&l=&l=`;
+const urlbuilder = (page) => {
+	return `https://github.com/search?l=&p=${page}&q=extension%3A${FILETYPE}&type=Code&ref=advsearch&l=&l=`;
 };
 
 const fetchParsed = (links) => {
 	for (const url of links) {
-		try {
-			https.get(url, (res) => {
-				try {
-					return saveFileFromHttpResponse(res);
-				} catch (e) {
-					return console.log(e);
-				}
-			});
-		} catch (error) {
-			console.log(error);
-		}
+		https.get(url, (res) => saveFileFromHttpResponse(res));
 	}
 	return;
 };
