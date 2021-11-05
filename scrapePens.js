@@ -1,8 +1,5 @@
 import { initializeBrowser } from './setup.js';
 import fs from 'fs';
-import $ from 'jquery';
-
-const regex = /(<([^>]+)>)/gi;
 
 /**
  * Initializes the browser and performs login on codepen.io
@@ -22,30 +19,85 @@ const initialize = async () => {
 };
 
 const parse = async (page, array) => {
-	await page.goto(array[0]);
-	/*for (const url of array) {
-		console.log(url);
-		await page.goto(url);
-		await validate(page);
-	}*/
+	for (const [index, url] of array.entries()) {
+		try {
+			await page.goto(url);
+			await parseCSS(page, index);
+		} catch (error) {}
+	}
 };
 
-const validate = async (page) => {
-	await page.waitForXPath('//*[@id="css-editor-title"]/span[2]');
-	const [el] = await page.$x('//*[@id="css-editor-title"]/span[2]');
-	let innerHTML = await el.getProperty('innerHTML');
-	innerHTML = await innerHTML.jsonValue();
-	innerHTML = innerHTML.replaceAll('(', '').replaceAll(')', '').toLowerCase();
-	if (innerHTML.length === 0) return;
+const parseCSS = async (page, index) => {
+	try {
+		await page.waitForXPath('//*[@id="css-editor-title"]/span[2]');
+		const [el] = await page.$x('//*[@id="css-editor-title"]/span[2]');
+		let innerHTML = await el.getProperty('innerHTML');
+		innerHTML = await innerHTML.jsonValue();
+		innerHTML = innerHTML
+			.replaceAll('(', '')
+			.replaceAll(')', '')
+			.toLowerCase();
 
-	const preprocessor = innerHTML;
-	const [code] = await page.$x(
-		'/html/body/div[2]/div/div[2]/div[4]/div[2]/div[1]/div[6]/div[1]/div/div/div/div[5]'
-	);
+		const preprocessor = innerHTML;
 
-	await code.click();
+		if (preprocessor.length === 0) return;
 
+		const editors = await page.$x(
+			'//*[@id="box-css"]/div[2]/div[1]/div[6]/div[1]/div/div/div/div[5]'
+		);
+		const editor = await editors[0].getProperty('innerHTML');
+		const val = removeAllHTMLTags(editor._remoteObject.value)
+			.replace(/\n/g, '')
+			.replace(/\t/g, '')
+			.replace(/\s/g, '');
+
+		const numberOfFiles = await getNumberOfFilesInDirectory(
+			`./pens/${preprocessor}/`
+		);
+		writeFile(
+			val,
+			`${preprocessor}-${numberOfFiles}`,
+			`./pens/${preprocessor}/`,
+			mapPreprocessorToFileName(preprocessor)
+		);
+	} catch (error) {
+		console.log(error);
+	}
 	return;
+};
+
+const removeAllHTMLTags = (str) => {
+	if (str) {
+		return str.replace(/<[^>]*>/g, '');
+	}
+	return '';
+};
+
+const writeFile = async (text, fileName, path, filetype) => {
+	fs.writeFile(`${path}/${fileName}.${filetype}`, text, (err) => {
+		if (err) throw err;
+		console.log(`${fileName} saved!`);
+	});
+};
+
+const getNumberOfFilesInDirectory = async (path) => {
+	const files = await fs.readdirSync(path);
+	return files.length;
+};
+
+const mapPreprocessorToFileName = (preprocessor) => {
+	switch (preprocessor) {
+		case 'less':
+			return 'less';
+		case 'scss':
+			return 'scss';
+		case 'sass':
+			return 'sass';
+		case 'stylus':
+			return 'styl';
+		default:
+			return 'css';
+	}
 };
 
 initialize();
