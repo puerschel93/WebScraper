@@ -2,7 +2,7 @@ import { initializeBrowser } from './setup.js';
 import https from 'https';
 import fs from 'fs';
 
-const FILETYPE = 'less';
+const FILETYPES = ['scss', 'sass', 'styl'];
 
 // SCHEDULE WAITTIME TO AVOID IP BAN
 const wait = 12500;
@@ -34,21 +34,27 @@ const RANGES = [
 ];
 
 const scrape = async () => {
-	const page = await initializeBrowser(urlbuilder(2, RANGES[0]));
+	const page = await initializeBrowser(urlbuilder(2, RANGES[0], 'scss'));
 	page.setDefaultNavigationTimeout(wait);
 
-	for (const range of RANGES) {
-		for (let i = 2; i < 70; i++) {
-			await fetch(page, i, range);
+	for (const filetype of FILETYPES) {
+		for (const range of RANGES) {
+			for (let i = 2; i < 70; i++) {
+				try {
+					await fetch(page, i, range, filetype);
+				} catch (error) {
+					console.log(error);
+				}
+			}
 		}
 	}
 };
 
-const fetch = async (page, i, range) => {
+const fetch = async (page, i, range, filetype) => {
 	try {
 		await page.waitForSelector('.f4');
 	} catch (error) {
-		await page.goto(urlbuilder(i, range));
+		await page.goto(urlbuilder(i, range, filetype));
 		return;
 	}
 	let links = await page.$$('.f4');
@@ -60,12 +66,15 @@ const fetch = async (page, i, range) => {
 		return;
 	}
 
-	links = await Promise.all(links.map(async (el) => await el.$('a')));
-
-	const parsed = await parselinks(links);
-	await fetchParsed(parsed);
-	await sleep(wait);
-	await page.goto(urlbuilder(i, range));
+	try {
+		links = await Promise.all(links.map(async (el) => await el.$('a')));
+		const parsed = await parselinks(links);
+		await fetchParsed(parsed, filetype);
+		await sleep(wait);
+		await page.goto(urlbuilder(i, range, filetype));
+	} catch (e) {
+		console.log(e);
+	}
 };
 
 const parselinks = async (links) => {
@@ -84,16 +93,16 @@ const parselinks = async (links) => {
 
 export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const urlbuilder = (page, range) => {
-	return `https://github.com/search?l=&p=${page}&q=extension%3A${FILETYPE}+size%3A${range}&type=Code&ref=advsearch&l=&l=`;
+const urlbuilder = (page, range, filetype) => {
+	return `https://github.com/search?l=&p=${page}&q=extension%3A${filetype}+size%3A${range}&type=Code&ref=advsearch&l=&l=`;
 };
 
-const fetchParsed = (links) => {
+const fetchParsed = (links, filetype) => {
 	for (const url of links) {
 		try {
 			https.get(url, (res) => {
 				try {
-					return saveFileFromHttpResponse(res);
+					return saveFileFromHttpResponse(res, filetype);
 				} catch (e) {
 					return console.log(e);
 				}
@@ -105,17 +114,25 @@ const fetchParsed = (links) => {
 	return;
 };
 
-const saveFileFromHttpResponse = (res) => {
-	const PATH = `./output/${FILETYPE}`;
-	const index = getNumberOfFilesInDirectory(PATH);
-	// prettier-ignore
-	const file = fs.createWriteStream(`${PATH}/${index}.${FILETYPE}`);
-	return res.pipe(file);
+const saveFileFromHttpResponse = (res, filetype) => {
+	try {
+		const PATH = `./output/${filetype}`;
+		const index = getNumberOfFilesInDirectory(PATH);
+		// prettier-ignore
+		const file = fs.createWriteStream(`${PATH}/${index}.${filetype}`);
+		return res.pipe(file);
+	} catch (error) {
+		return console.log(error);
+	}
 };
 
 const getNumberOfFilesInDirectory = (path) => {
-	const files = fs.readdirSync(path);
-	return files.length;
+	try {
+		const files = fs.readdirSync(path);
+		return files.length;
+	} catch (error) {
+		return 0;
+	}
 };
 
 scrape();
