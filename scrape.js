@@ -1,45 +1,23 @@
 import { initializeBrowser } from './setup.js';
 import https from 'https';
 import fs from 'fs';
-
-const FILETYPES = ['scss', 'sass', 'styl'];
+import { v4 as uuidv4 } from 'uuid';
+import { RANGES } from './ranges';
+import { PREPROCESSORS } from './preprocessors';
 
 // SCHEDULE WAITTIME TO AVOID IP BAN
 const wait = 12500;
 
-const RANGES = [
-	'501..1000',
-	'1001..1500',
-	'1501..2000',
-	'2001..2500',
-	'2501..3000',
-	'3001..3500',
-	'3501..4000',
-	'4001..4500',
-	'4501..5000',
-	'5001..5500',
-	'5501..6000',
-	'6001..6500',
-	'6501..7000',
-	'7001..7500',
-	'7501..8000',
-	'8001..8500',
-	'8501..9000',
-	'9001..9500',
-	'9501..10000',
-	'10001..11500',
-	'10501..11000',
-	'11001..11500',
-	'11501..12000',
-];
-
 const scrape = async () => {
-	const page = await initializeBrowser(urlbuilder(2, RANGES[0], 'scss'));
+	const page = await initializeBrowser(
+		urlbuilder(2, RANGES[0], PREPROCESSORS[0])
+	);
+
 	page.setDefaultNavigationTimeout(wait);
 
-	for (const filetype of FILETYPES) {
+	for (const filetype of PREPROCESSORS) {
 		for (const range of RANGES) {
-			for (let i = 2; i < 70; i++) {
+			for (let i = 33; i < 70; i++) {
 				try {
 					await fetch(page, i, range, filetype);
 				} catch (error) {
@@ -57,6 +35,7 @@ const fetch = async (page, i, range, filetype) => {
 		await page.goto(urlbuilder(i, range, filetype));
 		return;
 	}
+
 	let links = await page.$$('.f4');
 	links = await links.filter((div) =>
 		div._remoteObject.description.includes('text-normal')
@@ -117,21 +96,13 @@ const fetchParsed = (links, filetype) => {
 const saveFileFromHttpResponse = (res, filetype) => {
 	try {
 		const PATH = `./output/${filetype}`;
-		const index = getNumberOfFilesInDirectory(PATH);
+		const id = uuidv4();
 		// prettier-ignore
-		const file = fs.createWriteStream(`${PATH}/${index}.${filetype}`);
+		const file = fs.createWriteStream(`${PATH}/${id}.${filetype}`);
+		console.log(`wrote ${PATH}/${id}.${filetype}`);
 		return res.pipe(file);
 	} catch (error) {
 		return console.log(error);
-	}
-};
-
-const getNumberOfFilesInDirectory = (path) => {
-	try {
-		const files = fs.readdirSync(path);
-		return files.length;
-	} catch (error) {
-		return 0;
 	}
 };
 
