@@ -1,18 +1,15 @@
 import fs from 'fs';
 
 let totalCount = 0;
+const regex = '';
 
 const readfiles = () => {
 	const dir = './output/styl/';
 	const files = fs.readdirSync(dir);
 
-	// readFileLineByLine(dir, files[1]);
-
 	for (const filename of files) {
 		readFileLineByLine(dir, filename);
 	}
-
-	console.log(totalCount);
 };
 
 const readFileLineByLine = (dir, filename) => {
@@ -23,13 +20,10 @@ const readFileLineByLine = (dir, filename) => {
 	let count = 0;
 
 	for (const line of lines) {
-		if (line.includes('if ')) count++;
+		if (line.match(regex)) count++;
 	}
 
-	if (count > 0) {
-		console.log(filename, count);
-		totalCount++;
-	}
+	if (count > 0) totalCount++;
 };
 
 readfiles();
