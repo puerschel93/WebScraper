@@ -1,3 +1,11 @@
+/**
+ * This is a set of colors to print colorcoded messages on the console
+ * according to its importance or meaning.
+ * @author Florian Pürschel
+ * @version 1.0.0
+ * @url www.prshl.de
+ */
+
 const colors = {
 	cyan: '\x1b[36m%s\x1b[0m',
 	yellow: '\x1b[33m%s\x1b[0m',

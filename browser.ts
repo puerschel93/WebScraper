@@ -1,7 +1,9 @@
 /**
  * This Class initializes and handles the browser to provide a
  * Browserpage to the Collector Class, which collects files from Github.
- * @author: Florian Pürschel
+ * @author Florian Pürschel
+ * @version 1.0.0
+ * @url www.prshl.de
  */
 
 import AUTH from './auth';
