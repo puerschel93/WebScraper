@@ -34,7 +34,7 @@ class Collector {
 			this.filetype = type;
 			for (const range of Helpers.ranges) {
 				this.range = range;
-				while (this.pageNumber <= 2) {
+				while (this.pageNumber <= 95) {
 					await this.page.goto(this.buildurl(type));
 					Logger.info(
 						`Collecting page ${this.pageNumber} in Range ${range}...`

@@ -12,17 +12,17 @@ import Colors from './colors';
 class Logger {
 	clear = () => console.clear();
 
-	info = (_information: string): void =>
-		console.log(Colors.cyan, 'INFO:\t\t', Colors.white, `${_information}`);
+	info = (message: string): void =>
+		console.log(Colors.cyan, 'INFO:\t\t', Colors.white, `${message}`);
 
-	warn = (_warning: string): void =>
-		console.log(Colors.yellow, 'WARNING:\t', Colors.white, `${_warning}`);
+	warn = (message: string): void =>
+		console.log(Colors.yellow, 'WARNING:\t', Colors.white, `${message}`);
 
-	error = (_error: string): void =>
-		console.log(Colors.red, 'ERROR:\t\t', Colors.white, `${_error}`);
+	error = (message: string): void =>
+		console.log(Colors.red, 'ERROR:\t\t', Colors.white, `${message}`);
 
-	success = (_success: string): void =>
-		console.log(Colors.green, 'DONE:\t\t', Colors.white, `${_success}`);
+	success = (message: string): void =>
+		console.log(Colors.green, 'DONE:\t\t', Colors.white, `${message}`);
 }
 
 const logger = new Logger();
