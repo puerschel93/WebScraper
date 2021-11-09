@@ -5,7 +5,7 @@ const colors = {
 	red: '\x1b[31m%s\x1b[0m',
 	blue: '\x1b[34m%s\x1b[0m',
 	magenta: '\x1b[35m%s\x1b[0m',
-	white: '\x1b[37m%s\x1b[0m',
+	white: '\x1b[37m\x1b[0m',
 	gray: '\x1b[90m%s\x1b[0m',
 	black: '\x1b[30m%s\x1b[0m',
 	bgCyan: '\x1b[46m%s\x1b[0m',
