@@ -1,12 +1,14 @@
-import AUTH from './auth';
-import puppeteer from 'puppeteer-extra';
-import Colors from './utils/colors';
-import Logger from './utils/logger';
-
 /**
  * This Class initializes and handles the browser to provide a
  * Browserpage to the Collector Class, which collects files from Github.
+ * @author: Florian Pürschel
  */
+
+import AUTH from './auth';
+import puppeteer from 'puppeteer-extra';
+import Logger from './utils/logger';
+import Helpers from './utils/functions';
+
 class Browser {
 	sleeptime: number = 10 * 1000;
 	url: string = 'https://github.com/login';
@@ -29,7 +31,7 @@ class Browser {
 		await page.goto(this.url);
 		await page.waitForSelector('#login_field');
 		await page.waitForSelector('#password');
-		await this.sleep(2000);
+		await Helpers.sleep(2000);
 		await page.type('#login_field', AUTH.username);
 		await page.type('#password', AUTH.password);
 		const button = await page.$x(
@@ -48,16 +50,6 @@ class Browser {
 		Logger.info('Closing the browser...');
 		await this._browser?.close();
 		Logger.info('Done.');
-	};
-
-	/**
-	 * Function to sleep for a given time to avoid IP-ban from GitHub or
-	 * giving input before elements are rendered.
-	 * @param ms - time in milliseconds
-	 */
-	sleep = (ms?: number) => {
-		const time = ms ?? this.sleeptime;
-		new Promise((resolve) => setTimeout(resolve, time));
 	};
 }
 
