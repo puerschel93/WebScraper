@@ -2,6 +2,10 @@ import AUTH from './auth';
 import puppeteer from 'puppeteer-extra';
 import Colors from './colors';
 
+/**
+ * This Class initializes and handles the browser to provide a
+ * Browserpage to the Collector Class, which collects files from Github.
+ */
 class Browser {
 	sleeptime: number = 10 * 1000;
 	url: string = 'https://github.com/login';
