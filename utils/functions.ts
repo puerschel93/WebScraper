@@ -3,6 +3,8 @@
  * which are used in the whole project. The functions are not related to
  * one topic but are useful to manage a bunch of helpful utilities.
  * @author Florian Pürschel
+ * @version 1.0.0
+ * @url www.prshl.de
  */
 
 import Logger from './logger';
