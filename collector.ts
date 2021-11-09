@@ -34,6 +34,11 @@ class Collector {
 			this.filetype = type;
 			for (const range of Helpers.ranges) {
 				this.range = range;
+
+				// Fallback for when the script is interrupted.
+				// Allows to start in the middle of the script.
+				// if (Number.parseInt(range.split('..')[0]) < 3500) continue;
+
 				while (this.pageNumber <= 95) {
 					await this.page.goto(this.buildurl(type));
 					Logger.info(
