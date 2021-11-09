@@ -13,7 +13,7 @@ import Downloader from './downloader';
 class Collector {
 	page: any;
 	filetypes: string[] = ['scss', 'less', 'styl'];
-	pageNumber: number = 39;
+	pageNumber: number = 1;
 	range: string = '';
 	filetype: string;
 
@@ -35,14 +35,6 @@ class Collector {
 			for (const range of Helpers.ranges) {
 				this.range = range;
 
-				// Fallback for when the script is interrupted.
-				// Allows to start in the middle of the script.
-				if (
-					Number.parseInt(range.split('..')[0]) < 3500 &&
-					type === 'scss'
-				)
-					continue;
-
 				while (this.pageNumber <= 95) {
 					await this.page.goto(this.buildURL(type));
 					Logger.info(
@@ -53,6 +45,7 @@ class Collector {
 					Logger.success(`Page ${this.pageNumber} collected.`);
 					this.pageNumber++;
 				}
+
 				this.pageNumber = 1;
 			}
 		}
