@@ -9,6 +9,7 @@
 import Collector from './collector';
 import Browser from './browser';
 import Logger from './utils/logger';
+import now from 'performance-now';
 
 /**
  * Main-Function that initializes the collecting mechanism
@@ -17,7 +18,7 @@ import Logger from './utils/logger';
 const main = async () => {
 	Logger.clear();
 
-	const now = performance.now();
+	const time1 = now();
 	Logger.info('Starting the file-collector.');
 
 	const browser = new Browser();
@@ -29,8 +30,8 @@ const main = async () => {
 
 	Logger.info('Finishing the the file-collector.');
 
-	const time = (performance.now() - now) / 1000 / 60 / 60;
-	Logger.info(`The file-collector took ${time} hours to finish.`);
+	const time2 = (now() - time1) / 1000 / 60 / 60;
+	Logger.info(`The file-collector took ${time2} hours to finish.`);
 	return browser.close();
 };
 
