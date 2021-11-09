@@ -40,7 +40,7 @@ class Collector {
 				// if (Number.parseInt(range.split('..')[0]) < 3500) continue;
 
 				while (this.pageNumber <= 95) {
-					await this.page.goto(this.buildurl(type));
+					await this.page.goto(this.buildURL(type));
 					Logger.info(
 						`Collecting page ${this.pageNumber} in Range ${range}...`
 					);
@@ -139,7 +139,7 @@ class Collector {
 	 * @param type The filetype to collect
 	 * @returns The url to the current page
 	 */
-	buildurl = (type: string): string =>
+	buildURL = (type: string): string =>
 		'https://github.com/search?l=&p=' +
 		this.pageNumber +
 		'&q=extension%3A' +
