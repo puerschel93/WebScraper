@@ -1,6 +1,7 @@
 import AUTH from './auth';
 import puppeteer from 'puppeteer-extra';
-import Colors from './colors';
+import Colors from './utils/colors';
+import Logger from './utils/logger';
 
 /**
  * This Class initializes and handles the browser to provide a
@@ -44,9 +45,9 @@ class Browser {
 	 * Function to close the browser after all actions are done.
 	 */
 	close = async () => {
-		console.log(Colors.yellow, 'Closing browser...');
+		Logger.info('Closing the browser...');
 		await this._browser?.close();
-		console.log(Colors.yellow, 'Done.');
+		Logger.info('Done.');
 	};
 
 	/**

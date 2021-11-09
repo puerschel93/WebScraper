@@ -1,11 +1,18 @@
 import Collector from './collector';
 import Browser from './browser';
-import Colors from './colors';
+import Logger from './utils/logger';
 
+/**
+ * Main-Function that initializes the collecting mechanism
+ * to gather files with a given file-extension.
+ */
 const main = async () => {
-	console.log(Colors.cyan, 'Starting...');
+	Logger.info('Starting the file-collector.');
+
 	const browser = new Browser(false);
 	const page = await browser.initialize();
+
+	Logger.info('Finishing the the file-collector.');
 	return browser.close();
 };
 
