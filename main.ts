@@ -25,10 +25,9 @@ const main = async () => {
 	const page = await browser.initialize();
 
 	const collector = new Collector(page);
-
 	await collector.collect();
 
-	Logger.info('Finishing the the file-collector.');
+	Logger.info('Finishing the file-collector.');
 
 	const time2 = (now() - time1) / 1000 / 60 / 60;
 	Logger.info(`The file-collector took ${time2} hours to finish.`);
