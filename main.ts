@@ -16,6 +16,8 @@ import Logger from './utils/logger';
  */
 const main = async () => {
 	Logger.clear();
+
+	const now = performance.now();
 	Logger.info('Starting the file-collector.');
 
 	const browser = new Browser();
@@ -26,6 +28,9 @@ const main = async () => {
 	await collector.collect();
 
 	Logger.info('Finishing the the file-collector.');
+
+	const time = (performance.now() - now) / 1000 / 60 / 60;
+	Logger.info(`The file-collector took ${time} hours to finish.`);
 	return browser.close();
 };
 
