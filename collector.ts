@@ -1,5 +1,3 @@
-import AUTH from './auth';
-
 class Collector {
 	type: string;
 
@@ -8,6 +6,4 @@ class Collector {
 	}
 }
 
-const c = new Collector('sass');
-
-c.octocrawl();
+export default Collector;
