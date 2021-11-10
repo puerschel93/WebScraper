@@ -9,12 +9,9 @@
 import fs from 'fs';
 
 class Parser {
-	/**
-	 *
-	 * @param file
-	 * @returns
-	 */
-	readfile(file: string): string {
-		return fs.readFileSync(file, 'utf8');
+	readDir(dir: string): string[] {
+		const files = fs.readdirSync(dir);
+		console.log(files.length);
+		return files;
 	}
 }
