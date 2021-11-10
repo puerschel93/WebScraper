@@ -12,8 +12,8 @@ import Downloader from './downloader';
 
 class Collector {
 	page: any;
-	filetypes: string[] = ['scss', 'less', 'styl'];
-	pageNumber: number = 1;
+	filetypes: string[] = ['less', 'styl'];
+	pageNumber: number = 46;
 	range: string = '';
 	filetype: string;
 
@@ -34,6 +34,13 @@ class Collector {
 			this.filetype = type;
 			for (const range of Helpers.ranges) {
 				this.range = range;
+
+				if (
+					Number.parseInt(range.split('..')[0]) < 2500 &&
+					type === 'less'
+				) {
+					continue;
+				}
 
 				while (this.pageNumber <= 95) {
 					await this.page.goto(this.buildURL(type));
