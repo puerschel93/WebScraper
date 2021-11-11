@@ -1,0 +1,125 @@
+/*
+ * This file is part of thumbor-toy project.
+ *
+ * (c) Raphaël Benitte <thumbor-toy@rbenitte.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+.header
+  z-index 200
+
+  height $header-height
+
+  position absolute
+
+  top   0
+  left  0
+  right 0
+
+  padding (($header-height - $header-inner-height) / 2) (($header-height - $header-inner-height) * 1.5 + $header-inner-height * 2) 0 (($header-height - $header-inner-height) / 2)
+
+  box-shadow 0 0 3px rgba(0, 0, 0, 0.35)
+  font-size 16px
+
+  t(background-color, 'header-bg-color')
+
+  &._has-error
+    padding-left 40px
+
+  input[type="text"]
+    vertical-align top
+    font-family consolas, menlo, monaco, monospace;
+    t(background-color, 'url-bg-color')
+    width 100%
+    height $header-inner-height
+    padding 9px 9px 9px 46px
+    box-sizing border-box
+
+  &__settings
+    @extends $unselectable
+    t(background, 'copy-btn-bg-color')
+    t(color,      'copy-btn-color')
+    position absolute
+    text-align center
+    cursor pointer
+    width       $header-inner-height
+    height      $header-inner-height
+    line-height $header-inner-height
+    top   (($header-height - $header-inner-height) / 2)
+    right (($header-height - $header-inner-height) / 2)
+    border-radius 2px
+    &:hover
+      t(background, 'copy-btn-bg-color-hover')
+      t(color,      'copy-btn-color-hover')
+
+  &__notice
+    position absolute
+    top  115%
+    left 35%
+    width 30%
+    display block
+    text-align center
+    border-radius 2px
+    padding 9px 12px
+    font-size 14px
+    t(background,  'notice-bg-color')
+    t(color,       'notice-txt-color')
+    t(box-shadow , 'notice-shadow')
+    .fa
+      margin-right 7px
+      t(color, 'notice-icon-color')
+
+.url__status
+  color $url-status-color-ok
+  width       $header-inner-height
+  height      $header-inner-height
+  line-height $header-inner-height
+  position absolute
+  font-size 20px
+  text-align center
+  top  (($header-height - $header-inner-height) / 2)
+  left (($header-height - $header-inner-height) / 2)
+  &._is-unkown
+    color $url-status-color-unknown
+  &._has-error
+    color $url-status-color-error
+
+.url__copy
+  @extends $unselectable
+  cursor pointer
+  t(background, 'copy-btn-bg-color')
+  t(color,      'copy-btn-color')
+  position absolute
+  width       $header-inner-height
+  height      $header-inner-height
+  line-height $header-inner-height
+  text-align center
+  top   (($header-height - $header-inner-height) / 2)
+  right ($header-height - $header-inner-height) + $header-inner-height
+  display block
+  border-radius 2px
+
+  &__tooltip
+    position absolute
+    top   (($header-height - $header-inner-height) / 2)
+    right (($header-height - $header-inner-height) * 1.5 + $header-inner-height * 2)
+    height      $header-inner-height
+    line-height $header-inner-height
+    padding 0 11px
+    display none
+    t(background, 'copy-btn-bg-color')
+    t(color,      'copy-btn-color')
+    font-size 12px
+    border-radius 2px
+
+.zeroclipboard-is-hover,
+.url__copy:hover
+  t(background, 'copy-btn-bg-color-hover')
+  t(color,      'copy-btn-color-hover')
+
+.zeroclipboard-is-hover + .url__copy__tooltip,
+.url__copy:hover + .url__copy__tooltip
+    display block
+
+

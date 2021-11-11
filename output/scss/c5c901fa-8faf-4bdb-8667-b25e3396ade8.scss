@@ -1,0 +1,465 @@
+.main-navigation {
+	clear: both;
+	display: none;
+	text-align: center;
+	width: 100%;
+	// background-color: #fff;
+	@media screen and (min-width: $tabwidth) {
+		clear: none;
+		width: auto;
+		display: block;
+
+	}
+	@media screen and (min-width: $deskwidth) {
+		text-align: left;
+	}
+	.menu {
+		@include transition(all ease 1s);
+		overflow: hidden;
+		display: block;
+	}
+	&.toggled .menu {
+		max-height: 1000px;
+	}
+	.menu {
+		max-height: 0;
+		@media screen and (min-width: $tabwidth) {
+			max-height: 1000px;
+		}
+	}
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		@media screen and (min-width: $tabwidth) {
+			display: flex;
+		}
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 1.5em;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+				@media screen and (min-width: $tabwidth) {
+		
+				}
+				@media screen and (min-width: $deskwidth) {
+					
+				}
+			}
+
+
+			a {
+				width: 200px;
+				@media screen and (min-width: $tabwidth) {
+		
+				}
+				@media screen and (min-width: $deskwidth) {
+					
+				}
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+	li {
+		// float: left;
+		position: relative;
+		text-align: center;
+		display: inline-block;
+		hyphens: none;
+		padding: 0 ;
+		text-transform: uppercase;
+		font-family: $font-heading;
+		font-weight: 300;
+		width: 100%;
+		@media screen and (min-width: $tabwidth) {
+			border-left: 1px solid #000;
+			line-height: 3;
+			width: auto;
+			// padding: 0 20px;
+			&:first-of-type {
+				border: 0;
+			}
+		}
+		@media screen and (min-width: $deskwidth) {
+			// padding: 0 30px;
+		}
+
+		&:hover > a,
+		&.focus > a {
+		}
+	}
+	a {
+		display: block;
+		// align-items: center;
+		text-decoration: none;
+		padding: 10px 0px;
+		color: #000;
+		@include transition(all ease .4s);
+		@media screen and (min-width: $tabwidth) {
+			padding: 0% 20px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			padding: 0% 30px;
+		}
+		&:hover {
+			background-color: rgba(#fff, 1);
+			color: $color-black;
+		}
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+	// background-color: $color-green;
+	ul.sub-menu {
+		background-color: rgba(255,255,255,.1);
+	}
+	
+}
+
+
+@media screen and (min-width: $tabwidth) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		// display: block;
+	}
+}
+button.menu-toggle {
+	border: 0px;
+	text-shadow: none;
+	background-color: #ccc;
+	color: #fff;
+	box-shadow: none;
+	width: auto;
+	display: inline-block;
+	margin: 10px auto;
+	border-radius: 0;
+	text-transform: uppercase;
+	font: {
+		
+		weight :300;
+		size: 20px;
+	}
+	
+	@media screen and (min-width: $tabwidth) {
+		display: none;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+/*  BURGER
+========================================== */
+// body.logged-in .burger {
+// 	top: 0px;
+// }
+.burger {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0px;
+	left: 15px;
+	border-radius: 4px;
+	z-index: 100002;
+	@media screen and (min-width: $tabwidth) {
+		display: none;
+	}
+  
+	span {
+		@include burger(30px, 3px, 6px, #fff); // gray
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -15px;
+		margin-top: -1.5px;
+	}
+  
+	&.clicked {
+		span {
+			@include burger-to-cross;
+			
+			&:before, &:after {
+				background-color: #fff;
+			}
+		}
+	}
+  
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+
+/*  NAV
+========================================== */
+
+nav.mobilemenu {
+  // background-color: blue;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  height: 100%;
+  max-width: 515px;
+  width: 100%;
+  padding: 100px 40px 60px 40px;
+  overflow-y: auto;
+  z-index: 100001;
+  @include transform(translateX(100%));
+  @include transition(transform .55s cubic-bezier(0.785, 0.135, 0.15, 0.86));
+  @media screen and (min-width: $tabwidth) {
+  	display: none;
+  }
+  
+  &.show {
+    @include transform(translateX(0px));
+    
+    ul.mobilemain {
+      li {
+        @include transform(translateX(0px));
+        opacity: 1;
+        color: #fff;
+        text-transform: uppercase;
+        cursor:pointer;
+        @for $i from 1 to 10 { 
+          &:nth-child(#{$i}) {
+            transition-delay: $i * 0.15s;
+          }
+        }
+        ul.dropdown {
+        	max-height: 0;
+        	overflow: hidden;
+        	li {
+        		list-style: none;
+        		font-size: 14px;
+        	}
+        }
+        ul.dropdown.active {
+        	max-height: 1000px;
+        }
+      }
+    }
+    
+    .about, .social, ul.sub {
+      @include transform(translateY(0px));
+      opacity: 1;
+      transition-delay: .85s;
+    }
+  }
+  
+ 
+   
+  ul.mobilemain {
+    list-style-type: none;
+    margin: 0;
+    
+    li {
+      margin-bottom: 20px;
+      @include transform(translateX(40px));
+      opacity: 0;
+     font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      padding: 10px 0;
+      @include transition(all .3s ease);
+      
+      &:last-of-type {
+        margin-bottom: 0px;
+      }
+      
+      a {
+        color: $white;
+        // font-family: $raleway;
+         text-decoration: none;
+        display: block;
+        
+        
+        @include transition(all .3s ease);
+        
+        span {
+          color: yellow;
+        }
+        
+        &:hover {
+          // color: yellow;
+        }
+      }
+    }
+    ul.dropdown {
+    	@include transition(all .5s ease);
+    	li {
+    		margin: 0;
+    	}
+    }
+  }
+  
+  .about {
+    margin-top: 40px;
+    @include transform(translateY(30px));
+    opacity: 0;
+    @include transition(all .4s ease);
+    
+    p {
+      color: $white;
+      
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+      line-height: 170%;
+    }
+  }
+  
+  .social {
+    margin-top: 40px;
+    position: relative;
+    padding-bottom: 30px;
+    @include transform(translateY(30px));
+    opacity: 0;
+    @include transition(all .4s ease);
+    
+    &:after {
+      content: "";
+      width: 230px;
+      height: 2px;
+      background-color: yellow;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    
+    a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-right: 25px;
+      
+      &:last-of-type {
+        margin-right: 0px;
+      }
+      
+      &:hover {
+        svg {
+          path, circle {
+            fill: yellow;
+          }
+        }
+      }
+      
+      svg {
+        width: 100%;
+        height: 100%;
+        
+        path, circle {
+          fill: $white;
+          @include transition(all .3s ease);
+        }
+      }
+    }
+  }
+  
+  ul.sub {
+    list-style-type: none;
+    margin-top: 40px;
+    @include transform(translateY(30px));
+    opacity: 0;
+    @include transition(all .4s ease);
+    
+    li {
+      margin-bottom: 10px;
+      
+      &:last-of-type {
+        margin-bottom: 0px;
+      }
+      
+      a {
+        color: $white;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        @include transition(all .3s ease);
+        
+        &:hover {
+          color: yellow;
+        }
+      }
+    }
+  }
+}
+
+
+/*  OVERLAY
+========================================== */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height:100%;
+  @include transition(all 0.3s ease-in-out);
+  background-color: yellow;
+  opacity: 0;
+  visibility: hidden;
+  
+  &.show {
+    opacity: 0.8;
+    visibility: visible;
+  }
+}

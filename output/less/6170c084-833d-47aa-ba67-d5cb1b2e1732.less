@@ -1,0 +1,580 @@
+iframe {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  z-index: 9;
+}
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.726);
+  position: fixed;
+  z-index: 7;
+  display: none;
+  cursor: pointer;
+
+  .text1 {
+    position: absolute;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    left: 50%;
+    top: 20px;
+    transform: translate(-50%, 0);
+    font-weight: bold;
+  }
+}
+
+// 顶部banner
+.banner-Box {
+  width: 100%;
+  height: 600px;
+  background-color: #101010;
+
+  .bannerCnt {
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .leftTextGroup {
+      display: flex;
+      flex-direction: column;
+      margin-top: 132px;
+
+      p.hi {
+        display: flex;
+        font-size: 30px;
+        color: #F5F5F7;
+        line-height: 42px;
+        align-items: center;
+        margin-bottom: 7px;
+
+        .hello-icon {
+          width: 30px;
+          height: 30px;
+          margin-right: 5px;
+        }
+      }
+
+      .myName {
+        font-size: 58px;
+        font-weight: 600;
+        color: #F5F5F7;
+        line-height: 81px;
+        letter-spacing: 2px;
+        margin-bottom: 7px;
+
+        .color {
+          color: #36BC77;
+        }
+      }
+
+      .introduction {
+        font-weight: 400;
+        color: #F5F5F7;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+
+        .beer-icon {
+          width: 17px;
+          margin-left: 3px;
+        }
+      }
+    }
+
+    .rightIMG {
+      width: 340px;
+      height: 340px;
+      margin-top: 87px;
+      margin-right: 36px;
+      position: relative;
+
+      .Sketch,
+      .Ps,
+      .Figma,
+      .Ae,
+      .Vue,
+      .HTML,
+      .CSS {
+        height: 13px;
+        width: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        opacity: 0;
+      }
+
+      .CSS {
+        transition: all 0.3s;
+      }
+
+      .Ae {
+        transition: all 0.35s;
+      }
+
+      .HTML {
+        transition: all 0.4s;
+      }
+
+      .Vue {
+        transition: all 0.45s;
+      }
+
+      .Figma {
+        transition: all 0.5s;
+      }
+
+      .Sketch {
+        transition: all 0.55s;
+      }
+
+      .Ps {
+        transition: all 0.6s;
+
+      }
+
+      .Figma {
+        height: 18px;
+      }
+
+      .WWDC {
+        width: 340px;
+        height: 340px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+    }
+
+    .rightIMG:hover {
+
+      .WWDC {
+        transform: scale(1.05);
+      }
+
+      .Ps {
+        opacity: 70%;
+        transform: translate(136px, 108px);
+      }
+
+      .Sketch {
+        opacity: 70%;
+        transform: translate(150px, 0px);
+      }
+
+      .Figma {
+        opacity: 70%;
+        transform: translate(120px, -106px);
+      }
+
+      .Vue {
+        opacity: 70%;
+        transform: translate(-30px, -185px);
+      }
+
+      .HTML {
+        opacity: 70%;
+        transform: translate(-175px, -106px);
+      }
+
+      .Ae {
+        opacity: 70%;
+        transform: translate(-188px, 0px);
+      }
+
+      .CSS {
+        opacity: 70%;
+        transform: translate(-166px, 108px);
+      }
+    }
+
+    .arrowBottomGroup {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+
+      .text {
+        font-size: 14px;
+        font-weight: 400;
+        color: #999999;
+        line-height: 22px;
+        opacity: 0%;
+        animation-name: text;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+      }
+
+      .arrowBottom-icon {
+        width: 16px;
+        height: 16px;
+        opacity: 0;
+        animation-name: arrowBottom;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-delay: 2s;
+      }
+
+      @keyframes text {
+        50% {
+          opacity: 70%;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes arrowBottom {
+        50% {
+          transform: translate(0px, 10px);
+          opacity: 70%;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+// 作品集内容区
+.Portfolio-Box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .white {
+    background-color: #fff;
+  }
+
+  .gray {
+    background-color: #F8F8F8;
+  }
+
+  // 翻转左图右文
+  .flip {
+    flex-flow: row-reverse !important;
+  }
+
+  .PortfolioRow {
+    width: 100%;
+    height: 564px;
+
+    .PortfolioRowCnt {
+      width: 1200px;
+      height: 564px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .textGroup {
+        width: 618px;
+        height: 364px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .title {
+          font-size: 42px;
+          font-weight: 800;
+          color: #1D1D1F;
+          line-height: 42px;
+          letter-spacing: 1px;
+        }
+
+        // 进度条
+        .progressBar {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+
+          .lineBox {
+            width: 218px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #D8D8D8;
+            position: relative;
+
+            .lineCnt {
+              height: 10px;
+              border-radius: 5px;
+              background-color: #101010;
+              position: absolute;
+              top: 0;
+              left: 0;
+              transition: all 1s;
+            }
+          }
+
+          .numGroup {
+            width: 37px;
+            height: 12px;
+            display: flex;
+            align-items: center;
+
+            .num {
+              font-size: 12px;
+              margin-left: 8px;
+              font-weight: 400;
+              color: #86868B;
+              line-height: 12px;
+            }
+
+            .symbol {
+              font-size: 12px;
+              font-weight: 400;
+              color: #86868B;
+              line-height: 12px;
+              display: none;
+            }
+          }
+        }
+
+        .text {
+          font-size: 16px;
+          font-weight: 500;
+          color: #333333;
+          line-height: 24px;
+          margin: 20px 0;
+          text-align: center;
+        }
+
+        .detail {
+          font-size: 14px;
+          font-weight: 500;
+          color: #0066CC;
+          line-height: 20px;
+          display: flex;
+          align-items: center;
+          transition: all 0.3s;
+
+          .arrowRight-icon {
+            width: 15px;
+            height: 15px;
+            transition: all 0.3s;
+          }
+        }
+
+        .detail:hover {
+          .arrowRight-icon {
+            opacity: 50%;
+            transform: translate(3px, 0px);
+          }
+
+          color: #0066ccda;
+        }
+      }
+
+      .imgGroup {
+        overflow: hidden;
+        border-radius: 15px;
+        width: 572px;
+        height: 364px;
+
+        .PortfolioImg {
+          width: 572px;
+          height: 364px;
+          background-position: center !important;
+          background-size: cover !important;
+          transition: all 0.3s;
+        }
+      }
+
+      .imgGroup:hover {
+        .PortfolioImg {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+// 正在做的
+.doing-Box {
+  width: 100%;
+  background-color: #fff;
+
+  .doingCnt {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+    box-sizing: border-box;
+
+    .doingTitle {
+      font-size: 32px;
+      font-weight: 800;
+      color: #1D1D1F;
+      line-height: 53px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 32px;
+
+      .doing-icon {
+        width: 26px;
+        margin-left: 10px;
+      }
+    }
+
+    .doingGroup {
+      width: 1200px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .doingRow {
+        display: flex;
+        flex-direction: column;
+        margin-right: 22px;
+        margin-bottom: 60px;
+
+        .img-Box {
+          width: 385px;
+          height: 280px;
+          border-radius: 12px;
+          overflow: hidden;
+
+          .doingCover {
+            width: 385px;
+            height: 280px;
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+          }
+
+          .doingCover:hover {
+            transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+          }
+        }
+
+        .textGroup {
+          display: flex;
+          flex-direction: column;
+          margin-top: 10px;
+
+          .doingTitle {
+            font-size: 16px;
+            color: #1D1D1F;
+            line-height: 25px;
+            margin-bottom: 3px;
+          }
+
+          .description {
+            font-size: 14px;
+            color: #1D1D1F;
+            line-height: 20px;
+          }
+        }
+      }
+
+      .doingRow:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// 学习中
+.learning-Box {
+  width: 100%;
+  background-color: #fff;
+
+  .learningCnt {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0 150px 0;
+    box-sizing: border-box;
+    border-top: 1px dashed #f0f0f0;
+
+    .learningTitle {
+      font-size: 32px;
+      font-weight: 800;
+      color: #1D1D1F;
+      line-height: 53px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 32px;
+
+      .learning-icon {
+        width: 38px;
+        margin-left: 10px;
+      }
+    }
+
+    .learningGroup {
+      width: 1200px;
+      display: flex;
+      justify-content: space-around;
+
+      .learningRow {
+        width: 370px;
+        height: 100px;
+        background: #F5F5F5;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        .left {
+          width: 60px;
+          height: 60px;
+          margin-right: 18px;
+
+          img {
+            width: 60px;
+            height: 60px;
+            transition: all 0.3s;
+          }
+        }
+
+        .rightGroup {
+          display: flex;
+          flex-direction: column;
+
+          p {
+            font-size: 20px;
+            font-weight: 800;
+            color: #3C3C3C;
+            line-height: 28px;
+            margin-bottom: 4px;
+          }
+
+          span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #3C3C3C;
+            line-height: 20px;
+          }
+        }
+      }
+
+      .learningRow:hover {
+        transform: translateY(-5px);
+
+        .left img {
+          transform: rotate(-15deg);
+        }
+      }
+    }
+  }
+}

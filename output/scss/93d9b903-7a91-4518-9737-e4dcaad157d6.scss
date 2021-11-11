@@ -1,0 +1,59 @@
+/* css properties util */
+@mixin flex_set_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex_set_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex_set_space_between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin box_up {
+  box-shadow:
+    -3px -3px 5px #fff,
+    3px 3px 5px #aeaec040;
+}
+
+@mixin background-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin exclude_topbar {
+  width: 100%;
+  position: absolute;
+  top: 70px;
+  bottom: 0;
+}
+
+.class_flex_center {
+  @include flex_set_center;
+}
+
+/* color */
+$light_gray: #BDBDBD;
+$primary_pink: #FFAB91;
+
+/* box-shadow */
+@mixin box_shadow_up {
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 10px;
+}
+
+/* sizes */
+$topbar_height: 70px;
+
+/* export */
+:export {
+  primarypink: $primary_pink;
+}

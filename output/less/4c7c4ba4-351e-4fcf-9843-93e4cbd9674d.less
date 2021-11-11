@@ -1,0 +1,196 @@
+@import './base.less';
+
+@media @400 {
+    body {
+        header {
+            nav {
+                width: 115%;
+            }
+        }
+        main {
+            .about-start {
+                img {
+                    width: 35%;
+                }
+            }
+            .project-card {
+                img {
+                    width: 75%;
+                }
+            }
+            .smallRow {
+                text-align: center;
+                .column {
+                    text-align: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+@media @530 {
+    body {
+        header {
+            nav {
+                width: 150%;
+            }
+        }
+        main {
+            .about-start {
+                img {
+                    width: 30%;
+                }
+            }
+            .resume {
+                .cResume {
+                    .smallResume {
+                        display: none;
+                    }
+                    .skills {
+                        .flexrow();
+                        flex-wrap: wrap;
+                        
+                        li {
+                            margin: .5em;
+                            .cursiveSize12();
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media @730 {
+    body {
+        header {
+            width: 89%;
+            .head {
+                flex-direction: row;
+                img {
+                    display: flex;
+                    width: 14%;
+                    border-radius: 50%;
+                    margin-right: 1em;
+                }
+                .img {
+                    width: 140px;
+                }
+            }
+            nav {
+                width: 95%;
+                .nav-small {
+                    display: none;
+                }
+                .navbar {
+                    width: 100%;
+                    .flexrow();
+                    justify-content: space-around;
+                    .nav-option {
+                        text-decoration: none;
+                        cursor: pointer;
+                        font-family: 'Coming Soon', cursive;
+                        color: inherit;
+
+                        &:hover {
+                            background-color: @linkbg;
+                        }
+                    }
+                    
+                    .clicked {
+                        font-weight: bold;
+                        .cursiveSize12();
+                        background-color: @linkbg;
+                        padding: .2em 1em;
+                    }
+                }
+            }
+        }
+        main {
+            .flexcolumn();
+            .about-start {
+                flex-direction: row;
+                .text {
+                    width: 65%;
+                    margin-right: 1em;
+                }
+                img {
+                    width: 25%;
+                }
+                .img {
+                    max-width: 200px
+                }
+            }
+            .row {
+                .flexrow();
+                align-items: flex-start;
+
+                .column {
+                    .flexcolumn();
+                    margin: .5em;
+                }
+                .data {
+                    margin: 1em;
+                }
+                form {
+                    margin: 1em;
+
+                    section {
+                        .flexrow();
+
+                        label {
+                            margin: 0 .5em;
+                        }
+                    }
+                }
+            }
+            .resume {
+                width: 100%;
+                .flexrow();
+                align-items: flex-start;
+
+                .cResume {
+                    .flexcolumn();
+                    width: 45%;
+                    height: 95%;
+
+                    .skills {
+                        .flexrow();
+                        flex-wrap: wrap;
+
+                        li {
+                            margin: .5em;
+                            padding: .2em;
+                        }
+                    }
+                }
+            }
+            .data {
+                align-items: flex-start;
+
+                .column {
+                    margin: 0 1em;
+                }
+            }
+            .column {
+                .row {
+                    flex-wrap: wrap;
+
+                    .project-card {
+                        width: 300px;
+                        height: 300px;
+                        margin: 1em;
+                    }
+                }
+            }
+            .smallContact {
+                display: none;
+            }
+            .contact {
+                .flexcolumn();
+            }
+        }
+    }
+}
+

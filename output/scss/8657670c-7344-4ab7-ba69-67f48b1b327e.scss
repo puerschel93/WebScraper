@@ -1,0 +1,532 @@
+.html-component-wrapper {
+  float: none;
+  max-width: 100%;
+
+  &:not(:last-child):not(:first-child) {
+    margin: 10px 0;
+  }
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  // table {
+  //   border-collapse: collapse;
+  //   margin: 0;
+  //   padding: 0;
+  //   width: 100%;
+  //   table-layout: fixed;
+  // }
+
+  // table caption {
+  //   font-size: 1.5em;
+  //   margin: 0.5em 0 0.75em;
+  // }
+
+  // table tr {
+  //   border-bottom: 1px solid #ddd;
+  //   padding: 0.35em;
+  // }
+
+  // table th,
+  // table td {
+  //   padding: 0.625em;
+  //   border: 1px solid #ccc;
+  // }
+
+  // table th {
+  //   font-size: 0.85em;
+  // }
+
+  // @media  (max-width: 767px) {
+  //   table {
+  //     font-size: 16px;
+  //     line-height: 1.5em;
+  //   }
+  // }
+
+  // @media (max-width: 480px) {
+  //   table {
+  //     border: 0;
+  //     line-height: 1em;
+  //     width: 100% !important;
+  //   }
+
+  //   table caption {
+  //     font-size: 1.3em;
+  //   }
+
+  //   table thead {
+  //     border: none;
+  //     clip: rect(0 0 0 0);
+  //     height: 1px;
+  //     margin: -1px;
+  //     overflow: hidden;
+  //     padding: 0;
+  //     position: absolute;
+  //     width: 1px;
+  //   }
+
+  //   table tr {
+  //     border-bottom: 3px solid #ddd;
+  //     display: block;
+  //     margin-bottom: 0.625em;
+  //   }
+
+  //   table td {
+  //     display: block;
+  //   }
+
+  //   table > tbody > tr > td {
+  //     border: 1px solid #fff !important;
+  //   }
+  // }
+  .math-tex {
+    display: inline !important;
+    .mjx-chtml {
+      font-size: 100% !important;
+    }
+  }
+}
+
+// * + .html-component-wrapper {
+//   margin-top: 20px;
+// }
+.html-component-wrapper p {
+  margin-bottom: 0;
+}
+
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.text-italic {
+  font-style: italic !important;
+}
+
+.text-strike {
+  text-decoration: line-through !important;
+}
+
+.fw-100 {
+  font-weight: 100 !important;
+}
+
+.fw-200 {
+  font-weight: 200 !important;
+}
+
+.fw-300 {
+  font-weight: 300 !important;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-700 {
+  font-weight: 700 !important;
+}
+
+.fw-800 {
+  font-weight: 800 !important;
+}
+
+.fw-900 {
+  font-weight: 900 !important;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.content-title {
+  font-family: #{$font-family};
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.08;
+  letter-spacing: normal;
+  color: #444444;
+  width: 100%;
+}
+
+.separator-title {
+  border-bottom: 2px solid #6d7278;
+}
+
+$font-size-list: 10 11 12 13 14 15 16 17 18 19 20;
+@each $current-size in $font-size-list {
+  .fs-#{$current-size} {
+    font-size: #{$current-size}px;
+  }
+}
+
+.html-content-text {
+  font-family: #{$font-family};
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.45;
+  letter-spacing: normal;
+  color: #444444;
+}
+.themecolor {
+  color: white !important;
+}
+
+.col-count-2 {
+  column-count: 2;
+}
+
+.col-count-3 {
+  column-count: 3;
+}
+
+.col-count-4 {
+  column-count: 4;
+}
+
+.html-image-right {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  .html-content-text {
+    padding-#{$end-direction}: 10px;
+    display: flex;
+    flex: 1;
+    min-width: 150px;
+  }
+}
+.html-image-left {
+  display: flex;
+  flex-wrap: wrap;
+  .html-content-text {
+    padding-#{$start-direction}: 10px;
+    display: flex;
+    min-width: 150px;
+    flex: 1;
+  }
+}
+
+.expimage {
+  width: 100%;
+  max-width: 100%;
+}
+
+.column_border {
+  &3 {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    padding: 40px 30px;
+    border: 2px solid #1bb3e2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .top-right,
+    .top-left,
+    .bottom-right,
+    .bottom-left {
+      position: absolute;
+      width: 27px;
+      height: 27px;
+      background: url("../common/images/quran-style-1.svg");
+    }
+    &:before {
+      background: url("../common/images/quran-style-extra-1.svg");
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 178px;
+      height: 23px;
+      display: block;
+      content: "";
+    }
+
+    &:after {
+      background: url("../common/images/quran-style-extra-1.svg");
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%) scaleY(-1);
+      width: 178px;
+      height: 23px;
+      display: block;
+      content: "";
+    }
+    .top-right {
+      top: -2px;
+      right: -2px;
+      transform: rotate(90deg);
+    }
+    .top-left {
+      top: -2px;
+      left: -2px;
+    }
+    .bottom-right {
+      bottom: -2px;
+      right: -2px;
+      transform: rotate(180deg);
+    }
+    .bottom-left {
+      bottom: -2px;
+      left: -2px;
+      transform: rotate(270deg);
+    }
+  }
+  &4 {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    padding: 40px 30px;
+    border: 2px solid #00b176;
+    min-height: 160px;
+    margin-bottom: 11px;
+    margin-top: 11px;
+    .top-right,
+    .top-left,
+    .bottom-right,
+    .bottom-left {
+      position: absolute;
+      width: 69px;
+      height: 69px;
+      background: url("../common/images/quran-style-2.svg");
+    }
+    &:before {
+      background: url("../common/images/quran-style-extra-2.svg");
+      position: absolute;
+      bottom: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 79px;
+      height: 24px;
+      display: block;
+      content: "";
+    }
+
+    &:after {
+      background: url("../common/images/quran-style-extra-2.svg");
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%) scaleY(-1);
+      width: 79px;
+      height: 24px;
+      display: block;
+      content: "";
+    }
+    .top-right {
+      top: 0;
+      right: 0;
+      transform: rotate(90deg);
+    }
+    .top-left {
+      top: 0;
+      left: 0;
+    }
+    .bottom-right {
+      bottom: 0;
+      right: 0;
+      transform: rotate(180deg);
+    }
+    .bottom-left {
+      bottom: 0;
+      left: 0;
+      transform: rotate(270deg);
+    }
+  }
+  &5 {
+    display: inline-block;
+    width: calc(100% - 46px);
+    position: relative;
+    padding: 40px 30px;
+    border: 2px solid #16acb7;
+    // min-height: 170px;
+    margin: 27px 23px;
+    .top-right,
+    .top-left,
+    .bottom-right,
+    .bottom-left {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: url("../common/images/quran-style-3.svg");
+    }
+    &:before {
+      background: url("../common/images/quran-style-extra-3.svg");
+      position: absolute;
+      bottom: -29px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 49px;
+      display: block;
+      content: "";
+    }
+    &:after {
+      background: url("../common/images/quran-style-extra-3.svg");
+      position: absolute;
+      top: -29px;
+      left: 50%;
+      transform: translateX(-50%) scaleY(-1);
+      width: 80px;
+      height: 49px;
+      display: block;
+      content: "";
+    }
+    .top-right {
+      top: -25px;
+      right: -25px;
+      transform: rotate(90deg);
+    }
+    .top-left {
+      top: -25px;
+      left: -25px;
+    }
+    .bottom-right {
+      bottom: -25px;
+      right: -25px;
+      transform: rotate(180deg);
+    }
+    .bottom-left {
+      bottom: -25px;
+      left: -25px;
+      transform: rotate(270deg);
+    }
+  }
+  &6 {
+    display: inline-block;
+    width: calc(100% - 28px);
+    position: relative;
+    padding: 40px 30px;
+    border: 2px solid #c3a24b;
+    // min-height: 170px;
+    margin: 27px 14px;
+    &:before {
+      background: url("../common/images/quran-style-extra-4.svg");
+      position: absolute;
+      bottom: -29px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 49px;
+      display: block;
+      content: "";
+    }
+
+    &:after {
+      background: url("../common/images/quran-style-extra-4.svg");
+      position: absolute;
+      top: -29px;
+      left: 50%;
+      transform: translateX(-50%) scaleY(-1);
+      width: 80px;
+      height: 49px;
+      display: block;
+      content: "";
+    }
+
+    .top-right,
+    .top-left,
+    .bottom-right,
+    .bottom-left {
+      position: absolute;
+      width: 107px;
+      height: 49px;
+      background: url("../common/images/quran-style-4.svg");
+    }
+    .top-right {
+      top: -17px;
+      right: -15px;
+      transform: scaleX(-1);
+    }
+    .top-left {
+      top: -17px;
+      left: -15px;
+    }
+    .bottom-right {
+      bottom: -17px;
+      right: -15px;
+      transform: rotate(180deg);
+    }
+    .bottom-left {
+      bottom: -17px;
+      left: -15px;
+      transform: rotate(180deg) scaleX(-1);
+    }
+  }
+
+  &7 {
+    display: inline-block;
+    width: calc(100% - 28px);
+    position: relative;
+    padding: 40px 30px;
+    border: 2px solid #604c1d;
+    // min-height: 170px;
+    margin: 18px;
+    .top-right,
+    .top-left,
+    .bottom-right,
+    .bottom-left {
+      position: absolute;
+      width: 200px;
+      height: 38px;
+      background: url("../common/images/quran-style-7.svg");
+    }
+    .top-left {
+      top: 50%;
+      left: -101px;
+      transform: translateY(-50%) rotate(90deg);
+    }
+    .top-right {
+      top: 50%;
+      right: -101px;
+      transform: translateY(-50%) rotate(90deg);
+    }
+    .bottom-right {
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .bottom-left {
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.html-img-inline img {
+  display: inline;
+}

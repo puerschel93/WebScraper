@@ -1,0 +1,368 @@
+.insta-container
+	background-size cover
+	background-position 50% 100%
+	height  620px
+	position relative
+	overflow hidden
+	position absolute
+	width  839px
+	right -60px
+	+above(1080px)
+		.insta-slide.swiper-slide
+			width 270px
+			height 546px
+			border 1px solid #f0f0f0
+			.insta-user-pic
+				top 255px
+		.swiper-container-horizontal > .swiper-pagination
+			bottom -29px
+	+below(1080px)
+		position: static
+		background: url("../img/header.jpg") no-repeat
+		background-size: cover
+		background-position: 100% 45%
+		.overlay
+			display none
+		
+
+.instagram-media
+	box-shadow none !important
+
+.number-block__instas
+	max-width 640px
+	// overflow-x scroll
+	overflow hidden
+	height inherit
+	position relative
+	+below(1080px)
+		max-width 100%
+	// .number-block__instas-container
+	// 	width 130%
+	// 	overflow hidden
+
+.insta-block
+	size 128px
+	background-color white
+	position relative
+	float left
+	.center
+		width 100%
+	.bottom
+		position absolute
+		width 100%
+		bottom 0
+		
+.insta-block__img-border
+	width 72px
+	height 72px
+	border-radius 50%
+	border 2px solid blue
+	position relative
+	margin auto
+.insta-block__img
+	margin auto
+	border-radius 50%
+	@extend $absolute-cover
+	width 62px
+	height 62px
+	overflow hidden
+	&.is-small
+		border none
+		padding 0
+		size 32px
+		position absolute
+		top -90px
+
+.insta-block__name
+	color blue
+	fs(15px)
+	upcase()
+	letter-spacing 2px
+	line-height 1.8
+	font-family boldcond
+
+.insta-block__info
+	fs(7px)
+	font-family regular
+	color gray
+	letter-spacing 2px
+	upcase()
+	a
+		color blue !important
+		&:link
+			color blue !important
+	span
+		size 9px
+		display inline-block
+		vertical-align middle
+		margin-right 5px
+		position: relative
+		top -1px
+		background: url(unquote('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIxMS4zcHgiIGhlaWdodD0iMTFweCIgdmlld0JveD0iMCAwIDExLjMgMTEiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDExLjMgMTEiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGcgaWQ9Il94MzBfRkttcldfM18iPg0KCTxnPg0KCQk8Zz4NCgkJCTxwYXRoIGZpbGw9IiM5ODk4OTgiIGQ9Ik01LjcsMTFjLTEuNCwwLTIuOSwwLTQuMywwYy0wLjIsMC0wLjMsMC0wLjUtMC4xYy0wLjItMC4xLTAuMy0wLjItMC41LTAuM0MwLjIsMTAuNCwwLjEsMTAuMiwwLDkuOQ0KCQkJCWMwLTAuMSwwLTAuMSwwLTAuMmMwLDAsMC0wLjEsMC0wLjFjMC0yLjcsMC01LjUsMC04LjJjMC0wLjEsMC0wLjEsMC0wLjJjMC0wLjQsMC4yLTAuOCwwLjYtMUMwLjgsMC4xLDEuMSwwLDEuMywwDQoJCQkJYzAsMCwwLjEsMCwwLjEsMEM0LjIsMCw3LjEsMCwxMCwwYzAuMiwwLDAuMywwLDAuNSwwLjFjMC40LDAuMiwwLjcsMC41LDAuOCwxYzAsMC4xLDAsMC4yLDAsMC4yYzAsMS4yLDAsMi4zLDAsMy41DQoJCQkJYzAsMS42LDAsMy4zLDAsNC45YzAsMC4yLTAuMSwwLjUtMC4yLDAuN2MtMC4yLDAuMy0wLjUsMC41LTAuOCwwLjZjLTAuMSwwLTAuMiwwLTAuMywwYy0wLjUsMC0xLjEsMC0xLjYsMEM3LjUsMTEsNi42LDExLDUuNywxMQ0KCQkJCXogTTEuMyw0LjZjMCwwLDAsMC4xLDAsMC4xYzAsMS41LDAsMywwLDQuNGMwLDAsMCwwLjEsMCwwLjFjMCwwLjIsMC4yLDAuNCwwLjQsMC40YzAsMCwwLjEsMCwwLjEsMGMyLjYsMCw1LjEsMCw3LjcsMA0KCQkJCWMwLDAsMC4xLDAsMC4xLDBjMC4yLDAsMC4zLTAuMSwwLjQtMC4zYzAtMC4xLDAtMC4xLDAtMC4yYzAtMS41LDAtMywwLTQuNWMwLDAsMCwwLDAtMC4xYzAsMCwwLDAsMCwwYy0wLjEsMC0wLjYsMC0wLjksMA0KCQkJCWMwLDAsMCwwLTAuMSwwYzAsMCwwLDAsMCwwLjFjMCwwLjIsMC4xLDAuNCwwLjEsMC42YzAsMC4zLDAsMC41LDAsMC44QzksNi41LDguOCw2LjksOC42LDcuM0M4LjQsNy41LDguMyw3LjcsOC4xLDcuOQ0KCQkJCUM3LjcsOC4yLDcuMyw4LjUsNi45LDguNkM2LjYsOC43LDYuMyw4LjgsNiw4LjhjLTAuNCwwLTAuNywwLTEtMC4xQzQuNCw4LjcsNCw4LjUsMy42LDguMkMzLjQsOCwzLjIsNy45LDMsNy43DQoJCQkJQzIuOCw3LjQsMi42LDcuMSwyLjUsNi44QzIuMyw2LjQsMi4yLDUuOSwyLjIsNS41YzAtMC4xLDAtMC4yLDAtMC4zYzAtMC4yLDAtMC4zLDAuMS0wLjVjMCwwLDAsMCwwLTAuMWMwLDAsMCwwLDAsMA0KCQkJCUMyLDQuNiwxLjQsNC42LDEuMyw0LjZ6IE01LjYsMy40Yy0wLjEsMC0wLjIsMC0wLjMsMEM0LjgsMy41LDQuNSwzLjcsNC4xLDRDMy45LDQuMiwzLjcsNC41LDMuNiw0LjhDMy41LDUsMy41LDUuMywzLjUsNS41DQoJCQkJYzAsMC4zLDAuMSwwLjUsMC4yLDAuN0MzLjgsNi42LDQsNi45LDQuMyw3LjFjMC41LDAuNCwxLDAuNSwxLjcsMC41YzAuNCwwLDAuOC0wLjIsMS4xLTAuNGMwLjItMC4yLDAuNC0wLjQsMC42LTAuNw0KCQkJCWMwLjItMC40LDAuMy0wLjgsMC4yLTEuM2MwLTAuMy0wLjEtMC42LTAuMy0wLjhDNy4zLDQuMSw3LjEsMy45LDYuOSwzLjdDNi41LDMuNSw2LjEsMy40LDUuNiwzLjR6IE04LjksMy40YzAuMiwwLDAuMywwLDAuNSwwDQoJCQkJYzAuMSwwLDAuMSwwLDAuMiwwYzAuMSwwLDAuMi0wLjEsMC4zLTAuMkMxMCwzLjEsMTAsMywxMCwzYzAtMC40LDAtMC44LDAtMS4zYzAsMCwwLDAsMCwwYzAtMC4yLTAuMS0wLjMtMC4yLTAuNA0KCQkJCWMtMC4xLDAtMC4xLDAtMC4yLDBjLTAuNCwwLTAuOCwwLTEuMiwwYzAsMC0wLjEsMC0wLjEsMEM4LDEuMyw3LjksMS41LDcuOCwxLjZjMCwwLDAsMC4xLDAsMC4xYzAsMC40LDAsMC44LDAsMS4yYzAsMCwwLDAsMCwwLjENCgkJCQljMCwwLjIsMC4xLDAuMywwLjMsMC40YzAsMCwwLjEsMCwwLjEsMEM4LjUsMy40LDguNywzLjQsOC45LDMuNHoiLz4NCgkJPC9nPg0KCTwvZz4NCjwvZz4NCjwvc3ZnPg0K')) no-repeat; 
+		background-size: cover;
+
+.insta-block__info-bg
+	background-color rgba(deepblack,0.9)
+	margin 0 10px
+	padding 30px 0 10px
+
+.insta-overlay
+	background-color white
+	clearfix()
+	@extend $absolute-cover
+	width 588px
+	height 326px
+	text-align left
+	z-index 0
+	opacity 0
+	transition 0.30s ease-in
+	a.button.instabutton
+		padding 10px 10px 10px 10px
+		fs(12px)
+		img
+			width 12px !important
+			height 12px !important
+			top -1px !important
+	&.is-active
+		z-index 1
+		opacity 1
+	.close-button
+		size 20px
+		position absolute
+		top 18px
+		right 18px
+	.center
+		width 75%
+		margin-left 20px
+	p
+		fs(18px)
+		em
+			font-family boldcondit
+	
+.insta-overlay__col
+	position: relative
+	span(1/2)
+	height inherit
+	&.insta-overlay__col--right
+		float right
+
+.insta-overlay__name
+	fs(44px)
+	font-family boldcond
+	padding 5px 0 0px 0
+	
+.has-happened .insta-overlay__name
+	padding-bottom 5px
+
+.insta-user
+	fs(16px)
+	font-family regular
+	
+.insta-name
+	font-family boldcond
+	fs(30px)
+	// padding-bottom 10px
+	
+.insta-overlay__user
+	fs(14px)
+	font-family regular
+
+.has-happened .insta-overlay__name
+	fs(32px)
+	font-family medcond
+	
+	
+.insta-overlay__large-text 
+	fs(48px)
+	font-family medcond
+	padding-top 6px
+	
+.insta-overlay__small-text
+	fs(16px)
+	font-family lightcond
+
+.insta-overlay__location
+	font-family lightcond
+	fs(20px)
+	padding-bottom 10px
+
+	
+.insta-user-pic
+	align()
+	size 90px
+	z-index 10
+	border-radius 50%
+	border 8px solid white
+	
+.swiper-container
+	width 100%
+	height 560px
+	align()
+	top 48%
+	overflow visible
+
+.insta-info
+	padding 20px 16px 0px 16px
+	display inline-block
+	height 200px
+	overflow hidden
+	position: relative
+	.button
+		position absolute
+		bottom 5px
+		left 30px
+		right 30px
+		margin auto
+	p
+		line-height 1.6
+	a
+		color blue
+		word-break break-all
+	+ img
+		position absolute
+		bottom 0
+	
+.insta-slide
+	width 270px
+	height 560px
+	position relative
+	background-color white
+	margin auto
+	cursor pointer
+	cursor grab
+	a
+		cursor pointer
+	.button.instabutton, a.button.instabutton
+		border 1px solid black
+			
+	.insta-user-pic
+		top 270px
+		size 70px
+	p
+		fs(13px)
+		// padding-top 8px
+		padding-bottom 2px
+	a.button.instabutton
+		border 1px solid black
+		color black
+		fs(12px)
+		padding 10px 10px 10px 10px
+		img
+			width 12px !important
+			height 12px !important
+			top -1px !important
+
+.insta-gram
+	position absolute
+	bottom 0
+	left 0
+	right 0
+	margin auto
+	display inline-block
+	
+.swiper-pagination-bullet
+	size 10px
+	background #becec0
+	opacity 1
+	&.swiper-pagination-bullet-active
+		background blue
+
+.swiper-container-horizontal > .swiper-pagination
+	bottom -30px
+	+below(1080px)
+		bottom -40px
+		display none
+
+.insta-slide.swiper-slide
+	.insta-overlay
+		opacity 1
+// 		height 310px
+// 		width 580px
+// .hide-small
+// 	.insta-slide.swiper-slide
+// 		background-color transparent
+// 		width 590px
+// 		height 326px
+// 		p
+// 			padding-top 0
+// 	.insta-user-pic
+// 		top 146px
+// 	.swiper-container
+// 		height 324px
+// .hide-small
+
+
+// .IGF.small
+// 	display none
+// .insta-info
+.ig-background
+	background none !important
+	box-shadow none !important
+	border none !important
+	padding 0 !important
+	padding-left 30px !important
+	background transparent url(../img/instagram-black.png) no-repeat  !important
+	background-size 18px 18px  !important
+	background-position 5px 50% !important
+.ig-camera
+	display none !important
+.IGF.small .ig-text
+	padding 0 !important
+	font-family boldcond
+	color black !important
+	fs(18px)
+		
+
+.slider-button
+	size 30px 60px
+	background-color blue
+	position absolute
+	top -10px
+	bottom 0
+	margin auto
+	z-index 200
+	transition 0.2s ease 
+	+below(1080px)
+		display none
+	&.next-button
+		background blue url(../img/arrow-right.png) no-repeat
+		background-size 10px auto
+		background-position 50% 50%
+		right 5px
+		left auto
+		&:hover
+			background black url(../img/arrow-right.png) no-repeat
+			background-size 10px auto
+			background-position 50% 50%
+	&.prev-button
+		background blue url(../img/arrow-left.png) no-repeat
+		background-size 10px auto
+		background-position 50% 50%
+		left 5px
+		right auto
+		&:hover
+			background black url(../img/arrow-left.png) no-repeat
+			background-size 10px auto
+			background-position 50% 50%
+
+.index-slide .insta-name
+	&:hover
+		color blue
+		transition 0.2s ease
+
+.number-block__img.open-table-insta
+	width:50%;
+	background:url("../img/instagram_food.png") no-repeat; 
+	background-size:cover;
+	background-position:93% 0%; 
+	
+	.instagram-media
+		align()
+
+	+below(1080px)
+		width:100%;
+		min-height: 545px
+		background:url("../img/instagram_food.png") no-repeat !important; 
+		background-size:cover;
+		background-position:93% 0%; 
+		

@@ -1,0 +1,124 @@
+@import "color";
+// BG UNI
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:260;
+
+// VARIABLE SITE TYPO
+$font-body:"proxima-nova",arial,verdana,sans-serif;
+$font-title:"jaf-bernino-sans",arial,sans-serif;
+
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:NONE;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN TOP NAV
+$margin-top-navigation:8;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:0;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES3
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE PUB LIB1 = MODELE BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+.navigation {
+	@include gradient-secondary;
+}
+
+.menu-principal {
+		margin-top:28px;
+}
+.menu-principal>li>a {
+color:$color-primary;
+font-size:$font-size-title * 0.55; 
+}
+		
+header .logo img {
+max-width: 130%;
+}
+		
+.bouton-selection-annonces {margin-bottom:10px; margin-top:-10px;}
+
+.btn-cdc {font-size:1.1em;}
+
+.module-annonces-homepage {
+	background:$color-body;
+	@include box-shadow(0 1px 1px 0 rgba(0,0,0,1));
+	&:hover {
+		background:$color-shadow-hover;
+	}
+}
+
+.ie9 .module-annonces-homepage,
+.ie8 .module-annonces-homepage {
+border : 1px solid $color-shadow;
+}
+
+@media only screen and (max-width : 767px) {
+	header .logo img {
+	width: 30%;
+	}
+}
+
+.menu-principal > li > a {
+margin:0px;
+padding:22px;
+margin-top: -12px;
+ }
+ 
+ .horaires-agence h2,.horaires-agence table{display: none;}

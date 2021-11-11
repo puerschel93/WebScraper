@@ -1,0 +1,304 @@
+/* client/app/theme.styl */
+
+body,
+.container { position: relative; }
+
+.container { margin: 0 auto; }
+
+
+p, /* override Twitter Bootstrap */
+body,
+.dw-depth-1 blockquote p { /* override Bootstrap */
+  font: $postFontSize $uiFont;
+}
+
+article {
+  line-height: 165%;  // [post_acts_valign]
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $uiFont;
+  font-weight: bold;
+  line-height: 1em;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #393939;
+}
+
+h1 {
+  font-size: 33px;
+  color: $h1Color;
+  padding-top: 15px;   // [h1_pad_top]
+  margin-bottom: 4px;
+}
+
+h2 {
+  color: hsl(0, 0%, 24%);
+  font-size: 24px;
+  margin: 35px 0 15px 0;
+}
+
+h3 {
+  font-size: 20px;
+  color: hsl(0, 0%, 20%);
+  margin-top: 29px;
+}
+h4 {
+  font-size: 15px;
+  color: hsl(0, 0%, 15%);
+}
+h5, h6 {
+  font-size: $postFontSize;
+  color: hsl(0, 0%, 36%);
+}
+
+@media (max-width: 700px)
+  h1
+    font-size: 30px;
+  h2
+    font-size: 23px;
+  h3
+    font-size: 19px;
+
+
+p, li { color: #111; }
+
+
+p {
+  margin-bottom: 1em;
+  line-height: 20px;
+}
+
+.dw-res p,
+.dw-res ul,
+.dw-res ol {
+  margin-bottom: 0.7em;
+  line-height: normal;
+}
+
+li
+  margin-left: 2.2em;
+  margin-bottom: 0.6em;
+
+li > ul,
+li > ol
+  margin-top: 0.6em;
+
+ul, ol {
+  padding: 0;
+  margin: 0;
+  -webkit-padding-start: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+}
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+
+blockquote {
+  font-size: inherit;
+  margin: 14px 0 12px;
+  padding: 4px 12px 1px;
+}
+
+img, canvas {
+  margin: 0;
+  display: block; /* TODO inline those with no \n\n inbetween preceeding text */
+  max-width: 100%;
+}
+
+i, em { font-style: italic; }
+
+small { font-size: 80%;  color: #444; }
+
+/* Bootstrap's <pre> whiteSmoke too dark, and <code> bg colored. */
+pre, code {
+  background-color: #f7f7f7;
+  color: #222;
+  font-size: 12px; /* or unreadably small */
+  line-height: 16px;
+}
+
+small code {
+  background-color: inherit;
+  color: inherit;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+}
+
+
+ins
+  text-decoration: none
+  background: #9f9
+
+del
+  text-decoration: line-through
+  background: #ffd0d0
+
+
+a
+  cursor: pointer
+  text-decoration: none;
+  &:hover,
+  &:active
+    text-decoration:underline;
+
+  color: hsl($uiHue, 100%, 43%);
+  &:link
+    color: hsl($uiHue, 100%, 43%);
+  &:visited
+    color: hsl($uiHue, 90%, 40%);
+
+
+/* Make placeholder text darker == more readable. Do not combine this placeholde stuff to
+ * a single group — then they would all be ignored. */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: hsl(0, 0%, 50%);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: hsl(0, 0%, 50%);
+  opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: hsl(0, 0%, 50%);
+  opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: hsl(0, 0%, 50%);
+}
+
+
+// [refactor] Remove #topbar here, move to www.talkyard.io own CSS instead.
+#topbar > .container {
+  padding-top: 13px;
+  padding-bottom: 12px;
+  line-height: 100%;
+  font-size: $postFontSize;
+  color: hsl(0, 0%, 94%);
+}
+
+#topbar > .container a {
+  color: hsl(0, 0%, 94%);
+}
+
+.esPageHeader a
+  white-space: nowrap;
+
+.logo {
+  font-size: $postFontSize;
+}
+
+#topbar .logo-slogan img {
+  width: 26px;
+  display: inline;
+  margin: 0 6px 0 0;
+  padding: 0;
+  vertical-align: middle;
+  top: -2px;
+  position: relative;
+}
+
+
+
+/* Social links
+============================== */
+
+
+.social-links {
+  margin: 13px 0 16px;
+}
+
+.social-links-title {
+  float: left;
+  position: relative;
+  top: -2px;
+  margin: 0 8px 0 0;
+  font-size: 85%;
+}
+
+.social-links a {
+  opacity: 0.8;
+}
+
+.social-links a[class*=tweet] {
+  opacity: 0.73;
+}
+
+
+
+#social-btns {
+  margin-left: auto;
+}
+
+#twitter-btn iframe {
+  width: 100px !important;
+}
+
+#google-btn div, #google-btn iframe {
+  width: 150px !important;
+  margin-right: 10px !important;
+}
+
+
+
+/* Login
+============================== */
+
+
+#dw-loginout {
+  padding: 0 10px 0 15px;
+}
+
+.dw-a-logout {
+  margin-left: 1em; /* push login info away */
+}
+
+.dw-a-login,
+.dw-u-name {
+  color: #eee; /* #fff is too bright */
+  font-weight: bold;
+}
+
+.dw-u-name {
+  font-size: $postFontSize;
+}
+
+
+
+/* Code pages
+============================== */
+
+
+.code-page-title h1,
+.code-page p {
+  font-family: monospace;
+}
+
+.code-page-title h1 {
+  font-size: 20px;
+}
+
+
+
+/* Responsive (sync with client/admin-app/admin-page.styl)
+============================== */
+
+
+#topbar > .container nav > a {
+  margin-left: 1.1em;
+}
+
+html:not(.dw-admin-page):.mouse .container {
+  width: 940px;
+}
+
+#topbar > .container { display: table; }
+
+#topbar > .container > * {
+  display: table-cell !important;
+  float: none !important;
+}
+
+#topbar > .container nav { text-align: right; }
+
+// vim: fdm=marker et ts=2 sw=2 tw=0 fo=r list

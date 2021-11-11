@@ -1,0 +1,271 @@
+@import 'settings'
+@import 'options'
+
+
+header-height = 58px
+header-height-mini = 40px
+hamburger-size = 46px
+hamburger-size-mini = 40px
+
+
+$close
+    width unit(header-height/2, 'px')
+    height @width
+    self-center(vertical)
+    right 3%
+    +below(breaks.base)
+        width unit(header-height-mini/2, 'px')
+        height @width
+    +below(breaks.mobile)
+        right unit(header-height-mini/2, 'px')
+        top @right
+        transform none
+    @extend $cross
+    
+$hamburger
+    self-center()
+    width unit(hamburger-size/2, 'px')
+    +below(breaks.base)
+        width unit(hamburger-size-mini/2, 'px')
+    &:before, &:after
+            content ''
+            display block
+            position absolute
+            top 50%
+            left 50%
+            width 100%
+            opacity 1
+            background none
+        &:before
+            transform translate(-50%, -8px)
+            box-sizing content-box
+            height 6px
+            border-top 2px solid #fff
+            border-bottom 2px solid #fff
+            +below(breaks.base)
+                transform translate(-50%, -6px)
+                height 3px
+                
+        &:after
+            background #fff
+            height 2px
+            transform translate(-50%, 8px)
+            +below(breaks.base)
+                transform translate(-50%, 4px)
+
+header
+    &.loading
+        opacity 0
+    position fixed !important
+    top 0
+    left 50%
+    transform translate3d(0,0,0)
+    transform translate(-50%,0px)
+    transform-origin 50% 50%
+    background #222935
+    height header-height
+    width 105%
+    z-index 999999991
+    transition top 400ms ease-out, left 400ms ease-out, width 400ms ease-out, height 400ms ease-out, opacity 650ms ease-out;
+    border-radius header-height
+    overflow hidden
+    +below(breaks.base)
+        height header-height-mini
+        height 100vh
+        transform translate(-50%,-50%)
+    +below(breaks.mobile)
+        width 100%
+    .toggler
+        height 20px
+        cursor pointer
+        position absolute
+        z-index 99
+    .contain
+        position relative
+        text-align center
+        height 100%
+        width 85%
+        margin 0 auto
+        max-width 1100px
+        background #222935
+        transition opacity 800ms ease
+        +above(1025px)
+            opacity 0
+        +below(breaks.base)
+            width 100vw
+        .nav
+            float right
+            inline-mid()
+            width 100%
+            padding 10% 0
+            +below(breaks.base)
+                width 100%
+                float none
+                position absolute
+                transform translate(-50%, -50%)
+                top 50%
+                left 50%
+                // transition transform 200ms ease-in-out-quad
+            +above(1025px)
+                padding 0
+                height header-height
+                right 0
+                height 100%
+                width auto
+            li
+                margin 0 10px
+                +below(breaks.base)
+                    display block !important
+                    margin-bottom unit(header-height-mini/2, 'px')
+                a
+                    display inline-block
+                    transform translate3d(0,0,0)
+                    font-size 14px
+                    color linkgray
+                    position relative
+                    font-family 'HelveticaLight' !important
+                    padding-bottom 6px
+                    border-bottom 1px solid transparent
+                    +above(breaks.mobile)
+                        &:hover
+                            color lighten(linkblue, 5)
+                    &.active
+                        color linkblue
+                        border-bottom 1px solid linkblue
+                        pointer-events none
+                    +below(breaks.base)
+                        font-size 5vmin
+                        text-transform uppercase
+        .logo
+            self-center(vertical)
+            width 235px
+            height 26px
+            display block
+            margin 0 auto
+            // background url('./assets/img/logo_makeitsimple.svg') no-repeat 0 0
+            +above(breaks.base)
+                left 0
+                min-height 26px
+            +tablet()
+                img
+                    max-height 5vmin
+                    max-width 100%
+            +below(breaks.base)
+                self-center(horizontal)
+                bottom 15vh
+                top auto
+                width 100%
+                left auto
+                transform none
+                img
+                    height 7vmin
+                    max-height initial
+            
+    &.maximized
+        transition all 400ms ease-out, border-radius 800ms linear
+        opacity 1
+        overflow initial
+        .contain
+            opacity 1
+        .toggler
+            +above(breaks.base)
+                transition opacity 750ms ease-in-quad
+                opacity 1
+            @extend $hamburger
+            left calc(98% - 40px)
+            &:before
+                border-color linkgray
+             &:after
+                background linkgray
+            +above(breaks.base)
+                transition opacity 750ms ease-in-quad
+                opacity 1
+        +below(breaks.base)
+            transition left 400ms ease-out, opacity 400ms ease-out
+            height 100vh
+            width 100vw
+            border-radius 0
+            top 0
+            left 50%
+            transform translate(-50%, 0)
+            opacity 1
+            .toggler
+                top 30px
+                left calc(100% - 30px)
+                transform translate(-100%, 0)
+            .nav
+                top 50%
+                transform translate(-50%, -50%)
+    &.animate
+        width hamburger-size
+        height @width
+        opacity 1
+        .logo
+            visibility hidden
+        .contain
+            opacity 0
+            display block
+        +below(breaks.base)
+            transition left 400ms ease-out, opacity 400ms ease-out, width 400ms ease-out, height 400ms ease-out, border-radius 800ms linear;
+            .contain, .toggler
+                opacity 0
+        +below(breaks.base)
+            width hamburger-size-mini
+        +below(breaks.base)
+            top 50%
+            left 50%
+            width 150vmax
+            height @width
+            border-radius unit(@height/2, 'vmax')
+    &.hamburger
+        top 2%
+        .toggler
+            opacity 1
+        .contain
+            display none
+        +below(breaks.base)
+            transition top 400ms ease-out, left 400ms ease-out,  width 400ms ease-out,  height 400ms ease-out, margin 400ms ease-out, opacity 400ms ease-out
+            width 40px
+            height 40px
+            opacity 0.5
+            top 50%
+            left 50%
+            position fixed
+            .nav
+                top 50%
+                transform translate(-50%, -50%)
+                transition opacity 200ms ease-out
+            .contain
+                opacity 0
+                .nav
+                    opacity 0
+                    transform translate(-50%, -50%)
+    &.placed
+        top 20px
+        left calc(100% - 43px)
+        opacity 0.6
+        cursor pointer
+        background #222935
+        .toggler
+            @extend $hamburger
+        +below(breaks.base)
+            top 40px
+            left calc(100% - 20px)
+            margin-left -20px
+        +below(breaks.tablet)
+            width 40px
+            height 40px
+    &.maximized
+        .logo
+            visibility visible
+        .toggler
+            +below(breaks.tablet) // 6+
+                top 30px
+                right 30px
+                transform none
+                left initial
+                &.openbar
+                    top 60px
+                +landscape()
+                    top 37.5%
+                    left 79%

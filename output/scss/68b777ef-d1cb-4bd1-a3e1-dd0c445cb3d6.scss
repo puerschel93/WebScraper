@@ -1,0 +1,174 @@
+// VARIABLE DEFAULT
+body {
+	@if $bg-uni == yes {
+		background-color:$color-body;
+	} @else {
+		background-color:$color-primary;
+	}
+}
+
+.margin-top-under-nav-fixe {
+	@if $margin-top-under-nav-fixe != false {
+		margin-top:$margin-top-under-nav-fixe+px;
+	}
+}
+
+.ie7 .margin-top-under-nav-fixe {
+	@if $margin-top-under-nav-fixe != false {
+		padding-top:$margin-top-under-nav-fixe+px;
+	}
+}
+
+.margin-logo-absolute {
+	@if $margin-logo-absolute != false {
+		margin-top:$margin-logo-absolute+px;
+	}
+}
+
+.bg-extra {
+	height:$height-extra+px;
+	background:url(../images/extra/bg-extra.jpg) top center no-repeat;
+}
+
+.bg-pub {
+	height:$height-pub+px;
+	background:url(../images/pub/bg-pub.jpg) top center no-repeat; padding:20px 0;
+}
+
+
+// NAV
+.menu-principal {
+	line-height:$height-navigation+px;
+	font-size:$font-size-title * 0.6;
+	font-weight:$weight-title;
+}
+
+.menu-principal > li {
+	float:none;
+	display:inline-block;
+	margin-left:0;
+	* display:inline;
+	* zoom: 1;
+}
+
+.ie7 .menu-principal > li > a {
+	line-height:$height-navigation+px;
+}
+
+.menu-principal > li > a {
+	padding:8px;
+	color:$color-nav-footer;
+	text-transform:$type-title;
+	@extend .font-title;
+	@if $border-nav == yes {
+		border-bottom:1px solid transparent;
+	} @else {
+		@if $type-menu == flat {
+			@if $arrondi == yes {
+				@include border-radius(5px);
+				padding:12px;
+			}
+			background-color:$color-primary;
+			// EFFECT GRADIENT ONGLET
+			@include background-image(linear-gradient(top, lighten($color-primary,10) 0%, lighten($color-primary,8) 100%));
+			@include filter-gradient(lighten($color-primary,10),lighten($color-primary,8),vertical);
+			background-repeat: repeat-x;
+			// SHADOW
+			@include box-shadow(inset -1px 3px 3px -3px $color-primary-dark-100);
+			// TRANSITION
+			@include transition-color($temps:0.1s);
+		} @else {
+			@if $shape == yes {
+				background-color:$color-primary-dark-5;
+				@include lightnessColor($color-primary-dark-5);
+				padding:12px;
+			} 
+			@include transition-color($temps:0.1s);
+			@include transition-bg($temps:0.2s);
+		}
+	}
+}
+
+.menu-principal > li > a:hover {
+	@if $shape == no {
+		@if $border-nav == yes {
+				border-bottom:1px solid $color-primary-light-100;	
+		} @else {
+			@if $type-menu == flat {
+					background:$color-action;
+					background-image:none !important;
+					-ms-filter:none;
+					filter:none;
+			} @else {
+				background:$color-primary;
+				@include lightnessColor($color-primary,no);
+			}
+		}
+	} @else {
+		background:$color-primary;
+		@include lightnessColor($color-primary,no);
+	}
+}
+
+
+// FOOTER
+footer {
+ color:$color-nav-footer;
+}
+
+.nav-footer, .nav-footer-titre {
+ color:$color-nav-footer;
+}
+
+.nav-footer >li  > a {
+ padding:8px 0 8px 8px;
+}
+
+.texte-footer {
+ @include opacity(0.7);
+}
+
+.nav-footer >li  > a, .social-ico-footer > a, a.btn-responsive{
+ color:$color-nav-footer;
+ @include opacity(0.7);
+ &:hover {
+  @include opacity(1);
+  text-decoration:none;
+ }
+}
+
+// MINIMOTEUR
+.bg-minimot {
+	background-color:$color-body;
+	@if $bg-minimot == yes {
+		border-top:1px solid $color-body;
+		background:url(../images/bg-motif.gif) 0 0 repeat;
+		padding:30px 0;
+		}
+	@else {
+		background-color:$color-secondary;
+		padding:15px 0;
+		}
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input, select {
+border:1px solid $color-action;
+@if $arrondi == yes {
+	@include border-radius(2px);
+  }
+  @else {
+	@include border-radius(0px);
+	}
+}
+
+@media only screen and (max-width: 767px) {
+.margin-logo-absolute {
+margin-top: 0px;
+}
+}
+
+@media only screen and (max-width: 979px) and (min-width: 768px) and (orientation: portrait) {
+	.absolute {
+	position:relative;
+	}
+}

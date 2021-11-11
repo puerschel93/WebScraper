@@ -1,0 +1,196 @@
+.picker_container {
+  background   : rgb(83, 85, 83);
+  // border:1px solid rgb(100, 96, 96);
+  padding:18px 10px;
+  border-radius: 6px;
+  &.picker-no-upper-border-radius{
+    border-radius: 0 0 6px 6px;
+  }
+  .picker-hue-value-opacity {
+    display        : flex;
+    flex-direction : row;
+    justify-content: center;
+    align-items    : center;
+    #picker_value {
+      border-radius: 6px;
+      width        : 140px;
+      height       : 140px;
+      position     : relative;
+      background   : hsl(0, 100%, 50%);
+      display      : inline-block;
+      box-shadow:0 0 12px 1px rgb(50, 52, 53);
+    }
+
+    #picker_saturation {
+      border-radius: 7px;
+      width        : 140px;
+      height       : 140px;
+      position     : absolute;
+      background   : linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    #picker_lightness {
+      border-radius: 6px;
+      width        : 140px;
+      height       : 140px;
+      position     : absolute;
+      background   : linear-gradient(to bottom, transparent 0%, #000 100%);
+    }
+
+
+    #picker_hue {
+      border-radius: 6px;
+      width        : 12px;
+      height       : 140px;
+      position     : relative;
+      display      : inline-block;
+      margin-left  : 10px;
+      background   : linear-gradient(to top, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
+      box-shadow:0 0 12px 1px rgb(53, 50, 50);
+    }
+
+    #picker_opacity {
+      border-radius: 6px;
+      width        : 12px;
+      height       : 140px;
+      position     : relative;
+      display      : inline-block;
+      margin-right : 10px;
+      background   : #f00;
+      box-shadow:0 0 12px 1px rgb(53, 50, 50);
+    }
+
+
+    #picker_opacity_fade {
+      border-radius      : 6px;
+      width              : 12px;
+      height             : 140px;
+      display            : inline-block;
+      position           : absolute;
+      background         : linear-gradient(45deg, rgba(0, 0, 0, 0.0980392) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.0980392) 75%, rgba(0, 0, 0, 0.0980392) 0), linear-gradient(45deg, rgba(0, 0, 0, 0.0980392) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.0980392) 75%, rgba(0, 0, 0, 0.0980392) 0), #e6e3e3;
+      background-position: 0px 0, 4px 4px;
+      background-size    : 8px 8px, 8px 8px;
+      mask-image         : linear-gradient(to top, black 0%, transparent 100%);
+    }
+
+
+
+    .picker_value_indicator {
+      width        : 10px;
+      height       : 10px;
+      position     : absolute;
+      display      : inline-block;
+      border-radius: 20px;
+      cursor       : pointer;
+      border       : 2px solid rgb(245, 242, 242);
+      box-shadow   : inset 0px 0px 0px 1px rgba(100, 100, 100, 0.2),0 0 3px 1px rgba(45, 46, 48, 0.5);
+      background   : #f00;
+      left         : 130px;
+      top          : -4px;
+    }
+
+    .picker_hue_indicator {
+      width        : 100%;
+      height       : 10px;
+      position     : absolute;
+      top          : -4px;
+      border-radius: 2px;
+      cursor       : pointer;
+      border       : 2px solid rgb(241, 235, 235);
+      box-shadow   : inset 0px 0px 0px 1px rgba(100, 100, 100, 0.2),0 0 3px 1px rgba(45, 46, 48, 0.5);
+      margin-left  : -2px;
+      background   : #f00;
+      font-size    : 16px;
+    }
+
+    .picker_opacity_indicator {
+      width        : 100%;
+      height       : 10px;
+      position     : absolute;
+      top          : -4px;
+      border-radius: 2px;
+      cursor       : pointer;
+      border       : 2px solid rgb(245, 242, 242);
+      box-shadow   : inset 0px 0px 0px 1px rgba(100, 100, 100, 0.2),0 0 3px 1px  rgba(45, 46, 48, 0.5);
+      margin-left  : -2px;
+      background   : #f00;
+      font-size    : 16px;
+    }
+  }
+
+  // .picker_sample {
+  //   box-sizing         : border-box;
+  //   width              : 24px;
+  //   height             : 24px;
+  //   background: #f00;
+  //   display            : inline-block;
+  //   position           : relative;
+  //   margin-top         : 10px;
+  //                   transform-style: preserve-3d;
+  //   &::before{
+  //     transform: translateZ(-1px);
+  //     position: absolute;
+  //     width:24px;
+  //     height:24px;
+  //     content:'';
+  //     background         : linear-gradient(45deg, rgba(0, 0, 0, 0.0980392) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.0980392) 75%, rgba(0, 0, 0, 0.0980392) 0), linear-gradient(45deg, rgba(0, 0, 0, 0.0980392) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.0980392) 75%, rgba(0, 0, 0, 0.0980392) 0), #e6e3e3;
+  //     background-position: 0px 0, 4px 4px;
+  //     background-size    : 8px 8px, 8px 8px;
+  // }
+  // }
+
+
+   // #picker_opacity {
+  //   border-radius: 6px;
+  //   width        : 150px;
+  //   height       : 14px;
+  //   position     : relative;
+  //   display      : inline-block;
+  //   margin-top : 10px;
+  //   background   : #f00;
+  //   box-shadow:0 0 12px 1px rgb(53, 50, 50);
+  // }
+
+
+  // #picker_opacity_fade {
+  //   border-radius      : 6px;
+  //   width              : 150px;
+  //   height             : 14px;
+  //   display            : inline-block;
+  //   position           : absolute;
+  //   background         : linear-gradient(45deg, rgba(0, 0, 0, 0.0980392) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.0980392) 75%, rgba(0, 0, 0, 0.0980392) 0), linear-gradient(45deg, rgba(0, 0, 0, 0.0980392) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.0980392) 75%, rgba(0, 0, 0, 0.0980392) 0), #e6e3e3;
+  //   background-position: 0px 0, 4px 4px;
+  //   background-size    : 8px 8px, 8px 8px;
+  //   -webkit-mask-image : linear-gradient(to right, black 0%, transparent 100%);
+  //   mask-image         : linear-gradient(to right, black 0%, transparent 100%);
+  // }
+
+
+  // .picker_opacity_indicator {
+  //   width        : 10px;
+  //   height       : 100%;
+  //   position     : absolute;
+  //   top          : -7px;
+  //   border-radius: 2px;
+  //   cursor       : pointer;
+  //   border       : 2px solid #fff;
+  //   box-shadow   : 0 0 3px 1px #67b9ff;
+  //   margin-top  : 4px;
+  //   background   : #f00;
+  //   font-size    : 16px;
+  // }
+  .picker-color-inputs{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    justify-content: center;
+    font-size:14px;
+    align-items: center;
+    margin-top:10px;
+    color:white;
+    .picker-input-field{
+      width:25px;
+      font-size:12px;
+    }
+  }
+}

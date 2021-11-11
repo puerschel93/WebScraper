@@ -1,0 +1,114 @@
+*
+    margin: 0
+    padding: 0
+body
+    // background: rgba(0,0,0,0.3)
+    width 100vw
+    height 100vh
+    overflow-y: hidden
+
+#app
+    height 100vh
+
+.container
+    height 100vh
+    width: 100vw
+    // left: 50vw
+    overflow: hidden
+    // min-width 100vw
+    // display: flex
+    // align-items: center
+    // justify-content: center
+
+.zoom_box
+    height: 100vh
+    // width: 100vw
+    display: flex
+    align-items: center
+    transition: 0.8s
+    transform: translateX(0)
+    // animation: zoom_out 0.5s 1s forwards
+.card
+    height 100%
+    width 100vw
+    // background: rgba(255,128,0,1)
+    // margin: 0 50px
+    flex-shrink: 0
+    transform-origin: center
+    display: flex
+    align-content: center
+    justify-content: center
+    z-index: 5
+
+.video
+    height 100vh
+    width 100vw
+    object-fit: cover
+    transform-origin: center
+    display: flex
+    align-content: center
+    justify-content: center
+    position: relative
+    box-shadow: 0 20px 30px rgba(0,0,0,0)
+
+// .cs
+//     margin-left 50vw
+// .ce
+//     margin-right: 50vw
+
+
+.card_focse
+    height 100vh
+    width 100vw
+@keyframes zoom_out {
+    to {transform: scale(0.5,0.5)}
+}
+
+
+.zoom_out_in
+    & .video
+        animation: zoom_out_img 1.5s forwards
+
+
+@keyframes zoom_out_img {
+    0%{ 
+        transform: scale(1,1)
+        border-radius: 0
+        box-shadow: 0 20px 30px rgba(0,0,0,0)
+        }
+    20% {
+        transform: scale(0.7,0.7)
+        border-radius: 10px
+        box-shadow: 0 20px 30px rgba(0,0,0,0.3)
+    }
+   80% {
+        transform: scale(0.7,0.7)
+        border-radius: 10px
+        box-shadow: 0 20px 30px rgba(0,0,0,0.3)
+    }
+    100% {
+        transform: scale(1,1)
+        border-radius: 0
+        box-shadow: 0 20px 30px rgba(0,0,0,0)
+
+    }
+}
+
+
+.temp
+    position: absolute
+    left 0
+    top 0
+    z-index 10
+
+.teb
+    width 50px
+    height 50px
+    background: rgba(0,128,255,0.3)
+    border: 2px solid #fff
+    cursor pointer
+    margin: 5px
+.mainbg
+    width 800vw
+    height 100vh
+    position: absolute

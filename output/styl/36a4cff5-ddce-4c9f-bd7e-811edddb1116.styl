@@ -1,0 +1,75 @@
+section.servicesByIcon
+    height 500vh
+    .servicesView
+        pointer-events none
+        position absolute
+        z-index 5
+        top 0
+        left 0
+        height 100vh
+        width 100vw
+        display flex
+        flex-direction column
+        justify-content center
+        opacity 0
+        for i in (0...9)
+            &.service-{i}
+                pointer-events auto
+                .servicesIconsBox .serviceSelector
+                    transform translateX(i * 150%)
+                .servicesDescription
+                    transform translateX(i * -50vw)
+        &.service-8
+            pointer-events none
+        .colorCircle
+            position absolute
+            z-index -1
+            left 10vw
+            right 10vh
+            width 80vw
+            height 80vh
+            object-fit contain
+        .servicesIconsBox
+            position relative
+            margin 0 auto
+            display flex
+            align-items center
+            justify-content center
+            .serviceSelector
+            .serviceIcon
+                width 64px
+                height 64px
+                margin 16px
+                border-radius 16px
+                box-sizing border-box
+            .serviceSelector
+                border 2px solid $color-text-primary
+                position absolute
+                z-index 5
+                top 0
+                left 0
+                box-shadow inset 0 0 8px #fff
+                will-change transform
+                transition transform .4s $bezier-smooth
+                transform translateX(-150%)
+            .serviceIcon
+                background rgba(255, 255, 255, 0.1)
+                backdrop-filter blur(30px)
+                img
+                    height 48px
+                    width 48px
+                    margin 8px
+                    display block
+        .servicesDescription
+            display flex
+            font-size 4rem
+            font-weight 900
+            letter-spacing 4px
+            margin 24px 0 24px 25vw
+            will-change transform
+            transition transform .4s $bezier-smooth
+            transform translateX(50vw)
+            span
+                flex 0 0 50vw
+                display block
+                text-align center

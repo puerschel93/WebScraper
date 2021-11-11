@@ -1,0 +1,289 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:540;
+
+// VARIABLE SITE TYPO
+$font-body:"Open Sans",verdana,sans-serif;
+$font-title:"Helvetica","Times New Roman",Times,serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:194;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//---------------------------------------------------------------------------------------------
+//		PERSO ATLANTE
+//---------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//---------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width: 960px;
+	}
+}
+
+.margin-top-neg-35 {
+	margin-top: -35px;
+}
+
+	//---------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------
+
+.ligne-social-langue {
+	display:none;
+}
+
+.slogan-index {
+	position: relative;
+	.nav-social-menu {
+		position: absolute;
+		top: -140px;
+		right: 0;
+	}
+}
+
+
+
+.navigation {
+	@include border-navigation(200px, 40px, $color-secondary);
+}
+
+.menu-principal {
+	margin-top: 7px;
+	position: absolute;
+    left: 22%;
+	>li {
+	    padding: 0 24px;
+	    @media only screen and (max-width : 1024px) {
+	    	padding: 0 6px;
+	    	font-size: 0.9em;
+	    }
+	    >a {
+	    	color: $color-primary;
+	    }
+	}
+}
+
+@media only screen and (max-width : 1024px) {
+	.navigation {
+		@include border-navigation(170px, 40px, $color-secondary);
+		margin-top: -29px;
+	}
+	.logo img {
+		margin-top: 19px;
+	}
+	.menu-principal {
+	    position: absolute;
+	    top: 141px;
+    	left: 120px;
+	}
+	.margin-top-under-nav-fixe {
+	    margin-top: 141px;
+	}
+	.slogan-index .nav-social-menu {
+		top: -120px;
+	}
+}
+
+@media only screen and (max-width : 375px) {
+	.navigation {
+		@include border-navigation(170px, 40px, $color-secondary);
+		margin-top: 0px;
+	}
+	.margin-top-under-nav-fixe {
+		margin-top: 0px;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------
+	//		FOOTER
+	//---------------------------------------------------------------------------------------------
+
+.bg-secondary-footer {
+	background: $color-important;
+}
+
+//---------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------
+	//		VISUEL
+	//---------------------------------------------------------------------------------------------
+
+@media only screen and (max-width : 414px) {
+	.size-picture-container {
+		background-image: url('../images/homepage/homepage_fullscreen_1.jpg');
+		background-color: $color-secondary;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//---------------------------------------------------------------------------------------------
+
+.module-annonces-homepage {
+	background: $color-block;
+}
+
+div.homepage-info-bien.margin-bottom-5 > div.row-fluid.hidden-phone > ul > li {
+	display: none;
+}
+
+.homepage-info-bien .h2-like {
+	display: block;
+	margin-top: -10px;
+
+}
+
+	//---------------------------------------------------------------------------------------------
+	//		ENCART SERVICE -- SEO
+	//---------------------------------------------------------------------------------------------
+
+.zone-pub {
+	background: $color-block;
+	padding: 10px;	
+	@media only screen and (max-width : 1024px) {
+		height: auto;
+	}
+	svg {
+		fill: $color-important;
+	}
+
+}
+
+//---------------------------------------------------------------------------------------------
+//		LISTING PA
+//---------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------
+	//		FIXING
+	//---------------------------------------------------------------------------------------------
+
+.infos-bien {
+	display: none;
+}
+
+.recherche-annonces .ville {
+	color: $color-action;
+	font-size: 1.4em;
+}
+
+.type-bien-listing {
+	font-size: 1.3em;	
+}
+
+
+.recherche-annonces span.h2-like {
+	color: $color-black;
+}
+div[id^="annonce"] > a > p:nth-child(4) {
+	color: $color-action;
+}
+
+.recherche-annonces-lien div[itemprop^="name"] span.h2-like{
+	color: $color-important !important;	
+}
+//---------------------------------------------------------------------------------------------
+//		DETAIL AGENCE
+//---------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------
+	//		HEADER
+	//---------------------------------------------------------------------------------------------
+
+.header-agence {
+	display: none;
+}
+
+	//---------------------------------------------------------------------------------------------
+	//		ANNONCES
+	//---------------------------------------------------------------------------------------------
+
+.londres-bloc-type-bien-transaction .typo-action {
+	color: $color-black;
+}
+
+.agence-info-bien .ville {
+	color: $color-action;
+}
+
+
+.circle-estimation-action {
+	background-color: $color-important;
+	&:hover {
+		background-color: $color-important-dark-10;
+	}
+}

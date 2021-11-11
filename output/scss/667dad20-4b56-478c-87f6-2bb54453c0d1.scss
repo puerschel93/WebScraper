@@ -1,0 +1,599 @@
+.grid-menu {
+	height: $height-menu;
+	place-items: center;
+	font-family: cormorant-infant;
+	font-size: 20px;
+	font-weight: 600;
+	color: $brown;
+
+	li:nth-child(-n+4) {
+		width: 100%;
+		height: $height-menu;
+
+		label {
+			width: 100%;
+			height: calc(#{$height-menu} - 10px);
+			margin: 10px 0;
+			line-height: calc(#{$height-menu} - 20px);
+
+
+			display: flex;
+			justify-content: center;
+
+			&:hover {
+				cursor: pointer;
+				color: #ccc;
+
+				svg {
+					fill: #ccc;
+				}
+			}
+
+			@include widthTab {
+				align-items: flex-start;
+			}
+
+			p {
+				@include widthMob {
+					display: none;
+				}
+			}
+
+			svg {
+				display: none;
+				fill: $brown;
+
+				@include widthMob {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&__find {
+		position: relative;
+		width: 100%;
+		height: $height-menu;
+
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		@include widthPC {
+			margin-right: 5%;
+		}
+
+		@include widthTab {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 70px;
+			margin-right: 25px;
+		}
+
+		@include widthMob {
+			margin-right: 10px;
+		}
+
+		&:hover {
+
+			// ------------------ + ниже
+			input {
+				width: 100%;
+				padding: 7px 15px;
+				font-size: 14px;
+				font-weight: 400;
+
+				@include widthTab {
+					width: 90vw;
+					opacity: 1;
+				}
+			}
+		}
+
+		input {
+			width: 12vw;
+			margin-right: 5px;
+			padding: 0 10px;
+
+			font-family: lato;
+			font-size: 12px;
+			font-weight: 300;
+
+			background-color: $paper-todo;
+
+			@include widthTab {
+				width: 25px;
+				opacity: 0;
+			}
+
+			// ------------------ + выше
+			&:focus {
+				width: 100%;
+				padding: 7px 15px;
+				font-size: 14px;
+				font-weight: 400;
+
+				@include widthTab {
+					width: 90vw;
+					opacity: 1;
+				}
+			}
+		}
+
+		svg {
+			fill: $ocean;
+
+			@include widthMob {
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	&__total {
+		width: 100%;
+		height: 100%;
+		padding-right: 30px;
+
+		@include widthLT {
+			justify-self: flex-end;
+		}
+
+		@include widthTab {
+			p {
+				display: none;
+			}
+		}
+
+		label {
+			width: 100%;
+			height: 100%;
+			font-size: 18px;
+			font-weight: 700;
+			color: $ocean;
+
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+
+			&:hover {
+				cursor: pointer;
+				opacity: 0.5;
+			}
+
+			svg {
+				margin-left: 5px;
+				fill: $ocean;
+
+				@include widthTab {
+					width: 20px;
+					height: 20px;
+				}
+			}
+		}
+	}
+}
+
+#frame-pass:checked~.container .grid-menu {
+	display: none;
+}
+
+#frame-new:checked~.container .grid-menu__new label,
+#frame-profile:checked~.container .grid-menu__profile label,
+#frame-options:checked~.container .grid-menu__options label,
+#frame-help:checked~.container .grid-menu__help label,
+#frame-stat:checked~.container .grid-menu__stat label {
+	height: calc(#{$height-menu} - 15px);
+	margin: 15px 0 0 0;
+	border-radius: 0px;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+	background: $paper-frame;
+	box-shadow: inset $shadow-frame;
+	color: #ccc;
+
+	@include widthTab {
+		align-items: center;
+	}
+
+	svg {
+		fill: #ccc;
+	}
+}
+
+// Заголовок таблицы (высота в структуре)
+.header {
+	position: relative;
+	height: $height-header;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+	user-select: none;
+
+	@include widthTab {
+		background: $paper-title;
+	}
+
+	&__checkbox {
+		position: absolute;
+		left: 0;
+		width: 150px;
+		height: 100%;
+
+		display: flex;
+		justify-content: space-around;
+
+		label {
+			position: relative;
+			flex-grow: 1;
+
+			&:hover {
+				cursor: pointer;
+				opacity: 0.5;
+			}
+		}
+
+		svg {
+			@include position-center;
+			fill: $input-off;
+		}
+	}
+
+	// Связано с grid-table::before
+	&__marks {
+		position: absolute;
+		top: -3px;
+		left: 48%;
+		transform: translateX(-100%);
+		width: 150px;
+		height: 100%;
+
+		display: flex;
+		justify-content: space-between;
+
+		@include widthPC {
+			transform: translateX(-50%);
+		}
+
+		@include widthLT {
+			left: auto;
+			transform: translateX(0);
+			right: 45px;
+		}
+
+		@include widthMob {
+			right: 20px;
+		}
+
+		input {
+			display: none;
+		}
+
+		label:hover {
+			cursor: pointer;
+			opacity: 0.5;
+		}
+
+		svg {
+			filter: drop-shadow(-1px 1px 1px #777);
+		}
+
+		input:checked+label svg {
+			transform-origin: top;
+			transform: scaleY(1.3);
+		}
+	}
+
+	&__title {
+		height: 100%;
+		margin-left: $margin-table;
+		@include text-title;
+		font-size: 22px;
+		line-height: $height-header;
+
+		color: $ocean;
+
+		@include widthMob {
+			display: none;
+		}
+	}
+
+	&__date {
+		font-size: 20px;
+
+		@include widthLT {
+			display: none;
+		}
+	}
+
+	&__money {
+		position: relative;
+		flex-direction: column;
+		align-items: flex-end;
+
+		&-all-period {
+			display: none;
+
+			&+label {
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: 100%;
+				transform: translateY(-50%);
+				width: 20px;
+
+				svg {
+					fill: $input-off;
+				}
+			}
+
+			&:checked+label svg {
+				fill: $brown;
+			}
+		}
+
+		div {
+			display: flex;
+			align-items: center;
+
+			p {
+				margin-right: 5px;
+				font-size: 13px;
+			}
+		}
+
+		.total-debt {
+			color: $purple-deep;
+
+			&+svg {
+				fill: $purple-deep;
+			}
+		}
+
+		.total-income {
+			color: $grass-dark;
+
+			&+svg {
+				fill: $grass-dark;
+			}
+		}
+
+		.total-pay {
+			color: $red-dark;
+
+			&+svg {
+				fill: $red-dark;
+			}
+		}
+
+		.total-wages,
+		.middle-wages {
+			color: $blue-dark;
+
+			&+svg {
+				fill: $blue-dark;
+			}
+		}
+	}
+}
+
+// Подсветка нажатых иконок в первой строке
+#money:checked~.container .header__checkbox-money,
+#filters:checked~.container .header__checkbox-filters,
+#properties:checked~.container .header__checkbox-properties,
+#info:checked~.container .header__checkbox-info,
+#money-all-period:checked+label {
+	background: radial-gradient(circle farthest-corner at center center, $paper-title 0%, transparent 80%);
+
+	svg {
+		fill: $brown;
+	}
+}
+
+// Фильтры
+.filters {
+	height: 0px;
+	border-bottom: none;
+	overflow: hidden;
+	transition: height $timeout;
+	user-select: none;
+
+	&>div {
+		width: 100%;
+	}
+
+	&-wrap {
+		position: relative;
+		width: 100%;
+		height: 25px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		p {
+			display: none;
+
+			position: absolute;
+			bottom: -15px;
+			left: 3px;
+
+			@include text-info;
+
+			@include text-hide-overflow;
+		}
+	}
+
+	&__checkbox {
+		height: 100%;
+		margin-bottom: 0;
+		box-sizing: border-box;
+		border-radius: 3px;
+		border: 1px solid $input-border;
+		background-color: #fff;
+
+		display: flex;
+		justify-content: space-between;
+
+		&-full {
+			width: 100%;
+		}
+
+		input {
+			display: none;
+		}
+
+		label {
+			position: relative;
+			display: block;
+			width: 30px;
+			height: 100%;
+
+			&.filters__checkbox-one {
+				width: 25px;
+			}
+
+			&:hover {
+				cursor: pointer;
+				opacity: 0.5;
+			}
+		}
+
+		input:checked+label {
+			background: radial-gradient(circle farthest-corner at center center, #faf6e1 0%, transparent 100%);
+
+			svg {
+				fill: $blue;
+
+				&.filters__checkbox-save {
+					fill: $input-none;
+				}
+			}
+
+			span {
+				color: $blue;
+			}
+		}
+
+		svg {
+			@include position-center;
+			fill: $input-none;
+
+			&.filters__checkbox-save {
+				fill: $grass-dark;
+			}
+		}
+
+		span {
+			@include position-center;
+			font-size: 13px;
+			color: $input-none;
+		}
+	}
+
+	&__select,
+	&__select-money {
+
+		justify-content: flex-start;
+
+		svg {
+			width: 25px;
+			fill: $ocean;
+		}
+
+		select {
+			width: 75%;
+			height: 100%;
+			padding: 0 15px;
+			border-radius: 3px;
+			font-size: 13px;
+		}
+
+		p {
+			left: 28px;
+		}
+	}
+
+	&__select-money {
+		justify-content: space-between;
+
+		select {
+			width: calc(100% - 25px);
+		}
+	}
+
+	&__alone {
+		justify-content: center;
+
+		p {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+#info:checked~.container .filters-wrap {
+	margin-bottom: 12px;
+
+	p {
+		display: block;
+	}
+}
+
+#filters:checked~.container .filters {
+	height: 40px;
+	border-bottom: 1px solid #698ccc;
+}
+
+// Заголовок внутри таблицы
+.title {
+	background: $paper-title;
+
+	@include widthTab {
+		display: none;
+	}
+}
+
+//! ------------------------   800
+@media (max-width: $widthTab) {
+
+	#frame-pass:checked~.container li.grid-menu__find,
+	#frame-new:checked~.container li.grid-menu__find,
+	#frame-profile:checked~.container li.grid-menu__find,
+	#frame-options:checked~.container li.grid-menu__find,
+	#frame-help:checked~.container li.grid-menu__find,
+	#frame-stat:checked~.container li.grid-menu__find {
+		display: none;
+	}
+
+
+	#filters:checked~.container .filters {
+		border-bottom: none;
+	}
+}
+
+//! ------------------------   600
+@media (max-width: $widthMob) {
+
+	.grid-table__status .filters__checkbox:first-child {
+		display: none;
+	}
+
+	#table__swap-set:checked~.container .filters .grid-table__name .filters-wrap,
+	#table__swap-note:checked~.container .filters .grid-table__name .filters-wrap {
+		display: none;
+	}
+}
+
+//! ------------------------   height
+
+@media (max-height: $height) {
+
+	.header {
+		background: $paper-title;
+	}
+
+	.title {
+		display: none;
+	}
+
+}

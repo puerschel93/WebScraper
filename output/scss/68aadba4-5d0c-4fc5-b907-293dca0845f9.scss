@@ -1,0 +1,118 @@
+@import "base/_variables.scss";
+
+.input-file {
+    align-items: center;
+    display: flex;
+    position: relative;
+
+    input {
+        position: absolute;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        width: 1px;
+
+        &:focus + .input-file__text.ready {
+            color: $primary-full;
+        }
+
+        &:focus + .input-file__text.preload {
+            color: $text-full;
+        }
+    }
+
+    &__text-block {
+        align-items: center;
+        color: $primary-medium;
+        cursor: pointer;
+        display: inline-flex;
+        min-height: 40px;
+        max-width: calc(100% - 40px);
+        transition: color 0.3s;
+        white-space: nowrap;
+
+        &.ready {
+            color: $primary-medium;
+            font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.21428;
+
+            &:hover {
+                color: $primary-full;
+            }
+        }
+
+        &.preload {
+            color: $text-medium;
+            font-size: 16px;
+            line-height: 1.1875;
+            letter-spacing: 0.35px;
+            padding-left: 24px;
+            position: relative;
+
+            &::before {
+                content: '•';
+                left: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+                width: 24px;
+            }
+
+            &:hover {
+                color: $text-full;
+            }
+        }
+    }
+
+    &__text {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__placeholder {
+        color: $text-low;
+        cursor: text;
+        display: block;
+        font-size: 10px;
+        left: 0;
+        line-height: 1.2;
+        letter-spacing: 0.3px;
+        overflow: hidden;
+        position: absolute;
+        padding-left: 12px;
+        padding-right: 12px;
+        top: 0;
+        transform: translateY(-16px);
+        text-transform: uppercase;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__delete {
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        height: 40px;
+        justify-content: center;
+        min-width: 40px;
+        padding: 0;
+        width: 40px;
+
+        &:focus,
+        &:hover {
+            .icon {
+                stroke: $secondary-full;
+            }
+        }
+
+        .icon {
+            stroke: $secondary-medium;
+        }
+    }
+}

@@ -1,0 +1,224 @@
+@import "color";
+
+// LARGEUR DU SITE
+$sitewrap: 1170px;
+
+// AGRANDISSEMENT HAUTEUR SLIDER (0 par défaut, doit être  > 500px)
+// NE FONCTIONNE PAS SI MF_MOTEUR_TYPE = 2
+$slider-height: 630px;
+
+// HAUTEUR PHOTOS LISTING (235px par défaut)
+$listing-img-height:400px;
+
+// REQUIS MAIS NE SERT PAS
+$bg-uni: yes;
+$picture-bg: yes;
+$picture-bg-url:'';
+$picture-bg-repeat-horizontal: no;
+
+// VAR SITE TYPO
+$font-body:"Roboto",verdana,sans-serif;
+$font-title:"Bebas Neue",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:2.0em;
+
+// TYPE TITLE (NONE, UPPERCASE...)
+$type-title: uppercase;
+
+// WEIGHT (BOLD, NORMAL, 700, 300...)
+$weight-title: normal;
+
+// ARRONDI (YES / NO)
+$arrondi: no;
+
+// IMPORT ALL
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT TEMPLATE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/templates/mobilefirstv2";
+
+// IMPORT RECHERCHE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/recherche/mobilefirst";
+
+// IMPORT MOTEUR MOBILEFIRST (SUR RECHERCHE)
+// SEULEMENT SI RECHERCHE AUTRE QUE MF
+//@import "../../../slagence_X_V5/sources/scss/moteur/mobilefirst";
+
+// IMPORT DETAIL MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/detail/mobilefirst";
+
+// IMPORT AGENCE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/agence/mobilefirst";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/mobilefirst";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT PUB
+@import "../../../slagence_X_V5/sources/scss/pubs/mobilefirst";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra23";
+
+// IMPORT MODULE ANNONCES
+@import "../../../slagence_X_V5/sources/scss/modules/annonces18";
+
+
+//---------------------------------------------------------------------------------------------
+//   VIDEO RESPONSIVE KILDA
+//---------------------------------------------------------------------------------------------
+@media only screen and (max-width : 980px) {
+.slidermf-video {
+    width: 100%;
+    height: auto;
+    bottom:0px;
+}
+}
+
+
+//---------------------------------------------------------------------------------------------
+//   PERSO VILLAGEBLEU
+//---------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------
+//   GENEAL
+//---------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------
+	//   BTN
+	//---------------------------------------------------------------------------------------------
+
+.btn {
+	@include border-radius (4px);
+	letter-spacing: 0.1em;
+	font-size: 1.2em;
+}
+
+	//---------------------------------------------------------------------------------------------
+	//   MENU & NAV
+	//---------------------------------------------------------------------------------------------
+
+.header-main {
+	background-color: $color-primary;
+	border: none;
+}
+
+.header-top {
+	background-color: $color-secondary-dark-10;
+	border: none;
+	text-align: center;
+    padding: 1rem;
+}
+
+.maine-top {
+	background-color: #d40000;
+	padding: 1.2rem;
+	margin-bottom: 20px;
+}
+
+.maine-close {
+	cursor: pointer;
+    display: inline-block;
+    margin-left: 20px;
+    background-color: $color-content;
+    color: #d40000;
+    font-weight: bold;
+    padding: 5px 13px;
+    border-radius: 20px;
+}
+
+.logo img {
+	max-width: 478px;
+    max-height: 175px;
+    @media only screen and (max-width : 768px) {
+    	max-width: 414px;
+    	max-height: 145px;
+    }
+}
+
+.menu-principal {
+	font-size: 1.5em;
+}
+
+.menu-secondaire {
+	background-color: $color-primary;
+}
+
+.menu a:hover {
+	color: $color-important;	
+}
+
+	//---------------------------------------------------------------------------------------------
+	//   FOOTER
+	//---------------------------------------------------------------------------------------------
+
+footer, .nav-footer.nav-pills.nav-stacked>li>a, .social-ico-footer a {
+	color: $color-content;
+}
+
+//---------------------------------------------------------------------------------------------
+//   INDEX
+//---------------------------------------------------------------------------------------------
+
+.moteurmf.moteurmf-1, .moteurmf-body {
+	background-color: transparent;
+}
+
+	//---------------------------------------------------------------------------------------------
+	//   SERVICES
+	//---------------------------------------------------------------------------------------------
+
+#section-pub .section-ttl {
+	text-align: center;
+}
+
+.service-ttl {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.services-inner i {
+	font-size: 4.5em;
+}
+
+	//---------------------------------------------------------------------------------------------
+	//   EXTRA
+	//---------------------------------------------------------------------------------------------
+
+.extracity-item {
+	padding: 5%;
+}
+
+	//---------------------------------------------------------------------------------------------
+	//   PUB FULL
+	//---------------------------------------------------------------------------------------------
+
+#section-pubfull {
+	background-image: url('../images/homepage/bg-pubfull.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;	
+	.btn {
+		font-size: 1.2em;
+	}
+}
+
+.section-ttl {
+	font-size: 2.22em;
+}

@@ -1,0 +1,241 @@
+.main-slider
+    position relative
+    width 100%
+    height 100vh
+
+    &__list
+        display flex
+        flex-direction column
+        flex-shrink 0
+        margin 0
+        padding 0
+        list-style none
+
+    &__item
+        display flex
+        align-items center
+        justify-content center
+        width 100%
+        height 100vh
+        background-color black
+        text-align center
+        overflow hidden
+        &--video 
+            background-color transparent
+
+    &__image
+        position absolute
+        left 50%
+        top 50%
+        transform translate(-50%, -50%) scale(1)
+        max-width 100%
+        min-width 100%
+        display block
+        opacity .5
+        transition transform 3s 0s ease
+        @media tablet-portrait
+            max-width none
+            min-width none
+            max-height 100%
+            min-height 100%
+
+    &__text
+        position relative
+        width 75%
+        @media tablet-portrait
+            width calc(100% - 60px)
+        @media phone
+            width calc(100% - 40px)
+
+    &__title
+        position relative
+        //top 20px
+        font-family "Cormorant"
+        font-size 100px
+        line-height 104px
+        font-weight 700
+        color white
+        text-transform uppercase
+        letter-spacing 14px
+        //opacity 0
+        transition top 1.5s 0s ease, opacity 1.5s 0s ease
+        &--small 
+            font-size: 96px
+            text-transform: unset
+            letter-spacing normal
+            font-weight 300
+            display block
+        @media laptop
+            font-size 90px
+            line-height 94px
+        @media tablet-landscape-large
+            font-size 72px
+            line-height 76px
+        @media tablet-portrait
+            font-size 60px
+            line-height 64px
+            letter-spacing 10px
+        @media phone
+            font-size 30px
+            line-height 34px
+            letter-spacing 8px
+    &__link
+        color inherit
+        text-decoration none
+        border-bottom 1px solid rgba(255 255 255 0)
+        transition border 1s 0s ease
+        @media tablet-portrait
+            border-bottom 1px solid rgba(255 255 255 .25)
+
+        &:hover
+            border-bottom 1px solid rgba(255 255 255 .25)
+            @media tablet-portrait
+                border-bottom 1px solid rgba(255 255 255 0)
+
+    &__description
+        position relative
+        //top 20px
+        display block
+        width 35%
+        margin 0 auto
+        //opacity 0
+        transition top 1.5s .1s ease, opacity 1.5s .1s ease
+        &--about 
+            font-size 26px
+            font-family serif
+            margin-bottom 40px
+            line-height 34px
+            width 46.7%
+        @media laptop
+            width 45%
+        @media tablet-portrait
+            width 65%
+        @media phone
+            width 100%
+            &--about 
+                width 100%
+        
+
+
+    &__title + &__description
+        margin-top 32px
+    &__title + &__description--about
+        margin-top 47px
+        margin-bottom 23px
+
+    &__arrows
+        @media tablet-portrait
+            position absolute
+            bottom 50px
+            left 50%
+            transform translateX(-50%)
+            z-index 1
+            width 100px
+            height 18px
+        @media phone
+            width 90px
+
+    &__arrow
+        position absolute
+        top 50%
+        transform translateY(-50%)
+        z-index 1
+        width 35px
+        height 40px
+        cursor pointer
+        @media tablet-portrait
+            top 0
+            transform none
+
+        & svg
+            position absolute
+            top 50%
+            transform translateY(-50%)
+            fill none 
+            stroke white
+            stroke-width 1.2px
+
+        &--up
+            left 64px
+            @media tablet-landscape-large
+                left 40px
+            @media tablet-portrait
+                left 0px
+
+            &:hover svg
+                animation arrow-up-hover
+                animation-duration .75s
+                animation-timing-function ease
+                animation-iteration-count 1
+
+        &--down
+            right 64px
+            @media tablet-landscape-large
+                right 40px
+            @media tablet-portrait
+                right 0px
+
+            &:hover svg
+                animation arrow-down-hover
+                animation-duration .75s
+                animation-timing-function ease
+                animation-iteration-count 1
+    &__video 
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100vh
+        &:after
+            content: ''
+            display block
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+            background-color: #382f2d
+            opacity 0.5
+        &--backdrop
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+            object-fit cover
+            display none
+        video 
+            width 100%
+            height 100%
+            object-fit cover
+    @media tablet-landscape-medium
+        &__video 
+            video 
+                display none
+            &--backdrop 
+                display block
+        
+
+
+.main-slider__item.swiper-slide-active
+    & .main-slider__title
+        /*top 0
+        opacity 1
+        transition top 1s .5s ease, opacity 1s .5s ease*/
+        animation slide-content-animation
+        animation-duration 1.5s
+        animation-delay 0s
+        animation-timing-function ease 
+        animation-iteration-count 1
+        animation-fill-mode forwards
+
+    & .main-slider__description
+        /*top 0
+        opacity 1
+        transition top 1s .6s ease, opacity 1s .6s ease*/
+        animation slide-content-animation
+        animation-duration 1.5s
+        animation-delay .1s
+        animation-timing-function ease 
+        animation-iteration-count 1
+        animation-fill-mode forwards

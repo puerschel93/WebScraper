@@ -1,0 +1,203 @@
+@import "color";
+// BG SOLO
+$bg-uni: yes;
+
+// PICTURE BG
+$picture-bg: no;
+$picture-bg-url: "../images/degrade_bg.png";
+$picture-bg-repeat-horizontal: no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container: 448;
+
+// VAR SITE TYPO
+$font-body: "Source Sans Pro",verdana,sans-serif;
+$font-title: "Source Sans Pro",sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text: 1.6em;
+$font-size-title: 1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title: uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title: normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi: no;
+
+$height-nav: 60;
+
+// BORDER EFFECT ON NAV
+$border-nav: no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+
+$type-menu: no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape: no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe: 0;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib4";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/mobilefirst";
+
+// IMPORT MODULE SOUS MENU LIB1
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MODULE ANNONCES1
+@import "../../../slagence_X_V5/sources/scss/modules/annonces16";
+
+// IMPORT MODULE EXTRA2
+@import "../../../slagence_X_V5/sources/scss/extra/extra22";
+
+// IMPORT MODULE PUB LIB1
+@import "../../../slagence_X_V5/sources/scss/pubs/lib8";
+
+// IMPORT MODULE PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+@import "../../../slagence_X_V5/sources/scss/multiple-select.scss";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT CHOSEN
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//---------------------------------------------------------------------------------------------
+//		MODULE 16 V2
+//---------------------------------------------------------------------------------------------
+
+.container-modules {
+	width: 100%;
+	background: $color-block;
+	margin-top: -10px;
+}
+
+//---------------------------------------------------------------------------------------------
+//		ENCART SERVICES	
+//---------------------------------------------------------------------------------------------
+
+.container-pub {
+	width: 100%;		
+}
+
+//---------------------------------------------------------------------------------------------
+//		PERSO REALESTATE75008
+//---------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------
+
+.logo img {
+	margin-top: -77px;
+}
+
+.menu-principal >li {
+	background:none;	
+	padding: 10px  60px;	
+	&:hover {
+		background:none;
+	}
+	>a {			
+		&:after {
+            display: block;
+            content: "";
+            width: 0%; height: 2px;
+            background-color: $color-primary;
+            margin-top: 0px;
+            -webkit-transition: all .7s ease;
+            		transition: all .7s ease;
+         }
+         &:hover {
+            color: $color-important;
+            text-decoration: none;	            
+            &:after { 
+            	background-color: $color-important; 
+            	width: 100%;
+            }
+         }
+    }
+}
+
+.padding-top-content-logo-big {
+	padding-top: 30px;
+}
+
+.margin-top-47 {
+	margin-top: -47px !important;
+}
+
+.bg-tertiary {
+	color: $color-font-body;
+}
+
+//---------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------
+	//		MINI MOTEUR
+	//---------------------------------------------------------------------------------------------
+
+.minimotperso-fs .minimotperso-idtt>*:hover, .minimotperso-fs .minimotperso-idtt>*:focus, .minimotperso-fs .minimotperso-idtt>*:active, .minimotperso-fs .minimotperso-idtt>*.active {
+	color: $color-important;
+}
+
+	//---------------------------------------------------------------------------------------------
+	//		ENCART SERVICES
+	//---------------------------------------------------------------------------------------------
+
+.zone-pub:hover {
+	background: $color-secondary;
+}
+
+
+.btn-action-immo {
+	width: 105%;
+	@media only screen and (max-width : 767px) {
+		width: 100%;
+	}
+}
+
+//---------------------------------------------------------------------------------------------
+//		RESPONSIVE
+//---------------------------------------------------------------------------------------------
+
+@media only screen and (max-width : 410px) {
+	.ligne-contact {
+	    font-size: 1.2em;
+	}
+	.minimotperso-fs .minimotperso-idtt>* {
+	    padding: 10px 18px 0;
+	}
+	.prix-module {
+	    padding-right: 20px;
+	}
+}

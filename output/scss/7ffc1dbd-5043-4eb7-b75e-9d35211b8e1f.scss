@@ -1,0 +1,197 @@
+.bottom {
+  position: relative;
+
+  &__input {
+    position: absolute;
+    top: -12.5rem;
+    left: 48%;
+    transform: translateX(-10%);
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 5.5rem;
+    height: 3.25rem;
+    background-image: var(--clr-button);
+    border-radius: 2rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    @include media-medium {
+        left: 45%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: var(--clr-secondary);
+      top: 55%;
+      transform: translateY(-55%);
+      left: 0.5rem;
+      transition: left 0.3s ease-in-out;
+    }
+
+    &:checked::before {
+      left: 45%;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__basic {
+    background-color: var(--clr-white);
+    padding: 4rem 2.5rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 1px 14px 30px 1px rgba(0,0,0,0.1);
+
+    &--title {
+      color: var(--clr-quaternary);
+      margin-bottom: 2rem;
+    }
+
+    &--price {
+      color: var(--clr-quinary);
+      font-size: 4rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transform: all 0.3s ease;
+
+      span {
+        // padding: 0 1.5rem;
+        font-size: 7rem;
+        position: relative;
+        transition: transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        transform-style: preserve-3d;
+        transform-origin: top;
+      }
+
+      span::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        bottom: -100%;
+        text-align: center;
+        pointer-events: none;
+        transform: rotateX(-90deg);
+        transform-origin: top;
+        opacity: 0;
+        transition: opacity .3s ease-in .5s;
+      }
+    }
+
+    &--conditions {
+      margin: 3rem 0;
+    }
+
+    &--conditions li {
+      color: var(--clr-quaternary);
+      padding: 1.5rem 0;
+    }
+
+    &--conditions li:nth-child(1) {
+      border-top: 0.1rem solid var(--clr-bb);
+    }
+
+    &--conditions li:nth-child(2) {
+      border-top: 0.1rem solid var(--clr-bb);
+      border-bottom: 0.1rem solid var(--clr-bb);
+    }
+
+    &--conditions li:nth-child(3) {
+      border-bottom: 0.1rem solid var(--clr-bb);
+    }
+
+    &--submit {
+      width: 100%;
+      color: var(--clr-white);
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+      border: none;
+      outline: none;
+      padding: 1.5rem 0;
+      border-radius: 1rem;
+      background-image: var(--clr-button);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background: none;
+        color: var(--clr-main);
+        border: 0.1rem solid var(--clr-main);
+      }
+    }
+  }
+
+  .different {
+    background-image: var(--clr-primary);
+    box-shadow: none;
+
+    h3,
+    h1,
+    li,
+    button {
+      color: var(--clr-white);
+    }
+
+    .bottom__basic--conditions li {
+      border-color: var(--clr-white-m);
+    }
+
+    .bottom__basic--submit {
+      color: var(--clr-main);
+      background: var(--clr-white);
+      //   background-color: var(--clr-white);
+
+      &:hover {
+        color: var(--clr-white);
+        background: none !important;
+        border: 0.1rem solid var(--clr-white);
+      }
+    }
+  }
+
+  &__basic + &__basic {
+    margin-top: 3.5rem;
+  }
+
+  @include media-tablet {
+    display: flex;
+    justify-content: center;
+
+    &__basic {
+      width: 100%;
+      padding: 4rem 3.2rem 3rem;
+    }
+
+    &__basic + &__basic {
+      margin-top: 0;
+    }
+
+    .different {
+        margin: -2rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+  }
+}
+
+
+input[type="checkbox"]:checked ~ .bottom__basic .bottom__basic--price{
+  margin-left: 3rem;
+}
+
+input[type="checkbox"]:checked ~ .bottom__basic .bottom__basic--price span {
+  transform: rotateX(90deg);
+}
+
+input[type="checkbox"]:checked ~ .bottom__basic .bottom__basic--price span::after {
+  opacity: 1;
+}

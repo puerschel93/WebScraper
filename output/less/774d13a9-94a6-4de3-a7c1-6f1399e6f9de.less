@@ -1,0 +1,48 @@
+@import '../../variables.less';
+
+.@{prefix-cls}-topbar-panel {
+  display: flex;
+  height: 48px;
+  width: 100%;
+  flex-basis: auto;
+  background-color: var(--dn-panel-bg-color);
+  border-bottom: 1px solid var(--dn-panel-border-color);
+  button {
+    font-size: 16px;
+    + button {
+      margin-left: 8px;
+    }
+  }
+  .@{prefix-cls}-panel-box {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 16px;
+    + .@{prefix-cls}-panel-box {
+      border-left: 1px solid var(--dn-panel-border-color);
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      + .@{prefix-cls}-panel-box-item {
+        margin-left: 8px;
+      }
+      &.active {
+        color: var(--dn-composite-panel-tabs-hover-color);
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background-color: var(--dn-composite-panel-tabs-hover-color);
+        }
+      }
+    }
+  }
+}

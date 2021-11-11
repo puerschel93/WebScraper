@@ -1,0 +1,234 @@
+// @import "./base.styl"
+.asset
+  .balance
+    .asset-wallet
+      a
+        color $asset-font-main
+        cursor pointer
+        &:hover
+          color $asset-font-main-hover
+        &:active
+          color $asset-font-main-active
+      .input-wrap
+        .input
+          display inline-block
+          margin 0 4.8rem 0.2rem 0.3rem
+          input
+            width 3.8rem
+            height 0.3rem
+        span
+          position relative
+          display inline-block
+          min-width 110px
+          height 0.3rem
+          padding 0 0.22rem
+          margin-right 0.2rem
+          font-size 0.12rem
+          color $asset-font-minor
+          line-height 0.3rem
+          border-radius(0.02rem)
+          border 0.01rem solid $asset-border-minor
+          cursor pointer
+          &:hover
+            background-color $asset-bg-deep
+          &:hover, &.active
+            color $asset-border-main
+            border 0.01rem solid $asset-border-main
+            .pop-parent .img
+              background $yiwen-active no-repeat center center
+            i
+              border-color $asset-border-main
+          &.active
+            i
+              border none
+              background-color $asset-bg-main
+          i
+            position absolute
+            width 0.1rem
+            height 0.1rem
+            left 0.06rem
+            top 0.1rem
+            letter-spacing 0.05px
+            border 0.02rem solid $asset-border-minor
+            border-radius(60%)
+          b
+            position absolute
+            top 0.08rem
+            height 0.12rem
+            line-height 0.12rem
+            &.pop-parent
+              .img
+                position relative
+                display inline-block
+                top -0.01rem
+                width 12px
+                height 12px
+                margin-right 0.05rem
+                background $yiwen no-repeat center center
+              .pop-children
+                left -0.45rem
+                min-width 136px
+                width 1.36rem
+                z-index 99
+                &::before
+                  left 0.51rem
+      table
+        width 10.12rem
+        thead
+          background $asset-bg-btn
+          th
+            min-width 120px
+            width 1.35rem
+            height 0.3rem
+            font-size 0.12rem
+            color $asset-font-minor
+            letter-spacing 0.0005rem
+            text-align justify
+            line-height 0.3rem
+            &.avail
+              text-align right
+            &.lock, &.tobtc
+              text-align right
+              .pop-parent .img
+                position relative
+                display inline-block
+                width 12px
+                height 12px
+                margin-right 0.05rem
+                background $yiwen no-repeat center center
+              &:hover
+                .pop-parent .img
+                  background $yiwen-active no-repeat center center
+            &.currency, &.avail, &.lock, &.tobtc
+              cursor pointer
+              &:hover
+                color $asset-font-main
+                text-decoration underline
+            &.lock
+              .pop-parent
+                top 0.01rem
+                left 0.03rem
+                .pop-children
+                  left -0.75rem
+                  min-width 217px
+                  z-index 99
+                  &.en
+                    min-width 575px
+                  &::before
+                    left 0.85rem
+            &.tobtc
+              .pop-parent
+                top 0.01rem
+                left 0.03rem
+                .pop-children
+                  left -0.75rem
+                  // top 0.02rem
+                  min-width 150px
+                  width 1.8rem
+                  z-index 99
+                  &::before
+                    left 0.81rem
+            &.currency
+              padding-left 0.4rem
+            &.handle
+              min-width 250px
+              width 2.6rem
+              text-align center
+            .img
+              position relative
+              top 0.025rem
+              left 0.025rem
+              width 0.15rem
+              height 0.15rem
+        tbody
+          tr
+            position relative
+            border-bottom 0.01rem solid $asset-line-normal
+            &:hover
+             background-color $asset-bg-deep
+          td
+            height 0.7rem
+            line-height 0.7rem
+            font-size 0.14rem
+            color $asset-font-normal
+            letter-spacing 0.0006rem
+            text-align justify
+            &.fullname
+              a:hover
+                text-decoration underline
+            &.avail
+              text-align right
+            &.lock, &.tobtc
+              text-align right
+              padding-left 0.3rem
+            img
+              position relative
+              top 0.02rem
+              width 0.16rem
+              height 0.16rem
+              margin-right 0.05rem
+            &.currency
+              padding-left 0.3rem
+              span
+                width 0.16rem
+                height 0.16rem
+                background $asset-bg-btn
+            &.handle
+              padding-left 0.2rem
+              .button
+                display inline-block
+                width 0.66rem
+                height 0.3rem
+                line-height 0.3rem
+                position relative
+                button
+                  background-color $asset-bg-btn
+                  color $asset-font-main
+                  &:hover, &:active
+                    background-color $asset-bg-btn
+                    color $asset-font-main
+                &:hover
+                  ul
+                    display block
+                &.disable:hover
+                  ul
+                    display none
+                ul
+                  display none
+                  position absolute
+                  top 0.31rem
+                  left -0.15rem
+                  z-index 999
+                  border-radius(0.02rem)
+                  li
+                    min-width 0.95rem
+                    height 0.4rem
+                    line-height 0.4rem
+                    background $asset-bg-btn
+                    font-size 0.14rem
+                    text-align center
+                    cursor pointer
+                    &:hover
+                      background-color $asset-bg-main
+                      color $asset-font-none
+                    &:active
+                      background-color $asset-bg-main-active
+                      color $asset-font-main
+              button
+                width 0.66rem
+                height 0.3rem
+                line-height 0.3rem
+                margin-right 0.18rem
+                background-color $asset-bg-btn
+                color $asset-font-main
+                &:hover
+                  background-color $asset-bg-main
+                  color $asset-font-none
+                &:active
+                  background-color $asset-bg-main-active
+                  color $asset-font-main
+                // &.withdraw
+                //   // width 0.7rem
+                &.disable:hover
+                  background-color $asset-bg-btn
+                  color $asset-font-main

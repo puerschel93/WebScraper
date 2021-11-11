@@ -1,0 +1,246 @@
+@import 'general';
+@import 'nav';
+
+
+.landing{
+    position: relative;
+    height: 1100px;
+    width: 100vw;
+    top: 15vh;
+    overflow: hidden;
+}
+
+.forma{
+    position: absolute;
+    left: 70%;
+    top: 5vh;
+    opacity: 0.7;
+}
+
+.header{
+    position: absolute;
+    width: 95vw;
+    height: 35vh;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    overflow: hidden;
+    & h1{
+        color: $Paleta1;
+    }
+}
+
+
+.venta{
+    position: absolute;
+    top: 20%;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.decor{
+    width: 40vw;
+    height: 50vh;
+    margin: 0 4%;
+    background-image: url(img/nosotros2.jpg);
+    background-size: cover;
+    background-color: $Paleta1;
+    background-position: center;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    //background-blend-mode: lighten;
+
+}
+
+.despacho{
+    width: 50%;
+    padding: 8% 5%;
+    & h3{
+        color: $Paleta1;
+        font-size: clamp(1.1rem, 1.4vw,  1.4rem);
+    }
+}
+.plus{
+    background: $Paleta1;
+    height: 30vh;
+    width: 100vw;
+    top: 30vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: $Shadow
+}
+
+.titulo {
+    padding-top: 6%;
+    display: flex;
+    width: 95vw;
+    justify-content: right;
+    color: $Paleta1;
+}
+
+
+.plust{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+
+    & h1{
+        margin-left: 5%;
+    }
+    & h3{
+        color: white;
+        font-size: clamp(1rem, 1.6vw, 2rem);
+        padding: 0 40px;
+        text-align: center;
+    }
+
+}
+
+
+
+.imgplus{
+    width: 30vw;
+    height: 100%;
+    margin-left: auto;
+    & img{
+       object-fit: cover;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: lighten;
+    }
+}
+
+.vals{
+    display: flex;
+    flex-direction: column;
+    background: $Paleta2;
+    position: relative;
+    overflow: hidden;
+    & h1{
+        position: absolute;
+        height: 35vh;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        top: 50%;
+        transform: translate(-50%, -20%);
+    }
+
+}
+
+.forma2{
+    position: absolute;
+    left: -100px;
+    top: 10%;
+    width: 30%;
+}
+.titval{
+    color: $Paleta1;
+    padding: 25px;
+    text-align: right;
+    padding-right: 5%;
+    margin-top: 10%;
+}
+
+.valor{
+    padding: 8% 5%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    & h3{
+        color: $Paleta1;
+        font-size: clamp(1.1rem, 1.4vw,  1.4rem);
+        letter-spacing: 1px;
+    }
+    & p{
+//        font-size: clamp(0.9rem, 1.2vw,  1.1rem);
+    }
+    &:nth-child(3){
+        flex-flow: row-reverse wrap;
+    }    
+
+}
+
+.imgval{
+    width: 30%;
+    height: 300px;
+    background-color: $Paleta2;
+    background-blend-mode: screen;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.imghones{
+    background: url(img/honestidad.jpg), linear-gradient(240deg, $Paleta1 10%, $Paleta2 90%);
+    background-position: center;
+    background-size: cover;
+}
+.imgresp{
+    background: url(img/responsabilidad.jpg), linear-gradient(30deg, $Paleta1 10%, $Paleta2 90%);
+    background-position: center;
+    background-size: cover;
+    }
+    
+.imgconf{
+    background: url(img/confidencialidad.jpg), linear-gradient(125deg, $Paleta1 10%, $Paleta2 90%);
+    background-position: center;
+    background-size: cover;
+    }
+
+
+.text{
+    width: 50%;
+}
+
+@media (max-width: 850px) {
+    .header{
+        height: 20vh;
+    }
+    .forma{
+        position: absolute;
+        left: 0;
+        top: 5vh;
+        width: 30%;
+        opacity: 0.7;
+    }
+
+    .venta{
+        top: 20vh;
+        flex-direction: column;
+    }
+    .decor{
+        width: 100%;
+    }
+
+    
+    .despacho {
+        width: 100%;
+        padding: 0;
+        padding-top: 30px;
+        & p, h3 {
+            width: 90%;
+            margin: 5%;
+        }
+    }
+    .plus{
+        margin-top: 50px;
+    }
+    .valor{
+        flex-direction: column;
+    }
+    .text{
+        width: 90%;
+        margin-top: 30px;
+    }
+    
+    .imgval{
+        width: 95%;
+        height: 40vh;
+    }
+}

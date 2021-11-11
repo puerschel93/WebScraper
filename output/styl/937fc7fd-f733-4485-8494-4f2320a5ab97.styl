@@ -1,0 +1,266 @@
+@import '~assets/css/mixin.styl'
+
+.m-sell-order
+    width 948px
+    min-height 480px
+    .m-hd
+        width @width
+        padding 0 0 80px
+        _border(bottom,#E5E8EB)
+        position relative
+        .m-progress
+            width 800px
+            height 80px
+            margin 20px auto 30px
+            position relative
+            .progress-wrap
+                width @width
+                height 8px
+                background #d2d2d2
+                z-index 1
+                _completeCenter(0,auto,20px,auto)
+                .mark
+                    width 34px
+                    height 18px
+                    _completeCenter(-32px,auto,-20px,auto)
+                    background url('../../../../assets/img/i-theNo-car.png') center center no-repeat
+                    background-size 100% auto
+                    _translate3d(800px * 0.10)
+                    _transitionAll(1.2s,cubic-bezier(0.31, 0.51, 0.69, 0.94))
+                    &.v1
+                        _translate3d(800px * 0.10)
+                    &.v2
+                        _translate3d(800px * 0.30)
+                    &.v3
+                        _translate3d(800px * 0.40)
+                    &.v4
+                        _translate3d(800px * 0.50)
+                    &.v5
+                        _translate3d(800px * 0.60)
+                    &.v6
+                        _translate3d(800px * 0.70)
+                    &.v7
+                        _translate3d(800px * 0.80)
+                    &.v8
+                        _translate3d(800px)
+                .progress-gray
+                    width @width
+                    height @height
+                    background @background
+                    _overflow()
+                    _borderRadius(4px)
+                    .progress-bar
+                        width 800px * 0.10
+                        height @height
+                        background #53AEEF
+                        _transitionCustom(width 1.2s cubic-bezier(0.31, 0.51, 0.69, 0.94))
+                        &.v1
+                            width 800px * 0.10
+                        &.v2
+                            width 800px * 0.30
+                        &.v3
+                            width 800px * 0.40
+                        &.v4
+                            width 800px * 0.50
+                        &.v5
+                            width 800px * 0.60
+                        &.v6
+                            width 800px * 0.70
+                        &.v7
+                            width 800px * 0.80
+                        &.v8
+                            width 800px
+            .progress-info
+                width @width
+                height @height
+                z-index 2
+                _completeCenter(0,auto,0,auto)
+                .u-part-lst
+                    .u-item
+                        _display()
+                        text-align center
+                        width 160px
+                        float left
+                        .theNo
+                            width 38px
+                            height @width
+                            background #e2e2e2
+                            margin 5px auto 10px
+                            for num in 1..5
+                                &.v{num}
+                                    background url('../../../../assets/img/i-theNo-0'+num+'.png') center center no-repeat
+                                    background-size auto 100%
+                        .txt
+                            height 27px
+                            line-height @height
+                            color #959595
+                            font-size 15px
+                        &.on
+                            .theNo
+                                for num in 1..5
+                                    &.v{num}
+                                        background url('../../../../assets/img/i-theNo-on-0'+num+'.png') center center no-repeat
+                                        background-size auto 100%
+                            .txt
+                                color $c_blue
+        .m-statusText
+            .u-txt-box
+                width 720px - 16px
+                min-height 56px
+                max-height 112px
+                line-height 28px
+                background #E4F4FF
+                _borderAll(#2F98E2)
+                margin 0 auto 20px
+                padding 10px 12px
+                font-size 15px
+                _spacingPlus()
+        .m-operate-box
+            width @width - 300px
+            height 32px
+            _completeCenter(auto,15px,auto,15px)
+            .u-btn
+                _display()
+                height 32px
+                line-height @height
+                margin 0 0 0 15px
+                padding 0 15px
+                float right
+                background #2f98e2
+                color #fff
+                _borderRadius(2px)
+                &:hover
+                    background @background - 12%
+                &.v2
+                    background #ff6533
+                    &:hover
+                        background @background - 12%
+
+    .m-con
+        width @width
+        padding 15px 0 0
+        .u-part
+            .u-tit
+                height 32px
+                position relative
+                margin 0 0 10px
+                .tit
+                    _display(inline-block)
+                    height @height
+                    line-height @height - 2px
+                    font-size 14px
+                    text-align center
+                    _spacingPlus(2px)
+                    padding 0 12px
+                    background #E5E8EB
+                    color #4b5861
+                    position relative
+                    &::after
+                        content ""
+                        _display()
+                        height 2px
+                        background #53aeef
+                        _completeCenter(,,auto,0)
+        .m-seller-info
+            width 948px
+            min-height 70px
+            margin 0 0 15px
+            _border(bottom,#E5E8EB)
+            .u-con
+                height 32px
+                margin 0 0 10px
+                .u-lst
+                    height @height
+                    line-height @height
+                    .u-item
+                        float left
+                        &:not(:last-child)
+                            margin 0 40px 0 0
+                        .attr
+                            color #959595
+                            font-size 13px
+                            margin 0 4px 0 0 
+                        .data
+                            font-size 15px
+                            color $c_blue
+        .m-order-info 
+            width 948px
+            .u-con
+                width @width
+                .order-info
+                    width @width
+                    .u-line
+                        width @width
+                        height 28px
+                        line-height @height
+                        position relative
+                        .attr,.data
+                            _display(inline-block)
+                        .attr
+                            width 78px
+                            height @height
+                            _completeCenter(0,auto)
+                            font-size 13px
+                            color #959595
+                        .data
+                            margin 0 0 0 90px
+                            font-size 15px
+                            color #40474a
+                .product-info
+                    width @width 
+                    height 150px
+                    margin 20px 0 0
+                    position relative
+                    .u-pic-box
+                        width 200px
+                        height @height
+                        _completeCenter(0,auto,0,auto)
+                        .u-pic
+                            width @width
+                            height @height
+                            _overflow()
+                            position relative
+                            img
+                               width @width
+                               height auto
+                               _completeCenter(0,auto)
+                    .info-con
+                        height @height
+                        width @width - 215px - 20px
+                        margin 0 0 0 215px
+                        .u-title
+                            height 50px
+                            padding 6px 0
+                            margin 0 0 28px 
+                            line-height 25px
+                            _ellipsis(2)
+                            font-size 16px
+                            font-weight bold
+                            _spacingPlus()
+                        .u-other
+                            height 28px
+                            line-height @height
+                            .attr
+                                color #959595
+                                font-size 13px
+                            .data
+                                margin 0 0 0 10px
+                                font-size 15px
+                                color #40474a
+                                _spacingPlus()
+                            .cut
+                                margin 0 5px
+                                color #c2c2c2
+                        .u-price
+                            height 38px
+                            line-height @height
+                            width 250px
+                            text-align right
+                            _completeCenter(auto,10px,auto,0)
+                            color #959595
+                            .price
+                                color #ff6533
+                                .vital
+                                    font-size 22px
+                                    margin 0 4px 0 2px
+

@@ -1,0 +1,151 @@
+html
+  font: 300 100% / $baseline $fonts.primary
+
+body
+  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1
+  font-size: clamp(1em, 2.5vw, 1.3125em)
+  font-variant: common-ligatures discretionary-ligatures
+  line-height $baseline
+
+h1, h2, h3, h4, h5, h6
+  display: block
+
+h2
+  font-family: $fonts.secondary
+  font-size: 2.25em
+  font-weight: $fontWeights.bold
+  letter-spacing: -.05em
+  line-height: (1.35 / 1.5) * $baseline
+  margin-bottom: (.6666666666666667 / 1.5) * $baseline
+
+h1
+  @extend h2
+
+  @media (min-width: $breakpoints.tablet)
+    font-size: 3em
+    line-height: (1 / 1.5) * $baseline
+    margin-bottom: (.5 / 1.5) * $baseline
+
+h3
+  font-family: $fonts.secondary
+  font-size: 1.5em
+  font-weight: $fontWeights.bold
+  letter-spacing: -.05em
+  line-height: (1 / 1.5) * $baseline
+  margin-bottom: (1 / 1.5) * $baseline
+
+h4
+  font-size: 1.3125em
+  line-height: (1.142857142857143 / 1.5) * $baseline
+  margin-bottom: (1.142857142857143 / 1.5) * $baseline
+
+h5
+  font-size: .75em
+  font-weight: $fontWeights.medium
+  letter-spacing: .05em
+  line-height: ($baseline / .875)
+  margin-bottom: ($baseline / .875)
+  text-transform uppercase
+
+h6
+  font-size: 1em
+  line-height: $baseline
+  margin-bottom: $baseline
+
+p, ul, ol, dl, blockquote
+  margin-bottom: $baseline
+
+ul
+  list-style: disc inside
+
+ol
+  list-style: decimal inside
+
+ul, ol
+  ul
+    list-style: circle inside
+    margin:
+      bottom: 0
+      left: $baseline
+
+  ol
+    list-style: lower-roman inside
+    margin:
+      bottom: 0
+      left: $baseline
+
+em
+  font-style: italic
+
+strong
+  font-weight: $fontWeightBold
+
+small
+  font-size: .75em
+  line-height: .5em
+
+.quote
+  line-height: ($baseline * 1.5)
+  position: relative
+
+  &::before
+    content: '›'
+    font-size: 3em
+    font-weight: $fontWeights.bold
+    line-height: .5em
+    margin-right: .25em
+    position: absolute
+    right: 100%
+    top: 0
+
+  p
+    color: $colors.red
+    font-family: $fonts.secondary
+    font-size: 2.25em
+    font-style: italic
+    letter-spacing: -.025em
+    margin: 0 0 .22222222em
+
+  cite
+    display: inline
+
+  &__footer
+    @extend h5
+    color: $colors.gray2
+    text-align: right
+
+    &::before
+      content: '—'
+      margin-right: .5ch
+
+    .quote__tweet
+      font-size: 1em
+
+.screenreader-text
+  position: absolute
+  top: -9999vh
+  left: 0
+
+.swash
+  display: inline-block
+  position: relative
+  z-index: -1
+
+  &::before
+    color: $colors.gray
+    content: "B"
+    font-family: $fonts.swash
+    font-size: 2.25em
+    font-weight: $fontWeights.normal
+    left: 50%
+    position: absolute
+    top: 100%
+    transform: translate(-50%, -95%)
+    z-index: -1
+
+.script
+  font-family $fonts.tertiary
+
+:root
+  --deckgo-highlight-code-font-family: $fonts.mono
+  --deckgo-highlight-code-font-size: .875em

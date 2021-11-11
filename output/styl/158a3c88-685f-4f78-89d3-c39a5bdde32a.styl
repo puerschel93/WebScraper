@@ -1,0 +1,114 @@
+@css {
+/*
+Home My Team Teammate styles
+hometeammates.styl
+*/
+}
+.load-more
+  text-align                center
+  color                     #769ecc
+  margin-top                20px
+  cursor                    pointer
+
+.HomeApp-Teammate--ListItem
+  height                    44px
+  borderizeListItems        20px, 1px solid #EBEBEB
+  font-size                 15px
+  rel()
+  .badge
+    abs                     0 -4px 0px 0
+    margin                  0
+    color                   white
+    line-height             12px
+    size                    17px, 17px
+    rounded                 8px
+    font-size               0
+    &::before
+      content               ''
+      abs                   4px 0 0 3px
+    &.owner
+      bg                    color #48BA7D
+      &::before
+        r-sprite            app badge_icon_owner
+    &.admin
+      bg                    color #FFC442
+      &::before
+        left                4px
+        r-sprite            app badge_icon_admin
+
+  .avatarview
+    height                  40px
+    &.default
+      r-sprite              home user_default
+
+  .details
+    line-height             24px
+    margin-left             57px
+
+  p
+    dInline()
+
+  .fullname
+    color                   #5F5F5F
+    font-weight             400
+    padding-top             4px
+    line-height             22px
+    text-rendering          geometricPrecision
+
+  .metaData
+    color                   #AFAFAF
+    font-weight             400
+    line-height             14px
+    letter-spacing          .15px
+    text-rendering          geometricPrecision
+
+    .email
+    .nickname
+      ellipsis()
+
+    .nickname:before
+      content               ' | '
+      display               inline
+      color                 #eee
+
+
+  .dropdown
+
+    .role
+      display               inline-block
+      color                 #BFBFBF
+      cursor              text
+      margin-right          15px
+      font-size             14px
+      letter-spacing        .3px
+      &.showPointer
+        cursor              pointer
+
+    .ButtonWithMenuWrapper
+      cursor                pointer
+      display               inline-block
+      &:before
+        content             ''
+        background          none
+        border              5px solid transparent
+        border-top-color    rgb(183,183,183)
+        width               10px
+        abs                 8px
+        borderBox()
+
+
+.HomeApp-Teammate--ListItem
+  padding-top               0px !important
+  .avatarview
+    abs                     4px 0 0 0px
+    overflow                visible
+
+  .dropdown
+    abs                     10px 2px 0 0
+
+.HomeApp-Teammate--ListItem ~ .HomeApp-Teammate--ListItem
+  padding-top               20px !important
+  .avatarview
+    top                     24px
+  .dropdown
+    top                     30px

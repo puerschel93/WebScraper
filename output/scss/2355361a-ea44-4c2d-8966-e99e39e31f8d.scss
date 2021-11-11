@@ -1,0 +1,193 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// CHOIX UNIQUE // PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI 
+$picture-bg:no;
+$picture-bg-url:'../images/bg_moteur.jpg';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container:0;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:0;
+
+// SIZE NAVIGATION
+$height-navigation:130;
+
+// VARIABLE SITE TYPO
+$font-body:"proxima-nova",arial,verdana,sans-serif;
+$font-title:"clavo",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.5em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/paris";
+
+// IMPORT MODULE ANNONCES3
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+.navigation {
+ border-bottom:1px solid $color-secondary;
+}
+
+
+.menu-principal {
+font-size:$font-size-title * 0.56;
+>li>a {
+	text-transform:uppercase;
+	color:$color-menu;
+	padding:8px 0 8px 0;
+	margin: 2px 8px 2px 8px;
+	&:hover {
+	border-bottom: 1px solid $color-action;
+	color:$color-action;
+	}
+}
+}
+.menu-principal>li>a.menu-sub-on {
+background:transparent;
+border-bottom: 1px solid $color-menu;
+color:$color-action;
+}
+
+.menu-sub .menu-sub-bg {
+background:$color-body;
+}
+.openSub .padding-15 {
+padding:0 0 0 0;
+}
+.menu-sub ul li a {
+color:$color-action;
+padding:3px 8px 3px 8px;
+border-bottom:transparent;
+text-transform:uppercase;
+font-size:0.7em;
+}
+
+.h2-title-moteur {
+	text-align:center;
+	font-size:3.8em;
+}
+.moteur-refine .h2-title-moteur {
+	font-size: 2em;
+}
+@media only screen and  (max-width : 767px) {
+.h2-title-moteur {
+	font-size:1.1em;
+	}
+}
+
+// CHANGEMENT COULEUR TYPO DE PRIX SUR MOD
+.orbit-infos .typo-action {
+color:$color-block;
+}
+
+// PAS DE BOUTON EXCLU SUR LES ANNONCES EN HP
+/*.module-annonces-homepage .btn-exclusif {
+display:none;
+}*/
+
+// CMC PATRIMO FOOTER EN MAJ
+.nav-footer-titre {text-transform:uppercase;}
+
+// RESIZE PHOTO EXTRA
+
+#featured {
+height:583px !important;
+width: 850px !important;
+
+}
+
+div.orbit-wrapper {
+margin-left:45px;
+background-color:$color-body;
+height:583px !important;
+width: 850px !important;
+}
+
+.bg-picture .box-shadow-bottom {
+box-shadow:none;
+}
+
+// H1 DES PAGES LISTING EN MAJUSCULE POUR CONTOURNER L'ABSENCE DE MAJUSUCULE SUR FRANCE
+
+.phrase-recherche {
+text-transform: uppercase;
+font-size: $font-size-title*0.7;
+}
+
+
+// ELEMENTS MASQUES
+.slider-nav .right, .slider-nav .left, .titre-membres, .btn-cdc {
+display:none;
+}
+
+// Margin sur coordo footer
+.texte-info-agences {
+margin-bottom:5px;
+}
+
+.logo-membres img {
+margin-right:1px;
+}
+
+.homepage-bloc-prix-bien {
+color:$color-body;
+}
+

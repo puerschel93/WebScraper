@@ -1,0 +1,306 @@
+// Common Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Special Elite", cursive;
+    font-weight: 400;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    margin: 3rem;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// End of Common Styles
+
+// Menu
+.menu {
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    top: 5rem;
+    left: 10rem;
+    flex-direction: column;
+    z-index: 10;
+    cursor: pointer;
+    transition: all .5s;
+
+    .menu-line {
+        width: 100%;
+        height: .2rem;
+        background-color: #f2e108;
+        margin: .4rem 0;
+        box-shadow: 0.1rem 0.1rem 0.3rem #000000;
+        transition: all .5s;
+    }
+
+    &.change {
+        transform: rotate(45deg);
+
+        .menu-line {
+            background-color: #8f6a0c;
+        }
+
+        .menu-line-1 {
+            transform: rotate(270deg) translateX(-.4rem);
+        }
+    
+        .menu-line-2 {
+            transform: rotate(360deg) translateY(-.6rem);
+        }
+    }
+}
+// End of Menu
+
+
+// Navbar
+.navbar {
+    width: 16vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 9;
+    padding: 8rem .5rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: oldlace;
+    transition: left .5s;
+
+    .navbar-link {
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 2rem 0;
+        color: #777;
+        letter-spacing: .3rem;
+        text-transform: uppercase;
+        transition: color .3s;
+
+        &:hover {
+            color: #111;
+        }
+    }
+
+    &.change {
+        left: 0;
+    }
+}
+
+// End of Navbar
+
+
+// Common Section Styles
+.wrapper {
+    width: 100%;
+    perspective: 50rem;
+}
+
+section {
+    width: 100%;
+    background-color: #efefef;
+    box-shadow: 0rem 1rem 3rem #333;
+    margin-bottom: 3rem;
+    padding: 5rem 0 ;
+    position: relative;
+    left: 0;
+    transform-origin: left;
+    transition: left .5s, transform .5s;
+
+
+    .section-heading {
+        font-size: 8rem;
+        font-weight: bolder;
+        color: #fff;
+        margin-bottom: 4rem;
+        letter-spacing: 1rem;
+        text-align: center;
+    }
+
+    &.change {
+        left: 16vw;
+        transform: rotateY(10deg);
+    }
+}
+
+// End of Common Section Styles
+
+
+// Section-1
+.section-1 {
+    flex-direction: column;
+    background: url(../images/bg-section1.jpg) center no-repeat;
+    background-size: cover;
+    height: calc( 100vh - 6rem );
+
+
+    &-heading {
+        margin-top: 2rem;
+        text-transform: uppercase;
+        text-shadow: 1rem 1rem 1rem #000, 2rem 2rem 2rem #111,
+        3rem 3rem 3rem #222;
+    }
+
+    &-img {
+        width: 70%;
+    }
+}
+// End of Section-1
+
+// Section-2
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    &-heading  {
+        text-shadow: .3rem .3rem .5rem #555;
+    }
+
+    .cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .card {
+            width: 35%;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: .6rem .6rem .6rem #bbb;
+            margin: 3rem 0;
+            position: relative;
+            transition: all .3s;
+            
+            .car-name {
+                font-size: 2rem;
+                font-weight: 600;
+                position: absolute;
+                top: 2rem;
+                left: 2rem;
+                color: #fff;
+                text-transform: uppercase;
+                transition: color .3s;
+                z-index: 10;
+            }
+            
+            .car-img {
+                width: 100%;
+                opacity: .8;
+                transition: opacity .3s;
+            }
+            
+            .car-price {
+                font-size: 1.8rem;
+                color: #777;
+                margin: .5rem 0;
+                transition: color .3s;
+            }
+            
+            .card-btn {
+                width: 100%;
+                color: #fff;
+                font-size: 1.7rem;
+                border: none;
+                margin-top: 1rem;
+                padding: .5rem;
+                letter-spacing: .4rem;
+                text-shadow: .1rem .1rem .3rem #000;
+                box-shadow: .1rem .1rem .5rem #bbb;
+                cursor: pointer;
+            }
+
+            &:hover {
+                box-shadow:.8rem .9rem .9rem #aaa;
+
+                .car-img {
+                    opacity: 1;
+                }
+
+                .car-price {
+                    color: #333;
+                }
+            }
+        }
+    }
+}
+// End of Section-2
+
+// Section-3
+.section-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .section-heading {
+        color: rgb(250, 250, 250);
+        text-shadow: .3rem .3rem .5rem rgb(90, 90, 90);
+        margin-bottom: 15rem;
+    }
+
+    .gallery {
+        margin: 12rem 0;
+        perspective: 10rem;
+
+        .gallery-shelf {
+            width: 80%;
+            height: 3rem;
+            background-color: rgba(38, 126, 199, 0.8);
+            margin: auto;
+            position: relative;
+            box-shadow: 1rem 1rem 5rem #444;
+            transform: skewX(-10deg);
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 10rem;
+                background-color: rgba(34, 152, 248, 0.7);
+                top: -10rem;
+                transform: rotateX(20deg) skewX(10deg);
+                transform-origin: bottom;
+            }
+        }
+
+        img {
+            width: 22%;
+            position: absolute;
+            bottom: 4rem;
+            transform: translateX(-50%) rotateX(1deg);
+            box-shadow: 0.2rem -0.2rem 0.5rem #888;
+            border-radius: 0.5rem;
+            transition: all .3s;
+
+            &:hover {
+                transform: translateX(-50%) rotateX(0);
+            }
+        }
+
+        .gallery-img-1 {
+            left: 50%;
+        }
+
+        .gallery-img-2 {
+            left: 25%;
+        }
+
+        .gallery-img-3 {
+            left: 75%;
+        }
+    }
+}
+// End of Section-3

@@ -1,0 +1,282 @@
+#news-events--intro
+  padding rem(40px) rem(30px)
+  +above(m)
+    lost-flex-container: row
+    padding rem(40px) 0
+
+#news-events--intro-text
+  +between(m, l)
+    lost-column 15/36
+    lost-offset: 2/36
+  +above(xl)
+    lost-column 15/36
+    lost-offset: 2/36
+
+  h1
+    color $news-events-intro-headline-color
+    font-family $news-events-intro-headline-font
+    font-size $news-events-intro-headline-size-mobile
+    line-height 1
+    margin 0
+    text-transform $news-events-intro-headline-transform
+    +above(m)
+      font-size $news-events-intro-headline-size-desktop
+
+  h2
+    color $news-events-intro-subheadline-color
+    font-family $news-events-intro-subheadline-font
+    font-size $news-events-intro-subheadline-size-mobile
+    margin rem(10px) 0 0
+    text-transform $news-events-intro-subheadline-transform
+    +above(m)
+      font-size $news-events-intro-subheadline-size-desktop
+
+  p
+    color $news-events-intro-text-color
+    font-size $news-events-intro-text-size-mobile
+    line-height 1.5
+    margin-top rem(24px)
+    +above(m)
+      font-size $news-events-intro-text-size-desktop
+
+.news-events--featured-article
+#news-events--nav
+#news-events--rss
+#news-events--articles-list
+  +above(m)
+    lost-column 32/36
+    lost-offset: 2/36
+    lost-flex-container: row
+
+#news-events--rss
+  justify-content: flex-end
+  > a
+    align-items: center
+    color: $content-text-color
+    display: flex
+    padding: rem(4px)
+    text-decoration: none
+    svg
+      fill: $content-text-color
+      margin-left: rem(8px)
+      width: rem(14px)
+      +above(desktop-min)
+        width: rem(16px)
+    &:hover
+      color: $content-link-color
+      svg
+        fill: $content-link-color
+
+
+#news-events--articles-list
+  > article
+    margin 0 rem(10px) rem(15px)
+    +above(m)
+      lost-waffle: 1/3
+
+
+#news-events--nav
+.news-events--featured-article
+  margin-bottom rem(36px)
+  +above(m)
+    margin-bottom rem(48px)
+
+
+#news-events--nav
+  background-color $news-events-filter-background
+  +below(mobile-max)
+    padding rem(30px)
+
+  .news-events--nav--filter-row
+    +above(m)
+      lost-flex-container: row
+      width 100%
+      > label
+        lost-column 6/36
+        +above(xl)
+          lost-column 4/36
+        text-align right
+        font-family $news-events-filter-label-font
+        font-size $news-events-filter-label-size-desktop
+        display: flex
+        justify-content: center
+        flex-direction: column
+        cursor default
+      > .news-events--nav--filters
+        lost-column 29/36
+        +above(xl)
+          lost-column 31/36
+        lost-flex-container: row
+
+    input[type="checkbox"]
+      & + label::before
+        display none
+
+      & + label::after
+        opacity 1
+        pointer-events: none
+        closeSize = $line-height-computed / 2
+        left auto
+        right $border-width-base
+        top $border-width-base
+        mask: embedurl("../sprites/arrow-small-down.svg", "utf8") no-repeat 50% 50%/closeSize closeSize
+        height $input-height-base
+        width ($padding-base-horizontal * 3)
+        background-color: $navy
+        transition: all 150ms ease
+        +above(m)
+          opacity 0
+          display none
+
+      & + label[for=news-events--nav--filter-row--date]::after
+        background-color: $button-background
+
+      +below(mobile-max)
+        &:checked
+          & + label::after
+            transform: rotate( -180deg )
+            transform-origin: 50% 50%
+          & + label
+            background-color $button-hover-background
+            &[for=news-events--nav--filter-row--date]
+              background-color $dark-gray
+              color $white
+          & ~ ul
+          & ~ form ul
+            display block
+
+
+
+
+
+    > label
+      +below(mobile-max)
+        button($button-background, $button-hover-background, $button-text-color, $button-text-color, $button-font-size, $button-line-height, ($button-padding * 0.8), uppercase, left)
+        display block
+        margin-right 0
+        position relative
+
+        &[for=news-events--nav--filter-row--date]
+          button($white, $dark-gray, $button-background, $white, $button-font-size, $button-line-height, ($button-padding * 0.8), uppercase, left)
+          display block
+          margin-right 0
+
+      +above(m)
+        color $news-events-filter-label-color
+        font-size $news-events-filter-label-size-mobile
+        font-weight bold
+        text-transform $news-events-filter-label-transform
+        vertical-align middle
+
+    ul
+    form
+      padding 0
+      width 100%
+
+    ul
+      display none
+      +below(mobile-max)
+        margin-top rem(-10px)
+        li
+          a
+          input[type=submit]
+            margin-right 0
+            width 100%
+            &, &:hover
+              box-shadow none
+      +above(m)
+        display: flex
+        flex-flow: row nowrap
+        margin 1rem 0 0
+        &.news-events--nav--filters--type
+          align-items: stretch
+          li
+            flex-grow: 1
+        &.news-events--nav--filters--date
+          width 100%
+          align-items: stretch
+          +above(xl)
+            width 70%
+          li
+            flex-grow: 1
+            min-width rem(180px)
+
+      li
+        display block
+        +above(m)
+          display inline-block
+          margin 0 rem(10px) 1rem
+
+        a
+        input[type=submit]
+          button($button-background, $button-hover-background, $button-text-color, $button-text-color, $button-font-size, $button-line-height, ($button-padding * 0.8), uppercase, center)
+          display block
+
+        &.current
+          a
+          input[type=submit]
+            button($button-hover-background, $button-hover-background, $button-text-color, $button-text-color, $button-font-size, $button-line-height, ($button-padding * 0.8), uppercase, center)
+            display block
+
+
+
+.news-events--featured-article
+  > article
+    position relative
+    width: 100%
+
+    &.block--news-events--preview
+      a
+        padding-bottom 0
+
+    figure
+      position relative
+      +above(m)
+        &::after
+          display: block
+          position: absolute
+          background-image: linear-gradient(to bottom, transparent 0%, rgba($black, .6) 100%)
+          top 0
+          right 0
+          left 0
+          bottom 0
+          content: ''
+
+    .block--news-events--featured-title
+      padding rem(30px) 0 rem(28px)
+      +above(m)
+        position absolute
+        left 0
+        right 0
+        bottom rem(72px)
+        padding 0
+
+
+      h2
+      h3
+        padding-left rem(30px)
+        padding-right rem(30px)
+        +above(m)
+          padding-left: 'calc(%s * (-%s/%s * -%s) - (%s - %s * (-%s/%s * -%s)) + %s)' % (100vw 2 36 1 30px 30px 2 36 1 30px)
+          padding-right: 'calc(%s * (-%s/%s * -%s) - (%s - %s * (-%s/%s * -%s)) + %s)' % (100vw 2 36 1 30px 30px 2 36 1 30px)
+
+      h2
+        font-size $module-news-events-featured-preview-title-size-mobile
+        +above(m)
+          color $white
+          font-size $module-news-events-featured-preview-title-size-desktop
+
+        > span
+          background-color $module-news-events-featured-preview-title-button-background
+          color $module-news-events-featured-preview-title-button-color
+          display inline-block
+          font-size $module-news-events-featured-preview-title-button-size-mobile
+          padding .4em .8em
+          text-transform $module-news-events-featured-preview-title-button-transform
+          vertical-align middle
+          +above(m)
+            margin-left 1rem
+            font-size $module-news-events-featured-preview-title-button-size-desktop
+
+      h3
+        margin 0

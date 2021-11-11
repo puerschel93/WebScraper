@@ -1,0 +1,243 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/bg-picture.jpg';
+$picture-bg-repeat-horizontal:no;
+$picture-bg-repeat-vertical:no;
+$picture-bg-attachment:fixed;
+
+// SIZE NAVIGATION
+$height-navigation:80;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:412;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib6";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/buenos-aires";
+
+// IMPORT MODULE SOUS MENU LIB1
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MODULE ANNONCES12
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE PUB LIB1
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra16";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT CHOSEN
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+.nav-footer.nav-pills.nav-stacked>li>a {
+	color:$color-nav-footer;
+}
+
+// FLORES
+
+// ALIGNEMENT BG TEXTE ACCUEIL 
+
+.bg-picture{	
+	background-image:url('../images/bg-picture.jpg');
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+}
+
+// ALIGNEMENT MENU
+.menu-principal {
+	margin-top:15px;
+	font-size:1.2em;
+}
+
+// MODULE ANNONCES
+// SUPPRESION DE LA LIGNE TITRE DU MODULE ANNONCE
+.ligne-titre {
+	display:none;
+}
+
+// ALIGNEMENT MODULE ANNONCE
+.module-annonces-homepage {
+	margin-top:-2px;
+	.height-300 {
+		height:310px;
+	}
+}
+
+// MODULE PUB
+// REMPLACEMENT COULEUR MODULE
+.zone-pub {
+	background:$color-action;
+	padding:10px;
+}
+.zone-pub h3 {
+	color:$color-font-body;
+}
+
+
+// MINI MOTEUR
+// SUPPRESSION BG MINI MOTEUR
+.moteur-avantage {
+	background:none;
+}
+
+// DETAIL PA
+// CLASS SUPPRIMABLE EN FONCTION DE LA PHOTO
+.bloc-detail-prix, .breadcrumb .typo-important {
+	color:$color-font-body;
+}
+
+
+
+
+
+.img-homepage {
+@include box-shadow(#000 0px 0px 10px);
+@include border (full, 2px, #fff);
+}
+
+.navigation {
+@include border (bottom, 5px, $color-important);
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//		PERSO RONSARD
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:100%;
+	}
+}
+
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.logo img {
+	margin-top: -20px;
+}
+
+@media only screen and (max-width : 1280px) {
+	.menu-principal>li>a {
+		font-size: 0.8em;
+	}
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.bg-encart-text-home {  
+  	background:transparent;  
+	height: 198px;    
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//		INDEX
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		TTL INDEX
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.slogan-index {
+	margin-bottom:-20px;
+}
+
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		PUB SERVICES
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.zone-pub {
+	background-color:rgba($color-block,0.9);	
+	color:$color-primary;
+	.typo-action {
+		color:$color-important;
+	}
+}
+
+.zone-pub-gestion {
+	margin-top: 12px;
+    height: 198px;
+}
+
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		EXTRA
+	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.bg-module-annonces-homepage-extra {
+	background-color:rgba($color-block,0.9);	
+	color:$color-primary;	
+}
+
+.module-annonces-homepage-extra {
+	color:$color-primary;	
+	a {
+		color:$color-primary;	
+		.xbiggest {
+			color:$color-important;	
+		}
+	}	
+}
+
+.bg-encart-moteur-home {
+ 	background:$color-block;
+  	@include box-shadow(#000 0px 0px 10px);
+}

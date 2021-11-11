@@ -1,0 +1,426 @@
+.form-group {
+    & > label {
+        &.control-label {
+            font-family: @fontPrimary;
+            font-size: 0.875rem;
+            font-weight: normal;
+            line-height: 1.3;
+        
+            color: @textColorSecondary;
+        
+            margin-bottom: 0.25rem;
+        }
+    }
+    & > select,
+    & > textarea,
+    & > input[type=password],
+    & > input[type=select],
+    & > input[type=text] {
+        position: relative;
+        overflow: hidden;
+
+        background-color: @colorGrayscale100;
+        color: @textColorPrimary;
+
+        -webkit-transition: background-color .2s ease-out;
+        -moz-transition: background-color .2s ease-out;
+        transition: background-color .2s ease-out;
+
+        display: block;
+        border: 0;
+        width: 100%;
+
+        padding-bottom: 0.75rem;
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+        padding-top: 0.75rem;
+
+        font-size: 0.875rem;
+        line-height: 1.3;
+
+        &::placeholder {
+            color: @textColorTeritary;
+        }
+
+        @media @desktop {
+            border: 1px solid @colorGrayscale200;
+            border-radius: 0.5rem;
+        }
+        @media @mobile {
+            border-radius: @borderRadius;
+        }
+
+        &:hover {
+            background-color: @colorGrayscale200;
+        }
+        &:focus-within {
+            background-color: @colorGrayscale100;
+        }
+    }
+    & > select,
+    & > input[type=select] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        position: relative;
+        cursor: pointer;
+    }
+    & > .help-block {
+        font-size: 0.75rem;
+        line-height: 1.3;
+
+        color: @textColorTeritary;
+
+        margin-top: 0.25rem;
+
+        &.help-block-error {
+            margin-top: unset;
+        }
+    }
+    textarea {
+        resize: vertical;
+    }
+    label {
+        position: relative;
+
+        padding-bottom: unset;
+        padding-right: unset;
+        padding-left: unset;
+        padding-top: unset;
+
+        font-size: 0.875rem;
+        line-height: 1.4;
+
+        color: @textColorPrimary;
+
+        align-items: center;
+        display: flex;
+
+        .regular-radio-button,
+        .regular-checkbox-box {
+            order: -1;
+        }
+    }
+    & > .input-group {
+        .input-group-addon {
+            @media @desktop {
+                border: 1px solid @colorGrayscale200;
+                border-radius: 0.5rem;
+            }
+            @media @mobile {
+                border-radius: @borderRadius;
+            }
+        }
+        .form-control {
+            position: relative;
+            overflow: hidden;
+    
+            background-color: @colorGrayscale100;
+            color: @textColorPrimary;
+
+            -webkit-transition: background-color .2s ease-out;
+            -moz-transition: background-color .2s ease-out;
+            transition: background-color .2s ease-out;
+    
+            display: block;
+            border: 0;
+            width: 100%;
+    
+            padding-bottom: 0.75rem;
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
+            padding-top: 0.75rem;
+    
+            font-size: 0.875rem;
+            line-height: 1.3;
+
+            height: auto !important;
+    
+            &::placeholder {
+                color: @textColorTeritary;
+            }
+
+            @media @desktop {
+                border: 1px solid @colorGrayscale200;
+                border-radius: 0.5rem;
+            }
+            @media @mobile {
+                border-radius: @borderRadius;
+            }
+
+            &:hover {
+                background-color: @colorGrayscale200;
+            }
+            &:focus-within {
+                background-color: @colorGrayscale100;
+            }
+        }
+        .input-group-btn {
+            .btn {
+                margin-left: 0.5rem;
+                line-height: 1.15;
+            }
+        }
+    }
+    &.field-space-name  {
+        & > .input-group {
+            .input-group-addon {
+                @media @desktop {
+                    border-radius: 0.5rem 0 0 0.5rem;
+                }
+                @media @mobile {
+                    border-radius: @borderRadius 0 0 @borderRadius;
+                }
+
+                border-right: 0 !important;
+            }
+            .form-control {
+                @media @desktop {
+                    border-radius: 0 0.5rem 0.5rem 0;
+                }
+                @media @mobile {
+                    border-radius: 0 @borderRadius @borderRadius 0;
+                }
+
+                border-left: 0 !important;
+            }
+        }
+    }
+    &.field-space-about {
+        & > .ProsemirrorEditor {
+            position: relative;
+            overflow: hidden;
+    
+            background-color: @colorGrayscale100;
+            color: @textColorPrimary;
+    
+            display: block;
+            border: 0;
+            width: 100%;
+    
+            padding-bottom: 0.75rem;
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
+            padding-top: 0.75rem;
+    
+            font-size: 0.875rem;
+            line-height: 1.3;
+    
+            @media @desktop {
+                border: 1px solid @colorGrayscale200;
+                border-radius: 0.5rem;
+            }
+            @media @mobile {
+                border-radius: @borderRadius;
+            }
+    
+            .ProseMirror-menubar-wrapper {
+                .ProseMirror-menubar {
+                    margin-right: -0.75rem;
+                    margin-left: -0.75rem;
+                    margin-top: -0.75rem;
+                }
+            }
+        }
+    }
+
+    & > .help-block {
+        font-size: .875rem !important;
+        font-weight: 400 !important;
+        line-height: 1.3 !important;
+        color: @textColorSecondary !important;
+
+        margin-bottom: unset !important;
+    }
+}
+
+.tab-content {
+    .tab-pane {
+        .form-group {
+            margin-bottom: 1rem;
+        
+            margin-right: unset;
+            margin-left: unset;
+        }
+    }
+}
+
+.grid-view {
+    .table {
+        select,
+        textarea,
+        input[type=password],
+        input[type=select],
+        input[type=text] {
+            position: relative;
+            overflow: hidden;
+    
+            background-color: @colorGrayscale100;
+            color: @textColorPrimary;
+    
+            display: block;
+            border: 0;
+            width: 100%;
+    
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
+
+            @media @desktop {
+                padding-bottom: 0.25rem;
+                padding-top: 0.25rem;
+
+                font-size: 0.75rem;
+
+                width: 100%;
+                min-width: 11rem;
+            }
+            @media @mobile {
+                padding-bottom: 0.75rem;
+                padding-top: 0.75rem;
+
+                font-size: 0.875rem;
+            }
+    
+            line-height: 1.3;
+    
+            &::placeholder {
+                color: @textColorTeritary;
+            }
+    
+            @media @desktop {
+                border: 1px solid @colorGrayscale200;
+                border-radius: 0.5rem;
+            }
+            @media @mobile {
+                border-radius: @borderRadius;
+            }
+        }
+        select,
+        input[type=select] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+    
+            position: relative;
+            cursor: pointer;
+        }
+    }
+}
+
+.settings-selected {
+    .form-control {
+        margin-right: unset !important;
+        float: unset !important;
+    }
+
+    select,
+    textarea,
+    input[type=password],
+    input[type=select],
+    input[type=text] {
+        position: relative;
+        overflow: hidden;
+
+        background-color: @colorGrayscale100;
+        color: @textColorPrimary;
+
+        display: block;
+        border: 0;
+        width: 100%;
+
+        padding-bottom: 0.75rem;
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+        padding-top: 0.75rem;
+
+        font-size: 1rem;
+        line-height: 1.5;
+
+        &::placeholder {
+            color: @textColorTeritary;
+        }
+
+        @media @desktop {
+            border: 1px solid @colorGrayscale200;
+            border-radius: 0.5rem;
+        }
+        @media @mobile {
+            border-radius: @borderRadius;
+        }
+    }
+    select,
+    input[type=select] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        position: relative;
+        cursor: pointer;
+    }
+}
+
+.regular-checkbox + .regular-checkbox-box {
+    background-color: @colorGrayscale200;
+    border-color: @colorGrayscale200;
+    border-radius: 0.25rem;
+
+    margin-bottom: unset;
+    margin-right: 0.5rem;
+    margin-left: unset;
+    margin-top: unset;
+}
+.regular-checkbox:checked + .regular-checkbox-box {
+    background-color: @colorAccent100;
+    border: 2px solid @colorAccent100;
+    color: @colorWhite;
+
+    &.disabled {
+        background-color: #d7d7d7 !important;
+        border: 2px solid #d7d7d7 !important;
+        cursor: not-allowed
+    }    
+}
+
+.regular-radio:checked + .regular-radio-button {
+    background-color: transparent;
+    color: #757c82;
+    border: 2px solid #d7d7d7;
+    margin-right: 0.5rem;
+
+    &::after {
+        background-color: @colorAccent100;
+    }    
+}
+
+.ui-datepicker {
+    background-color: @colorWhite;
+    border: 1px solid @colorGrayscale200;
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+
+    padding-bottom: .75rem;
+    padding-right: .75rem;
+    padding-left: .75rem;
+    padding-top: .75rem;
+    
+    overflow: hidden;
+    z-index: 150;
+
+    @media @desktop {
+        border-radius: @borderRadiusFull;
+    }
+    @media @mobile {
+        border-radius: @borderRadius;
+    }
+    
+    .ui-datepicker-prev span,
+    .ui-datepicker-next span {
+        opacity: .2
+    }
+    
+    .ui-datepicker-prev:hover,
+    .ui-datepicker-next:hover {
+        background-color: @colorWhite;
+        border: none;
+    }
+}

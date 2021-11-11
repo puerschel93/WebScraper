@@ -1,0 +1,284 @@
+//--------------------------------
+//  コンテンツエリア幅の定義（コンテンツ幅は[variable.scss]にて定義）
+//--------------------------------
+@mixin contentArea {
+    width: 100%;
+    max-width: $content_width + ($content_gutter * 2);
+    padding: {
+        right: $content_gutter;
+        left: $content_gutter;
+    }
+    margin: {
+        right: auto;
+        left: auto;
+    }
+}
+
+//--------------------------------
+//  全幅セクション（ly_contが1カラムレイアウトの場合み適用可）
+//  @param str padding 左右のコンテンツエリアパディングを取る場合はpを入力
+//                null  => コンテンツエリアパディングなし
+//                both  => コンテンツエリアパディングあり
+//                right => 右側のみコンテンツエリアパディングあり
+//                left  => 左側のみコンテンツエリアパディングあり
+//--------------------------------
+@mixin contentAreaFullWidth($padding:'') {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    @if $padding == both {
+        padding-left: calc(50vw - 50%);
+        padding-right: calc(50vw - 50%);
+    } @else if $padding == right{
+        padding-right: calc(50vw - 50%);
+    } @else if $padding == left {
+        padding-left: calc(50vw - 50%);
+    }
+}
+
+//--------------------------------
+//  メディアクエリ制御（ブレイクポイントは[variable.scss]にて定義）
+//  @param str size 適用デバイスの指定
+//              sm => モバイル
+//              md => タブレット
+//              lg => デスクトップ
+//              smmd => モバイル＋タブレット
+//              mdlg => タブレット＋デスクトップ
+//--------------------------------
+@mixin media($size) { //[引数]sm：モバイル
+    @if $size == sm {
+        @media screen and (max-width : $breakpoint_small){
+            @content;
+        }
+    }
+    @else if $size == md { //[引数]md：タブレット
+        @media screen and (min-width : ( $breakpoint_small + 1) ) and (max-width : $breakpoint_medium){ //タブレットのみ適用
+            @content;
+        }
+    }
+    @else if $size == lg { //[引数]lg：デスクトップ
+        @media screen and (min-width : ( $breakpoint_medium + 1 )){
+            @content;
+        }
+    }
+    @else if $size == smmd { //[引数]smmd：モバイル＋タブレット
+        @media screen and (max-width : $breakpoint_medium){
+            @content;
+        }
+    }
+    @else if $size == mdlg { //[引数]mdlg：タブレット＋デスクトップ
+        @media screen and (min-width : ( $breakpoint_small + 1 )){
+            @content;
+        }
+    }
+}
+
+//--------------------------------
+//  Font Awesome 5 （アイコンフォントのスタイル）
+//--------------------------------
+@mixin fas { // Font Awesome 5 Free Solid.
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+@mixin far { // Font Awesome 5 Free Regular.
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+}
+
+@mixin fab { // Font Awesome 5 Free Brands.
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+}
+
+//--------------------------------
+//  フォントサイズの単位をremに変換
+//  @param int size px単位のフォントサイズを指定
+//--------------------------------
+@mixin fontSize($size : (.16 * $root_em)) {
+    font-size: ($size/(.16 * $root_em)) * 1rem;
+}
+
+//--------------------------------
+//  デスクトップセクション間パディング
+//  @param str area セクションのエリアを指定（上下のパディング値を変動する）
+//              	t => 上部セクション	（下パディング半分）
+//              	b => 下部	（上パディング半分）
+//              	o => 単独	（上下パディング半分）
+//              	null => 中間	（上下パディングフル）
+//--------------------------------
+@mixin dtSectPadding($area:'') {
+    $top: 2;
+    $bottom: 2;
+    @if $area == t {
+        $top: 1;
+        $bottom: 2;
+    }@else if $area == b {
+        $top: 2;
+        $bottom: 1;
+    }@else if $area == o {
+        $top: 1;
+        $bottom: 1;
+    }
+	padding-top: (120px / $top);
+	padding-bottom: (120px / $bottom);
+}
+
+//--------------------------------
+//  モバイルセクション間パディング
+//  @param str area セクションのエリアを指定（上下のパディング値を変動する）
+//              	t => 上部セクション	（下パディング半分）
+//              	b => 下部	（上パディング半分）
+//              	o => 単独	（上下パディング半分）
+//              	null => 中間	（上下パディングフル）
+//--------------------------------
+@mixin smSectPadding($area:'') {
+    $top: 2;
+    $bottom: 2;
+    @if $area == t {
+        $top: 1;
+        $bottom: 2;
+    }@else if $area == b {
+        $top: 2;
+        $bottom: 1;
+    }@else if $area == o {
+        $top: 1;
+        $bottom: 1;
+    }
+    @include media(sm) {
+        padding-top: (60px / $top)!important;
+        padding-bottom: (60px / $bottom)!important;
+    }
+}
+
+//--------------------------------
+//  フルードイメージ
+//  @param float height 横幅に対する高さの割合を％で指定（単位省略）
+//--------------------------------
+@mixin fluid ($height:'62.5') { //[引数]横幅に対する高さの比率
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: $height * 1%;
+    }
+    & > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+//--------------------------------
+//  リンクレイアー（要素全体にリンクエリアを適用）
+//  ※注：親要素に[position: relative;]を指定すること
+//--------------------------------
+@mixin layer() {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+//--------------------------------
+//  ul,olのスタイルをリセット
+//  （margin-leftとlist-styleの初期化）
+//--------------------------------
+@mixin ul() {
+    list-style: none;
+	margin-left: 0;
+}
+
+//--------------------------------
+//  グリッドレイアウトモジュール
+//  @param int $col カラムの数
+//  @param int $colgap カラム列の隙間(px)
+//  @param int $rowgap カラム行の隙間(px)
+//  @param int $colsm カラムの数 > モバイル
+//  @param int $colgapsm カラム列の隙間(px) > モバイル
+//  @param int $rowgapsm カラム行の隙間(px) > モバイル
+//--------------------------------
+@mixin grid($col:'3', $colgap:'40', $rowgap:'40', $colsm:$col, $colgapsm:$colgap, $rowgapsm:$rowgap) {
+    display: grid;
+	grid-template-columns: repeat($col, 1fr);
+	column-gap: $colgap * 1px;
+	row-gap: $rowgap * 1px;
+	@include media(sm) {
+		grid-template-columns: repeat($colsm, 1fr);
+		column-gap: $colgapsm * 1px;
+		row-gap: $rowgapsm * 1px;
+    }
+}
+
+//--------------------------------
+//  ハーフリーディングを除外する
+//  @param int lineheight 要素のline-height
+//--------------------------------
+@mixin lineHeightCrop($line-height) {
+	&::before {
+		display: block;
+		width: 0;
+		height: 0;
+		margin-top: calc((1 - #{$line-height}) * .5em);
+		content: '';
+	}
+	&::after {
+		display: block;
+		width: 0;
+		height: 0;
+		margin-bottom: calc((1 - #{$line-height}) * .5em);
+		content: '';
+	}
+}
+
+//--------------------------------
+//  カーテンアニメーション（要figure直下に空div[.an_curtain_layer]配置）
+//  @param int $angle  傾きの角度(skewX)
+//  @param int $height フルードイメージの高さ(%)
+//  @param int $color  背景色1
+//  @param int $color  背景色2
+//--------------------------------
+@mixin curtain( $angle, $height, $color: $body_color, $color_2: $theme_color ) {
+	.an_curtain_layer {
+		margin: 0;
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: skew_blank_minus($angle, $height);
+		min-width: skew_width($angle, $height);
+		height: 100%;
+		z-index: 3;
+		background-color: rgba($color_2, .3);
+		transform: skew($angle * 1deg);
+		transition: .6s cubic-bezier(1,0,.6,1);
+	}
+	&::before{
+		margin: 0;
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: skew_blank_minus($angle, $height);
+		min-width: skew_width($angle, $height);
+		height: 100%;
+		z-index: 4;
+		background-color: $color;
+		transform: skew($angle * 1deg);
+		transition: .3s cubic-bezier(.12,.01,1,.99);
+	}
+	&.js_active {
+		.an_curtain_layer {
+			transition-delay: .3s;
+			transform: skew($angle * 1deg) translateX(100%);
+		}
+		&::before {
+			transform: skew($angle * 1deg) translateX(100%);
+		}
+	}
+}

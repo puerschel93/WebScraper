@@ -1,0 +1,304 @@
+@use '/src/sass/mixins.sass' as *;
+@use '/src/sass/media.scss' as *;
+@use '/src/sass/variables' as *;
+@use '/src/sass/fonts' as *;
+
+.navbar__desktop {
+    @include no-user-select;
+    .btn {
+        @mixin btn-size {
+            @include box(43.3px, 50px);
+        }
+        cursor: pointer;
+        position: fixed;
+        inset: 25px 30px auto auto;
+        z-index: $ZINDEX__NAVBAR__BUTTON; // 99
+        @include btn-size;
+        display: grid;
+        place-items: center;
+
+        transition: 500ms;
+        transition-property: inset;
+
+        &.active {
+            inset: 50% 50% auto auto;
+
+            .hex-icon {
+                @include box(5000%);
+            }
+
+            .overflow-protection .lines .line {
+                transform: translate(700px, -30px);
+            }
+        }
+
+        .hex-icon {
+            @include box(100%);
+            transition: 700ms;
+            transition-property: width, height;
+            filter: drop-shadow(0 0 5px $MAIN_BG);
+
+            path {
+                cursor: pointer;
+                fill: #1e1e1e;
+            }
+        }
+
+        .overflow-protection {
+            overflow: hidden;
+            position: absolute;
+            @include btn-size;
+            display: grid;
+            place-items: center;
+            &:hover {
+                .lines .line .line__inner {
+                    // transform: translate(700px, -30px);
+                    width: 100%;
+                }
+            }
+            .lines {
+                transform: rotate(-30deg);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 40px;
+                height: 30px;
+                align-items: center;
+
+                .line {
+                    width: 100%;
+                    height: 3px;
+                    background-color: #696969;
+                    transition: 500ms;
+                    transition-property: transform;
+                    transform: translate(0, 0);
+                    position: relative;
+
+                    &:last-child,
+                    &:first-child {
+                        width: 50%;
+                    }
+
+                    @for $index from 1 to 4 {
+                        &:nth-child(#{$index}) {
+                            transition-delay: ($index - 1) * 100ms;
+                        }
+                    }
+
+                    &__inner {
+                        transition: 300ms;
+                        transition-property: width;
+                        @include box(0%, 100%);
+                        background-color: #999;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu {
+        --hex_width: 160px;
+        @include media('<=800px') {
+            --hex_width: 120px;
+        }
+        @media (max-height: 500px) {
+            --hex_width: 120px;
+        }
+        position: fixed;
+        inset: 0;
+        z-index: -100;
+        transition: z-index;
+
+        display: flex;
+        justify-content: center;
+        gap: calc(5vh + 1rem);
+        align-items: center;
+        flex-direction: column;
+
+        &.active {
+            z-index: $ZINDEX__NAVBAR__MENU;
+
+            .close-btn,
+            h2,
+            .links {
+                transform: translate(0, 0);
+            }
+        }
+
+        .close-btn {
+            cursor: pointer;
+            position: absolute;
+            inset: 25px 30px auto auto;
+            @include box(50px);
+            display: grid;
+            place-items: center;
+            transition: 500ms;
+            transition-property: transform;
+
+            transform: translate(1000px, -1000px);
+
+            path {
+                fill: #121212;
+            }
+        }
+
+        h2 {
+            color: #fff;
+            @include DisplayFont($TITLE_FONTSIZE);
+            transition: 500ms;
+            transition-property: transform;
+
+            transform: translate(-2000px, 0);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 500ms;
+            transition-property: transform;
+
+            transform: translate(0, 1000px);
+            .section {
+                display: flex;
+                &:last-child {
+                    margin-top: calc(
+                        ((49 / 185) * (185 / 160)) * var(--hex_width) * -1
+                    );
+                }
+            }
+        }
+
+        .hex {
+            @include war(var(--hex_width), #{160 / 185});
+            position: relative;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            gap: 10px;
+            margin-left: -3px;
+
+            .icon {
+                @include war(25%);
+
+                svg {
+                    @include box(100%);
+                }
+            }
+
+            &:hover {
+                .hex-icon {
+                    transform: scale(1);
+                }
+                .borders {
+                    --color: #696969;
+                    z-index: 1;
+                }
+            }
+
+            .hex-icon {
+                @include box(100%);
+                position: absolute;
+                z-index: -1;
+                transform: scale(0.8);
+                transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+                transform-origin: center;
+
+                path {
+                    stroke-width: 0;
+                    fill: #121212;
+                }
+            }
+
+            .borders {
+                --color: #121212;
+                position: absolute;
+                @include war(calc((92 / 160) * 100%), #{92 / 160});
+
+                div {
+                    box-sizing: border-box;
+                    position: absolute;
+                    @include box(100%);
+
+                    transform-origin: center center;
+
+                    &:nth-child(1) {
+                        transform: rotate(30deg);
+                    }
+                    &:nth-child(2) {
+                        transform: rotate(90deg);
+                    }
+                    &:nth-child(3) {
+                        transform: rotate(-30deg);
+                    }
+
+                    &::before,
+                    &::after {
+                        background-color: var(--color);
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                    }
+
+                    &::before {
+                        top: 0;
+                    }
+                    &::after {
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .overlay {
+        position: fixed;
+        inset: 0;
+        z-index: -100;
+        transition: z-index;
+        &.active {
+            z-index: $ZINDEX__NAVBAR; // 100
+        }
+    }
+}
+
+.navbar__mobile-container {
+    @include no-user-select;
+    @include box(100%, 70px);
+    overflow: hidden;
+
+    .navbar__mobile {
+        @include box(100%, 100%);
+        max-height: 70px;
+        min-height: 40px;
+        background-color: #272727;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-shrink: 0;
+        position: fixed;
+        bottom: 0;
+        z-index: $ZINDEX__NAVBAR; // 100
+        overflow: hidden;
+
+        a {
+            color: #fff;
+            @include war(100%, 1);
+            display: grid;
+            place-items: center;
+
+            &:active {
+                background-color: #121212;
+            }
+
+            svg {
+                @include box(clamp(1px, 0.7rem + 2.5vw, 70px));
+            }
+        }
+    }
+}

@@ -1,0 +1,298 @@
+// === Inputs ===
+.input,.textarea,.select
+	padding 18px 15px
+	border 1px solid $border-color
+	resize: none
+	outline: 0 !important
+	border-radius 4px
+	font-family $v-font
+	display block!important
+	placeholder(#888888)
+	background: #f6f6f6
+	tr(all)
+	line-height: 1.6
+	&:focus
+		border 1px solid $mark
+		background: white
+
+.input--disable
+	@extend .disabled
+
+// checkbox + radio style
+.style-label
+	display flex
+	position relative
+	align-items center
+
+.style-label--disable
+	@extend .disabled
+
+.check-el
+	input
+		position absolute
+		top 0
+		left -9999px
+
+.style-input-text
+	color black
+	width: calc(100% - 60px)
+	line-height: 1.6
+	a
+		color $mark
+
+// checkbox
+.style-label--checkbox
+	.style-input-element
+		br(4px)
+		cp()
+		tr(all)
+		size 32px
+		position relative
+		display inline-block
+		margin-right 10px
+		background white
+		border 1px solid $border-color
+		&:hover
+			border 2px solid $mark
+	&.style-label--disable
+		.style-input-element
+			background: $gray!important
+	.icon
+		display none
+	.style-input
+		&:checked ~ .style-input-element
+			flex(mid)
+			color white
+			background: $mark
+			border 1px solid $mark
+			.icon
+				display block
+				fill white
+				size 24px
+// checkbox === end
+
+// radio
+.style-label--radio
+	.style-input-element
+		size 32px
+		position relative
+		display inline-block
+		margin-right 10px
+		background white
+		border 2px solid $border-color
+		round()
+		cp()
+		tr()
+		&:hover
+			border 2px solid $mark
+	&.style-label--disable
+		.style-input-element
+			background: $gray!important
+	.style-input
+		&:checked ~ .style-input-element
+			flex(mid)
+			color white
+			border 1px solid $mark
+			background: $mark
+			.icon-radio
+				round()
+				size 16px
+				background white
+// radio === end
+
+// checkbox + radio style === end
+
+//form
+.input-row
+	margin-bottom: 20px
+	.input
+		width: 100%
+.input-row__title
+	margin-bottom: 10px
+
+.input-row--error
+	.input
+		border-color red
+		color red
+	.error-msg
+		display block
+	.error
+		color red
+	.style-input-element
+		border 1px solid red
+
+.error-msg
+	color red
+	margin: 10px 0
+	display none
+
+.input-cont
+	+below(640px)
+		grid-row-gap 0
+	display: grid
+	grid-gap 20px
+
+.input-cont--two
+	+below(640px)
+		grid-template-columns: 1fr
+	grid-template-columns: 1fr 1fr
+
+.input-cont--three
+	+below(640px)
+		grid-template-columns: 1fr
+	grid-template-columns: 1fr 1fr 1fr
+
+.input-cont--four
+	+below(640px)
+		grid-template-columns: 1fr 1fr
+	grid-template-columns: repeat(4,1fr)
+
+//checkbox remember
+.login-remember
+	.style-label
+		+below(768px)
+			align-items: flex-start
+	.style-input-text
+		font-size: 14px
+		color black
+		width: calc(100% - 80px)
+		line-height: 1.6
+		margin-top: 3px
+		a
+			color $mark
+	margin-bottom: 20px
+
+.input-get
+	f()
+	align-items stretch
+	margin-bottom: 20px
+	.input
+		border-radius 5px 0 0 5px
+.input-get__btn
+	position relative
+	.icon
+		position absolute
+		size 14px
+		fill white
+		top 50%
+		left 50%
+		margin-left: -7px
+		margin-top: -7px
+	.input-get__btn-el
+		height: 100%
+		background: $mark
+		border-radius 0 5px 5px 0
+		border 0
+		width: 60px
+		&:hover
+			background: darken($mark,5)
+
+//upload
+.upload-wrap
+	flex(mid)
+	fw()
+	margin-bottom: 20px
+.upload
+	f()
+	cp()
+	br(10px)
+	align-items: flex-start
+	justify-content: center
+	border 1px solid $border-color
+	box-shadow 0px 3px 14px white
+	tr(all)
+	margin-bottom: 10px
+	&:hover
+		bsh()
+.upload__icon
+	padding: 10px
+	border-right 1px solid $border-color
+	height: 50px
+	flex(mid)
+	.icon
+		size 25px
+		fill red
+.upload__text
+	height: 50px
+	margin-left: -1px
+	padding: 15px
+	width: auto
+	flex(mid)
+.upload-img
+	flex(mid)
+.upload-img__el
+	size 50px
+	br(10px)
+	border 1px solid $border-color
+	margin-right: 10px
+	margin-bottom: 10px
+	background-size: cover
+	background-repeat: no-repeat
+	position: relative
+	overflow: hidden
+	cp()
+	&:hover
+		&:before
+			content 'X'
+			opacity:1
+
+	&:before
+		content 'X'
+		position: absolute
+		background: #000000b3
+		width: 100%
+		height: 100%
+		left 0
+		top 0
+		flex(mid)
+		color white
+		opacity:0
+		tr(all)
+.upload-btn
+	position: absolute
+	left -9999px
+// form === end
+
+// incr
+.incr
+	f()
+	position relative
+.incr__nav
+	flex(mid)
+	tr(all)
+	size 40px
+	border 1px solid #dddddd
+	background white
+	round()
+	.icon
+		size 14px
+		fill $gray
+		tr()
+	&:hover
+		cp()
+		border 1px solid $mark
+		.icon
+			fill $mark
+	&:active
+		background-color darken($mark,10)
+.incr__val
+	flex(mid)
+	background white
+	position relative
+	tr(all)
+	padding: 0 15px
+	span
+		outline: none
+		user-select: none
+
+// Переключение с кнопки на инкремент
+.incr-btn
+	.incr-btn-wrap
+		display: none
+.incr-btn--active
+	.incr-btn__el
+		display: none
+	.incr-btn-wrap
+		display: block
+
+// incr === end

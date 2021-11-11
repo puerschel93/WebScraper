@@ -1,0 +1,102 @@
+$pin-color = rgb(255,255,255);
+$pin-border = rgb(0,200,8);
+$pin-shadow = rgb(0,0,0);
+
+.pin
+  position absolute
+  width auto
+  height auto
+  text-align center
+  font-size 22px
+  font-weight bold
+  color $pin-color
+  cursor pointer
+  
+  &:focus
+    outline none
+  
+  /*.pin-text-shadow
+    position relative
+    left 0px
+    top 0px
+    color black
+    text-shadow 5px 0 0 $pin-shadow, -5px 0 0 $pin-shadow, 0 5px 0 $pin-shadow, 0 -5px 0 $pin-shadow,
+      4px 0 0 $pin-shadow, -4px 0 0 $pin-shadow, 0 4px 0 $pin-shadow, 0 -4px 0 $pin-shadow,
+      3px 0 0 $pin-shadow, -3px 0 0 $pin-shadow, 0 3px 0 $pin-shadow, 0 -3px 0 $pin-shadow,
+      2px 0 0 $pin-shadow, -2px 0 0 $pin-shadow, 0 2px 0 $pin-shadow, 0 -2px 0 $pin-shadow,
+      1px 1px $pin-shadow, -1px -1px 0 $pin-shadow, 1px -1px 0 $pin-shadow, -1px 1px 0 $pin-shadow,
+      2px 2px $pin-shadow, -2px -2px 0 $pin-shadow, 2px -2px 0 $pin-shadow, -2px 2px 0 $pin-shadow,
+      3px 3px $pin-shadow, -3px -3px 0 $pin-shadow, 3px -3px 0 $pin-shadow, -3px 3px 0 $pin-shadow,
+      4px 4px $pin-shadow, -4px -4px 0 $pin-shadow, 4px -4px 0 $pin-shadow, -4px 4px 0 $pin-shadow;
+  
+  .pin-text
+    position absolute
+    left 0px
+    top -2px
+    //letter-spacing 2.5px
+    text-shadow 2px 0 0 $pin-border, -2px 0 0 $pin-border, 0 2px 0 $pin-border, 0 -2px 0 $pin-border, 1px 1px 0 $pin-border, -1px -1px 0 $pin-border, 1px -1px 0 $pin-border, -1px 1px 0 $pin-border;*/
+      
+  .pin-text-shadow
+    position relative
+    left 0px
+    top 0px
+    font-size 30px
+    font-weight bold
+    
+    svg
+      display block
+    
+    text
+      fill black
+      stroke black
+      stroke-width 10
+      stroke-linecap "round"
+      
+  .pin-text
+    position absolute
+    left 0px
+    top -2px
+    font-size 30px
+    font-weight bold
+    
+    svg
+      display block
+    
+    text
+      fill $pin-color
+      stroke $pin-border
+      stroke-width 2
+      stroke-linecap "round"
+  
+  .pin-image
+    position absolute
+    opacity 1
+    left 0px
+    top 40px
+    width 100%
+    text-align center
+    
+  .pin-image-hover
+    position absolute
+    opacity 0
+    left 0px
+    top 40px
+    width 100%
+    text-align center
+    
+  &:hover
+    .pin-image
+      opacity 0
+      
+    .pin-image-hover
+      opacity 1
+      
+  &.active
+    .pin-image
+      opacity 0
+      
+    .pin-image-hover
+      opacity 1
+    
+  
+

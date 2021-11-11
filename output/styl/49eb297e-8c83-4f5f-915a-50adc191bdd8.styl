@@ -1,0 +1,429 @@
+/* 	Willsong - Ghost Theme
+*	
+*	MARCOSN.COM
+*
+*	v1.1.0
+*	Copyright (c) 2014
+*
+*	Styling Content:
+*
+*	A. INIT THEME SETTINGS
+*	B. HEADER
+*	C. MAIN CONTENT (General)
+*	D. PAGINATION
+*	E. SHARE POST, AUTHOR
+*	F. COMMENTS
+*	G. FOOTER
+*	H. MEDIA QUERIES (General)
+*
+* */
+
+acc = #ffbb00
+blk = #000
+cw = #f1f1f1
+lgy = #bdbdbd
+dgy = #101010
+txt = #303030
+ww = #fff
+
+/*	A.
+*	INIT THEME SETTINGS
+* ================================ */
+
+::-moz-selection 
+	background rgba(acc, 0.1)
+	
+::selection 
+	background rgba(acc, 0.1)
+
+/* =============================== */
+body 
+	background-color cw
+	font 20px/34px "Roboto", sans-serif
+	text-rendering optimizeLegibility
+
+h1
+h2
+h3
+h4
+h5
+h6
+	font-family "Poly", serif
+	font-weight 400
+
+::-moz-selection 
+	color dgy
+	text-shadow none
+
+::selection 
+	color dgy
+	text-shadow none
+
+#blog_cover_willsong
+	bottom 0
+	position fixed
+	top 0
+	width 100%
+	z-index -10
+
+/*	B.
+*	HEADER
+* ================================ */
+
+#head_willsong
+	background-color rgba(blk, 0.4)
+	-webkit-box-shadow 0 0 10px rgba(txt, 0.7)
+	-moz-box-shadow 0 0 10px rgba(txt, 0.7)
+	box-shadow 0 0 10px rgba(txt, 0.7)
+	position relative
+	width 100%
+	z-index 40
+
+#head_content_willsong
+	color ww
+	padding 50px 0
+	text-align center
+
+	img
+		height auto
+		max-width 200px
+
+	h1 
+		border 3px solid ww
+		display inline-block
+		font-family "Roboto Condensed", sans-serif
+		font-weight 400
+		margin 0 30px
+		padding 0 15px
+
+	a 
+		color ww
+		text-decoration none
+
+	#blog_description 
+		display inline-block
+		font-family "Poly", serif
+		margin 0 30px
+		max-width 820px
+
+#menu_willsong
+	font-family "Roboto Condensed", sans-serif
+	font-size 0.9em
+	padding 40px 0
+	position relative
+	width 100%
+
+	ul 
+		margin 0 
+		padding 0
+		list-style none
+
+		li 
+			display inline-block
+			margin 0 5px
+			vertical-align top
+
+		a 
+			border-bottom 0px solid ww
+			padding 0 5px
+			text-transform uppercase
+			-webkit-transition all 0.2s ease
+			-moz-transition all 0.2s ease
+			-ms-transition all 0.2s ease
+			-o-transition all 0.2s ease
+			transition all 0.2s ease
+
+			&:hover 
+				border-width 2px
+
+/*	C.
+*	MAIN CONTENT
+* ================================ */
+
+#content_willsong
+	background-color cw
+	padding 50px 0
+	position relative
+	width 100%
+	z-index 30
+
+#content_column_willsong
+	overflow visible
+	
+	article
+		color txt
+		padding 80px 0
+		position relative
+		
+		.left_side_article
+			border-bottom 1px dotted lgy
+			margin-bottom 10px
+			padding 10px 0
+			position relative
+			font-size 0.8em
+			font-weight 700
+			text-align center
+
+			a 
+				color txt
+
+		.right_side_article 
+			text-align left
+
+		.post_title
+			
+			a 
+				color txt
+				text-decoration none
+
+		a 
+			color txt
+			font-weight 700
+			-webkit-transition all 0.2s ease
+			-moz-transition all 0.2s ease
+			-ms-transition all 0.2s ease
+			-o-transition all 0.2s ease
+			transition all 0.2s ease
+
+			&:hover 
+				color lgy
+
+		img 
+			border-radius 3px
+			height auto
+			max-width 100%
+
+		.read_more_btn
+			background-color txt 
+			border 1px solid txt
+			border-radius 3px 
+			color ww 
+			display inline-block
+			font-size 0.8em
+			padding 5px 15px
+			text-decoration none
+			text-shadow inset 1px 0 0 rgba(txt, 0.3)
+
+			&:hover 
+				color txt
+				background-color cw 
+
+		.reading_post_header
+			text-align center
+
+		blockquote
+			border-left 8px double lgy
+			-webkit-box-sizing border-box
+			-moz-box-sizing border-box
+			box-sizing border-box
+			font-family "Poly", serif 
+			font-size 1.4em
+			font-style italic
+			margin 50px 0
+			padding 10px 0
+			padding-left 10%
+
+		pre 
+			border-radius 3px 
+			-webkit-box-sizing border-box
+			-moz-box-sizing border-box
+			box-sizing border-box
+			color cw
+			margin 0
+			width 100%
+
+	article.index_post
+		width 100%
+
+		h2 
+			margin 0
+
+
+/*	D.
+*	PAGINATION
+* ================================ */
+
+nav.pagination
+	border-top 1px solid lgy
+	position relative
+	padding 20px 0
+	text-align center
+	width 100%
+	
+	.page-number
+		color lgy	
+		font-size 0.8em
+
+	.older-posts
+	.newer-posts
+		color txt
+		font-size 0.8em
+		font-weight 700
+		padding 2px 12px
+		position absolute
+		-webkit-transition all 0.2s ease
+		-moz-transition all 0.2s ease
+		-ms-transition all 0.2s ease
+		-o-transition all 0.2s ease
+		transition all 0.2s ease
+		top 20px
+
+		&:hover
+			color lgy
+
+	.older-posts
+		right 0
+
+	.newer-posts
+		left 0
+
+/*	E.
+*	SHARE POST
+* ================================ */
+#post_footer_willsong
+	position relative
+	width 100%
+
+#share_post_willsong
+	margin 100px 0
+	text-align center
+
+	h4
+		color txt
+		font-family "Roboto", sans-serif
+		font-size 1.6em
+		text-transform uppercase
+
+	a 
+		color lgy 
+		font-size 2em
+		margin 0 10px
+		text-decoration none
+		-webkit-transition all 0.3s ease 
+		-moz-transition all 0.3s ease 
+		-ms-transition all 0.3s ease 
+		-o-transition all 0.3s ease 
+		transition all 0.3s ease 
+
+	.fa-twitter:hover
+		color #4099ff
+
+	.fa-facebook:hover
+		color #3b5998
+
+	.fa-google-plus:hover
+		color #d34836
+
+#author_willsong
+	color txt
+	font-family "Noto Sans", sans-serif
+	margin 100px 0
+	text-align left
+	width 100%
+
+	img
+		border 5px solid ww
+		border-radius 50%
+		-webkit-box-shadow 1px 1px 4px rgba(lgy, 0.7)
+		-moz-box-shadow 1px 1px 4px rgba(lgy, 0.7)
+		box-shadow 1px 1px 4px rgba(lgy, 0.7)
+		-webkit-box-sizing border-box
+		-moz-box-sizing border-box
+		box-sizing border-box
+		float left
+		height auto
+		margin-right 30px
+		width 120px
+
+	h4
+		font-size 1.2em
+		line-height 1.6em
+		margin 0
+		padding-top 8px
+		
+	a 
+		color lgy 
+		font-size 0.8em
+		-webkit-transition all 0.3s ease
+		-moz-transition all 0.3s ease
+		-ms-transition all 0.3s ease
+		-o-transition all 0.3s ease
+		transition all 0.3s ease
+		
+		&:hover
+			color dgy
+		
+	p 
+		font-size 0.9em
+		line-height 1.6em
+		margin-bottom 100px
+	
+/*	F.
+*	COMMENTS
+* ================================ */	
+
+/*	G.
+*	FOOTER
+* ================================ */
+
+#foot_willsong
+	background-color rgba(blk, 0.4)
+	color ww
+	padding 100px 0
+	text-align center
+	width 100%
+
+	a
+		color ww
+		-webkit-transition all 0.3s ease
+		-moz-transition all 0.3s ease
+		-ms-transition all 0.3s ease
+		-o-transition all 0.3s ease
+		transition all 0.3s ease
+
+		&:hover
+			color blk
+
+#sociallinks_willsong
+	font-size 1.8em
+	list-style none
+	margin 0
+	padding 0
+
+	li 
+		display inline-block
+		margin 0 5px
+		vertical-align top
+	
+	a
+		text-decoration none
+
+#copyright_willsong
+	font-size 0.7em
+	margin 0 40px
+	margin-top 100px
+
+
+/*	H.
+*	MEDIA QUERIES
+* ================================ */
+
+//@media screen and (min-width: 320px)
+		
+
+@media screen and (min-width: 768px)
+
+	article 
+		
+		blockquote
+			margin-left -10%
+			width 110%
+
+	#author_willsong
+		
+		img 
+			margin-bottom 100px
+
+
+//@media screen and (min-width: 960px)
+

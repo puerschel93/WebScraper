@@ -1,0 +1,443 @@
+@require '../_vars'
+
+body
+	overflow-x hidden
+	overflow-y overlay
+
+	&.no-scroll
+		overflow-y hidden
+
+.header
+	position fixed
+	top 0
+	right 0
+	left 0
+	transition .4s top
+	z-index 10
+
+	&.nav-up
+		top -60px
+
+	.header__nav
+		position absolute
+		transform translateX(-50%)
+		left 50%
+
+		@media (max-width 1400px)
+			display none
+
+	@media (max-width 1500px)
+		.header__inner
+			padding 0 20px
+
+.header__inner
+	display flex
+	align-items center
+	padding 0 40px
+	height 60px
+	background-color $cl-grey-1
+
+	+media(mobile)
+		padding 0 16px
+
+.header__left
+.header__right
+	display flex
+	align-items center
+	flex-shrink 0
+
+.header__right
+	margin-left auto
+
+.header__logo
+	margin-right 40px
+	color $cl-white
+
+.header__slogan
+	max-width 160px
+	line-height 16px
+	font-family $ff-promo
+	font-weight 300
+	font-size 14px
+	color $cl-grey-5
+
+	+media(mobile)
+		display none
+
+.header__nav
+	flex-shrink 0
+	margin 0 auto
+	padding 0 20px
+	color $cl-white
+
+	ul
+		display flex
+		align-items center
+
+	li
+		position relative
+
+		& + li
+			margin-left 20px
+
+	a
+	span
+		@extend $text-navitem
+		text-decoration none
+		text-transform uppercase
+		white-space nowrap
+		color $cl-white
+
+		&:hover
+			text-decoration underline
+
+
+	& > ul > li:hover
+		.inner
+			display flex
+
+	.inner
+		display none
+		position absolute
+		flex-direction column
+		align-items flex-start
+		top 100%
+		left 0
+		padding 8px 12px
+		box-shadow $shadow
+		background-color $cl-grey-1
+		transform translateX(-12px)
+		z-index 1
+
+		li + li
+			margin-left 0
+
+
+.header__phone
+	margin-left auto
+	text-decoration none
+	color $cl-grey-5
+
+.header__menu-button
+	margin-left 40px
+	color $cl-grey-5
+
+.section
+	display flex
+	justify-content center
+	align-items stretch
+
+	&._dark
+		background-color $cl-grey-2
+		color $cl-white
+
+		.section__desc
+			color $cl-grey-4
+
+	&._light
+		background-color $cl-grey-5
+
+	&._sm
+		.container
+			min-height 160px
+
+	&._md
+		.container
+			min-height 600px
+
+			+media(desktop-md desktop-sm tablet-lg)
+				min-height 450px
+
+			+media(tablet-sm mobile)
+				min-height auto
+
+	&._lg
+		.container
+			min-height 800px
+
+			+media(desktop-md desktop-sm tablet-lg)
+				min-height 640px
+
+			+media(tablet-sm mobile)
+				min-height auto
+
+	&._more
+		display none
+		opacity 0
+		transition .3s opacity
+
+		&._active
+			opacity 1
+
+.section__half
+	display flex
+	justify-content center
+	align-items center
+	flex-shrink 0
+	padding 20px
+	width 50%
+	min-height 100%
+
+	+media(tablet-sm)
+		padding 32px 60px 40px
+
+	+media(tablet-sm mobile)
+		width 100%
+		min-height auto
+
+	+media(mobile)
+		padding 32px 20px 40px
+
+	&._img
+		padding 0
+		height 100%
+		background-repeat no-repeat
+		background-size cover
+		background-position 50% 50%
+
+		img
+			@extend $style-img-cover
+
+		&._top
+			align-items flex-start
+
+		+media(tablet-sm mobile)
+			height auto
+			max-height 320px
+			overflow hidden
+
+		+media(mobile-lg mobile-md)
+			max-height 240px
+
+		+media(mobile-sm)
+			max-height 200px
+
+	&._slider
+		align-items stretch
+		padding 0
+
+		.swiper-container
+			width 100%
+			min-height 400px
+
+			+media(tablet-sm)
+				max-height 400px
+
+	&._map
+		align-items stretch
+		padding 0
+
+		+media(tablet-sm mobile)
+			min-height 400px
+
+		iframe
+			display block
+			width 100%
+			min-height 100%
+
+	.section__title
+		margin-bottom 36px
+		text-align left
+
+		+media(tablet-sm mobile)
+			margin-bottom 16px
+
+	.section__action
+		margin-top 36px
+
+		+media(tablet-sm mobile)
+			margin-top 24px
+
+.section__desc
+	@extend $text-lg
+	color $cl-grey-3
+
+	& + .section__desc
+		margin-top 8px
+
+	+media(desktop-md desktop-sm tablet)
+		line-height 1.2
+		font-size 18px
+
+	+media(mobile)
+		line-height 1.3
+		font-size 14px
+
+.section__half-inner
+	padding 80px 0
+	max-width 80%
+	min-width 465px
+	width 100%
+
+	+media(tablet mobile)
+		min-width auto
+
+	+media(tablet-sm mobile)
+		padding 0
+		max-width 100%
+
+.container
+	display flex
+	justify-content center
+	align-items center
+	margin 0 auto
+	padding 20px
+	max-width 1160px
+	width 100%
+	min-height 400px
+
+	+media(desktop-md desktop-sm tablet-lg)
+		min-height 300px
+
+	+media(tablet-sm mobile)
+		min-height auto
+		flex-direction column
+
+	+media(mobile-md mobile-sm)
+		padding 20px 12px
+
+	&._fluid
+		max-width 100%
+
+	&._clean
+		padding 0
+
+	&._revert
+		+media(tablet-sm mobile)
+			.section__half
+				&:first-child
+					order 2
+				&:last-child
+					order 1
+
+
+.footer
+	padding 80px 0 80px
+	background-color $cl-grey-1
+	color $cl-white
+
+	+media(tablet-sm)
+		padding 60px
+
+	+media(mobile)
+		padding 60px 20px
+
+	+media(mobile-md mobile-sm)
+		padding 60px 0px
+
+.footer__inner
+	display flex
+	flex-direction column
+
+.footer__nav
+	display flex
+	align-items flex-start
+
+	+media(tablet-sm mobile)
+		flex-direction column
+
+.footer__legal
+	display flex
+	align-items stretch
+	margin-top 80px
+	font-size 14px
+
+	+media(tablet-sm mobile)
+		flex-direction column
+
+	+media(mobile)
+		line-height 1.2
+		font-size 11px
+
+.footer__title
+	display block
+	margin-bottom 24px
+	text-transform uppercase
+	line-height 16px
+	font-family $ff-promo
+	font-weight 700
+	font-size 14px
+	color $cl-grey-3
+
+	+media(mobile)
+		line-height 1.2
+		font-weight 500
+		font-size 12px
+
+.footer__list
+	& + .footer__list
+		margin-left 200px
+
+		+media(tablet-sm mobile)
+			margin-top 40px
+			margin-left 0
+
+		+media(mobile)
+			margin-right 0
+
+	li
+		@extend $text-navitem
+		font-weight 400
+
+		&.active
+			a
+				text-decoration underline
+
+		&:not(:last-child)
+			margin-bottom 16px
+
+		+media(mobile)
+			text-transform none
+			line-height 1.2
+			font-weight 400
+			font-size 12px
+
+	a
+		text-decoration none
+		color inherit
+
+		&:hover
+			text-decoration underline
+
+.footer__list-inner
+	columns 2
+
+	&._sections
+		column-gap 160px
+
+		+media(tablet-sm)
+			column-gap 80px
+
+		+media(mobile)
+			columns 1
+			column-gap 0
+
+	&._categories
+		column-gap 40px
+
+		+media(mobile-md mobile-sm)
+			columns 1
+			column-gap 0
+
+	.inner
+		margin-top 16px
+
+
+.footer__data
+.footer__policy
+	display flex
+	flex-direction column
+	color $cl-grey-3
+
+.footer__logo
+	margin-bottom 36px
+
+.footer__policy
+	margin-left 200px
+
+	a
+		color $cl-grey-3
+
+	+media(tablet-sm mobile)
+		margin-top 32px
+		margin-left 0

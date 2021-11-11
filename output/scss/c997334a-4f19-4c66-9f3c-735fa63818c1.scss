@@ -1,0 +1,519 @@
+@import "./front/css/reebok/scss/about.scss";
+
+/* common */
+#wrap{
+    overflow: hidden;
+    min-width: 1160px;
+}
+html,body{
+	height:100%;
+}
+.inner{
+	max-width:1200px;
+	margin:0 auto;
+	position: relative;
+	box-sizing: border-box;		
+}
+.inner2{
+	max-width:1685px;
+	margin:0 auto;
+	position: relative;
+	box-sizing: border-box;		
+}
+a{
+	outline:none;
+}
+button{
+	outline:none;
+}
+map{
+	outline:none;
+	border:0;
+}
+.clearfix{
+	clear: both;
+	display:block;
+	content:'';
+}
+
+#contents_wrap{padding: 0;}
+.button_area_v2 {
+	>div {
+		position: relative;
+		display: inline-block;
+		&:hover{
+			a{
+				color: #767677;
+				background: #000;
+				span{
+					&.arrow{
+						background: #767677;
+						em{
+							background: #767677;
+						}
+					}
+
+				}
+			}
+		}
+		.bg {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transform: translate(3px,3px);
+			-webkit-transform: translate(3px,3px);
+			box-shadow: inset 0 0 0 1px #000;
+			-webkit-box-shadow: inset 0 0 0 1px #000;
+		}
+		a {
+			position: relative;
+			display: block;
+			text-align: center;
+			height: 50px;
+			font: 500 15px/49px 'NotoSansKR';
+			color: #fff;
+			background: #000;
+			z-index: 2;
+			padding:0 20px;
+			span {
+				&.arrow {
+					position: relative;
+					top: -1px;
+					display: inline-block;
+					margin-left: 20px;
+					width: 25px;
+					height: 2px;
+					background: #fff;
+					vertical-align: middle;
+					em {
+						position: absolute;
+						right: 0;
+						width: 8px;
+						height: 3px;
+						background: #fff;
+						transform: rotate(45deg);
+						-webkit-transform: rotate(45deg);
+						&.top {
+							top: -3px;
+						}
+						&.bottom {
+							bottom: -3px;
+							transform: rotate(-45deg);
+							-webkit-transform: rotate(-45deg);
+						}
+					}
+				}
+			}
+		}
+		&.white {
+			&:hover{
+				a{
+					color: #767677;
+					background: #fff;
+					span {
+						&.arrow {
+							background: #767677;
+							em {
+								background: #767677;
+							}
+						}
+					}
+				}
+			}
+			.bg {
+				box-shadow: inset 0 0 0 1px #fff;
+				-webkit-box-shadow: inset 0 0 0 1px #fff;
+			}
+			a {
+				color: #000;
+				background: #fff;
+				span {
+					&.arrow {
+						background: #000;
+						em {
+							background: #000;
+							
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+#blackfriday {
+	position: relative;
+	.main{
+		position: relative;
+		.bg_wrap{
+			position: relative;
+			>img{
+				display:block;
+				width:100%;
+			}
+			.bt_wrap{
+				position:absolute;
+				left:50%;
+				top:64%;
+				transform:translate(-50%,-50%);
+				width:100%;
+				margin-left:6%;
+			}
+		}
+
+	}
+	.navi_coupon{
+		position: relative;
+		max-width:1920px;
+		// height: 973px;
+		height: 1023px;
+		z-index: 3;
+		.cupon_list{
+			position: absolute;
+			left:50%;
+			top:0;
+			// transform: translateX(-50%);
+			margin-left: -960px;
+			img{
+				// position: absolute;
+				// top:0;
+				// left:0;
+			}
+		}	
+		.btn{
+			position:absolute;
+			left:50%;
+			top:58%;
+			transform:translate(-50%,-50%);
+			margin-left: -290px;
+			a{
+				display:block;
+				background:#fff;
+				width:320px;
+				height:120px;
+			}
+		}		
+	}
+	.navi_wrap{
+		position: relative;
+		height:50px;
+		margin:0 auto;
+		display: block;
+		max-width: 1920px;
+		background:rgba(255,255,255,0.8);
+		z-index:3;
+		.navi{
+			position:absolute;
+			overflow: hidden;
+			left: 50%;
+			transform: translateX(-50%);			
+			width:100%;
+			background:none;
+			&.fixed{
+				background:rgba(255,255,255,0.8);
+				position:fixed;
+				top:0;
+				left:0;
+				width:100%;
+				max-width:1920px;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 10;				
+			}
+			.navi_inner{
+				margin: 0 auto;
+				width: 1200px;				
+			}
+			.inn_box{
+				float:left;
+				width:33.3333%;
+				box-sizing:border-box;	
+				cursor: pointer;				
+				transition: all 0.4s;
+				.btn{
+					box-sizing: border-box;
+					margin: 0 auto;
+					text-align: center;
+					width: 300px;
+					height: 50px;
+					background:none;
+					font: 400 14px/50px 'NotoSansKR';
+					color: #111;
+					opacity: 1;
+					transition: all 0.2s;
+				}
+				&.on{
+					position:relative;
+					.btn{
+						position:relative;
+						&::before{
+							position:absolute;left:50%;bottom:0;
+							margin-left:-30%;
+							width:60%;
+							height:3px;
+							content:'';
+							display:block;
+							background:#111;
+						}						
+					}
+				}
+			}
+		}
+	}	
+	.contents{
+		position:relative;
+		z-index:1;
+		margin-top:-50px;
+		.navi_blackdeal{
+			position: relative;
+			background:url('/images/reebok/2021/event/blackfriday/deal_bg.jpg')no-repeat;
+			background-size:100% 100%;
+			.tab_btn{
+				overflow: hidden;
+				max-width:1850px;
+				margin:0 auto;
+				h2{
+					font: 600 70px/73px 'NotoSansKR';
+					color: #fff;
+					text-align:center;
+					letter-spacing: 0;
+				}
+				>ul{
+					text-align:center;
+					>li{
+						float:left;
+						vertical-align:top;
+						position:relative;
+						width:12.43243243243%;
+						margin-right:2.16216216216%;
+						padding: 70px 0 75px 0;
+						&:last-child{
+							margin-right:0;
+						}						
+						a{
+							display:block;
+							>img{
+								width:100%;
+							}
+							p{
+								color:#111;
+								&.on{
+									text-decoration:underline;
+								}
+							}
+						}
+						.button_area_v2{
+							text-align: center;
+							margin-top:10px;
+						}						
+					}
+				}
+			}		
+		
+		}
+		.tab_con{
+			position:relative;
+			padding-bottom:35%;
+			.tab__content{
+				position:absolute;
+				top:0;
+				opacity:0;
+				width:100%;
+				z-index:0;		
+				padding-top:0;
+				display:none;
+				&.current{
+					opacity:1;
+					transition:all 2s;
+					z-index:1;
+					display:block;
+				}					
+				>img{
+					display:block;
+					width:100%;
+				}	
+				.all_deal{
+					padding:30px 0 40px 0;
+					h3{
+						text-align: center;
+						font:900 36px/36px 'neueplak';
+						letter-spacing:3px;
+						color:#111;
+						text-transform:uppercase;
+					}
+					img{
+						display:block;
+						width:100%;
+					}					
+					.slick-slide{
+						>img{
+						  width:78%;
+						  margin:0 auto;
+						}
+					  } 				
+					.slick-arrow {
+						font-size: 0;
+						border: 0;
+					  }
+					  .slick-prev {
+						position: absolute;
+						left: 1%;
+						top: 43%;
+						background: url("/images/reebok/2021/event/blackfriday/prev.png") no-repeat 50%;
+						background-size: auto;
+						width: 20px;
+						height: 29px;
+						z-index: 1;
+						outline: none;
+						cursor: pointer;
+					  }
+					  .slick-next {
+						position: absolute;
+						right: 1%;
+						top: 43%;
+						background: url("/images/reebok/2021/event/blackfriday/next.png") no-repeat 50%;
+						background-size: auto;
+						width: 20px;
+						height: 29px;
+						z-index: 1;
+						outline: none;
+						cursor: pointer;
+					  }		
+						  
+					  .slick-dots {
+						padding: 25px 0 0 0;
+						text-align: center;
+					  }
+					  .slick-dots li {
+						display: inline-block;
+						margin-right: 12px;
+					  }
+					  .slick-dots li button {
+						width: 11px;
+						height: 11px;
+						background: #bcbcbc;
+						border-radius:50%;
+						border: none;
+						padding: 0;
+						text-indent: -9999px;
+						cursor: pointer;
+					  }
+				  
+					  .slick-dots li.slick-active button {
+						background: #111;
+					  }		
+					  .button_area_v2{
+						  text-align: center;
+					  }		  	
+				}	
+		
+			}
+		}	
+	}
+	.navi_gift{
+		position: relative;
+		height:1111px;
+		.gift_list{
+			position: absolute;
+			left:50%;
+			top:0;
+			margin-left: -960px;
+			img{
+				position: absolute;
+				top:0;
+				left:0;
+			}			
+		}
+		.btn{
+			position:absolute;
+			left:50%;
+			top:81%;
+			transform:translate(-50%,-50%);
+			margin-left: -313px;
+			a{
+				display:block;
+				background:#fff;
+				width:170px;
+				height:50px;
+			}
+		}			
+		.btn2{
+			position:absolute;
+			left:50%;
+			top:81%;
+			transform:translate(-50%,-50%);
+			margin-left: 290px;
+			a{
+				display:block;
+				background:#fff;
+				width:175px;
+				height:50px;
+			}
+		}			
+	}	
+	.navi_item{
+		position: relative;
+		padding:40px 0;
+		overflow: hidden;
+		.txt{
+			float:left;
+			width:84%;
+			margin-left:2%;
+			h3{
+				font: 500 24px/60px 'NotoSansKR';
+				color: #111;
+				text-align:left;
+				letter-spacing: 0;
+			}
+		}
+		.btn{
+			text-align: right;
+		}
+	}
+
+	.navi_notice{
+		position: relative;
+		height:480px;
+		.notice_list{
+			position: absolute;
+			left:50%;
+			top:0;
+			margin-left: -960px;
+			img{
+				position: absolute;
+				top:0;
+				left:0;
+			}			
+		}
+		.btn{
+			position:absolute;
+			left:50%;
+			top:45%;
+			transform:translate(-50%,-50%);
+			margin-left: -450px;
+			a{
+				display:block;
+				background:#fff;
+				width:105px;
+				height:20px;
+			}
+		}			
+		.btn2{
+			position:absolute;
+			left:50%;
+			top:45%;
+			transform:translate(-50%,-50%);
+			margin-left: 100px;
+			a{
+				display:block;
+				background:#fff;
+				width:105px;
+				height:20px;
+			}
+		}			
+	}		
+}

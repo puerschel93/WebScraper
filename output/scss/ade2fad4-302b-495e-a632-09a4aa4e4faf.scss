@@ -1,0 +1,351 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:760;
+
+// VARIABLE SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Open Sans Condensed",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:175;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces9";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//---------------------------------------------------------------------------------------------------------------
+//		PERSO IFFIMMO
+//---------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------------------------------
+
+.color-vert {color:$color-vert;}
+
+.icon-v5-heart:before{ color:$color-icone-cdc;}
+.icon-v5-heart.opacity-4{opacity:1;}
+
+.bloc-bienvenue {background-color:$color-block; padding:10px;}
+
+
+.typo-action {color:#FFF;}
+
+	//---------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//---------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:960px;
+	}
+}
+
+.typo-seo {
+	color: $color-font-seo;
+}
+
+	//---------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------------------------
+
+.navigation {border-bottom: solid 2px $color-important;}
+
+.menu-principal {
+	padding-top:35px;
+	line-height: 70px;
+	    font-size: 1.1em;
+	    @media only screen and (max-width : 1280px) {
+	    	font-size: 0.75em;
+	    }
+	    @media only screen and (max-width : 930px) {
+	    	font-size: 0.65em;
+	    }
+	    @media only screen and (max-width : 860px) {
+	    	font-size: 0.55em;
+	    }
+	>li {
+	    padding: 0px;
+	    &:hover {
+	    	background-color: $color-primary;
+	    }
+	    @media only screen and (max-width : 1280px) {
+	    	padding: 0px;
+	    }
+	    >a {
+			border-bottom:2px solid $color-primary;
+			&:after {
+	            display: block;
+	            content: "";
+	            width: 0%;
+	            height: 2px;
+	            background-color: $color-important;
+	            margin-top: 5px;
+	            -webkit-transition: all .3s ease;
+	            		transition: all .3s ease;
+	         }
+	         &:hover {
+	            color: $color-secondary;
+	            background-color: $color-primary;
+	            &:after {
+	            	width: 50%;
+	            	background-color: $color-important;
+	            }
+	         }
+	    }
+	}
+}
+
+.logo img {
+	padding: 1px 2px;
+}
+
+@media only screen and (max-width : 767px) {
+header .logo img {
+width: 40%;
+}
+}
+
+.cookie-banner {
+	background-color: $color-primary;
+	color: $color-nav-footer;
+}
+
+.text_cookies .button_submit {
+	background-color: $color-action !important;
+}
+
+@media only screen and (max-width : 1290px) {
+.nav-social-menu {
+	    font-size: 0.8em;
+}
+}
+
+@media only screen and (max-width : 950px) {
+.nav-social-menu {
+	    font-size: 0.6em;
+}
+}
+
+@media only screen and (max-width : 850px) {
+.nav-social-menu {
+	    font-size: 0.55em;
+}
+}
+
+
+@media only screen and (max-width : 767px) {
+.btn-navbar, .btn-langue {
+color:$color-important;
+}
+}
+
+//---------------------------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------------------------
+
+.slogan-index {margin-top:-310px;}
+.emplacement-header > div:nth-child(1) > div > h1 {margin-top:-350px;}
+
+@media only screen and (max-width : 767px) {
+.slogan-index {
+margin-top:0px;
+}
+}
+
+@media only screen and (max-width : 767px) {
+.emplacement-header > div:nth-child(1) > div > h1  {
+margin-top:10px;
+}
+}
+
+
+	//---------------------------------------------------------------------------------------------------------------
+	//		MINI MOTEUR
+	//---------------------------------------------------------------------------------------------------------------
+
+.form-inline, .bg-mini-moteur {
+	margin-bottom: 265px;
+}
+
+.bg-mini-moteur {
+	background: $color-primary;
+}
+
+	//---------------------------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//---------------------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage {
+	background: $color-block;
+	padding: 10px;
+}
+
+.module-homepage .height-190 {
+	height: 240px;
+}
+
+@media only screen and (max-width : 767px) {
+	.module-annonces-homepage {
+		background:$color-block !important;
+		color:$color-nav-footer !important;
+	}
+	.homepage-bloc-type-bien-transaction .bg-white {
+		background:$color-block !important;
+	}
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+	background:$color-important !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+	background:$color-important !important;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+	background:$color-action !important;
+}
+
+	//---------------------------------------------------------------------------------------------------------------
+	//		ENCART PUB
+	//---------------------------------------------------------------------------------------------------------------
+
+.zone-pub {
+	background: $color-block;
+	padding: 10px;
+	height: 280px;
+	h3 {
+		margin-bottom: 20px;
+	}
+	p {
+		margin-bottom: 10px;
+	}
+	.height-150 {
+		height: 170px;
+	}
+	@media only screen and (max-width : 768px) {
+		height: auto;
+	}
+}
+
+
+body > section > div > div.row-fluid.margin-top-20.margin-bottom-20 > div > div:nth-child(4) > div > div > div:nth-child(2) > div > div > h3 {color:$color-font-body;}
+
+body > section > div > div.row-fluid.margin-top-20.margin-bottom-20 > div > div:nth-child(4) > div > div > div:nth-child(3) > div > div > h3
+{color:$color-font-body;}
+
+body > section > div > div.row-fluid.margin-top-20.margin-bottom-20 > div > div:nth-child(4) > div > div > div.span4.hidden-phone > div > div > h3 {color:$color-font-body;}
+
+#mens_calculer {background-color:$color-important;}
+
+body > section > div > div > div > div:nth-child(1) > div > h1 {color:$color-important;}
+
+body > section > div > div > div > div > div > div:nth-child(4) > div.span6.detail-bloc-contact.padding-10.border-solid-primary-1 > form > div.row-fluid > div:nth-child(2) > input {background-color:$color-important;}
+
+//---------------------------------------------------------------------------------------------------------------
+//		IMMO
+//---------------------------------------------------------------------------------------------------------------
+
+
+.btn-large-perso {
+    padding: 7px 30px;
+    line-height: normal;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.btn-large-perso-presta {
+    padding: 7px 50px;
+    line-height: normal;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+	//---------------------------------------------------------------------------------------------------------------
+	//		ESTIMATION
+	//---------------------------------------------------------------------------------------------------------------
+
+.adresse-estimation {
+	text-transform: capitalize;
+}
+
+//---------------------------------------------------------------------------------------------------------------
+//		DETAIL AGENCE
+//---------------------------------------------------------------------------------------------------------------
+
+body > section > div > div > div > div > div.span12 > div.row-fluid.margin-top-30.margin-bottom-10.bloc-agence.bloc-agence-bottom > div.span8 > h2 {display:none;}
+
+	//---------------------------------------------------------------------------------------------------------------
+	//		SUPP HEADER
+	//---------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------
+//		PAGE RECHERCHE
+//---------------------------------------------------------------------------------------------------------------
+body > section > div > div > div > div:nth-child(1) > div > h1 {display:none;}

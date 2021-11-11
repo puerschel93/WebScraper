@@ -1,0 +1,196 @@
+@import "color";
+// BG UNI
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:260;
+
+// VARIABLE SITE TYPO
+$font-body:"Open Sans", verdana,sans-serif;
+$font-title:"Montserrat",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.9em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:normal;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN TOP NAV
+$margin-top-navigation:8;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:0;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES3
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE PUB LIB1 = MODELE BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+.navigation {
+	@include gradient-secondary;
+}
+
+//--------------------------------------------------------------------------------------
+//    PERSO I2A
+//--------------------------------------------------------------------------------------
+
+/* AUTRES TEMPLATE */
+
+.container {
+    width: 1280px;
+    @media only screen and (max-width : 1280px) {
+        width: 960px
+    }
+}
+
+
+.bg-secondary {
+    background-color:$color-important;
+}
+
+.icon-v5-heart:before{ color:$color-icone-cdc;}
+.icon-v5-heart.opacity-4{opacity:1;}
+
+.cookie-banner {
+  background-color: $color-action;
+  color: $color-nav-footer;
+}
+
+.text_cookies .button_submit {
+  background-color: $color-action !important;
+}
+
+//--------------------------------------------------------------------------------------
+//    MENU & NAV
+//--------------------------------------------------------------------------------------
+
+.logo img {
+  padding: 1px 2px;
+}
+
+header .logo img {
+  width: 45%;
+}
+
+.menu-principal>li>a {
+  padding: 32px 16px;
+  color:$color-important;
+  font-size:1.10em;
+  &:hover {
+    background-color:$color-important;
+    color:$color-action;
+  }
+}
+
+
+@media only screen and (max-width : 1300px) {
+.menu-principal>li>a  {
+  padding: 10px 6px;
+  font-size:0.90em;
+}
+}
+
+@media only screen and (max-width : 767px) {
+  header .logo img {
+  width: 40%;
+  }
+}
+
+.perso-bienvenue {
+    font-size: 1.4em;
+}
+
+@media only screen and (max-width: 860px){
+.perso-bienvenue {
+    font-size: 1.1em;
+    color:$color-important;
+}
+}
+
+
+
+
+.menu-principal {margin-top:10px;}
+
+//--------------------------------------------------------------------------------------
+//    INDEX
+//--------------------------------------------------------------------------------------
+
+.h1-index {
+  font-size: 1.5em;
+}
+.slogan-index {
+  font-size: 1.3em;
+}
+@media only screen and (max-width : 860px) {
+  .h1-index {
+    font-size:1.20em;
+  }
+}
+
+//--------------------------------------------------------------------------------------
+//    FOOTER
+//--------------------------------------------------------------------------------------
+.texte-info-agences {color:$color-secondary; font-size:1.2em;}
+
+.bg-primary {background-color:$color-action;}
+
+//--------------------------------------------------------------------------------------
+//    AGENCE
+//--------------------------------------------------------------------------------------
+
+.horaires-agence {
+  display: none;
+}

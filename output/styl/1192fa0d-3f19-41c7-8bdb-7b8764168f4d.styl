@@ -1,0 +1,296 @@
+// All style of elements that is above the fold
+@import 'nib'
+@import 'variables'
+@import 'mixins/*'
+@import '../font-icon/variables'
+
+normalize-css()
+
+// General CSS
+*
+*:before
+*:after
+    box-sizing border-box
+    transition all .2s linear
+
+body
+    color $gray-dark
+    font-family $sans-serif
+    font-weight 300
+    overflow-x hidden
+    // padding-top $sm-nav-height
+
+    // @media screen and ( min-width $nav-breakpoint )
+    //     padding-top $sm-nav-height-breakpoint
+
+img
+    height auto
+    max-width 100%
+
+button
+    background none
+    border none
+
+// Helper classes
+
+// Container to center the element in the page on large screens. In minor
+// screens the element is full width.
+.container
+    margin-left auto
+    margin-right auto
+    max-width 100%
+    padding-left $container-padding
+    padding-right $container-padding
+    width 100vw
+
+    &.full
+        padding 0
+
+    @media screen and ( min-width ( $screen-lg + ( $container-padding * 2 ) ) )
+        padding-left 0
+        padding-right 0
+        width $screen-lg
+
+// Hide screen reader element until load the CSS file
+.screen-reader-text
+    display none
+
+// WOWJS integration
+.wow
+    visibility hidden
+
+// Header
+.top-header-wrapper
+    border-bottom 1px solid rgba( $white, .7 )
+    fixed top left
+    height $sm-nav-height
+    width 100%
+    z-index 99
+
+    @media screen and ( min-width $nav-breakpoint )
+        height $sm-nav-height-breakpoint
+
+.top-header
+    position relative
+    z-index 9999
+
+    .site-branding
+        position absolute
+        top 18px
+        width 140px
+
+        @media screen and ( min-width $nav-breakpoint )
+            float left
+            height 70px
+            left 0
+            margin-top 18px
+            position static
+            width 180px
+
+.header-right
+    @media screen and ( min-width $nav-breakpoint )
+        display flex
+        float right
+        max-width calc( 100% - 200px )
+        padding-top 38px
+
+.header-toogle-button
+    color $white
+    cursor pointer
+    position absolute
+
+    /.toggled &
+        color $red
+
+.site-search
+    @media screen and ( min-width $nav-breakpoint )
+        display flex
+        margin-right 40px
+
+    /.search-toggle
+        background transparent
+        border none
+        font-size 26px
+        icon( i-search )
+        right 83px
+        top 33px
+
+        @media screen and ( min-width $nav-breakpoint )
+            padding-top 3px
+            position static
+
+    .search-form
+        display none
+
+        ~/.toggled ^[1..-1]
+            display flex
+
+.main-navigation
+    /.menu-toggle
+        background-color transparent
+        border none
+        font-size 46px
+        icon( i-menu )
+        padding 0
+        right 20px
+        top 22px
+
+        @media screen and ( min-width $nav-breakpoint )
+            display none
+
+    div
+        background $white
+        display none
+        left 0
+        position absolute
+        top $sm-nav-height
+        width 100%
+        z-index 999
+
+        @media screen and ( min-width $nav-breakpoint )
+            background transparent
+            border-left 1px solid $white
+            display flex
+            height 30px
+            padding-left 20px
+            position static
+
+        ~/.toggled ^[1..-1]
+            display block
+
+    ul
+        list-style none
+        margin 0
+        padding 0
+        width 100%
+
+        @media screen and ( min-width $nav-breakpoint )
+            width auto
+
+        > .menu-item
+            display block
+            line-height 47px
+            text-transform uppercase
+
+            @media screen and ( min-width $nav-breakpoint )
+                display inline-block
+                font-size 16px
+                line-height 30px
+                padding 0 20px
+                position relative
+
+            &:last-child
+                @media screen and ( min-width $nav-breakpoint )
+                    padding-right 0
+
+            a
+                color $gray-dark
+                display block
+                font-size 16px
+                font-weight bold
+                padding 0 30px
+                text-decoration none
+                width 100%
+
+                @media screen and ( min-width $nav-breakpoint )
+                    color $white
+                    display inline-block
+                    padding 0
+                    text-decoration none
+                    width auto
+
+                ^[0..-2].current-menu-item ^[-1..-1] // @stylint ignore
+                &:hover
+                    color $red
+
+.site-header
+    height 100%
+    image-bg()
+    position fixed
+    width 100%
+    z-index 2
+
+    &--wrapper
+        background-color $purple
+        height 100vh
+        left 0
+        min-height 500px
+        position relative
+        right 0
+        top 0
+        width 100vw
+        z-index 2
+
+        /.no-hero &
+            height $sm-nav-height
+            min-height auto
+            position fixed
+            z-index 20
+
+            @media screen and ( min-width $nav-breakpoint )
+                height $sm-nav-height-breakpoint
+
+            /.sticky&
+                height $sm-nav-height-sticky
+
+    /.single-post &,
+    /.page-template-default &
+        position relative
+
+        &:before
+            background $header-overlay
+            bottom 0
+            content ''
+            height 100%
+            left 0
+            position absolute
+            right 0
+            top 0
+            width 100%
+
+    &__no-hero
+        height auto
+
+// Hero
+.hero
+    &--container
+        display none
+
+// Breadcrumb
+.breadcrumb
+    color $red
+    font-size 13px
+    letter-spacing 1.3px
+    list-style none
+    margin 0
+    padding 20px 0
+
+    &--wrapper
+        margin-top $sm-nav-height
+        position relative
+        z-index 10
+
+        @media screen and ( min-width $nav-breakpoint )
+            margin-top $sm-nav-height-breakpoint
+
+        /.sticky &
+            margin-top $sm-nav-height-sticky
+
+    &--item
+        display inline
+
+        &:after
+            content '>'
+            display inline-block
+            margin 0 10px
+
+        &:last-child:after
+            display none
+
+    &--link
+        color $red
+        text-decoration none
+
+.site-content,
+.site-footer
+    visibility hidden

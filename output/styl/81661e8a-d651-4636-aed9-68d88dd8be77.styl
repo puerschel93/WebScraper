@@ -1,0 +1,248 @@
+$bgColor-dark = #50b6fa00;
+$MyColorI = #66CCFF;
+$bgColorI = #173F6F;
+$fontColor = #FFF;
+
+// 基础样式配置
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd {
+    margin: 0;
+    padding: 0;
+    // list-style: none;
+    font-family: '微软雅黑', Arial, Helvetica, sans-serif;
+    color: #FFF;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+    // text-decoration: none;
+    color: #FFF;
+}
+
+input, img {
+    padding: 0;
+    border: none;
+    /* 轮廓线 */
+    outline: none;
+    vertical-align: middle;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* chrome & safari 浏览器 */
+/* 滚动条整体部分,必须要设置 */
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #000000;
+}
+
+/* 滚动条的轨道 */
+body::-webkit-scrollbar-track {
+    background-color: #0972a711;
+}
+
+/* 滚动条的滑块按钮 */
+body::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background-color: #1740729f;
+    box-shadow: inset 0 0 4px #66CCFF11;
+}
+
+/* 滚动条的上下两端的按钮 */
+body::-webkit-scrollbar-button {
+    height: 0px;
+    background-color: #000000;
+}
+
+.theme-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    padding-top: 9.375vw;
+    background: $bgColorI;
+    // background: url('/assets/img/background/1.jpg') no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    width: 100%;
+    overflow: auto;
+
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        padding-top: 9.375vw;
+        background: url('/assets/img/background/1.jpg') no-repeat;
+        background-size: cover;
+        background-position: 0 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        margin-top: 6.375vw;
+        background: $bgColor-dark;
+        background: $bgColorI;
+
+        a.sidebar-link {
+            color: #FFF;
+
+            &.active {
+                color: #66CCFF;
+            }
+        }
+    }
+
+    .navbar {
+        min-height: 155px;
+        height: 9.375vw;
+        background: $bgColor-dark;
+        // background: url('/assets/img/background/2.png') no-repeat;
+        background-size: 100% auto;
+        transition: all 0.5s;
+        overflow: hidden;
+        border: none;
+        box-sizing: border-box;
+
+        // border: none;
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            content: '';
+            display: block;
+            padding: 0;
+            width: 100%;
+            min-height: 155px;
+            height: 9.375vw;
+            background: $bgColor-dark;
+            background: url('/assets/img/background/2.png') no-repeat;
+            background-size: 100% auto;
+            filter: blur(2px);
+            // filter: opacity(85%);
+            // transition: all 1.5s;
+            overflow: auto;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        &:hover {
+            &::before {
+                filter: none;
+            }
+        }
+
+        .links {
+            background: $bgColor-dark;
+            border-radius: 16px;
+            color: #C00;
+        }
+    }
+
+    .home {
+        min-height: 1080px;
+        max-width: 100%;
+        padding-top: 0;
+
+        .footer {
+            width: 100%;
+            border: none;
+            padding: 0;
+            margin: 0;
+            color: #ffffff;
+        }
+    }
+}
+
+.theme-default-content {
+    &:not(.custom) {
+        max-width: 980px;
+        min-height: 960px;
+        background: $bgColorI;
+
+        h1 {
+            // text-align: center;
+        }
+
+        table {
+            tr {
+                &:nth-child(2n) {
+                    background: #282C34; 
+                    // color: $bgColorI;
+                }
+            }
+        }
+    }
+}
+
+// y-elment-style
+.yel-contanier {
+    display: flex;
+    box-sizing: border-box;
+
+    .yel-col-1 {
+        flex: 1;
+    }
+
+    .yel-col-2 {
+        flex: 2;
+    }
+
+    .yel-col-3 {
+        flex: 3;
+    }
+
+    .yel-col-4 {
+        flex: 4;
+    }
+
+    .yel-col-5 {
+        flex: 5;
+    }
+
+    .yel-col-6 {
+        flex: 6;
+    }
+
+    .yel-col-7 {
+        flex: 7;
+    }
+
+    .yel-col-8 {
+        flex: 8;
+    }
+
+    .yel-col-9 {
+        flex: 9;
+    }
+
+    .yel-col-10 {
+        flex: 10;
+    }
+
+    .yel-col-11 {
+        flex: 11;
+    }
+
+    .yel-col-12 {
+        flex: 12;
+    }
+}

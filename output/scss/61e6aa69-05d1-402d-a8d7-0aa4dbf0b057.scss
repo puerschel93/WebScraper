@@ -1,0 +1,161 @@
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.alert {
+  font-weight: 600;
+  a {
+    color: $kb_white;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.alert-warning {
+    a {
+      color: $kb_brown85_on_yellow;
+    }
+  }
+}
+
+h1, h2 {
+  font-weight: 800;
+}
+
+h3, h4, h5 {
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+ul {
+  margin-bottom:1.5em
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+code, pre {
+  font-size: 85%;
+  line-height: 1.6em;
+  text-rendering: auto;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+label {
+  font-weight: 800;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.label {
+  text-transform: uppercase;
+  border-radius:4px;
+  padding:.1em .6em;
+}
+
+/* remove focus glow around buttons, which doesn't match our wide radius */
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+  outline: none;
+}
+.btn {
+  border:0
+}
+
+@media screen and (min-width: $screen-sm) {
+  .container {
+    padding-left:30px;
+    padding-right:30px;
+  }
+}
+
+.btn {
+  font-size: $font-size-large;
+  padding: 7px 24px;
+}
+
+.btn:disabled {
+  opacity: 0.2;
+}
+
+/* and our green outline button */
+.btn-success-outline {
+  color: $kb_green_dark;
+  background-color: #fff;
+  border: 2px solid $kb_green;
+  padding: 6px 23px 5px;
+  &.btn-lg { padding: 6px 23px 5px; }
+  &.btn-sm { padding: 6px 23px 5px; }
+  &.btn-xs { padding: 6px 24px 5px; }
+}
+
+
+h4 small,
+h4 .small,
+.h4 small,
+.h4 .small,
+h5 small,
+h5 .small,
+.h5 small,
+.h5 .small,
+h6 small,
+h6 .small,
+.h6 small,
+.h6 .small, 
+small, .small {
+  color:$kb_black50;
+  font-size:13px 
+}
+.well {
+  color:$kb_white;
+  small {
+    color:$kb_white50_on_blue_darker2;
+  }
+}
+.jumbotron small { color: $kb_white50_on_blue_darker2; }
+
+.modal {
+  .modal-header {
+    text-align:center;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    padding:10px;
+    button.close {
+      margin-top:-7px;
+      margin-right:-2px
+    }
+  }
+  &.modal-info {
+    .modal-header  {background-color: $kb_yellow; color:$kb_brown85_on_yellow;}
+  }
+  &.modal-danger {
+    .modal-header  {background-color: $kb_red; color:$kb_white;}
+  }
+  &.modal-primary {
+    .modal-header  {background-color: $kb_blue; color:$kb_white;}
+  }
+  &.modal-success {
+    .modal-header  {background-color: $kb_green; color:$kb_white;}
+  }
+  &.modal-headerless {
+    .modal-header {
+      background-color: $kb_white;
+      color:$kb_white;
+      .modal-title {
+        display:none;
+      }
+    }
+    .modal-body {
+      padding-top:0px;
+    }
+  }
+
+}
+

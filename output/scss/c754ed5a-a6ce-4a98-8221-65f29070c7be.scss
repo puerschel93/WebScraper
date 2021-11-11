@@ -1,0 +1,219 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:600;
+
+// SIZE NAVIGATION
+$height-navigation:60;
+
+$margin-top-under-nav-fixe:180;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.7em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+
+//----------------------------------------------------------------------------------
+//	PERSO CAET
+//----------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------
+//	GENERAL
+//----------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1440px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1440px) {
+		width:100%;
+	}
+}
+
+	//----------------------------------------------------------------------------------
+	//	BG SUPPL
+	//----------------------------------------------------------------------------------
+.bg-white-index {
+	background-color:rgba($color-body, 0.9);
+}
+
+.margin-navigation {
+	background-image:url('../images/inside_scrolling.jpg');
+	background-position:center top;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
+	//----------------------------------------------------------------------------------
+	//	MENU & NAV
+	//----------------------------------------------------------------------------------
+.margin-navigation {
+	margin-top: 185px;
+}
+
+.bg-navigation {
+	@include background-image(linear-gradient($color-primary, $color-primary 66%, $color-primary-dark-20 85%, $color-primary ));
+}
+
+.menu-principal {
+	font-size: 1.2em;
+	@media only screen and (max-width : 1440px) {
+		font-size: 1.02em;
+	}
+	@media only screen and (max-width : 970px) {
+		font-size: 0.60em;
+	}
+	>li {
+		border-left:4px solid $color-primary;
+		border-right:4px solid $color-primary;
+		>a {
+			padding: 0px 44px;
+			@media only screen and (max-width : 1440px) {
+				padding: 0px 20px;
+			}
+			&:hover {
+				@include background-image(linear-gradient($color-action, $color-action 66%, $color-action-dark-20 85%, $color-action ));
+			}
+		}
+	}
+}
+
+
+//----------------------------------------------------------------------------------
+//	INDEX
+//----------------------------------------------------------------------------------
+
+	//----------------------------------------------------------------------------------
+	//	BG
+	//----------------------------------------------------------------------------------
+.aside-home-2 {
+	background:$color-body;
+}
+
+
+	//----------------------------------------------------------------------------------
+	//	PUB
+	//----------------------------------------------------------------------------------
+.zone-pub {
+	background:$color-block;
+    padding: 10px;
+    height: 170px;
+}
+
+
+	//----------------------------------------------------------------------------------
+	//	PLACEMENT MOTEUR
+	//----------------------------------------------------------------------------------
+#Mini_Moteur {
+    margin-top: 544px;
+	@media only screen and (max-width : 767px) {
+		margin-top: 0px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.titre-milieu-menu-under {
+		margin-top: -125px;
+	}
+}
+
+	//------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		MODULE PA
+	//------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage .height-180 {
+	height:300px;
+}
+
+	//----------------------------------------------------------------------------------
+	//	PUB FULL
+	//----------------------------------------------------------------------------------
+/*.pub-estimation-helsinki {
+	border-top:solid 20px $color-body;
+}*/
+
+.titre-pub {
+	font-size:1.5em;
+	background-color:rgba($color-body, 0.9);
+	padding:10px;
+}
+
+//----------------------------------------------------------------------------------
+//	LISTING AGENCE
+//----------------------------------------------------------------------------------
+
+	//----------------------------------------------------------------------------------
+	//	MASQUER INFOS
+	//----------------------------------------------------------------------------------
+
+.listing-agences-fax, .listing-agences-responsable {
+	display:none;
+}
+
+//----------------------------------------------------------------------------------
+//	DETAIL AGENCE
+//----------------------------------------------------------------------------------
+
+	//----------------------------------------------------------------------------------
+	//	MASQUER INFOS
+	//----------------------------------------------------------------------------------
+
+.agence-responsable {
+	display:none;
+}

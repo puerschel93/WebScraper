@@ -1,0 +1,475 @@
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root("::-webkit-input-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root(":-moz-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root("::-moz-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root(":-ms-input-placeholder") {
+    @content;
+  }
+}
+
+@mixin hover($parent: null, $touch: false) {
+  $selectors: "#{&}";
+  $isPseudo: str-index($selectors, "::before") or str-index($selectors, "::after");
+  $isChecked: str-index($selectors, "> input:checked");
+  $touchMod: null;
+
+  //@if (not $touch) {
+  //  $touchMod: "html:not(.touch)";
+  //}
+  //
+  //@if ($parent and $isChecked) {
+  //  #{$touchMod} & {
+  //    $selector: &;
+  //    $splitSelector: str-split("#{$selector}", ">");
+  //    $selector: str-replace(nth($splitSelector, 1), $parent, "#{$parent}:hover");
+  //    $selector: "#{$selector} > #{nth($splitSelector, 2)}";
+  //
+  //    @at-root #{$selector} {
+  //      @content;
+  //    }
+  //  }
+  //} @else if ($parent) {
+  //  #{$touchMod} #{$parent}:hover & {
+  //    @content;
+  //  }
+  //} @else if (not $parent and $isPseudo) {
+  //  $mods: get-map-modified-pseudo-selectors("#{$selectors}");
+  //
+  //  #{$touchMod} &:hover {
+  //    $selector: &;
+  //
+  //    @each $mod in $mods {
+  //      $selector: selector-replace($selector, map-get($mod, "original"), map-get($mod, "new"));
+  //    }
+  //
+  //    @at-root #{$selector} {
+  //      @content;
+  //    }
+  //  }
+  //} @else { //not $parent and not $isPseudo
+  //  #{$touchMod} &:hover {
+  //    @content;
+  //  }
+  //}
+
+  #{$touchMod} &:hover {
+    @content;
+  }
+}
+
+@mixin active($parent: null, $class: false) {
+  $selectors: "#{&}";
+  $isPseudo: str-index($selectors, "::before") or str-index($selectors, "::after");
+  $isChecked: str-index($selectors, "> input:checked");
+
+  @if ($parent and $isChecked) {
+    #{$touchMod} & {
+      $selector: &;
+      $splitSelector: str-split("#{$selector}", ">");
+      $selector: str-replace(nth($splitSelector, 1), $parent, "#{$parent}:hover");
+      $selector: "#{$selector} > #{nth($splitSelector, 2)}";
+
+      @at-root #{$selector} {
+        @debug $selector;
+
+        @content;
+      }
+    }
+  } @else if $parent {
+    #{$parent}:active &,
+    #{$parent}--active & {
+      @content;
+    }
+  } @else if (not $parent and $isPseudo) {
+    $mods: get-map-modified-pseudo-selectors("#{$selectors}");
+
+    &:active {
+      $selector: &;
+
+      @each $mod in $mods {
+        $selector: selector-replace($selector, map-get($mod, "original"), map-get($mod, "new"));
+      }
+
+      @at-root #{$selector} {
+        @content;
+      }
+    }
+
+  } @else { //not $parent and not $isPseudo
+    &:active,
+    &--active
+    {
+      @content;
+    }
+  }
+}
+
+@mixin focus($parent: null, $onlyTouch: false) {
+  $selectors: "#{&}";
+  $isPseudo: str-index($selectors, "::before") or str-index($selectors, "::after");
+  $isChecked: str-index($selectors, "> input:checked");
+  $touchMod: null;
+
+  @if ($onlyTouch) {
+    $touchMod: "html.touch";
+  }
+
+  @if ($parent and $isChecked) {
+    #{$touchMod} & {
+      $selector: &;
+      $splitSelector: str-split("#{$selector}", ">");
+      $selector: str-replace(nth($splitSelector, 1), $parent, "#{$parent}:hover");
+      $selector: "#{$selector} > #{nth($splitSelector, 2)}";
+
+      @at-root #{$selector} {
+        @debug $selector;
+
+        @content;
+      }
+    }
+  } @else if $parent {
+    #{$touchMod} #{$parent}:focus & {
+      @content;
+    }
+  } @else if (not $parent and $isPseudo) {
+    $mods: get-map-modified-pseudo-selectors("#{$selectors}");
+
+    #{$touchMod} &:focus {
+      $selector: &;
+
+      @each $mod in $mods {
+        $selector: selector-replace($selector, map-get($mod, "original"), map-get($mod, "new"));
+      }
+
+      @at-root #{$selector} {
+        @content;
+      }
+    }
+  } @else { //not $parent and not $isPseudo
+    #{$touchMod} &:focus {
+      @content;
+    }
+  }
+}
+
+@mixin u-grow-full-height() {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+
+@mixin container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $container-padding-x;
+  padding-left: $container-padding-x;
+  //max-width: 1135px;
+  max-width: 1170px;
+}
+
+@mixin menu-hover {
+  animation-name: menu-hover;
+  animation-duration: 0.25s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@mixin header-sticky($bp) {
+  ::ng-deep .page-header--sticky & {
+    @include media-breakpoint-up($bp) {
+      @content;
+    }
+  }
+}
+
+@mixin mobile-open($bp: null) {
+  ::ng-deep .page--mobile-open & {
+    @if ($bp) {
+      @include media-breakpoint-up($bp) {
+        @content;
+      }
+    } @else {
+      @content;
+    }
+  }
+}
+
+@mixin caret($top, $right, $color: $gray-dark-color, $hoverColor: $black-color) {
+  &::after {
+    content: "";
+    position: absolute;
+    top: $top;
+    right: $right;
+    width: 4px;
+    height: 4px;
+    border: 1px solid $color;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transform: rotate3d(0, 0, 1, 45deg);
+
+    @include hover {
+      border-bottom-color: $hoverColor;
+      border-right-color: $hoverColor;
+    }
+  }
+}
+
+@mixin text-bg($color: $primary-color, $border-radius: $border-radius) {
+  position: relative;
+  padding-left: 0.55em;
+  margin-right: 0.7em;
+  display: inline-block;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -0.35em;
+    right: -0.55em;
+    bottom: -0.35em;
+    left: 0;
+    z-index: -1;
+    border-radius: $border-radius;
+    background-color: $color;
+  }
+}
+
+@mixin box($x: 0) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: $white-color;
+  box-shadow: $x 14px 21px rgba($black-color, 0.1);
+}
+
+@mixin input() {
+  margin: 0;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  font-family: $font-family--secondary;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  //color: darken($gray-color, 13%);
+  color: $black-color;
+  background-color: $white-color;
+  border: 1px solid $gray-light-color;
+  border-radius: $border-radius;
+  //box-shadow: $input-shadow;
+  resize: none;
+  appearance: none;
+  cursor: pointer;
+
+  .input--invalid & {
+    color: $red-color;
+    background-color: rgba($red-color, 0.5);
+    border-color: $red-color;
+
+    @include focus {
+      color: $red-color;
+    }
+  }
+
+  .input--valid & {
+    border-color: rgba($green-color, 0.4);
+  }
+
+  @include focus {
+    outline: none;
+    color: $black-color;
+    border-color: $primary-color;
+  }
+
+  @include placeholder {
+    color: $gray-color--down-11;
+  }
+}
+
+@mixin scollbar {
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin-right: 5px;
+    background-color: $gray-light-color--up-5;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary-color;
+    border-radius: 10px;
+  }
+}
+
+@mixin moveContactPageInfoLeft {
+  transition: transform 0.5s ease-in;
+
+  .page-contacts--details & {
+
+    @include media-breakpoint-only(xs) {
+      transform: translateX(calc(-100% - #{$container-padding-x} * 2));
+      //position: absolute;
+    }
+  }
+}
+
+@mixin close-button($size, $color, $colorHover, $colorActive: $colorHover) {
+  padding: 0;
+  width: $size;
+  height: $size;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include focus {
+    outline: none;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 2px;
+    background-color: $color; //$gray-color--down-11
+
+    @include hover {
+      background-color: $colorHover;
+    }
+
+    @include active {
+      background-color: $colorActive;
+    }
+  }
+
+  &::before {
+    transform: rotate3d(0, 0, 1, 45deg);
+  }
+
+  &::after {
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+}
+
+
+@mixin map-full-mode() {
+  ::ng-deep .page--full-mode & {
+    @include media-breakpoint-down(md) {
+      @content;
+    }
+  }
+}
+
+@mixin active-map-panel($bp) {
+  .page-contacts--map-panel & {
+    @include media-breakpoint-down($bp) {
+      @content;
+    }
+  }
+}
+
+@mixin order-sidebar-open() {
+  ::ng-deep .page--order-sidebar-open &,
+  .page--order-sidebar-open & {
+    filter: blur(2px);
+
+    @include media-breakpoint-up(lg) {
+      filter: unset;
+    }
+  }
+}
+
+@mixin list-clear {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin btn-default {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @include focus {
+    outline: none;
+  }
+}
+
+@mixin step-point($size, $fontSize, $color: $black-color, $backgroundColor: $primary-color) {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $size;
+  height: $size;
+  font-family: $font-family;
+  font-size: $fontSize;
+  line-height: 1;
+  font-style: normal;
+  color: $color;
+  background-color: $backgroundColor;
+  //background-color: lighten(#E5E5E5, 5%);
+  border-radius: 50%;
+}
+
+
+@mixin bg-image($name, $ext) {
+  background-image: url($images-root + $name + "." + $ext);
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url($images-root + $name + "@2x." + $ext);
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+    background-image: url($images-root + $name + "@3x." + $ext);
+  }
+}
+
+@mixin clear-link-outline {
+  outline: 0;
+
+  &:focus,
+  &:active,
+  &:hover,
+  &:link,
+  &:visited {
+    outline: 0;
+  }
+}
+
+@mixin backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+//@mixin setSvg($icon) {
+//  background-image: url("/assets/img/svg/" + $icon + ".svg");
+//}

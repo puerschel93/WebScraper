@@ -1,0 +1,344 @@
+@import "ui-variables";
+@import (less) "nprogress.css";
+
+@color: #9da5b4;
+@hoverColor: #e2c08d;
+@easing: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+#nprogress {
+  .bar {
+    background: darken(saturate(@hoverColor, 20), 13);
+    height: .3em
+  }
+
+  .peg {
+    box-shadow:
+      0 0 .5em darken(saturate(@hoverColor, 20), 20),
+      0 0 .3em darken(saturate(@hoverColor, 20), 20);
+  }
+
+  .spinner {
+    display: none;
+  }
+
+  .spinner-icon {
+    border-top-color: darken(saturate(@hoverColor, 20), 13);
+    border-left-color: darken(saturate(@hoverColor, 20), 13);
+  }
+}
+
+.atom-pane-browser__box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: #fff;
+}
+
+.atom-pane-browser__menu {
+  display: flex;
+  align-items: center;
+  background-color: #21252b;
+  padding: 0 .2rem;
+  border-bottom: 1px solid #181a1f;
+}
+
+.atom-pane-browser__btn() {
+  color: @color;
+  position: relative;
+  transition: color .2s @easing;
+  cursor: pointer;
+
+  // ><
+  [data-menu-icon] {
+    position: relative;
+    top: -2px;
+    left: 3px;
+  }
+  // ><
+  &:hover,
+  &:hover [data-menu-icon] {
+    color: @hoverColor;
+  }
+}
+
+.atom-pane-browser__icon-wrapper {
+  .atom-pane-browser__btn;
+  height: 2.75em;
+  transition: .2s @easing;
+  padding: 0 .1em;
+  max-width: 2.75em;
+  min-width: 2.75em;
+  &:hover {
+    background: #3a3f4b;
+  }
+
+  &.atom-pane-browser__btn--disabled {
+    cursor: default !important;
+    background: transparent !important;
+  }
+}
+
+
+.atom-pane-browser__back-btn {
+  .atom-pane-browser__btn;
+  margin-left: 3px;
+  margin-right: .5rem;
+  margin-top: 18px;
+  min-width: 16px;
+  max-width: 16px;
+  height: 1px;
+  background-color: currentColor;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-top: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    transform: rotate(-135deg);
+  }
+}
+
+.atom-pane-browser__forward-btn {
+  .atom-pane-browser__btn;
+  margin-left: 2px;
+  margin-right: .5rem;
+  margin-top: 18px;
+  max-width: 16px;
+  min-width: 16px;
+  height: 1px;
+  background-color: currentColor;
+  &:before {
+    content: '';
+    position: absolute;
+    right: 1px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-top: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    transform: rotate(45deg);
+  }
+}
+
+.atom-pane-browser__btn--disabled {
+  color: rgba(157, 165, 180, 0.3) !important;
+  cursor: default;
+}
+
+.atom-pane-browser__reload-btn {
+  .atom-pane-browser__btn;
+  margin-left: 4px;
+  margin-right: .5rem;
+  margin-top: 11px;
+  max-width: 15px;
+  min-width: 15px;
+  height: 12px;
+  border-radius: 50%;
+  border-top: solid 1px currentColor;
+  border-bottom: solid 1px currentColor;
+  border-left: solid 1px transparent;
+  border-right: solid 1px currentColor;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    // top: 10px;
+    // width: 3px;
+    // height: 3px;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-top: solid 1px currentColor;
+    border-left: solid 1px currentColor;
+    transform: rotate(-22.5deg);
+  }
+}
+
+.atom-pane-browser__devtool-btn {
+  .atom-pane-browser__btn;
+  margin-left: 2px;
+  margin-top: 13px;
+  max-width: 15px;
+  min-width: 15px;
+  height: 10px;
+  border-radius: 1px;
+  border: solid 1px currentColor;
+  &:before,
+  &:after {
+    content: '';
+    background-color: currentColor;
+    position: absolute;
+  }
+  &:before {
+    top: 1px;
+    left: -1px;
+    width: 17px;
+    height: 2px;
+  }
+  &:after {
+    right: 1px;
+    bottom: 2px;
+    width: 4px;
+    height: 1px;
+  }
+}
+
+.atom-pane-browser__glass() {
+  .atom-pane-browser__btn;
+  margin-top: 11px;
+  margin-left: 3px;
+  margin-right: 8px;
+  padding: 3px;
+  max-width: 12px;
+  min-width: 12px;
+  height: 12px;
+  border: solid 1px currentColor;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    height: 6px;
+    width: 1.5px;
+    background-color: currentColor;
+  }
+}
+
+.atom-pane-browser__glass--minify {
+  .atom-pane-browser__glass;
+
+  & .atom-pane-browser__glass-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      right: 50%;
+      bottom: 50%;
+      transform: translate(50%, 50%);
+      width: 5px;
+      height: 1.3px;
+      background-color: currentColor;
+    }
+  }
+}
+
+.atom-pane-browser__glass--magnify {
+  .atom-pane-browser__glass--minify;
+  & .atom-pane-browser__glass-inner {
+    &:after {
+      width: 1px;
+      height: 5px;
+    }
+  }
+}
+
+.atom-pane-browser__ua--sp {
+  .atom-pane-browser__btn;
+  margin-left: 5px;
+  margin-top: 9.5px;
+  max-width: 12.5px;
+  min-width: 12.5px;
+  height: 17px;
+  border-radius: 2px;
+  border: solid 1px currentColor;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 0;
+    height: 13px;
+    width: 11px;
+    border-top: solid 1px currentColor;
+    border-bottom: solid 1px currentColor;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 4px;
+    width: 2.5px;
+    height: 1px;
+    background-color: currentColor;
+  }
+}
+
+.atom-pane-browser__ua--lt {
+  .atom-pane-browser__btn;
+  margin-left: 6px;
+  margin-top: 12.5px;
+  margin-right: 9px;
+  max-width: 8.9px;
+  min-width: 8.9px;
+  height: 8px;
+  border-radius: 2px;
+  border: solid 1px currentColor;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    bottom: -5px;
+    width: 15.7px;
+    height: 1px;
+    border-radius: 0 0 2px 2px;
+    border: solid 1px currentColor;
+  }
+}
+
+.atom-pane-browser__omni {
+  flex: 1 1 100%;
+  padding: .5rem;
+  border: none;
+  margin: .5rem;
+  border-radius: 3px;
+  color: #333;
+  transition: .2s @easing;
+  &:focus {
+    box-shadow:
+      0 0 1px 1px saturate(@hoverColor, 40%),
+      inset 0 0 1px 1px saturate(@hoverColor, 40%);
+  }
+}
+
+.atom-pane-browser__webview {
+  width: 100%;
+}
+
+.atom-pane-browser__error {
+  position: absolute;
+  top: 38px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: @base-background-color;
+  color: @text-color;
+}
+
+.atom-pane-browser__error-code {
+  font-size: 4em;
+}
+
+.atom-pane-browser__error-description {
+  font-size: 1.3em;
+  word-break: break-all;
+}

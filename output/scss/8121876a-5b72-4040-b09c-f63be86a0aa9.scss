@@ -1,0 +1,354 @@
+.evidence {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-align: center;
+    margin: var(--spacing-lg) 0;
+}
+
+.intro-auberge .wrapper {
+    margin-top: var(--spacing-xl);
+    h1 {
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+.reservation-auberge {
+    fieldset {
+        border: none;
+        @media screen and (min-width: $breakpoint-sm) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .input {
+        @media screen and (min-width: $breakpoint-sm) {
+            margin: 0 20px;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-bottom: var(--spacing-sm);
+
+        font-size: var(--font-size-very-small);
+
+        input {
+            background-color: var(--color-bg-secondary);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: 3px;
+            border: none;
+            width: 100%;
+        }
+    }
+}
+
+.nav-auberge {
+    @media screen and (min-width: $breakpoint-sm) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: baseline;
+        margin: 0 0 var(--spacing-lg) 0;
+        padding: 0;
+
+        width: 100%;
+
+        list-style-type: none;
+
+        @media screen and (min-width: $breakpoint-md) {
+            flex-direction: row;
+        }
+
+        .active {
+            background-color: var(--color-bg-dark-light);
+            color: var(--color-white);
+        }
+        li {
+            width: 100%;
+        }
+        a {
+            display: inline-block;
+            color: var(--color-black);
+            background-color: var(--color-bg-secondary);
+            margin-bottom: var(--spacing-md);
+            padding: 10px;
+            border-radius: 3px;
+            width: 100%;
+            text-align: center;
+
+            @media screen and (min-width: $breakpoint-md) {
+                margin-right: var(--spacing-lg);
+                margin-bottom: 0;
+                width: 90%;
+            }
+
+            &:active {
+                color: var(--color-white);
+                background-color: var(--color-bg-dark-light);
+            }
+        }
+    }
+    fieldset {
+        border: none;
+        display: none;
+        @media screen and (min-width: $breakpoint-md) {
+            display: none;
+        }
+    }
+
+    .input {
+        background-color: var(--color-bg-secondary);
+        padding: var(--spacing-sm) var(--spacing-lg);
+        border-radius: 3px;
+        border: none;
+        width: 75%;
+        @media screen and (min-width: $breakpoint-sm) {
+            width: 100%;
+        }
+        option {
+            border: none;
+        }
+    }
+}
+
+.chambres {
+    overflow: hidden;
+    @media screen and (min-width: $breakpoint-sm) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.show {
+    display: flex;
+}
+
+.chambres article {
+    @media screen and (min-width: $breakpoint-sm) {
+        width: 48%;
+        margin: 5px;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        width: 28%;
+        margin: 20px;
+    }
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--spacing-xl) 0;
+
+    &.show {
+        display: flex;
+    }
+
+    .image-relative {
+        position: relative;
+        .p1__prix {
+            font-weight: 700;
+        }
+    }
+
+    .prix-chambre {
+        color: var(--color-white);
+        background-color: var(--color-primary);
+        padding: var(--spacing-sm);
+        position: absolute;
+        bottom: 8px;
+        text-align: center;
+        border-radius: 3px;
+
+        p {
+            padding: 0;
+            margin: 0;
+        }
+    }
+    .image-chambre {
+        position: relative;
+    }
+
+    .reserve-chambre {
+        display: flex;
+        align-items: center;
+        color: var(--color-white);
+        background-color: var(--color-primary-dark);
+        border-radius: 3px;
+
+        padding: var(--spacing-sm);
+        position: absolute;
+        bottom: -19%;
+        right: 0;
+
+        @media screen and (min-width: $breakpoint-md) {
+            bottom: -20%;
+        }
+
+        p {
+            margin: 0;
+        }
+        svg {
+            color: var(--color-white);
+            margin-right: var(--spacing-md);
+        }
+    }
+
+    .contenu__chambre {
+        p {
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0 var(--spacing-sm);
+            margin: 0;
+        }
+        li:before {
+            content: '\2022';
+            margin-right: 10px;
+            color: var(--color-primary);
+        }
+    }
+}
+
+.option-reservation {
+    .wrapper {
+        @media screen and (min-width: $breakpoint-sm) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        @media screen and (min-width: $breakpoint-md) {
+            flex-direction: row-reverse;
+        }
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    li:before {
+        content: '\2022';
+        margin-right: 10px;
+        color: var(--color-primary);
+    }
+
+    .colonne1 {
+        background-color: var(--color-black);
+        color: var(--color-white);
+        padding: var(--spacing-md);
+        @media screen and (min-width: $breakpoint-md) {
+            padding: 60px;
+        }
+    }
+    .colonne2_3 {
+        background-color: var(--color-bg-dark-light);
+        color: var(--color-white);
+        padding: var(--spacing-lg);
+
+        @media screen and (min-width: $breakpoint-sm) {
+            display: flex;
+            align-items: baseline;
+            position: relative;
+            h5 {
+                margin-top: 0;
+                padding-top: 0;
+            }
+        }
+    }
+
+    .colonne2 {
+        @media screen and (min-width: $breakpoint-sm) {
+            width: 50%;
+        }
+    }
+    .colonne3 {
+        text-align: center;
+        @media screen and (min-width: $breakpoint-sm) {
+            margin-left: 20px;
+            width: 50%;
+            text-align: left;
+        }
+        @media screen and (min-width: $breakpoint-md) {
+            margin-left: 40px;
+        }
+        h5 {
+            color: var(--color-primary);
+            font-size: 1.25rem;
+            margin-bottom: 0;
+        }
+        .options__asterix {
+            font-size: var(--font-size-very-small);
+            @media screen and (min-width: $breakpoint-sm) {
+                position: absolute;
+                width: 50%;
+                bottom: 35px;
+                right: 23px;
+
+                margin: 0;
+            }
+            @media screen and (min-width: $breakpoint-md) {
+                position: static;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.citations {
+    background-color: var(--color-bg-secondary);
+    margin: var(--spacing-xl) 0;
+
+    @media screen and (min-width: $breakpoint-sm) {
+        display: flex;
+
+        .text-citation {
+            padding: var(--spacing-md) 15%;
+        }
+    }
+
+    img {
+        display: none;
+        @media screen and (min-width: $breakpoint-sm) {
+            display: block;
+            object-fit: cover;
+            width: 40%;
+
+            object-position: -1%;
+        }
+    }
+    .citation_auteur {
+        font-size: var(--font-size-h5);
+    }
+    .guillemets {
+        color: var(--color-primary);
+        font-size: var(--font-size-h1);
+        margin: 0;
+        font-weight: 700;
+    }
+}
+
+.galerie__split {
+    margin: var(--spacing-xl) 0;
+
+    p {
+        font-size: var(--font-size-small);
+        text-align: center;
+        margin-top: var(--spacing-xl);
+    }
+    img {
+        height: 200px;
+        object-fit: cover;
+        @media screen and (min-width: $breakpoint-lg) {
+            height: 400px;
+        }
+    }
+}

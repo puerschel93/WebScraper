@@ -1,0 +1,298 @@
+.app-header
+  padding-top 50px
+  padding-bottom 50px
+  margin 0 auto
+  flex none
+  width 100%
+  z-index 10
+  
+  .menu {
+    display: flex;
+    justify-content space-between !important
+    align-items: center; }
+
+  .menu-logo {
+    display: flex;
+    align-items: center; }
+
+  .menu-logo img {
+    margin-right: 9px; }
+
+  .menu-logo p {
+    text-transform: uppercase;
+    color: #570085;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Montserrat, sans-serif; }
+
+  .menu-search {
+    display: flex;
+     }
+
+  .menu-search__lang 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: -3px 3px 6px rgba(255, 255, 255, 0.2), 3px -3px 6px rgba(255, 255, 255, 0.2), -3px -3px 6px rgba(255, 255, 255, 0.9), 3px 3px 8px rgba(0, 0, 0, 0.5);
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    display inline-flex
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #53007E 0%, #5B008C 100%);
+    margin-right: 19px; 
+    
+  .lang__block
+    display none
+    padding 15px 25px
+    background: #FFFFFF;
+    border-radius: 59px;
+    
+  .lang 
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #560084;
+    padding-right 18px
+    &:last-child
+      padding-right 0
+    
+  .tab-2 {
+    position: relative;
+    color: #fff;
+  }
+  .tab-2 input {
+    opacity: 0;
+    z-index: 1;
+  }
+  .form__menu-2 {
+    cursor: pointer;
+  }
+
+  .slide__menu-2 {
+    z-index -1
+    width 0px
+    height 50px
+    display none
+    position absolute
+    top: 0px;
+    right: 18px;
+    background: #fff;
+    border-radius: 59px;
+    transition: max-height .35s;
+    padding-left 25px
+    transition .4s ease all
+  }
+  
+  /* :checked */
+  .tab-2 input:checked ~ .slide__menu-2 {
+    transition .4s ease all
+    width 160px
+    display flex 
+    align-items center
+    justify-content flex-start
+  }
+  
+  .menu-search__input 
+    width: 500px;
+    background: #FFFFFF;
+    border-radius: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    font-size: 16px;
+    color: #AFAFAF;
+    line-height: 20px;
+    border: none; 
+    outline none
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #AFAFAF;
+    &::placeholder
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 20px;
+      color: #AFAFAF;
+    &:hover,
+    &:active 
+      border none 
+
+  .menu-right {
+    display: flex;
+    align-items: center; }
+
+  .menu-right__button {
+    margin-right: 48px; }
+
+  .menu-right__button button 
+    display flex
+    align-items center
+    justify-content center
+    padding: 11px 37px;
+    background: linear-gradient(94.07deg, #D53D9C 5.48%, #433FD1 94.03%);
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: -3px 3px 6px rgba(189, 191, 198, 0.2), 3px -3px 6px rgba(189, 191, 198, 0.2), -3px -3px 6px rgba(255, 255, 255, 0.9), 3px 3px 8px rgba(189, 191, 198, 0.9);
+    border-radius: 50px;
+    font-weight: 300;
+    font-size: 20px;
+    cursor pointer
+    color: #FFFFFF; 
+    &:hover 
+      transition .4s ease all
+      color #FFF500
+
+  .menu-right__button button span {
+    font-weight: bold; }
+
+  .menu-right__notification 
+    margin-right: 30px; 
+    svg 
+      path 
+        fill #570085
+
+  .menu-right__img 
+    display: flex;
+    justify-content space-between !important
+    align-items: center; 
+    position relative
+    svg 
+      path 
+        fill #000
+    
+  .logo 
+    margin-right 10px
+    svg 
+      path 
+        fill #52007F
+        
+  .tab
+    svg 
+      width 20px
+      height 20px
+      fill #333
+      
+  .tab {
+    position: relative;
+    color: #fff;
+  }
+  .tab input {
+    display none
+    opacity: 0;
+    z-index: -1;
+  }
+  .form__menu {
+    transition .4s ease all
+    cursor: pointer;
+  }
+
+  .slide__menu {
+    z-index 10
+    width 150px
+    height 100px
+    display none
+    position absolute
+    top: 45px;
+    right: 30px;
+    background: #fff;
+    border-radius: 20px;
+    border 1px solid #570085
+    transition: max-height .35s;
+  }
+  
+  .link__block
+    padding 15px 0
+    font-family: Montserrat;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #52007F;
+    width 100%
+    text-align center
+    border-bottom 1px solid #ECEFFA;
+    &:last-child
+      border-bottom none
+
+  /* :checked */
+  .tab input:checked ~ .slide__menu {
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+  }
+
+  .tab input[type=checkbox] + .form__menu {
+    content: "+";
+  }
+  .tab input[type=radio] + .form__menu {
+    content: "\25BC";
+  }
+  .tab input[type=checkbox]:checked + .form__menu {
+    transform: rotate(540deg);
+    transition .4s ease all
+  }
+  .tab input[type=radio]:checked + .form__menu {
+    transform: rotateX(90deg);
+    transition .4s ease all
+  }
+    
+
+  @media screen and (max-width: 1280px)
+    .menu-right__button
+      display none
+      
+  @media screen and (max-width: 1024px)
+    .menu-search__input
+      width 300px
+      
+  @media screen and (max-width: 800px)
+    .menu-logo 
+      p 
+        display none
+        
+    .menu-right__notification
+      display none
+      
+    .menu-search__lang
+      display none
+      
+  @media screen and (max-width: 500px)
+    .menu-search__input
+      display none
+      
+  // .remodal
+  //   border-radius 20px
+  //   max-width 400px !important
+  //   height 500px
+    
+  // .remodal-list
+  //   width 100%
+  //   margin-top 20px !important
+  //   border-bottom 1px solid #570085
+    
+  // .remodal-close
+  //   left auto !important
+  //   top 10px !important
+  //   right 5px
+  //   width 40px !important
+  //   height 40px !important
+  //   &:before
+  //     font-size 45px !important
+      
+  // .remodal-menu
+  //   text-align left
+  //   padding 20px 0 0 0 !important
+    
+  // .remodal-2 
+  //   width 100%
+            
+

@@ -1,0 +1,261 @@
+@import('reset.styl');
+global-reset()
+@import('vendor.styl');
+@import('markdown.styl');
+@import('highlight.styl');
+
+tocwidth = 220px
+nav-height = 49px
+
+*
+    box-sizing: border-box
+body,html
+    height:100%
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+.logo
+    font-size: 24px
+    font-weight: 500;
+    background:#ef2d00
+    color:#fff
+    text-align:center
+
+.container
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1170px
+    margin 0 auto
+    &:before
+        display: table;
+        content: " ";
+    &:after
+        display: table;
+        content: " ";
+        clear: both;
+
+.navbar
+    z-index: 2
+    height: nav-height
+    line-height: nav-height
+    background-image: linear-gradient(to bottom,#fff 0,#f8f8f8 100%)
+    
+.bs-docs-header
+    display:none;
+    background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%)
+    background-repeat: repeat-x
+    position: relative
+    padding: 60px 0
+    color: #cdbfe3
+    font-size: 24px;
+    text-align: left;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1)
+    h1,p 
+        margin-right: 380px
+    h1
+        color: #fff
+        font-family: inherit
+        font-weight: 500
+        margin: .67em 0
+        margin-bottom: 10px
+        margin-top: 0
+        font-size: 60px;
+        line-height: 1;
+        text-align: left
+    p 
+        margin-bottom: 0
+        font-weight: 300
+        line-height: 1.4
+.page-toc
+    padding:0 10px;    
+    // padding: 6px 0 25px 20px 
+    // margin-top: 41px
+    // border-left: 1px solid #EEE
+    font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif !important
+    ul
+        list-style-type: none
+        margin: 0
+        padding:0
+        marign:0
+        a 
+            display: block
+            padding: 12px 0
+            text-decoration: none
+            font-weight:bold
+            line-height: 16px
+            font-size: 14px
+            font-size:16px
+            // color:#f02d00
+            border-bottom:1px solid #cecece
+            &:hover
+                color:red
+                text-decoration: underline
+        li 
+            padding-left:0
+            text-align:left
+            float: initial
+            
+        ul
+            margin-top:10px
+            padding-left:0
+            padding-left:20px
+            line-height:10px;
+            a
+                padding:3px 0
+            li 
+                list-style-type:square
+                ul
+                    li
+                        a
+                            font-size:12px;
+                a 
+                    font-size:90%
+                    font-weight:normal
+                    border-bottom:0
+                    color: #151515
+             ul
+                 margin:0
+.navbar
+    .rui_menu
+        ul  
+            list-style: none
+            position: relative
+            display: inline-table
+            // float: left
+            ul
+                // display: none
+                list-style: type
+                border-radius: 0 0 5px 5px
+                text-align:center;
+                padding: 3px
+                position: absolute
+                top: 100%
+                z-index: 9
+                li.active
+                    a    
+                        color:red
+                        line-height:29px
+                        height:29px
+                li 
+                    float: none
+                    border-bottom: 1px solid #F7F2FF
+                    position: relative
+                    list-style: type
+                a
+                    color: #fff
+                    line-height: 29px
+                    white-space:nowrap
+                    word-break:keep-all
+                ul
+                    position: absolute
+                    left: 100%
+                    top:0
+            li
+                float: left
+                line-height: nav-height
+                a
+                    display: block
+                    // color: #757575
+                    text-decoration: none
+                    padding: 0 15px
+            li:hover
+                background: #F3F3F3
+                a
+                    color: #333
+            li.active
+                a
+                    color: #f00300
+                    background-color: #F3F3F3
+                    height: nav-height
+                    font-size:20px;
+        ul li:hover > ul
+            display: block
+        ul:after
+            content: ""
+            clear: both
+            display: block
+
+.markdown-body
+    overflow: auto
+    h1
+        font-size:28px;
+        color:#f02d00
+    p
+        font-size:14px;
+    h2
+        font-size:20px;
+
+    
+
+                    
+.copyright
+    border-top: 1px dashed #E9E9E9
+    padding: 6px 0 5px 2px
+    margin: 32px 0 0 0
+    line-height: 16px
+    font-size: 12px
+    color: #dfdfdf
+    a 
+        color: #D6DDF8
+        text-decoration: underline
+        &:hover
+            color:#333
+
+.forkgithub
+    a 
+        float right
+        
+
+
+/*===============*/
+body,html
+    overflow:hidden
+.navbar
+    background: #f2f2f2;
+    position: fixed;
+    left:0;
+    top: 0px;
+    width: 224px;
+    height: calc(100%);
+    overflow: auto;
+    ul
+        li.active
+            a
+                background:none;
+                color:red;
+        li:hover
+            background:none;
+        li
+            a
+                color:#8a6c6c
+    
+
+.pages-toc
+    background: #f2f2f2;
+    position: fixed;
+    right:0;
+    top: 0px;
+    width: 224px;
+    height: calc(100%);
+    overflow: auto;    
+
+.container
+    position: absolute;
+    left: 255px;
+    right: 255px;
+    padding-left:10px;
+    width:calc(100% - 478px)
+    height:calc(100%)
+    font-family: Arial;
+    text-align: left;
+    word-wrap: break-word;
+    overflow:auto;
+
+
+
+
+
+
+
+
+
+
+    

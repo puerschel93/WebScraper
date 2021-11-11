@@ -1,0 +1,197 @@
+@import "~tracim_frontend_lib/src/css/Variable.styl"
+
+.formBlock
+  margin-bottom standardSpacing
+  border-radius standardBorderRadius
+  &__title
+    padding standardSpacing
+    border-bottom borderStyle
+    font-size titleFontSize
+  &__field
+    padding standardSpacing
+  &__bottom
+    padding standardSpacing
+
+.workspace_advanced
+  overflow-y auto
+  overflow-x hidden
+  &-content
+    padding standardSpacing
+  &__contentpage__content
+    overflow-y hidden
+    &__left
+      background-color offWhite
+      overflow auto
+  &__description
+    &__text
+      padding standardSpacing
+      &__textarea
+        width 100%
+    &__bottom
+      display flex
+      padding-right standardSpacing
+      &__btn
+        margin-left auto
+  &__defaultRole
+    &__list
+      padding standardSpacing
+    &__info
+      margin-left textSpacing
+      color grey
+      padding 0
+    &__bottom
+      display flex
+      padding-right standardSpacing
+      &__btn
+        margin-left auto
+  &__userlist
+    &__list
+      margin 0
+      padding 0
+      list-style none
+      &__item
+        display flex
+        justify-content space-between
+        align-items center
+        border-bottom borderStyle
+        padding 0 standardSpacing
+        height 60px
+        &__avatar
+          margin-right standardSpacing
+        &__name
+          flex 1
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+          &__username
+            font-size metadataFontSize
+            overflow hidden
+            text-overflow ellipsis
+        &__role
+          flex 2
+          .btndropdown
+            display flex
+            align-items center
+            max-width 16rem
+            width 100%
+            &__icon
+              width 25px
+              margin-right standardSpacing
+            &::after
+              display flex
+              margin-left auto
+            &.bordered
+              border borderStyle
+              border-radius standardSpacing
+          .subdropdown
+            width 250px
+            padding 0
+            &__item
+              display flex
+              align-items center
+              padding standardSpacing
+              &__icon
+                margin-right standardSpacing
+              &__text
+                white-space normal
+        &__delete
+          width 16px
+          font-size titleFontSize
+          cursor pointer
+    &__adduser
+      border-bottom borderStyle
+      padding standardSpacing
+      &__button
+        display flex
+        align-items center
+        border-color grey
+        color grey
+        &__avatar
+          display flex
+          justify-content center
+          align-items center
+          margin-right standardSpacing
+          border-width 2px
+          border-style dashed
+          border-radius 50%
+          width 50px
+          height 50px
+          cursor pointer
+          &__icon
+            font-size bigIconSize
+        &__text
+          font-size standardFontSize
+          cursor pointer
+  &__subscriptionRequests
+    & .dropdown
+      width 180px
+    &__info
+      max-width 170px
+      flex 1
+    &__button
+      margin-left auto
+      &:hover
+        color offWhite
+    &__empty
+      margin standardSpacing
+    &__userInfo
+      width calc(100% - 180px)
+.workspace_advanced__popup
+  .cardPopup__container
+    width 400px
+  &__body
+    width 100%
+    &__btn
+      display flex
+      justify-content flex-end
+      .btn:first-child
+        margin-right 15px
+
+// MEDIAQUERIES
+
+@media (min-width: min-xl)
+  .workspace_advanced__userlist__list__item__avatar
+    display none
+
+@media (min-width: min-lg) and (max-width: max-lg)
+  .workspace_advanced
+    height "calc(100% - %s)" % headerHeight
+    &-content
+      width 100%
+    &__contentpage__content
+      height auto
+    &__userlist
+      width 100%
+
+@media (min-width: min-md) and (max-width: max-md)
+  .workspace_advanced
+    height "calc(100% - %s)" % headerHeight
+    width 100%
+    &-content
+      width 100%
+    &__userlist
+      width 100%
+    &__contentpage__content
+      height auto
+
+@media (min-width: min-sm) and (max-width: max-sm)
+  .workspace_advanced
+    height "calc(100% - %s)" % headerHeight
+    width 100%
+    &-content
+      width 100%
+    &__userlist
+      width 100%
+    &__contentpage__content
+      height auto
+
+@media (max-width: max-xs)
+  .workspace_advanced
+    height "calc(100% - %s)" % headerHeight
+    width 100%
+    &-content
+      width 100%
+    &__userlist
+      width 100%
+    &__contentpage__content
+      height auto

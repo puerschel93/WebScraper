@@ -1,0 +1,214 @@
+@media (max-width: 991px)
+    .menu 
+        width: 100%
+        overflow: hidden
+
+        &__item
+
+            &.link-tool
+                background-color $pinkish-red
+                color #ffffff
+                max-height 50px
+                overflow hidden
+        
+        &--sub 
+            display: none 
+            background: rgba(0, 0, 0, .05)
+                
+        &--navigation 
+            overflow-y: auto
+
+            .menu 
+                &__icon 
+                    display: none 
+
+                &__link
+                    display: block 
+                    padding: (30px/2) 30px
+                    
+                    color:  color[0]
+                    font-size: 16px
+                    text-transform: uppercase
+                    font-weight: 600
+                    white-space: nowrap
+
+
+                &__item
+                    &--nv1 
+                        color: #000
+                        text-transform: uppercase
+                        font-weight: 700
+
+                        + .menu__item--nv1 
+                            border-top: solid 1px rgba(0,0,0,.1)
+
+                    &--has-child 
+                        display: flex 
+                        justify-content: space-between
+                        align-items: stretch
+                        flex-flow: row wrap 
+
+                        &:after 
+                            content: ''
+                            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAZCAMAAAAR624oAAAAVFBMVEUAAADfIDDfKDDfKzDjKDHfKDDiKjDfKTDhKDDfKDDfKTDhKjDfKjDhKTDfKTDhKjDfKTDgKTDfKjDgKTDfKTDgKjDfKjHgKTDfKTHgKjDfKTHgKjGkgDKsAAAAG3RSTlMAECAwP0BPUF9gcH+Aj5CfoK+wv8DP0N/g7/B2lF5RAAAArklEQVR42oXQRYLDMAwFUJnDzP/+55xpaygp6VvaYgqqsbZ0rgKwt/bq+2avJXEKRGMmmH/hBkQ9GyGr7UdEPiHaW24M1R0poCSSw+jV5Y3WWopiQVAQierAh3mFV/mOC75s9yma2LH5LDG5PWR7rtnwqXifuuje2hyS2czkHbycOMXuh1PEkKNPbQQxKp+6GGKYNd6DM/jPRRFHplQebiYu1Tuw5XRuqgRd+Pr8B6UCGu/W3DfMAAAAAElFTkSuQmCC");
+                            background-repeat: no-repeat
+                            background-position: center
+                            background-size: 17px
+
+                            order: 2
+                            flex: 0 0 auto
+                            
+                            display: flex 
+                            justify-content: center 
+                            align-items: center
+                            width: 45px 
+                            font-size: 20px
+
+                            transition: all 200ms ease
+
+                        > .menu__link 
+                            flex: 1 
+                            order: 1
+                            min-width: 0
+
+                        > .menu--sub 
+                            order: 3
+                            flex: 0 0 100%
+
+                        &[aria-expanded=true]
+                            &:after 
+                                transform: rotate(90deg)
+
+@media (min-width: 992px) 
+    .menu
+        &__item
+
+            &.link-tool
+                background-color $pinkish-red
+                color #ffffff
+                max-height 50px
+                overflow hidden
+
+                &:hover
+                    background-color #fff
+                    a
+                        color $pinkish-red
+
+
+        &--navigation
+            .menu
+                &__icon 
+                    display: inline-block 
+                    vertical-align: middle
+                    margin-right: 5px 
+                    img 
+                        width: 20px
+                        height: 20px 
+                        object-fit: contain 
+                &__ul
+                    &--nv1
+                        position relative
+                        display: flex 
+                        justify-content: space-between
+                        flex-flow: row nowrap
+                        height: 50px
+
+                    &--nv2
+                        display grid
+                        grid-template-columns repeat(auto-fill, minmax(23%, 1fr))
+                        grid-gap 15px
+
+                &__item 
+                    &--hidden 
+                        display: none 
+
+                    &:hover
+                        .menu__link--nv1
+                            color #E02A31
+
+                            &:before
+                                content: ''
+                                position: absolute
+                                bottom: 0px
+                                display: block
+                                width: 100%
+                                height: 2px
+                                background: #E02A31
+                                left: 0
+
+
+                    &--has-child
+                        &:hover 
+                            .menu--nv2
+                                opacity: 1 
+                                visibility: visible
+
+                &__link
+                    &--nv1
+                        position relative
+                        display: inline-block
+                        padding: 14px (30px / 2)
+                        color: #fff
+                        font-size: 16px
+                        text-transform: uppercase
+                        font-weight: 600
+                        white-space: nowrap
+                        font-family : 'Oswald', sans-serif
+
+
+                        &:before
+                            content: ''
+                            position: absolute
+                            bottom: 0px
+                            left 0
+                            width: 0%
+
+                            display: block
+                            height: 2px
+                            background: #E02A31
+                            transition: all 0.2s ease-in-out
+
+                        &:hover
+                            color color
+                            text-decoration: none
+
+                            &:before
+                                content: ''
+                                position: absolute
+                                bottom: 0px
+                                display: block
+                                width: 100%
+                                height: 2px
+                                background: #E02A31
+                                left: 0
+
+                    &--nv2 
+                        display: block
+                        padding: 5px (30px / 2)
+                        text-transform: uppercase
+                        color: #262323
+                        font-weight: 500
+
+                        &:hover
+                            color color
+                            text-decoration: none
+
+                &--sub 
+                    padding: 10px 0
+
+                &--nv2
+                    position: absolute 
+                    top 100%
+                    left: 0
+                    right 0
+                    opacity: 0 
+                    visibility: hidden
+
+                    background: #fff 
+                    box-shadow: 0 0 10px rgba(0,0,0,.1)
+                    padding 30px 60px
+
+                &--rtl 
+                    left: auto
+                    right: 0
+

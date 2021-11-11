@@ -1,0 +1,291 @@
+@import "color";
+// BG SOLO
+$bg-uni:no;
+
+// PICTURE BG
+$picture-bg:yes;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:450;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Open Sans Condensed",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:260;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib6";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE SOUS MENU LIB1
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MODULE ANNONCES1
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE EXTRA2
+@import "../../../slagence_X_V5/sources/scss/extra/extra12";
+
+// IMPORT MODULE PUB LIB1
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT MODULE PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+@import "../../../slagence_X_V5/sources/scss/multiple-select.scss";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT CHOSEN
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//------------------------------------------------------------------------------------------------
+//		PERSO REUSSIM49
+//------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------
+//		GENERAL
+//------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------
+	//		BTN
+	//------------------------------------------------------------------------------------------------
+
+.btn-cdc .opacity-4 {
+	opacity: 1 !important;
+}
+
+.icon-v5-heart {
+	color: $color-icone-cdc;
+}
+
+	//------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//------------------------------------------------------------------------------------------------
+
+.container {
+    width: auto;
+    max-width: 1280px;
+    @media only screen and (max-width : 1310px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+	//------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//------------------------------------------------------------------------------------------------
+
+.menu-principal {
+	text-align: center;
+	>li >a {
+		box-shadow: none;
+		padding: 12px 20px;
+		transition: all 0.7s ease;
+		&:after {
+			display: block;
+			content: "";
+			width: 0%;
+			height: 2px;
+			margin-top: 5px;
+			background-color: $color-important;
+			transition: all 0.7s ease;
+		}
+		&:hover {
+			background: none;
+			&:first-letter {
+				color: $color-important;
+			}
+			&:after {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width : 768px) {
+	.logo img {
+		width: 30% !important;
+	}
+}
+
+//------------------------------------------------------------------------------------------------
+//		INDEX
+//------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------
+	//		MOTEUR
+	//------------------------------------------------------------------------------------------------
+
+#Mini_Bouton {
+	margin-top:-1px;
+}
+
+.form-inline{ 
+	select {
+		height:50px;
+	}
+}
+
+.saisie-suggest {
+    height: 50px !important;    
+}
+
+.bouton-rechercher-moteur {
+	height: 50px;
+	line-height: 40px;
+}
+
+.bg-mini-moteur {
+	height: 70px;
+}
+
+	//------------------------------------------------------------------------------------------------
+	//		MODULE
+	//------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage .height-170 {
+	height: 240px;
+}
+
+	//------------------------------------------------------------------------------------------------
+	//		SERVICES
+	//------------------------------------------------------------------------------------------------
+
+.zone-pub {
+	height: 260px;
+	background-color: darken($color-block,5);
+	box-shadow: none;	
+	&:hover {
+		box-shadow: none;
+		background-color: $color-primary;
+	}
+	@media only screen and (max-width : 768px) {
+		height: auto;
+	}
+}
+
+.zone-ctc {
+	background-image: url('../images/bg-ctc.jpg');
+	background-repeat: no-repeat;
+}
+
+.encart-pub-boite {
+	background-size: cover;
+    height: 120px;
+}
+
+	//------------------------------------------------------------------------------------------------
+	//		IMMO
+	//------------------------------------------------------------------------------------------------
+
+.grayscale {
+	-webkit-filter: grayscale(1);
+	-ms-filter: grayscale(1);
+		filter: grayscale(1);
+	transition: all 0.7s ease;
+	@media only screen and (max-width : 768px) {
+		filter: grayscale(0);
+	}
+	&:hover {
+		filter: grayscale(0);
+		cursor: pointer;
+	}
+}
+
+//------------------------------------------------------------------------------------------------
+//		LISTING PA
+//------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------
+	//		BTN
+	//------------------------------------------------------------------------------------------------
+
+.active-tab-recherche {
+	display: none !important;
+}
+
+.recherche-selection-top {
+	margin-left: 240px !important;
+	@media only screen and (max-width : 1024px) {
+		margin-left: auto !important;
+	}
+}
+
+//------------------------------------------------------------------------------------------------
+//		DETAIL PA
+//------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------
+	//		TTL
+	//------------------------------------------------------------------------------------------------
+
+.detail-border-titre {
+	border-color: $color-important;
+}
+
+	//------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//------------------------------------------------------------------------------------------------
+
+.nivo-caption {
+	opacity: 1 !important;
+}
+
+	//------------------------------------------------------------------------------------------------
+	//		BTN
+	//------------------------------------------------------------------------------------------------	
+
+.bouton-ajouter-selection-detail {
+	font-size: 0.9em;
+    padding: 10px;
+    background: $color-important;
+    border: none;
+    &:hover {
+    	background: $color-important-dark-10;
+    	border: none;
+    }
+}

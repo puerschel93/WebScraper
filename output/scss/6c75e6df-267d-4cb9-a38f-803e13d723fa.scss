@@ -1,0 +1,207 @@
+.hero-background {
+  margin: 0 auto;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(
+      90deg,
+      #fff,
+      #d5d5d5,
+      #aaaaab,
+      #808082,
+      #555558,
+      #2b2b2e,
+      #27272b,
+      #232328,
+      #1f1f25,
+      #1b1a22,
+      #17161f,
+      #13121c
+    );
+  }
+}
+
+.hero-flexer {
+  @media screen and (max-width: $tablet - 1px) {
+    background-image: linear-gradient(
+      90deg,
+      #fff,
+      #d5d5d5,
+      #aaaaab,
+      #808082,
+      #555558,
+      #2b2b2e,
+      #27272b,
+      #232328,
+      #1f1f25,
+      #1b1a22,
+      #17161f,
+      #13121c
+    );
+  }
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 768px;
+  }
+  @media screen and (min-width: $desktop-hd) {
+    max-width: 1280px;
+  }
+}
+
+.hero-flexer__slider {
+  display: none;
+  @media screen and (min-width: $tablet) {
+    display: inline-block;
+    background: var(--white-color);
+    width: 159px;
+    height: 680px;
+  }
+}
+
+.hero-section {
+  position: relative;
+  display: flex;
+  height: 580px;
+  min-width: 280px;
+  max-width: 1125px;
+  @media screen and (max-width: $tablet - 1px) {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (min-width: $tablet) {
+    height: 680px;
+    min-width: 609px;
+    padding-top: 40px;
+  }
+  @media screen and (min-width: $desktop-hd) {
+    min-width: 1125px;
+    height: 680px;
+    padding: 40px 80px;
+  }
+}
+
+.hero-section__bg-shadow {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    90deg,
+    rgba(25, 28, 38, 0.2),
+    rgba(25, 28, 38, 0.2)
+  );
+}
+
+.hero-section__bg-img {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.hero-switch-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  @media screen and (max-width: $tablet - 1px) {
+    height: 580px;
+  }
+}
+
+.hero-container {
+  position: absolute;
+  font-style: normal;
+  z-index: 2;
+  @media screen and (max-width: $tablet - 1px) {
+    max-width: 306px;
+    padding-top: 208px;
+    margin-left: 31px;
+  }
+  @media screen and (max-width: $mobile - 1px) {
+    max-width: 306px;
+    padding-top: 208px;
+    margin-left: 8px;
+  }
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    max-width: 355px;
+    padding-left: 80px;
+    padding-top: 232px;
+  }
+  @media screen and (min-width: $desktop) {
+    max-width: 486px;
+    padding-left: 45px;
+    padding-top: 232px;
+  }
+
+  &__subtitle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    font-family: Open Sans, sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(157, 164, 189, 0.6);
+    &::before {
+      @include before($BG: var(--border-color));
+    }
+  }
+  &__title {
+    @media screen and (max-width: 380px) {
+      font-size: 42px;
+      line-height: 1.18;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 72px;
+      line-height: 1.18;
+    }
+    margin-bottom: 20px;
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.17;
+    letter-spacing: 0.05em;
+    color: #fff;
+  }
+  &__text {
+    font-family: Open Sans, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.62;
+    letter-spacing: 0.02em;
+    color: #9da4bd;
+    @media screen and (min-width: $desktop) {
+      font-size: 18px;
+      line-height: 1.67;
+    }
+  }
+}
+
+.slider-lines {
+  @media screen and (max-width: $tablet - 1px) {
+    display: none;
+  }
+}
+
+.hero-section__buttons {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  @media screen and (max-width: $tablet - 1px) {
+    display: none;
+  }
+}

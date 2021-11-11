@@ -1,0 +1,289 @@
+// MIXINS
+@mixin max-media($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin min-media($width) {
+    @media screen and (min-width: $width) {
+        @content;
+    }
+}
+
+//scroll-base
+@mixin custom-scrollbar ($width: $w-scroll,
+    $thumb: $main-cl,
+    $track: transparent) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $thumb;
+        border-radius: 990px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track;
+    }
+}
+
+@mixin custom-vertical-scrollbar($width: $w-scroll,
+    $thumb: $main-cl,
+    $track: $w-cl) {
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $thumb;
+        border-radius: 990px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track;
+    }
+}
+
+@mixin pos-mid() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin pos-full() {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@mixin pos-full-fixed() {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@mixin flex-mid() {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
+@mixin hidden() {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@mixin visible() {
+    opacity: 1;
+    visibility: visible;
+}
+
+@mixin line-clamp($args) {
+    display: -webkit-box;
+    -webkit-line-clamp: $args;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin lh($lh, $fz) {
+    line-height: ($lh / $fz);
+}
+
+@mixin trans($time) {
+	-webkit-transition: all $time ease;
+    -moz-transition: all $time ease;
+    -o-transition: all $time ease;
+    -ms-transition: all $time ease;
+    transition: all $time ease;
+}
+
+
+//font size
+@mixin fz-65 {
+    font-size: 65px;
+
+    @include max-media($bk-d-1200) {
+        font-size: 60px;
+    }
+
+    @include max-media($bk-d-992) {
+        font-size: 50px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 40px;
+    }
+}
+
+@mixin fz-60 {
+    font-size: 60px;
+
+    @include max-media($bk-d-1200) {
+        font-size: 50px;
+    }
+
+    @include max-media($bk-d-992) {
+        font-size: 45px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 40px;
+    }
+}
+
+@mixin fz-50 {
+    font-size: 50px;
+
+    @include max-media($bk-d-1200) {
+        font-size: 40px;
+    }
+
+    @include max-media($bk-d-992) {
+        font-size: 36px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 30px;
+    }
+}
+
+@mixin fz-45 {
+    font-size: 45px;
+
+    @include max-media($bk-d-1200) {
+        font-size: 40px;
+    }
+
+    @include max-media($bk-d-992) {
+        font-size: 36px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 32px;
+    }
+}
+
+@mixin fz-40 {
+    font-size: 40px;
+
+    @include max-media($bk-d-1200) {
+        font-size: 36px;
+    }
+
+    @include max-media($bk-d-992) {
+        font-size: 32px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 30px;
+    }
+}
+
+@mixin fz-36 {
+    font-size: 36px;
+
+    @include max-media($bk-d-992) {
+        font-size: 30px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 28px;
+    }
+}
+
+@mixin fz-30 {
+    font-size: 30px;
+
+    @include max-media($bk-d-992) {
+        font-size: 28px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 24px;
+    }
+}
+
+@mixin fz-28 {
+    font-size: 28px;
+
+    @include max-media($bk-d-992) {
+        font-size: 24px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 22px;
+    }
+}
+@mixin fz-25 {
+    font-size: 25px;
+
+    @include max-media($bk-d-992) {
+        font-size: 22px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 20px;
+    }
+}
+
+@mixin fz-24 {
+    font-size: 24px;
+
+    @include max-media($bk-d-992) {
+        font-size: 22px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 20px;
+    }
+}
+
+@mixin fz-22 {
+    font-size: 22px;
+
+    @include max-media($bk-d-992) {
+        font-size: 20px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 18px;
+    }
+}
+
+@mixin fz-20 {
+    font-size: 20px;
+
+    @include max-media($bk-d-992) {
+        font-size: 18px;
+    }
+}
+
+@mixin fz-18 {
+    font-size: 18px;
+
+    @include max-media($bk-d-992) {
+        font-size: 16px;
+    }
+}
+
+@mixin fz-16 {
+    font-size: 16px;
+
+    @include max-media($bk-d-992) {
+        font-size: 14px;
+    }
+}

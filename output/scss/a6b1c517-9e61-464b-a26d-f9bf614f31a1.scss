@@ -1,0 +1,100 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.topics{
+    &__grid{
+        @include m.tablet{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 0rem;
+            grid-auto-flow: dense;
+        }
+    }
+}
+.topic{
+    @include m.mobile{
+        min-height: 40rem;    
+    }
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0;
+    @include m.tablet{
+        padding: 9.5rem 0;
+    }
+    &:nth-child(1){
+        grid-column: 2/3;
+        @include m.bg("../img/mobile/image-transform.jpg");
+        background-position: center center;
+        @include m.tablet{
+            @include m.bg("../img/desktop/image-transform.jpg");
+        }
+    }
+    &:nth-child(3){
+        @include m.bg("../img/mobile/image-stand-out.jpg");
+        background-position: center center;
+        @include m.tablet{
+            @include m.bg("../img/desktop/image-stand-out.jpg");
+        }
+    }
+    &__info{
+        padding: 4rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        @include m.tablet{
+            text-align: left;
+            padding: 7rem;
+        }
+        @include m.desktop{
+            padding: 10rem;
+        }
+    }
+    &__heading{
+        font-family: v.$fuenteSecundaria;
+        font-weight: 900;
+        font-size: 3rem;
+        color: v.$veryDarkDesaturatedBlue;
+        @include m.tablet{
+            font-size: 4rem;
+        }
+        @include m.desktop{
+            font-size: 5rem;
+        }
+    }
+    &__text{
+        font-family: v.$fuentePrincipal;
+        color: v.$veryDarkGrayishBlue;
+        padding: .5rem 0 1.5rem 0;
+        @include m.tablet{
+            font-size: 1.7rem;
+        }
+    }
+    &__link{
+        font-family: v.$fuenteSecundaria;
+        font-weight: 900;
+        color: v.$veryDarkDesaturatedBlue;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        width: 15rem;
+        margin: 0 auto;
+        display: inline-block;
+        @include m.tablet{
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        &--1{
+            @include m.btn(lighten(v.$yellow,12%));
+            &:hover{
+                @include m.btn(v.$yellow);
+            }
+        }
+        &--2{
+            @include m.btn(v.$softRed);
+            &:hover{
+                @include m.btn(darken(v.$softRed,20%));
+            }
+        }
+    }
+}

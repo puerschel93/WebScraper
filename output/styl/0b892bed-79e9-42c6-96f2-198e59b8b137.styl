@@ -1,0 +1,251 @@
+.problems
+    position relative
+
+    &--index
+        width 100%
+        margin-bottom 200px
+        @media laptop
+            margin-bottom 160px
+
+    &__decoration
+        position absolute
+        top 65%
+        left 55%
+        transform translate(-50%, -50%)
+        @media tablet-portrait
+            display none
+
+        & svg
+            fill light-gray
+
+    &__description-wrapper
+        width 1248px
+        margin 0 auto 20px auto
+        @media laptop
+            width 918px
+        @media tablet-landscape-large
+            width 918px
+        @media tablet-landscape-small
+            width calc(100% - 80px)
+            max-width 918px
+            margin 0 auto 80px auto
+            text-align center
+        @media tablet-portrait
+            width calc(100% - 60px)
+        @media phone
+            width calc(100% - 40px)
+
+    &__description
+        width 40%
+        @media laptop
+            width 50%
+        @media tablet-landscape-small
+            width 75%
+            margin 0 auto
+        @media tablet-portrait
+            width 100%
+            max-width 600px
+
+    &__button-wrapper
+        position relative
+        display flex
+        justify-content center
+        width 100%
+        margin-top 32px
+        @media tablet-landscape-small
+            margin-top 82px
+        @media phone
+            flex-direction column
+            align-items stretch
+            width calc(100% - 40px)
+            margin 82px auto 0 auto
+
+.problems-slider
+    position relative
+    width 100%
+
+    &__list-wrapper
+        width 1108px
+        height 798px
+        @media laptop
+            width 918px
+            height 700px
+        @media tablet-landscape-medium
+            width calc(100% - 230px)
+        @media tablet-landscape-small
+            width calc(100% - 80px)
+            height auto
+        @media tablet-portrait
+            width calc(100% - 60px)
+        @media phone
+            width calc(100% - 40px)
+
+    &__list
+        display flex
+        flex-wrap nowrap
+        flex-direction column
+        flex-shrink 0
+        width 100%
+        padding 0
+        margin 0
+        list-style none
+        @media tablet-landscape-small
+            height auto
+
+    &__item
+        display flex
+        flex-wrap nowrap
+        justify-content space-between
+        width 100%
+        height 100%
+        @media tablet-landscape-small
+            justify-content center
+            height auto
+        @media phone
+            flex-direction column
+            align-items center
+
+        &:nth-child(1)
+            @media tablet-landscape-small
+                margin-bottom 80px
+
+        &:not(:nth-child(-n+2))
+            @media tablet-landscape-small
+                display none
+
+    &__problem-preview
+        display flex
+        flex-direction column
+        align-items center
+        box-sizing border-box
+        width calc(50% - 24px)
+        max-width 436px
+        @media laptop
+            max-width 362px
+        @media tablet-landscape-small
+            width calc(50% - 21px)
+        @media tablet-portrait
+            width calc(50% - 15px)
+        @media phone
+            width 100%
+
+        &:nth-child(odd)
+            padding-top 102px
+            @media tablet-landscape-small
+                padding-top 0
+                margin-right 42px
+            @media phone
+                margin-right 0
+
+        &:not(:nth-last-child(1))
+            @media phone
+                margin-bottom 80px
+
+    &__link
+        width 100%
+        text-decoration none
+        color inherit
+
+    &__image-container
+        position relative
+        width 100%
+        padding-top 100%
+
+    &__image-wrapper
+        position absolute
+        bottom 0
+        left 0
+        width 100%
+        height 100%
+        background-color black
+        overflow hidden
+        transition width .5s 0s ease
+        @media tablet-landscape-small
+            position absolute
+            top 0
+            left 0
+
+    &__image
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+        max-width 100%
+        min-width 100%
+        display block
+        opacity .85
+        transition transform .5s 0s ease 
+
+        &:hover
+            transform translate(-50%, -50%) scale(1.05)
+
+    &__text
+        position relative
+        top 0
+        width 85%
+        margin-top 35px
+        text-align center
+        opacity 1
+        transition top .5s 0s ease, opacity .5s 0s ease
+        @media phone
+            width 100%
+
+    &__title
+        display inline-block
+        margin-bottom 12px
+        font-family "Helvetica-Neue"
+        font-size 13px
+        line-height 22px
+        font-weight 300
+        color black
+        text-transform uppercase
+        letter-spacing 4px
+        @media laptop
+            font-size 12px
+            line-height 21px
+
+    &__arrow
+        position absolute
+        top 50%
+        transform translateY(-50%)
+        width 35px
+        height 40px
+        z-index 1
+        outline none
+        cursor pointer
+        @media tablet-landscape-small
+            display none
+
+        & svg
+            position absolute
+            top 50%
+            transform translateY(-50%)
+            fill none 
+            stroke black
+            stroke-width 1.2px
+
+        &--up
+            left 64px
+            @media tablet-landscape-large
+                left 40px
+            @media tablet-portrait
+                left 30px
+
+            &:hover svg
+                animation arrow-up-hover
+                animation-duration .75s
+                animation-timing-function ease
+                animation-iteration-count 1
+
+        &--down
+            right 64px
+            @media tablet-landscape-large
+                right 40px
+            @media tablet-portrait
+                right 30px
+
+            &:hover svg
+                animation arrow-down-hover
+                animation-duration .75s
+                animation-timing-function ease
+                animation-iteration-count 1

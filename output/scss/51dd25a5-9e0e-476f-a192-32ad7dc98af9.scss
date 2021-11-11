@@ -1,0 +1,504 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:1000;
+
+// SIZE NAVIGATION
+$height-navigation:80;
+
+// VAR SITE TYPO
+$font-body:"Open Sans",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES11
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU ORPI
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+
+.titre-milieu { margin-top: 0; }
+.padding-top-30 { padding-top:30px; }
+
+.aside-home-1 img[itemprop="logo"] {
+  display: none;
+}
+
+.module-homepage {
+  background-color: rgba(255,255,255,.7);
+  padding: 25px;
+  margin-top: 170px;
+}
+
+.module-annonces-homepage {
+  background-color: $color-primary;
+  border-bottom-color: $color-action;
+}
+
+.typo-action {
+  font-size: 1.5em;
+}
+
+.logo-home { margin-top: -30px; }
+
+.slogan-home {
+  max-width: 280px;
+  margin-top: 110px;
+  .slogan {
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: $font-title;
+    font-size: 1.4em;
+    line-height: 1.4;
+    font-weight: bold;
+    color: #000;
+    border-top: 3px solid #000;
+    padding: 10px 0 0 0;
+    margin-top: 5px;
+  }
+}
+
+.aside-home-3 {
+  background-image:url('../images/homepage/homepage_scrolling_4.jpg');
+  background-color:$color-body;
+  background-position:top center;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+}
+
+.aside-home-2 {
+  background-image:url('../images/homepage/homepage_scrolling_2.jpg');
+  background-color:$color-body;
+  background-position:top center;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  padding-top: 50px;
+}
+
+.aside-home-5 {
+  background-image:url('../images/homepage/homepage_scrolling_1.jpg');
+  background-color:$color-body;
+  background-position:top center;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+}
+
+
+.home-top ul.pull-right {
+  float: none;
+  left: 0; right: auto;
+}
+
+.link-home:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.bloc-nav-left-fix {
+  right: 0;
+  left: auto;
+}
+
+
+// BLOCS INDEX
+.bloc-txt-home {
+  margin-top: 20px;
+  background-color: rgba($color-primary,.9);
+}
+
+#div_moteur {
+  margin-top:-110px;
+  height: 140px;
+}
+.moteur-avantage.padding-10 {
+  padding: 10px 0;
+}
+
+#div_estimation, #div_suivi {
+  margin-top:-110px;
+  height: 90px;
+}
+
+#Menu-bloc > h1 { display: none; }
+
+.bloc-index {
+  margin-top: 20px;
+  > [class*="span"] {
+    padding:15px 0;
+    background-color: rgba($color-primary,.9);
+    font-family:$font-title;
+    font-size:1.3em;
+    text-transform:uppercase;
+    color:$color-action;
+    margin-bottom: 80px;
+    cursor: pointer;
+    &:hover {
+      text-decoration:none;
+      background-color: $color-primary;
+    }
+    .menu-bg-picto {
+      position: relative;
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      margin: 0 auto 10px auto;
+      line-height: 65px;
+      background-color: $color-secondary;
+      .icon-v5 {
+        color: $color-primary;
+        font-size: 1.5em;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 23px; right: -5px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7.5px 13.0px 7.5px 0;
+        border-color: transparent $color-important transparent transparent;
+      }
+    }
+  }
+
+}
+
+.bg-inside {
+  background-image:url('../images/inside/inside_scrolling.jpg');
+  background-color:$color-body;
+  background-position:top center;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+}
+
+
+// SCROLL ARROW
+
+.arrow-wrap {
+  position:absolute;
+  z-index:125;
+  left:50%;
+  bottom:10em;
+  margin-left:-5em;
+  background:$color-important;
+  width:10em;
+  height:10em;
+  padding:4em 2em;
+  border-radius:50%;
+  opacity:0.7;
+  font-size:0.5em;
+  display:block;
+  box-shadow:0px 0px 5px 0px #333;
+  .arrow {
+    float:left;
+    position:relative;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 3em 3em 0 3em;
+    border-color: #ffffff transparent transparent transparent;
+    -webkit-transform:rotate(360deg);
+    &:after {
+      content:'';
+      position:absolute;
+      top:-3.2em;
+      left:-3em;
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 3em 3em 0 3em;
+      border-color: $color-important transparent transparent transparent;
+      -webkit-transform:rotate(360deg)
+    }
+
+  }
+
+}
+
+.hint {
+  position:absolute;
+  top:0.6em;
+  width:100%;
+  left:0;
+  font-size:2em;
+  font-style:italic;
+  text-align:center;
+  color:#fff;
+  opacity:0;
+}
+
+.arrow-wrap:hover .hint {
+  opacity:1;
+}
+
+@-webkit-keyframes arrows {
+  0% { top:0; }
+  10% { top:12%; }
+  20% { top:0; }
+  30% { top:12%; }
+  40% { top:-12%; }
+  50% { top:12%; }
+  60% { top:0; }
+  70% { top:12%; }
+  80% { top:-12%; }
+  90% { top:12%; }
+  100% { top:0; }
+}
+
+.arrow-wrap .arrow {
+  -webkit-animation: arrows 2.8s 0.4s;
+  -webkit-animation-delay: 3s;
+}
+
+
+
+/* =================================
+==  SERVICES  ==
+================================= */
+
+[class*="borders-"] {
+  display: inline-block;
+  padding: 5px 0;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+.borders-action {
+  border-top-color: $color-action;
+  border-bottom-color: $color-action;
+}
+.borders-important {
+  border-top-color: $color-important;
+  border-bottom-color: $color-important;
+}
+.borders-body {
+  border-top-color: $color-font-body;
+  border-bottom-color: $color-font-body;
+}
+.borders-centered {
+  display: block;
+  text-align: center;
+}
+
+.ttl-bordered {
+  font-family: $font-title;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-top: 5px solid transparent;
+}
+
+[class^="aside-services-"] {
+  font-family: $font-title;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  font-size: 1.23076em;
+  p {
+    line-height: 1.5;
+  }
+  .services-ttl {
+    @extend .ttl-bordered;
+    font-size: 2em;
+    padding: 15px 0;
+  }
+  &.aside-services-1 {
+    background-image: url(../images/bg-services-01.jpg);
+    min-height: 500px;
+    .services-ttl {
+      color: $color-nav-footer;
+      border-top-color: $color-nav-footer;
+      margin-top: 80px;
+    }
+  }
+  &.aside-services-2 {
+    background-image: url(../images/bg-services-02.jpg);
+    min-height: 810px;
+    .services-ttl {
+      color: $color-important;
+      border-top-color: $color-important;
+      margin-top: 130px;
+    }
+  }
+  &.aside-services-3 {
+    background-image: url(../images/bg-services-03.jpg);
+    min-height: 560px;
+    .services-ttl {
+      color: $color-important;
+      border-top-color: $color-important;
+      margin-top: 170px;
+    }
+  }
+
+
+}
+
+
+
+/* =================================
+== AGENCES ==
+================================= */
+
+.listing-agences-responsable { display: none; }
+
+
+/* =================================
+== BIENS VENDUS ==
+================================= */
+
+.vendus-pagination {
+  text-align: right;
+  a {
+    display: inline-block;
+    vertical-align: middle;    
+    margin: 1px;
+    padding: 2px 5px;
+    color: $color-body;
+    background-color: $color-action;
+    &:hover, &.actif {
+      background-color: $color-important;
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+/* =================================
+== RESEAU ==
+================================= */
+
+[class^="aside-reseau-"] {
+  padding: 60px 0;
+  .reseau-ttl {
+    @extend .ttl-bordered;
+    font-size: 2em;
+    color: $color-font-body;
+    border-top-color: $color-font-body;
+    padding: 15px 0;
+  }
+  .reseau-iframe {
+    border: 1px solid darken($color-secondary,15);
+  }
+  &.aside-reseau-2 {
+    background-image: url(../images/bg-reseau-01.jpg);
+    min-height: 1030px;
+    .reseau-ttl {
+      color: $color-important;
+      border-top-color: $color-important;
+    }
+  }
+}
+
+
+/* =================================
+== MQs ==
+================================= */
+
+@media only screen and (max-width : 767px) {
+  #Mini_Moteur { display: block; }
+  .titre-milieu {
+    margin-top:0px;
+  }
+  .services [class^="aside-services-"] {
+    padding: 30px 0;
+    min-height: 0;
+    .services-ttl {
+      margin: 0;
+    }
+  }
+  .arrow-wrap { display: none; }
+  .aside-home-1 > .absolute {
+    position: absolute;
+    background-size: cover;
+  }
+  #Menu-bloc .btn-navbar {
+    position: absolute;
+    top: -80px; left: 0;
+  }
+  .logo-home{
+    margin-top: 10px;
+    background-color: rgba($color-primary,.9);
+    padding: 15px;
+  }
+  .slogan-home {
+    margin-top: 10px;
+    background-color: rgba($color-primary,.9);
+    padding: 10px;
+    max-width: none;
+    .slogan { display: block; }
+  }
+  .bloc-txt-home { margin-top: 10px; }
+  .aside-home-3, .aside-home-4, .aside-home-5 {
+    padding: 15px 0;
+    .margin-top-120 { margin-top: 0; }
+  }
+  .aside-home-5  .pagination-left { text-align: center; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

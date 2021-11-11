@@ -1,0 +1,345 @@
+@import '/styles/mixins';
+
+.preview-infos-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  height: max-content;
+  margin-left: 40px;
+  @include responsive-size(screen-l) {
+    max-width: 425px;
+    margin: 0 8px;
+  }
+  @include responsive-size(screen-m) {
+    max-width: 100%;
+    width: 100%;
+    padding: 8px;
+  }
+
+  .infos-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    &__title {
+      display: flex;
+      align-items: center;
+      width: 447px;
+      height: 54px;
+      color: #000000;
+      margin: 0;
+      @include setting-font(Tinos, normal, normal, 40px, 54px);
+      @include responsive-size(screen-xs) {
+        font-size: 35px;
+        line-height: 32px;
+      }
+      @media only screen and (max-width: 375px) {
+        width: 280px;
+        height: 32px;
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+    &__right-icon {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: max-content;
+      height: max-content;
+      .heart-icon {
+        width: 40px;
+        height: 40px;
+        margin: 0px 8px;
+        cursor: pointer;
+      }
+      .share-icon {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+      @media only screen and (max-width: 375px) {
+        height: 32px;
+        .heart-icon {
+          width: 32px;
+          height: 32px;
+        }
+        .share-icon {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+  .serial {
+    width: 100%;
+    color: #555770;
+    @include setting-font(Quicksand, normal, normal, 14px, 24px);
+    margin-bottom: 16px;
+  }
+  .price-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px;
+    .price {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 43px;
+      color: #1c1c28;
+      @include setting-font(Quicksand, normal, normal, 36px, 120%);
+      @media only screen and (max-width: 375px) {
+        font-size: 24px;
+      }
+      &__info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 26px;
+        width: 61px;
+        background: #37d5d5;
+        border-radius: 4px;
+        color: #ffffff;
+        @include setting-font(Quicksand, normal, normal, 14px, 24px);
+      }
+    }
+  }
+
+  .main-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    width: 100%;
+    margin: 16px 0px;
+    &__buy,
+    &__add {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+      height: 56px;
+      width: 50%;
+      text-align: center;
+      color: #ffffff;
+      cursor: pointer;
+      user-select: none;
+      @include setting-font(Quicksand, normal, bold, 18px, 24px);
+      background: #0d0d13;
+      @media only screen and (max-width: 375px) {
+        font-size: 16px;
+      }
+      @include responsive-size(screen-xxs) {
+        font-size: 15px;
+        padding: 0;
+      }
+    }
+    &__buy {
+      margin-right: 8px;
+    }
+  }
+  .pair-jewelry-button {
+    @include flex-container(center, center);
+    cursor: pointer;
+    width: 100%;
+    height: 56px;
+    margin-bottom: 16px;
+    background: $main-color;
+    @include setting-font(Quicksand, normal, normal, 16px, 24px);
+  }
+
+  .infos-desc {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    background: #f2fbfa;
+    &-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 100%;
+      height: max-content;
+      .rectangle {
+        position: absolute;
+        height: 100%;
+        width: 8px;
+        background: #06c270;
+      }
+    }
+    & > :first-child {
+      width: 100%;
+      @include setting-font(Tinos, normal, normal, 16px, 22px);
+    }
+    &__highlight {
+      width: 100%;
+      height: max-content;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 8px;
+      @include setting-font(Quicksand, normal, bold, 14px, 24px);
+      .account-link {
+        text-decoration: underline;
+      }
+      & > div {
+        margin-left: 4px;
+      }
+      & > :first-child {
+        margin-left: 4px;
+        width: 16px;
+        height: 24px;
+      }
+    }
+  }
+
+  .contact-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+    margin-top: 16px;
+    @media only screen and (max-width: 375px) {
+      display: none;
+    }
+    &__store,
+    &__contact {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      border: 1px solid #1c1c28;
+      cursor: pointer;
+      & > :first-child {
+        margin-right: 4px !important;
+      }
+    }
+    &__store {
+      margin-right: 8px;
+      user-select: none;
+      @include setting-font(Quicksand, normal, normal, 16px, 24px);
+    }
+    &__contact {
+      user-select: none;
+      @include setting-font(Quicksand, normal, normal, 14px, 24px);
+      & > :nth-child(2) {
+        display: flex;
+      }
+      & > :nth-child(3) {
+        display: none;
+      }
+      @include responsive-size(screen-l) {
+        & > :nth-child(2) {
+          display: none;
+        }
+        & > :nth-child(3) {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .specification {
+    width: 100%;
+    margin-top: 16px;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fafafc;
+    }
+    th {
+      @include setting-font(Quicksand, normal, normal, 16px, 24px);
+    }
+    td {
+      padding-left: 16px;
+      @include setting-font(Quicksand, normal, normal, 14px, 24px);
+    }
+    th,
+    td {
+      width: 50%;
+      height: 32px;
+      text-align: left;
+    }
+    .load-more {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 32px;
+      background: #f2f2f5;
+      &__button {
+        display: flex;
+        align-items: center;
+        margin-left: 16px;
+        cursor: pointer;
+        user-select: none;
+        @include setting-font(Quicksand, normal, 300, 14px, 24px);
+        & > div {
+          margin-left: 4px;
+          display: flex;
+          align-items: center;
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+    .certificate {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      text-decoration: underline;
+      margin-top: 8px;
+      @include setting-font(Quicksand, normal, 300, 14px, 24px);
+    }
+    span {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .icon-quiz {
+      @include flex-container(center, center);
+      flex-direction: row;
+      width: 14px;
+      height: 14px;
+      color: $main-color;
+      letter-spacing: 0.2px;
+      border: 1px solid $main-color;
+      border-radius: 100%;
+      margin: 0 4px;
+      cursor: pointer;
+      @include setting-font(Quicksand, normal, normal, 10px, 140%);
+    }
+  }
+
+  .policy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: max-content;
+    padding: 0;
+    margin-top: 16px;
+    @include setting-font(Quicksand, normal, 300, 14px, 24px);
+    & > div {
+      width: max-content;
+      height: 24px;
+      padding: 0;
+      margin-bottom: 2px;
+    }
+    @media only screen and (max-width: 375px) {
+      display: none;
+    }
+  }
+}

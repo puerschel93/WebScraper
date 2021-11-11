@@ -1,0 +1,650 @@
+@import 'assets/basscss.min.styl';
+
+// vars
+
+// $padding-page-lr = 8rem
+// $padding-page-tb = 4rem
+$padding-page-lr = 6rem
+$padding-page-ty = 3rem
+$padding-page-tb = 4rem
+$padding-pagei-lr = 6rem
+$padding-pagei-tb = 4rem
+$width-inpanel-l1 = 58rem
+$width-inpanel-r1 = 60rem
+$width-inpanel-r2 = 64rem
+$padding-page-tt = 9rem
+$padding-page-tm = 9.5rem
+
+$z-index-popup = 20
+$z-index-logo = 15
+$z-index-panel = 10
+$z-index-middle = 5
+$z-index-map = 1
+
+$ctbg = #0A1726;
+$ct1 = #0A0F18;
+$cg1 = #e21a1a
+$ct2 = #67C0F5;
+$ct9 = #0263ff;
+$cd1 = #38AAFD;
+$cd2 = #3AC270;
+$cd3 = #F48E2A;
+$ci1 = #1A1821;
+$ci2 = #22202C;
+$ci3 = #09101A;
+$ci4 = #433E54;
+
+.bgcd1 {
+  background-color: $cd1;
+}
+
+.bgcd2 {
+  background-color: $cd2;
+}
+
+.bgcd3 {
+  background-color: $cd3;
+}
+
+.bgcd4 {
+  background-color: $ct1;
+}
+
+
+.bgcd5 {
+  background-color: $ct2;
+}
+
+.bgcd6 {
+  background-color: $ct9;
+}
+
+.bgTrans {
+  background none
+}
+
+.wttype1{
+  background-color: #00a1e4;
+}
+
+.wttype2{
+  background-color: #00a1e4;
+}
+
+.wttype3{
+  background-color: #24c768;
+}
+
+.wttype4{
+  background-color: #e5ce10;
+}
+
+.wttype5{
+  background-color: #ff7e00;
+}
+
+.wttype6{
+  background-color: #ff0000;
+}
+
+// import
+
+@font-face {
+  font-family: 'iconfont';  /* project id 1639896 */
+  src: url('//at.alicdn.com/t/font_1639896_dwanbapaoyi.eot');
+  src: url('//at.alicdn.com/t/font_1639896_dwanbapaoyi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1639896_dwanbapaoyi.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1639896_dwanbapaoyi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1639896_dwanbapaoyi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1639896_dwanbapaoyi.svg#iconfont') format('svg');
+}
+
+.i {
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// base
+
+html {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
+  background-color $ctbg
+  color: #FFF;
+}
+
+body {
+  font-size 1.4rem
+  height 100vh
+  box-sizing border-box
+  overflow hidden
+}
+
+
+::-webkit-scrollbar {
+  width 0.82rem
+}
+
+::-webkit-scrollbar-thumb {
+  background #fff
+  background-color rgba(#fff, 0.3)
+  border-radius 3px
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+input {
+  background none
+  border none
+  border-bottom 1px solid $ci4
+  color #eee
+  padding 0.6rem 0
+  box-sizing border-box
+
+  &:focus {
+    outline none
+    border-color #ddd
+  }
+}
+
+// styles
+
+textarea {
+  background-color $ci1
+  border none style color
+  padding 1.8rem
+  border none
+  color #eee
+}
+
+h3 {
+  .h3ldesc {
+    margin-left 1rem
+    opacity 0.7
+    font-weight normal
+  }
+}
+
+.h3l {
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.4rem;
+    height: 2.4rem;
+    margin-right: 5.2rem;
+    background: $ct2;
+  }
+
+  margin 1.3em 0
+
+  .h3laddbtn {
+    color $cd3
+    float right
+    font-weight 500
+  }
+
+}
+
+.ulr {
+  @extend .list-reset;
+
+  li {
+    display: block;
+  }
+}
+
+// style componenets
+
+.logo {
+    position fixed
+    z-index $z-index-logo
+    left $padding-page-lr
+    top $padding-page-tb - 1rem
+    img {
+        height 4rem
+    }
+}
+
+.ulselect {
+  @extend .ulr;
+  li {
+    width 100%
+    box-sizing border-box
+    cursor pointer
+    font-size 1.8rem
+    font-weight 500
+    padding 1.4rem $padding-pagei-lr
+
+    &.active, &.active:hover {
+      color $cd1
+      background-color $ci1
+    }
+
+    &:hover {
+      background-color rgba($ci1,0.5)
+    }
+
+  }
+
+}
+
+.inputgroup {
+  line-height 4rem
+
+  .wide {
+    width 33%
+  }
+  .labelgroup-2x {
+    div:nth-of-type(odd) {
+      margin-right 6rem
+    }
+    margin-bottom 0.8rem
+  }
+  .labelgroup {
+    display inline-block
+    span {
+      font-size 1.6rem
+      display inline-block
+      color #ddd
+      &.before {
+        width 6rem
+        text-align center
+        margin-right 0
+      }
+      &.after {
+        width 4rem
+        margin-left 0.8rem
+      }
+    }
+    input {
+      text-align center
+      width 8rem
+      // font-size 1.8rem
+    }
+  }
+}
+
+ulcheck()
+  .ulcheck {
+    @extend .ulselect;
+    &.small {
+      li {
+        font-size 1.4rem
+        &::before {
+          width 1.2rem
+          left 2.2rem
+        }
+      }
+    }
+    li {
+      position relative
+      &::before {
+        content ''
+        background-image url('../assets/img/check-f.png')
+        background-size 100% auto
+        background-repeat no-repeat
+        background-position center
+        width 2.2rem
+        height 100%
+        position absolute
+        left 1.8rem
+        top 0
+      }
+      &.active{
+        color #fff
+        &::before {
+          background-image url('../assets/img/check-t.png')
+        }
+      }
+      .delete {
+        position absolute
+        top 0
+        right 0
+        width $padding-pagei-lr
+        height 100%
+        img {
+          position absolute
+          margin auto
+          top 0
+          left 0
+          right 0
+          bottom 0
+          width 2.2rem
+        }
+      }
+    }
+  }
+
+btnArr()
+  .btnArr {
+    background none
+    background-image url('../assets/img/btnArr.png')
+    background-size 100% 100%
+    font-size 2.8rem
+    font-weight 500
+    color #fff
+    height 6rem
+    width 40rem
+    box-sizing border-box
+    border none
+
+    &.small {
+      height 3rem
+      font-size 1.6rem
+      width 18rem
+      line-height 3rem
+    }
+  }
+
+.btnRight {
+  text-align right
+  margin-top 1.6rem
+  button {
+    margin-top 1rem
+  }
+}
+
+$padding-btn = 1rem
+$padding-btn-sm = 0.68rem
+.btnGrey {
+  cursor pointer
+  display inline-block
+  color #fff
+  background $ci1
+  border none
+  padding $padding-btn
+  padding-right 4*($padding-btn)
+  overflow hidden
+
+  &.small {
+    padding-top $padding-btn-sm
+    padding-bottom $padding-btn-sm
+    i {
+      padding-top (($padding-btn-sm)*1.8)
+      padding-bottom (($padding-btn-sm)*1.8)
+    }
+  }
+
+  i {
+    display inline-block
+    // vertical-align middle
+    background darken($ci1,20%)
+    margin -($padding-btn)
+    margin-right 4*($padding-btn)
+    padding (($padding-btn)*1.8) (2*($padding-btn))
+  }
+
+  &:hover {
+    background darken($ci1,20%)
+    i {
+      background none
+    }
+  }
+
+  &:focus {
+    outline none
+  }
+
+  &:active {
+    box-shadow 0 0 0 0.5rem rgba(#000,0.1) inset
+  }
+}
+
+.btnI {
+  display inline-block
+  i {
+    font-size 1.4em
+    vertical-align middle
+    display inline-block
+    margin -0.2rem 0.6rem 0 0.6rem
+  }
+  font-size 1.4rem
+  vertical-align middle
+  padding-right 1.6rem
+  margin-top -0.2rem
+}
+
+a{
+  text-decoration none
+  color #FFFFFF
+}
+
+.mtitle {
+  font-size 3.35rem
+  font-weight 500
+  margin 0
+
+  img {
+    height 3.35rem
+    margin-right 1rem
+    vertical-align middle
+  }
+  .back {
+    float right
+    font-size 2.2rem
+    margin-top 0.8rem
+    &:hover {
+      color $cd3
+    }
+    i {
+      font-size 2.2rem
+    }
+  }
+}
+
+.online {
+  &.is_offline {
+    color: $cd3;
+  }
+  img {
+    width: 1em;
+    margin: 0 0.6rem;
+  }
+}
+
+
+.tipbox {
+  padding 2rem 2rem 1.4rem 2rem
+  border-top 2px solid $cd3
+  background-color rgba($ci3,0.85)
+  width 24rem
+
+  & > h4 {
+    font-size 1.8rem
+    font-weight 500
+    margin 0 0 2rem 0
+
+    img {
+      height 1.8rem
+      vertical-align middle
+      margin-right 1.2rem
+    }
+  }
+
+  & > ul {
+    @extend .ulr;
+    color $ct2;
+    li {
+      margin 0.8rem 0
+      font-size 1.3rem
+    }
+  }
+
+}
+
+.popup-ctn-blur ~ * {
+  filter: blur(10px)
+}
+
+.popup-ctn {
+  position fixed
+  width 100vw
+  height 100vh
+  z-index $z-index-popup
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color rgba($ci2, 0.1)
+
+  .popup {
+    display block
+    // position fixed
+    width 40rem
+    border-top 2px solid $cd3
+    padding 3rem 4rem 3rem 4rem
+    background-color: rgba($ct1, 0.5);
+
+
+    .popup-title {
+      position relative
+      margin-bottom 3rem
+      h4 {
+        font-size 1.8rem
+        font-weight normal
+        margin 0
+      }
+      .close {
+        position absolute
+        right 0
+        top 0.4rem
+        img {
+          height 1.8rem
+        }
+      }
+    }
+
+    .popup-body {
+      font-size 1.4rem
+    }
+
+    .popup-bottom {
+      margin-top 3rem
+      text-align right
+    }
+  }
+}
+
+.dtable {
+  ul {
+    @extend .ulr;
+  }
+
+  .data {
+    display: inline-block;
+    width: 11rem;
+    font-size: 1.5rem;
+
+    &.last {
+      width: 3rem;
+    }
+
+    &.head {
+      font-size: 1.5rem;
+    }
+
+    &.dataSZ {
+      &.head {
+        position: relative;
+        left: 0.8rem;
+      }
+
+      .dataSZspan {
+        color: #ffffff;
+        background-color: #000;
+        padding: 0.3rem 0.8rem;
+        border-radius: 0.3rem;
+      }
+    }
+  }
+}
+
+// cross page style
+
+.inpage {
+  .logo {
+    left $padding-pagei-lr
+    top $padding-pagei-tb - 1rem
+  }
+}
+
+.panelFloat {
+  background-color rgba($ct1, 0.5)
+  padding 1rem 4rem 4rem 4rem
+  margin 0 -4rem -4rem -4rem
+}
+
+.inpanel {
+  position fixed
+  top 0
+  z-index $z-index-panel
+  padding $padding-pagei-tb $padding-pagei-lr 0 $padding-pagei-lr
+  background rgba($ci2,0.9)
+  height 100vh
+  box-sizing border-box
+  overflow-x: visible;
+  overflow-y: auto;
+
+  &>h3:first-of-type {
+    margin-top  1rem
+  }
+
+  &.left {
+    left 0
+    padding-top $padding-pagei-tb+8.8rem
+  }
+
+  &.right {
+    right 0
+  }
+
+  .ulselect li, .ulcheck li {
+    margin 0 (-($padding-pagei-lr))
+    box-sizing content-box
+  }
+}
+
+.inmiddle-ctn {
+  position fixed
+  top 0
+  width 100vw
+  height 100vh
+  box-sizing border-box
+  z-index $z-index-middle
+
+  .inmiddle {
+    position relative
+    padding $padding-pagei-tb $padding-pagei-lr
+    width 100%
+    height 100%
+    box-sizing border-box
+    overflow-y scroll
+    max-height 100vh
+  }
+}
+
+// mixins & func
+
+layout-three($width-l = $width-inpanel-l1, $width-r = $width-inpanel-r1) {
+  .inpanel {
+    &.left {
+      width: $width-l;
+    }
+    &.right {
+      width: $width-r;
+    }
+  }
+  .inmiddle-ctn {
+    padding-left: $width-l;
+    padding-right: $width-r;
+  }
+
+}
+

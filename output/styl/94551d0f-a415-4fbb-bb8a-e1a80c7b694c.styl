@@ -1,0 +1,105 @@
+.home
+    height 100vh
+    position relative
+    background $lightGreen
+    z-index $negativePriority
+
+    &__head,
+    &__content
+        z-index $highPriority
+        color $lightGrey
+
+    &__head
+        padding $defaultPadding
+        
+        @media screen and (min-width $lg)
+            padding $defaultPadding $largePadding 
+
+        &__title
+            font-weight $lightFont
+            
+    &__content
+        padding 0 $defaultPadding
+       
+        @media screen and (min-width $lg)
+            padding $defaultPadding $largePadding 
+
+        &__text
+            font-weight $boldFont
+            font-size $title
+
+            @media screen and (min-width $md)
+                font-size $hero
+        
+        &__arrow > img
+            z-index $highPriority
+            margin-top 10px
+            width 40px
+        
+            @media screen and (min-width $md)
+                width 45px
+
+    &__mobileBackground
+        @extend .vertical-center-column
+        align-items center
+        z-index $lowPriority
+        position absolute
+        left 0
+        top 0
+
+        @media screen and (min-width $lg)
+            display none
+        
+        &__leafs
+            z-index $mediumPriority
+            width 100%
+
+            @media screen and (min-width $md)
+                width 100vw
+                height auto
+                margin-top -40%
+            
+
+        &__plantperson
+            margin-top -85px
+            width 80%  
+
+            @media screen and (min-width $md)
+                width 75%  
+                margin-top -180px
+    
+    &__desktopBackground
+        display none
+        
+        @media screen and (min-width $lg)
+            position absolute
+            left 0
+            top 0
+            z-index $lowPriority
+            display flex
+            flex-direction row
+            align-items center
+            justify-content center
+            width 100%
+            height 100vh
+
+            &__left,
+            &__right
+                position absolute
+                top 0
+
+            &__left
+                left 0
+                width 55%
+                height 100vh
+            
+            &__plantperson
+                width 30%
+                height 75vh
+                position absolute
+                right 19%
+                
+            &__right 
+                right 0
+                width 23%
+                height 100vh

@@ -1,0 +1,161 @@
+.booking {
+  padding-top: 935px;
+  background: url('../img/booking_bg_desk.png') no-repeat @color-dark2;
+  color: @color-white;
+}
+
+@media (max-width: @tablet-width) {
+  .booking {
+    padding-top: 70px;
+    width: @tablet-width;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .booking {
+    padding-top: 40px;
+    width: @mob-width;
+  }
+}
+
+.booking__title {
+  margin: 0;
+  padding: 0;
+  line-height: 0.8;
+  text-align: center;
+
+  &--top {
+    .title-top;
+    color: @color-white;
+  }
+}
+
+.booking__wrapper {
+  .cont-pos--wide(35px, 68px);
+}
+
+@media (max-width: @tablet-width) {
+  .booking__wrapper {
+    .cont-pos(35px, 35px);
+  }
+}
+
+.booking__form {
+  .flex(row, wrap);
+}
+
+@media (max-width: @tablet-width) {
+  .booking__form {
+    justify-content: space-around;
+    background-color: @color-twhite;
+    padding: 30px 0;
+  }
+}
+
+.booking__field {
+  .flex(column, nowrap);
+  width: 237px;
+  margin-right: 266px;
+  margin-bottom: 43px;
+
+  &:nth-of-type(2),
+  &:nth-of-type(5) {
+    margin-right: 186px;
+  }
+
+  &:nth-of-type(3),
+  &:nth-of-type(6) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .booking__field {
+    margin-right: 0;
+    width: 260px;
+
+    &:nth-of-type(2),
+    &:nth-of-type(5) {
+      margin-right: 0;
+    }
+  }
+}
+
+.booking__label {
+  font-weight: 700;
+}
+
+@media (max-width: @tablet-width) {
+  .booking__label {
+    color: @color-dark2;
+  }
+}
+
+.booking__input {
+  height: 30px;
+  border: 2px solid @color-white;
+  border-radius: 10px;
+  color: @color-white;
+  font-weight: 700;
+  background-color:  @color-dark2;
+  outline: none;
+  font-family: inherit;
+  padding: 0 0 0 5px;
+
+  &::placeholder {
+    color: @color-white;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+  }
+
+  &--select {
+    height: 33px;
+  }
+
+  &--date::-webkit-calendar-picker-indicator,
+  &--time::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+
+  &--date::-moz-calendar-picker-indicator,
+  &--time::-moz-calendar-picker-indicator {
+    display: none;
+  }
+
+  &:focus {
+    background-color: lighten(@color-dark2, 10%);
+  }
+}
+
+.booking__button {
+  margin-top: 12px;
+  margin-left: 502px;
+  padding-top: 4px;
+  width: 237px;
+  height: 32px;
+  border: 2px solid @color-white;
+  border-radius: 10px;
+  color: @color-white;
+  font-weight: 700;
+  background-color:  @color-dark2;
+  text-transform: uppercase;
+
+  &:hover {
+    color: @color-dark2;
+    background-color: @color-white;
+  }
+
+  &:active {
+    color: @color-dark2;
+    background-color: @color-twhite;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .booking__button {
+    padding: 0;
+    margin: 0;
+  }
+}

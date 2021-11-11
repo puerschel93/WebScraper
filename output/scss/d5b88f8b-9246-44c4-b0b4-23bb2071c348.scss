@@ -1,0 +1,99 @@
+@import '../utils/variables';
+
+
+.productrecomendation
+{
+  &_container
+  {
+    @include useContainer();
+    @include flex(row, flex-start, flex-start, true);
+    position: relative;
+    margin-bottom: 72px;
+
+    & > div[class*="product_container"]
+    { 
+      @include fixedWidth(calc((100% - 72px) / 4));
+
+      &:not(:nth-last-child(2))
+      {
+        margin-right: 24px;
+      }
+
+      @media screen and (max-width: $breakpoint_max_md) 
+      {
+        @include fixedWidth(calc((100% - 16px) / 2));
+        margin-bottom: 16px;
+        margin-right: 16px !important;
+
+        &:nth-child(odd)
+        {
+          margin-right: 0 !important;
+        }
+      }
+    }
+
+    & > div[class*="product_placeholder"]
+    {
+      @include fixedWidth(calc((100% - 72px) / 4));
+
+      @media screen and (max-width: $breakpoint_max_md) 
+      {
+        @include fixedWidth(calc((100% - 16px) / 2));
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &_title
+  {
+    @include typographyBuilder(600, 20, 24);
+    color: $color_black_text;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  &_paging
+  {
+    @include flex(row, center, flex-end);
+    position: absolute;
+    top: 0;
+    right: 18px;
+  }
+
+  &_item
+  {
+    background-color: transparent;
+    border: 0;
+    height: 28px;
+
+    &:last-child
+    {
+      margin-left: 12px;
+    }
+
+    &:disabled
+    {
+      display: none;
+    }
+  }
+
+  &_nextIcon,
+  &_prevIcon
+  {
+    display: block;
+    width: 8px;
+    height: 13px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &_nextIcon
+  {
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.17192 6.99999L0.221924 2.04999L1.63592 0.635986L7.99992 6.99999L1.63592 13.364L0.221924 11.95L5.17192 6.99999Z' fill='%23333333'/%3E%3C/svg%3E");
+  }
+
+  &_prevIcon
+  {
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.82808 6.99999L7.77808 2.04999L6.36408 0.635986L7.62939e-05 6.99999L6.36408 13.364L7.77808 11.95L2.82808 6.99999Z' fill='%23333333'/%3E%3C/svg%3E%0A");
+  }
+}

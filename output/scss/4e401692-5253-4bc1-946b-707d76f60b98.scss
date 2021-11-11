@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+@mixin main($width) {
+    width: $width;
+}
+
+@mixin phot($disp, $marl, $marr, $width) {
+    display: $disp;
+    margin-left: $marl;
+    margin-right: $marr;
+    width: $width;
+}
+
+@mixin font-size($font, $size) {
+    font-family: $font;
+    font-size: $size;
+}
+
+@mixin font-size-ph($width, $height, $left, $top, $style, $wei, $hei, $align, $space, $col) {
+    width: $width;
+    height: $height;
+    left: $left;
+    top: $top;
+    font-style: $style;
+    font-weight: $wei;
+    line-height: $hei;
+    align-items: $align;
+    letter-spacing: $space;
+    color: $col;
+}
+
+@mixin ffont($style, $wei, $hei, $align, $space) {
+    font-style: $style;
+    font-weight: $wei;
+    line-height: $hei;
+    text-align: $align;
+    letter-spacing: $space;
+}
+
+@mixin ffont1($style, $wei, $hei, $space) {
+    font-style: $style;
+    font-weight: $wei;
+    line-height: $hei;
+    letter-spacing: $space;
+}
+
+@mixin ffont2($hei, $left, $top, $color, $mix, $opacity) {
+    height: $hei;
+    left: $left;
+    top: $top;
+    color: $color;
+    mix-blend-mode: $mix;
+    opacity: $opacity;
+}
+
+@mixin pictext($width, $height, $left, $top, $style, $wei, $hei, $align, $space, $color) {
+    width: $width;
+    height: $height;
+    left: $left;
+    top: $top;
+    font-style: $style;
+    font-weight: $wei;
+    line-height: $hei;
+    align-items: $align;
+    letter-spacing: $space;
+    color: $color;
+}
+
+@mixin swhsc($style, $weight, $height, $space, $color) {
+    font-style: $style;
+    font-weight: $weight;
+    line-height: $height;
+    letter-spacing: $space;
+    color: $color;
+}
+
+@mixin wff($width, $family) {
+    width: $width;
+    font-family: $family;
+}
+
+@mixin whlt($width, $height, $left, $top) {
+    width: $width;
+    height: $height;
+    left: $left;
+    top: $top;
+}
+
+main, html {
+    @include main(100%);
+}
+
+body {
+    @include main(100%);
+    height: 100%;
+    background-color: #deecec;
+}
+
+#carousel {
+    @include main(100%);
+}
+
+.photo{
+    @include phot(block, auto, auto, 95%)
+}
+
+.head{
+    @include font-size("oswald", 72px);
+    line-height: 107px;
+    align-items: flex-end;
+    letter-spacing: 4.608px;
+    color: #FFFFFF;
+}
+
+.text{letter-spacing: 1.5px;
+    color: #FFFFFF;
+    font-family: "oswald";
+}
+
+.navbar {
+    background: none;
+    margin-top: -45%;
+    margin-left:55%;
+}
+
+.nav-text {
+    @include font-size("oswald", 14px);
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 21px;
+    letter-spacing: 1.94px;
+    color: #FFFFFF;
+}
+
+.carousel-indicators [data-bs-target] {
+    @include font-size("oswald", 15px);
+    height: 0px;
+    color: rgb(255, 255, 255);
+    text-indent: -100%;
+    }
+    .carousel-indicators .active{
+    @include font-size("oswald", 30px);
+    text-indent: -100%;
+    margin-top: -15px;
+    }
+
+.sqr {
+    width: 309px;
+    height: 418px;
+    left: 403px;
+    top: 62px;
+    background: #4CAF50;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+        
+.pic1 {
+    width: 400px;
+    height: 411px;
+    left: -212px;
+    top: -19px;
+}
+
+.pic1_title {
+    @include font-size("oswald", 27px);
+    @include font-size-ph(150px, 53px, 0px, -4px, normal, bold, 80px, flex-end, 2.304px, #333333);
+}
+    
+.pic1_title2 {
+    @include font-size("Open sans", 30px);
+    @include font-size-ph(300px, 57px, 0px, 53px, normal, 300, 57px, flex-end, 2.688px, #504E4E);
+}
+    
+.pic1_text {
+    @include font-size("Open sans", 15px);
+    @include font-size-ph(281px, 75px, 30px, 0px, normal, 300, 25px, center, 1.26px, #5B5858);
+}
+
+.Question_block_text_top {
+    @include font-size("Oswald", 24px);
+    @include ffont(normal,normal,36px,center,2.66667px);
+}
+    
+.Question_block_text_bottom_left {
+    @include font-size("Open sans", 14px);
+    @include ffont(normal,300,19px,center,1.55556px);
+    @include ffont2(19px, 312px, 181px, #373737, normal, 0.8);
+}
+
+.Question_block_text_bottom_right {
+    @include font-size("Open sans", 14px);
+    @include ffont(normal,300,19px,center,1.55556px);
+    @include ffont2(19px, 404.5px, 181px, #FFFFFF, normal, 0.8);
+}
+    
+.bottom_block_text {
+    @include font-size("Oswald", 13px);
+    @include ffont1(normal,300,19px,0.832px);
+    @include ffont2(17px, 0px, 59px, #FFFFFF, normal, 0.5);
+}
+    
+.end_text {
+    @include font-size("Oswald", 13px);
+    @include ffont(normal,300,19px,center,0.832px);
+    @include ffont2(17px, 758px, 21px, #FFFFFF, normal, 0.5);
+    margin-bottom: 20px;
+}
+
+.picc1 {
+    @include whlt(590px, 411px, -212px, -19px);
+    background: url(images/Bitmap.svj);
+    mix-blend-mode: normal;
+    opacity: 0.3;
+}
+
+.pic1_text_top {
+    @include font-size("Oswald", 36px);
+    @include whlt(120px, 53px, 0px, -4px);
+    @include swhsc(normal, bold, 53px, 2.304px, #333333);
+}
+    
+.pic1_text_center {
+    @include font-size("Open sans", 42px);
+    @include whlt(228px, 57px, 0px, 53px);
+    @include swhsc(normal, 300, 57px, 2.688px, #504e4e);
+    display: flex;
+    align-items: flex-end;
+}
+
+.textr {
+    @include font-size("Oswald", 27px);
+    @include swhsc(normal, bold, 80px, 2.304px, #333333);
+    height: 53px; 
+    left: 0px;
+    top: -4px;
+    align-items: flex-end;
+}
+
+#mail {
+    align-self: center;
+    height: 35px;
+    width: 55px;
+}
+
+.navbar1 {
+    background: none;
+}
+
+.nav-text1 {
+    @include font-size("Oswald", 14px);
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 21px;
+    letter-spacing: 1.94px;
+    color: #000000;
+}
+
+.pic1_text1 {
+    @include font-size("Open sans", 13px);
+    @include pictext(300px, 75px, 30px, 0px, normal, 300, 25px, center, 1.26px, #b4aaaa);
+}
+
+.pic1_title3 {
+    @include font-size("Open sans", 30px);
+    @include pictext(250px, 57px, 0px, 53px, normal, 300, 57px, flex-end, 2.688px, #504E4E);
+}
+
+.pic1_title4 {
+    @include font-size("Open sans", 30px);
+    @include pictext(350px, 57px, 0px, 53px, normal, 300, 57px, flex-end, 2.688px, #504E4E);
+}
+
+.pic1_title5 {
+    @include font-size("Open sans", 30px);
+    @include pictext(210px, 57px, 0px, 53px, normal, 300, 57px, flex-end, 2.688px, #504E4E);
+}
+
+#Team {
+    background-color: rgb(236, 236, 236);
+}
+
+.relative_box {
+    @include wff(400px, "Oswald");
+	position:relative;
+	float:left;
+}
+.relative_box img {
+    @include wff(100%, "Oswald");
+}
+.relative_box h3 {
+    @include wff(100%, "Oswald");
+	position:absolute;
+	bottom:0;
+	left:0;
+	background:rgb(224, 224, 224);
+    opacity: 75%;
+	color:#fff;
+	margin:0;
+}
+
+.pic1_text2 {
+    @include font-size("Open sans", 13px);
+    margin-left: 27%;
+    max-width: 45%;
+    text-align: center;
+    left: 30px;
+    top: 0px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 1.26px;
+    color: #b4aaaa;
+}
+
+.center {
+    @include phot(block, auto, auto, 2%)
+}
+
+.text111 {
+    @include font-size("Oswald", 25px);
+}
+
+.center1 {
+    @include phot(block, auto, auto, 1%)
+}
+
+#images {
+    white-space: nowrap;
+}

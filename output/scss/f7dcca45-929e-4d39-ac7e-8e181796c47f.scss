@@ -1,0 +1,136 @@
+@import '../mixins/tag.mixin';
+
+.p-tag {
+  @include tag-level($font-size-caption, 6px 12px, $color-ui-info-lighter, $color-ui-info-default);
+
+  &--small {
+    @extend .p-tag;
+
+    padding: 4px 8px;
+    font-size: $font-size-tagline;
+  }
+
+  &--large {
+    @extend .p-tag;
+
+    padding: 8px 16px;
+    font-size: $font-size-xxs;
+  }
+
+  //levels
+
+  &__success {
+    @include tag-level(
+      $font-size-caption,
+      6px 12px,
+      $color-brand-primary-lighter,
+      $color-brand-primary-default
+    );
+
+    &--small {
+      @extend .p-tag__success;
+
+      padding: 4px 8px;
+      font-size: $font-size-tagline;
+    }
+
+    &--large {
+      @extend .p-tag__success;
+
+      padding: 8px 16px;
+      font-size: $font-size-xxs;
+    }
+  }
+
+  &__warning {
+    @include tag-level(
+      $font-size-caption,
+      6px 12px,
+      $color-ui-warning-lighter,
+      $color-ui-warning-default
+    );
+
+    &--small {
+      @extend .p-tag__warning;
+
+      padding: 4px 8px;
+      font-size: $font-size-tagline;
+    }
+
+    &--large {
+      @extend .p-tag__warning;
+
+      padding: 8px 16px;
+      font-size: $font-size-xxs;
+    }
+  }
+
+  &__danger {
+    @include tag-level(
+      $font-size-caption,
+      6px 12px,
+      $color-ui-danger-lighter,
+      $color-ui-danger-default
+    );
+
+    &--small {
+      @extend .p-tag__danger;
+
+      padding: 4px 8px;
+      font-size: $font-size-tagline;
+    }
+
+    &--large {
+      @extend .p-tag__danger;
+
+      padding: 8px 16px;
+      font-size: $font-size-xxs;
+    }
+  }
+
+  &__variant2 {
+    @include tag-level(
+      $font-size-caption,
+      6px 12px,
+      $color-brand-secondary-lighter,
+      $color-brand-secondary-default
+    );
+
+    &--small {
+      @extend .p-tag__variant2;
+
+      padding: 4px 8px;
+      font-size: $font-size-tagline;
+    }
+
+    &--large {
+      @extend .p-tag__variant2;
+
+      padding: 8px 16px;
+      font-size: $font-size-xxs;
+    }
+  }
+
+  &__disabled {
+    @include tag-level(
+      $font-size-caption,
+      6px 12px,
+      $color-gray-background-lighter,
+      $color-gray-background-disabled
+    );
+
+    &--small {
+      @extend .p-tag__disabled;
+
+      padding: 4px 8px;
+      font-size: $font-size-tagline;
+    }
+
+    &--large {
+      @extend .p-tag__disabled;
+
+      padding: 8px 16px;
+      font-size: $font-size-xxs;
+    }
+  }
+}

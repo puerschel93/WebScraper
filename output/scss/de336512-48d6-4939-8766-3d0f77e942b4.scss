@@ -1,0 +1,129 @@
+.toast-container {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  max-height: calc(var(--full-height) - 30px);
+  overflow: hidden;
+  width: calc(100% - 30px);
+  right: 15px;
+  z-index: var(--modal-z-index);
+  pointer-events: none;
+}
+
+.toast-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--first-color);
+  border-radius: var(--second-radius);
+  font-family: my-font-bold, serif;
+  font-size: var(--title-font);
+  width: 100%;
+  user-select: none;
+  pointer-events: all;
+
+  &.SUCCESS_TOAST {
+    background-color: var(--toast-success-bg);
+    color: var(--first-color);
+
+    .toast-item-close {
+      fill: var(--first-color);
+    }
+  }
+
+  &.INFO_TOAST {
+    background-color: var(--toast-info-bg);
+    color: var(--link-color);
+
+    .toast-item-close {
+      fill: var(--link-color);
+    }
+  }
+
+  &.FAIL_TOAST {
+    background-color: var(--toast-fail-bg);
+    color: var(--toast-fail-text);
+
+    .toast-item-close {
+      fill: var(--toast-fail-text);
+    }
+  }
+
+  &.dark {
+    &.SUCCESS_TOAST {
+      background-color: var(--first-color);
+      color: var(--solid-light);
+
+      .toast-item-close {
+        fill: var(--solid-light);
+      }
+    }
+
+    &.INFO_TOAST {
+      background-color: var(--link-color);
+      color: var(--solid-light);
+
+      .toast-item-close {
+        fill: var(--solid-light);
+      }
+    }
+
+    &.FAIL_TOAST {
+      background-color: var(--toast-fail-text);
+      color: var(--solid-light);
+
+      .toast-item-close {
+        fill: var(--solid-light);
+      }
+    }
+  }
+}
+
+.toast-item-message {
+  display: flex;
+  align-items: center;
+}
+
+.toast-item-svg {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 8px;
+
+  &.dark {
+    &.success {
+      path {
+        stroke: var(--solid-light)
+      }
+    }
+
+    &.info {
+      path, circle {
+        stroke: var(--solid-light)
+      }
+    }
+
+    &.fail {
+      path {
+        stroke: var(--solid-light)
+      }
+    }
+  }
+}
+
+.toast-item-close-material {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
+  cursor: pointer;
+}
+
+.toast-item-close {
+  width: 25px;
+  height: 25px;
+  transform: rotate(45deg);
+}

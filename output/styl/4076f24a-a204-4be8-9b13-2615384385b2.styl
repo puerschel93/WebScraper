@@ -1,0 +1,326 @@
+/* post */
+.post-intro 
+  margin-bottom 30px
+.post-title 
+  text-align center
+  font-size 2.15em
+  margin-bottom 20px
+  font-family Gothic
+.post-cover 
+  margin-top 80px
+.post-cover-img 
+  min-width 100%
+  height 350px
+  object-fit cover
+/* post-meta */
+.post-meta 
+  display flex
+  align-items center
+.meta-avator 
+  img 
+    width 45px
+    height 45px
+    border-radius 100%
+.meta-author 
+  margin-left 15px
+  margin-right auto
+  font-size 1.1em
+.meta-intro 
+  font-size .8em
+  text-transform : uppercase
+  letter-spacing: 1.5px
+  text-align center
+  font-family Gothic
+  color $color-text-secondary
+  line-height: 4
+  position: relative
+  &:after 
+      content ""
+      position absolute
+      top 0
+      left 48%
+      right 48%
+      bottom 98%
+      transition all .3s
+      background-color $color-theme-main
+.post-content-outer 
+  margin-top 50px
+  display flex
+  justify-content center
+  flex-direction: column
+.post-content-inner 
+  margin-bottom 100px
+  letter-spacing: .6px
+  line-height 1.7
+  h2 
+    margin-top 20px
+    margin-bottom 20px
+    font-size 1.7em
+    &::after 
+      content "#"
+      display inline-block
+      mix-blend-mode multiply
+      color #e3e3e3
+      margin-left 0.5rem
+      transition all 0.5s ease 0s
+  h3 
+    margin-top 20px
+    margin-bottom 20px
+    font-size 1.55em
+  h4 
+    margin-top 20px
+    margin-bottom 20px
+    font-size 1.3em
+  h5 
+    font-size 1em
+    line-height 3
+  h6 
+    font-size 1em
+    font 1em sans-serif
+    line-height 3
+  blockquote 
+    border-left 4px solid $color-theme-main
+    padding-left 17px
+    color #555555
+    font-size 0.9em
+    & > p 
+      margin-top 10px
+      margin-bottom 10px
+      line-height 1.65
+  a 
+    color $color-theme-main
+    &:hover 
+      text-decoration underline
+  img 
+    width auto
+    max-width 100%
+    margin 10px auto
+    display block
+  p 
+    line-height 2
+    & > strong 
+      color $color-theme-main
+      display inline-block
+  hr 
+    margin-top 30px
+    margin-bottom 30px
+    height 3px
+    border none
+    background-color #e3e3e3
+  pre 
+    margin-top 10px
+    margin-bottom 10px
+    line-height 1.6
+
+
+/* 规范各个标题的大小 */
+.post-content-inner h2,h3,h4,h5,h6 
+  color $color-text-main
+  font-weight normal
+/* 引用栏 */
+/* .post-content-inner blockquote::before{
+    content: '≤';
+    color:rgb(26, 152, 255) ;
+    font-size: 1.2em;
+    font-weight: 1000;
+} */
+/* 列表 */
+.post-content-inner ul,ol 
+  padding-left 22px
+  margin-top 10px
+  margin-bottom 10px
+/* 超链接 */
+/* 图片 */
+/* 表格 */
+table 
+  width 100%
+  border 1px solid #e3e3e3
+  border-collapse collapse
+  overflow: hidden
+  border-spacing 0
+  & > thead 
+    & > tr 
+      & > th 
+        vertical-align bottom
+        border-bottom 3px solid #e3e3e3
+  & > tbody 
+    & + tbody 
+      border-top 2px solid #e3e3e3
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td,
+table > tfoot > tr > th,
+table > tfoot > tr > td 
+  padding 12px
+  line-height 1.2
+  vertical-align top
+  border-top 1px solid #e3e3e3
+table > caption + thead > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > th,
+table > thead:first-child > tr:first-child > td 
+  border-top 0
+/* 加粗 */
+/* 分割线 */
+/* 代码高亮 */
+pre 
+  .hljs 
+    border-radius 3px
+code,kbd,pre,samp 
+  font-size 1em
+  font-weight normal
+  font-family hack-regular
+.hljs 
+  font-family hack-regular
+  overflow scroll
+  font-size 1em
+  span 
+    font-family hack-regular
+.hljs,code 
+  font-weight normal
+/* 小代码段 */
+code 
+  font-size 0.8em
+  font-weight 1000
+  background-color $color-theme-secondary
+  color $color-theme-main
+  border-radius 5px
+  padding 4px 6px
+  margin 0px 4px
+  font-family hack-regular,hack-italic,hack-bold,hack-bolditalic
+/* toc */
+/* 位于文章上方的toc */
+.toc-top 
+  border 1px solid #e3e3e3
+  border-radius 2px
+  padding 10px 20px
+  list-style none
+  counter-reset: li
+  margin-bottom 20px
+  li
+    line-height: 1.2
+    margin: 7px 0px
+    counter-increment: li
+    a
+      color $color-text-secondary
+      font-size: .8em
+    &::before
+      content: counter(li)
+      font-size: .8em
+      font-family: Merriweather
+      color: $color-text-secondary
+      margin-right: 0.5em
+      text-align: right
+      transition: all .3s
+    &:hover
+      a
+        text-decoration: none
+
+/* .toc{
+    z-index: 9999;
+    position: fixed;
+    top: 270px;
+    right: 120px;
+    overflow: scroll;
+} */
+/* 行高管理 */
+.post-content-inner ul,ol,li p 
+  line-height 2
+/* 分类 */
+.post-categoris-bottom 
+  margin-top 30px
+  margin-bottom 30px
+  border 1px solid #e3e3e3
+  border-radius 5px
+  padding 20px 20px
+  .post-categoris-bottom-link 
+    &:hover 
+      text-decoration none
+.post-categoris-name 
+  font-size 1.1em
+  font-weight 1000
+  margin-bottom 10px
+/* gitalk美化 */
+#gitalk-container .gt-header-textarea,.gt-comment-content 
+  border-radius 7px
+#gitalk-container .gt-header-controls>.gt-header-controls-tip,.gt-svg 
+  color $color-theme-main
+#gitalk-container .gt-header-avatar>img,.gt-comment-avatar>img 
+  border-radius 100%!important
+#gitalk-container 
+  .gt-btn-preview 
+    border 1px solid $color-theme-main
+    border-radius 20px
+    transition all .3s
+    &:hover 
+      background-color $color-theme-main
+      color #fff
+  .gt-btn-login 
+    border 1px solid $color-theme-main
+    background-color $color-theme-main
+    border-radius 20px
+    transition all .3s
+    &:hover 
+     background-color #fff
+     color $color-theme-main
+  .gt-btn-public 
+    border 1px solid $color-theme-main
+    background-color $color-theme-main
+    border-radius 20px
+    transition all .3s
+    &:hover 
+      background-color #fff
+      color $color-theme-main
+
+.post-content-inner
+  display flex
+  flex-direction row
+  .post-content-main
+    flex-basis: $post-max-width
+    max-width: $post-max-width
+  .post-content-inner-space
+    flex-basis: $side-toc-width
+    .space-toc-main
+      position: sticky
+      top 30px
+      padding-left: 10px
+      a 
+        color: $color-text-secondary
+        transition: all .3s
+        font-size: .8em
+      ol
+        list-style: none
+        counter-reset: li
+      li
+        line-height: 1.2
+        margin: 9px 0px
+        counter-increment: li
+        &::before
+          content: counter(li)
+          font-size: .8em
+          font-family: Merriweather
+          color: $color-text-secondary
+          margin-right: 0.5em
+          text-align: right
+          transition: all .3s
+        &:hover
+          a
+            color: $color-theme-main
+            text-decoration: none
+          &::before
+            color: $color-theme-main
+      
+
+
+  // .top-toc-test
+  //     padding 20px
+  //     flex-basis 100px
+  //     height 100%
+  //     background: green
+  //     flex-shrink 0
+  //     position: sticky
+  //     top 0px
+  //     margin-bottom 30px

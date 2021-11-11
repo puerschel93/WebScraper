@@ -1,0 +1,412 @@
+@require "../variables"
+@require "../shared/nav"
+@require "../shared/chat"
+
+body
+  padding-top 51px
+  margin-bottom 2em
+
+// STATS (TOP)
+
+.statsbox-top
+  text-align center
+  margin-bottom 1em
+  background-color ($bg_dark + 15%)
+  color $text_light
+  width 100%
+  padding .5em 0 .25em 0
+  .stat
+    margin 0 1em
+    display inline-block
+    text-align right
+    width 140px
+    label, .progress
+      display inline-block
+      height 20px
+      margin 0
+    label
+      position relative
+      top -4px
+      margin-right .5em
+    .progress
+      position relative
+      width 75px
+      background-image none
+      background-color $bg_dark
+      .content
+        position absolute
+        top 0
+        left 0
+        width @width
+        text-align center
+        white-space nowrap
+        overflow hidden
+        text-overflow ellipsis
+        font-size 11px
+        padding-top 2px
+    @media (min-width: 768px)
+      width 150px
+      .progress
+        width 85px
+        .content
+          width @width
+    @media (min-width: 992px)
+      width 200px
+      .progress
+        width 135px
+        .content
+          width @width
+    @media (min-width: 1200px)
+      width 250px
+      .progress
+        width 185px
+        .content
+          width @width
+
+// DAZED
+
+.dazed
+  form
+    margin-top .5em
+.join-settlement
+  form
+    margin-top .5em
+
+// MAP
+.map
+  text-align center
+  margin-bottom 1em
+
+  .location
+    background-color $bg_dark
+    color $text_light
+    padding 1em
+    border-radius .5em
+    text-align center
+    margin-bottom 1em
+    h1
+      font 1.75em $font_logo
+      margin 0 0 .25em 0
+      a
+        color $text_light
+      .disabled
+        color ($bg_dark + 20%)
+    h2
+      font-size 1em
+      margin 0
+      a
+        color $text_light
+
+  .flavor
+    margin-bottom 1em
+
+  .map-table
+    display inline-block
+    border 1px solid ($bg_dark + 65%)
+    border-radius .8em
+    overflow hidden
+    table
+      margin 0 auto
+      &.season-spring
+        td.map
+          background-color yellow
+          > .terrain
+            background-image none !important
+            opacity .7
+          &.no-season
+            > .terrain
+              opacity 1
+      &.season-summer
+        td.map
+          > .terrain
+            background-image none !important
+          &.no-season
+            > .terrain
+              opacity 1
+      &.season-autumn
+        td.map
+          background-color brown
+          > .terrain
+            background-image none !important
+            opacity .7
+          &.no-season
+            > .terrain
+              opacity 1
+      &.season-winter
+        td.map
+          background-color white
+          > .terrain
+            background-image none !important
+            opacity .7
+          &.no-season
+            > .terrain
+              opacity 1
+      tr:last-child
+        td.map
+          border-bottom none
+      tr
+        td.map
+          position relative
+          border-right 1px solid #999
+          border-bottom 1px solid #999
+          width 70px
+          height @width
+          background-size @width @width
+          background-repeat no-repeat
+          text-align center
+          &:last-child
+            border-right none
+          &.current
+            > .content
+              box-shadow inset 0 0 6px 4px ($bg_dark + 5%)
+          > .terrain
+            position absolute
+            z-index 0
+            top 0
+            left 0
+            width 100%
+            height 100%
+          > .content
+            position absolute
+            z-index 1
+            top 0
+            width 100%
+            height 100%
+            overflow hidden
+            max-height @width
+            min-height @width
+            padding-top 8px
+            line-height 1em
+            form
+              margin 0
+              padding 0
+            button
+              text-transform uppercase
+              min-width 30px
+              margin-bottom 3px
+              font-weight bold
+            .mapdata
+              display inline-block
+              padding 1px 4px
+              background-color $bg_dark
+              border-radius 3px
+              color $text_light
+              font-size 11px
+              overflow hidden
+              max-width (@width - 8px)
+          @media (min-width: 768px)
+            width 70px
+            height @width
+            background-size @width @width
+            > .content
+              max-height @width
+              min-height @width
+          @media (min-width: 992px)
+            width 90px
+            height @width
+            background-size @width @width
+            > .content
+              max-height @width
+              min-height @width
+
+// STATS (BOTTOM)
+
+.statsbox-bottom
+  padding 1em
+  clear right
+  dl
+    width 180px
+    dt
+      text-align left
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+  h2
+    .title
+      font .75em $font_logo
+    .label
+      font-size 11px
+      position relative
+      top -4px
+    margin 0 0 .5em 0
+  > div
+    margin-bottom 1.5em
+    a.btn
+      margin-top 1em
+  ul, ul li
+    list-style none
+    padding 0
+    margin 0
+
+// FLAVOR
+
+.flavor
+  text-align left
+  margin-bottom 1.5em
+  .writing
+    font 1.75em $font_logo
+    text-transform uppercase
+    text-align center
+    margin 5px 0 0 0
+  .alerts
+    margin-top 1em
+  .label
+    position relative
+    top -2px
+
+// ACTIONS
+
+.actions
+  margin-bottom 1.5em
+  .tab-content
+    background-color white
+    border-left 1px solid #ddd
+    border-bottom 1px solid #ddd
+    border-right 1px solid #ddd
+    padding 1em
+    form.action
+      margin-bottom .5em
+      input[type=submit]
+        margin-right 6px
+        position relative
+        top -1px
+        min-width 60px
+      .form-control
+        display inline-block
+        width auto
+      select
+        max-width 180px
+      span
+        display inline-block
+        margin 0 6px
+    form.action:last-child
+      margin-bottom 0
+    p.empty
+      margin .5em 0
+      text-align center
+      color #ccc
+  .progress.building-hp, .progress.building-occupancy
+    position relative
+    width 100%
+    background-image none
+    background-color #333
+    .content
+      position absolute
+      top 0
+      left 0
+      width @width
+
+// SKILLS
+
+.skills-page
+  margin-top 1em
+
+  h2
+    font 1.75em $font_logo
+    margin 0
+  h3
+    font-size 1em
+    margin 0 0 1em 0
+
+  .progress
+    position relative
+    width 100%
+    background-color #333
+    background-image none
+    .content
+      position absolute
+      top 0
+      left 0
+      width @width
+      text-align center
+  p.cost
+    font-size 11px
+
+  ul.skills
+    &.rank-0
+      margin-top 1em
+    padding-left 0
+    .skill
+      margin-top 1em
+      list-style none
+      .content
+        border 1px solid $border_dark
+        border-radius .5em
+        padding .5em
+        p
+          font-size 11px
+        p.requirement
+          color red
+          font-weight bold
+        input.disabled
+          color #333
+      &.purchased
+        > .content
+          background-color $bg_dark
+          color $text_light
+      &.not-purchasable
+        display none
+        .content
+          border none
+          opacity .5
+      form, .buttons
+        text-align center
+
+// SETTLE
+
+.jumbotron.settle
+  padding 1em 0 2em 0
+  text-align center
+  h1
+    font 4em $font_logo
+    margin 0
+  h2
+    font-size 15px
+    margin 0
+    a
+      color $text_light
+
+.settle-message
+  margin-top 1.5em
+  form
+    margin-top 1em
+
+// TERRAINS
+
+table.terrains
+  td
+    height 100px
+    text-align center
+    &.terrain_id
+      text-align right
+    &.bgcolor
+      background-image none !important
+
+// DEV
+
+ul.dev-buttons
+  padding 0
+  list-style-type none
+  li
+    display inline-block
+    margin-right 1em
+    &:last-child
+      margin-right 0
+
+.dazed-countdown
+  width auto
+  display inline-block
+
+  $scale = 1
+  transform-origin: 0 0;
+  transform: scale($scale);
+  -ms-transform: scale($scale);
+  -webkit-transform-origin: 0 0;
+  -webkit-transform: scale($scale);
+  -o-transform-origin: 0 0;
+  -o-transform: scale($scale);
+  -moz-transform-origin: 0 0;
+  -moz-transform: scale($scale);
+
+  .flip-clock-label
+    display none

@@ -1,0 +1,233 @@
+@import "color";
+// BG SOLO
+$bg-uni: yes;
+
+// CHOIX UNIQUE // PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg: no;
+$picture-bg-url: "../images/bg_moteur.jpg";
+$picture-bg-repeat-horizontal: no;
+$degrade-bg-primary: no;
+$degrade-bg-secondary: no;
+$degrade-bg-block: no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container: 600;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content: 161;
+$margin-top-under-nav-fixe: 77;
+
+// SIZE NAVIGATION
+$height-navigation: 60;
+
+// VAR SITE TYPO
+$font-body: "Open Sans",verdana,sans-serif;
+$font-title: "Roboto Condensed",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text: 1.5em;
+$font-size-title: 1.7em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title: uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title: normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi: no;
+
+// BORDER EFFECT ON NAV
+$border-nav: no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu: flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape: no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib6";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/paris";
+
+// IMPORT MODULE ANNONCES9
+@import "../../../slagence_X_V5/sources/scss/modules/annonces9";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+// PERSO
+
+.container {
+    width: auto;
+    max-width: 1280px;
+    @media only screen and (max-width : 1310px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+.cookie-banner {
+    top: auto;
+    bottom: 0;
+    background-color: $color-action;
+}
+
+.logo {
+    margin-top: -20px;
+    @media only screen and (max-width : 767px) {
+        margin-top: 0;
+        padding: 0;
+    }
+}
+
+// MENU
+
+.navigation {
+    background-color: $color-primary;
+
+    @include background-image(radial-gradient(at center, $color-primary-light-30, $color-primary));
+}
+
+.nav.nav-pills menu-principal {
+    .pagination-left {
+        text-align: right;
+    }
+}
+
+.menu-principal {
+    margin-top: 42px;
+    line-height: 0;
+     > li > a {
+        padding: 17px;
+        color: $color-content;
+        box-shadow: none;
+    }
+}
+li.menu-accueil a,
+li.menu-agences a,
+li.menu-blog a {
+    background: $bg-accueil;
+    &:focus,
+    &:hover,
+    &:active {
+        background-color: lighten($color-primary,5);
+    }
+}
+li.menu-vente a,
+li.menu-estimation a {
+    background: $bg-vente;
+    &:focus,
+    &:hover,
+    &:active {
+        background: lighten($bg-vente,5);
+    }
+}
+li.menu-location a,
+li.menu-alerte a {
+    color: $color-action;
+    background: $bg-location;
+    &:focus,
+    &:hover,
+    &:active {
+        color: $color-action;
+        background: darken($bg-location,5);
+    }
+}
+li.menu-location-prestige a,
+li.menu-suivi a {
+    background: $bg-location-prestige;
+    &:focus,
+    &:hover,
+    &:active {
+        background: lighten($bg-location-prestige,5);
+    }
+}
+
+.menu-principal > li {
+    padding: 0 1px;
+}
+
+.module-homepage .height-190 {
+    height: 290px;
+}
+
+
+.pub-neufs {
+    background-image: url("../images/pub/picto-neufs.png");
+    .ie7 &,
+    .ie8 & {
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/z/webagency/A_Nexi/edmimmo_37767/images/pub/picto-neufs.png', sizingMethod='image');
+
+        -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/z/webagency/A_Nexi/edmimmo_37767/images/pub/picto-neufs.png', sizingMethod='image')";
+    }
+}
+.pub-financement {
+    background-image: url("../images/pub/picto-financement.png");
+    .ie7 &,
+    .ie8 & {
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/z/webagency/A_Nexi/edmimmo_37767/images/pub/picto-financement.png', sizingMethod='image');
+
+        -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/z/webagency/A_Nexi/edmimmo_37767/images/pub/picto-financement.png', sizingMethod='image')";
+    }
+}
+
+.pub-vehicule {
+    background-image: url("../images/pub/picto-vehicule.png");
+    .ie7 &,
+    .ie8 & {
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/z/webagency/A_Nexi/edmimmo_37767/images/pub/picto-vehicule.png', sizingMethod='image');
+
+        -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/z/webagency/A_Nexi/edmimmo_37767/images/pub/picto-vehicule.png', sizingMethod='image')";
+    }
+}
+
+
+.theme-default .nivoSlider {
+    background: none !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .logo img {
+        width: 45% !important;
+    }
+}
+
+.menu-responsive > ul > li a {
+    background-color: transparent;
+    &:focus,
+    &:hover,
+    &:active {
+        background-color: transparent;
+        color: $color-content;
+    }
+}
+
+.opinionsystem_bloc .opinionsystem_avis {
+color: $color-nav-footer !important;
+}

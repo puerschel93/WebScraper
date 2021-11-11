@@ -1,0 +1,464 @@
+@import "reset_style";
+
+
+
+
+
+
+
+
+body
+{
+  background: #1B1B1B;
+}
+
+
+.page
+{
+  overflow-x: hidden;
+
+  .header
+  {
+    .mw
+    {
+      padding: 35px 2vh 0;
+
+      .nav
+      {
+        @include df-r-fe-c();
+
+        ul
+        {
+          @include df-r-fe-c();
+
+          li
+          {
+            margin-left: 30px;
+
+            &.active
+            {
+              a
+              {
+                background: $main_color;
+                border-color: $main_color;
+              }
+            }
+
+            a
+            {
+              padding: 8px 10px;
+              border: 1px solid #333333;
+              -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+              -webkit-border-radius: 4px;
+              border-radius: 4px;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 16px;
+              line-height: 19px;
+              color: #FFFFFF;
+              @include df-r-c-c();
+
+              &:hover
+              {
+                border-color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main
+  {
+    .mw
+    {
+      padding: 80px 2vh;
+
+      .table
+      {
+        table, td, th
+        {
+          border: 2px solid #1F1F21;
+        }
+
+        table
+        {
+          border-collapse: collapse;
+
+          thead
+          {
+            tr
+            {
+              background: #333333;
+
+              th
+              {
+                padding: 19px 15px;
+                text-align: left;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 13px;
+                line-height: 16px;
+                color: #FFFFFF;
+              }
+            }
+          }
+
+          tbody
+          {
+            tr
+            {
+              background: #232323;
+
+              td
+              {
+                height: 72px;
+                padding: 10px 16px;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 16px;
+                color: #FFFFFF;
+
+                .country
+                {
+                  @include df-r-fs-c();
+                  min-width: 175px;
+
+                  .icon
+                  {
+                    width: 16px;
+                    @include df-r-c-c();
+                    min-width: 16px;
+                    margin-right: 7px;
+
+                    img
+                    {
+                      width: 100%;
+                    }
+                  }
+                }
+
+                .btn_panic, .btn_warning
+                {
+                  min-width: 158px;
+                  width: 158px;
+                  height: 33px;
+                  -webkit-box-shadow: inset 0px 0px 19px #1B1211;
+                  box-shadow: inset 0px 0px 19px #1B1211;
+                  -webkit-border-radius: 40px;
+                  border-radius: 40px;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 11px;
+                  line-height: 13px;
+                  color: #FFFFFF;
+                  @include df-r-c-c();
+                  position: relative;
+                  z-index: 5;
+
+                  &:after
+                  {
+                    content: '';
+                    width: 150px;
+                    height: 25px;
+                    background: #C83000;
+                    position: absolute;
+                    -webkit-border-radius: 40px;
+                    border-radius: 40px;
+                    z-index: -1;
+                  }
+
+                  &:before
+                  {
+                    content: '';
+                    width: 158px;
+                    height: 33px;
+                    position: absolute;
+                    background: -o-linear-gradient(314deg, #747474 -16.38%, #343434 79.08%);
+                    background: linear-gradient(136deg, #747474 -16.38%, #343434 79.08%);
+                    top: 0;
+                    left: 0;
+                    z-index: -3;
+                    -webkit-border-radius: 40px;
+                    border-radius: 40px;
+                  }
+
+                  .icon
+                  {
+                    width: 13px;
+                    height: 13px;
+                    min-width: 13px;
+                    margin-right: 5px;
+
+                    img
+                    {
+                      width: 100%;
+                    }
+                  }
+                }
+
+                .btn_warning
+                {
+                  &:after
+                  {
+                    background: #FF8A00;
+                  }
+                }
+              }
+
+              &:nth-child(2n)
+              {
+                background: #272727;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@media (max-width: 575px)
+{
+  .page
+  {
+    .header
+    {
+      .mw
+      {
+        padding: 25px 2vh 0;
+
+        .nav
+        {
+          ul
+          {
+            li
+            {
+              margin-left: 20px;
+
+              a
+              {
+                font-size: 14px;
+                line-height: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .main
+    {
+      .mw
+      {
+        padding: 50px 2vh;
+
+        .table
+        {
+          overflow-x: scroll;
+
+          table
+          {
+            thead
+            {
+              tr
+              {
+                th
+                {
+                  padding: 15px 10px;
+                  font-size: 12px;
+                  min-width: 100px;
+                }
+              }
+            }
+
+            tbody
+            {
+              tr
+              {
+                td
+                {
+                  height: 50px;
+                  padding: 10px 10px;
+                  font-size: 12px;
+                  line-height: 14px;
+
+                  .country
+                  {
+                    min-width: 150px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 576px) and (max-width: 767px)
+{
+  .page
+  {
+    .header
+    {
+      .mw
+      {
+        padding: 25px 2vh 0;
+
+        .nav
+        {
+          ul
+          {
+            li
+            {
+              margin-left: 20px;
+
+              a
+              {
+                font-size: 14px;
+                line-height: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .main
+    {
+      .mw
+      {
+        padding: 50px 2vh;
+
+        .table
+        {
+          overflow-x: scroll;
+
+          table
+          {
+            thead
+            {
+              tr
+              {
+                th
+                {
+                  padding: 15px 10px;
+                  font-size: 12px;
+                  min-width: 100px;
+                }
+              }
+            }
+
+            tbody
+            {
+              tr
+              {
+                td
+                {
+                  height: 50px;
+                  padding: 10px 10px;
+                  font-size: 12px;
+                  line-height: 14px;
+
+                  .country
+                  {
+                    min-width: 150px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+  .page
+  {
+    .header
+    {
+      .mw
+      {
+        padding: 25px 2vh 0;
+
+        .nav
+        {
+          ul
+          {
+            li
+            {
+              margin-left: 20px;
+
+              a
+              {
+                font-size: 14px;
+                line-height: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .main
+    {
+      .mw
+      {
+        padding: 50px 2vh;
+
+        .table
+        {
+          overflow-x: scroll;
+
+          table
+          {
+            thead
+            {
+              tr
+              {
+                th
+                {
+                  padding: 15px 10px;
+                  font-size: 12px;
+                  min-width: 150px;
+                }
+              }
+            }
+
+            tbody
+            {
+              tr
+              {
+                td
+                {
+                  height: 50px;
+                  padding: 10px 10px;
+                  font-size: 12px;
+                  line-height: 14px;
+
+                  .country
+                  {
+                    min-width: 150px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

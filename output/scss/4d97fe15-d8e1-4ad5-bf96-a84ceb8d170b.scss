@@ -1,0 +1,400 @@
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Poppins', sans-serif;
+	background: #D7D3C5;
+    
+    main{
+        background: #D7D3C5;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 60vh;
+    }
+}
+
+/*Header*/
+.widthLink{
+    a{
+        img{
+            width: 40px;
+        }
+    }
+}
+
+.navbar-nav{
+    a{
+        padding: 30px 0;
+        text-decoration: none;
+        border-bottom: 4px solid transparent;
+        font-family: 'Poppins', sans-serif;
+        &:hover{
+            border-bottom-color: black;
+        }
+        &.headerContainer__links--activate{
+            border-bottom-color: black;
+        }
+    }
+}
+nav{
+    background: #EEEBDD;
+}
+/*Pagina Principal*/
+@media(max-width: 1200px){
+    .infoEmpresa{
+        display: none;
+    }
+}
+@media(min-width: 1200px){
+    .infoEmpresaMobile{
+        display: none;
+    }
+    
+}
+@media(max-width: 700px){
+    #productos{
+        flex-wrap: wrap;
+        width: 75%;
+    }
+    
+}
+
+.contenedor{
+    padding-top: 20px;
+    width: 86%;
+    margin: 0 auto;
+    min-height: 100vh;
+    .infoEmpresa{
+        width: 50%;
+        margin: auto;
+        background: radial-gradient(circle, #aa7b37 20%, #c6aa7b 85%, rgba(0, 212, 255, 0) 100%);
+        padding: 23px;
+        .infoEmpresa__texto{
+            text-align: center;
+            &.infoEmpresa__texto--regular{
+                font-size: 18px;
+                color: white;
+                text-shadow: black 0.1em 0.1em 0.2em;
+            }
+        }
+    }
+    .infoEmpresaMobile{
+        margin: auto;
+        background: radial-gradient(circle, #aa7b37 20%, #c6aa7b 85%, rgba(0, 212, 255, 0) 100%);
+        padding: 23px;
+        .infoEmpresa__texto{
+            text-align: center;
+            &.infoEmpresa__texto--regular{
+                font-size: 18px;
+                color: white;
+                text-shadow: black 0.1em 0.1em 0.2em;
+            }
+        }
+    }
+    .contenedor__subtitulo{
+        text-align: left;
+        &.contenedor__subtitulo--big{
+            font-size: 24px;
+        }
+    }
+    #productos{
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        div{
+            background: #c7ad7c;
+            padding: 7px 0;
+            margin: 0 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            a{
+                img{
+                    width: 80%;
+                    margin-left: 10%;
+                }
+            }
+            p{
+                margin-bottom: 10px;
+            }
+        }
+    }
+    #premios{
+        .premios__titulo{
+            text-align: left;
+            &.premios__titulo--big{
+                font-size: 24px;
+            }
+        }
+        .imgPremios{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-bottom: 10px;
+            img{
+                width: 440px;
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
+
+
+
+/*Shop*/
+
+.secciones{
+    width: 86%;
+    margin: 0 auto;
+    .accordion{
+        .card{
+            .card-body{
+                ul{
+                    li{
+                        list-style: inside;
+                    }
+                }
+            }
+        }
+    }
+    .shop{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 40px;
+        &.shop--center{
+            text-align: center;
+        }
+        div{
+            a{
+                cursor: pointer;
+            }
+            .imgShop{
+                width: 315px;
+                border: 1px solid #000;
+                background: #c7ad7c;
+                padding: 20px;
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
+            .shop__nameProd{
+                &.shop__nameProd--big{
+                    font-size: 24px;
+                }
+            }
+            .shop__priceProd{
+                &.shop__priceProd--medium{
+                    font-size: 18px;                    
+                }
+            }
+        }
+        .comprarQueso{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            img{
+                width: 275px;
+                height: 230px;
+                border: 3px solid #c7ad7c;
+            }
+            .textQueso{
+                flex: 50%;
+                margin-left: 10px;
+                text-align: left;
+                p{
+                    font-size: 18px;
+                }
+                ul{
+                    li{
+                        font-size: 18px;
+                        list-style: inside;
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pagina{
+    color: black;
+    font-size: 24px;
+}
+
+/*Compra Realizada*/
+
+.comprado{
+	color: black;
+	font-size: 24px;
+}
+
+/*Recetas*/
+
+.secciones{
+    .mainRecetas{
+        margin: 40px 0 50px 0;
+        div{
+            .imgRecetas{
+                width: 350px;
+                border: 1px solid #000;
+                background: #c7ad7c;
+                padding: 10px;
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
+            div{
+                font-size: 20px;
+            }
+        }
+    }
+}
+#recetasContainer{
+	width: 86%;
+	margin: 0 auto;
+    div{
+        .recetasContainer__titulo{
+            text-decoration: underline;
+            &.recetasContainer__titulo--big{
+                font-size: 28px;
+            }
+            &.recetasContainer__titulo--medium{
+                font-size: 24px;
+            }
+        }
+        .receta{
+            list-style-position: inside;
+        }
+    }
+}
+
+
+
+
+/*Contacto*/
+
+.paginaContacto{
+	color: black;
+	font-size: 24px;
+}
+.contacto{
+	background: #c7ad7c;
+    form{
+        div{
+            .casillas{
+                border: solid black 1px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .contacto{
+        form{
+            div{
+                .rightContactText{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+/*Preguntas Frecuentes*/
+
+.preguntas{
+    div{
+        font-size: 24px;
+        font-weight: 600;
+    }
+    ul{
+        li{
+            list-style: inside;
+        }
+    }
+}
+
+
+/*Footer*/
+
+@media (max-width: 1200px){
+	footer{
+        .footerContainer{
+            .rightFooter{
+                display: none;
+                iframe{
+                    display: none;
+                }
+                div{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+footer{
+	background: linear-gradient(180deg, rgba(206,18,18,1) 0%, rgba(129,0,0,1) 50%, rgba(0,0,0,1) 100%);
+    margin-top: auto;
+    .footerContainer{
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        margin: 0 auto;
+        width: 87%;
+        height: 350px;
+        padding: 30px;
+        justify-content: space-between;
+        color: white;
+        margin: auto;
+        .leftFooter{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .rightFooter{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        iframe{
+            height: 200px;
+            width: 675px;
+        }
+        a{
+            text-decoration: none;
+            &:link{
+                color: white;
+            }
+            &:visited{
+                color: white;
+            }
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/*Whatsapp*/
+
+#wp{
+	height: 60px;
+	width: 60px;
+	position: fixed;
+	top: 890px;
+	left: 1835px;
+}

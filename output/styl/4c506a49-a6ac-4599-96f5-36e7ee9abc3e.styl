@@ -1,0 +1,108 @@
+@import "~tracim_frontend_lib/src/css/Variable.styl"
+
+.memberlist
+  margin-top standardSpacing
+  &__header
+    font-weight bold
+    margin-bottom standardSpacing
+
+  &__wrapper
+    position relative
+    border borderStyle
+    background-color offWhite
+  &__list
+    margin 0
+    padding 0
+    list-style none
+    &__item
+      display flex
+      border-bottom borderStyle
+      padding standardSpacing
+      align-items center
+      &:hover
+        background-color grey-hover
+      &__avatar
+        margin-right textSpacing
+        & > img
+          width 30px
+          height 30px
+      &__info
+        margin-right auto
+        width calc(100% - 35px) // 30px is the avatar's size + textSpacing
+        display flex
+        flex-direction row
+        align-items baseline
+        &__firstColumn
+          overflow hidden
+          white-space nowrap
+          &__name
+            font-size standardFontSize
+            text-overflow ellipsis
+            overflow hidden
+          &__username
+            font-size metadataFontSize
+            color mediumDarkGrey
+            text-overflow ellipsis
+            overflow hidden
+        &__role
+          font-size metadataFontSize
+          color mediumDarkGrey
+          margin-inline-start textSpacing
+      &__delete
+        font-size standardFontSize
+        color fontColor
+        cursor pointer
+      &__last
+        border none
+  &__btnadd
+    border-bottom borderStyle
+    padding standardSpacing
+    height 60px
+    display flex
+    &__button
+      display flex
+      align-items center
+      border-color grey
+      color grey
+      &__avatar
+        display flex
+        justify-content center
+        align-items center
+        margin-right textSpacing
+        border-width 2px
+        border-style dashed
+        border-radius 50%
+        width 30px
+        height 30px
+        cursor pointer
+        &__icon
+          font-size standardFontSize
+      &__text
+        font-size standardFontSize
+        cursor pointer
+
+@media (min-width: min-md) and (max-width: max-md)
+
+  .memberlist
+    width 100%
+
+@media (min-width: min-sm) and (max-width: max-sm)
+  .memberlist
+    margin 50px 0
+    width 100%
+
+@media (max-width: max-xs)
+  .memberlist
+    margin 50px 0
+    width 100%
+    &__title
+      margin-left standardSpacing
+    &__wrapper
+      height auto
+    &__list
+      height auto
+      overflow-Y visible
+      &__item:nth-last-child(1)
+        border-bottom borderStyle
+    &__btnadd
+      border-top 0

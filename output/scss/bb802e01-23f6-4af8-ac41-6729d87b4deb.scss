@@ -1,0 +1,129 @@
+.contactPage{
+    padding: 100px 0px;
+    .contactSection__wrapper{
+        display: flex;
+        gap: 40px;
+        margin-top: 60px;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        position: relative;
+        flex-wrap: wrap;
+        ::after{
+            display: none;
+            @media screen and (min-width: 1162px) {
+                display: flex;
+                position: absolute;
+                content: "";
+                width: 2px;
+                height: 50%;
+                background-color: $fontColor;
+                left: 50%;
+                top: 30%;
+                transform: translate(-50%, -50%);
+                color: $fontColor;
+            }
+        }
+    }
+    .left{
+        width: 100%;
+        max-width: 500px;
+    }
+}
+.contents{
+    padding: 20px;
+    background-color: $bgitemColor;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    .icon{
+        color: white;
+        background-color: $bdColor;
+        padding: 13px;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    svg{
+        @include svgStyle();
+        width: 30px;
+    }
+}
+.myInfo{
+    width: 100%;
+    .form-group{
+        width: 100%;
+        margin: -1px -1px 20px;
+    }
+    p{
+        text-align: left;
+        font-size: 18px;
+        margin: 0px;
+    }
+    input, textarea{
+        width: 100%;
+        font-size: 2rem;
+        padding: 12px;
+        color: $fontColor;
+        background-color: $bgitemColor;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        margin: 10px -1px -1px;
+    }
+    textarea{
+        min-height: 250px;
+        resize: vertical;
+    }
+    button[type="submit"]{
+        background-color: $fontColor;
+        color: black;
+        font-size: 20px;
+        display: inline-block;
+        outline: none;
+        border: none;
+        padding: 10px 40px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}
+.map{
+    background: url(https://reacjs-portfolio03102021.vercel.app/static/media/map.7d98ba39.png)
+        center center / cover no-repeat;
+    min-height: 400px;
+    .container{
+        position: relative;
+        min-height: 400px;
+        margin: 0px;
+    }
+    .map__card{
+        position: absolute;
+        right: 10%;
+        bottom: 10%;
+        background: $bgitemColor;
+        padding: 20px;
+        width: 100%;
+        max-width: 300px;
+        max-height: 200px;
+        border-radius: 12px;
+        p{
+            font-size: 24px;
+            margin: 0px;
+        }
+    }
+    .map__card__heading{
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .map__card__link{
+        display: inline-block;
+        font-size: 15px;
+        margin-top: 30px;
+        text-decoration: underline;
+        color: $fontColor;
+    }
+}

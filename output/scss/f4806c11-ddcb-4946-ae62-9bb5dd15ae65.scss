@@ -1,0 +1,248 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:520;
+
+// VARIABLE SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Open Sans Condensed",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.7em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:146;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces18";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+//---------------------------------------------------------------------------------------
+//		PERSO
+//---------------------------------------------------------------------------------------
+
+.container {
+
+   width: auto;
+   max-width: 1280px;
+   @media only screen and (max-width : 1310px) {
+       padding-left: 15px;
+       padding-right: 15px;
+   }
+}
+
+.emplacement-header {
+	&.titre-milieu {
+		margin-top: 200px;
+		.row-fluid {
+			&.bg-primary {
+				background-color: transparent;
+				&:first-of-type {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+	}
+}
+
+.social-footer {
+	display: none;
+}
+
+
+//---------------------------------------------------------------------------------------
+//		FULHAM
+//---------------------------------------------------------------------------------------
+
+
+.padding-top-content-logo-big {
+	padding-top:60px;
+}
+
+//---------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------
+	//		BLOCK
+	//---------------------------------------------------------------------------------------
+
+.bloc-fullham-desk {
+	position: absolute;
+    left: 0;
+    bottom: -360px;
+}
+
+.margin-top-neg-60 {
+	margin-top:-60px;
+	@media only screen and (max-width : 767px) {
+		margin-top:0px;
+	}
+}
+
+.bg-block {
+	background-color:$color-primary;
+	-webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+	&:hover {
+		background-color:$color-primary-light-10;
+		a:hover {
+			text-decoration:none;
+		}
+	}
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?qi2zbk');
+  src:  url('../fonts/icomoon.eot?qi2zbk#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?qi2zbk') format('truetype'),
+    url('../fonts/icomoon.woff?qi2zbk') format('woff'),
+    url('../fonts/icomoon.svg?qi2zbk#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-perso-"], [class*=" icon-perso-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-perso-home:before {
+  content: "\e900";
+}
+.icon-perso-office:before {
+  content: "\e903";
+}
+
+	//---------------------------------------------------------------------------------------
+	//		CARROUSEL MOBILE
+	//---------------------------------------------------------------------------------------
+
+.hr-pub {
+	display:none;
+}
+
+@media only screen and (max-width : 767px) {
+	.module-annonces-homepage {
+		background:$color-block !important;
+		color:$color-nav-footer !important;
+	}
+	.homepage-bloc-type-bien-transaction .bg-white {
+		background:$color-block !important;
+	}
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+	background:$color-block !important;
+	color: $color-action !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+	background:$color-important !important;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+	background:$color-action !important;
+}
+
+
+//---------------------------------------------------------------------------------------
+//		PERSO IMMOVALOIS
+//---------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------
+
+.nav-social-menu .btn-action {
+	@include background-image(linear-gradient($color-important-light-10, $color-important));
+}
+
+	//---------------------------------------------------------------------------------------
+	//		POP NEWSLETTER
+	//---------------------------------------------------------------------------------------
+
+#PopContact {
+	position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 30rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: $color-action;
+    padding: 20px;
+    @include border-top-radius(8px);
+    color: $color-primary;
+	z-index: 1500;
+}
+
+.mf-icon-people {
+	font-size: 2em;
+}

@@ -1,0 +1,381 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:899;
+
+// SIZE VIDEO
+$height-video:650;
+
+// SIZE NAVIGATION
+$height-navigation:115;
+
+// VAR SITE TYPO
+$font-body:"Open Sans",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.5em;
+$font-size-title:1.6em;
+
+$margin-top-under-nav-fixe:170;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES11
+@import "../../../slagence_X_V5/sources/scss/modules/annonces11";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+.container {
+    width: auto;
+    max-width: 1280px;
+    @media only screen and (max-width : 1310px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+.logo img {
+   width: 45% !important;
+}
+}
+
+
+//------------------------------------------------------------------------------------------------
+//    PERSO IDF03200
+//------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------
+//    GENERAL
+//------------------------------------------------------------------------------------------------
+
+  //------------------------------------------------------------------------------------------------
+  //    MENU & NAV
+  //------------------------------------------------------------------------------------------------
+
+.menu-principal {
+  font-size: 1.0em;
+  >li {
+    border: none;
+    &:hover {
+      background: none;
+    }
+    >a {
+      color: $color-nav-footer;
+      &:after {
+        display: inline-block;
+        content: "\002022";
+        color: $color-nav-footer;
+        margin-left: 20px;
+      }
+      &:hover {
+        background: none;
+        color: $color-important;
+      }
+    }
+  }
+}
+
+//------------------------------------------------------------------------------------------------
+//    INDEX
+//------------------------------------------------------------------------------------------------
+
+.btn-down {
+  position: absolute;
+  top: 200px;  
+}
+
+  //------------------------------------------------------------------------------------------------
+  //    MOTEUR
+  //------------------------------------------------------------------------------------------------
+
+#Mini_Bouton {
+  margin-top:-1px;
+}
+
+.form-inline{ 
+  select {
+    height:50px;
+  }
+}
+
+.saisie-suggest {
+    height: 50px !important;    
+}
+
+.bouton-rechercher-moteur {
+  height: 50px;
+  line-height: 40px;
+}
+
+  //------------------------------------------------------------------------------------------------
+  //    SEO
+  //------------------------------------------------------------------------------------------------
+
+.aside-txt-home {
+  background-color: $color-body;
+}
+
+.circle {  
+  float: left;
+  shape-outside: circle(50%);
+  width: 300px;
+  height: 300px;
+}
+
+  //------------------------------------------------------------------------------------------------
+  //    MODULE
+  //------------------------------------------------------------------------------------------------
+
+.aside-home-2 {
+  background-color: darken($color-body,10);
+  box-shadow: none;
+  padding: 40px 0;
+}
+
+  //------------------------------------------------------------------------------------------------
+  //    PUB -- EXTRA
+  //------------------------------------------------------------------------------------------------
+
+.aside-pub, .aside-extra {
+  display: none;
+}
+
+  //------------------------------------------------------------------------------------------------
+  //    PUB FULL
+  //------------------------------------------------------------------------------------------------
+
+  //----------------------------------------------------------------------------------------------
+  //    PUB FULL
+  //----------------------------------------------------------------------------------------------
+
+.dualpub {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 280px;
+    background-color: $color-action;
+}
+
+.dualpub-black {
+  background-color: darken($color-body,10); 
+  .dualpub-content-txt {
+    color: $color-primary;
+  }
+}
+
+div.dualpub.dualpub-black.dualpub-alerte > div.dualpub-body > div > div > div {
+  color: $color-primary;
+  &:before {
+    color: $color-primary;
+  }
+}
+
+.dualpub-inv {
+    direction: rtl;
+}
+
+.dualpub-body,
+.dualpub-img {
+    display: table-cell;
+    vertical-align: middle;
+    .dualpub-inv & {
+        direction: ltr;
+    }
+}
+
+.dualpub-img {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    .dualpub-estimation & {
+        background-image: url("../images/pub/pub-estimation.jpg");        
+    }
+    .dualpub-outils & {
+        background-image: url("../images/pub/pub-outils.jpg");
+    }
+    .dualpub-alerte & {
+        background-image: url("../images/pub/pub-alerte.jpg");
+    }    
+}
+
+.dualpub-deco {
+    position: absolute;
+    top: 9rem;
+    left: -9rem;
+}
+
+.dualpub-content {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);    
+}
+
+.dualpub-content-txt {
+    width: 40%;
+    color: $color-body;
+    .dualpub-inv & {
+        margin-left: auto;
+    }
+}
+
+
+.dualpub-ttl {
+    font-family: $font-title;
+    font-size: 2.5em;
+    font-weight: 300;
+    color: $color-block;
+    line-height: 1.2;
+    text-transform: uppercase;
+    span {
+        display: block;
+        color: $color-action;
+    }
+    &:before {
+      display: inline-block;
+      content: "\00201F";
+      color: $color-body;
+      font-size: 1.9em;
+    }
+}
+
+.dualpub-ssttl {
+    margin-bottom: 3rem;
+    font-family: $font-title;
+    font-size: .8125em;
+    font-weight: 700;
+    color: $color-block;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+@media (max-width:1170px) {
+  .dualpub-content-txt {
+    width: 35%;
+    margin-left: 3rem;
+    .dualpub-inv & {
+        margin-right: 9rem;
+    }
+  }
+}
+
+@media (max-width:980px) {
+  .dualpub {
+      display: block;
+      height: auto;
+  }
+
+  .dualpub-body,
+  .dualpub-img {
+      display: block;
+  }
+
+  .dualpub-img {
+      min-height: 350px;
+  }
+
+  .dualpub-deco {
+      top: -2rem;
+      left: 2rem;
+      max-width: 300px;
+  }
+
+  .dualpub-content {
+      position: static;
+      max-width: none;
+      -webkit-transform: none;
+      transform: none;
+  }
+
+  .dualpub-content-txt {
+      width: auto;
+      margin: 3rem;
+      .dualpub-inv & {
+          margin-left: 3rem;
+          margin-right: 3rem;
+      }
+  }
+
+
+  .dualpub-ttl {
+      font-size: 1.875em;
+  }
+}
+
+@media (max-width:980px) {
+  .dualpub-deco {
+      max-width: 195px;
+  }
+
+  .dualpub-img {
+      min-height: 240px;
+  }
+}
+
+//------------------------------------------------------------------------------------------------
+//    DETAIL PA
+//------------------------------------------------------------------------------------------------
+
+  //------------------------------------------------------------------------------------------------
+  //    VISUEL
+  //------------------------------------------------------------------------------------------------
+
+.vertical-pano {
+  background-color: $color-block;
+}
+
+.cookie-banner {
+ background-color: $color-primary; 
+ color: $color-block; 
+}

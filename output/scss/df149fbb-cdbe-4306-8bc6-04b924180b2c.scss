@@ -1,0 +1,324 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Set your colors
+$primary: #447be0;
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+$primary-invert: findColorInvert($primary); //светлые текст на темном фоне
+
+// Lists and maps
+$custom-colors: null !default;
+$custom-shades: null !default;
+
+// Setup $colors to use as bulma classes
+$colors: mergeColorMaps(
+  (
+    "white": (
+      $white,
+      $black,
+    ),
+    "black": (
+      $black,
+      $white,
+    ),
+    "light": (
+      $light,
+      $light-invert,
+    ),
+    "dark": (
+      $dark,
+      $dark-invert,
+    ),
+    "primary": (
+      $primary,
+      $primary-invert,
+      $primary-light,
+      $primary-dark,
+    ),
+    "link": (
+      $link,
+      $link-invert,
+      $link-light,
+      $link-dark,
+    ),
+    "info": (
+      $info,
+      $info-invert,
+      $info-light,
+      $info-dark,
+    ),
+    "success": (
+      $success,
+      $success-invert,
+      $success-light,
+      $success-dark,
+    ),
+    "warning": (
+      $warning,
+      $warning-invert,
+      $warning-light,
+      $warning-dark,
+    ),
+    "danger": (
+      $danger,
+      $danger-invert,
+      $danger-light,
+      $danger-dark,
+    ),
+  ),
+  $custom-colors
+);
+
+//tipography
+$family-sans-serif: "Montserrat", system-ui, sans-serif;
+$family-primary: "Oswald", system-ui, sans-serif;
+$family-secondary: "Montserrat", system-ui, sans-serif;
+$title-color: #000;
+
+// Links
+// $link: $primary;
+// $link-invert: $primary-invert;
+// $link-focus-border: $primary;
+// $link-hover: #fff;
+// $link-focus: #fff;
+// $link-active: #fff;
+
+//button
+// $button-padding-horizontal: 3em;
+// $button-padding-vertical: 1.5em;
+// $button-hover-color: #fff;
+// $button-focus-color: #fff;
+$button-disabled-border-color: #efefef;
+$button-disabled-background-color: #efefef;
+
+//navbar
+$navbar-background-color: #fff;
+$navbar-height: 5rem;
+$navbar-item-color: #2c2a2a;
+$navbar-item-hover-color: $primary;
+$navbar-item-hover-background-color: $navbar-background-color;
+$navbar-item-active-color: $primary;
+$navbar-item-active-background-color: $navbar-background-color;
+$navbar-item-img-max-height: 100%;
+
+
+
+//carousel
+$carousel-min-height: calc(100vh - 250px);
+// $carousel-arrow-background: transparent;
+
+//hero
+$hero-body-padding: 3rem 1.5rem 3rem 1.5rem;
+$hero-body-padding-tablet: 3rem 1.5rem 3rem 1.5rem;
+
+/*loading component*/
+$loading-background: rgba(10, 10, 10, 0);
+
+/*steps component*/
+$steps-details-background-color: transparent;
+$steps-maker-default-color: transparent;
+$steps-marker-default-border: none;
+$steps-default-color: transparent;
+$steps-previous-color: transparent;
+$steps-active-color: transparent;
+$steps-divider-height: 4rem;
+
+/*radio button group component*/
+$radio-active-background-color: transparent;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+/*some more hack-customisation*/
+.hero.is-fullheight {
+  padding-top: $navbar-height;
+}
+
+@media (max-width: 1200px) {
+  .hero.is-fullheight {
+    padding-top: 0;
+  }
+}
+
+.button {
+  border-radius: 0px;
+}
+
+/*custom typography*/
+.my-sectionHeader {
+  font-family: $family-primary;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 54px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: $title-color;
+  margin-top: 2rem;
+}
+
+.my-sectionHeader::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background-color: $primary;
+  margin: 2rem 0;
+}
+
+.prompt {
+  line-height: 30px;
+  display: inline-block;
+  height: 30px;
+}
+
+.prompt > sup {
+  line-height: 20px;
+  height: 20px;
+}
+
+
+.my-col-width {
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+  .my-col-width {
+    width: 90vw;
+  }
+}
+
+.my-col-fullwidth {
+  width: calc(100% - 18px);
+}
+
+@media (max-width: 1220px) {
+  .my-col-fullwidth {
+    width: 100vw;
+  }
+}
+
+.my-col-vcenter {
+  margin: auto;
+}
+
+.my-regular-text {
+  font-family: $family-sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.my-primary-color {
+  color: $primary;
+}
+
+.my-politics-agreement {
+  font-family: $family-secondary;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.my-ctaLink {
+  font-size: 20px;
+  display: inline-block;
+  background: linear-gradient(134.94deg, rgba(65, 74, 118, 0) 0.44%, rgba(65, 74, 118, 0.5) 100.55%), url(../assets/landing-img/ocean-bg.png), #447be0;
+  background-color: $primary;
+  background-size: cover;
+  color: #fff;
+  letter-spacing: initial;
+  padding: 1rem 2rem;
+  text-shadow: 1px 1px 0px rgb(0 0 0 / 80%);
+}
+
+.my-ctaButton {
+  font-size: 20px;
+  display: inline-block;
+  background: linear-gradient(134.94deg, rgba(65, 74, 118, 0) 0.44%, rgba(65, 74, 118, 0.5) 100.55%), url(../assets/landing-img/ocean-bg.png), #447be0;
+  background-color: $primary;
+  background-size: cover;
+  color: #fff;
+  padding: 0;
+  border: 1px solid transparent;
+  text-shadow: 1px 1px 0px rgb(0 0 0 / 80%);
+  white-space: nowrap;
+  padding: 0.5rem 2rem;
+  height: 3rem;
+}
+
+.my-ctaButton:hover {
+  border-color: #447BE0;
+}
+
+.my-ctaButton > span {
+  margin: 1.5rem;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+}
+
+.my-input > input {
+  border-radius: 0;
+}
+
+.title {
+  margin-top: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .title {
+    margin-top: 1rem;
+    margin-bottom: 2rem!important;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar-item img {
+    max-width: 80vw;
+  }
+}
+
+.b-checkbox.checkbox .control-label {
+  overflow: hidden;
+}
+
+
+/*responsive helpers*/
+
+@media (max-width: 1024px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+/*arrow for accordeon*/
+.mdi.mdi-menu-up {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 8"%3E%3Cpath d="M8 8 0 0h16L8 8Z"/%3E%3C/svg%3E');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  height: 1rem;
+  width: 1rem;
+}
+
+.mdi.mdi-menu-down {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 8"%3E%3Cpath d="m8 0 8 8H0l8-8Z"/%3E%3C/svg%3E');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  height: 1rem;
+  width: 1rem;
+}

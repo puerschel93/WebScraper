@@ -1,0 +1,325 @@
+.tela.mod3tela1
+  position relative
+  min-height 100%
+  width 100%
+  height 100% /* cross-browser */
+  background-color #f4f9fd
+  color black
+  /*background url('../assets/images/px/formas/grafismos.png')
+  background-attachment fixed
+  background-position left top
+  background-repeat no-repeat
+  background-size auto 100%
+  background-color white*/
+
+  .white
+    color white
+
+  .mod3tela1-bg
+    position fixed
+    width 100%
+    height 100%
+    background url('../assets/images/px/formas/forma_circulo_claro.png')
+    background-size auto 80%
+    background-position left top
+    background-repeat no-repeat
+    background-attachment fixed
+
+  .mod3tela1-bg2
+    position fixed
+    width 100%
+    height 100%
+    background url('../assets/images/px/formas/forma_losango_claro.png')
+    background-size auto 80%
+    background-position right bottom
+    background-repeat no-repeat
+    background-attachment fixed
+
+  .container-fluid
+    height 100%
+    padding 0
+    font-size 0.9em
+    text-align center
+
+    .final-btn
+      position absolute
+      right 10%
+      bottom 10%
+      max-width 80%
+
+      &.bg-blue
+        background linear-gradient(90deg, #012f5e, #094cab) //#013469
+        transition 0.3s background
+
+        &:hover
+          background linear-gradient(90deg, #094cab, #094cab) //#013469
+
+      img
+        max-width 100%
+
+    .next-story, .prev-story
+      position absolute
+      width 20px
+      height 30px
+      font-size 25px
+      color black
+      text-align center
+      top 50%
+      transform translateY(-50%)
+
+    .next-story
+      right 5px
+
+    .prev-story
+      left 5px
+
+
+    .stories
+      position absolute
+      width 563px
+      //max-width 563px
+      //width calc((100vh - 25px) * (563 / 949))
+      //min-width calc(563px / 2)
+      //max-height 949px
+      //height calc((100vh - 25px))
+      //min-height calc(949px / 2)
+      height 949px
+      left 50%
+      //transform translateX(-50%)
+      overflow hidden
+      font-size 22px
+      transform-origin center top
+
+      &.storyBackwards
+
+        .story
+          position absolute
+
+          &.ng-hide-remove
+            animation 0.5s entradireita
+
+          &.ng-hide-add
+            animation 0.5s saidireita
+
+      &.storyForwards
+
+        .story
+          position absolute
+          left 0
+          top 20px
+          width 100%
+          height 100%
+
+          &.ng-hide-remove
+            animation 0.5s entraesquerda
+
+          &.ng-hide-add
+            animation 0.5s saiesquerda
+
+      .story-markers
+        position absolute
+        width 100%
+        height 20px
+        text-align center
+        padding-top 15px
+
+        .marker
+          position relative
+          display inline-block
+          vertical-align top
+          height 5px
+          background rgba(0,0,0,0.3)
+          width calc(100% / 28 - 4px)
+          margin 0 2px
+
+          &.visited
+            background #f8941f
+
+          &.current
+            background #d2222a
+
+      .story
+        position absolute
+        left 0
+        top 20px
+        width 100%
+        height 100%
+
+        .background
+          position relative
+          height 100%
+          margin-top 15px
+
+          &.cover
+            &:after
+              content ""
+              position absolute
+              left 0
+              top 0
+              width 100%
+              height 100%
+              background rgba(0,0,0,0.6)
+
+          img
+            max-height 100%
+            width 100%
+
+          video
+            width 100%
+
+        .content
+          position absolute
+          width 100%
+          height calc(100% - 25px)
+          left 0
+          top 20px
+          padding 10%
+          //padding-right 15%
+
+          ol
+            list-style lower-roman
+
+            li
+              font-size 1em
+              line-height 120%
+              margin-bottom 0.5em
+              padding-left 5px
+              margin-left 15px
+
+          img.img-content
+            max-width 100%
+            margin 0 auto
+            margin-bottom 1.2em
+
+            &.max-80
+              width 80%
+              margin-left 10%
+
+            &.max-60
+              width 60%
+              margin-left 20%
+
+            &.max-45
+              width 45%
+              margin-left 27%
+
+            &.inline
+              display inline-block
+              vertical-align middle
+              margin-left auto
+
+          .comp-hover-btn
+            img
+              max-width 80%
+              margin-left 10%
+
+          h1
+            font-size 2em
+            line-height 120%
+            font-weight 300
+
+          h2
+            font-size 1.6em
+            line-height 120%
+            font-weight 200
+
+          h3
+            font-size 1.4em
+            line-height 120%
+            font-weight 200
+
+          p.subtitle
+            text-align center
+            margin-top 2.5em
+            font-size 1.2em
+            line-height 120%
+
+          p
+            font-size 1.2em
+            line-height 120%
+            margin-bottom 1.2em
+            font-weight 200
+
+            .destaque, &.destaque
+              font-weight 200
+
+            .big, &.big
+              font-size 1.5em
+              line-height 120%
+
+            .bold, &.bold
+              font-weight bold
+
+            .small, &.small
+              font-size 1em
+              line-height 120%
+
+          .semibold
+            font-weight 500
+
+          .bold
+            font-weight bold
+
+          .strong
+            font-weight 200
+
+          .bigger
+            font-size 2em
+
+          .blue
+            color #013469
+
+          .white
+            color white
+
+          .center
+            text-align center
+
+          .middle
+            display table
+            width 100%
+            height 100%
+
+            p
+              display table-cell
+              vertical-align middle
+
+
+  .color-white
+    color white
+
+  .text-left
+    text-align left
+
+@keyframes saidireita
+  0%
+    transform translateX(0)
+    opacity 1
+  100%
+    transform translateX(100%)
+    opacity 0
+
+@keyframes entradireita
+  0%
+    transform translateX(-100%)
+    opacity 0
+  100%
+    transform translateX(0)
+    opacity 1
+
+
+@keyframes saiesquerda
+  0%
+    transform translateX(0)
+    opacity 1
+  100%
+    transform translateX(-100%)
+    opacity 0
+
+@keyframes entraesquerda
+  0%
+    transform translateX(100%)
+    opacity 0
+  100%
+    transform translateX(0)
+    opacity 1

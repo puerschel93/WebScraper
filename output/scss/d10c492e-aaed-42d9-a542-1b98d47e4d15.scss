@@ -1,0 +1,48 @@
+.question {
+    background-color: $details;
+    border-radius: 8px;
+    box-shadow: $shadow;
+    margin-top: 32px;
+    padding: 24px;
+
+    & + .question {
+        margin-top: 8px;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    footer {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+
+        button {
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+
+            &.like-button {
+                align-items: flex-end;
+                color: $dark-grey;
+                display: flex;
+                gap: 8px;
+                transition: filter 0.2s;
+
+                &.liked {
+                    color: $purple;
+
+                    svg path {
+                        stroke: $purple;
+                    }
+                }
+
+                &:hover {
+                    filter: brightness(0.7);
+                }
+            }
+        }
+    }
+}

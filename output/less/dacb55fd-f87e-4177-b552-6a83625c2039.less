@@ -1,0 +1,76 @@
+@import "../node_modules/nav-frontend-core/less/core";
+@import "../node_modules/nav-frontend-paneler-style/src/index.less";
+@import "../node_modules/nav-frontend-typografi-style/src/index.less";
+
+@import "./components/paneler/paneler.less";
+
+//Grunnet ulike font-størrelse mellom nav-frontend og ds-react
+//nullstilles font foreløpig
+:root {
+    --navds-font-size-heading-2xlarge: 2.2222222222222223rem;
+    --navds-font-size-heading-xlarge: 1.7777777777777777rem;
+    --navds-font-size-heading-large: 1.5555555555555556rem;
+    --navds-font-size-heading-medium: 1.3333333333333333rem;
+    --navds-font-size-heading-small: 1.1111111111111112rem;
+    --navds-font-size-xlarge: 1.1111111111111112rem;
+    --navds-font-size-large: 1rem;
+    --navds-font-size-medium: 0.8888888888888888rem;
+    --navds-font-size-small: 0.7777777777777778rem;
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: @navMorkGra;
+    background-color: @grayBackground;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.blokk-center {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 640px) {
+    .blokk-center {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .blokk-center {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    .blokk-center {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        &.blokk-center--wide {
+            display: block;
+            max-width: 944px;
+        }
+    }
+}
+
+.maincontent .side-innhold {
+    padding-top: 0;
+}
+
+// Hack for å skjule del-skjerm knappen
+.footer-bottom-content__personvern-lenker > li:last-child {
+    display: none;
+}
+
+#nav-chatbot {
+    display: none !important;
+}

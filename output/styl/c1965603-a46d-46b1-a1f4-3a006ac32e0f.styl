@@ -1,0 +1,352 @@
+.zyhRoleManagementMainPage {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  li {
+    list-style-position: inside;
+    list-style-type: none;
+  }
+
+  .clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  height: 100vh;
+  width: calc(100vw - 200px);
+
+  // display: flex;
+  // flex-flow: column;
+  header {
+    // border: 1px solid green;
+    padding-left: 50px;
+
+    .infoArea {
+      // border: 1px solid black;
+      height: 96px;
+      display: flex;
+      flex-direction: row;
+
+      .pageName {
+        flex-grow: 1;
+        line-height: 102px;
+        margin-left: -12px;
+        font-size: 24px;
+        letter-spacing: 1px;
+        font-family: PingFangSC-Regular;
+        color: #000;
+      }
+
+      .profile {
+        margin-top: 40px;
+        margin-right: 37px;
+      }
+    }
+
+    .searchArea {
+      // border: 1px solid red;
+      height: 44px;
+      line-height: 44px;
+      display: flex;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: calc(13px + 2px);
+        left: calc(16px + 2px);
+        height: 16px;
+      }
+
+      .el-input {
+        width: 545px;
+
+        .el-input__inner {
+          height: 44px;
+          border: solid 1px #1e69fe;
+          text-indent: 50px;
+          border-radius: 10px;
+        }
+      }
+
+      .el-button {
+        padding: 0 15px 0;
+        margin-left: 15px;
+        border-radius: 10px;
+        font-size: 16px;
+        background: #1e69fe;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  section {
+    padding-top: 28px;
+    height: calc(100vh - 96px - 44px);
+    display: flex;
+
+    .asidePart {
+      width: calc((100vw - 200px) * 0.35);
+
+      // width: calc((100vw - 200px) * 0.4);
+      .wrapper::-webkit-scrollbar {
+        display: none;
+      }
+
+      ul.wrapper {
+        box-shadow: 1px 1px 20px 10px #edf1f5;
+        // border: 1px solid #ccc;
+        margin-left: 49px;
+        min-height: calc(100vh - 96px - 39px - 44px - 26px);
+        max-height: calc(100vh - 96px - 39px - 44px - 26px);
+        overflow-y: scroll;
+
+        li:nth-child(2n-1) {
+          background: #EDF1F5;
+        }
+
+        li:hover {
+          background: #d4e1fc;
+        }
+
+        li {
+          // border: 1px solid black;
+          height: 164px;
+          display: flex;
+          align-items: center;
+
+          .customerServiceIconImage {
+            background: #1e69fe;
+            width: 59px;
+            height: 70px;
+            margin: 0 30px 0;
+          }
+
+          div {
+            width: 324px;
+            margin-right: 30px;
+
+            p:nth-child(1) {
+              font-size: 20px;
+              font-family: PingFang SC;
+              font-weight: 400;
+              color: #000000;
+            }
+
+            p:nth-child(2) {
+              font-size: 16px;
+              font-family: PingFang SC;
+              font-weight: 400;
+              color: #4C4C4C;
+            }
+
+            p:nth-child(3) {
+              margin-top: 10px;
+              font-size: 14px;
+              text-align: justify;
+              font-family: PingFang SC;
+              font-weight: 400;
+              color: #4C4C4C;
+            }
+          }
+
+          .alterIcon {
+            border: 1px solid black;
+            width: 22px;
+            height: 22px;
+            margin-right: 8px;
+          }
+
+          .deleteIcon {
+            border: 1px solid black;
+            width: 22px;
+            height: 22px;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+
+    .mainPart {
+      width: calc((100vw - 200px) * 0.65);
+      // border: 1px solid black;
+      // width: calc((100vw - 200px) * 0.6);
+      padding: 0 29px;
+
+      // .wrapper::-webkit-scrollbar {
+      // display: none;
+      // }
+      .wrapper {
+        overflow-y: scroll;
+        max-height: calc(100vh - 96px - 39px - 44px - 26px);
+
+        .el-table {
+          min-height: calc(100vh - 96px - 39px - 44px - 26px);
+
+          // border: 1px solid red;
+          .el-table__header {
+            tr {
+              th {
+                padding: 0;
+                background: #FAFAFA;
+
+                .cell {
+                  // border: 1px solid red;
+                  height: 58px;
+                  line-height: 58px;
+                  text-align: center;
+                  font-size: 20px;
+                  font-family: PingFang SC;
+                  font-weight: 400;
+                  color: black;
+                }
+              }
+            }
+          }
+
+          .el-table__body {
+            tr {
+              td {
+                padding: 0;
+                height: 40px;
+
+                // margin: 0;
+                .cell {
+                  text-align: center;
+
+                  .el-table__indent {
+                  }
+
+                  .el-table__expand-icon {
+                  }
+
+                  label {
+                    img {
+                      width: 27px;
+                    }
+                  }
+                }
+              }
+
+              td:nth-child(1) {
+                background: #fff;
+                border: none;
+                border-right: 7px solid #B5B5B5;
+
+                .cell {
+                  font-size: 20px;
+                  font-family: PingFang SC;
+                  font-weight: 400;
+                  color: #000000;
+                  display: flex;
+                }
+              }
+            }
+
+            tr.el-table__row--level-0 {
+              td:nth-child(1) {
+                .cell {
+                  padding-left: 50px;
+
+                  .el-table__expand-icon {
+                  }
+                }
+              }
+            }
+
+            tr.el-table__row--level-1 {
+              td:nth-child(1) {
+                .cell {
+                  padding-left: 74px;
+                  font-size: 20px;
+
+                  .el-table__indent {
+                  }
+
+                  .el-table__expand-icon {
+                  }
+                }
+              }
+            }
+
+            tr.el-table__row--level-2 {
+              td:nth-child(1) {
+                .cell {
+                  padding-left: 96px;
+
+                  .el-table__indent {
+                  }
+
+                  .el-table__expand-icon {
+                  }
+                }
+              }
+            }
+
+            tr.el-table__row--level-3 {
+              td:nth-child(1) {
+                .cell {
+                  padding-left: 119px;
+                  font-size: 16px;
+
+                  .el-table__indent {
+                  }
+
+                  .el-table__expand-icon {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 弹出框样式
+.zyhRoleManagementMainPage {
+  .el-dialog {
+    margin: 0 auto;
+    padding: 50px;
+
+    .el-dialog__header {
+    }
+
+    .el-dialog__body {
+      padding: 10px;
+
+      .el-form {
+        &-item {
+          margin: 10px;
+
+          &__label {
+            text-align: center;
+          }
+
+          &__content {
+            input {
+              text-indent: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .el-dialog__footer {
+      button {
+        padding: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,248 @@
+@import '../../../env'
+
+$menu-horizontal-padding = 20px
+$menu-vertical-padding = 20px
+$menu-icon-title-gap = 10px
+$menu-title-arrow-gap = 15px
+
+$menu-icon-size = 14px
+$menu-arrow-icon-size = 16px
+$menu-arrow-icon-top = 16px
+
+$menu-dark-bg = #363e4f
+$menu-light-bg = #fafafa
+
+$menu-item-dark-bg = #363e4f
+$menu-item-light-bg = #f0faff
+
+$menu-group-title-height = 34px
+$menu-horizontal-item-height = 64px
+$menu-vertical-item-height = 48px
+
+$menu-collapsed-width = 80px
+
+$menu-theme-hash = {
+  light: {
+
+    bg-color: $layout-light-bg-color,
+
+    item-color: $layout-dark-bg-color,
+    item-hover-color: $brand-primary,
+    item-disabled-color: $brand-disabled,
+
+    group-title-color: $brand-muted,
+
+    horizontal-item-active-color: $brand-primary,
+
+    vertical-item-active-color: $brand-primary,
+    vertical-item-active-bg-color: $menu-item-light-bg,
+
+    inline-bg-color: $menu-light-bg,
+  inline-item-active-color: $brand-primary,
+    inline-item-active-bg-color: $menu-item-light-bg,
+  },
+
+dark: {
+    bg-color: $layout-dark-bg-color,
+
+    item-color: #cacaca,
+    item-bg-color: $layout-dark-bg-color,
+    item-hover-color: $layout-light-bg-color,
+    item-disabled-color: #9b9b9b,
+
+    group-title-color: rgba(255, 255, 255, 0.36),
+
+    horizontal-item-active-color: $layout-light-bg-color,
+
+    vertical-item-active-color: $brand-primary,
+    vertical-item-active-bg-color: $menu-item-dark-bg,
+
+    inline-bg-color: $menu-dark-bg,
+    inline-item-active-color: $layout-light-bg-color,
+    inline-item-active-bg-color: $brand-primary,
+  }
+
+}
+
+menu-theme-style(style)
+  ui-set('background-color', style['bg-color'])
+
+  {$selector-class-prefix + '-menu-item-disabled'}
+    ui-set('color', style['item-disabled-color'])
+
+  if style['item-bg-color']
+    > {$selector-class-prefix + '-menu-item'},
+    > {$selector-class-prefix + '-sub-menu'} > {$selector-class-prefix + '-sub-menu-title'},
+    > {$selector-class-prefix + '-sub-menu'} > {$selector-class-prefix + '-dropdown-trigger'} > {$selector-class-prefix + '-sub-menu-title'}
+      ui-set('background-color', style['item-bg-color'])
+
+  if style['inline-bg-color']
+    {$selector-class-prefix + '-menu-inline'}
+      ui-set('background-color', style['inline-bg-color'])
+
+  {$selector-class-prefix + '-menu-item-enabled'},
+  {$selector-class-prefix + '-sub-menu-title'}
+
+    if style['item-color']
+      ui-set('color', style['item-color'])
+
+    if style['item-hover-color']
+      &:hover
+        ui-set('color', style['item-hover-color'])
+
+  {$selector-class-prefix + '-menu-group-title'}
+    ui-set('color', style['group-title-color'])
+
+  > {$selector-class-prefix + '-menu-item-active'}
+    ui-set('color', style['item-active-color'])
+    ui-set('background-color', style['item-active-bg-color'])
+
+  &{$selector-class-prefix + '-menu-horizontal'}
+    > {$selector-class-prefix + '-menu-item-active'}
+      ui-set('color', style['horizontal-item-active-color'])
+      ui-set('background-color', style['horizontal-item-active-bg-color'])
+
+  &{$selector-class-prefix + '-menu-vertical'}
+    > {$selector-class-prefix + '-menu-item-active'}
+      ui-set('color', style['vertical-item-active-color'])
+      ui-set('background-color', style['vertical-item-active-bg-color'])
+
+  &{$selector-class-prefix + '-menu-inline'}
+    {$selector-class-prefix + '-menu-item-active'}
+      ui-set('color', style['inline-item-active-color'])
+      ui-set('background-color', style['inline-item-active-bg-color'])
+
+menu-overlay-theme-style(style)
+  ui-set('background-color', style['bg-color'])
+
+{$selector-class-prefix + '-menu'}
+  display block
+  font-size $ui-font-size
+  position relative
+  text-align left
+  box-sizing border-box
+  transition background-color .3s, width .3s, height .3s
+  user-select none
+  ui-connect(
+    hash: $menu-theme-hash,
+    each: menu-theme-style
+  )
+  // 滚动条不显示出来
+  ui-scrollbar(0)
+
+  > {$selector-class-prefix + '-dropdown'}
+    display block
+
+{$selector-class-prefix + '-sub-menu-title'}
+  font-weight bold
+
+{$selector-class-prefix + '-menu-item'},
+{$selector-class-prefix + '-sub-menu'},
+{$selector-class-prefix + '-sub-menu-title'}
+  position relative
+  transition background-color .3s, color .3s
+
+{$selector-class-prefix + '-menu-item'},
+{$selector-class-prefix + '-sub-menu-title'}
+  > a
+    color inherit
+    font-weight normal
+    text-decoration none
+
+  > {$selector-class-prefix + '-icon'}:first-child
+    font-size $menu-icon-size
+    margin-right $menu-icon-title-gap
+
+{$selector-class-prefix + '-menu-overlay'}
+  min-width 180px
+  box-shadow $brand-layer-shadow
+
+  ui-connect(
+    hash: $menu-theme-hash,
+    each: menu-overlay-theme-style
+  )
+
+{$selector-class-prefix + '-menu-item-enabled'},
+{$selector-class-prefix + '-sub-menu-title'}
+  ui-clickable()
+
+{$selector-class-prefix + '-menu-item-disabled'}
+  ui-disabled()
+
+{$selector-class-prefix + '-menu-group-title'}
+  height $menu-vertical-item-height
+  line-height $menu-vertical-item-height
+  padding 0 $menu-vertical-padding
+
+  + {$selector-class-prefix + '-menu'} > {$selector-class-prefix + '-menu-item'}
+    padding-left $menu-vertical-padding + $menu-icon-size + $menu-icon-title-gap
+
+{$selector-class-prefix + '-sub-menu-title'}
+  + {$selector-class-prefix + '-menu'} > {$selector-class-prefix + '-menu-item'}
+    padding-left $menu-vertical-padding + $menu-icon-size + $menu-icon-title-gap
+
+{$selector-class-prefix + '-sub-menu-arrow-icon'}
+  font-size $menu-arrow-icon-size
+  transition transform .3s
+
+{$selector-class-prefix + '-menu-horizontal'}
+
+  > {$selector-class-prefix + '-menu-item'},
+  > {$selector-class-prefix + '-sub-menu'}
+    display inline-block
+    vertical-align top
+
+  {$selector-class-prefix + '-menu-item'},
+  {$selector-class-prefix + '-sub-menu-title'}
+    height $menu-horizontal-item-height
+    line-height $menu-horizontal-item-height
+    padding 0 $menu-horizontal-padding
+
+  {$selector-class-prefix + '-sub-menu-arrow-icon'}
+    margin-left $menu-title-arrow-gap
+
+{$selector-class-prefix + '-menu-inline'},
+{$selector-class-prefix + '-menu-vertical'}
+
+  {$selector-class-prefix + '-menu-item'},
+  {$selector-class-prefix + '-sub-menu-title'}
+    height $menu-vertical-item-height
+    line-height $menu-vertical-item-height
+    padding 0 $menu-vertical-padding
+
+  {$selector-class-prefix + '-sub-menu-arrow-icon'}
+    position absolute
+    top $menu-arrow-icon-top
+    right $menu-vertical-padding
+    transform rotate(0deg)
+
+{$selector-class-prefix + '-menu-inline'}
+
+  {$selector-class-prefix + '-sub-menu'}
+
+    > {$selector-class-prefix + '-menu'}
+      display none
+
+    &{$selector-class-prefix + '-menu-open'}
+      > {$selector-class-prefix + '-menu'}
+        display block
+
+  &{$selector-class-prefix + '-menu-collapsed'}
+    width $menu-collapsed-width
+
+    {$selector-class-prefix + '-menu-open'}
+      > {$selector-class-prefix + '-menu'}
+        display none
+
+{$selector-class-prefix + '-menu-open'} > {$selector-class-prefix + '-sub-menu-title'} > {$selector-class-prefix + '-sub-menu-arrow-icon'},
+{$selector-class-prefix + '-dropdown-fade'} > {$selector-class-prefix + '-dropdown-trigger'} > {$selector-class-prefix + '-sub-menu-title'} > {$selector-class-prefix + '-sub-menu-arrow-icon'}
+  transform rotate(-180deg)
+
+{$selector-class-prefix + '-menu-collapsed'}
+  > {$selector-class-prefix + '-menu-item'},
+  > {$selector-class-prefix + '-sub-menu'} > {$selector-class-prefix + '-sub-menu-title'},
+  > {$selector-class-prefix + '-sub-menu'} > {$selector-class-prefix + '-dropdown'} > {$selector-class-prefix + '-dropdown-trigger'} > {$selector-class-prefix + '-sub-menu-title'}
+    text-align center
+    > {$selector-class-prefix + '-icon'}:first-child
+      margin-right 0
+      vertical-align middle

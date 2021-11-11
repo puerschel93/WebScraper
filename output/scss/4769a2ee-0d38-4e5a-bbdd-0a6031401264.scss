@@ -1,0 +1,323 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// CHOIX UNIQUE // PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/bg_moteur.jpg';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container:500;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:195;
+
+// SIZE NAVIGATION
+$height-navigation:160;
+
+$margin-top-under-nav-fixe:60;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Droid Serif",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.9em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib8";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/paris";
+
+// IMPORT MODULE ANNONCES9
+@import "../../../slagence_X_V5/sources/scss/modules/annonces9";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra4";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//------------------------------------------------------------------------------------------------------------
+//		PERSO RIBAUD17
+//------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:100%;
+	}
+}
+
+	//------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//------------------------------------------------------------------------------------------------------------
+
+.navigation {
+	background-image: none;
+	background-color: $color-primary;
+}
+
+.menu-principal {
+	text-align: right;
+	>li {
+		background:none;
+		border:none;
+		padding: 15px;
+		&:hover {
+			background:none;
+		}
+		>a {
+			&:after {
+	            display: block;
+	            content: "";
+	            width: 0%; height: 2px;
+	            background-color: $color-nav-footer;
+	            margin-top: 5px;
+	            -webkit-transition: all .7s ease;
+	            		transition: all .7s ease;
+	         }
+	         &:hover {
+	            color: $color-nav-footer;
+	            &:after {
+	            	background-color: $color-nav-footer;
+	            	width: 100%;
+	            }
+	         }
+	    }
+	}
+}
+
+.icon-v5-heart {
+	color: $color-important;
+}
+
+.btn-cdc .opacity-4 {
+	opacity: 1;
+}
+
+	//------------------------------------------------------------------------------------------------------------
+	//		FOOTER
+	//------------------------------------------------------------------------------------------------------------
+
+body > footer > div > div:nth-child(2) > div.span4 > div.h3-like {
+	text-transform: capitalize;
+}
+
+//------------------------------------------------------------------------------------------------------------
+//		IDNEX
+//------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//------------------------------------------------------------------------------------------------------------
+
+.size-picture-container {
+	margin-top: 107px;
+	@media only screen and (max-width : 767px) {
+		margin-top: 0px;
+	}
+}
+
+	//------------------------------------------------------------------------------------------------------------
+	//		MINI MOTEUR
+	//------------------------------------------------------------------------------------------------------------
+
+.moteur-avantage {
+	background-image: none;
+	background-color: rgba($color-block, 0.7);
+}
+
+#Mini_Biens, #Mini_Villes, #Mini_Bouton, #Mini_Rayon {
+	margin:0px;
+}
+
+#Mini_Biens {
+	margin-left: 35px;
+}
+
+#Mini_Bouton {
+	margin-top:-1px;
+}
+
+.form-inline, .form-horizontal {
+	margin-left: 0px;
+	select {
+		height:50px;
+		border:none;
+		border-right: solid 1px $color-secondary;
+	    border-radius: 0;
+	}
+}
+
+.saisie-suggest {
+    -moz-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    border-radius: 0px !important;
+    height: 50px !important;
+    border:none !important;
+    border-right: solid 1px $color-secondary !important;
+}
+
+.bouton-rechercher-moteur {
+	height: 50px;
+	line-height: 40px;
+	@include border-left-radius(0px);
+	border: none;
+	margin-top: 1px;
+}
+
+	//------------------------------------------------------------------------------------------------------------
+	//		MODULE PA
+	//------------------------------------------------------------------------------------------------------------
+
+.bg-module-homepage {
+	background: $color-block;
+}
+
+.module-annonces-homepage .height-190 {
+	height: 240px;
+}
+
+@media only screen and (max-width : 767px) {
+	.module-annonces-homepage {
+		background:$color-block !important;
+		color:$color-nav-footer !important;
+	}
+	.homepage-bloc-type-bien-transaction .bg-white {
+		background:$color-block !important;
+	}
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+	background:$color-important !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+	background:$color-important !important;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+	background:$color-action !important;
+}
+
+	//------------------------------------------------------------------------------------------------------------
+	//		SERVICES
+	//------------------------------------------------------------------------------------------------------------
+
+.zone-pub {
+	width: 100% !important;
+	background: $color-primary;
+	margin-top: -30px;
+	margin-left: 0px !important;
+	p {
+		color: $color-nav-footer;
+	}
+	.typo-action {
+		color: $color-nav-footer;
+	}
+	&:hover {
+		background: $color-block;
+	}
+}
+
+	//------------------------------------------------------------------------------------------------------------
+	//		ESTIMATION ------- MASQUER TYPE DE BIEN
+	//------------------------------------------------------------------------------------------------------------
+
+#etape-1 > div:nth-child(5) > div:nth-child(3), #etape-1 > div:nth-child(5) > div:nth-child(5) {
+	display:none;
+}
+
+#etape-1 > div:nth-child(5) > div:nth-child(1) {
+	margin-left: 220px;
+}
+
+//------------------------------------------------------------------------------------------------------------
+//		IMMO
+//------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------
+	//		ESTIMATION
+	//------------------------------------------------------------------------------------------------------------
+
+.main_estimation_container {
+	background: $color-block !important;
+	color: $color-font-body !important;
+	font-family: $font-body !important;
+}
+
+.main_estimation_container p {
+	color: $color-font-body !important;
+}
+
+.main_estimation_container .step0 {
+	background: $color-block !important;
+}
+
+.main_estimation_container .square-button {
+	background: $color-body !important;
+}
+
+.main_estimation_container .sidebar-estimation h3 {
+	color: $color-font-body !important;
+}

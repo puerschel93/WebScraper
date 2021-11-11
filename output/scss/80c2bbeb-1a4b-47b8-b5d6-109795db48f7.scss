@@ -1,0 +1,122 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:1125;
+
+// SIZE NAVIGATION
+$height-navigation:90;
+
+$margin-top-under-nav-fixe:0;
+
+// PLACEMENT TOP CONTENT
+$placement-top-content:80;
+
+// VARIABLE SITE TYPO
+$font-body:Arial,sans-serif;
+$font-title:Arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE AMSTERDAM
+@import "../../../slagence_X_V5/sources/scss/templates/amsterdam";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+// IMPORT MODULE PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+.menu-principal > li > a {
+	@include filter-gradient($color-secondary, $color-primary); // IE6-8
+	@include background-image(linear-gradient($color-secondary, $color-primary));
+	font-family: "inconsolata",arial,sans-serif;
+	padding: 1px 8px;
+}
+.menu-principal > li > a:hover {background:$color-primary;}
+.navigation {@include box-shadow(#fff 0 0 0 4px);}
+.nav-social-menu .socialwhite-youtube{display: none;}
+div.orbit-wrapper .orbit-picture{border: none;}
+div.orbit-wrapper, .orbit-wrapper #featured, .orbit-wrapper #featured .orbit-picture a {
+	height:215px !important;  /* exemple fourni par Jerome : ericimmobilier_35079 */
+}
+div.slider-nav span {width:30px; height:40px; top:62%;}
+div.orbit .orbit-infos {font-size: 1em;}
+div.orbit .orbit-infos span.typo-action{display: block;font-size: 1.2em;}
+.pub-neuf {background-image:url(../images/pub/picto-neuf.png);}
+
+@media only screen and (max-width : 767px) {
+        header .logo img {
+        width: 30%;
+        }
+}
+
+
+
+
+
+
+
+
+.editeur h2, .editeur h3 {color: $color-secondary; border-bottom: 1px solid $color-secondary; margin: 1em 0;}
+.editeur h4{color: $color-secondary;font-weight: bold;font-size: 1.1em;}
+.editeur ul{margin-left:4em;}
+.editeur ul li{background: url(../images/pic.gif) no-repeat; padding-left: 25px;line-height:1.5em;margin: 1em 0;}
+
+
+
+
+/*
+#Editeur .ctcSyndic { background: #2e2e2e; color: #fff; display: inline-block; margin-right: 10px; width: 190px; padding: 10px; }
+#Editeur .ctcSyndic h1 { font-size: 13px; color: #dc0100; }
+#Editeur .intro{ }
+#Editeur .intro img{float: left;margin-right: 20px;}
+#Editeur .intro p{font-weight: bold; font-size: 1.5em; text-align: justify;padding-top: 30px;}
+*/

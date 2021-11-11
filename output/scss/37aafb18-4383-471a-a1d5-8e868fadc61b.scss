@@ -1,0 +1,458 @@
+.result {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15rem 5.7rem 6rem;
+  width: 100%;
+
+  @media (min-width: $stop-scaling) {
+    padding: 150px 57px 60px;
+  }
+
+  @media (orientation: portrait) {
+    padding: 8rem 0 4rem;
+  }
+
+  @media (max-width: $tablet) and (orientation: landscape) {
+    padding: 8rem 0 3rem;
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    padding: 3rem 0;
+  }
+}
+
+.result__images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  max-width: 700px;
+  margin: auto;
+  .result__image {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-out;
+
+  }
+  .img__flamingo {
+    max-width: 22rem;
+    z-index: 5;
+    opacity: 0;
+    transform: translate(-2rem, 30rem);
+  }
+  .img__suitcase {
+    max-width: 33rem;
+    z-index: 4;
+    transform: translate(1rem, 30rem) scale(0);
+  }
+  .img__leaf--grean, .img__leaf--blue-right, .img__leaf--blue-left {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+    transition-delay: 0.2s ;
+    animation-timing-function: ease-in;
+  }
+  .img__leaf--grean {
+    max-width: 30rem;
+    z-index: 3;
+    animation-name: anim-leaf-gr-r;
+    animation-duration: 2.2s;
+    transform-origin: left bottom;
+  }
+  .img__leaf--blue-right {
+    max-width: 30rem;
+    z-index: 2;
+    animation-name: anim-leaf-r;
+    animation-duration: 2s;
+    transform-origin: left bottom;
+  }
+  .img__leaf--blue-left {
+    max-width: 30rem;
+    z-index: 1;
+    animation-name: anim-leaf-l;
+    animation-duration: 2.1s;
+    transform-origin: right center;
+  }
+  &.anim-app-img {
+    .img__suitcase {
+      transform: translate(-3rem, 9rem) scale(1);
+    }
+    .img__flamingo {
+      transform: translate(-11rem, 10rem);
+      opacity: 1;
+      animation-name: anim-flamingo;
+      animation-timing-function: linear;
+      animation-delay: 0.5s;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      transform-origin: center 70%;
+    }
+    .img__leaf--blue-left, .img__leaf--blue-right, .img__leaf--grean {
+      opacity: 1;
+    }
+  }
+
+  @media (orientation: portrait) {
+    left: -1rem;
+    right: -1rem;
+  }
+
+  @media (max-width: $mobile) {
+    &.anim-app-img {
+      .img__flamingo {
+        transform: translate(-4rem, 10rem);
+        animation-name: anim-flamingo-mb;
+      }
+    }
+  }
+
+  picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@keyframes anim-leaf-r {
+  0% {
+    transform: translate(11rem, 5rem) rotate(-20deg);
+  }
+  10% {
+    transform: translate(11rem, 5rem) rotate(15deg);
+  }
+  20% {
+    transform: translate(11rem, 5rem) rotate(-10deg);
+  }
+  30% {
+    transform: translate(11rem, 5rem) rotate(10deg);
+  }
+  40% {
+    transform: translate(11rem, 5rem) rotate(-7deg);
+  }
+  55% {
+    transform: translate(11rem, 5rem) rotate(5deg);
+  }
+  70% {
+    transform: translate(11rem, 5rem) rotate(-5deg);
+  }
+  85% {
+    transform: translate(11rem, 5rem) rotate(3deg);
+  }
+  100% {
+    transform: translate(11rem, 5rem) rotate(0deg);
+  }
+}
+@keyframes anim-leaf-l {
+  0% {
+    transform: translate(-18rem, 10rem) rotate(20deg);
+  }
+  10% {
+    transform: translate(-18rem, 10rem) rotate(-15deg);
+  }
+  20% {
+    transform: translate(-18rem, 10rem) rotate(10deg);
+  }
+  30% {
+    transform: translate(-18rem, 10rem) rotate(-7deg);
+  }
+  40% {
+    transform: translate(-18rem, 10rem) rotate(5deg);
+  }
+  55% {
+    transform: translate(-18rem, 10rem) rotate(-5deg);
+  }
+
+  70% {
+    transform: translate(-18rem, 10rem) rotate(3deg);
+  }
+  85% {
+    transform: translate(-18rem, 10rem) rotate(-3deg);
+  }
+
+  100% {
+    transform: translate(-18rem, 10rem) rotate(0deg);
+  }
+}
+@keyframes anim-leaf-gr-r {
+  0% {
+    transform: translate(11rem, 10rem) rotate(-15deg);
+  }
+  10% {
+    transform: translate(11rem, 10rem) rotate(15deg);
+  }
+  20% {
+    transform: translate(11rem, 10rem) rotate(-10deg);
+  }
+  30% {
+    transform: translate(11rem, 10rem) rotate(10deg);
+  }
+  40% {
+    transform: translate(11rem, 10rem) rotate(-7deg);
+  }
+  55% {
+    transform: translate(11rem, 10rem) rotate(7deg);
+  }
+  70% {
+    transform: translate(11rem, 10rem) rotate(-5deg);
+  }
+
+  86% {
+    transform: translate(11rem, 10rem) rotate(3deg);
+  }
+
+  100% {
+    transform: translate(11rem, 10rem) rotate(0deg);
+  }
+}
+@keyframes anim-flamingo {
+  0% {
+    transform: rotate(-3deg) translate(-11rem, 10rem);
+  }
+  100% {
+    transform: rotate(3deg) translate(-10rem, 8rem);
+
+  }
+}
+
+@keyframes anim-flamingo-mb {
+  0% {
+    transform: rotate(-3deg) translate(-4rem, 10rem);
+  }
+  100% {
+    transform: rotate(3deg) translate(-3rem, 8rem);
+
+  }
+}
+.result__title {
+  margin: 0 auto 2rem;
+  color: $c-light;
+
+  @media (min-width: $stop-scaling) {
+    margin: 0 auto 20px;
+  }
+
+  @media (orientation: portrait) {
+    margin-bottom: 1.5rem;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    stroke-width: 0.2rem;
+    stroke-linejoin: round;
+  }
+}
+
+.result__text {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: $font-alt;
+  font-weight: 400;
+  font-size: 4.8rem;
+  line-height: 0.906;
+  letter-spacing: -0.01em;
+
+  @media (min-width: $stop-scaling) {
+    margin-bottom: 20px;
+    font-size: 48px;
+  }
+
+  @media (orientation: portrait) {
+    font-size: 2.8rem;
+    line-height: 1.1;
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    font-size: 2.8rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.result__button {
+  @include btn-reset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin: auto auto 1rem;
+  min-width: 34rem;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: $c-light;
+
+  @media (min-width: $stop-scaling) {
+    margin: auto auto 10px;
+    min-width: 340px;
+    font-size: 24px;
+  }
+
+  @media (orientation: portrait) {
+    margin: auto 0 0;
+    transform: none;
+    width: 100%;
+    min-width: auto;
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: $tablet) and (orientation: landscape) {
+    transform: none;
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    margin: auto 0 0;
+    width: 100%;
+    min-width: auto;
+    font-size: 1.6rem;
+  }
+
+  span {
+    position: relative;
+    margin-left: 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    color: $c-dark;
+
+    @media (min-width: $stop-scaling) {
+      margin-left: 15px;
+      width: 40px;
+      height: 40px;
+    }
+
+    &::before {
+      @include center;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: $c-light;
+      border: 2px solid $c-light;
+      border-radius: 50%;
+      z-index: -1;
+    }
+  }
+
+  svg {
+    @include center;
+    margin-left: 0.3rem;
+    width: 2.4rem;
+    height: 1.9rem;
+
+    @media (min-width: $stop-scaling) {
+      margin-left: 3px;
+      width: 24px;
+      height: 19px;
+    }
+  }
+
+  &:hover {
+    span::before {
+      width: 112.5%;
+      height: 112.5%;
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    span::before {
+      border-color: $c-purple;
+    }
+  }
+
+  &:active,
+  &:active:focus {
+    span {
+      color: $c-light;
+    }
+
+    span::before {
+      width: 100%;
+      height: 100%;
+      background-color: $c-purple;
+      border-color: $c-purple;
+    }
+  }
+}
+
+.result__form {
+  margin-top: auto;
+}
+
+.result--trip,
+.result--prize {
+  .result__title {
+    width: 57.3rem;
+    height: 11.3rem;
+
+    @media (min-width: $stop-scaling) {
+      width: 573px;
+      height: 113px;
+    }
+
+    @media (orientation: portrait) {
+      width: 28.7rem;
+      height: 5.7rem;
+    }
+
+    @media (max-width: $tablet) and (orientation: landscape) {
+      width: 40rem;
+    }
+
+    @media (max-width: $mobile) and (orientation: landscape) {
+      margin-bottom: 0;
+      width: 35rem;
+    }
+  }
+}
+
+.result--negative {
+  .result__title {
+    margin-top: 9.5rem;
+    width: 66.5rem;
+    height: 11.3rem;
+
+    @media (min-width: $stop-scaling) {
+      margin-top: 95px;
+      width: 665px;
+      height: 113px;
+    }
+
+    @media (orientation: portrait) {
+      margin-top: 0;
+      width: 28.8rem;
+      height: 4.9rem;
+    }
+
+    @media (max-width: $tablet) and (orientation: landscape) {
+      margin-top: 0;
+      width: 50rem;
+    }
+
+    @media (max-width: $mobile) and (orientation: landscape) {
+      width: 45rem;
+    }
+  }
+}

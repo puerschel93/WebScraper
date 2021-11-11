@@ -1,0 +1,291 @@
+@use "sass:math";
+
+// 라디오
+.label-btn1 {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  margin: 0 0 1.2rem;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+
+  >* {
+    flex: 1;
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    +span {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0 1.4rem;
+      font-size: 1.5rem;
+      line-height: 1.7rem;
+      height: 4.8rem;
+      color: #6d747a;
+      transition: all 0.3s ease;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      &:after {
+        right: -0.2rem;
+        top: 50%;
+        width: 0.1rem;
+        height: 1rem;
+        margin: -0.5rem 0 0;
+        background: #ced4da;
+        z-index: -2;
+      }
+    }
+
+    &:checked {
+      +span {
+        color: #175fec;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    &:disabled {
+      +span {
+        color: #8f959c;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 0.1rem solid #ced4da;
+    background: #f8f9fa;
+    z-index: -2;
+  }
+
+  &:before,
+  >label>span {
+    border-radius: 0.8rem;
+  }
+
+  >label {
+    position: relative;
+
+    &:last-child {
+      span {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    // <-- 기본형
+    >input {
+      &:checked {
+        +span {
+          background: #fff;
+          border-color: #175fec;
+        }
+      }
+    }
+
+    >span {
+      border: 0.1rem solid transparent;
+    }
+
+    // 기본형 -->
+  }
+
+  >span {
+    &:last-of-type {
+      &:after {
+        display: none;
+      }
+
+      // <-- 슬라이드형
+      &:before {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border: 1px solid #175fec;
+        border-radius: 0.8rem;
+        z-index: -1;
+      }
+    }
+
+    &:nth-of-type(1) {
+      @for $i from 2 to 5 {
+        &:nth-last-of-type(#{$i}) {
+          @for $ii from 2 to 5 {
+            @if $ii<=$i {
+              ~input:nth-of-type(#{$ii}) {
+                left: #{100 + math.div(100, $i) * ($ii - $i - 1%)};
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 슬라이드형 -->
+  }
+
+  // <-- 슬라이드형
+  >input {
+    bottom: 0;
+    z-index: 2;
+    cursor: pointer;
+
+    +span {
+      float: left;
+    }
+
+    &:not(:checked) {
+      ~input:not(:checked)~span:last-of-type:before {
+        display: none;
+      }
+    }
+
+    &:checked {
+      ~span:last-of-type:before {
+        display: block !important;
+      }
+
+      @for $i from 1 to 4 {
+        &:nth-of-type(#{$i}) {
+          @for $ii from 1 to 4 {
+            @if $i+$ii<=4 {
+              ~span:nth-of-type(#{$i + $ii}):before {
+                margin-left: -#{$ii+'00%'};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 슬라이드형 -->
+}
+
+// 체크박스
+.label-check1 {
+  display: inline-block;
+
+  &.block {
+    display: block;
+  }
+
+  &.simple {
+    >label {
+      width: 2.8rem;
+      color: transparent;
+      overflow: hidden;
+
+      span {
+        padding: 0.4rem;
+        
+        &::selection {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  >label {
+    display: inline-block;
+    position: relative;
+    line-height: 1.8rem;
+
+    span {
+      display: inline-block;
+      position: relative;
+      padding: 0.4rem 0.4rem 0.4rem 2.8rem;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0.4rem;
+        left: 0.4rem;
+      }
+
+      &:before {
+        width: 2rem;
+        height: 2rem;
+        border: 0.1rem solid #ffe344;
+        border-radius: 0.4rem;
+      }
+    }
+
+    input[type="checkbox"]:checked {
+      +span {
+        &:before {
+          background: #ffe344;
+        }
+
+        &:after {
+          top: 0.9rem;
+          left: 0.9rem;
+          width: 1.1rem;
+          height: 0.6rem;
+          border-left: 0.2rem solid #fff;
+          border-bottom: 0.2rem solid #fff;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    input[type="radio"] {
+      +span {
+        &:before {
+          border-radius: 50%;
+        }
+      }
+
+      &:checked {
+        +span {
+          &:before {
+            background: #ffe344;
+            border-radius: 50%;
+          }
+
+          &:after {
+            top: 1rem;
+            left: 1rem;
+            background: #fff;
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+          }
+        }
+      }
+    }
+  }
+}

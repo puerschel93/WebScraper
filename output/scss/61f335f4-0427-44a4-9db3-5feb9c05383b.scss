@@ -1,0 +1,481 @@
+@import "../main/color";
+@import "../main/flex";
+@import "../main/fonts";
+@import "../main/general";
+
+body {
+    background-color: $base-color;
+}
+
+/* Carousel */
+
+.carousel {
+    display:block;
+    margin:auto;
+    width: 100%;
+}
+
+/* Coupon */
+
+.coupon {
+    width: 35%;
+    display:block;
+    margin:auto;
+    padding: 2.5rem;
+}
+
+/* New Collection */
+
+.new__container {
+    position: relative;
+    margin: 2rem 0rem;
+    background-image: url("../../assets/img/new-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    .new__info{
+        @include flex (column, center);
+        h1 {
+            position: relative;
+            letter-spacing: .5rem;
+            color: $beige;
+            @include serif(3.5rem);
+        }
+        h2 {
+            position: relative;
+            @include serif(2rem);
+            color: $beige;
+            margin-bottom: 1rem;
+            letter-spacing: .3rem;
+        }
+        button {
+            position: relative;
+            @include font(1.5rem);
+            border: 0rem;
+            border-radius: 5%;
+            background-color: $dark;
+            color: $beige;
+            padding: .5rem 4rem;
+            letter-spacing: .3rem;
+            margin-bottom: 2rem;
+        }
+    }
+    
+    .new__container::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(58, 58, 58, 0.51);}
+    
+    .new__img1 {
+        width: 70%;
+        margin: 3rem 0rem 1rem 3rem;
+        box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.15);
+    }
+    .new__img2 {
+        width: 70%;
+        margin: 9rem 0rem 1rem 2rem;
+        box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.15);
+    }
+    .new__img3 {
+        width: 70%;
+        margin: 15rem 0rem 3rem 1rem;
+        box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.15);
+    }
+
+}
+
+/* New In */
+
+.newin__secondary:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(58, 58, 58, 0.50);}
+
+.newin {
+  @include flex(row, center);
+  .newin__main {
+    @include flex(row, center);
+    img {
+      height: 38vw;
+    }
+  }
+  .newin__secondary {
+    @include flex(column,center);
+    position: relative;
+    height: 750px;
+    margin: 2rem;
+    background-image: url("../../assets/img/wallpaper-newIn.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    .newin__info {
+      position: relative;
+      h3{
+        @include serif(3.5rem);
+        letter-spacing: .5rem;
+        color: $beige;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      hr {
+        color: $beige;
+      }
+      p {
+        @include serif(2.5rem);
+        letter-spacing: .5rem;
+        color: $beige;
+        text-align: center;
+      }
+    }
+
+    .newin__img {
+      @include flex(row, space-around);
+      position: relative;
+      img {
+        width: 10vw;
+        margin: 10rem 3rem 0rem 3rem;
+        transition: 2s;
+        &:hover {
+          transform: scale(1.05,1.05);
+        }
+      }
+      }
+  }
+}
+
+
+/* Sliders */
+
+.cards__title {
+  margin: 3rem 0rem 5rem 0rem;
+  h1 {
+      @include serif(3.5rem);
+      color: $dark; 
+      text-align: center;
+  }
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+  @include flex(row, center);
+  .carousel__item {
+    display: none;
+    .cards{
+      @include flex(column, center);
+      margin: 3rem;
+      img{
+        width: 15vw;
+        margin: 1rem;
+        height: auto;
+      }
+      p {
+        @include font(1.8rem);
+        color: $secondary-color;
+        text-align: center;
+        margin: 0rem;
+      }
+      .cards__price {
+          @include font(1.2rem);  
+          margin: 0rem;
+      }
+      .carousel__button {
+        @include font(1.5rem);
+        letter-spacing: .2rem;
+        border: 0rem;
+        border-radius: 5%;
+        background-color: $secondary-color;
+        color: $base-color;
+        padding: .5rem;
+        transition: .5s;
+        margin:.5rem 0rem 2rem 0rem;
+        &:hover{
+            background-color: $beige;
+            color: $secondary-color;
+        }
+      }
+    }
+  }
+  .carousel__item--visible {
+    display: block;
+    animation: fadeVisibility 0.5s;
+    @include flex(row, center);
+  }
+
+  .carousel__actions {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    position: absolute;
+    top: 35%;
+    transform: translateY(-35%);
+    button {
+      @include font(3rem);
+      background-color: rgba(0,0,0,0);
+      color: $secondary-color;
+      border-radius: 50px;
+      border: 0;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+    }
+    #carousel__button--prev {margin-left: 20px;}
+    #carousel__button--next {margin-right: 20px;}
+  }
+}
+
+
+@keyframes fadeVisibility {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: opacity linear;
+  }
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 600px) {
+
+  .carousel {
+    width: 100%;
+    height: 200px;
+    margin-top: 1rem;
+}
+
+/* Coupon */
+.coupon {width: 80%;padding: 1.5rem .5rem .5rem .5rem;}
+
+/* New Collection */
+.new__container {
+  margin: 1rem 0rem;
+  .new__info{
+    margin-bottom: 2rem;
+      h1 {
+          letter-spacing: .8rem;
+          @include serif(2rem);
+      }
+      h2 {
+          @include serif(1.3rem);
+      }
+      button {
+          position: relative;
+          @include font(.8rem);
+          border-radius: 2%;
+          padding: .5rem 2rem;
+          letter-spacing: .3rem;
+      }
+  }
+  .new__img1 {width: 100%;margin: 3rem 0rem 1rem 0rem;}
+  .new__img2 {width: 100%;margin: 9rem 0rem 1rem 0rem;}
+  .new__img3 {width: 100%;margin: 15rem 0rem 3rem 0rem;}
+}
+
+/* New In */
+
+.newin__secondary:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(58, 58, 58, 0.50);}
+
+.newin {
+  .newin__main {
+    img {
+      height: 350px;
+    }
+  }
+  .newin__secondary {
+    height: auto;
+    margin: 2rem;
+    .newin__info {
+      margin-top: 3rem;
+      h3{@include serif(2.5rem); letter-spacing: 1.5rem;}
+      p {@include serif(1.3rem);}}
+    .newin__img {
+      @include flex(column, space-around);
+      img {
+        width: 100px;
+        margin: .5rem 0rem;
+      }
+      #newin__img--none {display:none}
+      }
+  }
+}
+
+
+/* Sliders */
+
+.cards__title {
+  margin: 1rem 0rem;
+  h1 {@include serif(2.5rem);}
+}
+.carousel {
+  margin: 0rem;
+  .carousel__item {
+    display: none;
+    .cards{
+      @include flex(column, center);
+      margin: 0rem;
+      img{
+        width: 18vw;
+        margin: .2rem;
+        height: 28vw;
+      }
+      p {display:none;}
+      .cards__price {display:none;}
+      .carousel__button {display:none;}
+    }
+  }
+  .carousel__item--visible {
+    display: block;
+    animation: fadeVisibility 0.5s;
+    @include flex(row, center);
+  }
+  .carousel__actions {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    button {@include font(2rem);}
+    #carousel__button--prev {margin-left: 5px;}
+    #carousel__button--next {margin-right: 5px;}
+  }
+}
+
+}
+
+/* TABLET */
+
+@media only screen and (min-width: 601px) and (max-width: 1100px) {
+
+  .carousel {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+/* Coupon */
+.coupon {width: 50%;padding: 1.5rem .5rem .5rem .5rem;}
+
+/* New Collection */
+.new__container {
+  margin: 1rem 0rem;
+  .new__info{
+    margin-bottom: 4rem;
+      h1 {
+          letter-spacing: 1.8rem;
+          @include serif(2.5rem);
+      }
+      h2 {
+          @include serif(2.2rem);
+      }
+      button {
+          position: relative;
+          @include font(1.5rem);
+          border-radius: 2%;
+          padding: .5rem 2rem;
+          letter-spacing: .3rem;
+      }
+  }
+  .new__img1 {width: 80%;margin: 3rem 0rem 1rem 3rem;}
+  .new__img2 {width: 80%;margin: 9rem 0rem 1rem 3rem;}
+  .new__img3 {width: 80%;margin: 15rem 0rem 3rem 3rem;}
+}
+
+/* New In */
+
+.newin__secondary:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(58, 58, 58, 0.50);}
+
+.newin {
+  .newin__main {
+    img {
+      display:none;
+    }
+  }
+  .newin__secondary {
+    margin: 2rem;
+    .newin__info {
+      margin-top: 3rem;
+      h3{@include serif(2.8rem); letter-spacing: 1.5rem;}
+      p {@include serif(2rem);}}
+    .newin__img {
+      @include flex(row, space-around);
+      img {
+        width: 150px;
+        margin: 4rem 1rem;
+      }
+      }
+      #newin__img--none {display:none}
+  }
+}
+
+
+/* Sliders */
+
+.cards__title {
+  margin: 1rem 0rem;
+  h1 {@include serif(3rem);}
+}
+.carousel {
+  margin: 0rem;
+  .carousel__item {
+    display: none;
+    .cards{
+      @include flex(column, center);
+      margin: 0rem;
+      img{
+        width: 13rem;
+        margin: .5rem;
+        height: auto;
+      }
+      p {
+        @include font(1.3rem);
+      }
+      .cards__price {
+          @include font(1.2rem);
+      }
+      .carousel__button {
+        @include font(1rem);
+        letter-spacing: .2rem;
+        border: 0rem;
+        border-radius: 5%;
+        background-color: $secondary-color;
+        color: $base-color;
+        padding: .5rem;
+        transition: .5s;
+        margin:.5rem 0rem 2rem 0rem;
+    }}
+  }
+  .carousel__item--visible {
+    display: block;
+    animation: fadeVisibility 0.5s;
+    @include flex(row, center);
+  }
+  .carousel__actions {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    button {@include font(2rem);}
+    #carousel__button--prev {margin-left: 5px;}
+    #carousel__button--next {margin-right: 5px;}
+  }
+}
+}

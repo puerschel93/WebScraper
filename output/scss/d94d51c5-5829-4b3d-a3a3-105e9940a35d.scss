@@ -1,0 +1,280 @@
+@use '../../styles/colors' as *;
+@use '../../styles/spacing' as *;
+
+@mixin visually-hidden {
+  position: fixed;
+  right: 100%;
+  bottom: 100%;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+
+  &:focus {
+    left: 0;
+    right: auto;
+    top: 0;
+    bottom: auto;
+    clip: auto;
+    clip-path: none;
+  }
+}
+
+.hero {
+  width: $component-width;
+  // The line below needs should be reviewed by another developer or designer (min height or no min height?):
+  // min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(80.02% 20.01% at 91.08% 0%, #0F2226  0%, #0A0A0A 100%);
+
+  &__header-label {
+    @include visually-hidden();
+  }
+
+  &__sparkbox-logo {
+    &--full {
+      display: none;
+    }
+  }
+
+  &__container {
+    max-width: $max-content-width;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+
+    h1,
+    p {
+      padding-bottom: 1rem;
+      font-weight: 100;
+      margin: 0;
+    }
+  }
+
+  &__art-container {
+    display: none;
+  }
+
+  &__grid {
+    display: none;
+  }
+
+  @supports (display: grid) {
+    &__art-container {
+      display: block;
+      padding-bottom: 1rem;
+    }
+
+    &__grid {  // This grid is for the hero images and svgs
+      display: grid;
+      grid-template-columns: repeat(65, 1fr);
+      grid-template-rows: repeat(11, 1fr);
+
+      img {
+        max-width: 100%;
+        margin-top: -5px;
+
+        // Images below are placed in the grid in order from top to bottom and left to right
+        &:nth-child(1) {
+          grid-area: 2 / 18 / 7 / 41;
+        }
+
+        &:nth-child(2) {
+          grid-area: 7 / 7 / 11 / 18;
+        }
+
+        &:nth-child(3) {
+          grid-area: 7 / 41 / 12 / 64;
+        }
+
+        &:nth-child(4) {
+          grid-area: 12 / 18 / 17 / 41;
+        }
+
+        &:nth-child(5) {
+          grid-area: 17 / 41 / 20 / 51;
+        }
+        // In mobile and tablet view only 3 images are shown
+        &:nth-child(n + 4) {
+          display: none;
+        }
+      }
+
+      // Triangle: Top Right
+      &--shape1 {
+        grid-area: 1 / 37 / 3 / 46;
+
+        path {
+          stroke: $c-highlight-pink;
+        }
+      }
+
+      // Circle: Top Left
+      &--shape2 {
+        grid-area: 3 / 11 / 7 / 20;
+
+        circle {
+          stroke: $c-highlight-green;
+        }
+      }
+
+      // Triangle: Middle Left
+      &--shape3 {
+        grid-area: 6 / 2 / 9 / 9;
+      }
+
+      // Circle: Middle Right
+      &--shape4 {
+        grid-area: 7 / 30 / 12 / 44;
+
+        circle {
+          stroke: $c-highlight-blue;
+          stroke-width: 0.75;
+        }
+      }
+
+      // Triangle: Bottom Left
+      &--shape5 {
+        display: none;
+        grid-area: 14 / 6 / 19 / 26;
+
+        path {
+          stroke: $c-highlight-green;
+          stroke-width: 0.5;
+        }
+      }
+
+      // Circle: Bottom Right
+      &--shape6 {
+        display: none;
+        grid-area: 13 / 39 / 15 / 44;
+
+        circle {
+          stroke: $c-highlight-blue;
+          stroke-width: 1.5;
+        }
+      }
+
+      // Triangle: Bottom Right
+      &--shape7 {
+        display: none;
+        grid-area: 16 / 49 / 19 / 56;
+      }
+    }
+  }
+
+
+  @media (min-width: 43rem) {
+    &__container {
+      padding: 2rem;
+    }
+
+    &__sparkbox-logo {
+      &--half {
+        display: none;
+      }
+
+      &--full {
+        display: block;
+        padding: 1rem;
+        margin-bottom: -10rem;
+      }
+    }
+
+    &__text {
+      order: 1;
+      width: 90%;
+      margin-top: -3.5rem;
+
+      h1 {
+        width: 60%;
+        font-size: 4rem;
+      }
+
+      p {
+        width: 80%;
+        font-size: 1.25rem;
+        line-height: 1.8;
+      }
+    }
+
+    &__art-container {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__grid {
+      width: 70%;
+    }
+  }
+
+  @media (min-width: 70.25rem) {
+    padding: 5rem;
+
+    &__sparkbox-logo {
+      &--full {
+        margin-bottom: 0;
+      }
+    }
+
+    &__header-content {
+      flex-direction: row;
+    }
+
+    &__text {
+      width: 100%;
+      order: 0;
+      padding: 1rem;
+      margin-top: 2rem;
+
+      h1 {
+        font-size: 5rem;
+        width: 100%;
+      }
+
+      p {
+        font-size: 1.2rem;
+        width: 100%;
+      }
+    }
+
+    &__art-container {
+      justify-content: flex-start;
+      margin-top: -7rem;
+    }
+
+    &__grid {
+      width: 100%;
+
+      img {
+        &:nth-child(n + 4) {
+          display: block;
+        }
+      }
+
+      &--shape5 {
+        display: block;
+      }
+
+      &--shape6 {
+        display: block;
+      }
+
+      &--shape7 {
+        display: block;
+      }
+    }
+  }
+}

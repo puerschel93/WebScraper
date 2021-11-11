@@ -1,0 +1,170 @@
+@import '/src/assets/scss/breakpoints.scss';
+@import '/src/assets/scss/variables.scss';
+
+.cart {
+    padding: $base-padding;
+    width: 80%;
+    min-height: 70vh;
+    margin: 0 auto;
+
+    @include media('<=desktop') {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    h1 {
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: $base-margin;
+
+        button {
+            padding: $base-padding 5px;
+            background-color: $gray;
+            font-size: $base-font-size;
+            color: $lightGray;
+            border: 1px solid $gray;
+            border-radius: $base-border-radius;
+            cursor: pointer;
+            transition: opacity 0.4s;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        span {
+            text-decoration: underline;
+            cursor: pointer;
+            margin: 0px $base-margin;
+        }
+    }
+    
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+
+        @include media('<=tablet') {
+            flex-direction: column;
+        }
+
+        .info {
+            flex: 3;
+
+            .cartProduct {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: $base-margin;
+                border-radius: $base-border-radius;
+                background-color: $white;
+
+                .productDetail {
+                    flex: 2;
+                    display: flex;
+
+                    img {
+                        object-fit: cover;
+                        border-radius: $base-border-radius;
+                        height: 30vh;
+                        width: 20vh;
+
+                        @include media('<=tablet') {
+                            height: 20vh;
+                        }
+                    }
+
+                    .details {
+                        padding: $base-padding;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                    }
+                }
+
+                .priceDetail {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .productAmountContainer {
+                        display: flex;
+                        align-items: center;
+
+                        .productAmount {
+                            font-size: $base-font-size;
+                            margin: $base-margin;
+                            padding: $base-padding;
+                            border: 1px solid $leDarkPink;
+                        }
+
+                        .counter {
+                            cursor: pointer;
+                            padding: $base-padding;
+                            border: 1px solid $leDarkPink;
+                        }
+                    }
+
+                    .productPrice {
+                        font-size: $font-size-xl;
+                        font-weight: 200;
+                    }
+
+                    .remove {
+                        cursor: pointer;
+                        margin: $base-margin;
+                        padding: $base-padding;
+                        border: 1px solid $leDarkPink;
+                    }
+                }
+            }
+        }
+
+        .summary {
+            flex: 1;
+            background-color: $white;
+            border-radius: $base-border-radius;
+            padding: 20px;
+            margin: 0 0 0 20px;
+            height: 35vh;
+
+            @include media('<=tablet') {
+                margin: 0;
+            }
+
+            h2 {
+                font-weight: 200;
+            }
+
+            .summaryItem {
+                margin: 30px 0px;
+                display: flex;
+                justify-content: space-between;
+                font-weight: 400;
+                font-size: $base-font-size;
+            }
+
+            button {
+                margin-top: $base-margin;
+                padding: $base-padding 5px;
+                background-color: $gray;
+                font-size: $base-font-size;
+                color: $lightGray;
+                border: 1px solid $gray;
+                border-radius: $base-border-radius;
+                cursor: pointer;
+                transition: opacity 0.4s;
+
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}

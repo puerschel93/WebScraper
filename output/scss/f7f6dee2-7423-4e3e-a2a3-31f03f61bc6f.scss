@@ -1,0 +1,415 @@
+@mixin FullLayout($backColor1, $foreColor1, $backColor2, $foreColor2, $headerColor, $shadowColor, $headerFore) {
+  $horizontal: 10px;
+  $vertical: 5px;
+  $blur: 8px;
+  $spread: 2px;
+
+  .layout-container {
+    background-color: $backColor1;
+
+    .layout-header {
+      // position: sticky;
+      z-index: 99;
+      top: 0;
+
+      .left-header {
+        padding: 0 10px !important;
+
+        height: 100%;
+        display: inline-block;
+      }
+
+      .right-header {
+        padding: 0 20px !important;
+        button,
+        h2 {
+          color: lighten($foreColor1, 20);
+        }
+      }
+    }
+
+    .layout-main {
+      display: flex;
+
+      .left-main {
+        //  box-shadow: 1px 0 5px -2px #ccc;
+        margin-right: 1px;
+        &.expanded {
+          // border: 1px solid red;
+          flex-basis: 13%;
+          max-width: 13%;
+          min-width: 250px;
+        }
+
+        &.mini {
+          //border: 1px solid blue;
+          flex-basis: 5%;
+          max-width: 5%;
+          min-width: 70px;
+        }
+
+        .logodiv {
+          img {
+            margin-top: 5px !important;
+            width: 100%;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .left-outer {
+          box-shadow: 15px 0px 15px -10px rgba(0, 0, 0, 0.75);
+          border-radius: 0;
+        }
+      }
+
+      .right-main {
+        &.expanded {
+          //  border: 1px solid red;
+          flex-basis: 87%;
+          max-width: 87%;
+        }
+
+        &.mini {
+          // border: 1px solid blue;
+          flex-basis: 95%;
+          max-width: 95%;
+        }
+
+        .right-outer {
+          box-shadow: 15px 0px 15px -10px red;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+@mixin PageHeaderMixin($backColor, $foreColor, $contrastColor) {
+  padding: 2px 12px !important;
+
+  @include Shadow-Bottom();
+  // @include linear-gradient(
+  //   to bottom,
+  //   $backColor,
+  //   lighten($backColor, 5),
+  //   $backColor
+  // );
+
+  .header-text {
+    @include OurFont($color: #403f3f, $fontsize: 20px, $fontweight: 500, $fontstyle: normal, $letterspacing: 0.01em);
+
+    i {
+      margin-top: -5px;
+      cursor: pointer;
+      color: $foreColor;
+
+      &:hover {
+        background-color: $foreColor;
+        color: $backColor;
+      }
+    }
+  }
+}
+
+@mixin ToolbarMixin($backColor, $foreColor, $rad) {
+  padding: 4px 6px;
+
+  span {
+    display: inline-block;
+
+    background-color: $backColor;
+    // border: 1px solid darken( $backColor,10);
+
+    @include Shadow-All();
+    // @include linear-gradient(to bottom, #ccc, #fff, #ccc);
+    border-radius: 5px;
+    height: 30px;
+    width: 35px;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+
+      // border: 1px solid $backColor;
+
+      i {
+        color: darken($backColor, 20) !important;
+      }
+    }
+  }
+
+  i {
+    color: $foreColor !important;
+    font-size: 1.1rem;
+  }
+}
+
+@mixin FancyContainerMixin($backColor, $foreColor, $rad) {
+  margin: 0;
+  padding: 10px 10px;
+  overflow: hidden;
+  position: relative;
+  background-color: $backColor;
+  color: $foreColor;
+  .fancy-container-inner {
+    position: relative;
+    min-height: 780px;
+    padding: 10px;
+  }
+
+  .SearchContainer {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    top: -45px;
+
+    .textbox-container {
+      input {
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+@mixin DialogContainerMixin($backColor, $foreColor, $top: 10px, $headerColor) {
+  .dialog-outer {
+    padding: 0;
+    background-color: $backColor;
+  }
+
+  .dialog-text {
+    background-color: $backColor;
+    padding: 10px 5px;
+    max-height: 800px;
+
+    i {
+      color: $foreColor !important;
+      font-size: 1.8rem;
+    }
+
+    // input {
+    //   color: red !important;
+    // }
+  }
+
+  .dialog-title {
+    z-index: 999;
+    @include Shadow-Bottom();
+    height: 45px;
+    background-color: $headerColor;
+    font-weight: bold;
+    position: relative;
+
+    span.appsicon {
+      i {
+        color: $foreColor !important;
+      }
+      position: absolute;
+      left: 20px;
+      top: $top;
+    }
+
+    span.dialog-name {
+      color: $foreColor;
+      position: absolute;
+      left: 60px;
+      top: $top;
+    }
+
+    span.dialog-identifier {
+      color: $headerColor;
+      position: absolute;
+      right: 10%;
+      top: $top;
+
+      &:hover {
+        color: $foreColor;
+        cursor: pointer;
+      }
+    }
+
+    .closeicon {
+      button {
+        margin-top: 3px;
+        margin-right: 5px;
+      }
+      i {
+        color: $foreColor;
+      }
+    }
+  }
+
+  /********************************************************************************** */
+  label,
+  h3 {
+    color: $foreColor; /* top hints etc */
+  }
+
+  .dialog-text i {
+    color: $foreColor;
+    font-size: 1.2rem;
+  }
+}
+
+@mixin DataCardMixin($backColor, $foreColor, $rad, $shadowColor) {
+  .outerclass {
+    padding: 0 !important;
+
+    .card-default-title {
+      // padding: 0 10px !important;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #403f3f;
+      background-color: #fff;
+      border-bottom: 1px solid #efeded;
+      box-shadow: none !important;
+      // border-bottom: 1px solid lighten( $color4,40);
+
+      @include Shadow-Bottom();
+      margin: 5px 0;
+
+      // incase u want a close button on the right side
+      .v-btn {
+        color: $color1 !important;
+        background-color: $color1 !important; // remains depressed with title color
+        height: 25px;
+        width: 25px;
+        min-width: auto;
+        border-radius: 8px;
+      }
+
+      span { 
+        color: darken($color4, 20);
+        display: inline-block;
+      }
+      i {
+        font-size: 16px;
+      }
+    }
+
+    .card-default-contents {
+      background-color: $color2;
+      border-radius: 0;
+      padding: 0 !important;
+      p {
+        color: $foreColor;
+        padding: 10px;
+      }
+    }
+
+    .card-default-footer {
+      background-color: lighten($backColor, 4);
+      padding: 3px !important;
+    }
+  }
+}
+
+@mixin AutcCardMixin($backColor, $foreColor) {
+  // padding: 1px; // more padding makes a border
+  position: absolute;
+  top: 32px;
+  width: 100%;
+
+  .TheList {
+    padding: 0 !important;
+
+    .TheListItem {
+      margin: 0 !important;
+      padding: 0;
+      min-height: 28px;
+
+      .item-row {
+        margin: 0;
+        background-color: $backColor;
+        border-bottom: 1px solid darken($backColor, 10);
+
+        &:hover {
+          background-color: lighten($backColor, 10);
+        }
+      }
+
+      .TheColHead {
+        background-color: darken($backColor, 10);
+        padding: 6px !important;
+        font-size: 0.9rem; /* important */
+        color: $foreColor;
+        font-weight: bold;
+      }
+
+      .TheCol {
+        color: $foreColor;
+        font-size: 0.9rem; /* important */
+        padding: 4px 10px !important;
+      }
+    }
+  }
+
+  .theme--light.v-list {
+    background-color: $backColor;
+    padding: 0 !important;
+  }
+
+  .count {
+    color: $foreColor;
+  }
+}
+
+@mixin RightsEditorMixin($backColor, $foreColor) {
+  // @include NiceBox2();
+  background-color: darken($backColor, 2);
+
+  .editable_singlepage-inner {
+    min-height: 200px;
+    background-color: lighten($backColor, 2);
+  }
+
+  border-radius: 5px;
+  padding: 5px;
+
+  .page-title {
+    background-color: darken($backColor, 10);
+    font-weight: bold;
+    color: $foreColor;
+    padding: 5px;
+    border-bottom: 1px solid $foreColor;
+  }
+
+  .single-operation {
+    padding: 0 10px;
+  }
+}
+
+@mixin ProfileSection($backColor, $foreColor, $borderColor) {
+  padding: 5px 20px;
+
+  /* profile picture is already defined in app.scss*/
+
+  .username {
+    color: $foreColor;
+    display: block;
+    border-bottom: 1px solid darken($backColor, 10);
+    padding: 5px;
+    font-weight: bold;
+  }
+}
+@mixin question-container($backColor) {
+  @include NiceBox2();
+  border-radius: 5px;
+  padding: 9px 3px;
+  // min-height: 200px;
+
+  .v-input--selection-controls {
+    padding: 10px !important;
+  }
+  .v-input--selection-controls__input {
+    height: 40px;
+  }
+
+  // border: 1px solid lighten($backColor, 10);
+  &:hover {
+    background-color: lighten($backColor, 10);
+    cursor: pointer;
+  }
+}

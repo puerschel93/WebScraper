@@ -1,0 +1,367 @@
+/*--Forms--*/
+
+::placeholder {
+    color: var(--grey-dark-four);
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: var(--grey-dark-four);
+}
+
+::-ms-input-placeholder {
+    color: var(--grey-dark-four);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="file"],
+textarea,
+select {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: none;
+    background: transparent;
+    font-family: var(--secondary-font);
+    font-size: 1.6rem;
+    line-height: 3rem;
+    color: var(--grey-dark-one);
+    padding: .9rem 2rem;
+    border-radius: 0;
+    border: .2rem solid var(--grey-light-one);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: all .5s;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
+label {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    color: var(--grey-dark-four);
+    padding: 0 1rem;
+    margin-bottom: 0;
+    transition: all .2s;
+
+    span {
+        color: var(--primary-color);
+        margin-left: 1.5rem;
+    }
+}
+
+select {
+    cursor: pointer;
+    color: var(--typo-body);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 3rem;
+
+    &.focused {
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="number"],
+        input[type="file"],
+        textarea,
+        select {
+            +label {
+                top: 2.7rem;
+                left: 1rem;
+                background: #fff;
+                padding: 0 1rem;
+            }
+        }
+
+        select {
+            color: var(--typo-dark);
+        }
+    }
+}
+
+.select-wrapper {
+    position: relative;
+
+    &::before {
+        content: "\f0d7";
+        position: absolute;
+        right: 15px;
+        bottom: 0;
+        font-family: "Font Awesome 5 Pro";
+        font-size: 1.6rem;
+        line-height: 4rem;
+        font-weight: 600;
+        z-index: 9;
+        transition: all .5s;
+    }
+
+    &.focused {
+        &::before {
+            color: var(--primary-color);
+        }
+    }
+}
+
+// Custom Checkbox and radio button 
+input[type="checkbox"],
+input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+
+    +label {
+        position: relative;
+        font-family: var(--secondary-font);
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        font-weight: var(--s-regular);
+        color: var(--grey-dark-three);
+        padding-left: 1.5rem;
+        cursor: pointer;
+
+        &::before {
+            content: " ";
+            position: absolute;
+            top: .5rem;
+            left: 0;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-color: #fff;
+            border: .2rem solid var(--grey-light-one);
+            transition: all .3s;
+        }
+
+        &::after {
+            content: " ";
+            position: absolute;
+            top: .8rem;
+            left: 3rem;
+            width: .8rem;
+            height: .5rem;
+            background-color: transparent;
+            border-bottom: .2rem solid #fff;
+            border-left: .2rem solid #fff;
+            transform: rotate(-45deg);
+            opacity: 0;
+            border-radius: 0;
+            transition: all .3s;
+        }
+    }
+
+    &:checked {
+        +label {
+            &::before {
+                background-color: var(--primary-color);
+                border-color: var(--primary-color);
+            }
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+input[type="checkbox"] {
+    +label {
+        &::before {
+            width: 1.2rem;
+            height: 1.2rem;
+            top: .5rem;
+        }
+
+        &::after {
+            top: .7rem;
+            left: .2rem;
+        }
+    }
+
+    &:checked {
+        +label {
+
+            &::before {
+                border-color: var(--primary-color);
+            }
+        }
+    }
+}
+
+input[type="radio"] {
+    width: auto;
+
+    +label {
+        &::before {
+            border-radius: 50%;
+        }
+
+        &::after {
+            width: .6rem;
+            height: .6rem;
+            left: .5rem;
+            top: 1.2rem;
+            background: #fff;
+            border-radius: 50%;
+        }
+    }
+}
+
+.input-border {
+    width: calc(100% + .4rem);
+    transform: scale3d(1, -1, 1);
+    transition: stroke-dashoffset 0.3s;
+    pointer-events: none;
+    stroke: var(--grey-light-one);
+    stroke-width: 5px;
+    stroke-dasharray: 962;
+    stroke-dashoffset: 558;
+    position: absolute;
+    top: 0;
+    left: -.2rem;
+    fill: none;
+    overflow: hidden;
+
+    @media @OnMobile {
+        width: 100%;
+        left: 0;
+    }
+}
+
+.input-txt {
+    position: absolute;
+    left: 0;
+    bottom: 1rem;
+    display: block;
+    font-family: var(--secondary-font);
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    color: var(--grey-dark-three);
+    font-weight: var(--s-regular);
+    padding: 0 2rem;
+    transform-origin: 0% 50%;
+    pointer-events: none;
+    transition: transform 0.3s;
+
+    span {
+        font-size: 1.4rem;
+        color: var(--primary-color);
+        margin-left: .7rem;
+    }
+}
+
+.form-group {
+    label {
+        position: absolute;
+        top: 1.4rem;
+        left: 1.2rem;
+        pointer-events: none;
+        z-index: 9;
+        background: #fff;
+    }
+
+    &.focused {
+
+        input,
+        textarea {
+            border-color: var(--primary-color);
+        }
+
+        label {
+            top: -1rem;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+
+        }
+    }
+
+}
+
+.bg-grey-light-three {
+    .form-group {
+        label {
+            background: var(--grey-light-three);
+        }
+    }
+}
+
+.axil-contact-form-block {
+    .form-group {
+        label {
+            background: var(--color-white);
+        }
+    }
+}
+
+.subscription-form {
+    .input-border {
+        width: 100%;
+        left: 0;
+    }
+}
+
+.comment-form {
+    .input-border {
+        width: 100%;
+        left: 0;
+    }
+
+    .comment-message-field {
+        .input-border {
+            width: calc(100% + 2px);
+            stroke-width: 0.3rem;
+            left: -1px;
+        }
+    }
+}
+
+.error-msg,
+.success-msg {
+    p {
+        font-size: 1.3rem;
+        line-height: 1;
+        color: var(--color-danger);
+        font-weight: var(--p-semi-bold);
+        margin: 1rem 0 0;
+    }
+}
+
+.success-msg {
+    p {
+        color: var(--color-success);
+    }
+}
+
+.form-group {
+    &.has-error {
+
+        input,
+        textarea {
+            border-color: var(--color-danger);
+        }
+    }
+}
+
+.form-group-small {
+    input {
+        line-height: 2rem;
+    }
+
+    label {
+        top: .9rem;
+    }
+}

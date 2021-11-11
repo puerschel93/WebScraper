@@ -1,0 +1,317 @@
+@import "color";
+
+// LARGEUR DU SITE
+$sitewrap: 1170px;
+
+// REQUIS MAIS NE SERT PAS
+$bg-uni: yes;
+$picture-bg: yes;
+$picture-bg-url: "";
+$picture-bg-repeat-horizontal: no;
+
+// VAR SITE TYPO
+$font-body: "Source Sans Pro",verdana,sans-serif;
+$font-title: "Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text: 1.6em;
+$font-size-title: 1.8em;
+
+// TYPE TITLE (NONE, UPPERCASE...)
+$type-title: uppercase;
+
+// WEIGHT (BOLD, NORMAL, 700, 300...)
+$weight-title: normal;
+
+// ARRONDI (YES / NO)
+$arrondi: yes;
+
+// IMPORT ALL
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT TEMPLATE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/templates/mobilefirstv2";
+
+// IMPORT RECHERCHE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/recherche/mobilefirst";
+
+// IMPORT MOTEUR MOBILEFIRST (SUR RECHERCHE)
+// SEULEMENT SI RECHERCHE AUTRE QUE MF
+//@import "../../../slagence_X_V5/sources/scss/moteur/mobilefirst";
+
+// IMPORT DETAIL MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/detail/mobilefirst";
+
+// IMPORT AGENCE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/agence/mobilefirst";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/mobilefirst";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT PUB
+@import "../../../slagence_X_V5/sources/scss/pubs/mobilefirst";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra23";
+
+// IMPORT MODULE ANNONCES
+@import "../../../slagence_X_V5/sources/scss/modules/annonces18";
+
+.main {
+    text-align: justify;
+}
+
+.logo {
+    img {
+        max-height: 100px;
+    }
+}
+
+.menu {
+     a {
+        padding: 1rem;
+    }
+}
+.menu-accesclient {
+    a {
+        color: $color-tertiary;
+    }
+}
+[class*="social-link-"]{
+    background-color: $color-body;
+    color: $color-font-body;
+}
+
+
+#banner_cookie {
+    background-color: $color-important;
+    #submit_ok {
+        background-color: $color-tertiary !important;
+    }
+}
+
+.accordion-toggle {
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-tertiary;
+    }
+}
+
+.accordion-group {
+    background-color: darken($color-secondary, 15);
+}
+
+
+//PAGE ACCES CLIENT
+
+.acces-copro  {
+    border-right: 1px solid lighten($color-action, 20);
+}
+
+.espace-client-contact {
+    background-image: url('/z/webagency/A_Nexi/04gimco/images/bg-contact.jpg');
+    background-position: center;
+    background-size: cover;
+    .client-contact-container {
+        max-width: 630px;
+        margin: 5rem auto;
+    }
+    .client-contact-container-box {
+        background: white;
+        opacity: 0.8;
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width: 648px) {
+    .acces-copro  {
+        border-right: none;
+    }
+    .espace-client-contact {
+        .client-contact-container {
+            margin: 5rem 2rem;
+        }
+    }
+}
+
+
+
+
+
+//PAGE TRANSACTION
+
+.statistique .picto {
+    background-color: $color-action;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+}
+
+.statistique-item {
+    font-size: 1.6rem;
+}
+
+.stat-nbr {
+    font-size: 3.5rem;
+}
+
+//PAGE RECRUTEMENT
+.recrutement {
+    hr {
+        border: solid $color-tertiary;
+        border-width: 1px 0 0;
+    }
+    h2 {
+        color: $color-tertiary;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .statistique {
+        .row-fluid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        div.statistique-item {
+            width: 49%;
+            /* display: flex;
+            margin-bottom: 20px;
+            .span8 {
+                width: 150px;
+                margin-left: 2rem;
+            } */
+        }
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .statistique {
+        .row-fluid {
+            display: block;
+        }
+        div.statistique-item {
+            margin: auto;
+            margin-left: auto !important;
+        }
+    }
+}
+
+
+
+
+//SIDENAV
+.sidenav {
+    position: fixed;
+    z-index: 50;
+    top: 20rem;
+    right: 0;
+    background-color: $color-important;
+    font-size: 1rem;
+    [class^="mf-icon-"],
+    [class*=" mf-icon-"] {
+        display: block;
+        font-size: 1.8rem;
+    }
+}
+
+.sidenav-item {
+    display: block;
+    padding: 1rem;
+    color: $color-body;
+    text-align: center;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-tertiary;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sidenav {
+        display: none;
+    }
+}
+
+// FOOTER
+
+.footer-main {
+    background-color: $color-important;
+    color: $color-body;
+    a {
+        color: $color-body;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-pub;
+        }
+    }
+}
+.footer-ttl {
+    color: $color-action;
+}
+
+// CUSTOM MINIMOTEUR
+.topmodule {
+    position: relative;
+    .mini-moteur {
+        position: absolute;
+        background-color: rgba($color-body,.7);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+    }
+    .moteurmf-body {
+        background-color: transparent;
+    }
+    .moteurmf-more + .row-fluid {
+        .span2 {
+            display: none;
+        }
+        .span10 {
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
+
+
+// IFRAME RESPONSIVE
+
+.embed-container {
+    position: relative;
+    max-width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// MENTIONS LÉGALES
+
+.mention-transac,
+.mention-gestion {
+    display: none;
+}

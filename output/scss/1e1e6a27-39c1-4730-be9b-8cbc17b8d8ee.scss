@@ -1,0 +1,195 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:640;
+
+// VARIABLE SITE TYPO
+$font-body:"proxima-nova",verdana,sans-serif;
+$font-title:"franklin-gothic-ext-comp-urw",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:2.4em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:115;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+
+// PERSO ACI29
+	// MENU & NAV
+.ligne-social-langue {
+	background:$color-primary;
+}
+.nav-social-menu {
+	display:none;
+}
+
+	// SOCIAL FIX
+.bloc-nav-left-fix {
+	background:$color-primary;
+}
+
+.fix-facebook, .fix-twitter, .fix-gplus, .fix-youtube, .fix-contact, .fix-panier {
+	@include border-radius(100%);
+	margin-top: 5px;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.fix-facebook {	background:$color-fb; }
+.fix-twitter { background:$color-tw; }
+.fix-gplus { background:$color-gg; }
+.fix-youtube { background-color: $color-blog; }
+.fix-contact { background-color: $color-contact; }
+.fix-panier { background-color: $color-panier; }
+
+.logo {
+	@include single-box-shadow;
+	margin-top: -20px;
+}
+.navigation {	
+	border-bottom:solid 1px $color-action;
+}
+.menu-principal {
+	line-height:60px;
+	font-size:1.84em;
+	>li>a{
+		padding:10px 22px;
+		&:hover {
+			background:$color-action;
+			color:$color-primary;
+		}
+	}
+}
+	// H1
+.h1-index {
+	position:relative;
+}
+
+.h1-placement-index {
+	margin-top: -95px;
+}
+
+// PUB FULL
+	// PASSAGE DES CONTAINER EN 100%
+.bg-pub-bottom .container {
+	width:100%;
+}
+	// FIXING WORDPRESS
+.pub-wordpress-helsinki {
+	background:$color-primary;
+	height:500px;
+	padding-top: 70px;
+	>.container {
+		width:960px;
+	}
+}
+	// SEPARATION SOCIAL - ESTI
+.pub-estimation-helsinki {
+	border-top:solid 20px $color-primary;
+}
+	// FIXING SOCIAL
+.pub-social-helsinki {
+	height:500px;
+	.pub-full-social>p {
+		color:$color-action;
+	}
+	.titre-pub {
+		color:$color-action;
+	}
+}
+
+// LISTING ANNONCES
+	// COULEUR TYPO
+.recherche-annonces .typo-action {
+	color:$color-nav-footer;
+}
+.recherche-annonces .prix-annonce {
+	color:$color-nav-footer;
+}
+
+// DETAIL ANNONCE
+	// COLOR
+.zone-ligne h1 {
+	color:$color-action;
+}
+
+.recherche-annonces-prix .bloc-detail-prix {
+	color:$color-font-body;
+}
+
+	// BG BTN
+.detail-annonce .btn-small {
+	background:$color-primary;
+	border-color:$color-primary-dark-5;
+}
+
+#slider .vertical-pano { background-color: $color-body; }
+
+.bloc-detail-reference {
+    background-color: $color-action;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.quartier-annonce {display:none;}

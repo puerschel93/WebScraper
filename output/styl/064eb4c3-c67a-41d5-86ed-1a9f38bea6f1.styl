@@ -1,0 +1,302 @@
+.action
+  display block
+  font-size 0
+
+  &__group
+    display flex
+    margin-bottom 10px
+    height 36px
+    font-size 0
+    line-height 36px
+
+    +above(480px)
+      font-size 1rem
+
+  &__group-item
+    width 50%
+    height 100%
+    padding 0 1px
+    text-align center
+
+    &:first-child
+      padding-left 0
+
+    &:last-child
+      padding-right 0
+
+
+  &__item
+    position relative
+    margin 0 20px 10px
+    padding 0 15px
+    display block
+    height 36px
+    font-size 1rem
+    line-height 36px
+    text-decoration none
+    color $colorText
+    background-color #fff
+    border 1px dashed $colorDecorative
+
+    ^[0]_plain &
+      margin 0
+      padding 0
+      border none
+
+    ^[0]__group-item &
+      font-size inherit
+
+    +above(768px)
+      margin 0 10px
+      padding 0 7px
+      display inline-block
+
+    +above(980px)
+      margin-bottom 10px
+      padding 0 20px
+      font-weight bold
+
+    .page:not(.page_touch) &:hover
+      border-color $colorMain
+
+    .card__action &
+      +above(768px)
+        margin 0 10px
+        padding 0
+        border none
+
+      +above(1170px)
+        margin 0 8px
+
+    &:last-child
+      .card__action &
+        +above(768px)
+          margin-right 0
+
+    &_simple,
+    .card__meta-action &
+      padding-right 0
+      padding-left 0
+      background-color transparent
+      border none
+      white-space nowrap
+
+      +above(768px)
+        margin-bottom 0
+        margin-left 0
+
+    ^[0]_only-icon &
+      position relative
+      margin-right 0
+      margin-left 0
+
+      +above(768px)
+        margin-right 5px
+        margin-left 5px
+
+      +above(980px)
+        margin 0 auto 5px
+        padding 0
+        display block
+        size 30px
+        font-size 11px
+        font-weight normal
+        line-height @height
+        text-align center
+        background-color transparent
+        border none
+
+        opacity 0
+        transition opacity .3s
+
+      .card-list__item:hover &,
+      .card-list__item &_active
+      ^[0]_is-visible&
+        opacity 1
+
+      .page_touch &
+        +above(980px)
+          opacity 1
+
+      &:last-child
+        margin-bottom 0
+
+  &__item-text
+    line-height 1.2
+
+    ^[0]_only-icon &
+      +above(768px)
+        position absolute
+        z-index 1
+        top -2px
+        right 100%
+        margin-right 5px
+        padding 9px 18px 8px
+        white-space nowrap
+        pointer-events none
+        color darken($colorDecorative, 40)
+        background-color #fff
+        border 1px solid $colorDecorative
+        box-shadow 0 2px 8px rgba($colorDecorative, .4)
+
+        opacity 0
+        transform translate3D(-10px, 0, 0)
+        transition opacity .3s, transform .3s
+
+      &:before
+        +above(768px)
+          position absolute
+          z-index -1
+          top 50%
+          right -5px
+          margin-top -3px
+          size 7px
+          content ''
+          background-color #fff
+          border-top 1px solid $colorDecorative
+          border-right 1px solid $colorDecorative
+          transform rotate(45deg)
+
+    .page:not(.page_touch) ^[0]_only-icon ^[0]__item:hover &
+      +above(768px)
+        opacity 1
+        transform translate3D(0, 0, 0)
+
+  &__icon
+    position relative
+    top -2px
+    margin-right 6px
+    display inline-block
+    size 20px
+    vertical-align middle
+
+    ^[0]_only-icon &
+      margin-right 5px
+
+      +above(768px)
+        margin-right 0
+
+  &__icon-img
+    display inline-block
+    vertical-align top
+    size 20px
+
+    ^[0]_only-icon &
+      size 20px
+      fill $colorText
+      transition fill .3s
+
+      +above(768px)
+        margin-right 0
+
+    .page:not(.page_touch) ^[0]__item:hover &,
+    ^[0]__item_active &
+    // ^[0]_only-icon ^[0]__item:hover & .likeBorder
+      fill $colorMain
+
+  &__icon-img_like_fill
+    position absolute
+    top 0
+    left 0
+    size 20px
+
+    opacity 0
+    transition fill .3s, opacity .3s
+
+    ^[0]_only-icon &
+      top 0
+      left 50%
+      margin-left -10px
+
+    .page:not(.page_touch) ^[0]__item:hover &,
+    ^[0]__item_active &
+      fill $colorMain
+      opacity 1
+
+  &__phone
+
+    &:hover
+      border-style solid
+      border-color $colorMain
+
+    &_showed
+      border-color $colorSecondary
+
+  &__phone-button
+    position relative
+    padding 0 15px
+    display block
+    width 100%
+    height 36px
+    line-height 36px
+    color inherit
+    background-color #fff
+    border 1px dashed $colorDecorative
+
+    +above(768px)
+      padding-left 32px
+
+    ^[0]__phone_showed &
+      display none
+
+  &__phone-inner
+    visibility hidden
+    overflow hidden
+    height 0
+    max-height 0
+    transition ease max-height .3s, visibility .3s
+
+    ^[0]__phone_showed &
+      visibility visible
+      height auto
+      max-height 200px
+
+  &__phone-link
+    position relative
+    padding 9px 12px 9px 32px
+    display block
+    text-decoration none
+    color inherit
+    background-color #fff
+
+
+  &__phone-icon
+    position relative
+    top -2px
+    margin-right 6px
+    display inline-block
+    size 20px
+    vertical-align middle
+
+    ^[0]_only-icon &
+      margin-right 5px
+
+      +above(768px)
+        margin-right 0
+
+    ^[0]__phone:hover &
+      fill $colorMain
+
+  &__phone-number
+    display inline-block
+    font-size 16px
+    font-weight bold
+    color $colorSecondary
+
+    & + ^[0]__phone-remark
+      margin-top 12px
+
+  &__phone-remark
+    margin-top 9px
+    display block
+    font-size 11px
+
+  &__mobile-hidden
+    display none
+
+    +above(768px)
+      display inline-block
+
+  &__desktop-hidden
+    +above(768px)
+      display none

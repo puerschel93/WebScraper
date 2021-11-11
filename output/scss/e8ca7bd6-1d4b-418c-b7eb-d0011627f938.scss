@@ -1,0 +1,402 @@
+@import 'colors';
+
+#checkout-page {
+    .full-page-wrapper {
+        background-color: $light-gold;
+    }
+
+    #wrapper {
+        border: none;
+        margin-top: 30px;
+    }
+}
+
+.checkout-nav-bar {
+    background-color: white;
+    border-top: 10px solid  $light-gold;
+    box-shadow: 0 -1px 9px #cfd1d5; //fallback
+    box-shadow: 0 3px 7px -2px rgba(0.17, 0.17, 0.00, 0.1);
+    
+    .row {
+        padding: 10px 30px; 
+        margin-bottom: 0;    
+    }
+
+    .link-back-to-cart {
+        a {
+            color: $lighter-black;
+            font-weight: 100;
+            opacity: 1;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            
+            img {
+                height: 13px;
+                margin-right: 5px;
+                margin-top: -3px;
+                filter: $filter-lighter-black;
+            }
+
+            &:hover { 
+                border-bottom: 1px solid $gold-hover-nav-links;   
+                opacity: 0.6;              
+            }
+        }
+    }
+
+    .logo {  
+        img {
+            height: 40px;
+        }
+    }
+}
+
+// EDIT
+#checkout.container-fluid {
+    .checkout-content {
+        padding: 0;
+        text-align: left;
+
+        .progress-steps {
+            li {
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                clear: both;
+                color: $lighter-black;
+                display: block;
+                font-weight: 500;
+                margin: 20px 1%; 
+                padding: 20px;
+                width: 98%; // In order the box shadow to be displayed on left and right edge
+
+                &.current-first,
+                &.current,
+                &.completed-first,
+                &.completed {
+
+                    h1,
+                    h2 {
+                        color: $lighter-black;
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                        padding-bottom: 15px;
+                    }
+
+                    h1,
+                    .header {
+                        border-bottom: 1px solid $gold;
+                    }
+
+                    .field-required label:after {
+                        content: none;
+                    }
+
+                }
+
+
+                &.current-first,
+                &.current {
+                    h1 {
+                        margin-bottom: 30px;
+                    }
+
+                    h2,
+                    h3 {
+                        font-weight: 300;
+                        font-size: 1.1rem;
+                        margin-bottom: 20px;
+                    }
+
+                    #form-checkout-email {
+                        margin-bottom: 10px!important;
+                    }
+
+                    #billing,
+                    #shipping {
+                        border: none;
+                        margin-bottom: 0;
+                        padding-bottom: 0;
+                    }
+    
+                    .continue.button-style {
+                        font-size: 16px!important;
+                        // font-weight: 400!important;
+                        margin-bottom: 30px!important;
+                    }
+
+                }
+
+                &.completed-first,
+                &.completed {
+                    .header {
+                        margin-bottom: 0;
+
+                        a {
+                            color: inherit;
+                            font-size: 14px;
+                            font-weight: 400;
+                            text-decoration: underline;
+
+                            &:hover {
+                                color: black;
+                            }
+                        }
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                        font-size: 12px;
+                        font-weight: 100;
+                        padding-bottom: 0;
+                        text-transform: none;
+
+                        span {
+                            font-weight: 500;
+                        }
+
+                        .selected-shipping-method-cost {
+                            float: right;
+                        }
+                    }
+
+                    .billing-info {
+                        padding-top: 10px;
+                        
+                        p .header {
+                            text-decoration: underline;
+                            border: none;
+                        }
+                    }
+                }
+
+                #checkout_form_delivery {
+
+                    #shipping_method {
+                        border: none;
+                        margin: 0;
+                        padding: 0;
+
+                        .shipment {
+                            margin: 0;
+
+                            ul {
+                                padding: 0;
+
+                                li {
+                                    box-shadow: none;
+                                    margin: 0;
+                                    width: 100%;
+
+                                    &:last-of-type {
+                                        margin-bottom: 40px;
+                                    }
+
+                                    label {
+                                        font-weight: 100;
+                                        span {
+                                            text-transform: none;
+                                        }
+                                        .rate-cost {
+                                            color: inherit;
+                                            float: right;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #checkout_form_payment {
+                    #payment {
+                        border: none;
+                        padding: 0;
+                        margin: 0;
+
+                        #payment-method-fields {
+                            p:last-of-type {
+                                margin-bottom: 40px;
+                            }
+                        }
+                    }
+
+                    #billing {
+                        padding: 0;
+                    }
+                }
+
+                #checkout_form_confirm {
+                    .terms_and_conditions {
+                        label {
+                            a {
+                                text-decoration: underline;
+
+                                &:hover {
+                                    color: $gold-hover-nav-links;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.hidden,
+                &.next-hidden,
+                &.last-hidden,
+                &.next-last-hidden {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    #checkout-summary {
+        background-color: white;    
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        padding: 20px 16px;
+        position: absolute;
+        top: 100px;
+        right: 8.33333333%; // LG Screens
+
+        .order-summary {
+
+            .line-items {
+                .card.line-item {
+                    background: none;
+                    border: none;
+                    margin-bottom: 20px;
+
+                    .row {
+                        margin: auto;
+                        width: 100%;
+                    }
+
+                    .card-image {
+                        padding: 0;
+
+                        img {
+                            max-width: 100px;
+                            width: 100%;
+                        }
+                    }
+
+                    .card-body {
+                        padding: 0;
+
+                        .card-title {
+                            font-size: 14px;
+                            margin-bottom: 3px;
+                        }
+
+                        .card-text.variant-options  {
+                            font-size: 12px;
+                            padding: 0;
+                            text-align: left;
+                        }
+
+                        .cart-item-total {
+                            padding: 0;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            
+            .sub-totals,
+            .order-total {  
+                margin: 0;
+
+                .row {
+                    width: 100%;
+                    margin: 0 auto;
+
+                    p {
+                        padding: 0;
+
+                        &.label {
+                            text-align: left;
+                        }
+
+                        &.price-font-family {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+
+            .sub-totals {
+                p {
+                    font-weight: 300;
+                }
+            }
+
+            hr {
+                margin-top: 0;
+            }
+            
+        }
+    }
+    
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+
+    // Overwrite a style from solidus
+    .progress-steps li span {
+        display: inline;
+        padding: 0;
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+    .checkout-nav-bar {
+        border: none;
+        border-top: 10px solid  $light-gold;
+    }
+
+    #checkout-page {
+        #wrapper {
+            margin-top: 0;
+        }
+    }
+
+    #checkout.container-fluid {
+        #checkout-summary {
+            position: static;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// MD Devices (larger than 768px and smaller than 992px)
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #checkout.container-fluid {
+
+        .checkout-content {
+            width: 65%;
+            margin-left: 1%;
+        }
+
+        #checkout-summary {
+            width: 32%;
+            right: 1%;
+        }
+    }
+
+}
+
+.disabled-step {
+    opacity: .5;
+  }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #checkout.container-fluid {
+        #checkout-summary {
+            margin-left: 8.33333333%; //BS5 offset-md-1 is not applied because of style of soildus, so I apply it here  
+        }
+    }
+ }

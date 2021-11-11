@@ -1,0 +1,187 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:600;
+
+// SIZE NAVIGATION
+$height-navigation:40;
+
+// MARGIN SOUS NAV SI FIXE
+$margin-top-under-nav-fixe:0;
+
+// PLACEMENT TOP CONTENT
+$placement-top-content:70;
+
+// VARIABLE SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Pathway Gothic One",arial,sans-serif;
+$font-deco:"Allura",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.5em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib8";
+
+// IMPORT TEMPLATE AMSTERDAM
+@import "../../../slagence_X_V5/sources/scss/templates/amsterdam";
+
+// IMPORT MODULE ANNONCES6
+@import "../../../slagence_X_V5/sources/scss/modules/annonces6";
+
+// IMPORT MODULE PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+
+// PERSO CENTRASER
+
+// GENERAL
+// AJOUT TYPO
+.typo-deco {
+	font-family:$font-deco;
+}
+.bg-block { background-color: $color-block; }
+.btn-neutre { color: $color-content; }
+
+
+// SUPPRESSION DSE SHADOWS
+.box-shadow-inset, .box-shadow, .moteur-avantage {
+	box-shadow:none;
+}
+
+// MENU & NAV
+// MISE EN FORME
+.navigation {
+	border-bottom: 4px solid $color-action;
+}
+.menu-principal>li>a {
+	background:$color-action;
+	color:$color-primary;
+	padding: 10px 30px;
+	&:hover {
+		background:$color-important;
+	}
+}
+
+li.menu-vente>a {
+	background:$color-menu;
+}
+
+li.menu-agences>a {
+	background:$color-menu;
+}
+
+// INDEX
+// MINI MOTEUR
+// FLAT
+.moteur-avantage>.row-fluid, .moteur-alerte>.row-fluid {
+	box-shadow:none;
+	background-image:none;
+}
+
+.h2-title-moteur {
+	background-image:none;
+	background-color:$color-action;
+	>.bg-primary {
+		background-image:none;
+		background-color:$color-action-dark-5;
+	}
+}
+
+// ENCART PUB
+.bg-pub-top {
+	background-image:none;
+	background-color:$color-important;
+	color:$color-primary;
+	>.bg-primary {
+		background-image:none;
+		background-color:$color-important-dark-5;
+		>.ico {
+			color:$color-primary;
+		}
+	}
+}
+
+// LISTING AGENCES
+// MASQUER RESP AG
+.listing-agences-responsable {
+	display:none;
+}
+
+.detail-agence-liste {
+	&:hover { background-color: $color-block; }
+}
+
+// DETAIL AGENCE
+// MASQUER HORAIRE CAR AGENT CO
+.horaires-agence {
+	display:none;
+}
+
+.mention-transac {
+	display: none;
+}
+
+.texte-info-agences a:hover { color: black; }
+
+.accordion-heading a {
+	font-size: 2em;
+	text-transform: uppercase;
+}
+.accordion-inner a {
+	font-size: 1.5em;
+	line-height: 1.5em;
+}
+
+.nav-footer.nav-pills.nav-stacked>li>a {display: inline; }
+
+@media (max-width:767px) {
+	div.page-agence .coord-agence,
+	.expert-list-infos {
+		text-align: left;
+
+	}
+}

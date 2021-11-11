@@ -1,0 +1,259 @@
+/***************************************/
+
+.sc-home
+    position                            relative
+    width                               100%
+    height                              100vh
+    overflow                            hidden
+    background-color                    $color2
+
+.sch-background
+    position                            relative
+    top                                 0
+    left                                0
+    width                               100%
+    height                              100%
+    opacity                             0
+    transition2()
+
+    &.animated
+        opacity                         1
+
+    &:after
+        content                         ""
+        display                         block
+        position                        absolute
+        top                             0
+        left                            0
+        width                           100%
+        height                          100%
+        background-color                rgba( $color1, 0.4 )
+
+.schb-img
+    position                            absolute
+    top                                 0
+    left                                50%
+    transform                           translateX( -50% )
+    min-width                           1280px
+    width                               100%
+
+.sch-content
+    position                            absolute
+    z-index                             1
+    top                                 50%
+    left                                50%
+    transform                           translate( -50%, -50% )
+    margin-top                          -50px
+    width                               60%
+    min-width                           $smallScreenContentMaxWidth
+
+.sch-title-1
+    display                             block
+    margin-bottom                       45px
+    font-size                           3.4rem
+    color                               $color2
+    text-align                          center
+    opacity                             0
+    transform                           translateY( -30px )
+    font-eb()
+    transition2()
+
+    &.animated
+        opacity                         1
+        transform                       translateY( 0 )
+
+.sch-title-1_img
+    display                             block
+    margin                              0 auto
+    width                               265px
+    height                              177px
+
+.sch-title-2
+    position                            relative
+    display                             block
+    width                               437px
+    height                              64px
+    margin                              0 auto 55px auto
+    font-size                           5.5rem
+    color                               $color2
+    text-align                          center
+    text-transform                      uppercase
+    background-color                    $color3
+    line-height                         1.2
+    opacity                             0
+    font-2()
+    font-b()
+    transition2()
+
+    &.animated
+        opacity                         1
+
+        &:before
+            opacity                     1
+            transform                   translate( 0, 0 )
+
+    &:before
+        content                         ""
+        display                         block
+        position                        absolute
+        z-index                         -1
+        top                             10px
+        left                            @top
+        width                           100%
+        height                          100%
+        background-color                $color2
+        opacity                         0
+        transform                       translate( -10px, -10px )
+        transition4()
+
+.sch-text
+    position                            relative
+    display                             block
+    font-size                           2.2rem
+    color                               $color2
+    text-align                          center
+    line-height                         0.5
+    text-shadow                         0 7px 15px rgba( $color1, 0.5 )
+    opacity                             0
+    transform                           translateY( 30px )
+    font-sb()
+    font-ri()
+    transition2()
+
+    &.animated
+        opacity                         1
+        transform                       translateY( 0 )
+
+.sch-text_quotation-marks
+    position                            relative
+    display                             inline
+    font-size                           5rem
+    font-li()
+
+    &:nth-child(1)
+        top                             10px
+
+    &:nth-child(3)
+        top                             13px
+        left                            -6px
+
+.sch-text_author
+    display                             block
+    margin-top                          25px
+    font-li()
+
+.sch-scroll-bottom
+    position                            absolute
+    bottom                              40px
+    left                                50%
+    width                               25px
+    height                              41px
+    transform                           translate( -50%, 50px )
+    opacity                             0
+    transition2()
+
+    &.animated
+        transform                       translate( -50%, 0 )
+        opacity                         1
+
+.sch-scroll-bottom_mouse-y
+    width                               3px
+    padding                             1px 9px
+    height                              33px
+    border                              3px solid #fff
+    border-radius                       25px
+    opacity                             0.75
+
+.sch-scroll-bottom_scroller
+    width                               3px
+    height                              10px
+    border-radius                       25%
+    background-color                    #fff
+    animation-name                      mouse_scroll_animation
+    animation-duration                  2.2s
+    animation-timing-function           cubic-bezier( .15, .41, .69, .94 )
+    animation-iteration-count           infinite
+
+
+@keyframes mouse_scroll_animation {
+    0% {
+        opacity                         0
+    }
+    10% {
+        transform                       translateY( 0 )
+        opacity                         1
+    }
+    100% {
+        transform                       translateY( 15px )
+        opacity                         0
+    }
+}
+
+
+/* Mediaqueries Tablet (640px => 1023px) */
+@media all and ( min-width: $smallScreenContentMinWidth ) and ( max-width: $largeScreenContentMinWidth )
+
+    .sch-title-1_img
+        width                           185px
+        height                          auto
+
+    .sch-title-2
+        width                           247px
+        height                          35px
+        font-size                       3rem
+
+    .sch-text
+        font-size                       1.7rem
+
+    .sch-text_quotation-marks
+        font-size                       4rem
+
+
+/* Mediaqueries Mobile (639px) */
+@media all and ( max-width: $smallScreenContentMinWidth )
+
+    .sch-background
+        position                        absolute
+
+    .schb-img
+        min-width                       inherit
+        width                           auto
+        height                          100vh
+
+    .sch-content
+        position                        relative
+        z-index                         1
+        top                             inherit
+        left                            inherit
+        transform                       inherit
+        margin-top                      -50px
+        width                           90%
+        min-width                       inherit
+        margin                          0 auto
+
+    .sch-title-1
+        margin-bottom                   35px
+
+    .sch-title-1_img
+        width                           185px
+        height                          auto
+
+    .sch-title-2
+        width                           247px
+        height                          35px
+        font-size                       3rem
+        margin                          0 auto 35px auto
+
+    .sch-text
+        font-size                       1.5rem
+        line-height                     1
+        margin-bottom                   30px
+
+        br
+            display                     none
+
+    .sch-text_author
+        margin-top                      15px
+
+    .sch-text_quotation-marks
+        display                         none

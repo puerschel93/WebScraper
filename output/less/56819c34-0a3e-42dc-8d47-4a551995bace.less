@@ -1,0 +1,481 @@
+.hero {
+    height: 440px;
+    position: relative;
+    background-size: cover;
+
+    opacity: 0;
+    animation: fadeIn;
+    animation-delay: 200ms;
+    animation-duration: 800ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+
+    &.reduced {
+        height: 310px;
+
+        @media only screen and (max-width: 570px) {
+            height: 180px;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+    }
+
+    .col-lg-12 {
+        z-index: 3;
+        position: relative;
+    }
+
+    .bar-left {
+        z-index: 3;
+        position: relative;
+        max-width: 360px;
+
+        padding-left: 30px;
+
+        h1 {
+            margin-bottom: 0;
+
+            + .signup {
+                margin-top: 20px;
+            }
+        }
+
+        &:before {
+            position: absolute;
+            left: 0;
+            height: 0%;
+            width: 2px;
+            animation: heightIn;
+            animation-delay: 1000ms;
+            animation-duration: 700ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+            animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+            content: '';
+            background-color: @color-primary;
+        }
+    }
+
+    .signup {
+        position: relative;
+        z-index: 3;
+        animation: fadeIn;
+        animation-delay: 500ms;
+        animation-duration: 400ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+    }
+
+    .wrapped {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        height: 100%;
+    }
+
+    &:before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 2;
+        opacity: .5;
+        background-color: @color-bg;
+        content: '';
+    }
+}
+
+.facts-block {
+    span {
+        display: block;
+    }
+}
+@media only screen and (max-width: 570px) {
+    #seatplan > .row {
+        max-width: 100%;
+        overflow: auto;
+    }
+    #seatplan .seatplan {
+        width: 480px;
+    }
+
+}
+
+.connection {
+    border: 1px solid @color-grey-light;
+    border-radius: 20px;
+}
+
+.participant-tooltip {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+
+    width: 280px;
+    dt {
+        min-width: 70%;
+        line-height: 28px;
+    }
+    dd {
+        min-width: 30%;
+        text-align: right;
+        line-height: 28px;
+    }
+}
+
+#tournament-detail {
+    .encounter-entry {
+        a.btn {
+            background-color: @color-bg;
+        }
+
+        &.is-own {
+            p {
+                color: @color-secondary;
+            }
+        }
+    }
+
+    .group-round:not(.r-1) {
+        margin-top: 60px;
+    }
+
+    .bracket .round {
+        margin-right: 30px;
+
+        &:hover {
+            .winner, .lower {
+                .encounter {
+                    .team_1, .team_2 {
+                        background-color: @color-grey-light;
+                    }
+                }
+            }
+        }
+
+        .winner, .lower {
+            .encounter {
+                padding: 5px;
+                margin-bottom: 60px;
+
+                .btn {
+                    left: 24px;
+                }
+
+                &:before {
+                    height: 50px;
+                    top: 15px;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    border-color: @color-grey-light;
+                }
+
+                &:hover {
+                    span {
+                        color: @color-text-main;
+                    }
+                }
+
+                .team_1, .team_2 {
+                    border-radius: 100px;
+                    height: 35px;
+                    width: 180px;
+                    background-color: @color-bg-lighter;
+                    border: none;
+
+                    &.is-winner {
+                        color: @color-text-main;
+                        border: 1px solid @color-secondary;
+                    }
+
+                    &.loser {
+                        opacity: 0.4;
+                    }
+
+                    > span {
+                        transition: 200ms;
+                        line-height: 33px;
+
+                        &.name {
+                            padding-left: 10px;
+                            font-size: 1.143em;
+                            font-weight: normal;
+                        }
+
+                        &.score {
+                            border-left: none;
+                            font-weight: medium;
+                            font-size: 1.214em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.seatplan {
+    border: none;
+
+    .legend {
+        .legend-entry {
+            margin-right: 10px;
+            margin-left: 10px;
+
+            .label {
+                margin-left: 4px;
+                line-height: 26px;
+            }
+        }
+    }
+
+    .cell {
+        border: none;
+        width: 21px;
+        height: 21px;
+
+        &.icon-wall-r,&.icon-wall-b,&.icon-wall-t,&.icon-wall-l,&.icon-wall {
+            background-color: transparent;
+            border-color: @color-grey !important;
+        }
+
+        &.icon-door {
+            background-color: transparent;
+            border-color: @color-grey !important;
+        }
+
+        i.material-icons {
+            font-size: 22px;
+            color: lighten(@color-primary, 30%);
+        }
+
+        &.available {
+            background-color: @color-secondary;
+        }
+
+        &.character {
+            color: white;
+        }
+
+        &.sold {
+            background-color: @color-primary;
+        }
+
+        &.spacer {
+            background-color: @color-bg;
+        }
+    }
+}
+
+#participants, .forge-organizations {
+    flex-wrap: wrap;
+    margin-top: 40px;
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    .avatar-placeholder {
+        text-align: center;
+        font-size: 32px;
+        padding-top: 7px;
+        color: @color-gray;
+    }
+}
+.compact-infobox {
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+    .avatar .image {
+        background-size: 100%;
+    }
+
+    a {
+        color: @color-text-main;
+        &:hover {
+            color: @color-primary;
+        }
+    }
+
+    @media only screen and (min-width: 420px) {
+        min-width: 320px;
+    }
+}
+
+.search-field.form-group {
+    position: absolute;
+    z-index: 4;
+}
+.search-field + .row > .col-lg-12 > #seatplan {
+    margin-top: 60px;
+}
+
+#seatplan .legend {
+    position: absolute;
+    top: -30px;
+    right: 0;
+}
+#seatplan {
+    .cell.highlight {
+        animation: pulse 2s infinite;
+    }
+}
+.seatplan.searchActive {
+    .cell:not(.highlight) {
+        opacity: .2;
+    }
+}
+#participants .compact-infobox {
+    &.highlight {
+        animation: pulse 2s infinite;   
+    }
+}
+
+#tournament-detail .hero {
+    position: relative;
+
+    &:after {
+        height: 4px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        content: '';
+        background-color: @color-primary;
+        z-index: 5;
+
+        animation: widthIn;
+        animation-delay: 1400ms;
+        animation-duration: 2000ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+    }
+}
+#slidein-overlay {
+    .login {
+        max-width: 100%;
+        .col-lg-6.col-lg-offset-3 {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
+
+.price-phases {
+    margin-top: 70px;
+
+    .price-entry {
+        width: 100%;
+        max-width: inherit;
+    }
+
+    ul.phases {
+        list-style: none;
+        padding-left: 0;
+        width: 100%;
+
+        .phase {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid @form-border-color;
+
+            @media only screen and (max-width: 570px) {
+                flex-direction: column;
+                padding-bottom: 15px;
+
+                .left {
+                    width: 100%;
+                }
+                .status {
+                    width: 100%;
+                }
+            }
+
+            .left {
+                display: flex;
+
+                .icon {
+                    margin-right: 15px;
+                }
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
+                font-size: 34px;
+                color: @color-primary;
+            }
+
+            .text {
+                margin: 20px  0 20px 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: middle;
+
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+#organization-detail {
+    .image {
+        background-color: @color-grey-light;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-height: 140px;
+        }
+    }
+
+    .member-tabs {
+        margin-top: 30px;
+
+        .btn {
+            position: absolute;
+            right: 20px;
+            top: 0px;
+        }
+    }
+}
+
+.signup-form {
+    margin-top: 20px;
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@media only screen and (max-width: 570px) {
+    .hero {
+        height: 120px;
+ 
+        h1, .signup {
+            padding-left: 15px;
+        }
+    }
+}

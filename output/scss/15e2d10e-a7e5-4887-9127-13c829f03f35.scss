@@ -1,0 +1,368 @@
+// Variables
+@import './variables/colors';
+@import './variables/texts';
+@import './variables/space';
+
+// Functions
+@import './funtions/spaces';
+@import './funtions/text';
+
+// Animations
+@import './animations/hover';
+@import './animations/start';
+@import './animations/text';
+@import './animations/click';
+
+
+@media (max-width: 1600px){
+    $paddingPrimary: 15%;
+    // header
+    header{
+        nav{
+            padding: 0px $paddingPrimary;
+        }
+        
+    }
+
+    // article
+    article{
+        section.informations{
+            padding: 0px $paddingPrimary;
+        }
+    }
+
+    // footer
+    footer{
+        .description{
+            padding: 50px $paddingPrimary;
+        }
+        .privacy{
+            padding: 0px $paddingPrimary;
+        }
+    }
+}
+@media (max-width: 1400px){
+    $paddingPrimary: 8%;
+    // header
+    header{
+        nav{
+            padding: 0px $paddingPrimary;
+        }
+    }
+
+    // article
+    article{
+        section.informations{
+            padding: 0px $paddingPrimary;
+        }
+    }
+
+    // footer
+    footer{
+        .description{
+            padding: 50px $paddingPrimary;
+        }
+        .privacy{
+            padding: 0px $paddingPrimary;
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    $paddingPrimary: 5%;
+    // header
+    header{
+        nav{
+            padding: 0px $paddingPrimary;
+        }
+    }
+
+    // article
+    article{
+        section.informations{
+            padding: 0px $paddingPrimary;
+        }
+        ul{
+            li.list1{
+                width: 50% !important;
+            }
+            li.list2{
+                width: 45% !important;
+            }
+        }
+    }
+
+    // footer
+    footer{
+        .description{
+            padding: 50px $paddingPrimary;
+            .text{
+                width: 100%;
+                h2{
+                    @include textStyle($fontTitle, 25px,30px, #fff, center, 0 0);
+                    
+                }
+                p{
+                    @include textStyle($fontPargrafo, 20px, 25px, #fff, center, 0 0);
+                    padding-bottom: 50px
+                }
+            }
+            .boxButton{
+                width: 100%;
+                @include flexPosition(center,center);
+            }
+        }
+        .privacy{
+            padding: 0px $paddingPrimary;
+        }
+    }
+}
+@media (max-width: 800px){
+    $paddingPrimary: 5%;
+    // header
+    header{
+        nav{
+            padding: 0px $paddingPrimary;
+        }
+        section.slider{
+            height: 480px;
+            .slides{
+                padding: 0px $paddingPrimary;
+                .btn-left{
+                    left: $paddingPrimary;
+                }
+                .btn-rigth{
+                    right: $paddingPrimary;
+                }
+                .imagens{
+                    li{
+                        .body{
+                            top: 20%;
+                            width: 80% ;
+                            left: 10%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // article
+    article{
+        section.informations{
+            padding: 0px $paddingPrimary;
+        }
+        ul{
+            li.list1{
+                width: 100% !important;
+            }
+            li.list2{
+                width: 100% !important;
+            }
+        }
+    }
+
+    // footer
+    footer{
+        .description{
+            padding: 50px $paddingPrimary;
+        }
+        .privacy{
+            padding: 0px $paddingPrimary;
+        }
+    }
+}
+
+@media (max-width: 700px){
+    header{
+        section.slider{
+            height: 420px;
+            .slides{
+                .imagens{
+                    li{
+                        .body{
+                            top: 10%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 600px){
+    header{
+        section.slider{
+            height: 370px;
+        }
+    }
+}
+@media (max-width: 550px){
+    header{
+        section.slider{
+            height: 310px;
+            .slides{
+                .imagens{
+                    li{
+                        .body{
+                            top: 5%;
+                            h1{
+                                @include textStyle($fontTitle, $fontPrimary,$fontPrimary + 5, white, center, 5px 10%);
+                            }
+                            p{
+                                @include textStyle($fontPargrafo, $fontSecund, $fontSecund + 5, white, center, 5px 10%);
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px){
+    header{
+        section.slider{
+            height: 260px;
+            .slides{
+                .imagens{
+                    li{
+                        .body{
+                            top: 5%;
+                            h1{
+                                @include textStyle($fontTitle, $fontPrimary - 5,$fontPrimary - 2, white, center, 5px 5%);
+                            }
+                            p{
+                                @include textStyle($fontPargrafo, $fontSecund - 5, $fontSecund - 2, white, center, 10px 5%);
+                                display: block;
+                            }
+                            .button{
+                                button{
+                                    a{
+                                        @include textStyle($fontPargrafo, 18px - 5, 23px - 2, white, center, 0 5px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 350px){
+    header{
+        section.slider{
+            height: 200px;
+            .slides{
+                .imagens{
+                    li{
+                        .body{
+                            top: 5%;
+                            h1{
+                                @include textStyle($fontTitle, $fontPrimary - 5,$fontPrimary - 2, white, center, 15px 5%);
+                            }
+                            p{
+                                display: none;
+                            }
+                            .button{
+                                button{
+                                    a{
+                                        @include textStyle($fontPargrafo, 18px - 5, 23px - 2, white, center, 0 5px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Menu create
+@media (max-width: 1000px){
+    header{
+        nav{
+            .iconMenu{
+                height: $navbarHeigth - 30;
+                width: $navbarHeigth;
+                @include flexPosition(center,center);
+                position: relative;
+                // background-color: rgb(75, 75, 75);
+                .hamburguer{
+                    position: absolute;
+                    height: 4px;
+                    width: 60%;
+                    background-color: black;
+                    border-radius: 5px;
+                    transition: 0.3s;
+                    &::after,&::before{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 4px;
+                        background-color: black;
+                        border-radius: 5px;
+                    }
+                    &::after{
+                        transition: 0.3s;
+                        top: -13px
+                    }
+                    &::before{
+                        transition: 0.3s;
+                        top: 13px
+                    }
+                }
+            }
+            // Animation menu
+            #menuAnimation{
+                &:checked ~ label .hamburguer{
+                    transition: 0.3s;
+                    transform: rotate(45deg); 
+                    &::after{
+                        transition: 0.3s;
+                        transform: rotate(90deg);
+                        top: 0px;
+                    }
+                    &::before{
+                        transform: rotate(90deg);
+                        top: 0px;
+                    }  
+                } 
+                &:checked ~ .navbar{
+                    animation: menuMobileActive 0.2s;
+                    display: block;
+                }   
+            }
+            .navbar{
+                position: fixed;
+                top: $navbarHeigth;
+                left: 0;
+                width: 100% !important;
+                height: 100vh;
+                background-color: $backgroundSecund;
+                padding: 10px $paddingPrimary;
+                border-top: solid 1px #ddd;
+                display: none;
+                ul{
+                    display: block !important;
+                    width: 100%;
+                    li{
+                        width: 100%;
+                        text-align: center;
+                        line-height: $navbarHeigth;
+                        list-style: none;
+                        transition: 0.3s;
+                        border-bottom: solid 1px #ddd;
+                        a{
+                            @include textStyle($fontPargrafo, 25px, 70px, 'black', 'center', 0 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

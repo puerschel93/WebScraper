@@ -1,0 +1,249 @@
+sr-only()
+  position absolute
+  width 1px
+  height 1px
+  padding 0
+  margin -1px
+  overflow hidden
+  clip rect(0, 0, 0, 0)
+  border 0
+
+no-select()
+  -webkit-user-select none
+  -moz-user-select none
+  -ms-user-select none
+  user-select none
+
+
+double()
+  display flex
+  flex-direction column
+  justify-content space-between
+  @media tablet
+    flex-direction row
+
+
+section()
+  width 100%
+  display flex
+  justify-content center
+  align-items stretch
+  @media tablet
+    flex-direction column
+    align-items center
+
+  &__box
+    display flex
+
+  &__container
+    padding 0 4 * gutter
+    margin: 0 auto;
+    width: 100vw;
+    box-sizing border-box
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+  &__block
+    min-width 100%
+
+
+    @media desktop
+      width width__md
+
+    &_double
+      double()
+
+  &__one, &__two
+    flex-basis 50%
+    box-sizing border-box
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    padding 4 * gutter 0
+
+
+input()
+  width: 100%;
+  height: auto;
+  font-size: font-size__md
+  color: color__input-text
+  background-color: color__input-bg
+  border-radius: gutter
+  border: 1px solid color__input-border
+  outline none
+  padding: 4 * gutter 5 * gutter
+  line-height: 1
+  font-weight: 300
+  box-sizing: border-box
+  transition: all 150ms ease-in
+  text-decoration none
+  font-family: font__famaly
+  letter-spacing normal
+  word-spacing normal
+
+  &:focus, &:hover, &:active
+    bw = 2px
+    outline none
+    padding: 'calc(4 * %s - %s / 2)' % (gutter bw) 'calc(5 * %s - %s / 2)' % (gutter bw)
+    border bw solid color__input-border-active
+    transition: all 150ms ease-out
+
+button-state(type)
+  // list of button types
+  postfixes = link, default, primary
+  for postfix in postfixes
+    if (postfix == type)
+      color: lookup('color__button-color_' + postfix)
+      border-color: lookup('color__button-border_' + postfix)
+      background: lookup('color__button-bg_' + postfix)
+
+      &:focus
+        color: lookup('color__button-color_' + postfix + '-focus')
+        border-color: lookup('color__button-border_' + postfix + '-focus')
+        background: lookup('color__button-bg_' + postfix + '-focus')
+      &:hover
+        color: lookup('color__button-color_' + postfix + '-hover')
+        border-color: lookup('color__button-border_' + postfix + '-hover')
+        background: lookup('color__button-bg_' + postfix + '-hover')
+      &:active
+        color: lookup('color__button-color_' + postfix + '-active')
+        border-color: lookup('color__button-border_' + postfix + '-active')
+        background: lookup('color__button-bg_' + postfix + '-active')
+
+
+button()
+  input()
+  display: inline-block
+  text-align center
+  width: auto
+  padding: 4 * gutter + 1px 5 * gutter
+  border-width 1px
+  font-weight: 400
+  cursor: pointer
+  text-decoration: none
+  &:focus, &:hover, &:active
+    padding: 4 * gutter + 1px 5 * gutter
+    border-width 1px
+  &_default
+    button-state(default)
+  &_primary
+    button-state(primary)
+
+
+form()
+  display: flex;
+  flex-direction: column;
+  margin 0 -(gutter)
+
+  &__item
+    margin 0 gutter 2 * gutter gutter
+
+  &_inline
+    flex-direction: row;
+    align-items: flex-start;
+
+
+grid()
+  display block
+  box-sizing border-box
+
+  &_container
+    min-width: 100%
+    display flex
+    flex-direction row
+    flex-wrap: wrap
+    justify-content space-between
+    margin 0 -4 * gutter
+
+    // set only one column for super small screens
+    @media mini
+      flex-direction column
+
+  // loop for devices
+  for device, j in devices
+    // media query for device
+    @media device
+      // set device equal size
+      &_{sizes[j]}
+        for i in 1..12
+          &-{i}
+            width (i * 100% / 12)
+
+  &_item
+    // set only one column for super small screens
+    @media mini
+      width 100%
+
+icon()
+  display flex
+  //flex-wrap: wrap
+  margin auto
+
+  &_top, &_bottom
+    align-items flex-start
+    flex-direction column
+
+    &-center
+      align-items: center
+
+  &_bottom
+    flex-direction column-reverse
+
+
+  &_left, &_right
+    align-items flex-start
+    flex-direction row
+
+    &-center
+      align-items: center
+
+  &_right
+    flex-direction row-reverse
+
+  &__image
+    margin 0
+
+  &__content
+    &_top
+      margin 4 * gutter 0 0 0
+
+    &_right
+      margin 0 4 * gutter 0 0
+
+    &_bottom
+      margin 0 0 4 * gutter 0
+
+    &_left
+      margin 0 0 0 4 * gutter
+
+    &_end
+      text-align right
+
+  &_align
+    &-left
+      text-align left
+
+    &-center
+      text-align center
+
+    &-right
+      text-align right
+
+    &-justify
+      text-align justify
+
+  &_position
+    &-start
+      align-items flex-start
+
+    &-center
+      align-items center
+
+    &-end
+      align-items flex-end
+
+  &__ico
+    display block
+    background #ccc

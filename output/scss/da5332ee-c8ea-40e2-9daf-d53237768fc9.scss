@@ -1,0 +1,260 @@
+.header {
+    position: fixed;
+    background: rgba(0, 0, 0, .9);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 99;
+
+    .header-up {
+        max-width: 1810px;
+        margin: 0 auto;
+        padding: 21px 0 5px;
+        color: #e7e0dd;
+
+        #currency_active {
+            height: 30px;
+            display: inline-block;
+            padding: 0 10px;
+            line-height: 32px;
+            position: relative;
+            z-index: 10;
+            font-size: 14px;
+
+            &::after {
+                content: "\f107";
+                font: 18px /1em FontAwesome;
+                margin-left: 4px;
+                display: inline-block;
+            }
+
+            &:hover {
+                color: #cba181;
+            }
+
+            .active {
+                visibility: visible;
+            }
+        }
+
+        #currency_selector {
+            position: absolute;
+            right: 0;
+            left: 10px;
+            padding: 10px 10px;
+            width: 90px;
+            margin: 0;
+            z-index: 1;
+            background: #0b0a08;
+            border-top: 2px solid #cba181;
+            list-style: none;
+            text-align: center;
+            box-shadow: 0 4px 8px 0 #cba181;
+            visibility: hidden;
+
+
+
+            .currency_selector__item {
+                padding: 5px 0;
+                font-size: 16px;
+
+                &:hover {
+                    color: #000;
+                    background: #f6f6fa;
+                }
+            }
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        .header_item_right {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: right;
+            padding-right: 10px;
+
+            .header_item {
+                vertical-align: middle;
+                margin: 0 15px 0 0;
+            }
+
+            span {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    .header-down {
+        padding: 5px 0;
+        color: #e7e0dd;
+
+        .nav-item-header {
+            display: flex;
+            justify-content: center;
+
+            .nav-item {
+                font-size: 16px;
+                margin: 0 19px;
+                display: block;
+                transition-duration: 0.5s;
+                outline: none;
+                position: relative;
+
+                &:hover {
+                    color: #cba181;
+                    outline: 0;
+                    transition: background .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+
+                    &::before {
+                        width: 100%;
+                        left: 0;
+
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 0;
+                    bottom: -4;
+                    height: 2px;
+                    background: #cba181;
+                    transition: all .2s ease-in-out;
+                }
+
+                .home {
+                    background: #12100e;
+                    position: absolute;
+                    width: max-content;
+                    padding: 10px 20px 20px 20px;
+                    text-align: left;
+                    margin-top: 15px;
+                    cursor: pointer;
+                    transition: all 0.5s ease;
+                    opacity: 0;
+
+                    li {
+                        padding: 10px 0 0 0;
+                        margin: 0 !important;
+
+
+
+                        a {
+                            position: relative;
+
+                            &:hover {
+                                color: #cba181;
+                                outline: 0;
+                                transition: background .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: -3px;
+                                    width: 0;
+                                    height: 2px;
+                                    background: #cba181;
+                                    transition: width .2s ease-in-out;
+                                    transform: translate3d(0, 0, 0);
+                                    width: 100%;
+                                }
+                            }
+
+                        }
+
+                    }
+
+                    &:hover,
+                    &:focus {
+                        visibility: visible;
+                        opacity: 1;
+                        display: block;
+                    }
+                }
+
+                &:hover>.home,
+                &:focus-within>.home {
+                    visibility: visible;
+                    opacity: 1;
+                    display: block;
+                }
+
+                .catalog {
+                    background: #12100e;
+                    position: absolute;
+                    width: max-content;
+                    padding: 10px 20px 20px 20px;
+                    text-align: left;
+                    margin-top: 15px;
+                    cursor: pointer;
+                    transition: all 0.5s ease;
+                    opacity: 0;
+
+                    .catalog-head {
+                        font-size: 18px;
+                        letter-spacing: -.07em;
+                        color: #cba181;
+                    }
+
+                    li {
+                        padding: 10px 0 0 0;
+                        margin: 0 !important;
+
+
+
+                        a {
+                            position: relative;
+
+                            &:hover {
+                                color: #cba181;
+                                outline: 0;
+                                transition: background .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: -3px;
+                                    width: 0;
+                                    height: 2px;
+                                    background: #cba181;
+                                    transition: width .2s ease-in-out;
+                                    transform: translate3d(0, 0, 0);
+                                    width: 100%;
+                                }
+                            }
+
+                        }
+
+                    }
+
+                    img {
+                        width: 100%;
+                        display: block;
+                        backface-visibility: hidden;
+                        transform: translate3d(0, 0, 0);
+                        transition: transform .4s ease-in-out;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                }
+
+                &:hover>.catalog,
+                &:focus .catalog {
+                    visibility: visible;
+                    opacity: 1;
+                    display: block;
+                }
+
+            }
+        }
+    }
+}

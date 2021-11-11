@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+html {
+    font-size: 10px;
+    font-family: @font_default, sans-serif;
+}
+body {
+    background: @background-color;
+    color: @color_primary;
+    font-size: 1.6rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.hidden {
+    display: none !important;
+}
+.active {
+    color: @white;
+}
+.v-hidden {
+    visibility: hidden !important;
+}
+.paddind-clear {
+    padding: 0;
+}
+.s-decor-through {
+    text-decoration: line-through;
+}
+.sub-menu-v-hidden-mobile {
+    visibility: hidden;
+}
+.heading-primary {
+    font-family: @font_default_m, sans-serif;
+    font-size: 3.2rem;
+    color: @color_secondary;
+}
+.sub-menu {
+    display: flex;
+    font-family: @font_secondary, sans-serif;
+    font-size: 2.2rem;
+    z-index: 1;
+    &__item {
+        &:first-child:before {
+            .sub-menu__first-line-del();
+        }
+        &:before {
+            .sub-menu__line-add();
+        }
+    }
+    &__link:hover,
+    &__link:focus,
+    &__link:active {
+        color: @link_btns_color_hover_focus_pressed;
+    }
+}
+@media all and (min-width: 768px) {
+    .heading-primary {
+        font-size: 2.8rem;
+    }
+    .sub-menu {
+        font-size: 1.6rem;
+    }
+}
+// color for task-list tasks items
+
+.priority_urgent {
+    .priority(@priority_bg_urgent,@dark_coral);
+}
+.priority_high {
+    .priority(@priority_bg_high,@carrot_orange);
+}
+.priority_middle {
+    .priority(@priority_bg_middle,@moon_yellow);
+}
+.priority_low {
+    .priority(@priority_bg_low,@mountain_meadow_dark);
+}
+.category_work {
+    .category(@category_work,@category_work_pressed);
+}
+.category_education {
+    .category(@category_education,@category_education_pressed);
+}
+.category_hobby {
+    .category(@category_hobby,@category_hobby_pressed);
+}
+.category_sport {
+    .category(@category_sport,@category_sport_pressed);
+}
+.category_other {
+    .category(@category_other,@category_other_pressed);
+}
+.bg_category_work_pressed {
+    background-color: @category_work_pressed;
+    cursor: pointer;
+}
+.bg_category_education_pressed {
+    background-color: @category_education_pressed;
+    cursor: pointer;
+}
+.bg_category_hobby_pressed {
+    background-color: @category_hobby_pressed;
+    cursor: pointer;
+}
+.bg_category_sport_pressed {
+    background-color: @category_sport_pressed;
+    cursor: pointer;
+}
+.bg_category_other_pressed {
+    background-color: @category_other_pressed;
+    cursor: pointer;
+}
+
+[data-title]:hover:after,
+[data-title]:hover:before {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+[data-title]:before {
+    content: "";
+    position: absolute;
+    left: 15%;
+    bottom: -0.8rem;
+    border-style: solid;
+    border-color: transparent transparent @tooltip_bg_color transparent;
+    border-width: 6px 6px 6px 6px;
+    z-index: 99999;
+    visibility: hidden;
+}
+[data-title]:after {
+    background-color: @tooltip_bg_color;
+    padding: 0.8rem 1.6rem;
+    content: attr(data-title);
+    font-size: 1.2rem;
+    font-family: @font_secondary, sans-serif;
+    color: @tooltip_color;
+    position: absolute;
+    bottom: -3.5rem;
+    left: -5%;
+    white-space: nowrap;
+    opacity: 0;
+    border-radius: 0.2rem;
+    z-index: 99999;
+    visibility: hidden;
+    transform: translate(-20%);
+}
+[data-title] {
+    position: relative;
+}
+td,
+th {
+    padding: 5px;
+}
+.highcharts-background {
+    fill: transparent;
+}

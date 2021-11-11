@@ -1,0 +1,278 @@
+.hero-area-container
+    width: 100%;
+    position relative
+    display: flex;
+    align-items: center;
+    justify-content: center
+    overflow: hidden
+    background-image: radial-gradient(circle at 72% 100%, #56b8d3, #2b7da1 60%);
+    +media-md()
+        background: none
+    > img
+        max-width: 100%
+        display: none
+        +media-md()
+            display: block
+    // &:after
+    //     content: ''
+    //     width: 0;
+    //     height: 0;
+    //     border-style: solid;
+    //     border-width: 0 0 100px 1920px;
+    //     border-color: transparent transparent #FFF transparent;
+    //     position: absolute
+    //     bottom: 0
+    //     display: none
+.hero-area
+    @extend .container
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    min-height: 152px;
+    +media-md()
+        position: absolute
+        top: 0
+        height: 100%;
+    h1
+        font-family: 'Bebas Neue';
+        font-size: 38px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $white;
+        text-align: center
+        +media-md()
+            font-size: 60px
+        &:last-child
+            margin-bottom: 0
+        span
+            display: block
+            font-size: 14px
+            font-family: 'Campton';
+            font-weight: normal
+            letter-spacing: 6px
+            margin-bottom: 6px
+            +media-md()
+                font-size: 18px
+                letter-spacing: 0
+                margin-bottom: 0
+    > ul
+        display: none
+        margin-top: 32px
+        +media-lg()
+            display: flex
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        li
+            margin: 0 4px 16px
+            +media-xl()
+                margin: 0 10px 16px
+            a
+                display: flex
+                align-items: center
+                justify-content: center
+                font-size: 14px;
+                font-weight: 500;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                text-align: center;
+                color: $primaryblue;
+                padding: 0 12px
+                border-radius: 25px;
+                box-shadow: 0 4px 10px 0 rgba(3, 22, 28, 0.1);
+                background-color: $white;
+                border: solid 2px $white;
+                height: 48px
+                transition: all ease 0.3s
+                +media-xl()
+                    padding: 0 20px
+            &:hover, &.active
+                a
+                    border: solid 2px #c9eef8;
+                    background-color: #5bb8e0;
+                    color: $white
+
+.hero-area-banner-container
+    width: 100%;
+    position relative
+    display: flex;
+    align-items: center;
+    justify-content: center
+    background-image: radial-gradient(circle at 50% 94%, #56b8d3, #2b7da1 59%);
+    background-size: cover;
+    overflow: hidden
+    padding: 40px 0
+    +media-md()
+        margin-bottom: -80px
+        height: 470px;
+        background: url('../img/hero-bg.png') center bottom no-repeat;
+        padding: 0
+    &:after
+        content: ''
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 85px 1920px;
+        border-color: transparent transparent #FAFAFA transparent;
+        position: absolute
+        bottom: 0
+        display: none
+
+.light-template
+    .hero-area-banner-container
+        &:after
+            border-color: transparent transparent #FFF transparent;
+
+.milpoint.hero-area-banner-container
+    background: url('../img/milpoint-bg.png') center bottom no-repeat;
+    background-size: cover;
+    +media-md()
+        height: 403px
+            
+.hero-area-flat
+    margin-bottom: 0
+    background: url(../img/hero-bg.png) center top no-repeat;
+    background-size: cover;
+    &:after
+        display: none
+    &:before
+        content: ''
+        width: 100%
+        background: $white
+        height: 76px
+        left: 0
+        bottom: 0
+        position: absolute
+        display: none
+        +media-md()
+            display: block
+.hero-area-banner
+    @extend .container
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+    flex-direction: column-reverse;
+    justify-content: flex-end
+    +media-md()
+        position: absolute
+        top: 0
+        flex-direction: row
+        justify-content: space-between;
+
+.hero-area-banner-content
+    text-align: center
+    +media-md()
+        padding-top: 40px
+        padding-right: 40px
+        text-align: left
+    +media-lg()
+        padding-right: 180px
+    +media-xl()
+        padding-top: 80px
+    h5
+        font-size: 13px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $white;
+        margin-bottom: 6px
+        display: none;
+        +media-md()
+            display: block
+    h1
+        font-size: 38px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $white;
+        margin-bottom: 10px
+        font-family: 'Bebas Neue';
+        +media-md()
+            font-size: 60px
+    p
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.45;
+        letter-spacing: normal;
+        color: $white;
+        margin-bottom: 30px
+        +media-md()
+            font-size: 22px
+
+.hero-area-banner-image
+    display: flex;
+    height: auto;
+    width: 100%
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+    +media-md()
+        width: auto
+        height: 100%
+    img
+        width: 250px
+        +media-lg()
+            width: auto
+
+.hero-area--standart
+    background: none;
+    height: auto;
+    margin: 0;
+    padding: 0
+    &:after
+        display: none
+    .hero-area-banner-image
+        img
+            width: 100%
+
+.hero-area-box-menu-container
+    @extend .container
+    +media-md()
+        margin-top: -170px
+        position relative
+        z-index 1
+    +media-lg()
+        margin-top: -230px
+
+.hero-area-box-menu-item
+    @extend .col-12
+    @extend .col-md-4
+    @extend .col-lg-4
+    margin-bottom: 30px
+    +media-md()
+        margin-bottom: 0
+
+.hero-area-box-menu-content
+    display: block
+    border-radius: 2px;
+    background-color: $white;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+    overflow: hidden
+
+.hero-area-box-menu-image
+    img
+        display: block
+        width: 100%
+
+.hero-area-box-menu-title
+    font-size: 22px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: normal;
+    color: $black;
+    padding: 16px 24px

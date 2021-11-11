@@ -1,0 +1,532 @@
+.b-field
+	&__wrapper
+		position relative
+		border 1px solid $backFont
+		background $white
+		border-radius 3px
+		padding 0 10px
+	&__input
+		font-size 14px
+		line-height 35px
+		height 35px
+		width 100%
+	&__label
+		position relative
+		font-size 12px
+		line-height 20px
+		input
+			position absolute
+			left 0
+			top 0
+			opacity 0
+		a
+			text-decoration underline
+			&:hover
+				text-decoration none
+
+	&--search &__wrapper
+		padding-left 34px
+		width 300px
+		@media $tablet
+			width 200px
+		@media $phone
+			width 100%
+		&:after
+			content ''
+			position absolute
+			left 9px
+			top 10px
+			width 12px
+			height 12px
+			border 1px solid $baseFont
+			border-radius 50%
+		&:before
+			content ''
+			position absolute
+			left 18px
+			top 22px
+			width 6px
+			height 1px
+			background $baseFont
+			transform rotate(45deg)
+
+	&--default &__wrapper
+		padding 2px 15px 0
+		@media $desktop
+			padding 2px 10px 0
+
+	&--subscribe
+		display flex
+		max-width 297px
+	&--subscribe &__wrapper
+		padding 3px 14px 0
+		border-radius 3px 0 0 3px
+	&--subscribe &__input
+		font-size 16px
+		line-height 35px
+		height 35px
+	&--subscribe &__column
+		&:nth-child(1)
+			flex-grow 1
+	&--subscribe &__button
+		background $gray
+		border-radius 0 3px 3px 0
+		text-align center
+		line-height 42px
+		width 122px
+		height 40px
+		cursor pointer
+		color $baseFont
+		&:hover
+			background $orange
+			color $white
+			@media $phone
+				background $gray
+				color $baseFont
+
+	&--checkbox
+		padding 17px 0 13px
+		@media $phone
+			padding 16px 0 15px
+	&--checkbox &__caption
+		position relative
+		padding-left 32px
+		@media $phone
+			padding-left 27px
+		&:before
+			content ''
+			position absolute
+			left 0
+			top -2px
+			width 20px
+			height 20px
+			border 1px solid $gray
+			background $white
+			border-radius 3px
+		&:after
+			content ''
+			position absolute
+			left 5px
+			top 3px
+			width 12px
+			height 6px
+			opacity 0
+			border-left 2px solid $baseFont
+			border-bottom 2px solid $baseFont
+			transform rotate(-45deg)
+	&--checkbox input:checked ~ &__caption:after
+		opacity 1
+
+	&--filter-checkbox
+		padding 9px 0 10px
+		&.is-hidden
+			display none
+	&--filter-checkbox &__list
+		padding 12px 0
+	&--filter-checkbox &__caption
+		position relative
+		padding-left 29px
+		font-size 13px
+		line-height 1.2
+		letter-spacing -0.015em
+		&:before
+			content ''
+			position absolute
+			left 1px
+			top 0
+			width 15px
+			height 15px
+			border 1px solid $check
+		&:after
+			content ''
+			position absolute
+			left 4px
+			top 2px
+			width 12px
+			height 6px
+			opacity 0
+			border-left 2px solid $baseFont
+			border-bottom 2px solid $baseFont
+			transform rotate(-45deg)
+	&--filter-checkbox input:checked ~ &__caption:after
+		opacity 1
+
+	&--sort
+		position relative
+		width 190px
+		margin-right 1px
+		@media $phone
+			width 100%
+	&--sort &__caption
+		position relative
+		background $white
+		border 1px solid $backFont
+		white-space nowrap
+		overflow hidden
+		text-overflow ellipsis
+		border-radius 3px
+		font-size 13px
+		line-height 27px
+		padding 0 22px 0 12px
+		width 100%
+		height 27px
+		color $baseFont
+		cursor pointer
+		@media $phone
+			padding 0 22px 0 11px
+		&:after
+			content ''
+			position absolute
+			right 10px /*15*/
+			top 7px
+			width 8px
+			height 8px
+			border-left 1px solid $baseFont
+			border-bottom 1px solid $baseFont
+			transform rotate(-45deg)
+	&--sort &__options
+		position absolute
+		z-index 15
+		left 0
+		right 0
+		top 26px
+		background $white
+		border 1px solid $backFont
+		border-radius 3px
+		padding 3px 0
+		max-height 128px
+		overflow hidden
+		overflow-y scroll
+		display none
+		@media $phone
+			max-height 200px
+	&--sort &__item
+		padding 4px 12px 5px
+		font-size 13px
+		line-height 1.2
+		cursor pointer
+		@media $phone
+			padding 4px 11px 5px
+		&:hover
+			color $hoverFont
+			@media $tablet
+				color $baseFont
+	&--sort.is-open &__options
+		display block
+	&--sort.is-open &__caption:after
+		transform rotate(135deg)
+		top 12px
+
+.b-form-field
+	position relative
+	&__wrapper
+		position relative
+		border 1px solid $backFont
+		background $white
+		border-radius 3px
+		padding 0 17px
+		margin 14px 0
+		@media $phone
+			padding 0 12px
+	&__wrapper.is-locked &__input
+		pointer-events none
+		opacity 0.5
+
+	&.is-error &__wrapper
+		border-color $specsOrange
+	&.is-done &__wrapper
+		background $done
+	&__error
+		position absolute
+		font-family $MontserratR
+		font-size 12px
+		line-height 1
+		left 4px
+		bottom -18px
+		color $hoverFont
+		display none
+	&.is-error &__error
+		display block
+
+	&__input
+		font-family $MontserratR
+		font-size 14px
+		line-height 46px
+		padding-top 2px
+		height 48px
+		width 100%
+		letter-spacing -0.015em
+		&::placeholder
+			font-family $MontserratR
+			color $specsGrey
+	&__textarea
+		font-family $MontserratR
+		font-size 14px
+		line-height 1.4
+		padding 14px 0
+		min-height 180px
+		width 100%
+		resize none
+		letter-spacing -0.015em
+		&::placeholder
+			font-family $MontserratR
+			color $specsGrey
+
+	&__radio
+		position absolute
+		left 0
+		top 0
+		opacity 0
+
+	&--radio &__label
+		display inline-block
+		vertical-align top
+		position relative
+		padding-left 25px
+		margin 10px 35px 10px 0
+		span
+			position relative
+			display inline-block
+			vertical-align top
+			font-family $MuseoM
+			font-size 14px
+			line-height 1.2
+			letter-spacing -0.015em
+			&:before
+				content ''
+				position absolute
+				left -25px
+				top 0
+				border 3px solid $backFont
+				width 14px
+				height 14px
+				border-radius 50%
+	&__radio:checked + span:before
+		background $baseFont
+
+	&__suggest
+		position absolute
+		z-index 15
+		left 0
+		right 0
+		top 49px
+		border 1px solid $backFont
+		background $white
+		border-radius 3px
+		padding 5px 0
+		max-height 226px
+		overflow hidden
+		overflow-y scroll
+		display none
+	&__suggest-item
+		padding 5px 17px
+		cursor pointer
+		&.is-hidden
+			display none
+		&:hover
+			color $hoverFont
+		&--empty
+			cursor default
+			color $baseFont
+			display none
+		&--empty:hover
+			color $baseFont
+	&--suggest &__button
+		position absolute
+		right 0
+		top 9px
+		width 30px
+		height 30px
+		&--clear
+			right 36px
+			cursor pointer
+			display none
+			&.is-show
+				display block
+			&:after, &:before
+				content ''
+				position absolute
+				left 5px
+				top 15px
+				width 20px
+				height 1px
+				background $baseFont
+				transform rotate(45deg)
+			&:before
+				transform rotate(-45deg)
+		&--search
+			right 6px
+			&:after
+				content ''
+				position absolute
+				left 7px
+				top 8px
+				width 13px
+				height 13px
+				border-radius 50%
+				border 1px solid $baseFont
+			&:before
+				content ''
+				position absolute
+				left 17px
+				top 21px
+				width 6px
+				height 1px
+				background $baseFont
+				transform rotate(45deg)
+	&--suggest &__wrapper
+		padding 0 70px 0 17px
+	&--suggest.is-open &__suggest
+		display block
+
+	&--select
+		position relative
+		margin 14px 0
+	&--select &__caption
+		position relative
+		background $white
+		border 1px solid $backFont
+		white-space nowrap
+		overflow hidden
+		text-overflow ellipsis
+		border-radius 3px
+		font-size 14px
+		line-height 50px
+		padding 0 25px 0 17px
+		width 100%
+		height 50px
+		color $baseFont
+		cursor pointer
+		@media $phone
+			padding 0 20px 0 12px
+		&:after
+			content ''
+			position absolute
+			right 15px /*15*/
+			top calc(50% - 6px)
+			width 8px
+			height 8px
+			border-left 1px solid $baseFont
+			border-bottom 1px solid $baseFont
+			transform rotate(-45deg)
+			@media $phone
+				right 12px
+	&--select &__options
+		position absolute
+		z-index 15
+		left 0
+		right 0
+		top 49px
+		background $white
+		border 1px solid $backFont
+		border-radius 3px
+		padding 5px 0
+		max-height 157px
+		overflow hidden
+		overflow-y scroll
+		display none
+	&--select &__item
+		padding 7px 17px
+		font-size 13px
+		line-height 1.2
+		cursor pointer
+		/*@media $phone
+			padding 4px 11px 5px*/
+		&:hover
+			color $hoverFont
+			@media $tablet
+				color $baseFont
+	&--select.is-open &__options
+		display block
+	&--select.is-open &__caption:after
+		transform rotate(135deg)
+		top calc(50% - 2px)
+
+	&--small &__caption
+		line-height 35px
+		height 35px
+	&--select&--small &__options
+		top 34px
+
+	&--date &__row
+		display flex
+	&--date &__column
+		&:nth-child(1)
+			width 21.5%
+			@media $phone
+				width 25.5%
+			& .b-form-field__caption
+				border-right none
+				border-radius 3px 0 0 3px
+		&:nth-child(2)
+			flex-grow 1
+			& .b-form-field__caption
+				border-right none
+				border-radius 0
+		&:nth-child(3)
+			width 22.5%
+			@media $phone
+				width 25.5%
+			& .b-form-field__caption
+				border-radius 0 3px 3px 0
+
+	&--checkbox
+		padding 2px 0
+	&--checkbox &__label
+		position relative
+		font-size 14px
+		line-height 18px
+		letter-spacing -0.015em
+		input
+			position absolute
+			left 0
+			top 0
+			opacity 0
+		a
+			color $orange
+			text-decoration underline
+			&:hover
+				color $hoverFont
+				text-decoration none
+	&--checkbox &__caption
+		position relative
+		padding-left 32px
+		@media $phone
+			padding-left 27px
+		&:before
+			content ''
+			position absolute
+			left 1px
+			top -1px
+			width 18px
+			height 18px
+			border 1px solid $backFont
+			background $white
+			border-radius 2px
+		&:after
+			content ''
+			position absolute
+			left 5px
+			top 1px
+			width 14px
+			height 8px
+			opacity 0
+			border-left 2px solid $orange
+			border-bottom 2px solid $orange
+			transform rotate(-45deg)
+	&--checkbox input:checked ~ &__caption:after
+		opacity 1
+
+	&--review &__wrapper
+		font-size 0
+		line-height 1
+
+.is-blocked .b-basket-item
+	&__clear
+		display none
+	&__counter-input
+		pointer-events none
+	&__counter-minus, &__counter-plus
+		cursor default
+		&:after,&:before
+			background #dad0c7

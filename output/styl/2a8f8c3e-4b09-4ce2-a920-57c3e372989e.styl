@@ -1,0 +1,357 @@
+//------fighter---------//
+//.f-header
+//   display flex
+//   align-items stretch
+//   &__left
+//      flex 0 0 50%
+//      max-width 50%
+//      background-color $blueAlice
+//      background-image url("../img/fighter/logo-text.png")
+//      background-size 100%
+//      background-position 50% 50%
+//      background-repeat no-repeat
+//      border-radius 0 0 200px 0
+//      @media $phone
+//         border-radius 0 0 100px 0
+//      &-item
+//         margin 0 auto
+//         text-align center
+
+//------fighter-list---------//
+.fl-top
+   text-align center
+   max-width 56%
+   margin 0 auto
+   @media $phone
+      max-width 87%
+   &--position
+      margin-bottom: 80px
+      @media $phone
+         margin-bottom: 60px
+      @media $bigPhone
+         margin-bottom: 40px
+
+   &__title
+      font-weight: bold
+      font-size: 42px
+      color: $black
+      @media $phone
+         font-size 32px
+      @media $bigPhone
+         margin-bottom: 10px
+      @media $phoneS
+         font-size 24px
+   &-searche
+      &-input
+         display flex
+         align-items center
+         @media $bigPhone
+            flex-wrap wrap
+
+      &__label
+         border solid 1px $grayLight
+         border-radius 8px 0
+         background-color $white
+         margin 24px 0
+         flex 0 0 50%
+         max-width 50%
+         @media $bigPhone
+            flex 0 0 100%
+            max-width 100%
+            margin 9px 0
+      &__label + &__label
+         margin-left 20px
+         @media $bigPhone
+            margin-left 0
+      &__input
+         padding 12px 10px
+         font-size: 16px
+         line-height: 20px
+         //min-width 340px
+         width 100%
+         color: rgba(0, 0, 0, 0.5)
+         &::placeholder
+            color: rgba(0, 0, 0, 0.5)
+      &-btn
+         @media $bigPhone
+            margin-top: 17px
+         button
+            background-color $red
+            width 100%
+            display block
+            color $white
+            border-radius 8px 0 8px 0px
+            font-weight: bold
+            font-size: 18px
+            text-align: center
+            text-transform: uppercase
+            padding 15px 0
+            transition 0.3s
+            &:hover
+               box-shadow: 0 0 10px rgb(0 0 0 / 70%) inset
+.f-header
+   display flex
+   align-items stretch
+   @media $beforePhone
+      flex-wrap wrap
+   &__left
+      flex 0 0 50%
+      max-width 50%
+      //background-color $blueAlice
+      //background-image url("../img/fighter/logo-text.png")
+      background-image url("../img/fighter/fighter.jpg")
+      background-size cover
+      background-position 50% 40%
+      background-repeat no-repeat
+      border-radius 0 0 200px 0
+      background-color $blueAlice
+      overflow hidden
+      @media $phone
+         border-radius 0 0 100px 0
+
+      @media $beforePhone
+         flex 0 0 100%
+         max-width 100%
+         min-height 390px
+         //background-size 100%
+      @media $beforeBigPhone
+         background-size cover
+         min-height 309px
+      &-item
+         margin 0 auto
+         text-align center
+
+   &__right
+      padding-left 100px
+      padding-right 100px
+      flex 0 0 50%
+      max-width 50%
+      @media $desktop
+         padding-right 70px
+         padding-left: 40px
+      @media $phone
+         padding-right 40px
+         padding-left: 20px
+      @media $beforePhone
+         flex 0 0 100%
+         max-width 100%
+      &-inner
+         @media $beforePhone
+            margin 0 auto
+            margin 0 auto
+            flex 0 0 72%
+            max-width 72%
+         @media $beforeBigPhone
+            flex 0 0 100%
+            max-width 100%
+            justify-content space-between
+   &__country
+      display flex
+      align-items center
+      &-text
+         font-size 24px
+         @media $tablet
+            font-size 18px
+      &-img
+         margin-right: 10px
+         margin-bottom: 3px
+         width 42px
+         height 42px
+         @media $beforeBigPhone
+            width 24px
+            height 24px
+   &__name
+      font-size 42px
+      font-family: $Prosto
+      margin 22px 0 37px
+      line-height 40px
+      @media $minTablet
+         font-size 32px
+
+   &__record
+      display flex
+      align-items center
+      font-size 21px
+      &-text
+         font-size 21px
+         margin-right: 24px
+         @media $minTablet
+            font-size 14px
+      &-numb
+         color $white
+         padding 10px 23px
+         background $black
+         border-radius 8px 0 8px 0
+         font-weight: 700
+         white-space nowrap
+         font-size 21px
+         @media $minTablet
+            font-size 18px
+         @media $beforeBigPhone
+            font-size 14px
+   &__btn
+      margin 40px 0
+      button
+         //border solid 1px red
+         color $white
+         background $red
+         text-transform uppercase
+         font-size 18px
+         font-weight: 700
+         padding 14px 35px
+         border-radius 8px 0 8px 0
+         transition 0.3s
+         &:hover
+            box-shadow: 0 0 10px rgb(0 0 0 / 70%) inset
+         @media $minTablet
+            font-size 14px
+   &__link
+      display flex
+      align-items center
+      font-size 21px
+      @media $tablet
+         font-size 14px
+      @media $phoneS
+         justify-content space-between
+      &-item + &-item
+         margin-left: 60px
+         @media $phoneS
+            margin-left: 0
+      &-item
+         position relative
+         &:after
+            content ''
+            width 8px
+            height 8px
+            display block
+            border-right solid 1px $black
+            border-top solid 1px $black
+            transform rotate(45deg)
+            position absolute
+            top 0.55em
+            right -0.8em
+         a
+            color $black
+            text-decoration underline
+            transition 0.3s
+            &:hover
+               text-decoration none
+.f-info
+   display flex
+   align-items center
+   justify-content space-between
+   margin -50px -10px 0
+   @media $afterDesktop
+      flex-wrap wrap
+   @media $beforePhone
+      display none
+   &__item
+      flex 0 0 25%
+      max-width 25%
+      padding 0 10px
+      @media $afterDesktop
+         flex 0 0 50%
+         padding 10px
+         max-width 50%
+      &-inner
+         border solid 1px $black
+         background $white
+         border-radius 8px
+         display flex
+         align-items center
+         padding 31px 24px
+      &-name
+         font-size 18px
+         color rgba($black, 0.5)
+         margin-right: 15px
+         @media $bigDesktop
+            font-size 14px
+      &-post
+         font-size 24px
+         font-weight: 700
+         @media $bigDesktop
+            font-size 18px
+.f-achievement-bg
+   background $light
+   border-radius 0 200px 0 0
+   @media $phone
+      border-radius 0 100px 0 0
+.f-achievement
+   padding 80px 0px
+   @media $phone
+      padding 60px 0px
+   &__list
+      display flex
+      align-items center
+      justify-content space-between
+      margin 40px -10px 0
+      @media $tablet
+         flex-wrap wrap
+         margin 40px 0
+   &-inner
+      padding 0 10px
+      flex  0 0 33.333%
+      max-width 33.333%
+      @media $tablet
+         flex 0 0 100%
+         max-width 100%
+         padding 0
+   &__item
+      border-bottom solid 1px $grayLight
+      min-height 90px
+      position relative
+      padding-left: 48px
+      padding-bottom: 10px
+      @media $tablet
+         min-height auto
+         padding-bottom 24px
+         margin-bottom: 24px
+      @media $phoneS
+         padding-left: 40px
+      &:before
+         content ''
+         width: 0
+         height: 0
+         border-left: 24px solid $red
+         border-top: 10px solid transparent
+         border-bottom: 10px solid transparent
+         position absolute
+         left 0
+         top 5px
+         @media $tablet
+            top 0
+      a
+         color $black
+         font-weight: 700
+         font-size: 24px
+         line-height: 29px
+         position relative
+         transition 0.3s
+         &:hover
+            text-shadow 0 0 5px rgba($black, 0.3)
+         @media $bigPhone
+            font-size: 18px
+            line-height: 22px
+         @media $afterDesktop
+            font-size 18px
+         @media $tablet
+            font-size 24px
+.f-video
+   padding 100px 0 80px
+   position relative
+   @media $phoneS
+      padding 60px 0
+   @media $phoneS
+      padding 60px 0 130px
+   &__title
+      margin-bottom: 15px
+.f-foto
+   margin-top: 100px
+   position relative
+   @media $desktop
+      margin-top: 80px
+   @media $phone
+      margin-top: 60px
+      padding-bottom: 40px
+   .title__link-more
+      bottom 10px

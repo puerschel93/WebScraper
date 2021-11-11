@@ -1,0 +1,362 @@
+// Colores
+$blanco: #fff;
+$negro: #000;
+$libre: #07d903;
+$reservado: rgb(239, 145, 15);
+$vendido: rgb(201, 29, 29);
+$gris: #706f6f;
+$colorFondo: rgb(255, 245, 212);
+
+// Variaciones de color
+// oscuros
+@function oscuro($color, $porcentaje) {
+    @return mix($negro, $color, $porcentaje);
+}
+
+// claros
+@function claro($color, $porcentaje) {
+    @return mix($blanco, $color, $porcentaje);
+}
+
+// Mixins
+@mixin degrad ($blend, $color) {
+    background: rgb(115, 115, 115);
+    background: linear-gradient(0deg, rgba(115, 115, 115, 1) 0%, rgba(215, 215, 215, 1) 84%);
+    background-blend-mode: $blend;
+
+    // multiply, screen, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, hue, saturation, color, and luminosity
+    background-color: $color;
+}
+
+@mixin boton () {
+
+    input[type='checkbox'],
+    input[type='radio'] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+}
+
+// Genericos
+html {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #6f6f6f;
+    background: $colorFondo;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 1.5em 0 0;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+h2 {
+    margin: 1.5em 0 0;
+    text-align: center;
+    font-size: 1em;
+}
+
+p {
+    margin: .5em 0;
+    text-align: center;
+    font-size: 1em;
+}
+
+input[type='text'] {
+    margin: 1em auto 0 auto;
+    padding: 10px 30px;
+    width: 140px;
+    border-radius: 6px;
+    color: grey;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 300;
+    border: 0 solid #e5e5e5;
+}
+
+input[type='button'] {
+    margin: 0 auto 2em auto;
+    padding: 10px 30px;
+    width: 140px;
+    background-color: grey;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 300;
+    border: 0;
+}
+
+// código SASS
+
+#botonReset {
+    background-color: rgb(201, 29, 29);
+    margin: 1em auto;
+    background-image: url(/images/calavera.svg);
+    background-repeat: no-repeat;
+    background-position: 20px 9px;
+    cursor: pointer;
+    height: 40px;
+    vertical-align: middle;
+    background-size: 18px;
+    padding-left: 42px;
+}
+
+main {
+    padding: 1em;
+}
+
+// Seccion opciones
+#cabecera {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    #logo {
+        width: 100px;
+    }
+
+    #opciones {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 10px;
+        position: relative;
+
+        #cerrarOpciones {
+            display: none;
+        }
+
+        svg {
+            width: 22px;
+            height: 22px;
+            transition: .25s all ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            path {
+                fill: $gris;
+            }
+
+            margin-bottom: 10px;
+        }
+
+        #panel-opciones {
+            display: none;
+            position: absolute;
+            top: 50px;
+            z-index: 100;
+
+            #panel-pisos,
+            #panel-reset {
+                background-color: #ecdfb6e6;
+                width: 300px;
+                border: 2px solid $colorFondo;
+                border-radius: 12px;
+                margin-bottom: 10px;
+                padding-bottom: .7rem;
+                box-shadow: 0 8px 12px rgba(128, 128, 128, 0.425);
+            }
+
+            #panel-reservar-pisos {
+                border-top: 2px rgb(255, 245, 212) solid;
+            }
+
+            .flex-vertical {
+                display: flex;
+                flex-direction: column;
+
+                #boton-reserva {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        margin: 0 1em;
+                    }
+
+                    #interruptorReservas {
+                        margin: 1.4em 0;
+                        border-radius: 100px;
+                        height: 30px;
+                        width: 60px;
+                        background-color: #cabd91;
+                        display: flex;
+                        justify-content: flex-end;
+
+                        #interruptorOnOff {
+                            background-color: #fff5d4;
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 100px;
+                            box-shadow: 0 3px 5px rgba(128, 128, 128, 0.425);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//  Seccion Termometro
+#termometro {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    min-width: 300px;
+    width: 100%;
+    height: 50px;
+    max-width: 600px;
+    margin: 8em auto 4em;
+    border-radius: 50px;
+    box-shadow: 0px 10px 15px 1px rgba(102, 102, 102, 0.37);
+    position: relative;
+
+    // Dato a cambiar para porcentaje
+    #valorPorcentaje {
+        position: absolute;
+        width: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        /* dato clave a cambiar */
+        left: 0%;
+
+        /* dato clave a cambiar */
+        margin: unset;
+        font-size: 2em;
+        text-align: center;
+        text-shadow: -2px -2px 5px #fff, 0px 0px 8px #fff, 2px 2px 5px #fff, 4px 0px 8px #fff, -4px 0px 8px #fff, 0px 4px 8px #fff, 0px -4px 8px #fff;
+        font-weight: 300;
+
+        span {
+            font-size: .6em;
+        }
+
+        &::before {
+            content: "|";
+            position: absolute;
+            top: -20px;
+        }
+
+        &::after {
+            content: "|";
+            position: absolute;
+            bottom: -16px;
+        }
+    }
+
+    .libre {
+        height: 50px;
+        flex-grow: 1;
+        border-right: 1px solid oscuro($libre, 40%);
+
+        @include degrad (darken, $libre);
+
+        &:first-of-type {
+            border-top-left-radius: 100px;
+            border-bottom-left-radius: 100px;
+        }
+
+        &:last-of-type {
+            border-right: 0;
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 100px;
+        }
+    }
+
+    .reservado {
+        @include degrad (overlay, $reservado);
+
+        border-right: 1px solid oscuro($reservado, 10%);
+    }
+
+    .vendido {
+        height: 50px;
+        flex-grow: 1;
+        border-right: 1px solid oscuro($vendido, 10%);
+
+        @include degrad (hard-light, $vendido);
+
+        &:first-of-type {
+            border-top-left-radius: 100px;
+            border-bottom-left-radius: 100px;
+        }
+
+        &:last-of-type {
+            border-right: 0;
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 100px;
+        }
+    }
+}
+
+#leyenda {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 4em auto;
+
+    #reservado {
+        display: none;
+    }
+
+    .cont-leyendas {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1em;
+        margin-right: 1em;
+
+        .term-circulo {
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+
+            &#circ-vendido {
+                background-color: $vendido;
+            }
+
+            &#circ-reservado {
+                background-color: $reservado;
+            }
+
+            &#circ-libre {
+                background-color: $libre;
+            }
+        }
+    }
+}
+
+#panelControl {
+    display: none;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+    border: 1px rgba(128, 128, 128, 0.269) solid;
+    border-radius: 5px;
+
+    #pisosVendidos {
+        margin-bottom: 1em;
+    }
+
+    #info {
+        display: none;
+    }
+}

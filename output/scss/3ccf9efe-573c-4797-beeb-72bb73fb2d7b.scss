@@ -1,0 +1,296 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:1000;
+
+// SIZE NAVIGATION
+$height-navigation:90;
+
+$margin-top-under-nav-fixe:100;
+
+// VAR SITE TYPO
+$font-body:"Open Sans",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+$font-other:"Open Sans",arial,sans-serif;
+$font-deco:"Great Vibes",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib6";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES11
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-noir";
+
+
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../A_ID3X/lci47_46494/css/animate.min.css";
+
+
+
+//------------------------------------------------------------------------------------------------------
+//		PERSO LCI47
+//------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------
+//		GENERAL
+//------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------
+//		CONTAINER
+//------------------------------------------------------------------------------------------------------
+
+body {
+    background-color: $color-body;
+    background-image: url("../images/bg-body.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 1280px;
+    padding: 0 20px;
+    @media only screen and (max-width : 1280px) {
+        width: 100%;
+    }
+}
+
+//------------------------------------------------------------------------------------------------------
+//		TYPO
+//------------------------------------------------------------------------------------------------------
+
+.typo-other {
+    font-family: $font-other;
+}
+
+.typo-deco {
+    font-family: $font-deco;
+}
+
+//------------------------------------------------------------------------------------------------------
+//		MENU & NAV
+//------------------------------------------------------------------------------------------------------
+
+.menu-principal > li {
+    margin-left: 0;
+    padding: 0 24px;
+    border: none;
+    @media only screen and (max-width : 1280px) {
+        padding: 0 12px;
+    }
+    > a:hover {
+        color: $color-primary;
+    }
+}
+
+.menu-principal > li.dropdown {
+    display: none;
+}
+
+//------------------------------------------------------------------------------------------------------
+//		INDEX
+//------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------
+//		PLACEMENT VISUEL - MOTEUR - TTL
+//------------------------------------------------------------------------------------------------------
+.titre-milieu {
+    margin-top: 475px;
+    padding: 0;
+    @media only screen and (max-width : 767px) {
+        margin-top: 0;
+    }
+}
+
+.titre-milieu h1 {
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    padding: 10px;
+    background-color: rgba($color-primary,.9);
+    @media only screen and (max-width : 767px) {
+        display: none;
+    }
+}
+
+.form-inline {
+    margin-top: 320px;
+}
+
+#Mini_Ref .hidden-phone {
+    display: block !important;
+}
+
+
+//------------------------------------------------------------------------------------------------------
+//		ENCART PA
+//------------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage {
+    background: $color-block;
+    .height-170 {
+        height: 240px;
+    }
+}
+
+//------------------------------------------------------------------------------------------------------
+//		ENCART PUB
+//------------------------------------------------------------------------------------------------------
+
+.aside-pub {
+    display: none;
+}
+
+//------------------------------------------------------------------------------------------------------
+//		ENCART EXTRA
+//------------------------------------------------------------------------------------------------------
+
+.aside-extra {
+    height: 650px;
+}
+
+div.orbit-wrapper,
+#featured {
+    height: 600px !important;
+}
+
+#featured > div:nth-child(1) > a > div.picture-responsive {
+    height: 550px;
+}
+
+//------------------------------------------------------------------------------------------------------
+//		PUB FULL
+//------------------------------------------------------------------------------------------------------
+
+.titre-pub,
+.titre-pub .bigger {
+    color: $color-content;
+    font-size: 1.5em;
+}
+
+.pub-full-estimation {
+    text-align: right;
+}
+
+.pub-full-alerte {
+    text-align: left;
+}
+
+.pub-estimation-helsinki,
+.pub-alerte-helsinki {
+    box-shadow: none;
+}
+
+.pub-estimation-helsinki .titre-pub .bigger {
+    color: $color-important;
+}
+
+.pub-wordpress-helsinki {
+    background: $color-block;
+    .rounded-200 {
+        width: 300px;
+        height: 300px;
+        margin-top: -20px;
+        border-radius: 0;
+    }
+}
+
+//------------------------------------------------------------------------------------------------------
+//		LISTING PA
+//------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------
+//		VISUEL
+//------------------------------------------------------------------------------------------------------
+
+.recherche-annonces .height-370 {
+    height: 490px;
+}
+
+.recherche-annonces .typo-action {
+    color: $color-important;
+}
+
+//------------------------------------------------------------------------------------------------------
+//		DETAIL PA
+//------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------
+//		VISUEL
+//------------------------------------------------------------------------------------------------------
+
+.vertical-pano {
+    background: $color-block;
+}
+
+.bloc-detail-prix {
+    margin-top: -15px;
+    color: $color-important;
+    font-size: 2.5em;
+}
+
+
+// fix mobile
+
+@media only screen and (max-width : 767px) {
+	.logo .btn-navbar,
+	.ville-annonce,
+	.module-villes-annonces,
+	.alerte-recherche-vente,
+	a,
+	h2 .typo-action,
+	h2.typo-action,
+	.agence-responsable  .typo-action,
+	.agence-email .typo-action{
+		color: $color-important;
+        &.prix-annonce {
+            color: $color-content;
+        }
+	}
+}

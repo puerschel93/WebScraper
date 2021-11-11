@@ -1,0 +1,184 @@
+.catalog
+  .tags
+    @media (max-width: 767px)
+      margin-bottom 5px
+  .container
+    display grid
+    grid-template-columns 1fr 3fr
+    grid-gap 80px
+    @media (max-width: 1680px)
+      display block
+  &__aside
+    @media (max-width: 1680px)
+      display none
+    h2
+      margin-bottom 50px
+  &__content
+    h2
+      margin 0
+  &__wrapper
+    background var(--gray1)
+    padding 30px
+    @media (max-width: 1267px)
+      padding 30px 25px
+    @media (max-width: 767px)
+      padding 30px 16px
+      margin 0 -16px
+  &__controls
+    display flex
+    justify-content space-between
+    position relative
+    z-index 3
+  &__sort
+    position relative
+    cursor pointer
+    &::after
+      content ''
+      position absolute
+      top 5px
+      right -20px
+      display block
+      width 12px
+      height 12px
+      background url(../img/icons/down.svg) no-repeat center
+      transition .5s
+    &.active::after
+      transform rotate(180deg)
+    &-dropdown
+      display none
+      top 30px
+      left -20px
+      position absolute
+      background #fff
+      padding 10px 20px
+      box-shadow 0 0 5px rgba(0,0,0,.1)
+    &.active .catalog__sort-dropdown
+      display block
+      a
+        display block
+        white-space nowrap
+        margin 5px 0
+        color inherit
+        transition .5s
+        &.active
+        &:hover
+          color var(--gold)
+  &__grid-switcher
+    display flex
+    a
+      cursor pointer
+      color var(--gray4)
+      margin-left 15px
+      transition .5s
+      &:hover
+      &.active
+        color var(--gold)
+  &__grid
+    margin-top 20px
+    display grid
+    grid-template-columns 1fr 1fr 1fr 1fr
+    grid-gap 30px
+    @media (max-width: 1680px)
+      grid-template-columns 1fr 1fr 1fr
+    @media (max-width: 1267px)
+      grid-gap 25px
+    @media (max-width: 1023px)
+      grid-gap 20px
+    @media (max-width: 767px)
+      grid-template-columns 1fr 1fr !important
+      grid-gap 15px
+    &--2
+      grid-template-columns 1fr 1fr !important
+      @media (max-width: 767px)
+        grid-template-columns 1fr !important
+  &__top
+    margin-bottom 30px
+    display flex
+    justify-content space-between
+    @media (max-width: 1023px)
+      align-items center
+    @media (max-width: 767px)
+      display block
+      margin-bottom 20px
+  &__bottom
+    margin-top 30px
+    display flex
+    justify-content flex-end
+    align-items center
+    margin-bottom 20px
+    @media (max-width: 1023px)
+      position relative
+      padding-bottom 80px
+    @media (max-width: 767px)
+      justify-content center
+  &__more-btn
+    width 33.33%
+    text-align center
+    @media (max-width: 1023px)
+      position absolute
+      bottom 0
+      left 50%
+      transform translateX(-50%)
+    @media (max-width: 767px)
+      width auto
+  &__pagination
+    width 33.33%
+    display flex
+    justify-content flex-end
+    align-items center
+    @media (max-width: 1023px)
+      width auto
+    .slick-arrow
+      position static
+      .disabled
+        opacity .5
+        pointer-events none
+    .slick-counter
+      position static
+      width auto
+      margin 0 15px
+      display flex
+      > *
+        margin 0 7px
+      a
+        pointer-events auto
+        color inherit
+        text-decoration none
+        transition .5s
+      a[href]:hover
+        @media (hover)
+          color var(--red)
+  &__search
+    display block
+    position relative
+    @media (max-width: 767px)
+      margin-top 20px
+    input
+      width 350px
+      height 50px
+      padding 0 15px
+      font-size 16px
+      font-family var(--text-font)
+      border-radius 0
+      border 1px solid var(--gray4)
+      &::placeholder
+        color var(--black)
+    button
+      padding 0
+      cursor pointer
+      position absolute
+      width 14px
+      height 14px
+      border 0
+      border-radius 0
+      background transparent
+      display flex
+      align-items center
+      right 15px
+      top 18px
+      svg
+        width 100%
+        display block
+
+.catalog .catalog__grid
+  grid-template-columns 1fr 1fr 1fr

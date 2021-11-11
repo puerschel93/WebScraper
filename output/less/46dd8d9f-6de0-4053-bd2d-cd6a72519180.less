@@ -1,0 +1,101 @@
+@import '~theme/style/variables.less';
+
+@prefixCls: ~'@{prefix}-homepage';
+
+.@{prefixCls} {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: @layout-header-height 24px;
+  background: url('https://cdn-health.zhongan.com/magiccube/resource/rl/-fjUcUy5aS.png')
+    top right no-repeat;
+  background-size: cover;
+
+  &-main {
+    max-width: @screen-xl;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  &-title {
+    color: @primary-color;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+
+    span {
+      margin-left: 12px;
+      color: @text-color;
+    }
+  }
+
+  &-description .markdown p {
+    margin: 30px 0 0;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  &-actions {
+    margin: 100px 0 60px;
+
+    .ant-btn {
+      &:not(:first-child) {
+        margin-left: 16px;
+      }
+
+      &.ant-btn-lg {
+        height: 50px;
+        padding: 0 32px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  &-banner {
+    margin-top: 80px;
+
+    img {
+      width: 100%;
+      animation: zarm-docs-banner-move 60s infinite;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+
+  &-qrcode {
+    .ant-popover-inner-content {
+      padding: 8px;
+      canvas {
+        display: block;
+      }
+    }
+  }
+}
+
+@keyframes zarm-docs-banner-move {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  20% {
+    transform: translate3d(-30px, -30px, 0);
+  }
+
+  40% {
+    transform: translate3d(30px, -30px, 0);
+  }
+
+  60% {
+    transform: translate3d(-30px, 30px, 0);
+  }
+
+  80% {
+    transform: translate3d(30px, 30px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

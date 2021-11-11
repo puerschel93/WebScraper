@@ -1,0 +1,199 @@
+@use "utility/colours";
+@use "Utility/mixins";
+
+// ----------------------------------------------
+// Contact Section Structure
+// ----------------------------------------------
+
+.main-contact {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mixins.sm {
+    padding: 15px 25px 15px 230px;
+  }
+
+  @include mixins.mh {
+    padding: 15px;
+  }
+}
+
+.container-contact {
+  margin-bottom: 15px;
+  width: 100%;
+
+  @include mixins.lg {
+    width: 50%;
+  }
+}
+
+// ----------------------------------------------
+// Contact Info
+// ----------------------------------------------
+
+.contact-info-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include mixins.redborder;
+  padding: 15px;
+}
+
+.contact-info {
+  margin: 15px 0;
+
+  @include mixins.md {
+    padding: 0 15px;
+  }
+
+  @include mixins.lg {
+    padding: 15px;
+    margin: 0;
+    height: 100%;
+  }
+}
+
+.contact-info-header {
+    margin-top: -1.5rem;
+}
+
+.contact-info-content {
+  margin: 0 auto 1rem;
+}
+
+.contact-icons-container {
+  display: none;
+  margin: auto 0;
+  @include mixins.lg {
+    display: flex;
+  }
+}
+
+.contact-icons {
+  border: 2px solid red;
+  border-radius: 50%;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  box-shadow: inset 2px 2px 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+// ----------------------------------------------
+// Contact Form
+// ----------------------------------------------
+
+.contact-form {
+  height: 100%;
+  display: flex;
+  @include mixins.sm {
+    flex-wrap: wrap;
+  }
+
+  @include mixins.md {
+    padding: 15px;
+  }
+}
+
+.contactform-fieldset {
+  @include mixins.redborder;
+  padding: 15px;
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mixins.sm {
+    width: 100%;
+  }
+}
+
+// ----------------------------------------------
+// Contact Fields
+// ----------------------------------------------
+
+.contact-field-container {
+  width: 100%;
+}
+
+.contact-field-outer {
+  @include mixins.inputstyle;
+  margin: 5px 0px 15px;
+  box-shadow: inset 3px 3px 5px rgb(0 0 0 / 90%);
+}
+
+.field-border {
+  display: inline-block;
+  padding: 0 2px;
+  margin: -0.7rem 0 0 1rem;
+  line-height: 1rem;
+  color: black;
+  width: 100%;
+  position: relative;
+}
+
+.contact-field-container:nth-of-type(1),
+ .contact-field-container:nth-of-type(2) {
+
+  @include mixins.sm {
+    padding-right: 10px;
+    width: 50%;
+  }
+}
+
+.field-single {
+
+  @include mixins.sm {
+    color: red;
+    width: 100%;
+  }
+}
+
+// ----------------------------------------------
+// Contact Form Submit Button
+// ----------------------------------------------
+
+.submit-button-container {
+  @include mixins.inputstyle;
+  display: flex;
+}
+
+.contact-confirmation-container {
+  position: absolute;
+  @include mixins.redborder;
+  padding: 15px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  width: 230px;
+  text-align: center;
+  display: none;
+}
+
+// ----------------------------------------------
+// Form Validation Dot
+// ----------------------------------------------
+
+.validation-dot {
+  display: none;
+  position: absolute;
+  border-radius: 50%;
+  top: 20px;
+  right: 25px;
+  box-shadow: inset 2px 2px 2px black;
+  height: 15px;
+  width: 15px;
+}
+
+.green-dot {
+  background: green;
+}
+
+.red-dot {
+  background: red;
+}

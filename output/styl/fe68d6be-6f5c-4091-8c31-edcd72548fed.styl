@@ -1,0 +1,254 @@
+// CSS Style Guide: http://codeguide.co/#css
+
+
+$scheme    = hexo-config('scheme') ? hexo-config('scheme') : 'Muse';
+
+$variables = base $scheme;
+$mixins    = base $scheme;
+
+
+// Variables Layer
+// --------------------------------------------------
+for $variable in $variables
+  @import "_variables/" + $variable;
+for $inject_variable in hexo-config('injects.variable')
+  @import $inject_variable;
+
+// Mixins Layer
+// --------------------------------------------------
+for $mixin in $mixins
+  @import "_mixins/" + $mixin;
+for $inject_mixin in hexo-config('injects.mixin')
+  @import $inject_mixin;
+
+// Common Layer
+// --------------------------------------------------
+
+// Scaffolding
+@import "_common/scaffolding";
+
+// Layout
+@import "_common/outline";
+
+// Components
+@import "_common/components";
+
+
+// Schemes Layer
+// --------------------------------------------------
+@import "_schemes/" + $scheme;
+
+
+// Custom Layer
+// --------------------------------------------------
+for $inject_style in hexo-config('injects.style')
+  @import $inject_style;
+
+// 个人定制美化
+// --------------------------------------------------
+
+// 修改全局字体大小
+.post-body {
+    //font-size: 2.0em;
+}
+// h1-h6美化触控效果
+.post-body h1, .post-body h2, .post-body h3, .post-body h4, .post-body h5, .post-body h6{
+    cursor: pointer;
+    -webkit-transition:all .3s ease-out;
+    -moz-transition:all .3s ease-out;
+    -o-transition:all .3s ease-out;
+    -ms-transition:all .3s ease-out;
+    transition:all .3s ease-out;
+}
+// 美化 h2 h3 标签
+.post-body h2 {
+    font-size: 24px;
+    margin: 40px 0 18px;
+}
+.post-body h3 {
+    font-size: 22px;
+    margin: 25px 0 16px;
+}
+.post-body h1:hover, .post-body h2:hover, .post-body h3:hover, .post-body h4:hover, .post-body h5:hover, .post-body h6:hover{
+    padding-left: 10px;
+}
+// 归档的美化,设置归档方框美化
+.posts-collapse .post-header {
+    position: relative;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    transition-property: inherit;
+    box-shadow: 0 1px 3px #6f42c100, 0 1px 2px #6f42c1;
+    padding: 2px 10px;
+    margin: 8px;
+    background: #c1425c00;
+    border-bottom: none;
+    border-radius: 20px;
+}
+// 美化归档栏整体布局,调整时间日期
+.posts-collapse .post-meta {
+    color: #5073b8;
+    font-weight: 900;
+}
+.post-meta{
+    margin-left: 10px;
+}
+.posts-collapse .post-title {
+    margin-left: 20px;
+}
+// 归档竖线呈现出,彩带效果,包括彩球的美化代码
+.posts-collapse::before {
+    background-image: linear-gradient(180deg,#f79533 0,#f37055 15%,#ef4e7b 30%,#a166ab 44%,#5073b8 58%,#1098ad 72%,#07b39b 86%,#6dba82 100%);
+}
+.page-archive .posts-collapse .archive-move-on{
+	background-color: #fc6423;
+}
+.posts-collapse .collection-title::before{
+	background-color: #fc6423;
+}
+.posts-collapse .post-header::before {
+	background-color: #f0ffff00;
+}
+// 标签的美化,使用圆形方框美化
+.tag-cloud a {
+    //box-shadow: 0 1px 3px #6f42c1, 0 1px 2px #d9534f;
+    //padding: 2px 10px;
+    //margin: 8px;
+    //background: #c1425c00;
+    //border-bottom: none;
+    //border-radius: 20px;
+}
+
+// 美化标签底部选择按钮(1.2.3.4.5)颜色
+.pagination .page-number.current {
+    background: #a166ab;
+    border-radius: 20px 20px 20px 20px;
+}
+.pagination .prev, .pagination .next, .pagination .page-number {
+    color: blueviolet;
+    font-weight: 500;
+    border-radius: 30px 30px 30px 30px;
+}
+// 针对阅读全文按钮的美化
+.post-button .btn {
+    color: #555;
+    font-size: 15px;
+    box-shadow: inset 0 0 3px 0 #66a3ff;
+    border: none!important;
+    transition-property: unset;
+    padding: 0 15px;
+    border-radius: 30px 30px 30px 30px;
+}
+// 一二级菜单美化
+blockquote {
+  padding: 0 15px;
+  color: #000000;
+  font-family: cursive;
+  border-left-color: #42c1b8;
+}
+// 主标题栏位字体美化
+.site-title{
+	/*font-family: 'Lato', &quot;PingFang SC&quot;, &quot;华文新魏&quot;, sans-serif;*/
+	/*font-size: 20px;*/
+}
+// 主标题栏位背景颜色美化
+.site-meta {
+    //background-image: linear-gradient(200deg, #e4a0a3, #3F51B5);
+    //background-image: linear-gradient(90deg, #4263c1 0, #ef4ec5 25%, #b255f3 50%, #4eb2ef 75%, #8466ab 100%);
+}
+
+// 深度美化
+// --------------------------------------------------
+// 给文章概述与文章内容添加上一个方框。
+.content .posts-expand .post-block{
+    position: relative;
+    margin-bottom: 30px;
+    padding: 40px 20px;
+    font-size: 14px;
+    box-shadow: rgba(0,0,0,0.1) 0px 15px 35px 0px, rgba(0, 0, 0, 0.31) 6px 6px 10px 0px;
+    border-radius: 16px;
+    background-color: #fff;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s,-webkit-transform .3s;
+    transform-style: preserve-3d;
+}
+.post-expand .post-body{
+    position: relative;
+    overflow: visible;
+    padding: 20px;
+    color: #666;
+    font-size: 15px;
+    word-break: break-word;
+}
+
+/* 标签页 公共样式 */
+.note {
+    position: relative;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: initial;
+    border-left: 3px solid #eee;
+    background-color: #f9f9f9;
+	border-radius: 3px;
+	font-size: var(--content-font-size);
+}
+
+.note:not(.no-icon):before {
+    position: absolute;
+    font-family: FontAwesome;
+    font-size: larger;
+    top: 11px;
+    left: 15px;
+}
+
+.note:not(.no-icon) {
+    padding-left: 45px;
+}
+
+.note.info {
+    background-color: #eef7fa;
+	border-left-color: #428bca;
+}
+
+.note.info:not(.no-icon):before {
+    content: "\f05a";
+    color: #428bca;
+}
+
+.note.warning {
+    background-color: #fdf8ea;
+    border-left-color: #f0ad4e;
+}
+
+.note.warning:not(.no-icon):before {
+    content: "\f06a";
+    color: #f0ad4e;
+}
+
+.note.primary {
+    background-color: #f5f0fa;
+    border-left-color: #6f42c1;
+}
+
+.note.primary:not(.no-icon):before {
+    content: "\f055";
+    color: #6f42c1;
+}
+
+.note.danger {
+    background-color: #fcf1f2;
+    border-left-color: #d9534f;
+}
+
+.note.danger:not(.no-icon):before {
+    content: "\f056";
+    color: #d9534f;
+}
+
+//侧栏“文章目录”“站点概览”的鼠标悬停修改
+.sidebar-nav li:hover{
+    color: #00004d;
+}

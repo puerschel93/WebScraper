@@ -1,0 +1,483 @@
+@import "./reset.styl" 
+@import "./variables.styl"
+@import "./loading.styl"
+@import "./animation.styl"
+@import "./message.styl"
+
+$base = 100
+
+html {
+  font-size 100px
+}
+
+body {
+  font-size 0.14rem
+  background url($page-bg-img) center no-repeat
+  background-size 100% 100%
+  background-attachment fixed
+  font-family Arial,Helvetica,sans-serif
+}
+
+.page-view {
+  width $page-main-width
+  min-height 8.26rem
+  margin 0 auto
+  // background $theme-bg-color
+}
+
+pxToRem(px) {
+  px / 100
+}
+
+for k, v in $colors
+  .c-{k}
+    color v
+  .bgc-{k}
+    background-color v
+
+for x in 12 13 14 15 16 18 20 22 24 25 26 28 30 32 35 36 38 40 42 45 46 48 50
+  .fs-{x}
+    font-size pxToRem(x)rem
+
+for x in -100 -80 -50  -44 -40 -30 -20 -10 -5 -3 -2 0 1 2 3 4 5 10 15 20 25 30 34 40 44 50 60 70 75 80
+  .pd-{x}
+    padding pxToRem(x)rem
+  .mg-{x}
+    margin pxToRem(x)rem
+
+  .mgt-{x}
+    margin-top pxToRem(x)rem
+  .mgb-{x}
+    margin-bottom pxToRem(x)rem
+  .mgl-{x}
+    margin-left pxToRem(x)rem
+  .mgr-{x}
+    margin-right pxToRem(x)rem
+
+  .pd-{x}
+    padding pxToRem(x)rem
+  .pdt-{x}
+    padding-top pxToRem(x)rem
+  .pdb-{x}
+    padding-bottom pxToRem(x)rem
+  .pdl-{x}
+    padding-left pxToRem(x)rem
+  .pdr-{x}
+    padding-right pxToRem(x)rem
+  
+  .pol-{x}
+    left pxToRem(x)rem
+    
+  .por-{x}
+    right pxToRem(x)rem
+  
+  .pot-{x}
+    top pxToRem(x)rem
+    
+  .pob-{x}
+    bottom pxToRem(x)rem
+  
+  .lh-{x}
+    line-height pxToRem(x)rem
+    
+  .hlh-{x}
+    height pxToRem(x)rem
+    line-height pxToRem(x)rem
+
+.flex {
+  display flex
+}
+.fdr-r {
+  flex-direction row
+}
+.fdr-c {
+  flex-direction column
+}
+.fw-w {
+  flex-wrap wrap
+}
+.jc-c {
+  justify-content center
+}
+.jc-s {
+  justify-content start
+}
+.jc-e {
+  justify-content flex-end
+}
+.jc-s-b {
+  justify-content space-between  
+}
+.ai-c {
+  align-items center
+}
+.hide {
+  display none
+}
+.flt-r {
+  float right
+}
+.flt-l {
+  float left
+}
+.flex1 {
+  flex 1
+}
+.inlb {
+  display inline-block
+}  
+.va-m {
+  vertical-align middle
+}
+.va-t {
+  vertical-align top
+}
+.pos-r {
+  position relative
+}
+.pos-a {
+  position absolute
+}
+.txt-c {
+  text-align center
+}
+.txt-l {
+  text-align left
+}
+.txt-r {
+  text-align right
+}
+
+.t-yellow {
+  color $text-yellow!important
+}
+.f-14 {
+  font-size .14rem
+}
+.m-r-10
+  margin-right .1rem
+
+cntEl() {
+  content ' '
+  position absolute
+  top 0
+  width 200%
+  height 200%
+  transform scale(0.5)
+  background-clip padding-box
+  box-sizing border-box
+}
+.l-cir {
+  position relative
+  leftCircle()
+  &::before {
+    leftCircle()
+    cntEl()
+    transform-origin left top
+    left 0
+  }
+}
+.r-cir {
+  rightCircle()
+  position relative
+  &::before {
+    rightCircle()
+    cntEl()
+    transform-origin right top
+    right 0
+  }
+}
+.pos-center
+  position absolute
+  top 50%
+  left 50%
+  transform translate3d(-50%, -50%, 0)
+  
+.crs-p {
+  cursor pointer
+}
+
+.rec
+  display inline-block
+  border-radius 2px
+  box-sizing border-box
+  min-width .54rem
+  text-align center
+  line-height .24rem
+  margin-left 6px
+.code-bg,
+.ball,
+.rec {
+  &.bgc-r {
+    background #f42f3f
+    color #fff
+  }
+  &.bgc-g {
+    background #64cda7
+    color #fff
+  }
+  &.bgc-b {
+    background #51a0ef
+    color #fff
+  }
+  &.bgc-y {
+    background $text-orange
+    color #fff
+  }
+}
+
+.ld-item {
+  width 0.20rem
+  height 0.20rem
+  line-height 0.20rem
+  &.txt-r {
+    color #f42f3f // $ludan-open-item-bg-color-red
+  }
+  &.txt-g {
+    color #1aaf1a // $ludan-open-item-bg-color-green
+  }
+  &.txt-b {
+    color #009bc7 // $ludan-open-item-bg-color-blue
+  }
+  &.txt-y {
+    color #000000 // $ludan-open-item-bg-color-yellow
+  }
+  // &.icon-cur {
+  //   bg($ludan-open-item-icon-cur)
+  // }
+  // &.icon-qs {
+  //   bg($ludan-open-item-icon-qs)
+  // }
+}
+
+.code-bg,
+.status-b {
+  min-width 0.6rem
+  height 0.25rem
+  line-height 0.25rem
+  color $fc
+  padding 0 0.1rem
+  border-radius: 2px
+  box-sizing: border-box
+}
+.text-green
+  color $text-green
+.text-r
+  color $text-red
+.text-gray
+  color $text-gray
+.text-orange
+  color $text-orange
+
+.no-data {
+  color $no-data-txt-color
+}
+
+.ant-modal-confirm .ant-btn-primary {
+  color #fff
+  background-color #ff4d4f
+  border-color #ff4d4f
+  text-shadow 0 -1px 0 rgba(0, 0, 0, 0.12)
+  box-shadow 0 2px 0 rgba(0, 0, 0, 0.045)
+  &:hover,
+  &:active,
+  &:focus {
+    background-color #ff7875
+    border-color #ff7875
+  }
+}
+
+.clearfix:after
+  visibility hidden
+  display block
+  font-size 0
+  content ""
+  clear both
+  height 0
+
+.inline-item
+  display inline-block
+
+
+.self-scroll ::-webkit-scrollbar {
+  width:4px;
+}
+/* 滚动槽 */
+
+.self-scroll ::-webkit-scrollbar-track {
+  -webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
+  border-radius:10px;
+}
+/* 滚动条滑块 */
+
+.self-scroll ::-webkit-scrollbar-thumb {
+  border-radius:10px;
+  background:rgba(255,255,255,0.8);
+  -webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+}
+
+.self-scroll ::-webkit-scrollbar-thumb:window-inactive {
+  background:rgba(0,0,0,0.4);
+}
+
+
+.bg-orange
+  background-color $text-orange
+  color #fff
+.bg-white {
+  background-color $theme-bg-color
+}
+.self-btn
+  display inline-block
+  border-radius 3px
+  text-align center
+  line-height .3rem
+  cursor pointer
+  transition: .2s ease
+  width .8rem
+  user-select: none
+  border 1px solid #d9d9d9
+  box-sizing: border-box
+  background-color #fbfbfb
+  color $fc
+  transition .2s ease
+  &.active
+    color #fff
+    background-color $text-orange
+    border-color $text-orange
+  &:hover
+    opacity .85
+
+// 公用样式
+.txt-r {
+  // color #f42f3f
+}
+.txt-g {
+  color #1aaf1a
+}
+.txt-b {
+  color #009bc7
+}
+.txt-y {
+  color #fbff00
+}
+.letter-2
+  letter-spacing 2px
+.m-l-10
+  margin-left .1rem
+.ball
+  display inline-block
+  text-align center
+  width .24rem
+  height .24rem
+  line-height .24rem
+  color #fff
+  border-radius 50%
+  margin-right 6px
+  &:last-child
+    margin-right 0
+.m-t-10
+  margin-top .1rem
+.bet-records-view
+.open-issue-history-view
+.play-method-rule-view
+  min-height 8.26rem
+  background #e7e7e7
+  box-sizing border-box
+  padding 0 .1rem .4rem
+  .page-title
+    display inline-block
+    border-top 3px solid #a8a8a8
+    line-height .42rem
+    box-sizing border-box
+    padding 0 .2rem
+    background linear-gradient(to bottom, #fff, #e7e7e7)
+    cursor pointer
+    color $fc3
+    margin-right 1px
+    transition .2s ease
+    &.active
+      border-top-color $text-orange
+      color $text-orange
+  .search
+    padding .2rem
+    line-height .3rem
+    display flex
+    justify-content flex-start
+    background-color #fff
+    .total-group
+      padding 0 .12rem
+      span
+        display inline-block
+        cursor pointer
+        padding 0 .12rem
+        transition .2s ease
+        &.active
+          color $text-orange
+    .time-group
+      .item
+        display inline-block
+        width .8rem
+        border-radius 3px 
+        border 1px solid $border-color
+        text-align: center
+        color $fc
+        margin-left 8px
+        background-color #fbfbfb
+        transition .2s ease
+        cursor pointer
+        &.active
+          background $text-orange
+          border-color $text-orange
+          color #fff
+    .lottery-select
+      width 1.44rem
+    label
+      margin-left .14rem
+      span
+        margin-right 8px
+      .number-input
+        width 1.2rem
+      .self-btn
+        width 1rem
+  .ant-table-thead > tr > th
+    background linear-gradient(to bottom, #ccc, #e6e6e6)
+  .ant-table-tbody > tr > td
+    white-space: nowrap
+    border none
+  .ant-table-tbody > tr:nth-child(odd) > td
+    background #fff
+  .ant-table-tbody > tr:nth-child(even) > td
+    background #fafafa
+  .ant-table-body th
+  .ant-table-body td
+    text-align: center
+  .m-l-0
+    margin-left 0!important
+  .w-1
+    width 1.2rem
+
+.modal-root-c {
+  position fixed
+  left 0
+  top 0
+  width 100%
+  height 100%
+}
+
+.page-view
+  .ant-pagination-item-link
+    &a:hover
+      color rgba(0, 0, 0, 0.65)
+  .ant-pagination-item
+    a:hover
+      color rgba(0, 0, 0, 0.65)
+  .ant-pagination-prev .ant-pagination-item-link,
+  .ant-pagination-next .ant-pagination-item-link,
+  .ant-pagination-prev:hover .ant-pagination-item-link,
+  .ant-pagination-next:hover .ant-pagination-item-link
+    color rgba(0, 0, 0, 0.65) !important
+  .ant-pagination-item.ant-pagination-item-active
+    a
+      background-color #f37e0c
+      color #fff

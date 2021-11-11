@@ -1,0 +1,417 @@
+@import 'fonts'
+
+//FONT SIZES
+
+element-boxes-size=1.4em
+title-boxes-size=1.5em
+
+//COLORS
+
+light-green=#C4C9A8
+middle-green=#8b8f76
+dark-green=#3e4a40
+brown=#a57f68
+dark-brown=#7e644b 
+
+//FONTS
+
+title-font='Lobster'
+text-font='Poiret One'
+subtitle-font='Oswald'
+
+//MIXINS
+
+vendor(prop, args)
+    if prop=='display' 
+        if args=='flex'
+            {prop} -webkit- + args
+            {prop} args
+        else
+            {prop} args    
+    else    
+        -webkit-{prop} args
+        {prop} args
+
+display()
+    vendor('display', arguments)   
+
+flex-direction()
+    vendor('flex-direction', arguments)         
+
+flex-wrap()
+    vendor('flex-wrap', arguments)
+
+flexx()
+    vendor('flex', arguments)    
+
+order()
+    vendor('order', arguments)    
+
+justify-content()
+    vendor('justify-content', arguments)  
+
+flex-flow()
+    vendor('flex-flow', arguments)  
+
+align-items()
+    vendor('align-items', arguments)
+
+align-content()
+    vendor('align-content', arguments) 
+
+flex-config()    
+    flex-direction arguments[0]
+    flex-wrap arguments[1]
+    if arguments[2]!='0'
+        justify-content arguments[2]
+    if arguments[3]!='0'
+        align-items arguments[3]
+    if arguments[4]!='0'    
+        align-content arguments[4]  
+
+//BASIC SETTINGS
+
+a 
+    color #7E644B
+    text-decoration none
+    
+a:hover
+    color #3E4A40
+
+ul 
+    padding 0 
+    list-style none     
+
+.icon
+    color #3E4A40
+
+img
+    width 100%
+    height auto    
+
+
+//COMMON PARTS
+
+body
+    font-size 16px
+    background-color light-green 
+    font-family text-font
+
+.wrapper
+    display flex
+    flex-config row wrap 0 0 0
+
+.wrapper > * 
+    padding: 10px
+    flexx: 1 100%
+
+.header
+    background dark-green
+    font-family title-font
+    color brown
+    font-size 3em
+    padding 0 0.3em 0.2em 0.3em
+    display flex
+    flex-config row wrap space-between 0 0 
+
+.main
+    flex-flow row wrap
+    justify-content space-around
+    
+.navigation
+    display flex
+    flex-config row no-wrap flex-end 0 0
+    margin 0.2em 0 0 0
+    padding 0
+
+.navigation a
+    padding 0.5em
+    text-align center   
+    display block
+    font-size 0.5em
+    color middle-green
+
+.navigation a:hover
+    color brown  
+
+.aside-right
+    background middle-green
+    padding-top 1.5em
+
+.footer
+    background brown
+    color dark-green
+    font-family title-font
+    text-align center
+    
+@media all and (min-width : 480px) 
+    .aside-right  
+        flexx 1 
+    .main
+        order 2
+        flexx 3 0px
+    .header
+        order 1    
+    .aside-right  
+        order 3 
+    .footer   
+        order 4 
+    .navigation
+        justify-content space-around
+
+@media all and (min-width: 1024px)
+    .angular-google-map-container 
+        width 1000px
+
+@media all and (max-width: 1024px)
+    .angular-google-map-container 
+        width 700px          
+
+@media all and (max-width : 768px) 
+    .header
+        justify-content space-around
+    .angular-google-map-container 
+        width 480px
+
+@media all and (max-width : 480px)
+    .title
+        text-align center   
+    .navigation
+        flex-flow column wrap
+        padding 0
+    .angular-google-map-container 
+        width 260px    
+
+//BLOG POST LIST & USERS LIST
+
+.flex-container
+    display flex
+    flex-config row wrap space-around center flex-start
+
+.flex-item-postlist
+    margin: auto
+
+.flex-item
+    margin: auto    
+
+.blog-post-item, .user-link
+    margin 0em 0em .5em 0em
+    border-bottom 3px dashed #A57F68
+    background-color #979A85
+
+.blog-post-link, .user-link
+    font-family subtitle-font
+    padding 0.5em 0.5em 0.5em 0.5em
+
+//PAGINATOR
+
+.simple-pagination
+    font-family subtitle-font
+    display flex
+    flex-config row wrap space-between baseline center
+
+.simple-pagination p
+    margin 0 0.5em 0 0   
+    
+.simple-pagination__items
+    color dark-brown
+
+.simple-pagination__pages   
+    color dark-green
+
+.simple-pagination__page-limit a
+    color dark-green
+    
+.simple-pagination__page-limit a:hover
+    color dark-brown   
+
+.simple-pagination__button
+
+
+//BLOG POST
+
+.blog-post-header, .blog-post-create-header
+    font-family subtitle-font
+    color dark-brown  
+
+.blog-post-body, .blog-post-user, .blog-post-comments, .about-me-description   
+    font-family text-font 
+    color dark-green
+    margin 0 auto
+    margin-bottom 0.7em
+
+.comments-list
+    list-style-type none
+
+.subtitle
+    background middle-green
+    font-family text-font 
+    color dark-green
+    padding 0.2em
+    width 99%
+    display block
+
+//USER INFO
+
+.responsive-circle-container
+    width 30%
+    margin 0 auto
+
+.responsive-circle 
+    border-radius: 50%
+    border 5px solid #a57f68
+    margin-bottom 0.5em
+    margin: 0 auto 20px
+    width: 100%
+    display block
+
+.responsive-circle::after
+    border-radius: 50%
+    content: ""
+    display: block
+    height: auto
+    //margin-bottom: 20px
+    padding-bottom: 100%
+    width: 100%
+
+.responsive-circle div
+    color: white
+    float: left
+    line-height: 1em
+    margin-top: -0.5em
+    padding-top: 50%
+    text-align: center
+    width: 100%
+
+.img-circle::after
+    background: url("https://placekitten.com/400/400") repeat scroll 0 0 / cover
+
+.container-blog-user
+    display flex
+    flex-config row wrap space-around 0 0
+
+.blog-user 
+    width 100%
+   
+.container-blog-user h1
+    font-family subtitle-font   
+    color dark-brown
+    text-align center
+    margin 0 auto
+
+.container-blog-user a
+    font-family text-font
+    color brown
+    display block
+    text-align center
+
+.common-box
+    padding 0.7em  
+    display flex
+    flex-config column wrap center 0 0    
+
+.upper-box
+    background dark-green
+    @extends .common-box
+
+.lower-box
+    background brown
+    @extends .common-box
+
+.container-blog-user i
+    font-size 2em
+
+.button
+    background dark-green
+    width 100%
+    padding 1em 0em 1em 0em
+    align center
+    margin-top 0.7em
+
+.button a
+    color dark-brown
+    font-weight bold  
+
+.angular-google-map
+    display flex
+    flex-config row wrap center 0 0  
+
+.angular-google-map-container 
+    height: 200px 
+    border 5px solid dark-green
+
+//CREATE POST
+
+.blog-post-create-title
+    color dark-green
+    font-family text-font
+    font-weight bold
+    margin 0 auto
+
+.blog-post-create-input, .blog-post-create-select
+    width 80%   
+    font-family text-font
+    font-size 1em
+    padding 0.5em
+    background #979a85
+    border 0
+    color dark-green
+    margin-top 0.5em
+    margin-bottom 0.7em
+
+.blog-post-create-fieldset
+    border 0
+    padding 0   
+
+.blog-post-create-button
+    width 100%
+    background dark-green
+    color brown
+    font-family subtitle-font 
+    border 0
+    padding 0.3em
+    font-size 1em    
+
+.blog-post-create-button[disabled]
+    width 100%
+    background gray
+    color #666666
+    font-family subtitle-font 
+    border 0
+    padding 0.3em
+    font-size 1em    
+
+//ABOUT ME
+
+.about-me-title
+    font-family subtitle-font
+    text-align left
+    color dark-green
+    padding 0em 1em 0em 1em
+
+.about-me-name
+    display block
+    text-align center    
+    font-family subtitle-font
+    color dark-brown
+
+.about-me-description p
+    color dark-green
+    padding 0em 1em 0em 1em
+    font-family subtitle-font  
+    text-align center
+
+.about-me-connections
+    display flex   
+    flex-config row wrap center 0 0
+
+.aside-right i
+    color dark-green
+    font-size 2.5em   
+    margin-right 0.5em  
+
+.aside-right i:hover
+    color dark-brown     
+
+.about-me-image
+    background url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAgaAAAAJDE0OTc0ZGRhLTg4MWYtNDI3NC05ZmVhLWY0MjZmNmM5MDM0ZA.jpg') repeat scroll 0 0 / cover  

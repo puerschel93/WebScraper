@@ -1,0 +1,122 @@
+@import "variantes";
+@mixin estilo {
+    .trabajos{
+        width: 90%;
+        margin: 2rem 0;
+        
+        .trabajos__empresa{
+            font-weight: $bold;
+            font-family: $montserrat;
+
+            .trabajos__puesto{
+                font-weight: $thin;
+                color: $titulo;
+            }
+            
+            
+        }
+        .trabajos__tiempo{
+            color: $titulo;
+        }
+        .trabajos__desc{
+            line-height: 1.1em;
+            margin: .5em 0;
+        }
+
+    }
+    
+}
+
+
+.main{
+    .progress{
+        position: fixed;
+        z-index: 9999;
+        width: 80%;
+/*       display: none;
+ */    }
+    .main__inicial{
+        height: 100vh;
+        background-image: url(../img/bg.jpeg);
+        background-size: cover;
+    }
+    .main__blur{
+        width: 60%;
+        height: 300px;
+        z-index: 3;
+        bottom: 20%;
+        left: 32%;
+        background: inherit;
+        box-shadow: 5px 5px 5px rgba(12, 12, 12, 0.527);
+        overflow: hidden;
+        position: absolute;
+        z-index: 1;
+        backdrop-filter: saturate(180%) blur(20px)
+    
+}
+            .main__focus{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                bottom: 50vh;
+                z-index: 4;
+                
+
+            .inicial__titulo{
+                font-weight: $bold;
+                font-size: 3rem;
+                filter: none;
+                    span{
+                        cursor: default;
+                        transition: 0.5s color, 1s text-shadow ;
+                        user-select: none;
+                        &:hover{
+                            color: rgba(255, 255, 255, 0);
+                            text-shadow: black 0 25px,
+                                         black 0 -25px;
+                          
+                                    
+                        }
+                    }
+            }
+            .inicial__mail{
+                margin: 3rem 0 0 0;
+            }
+    }
+
+
+    
+    .main__grid{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
+    
+    .left{
+        grid-area: left;
+        width: 95%;
+        .title{
+            color:$titulo ;
+            margin: 1rem 0;
+            font-family: $montserrat;
+            
+            
+        }
+
+        @include estilo()
+    }
+    .right{
+        grid-area: right ;
+        width: 95%;
+
+        .title{
+            color:$titulo ;
+            margin: 1rem 0;
+        }
+        @include estilo()
+    }
+    }
+}

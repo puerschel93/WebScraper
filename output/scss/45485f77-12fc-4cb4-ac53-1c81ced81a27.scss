@@ -1,0 +1,354 @@
+.carousel {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+
+    .carousel-title {
+        color: $off-white;
+        font-family: $sans-serif;
+        font-size: 24px;
+        letter-spacing: .03em;
+        font-weight: 300;
+
+        margin-bottom: 10px;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    .carousel-main {
+        white-space: nowrap;
+    }
+}
+
+.carousel-item {
+    display: inline-block;
+    margin-right: 20px;
+
+    height: 260px;
+    width: 170px;
+    position: relative;
+}
+
+.carousel-item-thumbnail {
+    position: relative;
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+
+    .thumbnail-image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .thumbnail-overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        top: 0;
+        left: 0;
+
+        transition: .2s ease;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .thumbnail-info {
+        white-space: normal;
+
+        position: absolute;
+        top: 0;
+        padding: 10px 10px;
+        z-index: 1;
+
+        visibility: hidden;
+        
+        > p {
+            color: $white;
+            font-family: $sans-serif;
+            font-weight: 400;
+            margin-bottom: 2px;
+            line-height: 18px;
+            font-size: 12px;
+        }
+
+        .thumbnail-info-title {
+            font-size: 14px;
+        }
+    }
+}
+
+.carousel-item-btns {
+    height: 10%;
+    width: 100%;
+
+    display: flex;
+    z-index: 2;
+    visibility: hidden;
+
+    .left-btn, .right-btn {
+        width: 50%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: $white;
+        font-size: 12px;
+        font-family: $sans-serif;
+        cursor: pointer;
+
+        img {
+            height: 12px;
+            width: 12px;
+            margin-right: 4px;
+        }
+    }
+
+    .left-btn {
+        background-color: $orange;
+
+        &:hover {
+            background-color: $orange-hover;
+        }
+    }
+
+    .right-btn {
+        background-color: $gray-button;
+
+        &:hover {
+            background-color: $gray-button-hover;
+        }
+    }
+}
+
+.carousel-item-title {
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    height: 10%;
+
+    color: $white;
+    font-size: 14px;
+    font-family: $sans-serif;
+    font-weight: 300;
+    letter-spacing: .03em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.carousel-item:hover {
+    cursor: pointer;
+
+    .thumbnail-image {
+        filter: blur(4px);
+        -webkit-filter: blur(4px);
+    }
+
+    .thumbnail-overlay {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .thumbnail-info {
+        visibility: visible;
+    }
+
+    .carousel-item-btns {
+        visibility: visible;
+    }
+
+    .carousel-item-title {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .carousel {
+//     // display: flex;
+//     // overflow-x: hidden;
+//     // overflow-y: hidden;
+//     // scrollbar-width: none;  
+//     // margin: 0 auto;
+//     // left: -100%;
+//     width: 100vw;
+// }
+
+
+
+// .slick-arrow.slick-prev {
+//     left: 30px;
+//     z-index: 1;
+//     height: 50%;
+//     display: none;
+//     color: $light-gray;
+// }
+
+// .slick-arrow.slick-next {
+//     right: 30px;
+//     height: 50%;
+//     display: none;
+//     color: $light-gray;
+// }
+
+// .slick-list:hover .slick-arrow.slick-prev {
+//     display: block;
+//     color: red;
+//     // &.slick-arrow.slick-prev, 
+//     //     &.slick-arrow.slick-next {
+//     //     display: block;
+//     // }
+// }
+
+// .slick-arrow.slick-prev:hover, 
+//     .slick-arrow.slick-next:hover {
+//     // transform: scale(1.5);
+//     height: 60%;
+// }
+
+// .slick-slide.slick-active {
+//     // width: 160px;
+//     border: 2px solid black;
+//     // margin-left: 20px;
+//     // margin-right: 20px;
+// }
+
+// // .slick-list {margin: 0 -15px;}
+// // .slick-slide {margin: 0 15px;}
+
+// /* the slides */
+// .slick-slide {
+//     margin: 0 10px;
+// }
+// /* the parent */
+// // .slick-list {
+// //     margin: 0 -10px;
+// // }
+
+// .slick-list {
+//     height: 300px;
+// }
+
+
+// .carousel-item {
+//     // border: 2px solid black;
+//     // height: 300px;
+//     // width: 200px;
+
+//     // display: flex;
+//     // flex-direction: column;
+//     // justify-content: space-between;
+
+
+//     .info {
+//         visibility: hidden;
+//         border: 1px solid blue;
+//         height: 90%;
+//         padding: 5%;
+//         min-height: 0;
+        
+//         .description-info {
+//             max-height: 100%;
+//             overflow: hidden;
+//             text-overflow: ellipsis;
+//         }
+//     }
+
+//     .buttons {
+//         visibility: hidden;
+//         display: flex;
+//         text-align: center;
+//         height: 10%;
+//         border: 1px solid blue;
+
+//         .left-button {
+//             width: 50%;
+//         }
+
+//         .right-button {
+//             width: 50%;
+//         }
+//     }
+
+//     img {
+//         z-index: -1;
+//         height: 100%;
+//         width: 100%;
+//         // position: absolute;
+//         object-fit: cover;
+//     }  
+// }
+
+// .overlay {
+//     position: absolute;
+//     height: 100%;
+//     width: 100%;
+//     opacity: 0;
+//     transition: 1s ease;
+//     background: rgba(0, 0, 0, 0.3);
+//     z-index: -1;
+// }
+
+// .carousel-item:hover {
+//     cursor: pointer;
+
+//     img {
+//         filter: blur(4px);
+//         -webkit-filter: blur(4px);
+//     }
+
+//     .info, .buttons {
+//         visibility: visible;
+//     }
+
+//     .overlay {
+//         opacity: 1;
+//     }
+// }
+
+// TESTING
+// .item {
+//     height: 250px;
+//     width: 200px;
+//     background-color: darkgreen;
+//     border: 2px solid red;
+// }

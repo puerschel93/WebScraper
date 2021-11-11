@@ -1,0 +1,205 @@
+$dbg-img : url('./Files/Images/BackgroundImage.png');
+$tablet-view : 1024px;
+$mobile-view : 600px;
+$mobile-small-view : 300px;
+
+.App {
+  text-align: center;
+  background-image: $dbg-img;
+  height: 618px;
+  display: flex;
+  .BannerLeftSection{
+    margin-left: 198px;
+    margin-top: 224px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    text-align: left;
+    .firstHeading{
+      height: 64px;
+      margin: 0;
+      font-size: 64px;
+      line-height: 64px;
+      color: #343951;
+    }
+    .secondHeading{
+      font-size: 32px;
+      line-height: 32px;
+      color: #343951;
+      height: 32px;
+      margin-top: 48px;
+    }
+    .crossImage{
+      float: left;
+      margin-left: 125px;
+      width: 100.5px;
+    }
+    .getStartedBtn{
+      width: 250px;
+      height: 50px;
+      background: #449DFE;
+      border-radius: 25px;
+      display: block;
+      margin-top: 50px;
+      border: none;
+      font-family: Roboto;
+      font-size: 20px;
+      line-height: 23px;
+      color: #fff;
+    }
+  }
+  .BannerRightSection{
+    position: relative;
+    .firstImage{
+      position: absolute;
+      width: 75px;
+      height: 66.67px;
+      left: 490px;
+      top: 121px;
+    }
+    .secondImage{
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      left: 220px;
+      top: 204px;
+    }
+    .thirdImage{
+      position: absolute;
+      width: 75px;
+      height: 66.67px;
+      left: 470px;
+      top: 299px;
+    }
+    .forthImage{
+      position: absolute;
+      width: 75px;
+      height: 66.67px;
+      left: 100px;
+      top: 329px;
+    }
+    .getStartedBtn1{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width : $tablet-view) {
+  .App {
+    height: 624px;
+    .BannerLeftSection{
+      margin-left: 45px;
+      margin-top: 128px;
+      .firstHeading{
+        width: 338px;
+        height: 128px;
+      }
+      .secondHeading{
+        width: 360px;
+        height: 64px;
+      }
+      .crossImage{
+        display: none;
+      }
+    }
+    .BannerRightSection{
+      .forthImage{
+        display: none;
+      }
+      .firstImage{
+        left: 260px;
+        top: 130px;
+      }
+      .secondImage{
+        left: 0;
+        top: 197px;
+      }
+      .thirdImage{
+        left: 260px;
+        top: 292px;
+      }
+      .getStartedBtn1{
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width : $mobile-view) {
+  .App {
+    height: 583px;
+    flex-direction: column;
+    .BannerLeftSection{
+      margin: 0;
+      margin-top: 68px;
+      text-align: center;
+      .firstHeading{
+        width: 179px;
+        height: 64px;
+        font-size: 32px;
+        line-height: 32px;
+        margin: 0 auto;
+      }
+      .secondHeading{
+        width: 186px;
+        height: 48px;
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 20px;
+      }
+      .getStartedBtn{
+        display: none;
+      }
+    }
+    .BannerRightSection{
+      .firstImage{
+        top: 30px;
+        left: 50px;
+      }
+      .secondImage{
+        left: 30px;
+        top: 60px;
+      }
+      .thirdImage{
+        left: 250px;
+        top: 225px;
+      }      
+      .getStartedBtn1{
+        display: block;
+        position: absolute;
+        width: 250px;
+        height: 50px;
+        left: 62px;
+        top: 450px;
+        background: #449DFE;
+        border-radius: 25px;
+        border: none;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 23px;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width : $mobile-small-view) {
+  .BannerRightSection{
+    .firstImage{
+      left: 25px !important;
+    }
+    .secondImage{
+      left: 10px !important;
+    }
+    .thirdImage{
+      left: 200px !important;
+    }
+    .getStartedBtn1{
+      width: 200px !important;
+      left: 40px !important;
+    }
+  }
+}

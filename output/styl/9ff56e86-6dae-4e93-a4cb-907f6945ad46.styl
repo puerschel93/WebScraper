@@ -1,0 +1,502 @@
+/*!
+ * # Semantic UI - Icon
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+
+/*******************************
+            Theme
+*******************************/
+
+$ui_type    = 'element';
+$ui_element = 'icon';
+
+@import '../../theme.config';
+
+
+/*******************************
+             Icon
+*******************************/
+
+@font-face {
+  font-family: 'Icons';
+  src: $ui_fallbackSRC;
+  src: $ui_src;
+  font-style: normal;
+  font-weight: $ui_normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
+
+i.icon {
+  display: inline-block;
+  opacity: $ui_opacity;
+
+  margin: 0em $ui_distanceFromText 0em 0em;
+
+  width: $ui_width;
+  height: $ui_height;
+
+  font-family: 'Icons';
+  font-style: normal;
+  font-weight: $ui_normal;
+  text-decoration: inherit;
+  text-align: center;
+
+  speak: none;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+}
+
+i.icon:before {
+  background: none !important;
+}
+
+/*******************************
+             Types
+*******************************/
+
+/*--------------
+    Loading
+---------------*/
+
+i.icon.loading {
+  height: 1em;
+  line-height: 1;
+  animation: icon-loading $ui_loadingDuration linear infinite;
+}
+@keyframes icon-loading {
+ from {
+    transform: rotate(0deg);
+ }
+ to {
+    transform: rotate(360deg);
+ }
+}
+
+/*******************************
+             States
+*******************************/
+
+i.icon.hover {
+  opacity: 1 !important;
+}
+
+i.icon.active {
+  opacity: 1 !important;
+}
+
+i.emphasized.icon {
+  opacity: 1 !important;
+}
+
+i.disabled.icon {
+  opacity: $ui_disabledOpacity !important;
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+
+/*-------------------
+        Fitted
+--------------------*/
+
+i.fitted.icon {
+  width: auto;
+  margin: 0em;
+}
+
+/*-------------------
+         Link
+--------------------*/
+
+i.link.icon, i.link.icons {
+  cursor: pointer;
+  opacity: $ui_linkOpacity;
+  transition: opacity $ui_defaultDuration $ui_defaultEasing;
+}
+i.link.icon:hover, i.link.icons:hover {
+  opacity: 1 !important;
+}
+
+/*-------------------
+      Circular
+--------------------*/
+
+i.circular.icon {
+  border-radius: 500em !important;
+  line-height: 1 !important;
+
+  padding: $ui_circularPadding !important;
+  box-shadow: $ui_circularShadow;
+
+  width: $ui_circularSize !important;
+  height: $ui_circularSize !important;
+}
+i.circular.inverted.icon {
+  border: none;
+  box-shadow: none;
+}
+
+/*-------------------
+      Flipped
+--------------------*/
+
+i.flipped.icon,
+i.horizontally.flipped.icon {
+  transform: scale(-1, 1);
+}
+i.vertically.flipped.icon {
+  transform: scale(1, -1);
+}
+
+/*-------------------
+      Rotated
+--------------------*/
+
+i.rotated.icon,
+i.right.rotated.icon,
+i.clockwise.rotated.icon {
+  transform: rotate(90deg);
+}
+
+i.left.rotated.icon,
+i.counterclockwise.rotated.icon {
+  transform: rotate(-90deg);
+}
+
+/*-------------------
+      Bordered
+--------------------*/
+
+i.bordered.icon {
+  line-height: 1;
+  vertical-align: baseline;
+
+  width: $ui_borderedSize;
+  height: $ui_borderedSize;
+  padding: $ui_borderedVerticalPadding $ui_borderedHorizontalPadding !important;
+  box-shadow: $ui_borderedShadow;
+}
+i.bordered.inverted.icon {
+  border: none;
+  box-shadow: none;
+}
+
+/*-------------------
+      Inverted
+--------------------*/
+
+/* Inverted Shapes */
+i.inverted.bordered.icon,
+i.inverted.circular.icon {
+  background-color: $ui_black !important;
+  color: $ui_white !important;
+}
+
+i.inverted.icon {
+  color: $ui_white;
+}
+
+
+/*-------------------
+       Colors
+--------------------*/
+
+/* Red */
+i.red.icon {
+  color: $ui_red !important;
+}
+i.inverted.red.icon {
+  color: $ui_lightRed !important;
+}
+i.inverted.bordered.red.icon,
+i.inverted.circular.red.icon {
+  background-color: $ui_red !important;
+  color: $ui_white !important;
+}
+
+/* Orange */
+i.orange.icon {
+  color: $ui_orange !important;
+}
+i.inverted.orange.icon {
+  color: $ui_lightOrange !important;
+}
+i.inverted.bordered.orange.icon,
+i.inverted.circular.orange.icon {
+  background-color: $ui_orange !important;
+  color: $ui_white !important;
+}
+
+/* Yellow */
+i.yellow.icon {
+  color: $ui_yellow !important;
+}
+i.inverted.yellow.icon {
+  color: $ui_lightYellow !important;
+}
+i.inverted.bordered.yellow.icon,
+i.inverted.circular.yellow.icon {
+  background-color: $ui_yellow !important;
+  color: $ui_white !important;
+}
+
+/* Olive */
+i.olive.icon {
+  color: $ui_olive !important;
+}
+i.inverted.olive.icon {
+  color: $ui_lightOlive !important;
+}
+i.inverted.bordered.olive.icon,
+i.inverted.circular.olive.icon {
+  background-color: $ui_olive !important;
+  color: $ui_white !important;
+}
+
+/* Green */
+i.green.icon {
+  color: $ui_green !important;
+}
+i.inverted.green.icon {
+  color: $ui_lightGreen !important;
+}
+i.inverted.bordered.green.icon,
+i.inverted.circular.green.icon {
+  background-color: $ui_green !important;
+  color: $ui_white !important;
+}
+
+/* Teal */
+i.teal.icon {
+  color: $ui_teal !important;
+}
+i.inverted.teal.icon {
+  color: $ui_lightTeal !important;
+}
+i.inverted.bordered.teal.icon,
+i.inverted.circular.teal.icon {
+  background-color: $ui_teal !important;
+  color: $ui_white !important;
+}
+
+/* Blue */
+i.blue.icon {
+  color: $ui_blue !important;
+}
+i.inverted.blue.icon {
+  color: $ui_lightBlue !important;
+}
+i.inverted.bordered.blue.icon,
+i.inverted.circular.blue.icon {
+  background-color: $ui_blue !important;
+  color: $ui_white !important;
+}
+
+/* Violet */
+i.violet.icon {
+  color: $ui_violet !important;
+}
+i.inverted.violet.icon {
+  color: $ui_lightViolet !important;
+}
+i.inverted.bordered.violet.icon,
+i.inverted.circular.violet.icon {
+  background-color: $ui_violet !important;
+  color: $ui_white !important;
+}
+
+/* Purple */
+i.purple.icon {
+  color: $ui_purple !important;
+}
+i.inverted.purple.icon {
+  color: $ui_lightPurple !important;
+}
+i.inverted.bordered.purple.icon,
+i.inverted.circular.purple.icon {
+  background-color: $ui_purple !important;
+  color: $ui_white !important;
+}
+
+/* Pink */
+i.pink.icon {
+  color: $ui_pink !important;
+}
+i.inverted.pink.icon {
+  color: $ui_lightPink !important;
+}
+i.inverted.bordered.pink.icon,
+i.inverted.circular.pink.icon {
+  background-color: $ui_pink !important;
+  color: $ui_white !important;
+}
+
+/* Brown */
+i.brown.icon {
+  color: $ui_brown !important;
+}
+i.inverted.brown.icon {
+  color: $ui_lightBrown !important;
+}
+i.inverted.bordered.brown.icon,
+i.inverted.circular.brown.icon {
+  background-color: $ui_brown !important;
+  color: $ui_white !important;
+}
+
+/* Grey */
+i.grey.icon {
+  color: $ui_grey !important;
+}
+i.inverted.grey.icon {
+  color: $ui_lightGrey !important;
+}
+i.inverted.bordered.grey.icon,
+i.inverted.circular.grey.icon {
+  background-color: $ui_grey !important;
+  color: $ui_white !important;
+}
+
+/* Black */
+i.black.icon {
+  color: $ui_black !important;
+}
+i.inverted.black.icon {
+  color: $ui_lightBlack !important;
+}
+i.inverted.bordered.black.icon,
+i.inverted.circular.black.icon {
+  background-color: $ui_black !important;
+  color: $ui_white !important;
+}
+
+/*-------------------
+        Sizes
+--------------------*/
+
+i.mini.icon,
+i.mini.icons {
+  line-height: 1;
+  font-size: $ui_mini;
+}
+i.tiny.icon,
+i.tiny.icons {
+  line-height: 1;
+  font-size: $ui_tiny;
+}
+i.small.icon,
+i.small.icons {
+  line-height: 1;
+  font-size: $ui_small;
+}
+i.icon,
+i.icons {
+  font-size: $ui_medium;
+}
+i.large.icon,
+i.large.icons {
+  line-height: 1;
+  vertical-align: middle;
+  font-size: $ui_large;
+}
+i.big.icon,
+i.big.icons {
+  line-height: 1;
+  vertical-align: middle;
+  font-size: $ui_big;
+}
+i.huge.icon,
+i.huge.icons {
+  line-height: 1;
+  vertical-align: middle;
+  font-size: $ui_huge;
+}
+i.massive.icon,
+i.massive.icons {
+  line-height: 1;
+  vertical-align: middle;
+  font-size: $ui_massive;
+}
+
+/*******************************
+            Groups
+*******************************/
+
+i.icons {
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+}
+
+i.icons .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  margin: 0em;
+  margin: 0;
+}
+
+i.icons .icon:first-child {
+  position: static;
+  width: auto;
+  height: auto;
+  vertical-align: top;
+  transform: none;
+  margin-right: $ui_distanceFromText;
+}
+
+/* Corner Icon */
+i.icons .corner.icon {
+  top: auto;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  transform: none;
+  font-size: $ui_cornerIconSize;
+  text-shadow: $ui_cornerIconShadow;
+}
+i.icons .top.right.corner.icon {
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: auto;
+}
+i.icons .top.left.corner.icon {
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+}
+i.icons .bottom.left.corner.icon {
+  top: auto;
+  left: 0;
+  right: auto;
+  bottom: 0;
+}
+i.icons .bottom.right.corner.icon {
+  top: auto;
+  left: auto;
+  right: 0;
+  bottom: 0;
+}
+
+i.icons .inverted.corner.icon {
+  text-shadow: $ui_cornerIconInvertedShadow;
+}
+
+loadUIOverrides();
+

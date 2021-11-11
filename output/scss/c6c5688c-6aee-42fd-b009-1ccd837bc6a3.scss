@@ -1,0 +1,99 @@
+@import '@styles/variables';
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.steps {
+  width: 100%;
+  margin-bottom: 32px;
+  @media(max-width: 767px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+.step {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  &Index {
+    width: 16px;
+    height: 16px;
+    background-color: rgba($colorPrimaryBlack, 0.1);
+    border-radius: 50%;
+    border: 1px solid rgba($colorPrimaryBlack, 0);
+    color: rgba($colorPrimaryBlack, 0.4);
+    margin-right: 8px;
+    @include CaptionSmall-REGULAR;
+    font-size: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      height: calc(100% + 12px);
+      width: 1px;
+      background-color: rgba($colorPrimaryBlack, 0.1);
+      bottom: calc(50% + 8px);
+      @media(max-width: 767px) {
+        height: 1px;
+        width: calc(11vw + 2px);
+        bottom: 50%;
+        right: 100%;
+        left: auto;
+      }
+    }
+  }
+  &Title {
+    @include BodySmall-REGULAR;
+    color: rgba($colorPrimaryBlack, 0.7);
+    @media(max-width: 767px) {
+      display: none;
+    }
+  }
+  &Done &Index {
+    background-color: $colorPrimaryWhite;
+    border-color: $colorSupportGreen;
+    path {
+      fill: $colorSupportGreen;
+    }
+  }
+  &Done &Index:before {
+    background-color: $colorSupportGreen;
+  }
+  &Active &Index {
+    background-color: $colorPrimaryBlue;
+    color: $colorPrimaryGray;
+  }
+  &Active &Title {
+    color: $colorPrimaryBlue;
+    @media(max-width: 767px) {
+      display: block;
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &:first-child &Index:before{
+    display: none;
+  }
+}
+
+.btn {
+  width: 100%;
+}

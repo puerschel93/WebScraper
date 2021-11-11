@@ -1,0 +1,347 @@
+$easeInOutCubic = cubic-bezier(0.645, 0.045, 0.355, 1)
+$bw = 1px
+$bs = solid
+$bc = base(1)
+$b = $bw $bs $bc
+$i = !important
+$t = transparent
+
+S($x, $y)
+  s($x, unquote($y))
+v($x)
+  if $x is a "unit"
+    var(s("--base-%s", $x))
+  else if $x is a "rgba"
+    $x
+  else
+    var(S("--%s", $x))
+parent-hover()
+  ../:hover ^[2..-1]
+    {block}
+current-page()
+  &[aria-current="page"], &[aria-selected="true"]
+    {block}
+nav-focus()
+  &.navigation-focus, &[aria-selected="true"]
+    {block}
+edges()
+  &:first-child, &:last-child
+    {block}
+disabled()
+  &.disabled, &.disabled.selected, &[aria-disabled="true"], &[disabled], &:disabled
+    &, &:hover, &:focus
+      {block}
+checked($x = true)
+  if $x
+    &[aria-checked="true"]
+      {block}
+  else
+    &:not([aria-checked="true"])
+      {block}
+selected($x = true)
+  if $x
+    &.selected, &[aria-selected="true"], &[aria-current]
+      {block}
+  else
+    &[aria-selected="false"]
+      {block}
+fg($x)
+  v(S("text-%s", $x))
+selection($x)
+  v(S("selection-%s", $x))
+font($x, $y)
+  v(s("%s-font-%s", unquote($x), unquote($y)))
+t($x)
+  v(S("%s-transparent", $x))
+alt($x)
+  v(S("%s-alt", $x))
+light($x)
+  v(S("%s-light", $x))
+dark($x)
+  v(S("%s-dark", $x))
+scrollbar($x)
+  v(S("scrollbar-%s", $x))
+base($x)
+  v(s("base-%s", $x))
+set(x, y, z)
+  {x}
+    {y} z
+get-key(x, y, z)
+  z is a "object" ? x : y
+foreach(xs, fn)
+  fn(x, y) for x, y in xs
+map(xs, fn)
+  xs[get-key(x, y, xs)] = fn(x, y) for x, y in xs
+colors($xs, $p = "")
+  set('.' + $p + $k, c, v($v)) for $k, $v in $xs
+prop($p, $x...)
+  {$p} $x $i
+color-prop($p, $x)
+  if ($x is a "call" || $x is a "rgba" || $x == none)
+    prop $p $x
+  if ($x > 0)
+    prop $p base($x)
+x-axis($p, $x)
+  {s($p, $d)} $x $i for $d in left right
+y-axis($p, $x)
+  {s($p, $d)} $x $i for $d in top bottom
+/**
+ * c <foreground> <border-color> <background>
+ * use 0 to omit arguments
+ */
+c($x, $y = 0, $z = 0)
+  color-prop "color" $x
+  color-prop "border-color" $y
+  color-prop "background-color" $z
+/**
+ * vc <fill> <stroke> <fill-important> <stroke-important>
+ * use 0 to omit arguments
+ */
+vc($x, $y = 0)
+  color-prop "fill" $x
+  color-prop "stroke" $y
+hover($x, $y = 0, $z = 0)
+  &:focus, &:hover
+    c $x $y $z
+caret($direction = "bottom", $bg = 4, $border = 1)
+    $p = "border-" + $direction + "-color"
+    &::before
+      color-prop $p $border
+    &::after
+      color-prop $p $bg
+bgi($x...)
+  prop "background-image" $x
+bgs($x...)
+  prop "background-size" $x
+bgr($x...)
+  prop "background-repeat" $x
+bgp($x...)
+  prop "background-position" $x
+bg($x...)
+  prop "background" $x
+bgc($x...)
+  prop "background-color" $x
+
+bd($x...)
+  prop "border" $x
+bw($x...)
+  prop "border-width" $x
+bc($x...)
+  prop "border-color" $x
+bs($x...)
+  prop "border-style" $x
+by($x...)
+  y-axis('border-%s', $x)
+byc($x = $bc)
+  y-axis('border-%s-color', $x)
+byw($x = $bw)
+  y-axis "border-%s-width" $x
+bys($x = $bs)
+  y-axis "border-%s-style" $x
+bx($x...)
+  x-axis "border-%s" $x
+bxw($x = $bw)
+  x-axis "border-%s-width" $x
+bxs($x = $bs)
+  x-axis "border-%s-style" $x
+bxc($x = $bc)
+  x-axis "border-%s-color" $x
+
+bt($x...)
+  prop "border-top" $x
+btw($x = $bw)
+  prop "border-top-width" $x
+bts($x = $bs)
+  prop "border-top-style" $x
+btc($x = $bc)
+  color-prop "border-top-color" $x
+
+bb($x...)
+  prop "border-bottom" $x
+bbw($x = $bw)
+  prop "border-bottom-width" $x
+bbs($x = $bs)
+  prop "border-bottom-style" $x
+bbc($x = $bc)
+  color-prop "border-bottom-color" $x
+
+bl($x...)
+  prop "border-left" $x
+blw($x = $bw)
+  prop "border-left-width" $x
+bls($x = $bs)
+  prop "border-left-style" $x
+blc($x = $bc)
+  color-prop "border-left-color" $x
+
+br($x...)
+  prop "border-right" $x
+brw($x = $bw)
+  prop "border-right-width" $x
+brs($x = $bs)
+  prop "border-right-style" $x
+brc($x = $bc)
+  color-prop "border-right-color" $x
+
+r($x...)
+  prop "border-radius" $x
+rtl($x)
+  prop "border-top-left-radius" $x
+rtr($x)
+  prop "border-top-right-radius" $x
+rbl($x)
+  prop "border-bottom-left-radius" $x
+rbr($x)
+  prop "border-bottom-right-radius" $x
+rr($x)
+  y-axis "border-%s-right-radius" $x
+rl($x)
+  y-axis "border-%s-left-radius" $x
+rb($x)
+  x-axis "border-bottom-%s-radius" $x
+rt($x)
+  x-axis "border-top-%s-radius" $x
+mg($x...)
+  prop "margin" $x
+my($x)
+  y-axis "margin-%s" $x
+mx($x)
+  x-axis "margin-%s" $x
+mt($x)
+  prop "margin-top" $x
+mb($x)
+  prop "margin-bottom" $x
+ml($x)
+  prop "margin-left" $x
+mr($x)
+  prop "margin-right" $x
+
+pd($x...)
+  prop "padding" $x
+pt($x)
+  prop "padding-top" $x
+pb($x)
+  prop "padding-bottom" $x
+pl($x)
+  prop "padding-left" $x
+pr($x)
+  prop "padding-right" $x
+py($x)
+  y-axis "padding-%s" $x
+px($x)
+  x-axis "padding-%s" $x
+lh($x)
+  prop "line-height" $x
+po($x)
+  prop "position" $x
+o($x)
+  prop "opacity" $x
+a($x...)
+  prop "animation" $x
+tr($x...)
+  prop "transition" $x
+ease($x...)
+  +cache("x" + $x)
+    $x = border-color, background-color, color if $x == colors
+    tr $x 300ms $easeInOutCubic
+fn($x)
+  prop "font-family" $x
+fs($x)
+  prop "font-size" $x
+fw($x)
+  prop "font-weight" $x
+td($x)
+  prop "text-decoration" $x
+sbc($x...)
+  prop "scrollbar-color" $x
+sbw($x...)
+  prop "scrollbar-width" $x
+va($x)
+  prop "vertical-align" $x
+w($x)
+  prop "width" $x
+h($x)
+  prop "height" $x
+size($w, $h = $w)
+  prop "height" $h
+  prop "width" $w
+min-size($w, $h = $w)
+  prop "min-height" $h
+  prop "min-width" $w
+max-size($w, $h = $w)
+  prop "max-height" $h
+  prop "max-width" $w
+set-font($x)
+  fn font($x, "family")
+  fw font($x, "weight")
+box()
+  c 0 1 4
+  hover 0 v("blue") 5
+octicon($x...)
+  .octicon
+    c $x
+inv()
+  filter invert(1)
+fade-out()
+  bg linear-gradient(to top, base(1), $t)
+shadow($x...)
+  prop "box-shadow" $x
+elevation($x)
+  shadow v(s("elevation-%s", $x))
+// Mixin: Debug
+//
+// Debugging tool - adds a border to the current element, its children,
+// grandchildren, etc so you can see what's up – great for precise layout
+// tweaks.  It will also add flags if you made mistakes like put in inline
+// styles, forgot an alt on an image, left the alt blank, etc. Not to be used
+// in production, obviously.
+//
+// via dbox: http://codepen.io/dbox/pen/GJZzYo?editors=110
+
+debug()
+  border 1px solid MediumPurple
+  > *
+    border 1px solid DarkKhaki
+  > * > *
+    border 1px solid MediumTurquoise
+  > * > * > *
+    border 1px solid LightSlateGray
+  > * > * > * > *
+    border 1px solid LightBlue
+  > * > * > * > * > *
+    border 1px solid MediumSlateBlue
+  > * > * > * > * > * > *
+    border 1px solid DeepSkyBlue
+  > * > * > * > * > * > * > *
+    border 1px solid DarkSeaGreen
+  img
+    border: 1px solid #f00
+    -webkit-filter: hue-rotate(330deg) contrast(.75) saturate(6)
+    filter: hue-rotate(330deg) contrast(.75) saturate(6)
+  img[alt]
+    border: 1px solid LimeGreen
+    -webkit-filter: none
+    filter: none
+  img[alt=""]
+    border: 1px solid gold
+    -webkit-filter: contrast(1) saturate(2)
+    filter: contrast(1) saturate(2)
+  a
+    background: rgba(#f00, .1)
+    border: 1px solid #f00
+  a[title]
+    background: none
+    border-color: LimeGreen
+  style
+    border: block
+  [style], style, [class=""], [id=""], a[href="#"]
+    background: rgba(yellow, .2)
+    border: 1px solid gold
+borders($x)
+  for $direction in top left right bottom
+    $x = 'border-' + $direction
+    $y = 1px solid v($x) $i
+    .border
+      border $y
+    .{$x}
+      {$x} $y

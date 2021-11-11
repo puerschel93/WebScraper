@@ -1,0 +1,364 @@
+.btn-wrapper{
+    height: var(--btn-height);
+    margin: .5rem 1rem;
+    padding: 0 1rem;
+    border-radius: var(--btn-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+
+    .btn-name{
+        position: relative;
+        font-size: var(--btn-font-size);
+        box-sizing: border-box;
+        word-wrap:break-word;
+        font-weight: 700;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    div.mask{
+        position: absolute;
+        border-color: transparent;
+        border-style: solid;
+    }
+
+    .mask-gray{
+        width: calc(100% - 5px);
+        height: calc(100% - 5px);
+        border-radius: calc(var(--btn-radius));
+        background-color: var(--btn-bg);
+    }
+
+    .left-mask{
+        left: 0;
+        height: var(--btn-height);
+        width: var(--btn-radius);
+
+        div{
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            transform: rotate(-90deg);
+        }
+        .left-top-mask{
+            --delay: 5;
+            visibility: hidden;
+            top: 0;
+            border-top: .2rem;
+            border-left: .2rem;
+            border-top-left-radius: var(--btn-radius);
+            transform-origin: 100% 100%;
+            transform: rotate(-90deg);
+        }
+        .left-bottom-mask{
+            --delay: 4;
+            visibility: hidden;
+            bottom: 0;
+            border-bottom: .2rem;
+            border-left: .2rem;
+            border-bottom-left-radius: var(--btn-radius);
+            transform-origin: 100% 0%; 
+            transform: rotate(-90deg);
+        }
+    }
+
+    .middle-mask-container{
+        width: calc(100% - 2rem);
+        height: var(--btn-height);
+        div{
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            visibility: hidden;
+        }
+        .middle-top-mask{
+            --delay: 0;
+            top: 0;
+        }
+        .middle-bottom-mask{
+            --delay: 3;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    .right-mask{
+        right: 0;
+        height: var(--btn-height);
+        width: var(--btn-radius);
+        div{
+            width: 100%;
+            height: 50%;
+            position: absolute;
+        }
+        .right-top-mask{
+            --delay: 1;
+            visibility: hidden;
+            top: 0;
+            border-top: .2rem;
+            border-right: .2rem;
+            border-top-right-radius: var(--btn-radius);
+            transform-origin: 0% 100%;
+            transform: rotate(-90deg);
+        }
+        .right-bottom-mask{
+            --delay: 2;
+            visibility: hidden;
+            bottom: 0;
+            border-bottom: .2rem;
+            border-right: .2rem;
+            border-bottom-right-radius: var(--btn-radius);
+            transform-origin: 0% 0%; 
+            transform: rotate(-90deg);
+        }
+        
+    }
+
+    // mobile适配
+    @media screen and (max-width: 680px){
+        --btn-height: 2rem;
+        --btn-font-size: .8rem;
+        --btn-radius: 1rem;
+    }
+
+    @media screen and (min-width: 680px){
+        --btn-height: 2.5rem;
+        --btn-font-size: .8rem;
+        --btn-radius: 1.25rem;
+    }
+
+}
+
+.btn-friend{
+    box-shadow: 0px 1px 2px 1px var(--friend-color);
+    &:hover{
+        transition: box-shadow .13s linear;
+        box-shadow: 0px 2px 3px 1px var(--friend-color);
+    }
+    a.friend-name{
+        text-decoration: none;
+        color: var(--btn-bg);
+    }
+}
+
+.btn-support{
+    box-shadow: 0px 1px 2px 1px var(--support-color);
+    &:hover{
+        transition: box-shadow .13s linear;
+        box-shadow: 0px 2px 3px 1px var(--support-color);
+    }
+    a.support-name{
+        text-decoration: none;
+        color: var(--btn-bg);
+    }
+}
+
+// 按钮 & 进度条动画
+.wrapper-click{
+    animation: oneBeat 0.45s ease-out;
+    .left-top-mask{
+        animation: left-route var(--piece) linear forwards calc(var(--piece) * var(--delay));
+    }
+
+    .left-bottom-mask{
+        animation: left-route var(--piece) linear forwards calc(var(--piece) * var(--delay));
+    }
+    
+    .middle-top-mask{
+        animation: middle-top-line var(--piece) linear forwards calc(var(--piece) * var(--delay));
+    }
+    
+    .middle-bottom-mask{
+        animation: middle-bottom-line var(--piece) linear forwards calc(var(--piece) * var(--delay));
+    }
+    
+    .right-bottom-mask{
+        animation: right-route var(--piece) linear forwards calc(var(--piece) * var(--delay));
+    } 
+
+    .right-top-mask{
+        animation: right-route var(--piece) linear forwards calc(var(--piece) * var(--delay));
+    }
+}
+
+
+@keyframes left-route {
+    0% {
+        transform: rotate(-90deg);
+        visibility: visible;
+    }
+    100% {
+        visibility: visible;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes middle-top-line {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+@keyframes middle-bottom-line {
+    0%{
+        width: 0;
+        visibility: visible;
+    }
+    100%{
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+@keyframes right-route {
+    0% {
+        transform: rotate(-90deg);
+    }
+    100% {
+        visibility: visible;
+        transform: rotate(0deg);
+    }
+}
+
+// 每一个人的主题色
+.xiaoxi{
+    .btn-wrapper{
+        box-shadow: 0px 1px 2px 1px var(--xiaoxi-color);
+        &:hover{
+            transition: box-shadow .13s linear;
+            box-shadow: 0px 2px 3px 1px var(--xiaoxi-color);
+        }   
+        .btn-name{
+            color: var(--xiaoxi-color);
+        }
+        div.left-mask div{
+            background-color: var(--xiaoxi-color);
+        }
+        div.right-mask div{
+            background-color: var(--xiaoxi-color);
+        }
+        div.middle-mask-container div{
+            background-color: var(--xiaoxi-color);
+        }
+    }
+}
+
+.xiaotao{
+    .btn-wrapper{
+        box-shadow: 0px 1px 2px 1px var(--xiaotao-color);
+        &:hover{
+            transition: box-shadow .13s linear;
+            box-shadow: 0px 2px 3px 1px var(--xiaotao-color);
+        } 
+        .btn-name{
+            color: var(--xiaotao-color);
+        }
+        div.left-mask div{
+            background-color: var(--xiaotao-color);
+        }
+        div.right-mask div{
+            background-color: var(--xiaotao-color);
+        }
+        div.middle-mask-container div{
+            background-color: var(--xiaotao-color);
+        }
+    }
+}
+
+.xiaorou{
+    .btn-wrapper{
+        box-shadow: 0px 1px 2px 1px var(--xiaorou-color);
+        &:hover{
+            transition: box-shadow .13s linear;
+            box-shadow: 0px 2px 3px 1px var(--xiaorou-color);
+        }
+        .btn-name{
+            color: var(--xiaorou-color);
+        }
+        div.left-mask div{
+            background-color: var(--xiaorou-color);
+        }
+        div.right-mask div{
+            background-color: var(--xiaorou-color);
+        }
+        div.middle-mask-container div{
+            background-color: var(--xiaorou-color);
+        }
+    }
+}
+
+.reine{
+    .btn-wrapper{
+        box-shadow: 0px 1px 2px 1px var(--reine-color);
+        &:hover{
+            transition: box-shadow .13s linear;
+            box-shadow: 0px 2px 3px 1px var(--reine-color);
+        }
+        .btn-name{
+            color: var(--reine-color);
+        }
+        div.left-mask div{
+            background-color: var(--reine-color);
+        }
+        div.right-mask div{
+            background-color: var(--reine-color);
+        }
+        div.middle-mask-container div{
+            background-color: var(--reine-color);
+        }
+    }
+}
+
+.ailurus{
+    .btn-wrapper{
+        box-shadow: 0px 1px 2px 1px var(--ailurus-color);
+        &:hover{
+            transition: box-shadow .13s linear;
+            box-shadow: 0px 2px 3px 1px var(--ailurus-color);
+        }
+        .btn-name{
+            color: var(--ailurus-color);
+        }
+        div.left-mask div{
+            background-color: var(--ailurus-color);
+        }
+        div.right-mask div{
+            background-color: var(--ailurus-color);
+        }
+        div.middle-mask-container div{
+            background-color: var(--ailurus-color);
+        }
+    }
+}
+
+.yangbao{
+    .btn-wrapper{
+        box-shadow: 0px 1px 2px 1px var(--yangbao-color);
+        &:hover{
+            transition: box-shadow .13s linear;
+            box-shadow: 0px 2px 3px 1px var(--yangbao-color);
+        }
+        .btn-name{
+            color: var(--yangbao-color);
+        }
+        div.left-mask div{
+            background-color: var(--yangbao-color);
+        }
+        div.right-mask div{
+            background-color: var(--yangbao-color);
+        }
+        div.middle-mask-container div{
+            background-color: var(--yangbao-color);
+        }
+    }
+}

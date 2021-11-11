@@ -1,0 +1,92 @@
+@mixin heart-gradient {
+    font-weight: 600;
+    background: -webkit-linear-gradient($primary, $secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.icon {
+    margin: 0 20px;
+    align-self: center;
+    text-align: center;
+    font-family: $fontAwesome;
+    font-size: 18px;
+    font-weight: 900;
+    opacity: 0.7;
+    text-decoration: none;
+
+    @include md {
+        font-size: 20px;
+    }
+
+    &--map {
+        &::before {
+            content: '\f3c5';
+        }
+    }
+
+    &--mobile {
+        &::before {
+            content: '\f3cd';
+        }
+    }
+
+    &--list {
+        &::before {
+            content: '\f03a';
+        }
+
+    }
+
+    &--store {
+        opacity: 1;
+
+        &::before {
+            content: '\f54e';
+            color: $primary;
+        }
+
+    }
+
+    &--heart {
+        opacity: 1;
+        margin: 0;
+
+        &::before {
+            content: '\f004';
+            font-weight: 500;
+            color: #000;
+            font-size: 23px;
+        }
+
+        &:active,
+        &:focus {
+            &::before {
+                @include heart-gradient();
+            }
+        }
+
+        @include md {
+            &:hover {
+                &::before {
+                    @include heart-gradient();
+                }
+            }
+        }
+
+    }
+    &--utensils{
+        &::before{
+            content: '\f2e7';
+            
+        }
+    }
+
+    &--hands-helping{
+        &::before{
+            content: '\f4c4';
+        }
+    }
+
+}

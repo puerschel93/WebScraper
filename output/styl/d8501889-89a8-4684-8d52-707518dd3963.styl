@@ -1,0 +1,166 @@
+.article-main
+    text-align justify
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+        padding-top .8em
+        padding-bottom .3em
+    h1
+        .header-anchor::before
+            content "#"
+            margin-right 5px
+            color $maincolor-100
+    h2
+        .header-anchor::before
+            content "#"
+            margin-right 5px
+            color $maincolor-100
+    h3
+        .header-anchor::before
+            content "|"
+            margin-right 5px
+            color $maincolor-100
+    h4
+        .header-anchor::before
+            content "»"
+            margin-right 5px
+            color $maincolor-100
+    h5
+        .header-anchor::before
+            content "*"
+            margin-right 5px
+            color $maincolor-100
+    h6
+        .header-anchor::before
+            content "-"
+            margin-right 5px
+            color $maincolor-100
+
+    a
+        color $maincolor-100
+        &:hover
+            color $maincolor-120
+    p
+        font-size $fs-default
+        font-weight 400
+        line-height $lh-l
+        letter-spacing .05em
+
+    hr
+        width 75%
+        margin-block-start 2rem
+        margin-block-end 2rem
+
+    ol
+    ul
+        padding-left 2em
+        margin .8rem 0
+        li
+            margin .8rem 0
+            line-height $lh-m
+
+    table
+        max-width 100%
+        margin 10px auto
+        border-spacing 0
+        thead
+            background $lightgrey
+        th, td
+            padding 5px 15px
+            border .5px solid $grey
+        // tbody
+        //     tr
+        //         &:hover
+        //             background $lightgrey
+
+
+    .image-caption:not(:empty)
+        min-width 20%
+        max-width 80%
+        display inline-block
+        padding 10px
+        margin 0 auto
+        border-bottom 1px solid #d9d9d9
+        font-size $fs-xs
+        color #969696
+        line-height 1.7
+
+    img
+        display block
+        max-width 95%
+        border-radius $br-m
+        box-shadow $shadow-m
+        margin 2rem auto
+
+    img[data-action="zoom"]
+        cursor zoom-in
+
+    blockquote
+        font-size 1rem
+        display block
+        margin 1em 0
+        padding 1em 1.2em 1em 1.2em
+        position relative
+        color rgba(#34495e, 0.8)
+        background-color $lightgrey
+        border-left 2px solid $grey
+        //box-shadow 1px 1px 2px rgba(0,0,0,0.125)
+        p
+            font-size $fs-xs
+            margin 0
+        &.pullquote
+            background-color transparent
+            max-width 45%
+            border 0
+            &.left
+                float left
+                text-align left
+            &.right
+                float right
+                text-align right
+
+    code
+    pre
+        padding .5rem
+        font-family $font-code
+        background $lightgrey
+    code
+        font-size $fs-xs
+        padding 3px 5px
+        border-radius 4px
+
+    figure.highlight
+        line-height $lh-m
+        margin 1em 0
+        position relative
+        overflow-x auto
+        &::-webkit-scrollbar
+            width 6px
+            height 6px
+        &::-webkit-scrollbar-thumb
+            width 6px
+            background-color $seccolor-120
+            border-radius 2px
+        table
+            margin 0
+            position relative
+            tbody
+                tr
+                    td
+                        margin 0
+                        padding 0
+                        border 0
+                        width 100%
+                        border-collapse collapse
+                    .code
+                        pre
+                            margin 0
+                    // line number
+                    .gutter
+                        width 10px
+                        color $grey
+                        pre
+                            margin 0

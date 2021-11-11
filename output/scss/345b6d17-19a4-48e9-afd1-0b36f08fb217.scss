@@ -1,0 +1,471 @@
+/* Reset */
+@import "reset";
+/* Fonts */
+@import "fonts";
+
+// Variables
+$green: #1ca78b;
+$orange: #f16521;
+$orange-2: #ed6e2d;
+$orange-lg: linear-gradient(50deg, #d95129 20%, #f16521 100%);
+$black: #525256;
+$gray: #3b3b3b;
+
+/*=====*/
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content {
+  width: 128rem;
+  height: 80rem;
+  margin: 0 auto;
+}
+
+.left-header {
+  position: fixed;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  height: 10rem;
+  width: 50%;
+}
+
+nav {
+  font-family: "Raleway";
+}
+
+main {
+  width: 50%;
+  height: 100%;
+}
+
+.logo {
+  position: relative;
+  font-weight: 700;
+  color: #eb6023;
+  font-size: 2.4rem;
+  &::selection {
+    background: transparent;
+  }
+}
+
+.nav__links {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 200;
+  left: 13rem;
+  top: 3rem;
+}
+
+.nav__right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-left: 15rem;
+  margin-top: 1rem;
+  width: 15rem;
+  color: $black;
+  font-weight: 600;
+  & a {
+    transition: border 0.2s linear, color 0.5s linear;
+    color: inherit;
+    padding: 1rem 1.3rem;
+    border: 1px solid #fff;
+    border-radius: 0.7rem;
+    margin-left: 1.4rem;
+  }
+  & a:hover {
+    color: $orange;
+    border: 1px solid $orange;
+  }
+}
+
+h1 {
+  display: block;
+  font-size: 3.8rem;
+  font-weight: 900;
+  font-family: "Raleway";
+  color: $black;
+  margin-top: 13rem;
+  margin-left: 13rem;
+  width: 38rem;
+  height: 38rem;
+  &::selection {
+    color: #1ca78b;
+  }
+}
+
+.green-text {
+  color: $green;
+  text-decoration: underline;
+  &::after {
+    content: "";
+    border-right: 2px solid $green;
+    padding-left: 0.2rem;
+  }
+  &::selection {
+    color: $black;
+  }
+}
+
+.search__input {
+  position: absolute;
+  left: 13rem;
+  top: 30rem;
+  width: 55rem;
+  height: 7rem;
+  background-color: #fff;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 2rem;
+  color: #bcbcbc;
+  padding-left: 3rem;
+  z-index: 4;
+  transition: box-shadow 0.2s linear;
+  &:hover {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  }
+  &:focus {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.input-line {
+  position: absolute;
+  top: 30rem;
+  left: 13rem;
+  width: 0.5rem;
+  height: 7rem;
+  background-color: $green;
+  z-index: 5;
+}
+
+.search__icon {
+  position: absolute;
+  top: 32rem;
+  left: 64rem;
+  cursor: pointer;
+  z-index: 6;
+}
+
+.quicklinks__title {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  color: #000;
+  margin-left: 15rem;
+  margin-top: -10rem;
+  &::before {
+    content: "";
+    background: url(../img/icons/thunderbolt.svg) no-repeat;
+    position: absolute;
+    display: inline;
+    width: 1.3rem;
+    height: 1.9rem;
+    margin-left: -2rem;
+  }
+}
+
+.quicklinks__buttons {
+  position: relative;
+  top: 2rem;
+  left: 13rem;
+  width: 50rem;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr;
+  justify-items: start;
+  align-items: center;
+  &--first-row {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+  }
+}
+
+.quicklink__button {
+  font-family: "Open Sans";
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  width: 90%;
+  color: #000;
+  background-color: transparent;
+  padding: 1em;
+  border: 1px solid #000;
+  border-radius: 1rem;
+  transition: opacity 0.2s linear, background-color 0.2s linear,
+    border 0.2s linear, color 0.3s linear, box-shadow 0.2s linear;
+  margin-bottom: 1em;
+  &:first-child,
+  &:nth-child(2) {
+    opacity: 0.7;
+  }
+  &:nth-child(3),
+  &:nth-child(4) {
+    opacity: 0.5;
+  }
+  &:nth-child(5),
+  &:nth-child(6) {
+    opacity: 0.3;
+  }
+  &:nth-child(7),
+  &:last-child {
+    opacity: 0.2;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    background-color: $orange;
+    border: 1px solid $orange;
+    color: #fff;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.first-row {
+  font-family: "Open Sans";
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  width: 90%;
+  background-color: transparent;
+  padding: 1em;
+  border-radius: 1rem;
+  transition: background-color 0.2s linear, color 0.5s linear,
+  box-shadow 0.2s linear;
+  margin-bottom: 1em;
+  border: 1px solid $orange;
+  color: $orange;
+  opacity: 1;
+  &:hover {
+    background-color: $orange;
+    color: #fff;
+  }
+  &:active {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.right {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: url(../img/background-right.webp) 100% / cover no-repeat;
+}
+
+.right-header {
+  position: fixed;
+  z-index: 0;
+  left: 50%;
+  top: 0;
+  height: 10rem;
+  width: 50%;
+}
+
+.right__nav {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 9;
+  left: 5rem;
+  top: 4rem;
+}
+
+.right__navlink {
+  font-family: "Raleway";
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-left: 1.3rem;
+  margin-top: -1.6rem;
+  padding: 1.6rem 2rem;
+  border-radius: 0.7rem;
+  background-color: transparent;
+  transition: background-color 0.2s linear, color 0.5s linear;
+  &:hover {
+    color: $black;
+    background-color: #fff;
+    .icon path {
+      fill: #000;
+      stroke: #000;
+    }
+  }
+  &--dotted {
+    padding: 1.45rem 2rem 1.45rem 3rem;
+    &::before {
+      content: "";
+      width: 1.6rem;
+      height: 1.6rem;
+      transform: scale(0.85);
+      background: url(../img/icons/settings.svg) no-repeat;
+      position: absolute;
+      display: inline;
+      margin-left: -2rem;
+      top: -0.2rem;
+    }
+    &:hover {
+      &::before {
+        background: url(../img/icons/settings-black.svg);
+      }
+    }
+  }
+}
+
+.btn {
+  margin-top: -1.6rem;
+  padding: 1.45rem 2rem 1.45rem 3rem;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 0.7rem;
+  background-color: transparent;
+  transition: background-color 0.2s linear, color 0.5s linear;
+  &--login {
+    &::before {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      background: url(../img/icons/login.svg) no-repeat;
+      position: absolute;
+      display: inline;
+      margin-left: -2.5rem;
+      top: -0.45rem;
+    }
+    &:hover {
+      &::before {
+        background: url(../img/icons/login-black.svg);
+      }
+    }
+  }
+  &--signup {
+    &::before {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      background: url(../img/icons/plus.svg) no-repeat;
+      position: absolute;
+      display: inline;
+      margin-left: -2.3rem;
+      top: -0.4rem;
+    }
+    &:hover {
+      &::before {
+        background: url(../img/icons/plus-black.svg);
+      }
+    }
+  }
+  &:hover {
+    color: $black;
+    background-color: #fff;
+  }
+}
+
+.right__content {
+  position: relative;
+  top: 18rem;
+  left: 15rem;
+  width: 33rem;
+  height: 45rem;
+}
+
+.column__image {
+  margin-right: 2rem;
+  transition: all 0.2s linear;
+  path {
+    fill: white;
+    stroke: white;
+  }
+}
+
+.right__column {
+  width: 35rem;
+  height: 15rem;
+  background-color: $orange-2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s linear;
+  &:nth-child(even) {
+    background-color: $orange;
+  }
+  &:hover {
+    background-color: #fff;
+    transform: scale(1.1);
+    .column__image path,
+    rect {
+      fill: #f16521;
+      stroke: #f16521;
+    }
+    .column__text {
+      color: #000;
+      &::before {
+        border-left: 1px solid $orange;
+      }
+    }
+    .view-more {
+      display: block;
+    }
+  }
+}
+.column__text {
+  font-family: "Open Sans";
+  font-size: 1.4rem;
+  color: #fff;
+  width: 50%;
+  position: relative;
+  margin-left: 2rem;
+  transition: all 0.2s linear;
+  &::before {
+    content: "";
+    border-left: 1px solid #fff;
+    height: 10rem;
+    position: absolute;
+    top: -3rem;
+    left: -2rem;
+  }
+}
+
+.view-more {
+  display: none;
+  color: $green;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  transition: all 0.2s linear;
+  & a {
+    color: inherit;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer__rights {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+  transition: opacity 0.3s linear;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.footer__text {
+  font-family: "Raleway";
+  font-size: 1rem;
+}
+
+.footer__image {
+  img {
+    width: 30%;
+  }
+  position: relative;
+  bottom: 0.25rem;
+  left: 0.1rem;
+}

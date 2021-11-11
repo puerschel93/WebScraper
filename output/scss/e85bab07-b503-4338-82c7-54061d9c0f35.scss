@@ -1,0 +1,157 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:900;
+
+// SIZE NAVIGATION
+$height-navigation:106;
+
+// VAR SITE TYPO
+$font-body:"proxima-nova",verdana,sans-serif;
+$font-title:"jaf-facitweb",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:1.9em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:300;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES11
+@import "../../../slagence_X_V5/sources/scss/modules/annonces11";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// PAGE AGENCE
+.horaires-agence {
+display:none;
+}
+
+// HP
+/* MINI MOTEUR */
+.moteur-avantage {
+margin-top:285px;
+}
+
+.typo-marron {
+color:$color-perso;
+}
+
+aside.aside-txt-home {
+	 @include background-image(linear-gradient(to top, darken($color-primary,3) 0%, lighten($color-primary,12) 100% ));
+}
+
+/* LANGUE */
+.dropdown .icon-v5-arrow-down-6 {
+display:none;
+}
+.size-picture-container {
+height:900px;
+}
+/* NAV */ 
+.menu-principal {
+	>li {
+	border:none;
+		>a{
+		padding:0 50px;
+		}
+	}
+}
+
+.bg-navigation {
+	@include background-image(linear-gradient(to bottom, darken($color-primary,3) 0%, lighten($color-primary,12) 100% ));
+}
+
+footer.bg-primary {
+background-color:lighten($color-primary,6);
+}
+
+// SMARTPHONE
+@media only screen and (max-width : 1023px) {
+        header .logo img {
+        width: 15%;
+        }
+}
+
+// DESKTOP & TABLET
+@media only screen and (min-width : 768px) {
+	.ligne-titre {
+	display:none;
+	margin-top:-20px;
+	}
+	.shadow-perso, .module-annonces-homepage {
+	@include box-shadow($color-action 4px 4px 0px);
+	}
+	.titre-pub {
+		color:$color-secondary;
+		font-weight:200;
+	}
+	.text-shadow-perso {
+		@include text-shadow ($color-action 2px 2px 5px);
+	}
+	.nav-social-menu .btn-langue{
+		border:none;
+		background-color:transparent;
+	}
+	aside.bg-secondary.ligne-social-langue {
+	height:0px;
+	}
+	.menu-blog {
+	margin-right:90px;
+	}
+}
+
+// TABLET PORTRAIT
+@media only screen and (max-width: 979px) and (min-width: 768px) and (orientation: portrait) {
+aside.ligne-social-langue .btn-langue {
+display:none;
+}
+}
+
+// BARRE SOCIALE FIX
+.fix-panier, .fix-gplus, .fix-twitter {
+display:none;
+}

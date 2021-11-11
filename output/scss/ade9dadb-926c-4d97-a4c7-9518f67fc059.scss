@@ -1,0 +1,148 @@
+@import "color";
+// BG SOLO
+$bg-uni:no;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:400;
+
+// VAR SITE TYPO
+$font-body:"Open Sans Condensed",arial,sans-serif;
+$font-title:"Source Sans Pro",arial,sans-serif; 
+
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:0;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib4";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE SOUS MENU LIB1
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MODULE ANNONCES1
+@import "../../../slagence_X_V5/sources/scss/modules/annonces1";
+
+// IMPORT MODULE EXTRA2
+@import "../../../slagence_X_V5/sources/scss/extra/extra12";
+
+// IMPORT MODULE PUB LIB1
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT MODULE PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT CHOSEN
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+
+// STYLES PERSO MHT
+
+.logo {float:left;}
+
+.navigation {
+background-image: url(../images/bg_navigation.png);
+background-repeat: no-repeat;
+background-position: center;
+background-color:$color-primary;
+border-top: 0px;
+border-bottom: 0px;
+margin-left:0px;
+}
+
+.menu-principal {margin-top:20px;border-bottom:3px solid $color-secondary;padding-bottom:15px;} 
+
+.menu-principal > li > a {padding:15px;}
+.menu-principal > li > a:hover {background-color:$color-claire;color:$color-action;padding:15px;}
+
+.slogan-index {color:$color-secondary;text-shadow:none;font-size:$font-size-title * 0.80; margin-bottom:22px;font-weight:bold;}
+
+.pub-annonces {
+	background-image:url('../images/picto-annonces.jpg');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-annonces.jpg', sizingMethod='image'); 
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-annonces.jpg', sizingMethod='image')";
+}
+.text-annonces {
+border-top:8px solid $color-syndic;
+}
+.pub-locations {
+	background-image:url('../images/picto-locations.jpg');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-locations.jpg', sizingMethod='image'); 
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-locations.jpg', sizingMethod='image')"; 
+}
+.text-locations {
+border-top:8px solid $color-courtage;
+}
+.pub-selection{
+	background-image:url('../images/picto-selection.jpg');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-selection.jpg', sizingMethod='image'); 
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-selection.jpg', sizingMethod='image')";
+}
+.text-selection {
+border-bottom:8px solid $color-selection;
+}
+
+@media only screen and (max-width : 767px) {
+	header .logo img {
+	width: 70%;
+	}
+	.margin-top-under-nav-fixe {
+	margin-top: 0px;
+	}
+	.navigation {
+background-image:none;
+background-color:$color-primary-light-20;
+border-bottom: 5px solid $color-action;
+
+}
+}
+
+
+.img-homepage .btn-exclusif {width: 58px;}
+.img-homepage .btn-cdc {margin-left: 10px;}

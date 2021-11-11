@@ -1,0 +1,399 @@
+@import "variables.less";
+@import "mixins.less"; // Tiles news boxes
+@special-tiles-hight: 367px;
+
+.tiles-plugin {
+  // Wrap in class .tiles-plugin when used with Isotope plugin
+  padding-top: 15px;
+
+  &.tiles-x {
+    .tilebox {
+      height: @gridbox1;
+      margin-bottom: @grid-gutter-height;
+    }
+    @media (max-width: @screen-xs-max) {
+      .tilebox {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  @media all and (min-width: @screen-sm) {
+    &.tiles-x {
+      .tilebox {
+        width: @default-col-width;
+      }
+    }
+  }
+}
+
+.tile-img {
+  img {
+    object-fit: cover;
+    float: none;
+    flex: none;
+    .img-responsive;
+  }
+}
+
+.tile-link {
+  display: flex;
+  position: relative;
+  color: initial!important;
+  text-decoration: none!important;
+  width: 100%;
+  height: 100%;
+  min-height: 1px;
+
+  &:hover,
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:focus {
+    .tab-focus-v2();
+    outline-offset: -1px;
+
+    .tile-body:after {
+      // Make room for focus outline:
+      width: calc(100% - 2px)!important;
+      left: 1px!important;
+      bottom: 1px!important;
+    }
+  }
+}
+
+.tile-header {
+  font-size: 17.42px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-top: 0;
+  flex-shrink: 0;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+}
+
+.tile-cat {
+  display: flex;
+  justify-content: space-between;
+  // flex-wrap: wrap;
+  .date {
+    font-weight: 700;
+    color: @gray-light;
+    text-align: right;
+    padding-left: 5px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+  }
+
+  .header-small {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 700;
+    color: @gray-light;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 5px;
+    // If no category, align date to the left
+    &:empty {
+      & + .date {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.tiles-x {
+  .tiles-x-layout();
+}
+
+.tiles-y {
+  .tiles-y-layout();
+}
+
+.tile-body strong {
+  font-weight: 400;
+}
+
+.eventbox {
+  .tiles-x .tile-img {
+    position: relative;
+    overflow: visible;
+    max-height: 50%;
+  }
+}
+
+.date-ribbon {
+  position: absolute;
+  bottom: -10px;
+  right: 11px;
+  background-color: @red2;
+  color: @gridbox-text-light;
+  padding: 6px 8px;
+  font-weight: 700;
+  display: inline-block;
+  border-radius: 2px;
+}
+@media all and (min-width: @screen-sm) {
+  .tiles-y {
+    .tiles-y-desktop-layout();
+  }
+}
+// Full width single column
+@media all and (min-width: @screen-md) {
+  .single-column {
+    .tiles-x {
+      &:not(.tiles-plugin) {
+        .tile-header {
+          font-size: 26px;
+        }
+
+        .tile-cat {
+          display: none;
+        }
+
+        .tile-body {
+          display: block;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+//style for single and double column spans
+
+.one-two-column .column1,
+.quad-column,
+.right-side,
+.triple-column,
+.two-one-column .column2,
+body:not(.FullWidthFrontpage) .double-column {
+  .tiles-y {
+    .tile-link,
+    .tilebox {
+      flex-direction: column;
+      padding: 0 0 10px;
+    }
+
+    .tile-content {
+      flex: 1 1 auto;
+      padding-top: 10px;
+    }
+
+    .tile-img {
+      flex: 0 0 auto;
+      margin-left: 0;
+
+      img {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+}
+
+.GridForside .two-one-column {
+  .column1 {
+    .tiles-y {
+      .tilebox {
+        display: block;
+
+        .tile-img {
+          float: right;
+          margin-bottom: 7px;
+        }
+      }
+    }
+  }
+}
+@media all and (min-width: @screen-md) {
+  .FullWidthFrontpage .triple-column,
+  .double-column {
+    .tiles-x:not(.tiles-plugin) {
+      .tilebox {
+        height: @special-tiles-hight;
+
+        .tile-header {
+          // Truncate to avoid overflowing text
+          -webkit-line-clamp: 2;
+        }
+
+        .tile-body {
+          display: block;
+          flex: 1;
+
+          > .tile-teaser {
+            // Truncate to avoid overflowing text
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+          }
+
+          &:after {
+            content: '';
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(@white-color,1) 43%, rgba(@white-color,0));
+            display: block;
+            height: 35px;
+            position: absolute;
+            width: calc(100% - 20px);
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .FullWidthFrontpage {
+    .double-column {
+      .tiles-x:not(.tiles-plugin) {
+        .tile-img {
+          flex: 0 0 55%;
+        }
+
+        .tile-content {
+          flex: 1 1 45%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: @screen-sm-max) {
+  .FullWidthFrontpage .triple-column,
+  .double-column,
+  .single-column {
+    .tiles-x:not(.tiles-plugin) {
+      .tile-body {
+        display: block;
+      }
+    }
+  }
+}
+@media all and (min-width: @screen-sm) {
+  .eventbox,
+  .newsbox {
+    padding-bottom: 8px;
+    // Inserted as standalone grid element
+    .tiles-x {
+      .tilebox {
+        height: @gridbox1;
+      }
+    }
+
+    .single-column & {
+      .tiles-x {
+        .tilebox {
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .topnews {
+    & > .deloverskrift {
+      margin-top: 70px;
+    }
+  }
+}
+// Special styling for IE11:
+@media all and (max-width: @screen-xs-max) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .tiles-x {
+    .tilebox {
+      height: @gridbox1;
+    }
+  }
+
+  .tiles-y {
+    // Mobile view - list type
+    .tilebox {
+      height: @gridbox1;
+
+      &.no-img {
+        height: auto;
+      }
+    }
+
+    .tile-img {
+      flex: 0 1 auto;
+      overflow: hidden;
+    }
+
+    .tile-content {
+      flex: 1 0 auto;
+    }
+  }
+
+  .FullWidthFrontpage .triple-column,
+  .double-column,
+  .single-column {
+    .tiles-y:not(.tiles-plugin) {
+      height: @special-tiles-hight;
+    }
+  }
+}
+// Special styling for IE11:
+@media all and (min-width: @screen-xs) and (max-width: @screen-xs-max) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .tiles-x {
+    &:not(.tiles-plugin) {
+      .tilebox {
+        height: @special-tiles-hight;
+      }
+    }
+  }
+}
+// Special styling for IE11:
+@media all and (min-width: @screen-sm) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .single-column {
+    .tiles-x {
+      &:not(.tiles-plugin) {
+        .tile-img {
+          flex: 0 0 auto;
+        }
+
+        .tile-content {
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+}
+// Special styling for IE Edge
+@media all and (max-width: @screen-xs-max) {
+  @supports (-ms-ime-align: auto) {
+    // Mobile view - list type
+    .tiles-y {
+      .tile-link,
+      .tilebox {
+        flex-direction: column;
+      }
+
+      .tile-img {
+        flex: 0 0 60%;
+        overflow: hidden;
+      }
+
+      .tile-content {
+        flex: 1 1 auto;
+      }
+    }
+  }
+}
+// Special styling for IE Edge
+@media all and (min-width: @screen-sm) {
+  @supports (-ms-ime-align: auto) {
+    .single-column {
+      .tiles-x {
+        &:not(.tiles-plugin) {
+          .tile-content {
+            flex: 0 1 auto;
+          }
+        }
+      }
+    }
+  }
+}

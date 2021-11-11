@@ -1,0 +1,507 @@
+vendor-prefixes ?= webkit moz ms official
+basePath = '/';
+@import 'nib'
+global-reset()
+
+mainColor = #7a0863;
+secondaryColor = alpha(darken(mainColor, 60%),0.6)
+ctaColor = #7a0863;
+
+::selection
+    color darken(secondaryColor,40%)
+    background #fff
+::-moz-selection
+    color darken(secondaryColor,40%)
+    background #fff
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: lighten(mainColor, 65%)
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    background: lighten(mainColor, 65%)
+}
+
+::-webkit-scrollbar-thumb {
+    background: lighten(mainColor, 25%)
+    -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: lighten(mainColor, 25%)
+}
+
+a
+    color #fff
+
+a:hover,a:active
+    color lighten(mainColor,70%)
+
+*
+    box-sizing border-box
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: 400;
+    text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+
+html
+    height:100%
+    background: #000;
+body,html
+    padding:0;
+    margin:0;
+
+body
+    height 100%
+    font-family: arial;
+    font-size: 0.9375em;
+    line-height: 1.5em;
+    color darken(mainColor,70%)
+.large-paragraph
+    font-family: helvetica, arial, sans-serif;
+    font-size: 1.125em;
+    line-height: 1.75em;
+
+
+.btn-signup
+    font-size 16px
+
+header
+    width 100%
+    height 58px
+    background alpha(#280828,0.8)
+    color white
+    position fixed
+    top 0
+    z-index 3
+    padding: 0 10%;
+    line-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+nav ul
+    margin 0
+    padding 0
+    display: flex;
+    align-items: center;
+    list-style none
+    justify-content: center;
+nav a
+    color #fff
+    text-decoration none
+    display: list-item;
+    padding 0 10px
+    &:hover
+        text-decoration underline
+
+
+nav[role="secondary"]
+    margin 0 0 0 20px
+
+section[role="hero"]
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    text-align center
+    padding: 100px 0 0 0;
+    background #000 url(basePath+"herobg.jpg")
+    background-size cover
+    color #fff
+
+    h2
+        font-size 2em
+        font-weight bold
+        margin: 0 0 0.8em 0;
+        color mainColor
+        text-shadow 0px 1px 1px mainColor
+    h3
+        font-size 1.6em
+        margin: 0 0 60px 0;
+        color mainColor
+        text-shadow 0px 1px 1px lighten(mainColor,20%)
+    .btn
+        min-width 200px
+
+.big-logo
+    margin: 0 auto 45px auto;
+    background: url(basePath+"logo.png") center center no-repeat
+    background-size contain
+    height: 375px;
+    width: 400px;
+    display block
+    line-height 200px
+    color rgba(0,0,0,0.5)
+    &:hover
+        color black
+section[role="content"]
+    transform: translate3d(0,0,0);
+    position: relative;
+    z-index: 2;
+    background: rgba(0,0,0,0.96); ////darken(mainColor,80%)
+    width: 100%;
+    padding: 60px 15% 150px 15%;
+    margin: 0
+    margin-top: 80vh;
+    min-height 80vh;
+    color #fff
+    min-height 1000px
+    text-align center
+
+    h2
+        font-size 28px
+        margin-bottom 24px
+        margin-top 30px
+    h3
+        font-size 22px
+        margin-bottom 20px
+    p
+        margin-bottom 20px
+        font-size 18px
+        max-width 600px
+        display block
+        margin-left auto
+        margin-right auto
+
+
+.logo
+    margin 0 20px 0 0
+    text-decoration none
+    &:hover
+        text-decoration underline
+h1
+    padding 0
+    margin 0
+    color #fff
+    font-weight: bold;
+.btn
+    margin 0 0 50px 0
+    box-shadow: 0 -2px 0 rgba(0,0,0,0.12) inset,0 0 2px rgba(0,0,0,0.08),0 4px 6px rgba(0,0,0,0.08),0 12px 16px rgba(0,0,0,0.08);
+    background-color: ctaColor;
+    border-radius: 2px;
+    color: #fff;
+    font-size 16px
+    cursor: pointer;
+    display: inline-block;
+    padding: 20px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    text-decoration none
+    text-transform uppercase
+    font-weight bold
+    text-shadow: 0 0px 2px white;
+    transition background linear 250ms
+    animation:glow 100ms linear infinite, pulse 2s ease-in-out infinite;
+    &:hover
+        background-color #fff
+        animation none
+        color ctaColor
+
+
+@keyframes pulse
+    0%, 100%
+        background-color: ctaColor;
+    50%
+        background-color: darken(ctaColor,50%);
+
+@keyframes glow {
+    0% {
+        text-shadow 0 0 0px #fff
+    }
+    100% {
+        text-shadow 0 0 5px #fff
+    }
+}
+
+
+.btn-small
+    box-shadow: 0 -2px 0 rgba(0,0,0,0.12) inset, 0 0 2px rgba(0,0,0,0.08), 0 4px 6px rgba(0,0,0,0.08), 0 12px 16px rgba(0,0,0,0.08);
+    background-color: rgb(43, 222, 115);
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px 11px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: bold;
+    line-height: 26px;
+    margin: 0 0 0 15px;
+    animation:glow 100ms linear infinite, pulse 2s ease-in-out infinite;
+    &:hover
+        background-color #fff
+        animation none
+        color ctaColor
+        text-decoration none
+
+footer
+    height: 520px;
+    background: url(basePath+'space1.png') no-repeat center center
+    background-size cover
+    color: #fff;
+    padding: 50px 15px 10%;
+    font-size: 1em;
+    z-index: 3;
+    position: relative;
+    text-align: center;
+    .kickstart
+        margin 0 0 50px 0
+    p
+        margin: 120px 0 60px 0;
+        font-weight: bold;
+
+.player
+    width 125px
+    height 195px
+    background url(basePath+"you.png")
+    position: absolute;
+    z-index: 10;
+    right: 35px;
+    bottom: 0;
+    text-align: center;
+
+    .btn-small
+        display: block;
+        margin: 140px auto 0 auto;
+        width: 100%;
+        font-size: 0.8em;
+
+.morgondag
+    max-width: 450px;
+    min-width: 200px;
+    width: 10%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 150px;
+    margin: 150px auto 0;
+    display: inline-block;
+
+.facebook
+    text-align center
+    margin 0px auto 20px
+    min-height 20px
+
+.twitter
+    text-align center
+    margin 0 auto
+    max-width 500px
+
+.tweet
+    text-align left
+    padding 20px 20px
+    line-height 24px
+    img
+        float left
+        margin 0 20px 0 0
+    a
+        text-decoration none
+        &:hover
+            text-decoration underline
+    .tweet-html
+        padding-left: 93px;
+.news
+    text-align center
+    padding 20px 0
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap
+.post
+    //height 280px
+    margin: 0  auto;
+    text-align center
+    align-self flex-start
+    .img-container
+        width: 300px;
+        height: 100px;
+        overflow: hidden;
+        position: relative;
+        margin 0 10px 20px 0
+        border-bottom solid 3px mainColor
+        box-shadow: 0 0 2px rgba(0,0,0,0.08),0 4px 6px rgba(0,0,0,0.08),0 12px 16px rgba(0,0,0,0.08);
+
+    img
+        display: inline-block;
+        width: 300px;
+        height: auto;
+
+    a
+        text-decoration none
+    h1
+        font-size 1.1em
+        margin: -4px 0 10px 0;
+        font-weight bold
+        color ctaColor
+
+    time
+        font-style italic
+        font-size 0.9em
+        display block
+        text-align center
+    p
+        line-height 1.6em
+        font-size 1em
+        margin-top 0
+        color darken(mainColor,70%)
+.clear
+    clearfix();
+
+.machine
+    width: 100%;
+    height: 190px;
+    background: url(basePath+"machine.png") center center repeat-x;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: -145px 0 0 0;
+    pointer-events: none;
+
+.machine2
+    width: 100%;
+    height: 190px;
+    background: url(basePath+"machine.png") center center repeat-x;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: -160px 0 0 0;
+    pointer-events: none;
+    z-index 99
+
+
+section[role="capsules"]
+    z-index 3
+    position: relative
+    margin-bottom 60px
+    .desc
+        text-decoration none;
+
+    ul
+        margin -120px 0 50px 0
+        padding 0
+        display: flex;
+        align-items: center;
+        list-style none
+        justify-content: center;
+        li a.video
+            background rgba(40,8,40,18)
+            display: list-item;
+            margin 0 10px 20px 10px
+            width 180px
+            height 120px
+            text-align center
+            line-height 120px
+            font-size 22px
+            color rgba(255,255,255,0.2)
+            text-decoration none;
+            animation glow linear 150ms infinite
+            box-shadow 0 0 0 1px #000,0 0 0 5px mainColor,0 0 0 6px #000
+
+            &:hover
+                box-shadow 0 0 0 1px #000,0 0 0 5px ctaColor,0 0 0 6px #000
+                color black
+
+section[role="capsules"] ul li a.capsule1
+    background url(basePath+"trailerslot1.png")
+section[role="capsules"] ul li a.capsule2
+    background url(basePath+"trailerslot2.png")
+section[role="capsules"] ul li a.capsule3
+    background url(basePath+"trailerslot3.png")
+gif
+    position relative
+    display inline-block
+    text-align center
+    width 540px
+    .play, .loader
+        position absolute
+        top 50%
+        left 50%
+        width 60px
+        height 60px
+        background rgba(0,0,0,0.5)
+        font-weight bold
+        font-size 24px
+        margin -30px 0 0 -30px
+        line-height 60px
+        border-radius 60px
+        cursor pointer
+
+        &:hover
+            background rgba(255,255,255,0.5)
+            color black
+
+gif.inactive, gif.active
+    .loader
+        display none
+gif.inactive
+    cursor pointer
+gif.loading, gif.active
+    .play
+        display none
+
+gif .loader
+    animation:spin 250ms linear infinite;
+
+@keyframes spin { 100% { transform:rotate(360deg); } }
+
+.twitterLink
+    display block;
+    width: 200px;
+    text-decoration: none;
+    color: lighten(ctaColor,50%)
+    margin: 0 auto;
+    text-align center
+
+.overlay
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 4;
+    display: block;
+
+.slideshow
+    max-height: 95%;
+    width: auto;
+    max-width: 75%;
+    z-index 5 !important;
+
+
+@media (max-width: 650px)
+    section[role="capsules"]
+        display none
+    .slideshow
+        max-width 100%
+    .big-logo
+        width 100%
+    section[role="hero"]
+        position relative
+        padding: 100px 0 50px 0;
+    section[role="content"]
+        padding 20px 0 20px 0
+        margin-top: 0;
+        min-height: 0px;
+    gif
+        display block
+        width 80%
+        margin 0 auto 10px auto
+        img
+            display block
+            width 100%
+            heigt auto
+            margin 0 auto
+    .machine2
+        display none
+    footer
+        margin-top: -15px;
+

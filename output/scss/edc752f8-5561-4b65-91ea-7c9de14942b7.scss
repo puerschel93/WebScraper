@@ -1,0 +1,272 @@
+// 640px 1024px 1400px
+$breakpoints-up:("medium":"40em", "large":"64.5em", "xlarge":"87.5em");
+// 639px 1023px 1399px
+$breakpoints-down:("small":"39.9375em", "sm-med":"33.75em", "medium-sm":"63em", "medium":"64em", "large":"85,375em");
+@mixin breakpoint-up($size) {
+    @media(min-device-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media(max-device-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down-l($size) {
+    @media(max-device-width: map-get($breakpoints-down, $size)) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin breakpoint-up-l($size) {
+    @media(min-device-width: map-get($breakpoints-down, $size)) and (orientation: landscape) {
+        @content;
+    }
+}
+
+// convert px to rem
+@function pxToRem($pxsize, $rembase:16) {
+    @return ($pxsize / $rembase)+rem;
+}
+
+@mixin createFlex($direction, $jc, $ai, $fw) {
+    display: flex;
+    @if($direction) {
+        flex-direction: $direction;
+    }
+    @if($jc) {
+        justify-content: $jc;
+    }
+    @if($ai) {
+        align-items: $ai;
+    }
+    @if($fw) {
+        flex-wrap: $fw;
+    }
+}
+
+@mixin setMainItem() {
+    .wheatherMainItem {
+        &__main-item-header {
+            height: 50px;
+            @include createFlex(row, flex-start, center, null);
+        }
+        &__main-item {
+            position: relative;
+            left: 0.5%;
+            top: 0px;
+            transform: translateX(-50%);
+            margin-top: 30px;
+            img {
+                position: relative;
+                top: -15px;
+                left: 0px;
+                padding-top: 20px;
+                padding-bottom: 0px;
+                display: block;
+                margin: -60px auto;
+                width: 20%;
+            }
+            @keyframes comesIn {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+        }
+        &__wheather {
+            margin: 10px 0px 20px;
+            h3 {
+                margin: 0px;
+            }
+            h3:nth-of-type(2) {
+                margin: 0px 10px;
+            }
+            @include createFlex(row, flex-start, center, null);
+        }
+        &__wheather-info {
+            margin-top: 10px;
+            @include createFlex(row, space-between, center, wrap);
+            p {
+                @include createFlex(row, flex-start, center, null);
+                font-size: pxToRem(16) !important;
+                font-weight: bold;
+                padding: 10px;
+                height: 30px;
+                margin: 10px 0px;
+                margin-right: 5px;
+                width: 27%;
+                background-color: rgba(255, 255, 255, 0.185);
+                box-shadow: 0px 0px 3px white;
+            }
+        }
+    }
+    &__items {
+        @include createFlex(row, center, center, wrap);
+    }
+}
+
+@mixin setMainItemSmallAndDesktop() {
+    .wheatherMainItem {
+        &__main-item {
+            margin: 0px auto;
+            width: 70%;
+            padding: 30px;
+            background-color: rgba(77, 77, 77, 0.637);
+            box-shadow: 0px 0px 1px white, 0px 0px 50px black, 0px 0px 150px inset black;
+            border-radius: 10px;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+            @media (max-device-width: 1366px) and (max-device-height: 1024px) and (orientation: landscape) {
+                position: relative;
+                left: 40px;
+                top: 0px;
+                margin: 40px auto 20px;
+            }
+            @media (max-device-width:1024px) {
+                width: 80%;
+                position: relative;
+                left: 35px !important;
+                top: 0px;
+                margin: 20px 0px;
+            }
+            @media (max-device-width:767px) {
+                position: relative;
+                width: 80%;
+                left: 0px;
+                margin: 0px auto;
+                left: 0px !important;
+                top: 20px;
+            }
+            &.active {
+                animation: comesIn 1s 0.3s ease-in-out forwards;
+            }
+            h1 {
+                padding: 10px;
+                background-color: rgba(255, 255, 255, 0.185);
+                box-shadow: 0px 0px 3px white;
+                @media (max-device-width: 767px) {
+                    font-size: pxToRem(24);
+                }
+            }
+            h1,
+            h3,
+            p {
+                color: white;
+            }
+            img {
+                display: block;
+                margin: 0px auto;
+                width: 20%;
+            }
+            @keyframes comesIn {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+        }
+        &__wheather {
+            margin: 10px 0px 20px;
+            @include createFlex(row, flex-start, center, null);
+            h3 {
+                margin: 0px;
+                @media (max-device-width: 767px) {
+                    margin: 10px 0px 0px;
+                    font-size: pxToRem(16);
+                }
+            }
+            h3:nth-of-type(2) {
+                margin: 0px 10px;
+            }
+        }
+        &__wheather-info {
+            @include createFlex(row, space-between, center, wrap);
+            p {
+                font-size: pxToRem(16);
+                font-weight: bold;
+                padding: 10px;
+                margin: 10px 0px;
+                margin-right: 10px;
+                width: 28%;
+                background-color: rgba(255, 255, 255, 0.185);
+                box-shadow: 0px 0px 3px white;
+                @include breakpoint-down(medium) {
+                    width: 40%;
+                }
+                @include breakpoint-down(small) {
+                    height: 30px;
+                    width: 20%;
+                    font-size: pxToRem(12) !important;
+                    @include createFlex(row, center, center, null);
+                }
+            }
+        }
+    }
+}
+
+@mixin todoLook() {
+    h1,
+    h2 {
+        font-size: pxToRem(30);
+        text-align: center;
+    }
+    padding: 20px;
+    margin: 40px auto 0px;
+    color: white;
+    background-color: rgba(77, 77, 77, 0.637);
+    box-shadow: 0px 0px 1px white,
+    0px 0px 50px black,
+    0px 0px 150px inset black;
+}
+
+@mixin inputLook() {
+    position: relative;
+    right: 41px;
+    top: 0px;
+    min-width: 400px;
+    color: white;
+    padding: 10px 20px;
+    background: transparent;
+    border: 0px;
+    outline: none;
+    background-color: rgba(77, 77, 77, 0.637);
+    box-shadow: 0px 0px 1px white, 0px 0px 50px black, 0px 0px 50px inset black;
+    transition: all 200ms ease-in-out;
+    &:hover,
+    &:focus {
+        background-color: rgb(194, 194, 194);
+        box-shadow: 0px 0px 1px white, 0px 0px 50px black, 0px 0px 50px inset black;
+    }
+}
+
+@mixin btnLook() {
+    cursor: pointer;
+    min-width: 100px;
+    color: white;
+    padding: 10px 20px;
+    background: transparent;
+    border: 0px;
+    outline: none;
+    background-color: rgba(163, 163, 163, 0.637);
+    box-shadow: 0px 0px 1px white, 0px 0px 50px black, 0px 0px 70px inset black;
+    @media (min-device-width: 1024px) {
+        position: relative;
+        right: 40px;
+        top: 0px;
+    }
+    &:hover,
+    &:focus {
+        background-color: rgb(194, 194, 194);
+    }
+}

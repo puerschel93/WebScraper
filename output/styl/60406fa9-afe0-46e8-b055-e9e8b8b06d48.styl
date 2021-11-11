@@ -1,0 +1,245 @@
+// (c) Andrew Wei
+
+button-fade-behavior()
+  opacity: 1
+  transition: opacity .4s ease-out
+  +state('hover')
+    opacity: .6
+
++button-class('monogram')
+  background: get-color('true-black')
+  size: $menu-button-width $menu-button-height
+  transition: background .2s ease-out
+
+  svg circle
+    fill: get-color('true-white')
+    transition: fill .2s ease-out
+
+  +state('hover')
+    background: get-color('true-white')
+    svg circle
+      fill: get-color('true-black')
+
++button-class('return')
+  background: get-color('true-white')
+  size: $menu-button-width $menu-button-height
+  text-align: center
+  transition: (opacity transform background) .2s ease-out
+
+  svg rect
+    fill: get-color('true-black')
+    transition: fill .2s ease-out
+
+  +state('hover')
+    background: get-color('true-black')
+    svg rect
+      fill: get-color('true-white')
+
++button-class('social')
+  button-fade-behavior()
+  background: center / contain no-repeat
+  size: $social-anchor-diameter
+
+  &.github
+    background-image: url($base-path+'/images/github-logo.svg')
+  &.twitter
+    background-image: url($base-path+'/images/twitter-logo.svg')
+  &.linkedin
+    background-image: url($base-path+'/images/linkedin-logo.svg')
+
++button-class('hashtag')
+  button-fade-behavior()
+  set-font('sans-serif', 'xs', 'bold')
+  background-color: get-color('true-black')
+  border-radius: 4px
+  color: get-color('dark-grey')
+  padding: 5px 10px
+  size: auto;
+
+  +state('active')
+    color: get-color('true-white')
+    background-color: get-color('pink')
+
++button-class('read-more')
+  set-font('sans-serif', 'default', 'normal')
+  background: get-color('true-white')
+  border-radius: 4px
+  color: get-color('true-black')
+  padding: 8px 10px
+  size: auto
+  transition: (background color) .2s ease-out
+
+  +state('hover')
+    background: get-color('true-black')
+    color: get-color('true-white')
+
++button-class('reset')
+  set-font('sans-serif', 'default', 'normal')
+  background: get-color('true-white')
+  border-radius: 4px
+  color: get-color('true-black')
+  padding: 8px 10px
+  size: auto
+  transition: (background color) .2s ease-out
+
+  +state('hover')
+    background: get-color('true-black')
+    color: get-color('true-white')
+
+a.cover
+  size(100% 150px)
+  overflow(hidden)
+  margin(20px 0)
+  display: block
+  border-radius: 4px
+  position: relative
+
+  +screen('>=phablet')
+    height: 300px
+
+  figure.cover
+    size(100%)
+    transition(transform, .4s, ease-out)
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    transform: scale(1)
+    position: relative
+
+    &:before
+      size(100%)
+      transition(background-color, .4s, ease-out)
+      background-color: rgba(34, 34, 34, .4)
+      content: ''
+      display: block
+      position: relative
+
+  +state('hover')
+    figure.cover
+      transform: scale(1.1)
+
+      &:before
+        background-color: rgba(34, 34, 34, .0)
+
++button-class('number-tag')
+  set-font('sans-serif', 'default', 'normal')
+  background-color: get-color('true-white')
+  border-radius: 4px
+  color: get-color('very-dark-grey')
+  line-height: 25px
+  pointable: false
+  size: 25px
+  text-align: center
+
++button-class('paginator')
+  edge(null null $paginator-anchor-offset-y null)
+  set-font('sans-serif', 'default', 'normal')
+  size: auto $paginator-anchor-height
+  position: fixed
+
+  span.number,
+  span.label
+    align: 'center' 'top' 'inline'
+    box-sizing: border-box
+    display: block
+    float: left
+    line-height: $paginator-anchor-height
+    padding: 0 8px
+    position: relative
+    size: auto 100%
+
+  span.number
+    background: get-color('true-black')
+    color: get-color('true-white')
+    size: $paginator-anchor-number-width auto
+
+  &.newer,
+  &.older
+    size(($paginator-anchor-number-width + $paginator-anchor-label-width) null)
+    background-color: get-color('true-white')
+    color: get-color('very-dark-grey')
+    z-index: get-z('local-nav')
+
+    span.label
+      size($paginator-anchor-label-width null)
+
+  &.newer
+    left: 0
+
+    span.number
+      text-align: right
+
+    span.label
+      text-align: left
+
+    +state('hidden', true)
+      transform: translate3d(-$paginator-anchor-number-width - $paginator-anchor-label-width, 0, 0)
+
+  &.older
+    right: 0
+
+    span.number
+      text-align: left
+
+    span.label
+      text-align: right
+
+    svg
+      transform: rotate(180deg)
+
+    +state('hidden', true)
+      transform: translate3d($paginator-anchor-number-width + $paginator-anchor-label-width, 0, 0)
+
+  &.newest,
+  &.oldest
+    size($paginator-anchor-label-long-width null)
+    color: get-color('true-white')
+    background-color: get-color('true-black')
+    z-index: 0
+
+    span.label
+      width: inherit
+
+  &.newest
+    left: $paginator-anchor-number-width + $paginator-anchor-label-width
+    text-align: left
+
+    +state('hidden', true)
+      transform: translate3d($paginator-anchor-label-long-width * -1, 0, 0)
+
+  &.oldest
+    right: $paginator-anchor-number-width + $paginator-anchor-label-width
+    text-align: right
+
+    +state('hidden', true)
+      transform: translate3d($paginator-anchor-label-long-width, 0, 0)
+
+  transition: (transform opacity) .2s ease-out
+
+  +state('hidden', true)
+    opacity: 0
+    pointable: false
+
+  +state('visible')
+    opacity: 1.0
+    pointable: true
+    transform: translate3d(0, 0, 0)
+
+  +state('hover')
+    opacity: .4
+
+span.deprecated
+  set-font('sans-serif', 16px, 'normal')
+  align: 'center' 'center' 'inline'
+  background: get-color('pink')
+  border-radius: 4px
+  color: get-color('true-white')
+  display: inline-block
+  line-height: 30px
+  margin: 0 10px
+  padding: 0 10px
+  pointable: false
+  size: auto 30px
+
+  &::after
+    content: 'Deprecated'

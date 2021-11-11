@@ -1,0 +1,158 @@
+@use "utility/colours";
+@use "Utility/mixins";
+
+// ----------------------------------------------
+// Header Animations
+// ----------------------------------------------
+
+.header-initial {
+  transition: color 200ms ease-in-out;
+}
+
+.header-initial:hover {
+  color: red;
+  transition: color 500ms ease;
+}
+
+.header-initial:hover .header-letter {
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 500ms ease;
+}
+
+.header-nav a:after, .header-contact a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1rem;
+  background-color: red;
+  opacity: 1;
+  transition: opacity 300ms, transform 300ms;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.header-nav a:hover:after,
+a:focus:after, .header-contact a:hover:after,
+a:focus:after  {
+  transform: translate3d(0, 0, 0);
+}
+
+.github-icon:hover {
+  background: red;
+}
+
+// ----------------------------------------------
+// Header Animations
+// ----------------------------------------------
+
+// Typewriter cursor
+@keyframes blink {
+  from {opacity: 1.0;}
+  to {opacity: 0.0;}
+}
+
+// ----------------------------------------------
+// Scroll Button Animations
+// ----------------------------------------------
+
+.scroll-container-bottom:hover > .arrow-bottom {
+  height: 40px;
+  background-color: black;
+  transition: height 0.3s ease-in;
+}
+
+.scroll-container-bottom:hover > .arrow-bottom:before {
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 25px solid black;
+  transition: border 0.3s ease;
+}
+
+.scroll-container:hover > .arrow {
+  height: 40px;
+  background-color: black;
+  transition: height 0.3s ease-in;
+
+  @include mixins.sm {
+    height: 75px;
+  }
+
+  @include mixins.sh {
+    height: 40px;
+    background-color: black;
+    transition: height 0.3s ease-in;
+  }
+}
+
+.scroll-container:hover > .arrow:after {
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 25px solid black;
+  transition: border 0.3s ease;
+
+  @include mixins.sm {
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 50px solid black;
+  }
+
+  @include mixins.sh {
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 25px solid black;
+  }
+}
+
+// ----------------------------------------------
+// Project Card Animations
+// ----------------------------------------------
+
+.project-card:hover > .project-preview {
+  transform: scale(1.5);
+}
+
+.project-card:hover > .project-card-content{
+  visibility: visible;
+  background: rgba(255, 255, 255, 0.75);
+  transform: translateX(0px);
+  transition: transform 0.5s ease 0.5s;
+}
+
+.project-card label:hover {
+  float: right;
+  color: red;
+  transition: color 0.5s ease;
+}
+
+// ----------------------------------------------
+// Link Hover Animations
+// ----------------------------------------------
+
+.contact-info-content a:hover {
+  color: black;
+  transition: color 500ms ease;
+}
+
+.scs-container-content a:hover,
+.about-content a:hover {
+  color: black;
+  transition: color 500ms ease;
+  text-decoration: underline;
+}
+
+// ----------------------------------------------
+// Skill Icons Animations
+// ----------------------------------------------
+
+.skill-icon img:nth-child(2) {
+  display: none;
+}
+
+.skill-icon:hover img:nth-child(2) {
+  display: block;
+}
+
+.skill-icon:hover img:nth-child(1) {
+  display: none;
+}

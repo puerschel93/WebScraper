@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Montserrat:wght@700&display=swap");
+@import "vars/variables.scss";
+@import "vars/colors.scss";
+@import "vars/buttons.scss";
+@import "vars/mixins.scss";
+
+body {
+  font-family: "Catamaran", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  @include tablet {
+    font-size: 18px;
+  }
+  a {
+    color: $color-primary;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: $color-dark-primary;
+    }
+    &.invert {
+      color: lighten($color-primary, 10%);
+      &:hover {
+        color: lighten($color-primary, 20%);
+      }
+    }
+    &.arrow {
+      display: inline-block;
+      padding: 0.6em 0;
+      position: relative;
+      z-index: 1;
+      &:after {
+        position: absolute;
+        content: "\2192";
+        margin-left: 5px;
+        transition: transform 0.2s ease-in-out;
+      }
+      &:hover {
+        &:after {
+          transform: translateX(5px);
+        }
+      }
+    }
+    &.external-link {
+      position: relative;
+      svg {
+        display: inline-block;
+        width: 1.05em;
+        height: 1.05em;
+      }
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: $color-dark-primary;
+    font-family: "Montserrat", sans-serif;
+    &.highlight-overline {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        background-color: $color-primary;
+        border-radius: 5px;
+        width: 100px;
+        height: 5px;
+      }
+    }
+  }
+
+  h1 {
+    margin-bottom: 3rem;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .feature {
+    position: relative;
+    background-color: #fff;
+    padding: 100px 0;
+    overflow: hidden;
+    &.no-top-padding {
+      padding-top: 0;
+    }
+    &.dark {
+      background-color: $color-dark-primary;
+      color: #fff;
+      .container {
+        position: relative;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #fff;
+      }
+      .tag {
+        background-color: #fff;
+        color: $color-primary;
+        font-weight: bold;
+      }
+      &:before {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(lighten($color-dark-primary, 25%), 0.3);
+        border-radius: 50%;
+        content: "";
+        height: 60vh;
+        width: 60vh;
+        opacity: 0.5;
+        transform: translate(-100px, 200px);
+      }
+      &:after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(lighten($color-dark-primary, 25%), 0.1);
+        border-radius: 50%;
+        content: "";
+        height: 60vh;
+        width: 60vh;
+        opacity: 0.5;
+        transform: translate(100px, 100px);
+      }
+
+      .card {
+        background-color: rgba(#fff, 0.15);
+        backdrop-filter: blur(15px);
+        border-radius: 0.5rem;
+        padding: 0.75rem;
+        overflow: hidden;
+        img {
+          border-radius: 0.25rem;
+        }
+        &--content {
+          //color: initial;
+          padding: 0.75rem;
+          h2,
+          h3,
+          h4 {
+            // color: initial;
+            // margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .text-primary {
+    color: $color-primary;
+  }
+
+  .cards-container {
+    margin-bottom: 5rem;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px -10px;
+    > * {
+      flex: 1 1 280px;
+      margin: 10px 10px 100px 10px;
+    }
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-gap: 2rem;
+      margin: 0;
+      > * {
+        margin: 0 0 50px 0;
+      }
+      @include tablet {
+        grid-template-columns: repeat(auto-fill, minmax(351px, 1fr));
+      }
+      @include laptop {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      }
+      // Increased grid column width to achieve two column
+      &.x2 {
+        @include tablet {
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 4rem;
+        }
+        @include laptop {
+          // grid-template-columns: repeat(auto-fill, minmax(351px, 1fr));
+        }
+      }
+    }
+  }
+
+  .breadcrumbs {
+    margin-top: -20px;
+    margin-bottom: 40px;
+    ol {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      li {
+        display: inline-block;
+        a {
+          font-size: 0.8rem;
+          font-weight: normal;
+          padding: 5px;
+          position: relative;
+          text-transform: lowercase;
+          &:after {
+            content: ">";
+            margin-left: 10px;
+          }
+        }
+        > span {
+          color: $color-dark-primary;
+          font-size: 0.8rem;
+          font-weight: bold;
+          padding: 5px;
+          text-transform: lowercase;
+        }
+      }
+    }
+  }
+
+  /**
+    FORM STYLES
+  **/
+  form {
+    background-color: #fdfdfd;
+    border-radius: $border-radius;
+    margin: auto;
+    padding: 20px 0;
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      > * {
+        flex: 1 1 100%;
+        &:first-child {
+          flex: 0 0 100px;
+        }
+      }
+      &:last-child {
+        // flex: 1;
+        margin-bottom: 0px;
+      }
+    }
+    label {
+      color: $color-dark-primary;
+      font-size: 0.9rem;
+      font-weight: bold;
+      line-height: 1.5;
+      padding: 5px 10px 0 0;
+      > .required {
+        color: $color-red;
+        font-size: 0.7rem;
+      }
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      background-color: rgba($color-dark-primary, 0.025);
+      border: 1px solid rgba($color-dark-primary, 0.1);
+      border-radius: $border-radius;
+      font-family: inherit;
+      font-size: 16px;
+      padding: 10px;
+      transition: border-color 0.25s ease-in;
+      max-width: 100%;
+      &:focus {
+        border-color: rgba($color-primary, 0.7);
+        outline: none;
+      }
+      &.highlight {
+        border-color: $color-red;
+        box-shadow: 0 0 4px rgba($color-red, 0.5);
+      }
+    }
+    input[type="submit"] {
+      display: block;
+      font-size: 1.1rem;
+      padding: 12px !important;
+    }
+    .error {
+      color: $color-red;
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-align: right;
+      text-transform: uppercase;
+    }
+  }
+}

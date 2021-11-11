@@ -1,0 +1,488 @@
+.ignite__hero {
+    // background-image: url(../img/letsignite-bg.png);
+    background-position-x: 70%;
+    @extend %full-bg;
+    align-items: end;
+
+    @include large {
+        // background-image: url(../img/letsignite-bg.png);
+        align-items: center;
+        background-position-x: 5%;
+    }
+
+    h1 {
+        grid-column: span 12;
+        padding-bottom: 50px;
+        color: $white;
+
+        @include large {
+            grid-column: 2/10;
+            padding-bottom: 0;
+        }
+
+        span {
+            @include large {
+                margin-top: 7.5rem;
+                display: block;
+            }
+        }
+    }
+}
+
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    padding-top: 15px;
+}
+  
+  .scrolling {
+    animation: marquee 5s linear infinite;
+    animation-delay: -1s;
+    display: inline-block;
+  }
+  
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to { 
+      transform: translateX(-100%);
+    }
+  }
+  
+  span.marquee__item {
+    width: 350px;
+
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    text-transform: uppercase;
+    color: $pink;
+    font: {
+        size: 10px;
+        weight: bold;
+    }
+
+    @include large {
+        width: 450px;
+        font-size: 18px;
+    }
+
+    &:after {
+        content: '';
+        height: 1px;
+        background: $navy;
+        flex: 1;
+        margin: 0 60px;
+    }
+
+  }
+
+.ignite__intro {
+    padding-top: 50px;
+    padding-bottom: 40px;
+
+    @include large {
+        padding-top: 150px;
+        padding-bottom: 100px;
+    }
+
+    header {
+        @include large {
+            grid-column: 2/6;
+        }
+
+        h1 {
+            color: $navy;
+            text-align: center;
+            margin-bottom: 3rem;
+
+            @include large {
+                text-align: left;
+                margin-bottom: 0;
+            }
+
+            > .shift {
+                @include large {
+                    position: relative;
+                    left: 32px;
+                }
+                
+            }
+
+            .cursive {
+                display: block;
+                color: $pink;
+                transform: translateY(1rem);
+
+                @include fluid-type($min_width, $max_width, 30px, 90px);
+
+                @include large {
+                    color: $navy;
+                    transform: translateY(2rem);
+                }
+            }
+        }
+    }
+
+    main {
+        color: $light-navy;
+
+        p {
+            &:not(:last-of-type) {
+                margin-bottom: 1rem;
+
+                @include large {
+                    margin-bottom: 1.25rem;
+                }
+            }
+        }
+
+        @include large {
+            grid-column: 7/12;
+        }
+
+        .button {
+            margin-top: 2rem;
+        }
+    }
+}
+
+.ignite__carousel {
+    padding-bottom: 48px;
+
+    @include large {
+        padding-bottom: 140px;
+        grid-column: 2/12;
+    }
+
+    .main-carousel {
+        border: 1px solid $navy;
+        padding: 10px;
+        padding-bottom: 0;
+
+        @include large {
+            grid-column: 2/12;
+        }
+
+        .carousel-cell {
+            width: 100%;
+
+            > * {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+        }
+    }
+
+    .flickity-page-dots {
+        @include large {
+            bottom: -40px;
+        }
+    }
+    
+}
+
+.ignite__offering {
+    padding-bottom: 64px;
+    position: relative;
+
+    @include large {
+        padding-top: 122px;
+        padding-bottom: 179px;
+    }
+
+    .badge {
+        width: 53px;
+        margin: 0 auto;
+        margin-bottom: 27px;
+
+        @include large {
+            grid-column: 12/13;
+            align-self: start;
+            position: absolute;
+            top: 0;
+            width: 122px;
+        }
+    }
+
+    header {
+        margin-bottom: 1rem;
+        text-align: center;
+
+        @include large {
+            text-align: left;
+            grid-column: 7/11;
+            grid-row: 1;
+        }
+
+        .caption {
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            @include large {
+                margin-bottom: 1rem;
+            }
+
+            .shift {
+                @include large {
+                    position: relative;
+                    left: 4rem;
+                }
+            }
+        }
+
+        .description {
+            line-height: 30px;
+            margin-top: 2rem;
+        }
+
+        .button {
+            margin-top: 27px;
+            display: none;
+            @include large {
+                display: flex;
+            }
+        }
+    }
+
+    img.feature {
+        margin-top: 1rem;
+        margin-bottom: 24px;
+        // grid-column: 1/13;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include large {
+            grid-column: 2/6;
+            grid-row: 1;
+        }
+    }
+
+    .description {
+        margin-bottom: 44px;
+    }
+
+
+
+
+
+
+
+
+    &.one {
+        background: $peach;
+
+        header {
+            @include large {
+                grid-column: 3/7;
+            }
+        }
+
+        img.feature {
+            @include large {
+                grid-column: 8/12;
+            }
+        }
+
+        img.badge {
+            @include large {
+                grid-column: 1/2;
+            }
+        }
+    }
+
+    &.two {
+        header {
+            @include large {
+                grid-column: 3/7;
+            }
+        }
+
+        img.feature {
+            @include large {
+                grid-column: 8/12;
+            }
+        }
+
+        img.badge {
+            @include large {
+                grid-column: 1/2;
+            }
+        }
+    }
+
+    &.three {
+        header h1 {
+            @include large {
+                width: 103%;
+            }
+        }
+
+        background: $yellow;
+
+        header h1, header .caption {
+            color: $white;
+        }
+
+        .button {
+            color: $white;
+            border-color: $white;
+        }
+    }
+}
+
+section.quote {
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    &.ignite__quote {
+        @include large {
+            padding-top: 120px;
+            padding-bottom: 240px;
+        }
+
+        h1 {
+            color: $navy;
+        }
+
+        .cursive {
+            color: $pink;
+        }
+
+        .quote, cite p {
+            color: $navy;
+        }
+
+    }
+
+    cite {
+        display: block;
+        margin-bottom: 2rem;
+    }
+    .quote {
+        margin-bottom: 1rem;
+
+        @include large {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .quote-carousel {
+        .carousel-cell {
+            width: 100%;
+            padding-right: 10%;
+
+            > p {
+                margin-bottom: 24px;
+
+                @include large {
+                    margin-bottom: 76px;
+                }
+            }
+        }
+
+        .flickity-page-dots {
+            bottom: -50px;
+            text-align: center;
+
+            @include large {
+                text-align: left;
+            }
+
+            .dot {
+                background: $navy;
+            }
+        }
+    }
+
+    
+
+    header {
+        @include large {
+            grid-column: 2/7;
+        }
+
+        h1 {
+            // font-size: 22px;
+            color: $white;
+            margin-bottom: 1rem;
+
+            @include fluid-type($min_width, $max_width, 22px, 145px);
+
+            @include large {
+                // font-size: 200px;
+                margin-bottom: 4rem;
+            }
+
+            .shift {
+                @include large {
+                    position: relative;
+                    left: 6rem;
+                }
+            }
+        }
+        .cursive {
+            color: $white;
+            // font-size: 20px;
+
+            @include fluid-type($min_width, $max_width, 20px, 45px);
+
+            @include large {
+                // font-size: 60px;
+                width: 120%;
+            }
+        }
+    }
+
+    main {
+        @include large {
+            grid-column: 8/12;
+        }
+
+        margin-top: 2rem;
+        .quote {
+            color: $white;
+            font-size: 40px;
+            font-family: $font--heading;
+
+            @include large {
+                font-size: 200px;
+            }
+        }
+
+        > p {
+            @include text--body;
+            margin-bottom: 24px;
+        }
+
+        cite {
+            p {
+                color: $white;
+            }
+
+            .person {
+                font-size: 14px;
+
+                @include large {
+                    font-size: 30px;
+                }
+            }
+
+            .role {
+                font-size: 14px;
+                font-weight: bold;
+
+                @include large {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .arrow {
+            cursor: pointer;
+        }
+    }
+}

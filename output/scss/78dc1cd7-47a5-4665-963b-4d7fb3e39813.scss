@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
+.App {
+  &-header {
+    .navbar {
+      background-color: rgba(26, 35, 44, 1)!important;
+      box-shadow: 0px -20px 5px 20px #333333;
+
+      @media screen and ( min-width: 990px ) {
+        background-color: rgba(26, 35, 44, 0.3)!important;
+      }
+
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar-collapse {
+        font-family: 'Roboto';
+      }
+
+      .navbar-nav {
+        height: 100%;
+
+        .nav-link {
+          margin: 0 0.5rem;
+          font-weight: bold;
+          color: white;
+          border-bottom: 2px solid transparent;
+          box-sizing: border-box;
+
+          &:hover {
+            transition: 0.5s;
+            border-bottom: 2px solid white;
+          }
+
+          @media screen and ( max-width: 991px ) {
+            &.active {
+              color: white;
+              border-bottom: 2px solid white;
+            }
+          }
+
+          &.singin {
+            .user-logo {
+              width: 24px;
+            }
+          }
+        }
+      }
+
+      .navbar-toggler {
+        outline: none;
+        border-color: white;
+
+        .navbar-toggler-icon {
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+      }
+    }
+
+    &-logo {
+      pointer-events: none;
+      max-height: 40px;
+    }
+
+    &-text {
+      font-family: 'Bebas Neue';
+      color: white;
+      text-transform: uppercase;
+      padding-left: 0.8rem;
+      line-height: normal;
+      padding-top: 0.3rem;
+      font-size: 1.8rem;
+
+      @media screen and ( max-width: 1200px ) {
+        display: none;
+      }
+    }
+
+    &-menu {
+      li {
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &-content {
+    & > div > div {
+      max-width: none;
+      padding: 0;
+    }
+
+    .container {
+      .section {
+        &.home_section {
+          background: url(./images/Photos/laptop_tablet_phone.jpg) no-repeat;
+          background-size: cover;
+          background-position: center;
+          font-family: 'Noto Serif';
+
+          &:first-child {
+            display: flex !important;
+          }
+
+          .component_content {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            height: 100%;
+            color: white;
+            padding-top: 5rem;
+
+            &.home {
+              .container {
+                h1.mb-5 {
+                  font-size: 1.5rem;
+                  padding-bottom: 5rem;
+
+                  @media screen and ( min-width: 1000px ) {
+                    font-size: 2.5rem;
+                  }
+                }
+
+                p {
+                  font-size: 1rem;
+
+                  @media screen and ( min-width: 1200px ) {
+                    font-size: 1.4rem;
+                  }
+                }
+
+                .btndemo {
+                  font-size: 1rem;
+                  font-weight: bold;
+                  color: rgba(255, 255, 255, 1);
+                  background-color: rgba(0, 123, 255, 0.7);
+
+                  &:hover {
+                    text-decoration: none;
+                  }
+
+                  @media screen and ( min-width: 1200px ) {
+                    font-size: 2rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.about_section {
+          background: url(./images/Photos/tablet_and_photo.jpg) no-repeat;
+          background-size: cover;
+          background-position: center;
+          font-family: 'Roboto';
+
+          .component_content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            color: white;
+
+            &.about {
+              text-align: justify;
+
+              .container {
+                .about-title {
+                  color: #319ae0;
+                  margin-bottom: 1rem;
+                  padding-bottom: 1rem;
+                  border-bottom: 1px solid white;
+                  font-family: 'Noto Serif';
+                }
+              }
+            }
+          }
+        }
+
+        &.overview_section {
+          background-color: #1c1d21;
+          font-family: 'Roboto';
+
+          .component_content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+
+            &.overview {
+              table {
+                color: white;
+
+                td {
+                  border: none;
+                  text-align: center;
+                  padding-top: 0;
+                  padding-bottom: 1.5rem;
+
+                  .icons {
+                    display: inline-block;
+
+                    &-image {
+                      display:flex;
+                      align-items:center;
+                      justify-content:center;
+                      background-color: #0090fd;
+                      border-radius: 50%;
+                      width: 53px;
+                      height: 53px;
+                      margin: auto;
+                    }
+
+                    &-text {
+                      font-size: 0.5rem;
+                      font-weight: bold;
+                      margin-top: 0.5rem;
+                      margin-bottom: 0;
+
+                      @media screen and ( min-width: 1200px ) {
+                        font-size: 0.8rem;
+                        margin-top: 1rem;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .overview-text {
+                font-size: 1rem;
+                color: white;
+
+                h5 {
+                  color: #319ae0;
+                  font-weight: bold;
+                  font-family: 'Noto Serif';
+                }
+              }
+            }
+          }
+        }
+
+        &.demo_section {
+          background: url(./images/Photos/holding.JPG) no-repeat;
+          background-size: cover;
+          background-position: center;
+          font-family: 'Roboto';
+
+          .component_content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            color: white;
+
+            &.demo {
+              .demo-form-wrapper {
+                .demo-text {
+                  color: #319ae0;
+                  margin-bottom: 1rem;
+                  font-family: 'Noto Serif';
+                }
+
+                .form-control {
+                  background-color: #ffffffb0;
+                  border: none;
+
+                  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: #495057;
+                    opacity: 1; /* Firefox */
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.contact_section {
+          background-color: #1c1d21;
+          font-family: 'Roboto';
+
+          .component_content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            color: white;
+
+            &.contact {
+              .container {
+                .media {
+                  @media screen and ( max-width: 600px ) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  }
+
+                  .img-fluid {
+                    border-radius: 50%;
+
+                  }
+
+                  .media-body {
+                    .text-blue {
+                      color: #319ae0;
+                      font-family: 'Noto Serif';
+                    }
+                  }
+                }
+
+                .contact-form-wrapper {
+                  .contact-text {
+                    color: #319ae0;
+                    margin-bottom: 1rem;
+                    font-family: 'Noto Serif';
+
+                    @media screen and ( max-width: 1200px ) {
+                      font-size: 1.7rem;
+                    }
+                  }
+
+                  .contact-form {
+                    .form-group {
+                      .form-control {
+                        background-color: #ffffff30;
+                        border: none;
+                        color: white;
+
+                        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                          color: #d9dfe6;
+                          opacity: 1; /* Firefox */
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.footer_section {
+          background-color: #1c1d21;
+          font-family: 'Roboto';
+
+          .component_content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            color: white;
+
+            &.footer {
+              text-align: center;
+            }
+          }
+        }
+
+        &.first_pp_section {
+          background-color: #1c1d21;
+          color: white;
+          font-family: 'Roboto';
+
+          h2 {
+            font-size: 30px;
+            color: #0090fc;
+            font-family: 'Noto Serif';
+
+            @media screen and ( min-width: 1200px ) {
+              font-size: 40px;
+            }
+          }
+
+          p {
+            font-size: 18px;
+          }
+        }
+
+        &.first_cp_section {
+          background-color: #1c1d21;
+          color: white;
+          font-family: 'Roboto';
+
+          h1,
+          h2 {
+            font-size: 20px;
+            color: #0090fc;
+            font-family: 'Noto Serif';
+          }
+
+          p {
+            font-size: 18px;
+          }
+        }
+
+        &.first_tc_section {
+          background-color: #1c1d21;
+          color: white;
+          font-family: 'Roboto';
+
+          h2 {
+            font-size: 30px;
+            color: #0090fc;
+            font-family: 'Noto Serif';
+
+            @media screen and ( min-width: 1200px ) {
+              font-size: 40px;
+            }
+          }
+
+          h3 {
+            font-size: 20px;
+            color: #0090fc;
+            font-family: 'Noto Serif';
+
+            @media screen and ( min-width: 1200px ) {
+              font-size: 30px;
+            }
+          }
+
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,569 @@
+/*
+	Characters CSS Stylesheet
+	Created by RhoVisions, designer Rohit Sodhia
+*/
+@import "gpVariables.less";
+
+#page_tools {
+	#toolsList {
+		text-align: center;
+	}
+
+	#toolsList {
+		a {
+			display: inline-block;
+			margin: 0 15px;
+			padding: 5px 15px;
+			border: 3px solid #a00;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+			background: #fff;
+
+			&:hover {
+				background: #f8eeee;
+			}
+
+			&:first-child {
+				margin-right: 15px;
+			}
+
+			p {
+				text-align: center;
+				margin-top: 1em;
+				font-size: 1.5em;
+			}
+		}
+	}
+}
+
+/* --------------------------------------------*/
+
+#page_tools_cards {
+	& > .flexWrapper {
+		flex-wrap: nowrap;
+	}
+
+	.cardControls {
+		flex-basis: 220px;
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	.cardControls,
+	.cardControls > * {
+		text-align: center;
+	}
+
+	.numCards {
+		width: 30px;
+		text-align: center;
+	}
+
+	.drawCards {
+		margin: 10px 0;
+	}
+
+	#dispArea {
+		flex-grow: 2;
+		margin-left: 10px;
+	}
+
+	.newDeck {
+		margin-bottom: 2em;
+		padding: 5px 10px 10px;
+		border: 1px solid #ccc;
+		background-color: #eee;
+		text-align: left;
+
+		h2 {
+			margin: .2em 0 .2em;
+			padding: 0 10px;
+			background: #444;
+			font-size: 2em;
+			font-family: 'AgencyFB';
+			color: #fff;
+		}
+	}
+
+	.deckType {
+		display: inline-block;
+		width: 222px;
+	}
+
+	.button :first-child {
+		width: 134px;
+		text-align: center;
+	}
+
+	.cardSpace {
+		border: 1px solid #a00;
+		padding: 5px;
+		text-align: left;
+	}
+
+	.cardWindow {
+		margin: 4px;
+	}
+
+	#deckAnnouncement {
+		text-align: center;
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+}
+
+/* --------------------------------------------*/
+
+#page_tools_dice {
+	#roller {
+		width: 400px;
+		margin-right: 20px;
+	}
+
+	.sectionControls {
+		overflow: visible;
+		justify-content: flex-end;
+
+		.prettySelect,
+		.prettySelectCurrent,
+		.prettySelectOptions {
+			background: #522;
+		}
+
+		.prettySelect,
+		.prettySelectOptions {
+			color: #fdd;
+			border: none;
+			border-top: .3em solid @gp-black;
+			-webkit-border-radius: 0;
+			-moz-border-radius: 0;
+			border-radius: 0;
+		}
+
+		.prettySelectCurrent,
+		.prettySelectLongest,
+		.prettySelectOptions li {
+			padding: .3em 15px;
+		}
+
+		.prettySelectDropdown {
+			background-image: url('../images/dropdown_arrow_white.png');
+		}
+
+		.prettySelectOptions {
+			top: -3px;
+			left: -1px;
+			border: 1px solid #522;
+			border-top: .3em solid @gp-black;
+		}
+
+		.prettySelectOptions li:hover {
+			background: #449;
+			color: #fff;
+		}
+	}
+
+	.dice_basic textarea {
+		float: left;
+		height: 6.2em;
+		width: 275px;
+	}
+
+	#basic_customDice {
+		.rollWrapper {
+			display: inline-block;
+			margin: 20px 0 0 15px;
+		}
+
+		label {
+			display: inline;
+		}
+	}
+
+	.dice_basic .cbWrapper {
+		margin-top: 6px;
+	}
+
+	#basic_indivDice {
+		margin-top: 1em;
+
+		& > div {
+			text-align: center;
+			margin-top: .5em;
+		}
+
+		.fancyButton {
+			margin: 0;
+		}
+	}
+
+	.dice_starwarsffg {
+		& > .flexWrapper {
+			flex-wrap: nowrap;
+		}
+
+		.dicePool {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			min-height: 50px;
+			width: 302px;
+			margin: .5em 0;
+			padding: 10px;
+			background: #ddf;
+			border: 1px solid #400;
+			border-bottom-color: #900;
+			border-right-color: #900;
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+
+			.starwarsffg_dice {
+				display: block;
+			}
+		}
+
+		.rollWrapper {
+			display: inline-block;
+			margin-top: 20px;
+			text-align: center;
+			flex-wrap: nowrap;
+		}
+
+		#starwarsffg_clear {
+			display: inline-block;
+			margin-top: .5em;
+		}
+
+		.addDiceLink {
+			display: inline-block;
+			width: 48%;
+			margin: 5px 0;
+			padding: 5px 10px;
+			border: 1px solid #000;
+			font-family: 'AgencyFB';
+			font-size: 2em;
+			line-height: 1em;
+		}
+
+		.addDiceLink,
+		.addDiceLink:active,
+		.addDiceLink:visited {
+			color: #000;
+		}
+
+		.addDiceLink:hover span {
+			text-decoration: underline;
+		}
+
+		.addDiceLink span {
+			margin-left: 5px;
+		}
+
+		.addDiceLink > * {
+			vertical-align: middle;
+		}
+	}
+
+	#starwarsffg_ability {
+		background-color: rgba(79, 184, 71, .5);
+	}
+
+	#starwarsffg_difficulty {
+		background-color: rgba(83, 35, 128, .5);
+	}
+
+	#starwarsffg_proficiency {
+		background-color: rgba(255, 233, 0, .5);
+	}
+
+	#starwarsffg_challenge {
+		background-color: rgba(229, 25, 55, .5);
+	}
+
+	#starwarsffg_boost {
+		background-color: rgba(163, 217, 246, .5);
+	}
+
+	#starwarsffg_setback {
+		background-color: rgba(0, 0, 0, .5);
+	}
+
+	#diceSpace {
+		flex-grow: 2;
+		height: 292px;
+		border: 1px solid #a00;
+		overflow: auto;
+		background: #eee;
+
+		.roll {
+			margin: 0;
+			padding: .5em 1em;
+			font-size: 1.15em;
+			line-height: 1.3em;
+		}
+
+		.roll p {
+			margin: .3em 0 0;
+		}
+
+		.rollString {
+			margin: 0;
+		}
+
+		/*.newestRoll {
+			display: none;
+			margin: 1em;
+			background-color: @gp-black;
+		}*/
+
+		.newestRolls {
+			display: none;
+			border-bottom: 1px solid #d99;
+			background-color: #fff;
+		}
+
+		.newestRolls p.error {
+			font-weight: bold;
+		}
+
+		.starwarsffg_dice,
+		.fate_dice {
+			margin-right: 10px;
+		}
+	}
+
+	.dice_fate,
+	.dice_fengshui {
+		.rollWrapper {
+			display: inline-block;
+			margin-left: 5px;
+		}
+	}
+
+	.dice_fengshui {
+	}
+
+	#roller {
+		.dice_fate > div > * {
+			vertical-align: middle;
+		}
+
+		.dice_fate,
+		.dice_fengshui {
+			label {
+				display: inline-block;
+			}
+
+			input {
+				width: 30px;
+				text-align: center;
+			}
+
+			.fancyButton {
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+/* --------------------------------------------*/
+
+#page_music {
+	#info {
+		margin-bottom: 10px;
+		padding: 10px;
+		border: 1px solid #bbb;
+		background-color: #eee;
+	}
+
+	.sideWidget {
+		ul {
+			margin: 0.5em 0 1em;
+			list-style: none;
+		}
+
+		li {
+			padding: 0.1em 0;
+		}
+
+		label {
+			display: inline;
+			cursor: pointer;
+		}
+	}
+
+	.mainColumn form {
+		margin-top: .5em;
+		padding: 3px 8px;
+		border: 1px solid #666;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		background: #eee;
+
+		.pRow {
+			& > * {
+				display: inline-block;
+			}
+
+			* {
+				vertical-align: middle;
+			}
+		}
+
+		label.spaceText .labelText,
+		div.spaceText {
+			width: 80px;
+		}
+
+		.indentAlert {
+			margin-left: 90px;
+		}
+
+		input[type="text"] {
+			width: 350px;
+		}
+
+		.radioLabel {
+			div.labelText {
+				width: 40px;
+			}
+		}
+
+		#genres {
+			& > label {
+				width: 160px;
+
+				& > * {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+
+			.labelText {
+				width: auto;
+			}
+		}
+
+		#notesRow * {
+			vertical-align: top;
+		}
+
+		textarea {
+			width: 350px;
+			height: 6.1em;
+		}
+
+		.buttonRow {
+			margin-left: 90px;
+		}
+	}
+
+	.hbAttachedList {
+		margin: 0;
+
+		& > li {
+			position: relative;
+		}
+
+		.unapproved {
+			background-color: #ffb;
+		}
+
+		& > li {
+			&:first-child:hover {
+				padding: 7px 7px;
+				border: 1px solid #ccc;
+			}
+
+			& > .clearfix > * {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.song {
+		width: 320px;
+		padding-right: 15px;
+
+		img {
+			margin-left: 7px;
+			vertical-align: middle;
+		}
+	}
+
+	.genres {
+		width: 300px;
+		padding-left: 15px;
+		border-left: 1px solid #666;
+	}
+
+	.notes {
+		margin: 5px 0 0 20px;
+	}
+}
+
+/* --------------------------------------------*/
+
+#page_addMusic {
+	label {
+		display: inline-block;
+		width: 80px;
+	}
+
+	input,
+	textarea {
+		width: 350px;
+	}
+
+	.alert {
+		margin-bottom: .3em;
+		margin-left: 90px;
+	}
+
+	.radioLabel {
+		width: auto;
+	}
+
+	.note {
+		font-size: .8em;
+	}
+
+	#noGenres {
+		display: inline-block;
+		margin-left: 0;
+
+		&.hideDiv {
+			display: none;
+		}
+	}
+
+	#genres {
+		& > div {
+			display: inline-block;
+			width: 32%;
+
+			& > * {
+				vertical-align: middle;
+			}
+		}
+	}
+
+	#notesRow {
+		& > * {
+			vertical-align: top;
+		}
+
+		label {
+			margin-top: 4px;
+		}
+	}
+
+	#submitDiv {
+		margin-top: 1em;
+		text-align: center;
+	}
+}

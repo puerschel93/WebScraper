@@ -1,0 +1,475 @@
+// Rich Editor Tables
+.rich-editor-table{
+  table{
+    &.header-color-maroon th{
+      background: $maroon;
+      color: $white;
+      a{
+        color: $white;
+      }
+    }
+    &.header-color-gold th{
+      background: $gold;
+      color: $white;
+      a{
+        color: $white;
+      }
+    }
+    &.header-color-charcoal th{
+      background: $charcoal;
+      color: $white;
+      a{
+        color: $white;
+      }
+    }
+    &.header-color-blue th{
+      background: $blue;
+      color: $white;
+      a{
+        color: $white;
+      }
+    }
+    &.header-color-river th{
+      background: $river;
+      color: $black;
+      a{
+        color: $black;
+      }
+    }
+    &.header-color-sandstone th{
+      background: $sandstone;
+      color: $black;
+      a{
+        color: $black;
+      }
+    }
+    &.header-color-oldgold th {
+      background: $oldgold;
+      color: $black;
+      a {
+        color: $black;
+      }
+    }
+  }
+}
+
+//rich editor
+.gato-rich-editor, .gato-textimage {
+  p {
+    margin-top: 0rem;
+    margin-bottom: 3rem;
+  }
+  ul, ol {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    li {
+      margin-top: 0rem;
+      margin-bottom: 1rem;
+    }
+  }
+  blockquote {
+    padding: 0 0 0 2rem;
+    line-height: 2.8rem;
+    border-left: 3px solid $maroon;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  hr {
+    height: 1px;
+    border: 0px;
+    background: $almondmilk;
+    margin-bottom: 3rem;
+  }
+}
+
+.column_paragraph {
+  .gato-faqitem-answer {@extend .gato-rich-editor;}
+}
+//patterns
+.mobilefirst-pattern {
+  .pattern-content {
+    //all of the text should be maroon for the old gold patterns
+    &.color7 {
+      .title, .text, .stat, .quotation-text, .quotation-source {
+        color: $maroon;
+      }
+    }
+    //sandstone and old gold need maroon links and buttons
+    &.color6, &.color7 {
+      a {
+        border-color: $maroon;
+        color: $maroon;
+      }
+    }
+    &.overlay-block.color7 {
+      p {
+        color: $maroon;
+      }
+    }
+  }
+
+  //image next to sandstone content should have dark overlay
+  .pattern-image.color4 {
+    .overlay-left {
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.47), rgba(255, 255, 255, 0));
+      @media (max-width: $sm-breakpoint) {
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, .47));
+      }
+    }
+    .overlay-right {
+      background-image: linear-gradient(-90deg, rgba(0, 0, 0, .47),rgba(255, 255, 255, 0));
+      @media (max-width: $sm-breakpoint) {
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, .47));
+      }
+    }
+  }
+
+  //Call to Action: Margin-Buttons + Image
+  &.insettextimage {
+    .pattern-content {
+      .inset.color6 {
+        a.button {
+          color: $maroon;
+        }
+      }
+      .inset.color7 {
+        color: $maroon;
+        a, h2 {
+          color: $maroon;
+        }
+      }
+      .inset.color8 {
+        border: 1px solid #d8d8d8;
+        a.button {
+          color: $maroon;
+        }
+      }
+    }
+  }
+
+  .tabbed {
+    .overlay-block.color7 {
+      .tab-list button {
+        color: $maroon;
+      }
+    }
+  }
+}
+
+//Facts/Figures
+.callout.pattern-content {
+  &.color1 .stat.background {
+    background-color: $gold;
+  }
+  &.color2 .stat.background {
+    background-color: $maroon;
+  }
+  &.color3 .stat.background {
+    background-color: $peach;
+  }
+  &.color4 .stat.background {
+    background-color: $peach;
+  }
+  &.color5 .stat.background {
+    background-color: $maroon;
+    color: $white;
+  }
+  &.color6 .stat.background {
+    background-color: $maroon;
+    color: $white;
+  }
+  &.color7 .stat.background {
+    background-color: $maroon;
+    color: $white;
+  }
+  &.color11 .stat.background {
+    background-color: $maroon;
+    color: $white;
+  }
+}
+
+//Icon and Text
+.column_paragraph {
+  .icontext {
+    .icontext-title {
+      font-family: $halis;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .icontext-text {
+      margin: 0 0 3rem 0;
+    }
+    .icontext-text:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+}
+
+//Events
+h2.event-list-title {
+  font-family: $nunito;
+  font-weight: 600;
+  font-size: 2.7rem;
+  line-height: 3.5rem
+}
+
+.gato-events div.txst-eventdetail .gato-accordion-header .txst-eventdetail-title {
+  font-family: $halis;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  line-height: 2.8rem;
+  font-weight: 600;
+}
+
+.has-background {
+  .gato-events .gato-accordion.shown {
+    background-color: $white;
+  }
+}
+
+//rss
+.gato-rss-item {
+  .gato-accordion-header {
+    font-family: $halis;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    line-height: 2.8rem;
+    font-weight: 600;
+  }
+  .gato-accordion-content {
+    .gato-rss-thumbnail img {
+      max-width: 100%;
+    }
+  }
+}
+
+//Article List
+.column_paragraph a.gato-articlelink-link {
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  font-weight: 500;
+  text-decoration: underline;
+  color: $maroon;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.column_paragraph .gato-articlelink-summary {
+  line-height: 2.8rem;
+  padding-top: 1.5rem;
+}
+
+//embed video
+.gatoStreamingWrapper {
+  .streaming-title {
+    font-family: $garamond;
+    font-size: 3rem;
+    line-height: 3.6rem;
+    font-weight: 400;
+  }
+}
+
+//faq
+ul.gato-faq-hierarchy {
+  .gato-faq-header a {
+    font-family: $nunito;
+    font-size: 1.7rem;
+    text-transform: none;
+  }
+  .gato-faqitem-answer {
+    p {
+      margin-bottom: 3rem;
+    }
+    //force faq headers to look like they start at h3
+    .h3styles {
+      font-family: $nunito;
+      font-weight: 500;
+      font-size: 2.2rem;
+      line-height: 2.8rem;
+      color: $dark-gold;
+    }
+    .h4styles {
+      font-family: $nunito;
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      color: $verydark;
+    }
+    .h5styles {
+      font-family: $nunito;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+    }
+  }
+}
+.has-background {
+  ul.gato-faq-hierarchy {
+    & > .gato-faqitem, & > .gato-faq-group {
+      background-color: $white;
+    }
+  }
+}
+
+//image gallery
+.pswp__ui .pswp__caption__center {
+  font-size: 1.5rem;
+  line-height: 3.2rem;
+  font-weight: 400;
+  font-family: $nunito;
+}
+
+//image card
+.gato-card {
+  figcaption {
+    .title {
+      font-family: $halis;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .caption-content {
+      font-size: 1.7rem;
+      line-height: 3.2rem;
+    }
+  }
+}
+
+//slider
+.gato-slideshow .slides .slide .caption .title{
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  font-weight: 600;
+  font-family: $halis;
+  text-transform: uppercase;
+}
+
+.gato-slideshow .slides .slide .caption p {
+  font-size: 1.7rem;
+}
+
+//text and image
+.gato-textimage {
+  .gato-textimage-caption {
+    font-size: 1.5rem;
+    padding: 1.2rem 1.4rem;
+    line-height: 3.2rem;
+    text-align: center;
+    a:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+//form
+.txst-form-cont {
+  max-width: 75%;
+  margin: 0 auto;
+  @media (max-width: $sm-breakpoint) {
+    max-width: 80%;
+  }
+  @media (max-width: $mn-breakpoint) {
+    max-width: 100%;
+  }
+}
+.txst-form {
+  button.submit {
+    padding: 1rem 2rem 0.9rem 2rem;
+    background-color: $gold;
+    color: $white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: $halis;
+    text-transform: uppercase;
+    line-height: 2rem;
+    border: 1px solid $gold;
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    &:hover {
+      transform: translate(0px, -3px);
+      box-shadow: inset 0 -2px 0 0 $gold;
+    }
+    &:disabled {
+      transition: none;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+//filterable search
+.btn-toggle-filters {
+  span.label {
+    font-family: $halis;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+.filterable-search.directory {
+  .results .listitem .info-container, #more-content-popup .popup-content {
+    .listitem-title {
+      //matches h3 style
+      font-family: $halis;
+      font-weight: 600;
+      font-size: 2.2rem;
+      line-height: 2.8rem;
+      color: $dark-gold;
+      text-transform: uppercase;
+    }
+    .listitem-heading {
+      font-family: $halis;
+      font-weight: 600;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      color: $verydark;
+      text-transform: uppercase;
+    }
+    .linktofp {
+      color: $blue;
+    }
+    .listitem-biography, .listitem-teaching, .listitem-research {
+      font-size: 1.7rem;
+      line-height: 3.2rem;
+    }
+  }
+}
+
+//separator
+.has-background .gato-separator hr {
+  background: #ADADAD;
+}
+
+//raw html
+.gato-html blockquote {
+  font-family: $garamond;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+  color: $verydark;
+  padding: 0 0 0 2rem;
+}
+
+//table
+table.gato-table {
+  tr {
+    font-size: 1.7rem;
+    line-height: 3.2rem;
+    th {
+      font-weight: 700;
+      font-family: $halis;
+      text-transform: uppercase;
+    }
+  }
+}
+
+//document
+.txst-filedownload {
+  font-size: 1.7rem;
+  line-height: 3.2rem;
+}

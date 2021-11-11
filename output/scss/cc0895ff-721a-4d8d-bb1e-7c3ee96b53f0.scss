@@ -1,0 +1,597 @@
+@import "variables.scss";
+@import "main-user-comments.scss";
+@include narrowSide;
+h2 {
+    color: $darkGrey;
+    font-size: 1.2em;
+    line-height: $goldenRatio;
+    margin-bottom: 0.618em;
+}
+.has-side .content-inner {
+	border-color: transparent;
+}
+.side-container {
+	background-color: transparent;
+}
+.story-page .mpu-container.first-child {
+	padding-top: 0;
+}
+.ce .story-body {
+	p {
+		text-indent: 0;
+		&:first-child {
+			&:first-letter {
+				display: inline;
+			    float: none;
+			    margin: 0;
+			    font-size: 1em;
+			    line-height: 100%;
+			    font-weight: normal;
+			}
+		}
+
+	}
+}
+.story-box {
+	//border: 1px solid $borderColor;
+	margin-bottom: $defaultPadding;
+	.top10 {
+		padding: 0 0 $defaultPadding/2 0;
+		li {
+			&.story-theme {
+				padding: 0 0 2*$defaultPadding/3 0;
+				border-width: 0;
+				a {
+					color: black;
+				}
+			}
+		}
+	}
+}
+
+
+@supports (display: flex) {
+	.story-box {
+		.top10 {
+			li {
+				&.story-theme {
+					display: flex;
+					align-items: center;
+					a {
+						flex: 2;
+					}
+					.icon-right {
+						float: none;
+						white-space: nowrap;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.box-title {
+	margin: 0 0 $defaultPadding;
+	font-size: 18px;
+	a {
+		background-color: $defaultPink;
+		color: $darkGrey;
+		&:after {
+		    content: '';
+		    display: block;
+		    width: 60px;
+		    margin-top: 5px;
+		    border-bottom: 4px solid #000;
+		    position: absolute;
+		    z-index: 1;
+		}
+	}
+}
+.story-headline-large {
+    font-size: $largeHeadlineFontSize;
+    line-height: 1.4em;
+    font-weight: bold;
+    margin: 0 0 $defaultPadding/2;
+    position: relative;
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	/* This is the dangerous one in WebKit, as it breaks things wherever */
+	word-break: break-all;
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+    &:after {
+		content: '';
+	    padding-top: $defaultPadding/2;
+	    padding-bottom: 0;
+	    display: block;
+	    width: $headlineUnderlineWidth;
+	    border-bottom: $headlineUnderlineHeight solid #000;
+    }
+}
+
+#story_main_mpu, .story_main_mpu_vw, .mpu-container-instory {
+	width: 100%;
+	padding: $defaultPadding 0;
+	margin-bottom: $defaultPadding;
+	border-width: 1px 0;
+	border-color: $borderColor;
+	border-style: solid;
+	clear: both;
+	position: relative;
+	.banner-iframe {
+		margin: auto;
+		display: block;
+	}
+	div {
+		text-align: center;
+	}
+
+	&:before {
+		content: '广告';
+	    position:absolute;
+	    top:0;
+	    right:0;
+	    font-size:12px;
+	    text-align:center;
+	    color: #505050;
+	}
+}
+.pagination-inner {
+	text-align: right;
+	line-height: $mastheadHeight;
+	padding-bottom: $defaultPadding/2;
+	span, a {
+		padding-left: $defaultPadding;
+		font-weight: bold;
+	}
+	a {
+		color: $darkGreen;
+		&:hover, &:active {
+			color: black;
+		}
+	}
+}
+.pic {
+	text-align:left;
+	color: #4d4845;
+	line-height: $captionLineHeight;
+	font-size: 0.8em;
+	margin-bottom: $defaultPadding;
+	img {
+		display: block;
+		margin: 0 auto 4px auto;
+	}
+	&.no-copyright {
+		display: none;
+	}
+}
+.caption {
+    margin-top: 5px;
+    text-align: left;
+    color: #4d4845;
+    line-height: 140%;
+    font-size: .8em;
+    margin-bottom: 15px;
+}
+h1 {
+	line-height: 120%;
+	clear: both;
+}
+.story-body {
+	h1, h2, h3, h4 {
+		margin-bottom: $defaultPadding/2;
+	}
+	h1 {
+		margin-top: $defaultPadding;
+	}
+}
+h4 {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.rightPic{
+	margin:10px 0 0 6px;
+	float:right;
+}
+.leftPic{
+	margin:3px $defaultPadding/2 0 0;
+	float:left;
+}
+.leftPic,.rightPic {
+	line-height: $goldenRatio;
+	font-size:12px;
+	color:#4d4845;
+	width:300px;
+	img{
+		display:block;
+		width:300px;
+		margin:0 auto 10px auto;
+	}
+}
+.left-pic-small {
+	margin:3px $defaultPadding/2 0 0;
+	float:left;
+	font-size:12px;
+	color:#4d4845;
+	width: 100px;
+	&.image {
+		position: static;
+	}
+	img{
+		width: 100px;
+	}
+}
+.leftp, .rightp {
+	width: 48%;
+}
+.leftp {
+	float: left;
+	font-family: Georgia,serif;
+}
+.rightp {
+	float: right;
+}
+.story-body {
+	.leftp, .rightp {
+		padding-bottom: 1em;
+		p {
+			padding-bottom: 0;
+		}
+	}
+}
+.en {
+	font-family: Georgia,serif;
+}
+.subtitle {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+hr {
+	margin-top: 8px;
+    border: 2px solid #000;
+    border-width: 2px 0;
+    width: 60px;
+    display: inline-block;
+}
+.bullet-point {
+	display: block;
+    position: relative;
+    padding-left: 1.333333333em;
+    &:before {
+	    color: #33302e;
+	    display: inline-block;
+	    position: absolute;
+	    content: '\2022';
+	    left: -0.0625em;
+	    font-size: 1.777777778em;
+    }
+}
+.card-container {
+	background-color: #ffebd9;
+	padding: $defaultPadding/2;
+	margin-bottom: 1em;
+}
+#story-recommend-container {
+	display: none;
+}
+.timeline-container {
+	.n-content-layout__slot {
+		flex-basis: 100%;
+		padding-left: 30px;
+		margin-left: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-top: 28px;	
+		position: relative;
+		&::before {
+			content: "";
+			width: 2px;
+			background: #000;
+			height: 100%;
+			display: block;
+			position: absolute;
+			left: 5px;
+			top: 0;	
+			min-width: 0;
+			max-width: 100%;
+		}
+		.n-content-heading-5 {
+			position: relative;
+			strong::before {
+				content: "";
+				position: absolute;
+				top: 6px;
+				left: -28px;
+				height: 8px;
+				width: 8px;
+				border-radius: 50%;
+				background-color: #000;
+			}
+		}
+	}
+}
+
+//responsive videos
+.o-responsive-video-container {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto 14px auto;
+	zoom: 1;
+	overflow: hidden;
+	position: relative;
+	background-color:#000;
+}
+.o-responsive-video-wrapper-outer {
+	position: relative;
+	padding-top: 56.25%;
+	height: 0;
+}
+.o-responsive-video-wrapper-inner{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.o-responsive-video-caption {
+	display:block;
+	background-color:#000;
+	color:#FFF;
+	font-size:14px;
+	line-height: 30px;
+	padding-left: 14px;
+}
+a.o-responsive-video-caption:link, a.o-responsive-video-caption:visited, a.o-responsive-video-caption:active, a.o-responsive-video-caption:hover {
+	color: #FFF;
+}
+.story_main_mpu_vw {
+	display:none;
+}
+
+// MARK: - In-story recommendation
+.in-story-recommend {
+	padding-bottom: $defaultPadding;
+	&.leftPic, &.rightPic {
+		font-size: 1em;
+	}
+}
+.recommend-header {
+	color: $darkGrey;
+	font-weight: bold;
+	font-size: 0.85em;
+	padding-bottom: $defaultPadding/4;
+	display:block;
+	&:after {
+		content: "";
+		display: block;
+		width: 60px;
+		margin-top: 5px;
+		border-bottom: 4px solid;
+		position: absolute;
+		z-index: 1;
+	}
+}
+.recommend-content {
+	display: block;
+	border-width: 1px 1px 0 1px;
+	border-style: solid;
+	border-color: $borderColor;
+	padding: $defaultPadding/4;
+	.headline {
+		font-weight:bold;
+		padding-bottom: $defaultPadding/4;
+		//padding: $defaultPadding/4;
+	}
+	.lead {
+		color: $lightGrey;
+		font-size: 0.85em;
+		padding-bottom: $defaultPadding/4;
+	}
+	a:link, a:visited, a:active, a:hover {
+		color: $darkGrey;
+		
+		display: block;
+	}
+}
+.recommend-image {
+    position: relative;
+    float: none;
+    width: 100%;
+    margin-top: -1px;
+    padding-left: 25%;
+    display:block;
+    figure {
+    	width:100%;
+    	height: 0;
+    	padding-bottom: $figureHeight;
+    	z-index: 1;
+    	position: relative;
+    }
+    &:after {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    content: "";
+	    display: block;
+	    width: 100%;
+	    height: 50%;
+	    border-left: 1px solid $borderColor;
+	    border-bottom: 1px solid $borderColor;
+    }
+}
+.copyrightstatement-container {
+	padding: 15px 0;
+	font-size: .9em;
+}
+.ft-asset {
+	img {
+		display: block;
+		margin: 0 auto $defaultPadding/2 auto;
+	}
+}
+
+
+// MARK: - Subscribe-lock
+.subscribe-lock-container{
+	position: relative;
+	background: #faeadd;	  
+	left: 0px;
+	width: 100%;
+	height: 280px;
+	margin: 10px 0 20px;
+	.lock-block{
+		position: absolute;
+		width: 100%;
+		top: 25%;
+		height: 50%;
+	}
+    .lock-content{
+      width: 100%;
+	  text-align: center;
+      padding-bottom: 5px;
+	  a{
+		color: #26747a;
+	  }
+    }
+	.lock-download-hint{
+		padding: 10px 0px 0px;
+	}
+    .subscribe-btn{
+	  position: absolute;
+	  bottom: 10px;
+      text-align: center;
+      width: 100%;
+      color:white;
+	  a{
+		color: white;
+		background-color: #0d7680;
+		display: inline-block;
+		letter-spacing: 3px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		font-size: 14px;
+		border-radius: 1px;
+		padding: 0 $defaultPadding/2;
+	  }
+    }
+}
+.full-grid-story {
+	.side-container { 
+ 		display: none; 
+	}
+	.story-body, #story-body-container {
+		float: none;
+		clear: both;
+		max-width: 100%;
+	}
+	.story-container {
+		max-width: 100%;
+		p, div, h1, h2, .story-theme, .story-headline, .story-lead, .story-image, .story-action-placeholder, .story-byline, .n-content-layout {
+			max-width: 700px;
+			margin-left: auto;
+			margin-right: auto;
+			&.story-body {
+				max-width: 100%;
+			}
+		}
+		[data-layout-width="full-grid"] {
+			max-width: 100%;
+		}
+	}
+	.content-inner {
+		border: 0; 
+		padding: 0;
+	}
+	.n-content-layout {
+		figure {
+			text-align: center;
+		}
+	}
+}
+.n-content-layout__slot {
+    font-size: 0.85em;
+	margin-bottom: 1em;
+}
+.flourish-embed {
+	margin-bottom: 1em;
+}
+.print-only {
+	display: none;
+	font-weight: bold;
+	color: $darkGreen;
+	margin-bottom: 1em;
+}
+@media print { 
+ /* All your print styles go here */
+	.header-container, 
+	.o-nav__placeholder, 
+	.bn-ph, 
+	.mpu-container, 
+	.toprecommend-part, 
+	.language-switch-placeholder, 
+	.story-action-placeholder, 
+	.subscription-promo-container, 
+	.myft-follow, 
+	.side-container, 
+	.mpu-container-instory,
+	.list-title,
+	.allcomments,
+	.logincomment,
+	.nologincomment,
+	.o-ads,
+	#story-recommend-container,
+	.footer-container { 
+ 		display: none !important; 
+	} 
+	.content-inner {
+		border: 0 !important; 
+		padding: 0 !important;
+	}
+	.print-only {
+		display: block;
+	}
+}
+/* MARK:
+When a subscriber is taking a screenshot of the full content, hide all irrelevant content. 
+Radio content uses this too. So the style should be here. 
+At the request of the boss, ads will be displayed when user captures the screen. 
+This results in wasted space and memory for subscribers' device and does not increase ad delivery. 
+*/
+.is-screenshot {
+	.side-container, /*.o-ads, */#story-recommend-container, .list-title, .allcomments, .logincomment {
+		display: none!important;
+	}
+	.content-inner {
+		border: 0 !important; 
+		padding: 0 !important;
+	}
+}
+
+// MARK: - Side-by-side portrait images
+@media only screen and (min-width: 691px) {
+	[data-layout-width="full-grid"] .n-content-layout__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: $defaultPadding/2;
+	}
+	[data-layout-width="true"] {
+		.n-content-layout__container {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			padding-top: 4px;
+		}
+		.n-content-layout__slot {
+			flex: 1 1 1px;
+		}
+	}
+}
+
+@import "quote-number.scss";
+@import "story-progress.scss";

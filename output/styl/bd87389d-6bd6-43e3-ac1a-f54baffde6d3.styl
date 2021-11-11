@@ -1,0 +1,310 @@
+.page--lookbook {
+  .page-head {
+    color: $color--white;
+    @media $display-breakpoints.sm-and-up {
+      margin-top: r(-64 - 81);
+    }
+    @media $display-breakpoints.lg-and-up {
+      margin-top: r(-64 - 81 - 65);
+    }
+    &__content {
+      padding: r(24) $grid-gutter-ms r(40);
+
+      @media $display-breakpoints.sm-and-up {
+        absolute(vw(310), 0px, 0px);
+        width 100%
+        z-index: 1;
+        padding: 0;
+      }
+    }
+    &__collection {
+      font: r(100)/1 $font-accent;
+      absolute(r(12), 0px);
+      opacity: 0.1;
+
+      @media $display-breakpoints.sm-and-up {
+        top: vw( 72 + 34);
+        left: auto;
+        right 50%;
+        margin-right: vw(201);
+        opacity: 1;
+        font-size: vw(100);
+      }
+    }
+    &__title {
+      font: r(48)/1 $font-accent;
+      margin-bottom: r(16);
+      z-index: 1;
+
+      @media $display-breakpoints.sm-and-up {
+        absolute(vw(72 + 150));
+        right 50%;
+        margin-right: vw(45);
+        font-size: vw(150);
+      }
+    }
+    &__desc {
+      font: italic r(14)/1.5 $font-base;
+      z-index: 1;
+
+      @media $display-breakpoints.sm-and-up {
+        absolute(0px, 50%);
+        margin-left: vw(-102);
+        max-width: r(480);
+      }
+    }
+    &__img {
+      padding-bottom: 56.25%;
+      background-position center;
+      background-repeat no-repeat;
+      background-size cover;
+
+      @media $display-breakpoints.sm-and-up {
+        padding-bottom: 55.55%;
+
+        &::after {
+          content: '';
+          display block;
+          absolute(0px, 0px);
+          size(100%);
+          background: rgba($color--default, 0.25);
+        }
+      }
+    }
+  }
+}
+.page--lookbook-catalog {
+  .page-head {
+    color: $color--white;
+    @media $display-breakpoints.sm-and-up {
+      margin-top: r(-64 - 81);
+      padding-top: r(64 + 81);
+    }
+    @media $display-breakpoints.lg-and-up {
+      margin-top: r(-64 - 81 - 65);
+      padding-top: r(64 + 81 + 65)
+    }
+    &__content {
+      padding: r(32) $grid-gutter-ms;
+      z-index: 1;
+
+      @media $display-breakpoints.sm-and-up {
+        padding: r(72) $grid-gutter r(88);
+      }
+    }
+    &__title {
+      font: r(48)/1.125 $font-accent;
+      text-align center
+
+      @media $display-breakpoints.sm-and-up {
+        font-size: r(64);
+      }
+    }
+    &__img {
+      absolute(0px, 0px);
+      size(100%);
+      background-position center;
+      background-repeat no-repeat;
+      background-size cover;
+
+      &::after {
+        content: '';
+        display block;
+        absolute(0px, 0px);
+        size(100%);
+        background: rgba($color--default, 0.25);
+      }
+    }
+  }
+}
+
+.lookbook {
+  &__img {
+    img {
+      display block;
+      size(100%, auto);
+    }
+
+    &--1 {
+      margin: 0 r(95) r(32) (-1 * $grid-gutter-ms);
+
+      @media $display-breakpoints.sm-and-up {
+        margin: 0 0 0 $grid-gutter;
+      }
+    }
+    &--2 {
+      margin: 0 (-1 * $grid-gutter-ms) 0 r(95);
+
+      @media $display-breakpoints.sm-and-up {
+        margin: vw(72) vw(150) vw(64);
+      }
+    }
+    &--3 {
+      @media $display-breakpoints.sm-and-up {
+        margin: 0 vw(384);
+      }
+    }
+    &--4 {
+      margin: 0 r(95) r(40) 0;
+
+      @media $display-breakpoints.sm-and-up {
+        margin: 0 vw(150);
+      }
+    }
+    &--5 {
+      margin: 0 0 0 r(95);
+
+      @media $display-breakpoints.sm-and-up {
+        margin: vw(80) $grid-gutter 0 0;
+      }
+    }
+    &--8 {
+      @media $display-breakpoints.sm-and-up {
+        margin: 0 vw(384);
+      }
+    }
+  }
+
+  &__text {
+    &--1 {
+      margin: r(-60) 0 0;
+
+      @media $display-breakpoints.sm-and-up {
+        absolute(0, 0, vw(100), 0px);
+        margin: 0;
+        max-width: vw(680);
+      }
+
+      .title {
+        font: r(48)/1.167 $font-accent;
+        margin-bottom: r(24);
+
+        @media $display-breakpoints.sm-and-up {
+          font-size: vw(95);
+          line-height 1;
+          margin-bottom: vw(40);
+        }
+      }
+      .text {
+        font: italic r(14)/1.5 $font-base;
+
+        @media $display-breakpoints.sm-and-up {
+          max-width: r(480);
+          line-height: 1.7;
+        }
+      }
+    }
+    &--2 {
+      display none;
+
+      @media $display-breakpoints.sm-and-up {
+        display block;
+        absolute(0, vw(150), vw(120));
+        font: vw(48)/1.33 $font-accent;
+        max-width: vw(350);
+      }
+    }
+  }
+
+  &__block {
+    &--1 {
+      padding: r(36) $grid-gutter-ms r(40);
+
+      @media $display-breakpoints.sm-and-up {
+        padding: vw(80) 0 vw(250);
+        flexy(center, center);
+      }
+    }
+    &--2 {
+      padding: 0 $grid-gutter-ms;
+
+      @media $display-breakpoints.sm-and-up {
+        padding: 0;
+      }
+    }
+    &--3 {
+      padding: r(48) 0;
+
+      @media $display-breakpoints.sm-and-up {
+        padding: vw(120) 0 vw(80);
+        flexy(center, center);
+      }
+    }
+    &--4 {
+      flexy(center, stretch);
+    }
+    &--5 {
+      padding: r(40) $grid-gutter-ms;
+
+      @media $display-breakpoints.sm-and-up {
+        padding: vw(120) 0 vw(80);
+      }
+    }
+    &--6 {
+      padding: 0 $grid-gutter-ms r(40) 0;
+      flexy(flex-start, stretch);
+
+      @media $display-breakpoints.sm-and-up {
+        padding: 0 vw(267) vw(120) $grid-gutter-md;
+      }
+    }
+  }
+}
+
+.lookbook-kits {
+  background: #191a1d;
+  padding: r(40) 0;
+  // fix white lines bug
+  margin: -1px 0;
+  &__title {
+    font: italic r(32)/1.5 $font-accent;
+    text-align center;
+    margin-bottom: r(20);
+    max-width: r(500);
+    margin: auto;
+
+    @media $display-breakpoints.sm-and-up {
+      font-size: r(48);
+      line-height: 1.33;
+    }
+  }
+  &__carousel {
+    .swiper-slide {
+      width: r(205);
+    }
+  }
+
+  .kit {
+    &__img {
+      padding-bottom: 150%;
+      background-position center;
+      background-repeat no-repeat;
+      background-size cover;
+    }
+    &__content {
+      padding: r(12) $grid-gutter-ms;
+
+      @media $display-breakpoints.sm-and-up {
+        absolute(0, 0px, 0px);
+        width: 100%;
+        padding: r(20);
+      }
+
+      .title {
+        font: italic r(20)/1.6 $font-accent;
+
+        @media $display-breakpoints.sm-and-up {
+          font-size: r(24);
+          line-height: 1.33;
+          margin-bottom: r(20);
+        }
+      }
+      .btn {
+        @media $display-breakpoints.ms-and-down {
+          padding: r(12) r(16);
+          font-size: r(12);
+        }
+      }
+    }
+  }
+}

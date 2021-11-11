@@ -1,0 +1,84 @@
+@import "base/_variables.scss";
+
+.fancybox-is-open .fancybox-bg {
+    opacity: 1;
+}
+
+.fancybox-bg {
+    background-color: rgba(#000F34, 0.35);
+}
+
+.fancybox-can-swipe .fancybox-content {
+    cursor: initial;
+}
+
+.fancybox-content {
+    &.popup--400 {
+        max-width: 400px;
+        padding: 24px 20px;
+    }
+
+    &.popup--460 {
+        max-width: 460px;
+        padding: 24px 20px;
+    }
+
+    &.popup--656 {
+        max-width: 656px;
+        @media(min-width: 768px) {
+            padding: 32px 32px 24px;
+        }
+    }
+
+    &.help-popup {
+        max-width: 1000px;
+        padding: 24px 20px;
+        @media(min-width: 768px) {
+            padding: 32px 32px 24px;
+        }
+        @media(min-width: 1200px) {
+            max-width: 1204px;
+        }
+
+        .fancybox-close-small {
+            top: 16px;
+            @media(min-width: 992px) {
+                right: 24px;
+                top: 30px;
+            }
+        }
+    }
+}
+
+.fancybox-slide--html .fancybox-close-small {
+    align-items: center;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    opacity: 1;
+    padding: 0;
+    right: 10px;
+    top: 14px;
+    width: 40px;
+
+    &:focus,
+    &:hover {
+        .icon {
+            stroke: $text-full;
+        }
+    }
+
+    svg.icon--big {
+        height: 24px;
+        width: 24px;
+
+        path {
+            fill: none;
+            stroke-width: 2px;
+        }
+    }
+
+    .icon {
+        stroke: $text-medium;
+    }
+}

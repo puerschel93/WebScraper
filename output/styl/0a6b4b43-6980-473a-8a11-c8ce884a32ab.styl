@@ -1,0 +1,543 @@
+@import 'nib'
+@import '../../node_modules/jeet/stylus/jeet/*'
+@import '_mixins.styl'
+
+// Media queries
+$xl = 1600px
+$lg = 1260px
+$md = 1023px
+$sm = 767px
+
+// Colors
+$primary ?= #fff
+$secondary ?= #000
+$accent ?= #ff0000
+
+// Metrics
+$padding = 3rem
+$paddingmobile = 1.5rem
+$kinetic = cubic-bezier(0.77, 0, 0.175, 1)
+
+// CSS Reset
+global-reset()
+
+webfont('LarsBold', 'LarsBold', true, 'normal')
+
+body,html
+	width 100%
+	-webkit-text-size-adjust 100%
+	background $primary
+
+html
+	font-size 62.5%
+	+below($md)
+		font-size 50%
+	+above($xl)
+		font-size .55vw
+
+body
+	text-rendering optimizeLegibility
+	font-smoothing()
+	font-family 'LarsBold'
+	font-size 2rem
+	overflow-x hidden
+
+body::before, body::after
+	content ''
+	position fixed
+	top 0
+	width 55%
+	height 100%
+	background $secondary
+	transition(transform 1s $kinetic)
+	z-index 10
+	backface()
+
+body::before
+	left 0
+	transform(translateX(-100%))
+
+body::after
+	right 0
+	transform(translateX(100%))
+
+body.page::before, body.page::after
+	transform(none)
+
+img.lazyimg
+	transition(filter 400ms ease)
+	//opacity 0.4
+	filter(blur(20px))
+
+img.lazyimg.lazyloaded
+	opacity 1
+	filter(none)
+
+p, h1, h2
+	margin-bottom 1em
+	line-height 105%
+
+p:last-child
+	margin-bottom 0
+
+::selection
+	background $secondary
+	
+::-moz-selection
+	background $secondary
+
+*
+	hideselect()
+	box-sizing(border-box)
+
+::-webkit-scrollbar
+	width 0px
+	background transparent
+
+a, a:hover, a:visited, a:focus
+	color inherit
+	text-decoration none
+	cursor pointer
+
+.x
+	flexbox()
+
+.xafe
+	align-items flex-end
+
+.xas
+	align-items stretch
+
+#outdated
+	display none
+	text-align center
+	position fixed
+	width 100%
+	height 100%
+	top 0
+	left 0
+	background $primary
+	z-index 1100
+	a
+		border-bottom 1px solid
+	.inner
+		padding 15% 20%
+
+.no-js, .no-svg, .no-flexbox
+	#outdated
+		display block
+
+.row
+	span(1)
+	+below($md)
+		display block
+		margin-bottom 1em
+
+.row:last-child
+	margin-bottom 0
+
+.col-2
+	col(1/2, gutter: 10)
+	+below($md)
+		stack()
+
+.kirby-plugin-oembed__thumb>img
+	transition(filter 300ms ease)
+	opacity 1
+	max-width 140px
+
+.kirby-plugin-oembed__thumb:hover>img
+	filter(drop-shadow(0 0 6px alpha($secondary,0.5)))
+
+.kirby-plugin-oembed--video
+	background $secondary
+
+// @keyframes color {
+//     100%, 0% {
+//         stroke: #40382e
+//     }
+//     40% {
+//         stroke: #0f0f0f
+//     }
+//     66% {
+//         stroke: #40382e
+//     }
+//     80%, 90% {
+//         stroke: #0f0f0f
+//     }
+// }
+
+@keyframes rotate {
+    100% {
+        transform(rotate(360deg))
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0
+    }
+    30% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px
+    }
+}
+
+#loader
+	transition(opacity 300ms ease, visibility 300ms ease)
+	position fixed
+	width 100%
+	height 100%
+	top 0
+	left 0
+	background $primary
+	z-index 1000
+	.spinner
+		width $padding*2
+		height $padding*2
+		align()
+		.circular
+			animation rotate 2s linear infinite
+			height 100%
+			transform-origin center center
+			width 100%
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			margin auto
+			.path
+				stroke $secondary
+				stroke-dasharray 1, 200
+				stroke-dashoffset 0
+				animation dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite
+
+#intro
+	position fixed
+	width 100%
+	height 100%
+	top 0
+	left 0
+	background $primary
+	z-index 400
+	display none
+
+header
+	padding $padding
+	position fixed
+	top 0
+	left 0
+	width 100%
+	flexbox()
+	justify-content space-between
+	z-index 500
+	+below($md)
+		padding $paddingmobile
+	.reveal
+		transition(opacity 300ms ease)
+		opacity 0
+	span
+		display inline-block
+		overflow hidden
+	span.atelier
+		width 100%
+		flexbox()
+		justify-content center
+		align(vertical)
+		left 0
+		top calc(50% - 1em)
+	span.about-link
+		white-space nowrap
+	span.about-link:last-child
+		text-align right
+	.name
+		display none
+	#close-page
+		display none
+		width 1.6rem
+		height 1.6rem
+		position relative
+		+below($md)
+			width 2rem
+			height 2rem
+		a
+			display block
+			width 100%
+			height 100%
+			filter(drop-shadow(0 0 1px alpha($secondary,0.5)))
+		span
+			position absolute
+			top 50%
+			left 0
+			width 100%
+			height 2px
+			background $primary
+		span:nth-child(1)
+			transform(rotate(-45deg))
+		span:nth-child(2)
+			transform(rotate(45deg))
+
+body.with-names
+	header
+		.reveal.name
+			opacity 1
+		
+header:hover
+	.reveal
+		+above($md + 1)
+			opacity 1
+
+#categories
+	position fixed
+	width 100%
+	top 'calc(100vh - 4vw - %s)' % ($padding*2)
+	left 0
+	flexbox()
+	justify-content space-between
+	font-size 4vw
+	+below($md)
+		display none
+	.filter
+		cursor pointer
+		transition(transform 500ms ease)
+		padding $padding
+		transform(translateY(43%) translateZ(0))
+	.filter.active, .filter:hover
+		transform(translateY(0%) translateZ(0))
+
+#mouse-title
+	position absolute
+	width 50%
+	margin-left -25%
+	margin-top -.5em
+	text-align center
+	font-size .8em
+	color $secondary
+	//filter(drop-shadow(0 0 2px alpha($primary,0.8)))
+	pointer-events none
+	+below($md)
+		display none
+
+#container
+	span(1)
+	.inner
+		transition(opacity 500ms ease)
+		span(1)
+	.inner.page
+		position relative
+		z-index 20
+	.page-content
+		span(1)
+	#project-list
+		margin 8rem 12%
+		margin-right 'calc(12% - %s)' % $padding
+		+below($md)
+			margin 8rem $paddingmobile
+		.gutter-sizer
+			width 3%
+			+below($md)
+				width $padding
+		.grid-sizer
+			width 47%
+			+below($md)
+				width 100%
+		.project
+			transition transform 1000ms $kinetic, filter 300ms ease
+			transition-delay 0ms, 300ms
+			width 47%
+			+below($md)
+				width 100%
+			cursor none
+			a
+				cursor none
+			.project-title
+				display none
+				margin-top .5rem
+				+below($md)
+					display block
+		.project.image-only
+			cursor auto
+		.project.disabled
+			transform(scale(0.9))
+			filter(blur(13px))
+			pointer-events none
+	.content-item
+		padding 0 12%
+		margin-bottom 8rem
+		text-align center
+		+below($md)
+			margin-bottom 5rem
+			padding 0 $paddingmobile
+		.item-caption
+			margin-top 1rem
+			+below($md)
+				font-size 0.7em
+	.content-item:first-child
+		margin-top 8rem
+	.content-item:last-child
+		margin-bottom 0
+	.content-item.fullwidth:first-child
+		+above($md + 1)
+			margin-top 0
+	.content-item.fullwidth
+		+above($md + 1)
+			padding 0
+	.content-item.small
+		+above($md + 1)
+			padding-left 33%
+			padding-right 33%
+	.content-item.image-item
+		overflow hidden
+	.project-description
+		span(1)
+		padding $padding
+		margin-top (8rem * 2)
+		+below($md)
+			padding $paddingmobile
+			margin-top (8rem * 2)
+	#next-project
+		+below($md)
+			margin-top 8rem
+			text-align right
+	.page-content.about
+		+above($md + 1)
+			height 100vh
+			flexbox()
+			flex-direction column
+			justify-content space-between
+		.content-item
+			+above($md + 1)
+				margin-bottom 0
+		#credits
+			margin-bottom $padding
+			+below($md)
+				margin-bottom $paddingmobile
+	.page-content.about::before, .page-content.about::after
+		display none
+
+@keyframes expandAbout {
+	0% {
+		width 12.3vw
+	}
+    100% {
+        width 50%
+        font-size 2rem
+    }
+}
+
+@keyframes expandName {
+    100% {
+        width 15.5vw
+    }
+}
+
+@keyframes stopTransform {
+    100% {
+        transform(translateY(0%) translateZ(0))
+    }
+}
+
+@keyframes reveal {
+    100% {
+        opacity 1
+    }
+}
+
+@keyframes hide {
+    100% {
+        opacity 0
+    }
+}
+
+body.intro
+	overflow hidden
+	cursor pointer
+	#intro
+		display block
+	header
+		font-size 4vw
+		pointer-events none
+		justify-content center
+		transform(translateY(calc(50vh - 4rem)))
+		.reveal
+			opacity 1
+			width 0
+	#categories
+		transform(translateY(100%) translateZ(0))
+	#container
+		.inner
+			transform(translateY(100vh) translateZ(0))
+
+body.intro.intro-start
+	#intro
+		display none
+	header
+		animation-name stopTransform
+		animation-duration 2s
+		animation-delay 2s
+		animation-timing-function $kinetic
+		animation-fill-mode forwards
+		.atelier
+			animation-name hide
+			animation-duration 0.3s
+			animation-delay 0s
+			animation-timing-function ease
+			animation-fill-mode forwards
+		.reveal
+			animation-name expandName
+			animation-duration 1s
+			animation-delay 0s
+			animation-timing-function ease
+			animation-fill-mode forwards
+		span.about-link
+			animation-name expandAbout
+			animation-duration 1.5s
+			animation-delay 1s
+			animation-timing-function $kinetic
+			animation-fill-mode forwards
+	#container
+		.inner
+			animation-name stopTransform
+			animation-duration 2s
+			animation-delay 2.2s
+			animation-timing-function $kinetic
+			animation-fill-mode forwards
+	#categories
+		animation-name stopTransform
+		animation-duration 500ms
+		animation-delay 2.2s
+		animation-timing-function ease
+		animation-fill-mode forwards
+
+body.loading
+	cursor wait
+	overflow hidden
+	#loader
+		opacity 0
+		visibility hidden
+	#container
+		.inner:not(.work)
+			opacity 0
+
+body.loaded
+	#loader
+		opacity 0
+		visibility hidden
+
+body.page
+	color $primary
+	background $secondary
+	header
+		#close-page
+			display block
+			opacity 1
+
+.no-js, .no-csstransforms, .no-csstransitions, .no-cssfilters, .no-flexbox, .no-cssvwunit
+	#outdated
+		display block

@@ -1,0 +1,260 @@
+@import '../../colors.styl';
+
+$font-weight = 400
+
+$title-font-color = $grey
+$title-font-size = 1em  
+
+$data-label-color = $grey
+$data-label-font-size = 14px
+
+$axis-labels-color = #656565
+$axis-labels-font-size = 12px
+
+$legend-font-color = #656565
+$legend-font-size = 12px
+
+.highcharts-root
+    font-family 'AvenirLTPro-Roman', sans-serif
+
+.highcharts-color-0
+    fill $primaryColor
+    stroke $primaryColor
+
+.highcharts-color-1
+    fill $chartgreen
+    stroke $chartgreen
+
+.highcharts-color-2
+    fill $chartorange
+    stroke $chartorange
+
+.highcharts-color-3
+    fill $chartpink
+    stroke $chartpink
+
+.highcharts-color-4
+    fill $primaryColorHoverColor
+    stroke $primaryColorHoverColor
+
+.highcharts-color-5
+    fill $secondaryColor
+    stroke $secondaryColor
+
+.highcharts-color-6
+    fill $tertiaryColor
+    stroke $tertiaryColor
+
+.highcharts-color-7
+    fill $chartYellow
+    stroke $chartYellow
+
+.highcharts-color-8
+    fill $chartGreen
+    stroke $chartGreen
+
+.highcharts-color-9
+    fill $chartorange
+    stroke $chartorange
+
+.highcharts-color-10
+    fill $chartblue
+    stroke $chartblue
+
+.highcharts-color-11
+    fill $chartDPink
+    stroke $chartDPink
+
+.highcharts-color-12
+    fill $chartDBlue1
+    stroke $chartDBlue1
+
+.highcharts-container
+    font-size 14px
+
+.highcharts-background
+	fill transparent
+	stroke transparent
+
+.highcharts-title
+    fill $title-font-color
+    font-size $title-font-size
+    font-weight $font-weight
+
+.highcharts-data-label-connector
+    fill none
+
+.highcharts-data-label
+    font-size $data-label-font-size
+    font-weight $font-weight
+    @media (max-width: 1024px)
+      font-size 0.9em
+
+.highcharts-data-label text, text.highcharts-data-label
+    fill $data-label-color
+
+.highcharts-axis-labels
+    fill $axis-labels-color
+    font-size $axis-labels-font-size
+
+.highcharts-legend-item text
+    fill $legend-font-color
+    font-weight $font-weight
+    font-size $legend-font-size
+
+.pie-data-label.highcharts-data-label
+    font-size 0.9em
+    text
+        fill $white
+
+.metric-solid-guage
+    path
+        fill $highlight2
+        stroke $highlight2
+    .solid-guage-label.highcharts-data-label
+        text
+            font-size 15px
+            font-family $font-family
+    .dash-solid-guage-label.highcharts-data-label
+        font-weight normal
+        text
+            font-size 20px
+            fill $neutral4
+  
+.dashboard-metric-solid-gauge
+    .highcharts-title
+        fill $white
+        font-weight 100
+        font-size 14px
+    .solid-gauge-label
+        text
+            fill $white
+            font-weight 500
+            font-size 14px
+    .highcharts-pane-group
+        path
+            fill lighten($primaryColor, 50%)
+            stroke lighten($primaryColor, 50%)
+            fill-opacity: 0.5
+
+.income-statement-chart
+    .highcharts-title
+        font-weight 500
+    .highcharts-data-label
+        font-size 0.9em
+        font-weight 500
+        text
+            fill $title-font-color
+    .highcharts-series
+        .highcharts-point
+            stroke-width 5px
+    
+
+isma-dashboardgraph
+    #gradient-0 stop 
+        stop-color #FEC130    
+    #gradient-0 stop[offset="1"] 
+        stop-color #FF9A1E
+    .highcharts-pane
+        fill transparent
+        fill-opacity 0.45
+    .highcharts-color-0
+        fill $orange
+        stroke $orange
+    .highcharts-container
+        margin auto
+    .highcharts-data-labels
+        top -5px !important
+    .highcharts-grid-line, .highcharts-minor-grid-line
+        stroke: transparent
+
+.dashboard-graphs
+    .highcharts-background
+        fill transparent
+
+.generation-wrapper
+    .column-chart 
+        @media (max-width: 1024px)
+            .highcharts-data-label
+                font-size 0.8em
+    .stack-chart
+        .highcharts-series-4.highcharts-color-5
+            & > g:nth-child(1)
+                display none
+            & > g:nth-child(2)
+                text
+                    fill $chartLBlue
+        .highcharts-series-0.highcharts-color-4
+            & > g:nth-child(2)
+                display none
+            & > .highcharts-data-label-color-4:nth-child(1)
+                text
+                    fill $chartRed
+    .overlap-chart.chart-above,
+    .overlap-chart.chart-below
+        .highcharts-data-label
+            font-size 0.8rem
+            @media screen and (max-width 1140px)
+                font-size 0.6rem
+
+        .highcharts-series-0
+            // @media screen and (min-width 1140px)
+            //     .highcharts-data-label-color-7
+            //         transform translate(35%, 45%)
+            // @media screen and (max-width 1139px)
+            //     .highcharts-data-label-color-7                   
+            //         transform translate(28%, 36%)
+            //         font-size 0.5rem
+
+            text
+                fill #fff
+        .highcharts-legend
+            pointer-events: none
+            .highcharts-legend-item:nth-of-type(4),
+            .highcharts-legend-item:nth-of-type(5),
+            .highcharts-legend-item:nth-of-type(6)
+                display none
+
+    .overlap-chart
+        .highcharts-background
+            fill transparent
+    // .modify-chart
+    //     .highcharts-color-0
+    //         fill $chartGrey
+    //         stroke $chartGrey
+    //     .highcharts-color-1
+    //         fill $chartDBlue
+    //         stroke $chartDBlue
+    //     .highcharts-color-2
+    //         fill $chartGreen
+    //         stroke $chartGreen
+
+.character-wrapper
+    .highcharts-series-0
+        .highcharts-color-0
+            fill: url(#diagonalHatch)
+        .highcharts-color-1
+            fill: url(#diagonalHatch1)
+        .highcharts-color-2
+            fill: url(#diagonalHatch2)
+    .highcharts-legend-item.highcharts-series-0
+        .highcharts-point
+            fill: url(#diagonalHatch)
+    .highcharts-legend-item.highcharts-series-1
+        .highcharts-point
+            fill: $black
+
+.services-wrapper
+    .slider-area-chart
+        &.chart-Low
+            .highcharts-color-0
+                fill $chartRed
+                stroke $chartRed
+        &.chart-Medium
+            .highcharts-color-0
+                fill $chartorange
+                stroke $chartorange
+        &.chart-High
+            .highcharts-color-0
+                fill $chartgreen
+                stroke $chartgreen

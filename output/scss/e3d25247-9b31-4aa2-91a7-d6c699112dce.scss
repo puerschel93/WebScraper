@@ -1,0 +1,150 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:460;
+
+$margin-top-under-nav-fixe:180;
+
+// SIZE NAVIGATION
+$height-navigation:40;
+
+// VAR SITE TYPO
+$font-body:"proxima-nova",sans-serif;
+$font-title:"brandon-grotesque",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:normal;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB5
+@import "../../../slagence_X_V5/sources/scss/boutons/lib5";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES13
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra4";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+
+.menu-principal>li {
+   @include box-shadow(inset 0px 1px 0px 0px $color-primary-light-5);
+	@include background-image(linear-gradient(top, $color-primary-light-5 0%, $color-primary-light-5 49%, $color-primary-dark-5 51%, $color-primary 100%));
+	@include filter-gradient($color-primary-light-10,$color-primary-light-5,vertical);
+	background-color:$color-primary;
+	border-bottom:0px;
+	border-right:1px solid $color-primary-dark-5;
+	border-left:1px solid $color-primary-dark-5;
+	margin-left:-6px;
+	&:hover {
+	@include background-image(linear-gradient(top, $color-primary-light-10 0%, $color-primary-light-5 49%, $color-primary-dark-5 51%, $color-primary 100%));
+	@include filter-gradient($color-primary-light-10,$color-primary-light-5,vertical);
+	background-color:$color-primary;
+	}
+}
+
+.navigation {border-bottom:8px solid $color-action;}
+//.bg-navigation {background-image: url(../images/bg_header.jpg); background-repeat: no-repeat; background-position: top center; background-color:$color-secondary;}
+.bg-navigation, .navigation, .logo-vendu {@include background-image(linear-gradient(top, $color-header-top 0%, $color-header 100%));}
+.menu-principal > li > a {padding: 0px 8px;}
+.menu-principal > li + li {border-left:1px solid $color-primary-dark-5;}
+
+.menu-principal .icon-v5-facebook-2 {color:$bg-fb;}
+.menu-principal .icon-v5-twitter-2 {color:$bg-tw;}
+.menu-principal .icon-v5-youtube {color:$bg-yt;}
+.menu-principal .icon-v5-googleplus-2 {color:$bg-gg;}
+
+.bg-moteur {background:$color-primary;}
+.border-left-solid-action-1 {border-left:1px solid $color-action;}
+.phrase-recherche, .adresse-estimation {display:none;}
+.logo {padding:4px 0 0 0;}
+.txt-chapeau {font-weight:bold; font-style:italic;color:$color-secondary; font-size:$font-size-title * 0.60;}
+.h2-title-moteur{ font-size:$font-size-title * 0.70;}
+.titre-page{border-bottom: 3px solid $color-secondary-dark-10;}
+.module-homepage .ligne-titre h2, .ttl-primary {background:$color-primary; padding:0 10px; border-bottom: 3px solid $color-primary-dark-10; color:$color-body;}
+.texte-info-agences {margin:-10px 0;}
+.titre-surface {color:$color-body;}
+.social-footer span {color:$color-body; margin:0 5px; font-size:$font-size-title * 0.8;}
+.social-footer .social-ico-footer {margin-top:15px;}
+.social-footer .icon-v5-facebook-2:before {content:"\e071";}
+.social-footer .icon-v5-twitter-2:before {content:"\e06f";}
+.social-footer .icon-v5-googleplus-2:before {content:"\e074";}
+.social-footer .icon-v5-youtube:before {content:"\e0a6";}
+.bg-quote {background:url(../images/quote_temoignage.jpg) center center no-repeat;}
+.bg-quote span {top:50px; right:-21px;}
+.ou-map {top:-10px; left:-10px;}
+.map-img {opacity:0.5;}
+.logo-vendu > div {line-height:200px;}
+
+
+@media only screen and (max-width: 969px) {
+	.menu-principal>li>a {
+		font-size: 0.7em;		
+	}
+}
+@media only screen and (max-width: 852px) {
+	.fixe {
+		position: relative;
+	}
+	.margin-navigation {
+		margin-top: -70px;
+	}
+	.height-scrolling {
+		height: 387px;
+	}
+}
+@media only screen and (max-width: 767px){
+	.height-scrolling {
+		height: auto;
+	}
+	.margin-navigation {
+		margin: 0;
+	}
+}
+
+.logoprint{
+padding:0; 
+margin:0;
+}

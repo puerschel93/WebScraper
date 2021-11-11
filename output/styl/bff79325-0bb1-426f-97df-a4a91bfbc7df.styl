@@ -1,0 +1,212 @@
+@require 'values'
+@require 'colors'
+@require 'util'
+
+colorTiltedBg = #E8E8E8 + 16%
+mapWidth = 180px
+cardWidth = 780px
+photoSize = 10rem
+
+supportButton(typeColor)
+  section.detail ul.stats .backed
+    button
+      background typeColor
+      &:active
+        background activeColor(typeColor)
+      yi-icon::shadow .show
+        stroke white
+        stroke-width 1.8 !important
+    output
+      color typeColor
+
+#detail
+  display flex
+  flex-direction column
+  background pale-grey
+  position relative
+
+  // type variant styles
+  &.request
+    supportButton colorBlue
+    main
+      scrollbar colorBlue
+      yi-tab.active
+        color colorBlue
+        &::shadow yi-icon::shadow .show
+          stroke colorBlue
+  &.complain
+    supportButton colorOrange
+    main
+      scrollbar colorOrange
+      yi-tab.active
+        color colorOrange
+        &::shadow yi-icon::shadow .show
+          stroke colorOrange
+
+  > nav
+    flex-shrink 0
+    z-index 1
+    asTopbar()
+
+    .container
+      align-items center
+      display flex
+      height 100%
+      justify-content center
+      // justify-content space-between
+      margin auto
+      max-width cardWidth
+      width 90%
+
+    button
+      background none
+      border none
+      yi-icon
+        vertical-align bottom
+      &:last-of-type yi-icon
+        transform rotate(180deg)
+      &:active
+        transform scale(0.9)
+
+  yi-cover
+    cover()
+    img
+      width 100%
+      filter blur(10px)
+      -webkit-filter blur(10px)
+
+  main
+    flex 1
+    overflow-x hidden
+    overflow-y auto
+    padding 2rem 0
+    position relative
+    scrollbar()
+
+    > section
+      width 90%
+      margin 0.5rem auto
+      max-width cardWidth
+
+  section.detail
+    asCard()
+    mgl-map
+      width mapWidth
+      [marker]
+        width 0
+        height 0
+        yi-marker
+          transform translate(-50%, -95%)
+
+    article
+      display flex
+      flex 1
+      flex-direction column
+
+      h1
+        font-size 1.5em
+        padding-left 1rem
+        padding-top 1rem
+      p.category
+        font-weight normal
+        font-size 0.9em
+        line-height 1.5em
+        padding-left 1rem
+        text-transform uppercase
+      p.address
+        color colorGray2
+        font-size 0.8em
+        height 2.8em
+        line-height 2.8em
+        padding-left 1rem
+      p.description
+        flex 1
+        padding 1rem
+        background-color pale-grey
+        font-family 'Roboto Slab'
+        &::first-letter
+          text-transform capitalize
+
+    ul.stats
+      display flex
+      height 2rem
+      li
+        flex 1
+        display flex
+        .indicator
+          background light-grey
+          display inline-block
+          width 2rem
+          yi-icon
+            transform scale(0.7)
+            &::shadow .show
+              stroke colorBlack
+        button
+          border none
+          cursor pointer
+          &:active
+            background activeColor(light-grey)
+          yi-icon
+            cursor pointer
+        output
+          color colorBlack
+          flex 1
+          text-align center
+          line-height 2rem
+        &.status
+          background light-grey
+
+  section.photos
+    margin 1.5rem auto
+    ul
+      display flex
+      justify-content space-between
+      flex-direction row
+    li
+      border 2px solid light-grey
+      border-radius cardRadius
+      display flex
+      height photoSize
+      min-width 9rem
+      overflow hidden
+      width photoSize
+
+      &.pic
+        align-items center
+        background-color colorGray3
+        justify-content center
+        img
+          height 100%
+        yi-icon
+          width (photoSize/3)
+          height (photoSize/3)
+      &.gallery
+        flex-wrap wrap
+        img
+          height  50%
+
+  section.actions
+    asCard()
+    flex-direction column
+    yi-tabs
+      height 2.2rem
+    .action
+      align-items center
+      display flex
+      flex 1
+      flex-direction column
+      justify-content center
+
+  // dialogs
+  dialog
+    padding 0 1rem 1rem
+
+    > yi-icon
+      background light-grey
+      border-radius 0 0 3px 3px
+      display block
+      height 4rem
+      margin auto
+      margin-bottom 1rem
+      width 4rem
+      padding 0.5rem

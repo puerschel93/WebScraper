@@ -1,0 +1,168 @@
+/* ==UserStyle==
+@name           Regex101
+@description    Tweaks to CodeMirror editor styles
+@version        0.0.5
+@namespace      github.com/disk0/stylus/regex101
+
+@author         disk0 (github.com/disco0)
+@license        MIT
+
+@preprocessor   stylus
+
+@var select     WhitespaceSymbol        "Predefined list of EOL symbols, displayed on the end of lines (when display of whitespace is enabled)." [
+	"\"․\"", 
+	"\"⁻\"", 
+	"\"⇨\"", 
+	"\"⇢\"", 
+	"\"⇥\"", 
+	"\"⇸\"",
+	"\"⇒\"",
+	"\"⇉\"",
+	"\"⇀\"",
+	"\"↦\"",
+	"\"↛\"",
+	"\"→\"",
+	"\"⊖\"",
+	"\"┈\"",
+	"\"─\"",
+	"\"▶\"",
+	"\"▷\"",
+	"\"▸\"",
+	"\"▹\"",
+	"\"▻\"",
+	"\"◇\"",
+	"\"➡\"",
+	"\"⠄\"",
+	"\"⠠\"",
+	"\"⠤\"",
+	"\"⭓\"",
+	"\"⭔\"",
+	"\"\""
+]
+]
+@var text       WhitespaceCustom        "Define custom whitespace symbol. (Leave as unset to ignore.)"   unset
+@var color      WhitespaceColor         "Color of whitespace symbol"                                     #DDDDDD
+@var number     WhitespaceOpacity       "Opacity of whitespace (when display of whitespace is enabled)." [ 0.2, 0.0, 1, 0.05 ]
+@var number     WhitespaceWeight        "Whitespace font weight"                                         [ 200, 100, 900, 100 ]
+@var number     WhitespacePaddingLength "Padding length inserted before whitespace symbol"               0
+
+@var select     EOLSymbol               "Predefined list of EOL symbols, displayed on the end of lines (when display of whitespace is enabled)." [
+	"\⁋*",
+	"\❡",
+	"\"⸿\"",
+    "\"\\n\"",
+    "\"¬\"",
+    "\"^C\"",
+    "\"▼\"",
+    "\"▽\"",
+    "\"▾\"",
+    "\"▿\""
+]
+@var text       EOLSymbolCustom         "Define custom EOL symbol. (Leave as unset to ignore.)"          unset
+@var color      EOLSymbolColor          "Color of EOL symbol"                                            #DDDDDD
+@var number     EOLSymbolOpacity        "Opacity of EOL symbol"                                          [ 0.5, 0.0, 1, 0.05 ]
+@var number     EOLSymbolWeight         "EOL symbol font weight"                                         [ 200, 100, 900, 100 ]
+@var number     EOLPaddingLength        "Padding length inserted before EOL symbol"                      0
+
+@var checkbox   HideScrollbars          "Hide scrollbars" 1
+
+@var checkbox   WorkInProgressStyles    "Enable to have problems"                                        0
+
+@var checkbox  UseUserStyleFont        "Apply font set in UserStyle's options."        1
+@var select    CodeFont                "Font for code displayed on page."              {
+
+	"Wide Iosevka": "Iosevka Extended, Iosevka Expanded",
+	"Iosevka Wide (macOS)": "Iosevka Extended",
+	"Iosevka Extended (Custom)": "Iosevka Extended Custom",
+	"Iosevka Wide (Windows)": "Iosevka Expanded",
+	"Iosevka Term": "Iosevka Term",
+	"Iosevka": "Iosevka",
+	
+	"SemanticHaskell": "SemanticHaskell",
+	"SemanticJavascript": "SemanticJavascript",
+	"SemanticCode": "SemanticCode",
+	"Hasklig": "Hasklig",
+	
+	"PragmataPro Mono Liga": "PragmataPro Mono Liga",
+	
+	"monospace": "monospace"
+
+}
+@var number    CodeFontSize            "Size of code in editor"                        [ 14,  1,   50,  0.5,   "px" ]
+@var number    CodeFontWeight          "Code font base weight"                         [ 400, 100, 900, 100         ]
+@var number    CodeLetterSpacing       "Code character spacing"                        [ 0,   0,   1,   0.025, "em" ]
+@var checkbox  WorkInProgressStyles    "Experimental Styles"                           0
+@var number    CodeLetterSpacing       "Spacing between chars in editor"               [ 0.01, 0.0, 0.1, 0.005, "em" ]
+@var checkbox  DebugMode               "Debug Mode"                                    0
+
+@var number   CodeFontWeight    "Code font weight"                               [ 400, 100, 900, 100 ]
+@var number   CodeLetterSpacing "Letter spacing for code blocks."                [0, 0, 1, 0.025, "em"]
+@var checkbox CodeWordWrap      "Control line wrapping in document views"        0
+@var number   CodeFontSize      "Size of code in editor"                         [ 14, 1, 50,  0.5, "px" ]
+
+@var checkbox UseUserStyleFont  "Apply font set in UserStyle's options."         1
+
+@var number   WhitespaceOpacity "Transparency of whitespace indentation [0-100]" [ 10, 0, 100, 5, "%"]
+@var checkbox ChangeStringColor "Toggle alternate string token color."           0
+
+ var number   DiffFillPads      "Diff view padding (depreciated)"                03vw
+@var number   ModWidth          "Width used for core view style changes"         [95, 1, 100, 1, "vw"]
+
+@var number   TwirlScale        "0.1-1 scale multiplier for twirldowns"          [ 0.9, 0.1, 1, 0.05 ]
+
+@var checkbox NavViewinWiki     "NavBar Visibility"                              0
+@var checkbox DebugStyles       "Enable debug mode styles"                       0 
+
+==/UserStyle== */
+// "‧", "·",
+
+//"\ *", "\⁋", "\❡", "⸿", "\\n", "¬", "^C", "▼", "▽", "▾", "▿"
+@-moz-document domain("regex101.com")
+	pad($length, $char = " ")
+		if($length < 1)
+			error()
+		$buf = ''
+		for $n in range(0, $length - 1)
+			$buf = join($buf, $char)
+		
+	hideScrollbar(width = true, height = false)
+		if(width || height) 
+			// Not sure how to set per axis ?
+			&::-webkit-scrollbar   
+				display: none
+
+			// [Firefox]: Per axis adjustment
+			if(width)
+				scrollbar-width: none
+
+			if(height)
+				scrollbar-height: none
+
+
+	$WhitespaceContent = '"%s%s"' % (WhitespaceCustom != "unset" ? WhitespaceCustom : WhitespaceSymbol) 
+	$EOLContent =        '"%s%s"' % (EOLSymbolCustom  != "unset" ? EOLSymbolCustom  : EOLSymbol       )
+	
+	.CodeMirror-show-whitespace > .CodeMirror
+		// Scrollbars
+		if( HideScrollbars )
+			// Hide system scrollbars
+			hideScrollbar(width = true, height = true)
+			// Hide application scrollbars
+			[class$=scrollbar]
+				visibility: hidden !important
+			
+		// Whitespace opacity
+		& span.cm-overlay.cm-space:before
+			content:     $WhitespaceContent !important
+			color:       WhitespaceColor   !important
+			opacity:     WhitespaceOpacity !important
+			font-weight: EOLSymbolWeight  !important
+
+		// Blank line char
+		.CodeMirror-line:not(:last-child)>span:after
+			content:     $EOLContent      !important
+			color:       EOLSymbolColor   !important
+			opacity:     EOLSymbolOpacity !important
+			font-weight: EOLSymbolWeight  !important
+		
+		font-family: CodeFont

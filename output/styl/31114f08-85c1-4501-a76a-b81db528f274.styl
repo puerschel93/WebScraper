@@ -1,0 +1,87 @@
+$ns = 'pct';
+
+// ======================================================
+// COLOR-THEMES
+// ======================================================
+@import './colors.styl';
+
+$theme-dark = {
+  base: $color-dark.base,
+  contrast: $color-light.base,
+}
+
+$theme-light = {
+  base: $color-light.base,
+  contrast: $color-dark.base,
+}
+
+$theme-primary = {
+  base: $color-yellow.base,
+  contrast: $color-dark.base,
+  complement: $color-light.base,
+}
+
+$theme-secondary = {
+  base: $color-blue.base,
+  contrast: $color-light.base,
+  complement: $color-dark.base,
+}
+
+$themes-tree = {
+  dark: $theme-dark,
+  light: $theme-light,
+  primary: $theme-primary,
+  secondary: $theme-secondary,
+}
+
+// ======================================================
+// FONTS
+// ======================================================
+$font-base = MontserratAlternates, --apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Verdana, sans-serif;
+
+// if ($use-fonts) import custom fonts
+$use-fonts = true;
+@import './fonts.styl';
+
+// font sizes 
+// $font-size-{size}
+$font-size = 16px;
+$font-size-small-xs = 8px;
+$font-size-small-s = 10px;
+$font-size-small = 12px;
+$font-size-base = 14px;
+$font-size-medium-s = 16px;
+$font-size-medium = 18px;
+$font-size-big-s = 20px;
+$font-size-big = 22px;
+$font-size-large-s = 24px;
+$font-size-large = 26px;
+
+// other
+$border-radius-base = 12px;
+$border-radius-big = 20px;
+$border-radius-small = 6px;
+
+// shadows
+$base-shadow = rgba(0, 0, 0, 0.2) 0px 3px 30px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
+
+// ======================================================
+// BREAKPOINTS
+// ======================================================
+$breakpoints := {
+  xs: 0,
+  ms: 25rem,   // 400px
+  sm: 48rem,   // 768px
+  md: 64rem,   // 1024px
+  lg: 80rem,   // 1280px
+  xl: 100rem,  // 1600px
+}
+
+@import './breakpoints.styl';
+@import './colors.styl';
+
+
+$gutter = 1rem;
+$container-max = 73.125rem;
+$header-height = 80px;
+

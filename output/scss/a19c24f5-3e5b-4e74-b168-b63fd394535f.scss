@@ -1,0 +1,296 @@
+@use 'sass:math';
+@use '../../../compiled/tokens/scss/breakpoint';
+@use '../../../compiled/tokens/scss/color';
+@use '../../../compiled/tokens/scss/line-height';
+@use '../../../compiled/tokens/scss/size';
+@use '../../../mixins/border-radius';
+@use '../../../mixins/button';
+@use '../../../mixins/emdash';
+@use '../../../mixins/ms';
+@use '../../../mixins/table';
+@use '../../../mixins/theme';
+
+/**
+ * Gutenberg block: Button
+ * Applies our pattern library styles to buttons generated via Gutenberg blocks.
+ */
+
+$wp-button-gap: size.$spacing-gap-button-group-default;
+
+.wp-block-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: $wp-button-gap * -1;
+}
+
+/**
+ * 1. Prevent inherited display flex styling from crushing layout
+ */
+.wp-block-button {
+  flex: none; /* 1 */
+
+  .wp-block-buttons & {
+    margin-bottom: $wp-button-gap;
+    margin-right: $wp-button-gap;
+  }
+
+  .wp-block-button__link {
+    @include button.default;
+  }
+
+  &.is-style-outline .wp-block-button__link {
+    @include button.secondary;
+  }
+}
+
+/**
+ * Gutenberg block: File download button
+ * Applies our pattern library styles to gutenberg file download blocks.
+ */
+.wp-block-file {
+  /**
+   * 1. Prevents stacked file buttons from collapsing on each other.
+   */
+  + .wp-block-file {
+    margin-top: $wp-button-gap; /* 1 */
+  }
+
+  /**
+   * The following three selectors target a class name _and_ a universal
+   * selector (*). This is intentional because the Gutenberg file block can
+   * generate two different elements, a file-link and a file-button and we
+   * want to style both of them with the same visual appearance and
+   * characteristics. We could easily have chosen `:not(.wp-block-file__button)`
+   * but opted for less characters.
+   *
+   * 1. Prevents default WP styling from modifying buttons opacity on hover.
+   */
+  .wp-block-file__button,
+  * {
+    @include button.default;
+    opacity: inherit !important; /* 1 */
+  }
+
+  /**
+   * 1. Prevents default WP styling from modifying button text color on hover
+   */
+  &.c-button--secondary {
+    .wp-block-file__button,
+    * {
+      @include button.secondary;
+      color: inherit !important; /* 1 */
+    }
+  }
+
+  /**
+   * 1. Prevents default WP styling from modifying button text color on hover
+   */
+  &.c-button--tertiary {
+    .wp-block-file__button,
+    * {
+      @include button.tertiary;
+      color: inherit !important; /* 1 */
+    }
+  }
+}
+
+/**
+ * Gutenberg block: Image
+ * Styles for images inserted via Gutenberg blocks.
+ *
+ * 1. Since we are applying `margin-top` to CMS content via our o-rhythm
+ *    pattern, the default `margin-bottom` value on Gutenberg image blocks is
+ *    unnecessary, so we remove it here.
+ */
+.wp-block-image {
+  margin-bottom: 0; /* 1 */
+  position: relative;
+
+  /**
+   * Setting a width of `100%` prevents resized and centered images from
+   * breaking layout when placed after a right-aligned image in a post.
+   */
+  &.aligncenter {
+    width: 100%;
+  }
+
+  /* Since we are applying `margin-top` to CMS content via our o-rhythm
+   * pattern, the default `margin-bottom` value on Gutenberg figcaption
+   * elements is unnecessary, so we remove it here.
+   */
+  figcaption {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Gutenberg block: Table
+ * Applies our pattern library styles to tables generated via Gutenberg blocks.
+ */
+
+/**
+ * Default table
+ */
+.wp-block-table table td,
+.wp-block-table table th {
+  @include table.t-container;
+}
+
+.wp-block-table table th {
+  @include table.t-heading;
+}
+
+.wp-block-table table thead {
+  @include table.t-head;
+}
+
+.wp-block-table table tfoot {
+  @include table.t-foot;
+}
+
+.wp-block-table table caption {
+  @include table.t-caption;
+}
+
+/**
+ * Striped table
+ */
+.wp-block-table.is-style-stripes {
+  border-bottom: 0;
+
+  & tbody tr:nth-of-type(2n - 1) {
+    @include table.t-striped;
+  }
+}
+
+/**
+ * Numeric table
+ */
+.wp-block-table.c-table--numeric table {
+  @include table.t-numeric;
+
+  & th {
+    text-align: right;
+  }
+}
+
+/**
+ * Quote and Pull-quote
+ * Styles for quotes and pull-quotes
+ */
+
+.wp-block-pullquote,
+.wp-block-quote {
+  color: var(--theme-color-text-muted);
+}
+
+/**
+ * 1. Reset bottom margin
+ * 2. Reset padding
+ * 3. Reset text alignment
+ */
+
+.wp-block-pullquote {
+  background-color: var(--theme-color-background-secondary);
+  margin-bottom: 0; /* 1 */
+  padding: 0; /* 2 */
+  text-align: left; /* 3 */
+  @include border-radius.conditional();
+}
+
+/**
+ * Our default styles for the blockquote element include `padding-left`.
+ * Pullquotes get padding on every side.
+ */
+
+.wp-block-pullquote blockquote {
+  padding: ms.step(1);
+}
+
+/**
+ * 1. Adjacent children of blockquotes have vertical spacing. Making `cite`
+ *    a block level element so that it has the same spacing.
+ */
+
+.wp-block-pullquote cite,
+.wp-block-quote cite {
+  display: block; /* 1 */
+  font-style: normal;
+}
+
+/**
+ * Add an em dash before the citation.
+ */
+
+.wp-block-pullquote cite::before,
+.wp-block-quote cite::before {
+  @include emdash.content;
+}
+
+/**
+ * Makes the line-height more consistent with existing typographic styles.
+ */
+
+.wp-block-pullquote,
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+  p {
+    line-height: line-height.$tight;
+  }
+}
+
+/**
+ * Reset the max-width so the text spans the width of the container.
+ */
+
+.wp-block-pullquote.is-style-solid-color {
+  blockquote {
+    max-width: 100%;
+  }
+}
+
+.wp-block-pullquote,
+.wp-block-pullquote.is-style-solid-color blockquote {
+  p {
+    font-size: ms.step(1);
+  }
+}
+
+.wp-block-quote {
+  border-left: size.$border-width-blockquote solid
+    var(--theme-color-border-text-group);
+}
+
+/**
+* 1. Reset margins and padding
+* 2. The quote itself defaults to being italic, this straightens out the quote
+*/
+.wp-block-quote.is-style-large,
+.wp-block-quote.is-large {
+  margin: 0; /* 1 */
+  padding-left: ms.step(1); /* 1 */
+  padding-right: 0; /* 1 */
+
+  p {
+    font-size: ms.step(0);
+    font-style: normal; /* 2 */
+  }
+
+  cite {
+    font-size: ms.step(0);
+    text-align: left;
+  }
+}
+
+/**
+ * Gutenberg block: Separator
+ *
+ * The default separator is intended to be partial-width, so we apply those
+ * styles selectively here rather than un-applying them to the other modifiers.
+ */
+
+.wp-block-separator.is-style-default {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% / 3);
+}

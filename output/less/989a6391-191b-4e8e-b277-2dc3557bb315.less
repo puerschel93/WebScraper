@@ -1,0 +1,200 @@
+.ice-climbing {
+  width: @desktop-width;
+  color: @color-green;
+  background: url('../img/ice_climbing_bg.png') bottom no-repeat @color-light;
+}
+
+@media (max-width: @tablet-width) {
+  .ice-climbing {
+    width: @tablet-width;
+    background-position: -440px 100%;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .ice-climbing {
+    width: @mob-width;
+    background-position: -600px 125%;
+  }
+}
+
+.ice-climbing__wrapper {
+  .cont-pos(70px, 253px);
+  .flex(row, nowrap);
+  justify-content: space-between;
+  position: relative;
+
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 112px;
+    right: -50px;
+    width: 8px;
+    height: 30px;
+    background-image: url('../img/ice_climbing_x.png');
+  }
+}
+
+@media (max-width: @mob-width) {
+  .ice-climbing__wrapper {
+    .cont-pos(40px, 100px);
+    display: block;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .ice-climbing__wrapper {
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.ice-climbing__main {
+  width: 531px;
+}
+
+@media (max-width: @tablet-width) {
+  .ice-climbing__main {
+    text-align: right;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .ice-climbing__main {
+    width: @cont-width-mob;
+  }
+}
+
+.ice-climbing__title {
+  display: inline-block;
+  width: 245px;
+  margin: 0;
+  .bebas;
+  font-size: 75px;
+  line-height: 1;
+  position: relative;
+
+  &::before {
+    .angle(@color-green, left);
+    bottom: -35px;
+    left: -29px;
+  }
+
+  &::after {
+    .angle(@color-green, right);
+    top: -22px;
+    right: 130px;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .ice-climbing__title {
+
+    &::after {
+      top: -22px;
+      right: -10px;
+    }
+  }
+}
+
+.ice-climbing__subtitle {
+  margin-top: 43px;
+  margin-bottom: 0;
+  .bebas;
+  font-size: 42px;
+}
+
+.ice-climbing__text {
+  margin-top: 18px;
+  margin-bottom: 0;
+  .bitter;
+  font-size: 25px;
+  line-height: 45px;
+}
+
+@media (max-width: @mob-width) {
+  .ice-climbing__text {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+
+.ice-climbing__info {
+  margin-top: 33px;
+  margin-bottom: 0;
+  padding-top: 32px;
+  .raleway;
+  font-size: 25px;
+  line-height: 41px;
+  font-weight: 700;
+  border-top: 2px solid @color-green;
+}
+
+@media (max-width: @mob-width) {
+  .ice-climbing__info {
+    padding: 0;
+  }
+}
+
+.ice-climbing__add {
+  width: 241px;
+  .flex(row, wrap);
+  justify-content: space-between;
+  order: -1;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 50px;
+    right: -46px;
+    width: 36px;
+    height: 36px;
+    border-bottom: 3px solid @color-green;
+    border-right: 3px solid @color-green;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .ice-climbing__add {
+    width: @cont-width-mob;
+    margin-top: 30px;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.ice-climbing__date {
+  display: block;
+  width: 100px;
+  margin: 0;
+  .bebas;
+  font-size: 33px;
+}
+
+@media (max-width: @mob-width) {
+  .ice-climbing__date {
+    color: @color-light;
+  }
+}
+
+.ice-climbing__price {
+  display: block;
+  width: 82px;
+  margin: 0;
+  .raleway;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}

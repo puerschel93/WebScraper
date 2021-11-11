@@ -1,0 +1,225 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:350;
+
+$margin-top-under-nav-fixe:0;
+
+// SIZE NAVIGATION
+$height-navigation:70;
+
+// PLACEMENT TOP CONTENT
+$placement-top-content:70;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE AMSTERDAM
+@import "../../../slagence_X_V5/sources/scss/templates/amsterdam";
+
+// IMPORT MODULE ANNONCES1
+@import "../../../slagence_X_V5/sources/scss/modules/annonces6";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-noir";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra4";
+
+
+// STYLES PERSO LABELL IMMOBILIER 
+
+
+
+
+.nav-rotation {display:none;}
+
+
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+//		PERSO LABELL86
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+	//----------------------------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//----------------------------------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1440px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1440px) {
+		width:100%;
+	}
+}
+
+.border-content-black {
+	border:none;
+}
+
+body > section > div.left.top.width-100-pourcent.height-100-pourcent.hidden-phone.absolute.z-25.box-shadow {
+	box-shadow:none;
+}
+
+	//----------------------------------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//----------------------------------------------------------------------------------------------------------------------------------------
+
+.navigation {
+	@include border-navigation(302px, 70px, $color-touch);
+	@media only screen and (max-width : 1440px) {
+		@include border-navigation(262px, 70px, $color-touch);
+	}
+}
+
+.menu-principal {
+	font-size:1.2em;
+	> li > a {
+		padding:0 50px;
+		background:$color-touch;
+		color:$color-body;
+		@media only screen and (max-width : 1440px) {
+		padding:0 25px;
+		}
+		&:hover {
+			background:lighten($color-touch,5);
+			color:$color-body;
+		}
+	}
+}
+
+	//----------------------------------------------------------------------------------------------------------------------------------------
+	//		FOOTER
+	//----------------------------------------------------------------------------------------------------------------------------------------
+
+footer.bg-primary{
+	background:$color-body;
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+//		INDEX
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+	//----------------------------------------------------------------------------------------------------------------------------------------
+	//		MISE EN FORME TTL
+	//----------------------------------------------------------------------------------------------------------------------------------------
+.placement-top-content .bg-black {
+		background:none;
+}
+
+.slogan-coord {
+	position:absolute;
+	top:-505px;
+	right:0px;
+	color:$color-action;
+	font-size:2.5em;
+	font-weight:bold;
+	line-height:45px;
+}
+
+.slogan-coord-int {
+	position:absolute;
+	top:-372px;
+	right:0px;
+	color:$color-action;
+	font-size:2.5em;
+	font-weight:bold;
+	line-height:45px;
+	width: 1000px;
+}
+
+
+
+
+	//----------------------------------------------------------------------------------------------------------------------------------------
+	//		EXTRA
+	//----------------------------------------------------------------------------------------------------------------------------------------
+
+.module-homepage-extra {
+	height:520px;		
+}
+.module-homepage-extra .height-400 {
+	height:500px;
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+//		LISTING PA
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+	//----------------------------------------------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//----------------------------------------------------------------------------------------------------------------------------------------
+
+.recherche-annonces .height-130 {
+	height:195px;
+}
+//----------------------------------------------------------------------------------------------------------------------------------------
+//		DETAIL PA
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+	//----------------------------------------------------------------------------------------------------------------------------------------
+	//		HEADER PRIX
+	//----------------------------------------------------------------------------------------------------------------------------------------
+
+.bloc-detail-prix {
+	color:$color-font-body;
+	font-weight:bold;
+	font-size: 1.8em;
+}
+
+.agence-responsable .typo-action, .agence-email .typo-action {
+	color:$color-font-body;
+}

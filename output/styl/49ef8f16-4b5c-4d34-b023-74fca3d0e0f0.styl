@@ -1,0 +1,145 @@
+.nav
+  padding 0 30px
+  display block
+  height 100%
+
+  &_footer,
+  &_sidenav
+    padding 0
+
+  &__list
+    font-size 16px
+
+    +above(768px)
+      display flex
+      height 100%
+      align-items center
+
+    ^[0]_footer &
+      font-size 14px
+      flex-wrap wrap
+
+      +above(768px)
+        margin-left -10px
+
+    ^[0]_sidenav &
+      display block
+      height auto
+
+  &__item
+    position relative
+    height 100%
+
+    ^[0]_footer &
+      display inline-block
+      height auto
+      margin-right 10px
+
+      +above(768px)
+        display block
+        margin-right 0
+
+  &__link
+    padding 10px
+    display block
+    align-self center
+    text-decoration none
+    color #fff
+
+    +above(768px)
+      padding 10px 20px
+      display flex
+      height 100%
+      align-items center
+      justify-content center
+      transition background-color .3s, color .3s
+
+    &:hover,
+    ^[0]__item:hover &
+      color #fff
+      background-color $colorMain
+
+    ^[0]_sidenav ^[0]__item:hover & {
+      background-color transparent
+    }
+
+    ^[0]_footer &
+      padding 10px 0
+      display block
+
+      +above(768px)
+        padding 10px
+
+      &:hover
+        color $colorMain
+        background-color transparent
+
+    ^[0]_sidenav &
+      padding-right 0
+      padding-left 0
+      display inline-block
+      text-align left
+
+      &:hover
+        color $colorMain
+        background-color transparent
+
+  &__link-text
+    display inline-block
+    border-bottom 1px solid rgba(#fff,.23)
+    transition border-color .3s
+
+    ^[0]__link:hover &
+      border-bottom-color currentcolor
+
+  &__dropdown
+    position absolute
+    z-index 9000
+    left -9999px
+    top 100%
+    background-color #fff
+    box-shadow 0 3px 5px $colorDecorative
+
+    ^[0]__item:hover &
+      left 0
+
+    .sidenav &
+      position relative
+      z-index 1
+      left auto
+      background-color transparent
+      box-shadow none
+      overflow hidden
+      max-height 0
+      transition max-height .3s
+
+      &_open
+        max-height 1000px
+
+  &__dropdown-link
+    display block
+    padding 12px 20px
+    text-align left
+    color $colorSecondary
+
+    .sidenav &
+      padding 8px 0 8px 20px
+      color #fff
+
+    &:hover
+      color $colorMain
+
+  &__trigger
+    padding 10px 0
+    display flex
+    justify-content space-between
+    color #fff
+    border none
+    background-color transparent
+
+  &__trigger-icon
+    align-self center
+    margin-left 10px
+    width 12px
+    height 12px
+    fill currentColor

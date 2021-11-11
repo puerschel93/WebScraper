@@ -1,0 +1,165 @@
+#resume-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+
+  .resumeContainer--Mobile {
+    .resumeContainerTitle {
+      align-self: center;
+      padding: 5% 0;
+      font-size: 2.5vmax;
+
+      @media screen and (orientation: landscape) {
+        margin-bottom: 5%;
+      }
+
+      @media screen and (orientation: portrait) {
+        padding-bottom: 0;
+      }
+    }
+
+    .resumeUIContainer {
+      margin: 5% 0;
+
+      .resumeParentContainer {
+        // Default View (nothing highlighted)
+        .publicResponsiveRowX {
+          text-align: center;
+          // width: 15%;
+          .publicColumnContainerTitle {
+            h6 {
+              font-size: 2em;
+              padding: 25% 0;
+              line-height: 1.5;
+            }
+          }
+        }
+
+        // Mobile View when being hovered...
+        .publicContainerRow {
+          display: flex;
+
+          // Default Settings, negating the settings caused by browser view
+          &:hover .publicColumnContainerTitle {
+            background-color: transparent;
+            border: none;
+            h6 {
+              color: ivory;
+            }
+          }
+
+          .responsiveMobileColumnContainer {
+            width: 25%;
+            text-align: center;
+          }
+          .publicColumnContainerTitle {
+            h6 {
+              font-size: 2em;
+              padding: 100% 0;
+              line-height: 1.5;
+            }
+          }
+
+          .publicColumnContainer {
+            flex: 1;
+
+            .resumeParentContainer {
+              &:last-child .publicContainerRow {
+                padding-bottom: 0;
+              }
+              .publicChildContainerRow {
+                margin: 0;
+
+                &:hover .publicColumnContainerSection {
+                  border: none;
+                  h6 {
+                    background-color: transparent;
+                    color: ivory;
+                  }
+                }
+
+                .publicColumnContainerSection,
+                .publicColumnContainerDetail {
+                  margin: 0 2%;
+                }
+                .publicColumnContainerSection {
+                  h6 {
+                    font-size: 2em;
+                    color: ivory;
+                    height: 5rem;
+                    align-items: center;
+                  }
+                }
+                .publicColumnContainer {
+                  .resumeParentContainer {
+                    .publicColumnContainerDetail {
+                      font-size: 1.65em;
+                      line-height: 2;
+                      padding: 4.5% 0;
+                    }
+                  }
+                }
+                .minorContainer {
+                  border-top: 1px solid ivory;
+                  border-bottom: 1px solid ivory;
+                  width: 100%;
+                  padding: 5% 0;
+                  align-self: center;
+                  text-align: center;
+                  .minorContainerTitle {
+                    padding: 2% 0;
+                    font-size: 2em;
+                    text-decoration: none;
+                    margin-bottom: 2.5%;
+                  }
+                  .minorHighlights {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 1.5em;
+                    line-height: 2;
+                    list-style: circle;
+                    .minor-item {
+                      display: list-item;
+                      padding: 1% 0;
+                    }
+                  }
+                }
+              }
+              .activeMobileHighlightedContainer {
+                .publicColumnContainerSection {
+                  border: 1px solid lightslategrey;
+                  h6 {
+                    padding: 0 0;
+                    line-height: 3;
+                    background-color: ivory !important;
+                    color: darkslategrey !important;
+                  }
+                }
+              }
+            }
+          }
+          // Parent is highlighted
+          &:hover {
+            .publicColumnContainerTitle {
+              h6 {
+                padding: 100% 10%;
+              }
+            }
+            .publicColumnContainer {
+            }
+          }
+        }
+        .activeMobileHighlightedContainer {
+          .publicColumnContainerTitle {
+            border: 1px solid lightslategrey;
+            background-color: ivory !important;
+            h6 {
+              color: darkslategrey !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

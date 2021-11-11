@@ -1,0 +1,214 @@
+//////////////////////////////////////
+//
+// タイトル
+//
+//////////////////////////////////////
+
+ex_title-1()
+    $mp-rl(padding,,,0,30)
+    $mp-tb(padding,,,15)
+    $mp-tb(,,,140,50)
+    box-sizing: border-box
+    position: relative
+    border-bottom: solid 1px siteColor['main']
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        changeVw(width,,,12)
+        height: 100%
+        background-color: siteColor['main']
+    +breakpoint(mqMin-medium)
+        fontSize(+8,true,false)
+    +breakpoint(mqMax-medium)
+        fontSize(+2,true,,sp)
+        
+    &.has-
+        &background
+            background-color: unset !important
+            
+        &sub-background-color
+            border-bottom-color: siteColor['sub'] !important
+            &::before
+                background-color: @border-bottom-color
+            
+        &accent-background-color
+            border-bottom-color: siteColor['accent'] !important
+            &::before
+                background-color: @border-bottom-color
+            
+        &a-visited-background-color
+            border-bottom-color: siteColor['a-visited'] !important
+            &::before
+                background-color: @border-bottom-color
+            
+        &a-hover-background-color
+            border-bottom-color: siteColor['a-hover'] !important
+            &::before
+                background-color: @border-bottom-color
+            
+        &attention-background-color
+            border-bottom-color: siteColor['attention'] !important
+            &::before
+                background-color: @border-bottom-color
+            
+        &black-background-color
+            border-bottom-color: siteColor['black'] !important
+            &::before
+                background-color: @border-bottom-color
+        
+    br
+        +breakpoint(mqMax-medium)
+            display: none !important
+  
+ex_title-2()
+    border-bottom: solid 4px siteColor['main']
+    position: relative
+    display: inline-flex
+    width: 100%
+    align-items: center
+    justify-content: center
+    $mp-tb(padding,,,0,20)
+    $mp-tb(,,,60,50)
+    padding-right: 0
+    padding-left: 0
+    +breakpoint(mqMin-medium)
+        fontSize(+24,true,false)
+    +breakpoint(mqMax-medium)
+        fontSize(+4,true,,sp)
+    &::before
+        content: ''
+        position: absolute
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%)
+        background-color: siteColor['main']
+        changeVw(height,,,30)
+        changeVw(width,,,30)
+        left: 0
+        right: 0
+        margin: 0 auto
+        changeVw(bottom,,,-15 - 2)
+    &.has-
+        &background
+            background-color: unset !important
+        &sub-background-color
+            border-bottom-color: siteColor['sub'] !important
+            &::before
+                background-color: siteColor['sub'] !important
+      
+        &accent-background-color
+            border-bottom-color: siteColor['accent'] !important
+            &::before
+                background-color: siteColor['accent'] !important
+              
+        &a-visited-background-color
+            border-bottom-color: siteColor['a-visited'] !important
+            &::before
+                background-color: siteColor['a-visited'] !important
+                
+        &a-hover-background-color
+            border-bottom-color: siteColor['a-hover'] !important
+            &::before
+                background-color: siteColor['a-hover'] !important
+                
+        &mark-background-color
+            border-bottom-color: siteColor['mark'] !important
+            &::before
+                background-color: siteColor['mark'] !important
+                
+        &attention-background-color
+            border-bottom-color: siteColor['attention'] !important
+            &::before
+                background-color: siteColor['attention'] !important
+        
+    br
+        +breakpoint(mqMax-medium)
+            display: none !important
+
+
+ex_title-3(mt = 100, mb = 50, bgColor = siteColor['main'], fontSizeAdjust = 0)
+    background-color: (bgColor)
+    color: siteColor['white']
+    $mp-rl(padding,,,30)
+    $mp-tb(padding,,,10)
+    $mp-tb(,,,mt,mb)
+    +breakpoint(mqMin-medium)
+        fontSize(+8 + fontSizeAdjust,true,false)
+    +breakpoint(mqMax-medium)
+        fontSize(+2,true,,sp)
+        
+    &.has-
+        &sub-background-color
+            background-color: siteColor['sub'] !important
+            
+        &accent-background-color
+            background-color: siteColor['accent'] !important
+            
+        &a-visited-background-color
+            background-color: siteColor['a-visited'] !important
+            
+        &a-hover-background-color
+            background-color: siteColor['a-hover'] !important
+            
+        &attention-background-color
+            background-color: siteColor['attention'] !important
+            
+        &black-background-color
+            background-color: siteColor['black'] !important
+        
+        
+    br
+        +breakpoint(mqMax-medium)
+            display: none !important
+    
+ex_title-4()
+    border: solid 1px siteColor['gray']
+    position: relative
+    $mp-rl(padding,,,30)
+    $mp-tb(padding,,,8)
+    $mp-tb(,,,80,40)
+    box-sizing: border-box
+    +breakpoint(mqMin-medium)
+        fontSize(+6,true,false)
+    +breakpoint(mqMax-medium)
+        fontSize(+2,true,,sp)
+    &::before
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        height: 100%
+        changeVw(width,,,12)
+        background-color: siteColor['main']
+        
+    &.has-
+        &background
+            background-color: unset !important
+            
+        &sub-background-color
+            &::before
+                background-color: siteColor['sub'] !important
+            
+        &accent-background-color
+            &::before
+                background-color: siteColor['accent'] !important
+            
+        &a-visited-background-color
+            &::before
+                background-color: siteColor['a-visited'] !important
+            
+        &a-hover-background-color
+            &::before
+                background-color: siteColor['a-hover'] !important
+            
+        &attention-background-color
+            &::before
+                background-color: siteColor['attention'] !important
+            
+        &black-background-color
+            &::before
+                background-color: siteColor['black'] !important
+        
+    br
+        +breakpoint(mqMax-medium)
+            display: none !important

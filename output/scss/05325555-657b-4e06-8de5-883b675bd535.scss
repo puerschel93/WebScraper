@@ -1,0 +1,203 @@
+@import "variables";
+@import "body";
+main#create{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    padding-top: 10vh;
+    section#cardCreat{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        background-color: $grey;
+        margin: 1rem 0;
+        padding: 1rem;
+        box-shadow: 0 .2rem .3rem rgba(0, 0, 0, .2);
+        form{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-flow: row wrap;
+            section#photo{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-flow: row wrap;
+                article#img{
+                    width: 80%;
+                    height: 30vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $white;
+                    border: .2rem dashed $black;
+                    border-radius: .2rem;
+                    margin: 1rem 0;
+                    i{
+                        font-size: 2.3rem;
+                        color: $black;
+                    }
+                }   
+                label#imgButton{
+                    width: 30%;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $primary-color;
+                    padding: .3rem .8rem;
+                    border-radius: .2rem;
+                    box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .2);
+                    transition: all .3s ease;
+                    cursor: pointer;
+                    input{
+                        visibility: hidden;
+                    }
+                    h3{
+                        position: absolute;
+                        font-size: 1.3rem;
+                        font-family: $Lobster;
+                        color: $black;
+                    }
+                }
+                label#imgButton:hover{
+                    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .2);
+                }
+            }
+            section#forms{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-flow: row wrap;
+                label.forms{
+                    width: 80%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: .5rem 0;
+                    padding: .4rem;
+                    background-color: $white;
+                    border: 1px solid $black;
+                    border-radius: .2rem;
+                    box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .2);
+                    i, button, span{
+                        width: 10%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $black;
+                    }
+                    input{
+                        width: 80%;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                    }
+                    button{
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
+                        i{
+                            font-size: 1rem;
+                            transition: all .3s ease;
+                        }
+                    }
+                    button:hover i{
+                        color: $secundary-color;
+                    }
+                }
+                h1{
+                    width: 100%;
+                    text-align: center;
+                    font-family: $Lobster;
+                    font-size: 1.3rem;
+                    color: $black;
+                    margin: .5rem 0;
+                }
+                textarea{
+                    width: 80%;
+                    height: 20vh;
+                    padding: 1rem;
+                    resize: none;
+                    border: none;
+                    outline: none;
+                    border-radius: .2rem;
+                    box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .1);
+                }
+                article#offert{
+                    width: 80%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    margin: 1rem 0;
+                    h2{
+                        font-family: $Lobster;
+                        font-size: 1.2rem;
+                        color: $black;
+                        margin: 0 .5rem 0 0;
+                    }
+                    label{
+                        width: 30%;
+                        padding: .4rem;
+                        background-color: $white;
+                        border: 1px solid $black;
+                        border-radius: .2rem;
+                        box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .2);
+                        input{
+                            width: 100%;
+                            border: none;
+                            outline: none;
+                            background-color: transparent;
+                        }
+                    }
+                }
+                section#buttons{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    button{
+                        padding: .3rem .8rem;
+                        background-color: $primary-color;
+                        color: $black;
+                        font-family: $Lobster;
+                        border: none;
+                        outline: none;
+                        border-radius: .2rem;
+                        box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .2);
+                        cursor: pointer;
+                        transition: all .3s ease;
+                    }
+                    button:hover{
+                        box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .2);
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 768px) {
+        section#cardCreat{
+            form{
+                section#photo, section#forms{
+                    width: 50%;
+                    align-items: flex-start;
+                }
+                section#photo{
+                    article#img{
+                        height: 45vh;
+                    }   
+                }
+                section#forms{
+                    section#buttons{
+                        button{
+                            padding: .5rem 1rem;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}

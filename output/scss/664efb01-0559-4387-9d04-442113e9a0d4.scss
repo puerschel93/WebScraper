@@ -1,0 +1,274 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:0;
+
+// VARIABLE SITE TYPO
+$font-body: verdana,sans-serif;
+$font-title: verdana,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:160;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//		PERSO I2MO94
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ctbvxa');
+  src:  url('../fonts/icomoon.eot?ctbvxa#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?ctbvxa') format('truetype'),
+    url('../fonts/icomoon.woff?ctbvxa') format('woff'),
+    url('../fonts/icomoon.svg?ctbvxa#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e900";
+}
+.icon-office:before {
+  content: "\e903";
+}
+.icon-pen:before {
+  content: "\e908";
+}
+.icon-books:before {
+  content: "\e920";
+}
+.icon-file-text:before {
+  content: "\e922";
+}
+.icon-coin-euro:before {
+  content: "\e93c";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+
+.icon-v5-phone:before {
+  content: "\e942";
+}
+
+.icon-envelop:before {
+  content: "\e945";
+}
+.icon-location:before, .icon-v5-location:before {
+  content: "\e947";
+}
+.icon-printer:before {
+  content: "\e954";
+}
+.icon-bubble:before {
+  content: "\e96b";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-user-check:before {
+  content: "\e975";
+}
+.icon-search:before {
+  content: "\e986";
+}
+.icon-stats-bars:before {
+  content: "\e99c";
+}
+.icon-briefcase:before {
+  content: "\e9ae";
+}
+.icon-attachment:before {
+  content: "\e9cd";
+}
+.icon-info:before {
+  content: "\ea0c";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
+.icon-table:before {
+  content: "\ea70";
+}
+
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:9660px;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.logo img {
+	float:left;
+}
+
+.navigation {
+	@include border-navigation(188px, 40px, $color-secondary);
+}
+
+.menu-principal>li>a {
+	color:lighten($color-body,10);	
+}
+
+#menuNavigation > li.actif a {
+	background:$color-important;
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		TTL
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.h1-index {
+	position:relative;
+	font-size:0.8em;
+	text-align: left;
+	> span {
+		position: absolute;
+	    top: -110px;
+	    right: 0px;
+	    text-transform: none;
+	}
+}
+
+@media only screen and (max-width : 767px) {
+	.size-picture-container {
+		display:none;
+	}
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//		LISTING PA
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		TTL
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.phrase-recherche, .btn-nouveau {
+	display:none; 
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//		DETAIL AGENCE
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//		COORDONNEES
+	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.agence-responsable {
+	display:none;
+}
+
+.phrase-agences {
+	display:none;	
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//    DETAIL AGENCE
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  //    TTL
+  //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.coord-agence .h2-like {
+  text-transform: none;
+}

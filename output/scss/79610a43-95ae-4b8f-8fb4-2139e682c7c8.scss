@@ -1,0 +1,162 @@
+// FONT
+
+@font-face {
+	font-family: 'logo';
+	src: local('logo'),
+		 url('/font/Futura_XBlk_BT.woff2') format('woff2'),
+		 url('/font/Futura_XBlk_BT.woff') format('woff');
+		 unicode-range: U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E, U+0041-005A, U+0061-007A, U+0030-0039;
+	font-display: fallback;
+}
+
+// VARIABLE
+
+$white-color: #fff;
+$black-color: #111;
+$primary-color: #0036ff;
+$second-color: #ddbe9f;
+
+$size-s :14px;
+$size-m :18px;
+$size-l :24px;
+
+$align-top: top;
+$align-middle: middle;
+$align-bottom: bottom;
+$align-left: left;
+$align-center: center;
+$align-right: right;
+
+$futura-logo: 'logo';
+$futura: "futura-pt",sans-serif;
+
+$marquee-width: 100vw;
+$offset: 20vw;
+$move-initial: calc(-25% + $offset);
+$move-final: calc(-50% + $offset);
+$item-font-size: 10vw;
+
+// MIXIN
+
+@mixin center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin box-sizing($css-selector) {
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+}
+
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin spritebox($left, $top, $width, $height) {
+  background-repeat: no-repeat;
+  background-position: $left $top;
+  width: $width;
+  height: $height;
+}
+
+// KEYFRAMES
+
+// 이미지 회전
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+// 메인 텍스트
+@keyframes introTextAnimation {
+    from {
+        opacity: 0;
+        transform: translate(-500px, -100px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-80px, 0px);
+    }
+}
+@media screen and ( max-width: 750px ) {
+  @keyframes introTextAnimation {
+    from {
+        opacity: 0;
+        transform: translate(-500px, -50px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-5vw, 0px);
+    }
+  }
+}
+
+// 메인 텍스트 dot
+@keyframes dotAnimation {
+  10% {
+    transform: translate(1100px, 0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+// 메인 텍스트 박스 dot
+@keyframes TopBottomAnimation {
+  from {
+    opacity: 0; transition: 1s ease-in-out;
+  }
+  to {
+    opacity: 1; transition: 1s ease-in-out;
+  }
+}
+
+/* 도트 배지 */
+@keyframes dotBadge {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+/* 텍스트 애니메이션*/
+@keyframes text-marquee {
+	0% {
+		transform: translate3d($move-initial, 0, 0);
+	}
+
+	100% {
+		transform: translate3d($move-final, 0, 0);
+	}
+}
+
+/* cursor */
+.cursor {
+	position: fixed;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #f5f5f5;
+	pointer-events: none;
+	mix-blend-mode: difference;
+	-webkit-mix-blend-mode: difference;
+	z-index: 999;
+	transition: transform 0.2s;
+	opacity: 0;
+}
+
+/* background */
+body { transition: .5s ease; }
+body.bg1 { background: #111; transition: .5s ease; }

@@ -1,0 +1,204 @@
+@use './../base' as *;
+@use './../components' as *;
+
+.container {
+  @include boxSizeMax;
+  @include flexbox($flex-wrap: wrap);
+  padding: rem(14px);
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  @include flexbox($justify-content: space-between);
+
+  &__logo {
+    a > img {
+      width: 100%;
+    }
+  }
+
+  @include desktop {
+    margin: rem(40px) 0;
+
+    &__logo {
+      width: rem(256px);
+    }
+  }
+
+  @include mobile {
+    margin: rem(40px) 0 rem(90px);
+
+    &__logo {
+      width: rem(150px);
+    }
+  }
+
+  &__nav {
+    button {
+      border: 0;
+      background-color: transparent;
+    }
+
+    @include desktop {
+      .login,
+      .new-review {
+        padding: rem(6px) rem(10px);
+        min-width: rem(100px);
+        border: 2px solid $gray1;
+        border-radius: rem(30px);
+        margin-left: rem(20px);
+        img {
+          display: none;
+        }
+      }
+      .login::before {
+        content: '로그인';
+      }
+      .new-review::before {
+        content: '새 리뷰 올리기';
+      }
+    }
+
+    @include mobile {
+      .login,
+      .new-review {
+        margin-left: rem(20px);
+        img {
+          width: rem(25px);
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  width: 100%;
+  margin: rem(30px) 0;
+
+  &__list {
+    @include flexbox;
+
+    li {
+      margin-right: rem(20px);
+      padding: rem(8px);
+    }
+  }
+  &__now {
+    border-bottom: 3px solid $black;
+  }
+}
+
+.review {
+  @include desktop {
+    padding-right: rem(20px);
+    width: 80%;
+    &__list {
+      @include flexbox($justify-content: space-between, $flex-wrap: wrap);
+    }
+    &__card {
+      width: 31%;
+      height: rem(330px);
+    }
+  }
+
+  @include mobile {
+    @include autoMargin;
+    width: 100%;
+
+    &__list {
+      width: 100%;
+      @include flexbox($justify-content: space-between, $align-items: center, $flex-wrap: wrap);
+    }
+    &__card {
+      height: rem(330px);
+    }
+    @media (max-width: 449px) {
+      &__card {
+        width: 100%;
+        min-width: rem(300px);
+      }
+    }
+    @media (min-width: 450px) {
+      &__card {
+        width: 48%;
+      }
+    }
+    @media (min-width: 700px) {
+      &__card {
+        width: 31%;
+      }
+    }
+  }
+}
+
+.likes {
+  &__container {
+    position: absolute;
+    top: rem(10px);
+    right: rem(10px);
+  }
+  &__button {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    img {
+      width: rem(23px);
+    }
+  }
+}
+
+.tags {
+  border-radius: rem(10px);
+  @include boxShadow;
+  background-color: $white;
+  &__title {
+    font-size: rem(25px);
+    font-weight: 800;
+    margin-bottom: rem(25px);
+  }
+  .tag {
+    a {
+      margin-bottom: rem(5px);
+      background-color: rgba($olive, 0.3);
+      padding: rem(10px);
+      border-radius: rem(5px);
+    }
+  }
+
+  @include desktop {
+    width: 20%;
+    padding: rem(30px) rem(16px);
+  }
+  @include mobile {
+    position: absolute;
+    top: rem(130px);
+    left: 10%;
+    padding: rem(10px);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    width: 90%;
+
+    &__title {
+      display: none;
+    }
+    &__list {
+      @include flexbox;
+      overflow-x: scroll;
+    }
+    // 태그 수정 필요
+    .tag {
+      word-wrap: keep-all;
+      margin-right: rem(10px);
+      // width: rem(200px);
+      a {
+        min-width: 100%;
+        // width: rem(200px);
+        // overflow-wrap: break-word;
+        word-break: break-all;
+        display: block;
+      }
+    }
+  }
+}

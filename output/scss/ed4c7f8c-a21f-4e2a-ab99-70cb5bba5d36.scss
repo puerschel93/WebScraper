@@ -1,0 +1,293 @@
+.callback {
+  background-color: $blue;
+}
+
+.callback__wrapper {
+  margin: 0 auto;
+  display: flex;
+}
+
+.callback__inner h3 {
+  margin: 0;
+  font-family: $font-title;
+  font-weight: normal;
+  color: $white;
+}
+
+.callback__inner p {
+  margin: 0;
+  font-weight: normal;
+  color: $white;
+}
+
+.callback__list-input {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.callback__list-input input,
+.callback textarea {
+  background: transparent;
+  background-color: $callback-white;
+  border: none;
+  padding-top: 14px;
+  padding-left: 18px;
+  padding-bottom: 18px;
+}
+
+.callback__list-input input:hover,
+.callback textarea:hover {
+  background-color: $callback-hover;
+}
+
+.callback__list-input input::placeholder,
+.callback textarea {
+  font-family: $font-main;
+  font-size: 16px;
+  line-height: 22px;
+  color: $white;
+}
+
+.callback textarea {
+  display: block;
+  resize: none;
+  padding-bottom: 13px;
+}
+
+.callback__box {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+}
+
+.callback__box button {
+  cursor: pointer;
+  background: transparent;
+  text-transform: uppercase;
+  color: $white;
+  border-radius: 5px;
+  border: 1px solid $white;
+  text-align: center;
+
+  &:hover {
+    background-color: $callback-hover;
+  }
+}
+
+.callback__box input {
+  cursor: pointer;
+  position: absolute;
+  margin-top: 2px;
+  margin-left: -30px;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 0 0 1px $white;
+
+  &:hover {
+    box-shadow: 0 0 0 1px $callback-hover;
+  }
+}
+
+.callback__box input:checked {
+  background-image: url("../img/checked.svg");
+  background-repeat: no-repeat;
+  background-position: 4px 5px;
+}
+
+.callback__box label {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 16px;
+  color: $white;
+
+  &:hover {
+    color: $callback-hover;
+  }
+}
+
+@media screen and (min-width: $min-desktop-whidth) {
+  .callback {
+    background-image: url("../img/paper-airplane.webp"),
+      url("../img/polygon-group.svg"),
+      url("../../img/polygon-left-plane.svg"),
+      url("../../img/polygon-right-plane.svg");
+    background-repeat: no-repeat;
+    background-position: 25% 42%, 14% -204%, 94% 19%, 105% 83%;
+  }
+
+  .callback__wrapper {
+    max-width: 1186px;
+    justify-content: flex-end;
+  }
+
+  .callback__inner {
+    padding-top: 92px;
+    padding-bottom: 113px;
+    max-width: 35.375em;
+    padding-right: 10px;
+  }
+
+  .callback h3 {
+    font-size: 36px;
+    line-height: 51px;
+  }
+
+  .callback p {
+    padding-top: 8px;
+    padding-left: 5px;
+    padding-bottom: 52px;
+  }
+
+  .callback__list-input {
+    margin-bottom: 40px;
+  }
+
+  .callback__list-input input {
+    width: 250px;
+  }
+
+  .callback textarea {
+    margin-top: 20px;
+    width: 34.125em;
+    height: 8.1em;
+  }
+
+  .callback__box {
+    margin-top: 41px;
+  }
+
+  .callback__box button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 270px;
+  }
+
+  .callback__box label {
+    padding-top: 9px;
+    padding-left: 66px;
+  }
+}
+
+@media screen and (min-width: $min-tablet-whidth) and (max-width: $max-tablet-whidth) {
+  .callback__wrapper {
+    max-width: 591px;
+    justify-content: center;
+  }
+
+  .callback__inner {
+    padding-top: 81px;
+    padding-bottom: 105px;
+  }
+
+  .callback h3 {
+    font-size: 32px;
+    line-height: 45px;
+  }
+
+  .callback p {
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-bottom: 55px;
+  }
+
+  .callback__list-input {
+    margin-bottom: 45px;
+  }
+
+  .callback__list-input input {
+    width: 260px;
+  }
+
+  .callback textarea {
+    width: 571px;
+    height: 8.1em;
+  }
+
+  .callback__box {
+    margin-top: 45px;
+  }
+
+  .callback__box button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 280px;
+  }
+
+  .callback__box label {
+    padding-top: 9px;
+    padding-left: 76px;
+  }
+
+  .callback__box input {
+    margin-top: 1px;
+    margin-left: -34px;
+  }
+}
+
+@media screen and (min-width: $min-mobile-whidth) and (max-width: $max-mobile-whidth) {
+  .callback__wrapper {
+    max-width: 320px;
+    padding-left: 15px;
+    padding-right: 15px;
+    //justify-content: center;
+  }
+
+  .callback__inner {
+    padding-top: 30px;
+    padding-bottom: 42px;
+  }
+
+  .callback h3 {
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  .callback p {
+    padding-top: 13px;
+    padding-bottom: 26px;
+    max-width: 290px;
+  }
+
+  .callback__list-input {
+    flex-direction: column;
+  }
+
+  .callback__list-input input {
+    width: 270px;
+    padding-bottom: 22px;
+    padding-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  .callback textarea {
+    width: 270px;
+    height: 5.8em;
+    padding-top: 11px;
+    padding-bottom: 0;
+  }
+
+  .callback__box {
+    margin-top: 29px;
+    grid-template-columns: 1fr;
+  }
+
+  .callback__box button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 290px;
+  }
+
+  .callback__box label {
+    padding-top: 31px;
+    padding-left: 35px;
+  }
+
+  .callback__box input {
+    margin-top: 1px;
+    margin-left: -34px;
+  }
+}

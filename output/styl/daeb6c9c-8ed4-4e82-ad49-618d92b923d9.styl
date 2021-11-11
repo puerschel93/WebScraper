@@ -1,0 +1,203 @@
+.container-mobile
+    padding: 0
+    +media-md()
+        padding: 0 15px
+        @extend .container
+.tab-container
+    display: flex;
+    flex-wrap: nowrap
+    white-space: nowrap
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.07);
+    overflow-x: auto
+    margin-bottom: 24px
+    margin-top: 24px
+    background: $white
+    +media-lg()
+        margin-bottom: 80px
+        margin-top: 80px
+        flex-wrap: wrap;
+        white-space: inherit
+        overflow-x: inherit
+
+
+.tab-item
+    +media-lg()
+        flex: 1;
+        border-right: 1px solid #ebebeb
+    &:last-child
+        border: 0 none
+    br
+        display: none
+        +media-lg()
+            display: block
+    a
+        display: flex;
+        align-items: center
+        justify-content: center
+        font-size: 16px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.38;
+        letter-spacing: normal;
+        text-align: center;
+        color: $black;
+        background: $white
+        padding: 20px
+        height: 100%
+        +media-lg()
+            height: 80px
+            padding: 0
+            color: $primaryblue
+    &.active
+        a
+            color: $primaryblue
+            position relative
+            &:before
+                content: ''
+                width: 100%
+                height: 3px
+                background: $primaryblue
+                position: absolute
+                left: 0
+                bottom: 0
+                display: block
+                +media-lg()
+                    display: none
+            +media-lg()
+                background: $primaryblue
+                color: $white
+                border-right: 1px solid $primaryblue
+
+.card-type-container
+    margin: 0
+    +media-lg()
+        margin: 0 -15px
+
+.tab-detail-container
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0
+    padding-bottom: 0
+    +media-lg()
+        background: none
+        padding-top: 0
+        padding-bottom: 0
+    
+
+.tab-detail-item
+    width: 100%
+    padding: 0 15px 0
+    +media-lg()
+        padding: 0 0 80px 0
+    > h2
+        font-family: 'Bebas Neue';
+        font-size: 36px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: $black;
+        margin-bottom: 20px
+        padding: 0 20px
+        +media-lg()
+            margin-bottom: 40px
+
+    p
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.75;
+        letter-spacing: normal;
+        color: $darkgrey;
+        margin-bottom: 20px
+        +media-lg()
+            margin-bottom: 40px
+        &:last-child
+            margin-bottom: 0
+
+
+.inline-tab-container
+    width: 100%
+    margin-bottom: 30px
+    border-bottom: 1px solid #dbdddf
+    overflow-x: auto
+    +media-lg()
+        margin-bottom: 60px
+.inline-tab-container-scroll
+    width: 700px
+    display: flex
+    align-items: center;
+    justify-content: flex-start;
+.inline-tab-item
+    margin: 0 20px
+    +media-max-lg()
+        min-width: 106px
+    +media-lg()
+        margin: 0 40px
+    a
+        display: flex;
+        align-items: center
+        justify-content: center
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $black;
+        padding: 28px 0
+        position relative
+        &:before
+            content: ''
+            width: 100%
+            height: 3px;
+            background-color: $primaryblue;
+            left: 0
+            bottom: -1px
+            display: none
+            position: absolute
+    &.active
+        a
+            color: $primaryblue;
+            &:before
+                display: block
+    &:hover
+        a
+            color: $primaryblue;
+
+.inline-tab-detail-container
+    display: flex;
+    flex-wrap: wrap;
+    
+
+.inline-tab-detail-item
+    width: 100%
+    padding-bottom: 80px
+    > h2
+        font-family: 'Bebas Neue';
+        font-size: 36px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: $black;
+        margin-bottom: 40px
+
+    p
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.75;
+        letter-spacing: normal;
+        color: $darkgrey;
+        margin-bottom: 40px
+        &:last-child
+            margin-bottom: 0
+    

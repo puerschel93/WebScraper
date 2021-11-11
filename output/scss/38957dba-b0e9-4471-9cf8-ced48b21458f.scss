@@ -1,0 +1,263 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:700;
+
+// VARIABLE SITE TYPO
+$font-body:"Quattrocento",verdana,serif;
+$font-title:"Quattrocento",arial,serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.5em;
+$font-size-title:1.9em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:120;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+
+//------------------------------------------------------------------------------------------------
+//			PERSO HARDOY
+//------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------
+//			GENERAL
+//------------------------------------------------------------------------------------------------
+
+
+.btn-exclusif {font-size:1.05em; font-family: Roboto Slab, serif;}
+
+	//------------------------------------------------------------------------------------------------
+	//			CONTAINER
+	//------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:960px;
+	}
+}
+
+.bg-picture {
+	background-image:url('../images/bg-body.jpg');
+	background-color:$color-body;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+	//------------------------------------------------------------------------------------------------
+	//			MENU & NAV
+	//------------------------------------------------------------------------------------------------
+
+.navigation {
+	border-bottom:solid 1px $color-secondary;
+}
+
+.menu-principal {
+	line-height: 70px;
+	    font-size: 0.88em;
+	    padding: 8px 2px;
+	    @media only screen and (max-width : 1285px) {
+	    	font-size: 0.60em;
+	    }
+	    @media only screen and (max-width : 930px) {
+	    	font-size: 0.50em;
+	    }
+	    @media only screen and (max-width : 860px) {
+	    	font-size: 0.40em;
+	    }
+	>li {
+	    padding: 8px 2px;
+	    &:hover {
+	    	background-color: $color-primary;
+	    }
+	    @media only screen and (max-width : 1285px) {
+	    padding: 8px 0px;
+	    }
+	    >a {
+			border-bottom:2px solid $color-primary;
+			&:after {
+	            display: block;
+	            content: "";
+	            width: 0%;
+	            height: 2px;
+	            background-color: $color-action;
+	            margin-top: 5px;
+	            -webkit-transition: all .3s ease;
+	            		transition: all .3s ease;
+	         }
+	         &:hover {
+	            color: $color-important;
+	            background-color: $color-primary;
+	            &:after {
+	            	width: 50%;
+	            	background-color: $color-action;
+	            }
+	         }
+	    }
+	}
+}
+
+
+.nav-tabs > li > a, .nav-pills > li > a {
+padding-right: 5px;
+padding-left: 5px;
+margin-right: 2px;
+line-height: 14px;
+}
+
+//------------------------------------------------------------------------------------------------
+//			INDEX
+//------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------
+	//			MOTEUR
+	//------------------------------------------------------------------------------------------------
+
+.bg-mini-moteur {
+	background:$color-primary;
+}
+
+	//------------------------------------------------------------------------------------------------
+	//			ENCART PA
+	//------------------------------------------------------------------------------------------------
+
+.module-homepage .homepage-bien-bloc, .homepage-info-bien {
+	display:none;
+}
+
+.module-homepage .height-170 {
+	height:240px;
+}
+
+
+	//------------------------------------------------------------------------------------------------
+	//			PUB FULL
+	//------------------------------------------------------------------------------------------------
+
+.fb-page {
+	border: solid 10px $color-block;
+}
+
+.bg-pub-bottom {
+	background:$color-primary;
+	box-shadow:none;
+	.container {
+		width:100%;
+		padding:0px;
+	}
+}
+
+.background-pub-avis {
+	background-image:url('../images/pub/homepage_scrolling_avis.jpg');
+	background-color:$color-body;
+	background-repeat:no-repeat;
+}
+
+.pub-estimation-helsinki {
+	height: 600px;
+}
+
+.titre-pub {
+	font-size: 1.5em;
+}
+
+.vertical-pano {
+	background:$color-block;
+}
+
+
+.cookie-banner {
+	background-color: $color-primary;
+	color: $color-nav-footer;
+}
+
+.text_cookies .button_submit {
+	background-color: $color-action !important;
+}
+
+	//------------------------------------------------------------------------------------------------
+	//			PAGE AGENCE
+	//------------------------------------------------------------------------------------------------
+
+body > section > div > div > div > div > div.span12 > div.row-fluid.bloc-agence.bloc-agence-top > div.span7 > div:nth-child(3) > div > ul > li.agence-responsable {color: $color-nav-footer;}
+
+body > section > div > div > div > div > div.span12 > div.row-fluid.bloc-agence.bloc-agence-top > div.span7 > div:nth-child(3) > div > ul > li.agence-email {color: $color-nav-footer;}
+
+	//------------------------------------------------------------------------------------------------
+	//			FOOTER
+	//------------------------------------------------------------------------------------------------
+
+
+	//------------------------------------------------------------------------------------------------
+	//			PAGE LISTING
+	//------------------------------------------------------------------------------------------------
+
+.height-370  {height: 600px;}
+
+
+.btn-cdc {display:none;}
+.btn-nouveau {display:none;}
+
+.prix-annonce {margin-top:50px;}
+
+#annonce146651441 > div > div.span3 > div:nth-child(1) > div > a > span > img {height: 200px;}

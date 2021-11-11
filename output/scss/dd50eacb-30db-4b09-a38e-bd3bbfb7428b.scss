@@ -1,0 +1,230 @@
+.form {
+  width: 100%;
+}
+.form__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column;
+  }
+
+  &--nowrap {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+
+    @media (max-width: $mobile-width) {
+      align-items: center;
+    }
+  }
+
+  &--popup {
+    display: block;
+  }
+}
+.form__wrapper > label {
+  display: block;
+  width: calc((100% - 31px) / 2);
+  margin-right: 31px;
+  margin-bottom: 40px;
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+.form__wrapper > label:nth-of-type(2n) {
+  margin-right: 0;
+}
+.form__wrapper--popup > label {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 31px;
+}
+.form input,
+.form textarea {
+  font: inherit;
+  letter-spacing: 0.05em;
+  color: inherit;
+  background-color: rgba($white, 0.1);
+  border: 1px solid transparent;
+}
+.form input:hover,
+.form textarea:hover {
+  box-shadow: 0px 0px 0px 1px $white;
+  transition: 500ms;
+}
+.form input[type="text"],
+.form input[type="tel"] {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 11px;
+  padding-right: 16px;
+  padding-bottom: 17px;
+  padding-left: 16px;
+
+  @media (max-width: $tablet-width) {
+    padding-top: 12px;
+    padding-right: 19px;
+    padding-left: 19px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+.form--popup input[type="text"],
+.form--popup input[type="tel"] {
+  padding-top: 12px;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+.form input::placeholder,
+.form textarea::placeholder {
+  font: inherit;
+  letter-spacing: 0.05em;
+  color: inherit;
+  opacity: 1;
+}
+.form textarea {
+  display: block;
+  width: 100%;
+  min-height: 154px;
+  resize: none;
+  margin-bottom: 43px;
+  padding-top: 9px;
+  padding-right: 16px;
+  padding-bottom: 9px;
+  padding-left: 16px;
+
+  @media (max-width: $tablet-width) {
+    min-height: 159px;
+    padding-top: 10px;
+    padding-right: 17px;
+    padding-bottom: 10px;
+    padding-left: 17px;
+    margin-bottom: 46px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-height: 104px;
+    margin-bottom: 30px;
+  }
+}
+.form--popup textarea {
+  padding-top: 9px;
+  padding-right: 24px;
+  padding-bottom: 9px;
+  padding-left: 24px;
+  min-height: 103px;
+  margin-bottom: 30px;
+}
+.form button {
+  box-sizing: border-box;
+  color: inherit;
+  border: 1px solid $white;
+  border-radius: 5px;
+  flex: 0 1 270px;
+  margin-right: 38px;
+  padding-top: 13px;
+  padding-right: 15px;
+  padding-bottom: 13px;
+  padding-left: 15px;
+
+  @media (max-width: $tablet-width) {
+    flex: 0 1 282px;
+    padding-bottom: 15px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-right: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 290px;
+    margin-bottom: 24px;
+  }
+}
+.form  button:hover {
+  opacity: 0.8;
+  transition: 500ms;
+}
+.form  button:active {
+  opacity: 0.6;
+  transition: 500ms;
+}
+.form--popup button {
+  width: 100%;
+  padding-bottom: 14px;
+  margin-right: 0;
+  margin-bottom: 28px;
+}
+.form__checkbox {
+  flex: 0 1 262px;
+
+  @media (max-width: $tablet-width) {
+    flex: 0 1 272px;
+  }
+
+  @media (max-width: $mobile-width) {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 290px;
+  }
+}
+.form__checkbox label {
+  font-size: 14px;
+  line-height: 16px;
+  opacity: 0.8;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+  padding-top: 8px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  padding-left: 33px;
+
+  @media (max-width: $tablet-width) {
+    padding-left: 36px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-left: 33px;
+    padding-top: 7px;
+  }
+}
+.form__checkbox--popup label {
+  padding-top: 7px;
+  padding-left: 50px;
+
+}
+.form__checkbox input:hover + label,
+.form__checkbox input:focus + label {
+  color: rgba($white, 0.8);
+}
+.form input[type="checkbox"] + label:before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid $white;
+}
+.form input[type="checkbox"]:focus + label:before {
+  outline: 2px solid $black;
+}
+.form input[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background-image: url("../img/check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}

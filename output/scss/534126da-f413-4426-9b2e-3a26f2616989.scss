@@ -1,0 +1,188 @@
+// ************************ RESTAURANT - HEADER DES PAGES ************************
+.flexDisplayRestaurants {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    .positionFleche {
+        font-size: 30px;
+        justify-content: center;
+        left: 15px;
+        position: absolute;
+    }
+}
+
+// ************************ IMAGE DE PRÉSENTATION DU RESTAURANT ************************
+.imageRestaurantPages {
+    height: 338.66px;
+    object-fit: cover;
+    width: 100%;
+}
+
+// ************************ MENU - PARTIE PRINCIPALE DES PAGES ************************
+.menu {
+    border-radius: 40px 40px 0 0;
+    margin-top: -65px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    position: relative;
+    .flexTesting {
+        display: flex;
+    }
+    .correctionHautMenu {
+        gap: 95px;
+    }
+    .hautMenu {
+        align-items: center;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        .TitreMenu {
+            font-family: 'shrikhand';
+            font-size: 27px;
+        }
+        .coeurMenu {
+            background: #F6F6F6;
+            font-size: 25px;
+            margin: unset;
+            padding: unset;
+        }
+        .coeurMenu:hover {
+            transition: 0.2s;
+            background:linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            font-weight: bold;
+        }
+    }
+}
+.menuSection {
+    align-items: center;
+    display: flex;
+    flex-direction: unset;
+    flex-wrap: wrap;
+    justify-content: center;
+    .menuBlock {
+        display: flex;
+        flex-direction: column;
+        margin: 2%;
+        width: 350px;
+        .typePlat {
+            border-bottom: solid 3px #99E2D0;
+            font-size: 15px;
+            margin-left: 10px;
+            opacity: 0.7;
+            padding-bottom: 6px;
+            width: 50px;
+        }
+    }
+}
+.article1 {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    margin-bottom: 5%;
+    overflow: hidden;
+    position: relative;
+    &:hover > .menudesc {
+        animation: texte 0.5s;
+    }
+    &:hover > .confirmation {
+        right: -100px;
+        transform: translateX(0);
+    }
+    &:hover > .confirmation > div.ajout i {
+        font-size: 30px;
+    }
+    .menudesc h3 {
+        font-size: 18px;
+        margin-bottom: 3px;
+        margin: 0px;
+        padding: 0;
+    }
+    .menudesc p {
+        display: flex;
+        font-size: 14px;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+    }
+    .menudesc {
+        animation: texter 0.5s;
+        flex: 1;
+        margin: 3%;
+        overflow: hidden;
+        white-space: nowrap;
+        h3, h4 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .confirmation {
+        background-color: white;
+        display: flex;
+        height: 100%;
+        position: absolute;
+        right: -124px;
+        transform: translateX(52px);
+        transition: 1s;
+        width: 60%;
+        .prix {
+            align-items: flex-end;
+            display: flex;
+            padding-bottom: 3%;
+            padding-right: 5%;
+        }
+        div.ajout {
+            align-items: center;
+            background-color: #99e2d0;
+            color: white;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            z-index: -1;
+        }
+        .ajout {
+            width: 35%;
+        }
+    }
+    .menudesc, div.ajout i {
+        transition: transform 500ms ease-in-out;
+    }
+
+    @keyframes texte {
+        0% { margin-right: 52px; }
+        100% { margin-right: 100px; }
+    }
+    @keyframes texter {
+        0% { margin-right: 100px; }
+        100% { margin-right: 52px; }
+    }
+}
+.margeTypeCommande {
+    padding-bottom: 100px;
+    padding-top: 50px;
+    .lienCommander:hover {
+        background: linear-gradient( #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da 120%);
+        box-shadow: 0px 3px 12px 0 rgba(0, 0, 0, 0.4);
+        transition: 0.5s;
+    }
+    .lienCommander {
+        background: linear-gradient( #FF79DA, #9356DC 120%); 
+        border-radius: 30px 30px 30px 30px;
+        box-shadow: 0px 1px 6px 0 rgba(0,0,0,0.4);
+        color: white;
+        display: block;
+        font-weight: bold;
+        margin: auto;
+        padding: 15px;
+        padding-left: 45px;
+        padding-right: 45px;
+        width: max-content;
+    }
+}
+

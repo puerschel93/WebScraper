@@ -1,0 +1,454 @@
+transition()
+	-webkit-transition arguments
+	-moz-transition arguments
+	-ms-transition arguments
+	-o-transition arguments
+	transition arguments
+
+box-sizing()
+	-moz-box-sizing arguments
+	-webkit-box-sizing arguments
+	box-sizing arguments
+
+border-radius()
+	-webkit-border-radius arguments
+	-moz-border-radius arguments
+	-ms-border-radius arguments
+	-o-border-radius arguments
+	border-radius arguments
+
+box-shadow()
+	-webkit-box-shadow arguments
+	-moz-box-shadow arguments
+	-ms-box-shadow arguments
+	-o-box-shadow arguments
+	box-shadow arguments
+
+opacity(n)
+	opacity n
+	if support-for-ie
+		filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')')
+
+article p
+	box-sizing border-box
+	text-align left
+	
+
+body
+	background url('/images/keyarts/bg_canvas.png')
+	font-size 16px
+
+footer
+	background-color #222222
+  	bottom 0px 
+  	color white
+  	font-size .7em
+  	height 42px 
+	position relative
+	width 100%
+	& #desarrollado
+		botom 100%
+		position absolute
+		margin 0 0 -37px 0
+		right 130px
+	& #facebook-footer
+		position absolute
+		top -20px
+		right 0px
+
+	& #twitter-footer
+		position absolute
+		top -20px
+		right 60px
+
+h2.titulo-article
+	background url('/images/keyarts/separador.png')
+	background-repeat repeat-x
+	background-position bottom left
+	box-sizing border-box 
+	font-family: 'Oswald', Arial, Helvetica, sans-serif;
+	font-size 3em
+	font-style normal
+	font-weight normal
+	margin 16px 0 
+	letter-spacing -1.5px
+	padding-bottom 13px
+	text-shadow 2px 2px 0px #CCCCCC
+	text-align left
+	text-transform uppercase
+	width 100%
+
+h2.titulo-galeria
+	font-family: 'Oswald', Arial, Helvetica, sans-serif;
+	font-size 3em
+	font-style normal
+	font-weight normal
+	letter-spacing -1.5px
+	line-height .7em
+	margin 16px 0 
+	padding 0
+	position relative
+	text-shadow 2px 2px 0px #CCCCCC
+	text-align left
+	text-transform uppercase
+	width 100%
+	& span
+		bottom -1em
+		font-family: 'Oswald', Arial, Helvetica, sans-serif;
+		font-size 1.5rem
+		font-style normal
+		font-weight normal
+		letter-spacing -1.5px
+		right 2em
+		text-transform uppercase
+		position absolute 
+		
+	&.titulo-galeria-find
+		background url('/images/keyarts/separador.png')
+		background-repeat repeat-x
+		background-position top left
+		margin 16px 0 24px 0
+		padding-top 26px
+
+
+header
+	margin 1em auto
+	text-align center
+	position relative
+	width 100%
+
+nav 
+	background url('/images/keyarts/menu.png')
+	background-position top center
+	background-repeat no-repeat
+
+	& > a
+		display none
+	& a
+		color white
+		text-decoration none
+		text-transform uppercase
+		display block
+		padding 10px 15px
+		&:hover
+		&:active
+			text-decoration underline
+	& li
+		position relative
+	& li:hover > ul
+		max-height 300px
+	& > ul
+		height 75px
+		list-style none
+		padding 0
+
+		& > li
+			display inline-block
+			vertical-align top
+			& > ul
+				left -40px
+				top 100%
+				position absolute
+				max-height 0px
+				overflow hidden
+				transition max-height 1s linear
+				width 250px
+				z-index 2000
+				& > li
+					background url('/images/keyarts/menu.png')
+					background-position top center
+					background-repeat no-repeat
+					list-style none
+					margin-bottom 1px solid red
+					text-align left
+
+
+#boton-comprar
+	text-align left
+	position relative
+	& > a
+		background url('/images/keyarts/comprar.png') no-repeat center right
+		color white
+		height 24px
+		margin-left 5px
+		text-decoration none
+		text-transform uppercase
+		padding 1em
+		width 150px
+	&:hover ul.menu-comprar
+		max-height 300px
+	& ul.menu-comprar
+		position absolute
+		bottom 6px
+		left -35px
+		max-height 0px
+		overflow hidden
+		transition max-height 1s linear
+		width 250px
+		z-index 2000
+		& li
+			background url('/images/keyarts/menu.png')
+			background-position top center
+			background-repeat no-repeat
+			list-style none
+			margin-bottom 1px solid red
+			text-align left
+			& a
+				color white
+				text-decoration none
+				text-transform uppercase
+				display block
+				padding 10px 15px
+
+#contenedor
+	margin 0 auto
+	min-height 400px
+	width 950px
+
+#contenido
+	text-align center
+	&.botellas header h1
+		color black
+		margin .2em 0
+		text-align left
+		text-transform uppercase
+		line-height .5em
+	&.botellas header h2
+		margin 0
+		text-align left
+		text-transform uppercase
+
+#contenido-footer
+	padding .7em
+
+#desarrollado img
+	opacity .5
+	filter(opacity=50)
+	transition all 1s ease
+
+#desarrollado:hover img
+	opacity 1
+	filter(opacity=100)
+
+#foto-la-nina
+	margin 0 auto
+	width 100%
+	& img
+		border 6px solid white
+		border-radius .2em
+		box-sizing border-box
+		box-shadow  0 0 0.3em gray
+		max-width 99%
+
+#lenguajes
+	top 0px
+	right 0px
+	position absolute
+
+#lenguajes #lenguaje-es a,
+#lenguajes #lenguaje-en a
+	color gray
+	text-decoration none
+	text-transform uppercase
+	text-shadow  0 0 0.1em gray
+	font-size .7em
+
+#lenguajes span:first-child
+	border-right 1px solid gray
+	height 1em
+#lenguajes span:last-child
+	margin-left 5px
+
+#nav-left
+	background url('/images/keyarts/menu.png') top left no-repeat
+	height 75px
+	left -60px
+	top 132px
+	position absolute
+	width 80px
+#nav-right
+	background url('/images/keyarts/menu.png') top right no-repeat
+	height 75px
+	top 132px
+	right -60px
+	position absolute
+	width 80px
+
+#menus-botellas
+	background url('/images/keyarts/bottletour-submenu.png') no-repeat center top
+	height 40px
+	margin-bottom 1em
+	width 100%
+	& ul
+		list-style none
+		padding 0
+		& li
+			display inline-block
+			vertical-align top
+			& a
+				font-size .8em
+				text-transform uppercase
+				text-decoration none
+				margin-left .1em
+			& a.active	
+			& a:hover
+				text-decoration underline
+
+#redes-sociales
+	position absolute
+	right 0px
+	top 80px
+	& figure
+		display inline-block
+		vertical-align top
+
+#redes-sociales-pagina
+	text-align left
+	width 100%
+	& figure
+		display inline-block
+		vertical-align top
+
+#botella 
+	position relative
+	& .descripcion-botella
+		left 0px
+		position absolute
+		top 0px
+		width 40%
+		& header h1
+		& header h2
+			font-family: 'Oswald', Arial, Helvetica, sans-serif;
+			font-style normal
+			font-weight normal
+			letter-spacing -1.5px
+			text-shadow 2px 2px 0px #CCCCCC
+		& header h1
+			font-size 2em
+		& header h2
+			font-size 3em
+		& p
+			border-left 6px solid red
+			padding-left 5px
+	& .mensaje-toltip
+		font-size 1em;
+		text-transform capitalize
+		position absolute
+		&.right
+			text-align right
+			right 125px
+		&.left
+			text-align left
+			left 95px
+
+
+.botellas
+	position relative
+	& #redes-sociales-pagina
+		text-align right
+
+.contenedor-galeria
+	box-sizing border-box
+	margin 0 auto
+	padding 0
+	width 95%
+	
+.contacto
+	display inline-block
+	text-align center
+	vertical-align top
+	width 45%
+
+.espadin
+	color #920d10
+
+.madrecuixe 
+	color #8c00ec
+
+.tobala
+	color #72ec03
+
+.tepextate
+	color #033cff
+
+.pechuga
+	color #20c2e8
+
+.primario-mezcal
+	color #f2f2f2
+
+.primario-licor
+	color #b40004
+
+.galeria
+	padding .1em 0 .5em 0
+	position relative
+	width 100%
+	& ul 
+		list-style none
+		margin 0
+		padding 0
+		& li
+			box-sizing border-box
+			display inline-block
+			margin  0
+			padding 5px
+			vertical-align top
+			&.item-regular
+				background url('/images/keyarts/galeria_about.png') no-repeat center center
+				background-size 100% 100%
+				height 225px
+				width 290px
+			&.item-small
+				background url('/images/keyarts/retail_galeria.png') no-repeat center center
+				background-size 100% 100%
+				height 146px
+				width 195px
+			&.item-distribuidores
+				background url('/images/keyarts/separadorvertical.png') no-repeat top right
+				height 422px
+				width 300px
+			& a
+				margin 0 auto
+				vertical-align middle
+				& img
+					max-height 100%
+					width 100%
+
+	& figure.control-galeria-izquierda
+		margin -23px -25px 0 0
+		right 100%
+		top 50%
+		position absolute
+		z-index 1000
+		& a
+			background url('/images/arrow_left.png') no-repeat center center
+			box-sizing border-box
+			color transparent
+			height 46px
+			padding 15px
+			width 32px
+	& figure.control-galeria-derecha
+		left 100%
+		margin -23px 0 0 -25px
+		top 50%
+		position absolute
+		z-index 1000
+		& a
+			background url('/images/arrow_right.png') no-repeat center center
+			box-sizing border-box
+			color transparent
+			height 46px
+			padding 15px 15px
+			width 32px
+	&.distribuidores
+		padding 0
+		& figure.control-galeria-izquierda
+			margin 0 -25px 0 0
+			top 1em
+		& figure.control-galeria-derecha
+			margin 0 0 0 -25px
+			top 1em	
+
+
+

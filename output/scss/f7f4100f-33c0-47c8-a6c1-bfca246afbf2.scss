@@ -1,0 +1,90 @@
+@mixin fontBold {
+    font-family: Nunito-Bold;
+    font-size: 14px;
+}
+
+@mixin row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@include breakpoint(mobile) {
+    .header-section {
+        .header-title {
+            display: none;
+        }
+        .header-container {
+            display: none;
+        }
+    }
+}
+@include breakpoint(tablet) {
+}
+@include breakpoint(laptops) {
+    .header-section {
+        width: 100%;
+        &-heroBG {
+            position: absolute;
+            top: -220px;
+            z-index: -1 !important;
+            height: 50em;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .header {
+            @include row();
+            justify-content: space-around;
+            position: relative;
+            padding: 0 5%;
+            .header-title {
+                position: relative;
+                top: -45px;
+                &-logo {
+                    img {
+                        height: 20px;
+                    }
+                }
+            }
+
+            .header-container {
+                @include row();
+                position: relative;
+                top: -100px;
+                height: 150px;
+                &-title {
+                    list-style: none;
+                    margin: 0 10px;
+                    &-btn {
+                        background-color: transparent;
+                        border: none;
+                        padding-right: 25px;
+                        position: relative;
+                        bottom: -25px;
+                        &-txt {
+                            @include fontBold();
+                            color: $base-color;
+                            text-decoration: none;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                &-title:hover {
+                    background-clip: border-box;
+                    background-color: $secondary-color;
+                    padding: 70px 0 60px 0;
+                    border-radius: 0 0 5px 5px;
+                }
+
+                button {
+                    font-size: 12px;
+                    margin-left: 30px;
+                    position: relative;
+                    top: 50px;
+                }
+            }
+        }
+    }
+}

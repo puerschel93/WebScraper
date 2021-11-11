@@ -1,0 +1,718 @@
+.widget{
+  margin-bottom:$vertical-rhythm;
+  @extend %clearfix;
+  ul{
+    padding-left:2em;
+  }
+  select{
+    min-width:inherit;
+    width:100%;
+  }
+}
+
+/* Calendar */
+
+#wp-calendar{
+  width:95%;
+  margin-bottom:15px;
+  clear:both;
+  padding:0;
+}
+
+#wp-calendar caption{
+  padding:10px;
+}
+
+#wp-calendar th,
+#wp-calendar td{
+  text-align:center;
+  padding:3px 0;
+}
+
+#wp-calendar td{
+  background:transparent;
+}
+
+.comment-form{
+  p{
+    width:100%;
+    overflow:hidden;
+    padding:0 0 10px;
+    margin:0;
+  }
+  label{
+    display:block;
+    padding:0 0 5px;
+  }
+  textarea,
+  input[type='text']{
+    margin:0 4px 0 0;
+  }
+  textarea{
+    width:96%;
+    margin:0;
+  }
+  input[type='submit']{
+    display:block;
+    float:none;
+  }
+}
+
+.post-password-form{
+  label{
+    display:block;
+  }
+  input[type='password']{
+    margin:0 4px 0 0;
+    width:300px;
+  }
+}
+
+.search-form{
+  @extend %clearfix;
+  input{
+    float:left;
+    &[type='search']{
+      margin:0 4px 0 0;
+      width:150px;
+    }
+  }
+}
+
+.post-password-form{
+  p{
+    @extend %clearfix;
+  }
+  input{
+    float:left;
+    &[type='password']{
+      width:150px;
+    }
+  }
+}
+
+.comment-form,
+.post-password-form,
+.search-form,
+#search_block{
+  button,
+  input[type='submit']{
+    @include animate(background-color);
+    background:$btn-background;
+    color:$btn-color;
+    height:40px;
+    padding:0 10px;
+    border: 0;
+    &:hover {
+      background-color: lighten($btn-background, 10%);
+    }
+  }
+}
+.search-form,
+.post-password-form,
+#search_block{
+  margin-bottom:15px;
+  @extend %clearfix;
+  p{
+    @extend %clearfix;
+  }
+  input{
+    float:left;
+    height:40px;
+    &[type='search'],
+    &[type='text']{
+      margin:0 4px 0 0;
+      width:150px;
+    }
+    &[type='password']{
+      width:150px;
+    }
+  }
+  input[type="submit"],
+  button{
+    height:40px;
+  }
+}
+
+.commentlist{
+  margin:0 0 $vertical-rhythm;
+  .edit-link{
+    margin:0;
+  }
+  .avatar-holder{
+    float:left;
+    margin:0 $vertical-rhythm 4px 0;
+  }
+}
+
+.commentlist-item{
+  .commentlist-item{
+    padding:0;
+    @include media(">=tablet") {
+      padding:0 0 0 2em;
+
+    }
+  }
+}
+
+.comment,
+.commentlist-holder{
+  overflow:hidden;
+}
+
+.commentlist-item .commentlist-item,
+.commentlist-item + .commentlist-item{
+  padding-top:$vertical-rhythm;
+}
+
+.widget_calendar{
+  #prev{
+    padding-left:5px;
+    text-align:left;
+  }
+  #next{
+    padding-right:5px;
+    text-align:right;
+  }
+}
+
+.gallery-item{
+  dt{
+    float:none;
+    padding:0;
+  }
+}
+
+.navigation,
+.navigation-comments,
+.pagination{
+  position:relative;
+  vertical-align:middle;
+  padding:10px 0 20px 0;
+  width:100%;
+  overflow:hidden;
+  text-transform:uppercase;
+  @include media("<desktop") {
+    font-size:14px;
+  }
+  @include media("<tablet") {
+    font-size:12px;
+  }
+  @include media ('<phone') {
+    font-size: 11px;
+  }
+  .screen-reader-text{
+    position:absolute;
+    left:-99999px;
+  }
+
+  .current{color:#ccc;}
+
+  .page-numbers{
+    display:inline-block;
+    vertical-align:middle;
+    padding:10px 15px;
+    @include media("<tablet") {
+      padding:10px 8px;
+    }
+    &.current:hover{
+      background:none;
+      color:#ccc;
+    }
+    @include media('<tablet') {
+      padding:8px;
+    }
+  }
+
+  .next,
+  .prev,
+  .al,
+  .ar{
+    @include animate(background-color);
+    display:inline-block;
+    vertical-align:middle;
+    max-width:50%;
+    background:$btn-background;
+    color:#fff;
+    text-decoration:none;
+    &:hover {
+      background-color: lighten($btn-background, 10%);
+    }
+    &.disabled{
+      background:#b3b3b3;
+      border-color:#b3b3b3;
+      pointer-events:none;
+    }
+    a{
+      display:inline-block;
+      vertical-align:top;
+      padding:10px 15px;
+      color: $white;
+      text-decoration: none;
+      @include media("<tablet") {
+        padding:10px;
+      }
+    }
+  }
+  a{
+    color:inherit;
+  }
+}
+
+.navigation-single{
+  @extend %clearfix;
+  margin-bottom:$vertical-rhythm;
+  .next,
+  .prev{
+    float:left;
+    vertical-align:middle;
+    max-width:50%;
+    background:$btn-background;
+    color:$btn-color;
+    text-decoration:none;
+    a{
+      color:inherit;
+      text-decoration:none;
+      padding:5px;
+      display:block;
+      @include media('<tablet') {
+        padding:.2em;
+      }
+    }
+  }
+  .next{
+    float:right;
+  }
+}
+
+/* Begin Images */
+
+img.border {
+  padding: 5px;
+  border:1px solid #ccc;
+}
+
+.wp-caption{
+  max-width:100%;
+  clear:both;
+  /* Image does not overflow the content area */
+  &.alignnone{
+    margin: 5px 0 20px 0;
+  }
+  .wp-caption-text{
+    font-size:16px;
+    line-height:1.9;
+    margin:0;
+    padding:5px 0 0;
+    color: $dark-blue;
+    font-style: italic;
+  }
+  img{
+    margin:0 0 9px 0;
+    padding:0;
+    border:0;
+    vertical-align:top;
+    width:auto;
+  }
+  p{
+    margin:.4em 0 0;
+  }
+}
+
+div.aligncenter,
+figure.aligncenter{
+  margin:0 auto $vertical-rhythm;
+  text-align:center;
+}
+
+img.aligncenter{
+  display:block;
+  margin:0 auto 20px;
+}
+
+.aligncenter {
+  margin: 5px auto 20px auto;
+}
+
+img.alignleft,
+img.alignright{
+  @include media("<desktop") {
+    max-width:50%;
+  }
+}
+
+.alignleft{
+  float:left;
+  margin:0 $vertical-rhythm 10px 0;
+}
+
+.alignright{
+  float:right;
+  margin:0 0 10px $vertical-rhythm;
+}
+
+.alignnone{
+  margin:0;
+}
+
+img.wp-smiley{
+  padding:0;
+  border:none;
+}
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+  margin: 0;
+}
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.fluid-iframe{
+  display:block;
+  position:relative;
+  padding-bottom:56%;
+  iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    margin:0;
+  }
+}
+
+.mejs-container{
+  margin-bottom:$vertical-rhythm;
+}
+
+.wp-caption-text,
+.gallery,
+.alignnone,
+.gallery-caption,
+.sticky,
+.bypostauthor{
+  height:auto;
+}
+
+.al,
+.navigation .next{
+  @include animate(background-color);
+  float:left;
+  color: $dark-gray;
+  background-color: $btn-background;
+  &:hover {
+    background-color: lighten($btn-background, 10%);
+  }
+}
+
+.ar,
+.navigation .prev{
+  @include animate(background-color);
+  float:right;
+  color: $dark-gray;
+  background-color: $btn-background;
+  &:hover {
+    background-color: lighten($btn-background, 10%);
+  }
+}
+
+.posts-list p{
+  margin:0;
+}
+
+.posts-list .post{
+  margin:0 0 60px;
+  @include media("<tablet") {
+    margin:0 0 20px;
+  }
+}
+
+.title{
+  h1{
+    margin:0;
+  }
+}
+
+.post .title{
+  margin-bottom:10px;
+}
+
+.post .postmetadata{
+  margin-bottom:10px;
+}
+
+.textwidget p{
+  padding:0 0 10px 0;
+}
+
+.center{
+  text-align:center;
+}
+
+.hidden{
+  display:none;
+}
+
+code br{
+  display:none;
+}
+
+pre,
+code{
+  font-family:mono-space, monospace;
+  border:1px solid #eee;
+  padding:20px;
+  display:block;
+  margin:0 0 20px 0;
+  overflow:auto;
+  white-space:pre;
+  font-size:12px;
+  line-height:20px;
+}
+
+code{
+  padding:1px 20px 0 20px;
+  background:#f6f6f6;
+  border-top:0;
+  border-bottom:0;
+}
+
+/* Various Tags & Classes */
+
+acronym,
+abbr,
+span.caps {
+  cursor: help;
+}
+
+acronym,
+abbr {
+  border-bottom: 1px dashed #dfcfba;
+}
+
+sup {
+  position: relative;
+  top: -5px;
+}
+
+sub {
+  position: relative;
+  top: 5px;
+}
+
+.last{
+  margin-right:0 !important;
+  clear:right;
+}
+
+.clear{
+  clear:both;
+  line-height:0;
+}
+
+.page-link{
+  padding:0 0 15px;
+}
+
+.sticky{}
+
+.bypostauthor{}
+
+/* Respond */
+
+.comments{
+  clear:both;
+}
+
+#respond{
+  margin:20px 0 20px 0;
+  overflow:hidden;
+}
+
+.commentlist #respond{
+  margin:0 0 20px 0;
+}
+
+#respond .comment-reply-title small{
+  font-size:12px;
+  font-weight:normal;
+}
+
+/* Comments*/
+
+#comments,
+#reply-title{
+  margin:0 0 15px 0;
+  line-height:1.6em;
+}
+
+.commentlist{
+  margin-left:-2em;
+  padding:0;
+  text-align:justify;
+  line-height:1.6em;
+  @include media("<tablet") {
+    margin-left:0;
+  }
+}
+
+.commentlist .comment{
+  padding:0 0 0 2em;
+  @include media("<tablet") {
+    padding:0;
+  }
+}
+.commentlist .comment,
+.commentlist + .comment{
+  padding-top:1.2em;
+}
+.commentlist .commentlist{padding:0;}
+.commentlist .comment-author{
+  margin-bottom:0.5em;
+  @extend %clearfix;
+}
+.commentlist .comment-metadata{margin-bottom:0.5em;}
+.commentlist .comment-author img{
+  float:left;
+  margin:0 1.2em 4px 0;
+}
+.comment .comment-respond{
+  margin-left:20px;
+}
+
+.comment-body{
+  margin:0 0 20px;
+}
+.comment-body .reply{
+  padding-bottom: 15px;
+}
+.parent.comment .comment {
+  margin-left: 30px;
+  @include media("<phone") {
+    margin-left:5%;
+  }
+}
+.comment-author.vcard{
+  margin-bottom:10px;
+}
+
+.breadcrumb{
+  padding-bottom: 20px;
+}
+.post .title h3{margin-bottom:1em;}
+
+.divider{
+  height:71px;
+  @include media("<desktop") {
+    height:30px;
+  }
+  @include media("<tablet") {
+    display:none;
+  }
+}
+
+.wpcf7-not-valid-tip{
+  display:block;
+  padding-top:5px;
+}
+.wpcf7-response-output{
+  text-align:center;
+}
+.wpcf7-not-valid-tip,
+.wpcf7-validation-errors{
+  color:#d93c3c;
+}
+
+.error input:not([type="submit"]){
+  border-color:red !important;
+}
+
+.container.wp {
+  @extend %clearfix;
+  padding: 30px 15px;
+  @include media ('<tablet') {
+    padding: 0 15px 30px 15px;
+  }
+  @include media ('<phone') {
+    font-size: 16px;
+  }
+  #sidebar {
+    @extend %clearfix;
+    background-color: $white;
+    float: right;
+    padding: 0;
+    width: 362px;
+    margin-left: -100%;
+    @include media ('<desktop') {
+      max-width: 100%;
+      overflow: hidden;
+      float: none;
+      width: 100%;
+      margin: 0;
+      padding: 30px 15px 0 15px;
+    }
+  }
+  textarea {
+    width: 100%;
+    min-height: 150px;
+    max-height: 300px;
+  }
+  input.button {
+    @include animate(background-color);
+    background: $dark-blue;
+    padding: 0 10px;
+    height: 40px;
+    border: 0;
+    color: $white;
+    &:hover {
+      background-color: lighten($dark-blue, 10%);
+    }
+  }
+  input[type='text'],
+  input[type='tel'], 
+  input[type='email'], 
+  input[type='search'], 
+  input[type='password'], 
+  input[type='url'], 
+  textarea {
+    @include media ('<phone') {
+      width: 100%;
+    }
+  }
+  .search-form input[type='search'], .search-form input[type='text'], .post-password-form input[type='search'], .post-password-form input[type='text'], #search_block input[type='search'], #search_block input[type='text'] {
+    width: 150px;
+  }
+  .search-form input[type='password'], .post-password-form input[type='password'], #search_block input[type='password'] {
+    width: 150px;
+  }
+}
+#content {
+  float: left;
+  width: 100%;
+  @include media ('<desktop') {
+    overflow: hidden;
+    position: relative;
+    float: none;
+  }
+}
+.holder.wp {
+  margin-right: 500px;
+  background-color: $white;
+  @include media ('<desktop') {
+    overflow: hidden;
+    margin: 0;
+  }
+}

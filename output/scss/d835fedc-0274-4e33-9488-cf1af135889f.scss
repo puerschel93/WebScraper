@@ -1,0 +1,491 @@
+@font-face {
+    font-family: myFont;
+    src: url(../font/lmroman10-regular.otf);
+}
+
+$my-white: rgb(240, 240, 240);
+$my-blue: rgb(4, 0, 255);
+$my-purple: rgb(140, 0, 255);
+$empty-width: 10%;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: myFont;
+    transition: 0.3s ease-in-out;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../image/banner.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    // Background of header
+    position: relative;
+    
+
+    nav{
+        padding: 1rem 0;
+        width: 100%;
+        height: fit-content;
+        background-color: $my-white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+        .logo_burger{
+            width: 25%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+    
+            .wrap_logo{
+                width: 90%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                #logo{
+                    width: 15rem;
+                }
+            }
+    
+            .wrap_burger{
+                width: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+    
+                #burger{
+                    width: 2.5rem;
+                    fill: currentColor;
+                    color: $my-blue;
+                    cursor: pointer;
+                    opacity: 0;
+                }
+            }
+        }
+    
+        .empty{
+            width:  $empty-width;
+        }
+        .wrap_link{
+            width: 75%-$empty-width;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+    
+            a{
+                padding: 0.3rem 0.9rem;
+                font-size: 2rem;
+                font-weight: 600;
+                text-decoration: none;
+                color: $my-blue;
+                border-radius: 0.6rem;
+    
+                &:hover{
+                    color: $my-white;
+                    background-color: $my-blue;
+                    border-radius: 0.6rem;
+                }
+            }
+        }   
+    }
+
+    .detail{
+        width: 60%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #company{
+            font-size: 7rem;
+            font-family: sans-serif;
+            font-weight: bold;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+
+            color: #fff;
+        }
+
+        #slogan{
+            margin-top: 1rem;
+            font-size: 3rem;
+            font-family: sans-serif;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+
+            color: #fff;
+        }
+
+        .button{
+            margin-top: 2rem;
+            padding: 0.5rem 1.5rem;
+            width: fit-content;
+            background-color: $my-white;
+
+            font-size: 2rem;
+            text-decoration: none;
+            color: black;
+            transition: 0.3s ease-in-out;
+
+            &:hover{
+                background-color: $my-blue;
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.introduce{
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .about{
+        width: 30%;
+        padding: 5rem;
+        display: flex;
+        flex-direction: column;
+
+        p{
+            font-size: 2rem;
+        }
+
+        .title{
+            font-size: 4.5rem;
+            font-weight: bold;
+            color: $my-blue;
+        }
+
+        .button{
+            margin-top: 2rem;
+            padding: 0.5rem 1.5rem;
+            width: fit-content;
+            border: 0.1rem solid black;
+
+            font-size: 2rem;
+            text-decoration: none;
+            color: black;
+            transition: 0.3s ease-in-out;
+
+            &:hover{
+                border: none;
+                background-color: $my-blue;
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .about-banner{
+        width: 100rem;
+        display: flex;
+        justify-content: center;
+
+        img{
+            width: 100rem;
+        }
+    }
+}
+
+.product{
+    padding: 4rem 0;
+    margin-top: 2rem;
+    width: 100%;
+    background-color: rgb(227, 227, 248);
+
+    .detail{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .left{
+            margin-top: 2rem;
+            width: 30rem;
+
+            .title{
+                padding: 0 1rem;
+                width: fit-content;
+                font-size: 4rem;
+                color: $my-blue;
+                border-bottom: 0.5rem solid $my-blue;
+            }
+        }
+
+        .right{
+            margin-top: 2rem;
+            width: 60rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            p{
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .list{
+        padding: 2rem 0;
+        width: 70%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .item{
+
+            margin: 1rem;
+            padding: 2rem;
+            background-color: rgb(255, 255, 255);
+            cursor: pointer;
+            text-decoration: none;
+
+            img{
+                width: 30rem;
+            }
+
+            p{
+                color: black;
+                font-size: 2rem;
+                font-weight: 600;
+            }
+
+            &:hover{
+                background-color: $my-blue;
+            }
+        }
+    }
+}
+
+.contact{
+    padding: 2rem;
+    width: 100%;
+    background-color: rgb(238, 252, 255);
+
+    .row{
+        margin: auto;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .col{
+            margin: 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            #company-name{
+                width: 30rem;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 2.5rem;
+                font-weight: bold;
+            }
+
+            .sub-col{
+                margin: 0.2rem;
+                max-width: 40rem;
+                width: fit-content;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                .item{
+                    margin: 0.4rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    svg{
+                        margin-right: 1rem;
+                        width: 2.5rem;
+                        
+                        path{
+                            fill: currentColor;
+                            color: rgb(95, 157, 250);
+                        }
+                    }
+
+                    p{
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1450px){
+    .introduce{
+        .about{
+            width: 90%;
+        }
+
+        .about-banner{
+            padding: 2rem 0;
+            width: 80%;
+
+            img{
+                width: 80%;
+            }
+        }
+    }
+
+    .product{
+        .list{
+            width: 90%;
+        }
+    }
+
+    .contact{  
+        .row{
+            width: 100%;
+            .col{
+                width: 100%;
+                #company-name{
+                    width: 80%;
+                }
+    
+                .sub-col{
+                    width: 80%;
+                    align-items: center;
+                    
+                    .item{
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 952px) and (max-width: 1450px){
+    .introduce{
+        .about{
+            width: 90%;
+        }
+
+        .about-banner{
+            padding: 2rem 0;
+            width: 80%;
+
+            img{
+                width: 80%;
+            }
+        }
+    }
+
+    .product{
+        .list{
+            width: 90%;
+        }
+    }
+}
+
+@media (max-width: 952px){
+    header{
+        nav{
+            flex-direction: column;
+    
+            .logo_burger{
+                padding: 0px 30px;
+                width: 100%;
+    
+                .wrap_logo{
+                    justify-content: flex-start;
+                }
+            }
+    
+            .empty{
+                display: none;
+            }
+    
+            .wrap_link{
+                padding: 10px 30px;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: flex-end;
+    
+                a{
+                    margin: 5px 0px;
+                }
+            }
+        }
+
+
+        .detail{
+            width: 90%;
+
+            #company{
+                font-size: 6rem;
+            }
+
+            #slogan{
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .introduce{
+        .about{
+            width: 90%;
+        }
+
+        .about-banner{
+            padding: 2rem 0;
+            width: 80%;
+
+            img{
+                width: 90%;
+            }
+        }
+    }
+
+    .product{
+        .list{
+            width: 90%;
+        }
+    }
+}

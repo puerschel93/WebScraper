@@ -1,0 +1,293 @@
+/**
+ * Custom Styles here.
+ *
+ * ref：https://v1.vuepress.vuejs.org/config/#index-styl
+ */
+
+html, body, #app, .theme-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 1.44;
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+
+  img {
+    max-height 1.5rem
+  }
+}
+
+#app {
+  .global-ui {
+    position relative
+    z-index 100
+  }
+
+  .home .hero img {
+    max-height 220px
+  }
+
+  .content {
+    img {
+      max-width 100% !important
+    }
+  }
+
+  code {
+    overflow-wrap break-word
+
+  }
+
+  .navbar {
+    //border-bottom 1px solid $colorGray
+    border-bottom: none;
+    box-shadow 0px 0px 15px 0px rgba(132, 132, 132, 0.2) !important;
+
+    .nav-links {
+      margin-top: 0.2rem;
+    }
+  }
+
+  .search-box {
+    margin-right 1.5rem
+
+    input {
+      background: #fff url(https://gw.alipayobjects.com/zos/bmw-prod/72262c89-1d96-442d-bdcf-e4e50d10bd42.svg) 0.1rem 0.3rem no-repeat;
+      background-size: 1.5rem;
+      -webkit-appearance: none;
+      border-radius 0
+      border-style: solid;
+      border-style: unset;
+      border-bottom: 1px solid lighten($colorInactive, 50%);
+      transition all 0.3s;
+
+      &.focused {
+        border-bottom: 1px solid $colorFont;
+      }
+    }
+
+    .suggestions {
+      font-size 1rem
+      padding 0.5rem
+      display block !important;
+      font-family: clear;
+      font-style: normal;
+      font-weight: lighter;
+      top: 2rem;
+      border none;
+      box-shadow 0px 0px 15px 0px rgba(132, 132, 132, 0.2);
+
+      .page-title {
+        font-weight: normal;
+      }
+
+      .header {
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+
+body {
+  font-weight lighter;
+  font-family: "Cardo", "Times New Roman", Times, serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+}
+
+
+//.page-edit {
+//  background-color: $colorGray;
+//}
+//
+//footer {
+//  background-color: $colorGray;
+//}
+//
+//.custom-page-bottom {
+//  background-color: $colorGray;
+//}
+
+.icon.outbound {
+  display: none;
+}
+
+
+.sidebar {
+  font-style italic
+}
+
+.navbar .nav-links {
+  a {
+    white-space: nowrap;
+    position: relative;
+    border none !important;
+    color: $colorInactive
+  }
+
+  a.router-link-active {
+    color: $colorFont;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 170%;
+      left: -0.2em;
+      right: -0.2em;
+      bottom: -75%;
+      transition background-color 0.2s;
+      background-color: lighten($colorInactive, 50%);
+    }
+  }
+
+  a:hover {
+    text-decoration: none !important;
+
+    &:after {
+      background-color: $colorDark;
+    }
+  }
+}
+
+.content__default {
+  h1 {
+    position: relative;
+  }
+
+  a {
+    cursor pointer
+    @media (min-width: $MQMobile) {
+      color $colorFont
+    }
+  }
+
+
+  @media (min-width: $MQMobile) {
+    a {
+      max-width 100%
+      position: relative;
+      display: inline-block;
+      vertical-align bottom
+    }
+
+    a:after {
+      content: "";
+      position: absolute;
+      top: 60%;
+      left: -0.1em;
+      right: -0.1em;
+      bottom: 10%;
+      transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+      background-color: alpha($accentColor, 0.2);
+    }
+
+    a:hover {
+      text-decoration: none !important;
+
+      &:after {
+        top: 10%;
+      }
+    }
+  }
+}
+
+p
+  margin-top: 1.2em;
+
+blockquote
+  box-shadow: inset 3px 0 0 0 rgba(0, 0, 0, 0.84);
+  border-left: none;
+  margin-top: 2em;
+  font-style: italic;
+  color: $colorInactive;
+  font-size: 21px;
+  padding-left: 23px;
+
+@import '~prismjs/themes/prism-tomorrow.css'
+
+div[class*="language-"]
+  position: relative;
+  background-color: $colorFont;
+  border-radius: 6px;
+
+.theme-default-content pre, .theme-default-content pre[class*="language-"] {
+  background white
+  line-height: 1.4;
+  padding: 1.25rem 1.5rem;
+  margin: 0.85rem 0;
+  background-color: $colorFont;
+  border-radius: 6px;
+  overflow: auto;
+  font-size 1rem;
+  letter-spacing 0.5px
+
+  .token.atrule, .token.attr-value, .token.keyword {
+    color: #63DAF5;
+  }
+}
+
+strong {
+  font-weight: 900;
+}
+
+h1 a::after {
+  display none
+}
+
+
+// Sidebar defaults to right at Blog Layout
+.theme-container.layout-post {
+  h1 a.header-anchor {
+    padding-right 0
+  }
+
+  .sidebar {
+    font-style normal
+
+    .sidebar-group.depth-0 p {
+      display none
+    }
+
+    a.sidebar-link.active {
+      border-width 1px
+    }
+
+    .sidebar-group a.sidebar-link {
+      padding-left: 1.5rem;
+    }
+  }
+
+  @media (min-width: $MQMobile) {
+    .theme-default-content.content__default:not(.custom) > h1 {
+      margin-top 3rem !important
+
+      &:first-child {
+        margin-top -1.5rem
+        margin-bottom 1rem
+      }
+    }
+
+    .sidebar {
+      left auto
+      right 0
+    }
+
+    .page {
+      padding-left: 5rem
+      padding-right 20rem
+    }
+  }
+}
+
+

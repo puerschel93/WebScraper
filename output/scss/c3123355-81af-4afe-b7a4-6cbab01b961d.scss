@@ -1,0 +1,285 @@
+@import "./Themes";
+
+.background{
+    background-color: #ffffff;
+}
+
+/* Header */
+
+.header-container{
+    @include titleContainer();
+}
+
+h1{
+    @include pageTitle();
+}
+
+/* Intro */
+
+.insights-intro-container{
+    @include pageIntro();
+    background-image: url('../media/insights.jpg');
+    background-size: 100% auto;
+    @media screen and (min-width: 475px) {
+        background-size: 100% auto;
+    }
+    .insights-overlay{
+        @include pageIntroOverlay();
+        .insights-intro{
+            @include pageIntroText();
+            h3{
+                text-align: center;
+                color: #ffffff;
+                text-shadow: 1px 1px 1px rgb(0, 0, 0);
+            }
+        }
+    }
+}
+
+/* Main body */
+
+.insights-container{
+    .latest-articles{
+        text-align: center;
+        .article{
+            box-sizing: border-box;
+            display: inline-block;
+            margin: 2%;
+            vertical-align: top;
+            cursor: pointer;
+            @include boxShadow();
+            color: #ffffff;
+            background-image: url('../media/insights.jpg');
+            background-repeat: round;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            width: 90%;
+            min-height: 130px;
+            @media screen and (min-width: 500px) {
+                min-height: 150px;
+            }
+            @media screen and (min-width: 700px) {
+                width: 270px;
+                min-height: 260px;
+                background-size: auto 100%;
+            }
+            @media screen and (min-width: 1000px) {
+                width: 350px;
+                min-height: 290x;
+            }
+            .article-overlay{
+                box-sizing: border-box;
+                padding: 15px 20px;
+                margin-top: 0px;
+                height: 100%;
+                height: 100%;
+                min-height: 130px;
+                background-color: rgba(102, 102, 102, 0.5);
+                transition: 1s;
+                @media screen and (min-width: 500px) {
+                    min-height: 150px;
+                }
+                @media screen and (min-width: 700px) {
+                    min-height: 260px;
+                }
+                @media screen and (min-width: 1000px) {
+                    min-height: 290x;
+                }
+                h2{
+                    display: block;
+                    transition: 1s;
+                    color: #ffffff;
+                    text-decoration: none;
+                }
+                p{
+                    display: none;
+                    transition: 1s;
+                    color: #ffffff;
+                    text-decoration: none;
+                }
+                &:hover{
+                    background-color: rgba(102, 102, 102, 0.9);
+                    transition: 1s;
+                    h2{
+                        display: none;
+                        transition: 1s;
+                    }
+                    p{
+                        display: block;
+                        transition: 1s;
+                    }
+                }
+            }
+            .markdown{
+                display: none;
+            }
+        }
+    }
+    .categories{
+        @media screen and (min-width: 600px) {
+            background: linear-gradient(20deg, #f7f7f7 10%, 0%, #ffffff 90%);
+        }
+        .categories-container{
+            text-align: center;
+            max-width: 1400px;
+            padding: 20px;
+            margin: 0 auto;
+            .category{
+                box-sizing: border-box;
+                width: 20%;
+                min-width: 240px;
+                max-width: 350px;
+                padding: 15px;
+                margin: 1%;
+                color: #004d00;
+                background-color: #ffffff;
+                font-size: 20px;
+                border: 2px solid #004d00;
+                cursor: pointer;
+                transition: 0.5s;
+                display: inline-block;
+                @include boxShadow();
+                &:hover{
+                    color: #ffffff;
+                    background-color: #004d00;
+                    transition: 1s;
+                }
+            }
+        }
+    }
+    .case-studies{
+        @media screen and (min-width: 600px) {
+            background-color: #f7f7f7;
+        }
+        .case-studies-container{
+            text-align: center;
+            max-width: 1400px;
+            padding: 20px;
+            margin: 0 auto;
+            .tabs{
+                box-sizing: border-box;
+                width: 100%;
+                margin: 20px auto;
+                padding: 0px 20px;
+                .tablist{
+                    text-align: center;
+                    padding-right: 40px;
+                    .inactive-tab{
+                        display: inline-block;
+                        list-style: none;
+                        background-color: #d3d3d3;
+                        margin: 5px 5px 0px 5px;
+                        padding: 5px;
+                        width: 200px;
+                        cursor: pointer;
+                    }
+                    .active-tab{
+                        display: inline-block;
+                        list-style: none;
+                        border-bottom: 3px solid #004d00;
+                        background-color: #ffffff;
+                        margin: 5px 5px 0px 5px;
+                        padding: 5px;
+                        width: 200px;
+                        cursor: pointer;
+                    }
+                }
+                .tab-panel{
+                    h2{
+                        font-weight: 500;
+                    }
+                    .case-study-info{
+                        box-sizing: border-box;
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 90%;
+                        margin: 15px 0px;
+                        background-color: #f7f7f7;
+                        @include boxShadow();
+                        @media screen and (min-width: 1000px) {
+                            width: 30%;
+                            margin: 1.5%;
+                        }
+                        .info-header{
+                            background-image: linear-gradient(to right, #004d00, #006600);
+                            transform: translateY(-15px);
+                            padding: 3px;
+                            .fas{
+                                color: #ffffff;
+                                display: inline;
+                                float: left;
+                                margin-top: 7px;
+                                margin-left: 10px;
+                                font-size: 24px;
+                                @media screen and (min-width: 700px) {
+                                    margin-left: 15px;
+                                    font-size: 30px;
+                                }
+                                @media screen and (min-width: 1000px) {
+                                    margin-top: 10px;
+                                }
+                            }
+                            h2{
+                                color: #ffffff;
+                                display: inline;
+                                margin-left: -50px;
+                            }
+                        }
+                        .info-body{
+                            padding: 0px 10px;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+/* CTA */
+
+.insights-cta{
+    display: block;
+    background-image: url('../media/insights.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    opacity: 0.8;
+    height: auto;
+    width: 100vw;
+    margin: auto;
+    margin-top: 0px;
+    overflow: hidden;
+    @media screen and (min-width: 650px) {
+        background-size: 100% auto;
+    }
+    @media screen and (min-width: 900px) {
+        background-attachment: fixed;
+    }
+    .insights-overlay{
+        height: 100%;
+        width: 100%;
+        background-color: rgba(102, 102, 102, 0.5);
+        .cta-textbox{
+            display: block;
+            max-width: 1200px;
+            margin: auto;
+            height: auto;
+            box-sizing: border-box;
+            padding: 30px;
+            overflow: auto;
+            text-align: center;
+            h2{
+                font-weight: 500;
+                color: #ffffff;
+                text-shadow: 1px 1px 1px rgb(0, 0, 0);
+                padding: 10px 0px;
+            }
+            p{
+                color: #ffffff;
+                text-shadow: 1px 1px 1px rgb(0, 0, 0);
+            }
+        }
+    }
+}

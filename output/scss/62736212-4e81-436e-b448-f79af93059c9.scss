@@ -1,0 +1,144 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:600;
+
+// SIZE NAVIGATION
+$height-navigation:77;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.7em;
+$font-size-title:1.7em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+.bg-block { background-color: $color-block; }
+
+
+
+
+.blocinfo {
+    background-color: $color-autre2;
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+    .blocinfo-ttl {
+        font-size: 1.1em;
+        color: $color-autre;
+        min-height: 80px;
+        line-height: 80px;
+        > span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+    }
+    .blocinfo-btn {
+        font-size: .8em;
+        text-transform: uppercase;
+        margin: 10px 0 20px 0;
+        &:before {
+            content: "Lire la suite";
+        }
+        &.active:before {
+            content: "Fermer";
+        }
+    }
+    .blocinfo-txt {
+        display: none;
+        text-align: left;
+        line-height: 1.4;
+        font-size: .9em;
+        color: $color-autre;
+    }
+}
+
+.titre-pub,
+.titre-extra {
+    color:$color-primary;
+}
+
+.titre-milieu { margin-top: 235px; }
+@media only screen and (max-width: 767px){
+    .titre-milieu { margin-top: 0px; }
+}
+
+.menu-principal > li > a {
+    font-size: .75em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.menu-sub ul li a:hover { color: $color-nav-footer; }
+
+.aside-home-1 { background-color: $color-dark; }
+.aside-home-2 .bg-secondary { background-color: transparent; }
+
+
+@media only screen and (max-width: 767px) {
+    .logo img {
+        width: 45% !important;
+    }
+    .menu-principal > li > a {
+        font-size: 45% !important;
+    }
+    .h1-index {
+        font-size:$font-size-title * 0.3;
+    }
+
+}
+
+.menu-responsive>ul>li a {
+    font-size: 1.2em;
+    }
+
+.ligne-annonces-agence .ellipsis { overflow: visible; }
+.btn-cdc{display:none;}

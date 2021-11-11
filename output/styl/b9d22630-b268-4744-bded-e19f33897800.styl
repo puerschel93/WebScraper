@@ -1,0 +1,483 @@
+header
+  pt(7.563rem)
+  bg($blue-light9)
+  height 511px
+  overflow hidden
+  +mob()
+    pt(r(59))
+  +port()
+    pt(8.75rem)
+  h1
+    +mob()
+      letter-spacing 0
+      mb(r(11))
+  h6
+    +mob()
+      fs(e(14))
+  &.header-index
+    bg($blue-light4)
+    mb(r(90))
+    height 100vh
+    min-height 768px
+    max-height 1100px
+    display flex
+    align-items flex-end
+    transition .6s all ease
+    +tab()
+      mb(r(60))
+    +port()
+      mb(r(60))
+    +mob()
+      pt(r(59))
+      min-height: unset
+      align-items flex-start
+      mb(r(25))
+      height auto
+
+  &.header-about-us
+    //mb(r(90))
+    mb(r(41))
+    height auto
+    +mob()
+      pt(r(59))
+      height auto
+      mb(r(25))
+    .breadcrumbs
+      position absolute
+      left 15px
+      top 0
+      mb(r(13))
+      +mob()
+        position static
+        mb(r(38))
+
+  &.header-about-business
+    height 438px
+    position relative
+    z-index 40
+    overflow visible
+    +mob()
+      pb(r(51))
+      height auto
+    &:after
+      pseudo(block, absolute)
+      top 100%
+      left 0
+      right 0
+      height 73px
+      bg($blue-light9)
+      z-index -1
+      +mob()
+        height 80px
+    p
+      mt(r(6))
+
+    &.header-about-business-without-after
+      height 457px
+      mb(r(90))
+      +mob()
+        height auto
+      &:after
+        display none
+    &.header-about-business-news
+      height 457px
+      mb(r(17))
+      +mob()
+        height auto
+      +xs()
+        mb(0)
+      &:after
+        display none
+
+  &.header-committees
+    mb(r(40))
+    height auto
+    p
+      mt(r(6))
+    .ul-tablist
+      mb(5rem)
+      //mt(r(81))
+      +mob()
+        mb(r(5))
+    &.header-committees-initiative
+      +xs()
+        mb(0)
+    &.header-events-all
+      bg(#f7f8f9)
+      mb(0)
+      overflow visible
+      h1
+        co(#053a78)
+      .ul-tablist
+        mt(r(60))
+        mb(r(4))
+
+  &.header-members
+    mb(r(21))
+    height auto
+    p
+      mt(r(6))
+    .ul-tablist
+      mb(5rem)
+      +mob()
+        mb(r(6))
+
+  &.header-advantages
+    height auto
+    bg($blue-light-back)
+    mb(0)
+    h1
+      co($blue-dark)
+      mb(r(51))
+      +mob()
+        mb(r(17))
+
+  &.header-events-year
+    height auto
+    pb(r(56))
+    mb(r(91))
+    +land()
+      pb(r(45))
+    +xs()
+      pb(r(45))
+    +mob()
+      mb(r(25))
+      pb(r(35))
+    h1
+      position absolute
+      left 15px
+      co($wt)
+      bg($blue-light9)
+      z-index 50
+      +mmax(991px)
+        position static
+      +mob()
+        mb(r(41))
+
+  &.header-article
+    height 391px
+    overflow visible
+    bg(#f7f8f9)
+    position relative
+    mb(r(47))
+    +mob()
+      height 300px
+      mb(r(32))
+
+    h1
+      color #053a78
+      mb(r(6))
+
+      +port()
+        fs(e(34))
+      +mob()
+        mb(r(22))
+        line-height: 1.33;
+        //fs(e(20))
+    &--row
+      height: 184px;
+      .col-12
+        height 100%
+    &.header-article-report
+      height 457px
+      mb(r(47))
+      +land()
+        height 350px
+      .header-article--row
+        height: 186px
+        +land()
+          height auto
+      .header-article--container
+        top calc(100% - 98px)
+        +xs()
+          top: calc(100% - 185px);
+    &.header-article-events
+      height 471px
+      mb(r(60))
+      +mob()
+        h1
+          mb(0)
+      +xs()
+        mb(r(206))
+      .header-article--container
+        top: calc(100% - 180px)
+        left: calc(50% - (1101px / 2))
+        +tab()
+          left calc(50% - (891px / 2))
+        +port()
+          left calc(50% - (651px / 2))
+          top: calc(100% - 150px)
+        +land()
+          left calc(50% - (471px / 2))
+          top: calc(100% - 210px)
+          .header-article--author.header-article--author-event
+            pt(r(31))
+            pl(r(24))
+            pr(r(24))
+            width auto
+          .header-article--author.header-article--author-event .header-article--author-date
+            mr(r(20))
+        +mob()
+          left 0
+        +xs()
+          top: calc(100% - 216px);
+          .header-article--author.header-article--author-event
+            pt(r(31))
+            width auto
+
+    &.header-article-initiative
+      mb(r(90))
+      +mob()
+        height 374px
+      h1
+        +xs()
+          fs(e(24))
+
+    &.header-contacts
+      bg($tr)
+      position relative
+      mb(r(390))
+      +land()
+        mb(r(450))
+      +xs()
+        mb(r(620))
+        height: 320px;
+      h1
+        co($wt)
+        +mob()
+          font-size: e(28)
+      .header-article--container
+        top calc(100% - 100px)
+        +mob()
+          top: calc(100% - 90px);
+      .header-article--author
+        width auto
+        padding r(46) r(97)
+        +mob()
+          padding r(37) r(24)
+        .article-contact
+          mb(r(5))
+        .ul-article-share
+          +mob()
+            mb(0)
+          li
+            max-width: 83px;
+            a
+              height: 40px;
+
+
+    &.header-article-members
+      height 457px
+      mb(r(121))
+      +port()
+        margin-bottom: r(300)
+      +land()
+        margin-bottom: r(300)
+      +xs()
+        margin-bottom: r(500)
+      h2
+        font-size: e(34)
+        color: #d6dce4;
+        letter-spacing: 0.8px;
+        line-height: 1.53;
+        mb(r(19))
+        +mob()
+          fs(e(30))
+      .header-article--row
+        img
+          max-width 100%
+      .header-article--container
+        left: calc(50% - (1101px / 2))
+        top: 41.5%;
+        +tab()
+          left: calc(50% - (850px / 2));
+        +port()
+          left calc(50% - (651px / 2))
+          top: calc(70% - 150px);
+        +land()
+          left calc(50% - (471px / 2))
+          top: 70%;
+        +mob()
+          left 0
+        +xs()
+          top: 70%;
+      .header-article--author
+        width calc(100% - 15px)
+        pl(r(47))
+        pb(r(30))
+        +tab()
+          width: calc(95% - 15px);
+        +port()
+          flex-wrap wrap
+        +mob()
+          pl(r(24))
+          pr(r(24))
+          width auto
+          pt(r(35))
+          .ul-article-share
+            mb(r(7))
+        +xs()
+          flex-wrap wrap
+
+        h1
+          font-size: e(30)
+          line-height: 1.33;
+          letter-spacing: 1.3px;
+          color $blue
+          margin-bottom: r(15)
+        h3
+          font-size: e(20)
+          line-height: 2;
+          letter-spacing: 1px;
+        .spec
+          color: #a0b3c9;
+          mb(r(9))
+        .found
+          position absolute
+          bottom 0
+          left 15px
+          co(#a0b3c9)
+          mb(r(5))
+          +port()
+            position static
+            mt(r(10))
+            mb(r(15))
+          +xs()
+            position static
+            mt(r(10))
+            mb(r(15))
+          span
+            co(#053a78)
+        .article-contact
+          mb(r(10))
+          line-height: 1.43
+        .ul-article-share li
+          max-width 83px
+          a
+            height: 40px;
+      .header-article--author-left
+        flex 1 1 47%
+        max-width 47%
+        pl(r(15))
+        pr(r(15))
+        position relative
+        +port()
+          flex 1 1 100%
+          max-width 100%
+          pl(0)
+          pr(0)
+        +mob()
+          pl(0)
+          pr(0)
+        +xs()
+
+          flex 1 1 100%
+          max-width 100%
+      .member--tags
+        pl(0)
+        li
+          color #a0b3c9
+  &.header-newsin
+    position relative
+    overflow visible
+    height 390px
+    bg(#f7f8f9)
+    mb(r(55))
+    +mob()
+      mb(r(100))
+    +land()
+      height: 350px;
+    .breadcrumbs
+      mb(r(13))
+      +mob()
+        mb(r(4))
+    h1
+      text-align center
+      font-size: r(32)
+      line-height: 1.25;
+      letter-spacing: normal;
+      color: #053a78
+      +mob()
+        fs(e(24))
+        text-align left
+    .header-article--container
+      +mob()
+        top: calc(100% - 50px);
+    .header-article--author
+      width auto
+      pt(r(27))
+      +mob()
+        pl(r(24))
+        pr(r(24))
+
+      li
+        mb(r(7))
+        b
+          mr(r(16))
+        &.ds-flex
+          display flex
+          +xs()
+            b
+              display none
+
+    &.header-newsin-photo
+      bg($tr)
+      .header-newsin-photo--image
+        position absolute
+        left 0
+        right 0
+        top 0
+        z-index -1
+        +xs()
+          display flex
+          justify-content center
+        img
+          width 100%
+          filter: grayscale(100%);
+          opacity .3
+          +xs()
+            width 200vw
+        &:after
+          pba()
+          background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+          bottom 0
+          left 0
+          right 0
+          top 0
+      .header-newsin-photo--container
+        +xxl()
+          max-width 1500px !important
+
+  &.header-search
+    bg(#f7f8f9)
+    //mb(r(40))
+    height auto
+    h1
+      co(#053a78)
+      line-height: 1.15
+      letter-spacing: 0.7px;
+      fs(e(32))
+    p
+      co(#768190)
+      mt(r(6))
+
+
+.header-col
+  &.left
+    display flex
+    align-items center
+    +mob()
+      display block
+  &.right
+    pl(0)
+    +mob()
+      pr(0)
+
+.header-text
+  +xs()
+    pb(r(50))
+  +land()
+    pb(r(15))
+
+
+

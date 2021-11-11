@@ -1,0 +1,350 @@
+.about-page {
+    .one {
+
+        .bg {
+            display: flex;
+            height: 700px;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            overflow: hidden;
+
+        }
+
+        background: transparent linear-gradient(116deg, #EC0DDB 0%, #F1832C 100%) 0% 0% no-repeat padding-box;
+        background-size: cover;
+        width: 100vw;
+        position: relative;
+        height:700px;
+        background-repeat: no-repeat;
+
+        @include breakpoint(lgmobile) {
+            margin-bottom: 4rem;
+        }
+
+        .text-flex {
+            height: 780px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+        }
+
+        .rect-data {
+            width: 780px;
+            height: 300px;
+            background: #fff;
+            border-radius: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include breakpoint(lgmobile) {
+                width: 400px;
+                height: 250px;
+                margin: auto;
+            }
+
+            .text-wrapper {
+                width: 75%;
+
+                h1 {
+                    color: #200F54;
+                    font-family: bfont;
+                    padding-bottom: 0.5rem;
+                }
+
+                p {
+                    color: #200F54;
+                    font-family: bfont;
+                    font-size: 1.1rem;
+                }
+            }
+
+        }
+
+    }
+
+    .company {
+        background: #fff;
+        height: 80vh;
+        position: relative;
+
+        @include breakpoint(lgmobile) {
+            padding: 2rem;
+            height: auto;
+        }
+
+
+        .img-wrapper {
+            height: 100%;
+            display: flex;
+            justify-content:#{$flex-end};
+            align-items: center;
+            position: relative;
+
+            img {
+                width: 45%;
+            }
+
+            .metal-card {
+                width: 50%;
+                position: absolute;
+                right: 28%;
+            }
+
+            @include breakpoint(lgmobile) {
+                height: auto;
+            }
+        }
+
+        .text-wrapper {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: #{$flex-start};
+            flex-direction: column;
+            color: #200F54;
+
+            @include breakpoint(lgmobile) {
+                height: auto;
+            }
+
+            h1 {
+                font-family: bfont;
+                margin-bottom: 1rem;
+                z-index: 22;
+                font-size: 3rem;
+            }
+
+            p {
+                font-family: bfont;
+                width: 74%;
+                z-index: 22;
+                margin-bottom: 3rem;
+
+                @include breakpoint(lgmobile) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .brains {
+        padding-bottom: 2rem;
+        position: relative;
+        background: transparent linear-gradient(116deg, #C960C1 0%, #5B28F4 100%) 0% 0% no-repeat padding-box;
+        background-size: cover;
+        //  min-height: 100vh;
+
+        @include breakpoint(lgmobile) {
+            height: auto;
+
+        }
+
+        .text-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3rem 0 1rem 0;
+
+            .data-wrapper {
+                margin-left: 30px;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: flex-start;
+
+                h3 {
+                    font-size: 2.2rem;
+                    font-family: bfont;
+                    color: #fff;
+                    padding-bottom: 0.5rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    font-family: bfont;
+                    color: #fff;
+                    width: 90%;
+
+                    @include breakpoint(lgmobile) {
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+
+
+        .all-members {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+
+            flex-wrap: wrap;
+
+            .member {
+                width: 25%;
+                position: relative;
+
+                @include breakpoint(lgmobile) {
+                    min-width: 50%;
+                    flex-wrap: wrap;
+                }
+
+                .member-data {
+                    width: 100%;
+                    height: 4.5rem;
+                    background-color: #200F54;
+                    position: absolute;
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                    visibility: hidden;
+                    overflow: hidden;
+
+                    a {
+                        display: none;
+                    }
+
+
+                    h3 {
+                        padding: 0;
+                        margin: 0;
+                        text-transform: capitalize;
+                        font-family: mfont;
+                        font-size: 1.5rem;
+
+                        @include breakpoint(lgmobile) {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    p {
+                        text-transform: capitalize;
+                        font-family: lfont;
+                        font-size: 1.3rem;
+                        padding: 0;
+                        margin: 0;
+
+                        @include breakpoint(lgmobile) {
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+
+                img {
+                    filter: grayscale(1);
+                    position: relative;
+                    width: 100%;
+
+                    @include breakpoint(lgmobile) {
+                        width: 100%;
+                    }
+
+                }
+
+                &:hover {
+                    img {
+                        filter: unset;
+                    }
+
+                    .member-data {
+                        visibility: visible;
+                        opacity: 1;
+                        transform: translateY(-4.5rem);
+                    }
+                }
+            }
+        }
+    }
+
+    .seprated {
+        .text-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+            flex-direction: column;
+            text-align: center;
+
+            h1 {
+                color: #200F54;
+                font-family: bfont;
+                font-size: 2.5rem;
+            }
+
+            p {
+                color: #200F54;
+                font-family: bfont;
+            }
+        }
+    }
+
+    .core {
+        background: transparent linear-gradient(116deg, #36A0FF 0%, #00CFA1 100%) 0% 0% no-repeat padding-box;
+        background-size: cover;
+        position: relative;
+
+        @include breakpoint(lgmobile) {
+            padding: 3rem 2rem 2rem 2rem;
+            height: auto;
+        }
+
+        .core-sign {
+            position: absolute;
+            #{$left}: 0;
+            bottom: 0;
+
+            @include breakpoint(lgmobile) {
+                display: none;
+            }
+
+        }
+
+        .text-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items:#{$flex-start};
+            flex-direction: column;
+            height: 65vh;
+            color: #fff;
+
+            @include breakpoint(lgmobile) {
+                height: auto;
+                margin: 1rem;
+            }
+
+            h1 {
+                font-family: bfont;
+                text-transform: capitalize;
+
+                font-size: 3rem;
+            }
+
+            h4 {
+                font-family: bfont;
+                padding-bottom: 0.7rem;
+            }
+
+            h5 {
+
+                font-family: bfont;
+                text-transform: uppercase;
+            }
+
+            p {
+                font-family: nfont;
+                width: 60%;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,197 @@
+/* -----------------抽屉----------------- */
+.drawer {
+    position fixed
+    top 0
+    right 0
+    bottom 0
+    left 0
+    transition transform 0.5s
+    z-index 900
+    background rgba(0, 0, 0, 0.8)
+    width 40rem
+    max-width 100%
+    color #fff
+
+    &-title {
+        h3 {
+            position relative
+            padding 0
+            color var(--color-reverse)
+
+            &::before {
+                display inline-block
+                margin-right 1rem
+                background-color var(--color-reverse)
+                width 0.5rem
+                height 1.5rem
+                content ''
+            }
+        }
+
+        &__fold {
+            position absolute
+            right 2rem
+
+            svg {
+                position relative
+                bottom -5px
+                color #fff
+            }
+        }
+    }
+
+    ul {
+        overflow hidden
+    }
+
+    &__close {
+        position absolute
+        top 0
+        right 0
+        z-index 1000
+        margin 1rem
+        padding 0
+        color var(--color-reverse)
+        background #000
+    }
+
+    &-save {
+        svg {
+            color #fff
+            position relative
+            bottom -5px
+        }
+    }
+
+    &-content {
+        overflow-y scroll
+        height 100vh
+
+        > div {
+            padding 1rem
+        }
+    }
+
+    &-entry {
+        display grid
+        grid-template-rows 1fr 1fr
+        grid-template-columns 5rem 1fr 24px
+        padding 0.5rem 0
+        font-family 'Sans-serif'
+        gap 0.5rem
+
+        &__add, &__save, &__delete {
+            transition 0.5s
+            padding 0
+            height 24px
+            vertical-align bottom
+        }
+
+        &__delete {
+            color var(--color-reverse-sub)
+
+            &:hover {
+                color var(--color-reverse)
+            }
+        }
+
+        &__add, &__save {
+            margin 0 0.5rem
+            color var(--color-reverse)
+        }
+
+        input {
+            &:nth-of-type(2) {
+                grid-column-start 2
+                grid-column-end 4
+            }
+
+            &:nth-of-type(3) {
+                color var(--color-reverse-sub)
+            }
+        }
+
+        > svg {
+            margin 0.2rem auto
+            color var(--color-reverse)
+        }
+    }
+
+    input {
+        transition 0.5s
+        border none
+        border-bottom solid var(--color-reverse-sub) 2px
+        background-color transparent
+        padding 0.2rem 0.5rem
+        height 1.5rem
+        color var(--color-reverse)
+
+        &:focus {
+            border-bottom solid var(--color-reverse) 2px
+        }
+    }
+
+    &-sync {
+        display flex
+        flex-direction column
+
+        input {
+            margin-bottom 0.5rem
+        }
+    }
+
+    /* -----------------落款----------------- */
+    &-about {
+        margin 0.5rem 0
+        color var(--color-reverse)
+
+        a {
+            color var(--color-reverse)
+        }
+    }
+}
+
+.l-button {
+    transition 0.5s
+    margin 0.5rem
+    border solid var(--color-reverse-sub) 2px
+    padding 0.5rem
+    width max-content
+    color var(--color-reverse)
+    align-items center
+    display flex
+
+    svg {
+        margin-right 0.5rem
+    }
+
+    &:hover {
+        border solid var(--color-reverse) 2px
+    }
+}
+
+.down {
+    animation turn-up 1s linear 1
+}
+
+@keyframes turn-up {
+    0% {
+        transform rotate(0deg)
+    }
+
+    25% {
+        transform rotate(45deg)
+    }
+
+    50% {
+        transform rotate(90deg)
+    }
+
+    75% {
+        transform rotate(135deg)
+    }
+
+    100% {
+        transform rotate(180deg)
+    }
+}

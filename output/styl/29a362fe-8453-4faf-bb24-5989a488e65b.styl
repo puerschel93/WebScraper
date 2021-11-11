@@ -1,0 +1,147 @@
+.use-motion .sidebar .motion-element { opacity: 1; }
+
+.sidebar {
+  margin-top: 0;
+  right: auto;
+  bottom: auto;
+
+  // Do NOT delete this line
+  // or Affix (position: fixed) will not work in Google Chrome.
+  -webkit-transform: none;
+}
+
+
+.sidebar-inner {
+  box-sizing: border-box;
+  width: $sidebar-desktop;
+  color: $text-color;
+  overflow: hidden;
+  
+  &.affix {
+    position: fixed;
+    top: $sidebar-offset;
+  }
+
+  &.affix-bottom {
+    position: absolute;
+  }
+
+}
+
+.site-overview-wrap {
+  padding: 15px;
+  background: #fff;
+  border-radius: $border-radius;
+  box-shadow: $post-block-shadow;
+}
+
+.site-overview {
+  //margin: 0 2px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.site-author {
+  clearfix();
+}
+
+.sidebar a {
+  color: $black-light;
+
+  &:hover { color: $black-deep; }
+}
+
+.site-state-item {
+  padding: 0 10px;
+}
+
+.links-of-author-item {
+  a:before { display: none; }
+  a {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+}
+
+.feed-link {
+  border-top: 1px dotted $grey-light;
+  border-bottom: 1px dotted $grey-light;
+  text-align: center;
+}
+
+.feed-link a {
+  display: block;
+  color: $orange;
+  border: none;
+
+  &:hover {
+    background: none;
+    color: darken($orange, 20%);
+
+    i { color: darken($orange, 20%); }
+  }
+}
+
+.links-of-author {
+  //clearfix();
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.links-of-author-item {
+  margin-left: 10px;
+  &:nth-of-type(1) {
+    margin-left: 0;
+  }
+  a {
+    display: block;
+    line-height: 1;
+    text-decoration: none;
+    padding: 5px;
+    cursor: pointer;
+    // transition: transform .3s ease;
+
+    &:hover {
+      border-radius: 4px;
+      background: $gainsboro;
+      // transform: translateY(-10%);
+    }
+  }
+
+  .fa {
+    margin-right: 2px;
+    font-size: 16px;
+  }
+  .fa-globe { font-size: 15px; }
+}
+
+
+.links-of-blogroll {
+  text-align: center;
+  margin-top: 20px;
+  padding: 3px 0 0;
+  border-top: 1px dotted $grey-light;
+}
+.links-of-blogroll-title { margin-top: 0; }
+.links-of-blogroll-item { padding: 0; }
+.links-of-blogroll-inline {
+  clearfix();
+
+  .links-of-blogroll-item {
+    sidebar-inline-links-item();
+    display: inline-block;
+    if !hexo-config('social_icons.icons_only') { width: unset; }
+  }
+}
+
+.back-to-top {
+  cursor: pointer;
+  position: fixed;
+  right: 50px;
+  top: -900px;
+  z-index: 2;
+  width: 70px;
+  height: 900px;
+  transition: all .5s ease-in-out;
+  opacity: 1;
+}

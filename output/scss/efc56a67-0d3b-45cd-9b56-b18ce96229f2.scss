@@ -1,0 +1,166 @@
+.btn {
+  width: 16.9vw;
+  height: 16.9vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  border:0;
+  background: none;
+
+  &--arrowDownCircle {
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px $vividRed;
+    border: solid 2px $vividRed;
+
+    transform: scale(1);
+    animation: pulse-vividRed 2s infinite;
+
+    &.white {
+      box-shadow: inset 0 0 0 2px $white;
+      border: solid 2px $white;
+      animation: pulse-white 2s infinite;
+    }
+
+    &:hover {
+        // border: solid 2px $vividRed;
+        animation-play-state: paused;
+    }
+  }
+
+  &--arrowRight {
+    border: none;
+    width:6vw;
+    margin-right: 100px;
+  }
+
+  &--arrowDownNoCircle{
+    border: none;
+    width: 6vw;
+
+    &.white {
+      -webkit-text-stroke: 2px $white;
+    }
+  }
+
+  &--arrowLeft {
+    border: none;
+    width: 6vw;
+  }
+
+  &--about {
+    margin-right: 30px;
+    font-family: 'abc_whyte_semi-mono_trialRg';
+    color: white;
+    font-size: 2.8vw;
+    width: 15vw;
+    height: 15vw;
+    transition: transform .2s;
+    border: none;
+    position: relative;
+    .about {
+      border-bottom: solid 2px transparent;;
+      transition: border-color 300ms;
+    }
+    .circle {
+      transition: transform ease 300ms;
+      border: solid 2px $vividRed;
+      width: 100%;
+      height: 100%;
+      position:absolute;
+      border-radius: 50%;
+    }
+  }
+  &:hover {
+    .circle {
+      transform: scale(1.2);
+    }
+    .about {
+      border-color: $vividRed;
+    }
+  }
+  
+  & .arrow {
+    width: 6vw;
+    display: block; 
+
+    &--right {
+        width: 6vw;
+        transition: transform ease 300ms;
+      }
+
+      &--downNoCircle {
+        margin-right: 35px;
+        width: 5vw;
+        transition: transform ease 300ms;
+
+        &.white {
+          -webkit-text-stroke: 2px $white;
+        }
+      }
+
+      &--downInCircle {
+        font-size: 7vw;
+        -webkit-text-stroke: 2px rgb(254, 15, 10);
+        color: transparent;
+        transition: transform ease 300ms;
+      }
+  
+      &--left {
+        transition: transform ease 300ms;
+      }
+      &--down {
+        width: 5vw;
+        transition: transform ease 300ms;
+      }
+  }
+  &:hover .arrow--right {
+    transform: translateX(50%);
+  }
+  &:hover .arrow--left {
+    transform: translateX(-50%);
+  }
+  &:hover .arrow--downNoCircle {
+    transform: translate(0, 50px);
+  }
+  &:hover .arrow--down {
+    transform: translate(0, 50px);
+  }
+  &:hover .arrow--downInCircle {
+    transform: translate(0, 50px);    
+    animation: fill 2s forwards;
+  }
+}
+
+@keyframes fill {
+  0% {color: transparent;}
+  25% {color: $vividRed;}
+  50% {color: $vividRed;}
+  100% {color: $vividRed;}
+}
+
+@keyframes pulse-vividRed {
+	0% {
+		//transform: scale(0.95);
+		box-shadow: 0 0 0 0px $vividRed;
+	}
+	
+	100% {
+		//transform: scale(1);
+		box-shadow: 0 0 10px 15px rgba($vividRed, 0);
+	}
+}
+@keyframes pulse-white {
+	0% {
+		//transform: scale(0.95);
+		box-shadow: 0 0 0 0px $white;
+	}
+	
+	100% {
+		//transform: scale(1);
+		box-shadow: 0 0 10px 15px rgba($white, 0);
+	}
+}

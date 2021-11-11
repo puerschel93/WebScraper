@@ -1,0 +1,710 @@
+@import "nib"
+@import "normalize.styl"
+@import "icons.styl"
+
+
+gris = #333333
+gris2 = #2B313B
+naranja = #e13c04
+verde2 = #00703c
+azul = #028dd2
+celeste = #29abe2
+verde = #99cc66
+morado = #65007a
+amarillo = #FFC911
+
+
+
+body
+	font-family 'Oswald', sans-serif;
+	font-size 100%
+	font-weight 400
+	line-height 30px
+	color #707070
+
+*
+	box-sizing border-box
+
+ul
+	margin 0
+	padding 0
+	
+
+a
+	text-decoration none
+
+h1
+h2
+h3
+h4
+h5
+	font-weight 400
+	margin-top 0
+	//font-family 'Oswald', serif
+
+
+img
+	max-width 100%
+	height auto
+
+input[type="text"]
+input[type="email"]
+input[type="number"]
+input[type="search"]
+input[type="url"]	
+select
+textarea
+	width 100%
+	height 34px
+textarea
+	height 90px
+.alignleft
+.alignright
+	margin-bottom .5rem
+	width 100%
+	height auto
+@media screen and (min-width:768px)
+	.alignleft
+		margin-right 1rem
+		float left
+		width 450px
+	.alignright
+		margin-left 1rem
+		float right
+		width 450px
+.right
+	right 0
+.left
+	left 0
+.txt-center
+	text-align center
+.white 
+	color white
+.bg-naranja
+	background-color naranja
+.bg-morado
+	background-color morado
+.bg-verde
+	background-color verde
+.bg-amarillo
+	background-color amarillo
+
+.btn-fixed-transfer
+.wpcf7-submit
+.submit
+.btn
+	display inline-block
+	color gris
+	padding .8rem
+	text-align center
+	border-radius 5px
+	text-transform uppercase
+	border none
+	color white
+	
+.wpcf7-submit
+.submit
+	background-color azul
+	&:hover
+		background-color verde
+.btn-white
+	background-color white
+	color #000
+.btn-black
+	background-color #000
+	color white
+.more-link
+	color celeste !important
+	&:hover
+		color verde !important
+.inner
+	max-width 1186px
+	margin 0 auto
+	position relative
+	padding-left 1.2rem
+	padding-right 1.2rem
+
+.top 
+	background-color celeste
+	position absolute
+	left 0
+	right 0
+	height 44px
+	display none
+	z-index 999
+	
+	&__info
+	&__social
+		display inline-block
+		float right
+		line-height 44px
+		&__link
+			color gris2
+			padding	 .5rem
+			color white		
+			&:hover
+				color white						
+														
+		
+	&__info
+		margin-right .8rem
+		color white
+
+
+.header
+	background-color white
+	text-align center
+	position relative
+	left 0 
+	right 0
+	z-index: 999
+	box-shadow 1px 1px 5px rgba(0,0,0,.25)
+	&__logo
+		display block
+		padding-top .5rem
+		width: 150px
+		margin 0 auto
+	&__btn-menu
+		position absolute
+		left 15px
+		top 100px
+		background-color transparent
+		border 0
+		color verde
+		font-size 2.5rem
+		outline 0
+		
+		&--active
+			//color white
+			i:before
+				content "\f00d"	
+	&__menu
+		background-color verde
+		position absolute
+		left 0
+		right 0
+		top 155px
+		display none
+		
+		
+		li
+		&__item
+			display block
+			margin 0 1rem
+		a
+		&__link
+			display block
+			padding .5rem
+			color white
+			text-transform uppercase			
+@media screen and (min-width:768px)
+	body
+		font-size 100%
+	.header
+		position relative
+		&__logo
+			padding-top 1rem
+			padding-bottom 1rem
+		&__btn-menu
+			display none
+		&__menu 
+			display block !important
+			position static
+			background-color transparent
+			margin 1rem 0
+			
+			li
+			&__item 
+				display inline-block
+				
+			a
+			&__link
+				color gris
+				
+				&:hover
+					color verde
+	
+@media screen and (min-width:1200px)
+	.inner 
+		padding-left 0
+		padding-right 0
+	.top 
+		display block
+		
+	.header
+		position absolute
+		top 44px
+		height 90px//112px
+		text-align left
+		&--fixed
+			position fixed
+			top 0
+			box-shadow 1px 1px 5px rgba(0, 0, 0, .25)	
+		&__logo
+			display inline-block
+			vertical-align top
+			padding-top	5px
+			padding-bottom 5px
+			margin-right 2rem
+			//width: 125px
+		&__menu
+			display inline-block !important
+			vertical-align top
+			margin-top 1.5rem		
+
+
+.main 
+	padding-top 0px
+	padding-bottom 2rem
+	&__slider
+		width 100%
+		&__slide
+			position relative
+			width 100%
+			height 200px
+			background-size cover
+			background-position center center
+			background-repeat no-repeat
+			&__info
+				padding-top 4rem
+				padding-left 1.5rem
+				padding-right 1.5rem	
+				position absolute
+				h1 
+					color #fff
+					font-weight	700
+					text-shadow 1px 1px 2px rgba(0, 0, 0, .75)
+				h4 
+					text-shadow 1px 1px 2px rgba(0, 0, 0, .75)
+				figure
+					float left
+					margin-right 1rem
+				&--right 
+					right 0
+				&--left 
+					left 0
+	&__featured
+		margin-top 2rem
+		margin-bottom 2rem
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		position relative
+		z-index 900
+		
+		&__item 
+			width 100%
+			margin-bottom 1.5rem
+		
+			&__link
+				display block
+				position relative
+				text-align center
+				color white
+				transition all .5s ease-in
+				
+				&:hover
+					.main__featured__item__caption
+						top -20px
+					
+					.main__featured__item__description
+						opacity 0	
+						
+			&__figure
+				height 400px
+				background-color gris
+				overflow hidden
+				position relative
+			&__img
+				position relative
+				display block
+				height 360px
+				width 100%
+				margin-top 44px
+				background-position 50% 0
+				background-size cover
+				background-repeat no-repeat
+			&__caption
+				color white
+				position absolute
+				top 0
+				border-top 5px solid gris
+				width 100%
+				padding 1rem
+				transition all .5s ease
+				
+			&__title
+				text-transform uppercase
+				margin-bottom 5px
+				font-size 1rem
+				
+			
+			&__description
+				margin 0
+				line-height	24px
+				transition all .5s ease		
+	&__more
+	&__contact
+		background-color verde
+		padding-top 2rem
+		padding-bottom 2rem
+		text-align center
+		position relative
+		&__title 
+			color white
+					
+	&__more
+		background-color white
+		iframe
+			width 100%
+		&__bg 
+			width 100%
+			height 100%
+			position absolute
+			left 0
+			top 0
+			background-size cover
+			background-repeat no-repeat
+			background-position 50% 50%
+			background-attachment fixed
+		&__info 
+			position relative
+		&__button
+			background-color celeste
+			&:hover
+				background-color verde
+				color white
+
+@media screen and (min-width:768px)
+	.main 
+		&__slider
+			&__slide 
+				height 423px
+				
+				&__info
+					width 50%
+					h1
+						font-size 3rem
+					h4
+						font-size 1.4rem	
+		&__featured
+			margin-top -1.8rem
+						
+			&__item 
+				width 45%
+		&__more
+		&__contact
+			
+			padding-top 4rem
+			padding-bottom 4rem
+			
+			&__title 
+				font-size 2.5rem
+		&__more
+			padding-top 8rem
+			padding-bottom 8rem
+
+@media screen and (min-width:1200px)
+	/*.page 
+		.main 
+			padding-top 190px*/
+	.home 
+		.main 
+			padding-top 134px
+			padding-bottom 0
+	.main 
+		padding-top	134px
+		
+		&__slider
+			&__slide 
+				height 562px
+				&__info
+					padding-top 10rem
+					
+		&__featured
+				margin-top -1.8rem
+							
+				&__item 
+					width 23%
+		
+		&__contact
+			padding-top 5rem
+			padding-bottom 5rem
+			&__title
+				float left									
+
+@media screen and (min-width:1400px)
+	.main 
+		&__slider
+			&__slide 
+				height 793px
+				
+				&__info
+					
+					width 60%
+					
+					line-height	45px
+					h1
+						font-size 3.9rem
+					h4
+						font-size 1.9rem						
+
+.post-11
+	max-width 500px
+	margin 0 auto
+	.entry-title
+		text-align center
+.entry-title
+	text-align center
+	color verde
+.entry-header
+	padding-top 1rem
+.entry-content
+	ul 
+		margin-left 45px
+		
+.entry-banner
+	height 200px
+	width 100%
+	background-position center center
+	background-size cover
+	
+@media screen and (min-width:768px)
+	.entry-banner
+		height 350px
+
+@media screen and (min-width:1024px)
+	.entry-banner
+		height 450px
+	
+.footer
+	background-color gris
+	
+	> .inner 
+		display flex
+		flex-wrap wrap
+		justify-content space-between
+		padding 1rem 1rem
+		text-align center
+	&__logo
+		margin-top 1rem
+		width 150px
+		display inline-block
+	&__tripadvisor
+		padding 2rem 0
+		width 100%
+		.widSSP 
+			width 100% !important
+	&__social
+		//text-align center
+		width 100%
+		padding 1rem
+		&__item 
+			display block
+			margin .5rem .2rem
+		&__info 
+			display none
+			vertical-align middle	
+		
+		&__link
+			display inline-block
+			vertical-align middle
+			background-color celeste
+			width 67px 
+			height 67px
+			border-radius 50%
+			color white
+			text-align center
+			font-size 2.5rem
+			padding 1.1rem
+			&:hover
+				background-color white
+				color gris2		
+	&__numbers
+		padding 1rem 0
+		width 100%	
+	&__copyright
+		background-color celeste
+		color gris
+		text-align center
+		padding 1rem
+		&__phone
+			color white
+			display block
+		&__avotz
+			a 
+				color white
+				display block
+				i 
+					font-size 3rem
+					display inline-block
+					vertical-align middle
+			
+			
+	&__menu
+		text-align center
+		li
+		&__item
+			display inline-block
+		a
+		&__link
+			display block
+			padding .5rem
+			color #FFF
+			&:hover
+				color gris		
+				
+@media screen and (min-width:768px)
+	.footer
+		&__social
+		&__tripadvisor
+		&__numbers
+			width auto	
+@media screen and (min-width:900px)
+	.footer
+		> .inner
+			text-align left
+		&__social
+			padding 1rem
+			&__info
+				display inline-block
+				font-size 1rem
+			&__item
+				margin 1rem 1rem					
+		&__menu 
+			a
+			&__link
+				font-size .7rem
+		
+		&__copyright
+			position relative
+			padding 0
+			/*&__phone
+				position absolute
+				left 1.2rem
+				top 8px
+				font-size .8rem*/
+			&__avotz
+				position absolute
+				right 1.2rem
+				top 8px
+				font-size .6rem
+				
+				a 
+					i 
+						font-size 2rem
+
+.btn-fixed-transfer
+	position fixed
+	top 40%
+	left -20px
+	z-index 999
+	background-color orange
+	color white
+	transform rotate(-90deg)
+	&:hover
+		background-color celeste
+.two-columns{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+  
+}
+.two-columns .column{
+  width: 100%;
+}
+.two-columns > p{
+    width: 100%;
+}
+@media screen and (min-width: 768px){
+  .two-columns .column{
+    width: 45%;
+  }
+  .two-columns > p{
+      width: 45%;
+  }
+
+}
+
+.form-two-columns{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.form-two-columns .column{
+    width: 100%;
+}
+@media screen and (min-width: 540px)
+{
+    .form-two-columns .column{
+        width: 45%;
+    }
+}
+
+.table 
+	thead 
+		tr 
+			background-color verde
+			color white
+
+.blog
+.single
+.archive
+.error404
+	&-content 
+	&-right
+		margin-top 1rem 
+		display inline-block
+		width 100%
+		vertical-align top
+		a 
+			color verde
+		ul 
+			margin-left 45px
+		
+	&-content 
+		header
+			text-align center
+		.entry-banner
+			position relative
+			a 
+				position absolute
+				left 0
+				right 0
+				top 0
+				bottom 0
+	.widget
+		margin-bottom 1rem
+	.search-submit
+		display none
+	
+.error-404
+	padding-top 2rem
+	.widget
+	.search-form
+		margin-bottom 1rem
+	.page-header
+		text-align center
+	.page-content
+		max-width 500px
+		margin 0 auto
+	
+	a 
+		color verde
+		
+@media screen and (min-width: 980px)
+	.blog
+	.single
+	.archive
+		&-content
+			margin-top 5rem 
+			width 64%
+			.entry-banner
+				height 300px 
+		&-right
+			margin-top 5rem  
+			width 30%
+			margin-left: 3rem;				
+		
+@import "tables.styl"

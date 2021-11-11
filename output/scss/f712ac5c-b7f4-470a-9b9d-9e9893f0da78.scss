@@ -1,0 +1,320 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:540;
+
+// VARIABLE SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Shadded_South_Personal_Use-webfont",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:2.0em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:210;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+//		PERSO MAPIMMO
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//---------------------------------------------------------------------------------------------------------------------------
+
+$fontFileName: "../css/Shadded_South_Personal_Use-webfont";
+$fontName: "Shadded_South_Personal_Use-webfont";
+
+@font-face { 
+    font-family: $fontName;    
+    src: url('/z/webagency/A_ID3X/mapimmo_54388/css/#{$fontFileName}.woff') format('woff'),
+         url('/z/webagency/A_ID3X/mapimmo_54388/css/#{$fontFileName}.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:960px;
+	}
+}
+
+.bg-picture {
+	background-image: url('../images/bg-site.jpg');
+	background-color: $color-body;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.typo-primary {
+	color: $color-primary;
+}
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.ligne-social-langue {
+	display: none;
+}
+
+.menu-principal>li {
+	padding: 0 2px;
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		MINI MOTEUR
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.bouton-rechercher-moteur {
+	background-image: none;
+	background-color: $color-recherche;
+	border: solid 1px darken($color-recherche,15);
+	&:hover {
+		background-color: darken($color-recherche,10);
+	}
+}
+
+
+#Mini_Bouton {
+	margin-top:-1px;
+}
+
+.form-inline{ 
+	margin-bottom: -10px;
+	select {
+		height:50px;
+		border:none;		
+		border-left: solid 1px $color-secondary;	    	    
+	    border-radius: 0;
+	    background-color: $color-primary;
+	    color: $color-nav-footer;
+	}
+}
+
+.saisie-suggest {
+    -moz-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    border-radius: 0px !important;
+    height: 50px !important;    
+    border:none !important;
+    background-color: $color-primary !important;
+    color: $color-nav-footer !important;
+}
+
+.bouton-rechercher-moteur {
+	height: 50px;
+	line-height: 40px;
+	margin-top: 1px;
+}
+
+/*.bg-mini-moteur {
+	background:transparent;
+}*/
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//---------------------------------------------------------------------------------------------------------------------------
+
+@media only screen and (max-width : 767px) {
+	.size-picture-container {
+		background-image: url('../images/homepage/homepage_fullscreen_1.jpg');
+	}
+}
+
+a > div.zone-pub-visuel {
+	/* background-color: rgba($color-block,0.7);
+	border-bottom: solid 10px lighten($color-block,20);
+	padding-bottom: 20px;
+	margin-right: 10px;
+	color: $color-nav-footer;
+	&:hover {
+		border-bottom: solid 10px lighten($color-block,25);
+	}
+	color: $color-nav-footer;
+	svg {
+		fill: $color-action;
+	}*/
+}
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage {
+	background: $color-block;
+}
+
+.module-villes-annonces {
+	background: $color-primary;
+	padding: 10px;
+    margin-top: 0px;
+    color: $color-nav-footer;
+}
+
+.homepage-bloc-type-bien-transaction {
+	display: none;
+}
+
+.homepage-info-bien .h2-like {
+	font-family: $font-body;
+	margin-top: -20px;
+    display: block;
+}
+
+@media only screen and (max-width : 767px) {
+	.module-annonces-homepage {
+		background:$color-block !important;		
+		color:$color-nav-footer !important;		
+	}
+	.homepage-bloc-type-bien-transaction .bg-white {
+		background:$color-block !important;		
+	}
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+	background:$color-important !important;		
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+	background:$color-important !important;			
+}
+
+.owl-theme .owl-dots .owl-dot span {
+	background:$color-action !important;				
+}
+
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		ENCART SERVICE
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.zone-pub {
+	background: $color-block;
+	padding: 10px;
+	margin-top: 20px;
+	border-bottom: solid 10px lighten($color-block,20);
+	&:hover {
+		border-bottom: solid 10px lighten($color-block,25);
+	}
+	.typo-action, a {
+		color: $color-nav-footer;	
+	}
+}
+
+//---------------------------------------------------------------------------------------------------------------------------
+//		LISTING PA
+//---------------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		TYPO
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.recherche-annonces .typo-action {
+	color: $color-nav-footer;
+}
+
+.prix-annonce {
+	font-family: $font-body;
+}
+
+.bloc-detail-prix {
+	font-family: $font-body;	
+}
+
+.vertical-pano {
+	background: $color-block;
+}
+
+//---------------------------------------------------------------------------------------------------------------------------
+//		DETAIL AGENCE
+//---------------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		NOUVEAUTES
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.londres-bloc-type-bien-transaction .h3-like, .agence-info-bien .h2-like {
+	font-family: $font-body;	
+}
+
+.agence-info-bien .h3-like {
+	display:none;
+}
+
+
+ .bg-black-opacity {
+   background-color: $color-dark;
+   background-color: rgba($color-dark, .6);
+   padding: 10px;
+}

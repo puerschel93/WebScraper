@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap');
+
+
+
+/* colors */
+$surface: #161717;
+$secondary: #fff;
+$text: #999;
+$bg-200: #767A7C;
+$bg-700: #2A2C2D;
+
+$breakpoint-mobile: 280px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+
+
+/* function */
+
+/* rem calculator */ 
+@function calculateRem($size) {
+ @return $size / 16px * 1rem;
+}
+
+
+
+/* mixins */
+/* media query */
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+/* clear */
+
+@mixin clear{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/* global */
+
+*{
+	box-sizing: border-box;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;
+	scroll-behavior: smooth;
+}
+
+ul{
+	margin-block-start: 0;
+	margin-block-end: 0;
+	padding-inline-start: 0;
+
+	li{
+		list-style: none;
+	}
+}
+
+
+h2{
+	font-weight: 500;
+}
+
+
+a{
+	color: $bg-200;
+	text-decoration: none;
+}
+
+p{
+	margin: 0;
+}
+
+
+
+
+
+/* navigation */
+
+.navbar-wrapper{
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 56px;
+	background: $surface;
+	z-index: 999;
+
+
+
+	
+	ul{
+		
+		display: flex;
+		overflow: auto;
+		white-space: nowrap;
+
+		li{
+			position: relative;
+			font-size: calculateRem(18px);
+
+			a{
+				display: block;
+				line-height: 56px;
+				padding: 0 16px;
+				white-space: nowrap;
+
+			}
+			
+		}
+	}
+
+	@include desktop{
+
+		width: 300px;
+		height: 100%;
+
+		ul{
+			
+			flex-direction: column;
+		}
+
+	}
+}
+				
+.active{
+
+	a{
+		color: $secondary;
+		height: 56px;
+		border-bottom: 3px solid $secondary;
+
+		@include desktop{
+		border-bottom: 0 none;
+		background: darken($bg-700, 30%);
+		}
+	}	
+}
+
+
+
+
+.navbar-wrapper ul {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.navbar-wrapper ul::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-up {
+    top: -56px;
+
+    @include desktop{
+    	top: 0;
+    }
+
+}
+
+
+
+
+
+/* index */
+
+.index-body{
+	background-image:url(../img/bg.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.index-container{
+	display: flex;
+	height: 90vh;
+	flex-direction: column;
+	justify-content: center;
+
+	@include mobile{
+		height: 80vh;
+	}
+}
+
+.index-logo{
+	width: 150px;
+  	height: 132px;
+  	margin: 0 auto 60px;
+  	background:url(../img/sub-logo.svg) 0 0 no-repeat;
+  	background-size: 100%;
+  	text-indent: -9999px;
+
+  	@include mobile{
+  		width: 120px;
+  		height: 100px;
+  	}
+}
+
+.slogan {
+  margin: 0 42px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 1.5;
+  color: $text;
+
+	.bolder{
+	  font-size: calculateRem(42px);
+	  color: $secondary;
+	}
+
+
+	@include mobile {
+		.bolder{
+			font-size: calculateRem(24px);
+		}
+
+		.grey{
+			display: none;
+		}		 		
+	}
+}
+
+
+.google-play-badge {
+	display: block;
+	width: 292px;
+	height: 113px;
+	margin: 60px auto 0;
+
+	img{
+		width: 100%;
+	}
+
+	@include mobile{
+		width: 200px;
+		height: 77px;
+	}
+}
+
+footer{
+	color: $text;
+	height: 10vh;
+	position: relative;
+
+	.contact{
+		position: absolute;
+		top: 0;
+		left: 60px;
+		
+		a{
+			display: block;
+			float: left;
+			margin-right: 48px;
+
+			&:hover{
+				color: $secondary;
+			}
+
+
+			&:before{
+				content: "";
+				display:block;
+				float: left;
+				width: 24px;
+				height: 24px;
+				margin-right: 10px;
+				background-size: 100% !important;
+			}
+
+
+		}
+
+	.youtube:before{
+			background:url(../img/ic-social-youtube.svg) no-repeat center;
+		}
+
+	.mail:before{
+			background:url(../img/ic-contact.svg) no-repeat center;
+		}
+
+	.tutorial:before{
+		background:url(../img/ic-tutorial.svg) no-repeat center;
+	}
+
+	}
+
+	.copyright{
+		position: absolute;
+		text-align: right;
+		top: 0;
+		right: 60px;
+	}
+
+
+	@include mobile{
+		
+		display:flex;
+		height: 20vh;
+		flex-direction: column;
+	    justify-content: space-around;
+	    align-items: center;
+
+
+		.contact{
+			position:relative;
+			top: auto;
+			left: auto;
+			text-indent: -9999px;
+
+
+			a{
+				margin: 0 10px;
+				width: 56px;
+				height: 56px;
+				background-color: rgba(216, 216, 216, 0.07);
+				border-radius: 50%;
+
+				&:before{
+					margin: 9px;
+					width: 38px;
+					height: 38px;
+				}
+
+				&:hover{
+					
+				}
+			}
+		}
+
+		.copyright{
+			position:relative;
+			top:auto;
+			right: auto;
+			text-align: center;
+			font-size: calculateRem(12px);
+		}
+	}
+}
+
+
+
+/* section */
+
+.tutorial .container{
+
+	@include desktop{
+		width: calc(100% - 300px);
+		margin-left: 300px;
+		margin-top: 0px !important;
+		padding: 0 30px;
+
+
+		section{
+
+			overflow: hidden;
+			&:after{
+				display: none;
+			}
+			
+			.video-preview{
+				float:left;
+			}
+
+			h2, p{
+				margin-left: 300px;
+			}
+		}
+		
+	}
+	
+}
+
+
+section{
+	position: relative;
+	padding: 35px;
+	margin-top: 35px;
+	z-index: 10;
+	@include clear;
+
+	h2{
+		margin-top: 35px;
+		font-size: calculateRem(20px);
+	}
+
+	p{
+		color: $text;
+	}
+
+
+	&:before{
+		position: relative;
+		display: block;
+		top:0;
+		left: 0;
+		content: "";
+		height: 40px;
+		width: 100%;
+	}
+
+	&:after{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width:100%;
+		height: calc(100% - 400px);
+		background: $surface;
+		z-index: 5;
+		content: "";
+	}
+
+	.video-preview, h2, p{
+		position: relative;
+		z-index: 100;
+	}
+
+}
+
+
+
+
+.video-preview{
+	display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.35);
+    width: 250px;
+    height: 518px;
+    overflow: hidden;
+    background-size: cover;
+}
+
+
+#practice:before{
+	height: 0;
+}
+
+#practice .video-preview{
+	background-image:url(../img/tutorial01.png);
+}
+
+#edit-lyrics .video-preview{
+	background-image:url(../img/tutorial02.png);
+}
+
+#adjust-sync .video-preview{
+	background-image:url(../img/tutorial03.png);
+}
+
+#recording .video-preview{
+	background-image:url(../img/tutorial04.png);
+}
+
+#clip .video-preview{
+	background-image:url(../img/tutorial05.png);
+}
+
+#clip-sync .video-preview{
+	background-image:url(../img/tutorial06.png);
+}
+
+#template .video-preview{
+	background-image:url(../img/tutorial07.png);
+}
+
+
+
+
+
+
+
+

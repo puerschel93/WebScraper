@@ -1,0 +1,325 @@
+.header {
+    height: 80px;
+    position: relative;
+    width: 100%;
+    @include laptop-query {
+    }
+    &__container {
+        padding: 2rem 1.4rem;
+        @include laptop-query {
+            padding: 2rem 6rem;
+        }
+        @include laptop-l-query {
+            padding: 2rem 17rem;
+        }
+    }
+    &__hr {
+        display: none;
+        @include laptop-query {
+            display: block;
+            width: 100%;
+            height: 0.81px;
+            background-color: $c-Grayish-blue;
+            margin: 0;
+            opacity: 0.4;
+            margin: 1rem 0;
+        }
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include laptop-query {
+        z-index: -8;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    &__btn {
+        width: 28px;
+        display: flex;
+        justify-content: flex-start;
+        align-content: flex-start;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 31;
+        @include laptop-query {
+            display: none;
+        }
+    }
+    &__btn-open {
+        @include laptop-query {
+            display: none;
+        }
+    }
+    &__btn-close {
+        display: none;
+    }
+    &__logo {
+        @include laptop-query {
+            padding: 0;
+        }
+    }
+    &__list {
+        position: absolute;
+        top: 0;
+        right: 6%;
+        left: -2%;
+        z-index: 30;
+        width: 70%;
+        height: 100vh;
+        list-style: none;
+        background-color: $c-White;
+        padding: 7rem 0;
+        display: none;
+
+        @include laptop-query {
+            position: absolute;
+            display: flex;
+            height: 20px;
+            width: 34%;
+            background-color: transparent;
+            top: -70px;
+            right: 100px;
+            left: 308px;
+        }
+        @include laptop-l-query {
+            top: -70px;
+            right: 100px;
+            left: 441px;
+        }
+    }
+    .hide {
+        display: none;
+    }
+    .show {
+        display: block;
+        @include laptop-query {
+            display: none;
+        }
+    }
+    &__list-item {
+        text-align: start;
+        padding: 0.7rem 2.4rem;
+        z-index: 60;
+        &:hover {
+            transform: translateX(9px);
+            color: $c-Orange;
+        }
+        @include laptop-query {
+            width: 80px;
+            padding: 0;
+            text-align: center;
+        }
+    }
+
+    &__list-item-link {
+        width: 100%;
+        font-size: $c-mfont-size;
+        font-weight: $fw-bold;
+        color: $c-light-black;
+        text-decoration: none;
+
+        &:hover {
+            padding: 0.4rem 0;
+            border-bottom: 2px solid $c-Orange;
+            animation: addx;
+            color: $c-Orange;
+            @keyframes addx {
+                from {
+                    transform: scaleX(0);
+                }
+
+                to {
+                    transform: scaleX() (100%);
+                }
+            }
+            @include laptop-query {
+                padding: 1.8rem 0;
+            }
+        }
+    }
+    &__move-in {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 6%;
+        left: -2%;
+        z-index: 30;
+        max-width: 100%;
+        height: 945px;
+        list-style: none;
+        background-color: $c-White;
+        padding: 7rem 0;
+        animation: slidein 1s;
+
+        @keyframes slidein {
+            from {
+                transform: translateX(-80%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+        @include tablet-query {
+        }
+        @include laptop-query {
+            display: none;
+        }
+    }
+    &__move-out {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0%;
+        left: -1px;
+        z-index: 30;
+        max-width: 100%;
+        height: 945px;
+        list-style: none;
+        background-color: $c-White;
+        padding: 7rem 0;
+        animation: slideout 1s ease-in-out;
+        @include laptop-query {
+            display: none;
+        }
+        @keyframes slideout {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-600px);
+            }
+        }
+    }
+    &__shop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 70px;
+    }
+    &__text {
+        display: none;
+    }
+    &__shop-cart-icon {
+        // padding: 0 1rem;
+        border: none;
+        background-color: transparent;
+    }
+
+    &__shop-profile-picture {
+        width: 25px;
+        height: 25px;
+        &:hover {
+            border-radius: 50%;
+            border: 0.001rem solid $c-Orange;
+        }
+        @include laptop-query {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+.popup-show {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    text-align: center;
+    top: 27px;
+    color: white;
+    background-color: $c-Orange;
+    border-radius: 50%;
+    font-size: $c-Smfont-size;
+    font-weight: $fw-bold;
+    z-index: 4;
+    display: block;
+}
+.hide-scroll {
+    overflow: hidden;
+    height: 50%;
+}
+
+/*
+// * overlay section
+// */
+.overlay {
+    &::before {
+        content: "";
+        opacity: 0.77;
+        width: 32%;
+        height: 100vh;
+        display: block;
+        right: 0;
+        top: 0;
+        position: absolute;
+        background: $c-Black;
+        z-index: 5;
+        animation: slidex 1s;
+        @keyframes slidex {
+            from {
+                transform: translateX(-400px);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+        @include tablet-query {
+            max-width: 100%;
+            animation: slidexx 1s;
+            @keyframes slidexx {
+                from {
+                    transform: translateX(-610px);
+                }
+
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            @include laptop-query {
+                display: none;
+            }
+        }
+    }
+}
+.overlay-out {
+    &::before {
+        content: "";
+        opacity: 0.77;
+        width: 103px;
+        height: 100vh;
+        display: block;
+        right: 0;
+        top: 0;
+        position: absolute;
+        background: $c-Black;
+        z-index: 5;
+        animation: slidex 1s;
+        @keyframes slidex {
+            from {
+                transform: translateX(-300px);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+        @include tablet-query {
+        }
+        @include laptop-query {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,274 @@
+//=======================
+// Custom styles
+//=======================
+
+// To use images in assets folder:
+// ex: background-image url($assets-path + 'filename.jpg')
+
+// See `base` folder for variables (color, font, media queries)
+
+.futura-bold
+  font-family 'FuturaStd-Bold', Impact, Arial
+  font-weight 700
+
+.futura-light
+  font-family 'FuturaStd-Light', Impact, Arial
+
+.futura-medium
+  font-family 'FuturaStd-Medium', Impact, Arial
+
+.bold
+  font-weight bold !important
+
+.intro
+  padding 1em
+  max-width 55rem
+  margin 1em auto
+  +mq(bp-2)
+    max-width 50em
+  +mq(bp-3)
+    max-width 55em
+
+  &__logos
+    display flex
+    flex-wrap nowrap
+
+    &--img
+      width 100%
+
+      &.bristol-logo
+        width 55%
+
+.super
+  vertical-align super
+  // color $primary-blue
+  cursor pointer
+  font-size .8rem
+
+.nav-pills
+  .nav-item
+    a
+      color $offblack
+      padding 1em
+    &-1
+      a.active
+        background $r1 !important
+        color $offblack !important
+    &-2
+      a.active
+        background $g1 !important
+        color $offblack !important
+    &-3
+      a.active
+        background $accent-b1 !important
+        color $offblack !important
+    &-4
+      a.active
+        background $prpl-1 !important
+        color $offblack !important
+
+.sidebar
+  display none
+  +mq(bp-2)
+    display block
+    padding-top .25em
+    padding-left 1em
+    position sticky
+    top 0
+    left 1em
+    background $primary-red
+    height 100vh
+
+  &__list
+    list-style-type none
+
+    &--item[data-active='true']
+      background $accent-b1
+      padding .5em
+      a
+        color $black !important
+
+    &--item[data-active='false']
+      color $offwhite
+
+    &--item
+      margin 1em
+
+      a
+        text-decoration none
+        color $offwhite !important
+        position relative
+
+        &:before
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: -5px;
+          left: 0;
+          background-color: $offwhite;
+          visibility: hidden;
+          transform: scaleX(0);
+          transition: all 0.3s ease-in-out 0s;
+
+        &:hover
+          text-decoration underline
+          transition text-decoration .2s linear
+
+          &:before
+            visibility visible
+            transform scaleX(1)
+
+    &--sublist
+      margin-left 1.5em
+
+      li
+        margin .5em 0
+        font-size .95em
+        list-style-type disc
+        color $offwhite !important
+
+        a
+          text-decoration none
+          color $offwhite !important
+          position relative
+
+          &:before
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -3px;
+            left: 0;
+            background-color: $offwhite;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out 0s;
+
+          &:hover
+            text-decoration underline
+            transition text-decoration .2s linear
+
+            &:before
+              visibility visible
+              transform scaleX(1)
+
+.main
+  padding-top 1em
+  width 95%
+  margin 0 auto
+
+  &__icon
+    width 120px
+    margin 0 auto
+
+
+  &__hed
+    font-size 1.75em
+    margin 0
+    +mq(bp-2)
+      font-size 2em
+      margin 1em 0
+    +mq(bp-3)
+      font-size 3em
+
+  &__dek
+    font-size 1em
+    margin 1em 0
+    +mq(bp-2)
+      font-size 1.3em
+    +mq(bp-3)
+      font-size 1.6em
+
+  &__section
+    rhythm('medium')
+    margin-left 10px
+    +mq(bp-2)
+      margin 1em 0
+
+  &__inline-img
+    width 100%
+
+  &__aside
+    rhythm('small')
+    font-style italic
+    padding-left 2em
+    max-width 35em
+
+  &__graf
+    rhythm('base')
+    max-width 40rem
+    margin 1em 0
+    line-height 1.6
+    font-weight normal
+    font-size 1em
+    +mq(bp-2)
+      font-size 1.05em
+
+    &--list
+      rhythm('base')
+      max-width 40rem
+      margin 1em
+      line-height 1.6
+      font-size 1em
+      +mq(bp-2)
+        margin 1em 2em
+        font-size 1.05em
+
+      &-item
+        strong
+          font-weight bold
+        em
+          font-style italic
+
+    strong
+      font-weight bold
+
+    em
+      font-style italic
+
+  &__nav
+    padding 1em
+    margin 1em 0
+    @extends $btn
+    background $accent-b2
+    font-family 'Futura'
+    color $black
+    +mq(bp-2)
+      margin-left 15px
+    &:hover
+      background darken($accent-b2, 30)
+      text-decoration none
+      color $offwhite
+
+  &__questions
+    line-height 1.5
+    padding-left 15px
+
+    &__wrapper
+      +mq(bp-2)
+        margin-bottom 1em
+
+    &--list
+      rhythm('base')
+      margin-bottom .75em
+      list-style-type disc
+      font-size 1em
+      line-height 1.5
+      strong
+        font-weight bold
+
+
+    &--subq
+      margin-bottom .5em
+
+    .subq_list
+      list-style-type disc
+      rhythm('small')
+      line-height 1.6
+      &--item
+        margin-left 1.2em
+
+      .mini-list
+        margin-left 2em
+        list-style-type '- '

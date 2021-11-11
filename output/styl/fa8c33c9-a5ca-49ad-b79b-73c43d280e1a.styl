@@ -1,0 +1,444 @@
+@import '../../styl/component-include.styl'
+
+@import './filter.styl'
+
+.b-estate-list
+  position relative
+  overflow hidden
+    
+  &:after
+    clear both
+    content "."
+    display block
+    height 0
+    visibility hidden
+  
+  &__img-div-bw,
+  &__img-div
+    opacity(0)
+    transition( opacity 0.5s ease )
+    width 100%
+    height 100%
+    abs()
+    background-repeat no-repeat
+    background-position center center
+    background-size cover
+    
+    
+  .i-loaded &__img-div-bw,
+  .i-img-loaded:hover &__img-div
+    opacity(1)
+    
+  &__empty
+    position absolute
+    bottom 0
+    left 0
+    width 100%
+    padding-top 25%
+    z-index 7
+    
+    @media ( max-width 800px)
+      width 400%
+      padding-top 100%
+    
+    
+    @media ( max-width 1200px ) and ( min-width 801px )
+      width 200%
+      padding-top 50%
+    
+    
+    @media ( max-width 1600px ) and ( min-width 1201px )
+      width 33.3%
+      width 133.2%
+      padding-top 33.3%
+    
+    
+    &__cont
+      position absolute
+      bottom 0
+      left 0
+      width 100%
+      height 100%
+    
+    
+    &__i
+      float left
+      width 25%
+      height 100%
+      background-color #252525
+      position relative
+      
+      &:nth-child( even )
+        background-color #171717
+      
+    
+  
+  
+  &__i
+    float left
+    width 50%
+    position relative
+    background url(/template/images/preloader-25.gif) no-repeat 55px 55px #252525
+    line-height 1.3
+    overflow hidden
+    z-index 8
+    
+    &:hover,
+    &:active,
+    &:focus
+      color #fff
+    
+    
+    &:nth-child( even )
+      background-color #171717
+      background-image url(/template/images/preloader-17.gif)
+    
+    
+    &__small-img,
+    &__small-img-bw
+      display none
+    
+    
+    &__img,
+    &__small-img,
+    &__big-img
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height auto
+      opacity(0)
+      transition( opacity 0.5s ease )
+      z-index 10
+      
+      &-bw
+        width 100%
+        height auto
+        display block
+        opacity(0)
+        transition( opacity 0.5s ease )
+      
+    
+    
+    &__shutter
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      background embedurl("img/grad.png") repeat-y 0 0
+      background-size 100%
+      opacity(0)
+      transition( opacity 0.5s ease )
+      z-index 9
+    
+    
+    &.i-loaded &__img-bw,
+    &.i-loaded &__shutter,
+    &.i-img-loaded:hover &__img
+      opacity(1)
+
+
+    &.i-loaded &__props
+      transform: translate(0);
+      opacity(1)
+
+    &.i-loaded:hover &__props
+      transform: translate(100%);
+      opacity(0)
+
+    &.i-loaded:hover &__info
+      transform: translate(0);
+      opacity(1)
+
+
+    &__title
+      display block
+      position absolute
+      bottom 8%
+      left 0
+      width 50%
+      text-align left
+      font-size 18pt
+      word-wrap break-word
+      box-sizing( border-box )
+      padding-left 50px
+      line-height 1.2
+      z-index 11
+    
+      @media ( max-width 520px)
+        padding-left 20px
+
+
+
+    &__hot
+      background: #ff4242
+      padding: 15px 30px 20px
+      width: 250px
+      box-sizing( border-box )
+      position absolute
+      font-size 14px
+      top 0
+      right 0
+
+      span&-icon
+        background-repeat: no-repeat
+        background-position 0 0
+        width: 24px
+        height: 24px
+        display: inline-block
+        vertical-align: bottom
+        margin-right: 25px
+
+        @media (min-width 800px) and (max-width 920px)
+          margin-right: 20px
+
+      @media (min-width 800px) and (max-width 920px)
+        width: 185px
+        padding: 10px 25px 15px
+
+    &__props
+      display block
+      position absolute
+      box-sizing( border-box )
+      padding: 35px 30px 40px
+      bottom: 0;
+      right: 0
+      background: rgba(0, 0, 0, .8);
+      text-align: left
+      font-size: 14px
+      font-weight: bold
+      height: 180px
+      width: 250px
+      z-index 12
+      transition( all 0.5s cubic-bezier(0.4, 0, 1, 1) )
+      transition-delay: 0.3s
+      transform: translate(100%)
+      overflow: hidden
+      opacity(0)
+
+      @media (min-width 800px) and (max-width 920px)
+        padding: 25px 20px 30px
+        width: 185px
+        font-size: 10px
+
+
+      span
+        font-size 12px
+        font-weight: normal
+        margin-top: 8px
+        display: inline-block
+        @media (min-width 800px) and (max-width 920px)
+          font-size: 9px
+
+    &__info
+      display: block
+      height: 100%
+      width: 250px
+      padding: 30px
+      background: rgba(0,0,0,0.8)
+      position: absolute
+      top: 0
+      right: 0
+      box-sizing: border-box
+      z-index: 12
+      font-size: 14px
+      transition( all 0.3s cubic-bezier(0.4, 0, 1, 1) )
+      transition-delay: 0.3s
+      transform: translate(100%)
+      overflow: hidden
+      opacity(0)
+
+      @media (min-width 800px) and (max-width 1015px),
+             (min-width 1201px) and (max-width 1450px),
+             (min-width 1601px) and (max-width 1915px)
+        padding: 20px
+        width: 185px
+        font-size: 11px
+
+      b
+        display: block
+        margin: 15px 0 5px
+
+      span
+        display: block
+        //max-height 22px
+        text-overflow ellipsis
+
+      span&-title
+        font-size: 18px
+        font-weight: bold
+
+      span&-icons
+        margin-top: 30px
+        display: block
+        width: 100%
+
+      div&-icon
+        width: 24px
+        height: 24px
+        display: inline-block
+        margin: 0 11px 6px;
+        background: url("/template/images/icons/icons.png") no-repeat;
+        @media (min-width 800px) and (max-width 920px)
+          margin: 0 6px 6px;
+        &:nth-child(4n)
+          margin-right: 0
+          
+        @media (min-width 800px) and (max-width 1015px),
+               (min-width 1201px) and (max-width 1450px),
+               (min-width 1601px) and (max-width 1915px)
+          transform scale(0.7)
+          margin 0 2px 2px
+
+
+
+    span&__label
+      display: block
+      font-size: 11px
+      margin-top: 20px
+      position: relative
+      width: 100%
+      text-transform: lowercase
+
+      @media (min-width 800px) and (max-width 920px)
+        font-size: 8px
+
+    span&__count
+      font-weight: bold
+      font-size: 18px
+      margin: 0
+
+      @media (min-width 800px) and (max-width 920px)
+        font-size: 13px
+
+    span&__folder-icon
+      position: absolute
+      right: 0
+      background: url("/template/images/icons/folder.png") no-repeat
+      width: 24px
+      height: 24px
+      top: 50%
+      transform: translate(0, -50%)
+      margin: 0
+
+
+    span&__price
+      display block
+      margin-top 14px
+      font-size 13.5pt
+
+    
+    
+    @media ( min-width 801px )
+      &.i-large-item
+        float none
+        display block
+        width 100%
+        max-height 525px
+        overflow hidden
+        
+        .b-estate-list__i__title
+          font-size 36pt
+          bottom 12%
+        
+        
+        .b-estate-list__i__props
+          font-size 13.5pt
+          line-height 1.45
+          bottom 12%
+        
+        
+        .b-estate-list__i__price
+          font-size 26pt
+          margin-top 6px
+        
+      
+    
+    
+    @media ( max-width 800px)
+      width 100%
+      
+      &__small-img,
+      &__small-img-bw
+        display block
+      
+      
+      &__big-img,
+      &__big-img-bw
+        display none !important
+      
+    
+    @media ( max-width 1200px ) and ( min-width 801px )
+      width 50%
+    
+    @media ( max-width 1600px ) and ( min-width 1201px )
+      width 33.3%
+    
+    @media ( min-width 1601px )
+      width 25%
+
+      
+  &.i-empty
+    padding-top 25%
+    
+    @media ( max-width 800px)
+      padding-top 100%
+    
+    @media ( max-width 1200px ) and ( min-width 801px )
+      padding-top 50%
+    
+    @media ( max-width 1600px ) and ( min-width 1201px )
+      padding-top 33.3%
+
+
+.b-empty-link
+  border 6px solid #666666
+  position absolute
+  top 25%
+  left 25%
+  width 50%
+  height 50%
+  animation( opacityAnimation 1.5s )
+  transition( background 0.5s ease )
+  box-sizing( border-box )
+  
+  &:hover
+    background rgba(255,255,255,0.1)
+  
+  
+  &__cont
+    font-size 18pt
+    color #999
+    display block
+    position absolute
+    top 50%
+    left 50%
+    width 125px
+    height 125px
+    
+    span
+      ib()
+      margin -50% 0 0 -50%
+      text-align center
+    
+  
+  
+
+
+@keyframes opacityAnimation
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+
+
+@-webkit-keyframes opacityAnimation
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }

@@ -1,0 +1,163 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:480;
+
+// SIZE NAVIGATION
+//$height-navigation:70;
+$height-navigation:90;
+
+//$margin-top-under-nav-fixe:220;
+$margin-top-under-nav-fixe:180;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Yanone Kaffeesatz",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:2.32em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:normal;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES13
+@import "../../../slagence_X_V5/sources/scss/modules/annonces13";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra4";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+.btn-important {color: $color-action;}
+.btn-important:hover {color: $color-secondary;}
+
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// STYLES PERSO VOTRE MAISON 
+
+.navigation {
+	border-bottom:1px solid #c2c2c2;
+}
+.menu-principal {
+ font-size:$font-size-title * 0.56;
+}
+.menu-principal>li>a {
+padding: 0px 3px;
+}
+.menu-principal > li > a {
+	color:$color-font-body;
+	text-transform:uppercase;
+	border-bottom:5px solid #000;
+}
+.menu-principal > li > a:hover {
+	color:$color-font-body;
+	background:darken($color-block,5);
+	border-bottom:5px solid $color-important;
+}
+
+.vignette-pub a{
+	text-decoration:none;
+}
+
+.vignette-pub:hover {
+	@include background-image (linear-gradient(bottom, lighten($color-primary,10) 0%, $color-primary 100%));
+
+}
+
+.haccueil{
+margin-top:-70px;
+margin-bottom:-18px;
+}
+
+.titreTexte{
+padding-left:10px;
+border-bottom:4px solid $color-important;
+}
+
+ul.liens-infos a {
+background:$color-block;
+padding:10px;
+	&:hover {
+	text-decoration:none;
+	background:lighten($color-encartpub,5);
+	color:$color-block;
+	}
+}
+
+ul.liens-infos li {
+margin-top:17px;
+}
+
+ul.liens-encartpub a, .sousmenu-encartpub a {
+background:lighten($color-encartpub,5);
+@include lightnessColor($color-encartpub,no);
+border-bottom:1px solid $color-encartpub !important;
+	&:hover {
+	background:darken($color-encartpub,5) !important;
+	}
+}
+
+.bg-encartpub {
+background:$color-encartpub;
+}
+
+.btn-important{
+color:$color-font-body;
+	&:hover {
+	color:darken($color-encartpub,20);
+	}
+}
+
+.bouton-raz{
+color:$color-font-body;
+	&:hover {
+	color:darken($color-encartpub,20);
+	}
+}
+
+.pagination ul>.active>a, .pagination ul>.active>span{
+color:$color-font-body;
+}
+
+.listing-agences-responsable,.agence-responsable{display: none;}

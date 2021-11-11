@@ -1,0 +1,184 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:799;
+
+// SIZE NAVIGATION
+$height-navigation:94;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:110;
+
+// VAR SITE TYPO
+$font-body:"Open Sans",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES11
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//--------------------------------------------------------------------------------------
+//      PERSO MOTORO78
+//--------------------------------------------------------------------------------------
+
+.container {
+    width: auto;
+    max-width: 1280px;
+    @media only screen and (max-width : 1310px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.cookie-banner {
+    background-color: $color-primary;
+    color: $color-nav-footer;
+}
+
+.text_cookies .button_submit {
+    background-color: $color-action !important;
+}
+
+
+
+//--------------------------------------------------------------------------------------
+//      MENU & NAV
+//--------------------------------------------------------------------------------------
+
+@media only screen and (max-width: 767px) {
+    .logo img {
+       width: 25% !important;
+    }
+}
+
+.bg-navigation {
+    background-color: rgba($color-primary,0.9);
+}
+
+.aside-home-1 {
+    margin-top: -95px;
+    @media only screen and (max-width: 767px) {
+        margin-top: auto;
+    }
+}
+
+.menu-responsive>ul>li a {
+    font-size: 1.1em;
+    font-weight: initial;
+}
+
+.menu-principal>li>a {
+    padding: 0px 12px;
+    background-color:transparent;
+    &:hover {
+        color:$color-important;
+        background-color:$color-primary-dark-5;
+    }
+}
+
+@media only screen and (max-width : 1280px) {
+    .menu-principal>li>a {
+        padding: 8px 8px;
+        font-size:1.0em;
+    }
+}
+
+@media only screen and (max-width : 890px) {
+    .menu-principal>li>a {
+        padding: 8px 4px;
+        font-size:0.8em;
+    }
+}
+
+
+
+//--------------------------------------------------------------------------------------
+//      INDEX
+//--------------------------------------------------------------------------------------
+
+.aside-home-1 {
+    color: #fff;
+}
+
+.background-pub-estimation {
+    background-position-y: bottom;
+}
+
+
+.height-180 {
+    height: 240px;
+}
+
+
+.opacity-9 {
+    opacity: .4;
+}
+
+
+//--------------------------------------------------------------------------------------
+//      POP AVIS CLIENT
+//--------------------------------------------------------------------------------------
+
+#PopAvis {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 20rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: $color-body;
+    padding: 20px;
+    @include border-top-radius(8px);
+    color: $color-primary;
+    z-index: 1500;
+}

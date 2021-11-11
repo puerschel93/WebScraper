@@ -1,0 +1,134 @@
+.slide
+  height: 100vh
+  $imageOffset = 6%;  
+  $imageOffsetVertical = 10vh;  
+  &__title
+    font-size: px-to-rem(28px)
+    margin-bottom: 4px;
+  &__sub-title
+    display block    
+    margin-bottom: px-to-rem(40px)
+  .gs
+    filter: grayscale(100%);
+    opacity: 0.85;
+    width: 100%
+    transition opacity 0.3s ease-in-out, filter 0.3s ease-in-out
+  &__images
+    display flex
+    position relative
+    .left
+      position relative
+      left $imageOffset;
+      z-index: 2
+      transition: left 0.3s ease-in-out;
+    .right
+      position relative
+      right $imageOffset;
+      top: $imageOffsetVertical;
+      margin-left: 20px;
+      transition: right 0.3s ease-in-out, top 0.3s ease-in-out;
+    &:hover
+      .gs
+        opacity 1
+        filter: grayscale(0%);
+      .left
+        left 0
+      .right
+        position relative
+        right 0px;
+        top: 0px
+      .slide__link, .slide__links
+        opacity 1
+  &__role
+    font-weight: bold
+  &__description
+    text-align: center
+    width: 50%;
+    margin-top: 25px;
+    padding 0 60px;
+    ul
+      margin-bottom 10px
+  &__link
+    position absolute
+    left: 50%;
+    top: 50%
+    z-index: 10
+    transform: translateX(-50%) translateY(-50%);
+    opacity 0;
+    transition: opacity 0.3s ease-in-out;
+  &__links
+    position absolute
+    width: 100%
+    left: 0%;
+    bottom: 0%
+    z-index: 10
+    opacity 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    .slide__link
+      position relative
+      left inherit 
+      display inline-block
+      top inherit
+      margin-right: 10px;
+      background-color: $info
+      transform: none;
+      &:hover
+        background-color: lighten($info,10%)
+  &__contact
+    margin-top: 40px;
+    a
+      font-size: px-to-rem(20px)
+      display block
+      margin-top: 20px;
+  &:nth-last-of-type(2)
+      height: 80vh  
+  +for_breakpoint(xs)
+    $mobile-spacing = 60px;
+    height:  auto;
+    margin-bottom: $mobile-spacing
+    padding-bottom: $mobile-spacing
+    border-bottom: solid 1px $light-gray;
+    &:nth-last-of-type(2)
+      border-bottom: none;
+    &__images
+      display: block
+      opacity 1
+      .gs
+        opacity 1
+        filter: grayscale(0%);
+      .left
+        position relative
+        left 0;
+        width: 80%;
+        margin: 0 auto 20px;
+      .right
+        position relative
+        width: 80%;
+        right 0;
+        margin: 0 auto;
+        top: 0;
+    &__title
+      margin-bottom: 10px;
+    &__description
+      width: 80%;
+      margin 40px auto
+      padding: 0;
+    .slide__link
+      opacity 1;
+      font-size: px-to-rem(10px)
+
+    &__links
+      position relative
+      width: 90%
+      margin 14px auto 0;
+      left: 0%;
+      bottom: 0%
+      opacity 1;
+      display block
+      .slide__link
+        opacity 1;
+        transform: none;
+        margin-bottom: 3px
+        font-size: px-to-rem(10px)
+

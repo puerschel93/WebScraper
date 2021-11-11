@@ -1,0 +1,490 @@
+// from global.css
+
+body {
+    font-family: 'Nunito', sans-serif;
+    /* font-family: 'Open Sans', Helvetica, Arial, sans-serif; */
+    /* font-family: Roboto, "Ubuntu", Arial, sans-serif; */
+    color: #393939;
+    background-color: #FFF;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*, * ::before, * ::after {
+     box-sizing: inherit;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #5BACC3;
+}
+
+/* removed weird linking lines at Yelp logo */
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;  
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 3.75em;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 2.1em;
+    font-weight: 300;
+}
+
+nav li a {
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+p {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+/* navbar ------------------------------------------------------------------------------------- */ 
+.navbar {
+    background-color:#FFF0ED;  
+    overflow: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.navbar li {
+    display: inline-block;
+    margin: 0 auto;
+    /* padding-top: 3em;
+    padding-bottom: 0.5em;
+    padding-left: 2em; */
+    padding: 2em;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #393939;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+a.shop-now {
+    text-decoration: none;
+    color: #5BACC3; 
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
+/* Change the color of links on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: #5BACC3; 
+}
+  
+/* Add an active class to highlight the current page */
+.navbar a.active {
+    background-color: #5BACC3;
+    color: white;
+}
+
+.navbar .shop-now:hover {
+   color:white;
+}
+
+a .beans-icon:hover {
+    background-color: #5BACC3; 
+}
+
+.beans-icon {
+    width: 2.5em;
+    height: 2.5em;
+    /* min-width: 50px;
+    max-width: 120px;  */
+    vertical-align: sub;  /* makes icon to be lower position */
+}
+
+a.store-name {
+    text-decoration: none; 
+    font-size: 4em;
+    color: #393939;
+    font-weight: lighter
+}
+
+
+// from landing.css
+
+header {
+    background-color: #FFF0ED;
+    margin: 0 auto;
+    padding: 0;
+}
+
+footer {
+    background-color: #FFF0ED;
+    position: relative;
+}
+
+/* ======================================== Button ============================================ */
+.button {
+    background-color: #5BACC3;
+    color: white;
+    border: none; 
+    width: 8.5em;
+    height: 3.75rem;
+    font-size: 1.3em;
+    font-weight: 400;
+    position: absolute;
+    padding-top: 0.7rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 0.7rem;
+    margin: 1em;
+}
+
+.button__line {
+    position: relative;
+    width: 11.2rem;
+    height: 3.75rem;
+    border: 2px solid black;
+    top:  1rem;
+    left: 1rem;
+}
+
+.button__line:hover {
+    top: 1.25rem;
+    left: 1.25rem;
+}
+
+.button__line:active {
+    background-color: #FFF0ED;
+}
+
+    /* 
+    Minimum width: 180px;
+    Maximum width: 80%;
+    Padding/Margin increments: 20px;
+    Background color: Nitro-Blue;
+    Text color: White;
+    Border width: 2px;
+    Border color: Graphite;
+    Position/offset increments: 5px;
+     */
+/* ============================================ Promotion ================================================= */
+
+/* promotion content p tag */
+.promotion {
+    background-color: #393939;
+    color: white;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif; 
+    margin: 13rem;
+    padding: 0.8em;
+    font-size: 3em;
+    text-align: center;
+    width: 80%; 
+    margin-left: 10%;
+    border: none;
+    animation: discount-banner 2.5s infinite; 
+}
+   @keyframes discount-banner {
+    from {background: linear-gradient(45deg,#5BACC3, #393939);}
+    to {background-color: #393939;}
+} 
+
+/* .promotion:active {
+    background: linear-gradient(45deg,#5BACC3, #393939);
+    -webkit-transition: background-color 2.5s linear infinite;
+    -ms-transition: background-color 2.5s linear infinite;
+    transition: background-color 2.5s linear infinite;
+} */
+
+.promotion__title {
+    font-weight: 900;
+}
+    /* 
+    Minimum width: size of text;
+    Maximum width: 90%;
+    Padding/Margin increments: 20px;
+    Background color: Graphite;*/
+
+/* ======================================= Product ========================================== */
+.product-image {
+    min-height: 15em;
+    max-height: 34em ;
+}
+
+.product-price {
+    color: #5BACC3;
+    font-size: 2.5rem;
+    text-align: right;
+    margin-top: 1.3em;
+    padding-right: 0.5em;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif; 
+    font-weight: 900;
+}
+
+span {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif; 
+    font-weight: 900;
+}
+
+/* coffee beans and social network icons */
+#logo-img {
+    min-width: 3em;
+    max-width: 7.5em;
+}
+
+/* https://stackoverflow.com/questions/38437231/icon-flipping-on-hover social network icons animation */
+a #logo-img{ 
+    margin: 0.1em 0.2em; 
+    -webkit-transition: 0.6s ease-out;
+    -moz-transition:  0.6s ease-out;
+    transition:  0.6s ease-out;
+}
+
+a #logo-img:hover {
+  -webkit-transform: rotateZ(720deg);
+  -moz-transform: rotateZ(720deg);
+  transform: rotateZ(720deg);
+}
+
+/* ------------------------------------------------------------------------ */
+.product {
+    background-color: #F7F7F7;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.product__heading {
+    text-align: center;
+}
+
+/* production card --------------------------------------------------*/
+.product-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 30rem;
+    margin: 0 auto;
+}
+
+.product-container__card {
+    background-color: #FFF;
+    width: 22em;
+    min-height: 28em;
+    max-height: 29em;
+    margin: 1.25em;
+    padding: 1.25em;
+    border-radius: 10px;
+    box-shadow: 0 5px 9px -1px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+    /* Minimum width: 330px;
+    Maximum width: 350px;
+    Minimum height: 440px;
+    Maximum height: 460px;
+    Padding/Margin increments: 20px;
+    Border radius: 10px;
+    Box shadow: 0 5px 9px -1px;
+    Box shadow color: rgba(0, 0, 0, 0.25) */
+    
+.product-container__card-pink-background {
+    background-color: #FFF0ED;
+    width: 22em;
+    margin: -3.5em;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: relative;
+}
+
+.product-container__card-pink-background--left {
+    position: absolute;
+    text-align: left;
+    justify-content: center;
+    padding-left: 2em;
+}
+
+h3 {
+    margin-bottom: 0;
+}
+
+p.product-container__card-pink-background--left-description {
+    margin-top: 0;
+    color: gray;
+}
+
+.product-container--button {
+    padding-top: 3em;
+    padding-bottom: 5em;
+    padding-left: 42%;
+}
+
+/* ============================= h1 =================================== */
+.h1-container {
+    background-color: #FFF0ED;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    height: 35rem;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.h1-container__card--text {
+    width: 30em;
+    text-align: left;
+    margin: 2em;
+}
+
+.h1-container__card--image{
+    width: 30em;
+    text-align: right;
+    margin: 2em;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+/* ============================== slogan ============================= */
+.slogan-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-between;
+    /* height: 30rem; */
+    /* margin-bottom: 15em; */
+}
+
+.slogan-container__left {
+    flex-grow: 1;
+    margin-left: 10em;
+    padding: 2em;
+}
+
+h4 {
+    font-size: 3.5em;
+    font-weight: 400;
+    margin-bottom: 0; 
+}
+
+.slogan-container__right {
+    flex-basis: 35%;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 10em;
+}
+
+.slogan-container__right--line-decoration{
+    position: absolute;
+    width: 24em;
+    height: 24em;
+    border: 6px solid #5BACC3;;
+    top: -1.1em;
+    left: -1.1em;
+}
+
+.cold-brew-background {
+    width: 24em;
+    height: 24em; 
+}
+
+.tilted-can {
+    margin-left:8em;
+    margin-top: 6em;
+}
+
+/* tilted-can animation ---------------------------------------*/
+ .slogan-container__right--png-2:hover {
+    -webkit-animation: rotating 2s linear infinite;
+ }
+
+ @-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+/* ------------------------------------------------------------- */
+
+.slogan-icon {
+    width: 3em;
+    height: 3em;
+}
+
+.slogan-container__icon-container {
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 29em;
+    margin: 2em 0;
+}
+
+/* ===================================== footer ======================================= */
+.address {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-style: normal;
+    padding: 3em;
+    width: 100%;
+    overflow: hidden;
+}
+
+.beans-icon--footer {
+    /* min-width: 5em; */
+    width: 7.5em;
+    opacity: 25%;
+}
+    /* Minimum width: 60px;
+    Maximum width: 120px;
+    Opacity: 25%;
+    Position/offset increments: 20px */
+
+.address__beans-logo--left {
+    position: relative;
+    right: 9em;
+    bottom: 2em;
+}
+
+.address__beans-logo--right {
+    position: relative;
+    left: 9em;
+    top: 3em;
+}
+
+

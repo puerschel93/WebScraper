@@ -1,0 +1,312 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:640;
+
+// VARIABLE SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Open Sans Condensed",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:120;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+//--------------------------------------------------------------------------------------
+//    PERSO MURAT63
+//--------------------------------------------------------------------------------------
+
+/*** Non mais sérieusement ?? Voir le wiki pour la bonne méthode, Cédric le 14/09/18
+  .container { width: 1280px; }
+***/
+
+.container {
+   width: auto;
+   max-width: 1280px;
+   @media only screen and (max-width : 1310px) {
+       padding-left: 15px;
+       padding-right: 15px;
+   }
+}
+
+
+.color-orange {color:$color-orange;}
+
+.font-perso {font-family: Roboto Slab, serif; text-transform: none;}
+
+.quartier-annonce {display:none;}
+
+
+//--------------------------------------------------------------------------------------
+//    MENU & NAV
+//--------------------------------------------------------------------------------------
+
+.height-40 {
+    height: 45px;
+}
+
+.logo {
+  margin-top: -44px;
+  @media only screen and (max-width : 767px) {
+  margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+.logo img {
+   width: 40% !important;
+}
+.h1-index {
+   font-size:$font-size-title * 0.4;
+}
+
+}
+
+.menu-principal {
+    line-height: 60px;
+}
+
+.menu-principal > li > a:hover {
+   background-color: lighten($color-orange,15);
+}
+
+.menu-principal>li>a {
+text-transform: capitalize;
+font-family: Noto Sans, sans-serif;
+padding: 10px 8px;
+}
+
+
+ul > li.menu-outils {
+text-transform: capitalize;
+font-family: Noto Sans, sans-serif;
+}
+
+ul > li.menu-estimation {
+text-transform: capitalize;
+font-family: Noto Sans, sans-serif;
+}
+
+.ligne-social-langue {font-size:1.2em;}
+
+.navigation {border-bottom: solid 2px $color-orange;}
+
+.icon-v5-heart:before{ color:$color-icone-cdc;}
+.icon-v5-heart.opacity-4{opacity:1;}
+
+//--------------------------------------------------------------------------------------
+//    INDEX
+//--------------------------------------------------------------------------------------
+
+
+hr, .hr-like {
+   border-color: darken($color-body,15);
+}
+
+
+.module-annonces-homepage {
+   border-bottom-color: $color-action;
+   &:hover { border-bottom-color: lighten($color-action,15); }
+}
+
+.bloc-nav-left-fix {background-color:$color-secondary;}
+
+  //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  //    MINI MOTEUR
+  //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Mini_Biens, #Mini_Villes, #Mini_Bouton {
+  margin:0px;
+}
+
+#Mini_Bouton {
+  margin-top:-1px;
+}
+
+.form-inline{
+  margin-left: 35px;
+  margin-bottom: -10px;
+  select {
+    height:40px;
+    border:none;
+    border-right: solid 1px $color-secondary;
+    border-left: solid 1px $color-secondary;
+      border-radius: 0;
+  }
+}
+
+.saisie-suggest {
+    -moz-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    border-radius: 0px !important;
+    height: 40px !important;
+    border:none !important;
+}
+
+.bouton-rechercher-moteur {
+  height: 40px;
+  line-height: 40px;
+}
+
+@media only screen and (max-width : 767px) {
+.bouton-rechercher-moteur  {
+  height: 60px;
+  line-height: 60px;
+}
+}
+
+@media only screen and (max-width : 767px) {
+#Mini_Bouton > div > div
+ {
+margin-top:-10px;
+}
+}
+
+
+
+.bg-mini-moteur {
+  background:transparent;
+}
+
+.moteur-avantage {margin-top:-200px;}
+.h1-index {margin-top:-340px; }
+.slogan-index {margin-top:-250px;}
+
+@media only screen and (max-width : 767px) {
+.moteur-avantage {
+margin-top:0px;
+}
+}
+
+@media only screen and (max-width : 767px) {
+.h1-index {
+margin-top:0px;
+}
+}
+
+@media only screen and (max-width : 767px) {
+.slogan-index {
+margin-top:0px;
+}
+}
+
+
+
+@media only screen and (max-width : 1290px) {
+  .menu-principal>li>a {
+    font-size: 0.8em;
+    padding: 10px 4px;
+  }
+}
+
+
+//--------------------------------------------------------------------------------------
+//    ENCART MODULE
+//--------------------------------------------------------------------------------------
+.module-annonces-homepage .height-180 {
+  height:300px;
+}
+
+
+
+//--------------------------------------------------------------------------------------
+//    IMMO
+//--------------------------------------------------------------------------------------
+
+.zoomarticle {
+   height: auto;
+   float: left;
+   margin-bottom: 1.65em;
+   margin-left: 0%;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   list-style: none;
+}
+
+.article_big_img {
+
+   overflow: hidden;
+   padding: 2px;
+}
+
+.article_big_img > img {
+
+   transition: all 1s;
+   -moz-transition: all 1s;
+   -webkit-transition: all 1s;
+   -o-transition: all 1s;
+}
+
+.zoomarticle:hover > .article_big_img > img {
+   transform: scale(1.05);
+   -ms-transform: scale(1.05);
+   -webkit-transform: scale(1.05);
+   -o-transform: scale(1.05);
+   -moz-transform: scale(1.05);
+}
+
+

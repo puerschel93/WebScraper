@@ -1,0 +1,159 @@
+@import "setting";
+@import "parts";
+@import "./PT/scrollbar";
+
+html {
+    -webkit-text-size-adjust: $r100;
+    overflow: scroll;
+  }
+body {
+    font: {
+      family: $Google;
+      weight: normal;
+      size: $p14;
+    }
+    word-break: break-all;
+    text-align: center;
+    background: $BG;
+    color: $ST;
+    width: $r50;
+    @include LRauto;
+}
+
+main {
+  display: inline-block;
+}
+
+button {
+  font: {
+    family: $Google;
+    weight: normal;
+    size: 14px;
+  }
+}
+
+li {
+    list-style-type: none;
+  }
+  
+.nav1 {
+    @include NAV;
+}
+
+.nav2 {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  row-gap: 20px;
+  font-size: 20px;   
+}
+
+.nav3 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  grid-gap: $p20;
+}
+
+
+dt {
+    font-size: $p10;
+}
+dd {
+    margin-left: $p0;
+    margin-bottom: $p20;
+}
+  
+a {
+    color: $ST;
+    text-decoration: none;
+}
+  
+a.scale:hover {
+    @include Hover;
+}
+
+h1 {
+    @include H1H2;
+  }
+  
+h2 {
+    @include H1H2;
+}
+  
+h3 {
+    @include H3;
+}
+
+@keyframes feed {
+    from { opacity: 0.05; }
+    to { opacity: 1; }
+}
+
+.footerFix {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  
+  footer {
+    margin-top: auto;
+    padding: 20px;
+  }
+
+  input {
+    @include Input;
+    @include LRauto;
+    @include BBMyellow;
+  }
+  
+  textarea {
+    @include Textarea;
+    @include LRauto;
+    @include BBMyellow;
+  }
+  
+  #massageButton {
+    @include Mbutton;
+  }
+  
+  .MenuList  {
+    visibility: collapse;
+  }
+  
+  .MenuList [aria-expanded='true'] {
+    @include Menu;
+    visibility: visible;
+  }
+  
+  .MenuList [aria-expanded='false'] {
+    @include Menu;
+    opacity: 0;
+    visibility: unset;
+  }
+  
+  .migiue {
+    z-index: 5;
+    position: relative;
+    top: 14px;
+    left: -340px;
+    font-size: 24px;
+  }
+  .Logo {
+    z-index: 4;
+    position: relative;
+    background: #FFEFEF;
+    top: -26px;
+    left: -240px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .m0 {
+    cursor: pointer;
+  }
+  .Maru {
+    border-radius: $r50;
+  }

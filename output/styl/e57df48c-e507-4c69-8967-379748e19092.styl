@@ -1,0 +1,247 @@
+// app
+#app
+  width 100vw
+  height 100vh
+  background #fff
+  display flex
+  flex-direction row
+  overflow hidden
+  position relative
+  #left
+    width 100%
+    height 100%
+    display inline-block
+    position relative
+  #right
+    width 25%
+    height 100vh
+    display inline-block
+    position relative
+    top 0
+    right 0
+    // background linear-gradient(90deg,#fff 50%, #506c81 60%)
+    z-index 9999
+    #btnBar
+      width 60px
+      height 30px
+      background #506c81
+      border-radius 50%
+      position absolute
+      top 50%
+      left 0%
+      transform translate(-60%,-50%)
+      &::before
+        content ''
+        width 60px
+        height 30px
+        background #506c81
+        border-radius 50%
+        position absolute
+        top 0%
+        left 0%
+        transform translate(0%,-50%) rotate(60deg)
+      &::after
+        content ''
+        width 60px
+        height 30px
+        background #506c81
+        border-radius 50%
+        position absolute
+        top 100%
+        left 0%
+        transform translate(0%,-50%) rotate(-60deg)
+      .chevron
+        color#fff
+        font-size 2rem
+        position absolute
+        left 30%
+        z-index 3
+
+// common
+.blueTxt
+  color #506c81
+.redTxt
+  color #e48664    
+
+// sidebar
+#sidebar-right
+  width 80%
+  background linear-gradient(90deg,#fff 8%, #506c81 10%)!important
+  color #fff
+  margin-left 0
+  .b-sidebar-header
+    display none
+  table
+    color #fff
+  #content
+      color #fff
+      width 80%
+      height auto
+      // display none
+      position absolute
+      right 0
+      bottom 30%
+      transform translateY(-50%)
+      margin-left 1.5rem
+      margin-right 1.5rem
+      table
+        color #fff
+    
+  .fade-enter-active, .fade-leave-active
+    transition: opacity .5s
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ 
+    opacity: 0
+
+// sidebar
+.menu
+  background-color #506c81
+  // border 1px solid #fff
+  width 100%
+  text-align center
+  border-top-left-radius 50%
+  border-bottom-left-radius 50%
+  padding-left 1.5rem
+
+.nav-item
+  color #fff
+  font-size 2rem
+
+li.nav-item.actionRed
+  width 60px
+  height 60px
+  background #e48664
+  border-radius 50%
+      
+// header
+#navTop .title01 a
+  color red
+
+// clock
+#clock
+  .circleRun
+    width 400px
+    height 400px
+    border 3px solid #adadad
+    border-radius 50%
+  .timetext
+    font-size 7rem
+    color #e48664
+  .firstDo
+    font-size 1.5rem
+    color #e48664
+    margin-bottom 1.2rem
+  h4.redTxt
+    font-weight 400
+  table
+    margin-bottom 0
+
+// home
+#home
+  width 100%
+  height 100%
+  color #fff
+  position absolute
+  right 0
+  #homeList
+    width 80%
+    margin-top 5rem 
+#home #menu a .addRed
+  width 60px
+  height 60px
+  background #e48664!important
+  border-radius 50%
+#home .nav-item a
+  color #fff
+.card-header
+  border none
+  background #506c81
+#home .nav-item a
+  background #506c81
+  border none
+  border-bottom 3px solid #e48664
+#home .nav-item a:not(.active)
+  background #506c81
+  border none
+#home .card
+  border none
+  background #506c81
+#home .tab-content .card-body
+  background #506c81
+#home
+  table.table.b-table
+    width 93%
+    margin-left 1.5rem
+    margin-right 3rem
+  .table td, .table th
+    border-bottom none
+    border-top none
+  .table td:nth-child(1)
+    border-left 1px solid #ddd
+    margin-right 2rem
+  table
+    margin-bottom 0
+
+#home thead
+  display none
+
+#clock thead
+  display none
+
+#list thead
+  display none
+
+
+// menu
+#menu
+  width 20%
+.linebuttom
+  display inline-block
+  border-bottom 3px solid #e48664
+  margin-bottom 2rem
+
+// list
+#list
+  table.table.b-table
+    width 93%
+    margin-left 1.5rem
+    margin-right 3rem
+  .table td, .table th
+    border-bottom none
+    border-top none
+  .table td:nth-child(1)
+    border-left 1px solid #ddd
+    margin-right 2rem
+  table
+    margin-bottom 0
+#list .nav-item a
+  color #fff
+.card-header
+  border none
+  background #506c81
+#list .nav-item a
+  background #506c81
+  border none
+  border-bottom 3px solid #e48664
+#list .nav-item a:not(.active)
+  background #506c81
+  border none
+#list .card
+  border none
+  background #506c81
+#list .tab-content .card-body
+  background #506c81
+
+// settings
+#settings
+  table
+    margin-top 3rem
+
+// rwd
+@media (min-width: 768px) {
+  #app #right {
+    width 10%
+  }
+  #app #sidebar-right {
+    width 50%
+  }  
+}

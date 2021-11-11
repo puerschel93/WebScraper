@@ -1,0 +1,503 @@
+#Reservaciones
+	.modal-content
+		color white
+		.modal-body
+			padding 0
+			.close
+				position absolute
+				right: -24px
+				top -24px
+				color $azul
+				font-size 44px
+				font-weight 200
+				background-color: #FFF
+				opacity 1
+				line-height 33px
+				padding 11px 14px
+				border-radius 50% 
+		.header-reservacion
+			background-image: url("../images/src/slider-soccer.png")
+			background-size: cover
+			background-repeat: no-repeat
+			padding 50px 50px 40px 50px
+			background-position-y: -98px
+			+for_breakpoint(mobile)
+				background-size initial
+			img
+				+for_breakpoint(mobile)
+					width 100%
+			&.box
+				background-image: url("../images/src/sliders/box.png")
+			&.champions
+				background-image: url("../images/src/sliders/champions.png")
+			&.copa-del-rey
+				background-image: url("../images/src/sliders/copa-del-rey.png")
+			&.futbol
+				background-image: url("../images/src/sliders/futbol.png")
+			&.mlb
+				background-image: url("../images/src/sliders/mlb.png")
+			&.nfl
+				background-image: url("../images/src/sliders/nfl.png")
+			&.ufc
+				background-image: url("../images/src/sliders/ufc.png")
+			&.general
+				background-image url("../images/src/historia-taberna.jpg")
+				background-position center center
+			.title-reserva-general
+				font-size 30px
+				font-weight 700
+				padding 20px 20px
+				+for_breakpoint(mobile)
+					font-size 21px
+			.title-reserva-modal
+				font-size 30px
+				font-weight 700
+				margin-top 60px
+				+for_breakpoint(mobile)
+					margin-top 0
+					font-size 21px
+					text-align center
+			.hora-fecha-modal
+				font-size 25px
+				font-weight 100
+				+for_breakpoint(mobile)
+					font-size 18px
+					text-align center
+					font-weight 200
+		.texto-step
+			font-size 25px
+			color $azul
+			font-weight 700
+			background-color $amarillo
+			padding 13px 50px 13px 50px
+			line-height 25px
+			span
+				font-weight 200
+		.contenido
+			margin 0 30px
+			padding 20px 0
+			position: relative
+			.evento-iniciado
+				padding 30px 0
+				color $azul
+				h1
+					font-weight 700
+					font-size 16px
+				p
+					font-weight 400
+					font-size 12px
+					
+			.loader-reserva
+				position absolute
+				top 0
+				bottom: 0
+				right: 0
+				left: 0
+				width 100%
+				height 100%
+				background-color #fff
+				z-index 1000
+				#beer2
+					height 100%
+			.dos-input
+				.lt-input
+					width: 40%
+					display inline-block
+					&.mr-input
+						margin-right: 18%
+			.lt-input
+				margin-bottom 15px
+				&.danger
+					position relative
+					input
+						border-color red
+					textarea
+						border-color red
+					select
+						border-color red
+					&:before
+						content ""
+						display block
+						position absolute
+						width 16px
+						height 16px
+						bottom 0 
+						right 0
+						transform translateY(-50%)
+						background-image url("../images/src/alert-red.png")
+						background-size cover
+						background-repeat no-repeat
+						 
+				label
+					display: block
+					font-size 13px
+					font-weight 400
+					color $azul
+					position relative
+					a
+						position relative
+						img
+							position relative
+							bottom 2px
+						&:after
+							content ""
+							width 210px
+							height 60px
+							opacity 0
+							position absolute
+							right -216px
+							top -50px
+							background-image url("../images/src/ccv.png")
+							background-size cover
+							background-repeat no-repeat
+							transition all 0.5s ease-in-out
+						&:hover
+							&:after
+								opacity 1
+				input
+					display: block
+					font-size 21px
+					font-weight 400
+					color $azul
+					border none
+					border-bottom 1px solid $amarillo
+					width 100%
+					outline none !important
+					&.danger
+						border-color red
+				input[disabled]
+					color #bebebe
+				textarea
+					outline none
+					border none
+					font-size 21px
+					font-weight 400
+					display: block
+					width: 100%
+					height 75px
+					resize none
+					border-bottom 1px solid $amarillo
+					color $azul
+					&.danger
+						border-color red
+				select
+					display: block
+					width 100%	
+					font-size 21px
+					font-weight 400
+					border none
+					border-bottom 1px solid $amarillo
+					color $azul
+					outline none
+					background-color: transparent
+					&.danger
+						border-color red 
+			.costo-reserva
+				font-size 39px
+				font-weight 400
+				color #bebebe
+				text-align: center
+			p.terminos-reserva-modal
+				color #bebebe
+				font-size 9px
+				font-weight bold
+				text-align justify
+		.steps-formulario
+			text-align: center
+			.step-formulario
+				width 11px
+				height 11px
+				display: inline-block
+				background-color: #d8d8d8
+				border-radius 50%
+				margin-right 30px
+				&:last-child
+					margin-right 0
+				&.active
+					background-color: #eaba5c
+		.actions-reserva
+			margin-bottom 20px
+			margin-top 20px
+			a
+				font-size 21px
+				font-weight 400
+				color $azul
+				line-height 21px
+				padding 13px 46px
+				background-color $amarillo
+				width 220px
+				display: block
+				margin 0 auto
+				border-radius 3px
+				&:hover
+					text-decoration: none !important
+.step2
+	.opcion
+		img
+			float right
+	.actions-reserva
+		text-align: center
+		a
+			display: inline-block !important
+			&.back-reserva
+				background-color #d8d8d8 !important
+	.tarjeta
+		.opcion
+			border-bottom 1px solid $amarillo
+			padding-bottom 5px
+			.checkbox-input
+				display: inline-block
+				input[type=checkbox]
+					display none
+					&:checked
+						&+ label
+							&:before
+								width 15px
+								height 15px
+								display: block
+								position absolute
+								background-color $amarillo
+								content ""
+								border-radius 50%
+								top 50%
+								left 50%
+								transform translate(-50%,-50%)					
+						
+					
+				label
+					width 22px
+					height 22px
+					border 1px solid $amarillo
+					background-color: transparent
+					border-radius 50%
+					position: relative
+					top 9px
+			.title-option
+				display: inline-block
+				color $azul
+				font-size 21px
+				font-weight 400
+				
+		.formulario-tarjeta
+			padding-top 10px
+			.tres-input
+				.lt-input
+					display: inline-block
+					input[name=numeroTarjeta]
+						width 231px !important
+						margin-right 45px !important
+					input[name=expiracion]
+						width 161px !important
+						margin-right 45px
+					input[name=seguridad]
+						width 161px !important
+		
+	.oxxo
+		.opcion
+			border-bottom 1px solid $amarillo
+			padding-bottom 5px
+			.checkbox-input
+				display: inline-block
+				input[type=checkbox]
+					display none
+					&:checked
+						&+ label
+							&:before
+								width 15px
+								height 15px
+								display: block
+								position absolute
+								background-color $amarillo
+								content ""
+								border-radius 50%
+								top 50%
+								left 50%
+								transform translate(-50%,-50%)
+				label
+					width 22px
+					height 22px
+					border 1px solid $amarillo
+					background-color: transparent
+					border-radius 50%
+					position: relative
+					top 9px
+		
+					
+					
+			.title-option
+				display: inline-block
+				color $azul
+				font-size 21px
+				font-weight 400
+				
+		
+				
+		
+.step3
+	.title-confirmation
+		font-size 21px
+		color $azul
+		border-bottom 1px solid $amarillo
+		padding-bottom 5px
+		font-weight 700
+	.confirm-text
+		margin-top 10px
+		.header-text
+			font-size 13px
+			color $azul
+			font-weight 400
+			display: block
+		.body-text
+			font-size 13px
+			color $azul
+			font-weight 700
+			display: block
+			padding 0 !important
+			text-transform:  uppercase
+			&[data-reserva=monto]
+				font-size 23px
+	.tres-confirm
+		.confirm-text
+			display: inline-block
+	.dos-confirm
+		.confirm-text
+			display: inline-block
+	.cuatro-confirm
+		border-top 1px solid $amarillo
+		margin-top: 10px
+		.confirm-text
+			display: inline-block
+		
+	.actions-reserva
+		text-align center
+		a
+			display: inline-block !important
+			&.back-reserva
+				background-color: #bebebe !important
+	.terminos-reserva
+		display: block
+		text-align: center
+		input[type=checkbox]
+			display none
+			&:checked
+				& + label
+					background-color: $amarillo
+			& + label
+				width 23px
+				height 23px
+				border-radius 3px
+				border 1px solid $amarillo
+				display: inline-block
+				position: relative
+				top 12px
+		.text-termino
+			display: inline-block
+			font-size 13px
+			font-weight 400
+			color $azul
+			a
+				font-weight 700
+				color $azul
+.step4
+	.exitosa-reserva
+		font-size 43px
+		font-weight 400
+		color: #89bd61
+		text-align: center
+		strong
+			font-weight 700
+	.texto-reserva-confirmation
+		font-size 15px
+		font-weight 400
+		color $azul
+		width: 639px
+		margin 0 auto
+		text-align justify
+		+for_breakpoint(mobile)
+			width 100%
+		span
+			font-weight 700
+		a
+			text-decoration: underline
+			color $azul
+	.texto-reserva-fallida
+		font-size 16px
+		font-weight 400
+		color $azul
+		width 639px
+		margin 0 auto
+		text-align center
+		padding 30px 0
+		+for_breakpoint(mobile)
+			width 100%
+	.texto-prereserva-oxxo
+		font-size 16px
+		font-weight 400
+		color $azul
+		width 639px
+		margin 0 auto
+		padding 15px 0
+		text-align justify
+		+for_breakpoint(mobile)
+			width 100%
+		.referencia
+			font-size 40px
+			text-align center
+			+for_breakpoint(mobile)
+				font-size 21px
+	.falla-reserva
+		font-size 43px
+		font-weight 400
+		color $amarillo
+		text-align center
+		strong
+			font-weight 700
+	.preserva
+		font-size 43px
+		font-weight 400
+		color $amarillo
+		text-align center
+		strong
+			font-weight 700
+	.actions-reserva
+		a
+			&.fin-reserva
+				background-color: #89bd61 !important
+				color: #fff !important
+			
+.bread-desktop
+	+for_breakpoint(mobile)
+		display none
+.bread-mobile
+	display none
+	+for_breakpoint(mobile)
+		display block
+		
+.ml-mobile
+	+for_breakpoint(mobile)
+		margin-left 0 !important
+
+.floatante
+	&.link-reserva
+		background-color $azul
+		color #fff
+		position fixed
+		bottom 80px
+		right 23px
+		font-size 24px
+		border-radius 3px
+		z-index 1000
+		padding 8px 10px
+		font-weight 300
+		border-radius 50%
+		width 50px
+		height 50px
+		text-align center
+		box-shadow 0 4px 5px -1px rgba(0,0,0,0.5)
+						
+		
+		
+			
+			
+		
+

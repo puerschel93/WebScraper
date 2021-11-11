@@ -1,0 +1,142 @@
+.categories
+    --color: #474747
+
+    &__show
+        flex: 0 0 auto
+        order: -1
+        margin-right: 10px
+        width: 50px
+        height: 50px
+        border-radius: var(--radius)
+
+    @media media-max-lg
+        background: var(--secundary-contrast)
+        box-shadow: inset 0 44px 0 var(--secundary)
+
+        .ul--0
+            padding-top: 20px
+
+        &__hide
+            z-index: 9000
+            border-radius: 0
+            background: var(--secundary)
+
+        .all-a--0, .all-a--1, .all-a--2
+            color: var(--secundary)
+            font-size: 14px
+
+        .parent
+            position: relative
+
+            > ul
+                display: none
+
+            &:after
+                content: ''
+
+            > a
+                display: flex
+                justify-content: flex-start
+                align-items: center
+                min-height: 48px
+
+            &:after
+                icon('\f054')
+
+                position: absolute
+                top: 0
+                right: 0
+                z-index: 10
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 48px
+                height: 48px
+                color: var(--primary)
+                font-size: 20px
+                transition: all .2s ease
+
+            &.on
+                &:after
+                    transform: rotate(90deg)
+
+                > ul
+                    display: block
+
+        .all-li--0
+            padding-bottom: 0
+
+    @media media-min-lg
+        flex: 1
+        margin-top: -(gap / 2)
+        margin-bottom: 0 !important
+        min-width: 0
+        background: var(--primary)
+        box-shadow: inset 0 -3px 0 #E5BD10
+
+        &--justify
+            .box--1
+                padding: gap (gap / 2) !important
+                width: 100%
+                box-shadow: 0 0 10px rgba(0, 0, 0, .1)
+
+        .a--0
+            height: 54px
+            color: var(--color)
+            white-space: nowrap
+            font-weight: bold
+            font-size: 15px
+
+        .li--0
+            position: static
+            flex: 0 0 auto
+            order: 1
+            min-width: 0
+
+            &:hover
+                .a--0
+                    box-shadow: inset 0 -3px 0 var(--color)
+                    color: var(--color)
+
+        &__all
+            .a--0
+                display: flex
+                justify-content: center
+                align-items: center
+
+        .ul--0
+            justify-content: space-between
+
+        .ul--1
+            display: flex
+            flex-flow: row wrap
+
+            body:not(.mobile) &
+                overflow: visible
+
+        .li--1
+            flex: 0 1 25%
+
+        .li--2
+            padding: 8px 0
+
+        .all-a--0, .a--1
+            color: var(--color)
+            text-transform: uppercase
+            font-weight: bold
+            font-size: 16px
+
+        .all-a--1, .a--2
+            color: var(--color)
+            font-weight: regular
+            font-size: 16px
+            transition: all 100ms ease-out
+
+            &:hover
+                box-shadow: -5px 0 0 var(--secundary)
+
+        .all-a--2
+            display: none
+
+        .all-li--1
+            padding: 8px 0

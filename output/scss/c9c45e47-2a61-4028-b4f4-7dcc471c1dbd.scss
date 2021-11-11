@@ -1,0 +1,321 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+// more tag styles
+h1,
+h2 {
+    border-bottom: none;
+}
+
+h1 {
+    & code {
+        font-size: 2rem;
+    }
+}
+
+p {
+    & code {
+        font-size: 0.75rem;
+    }
+}
+
+pre {
+    font-size: 0.75rem !important;
+}
+
+header {
+    z-index: 20;
+    position: relative;
+}
+
+main {
+    position: relative;
+    z-index: 10;
+}
+
+label {
+    z-index: 10;
+}
+
+input {
+    z-index: 10;
+}
+
+blockquote {
+    font-style: italic !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+th,
+strong {
+    font-weight: 900 !important;
+}
+
+pre,
+code {
+    font-family: "Fira Code", monospace !important;
+    font-weight: bold !important;
+    line-height: 1rem !important;
+    border: none !important;
+    padding: 0.3rem !important;
+    transition: 0.4s !important;
+}
+
+a > code {
+    text-decoration: underline;
+}
+
+th:first-child,
+td:first-child {
+    padding-left: 1rem;
+}
+
+ul {
+    list-style-position: inside;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    li {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+main {
+    margin-top: 2rem;
+}
+
+article header h3 {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.blog-post-date {
+    display: block;
+    font-style: italic;
+    margin-top: 0.2rem;
+    margin-bottom: 0.25rem;
+}
+
+// prism overrides and extensions
+pre[class*="language-"]:before {
+    display: none !important;
+}
+
+pre[class*="language-"]:after {
+    display: none !important;
+}
+
+pre[class*="language-"] > code {
+    box-shadow: none !important;
+}
+
+.dark-theme {
+    pre .code-line-added {
+        background-color: $codeLineAddedDarkMode !important;
+    }
+}
+
+.light-theme {
+    pre .code-line-added {
+        background-color: $codeLineAddedLightMode !important;
+    }
+}
+
+.outrun-theme {
+    pre .code-line-added {
+        background-color: $codeLineAddedOutrunMode !important;
+    }
+}
+
+.black-white-theme {
+    pre .code-line-added {
+        background-color: $codeLineAddedBlackWhiteMode !important;
+    }
+}
+
+pre .code-line-pdf-mode {
+    white-space: pre-wrap;
+}
+
+a {
+    text-decoration: none;
+}
+
+p > img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+// util classes used in many places
+.text-center {
+    text-align: center;
+}
+
+.font-weight-bold {
+    font-weight: 900;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.packages-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.duck-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-post-footer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.bio-lead {
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: center;
+}
+
+.small {
+    font-size: 0.75rem;
+}
+
+.message-of-the-day {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 900;
+    font-size: 1.01rem;
+}
+
+.code-copy-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: -1rem;
+}
+
+button.code-copy-button {
+    border: none;
+    background: none;
+    box-shadow: none;
+    text-decoration: none;
+    margin-bottom: -1.5rem;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+    padding: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Fira Code", monospace !important;
+    font-weight: bold !important;
+    font-size: 0.75rem !important;
+    z-index: 1;
+}
+
+.blog-post-separator-top,
+.blog-post-separator-bottom {
+    border-bottom: $borderThickness dashed;
+    width: 50%;
+}
+
+.blog-post-separator-top {
+    margin-top: 1rem;
+    margin-bottom: 0.1rem;
+}
+
+.blog-post-separator-bottom {
+    margin-top: 0.25rem;
+}
+
+.plain-link {
+    color: auto;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.inline {
+    display: inline;
+}
+
+.white-background {
+    background: white !important;
+}
+
+// to work on safari, this has to be !important (why - who knows?)
+// .gatsby-image-wrapper img {
+//     border-radius: 100% !important;
+// }
+
+// large screens (width greater than 1400px)
+@media only screen and (min-width: $large) {
+    .medium-only,
+    .small-only {
+        display: none;
+    }
+}
+
+// medium screens (width less than 1400px but greater than 600px)
+@media only screen and (max-width: $largeOffset) and (min-width: $medium) {
+    .large-only,
+    .small-only {
+        display: none;
+    }
+}
+
+// small styles (width less than 600px)
+@media only screen and (max-width: $mediumOffset) {
+    .large-only,
+    .medium-only {
+        display: none;
+    }
+
+    main,
+    h1 {
+        margin-top: 0;
+    }
+
+    // break annoyingness in links and code - there may be more here!
+    main a {
+        line-break: word;
+    }
+    code {
+        line-break: anywhere;
+    }
+}
+
+// keyframes
+@keyframes hover {
+    from {
+        transform: translateY(-10%);
+        transform: translateX(-10%);
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: translateY(10%);
+        transform: translateX(10%);
+        transform: rotate(30deg);
+    }
+}

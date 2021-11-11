@@ -1,0 +1,495 @@
+@import 'variables';
+
+/*-------------------------------------------------*/
+/*  Banking
+/*-------------------------------------------------*/
+#deposit-box {
+	.tabs {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		min-height: 50px;
+		border-bottom: 1px solid;
+		a {
+			color: #fff;
+			font-weight: 200;
+			min-height: 50px;
+			display: flex;
+			align-items: center;
+			flex: 1;
+			text-align: center;
+			justify-content: center;
+			&:hover {
+				border-top: 1px solid white !important;
+				border-right: 1px solid white !important;
+				border-left: 1px solid white !important;
+				text-decoration: none;
+				color: white;
+			}
+		}
+
+		//TABS DEFAULTH
+		& > a {
+			&:nth-child(1) {
+				background-color: $prim-color-lighter;
+				color: black;
+				border-top: 1px solid white;
+				border-right: 1px solid white;
+				border-left: 1px solid white;
+			}
+		}
+	}
+	.content-tabs {
+		display: flex;
+		flex-wrap: wrap;
+
+		//CONTENT DEFAULTH
+		//HIDE 2 tab beginning
+		& > div {
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+
+		.box-content {
+			display: flex;
+			flex-wrap: wrap;
+			.box-banking {
+				background-color: #111111;
+				min-height: 300px;
+				border: 2px solid #3a3a3a;
+				border-radius: 10px;
+				justify-content: space-evenly;
+				margin: 10px;
+				display: flex;
+				min-width: 100%;
+				@media (min-width: $md) {
+					max-width: calc(50% - 20px);
+					min-width: initial;
+				}
+
+				p {
+					font-size: 13px;
+					min-height: 70%;
+				}
+				.logo {
+					border-right: 2px solid #3a3a3a;
+					flex: 1;
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+					justify-content: center;
+					padding: 10px 10px 10px 0px;
+					max-width: 20%;
+				}
+				.content {
+					flex: 2;
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+					justify-content: center;
+					text-align: center;
+					margin: 20px;
+
+					h3 {
+						text-transform: uppercase;
+						font-size: 20px;
+					}
+				}
+				.buttom-signup {
+					color: #fff !important;
+					background-color: #65656540 !important;
+					border-color: #ffffff30 !important;
+					width: 100%;
+					text-transform: uppercase;
+					display: flex;
+					justify-content: center;
+					padding: 0.25rem 0.5rem;
+					font-size: 0.875rem;
+					line-height: 1.5;
+					border-radius: 0.2rem;
+					cursor: pointer;
+					&:hover {
+						background-color: $prim-color-lighter !important;
+					}
+				}
+			}
+		}
+	}
+
+	//ON CLICK
+	&.show-retiros {
+		.tabs {
+			.depositos {
+				background-color: transparent;
+				color: white;
+				border-top: 1px solid transparent;
+				border-right: 1px solid transparent;
+				border-left: 1px solid transparent;
+			}
+			.retiros {
+				background-color: $prim-color-lighter;
+				color: black;
+				border-top: 1px solid white;
+				border-right: 1px solid white;
+				border-left: 1px solid white;
+				:hover {
+					color: black;
+				}
+			}
+		}
+		.content-tabs {
+			.depositos {
+				display: none;
+			}
+			.depositos {
+				display: none;
+			}
+			.retiros {
+				display: flex;
+			}
+		}
+	}
+	&.show-depositos {
+		.tabs {
+			.retiros {
+				background-color: transparent;
+				color: white;
+				border-top: 1px solid transparent;
+				border-right: 1px solid transparent;
+				border-left: 1px solid transparent;
+			}
+			.depositos {
+				background-color: $prim-color-lighter;
+				color: black;
+				border-top: 1px solid white;
+				border-right: 1px solid white;
+				border-left: 1px solid white;
+				:hover {
+					color: black;
+				}
+			}
+		}
+		.content-tabs {
+			.retiros {
+				display: none;
+			}
+			.retiros {
+				display: none;
+			}
+			.depositos {
+				display: flex;
+			}
+		}
+	}
+	.fa-whatsapp::before {
+		content: url('../../inc/images/whatsup.png');
+		display: inline;
+	}
+}
+
+/*-------------------------------------------------*/
+/*  software-wrap
+/*-------------------------------------------------*/
+.software-wrap {
+	margin: 50px 0px;
+	flex-wrap: wrap;
+	.box-round {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.donwload-alert {
+		position: absolute;
+		top: -20px;
+		color: white;
+		text-align: center;
+	}
+	@media (max-width: $sm) {
+		.donwload-alert {
+			position: initial;
+			flex-wrap: wrap;
+			max-width: 150px;
+		}
+	}
+	h2 {
+		margin-top: 50px;
+		min-width: 100%;
+		min-height: 70px;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		font-size: calc(0.5vw + 1vh + 0.5vmin);
+	}
+	.chrome {
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		margin: 40px auto;
+		.text {
+			min-height: 50px;
+			align-content: center;
+			align-items: center;
+			display: flex;
+			color: white;
+			.icon {
+				width: 50px;
+				height: 50px;
+				background-image: url('../../inc/images/chrome.png');
+				background-repeat: no-repeat;
+				background-size: contain;
+				margin: 10px;
+			}
+			.download {
+				min-width: 100%;
+				text-align: center;
+				margin: 20px auto;
+			}
+		}
+	}
+}
+
+/*-------------------------------------------------*/
+/*  #horse-race 
+/*-------------------------------------------------*/
+#horse-race {
+	&.tabs {
+		min-width: 100%;
+		color: white;
+
+		a {
+			color: white;
+			font-weight: 200;
+		}
+		.nav-tabs {
+			.active {
+				background-color: #ff9d00 !important;
+				border-color: #ff9d00 #ff9d00 #ff9d00;
+				color: white !important;
+			}
+		}
+		.table {
+			color: white;
+			font-weight: 200;
+			min-width: 100%;
+			.ColorTH {
+				color: #ff9d00 !important;
+				font-weight: bold;
+				@media (max-width: $sm) {
+					padding: 0px;
+					text-align: center;
+					font-weight: 200;
+				}
+			}
+		}
+		#nav-profile2 {
+			flex-wrap: wrap;
+		}
+		#nav-tabContent {
+			flex-wrap: wrap;
+
+			#nav-home {
+				flex-wrap: wrap;
+			}
+			.tab-pane {
+				display: none;
+			}
+			.show {
+				display: flex;
+			}
+		}
+	}
+	.table {
+		font-size: 12px;
+		font-weight: 200 !important;
+	}
+}
+
+/*-------------------------------------------------------*/
+/*  loginModal
+/*-------------------------------------------------------*/
+#loginModal {
+	background: #00000091;
+	&.show {
+		display: flex;
+		.modal-content {
+			position: relative;
+			border: 1px solid #9f9f9f !important;
+			background-color: #000 !important;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			color: white;
+
+			.closeLogin {
+				position: absolute;
+				right: -10px;
+				top: -10px;
+				background: #d8d8d8;
+				width: 40px;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 22px;
+				border-radius: 25px;
+				font-weight: 600;
+				color: gray;
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+	}
+	.btn-success {
+		width: 100%;
+		background-color: #65656540 !important;
+		border-color: #ececec !important;
+		font-size: 15px;
+		text-transform: uppercase;
+		font-weight: 200;
+	}
+	#ui-dialog-0-label {
+		font-size: 14px;
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+	.ui-widget-content {
+		margin: 20px;
+	}
+	.btn-primary {
+		background-color: $prim-color-lighter !important;
+		border-color: $prim-color-lighter !important;
+		font-size: 15px;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: #111111;
+	}
+	label {
+		font-weight: 200;
+	}
+	.forgot-pass {
+		font-size: 12px;
+		color: #585858;
+		font-weight: 200;
+	}
+
+	.col-sm-12 {
+		margin: 0px !important;
+		padding: 0px !important;
+	}
+	.ui-dialog-titlebar {
+		width: 100%;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+		text-align: center;
+		border-bottom: 1px solid gray;
+		padding-bottom: 1rem;
+	}
+}
+
+#registerModal {
+	background: #00000091;
+	.modal-dialog {
+		width: 80%;
+	}
+	&.show {
+		display: flex;
+		.modal-content {
+			position: relative;
+			border: 1px solid #9f9f9f !important;
+			background-color: #000 !important;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			color: white;
+			width: 800px;
+
+			.closeLogin {
+				position: absolute;
+				right: -10px;
+				top: -10px;
+				background: #d8d8d8;
+				width: 40px;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 22px;
+				border-radius: 25px;
+				font-weight: 600;
+				color: gray;
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.social {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	background-color: gray;
+
+	& a {
+		min-width: 60px;
+		height: 60px;
+		background-position: center;
+		//https://isotropic.co/hex-color-to-css-filter/
+		//filter: invert(99%) sepia(2%) saturate(114%) hue-rotate(215deg) brightness(118%) contrast(91%);
+	}
+	&-facebook {
+		background-image: url('../../inc/images/facebook.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	&-twitter {
+		background-image: url('../../inc/images/twitter.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	&-youtube {
+		background-image: url('../../inc/images//youtube.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	&-instagram {
+		background-image: url('../../inc/images/instagram.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+
+.casino-games {
+	gap: 20px;
+	&-box {
+		position: relative;
+		overflow: hidden;
+	}
+	.img-thumbnail {
+		background-color: #373737;
+		border: 1px solid #646464;
+	}
+	&-description {
+		position: absolute;
+		background: #000000a6;
+		z-index: 2;
+		min-width: 90%;
+		height: 85%;
+		margin: 5%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		color: white;
+		opacity: 0;
+		transition: all 1s;
+		top: 0px;
+		left: 0px;
+		transform: translateY(-10%);
+		&:hover {
+			opacity: 1;
+			transform: translateY(0px);
+		}
+	}
+}

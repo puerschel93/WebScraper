@@ -1,0 +1,317 @@
+
+/**
+ * 清理部分原生样式装饰
+ */
+input, button, textarea, select, option {
+    &:focus {
+        outline: none;
+    }
+
+    &::-moz-focus-inner {
+        border: 0;
+    }
+
+    appearance: none;
+    -moz-appearance: none;
+    /* 在 WebKit/Blink 中可用的部分值 */
+    -webkit-appearance: none;
+    /* - -" */
+    padding: 0;
+}
+
+/* 火狐神奇的去掉focus虚线的方式 */
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+
+a {
+    &:focus {
+        outline: none;
+    }
+
+    &:link, &:focus, &:visited, &:hover, &:active {
+        /* - -" */
+        text-decoration: none;
+    }
+}
+
+/* 使用继承值 */
+input, button, textarea, select, option, label, code, pre {
+    font-size: inherit;
+}
+
+input {
+    font-family: inherit;
+}
+
+/**
+ * 变量
+ */
+:root {
+    --std-font-size: 1rem;
+    --std-line-height: 2.8;
+    --std-line-height-component: 2;
+    --std-line-height-pargaph: 2;
+    --std-line-height-inline: 1.6;
+    --std-margin: 0.3em;
+    --std-padding: 0.6em;
+    --std-margin-separation: 0.3em;
+    --std-padding-separation: 0.6em;
+    --std-border-radius: 0.4em;
+    --std-animation-duration: 0.2s;
+    --std-animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    --std-card-froested-glass: brightness(1.2) blur(100px);
+    --std-bg-color: rgba(241, 245, 248, 0.4);
+    --std-card-shadow: 0 0 1.6em 0px rgba(24, 40, 35, 0.06) inset, 0 0 0.2em 0 rgba(24, 40, 35, 0.16);
+    --std-card-shadow-lite: 0 0 0.8em 0px rgba(24, 40, 35, 0.06) inset, 0 0 0.2em 0 rgba(24, 40, 35, 0.16);
+    --std-card-shadow-line: 0 0px 0px 1px rgba(24, 40, 35, 0.06) inset, 0 0px 0px 1px rgba(233, 233, 233, 0.1) inset;
+}
+
+html {
+    // 在chorme中部分input如time会将绝对尺寸降一号
+    // font-size: medium;
+    font-family: 'Microsoft YaHei UI', 'Microsoft YaHei', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', emoji, math, fangsong;
+    font-size: 14px;
+    line-height: var(--std-line-height);
+    background-color: var(--std-bg-color);
+}
+
+html, body {
+    margin: 0;
+    height: 100vh;
+}
+
+body {
+}
+
+select, option, button {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+/*
+ *  input 行高问题很恶心，你无法得到一个等于字体大小的行高，在不同的浏览器上的值也不同，强行设置也不行(eg:f-z 16px,l-h 1,firefox l-h 19.25px chrome 18px)
+ *  默认normal值为1.2左右，且与字体相关，所以建议行高大于1.3
+ *  input有的元素为content-box有的为border-box，我本身就不喜欢border，所以直接让border为none
+ *  对于img  textarea 块级元素
+ */
+input, button, textarea, select, option, label, code, pre {
+    border: none;
+    border-radius: var(--std-border-radius);
+}
+
+input, button, textarea, select, option {
+    box-shadow: var(--std-card-shadow-line);
+    padding: 0 var(--std-padding);
+    margin: 0 var(--std-margin);
+    line-height: var(--std-line-height-component);
+}
+
+pre, p {
+    line-height: var(--std-line-height-pargaph);
+}
+
+code, pre {
+    font-family: Consolas, 'Courier New', monospace;
+    box-shadow: var(--std-card-shadow-line);
+}
+
+code {
+    display: inline-block;
+    padding: 0 var(--std-padding);
+    line-height: var(--std-line-height-inline);
+}
+
+a {
+    color: cornflowerblue;
+    padding: 0 var(--std-padding);
+    margin: 0 var(--std-margin);
+}
+
+img {
+    vertical-align: middle;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    white-space: nowrap;
+
+    &:hover {
+        filter: invert(8%);
+        transition: filter 0.2s ease-in;
+    }
+
+    &:active {
+        filter: invert(16%);
+        transition: filter 0.1s ease-out;
+    }
+
+    &:disabled {
+        filter: none;
+        cursor: not-allowed;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+    th, td {
+        padding: 0 var(--std-padding);
+    }
+
+    tr {
+        border-bottom: 1px solid #ebeef5;
+
+        &:nth-child(2) {
+            background-color: rgba(32, 32, 32, 0.01);
+        }
+    }
+}
+
+input[type=number] {
+    padding-right: 0;
+}
+
+input[type=radio] {
+    box-shadow: none;
+
+    &::before {
+        content: '';
+        cursor: pointer;
+        vertical-align: middle;
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        transition-duration: var(--std-animation-duration);
+        transition-timing-function: var(--std-animation-timing-function);
+        border-radius: 0.5em;
+        background-color: lightgray;
+    }
+
+    &:checked::before {
+        background-color: yellowgreen;
+    }
+
+    /* 为悬浮和按下添加细节 */
+    &:hover::before {
+        filter: invert(8%);
+    }
+
+    &:active::before {
+        filter: invert(16%);
+    }
+}
+
+input[type=checkbox] {
+    box-shadow: none;
+
+    &::before {
+        content: '';
+        cursor: pointer;
+        vertical-align: middle;
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        transition-duration: var(--std-animation-duration);
+        transition-timing-function: var(--std-animation-timing-function);
+        border-radius: 0.3em;
+        background-color: lightgray;
+    }
+
+    &:checked::before {
+        background-color: yellowgreen;
+    }
+
+    /* 为悬浮和按下添加细节 */
+    &:hover::before {
+        filter: invert(8%);
+    }
+
+    &:active::before {
+        filter: invert(16%);
+    }
+}
+
+input[type=checkbox] {
+    &.switch {
+        /* 去掉after圆圈的宽度 */
+        margin-right: -0.7em;
+
+        &::before {
+            content: '';
+            cursor: pointer;
+            vertical-align: middle;
+            display: inline-block;
+            height: 1em;
+            width: 1.5em;
+            transition-duration: var(--std-animation-duration);
+            transition-timing-function: var(--std-animation-timing-function);
+            border-radius: 0.5em;
+            background-color: lightgray;
+        }
+
+        $width = 1.1em;
+
+        &::after {
+            content: '';
+            cursor: pointer;
+            vertical-align: middle;
+            display: inline-block;
+            width: $width;
+            height: @width;
+            transition-duration: var(--std-animation-duration);
+            transition-timing-function: var(--std-animation-timing-function);
+            border-radius: (@width / 2);
+            background-color: gray;
+            transform: translateX(-(1.5em + @width) / 2 - (1.5em - @width) / 2 + (1em - @width) / 2);
+        }
+
+        &:checked::after {
+            background-color: yellowgreen;
+            transform: translateX(-(1.5em + $width) / 2 + (1.5em - $width) / 2 - (1em - $width) / 2);
+        }
+
+        /* 为悬浮和按下添加细节 */
+        &:hover::before {
+            filter: invert(8%);
+        }
+
+        &:active::before {
+            filter: invert(16%);
+        }
+
+        &:hover::after {
+            filter: invert(8%);
+        }
+
+        &:active::after {
+            filter: invert(16%);
+        }
+    }
+}
+
+dialog {
+    width: auto;
+    position: fixed;
+    height: 100%;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border: 0;
+}
+
+.froested-glass {
+    backdrop-filter: var(--std-card-froested-glass);
+}

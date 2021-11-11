@@ -1,0 +1,211 @@
+.hero {
+    padding-top: 73rem;
+    padding-bottom: 73rem;
+}
+
+.hero__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30rem;
+}
+
+.hero__logo {
+    display: none;
+    img {
+        width: 200rem;
+        height: 69rem;
+    }
+    
+}
+
+.hero__left {
+    .btn__black {
+        margin-top: 28rem;
+    }
+}
+
+.hero__left__links {
+    ul {
+        padding: 10rem 30rem;
+        background-color: #E9E9E9;
+        border-radius: 10rem;
+        display: flex;
+        align-items: center;
+        width: max-content;
+        li {
+            margin-right: 30rem;
+            position: relative;
+            &:last-child {
+                margin-right: 0;
+                &::before {
+                    display: none;
+                }
+            }
+            &::before {
+                content: '';
+                display: block;
+                width: 6rem;
+                height: 6rem;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                background-image: url(../img/hero__links__dot.svg);
+                position: absolute;
+                right: -17rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            a {
+                font-weight: 600;
+                font-size: 14rem;
+                color: @black;
+                &:hover {
+                    color: #787878;
+                }
+            }
+        }
+    }
+}
+
+.hero__title {
+    font-weight: 600;
+    font-size: 36rem;
+    margin-top: 20rem;
+}
+
+
+.hero__right {
+    justify-self: end;
+}
+
+.hero__right__img {
+    position: relative;
+    z-index: 1;
+}
+
+.hero__right__img__main {
+    width: 454rem;
+    height: 389rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero__right__img__main {
+    border-radius: 40px;
+}
+
+.hero__right__img__small {
+    width: 109rem;
+    height: 109rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    box-shadow: -8px 4px 40px rgba(29, 89, 114, 0.15);
+    border-radius: 20rem;
+    position: absolute;
+    &.left {
+        left: -55rem;
+        bottom: 70rem;
+    }
+    &.right {
+        right: -55rem;
+        top: 70rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .hero__right {
+        padding-right: 50rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .hero__right {
+        justify-self: stretch;
+    }
+    .hero__right__img {
+        width: 100%;
+    }
+    .hero__right__img__main {
+        width: 100%;
+        height: initial;
+        padding-bottom: 100%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    .hero__content {
+        grid-template-columns: 1fr;
+    }
+    .hero__right__img {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .hero__right {
+        order: 1;
+        padding-right: 0;
+    }
+    .hero__left {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero__title {
+        text-align: center;
+    }
+    
+}
+
+
+@media screen and (max-width: 600px) {
+    .hero {
+        padding-top: 10rem;
+        padding-bottom: 40rem;
+    }
+    .hero__logo {
+        display: block;
+    }
+    .hero__right__img {
+        width: 77%;
+    }
+    .hero__right__img__small {
+        width: 75rem;
+        height: 75rem;
+        &.left {
+            left: -38rem;
+        }
+        &.right {
+            right: -38rem;
+        }
+    }
+    .hero__left__links {
+        display: none;
+    }
+    .hero__title {
+        font-size: 24rem;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hero__right__img__small {
+        width: 65rem;
+        height: 65rem;
+    }
+    .hero__right__img__small.right {
+        top: 37rem;
+    }
+    .hero__right__img__small.left {
+        bottom: 37rem;
+    }
+    .header__offices__title {
+        font-size: 14rem;
+    }
+    .header__phone {
+        font-size: 14rem;
+    }
+}

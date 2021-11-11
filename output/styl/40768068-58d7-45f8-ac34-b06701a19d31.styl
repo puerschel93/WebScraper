@@ -1,0 +1,65 @@
+.filters
+    &__name
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        margin-bottom: 0
+        padding: 0 24px
+        min-height: 60px
+        border-radius: var(--radius) var(--radius) 0 0
+        background: var(--primary)
+        color: var(--primary-contrast)
+        text-transform: uppercase
+        font-weight: bold
+        font-size: 16px
+
+    &__filter
+        border-radius: 0 0 var(--radius) var(--radius)
+        box-shadow: inset 0 0 0 1px rgba(153, 153, 153, .2)
+
+        > .filters__swatches, > ul, > ol
+            padding: 24px 19px
+
+        .a--0, .a-filter
+            padding: 0 5px
+            color: var(--color-text)
+            font-weight: regular
+            font-size: 14px
+
+            .count
+                display: none
+
+    @media media-min-lg
+        .title
+            display: none
+
+        &__filter
+            padding: 0
+
+            .a--0, .a-filter
+                &:hover
+                    box-shadow: -4px 0 0 var(--color-text)
+
+        &__swatches
+            .li--0
+                flex: 0 1 50%
+
+                .a--0
+                    overflow: hidden
+                    padding: 0
+                    border-radius: var(--radius)
+
+                    &:hover
+                        box-shadow: 0 0 0 2px black
+
+                    img
+                        width: 100%
+                        object-fit: cover
+
+    @media media-max-lg
+        &__filter
+            &:first-child
+                margin-top: 30px
+
+        &__list
+            background: white

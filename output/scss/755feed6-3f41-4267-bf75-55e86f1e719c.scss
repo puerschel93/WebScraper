@@ -1,0 +1,276 @@
+//resets
+
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+body {
+  min-height: 100%;
+  line-height: 1.6;
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+//layout
+
+div.container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 9.2rem;
+}
+
+div.container header {
+  padding-top: 4rem;
+  height: 10rem;
+  border-bottom: 2px black solid;
+  margin-bottom: 2rem;
+}
+.container-main {
+  width: 85%;
+  margin: 0 auto 4rem;
+}
+
+.container-main h1 {
+  margin-bottom: 4rem;
+}
+.container-item {
+  min-width: 30rem;
+  max-width: 70rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 1.5rem;
+  margin: 0 auto;
+  }
+
+  .contianer-item-image img {
+    box-shadow: 5px 10px 8px #888888;
+    }
+
+.container-item .container-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-item .container-item-info .container-item-title {
+  margin-bottom: 4rem;
+}
+.container-item .container-item-info .container-item-price {
+  margin-bottom: 4rem;
+}
+
+.container-item-description ul li {
+  list-style: square;
+  list-style-position: inside;
+}
+
+.container-item-buyNowButton {
+  display: flex;
+  width: 23rem;
+  justify-content: center;
+}
+//delivery.html
+.container-deliver-item {
+  min-width: 35rem;
+  max-width: 90rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18rem;
+  margin: 0 auto;
+}
+.container-delivery-item-info {
+  order: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.container-delivery-item-info .thankMessage {
+  margin-bottom: 3rem;
+}
+
+.container-item-downloadButton a {
+  display: inline-block;
+  padding: 1.5rem 2.5rem;
+  background-color: blue;
+  width: 25rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.container-item-download-description ul li {
+  list-style-type:square;
+  list-style-position: inside;
+  padding-left: 5rem;
+}
+//end of css for delivery.html
+//beginning of the cancel.html
+.main {
+  min-width: 320px;
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  gap: 10rem;
+  height: 30rem;
+  align-items: center;
+}
+.container-main h1 {
+  margin-bottom: 9rem;
+}
+.main .main-message h4 {
+  margin-bottom: 3rem;
+}
+
+.main .main-button a {
+  display: inline-block;
+  padding: 1.5rem 2.5rem;
+  background-color: blue;
+  width: 25rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+
+}
+//end of cancel.html
+div.container footer {
+  height: 9.2rem;
+  border-top: 2px black solid;
+  width: 100%;
+  background-color: dimgray;
+  position: absolute;
+  bottom: 0;
+} 
+
+footer > p {
+  text-align: center;
+}
+//typography
+body {
+  font: 1.6rem "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+}
+
+div.container header, div.container footer {
+  font: 3.6rem Consolas, monaco, monospace;
+}
+
+.container-item-title > p:nth-child(1) {
+font-size: 2rem;
+}
+
+.container-item-title > p:nth-child(2) {
+  font-size: 1rem;
+  }
+
+.container-item-price {
+    font-size: 4rem;
+  }
+  
+  footer > p {
+    font: 1rem Copperplate, "Copperplate Gothic Light", fantasy;
+  }
+//delivery.html
+
+.container-delivery-item-info .thankMessage p {
+font: 3.6rem Papyrus, fantasy;
+width: 25rem;
+}
+//cancel.html
+
+.main .main-message h4 {
+font: 3.6rem Papyrus, fantasy;
+}
+
+//media queries
+@media screen and (max-width: 802px) {
+  .container-item .container-item-info .container-item-title{
+    width: 23rem;
+  }
+}
+@media  screen and (max-width: 560px)  {
+  .container-item {
+    min-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    
+  }
+
+  .container-item .container-item-info {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .container-item .container-item-info .container-item-title {
+    margin-bottom: 1rem;
+    width: auto;
+  }
+  .container-item .container-item-info .container-item-price {
+    margin-bottom: 1rem;
+  }
+}
+
+@media  screen and (max-width: 30rem) {
+  div.container header {
+  height: 15rem;
+  }
+}
+
+//delivery.html
+
+@media screen and (max-width: 777px) {
+  .container-deliver-item {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    margin: 0 auto;
+  }
+
+  .container-deliver-item img {
+   display: none;
+  }
+  
+}
+//cancel.html
+
+@media screen and (max-width: 1356px) {
+  .main {
+    width: 85%;
+    }
+}
+@media screen and (max-width: 961px) {
+  .main {
+    width: 85%;
+    }
+
+}
+
+@media screen and (max-width: 770px) {
+  .main {
+  min-width: 320px;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: flex-start;
+}
+.main .main-message h4 {
+  font: 2.4rem Papyrus, fantasy;
+  }
+}

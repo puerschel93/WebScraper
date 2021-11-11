@@ -1,0 +1,376 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:520;
+
+// SIZE NAVIGATION
+$height-navigation:120;
+
+// HAUTEUR PHOTOS LISTING (235px par défaut)
+$listing-img-height:400px;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+$font-deco:"Montserrat",sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.7em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces18";
+
+// IMPORT DETAIL MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/recherche/mobilefirst";
+
+// IMPORT MODULE SOUS MENU<br />
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+.titre-pub, .titre-extra {
+color:$color-primary;
+}
+
+
+.module-annonces-homepage .height-180 {
+    height: 265px;
+}
+
+#PopContact {
+	position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 20rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: $color-action;
+    padding: 20px;
+    @include border-top-radius(8px);
+    color: $color-nav-footer;
+	z-index: 1500;
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+//      PERSO GIRRENNES
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+//      GENERAL
+//---------------------------------------------------------------------------------------------------------------------------
+
+    //---------------------------------------------------------------------------------------------------------------------------
+    //      CONTAINER
+    //---------------------------------------------------------------------------------------------------------------------------
+
+.container {
+    width: auto;
+    max-width: 1280px;
+    @media only screen and (max-width : 1310px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.navigation > .container {
+    width: auto;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    // background-color: $color-important;
+    @media only screen and (max-width : 1310px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.font-deco {
+	font-family: $font-deco;
+}
+
+.padding-80 {
+    padding: 80px 60px;
+    @media only screen and (max-width : 768px) {
+        padding: auto;
+    }
+}
+
+#PopAvis {
+    position: fixed;
+    left: 163px;
+    top: 22px;
+    width: 20rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: $color-body;
+    padding: 20px;
+    @include border-bottom-radius(8px);
+    color: $color-body;
+    z-index: 1500;
+    @media only screen and (max-width : 1024px) {
+        left: 103px;
+        width: 24rem;
+    }
+}
+
+
+#PopAvis > div > div > div > div.os-col-xs-8 > div {
+    text-align: left !important;
+    @media only screen and (max-width : 1024px) {
+        margin-left: 22px !important;
+    }
+}
+
+    //---------------------------------------------------------------------------------------------------------------------------
+    //      MENU & NAV
+    //---------------------------------------------------------------------------------------------------------------------------
+
+.bg-navigation {
+	background-color: $color-body;
+	border-bottom: solid 1px $color-important;
+}
+
+.navigation {
+	border-bottom: none;
+}
+
+.menu-principal > li {
+	border: none;	
+	> a {
+	    padding: 0px 4rem;
+	    // color: $color-primary;
+	    font-size: 1.2em;
+	    &:hover {
+	    	background-color: $color-important;
+	    	color: $color-body;
+	    }        	
+	    @media only screen and (max-width : 1600px) {
+            font-size: 1.2em;
+	        padding: 0rem 2rem;
+	    } 
+        @media only screen and (max-width : 1366px) {
+            font-size: 1.6rem;
+            padding: 0rem 1.3rem;
+        } 
+	}
+}
+
+#menuNavigation > li.is-active {
+    background-color: $color-important;
+     > a {
+        color: $color-body;
+    }
+}
+
+
+.logo img {
+	height: 100px;
+	margin: 10px 0;	
+    @media only screen and (max-width : 414px)  {
+        width: 50% !important;
+        height: auto;
+    }
+}
+
+@media only screen and(min-width : 415px) and (max-width : 1440px) {
+    .logo img {
+        max-height: 59px;
+    }
+} 
+
+    //---------------------------------------------------------------------------------------------------------------------------
+    //      ANIMATION
+    //---------------------------------------------------------------------------------------------------------------------------
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-1-29 11:42:27
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-in-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-in-center {
+    -webkit-animation: scale-in-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: scale-in-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+//---------------------------------------------------------------------------------------------------------------------------
+//      INDEX
+//---------------------------------------------------------------------------------------------------------------------------
+
+    //---------------------------------------------------------------------------------------------------------------------------
+    //      MOTEUR
+    //---------------------------------------------------------------------------------------------------------------------------
+
+.form-inline {
+    margin-top: 160px;
+    @media only screen and (max-width : 768px) {
+        margin-top: auto;
+    }
+}
+
+.form-inline select {
+    height:50px;
+}
+
+.saisie-suggest {
+    height: 50px !important;        
+}
+
+.bouton-rechercher-moteur {
+    height: 50px;
+    line-height: 40px;
+}
+
+    //---------------------------------------------------------------------------------------------------------------------------
+    //      SERVICE -- SEO -- MODULE
+    //---------------------------------------------------------------------------------------------------------------------------
+
+.aside-home-2 {
+    box-shadow: none;
+}
+
+.ttl-seo:before {
+    display: inline-block;
+    content: "\00201C";                
+    font-size: 2em;
+    color: $color-important;
+}
+
+.grayscale {
+    filter: grayscale(1);
+    transition: all 0.7s ease;
+    &:hover {
+        filter: grayscale(0);
+    }
+}
+
+.section-ttl {
+    background-color: $color-primary;
+    padding: 10px;
+}
+
+.module-annonces-btn {
+    padding: 13px;
+}
+
+    //---------------------------------------------------------------------------------------------------------------------------
+    //      EXTRA
+    //---------------------------------------------------------------------------------------------------------------------------
+
+.aside-extra {
+    display: none;
+}
+
+//---------------------------------------------------------------------------------------------------------------------------
+//      DETAIL PA
+//---------------------------------------------------------------------------------------------------------------------------
+
+    //---------------------------------------------------------------------------------------------------------------------------
+    //      VISUEL
+    //---------------------------------------------------------------------------------------------------------------------------
+
+.vertical-pano {
+    background-color: $color-block;
+}
+
+//---------------------------------------------------------------------------------------------------------------------------
+//      IMMO
+//---------------------------------------------------------------------------------------------------------------------------
+
+    //---------------------------------------------------------------------------------------------------------------------------
+    //      GESTION
+    //---------------------------------------------------------------------------------------------------------------------------
+
+.bg-gestion {
+    background-color: rgba($color-block,0.3);
+}
+
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid $color-important;
+    margin-left: 182px;
+    @media only screen and (max-width : 414px) {
+        margin-left: 152px;
+    }
+}
+
+.subttl-gestion {
+    background-color: rgba($color-block,0.3);
+    padding: 20px;
+}

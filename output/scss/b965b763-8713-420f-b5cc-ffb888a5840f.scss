@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5em;
+    box-sizing: border-box;
+    line-height: 1.5em;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Spartan', sans-serif;
+}
+
+// **************************************************** //
+//                     THEME #01                        //
+// **************************************************** //
+
+// BG
+$Very-dark-desaturated-blue-low: hsl(222, 26%, 31%);
+$Very-dark-desaturated-blue-min: hsl(223, 31%, 20%);
+$Very-dark-desaturated-blue-hight: hsl(224, 36%, 15%);
+
+// KEYS
+$Desaturated-dark-blue: hsl(225, 21%, 49%);
+$Desaturated-dark-blue-shadow: hsl(224, 28%, 35%);
+$Red: hsl(6, 63%, 50%);
+$Dark-red: hsl(6, 70%, 34%);
+$Light-grayish-orange-bg: hsl(30, 25%, 89%);
+$Grayish-orange-shadow: hsl(28, 16%, 65%);
+
+// TEXT
+$Very-dark-grayish-blue: hsl(221, 14%, 31%);
+$White: rgb(255, 255, 255);
+
+// **************************************************** //
+//                     THEME #02                        //
+// **************************************************** //
+
+// BG
+$Light-gray: hsl(0, 0%, 90%);
+$Grayish-red: hsl(0, 5%, 81%);
+$Very-light-gray: hsl(0, 0%, 93%);
+
+// KEYS
+$Dark-moderate-cyan: hsl(185, 42%, 37%);
+$Very-dark-cyan-shadow: hsl(185, 58%, 25%);
+$Orange: hsl(25, 98%, 40%);
+$Dark-orange-shadow: hsl(25, 99%, 27%);
+$Light-grayish-yellow: hsl(45, 7%, 89%);
+$Dark-grayish-orange-shadow: hsl(35, 11%, 61%);
+
+// TEXT
+$Very-dark-grayish-yellow: hsl(60, 10%, 19%);
+
+// **************************************************** //
+//                     THEME #03                        //
+// **************************************************** //
+
+// BG
+$Very-dark-violet: hsl(268, 75%, 9%);
+$Very-dark-violet-light: hsl(268, 71%, 12%);
+
+// KEYS
+$Dark-violet: hsl(281, 89%, 26%);
+$Vivid-magenta: hsl(285, 91%, 52%);
+$Pure-cyan: hsl(176, 100%, 44%);
+$Soft-cyan-shadow: hsl(177, 92%, 70%);
+$Very-dark-violet: hsl(268, 47%, 21%);
+$Dark-magenta-shadow: hsl(290, 70%, 36%);
+
+// TEXT
+$Light-yellow: hsl(52, 100%, 62%);
+$Very-dark-blue: hsl(198, 20%, 13%);
+
+
+// **************************************************** //
+//                       MIXINS                         //
+// **************************************************** //
+@mixin border-radius($size) {
+    border-radius: $size;
+    -webkit-border-radius: $size;
+    -moz-border-radius: $size;
+}
+
+// **************************************************** //
+//                   PLACEHOLDERS                       //
+// **************************************************** //
+%upper_case {
+    text-transform: uppercase;
+}
+
+%border {
+    border: 2px solid rebeccapurple;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1em;
+    background-color: $Very-dark-desaturated-blue-low;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    display: grid;
+    grid-template-areas: "title title title title"
+        "result result result result"
+        "buttons buttons buttons buttons";
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+}
+
+.title {
+    grid-area: title;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    color: $White;
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .theme {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    p {
+        font-size: .9em;
+        text-transform: uppercase;
+        margin-right: 1em;
+
+    }
+
+    .set__theme {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        ul {
+            display: flex;
+            width: 80%;
+            justify-content: space-around;
+            margin-bottom: .5em;
+
+            li {
+                font-size: .8em;
+            }
+        }
+
+        input[type="range"] {
+            display: block;
+            -webkit-appearance: none;
+            background-color: $Very-dark-desaturated-blue-hight;
+            width: 70%;
+            height: 25px;
+            padding: .2em;
+            border-radius: 50px;
+            margin: 0 auto;
+            outline: 0;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            background-color: $Red;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+        }
+
+        ​ input[type="range"]::-webkit-slider-thumb:active {
+            transform: scale(1.6);
+        }
+    }
+}
+
+.display {
+    width: 100%;
+    padding: 1.5em;
+    border: none;
+    text-align: end;
+    @include border-radius(10px);
+    grid-area: result;
+    height: 4em;
+    margin: 1.5em 0;
+    background-color: $Very-dark-desaturated-blue-hight;
+    color: $White;
+    font-size: 1.5em;
+
+}
+
+.btn-container {
+    grid-area: buttons;
+    padding: 1em;
+    @include border-radius(10px);
+    background-color: $Very-dark-desaturated-blue-min;
+    margin-bottom: 4em;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 60px 60px 60px 60px 60px;
+    grid-gap: 10px;
+
+    .btn {
+        @include border-radius(7px);
+        border: none;
+        font-size: 1.1em;
+        background-color: $Light-grayish-orange-bg;
+        border-bottom: 4px solid $Grayish-orange-shadow;
+        color: $Very-dark-grayish-blue;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($Light-grayish-orange-bg, 5);
+        }
+    }
+
+    .del {
+        @include border-radius(7px);
+        border: none;
+        font-size: 1.1em;
+        @extend %upper_case;
+        color: $White;
+        background-color: $Desaturated-dark-blue;
+        border-bottom: 4px solid $Desaturated-dark-blue-shadow;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($Desaturated-dark-blue, 5);
+        }
+    }
+
+    .reset {
+        @include border-radius(7px);
+        border: none;
+        font-size: 1.1em;
+        @extend %upper_case;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        color: $White;
+        background-color: $Desaturated-dark-blue;
+        border-bottom: 4px solid $Desaturated-dark-blue-shadow;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($Desaturated-dark-blue, 5);
+        }
+    }
+
+    .equals {
+        @include border-radius(7px);
+        border: none;
+        font-size: 1.1em;
+        @extend %upper_case;
+        grid-column-start: 3;
+        grid-column-end: 5;
+        color: $White;
+        background-color: $Red;
+        border-bottom: 4px solid $Dark-red;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($Red, 5);
+        }
+    }
+}
+
+.attribution {
+    text-align: center;
+    font-size: .8em;
+    color: $Light-grayish-orange-bg;
+
+    a {
+        font-size: 1.1em;
+        color: $Very-dark-desaturated-blue-hight;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// theme 01 -----------------------------------------------
+
+.bg-1 {
+    background-color: $Very-dark-desaturated-blue-low;
+}
+
+// theme 02 -----------------------------------------------
+
+.bg-2 {
+    background-color: $Light-gray;
+}
+
+.title-2 {
+    color: $Very-dark-grayish-yellow;
+}
+
+.display-bg-2 {
+    background-color: $Very-light-gray;
+    color: $Very-dark-grayish-yellow;
+}
+
+.btn-container-2 {
+    background-color: $Grayish-red;
+}
+
+.btn-2 {
+    background-color: $Light-grayish-yellow;
+    border-bottom: 4px solid $Dark-grayish-orange-shadow;
+    color: $Very-dark-grayish-yellow !important;
+}
+
+.del-2 {
+    background-color: $Dark-moderate-cyan !important;
+    border-bottom: 4px solid $Very-dark-cyan-shadow !important; 
+}
+
+.reset-2 {
+    background-color: $Dark-moderate-cyan !important;
+    border-bottom: 4px solid $Very-dark-cyan-shadow !important; 
+}
+
+.equals-2 {
+    background-color: $Orange !important;
+    border-bottom: 4px solid $Dark-orange-shadow !important; 
+}
+
+.attribution-2 {
+    text-align: center;
+    font-size: .8em;
+    color:  $Very-dark-grayish-yellow;
+
+    a {
+        font-size: 1.1em;
+        color: $Orange;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// theme 03 -----------------------------------------------
+
+.bg-3 {
+    background-color: $Very-dark-violet;
+}
+
+.title-3 {
+    color: $Light-yellow;
+}
+
+.display-bg-3 {
+    background-color: $Very-dark-violet-light;
+    color: $Light-yellow;
+}
+
+.btn-container-3 {
+    background-color: $Very-dark-violet-light;
+}
+
+.btn-3 {
+    background-color: $Very-dark-violet !important;
+    border-bottom: 4px solid $Dark-magenta-shadow !important;
+    color: $Light-yellow !important;
+}
+
+.del-3 {
+    background-color: $Dark-violet !important;
+    border-bottom: 4px solid $Vivid-magenta !important; 
+}
+
+.reset-3 {
+    color: $White !important;
+    background-color: $Dark-violet !important;
+    border-bottom: 4px solid $Vivid-magenta !important; 
+}
+
+.equals-3 {
+    color: $Very-dark-violet-light !important;
+    background-color: $Pure-cyan !important;
+    border-bottom: 4px solid $Soft-cyan-shadow !important; 
+}
+
+.attribution-3 {
+    text-align: center;
+    font-size: .8em;
+    color: $Light-grayish-orange-bg;
+
+    a {
+        font-size: 1.1em;
+        color: $Light-yellow;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,255 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__tips {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: 15px;
+  margin-right: 15px;
+
+  @media (min-width: 768px) {
+    margin-left: 39px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: 275px;
+    margin-right: 275px;
+  }
+
+  &--tips {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 14px;
+    color: $purple;
+    line-height: 30px;
+    margin-top: 30px;
+
+    @media (min-width: 1200px) {
+      margin-top: 60px;
+    }
+  }
+
+  &--title {
+    @include main__title;
+    margin-bottom: 15px;
+
+    @media (min-width: 768px) {
+      font-size: 26px;
+      line-height: 45px;
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 32px;
+      line-height: 45px;
+    }
+  }
+
+  &--text {
+    @include main__text;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+  &--button{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 45px;
+    color: $dark-grey;
+    border: solid 2px $dark-grey;
+    width: 76px;
+    height: 45px;
+    border-radius: 45px;
+    margin-bottom: 45px;
+    &:hover {
+      @media (min-width: 1200px) {
+        background-color: $dark-grey;
+        color: white;
+        transition: color ease-out 1s;
+      }
+    }
+
+    @media (min-width: 768px) {
+      width: 91px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 160px;
+    }
+  }
+}
+
+.main__reasons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: $light-purple;
+  text-align: center;
+  width: 100%;
+
+  &--title {
+    @include main__title;
+    grid-column: span 3;
+    margin-top: 30px;
+
+    @media (min-width: 1200px) {
+      margin-top: 60px;
+    }
+  }
+
+  &--article {
+    @include main__article;
+    margin-left: 70px;
+    margin-right: 70px;
+    grid-column: span 3;
+
+    @media (min-width: 768px) {
+      grid-column: span 1;
+    }
+
+    &__title {
+      font-family: 'Lato', sans-serif;
+      font-weight: bold;
+      margin-top: 45px;
+    }
+
+    &__text {
+      font-family: 'Lato', sans-serif;
+    }
+  }
+
+  &--button{
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $medium-grey;
+    width: 184px;
+    height: 45px;
+    border-radius: 45px;
+    font-family: 'Lato', sans-serif;
+    font-weight: medium;
+    color: white;
+    margin: auto;
+    margin-top: 45px;
+    margin-bottom: 60px;
+
+    @media (min-width: 768px) {
+      margin-top: 60px;
+    }
+
+    &:hover {
+      @media (min-width: 1200px) {
+        color: $dark-grey;
+        border: solid 2px $dark-grey;
+        background-color: white;
+        transition: background ease-in-out 0.7s;
+        width: 180px;
+        height: 41px;
+      }
+    }
+  }
+}
+
+.main__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: auto;
+  grid-column: 2/3;
+  transform: translateY(50%);
+  background-color: $medium-grey;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+
+  &--arrow{
+    width: 35px;
+    height: 35px;
+  }
+
+  &:hover {
+    @media (min-width: 1200px) {
+      animation-name: scale;
+      animation-duration: 3s;
+      animation-iteration-count: 1;
+    }
+  }
+}
+
+.main__projects{
+  &--article{
+    display: flex;
+    &__title{
+      @include main__title;
+      
+    }
+    &__text{
+      @include main__text;
+    }
+    &__img{
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+    }
+    &__link{
+      width: 18px;
+      padding: 5px;
+    }
+  }
+}
+.projects{
+  &__text{
+margin-left: 10px;
+  }
+  &__links{
+    text-align: right;
+  }
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  &__instructions{
+    @include main__text;
+  }
+  &__section{
+    display: flex;
+    flex-direction: column;
+  }
+  &__short{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+  }
+  &__label{
+    @include main__article;
+    font-family: 'Lato', sans-serif;
+  }
+  &__input{
+    background-color: $light-grey;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  &__fill{
+    width: 250px;
+    height: 150px;
+    background-color: $light-grey;
+    border-radius: 5px;
+    ::placeholder{
+    }
+  }
+  &__button{
+    padding: 10px;
+    background-color: $light-grey;
+    @include main__article;
+    font-family: 'Lato', sans-serif;
+  }
+}

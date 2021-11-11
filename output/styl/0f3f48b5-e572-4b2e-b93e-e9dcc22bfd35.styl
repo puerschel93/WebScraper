@@ -1,0 +1,310 @@
+.header
+    width 100%
+    width 100vw
+    position absolute
+    z-index 2
+
+    &__wrapper
+        position relative
+        display -webkit-flex
+        display -moz-flex
+        display -ms-flex
+        display -o-flex
+        display flex
+        max-width 1170px
+        margin: auto
+        padding 40px 20px 20px
+        scroll-behavior: smooth
+        -webkit-overflow-scrolling: touch
+        
+        ul
+            @media screen and (max-width: 720px)
+                display none
+
+    &__menu
+        display -webkit-flex
+        display -moz-flex
+        display -ms-flex
+        display -o-flex
+        display flex
+        width: 100%;
+        justify-content space-around
+
+        @media screen and (max-width: 720px)
+            flex-direction column
+            align-items flex-end
+            justify-content unset
+            width 100%
+
+    &__item
+        margin 10px 0
+
+    &__logo
+        display block
+        width: 112px
+        height: 55px
+        background url('../assets/svg/logo-w.svg')
+        background-repeat no-repeat
+        background-size: contain;
+        background-position 50% 100%
+        position relative
+        
+        @media screen and (max-width: 1024px)
+            height: 47px
+            
+        @media screen and (max-width: 720px)
+            height 37px
+    &__link
+        position relative
+        color: #fff
+        font-size: 24px
+        font-weight: 700
+        margin-left 47px
+        transition: .3s ease-in-out
+        padding 10px 0
+        word-wrap break-word
+
+        @media screen and (max-width: 1160px)
+            margin-left: 2vw
+            
+        @media screen and (max-width: 1024px)
+            font-size: 16px;
+
+        @media screen and (max-width: 720px)
+            display block
+            margin 40px 0
+            margin: 2vh 0
+
+        &::after
+            bottom 0
+            left 0
+            content: " "
+            width: 30px
+            height: 3px
+            position absolute
+            background-color: transparent
+            transition: .3s ease-in-out
+
+        &:hover
+            &::after
+                background-color: #fff
+
+// mob menu settings
+.menu
+    &-decor
+        position: absolute
+        display: flex
+        align-items: center
+        cursor: pointer
+        top: 40px
+        right: 20px
+        padding: 5px 9px
+
+        &__icon
+            position relative
+            width: 18px
+            height: 18px
+            z-index: 202
+            padding-top: 0
+            -webkit-transition: all linear .2s
+            transition: all linear .2s
+            border: 1px solid transparent
+
+        &__hamburger
+            display none
+
+            @media screen and (max-width: 720px)
+                display block
+
+            span
+                display: block
+                position: absolute
+                height: 3px
+                width: 18px
+                -webkit-border-radius: 100px
+                border-radius: 100px
+                background-color: #28ebff
+                opacity: 1
+                left: 0
+                -webkit-transform: rotate(0deg)
+                -ms-transform: rotate(0deg)
+                transform: rotate(0deg)
+                -webkit-transition: .2s ease-in-out
+                transition: .2s ease-in-out
+
+                &:nth-child(1)
+                    display none
+
+                &:nth-child(2),
+                &:nth-child(3)
+                    top: 4px
+
+                &:nth-child(4)
+                    top: 12px
+
+.close-menu
+    display none
+
+    &__closed,
+    &__opened
+        display none
+        color: #28ebff
+        font-size: 16px
+        font-weight: 700
+
+    @media screen and (max-width: 720px)
+        display -webkit-flex
+        display -moz-flex
+        display -ms-flex
+        display -o-flex
+        display flex
+        margin-left 11px
+
+        &__closed
+            display block
+
+        &__opened
+            display none
+
+.header__wrapper.open
+    @media screen and (max-width: 720px)
+        position fixed
+        width 100%
+        height: 100vh
+        overflow-x scroll
+        scroll-behavior: smooth
+        -webkit-overflow-scrolling: touch
+        background-color #5448d5
+        background linear-gradient(180deg, #42178c 0%, #413b85 100%)
+        z-index 1
+
+        &::before
+            // display none
+            // content: ''
+            // width: 100%
+            // height: 100vh
+            // top: 0
+            // bottom: 0
+            // left: 0
+            // right: 0
+            // position: fixed
+            // background-image: url('../assets/svg/logo-w.svg')
+            // background-repeat: no-repeat
+            // background-size: cover
+            // background-position: center
+            z-index: -1
+
+            @media screen and (max-width: 768px)
+                display block
+                top: 0
+                margin-top 70px
+                padding-top: 282px
+
+        ul
+            display flex
+            margin-top: 55px
+
+        a
+            display: inline-block
+
+       .header__link
+            @media screen and (max-width: 720px)
+                color: #fff !important
+
+    .menu-decor
+        display none
+
+        @media screen and (max-width: 720px)
+            display: flex
+
+            &__hamburger
+                display block
+
+                span
+
+                    &:nth-child(1)
+                        display: none
+                        width: 0%
+                        left: 50%
+
+                    &:nth-child(2)
+                        top 6px
+                        -webkit-transform: rotate(45deg)
+                        -ms-transform: rotate(45deg)
+                        transform: rotate(45deg)
+
+                    &:nth-child(3)
+                        top 6px
+                        -webkit-transform: rotate(-45deg)
+                        -ms-transform: rotate(-45deg)
+                        transform: rotate(-45deg)
+
+                    &:nth-child(4)
+                        display: none
+                        width: 0%
+                        left: 50%
+
+    .close-menu__closed, 
+    .close-menu__opened
+        color #fff
+
+    .menu-decor__hamburger span
+        background-color #fff
+
+    .close-menu
+        &__closed
+            display none
+
+        &__opened
+            display block
+
+    .header__logo
+        @media screen and (max-width: 720px)
+            position absolute
+            top 40px
+            z-index 102
+
+.no-scroll
+    position: fixed
+    overflow: hidden
+
+.header__light-bg
+    .header__wrapper.open
+        .header__logo
+            background: url('../assets/img/logo/logo-w.svg')
+
+    .header__link
+        color: #0f1266
+
+        &:hover
+            &::after
+                background-color: #25c8f1
+
+        &.active
+            &::after
+                background-color: #25c8f1
+
+    .header__logo
+        display block
+        width: 112px
+        height: 55px
+        background url('../assets/svg/logo-dark.svg')
+        background-repeat no-repeat
+        background-size: contain;
+        background-position 50% 100%
+        position relative
+        
+        @media screen and (max-width:1024px)
+            height: 42px
+            width 100px
+            
+        @media screen and (max-width:720px)
+            height 37px
+
+    .menu-decor__hamburger span
+        
+        background-color: #0f1266
+        
+    .close-menu__closed, 
+    .close-menu__opened
+        color: #0f1266

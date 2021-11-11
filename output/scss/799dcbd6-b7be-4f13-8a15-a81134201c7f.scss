@@ -1,0 +1,340 @@
+/*
+ * @Author: zq 
+ * @Date: 2020-02-17 22:03:49 
+ * @Last Modified by: MinJ
+ * @Last Modified time: 2020-07-23 15:15:49
+ * * 听评课V2.2——创建评课任务-选择人员
+ */
+.zq-scl-seleModal {
+  &.mj-scl-seleModal .ant-modal {
+    min-width: 1148px !important;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .ant-modal-footer {
+    // border-top: none;
+  }
+
+  .zq-psModal-body {
+    & > p {
+      margin-bottom: 16px;
+    }
+
+    .zq-psModal-cont {
+      display: flex;
+      justify-content: space-between;
+
+      & > div {
+        height: 476px;
+        border: 1px solid #c2c8cc;
+      }
+
+      .zq-left-treeSearch {
+        position: relative;
+        padding-bottom: 16px;
+
+        .icon {
+          position: absolute;
+          z-index: 99;
+          left: 10px;
+          top: 12px;
+        }
+
+        .ant-input {
+          padding-left: 28px;
+          height: 36px;
+          line-height: 36px;
+        }
+
+        .ant-btn-primary {
+          margin-left: 10px;
+          padding: 0;
+        }
+      }
+
+      .zq-person-nexticon {
+        position: absolute;
+        top: 50%;
+        right: -26px;
+        height: 16px;
+        width: 16px;
+
+        .icon {
+          font-size: 16px;
+
+          &:last-child {
+            position: relative;
+            color: #59a6ee;
+          }
+
+          &:first-child {
+            position: absolute;
+            top: 7px;
+            left: 2px;
+            color: #acd2f6;
+          }
+        }
+      }
+
+      .zq-cont-left {
+        position: relative;
+        width: 246px;
+
+        // .zq-person-nexticon {
+        //   right: -10px
+        // }
+
+        & > p {
+          height: 50px;
+          padding-left: 10px;
+          line-height: 49px;
+          border-bottom: 1px solid #c2c8cc;
+        }
+
+        .zq-left-treeSearch {
+          .ant-input {
+            width: 156px;
+          }
+
+          .ant-btn-primary {
+            width: 50px;
+          }
+        }
+
+        .zq-left-treeBox {
+          height: calc(100% - 50px);
+          padding: 18px 14px;
+
+          .zq-left-tree {
+            height: calc(100% - 52px);
+
+            .ant-tree li {
+              // position: relative;
+
+              // &:first-child {
+              //   padding-top: 4px;
+              // }
+
+              .ant-tree-node-content-wrapper {
+                width: calc(100% - 56px);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+
+              span {
+                &.ant-tree-switcher {
+                  // position: absolute;
+                  // top: 4px;
+                  // left: 24px;
+
+                  &.ant-tree-switcher_open {
+                    background: url(./../../../media/picture/tree_jian.png) no-repeat center;
+
+                    .ant-tree-switcher-icon {
+                      display: none;
+                    }
+                  }
+
+                  &.ant-tree-switcher_close {
+                    background: url(./../../../media/picture/tree_jia.png) no-repeat center;
+
+                    .ant-tree-switcher-icon {
+                      display: none;
+                    }
+                  }
+                }
+
+                // &.ant-tree-checkbox {
+                //   position: absolute;
+                //   top: 4px;
+                //   left: 0;
+                // }
+
+                // &.ant-tree-node-content-wrapper {
+
+                //   padding-left: 49px;
+                // }
+              }
+            }
+          }
+        }
+      }
+
+      .zq-cont-middle {
+        position: relative;
+        width: 472px;
+        padding: 18px 14px;
+
+        .zq-left-treeSearch {
+          .ant-input {
+            width: 200px;
+          }
+
+          .ant-btn-primary {
+            width: 72px;
+          }
+        }
+
+        .zq-person-index {
+          position: relative;
+          padding-left: 24px;
+
+          & > span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 16px;
+            line-height: 16px;
+            font-size: 16px;
+          }
+
+          .zq-person-indexItem {
+            display: flex;
+            flex-wrap: wrap;
+
+            & > span {
+              display: inline-block;
+              vertical-align: top;
+              width: 26px;
+              height: 20px;
+              line-height: 20px;
+              margin-bottom: 10px;
+              text-align: center;
+              cursor: pointer;
+
+              &.zq-itemActive {
+                color: #26a5ff;
+                font-size: 18px;
+              }
+            }
+          }
+        }
+
+        .zq-person-list {
+          height: calc(100% - 112px);
+
+          .zq-person-item {
+            &:nth-child(4n + 4) {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
+      .zq-person-item {
+        display: inline-block;
+        padding-top: 10px;
+        width: calc(25% - 20px);
+        // width: 90px;
+        height: 60px;
+        border: 1px dashed #999999;
+        text-align: center;
+        margin-right: 26px;
+        margin-bottom: 14px;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &.zq-person-select {
+          color: #45a5e6;
+          border: 1px solid #79c2f2;
+          background-color: #ebf7ff;
+        }
+
+        & > p {
+          height: 20px;
+          line-height: 20px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .zq-cont-right {
+        width: 320px;
+
+        & > div {
+          &:first-child {
+            position: relative;
+            height: 50px;
+            padding-left: 10px;
+            line-height: 49px;
+            border-bottom: 1px solid #c2c8cc;
+
+            .zq-selePerNum {
+              position: absolute;
+              right: 14px;
+              top: 0;
+
+              span {
+                font-size: 20px;
+                margin: 0 4px;
+              }
+            }
+          }
+
+          &:last-child {
+            height: calc(100% - 50px);
+            padding: 12px 0 18px 10px;
+
+            .scrollbar-container {
+              > div {
+                padding-top: 6px;
+              }
+            }
+
+            .zq-person-item {
+              position: relative;
+              margin-right: 14px;
+              transition: none;
+              width: calc(33% - 12px);
+
+              &:nth-child(3n) {
+                margin-right: 0;
+              }
+
+              & > span {
+                position: absolute;
+                font-size: 16px;
+                top: -12px;
+                right: -6px;
+                color: #ff584f;
+                z-index: 99;
+                display: none;
+              }
+
+              &:hover {
+                > span {
+                  display: block;
+                }
+
+                // color: #ff584f;
+              }
+            }
+
+            .zq-selePer-nodata {
+              margin-top: 80px;
+
+              img {
+                width: 150px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .zq-selePer-nodata {
+    text-align: center;
+    padding-top: 20px;
+
+    img {
+      width: 180px;
+      margin-bottom: 10px;
+    }
+  }
+}

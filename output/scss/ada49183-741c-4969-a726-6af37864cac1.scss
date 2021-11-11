@@ -1,0 +1,166 @@
+@import "variables", "responsive";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #aab2f9;
+  font-size: 24px;
+
+  .welcome {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    // background: #4753be;
+    height: 100vh;
+    overflow: hidden;
+
+    &-tittle {
+      font-size: 1.2rem;
+      padding: 0 1.2rem;
+
+      @include ipads {
+        font-size: 2rem;
+        margin-left: 2rem;
+      }
+
+      @include web-browser {
+        font-size: 1.5rem;
+      }
+
+      h1 {
+        color: #fff;
+
+        span {
+          color: $s-color;
+          font-size: 3rem;
+          @include ipads {
+            font-size: 5rem;
+          }
+          @include web-browser {
+            font-size: 3.5rem;
+          }
+        }
+      }
+    }
+    &-body {
+      width: 100%;
+      margin-top: 3rem;
+
+      @include ipads {
+        display: flex;
+        flex-direction: row;
+        margin-top: 5rem;
+      }
+
+      @include ipad-pro {
+        flex-direction: column;
+      }
+
+      &-login {
+        background: $s-color;
+        color: rgb(211, 203, 203);
+        cursor: pointer;
+        text-align: center;
+        @include transitions;
+
+        .paragraph-welcome {
+          text-align: center;
+          text-decoration: none;
+          color: rgb(194, 176, 176);
+          padding: 1rem 8rem;
+          border-radius: 50px;
+          background-color: transparent;
+        }
+
+        &:hover,
+        &:focus {
+          background: transparent;
+          border: 1px solid $s-color;
+          color: $s-color;
+        }
+      }
+
+      &-signup {
+        color: $s-color;
+        cursor: pointer;
+        @include transitions;
+
+        .paragraph-welcome {
+          text-align: center;
+          text-decoration: none;
+          color: $s-color;
+          padding: 1rem 5.7rem;
+          border-radius: 50px;
+          background-color: transparent;
+        }
+
+        &:hover &:focus {
+          background: $s-color-hover;
+          border: 1px solid $s-color-hover;
+          color: #fff;
+        }
+      }
+
+      .mid-botton {
+        line-height: 2.8rem;
+        border: 1px solid $s-color;
+        margin: 0 auto 1rem auto;
+        width: 290px;
+        border-radius: 50px;
+
+        &:hover .paragraph-welcome {
+          color: $s-color;
+        }
+
+        @include ipads {
+          line-height: 4rem;
+          width: 350px;
+          margin-top: 3rem;
+        }
+
+        @include ipad-pro {
+          line-height: 6rem;
+          width: 450px;
+          font-size: 2.5rem;
+        }
+
+        @include web-browser {
+          line-height: 3.5rem;
+          width: 300px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .ellipse {
+      background: #fff;
+      opacity: 30%;
+      position: absolute;
+      border-radius: 50%;
+      height: 250px;
+      width: 250px;
+      overflow-y: hidden;
+    }
+    .ellipse-section-1 {
+      left: -100px;
+      top: -60px;
+    }
+
+    .ellipse-section-2 {
+      right: -120px;
+      z-index: -1;
+    }
+    .ellipse-section-3 {
+      bottom: -100px;
+      left: -50px;
+      z-index: -1;
+    }
+  }
+  .paragraph-welcome {
+    text-align: center;
+    text-decoration: none;
+  }
+}

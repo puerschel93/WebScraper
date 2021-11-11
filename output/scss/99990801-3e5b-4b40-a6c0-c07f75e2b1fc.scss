@@ -1,0 +1,159 @@
+@import "color";
+
+// LARGEUR DU SITE
+$sitewrap: 1170px;
+
+// AGRANDISSEMENT HAUTEUR SLIDER (0 par défaut, doit être  > 500px)
+// NE FONCTIONNE PAS SI MF_MOTEUR_TYPE = 2
+$slider-height: 0;
+
+// HAUTEUR PHOTOS LISTING (235px par défaut)
+$listing-img-height:235px;
+
+// REQUIS MAIS NE SERT PAS
+$bg-uni: yes;
+$picture-bg: yes;
+$picture-bg-url:'';
+$picture-bg-repeat-horizontal: no;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.8em;
+
+// TYPE TITLE (NONE, UPPERCASE...)
+$type-title: uppercase;
+
+// WEIGHT (BOLD, NORMAL, 700, 300...)
+$weight-title: normal;
+
+// ARRONDI (YES / NO)
+$arrondi: yes;
+
+// IMPORT ALL
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT TEMPLATE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/templates/mobilefirstv2";
+
+// IMPORT RECHERCHE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/recherche/mobilefirst";
+
+// IMPORT MOTEUR MOBILEFIRST (SUR RECHERCHE)
+// SEULEMENT SI RECHERCHE AUTRE QUE MF
+//@import "../../../slagence_X_V5/sources/scss/moteur/mobilefirst";
+
+// IMPORT DETAIL MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/detail/mobilefirst";
+
+// IMPORT AGENCE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/agence/mobilefirst";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/mobilefirst";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT PUB
+@import "../../../slagence_X_V5/sources/scss/pubs/mobilefirst";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra23";
+
+// IMPORT MODULE ANNONCES
+@import "../../../slagence_X_V5/sources/scss/modules/annonces18";
+
+.cookie-banner {
+ background-color: $color-secondary; 
+ color: $color-primary; 
+}
+
+.slidermf {
+    position: relative;
+    height: 600px;
+    }
+    
+.logo img {
+    max-width: 374px;
+    max-height: 90px;
+}
+
+.btn-important {
+	color: $color-body;
+}
+
+.module-tag-exclu {
+    background-color: #f15e56;
+}
+
+.module-tag-360, .module-tag-new {
+    background-color: #ffffff;
+   
+}
+
+.module-annonces-prix {
+    font-size: 1.4em;
+}
+
+//------------------------------------------------------------
+//		EXCLU TXT
+//------------------------------------------------------------
+
+.padding-left-40 {
+	padding-left: 40px;
+	@media only screen and (max-width : 768px) {
+		padding-left: auto;
+	}
+}
+
+.bg-exclu {
+	height: 150px;
+	@include background-image(linear-gradient($color-body 25%, darken($color-body,30) 25%, darken($color-body,30) 69%, $color-body 69%, $color-body 100%));	
+	@media only screen and (max-width : 768px) {
+		height: auto;
+	}
+}
+
+.i-exclu {
+	font-size: 4.5em;
+}
+
+.shape-100-left {
+	float: left;
+    shape-outside: circle(50%);
+    width: 150px;
+    height: 150px;
+    background: $color-important;
+    border-radius: 150px;
+    padding-top: 60px;
+    margin-left: 50px;
+    margin-right: 20px;
+ }
+
+ .shape-100-right {
+	float: right;
+    shape-outside: circle(50%);
+    width: 150px;
+    height: 150px;
+    background: $color-important;
+    border-radius: 150px;
+    padding-top: 40px;
+    margin-right: 50px;
+    margin-left: 20px;
+ }

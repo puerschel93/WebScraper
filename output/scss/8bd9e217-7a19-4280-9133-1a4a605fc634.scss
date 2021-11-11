@@ -1,0 +1,187 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Font import
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap");
+
+// Bootstrap Import
+@import "bootstrap/scss/bootstrap.scss";
+
+// Scss Variables
+
+// App Colors
+
+$siigo-blue: #00aaff;
+$error-color: #FF6719;
+$shadow-color: rgba(0, 0, 0, 0.25);
+
+$disabled-color: #C4C4C4;
+
+// Player colors
+$player-color-1: #F2CC46;
+$player-color-2: #6CDF12;
+$player-color-3: #4AABE1;
+$player-color-4: #EC6C23;
+
+$button-round-value: 2rem;
+$button-round-square: 0.75rem;
+$button-overlay-color: rgba(0, 0, 0, 0.25);
+$shadow-profile: 0 1px 8px $shadow-color;
+$pressed-shadow-profile: 0 1px 4px $shadow-color;
+$base-round: 0.625rem; // 10px
+$base-round-medium: 0.9375rem; // 15 px
+$base-round-large: 1.5625rem; // 25 px
+
+html{
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+}
+
+* {
+  font-family: "Sora", sans-serif;
+
+  &:focus {
+    outline-color: rgb(24, 83, 179);
+    outline-offset: 1px;
+    outline-style: auto;
+    outline-width: 16px;
+  }
+}
+
+.full-extent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wabble {
+  animation: wabble 4s infinite forwards ease-in-out;
+}
+
+@keyframes wabble {
+  0%, 100% {
+    transform: rotate(5deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-5deg) translate(1rem);
+  }
+}
+
+.app-btn {
+  position: relative;
+  border-radius: $button-round-value;
+  padding: 0.5rem 1.75rem;
+  overflow: hidden;
+  border: none;
+  background-color: $siigo-blue;
+  color: white;
+  box-shadow: $shadow-profile;
+  transition: all 100ms;
+
+  &[disabled] {
+    background-color: #EFEFEF;
+    color: #CDCDCD;
+  }
+
+  &.icon {
+    $round-size: 3.25rem;
+    width: $round-size;
+    height: $round-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    &.square {
+      border-radius: $button-round-square;
+    }
+
+    &>* {
+      font-size: 1.25em;
+    }
+  }
+
+  &.white {
+    background-color: white;
+    color: $siigo-blue;
+  }
+
+  &:active {
+    transform: translate(0, 1px);
+    box-shadow: $pressed-shadow-profile;
+  }
+
+  &:active::after {
+    content: "";
+    background-color: $button-overlay-color;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+input:not([type=button]) {
+  border-radius: $base-round-medium;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.25);
+
+  &::placeholder {
+    color: #bbb;
+  }
+}
+
+.player-color-1 {
+  color: $player-color-1;
+}
+
+.player-color-2 {
+  color: $player-color-2;
+}
+
+.player-color-3 {
+  color: $player-color-3;
+}
+
+.player-color-4 {
+  color: $player-color-4;
+}
+
+.error-color {
+  color: $error-color;
+}
+
+.modal-style {
+  box-shadow: $shadow-profile;
+  padding: 2rem;
+  border-radius: $base-round-large;
+}
+
+.clear {
+  background-color: transparent;
+}
+
+.bold-0 {
+  font-weight: 400;
+}
+
+.bold-1 {
+  font-weight: 600;
+}
+
+.bold-2 {
+  font-weight: 800;
+}
+
+.lock-scroll-x {
+  overflow-x: hidden;
+}

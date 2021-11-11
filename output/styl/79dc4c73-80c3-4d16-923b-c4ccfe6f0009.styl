@@ -1,0 +1,534 @@
+@require "base/utiles"
+@require "nib"
+@require "animations"
+
+#portada
+	.carrusel
+		margin 0 auto
+
+		.item
+			display block
+			position relative
+
+			.imagen
+				width 100%
+				display block
+			.txt
+				color red1
+				background rgba(255,255,255,.9)
+				padding 15px 13px 0 13px
+				position absolute
+				top 22%
+				z-index 1
+				right 0
+				left 0
+				margin 0 20px
+				text-align center
+				
+				+desde( escritorio )
+					right 200px
+					left inherit
+					padding 21px 35px 0 35px
+					
+				.esquina
+					content ''
+					position relative
+					background url('../img/icons/arrow-box.png') right top no-repeat
+					height 24px
+					display block
+					bottom -24px
+					margin-right -10px
+					background-size contain
+					+desde( escritorio )
+						height 40px
+						bottom -40px
+						margin-right -30px
+					
+					
+					
+				h2
+					font-family Rockwell
+					font-size (19.16 / 16)rem
+					line-height normal
+					+desde( escritorio )
+						font-size (38.34 / 16)rem
+					span
+						display block
+						font-size (21.91 / 16)rem
+						text-transform uppercase
+						font-weight bold
+						letter-spacing 0.12rem
+						+desde( escritorio )
+							font-size (43.84 / 16)rem
+
+		.slick-dots
+			absolute bottom left right
+			display flex
+			justify-content center
+			align-items center
+
+			li
+				margin-bottom 10px
+				button
+					display block
+					width 15px
+					height 15px
+					background-color blanco
+					border 3px solid blanco
+					border-radius 50%
+					margin 5px
+					padding 0
+					font-size 0
+					line-height 0
+					overflow hidden
+					box-sizing border-box
+					cursor pointer
+					outline none
+					color transparent
+
+				&.slick-active
+					button
+						background-color #de1a22
+						width 23px
+						height 23px
+
+
+
+#acciones
+	background url('../img/franja-red.jpg') no-repeat
+	background-size cover
+	padding 1rem 1.7rem
+	color white
+	text-align center
+	+dede( escritorio )
+		padding 1rem 0
+	p
+		font-size (20 / 16)rem
+		color white
+		letter-spacing 0.1rem
+	
+		
+#colaboradores
+	padding 4rem 0  0 0
+	background url('../img/bg-section-white.jpg') no-repeat bottom center
+	background-size cover
+	+desde( escritorio )
+		padding 4rem 0 
+	
+	.contenedor
+		display flex
+		justify-content space-between
+		align-items flex-start
+		flex-wrap wrap
+		
+		.new
+			+hasta( escritorio )
+				margin-bottom 20px
+	.scroll-down1
+		+hasta( escritorio )
+			position absolute
+			left 0
+			right 0
+			margin-top -45px
+			background url('../img/icons/arrow-down.png') center center no-repeat
+
+		
+.new
+	border 2px solid red1 
+	border-radius 7px
+	padding 0.4rem
+	margin 50px 0
+	display flex
+	justify-content space-between
+	align-items flex-start
+	flex-wrap wrap
+	margin-right -10px
+	margin-left -10px
+	margin-top 30px
+	+desde( escritorio )
+		margin 50px 0
+		padding 0.8rem
+	.new-t
+		width 45%
+		padding 10px 0px
+		box-sizing border-box
+		+desde( escritorio )
+			padding 20px
+			width 60%
+		h2
+			font-size (16.91 / 16)rem
+			margin-bottom 20px
+			+desde( escritorio )
+				font-size (20 / 16)rem
+				margin-bottom 40px
+			a
+				text-decoration none
+				color gris
+				font-weight bold
+				
+		.more1
+			background url('../img/icons/more1.png') no-repeat right 11px center
+			color red1
+			padding 0 25px 0 0  
+			text-decoration none
+			font-weight bold
+			font-size 1rem
+			transition all .4s
+			&:hover
+				background-position right 7px center
+				color red4
+				
+	.imgx
+		max-width 50%	
+		+desde( escritorio )
+			max-width 100%
+#clientes
+	padding 1rem 0 0 0
+	background-color #f5f5f5
+	.colm-01
+		display flex
+		justify-content space-between
+		align-items flex-start
+		flex-wrap wrap
+		margin 0 22px
+		+desde( escritorio )
+			margin 0
+	.imagen
+		margin 0 0 0 100px
+		display none
+		+desde( escritorio )
+			display block
+	.scroll-down1
+		position absolute
+		left 0
+		right 0
+		margin-top 0
+	.new
+		margin-bottom 80px
+	.img-resp1
+		display inherit
+		
+		+desde( escritorio )
+			display none
+	.scroll-down1
+		+hasta( escritorio )
+			position absolute
+			left 0
+			right 0
+			margin-top -45px
+			
+#comunidad
+	margin-top -2.7rem
+	padding 6.5rem 0 1.2rem 0
+	background url('../img/bg-section2-white-resp.png') #f5f5f5 no-repeat center center
+	background-size auto 100%
+	+desde( escritorio )
+		padding 8.5rem 0 5rem 0
+		margin-top -1rem
+		background url('../img/bg-section2-white.jpg') no-repeat center center
+		background-size 100% 100%
+	.contenedor
+		display flex
+		justify-content space-between
+		align-items flex-start
+		flex-wrap wrap
+		.btn1
+			margin-top 0
+		.col-a
+			padding-top 30px
+	.scroll-down1
+		+hasta( escritorio )
+			position absolute
+			left 0
+			right 0
+			margin-top -40px
+#medio
+	padding 2rem 0  0.4rem 0
+	background-color #faf9fa
+	+desde( escritorio )
+		padding 2rem 0 
+		
+	.imagen
+		display none
+		+desde( escritorio )
+			display block
+	.img-resp
+		display none
+		+hasta( escritorio )
+			display block
+		
+	.colm-01
+		display flex
+		justify-content space-between
+		align-items flex-start
+		flex-wrap wrap	
+	.btn1
+		margin-top 0
+	.new
+		+hasta( escritorio )
+			margin-bottom 20px
+	.scroll-down1
+		+hasta( escritorio )
+			position absolute
+			left 0
+			right 0
+			margin-top -25px
+#proveedores
+	background url('../img/bg-section3-white.jpg') no-repeat
+	background-size cover
+	padding 4.375rem 0 14.9375rem 0
+	+hasta( escritorio )
+		padding-bottom 10rem
+	
+	.colm-01
+		display flex
+		justify-content space-between
+		align-items flex-start
+		flex-wrap wrap
+		+hasta( escritorio)
+			.col-a
+			.col-b
+				width 100%
+	.btn1
+		margin-top -20	px
+	.box-ht
+		.new
+			margin-top -20px
+		
+.scroll-down
+	display block
+	margin 0 auto
+	background url('../img/icons/arrow-down.png') no-repeat
+	width 30px
+	height 26px
+	margin 30px auto 0 auto
+	&:hover
+		animation scrollhover 0.5s infinite
+	
+.scroll-down1
+	display block
+	margin 0 auto
+	background url('../img/icons/arrow-down-red.png') center center no-repeat
+	width 100%
+	height 30px
+	margin 40px auto 0 auto	 
+	position absolute
+	+desde( escritorio )
+		position inherit
+		width 30px
+	&:hover
+		animation scrollhover 0.5s infinite
+
+.btn1
+	background red1
+	color white
+	text-decoration none
+	border-radius 20px
+	padding 5px 35px 8px 20px
+	letter-spacing 0.1rem
+	position absolute
+	font-size (17.42 / 16)rem
+	font-weight bold
+	left 0
+	right 0
+	width 150px
+	margin -220px  auto 0 auto
+	
+	+desde( escritorio )
+		position relative	
+
+#contenido
+
+	   
+
+
+
+			.fila
+				background-color blanco
+				border-radius 0.2rem
+				padding 0.2rem
+				display flex
+				flex-flow row no-wrap
+				justify-content center
+
+				input
+					display block
+					//font-size 1.2rem
+					padding 0
+					border none
+					margin 0
+					max-width 100%
+ 
+.products
+		display flex
+		justify-content space-between
+		align-items flex-start
+		flex-wrap wrap
+		
+		
+			
+	.product
+		position relative
+		margin-top 2rem
+		text-align center
+		
+		
+		+desde( escritorio )
+			max-width 230px
+			margin-right 60px
+			margin-left 60px
+			margin-bottom 6rem
+		.item
+			display flex
+			justify-content space-between
+			align-items top
+			
+			+desde( escritorio )
+				display inherit
+			.contenido
+				width 40%
+				padding 0 0  0 10px
+				line-height 1.2rem
+				text-align left
+				margin-top 10px
+				+desde( escritorio )
+					text-align center
+					width  100%
+					padding 0
+				.titulo-3
+					+desde( escritorio )
+						font-size: 1.375rem;
+					
+					margin-bottom 8px
+					font-size (17.98 / 16)rem
+					color azul
+					font-weight 600
+					font-family "Fontin"
+							
+				.texto
+					font-size (12.22 / 16)rem
+					line-height 1rem
+					color plomo2
+					+desde( escritorio )
+						font-size 1rem
+						line-height inherit
+						
+			.imagen
+				width 45%
+				+desde( escritorio )
+					width  100%
+	.btn
+		
+		font-size 0
+		background url('../img/ver-mas.png') no-repeat
+		width 10%
+		height 59px
+		display block
+		transition background .4s
+		+desde( escritorio )
+			font-size (20 / 16)rem
+			font-family "Fontin"
+			background ocre
+			color blanco
+			padding 10px 30px
+			border-radius 5px
+			text-decoration none
+			display inline-block
+			width auto
+			height auto
+			margin-top 15px
+		&:hover
+			background azul
+				
+			
+	.contenido
+		.texto
+			color celeste-claro
+			font-size 1rem
+			margin-bottom 0
+			font-family "Fontin"
+			+desde( escritorio )
+				margin-bottom 0.5rem
+#productos
+	display none
+	+desde( escritorio )
+		display inherit
+
+	.titulo
+		text-align center
+		font-family "Fontin"
+		font-weight bold
+		font-size ( 35 / 16 )rem
+		color azul
+
+
+	.marquesina
+		margin 2rem
+
+		.slick-prev,
+		.slick-next
+			font-size 0
+			line-height 0
+			position absolute
+			top 50%
+			display block
+			width 2rem
+			height 60px
+			padding 0
+			transform translate(0, -50%)
+			cursor pointer
+			color transparent
+			border none
+			outline none
+			background-color transparent
+			background-position center
+			background-repeat no-repeat
+			z-index 1
+
+		.slick-prev
+			left -2rem
+			background-image url( "../img/chevron-izquierda.png" )
+
+		.slick-next
+			right -2rem
+			background-image url( "../img/chevron-derecha.png" )
+
+		.item
+			display block
+			padding 0.5rem
+			box-sizing border-box
+
+			.imagen
+				display block
+				position relative
+
+				&::before
+					content " "
+					display block
+					padding-top 75%
+
+				img
+					absolute top left right bottom
+					display block
+					margin auto
+
+
+			.contenido
+				.titulo
+					font-size ( 21.6 / 16 )rem
+
+				.texto
+					font-family "Gotham"
+					font-size ( 16.46 / 16 )rem
+					color ocre
+					text-align center
+#pie
+	&::before
+		content " "
+		absolute top -172px 
+		background-image url( "../img/frutas-collage.png" )
+		background-position center bottom
+		background-repeat no-repeat
+		display block
+		width 100%
+		height 172px

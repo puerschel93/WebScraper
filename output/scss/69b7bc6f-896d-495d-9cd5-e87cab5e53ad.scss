@@ -1,0 +1,170 @@
+.sklad {
+	padding: 54px 0 59px 0;
+	background-color: #F8f8f8;
+	&__inner {
+
+	}
+
+	&__title {
+		margin: 0 auto;
+		margin-bottom: 25px;
+		max-width: 829px;
+		display: flex;
+
+	}
+
+	&__list {
+		margin-bottom: 34px;
+		background-color: #fff;
+		box-shadow: 0px 0px 10px rgba(192, 192, 192, 0.25);
+		border-radius: 6px;
+		padding-right: 0;
+		padding-left: 15px;
+		padding-bottom: 30px;
+		padding-top: 50px;
+		width: 100%;
+
+		display: flex;
+
+
+		&_item {
+			width: 236px;
+
+			&_img {
+				margin-bottom: 6px;
+			}
+
+			&_text {
+				font-size: 18px;
+				line-height: 21px;
+			}
+		}
+	}
+	&__content {
+		display: flex;
+		justify-content: space-between;
+
+		&_item {
+			overflow: hidden;
+			img {
+				transition: all 2s ease-in;
+			}
+		}
+		&_item:hover {
+
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+
+@media (max-width: 1200px) {
+	.sklad {
+		padding: 40px 0 68px 0;
+		&__title {
+			max-width: 643px;
+			margin-bottom: 36px;
+		}
+		&__list {
+			flex-wrap: wrap;
+			margin-bottom: 21px;
+
+			&_item {
+				width: 33.33%;
+				display: flex;
+
+				&_img {
+					margin-right: 5px;
+				}
+
+				&:nth-child(1) {
+					order: 1;
+				}
+				&:nth-child(2) {
+					order: 4;
+				}
+				&:nth-child(3) {
+					order: 2;
+				}
+				&:nth-child(4) {
+					order: 3;
+				}
+				&:nth-child(5) {
+					order: 5;
+				}
+			}
+		}
+		&__content {
+			justify-content: space-evenly;
+			&_item {
+				max-width: 310px;
+
+				img {
+					height: 288px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.sklad {
+		padding: 56px 0 25px 0;
+		&__title {
+			max-width: 384px;
+			margin-bottom: 23px;
+		}
+
+		&__list {
+			padding: 32px 20px 43px 20px;
+			margin-bottom: 23px;
+			&_item {
+				width: 100%;
+				margin-bottom: 23px;
+
+				&:nth-child(1) {
+					order: 1;
+				}
+
+				&:nth-child(2) {
+					order: 2;
+				}
+				&:nth-child(3) {
+					order: 3;
+				}
+				&:nth-child(4) {
+					order: 5;
+				}
+				&:nth-child(5) {
+					order: 4;
+				}
+
+				&_img {
+					width: 30px;
+					margin-right: 14px;
+				}
+
+			}
+		}
+
+		&__content {
+			justify-content: center;
+
+			&_item {
+				max-width: 310px;
+				height: 188px;
+
+
+
+				&:first-child {
+					margin-right: 5px;
+				}
+				&:last-child {
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+}

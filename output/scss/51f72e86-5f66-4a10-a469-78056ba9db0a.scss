@@ -1,0 +1,279 @@
+@font-face {
+    font-family: "Shrikhand";
+    src: url("../Shrikhand-Regular.otf");
+}
+@font-face {
+    font-family: "roboto";
+    src: url("../roboto/Roboto-Regular.ttf");
+}
+* {
+    font-family: "roboto";
+    margin: 0;
+    padding: 0;
+}
+
+$color-tertiary: #99E2D0;
+$color-bg:#ededed;
+$min-tablet:720px;
+$max-tablet:1024px;
+
+header{
+    display: flex;
+    i {
+        position: absolute;
+        top:25px;
+        left:1em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        font-size:1.3em;
+        cursor: pointer;
+        transition: transform 200ms ease-in-out;
+    }
+    a:hover {
+        color:$color-tertiary;
+        transform:translateX(-15px) ;
+    }
+    a:active{
+        color:$color-tertiary;
+    }
+        .logo{
+            padding:1rem;
+            font-family: Shrikhand;
+            font-size: 2em;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 1px;
+
+        }
+}
+.picture {
+    width: 100%;
+    object-fit: cover;
+    @media (min-width:$min-tablet){
+        height: 320px;
+    }
+}
+@keyframes slow-card{
+    from{
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    to{
+        opacity: 1;       
+    }
+}
+main{
+    background: $color-bg;
+    border-radius: 2em 2em 0 0;
+    position: relative;
+    top: -4em;   
+    
+    H2{
+        font-family: Shrikhand;
+        padding:1em;
+        display: flex;
+        @media (min-width:$max-tablet) {
+            justify-content: center;
+        }
+        i {
+            position: absolute;
+            right:1em;
+        }
+    }
+    .btn{
+        display: flex;
+        justify-content: center;
+        margin-bottom: -4em;
+        input {
+            background: linear-gradient(350deg, rgba(147,86,220,1) 19%, rgba(255,121,218,1) 100%);
+            color:white;
+            border-radius: 2rem;
+            font-size: 1rem;
+            padding:0.8rem 2.5rem;
+            border:0px;
+            margin: 1.5em;
+            cursor: pointer;
+            transition: all 200ms ease-in-out;
+                     
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+    }
+}
+@for $i from 1 through 3{
+    .menu-#{$i} {
+        animation: slow-card 1500ms backwards;
+    }
+}
+@mixin menu-title{
+    padding-left: 1em;
+    opacity: 50%;
+    text-transform: uppercase;
+}
+@mixin media-width{
+    @media (min-width:$max-tablet){
+        width: 45%;
+    }
+}
+.menu{
+    @media (min-width: $max-tablet){
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    &-border {
+        border-bottom:0.2em solid $color-tertiary;
+        width:3em;
+        margin-left: 1.2em;
+        margin-top: 0.2em;
+        }
+    &-1{
+        padding: 0.5em;
+        @include media-width;
+        H3{
+            @include menu-title;
+        }
+    }       
+    &-2{
+        animation-delay: 500ms;
+        padding: 0.5em;
+        @include media-width;
+
+        H3{
+            @include menu-title;
+        }
+    }
+    &-3{
+        animation-delay: 1000ms;
+        padding: 0.5em;
+        @include media-width;
+        H3{
+            @include menu-title;
+        }
+    }
+    &-check{
+        position: absolute;
+        right: -4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4em;
+        height: 4em;
+        background-color: $color-tertiary;
+        transition: all 500ms ease-in-out;
+        i{
+            color: white;
+            background-color: $color-tertiary;
+            align-self: center;
+            font-size: x-large;
+            transition: all 600ms ease-out;
+        }
+    }
+    &-item { 
+        cursor: pointer;
+        background: white;
+        margin:1em;
+        border-radius: 1em;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        &:hover > .menu{            
+             &-check {
+                margin-right: 4em;
+                i {
+                    transform: rotate(1turn);
+                }
+            }            
+             &-price{
+                margin-right: 3em;
+            }
+        }
+    }
+    &-description{
+        padding: 0.5em;
+        width: 100%;
+        overflow: hidden;
+    }
+    &-name {
+        font-weight: bold;
+        font-size: 1em;
+        padding-bottom:0.3em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @media (min-width:$min-tablet) {
+            font-size: 1.2em;
+        }
+    }
+    
+    &-descr{            
+        opacity: 0.8;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.8em;
+        @media (min-width:$min-tablet){
+            font-size: 1em;
+        }
+    }
+    &-price{
+        font-weight: bold;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-size:1.2em;
+        transition: all 500ms ease-in-out;
+        padding: 0.5em;
+    }
+}
+.footer{
+    background-color: #353535;
+    color:white;
+    padding: 2rem;
+        @media (min-width:$max-tablet) {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        @media (min-width:$min-tablet) and (max-width:$max-tablet){
+            text-align: center;
+            margin: 1em;
+        }
+    &__title{
+    font-family:"Shrikhand";
+    padding-bottom: 0.5rem;
+        @media screen and (min-width:$max-tablet) {
+            font-size: 1.5rem;
+        }
+    }
+    &__liste{
+        list-style: none;
+        @media (min-width:$max-tablet) {
+            display: flex;
+        }
+        &_element{
+            margin:0.5rem;
+            cursor: pointer;
+            &:hover{
+                color:$color-tertiary;
+                font-style:italic ;
+            }
+            @media (min-width:$max-tablet) {
+                padding:0;
+                padding-left: 3rem;           
+            }
+            i {
+                width: 1.5em;
+            }
+            a {
+                color:white;
+                text-decoration: none;
+                &:hover{
+                    color:$color-tertiary
+                }
+            }
+            a:visited {
+            color:white;}
+        }
+    }
+}

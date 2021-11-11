@@ -1,0 +1,103 @@
+@import '../../style.styl'
+
+.payment
+    font-size: 12px
+    &__steps
+        display: flex
+        justify-content: center
+    &__form
+        background-color: $white
+        margin-top: -30px
+        padding: 15px
+        box-shadow: 0px 5px 10px #FFF1E0
+    &__back-to-cart
+        padding-left: 15px
+        padding-right: 15px
+        margin-top: 25px
+        cursor: pointer
+    &__form-content
+        margin-top: 20px
+        display: flex
+    &__form-section
+        flex-basis: 70%
+        padding: 0px 15px
+    &__shipment-title
+        width: 30%
+    &__shipment-list
+        display: flex
+        margin-top: 30px
+        flex-wrap: wrap
+    &__item
+        display: flex
+        cursor: pointer
+        border: 1px solid #CCCCCC
+        margin-bottom: 10px
+        margin-right: 10px
+        &:hover
+            background-color: #ededed
+        &--checked
+            border: 2px solid $success
+            background-color: rgba(27, 217, 123, 0.1)
+            &:hover
+                background-color: rgba(27, 217, 123, 0.1)
+    &__item-info
+        padding: 10px 50px 10px 10px
+    &__item-price
+        margin-top: 5px
+        font-size: 14px
+        &--bold
+            font-weight: bold
+        &--hide
+            display: none
+    &__item-checked
+        padding: 10px
+        display: flex
+        align-items: center
+        color: $success
+    &__method
+        margin-top: 50px
+    &__method-title
+        width: 30%
+    &__method-list
+        display: flex
+        margin-top: 30px
+        flex-wrap: wrap
+    &__wrap-item
+        display: flex   
+        align-items: center
+    &__summary-section
+        flex-basis: 30%
+        border-left: 1px solid rgba(255, 138, 0, 0.2)
+        padding: 10px 15px
+
+@media only screen and (max-width: 768px)
+/* mobile landscape */
+    .payment
+        &__form-section
+            flex-basis: 60%
+        &__summary-section
+            flex-basis: 40%
+        &__shipment-title
+            width: 80%
+        &__method-title
+            width: 80%
+
+@media only screen and (max-width: 576px)
+/* mobile portrait or less than 576px */    
+    .payment
+        &__form-content
+            display: block
+            margin-top: 30px
+        &__summary-section
+            margin-top: 20px
+            border: none
+
+@media only screen and (max-width: 380px)
+/* mobile portrait (small phone) */
+    .payment
+        &__form
+            margin-top: -25px
+        &__item
+            width: 100%
+            justify-content: space-between
+            

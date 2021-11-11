@@ -1,0 +1,159 @@
+.directory {
+  padding-top: 140px;
+  padding-bottom: 140px;
+  @include media-breakpoint-down(md){
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  &__headers {
+    &-text {
+      .title {
+        font-family: $bold-font-family;
+        font-size: 47px;
+        font-weight: 600;
+        line-height: 55px;
+        color: #000000;
+        @include media-breakpoint-down(md){
+          font-size: 31px;
+          line-height: 42px;
+        }
+      }
+      .desc {
+        color: #323232;
+        font-family: $regular-font-family;
+        font-weight: 400;
+        line-height: 25px;
+        font-size: 18px;
+        padding-top: 18px;
+      }
+    }
+  }
+  &-form {
+    padding-top: 80px;
+    &__label {
+      color: #323232;
+      font-family: $regular-font-family;
+      font-size: 16px;
+      font-weight: 400;
+      padding-bottom: 10px;
+      width: 100%;
+      @include media-breakpoint-down(md){
+        text-align: center;
+      }
+    }
+    &__input {
+      &-container {
+        input, select {
+          width: 100%;
+          padding: 15px 20px;
+          min-width:400px;
+          border: 1px solid #e8e8e8;
+          @include media-breakpoint-down(lg){
+            min-width: 320px;
+          }
+          @include media-breakpoint-down(sm){
+            min-width: auto;
+            max-width: 320px;
+          }
+          &::placeholder {
+            color: #b5b5b5;
+            font-family: $regular-font-family;
+            font-size: 16px;
+            font-weight: 400;
+          }
+          &.wpcf7-not-valid{
+            border:1px solid red;
+          }
+        }
+      }
+      &-submit {
+        padding-top: 60px;
+        input {
+          background-color: #d40511;
+          border-color: #d40511;
+          color: #ffffff;
+          font-family: $regular-font-family;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+          border: 0;
+          padding: 20px 60px;
+          -webkit-transition: all 0.3s ease;
+          -moz-transition: all 0.3s ease;
+          -ms-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+          &:hover{
+            background-color: #af040e;
+            border-color: #a2040d;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    &__checkbox-container {
+      label {
+        color: rgba(#323232, .49);
+        font-family: $regular-font-family;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        display: flex;
+        .form-accept {
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -o-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+          border: 1px #acacac solid;
+          border-radius: 2px;
+          padding: 1px;
+          -webkit-animation: check 300ms ease;
+          -o-animation: check 300ms ease;
+          animation: check 300ms ease;
+          position: absolute;
+          left: 0;
+          top: 10px;
+          opacity: 1;
+          &:checked {
+            &::before {
+              height: 22px;
+              width: 22px;
+              border-radius: 2px;
+              background-color: #ffcc02;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              -moz-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              -o-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+              content: '';
+            }
+          }
+          &:focus {
+            outline: unset;
+          }
+        }
+        .wpcf7-list-item-label{
+          padding-left: 25px;
+        }
+      }
+    }
+  }
+  &__data {
+    padding: 30px 0 0;
+    &-clause {
+      opacity: 0.49;
+      color: #323232;
+      font-family: $regular-font-family;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+}

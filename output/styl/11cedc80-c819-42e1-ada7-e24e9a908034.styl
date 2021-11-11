@@ -1,0 +1,491 @@
+
+// header
+header
+	@media $large
+		height auto !important
+		nav
+			box-shadow none
+	.container
+		position relative
+	@media $$large
+		height auto !important	
+	.list 
+		position absolute
+		right 0px
+		bottom 80px 
+		height auto
+		display block
+		width auto
+		li
+			color black
+			display block
+			position relative
+			heigh auto
+			margin-left 1em
+			overflow hidden
+			transform rotate(9deg)
+			transition transform 0.5s
+			border-radius 0 12px 12px 0
+			&:hover
+				transform rotate(-9deg)
+			a
+				position relative
+				display block
+				border-radius 2px 12px 12px 2px
+				font-size 22px
+				margin 0 0 0 40px
+				height 55px
+				width auto
+				line-height @height
+				box-shadow initial
+				font-weight 700
+				z-index 1
+				padding-left 1em
+				background #D8385E
+				color white
+				text-shadow 2px 2px #000
+				&:before
+					content ""
+					background inherit
+					height 45px
+					width @height
+					position absolute
+					border-radius 30%
+					left -22px
+					top 5px
+					transform rotate(45deg)
+					z-index -1
+				&:after
+					content ""
+					height 15px
+					width @height
+					border-radius 50%
+					background white
+					position absolute
+					z-index 2
+					left -15px
+					top 18px
+				&:hover
+					background color6
+					color white
+					text-decoration none
+
+			&:hover
+				background-color inherit
+		a
+			text-transform uppercase
+			
+	nav
+		background white
+		height auto
+		line-height @height
+		transition background 1s
+		box-shadow none
+		// top 27px
+		.mdi-navigation-menu:before
+			color black
+		@media $large
+			position relative !important
+			background-color white
+		.button-collapse
+			color white
+		h1
+			display none
+		.brand-logo
+			img
+				height 56px
+				@media $small
+					height 40px
+					margin-top 5px
+				@media $large
+					display none
+			// @media $large
+			// 	opacity 0
+			// 	width maxwide
+			// 	height header_height
+			// 	margin-top unquote('-'+ header_height)
+			// 	img
+			// 		width 100%
+			// 		height 100%
+		a
+			text-transform uppercase
+	@media $large		
+		&::before
+			display block
+			// background header_bg
+			// height header_height	
+			content ""	
+			width 100%
+
+
+.header_line
+	height 4px
+	background #084ea3
+			
+menu_height=28px
+// menu_height=menu_height - 1px
+
+.menu_top
+	height 108px
+	line-height 108px
+	margin-top 0px
+	display block
+	display flex
+	justify-content center
+	overflow visible
+	// postion relative
+	.lines
+		position absolute !important
+		height auto !important
+		line-height initial !important
+		&.line_1
+			top 35px
+			left 120px
+			z-index 1
+			span
+				color #4e9af6 !important
+				font-size 1.3em
+				font-style italic
+		&.line_2
+			top 68px
+			left 120px
+			z-index 1
+			span
+				color #1859a7 !important
+				font-size 1.5em
+		&.line_3
+			top 8px
+			right 0px
+			z-index 1
+			// width 100%
+			// border 1px solid #000
+			text-align right
+			> span.phone
+				padding-left 25px
+				display inline-block
+				&:before
+					position absolute
+					left 0
+					top 7px			
+					color #1749AF
+				icomoon('e620')
+			> .bolita
+				width 33px
+				height @width
+				line-height @width
+				background transparent
+				display inline-block
+				margin-right @width
+				border-radius (@width/2)
+				text-align center
+				vertical-aligen middle
+				border 1px solid #aaa
+				margin-right 1em
+				// padding 0
+				margin-bottom 0
+				> a
+					background transparent
+					// margin-right em
+					// position relative
+					&:before
+						position relative
+						// top 0px
+						border 0
+						bottom initial
+						top -6px
+				&.facebook a
+					&:before
+						color #1749AF
+					icomoon('e902')
+				&.twitter a
+					&:before
+						color #22ADF5
+					icomoon('e901')
+				&.youtube 
+					border 0
+					margin-left 1.2em
+					a
+						&:before
+							color #be252b
+							// color #000
+							font-size 1.6em
+						icomoon('e674')
+						// icomoon('e65e')
+			span
+				color #000 !important
+				font-size 1.3em
+				font-weight 400
+				strong
+					color color1 !important
+					font-weight 700
+					font-size 1.15em
+					text-shadow color2 1px 1px 3px;
+		&.line_4
+			top 48px
+			right 0px
+			z-index 1
+			span
+				color #000 !important
+				font-size 1.05em
+				font-weight 300
+	// overflow-y hidden
+	li
+		background transparent
+		flex-grow 1
+		flex-shrink 1
+		flex-basis auto
+		text-align center
+		// position relative
+		// icomoon('e64b')
+		&:before
+			position absolute
+			bottom 22px
+			left 40%
+			font-size 1em
+			height 0px
+		// max-width 120px
+		height 100%
+		// vertical-align middle
+		display inline-block
+		// background-color red
+		&:hover,
+		&.active
+			a
+				&:before
+					border-bottom menu_height solid lighten(#084ea3,30)
+		a
+			text-align center
+			vertical-align bottom
+			display inline-block
+			color #fff
+			font-size .9em
+			font-family Roboto
+			height menu_height
+			line-height 1.1em
+			padding 0.54em 0em
+			// padding 2.9em 0
+			background #084ea3
+			width 100%
+			font-weight 700
+			// background lighten(red,45)
+			// @media only screen and (max-width : 1100px )
+			// 	padding-left 1.8em
+			// 	padding-right @padding-left
+			// background lighten(yellow,45)
+			&:before
+				content ""
+				width 0
+				height 0
+				position absolute
+				left 0px
+				bottom 1px
+				border-left 20px solid #fff
+				border-right 0px solid #fff
+				border-bottom menu_height solid #084ea3
+			&:hover
+				text-decoration none
+				&:before
+					border-bottom menu_height solid lighten(#084ea3,30)
+		&:hover, 
+		&.active
+			background-color #fff //submenu
+			a
+				// background-color rgba(black,0.1);
+				background-color lighten(#084ea3,30) //submenu
+				color white
+		&.logo
+			background transparent !important
+			// margin-top 10px
+			a
+				// display inline-block
+				width logo_width
+				height 100%
+				color transparent
+				background url(imgs+'logo_american_header.png') no-repeat 0 center
+				background-size 100%
+				// background-size contain
+				line-height 100%
+				padding 0 1.3em 0 0
+				margin-right 300px
+				float left
+				&:before
+					display none
+				// margin-top 10px
+				&:hover
+					color transparent !important
+				// margin-top 0.1em
+	&:after
+		content ""
+		height 10px
+		width 100%
+		position absolute
+		bottom -10px		
+		left 0
+
+
+
+
+.menu
+	// background red !important
+	> li
+		// background-image linear-gradient(top,transparent,lighten(color2,15))
+		position relative
+		margin-right 5px
+		a:hover
+			color inherit !important
+		// &:hover:before
+		// 	content ""
+		// 	position absolute
+		// 	width 0
+		// 	height 0
+		// 	border-left 7px solid transparent
+		// 	border-right 7px solid transparent
+		// 	border-bottom 5px solid white
+		// 	bottom 0px
+		// 	left 50%			
+		.submenu
+			overflow hidden
+			position absolute
+			top 100%
+			// top 64%
+			left 0px
+			background inherit
+			min-width 100%
+			width auto
+			z-index 5
+			> li
+				margin-top -100px
+				transition margin-top .5s
+				background inherit
+				display block
+				width 100%
+				overflow hidden
+				border-bottom 1px solid lighten(color6,40)
+				text-align left
+				&:before
+					content ""
+				&:last-child
+					border-bottom 0
+				> a
+					color inherit
+					background inherit
+					display block
+					white-space nowrap
+					font-size 0em
+					transition font-size .5s,color 1s
+					padding-top 0.5em
+					padding-bottom @padding-top
+					padding-left 0.6em
+					padding-right 0.6em
+					text-align left
+					&:before
+						display none
+					&:hover
+						color black !important
+						background rgba(#81C3E5,0.2)
+		&:hover
+			.submenu
+				> li
+					margin-top 0px
+					color black
+					> a
+						font-size 0.9em
+						font-weight 400
+
+				
+		
+
+
+
+
+
+.menu_left	
+	li
+		border-bottom 1px solid color6
+		&:last-child
+			border-bottom 0
+		a
+			line-height 1.5em !important
+			height auto !important
+			padding-top 1em
+			padding-bottom 1em
+			display block
+			vertical-align middle
+			// font-weight 400
+			&.promociones
+				displa block
+				icomoon('e678')
+				&:before
+					color #c62665
+					float right
+					font-size 1.4em
+					margin-right -0.8em
+		&.collapse .collapsible-header
+			padding 1em 0 1em 1em !important
+			// &.collapsible-header
+			// 	font-weight bold
+	.collapsible-body
+		li
+			border-bottom 0
+			a
+				margin-left 1em
+				color color1
+				font-weight normal				
+			&.active
+				background-color lighten(#ddd,4)
+				a
+					color black
+	&.collapsible-accordion
+		li.collapse
+			padding 0
+			
+
+
+
+
+
+		
+@media $large
+	body.headfixed
+		padding-top 151px
+		.preheader
+			display none
+		header
+			nav
+				// background rgba(#357bb2,0.9)
+				background white			
+				position fixed !important
+			&::before
+				display none
+			li
+				a
+					font-size 0.80em
+					// padding-left 0.2em
+					// padding-right 0.2em
+					color black
+					&:hover
+						color black !important
+				&.logo
+					padding 0 0.5em
+					a
+						display inline-block
+						width 120px
+						height auto
+						color transparent
+						background url(imgs+'logo.png') no-repeat
+						background-size contain
+						line-height 100%
+						margin-top 0.1em
+					&:hover
+						background-color transparent
+						a
+							color transparent	!important
+					&.active
+						background white
+
+
+					
+
+
+			
+

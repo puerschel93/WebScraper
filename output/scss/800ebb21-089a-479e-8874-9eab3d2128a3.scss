@@ -1,0 +1,293 @@
+/*Card Step*/
+/*------------------*/
+
+.step_card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: $space-regular 0rem;
+    border-radius: $border-radius-basic;
+    background-color: $colour-extralight-grey;
+    box-shadow: $shadow-card;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:active, &:hover {
+        background-color: $colour-primary--lighter;
+
+        .step_card__icon {
+            color: $colour-primary;
+        }
+    }
+
+    @include screen-md {
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    @include screen-xl {
+        padding: $space-XXlarge;
+        width: 100%;
+        height: 250px;
+    }
+        
+    &__icon {
+        text-align: center;
+        color: $colour-middle-grey;
+        width: 20px;
+        padding: $space-Xsmall $space-medium;
+
+        @include screen-md {
+            padding: $space-Xsmall $space-regular $space-Xsmall 0rem ;
+        }
+
+        @include screen-xl {
+            padding: $space-XXXlarge $space-medium 0rem 0rem;
+            font-size: $font-large;
+        } 
+    }
+
+    &__text {
+        font-size: $font-small;
+        font-weight: $font-weight-bold;
+
+        @include screen-xl {
+            font-size: $font-regular;
+            padding-top: $space-XXXlarge;
+        }  
+    }
+
+    &__number {
+        width: $size-circle-number;
+        height: $size-circle-number;
+        border-radius: 50%;
+        background-color: $colour-primary;
+        color: $colour-white;
+        font-size: $font-Xsmall;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        /*La position dépend de la taille du cercle divisé par deux (multiplié par moins 1 car il est positionné en négatif)*/
+        left: calc($size-circle-number / -2);
+
+        @include screen-md {
+            /*La position dépend de la taille du cercle divisé par deux (multiplié par moins 1 car il est positionné en négatif)*/
+            top: calc($size-circle-number / -2);
+            left: calc(50% - ($size-circle-number / 2));
+        }
+
+        @include screen-xl {
+            width: $size-circle-number-xl;
+            height: $size-circle-number-xl;
+            font-size: $font-large;
+            top: 25%;
+            left: calc(50% - $size-circle-number-xl / 2 );
+        }    
+    }
+}
+
+
+/*Card Restaurant*/
+/*-------------------*/
+
+.restaurant_card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $colour-white;
+    border-radius: $border-radius-basic;
+    overflow: hidden;
+    box-shadow: $shadow-card;
+    cursor: pointer;
+    position: relative;
+
+    @include screen-md {
+        /*La width fait 50% de la div parent moins la largeur de la gap sur 2*/
+        width: calc(50% - ($space-medium / 2));
+    }
+
+    @include screen-xl {
+        /*La width fait 50% de la div parent moins la largeur de la gap sur 2*/
+        width: calc(50% - ($space-large / 2));
+    }
+
+    &:active, &:hover {
+        box-shadow: $shadow-card--hover;
+    }
+
+    &__link {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__img {
+        width: 100%;
+        height: 150px;
+
+        @include screen-xl {
+            height: 250px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+    }
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $padding-body-card;
+        box-sizing: border-box;
+
+        @include screen-xl {
+            padding: $padding-body-card-xl;
+        }
+
+        .restaurant_card__caption {
+
+            .restaurant_card__text {
+                padding-top: $space-XXsmall;
+
+                @include screen-xl {
+                    padding-top: $space-small;
+                }
+            } 
+        }
+
+        .restaurant_card__icon {
+            font-size: $font-large;
+
+            @include screen-xl {
+                font-size: $font-Xlarge;
+            }
+        }
+    }
+}
+
+
+/*Card Menu*/
+/*-------------------*/
+
+.menu_card {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $colour-white;
+    padding: $padding-body-card;
+    box-shadow: $shadow-menu;
+    border-radius: $border-radius-basic;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    &:active, &:hover {
+        box-shadow: $shadow-menu--hover;
+
+        .menu_card__body {
+            transform: translateX(0);
+            transition: transform 1s ease-in-out;
+
+            &__title {
+                width: 100%;
+                transform: translateX(0);
+                transition: width 1s ease-in-out, transform 1s ease-in-out;
+            }
+              
+            &__text {
+                width: 100%;
+                transform: translateX(0);
+                transition: width 1s ease-in-out, transform 1s ease-in-out;
+            }
+        }
+
+        .menu_card__price {
+            transform: translateX(0);
+            transition: transform 1s ease-in-out;
+        }
+
+        .menu_card__checkbox {
+            visibility: visible;
+            transform: translateX(0);
+            transition: transform 1s ease-in-out;
+
+            .checked {
+                transform: rotate(360deg);
+                transition: transform 1s ease-in-out;
+            }
+        }
+    }
+
+    &__body {
+        /*Le min width à 0 permet d'avoir au texte ellipsis de fonctionner correctement avec flex*/
+        min-width: 0;
+        flex-grow: 1;
+        /*On translate le body de la largeur de la div &__checkbox*/
+        transform: translateX($size-checkbox);
+        transition: transform 1s ease-in-out;
+        
+        &__title {
+            font-weight: $font-weight-bold;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            /*On translate le titre de la largeur de la div &__checkbox*/
+            transform: translateX(-$size-checkbox);
+            /*On agrandit la zone titre de la largeur de la div &__checkbox*/
+            width: calc(100% + $size-checkbox);
+            transition: width 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        &__text {
+            font-size: $font-small;
+            padding-top: $space-XXsmall;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            /*On translate le texte de la largeur de la div &__checkbox*/
+            transform: translateX(-$size-checkbox);
+            /*On agrandit la zone texte de la largeur de la div &__checkbox*/
+            width: calc(100% + $size-checkbox);
+            transition: width 1s ease-in-out, transform 1s ease-in-out;
+        }
+    }
+
+    &__price {
+        display: flex;
+        align-items: flex-end;
+        font-size: $font-small;
+        font-weight: $font-weight-bold;
+        padding: 0rem $space-medium;
+        /*On translate le texte de la largeur de la div &__checkbox*/
+        transform: translateX($size-checkbox);
+        transition: transform 1s ease-in-out;
+    }
+
+    &__checkbox {
+        min-width: $size-checkbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $colour-tertiary;
+        color: $colour-white;
+        border-top-right-radius: $border-radius-basic;
+        border-bottom-right-radius: $border-radius-basic;
+        margin: -$space-small;
+        /*On translate la div, en dehors du parent, de la largeur de la div &__checkbox*/
+        transform: translateX($size-checkbox);
+        transition: transform 1s ease-in-out;
+
+        .checked {
+            font-size: $font-large;
+            transform: rotate(0);
+            transition: transform 1s ease-in-out;
+        }
+    }
+}

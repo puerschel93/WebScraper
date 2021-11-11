@@ -1,0 +1,116 @@
+.experience {
+   background-color: $white-color;
+   width: 100%;
+   height: 100%;
+   position: relative;
+   padding: 10rem 0;
+   .shape5 {
+      width: 40rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+   }
+   .container-experience {
+      position: relative;
+      padding: 3rem 4rem;
+      width: 100%;
+      z-index: 2;
+      @include display-flex;
+      justify-content: space-between;
+
+      .experience-img {
+         width: 65rem;
+         height: auto;
+         object-fit: cover;
+      }
+
+      .experience-content {
+         padding-left: 10rem;
+         .experience-title {
+            color: $base-color;
+            width: 60%;
+         }
+         .experience-desc {
+            z-index: 2;
+            color: $base-color;
+            text-align: left;
+            width: 80%;
+            margin: 5rem 0;
+         }
+         .btn-experience {
+            width: 32rem;
+            padding: 1rem 0;
+            border-radius: 0.75rem;
+            color: $white-color;
+            background-color: $base-color;
+            font-size: fontSize(footer-desc);
+            font-family: $header-font;
+            &:hover {
+               background-color: $menu-hover-color;
+               color: $base-color;
+               @include transition-ease-in-out;
+            }
+         }
+      }
+   }
+}
+@media screen and (max-width: 1023px) {
+   .experience {
+      .container-experience {
+         flex-direction: column;
+         gap: 4rem;
+         .experience-img {
+            order: 2;
+         }
+         .experience-content {
+            order: 1;
+            @include display-flex;
+            flex-direction: column;
+            padding-left: 0;
+            .experience-title {
+               width: auto;
+            }
+            .experience-desc {
+               width: 100%;
+               text-align: center;
+            }
+         }
+      }
+   }
+}
+@media screen and (max-width: 767px) {
+   .experience {
+      .shape5 {
+         width: 30rem;
+      }
+      .container-experience {
+         .experience-img {
+            width: 45rem;
+         }
+         .experience-content {
+            order: 1;
+            @include display-flex;
+            flex-direction: column;
+            padding-left: 0;
+            .experience-title {
+               width: 100%;
+               font-size: 50px;
+               text-align: center;
+            }
+            .experience-desc {
+               line-height: 5rem;
+            }
+         }
+      }
+   }
+}
+@media screen and (max-width: 500px) {
+   .experience {
+      .container-experience {
+         .experience-img {
+            width: 100%;
+         }
+      }
+   }
+}

@@ -1,0 +1,172 @@
+.icon {
+    height: 1.3em;
+    width: 1.3em;
+    margin-top:-0.1rem;
+    object-fit: contain;
+    vertical-align: middle;
+    transition: background-color 0.3s ease;
+
+    &.avatar {
+        height: 1.563rem;
+        width: 1.563rem;
+        object-fit: cover;
+        border-radius: 50%;
+
+        &.square {
+            border-radius: none;
+        }
+
+        &.lg {
+            height: 2.188rem;
+            width: 2.188rem;
+        }
+    }
+
+    &.primary {
+        background-color: $color-primary
+    }
+
+    &.secondary {
+        background-color: $color-secondary
+    }
+
+    &.white {
+        background-color: white;
+
+        &:hover {
+            background-color: $color-secondary
+        }
+    }
+
+    &.green {
+        background-color: $color-green;
+    }
+
+    &.red {
+        background-color: $color-red;
+    }
+
+    &.black {
+        background-color: $color-black;
+    }
+
+    &.light-grey {
+        background-color: $color-grey;
+    }
+
+    &.grey {
+        background-color: $text-grey;
+    }
+
+    &.nudge {
+        &-up {
+            top:-0.075em;
+        }
+        &-down {
+            top:0.075em;
+        }
+    }
+
+    use('plugins/toLowerCase.js')
+
+    for $mask in Alarm ArrowDown ArrowLeft ArrowUp ArrowRight Bell Bin Binoculars Blocks Box Building BulletList Burger Calendar CardPayment Clock ContentBanner ContentButton ContentFeatures ContentText ContentTitle ContentVideo Crosshairs Cycle Duplicate Edit Envelope Eye Gauge HandStop Help House Link MapMarker MapMarkerUndo MapMarkers  Megaphone Merge M Melded NoEntry Note Organisation People Person PieChart Plus PreviewDesktop PreviewMobile PreviewTablet PriceTag Pulse RepeatArrow Rocket Scissors Screen Search Settings SectionGrab Settings ShoppingBasket ShoppingTrolley SideMenuCollapse SideMenuExpand SignIn SignOut ShoppingBag SpeechBubble1 SpeechBubble2 Stopwatch Suppliers Swap ThreeDots ThumbsDown ThumbsUp Tick TickCircle Unlink Violin Voucher X XCircle  {
+
+        &.{toLowerCase($mask)} {
+            -webkit-mask-image: url('/icons/Icon-' + $mask + '.svg');
+            mask-image: url('/icons/Icon-' + $mask + '.svg');
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: center;
+            mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+        }
+
+    }
+
+    &-circle {
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top:0;
+        left:0
+        height: 1.2em;
+        width: 1.2em;
+        border-radius: 50%;
+        background-color: $brand-primary;
+
+        span {
+            height: 0.75rem;
+            width: 0.75rem;
+            display: block;
+            margin:0 !important;
+        }
+
+        &.unconfirmed {
+            background-color: white;
+        }
+
+        &.confirmed {
+            background-color: $confirmed;
+        }
+
+        &.checkedin {
+            background-color: $checked_in;
+        }
+
+        &.paid {
+            background-color: $paid;
+        }
+
+        &.cancelled {
+            background-color: $cancelled;
+        }
+
+    }
+
+    &.left {
+        margin-right: 0.800em;
+    }
+
+    &.right {
+        margin-left: 0.800em;
+    }
+
+    &.sm {
+        height: 0.85em;
+        width: 0.85em;
+    }
+
+    &.align {
+        height: 1em;
+        width: 1em;
+        vertical-align: middle;
+        margin-top:-3px;
+    }
+
+    &.lg {
+        height: 1.35rem;
+        width: 1.35rem;
+    }
+
+    &.xl {
+        height: 2em;
+        width: 2em;
+    }
+
+    &.xxl {
+        height: 3em;
+        width: 3em;
+    }
+
+    &.logo-size {
+        height:2rem;
+        width: 99px;
+    }
+
+}

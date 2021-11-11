@@ -1,0 +1,258 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:600;
+
+// SIZE NAVIGATION
+$height-navigation:120;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Montserrat",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+//----------------------------------------------------------------------------------------------------------------
+//		PERSO GH745
+//----------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//----------------------------------------------------------------------------------------------------------------
+
+	//----------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//----------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:100%;
+	}
+}
+
+.rounded-150 {
+	@include border-radius (150px);
+}
+
+	//----------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//----------------------------------------------------------------------------------------------------------------
+
+.navigation > .container {
+	width: 100%;
+}
+
+
+.menu-principal {
+	font-size:1.0em;	
+	@media only screen and (max-width : 1440px) {
+		font-size: 0.6em;
+	}
+	>li {
+		background:none;	
+		border: none;
+		padding: 0px 15px;
+		@media only screen and (max-width : 1440px) {
+			padding: 0 2px;
+		}
+		@media only screen and (max-width : 1366px) {
+			padding: 0 2px;
+		}
+		&:hover {
+			background:none;
+		}
+		>a {			
+			&:after {
+	            display: block;
+	            content: "";
+	            width: 0%; height: 2px;
+	            background-color: $color-primary;
+	            margin-top: -40px;
+	            -webkit-transition: all .7s ease;
+	            		transition: all .7s ease;
+	         }
+	         &:hover {
+	            color: $color-action;	            
+	            &:after { 
+	            	background-color: $color-action; 
+	            	width: 100%;
+	            }
+	         }
+	    }
+	}
+}
+
+.bloc-nav-left-fix {
+	padding: 0;
+}
+
+.fix-blog, .fix-rss {
+	display: none;
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//		INDEX
+//----------------------------------------------------------------------------------------------------------------
+
+	//----------------------------------------------------------------------------------------------------------------
+	//		VISEUL
+	//----------------------------------------------------------------------------------------------------------------
+
+.aside-home-1 {
+	margin-top: -120px;
+	@media only screen and (max-width : 767px) {
+		margin-top: 0px;
+	}
+}
+
+.titre-milieu {
+	margin-top: 85px;
+	@media only screen and (max-width : 767px) {
+		margin-top: 0px;
+	}
+}
+
+.btn-index {
+	background-color: rgba($color-primary,0.7);
+	padding: 10px;
+    margin: 10px;    
+    transition: all 1s ease;
+    svg {
+    	fill: $color-nav-footer;    	
+    	transition: all 1s ease;
+    }
+    &:hover {
+    	background-color: rgba($color-primary,0.9);
+        svg {
+        	transition: all 1s ease;
+    		fill: $color-action-dark-10;
+    	}
+    }
+}
+
+	//----------------------------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//----------------------------------------------------------------------------------------------------------------
+
+.aside-home-2, .aside-extra {
+	background: $color-body;
+	height: auto;
+	box-shadow: none;
+}
+
+.aside-extra .bg-secondary {
+	display: none;
+}
+
+.module-annonces-homepage .height-180 {
+	height: 240px;
+}
+
+	//----------------------------------------------------------------------------------------------------------------
+	//		SEO
+	//----------------------------------------------------------------------------------------------------------------
+
+.zone-pub {
+	background: $color-block;
+	padding: 10px;
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//		DETAIL ANNONCE
+//----------------------------------------------------------------------------------------------------------------
+
+	//----------------------------------------------------------------------------------------------------------------
+	//		PRIX
+	//----------------------------------------------------------------------------------------------------------------
+
+.bloc-detail-prix {
+	font-size: 2.5em;
+}
+
+	//----------------------------------------------------------------------------------------------------------------
+	//		INFOS COMPLEMENTAIRES
+	//----------------------------------------------------------------------------------------------------------------
+
+.nav-fiche-new .bold {
+	color: $color-action;	
+	font-size: 1.2em;
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//		DETAIL AGENCE
+//----------------------------------------------------------------------------------------------------------------
+
+	//----------------------------------------------------------------------------------------------------------------
+	//		AJOUT VISUEL SOUS NAV
+	//----------------------------------------------------------------------------------------------------------------
+
+.maclasseamoi {
+	height: 360px;
+	background-image: url('../images/bg-agence.jpg');
+	background-repeat: no-repeat;
+	margin-bottom: -340px;
+	@media only screen and (max-width : 767px) {
+		height: 0px;
+		margin-bottom: 0px;
+	}
+}
+
+.header-agence {
+	margin-top: 360px;
+	@media only screen and (max-width : 767px) {
+		margin-top: 0px;
+	}
+}

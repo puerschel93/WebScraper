@@ -1,0 +1,285 @@
+$background: #fefefe;
+$additional: #fafafa;
+$primary: #252525;
+$secondary: #858585;
+$placeholder: #c5c5c5;
+$stroke: #e6e6e6;
+$hover: #eaeaea;
+$selected: #5e89e3;
+$accent: #245ac8;
+
+@media screen and (min-width: 1600px) {
+  .menu {
+    width: 360px;
+    margin-right: 48px;
+    filter: drop-shadow(15px 0px 45px rgba(37, 37, 37, 0.05));
+    border-radius: 0px 35px 35px 0px;
+    &-content {
+      width: 278px;
+      margin: {
+        top: 32px;
+        left: 28px;
+      }
+      &__label {
+        width: 278px;
+        font-size: 24px;
+      }
+      &__greetings {
+        font-size: 24px;
+        margin-top: 42px;
+      }
+      .user-data {
+        margin-top: 22px;
+        &__img {
+          width: 85px;
+          height: 85px;
+          margin-right: 24px;
+          filter: drop-shadow(0px 3px 12px rgba(37, 37, 37, 0.1));
+        }
+        &__name {
+          font-size: 22px;
+        }
+        &__position {
+          font-size: 16px;
+          padding-top: 16px;
+        }
+      }
+    }
+    &-links__container {
+      margin-top: 36px;
+    }
+    .links-list {
+      &__item {
+        width: 229px;
+        height: 72px;
+        margin-bottom: 16px;
+      }
+      &__link {
+        border-radius: 25px;
+        padding-left: 32px;
+      }
+      &__icon {
+        width: 24px;
+        height: 24px;
+      }
+      &__text {
+        margin-left: 12px;
+        font-size: 18px;
+      }
+    }
+    &-logout-link {
+      padding: 24px;
+      width: 72px;
+      height: 72px;
+      border-radius: 25px;
+      margin-bottom: 56px;
+    }
+  }
+
+  .adding {
+    &-header {
+      font-size: 48px;
+      margin-top: 36px;
+    }
+    &-container {
+      margin-top: 32px;
+    }
+
+    &-form {
+      width: 652px;
+      height: 668px;
+      border-radius: 35px;
+      margin-right: 48px;
+      &__content {
+        padding: 24px 28px 28px;
+      }
+      &__header {
+        width: 326px;
+        &-heading {
+          font-size: 24px;
+          width: 100%;
+        }
+        &-description {
+          font-size: 16px;
+          line-height: 20px;
+          margin-top: 12px;
+          width: 100%;
+        }
+      }
+      &__cols-container {
+        width: 596px;
+        height: 533px;
+      }
+      &__label {
+        font-size: 20px;
+      }
+      &__column {
+        width: 280px;
+        height: 100%;
+      }
+      &__input {
+        width: 100%;
+        padding: 23px;
+        font-size: 16px;
+        margin-top: 16px;
+        border-radius: 25px;
+        filter: drop-shadow(0px 0.76vh 1.11vw rgba(21, 21, 21, 0.05));
+        outline: none;
+        &:focus {
+          outline: none;
+          color: $primary;
+          outline: 2px solid $accent;
+        }
+        &__file {
+          width: 100%;
+          padding: 23px;
+          font-size: 16px;
+          margin-top: 16px;
+          border-radius: 25px;
+          filter: drop-shadow(0px 0.76vh 1.11vw rgba(21, 21, 21, 0.05));
+          outline: none;
+          &:focus {
+            outline: none;
+            color: $primary;
+            outline: 2px solid $accent;
+          }
+        }
+      }
+      &__textarea {
+        height: 96px;
+        border-radius: 25px;
+      }
+      &__sender {
+        width: 100%;
+        height: 68px;
+        border: none;
+        font-size: 16px;
+        margin-top: 60px;
+        border-radius: 25px;
+        color: $background;
+        background: linear-gradient(84.39deg, #245AC8 -2.78%, #4CA3DD 109.11%);
+        &:hover {
+          box-shadow: 0px 5px 15px rgba(36, 90, 200, 0.5);
+        }
+      }
+      &:last-child {
+        height: 512px;
+      }
+    }
+  }
+
+  .selector {
+    // list
+    &__list {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+      width: 100%;
+    }
+    &__arrow {
+      margin-top: 1px;
+    }
+    // item
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      filter: drop-shadow(0px 0.76vh 1.11vw rgba(21, 21, 21, 0.05));
+      width: 100%;
+      padding-bottom: 0;
+      
+      &-opened {
+        z-index: 10;
+      }
+    }
+    // name
+    &__name {
+      font-weight: 500;
+      font-size: 20px;
+      color: $primary;
+      margin-bottom: 16px;
+    }
+    // select
+    &__select {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 23px;
+      background: $additional;
+      border: 1px solid $stroke;
+      box-sizing: border-box;
+      border-radius: 25px;
+      &-wrap {
+        position: relative;  
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+    // value
+    &__value {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: $primary;
+    }
+    // options
+    &__options {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 16px auto 0;
+      background: $background;
+      border: 1px solid $stroke;
+      box-sizing: border-box;
+      filter: drop-shadow(0px 10px 30px rgba(37, 37, 37, 0.1));
+      border-radius: 25px;
+      padding: 12px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: $primary;
+      opacity: 0;
+      display: none;
+      transition: all 0.3s ease;
+      overflow: auto;
+      &-active {
+        display: block;
+        opacity: 1;
+        z-index: 10;
+      }
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: $background;
+        border-radius: 20px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background-color: $selected;
+      }
+      // options item
+      &_item {
+        width: 100%;
+        cursor: pointer;
+        border-radius: 25px;
+        margin-bottom: 12px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:hover {
+          background-color: $hover;
+        }
+      }
+      &_value {
+        padding: 18px;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+  }
+}

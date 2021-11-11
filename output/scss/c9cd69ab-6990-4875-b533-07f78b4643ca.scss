@@ -1,0 +1,299 @@
+$darkbrown:#3B2C28;
+$lightbrown:#DFCEBE;
+body{
+    width: 100vw;
+    overflow-x: hidden !important;
+}
+.container{
+    width: 90% !important;
+}
+     .nav-cta{
+            button{
+                font-size: 16px;
+            font-weight: bold;
+            color: black;
+            background-color: $lightbrown;
+            }
+        }
+  .navbar{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 0% !important;
+      padding-right: 0% !important;
+      z-index: 500;
+      .container{
+ flex-wrap: nowrap;
+      }
+        .logo{
+            font-size: 30px;
+            font-family: 'Yantramanav',sans-serif;
+        }
+        .menu{
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            min-width: 50%;
+            font-family: 'Nunito',sans-serif;
+            
+        }
+       
+    }
+    .navbar-trans{
+        color: white;
+        background-color: transparent;
+    }
+    .navbar-white{
+        display: none;
+        color: black;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        .logo{
+            color: $darkbrown;
+        }
+    }
+    .hero-wrapper{
+        height: fit-content;
+    }
+    .header{
+    background-color: $darkbrown;
+    width: 100%;
+    .hero{
+        height: 86vh;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .hero-text{
+            position: absolute;
+            color: white;
+            width: 60%;
+            top: 57%;
+            transform: translateY(-50%);
+            p{
+                font-family: 'Nunito',sans-serif;
+                opacity: 0.9;
+            }
+            h1{
+                font-family: 'Yantramanav',sans-serif;
+                font-size: 45px;
+                font-weight: bold;
+            }
+            .search-form{
+                background-color: white;
+                width: 70%;
+                justify-content: space-between;
+                input{
+                    background-color: transparent;
+                    flex-grow: 1;
+                }
+            }
+        }
+ 
+    }
+}
+       .image{
+             width: fit-content;
+              width: 40%;
+              min-width: 300px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 0% 30%;
+        }
+    }
+.legal-services-wrapper{
+background-color:#58392c07;
+width: 100%;
+position: relative;
+.image-wrapper{
+    min-height: 300px;
+   .image{
+        right: 50%;
+        transform: translateX(50%);
+        top: -3%;
+        position: absolute;
+    }
+}
+.legal-services{
+ 
+    .text{
+        width: 70%;
+        margin: auto;
+    h2{
+        font-size: 36px;
+        font-family: 'Montserrat',sans-serif;
+        font-weight:800;
+        text-transform: capitalize;
+    }
+    p{
+        width: 70%;
+        margin: auto;
+        font-family: 'Nunito';
+    }
+}
+.legal-services-cards{
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    .service-card{
+        width: 320px;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .number{
+            font-size: 48px;
+            color: $lightbrown;
+        }
+        .title{
+            width: 70%;
+            font-size: 20px;
+            font-family: 'montserrat';
+            font-weight: 600;
+        }
+        .text-muted{
+            font-family: 'Nunito';
+        }
+        .link{
+            color: $darkbrown;
+            a{ 
+                &::after{
+                    content:"\2192";
+                    transition: 0.2s;
+                }
+                &:hover{
+                    &::after{
+                        margin-left: 10px;
+                    }
+                text-decoration: none;
+            }
+        }
+        }
+    }
+}
+}
+}
+.faq{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-size: 36px;
+        font-weight: bold;
+    }
+    .faq-header{
+        background-color: #58392c23;
+        h3{
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'montserrat';
+        }
+    }
+    .card{
+        border: none !important;
+       border-radius: 0%;
+       .card-header{
+           background-color:#58392c23;
+           h3{
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'montserrat';
+        }
+       }
+    }
+}
+.footer{
+    background-color: $darkbrown;
+}
+// media queries
+ .lg-none{
+     display: none;   
+    }
+     .sm-none{
+     display: none;   
+    }
+@media (min-width:1000px){
+    .sm-none:not(.flex){
+      display: block !important;
+    }
+    .nav-mobile-menu{
+        right: -100% !important;
+    }
+    .sm-none.flex{
+        display: flex !important;
+    }
+}
+@media (max-width:1000px){
+    h1{
+        font-size: 24px !important;
+    }
+    h2{
+        font-size: 18px !important;
+    }
+    .container.sm-full{
+        width: 100% !important;
+        .text{
+            width: 100%;
+        }
+        .container{
+          width: 99% !important;
+        }
+    }
+    .lg-none{
+        display: block;
+    }
+.hero-text{
+    position: relative !important;
+    width: 90vw !important;
+    z-index: 3;
+ .search-form{
+     width: 100% !important;
+ }
+}
+.hero{
+    height:60vh !important;
+    position: relative !important;
+    .image{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+}
+}
+.nav-mobile-menu{
+    background-color: $darkbrown;
+    height: 100vh;
+    width:90%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: 0.3s;
+    z-index: 10000;
+    color: white;
+    .header{
+        font-size: 64px;
+        button{
+            cursor: pointer;
+        }
+    }
+    .menu{
+        li{
+            font-weight: bold;
+        }
+    }
+    .nav-cta{
+        margin: auto;
+    }
+}
+// framework
+input{
+    &:focus{
+    outline-color: transparent;
+    }
+    color: $darkbrown;
+}

@@ -1,0 +1,128 @@
+.promo {
+    & .swiper-container {
+    }
+    & .swiper-slide {
+        height: 100vh;
+        overflow: auto;
+        position: relative;
+
+        & .swiper-lazy-preloader {
+            border-color: $mainColor;
+            border-left: 4px solid transparent;
+        }
+
+
+        &:nth-child(even) {
+            & .promo__bg {
+                & img {
+                    transform: scale(1.1);
+                }
+            }
+
+            &.swiper-slide-active {
+                & .promo__bg {
+                    & img {
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+
+        &:nth-child(odd) {
+            & .promo__bg {
+                & img {
+                    transform: scale(1);
+                }
+            }
+
+            &.swiper-slide-active {
+                & .promo__bg {
+                    & img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: hidden;
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(
+                180deg,
+                rgba(19, 19, 19, 0.4) 8.97%,
+                rgba(19, 19, 19, 0.0001) 18.77%,
+                rgba(19, 19, 19, 0.0001) 30.22%,
+                rgba(19, 19, 19, 0.6) 73.67%
+            );
+        }
+
+        & img {
+            transition: all 13s linear;
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh;
+        padding-top: 150px;
+        padding-bottom: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        @media (max-width: $md3+px) {
+            padding-top: 90px;
+            padding-bottom: 150px;
+        }
+    }
+
+    &__title {
+        font-weight: normal;
+        font-size: 44px;
+        line-height: 1.227em;
+        color: $textColorLight;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+
+        &:after {
+            font-family: 'icomoon';
+            content: '';
+            display: inline-block;
+            content: "\e909";
+            opacity: 0.4;
+            font-size: 0.7em;
+            margin-left: 0.68em;
+            transition: all .3s ease;
+        }
+
+        @media (max-width: $md3+px) {
+            font-size: 30px;
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                &:after {
+                    transform: translateX(0.22em);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

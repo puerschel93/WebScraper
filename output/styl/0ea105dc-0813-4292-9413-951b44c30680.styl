@@ -1,0 +1,497 @@
+.catalog-item
+
+	&__container
+		border 1px solid $line
+
+		position relative
+
+	&__image
+		display block
+		width 100%
+
+		height 100%
+		max-height 350px
+
+		object-fit cover
+
+	&__content
+		padding 16px 20px 20px
+
+		display flex
+		flex-direction column
+		align-items center
+
+	&__title
+		margin 0
+
+		min-height 36px
+
+		font-size 18px
+		line-height 1
+		font-family $Bold
+
+		color $text
+
+	&__buttons
+		width 100%
+		display flex
+		justify-content center
+		
+
+		&-sizes
+			margin-bottom 10px
+
+			& .catalog-item__button
+				padding 0 9px
+
+				width 100%
+
+				min-height 25px
+
+				display flex
+				align-items center
+				justify-content center
+				font-size 18px
+				line-height 1
+				font-family $Regular
+
+				border 1px solid transparent
+				border-radius 3px
+				background-color transparent
+				color $text
+				text-transform uppercase
+
+				&:hover
+					border-color $pink
+				
+				&-active
+					border-color $pink
+
+		&-colors
+			margin-bottom 10px
+
+			& li
+
+				&:not(:last-child)
+					margin-right 10px
+
+			& .catalog-item__button
+				padding 0
+
+				width 30px
+				height 30px
+
+				border 1px solid $line
+				border-radius 50%
+
+				&-black
+					background-color $black
+				
+				&-red
+					background-color $red
+
+	&__button
+		cursor pointer
+
+		transition-property border-color
+		transition-duration .3s
+
+		&:hover
+			border-color $pink
+		
+		&:disabled
+			color $lightGrey
+			pointer-events none
+
+		&-active
+			border-color $pink
+
+	&__price
+		margin-bottom 12px
+
+		display flex
+		align-items center
+
+		& span
+			display block
+
+		&-old
+			margin-right 20px
+
+			font-size 24px
+			line-height 36px
+			font-family $Regular
+
+			color $grey
+			text-decoration line-through
+
+		&-new
+			font-size 30px
+			line-height 35px
+			font-family $Bold
+
+			color $pink
+
+	&__order
+		padding 15px
+
+		display flex
+		align-items center
+		justify-content center
+
+		width 100%
+		height 60px
+
+		font-size 18px
+		line-height 30px
+		font-family $Semibold
+
+		color $white
+		background linear-gradient(0deg, #4776E6 0%, #8E54E9 100%), #E8A900
+		box-shadow 0px 4px 0px #375CB3
+		border none
+		border-radius 3px
+		cursor pointer
+		text-transform uppercase
+
+		transition-property transform
+		transition-duration .3s
+		
+		will-change transform
+
+		&:active
+			transform scale(0.9)
+
+	&__action
+		display flex
+		align-items center
+		justify-content center
+
+		width 60px
+		height 60px
+
+		position absolute
+		top 10px
+		left 10px
+
+		font-size 20px
+		line-height 36px
+		font-family $Bold
+
+		background-color $pink
+		border-radius 50%
+		color #E6E6E6
+
+@media(max-width 960px)
+	.catalog-item
+
+		&__image
+			max-height 450px
+
+		&__content
+			padding 16px 20px 20px
+
+			display flex
+			flex-direction column
+			align-items center
+
+		&__title
+			margin 0
+
+			min-height 36px
+
+			font-size 18px
+			line-height 1
+			font-family $Bold
+
+			color $text
+
+		&__buttons
+			width 100%
+			display flex
+			justify-content center
+			
+
+			&-sizes
+				margin-bottom 10px
+
+				& .catalog-item__button
+					padding 0 9px
+
+					width 100%
+
+					min-height 25px
+
+					display flex
+					align-items center
+					justify-content center
+					font-size 18px
+					line-height 1
+					font-family $Regular
+
+					border 1px solid transparent
+					border-radius 3px
+					background-color transparent
+					color $text
+					text-transform uppercase
+
+					&:hover
+						border-color $pink
+					
+					&-active
+						border-color $pink
+
+			&-colors
+				margin-bottom 10px
+
+				& li
+
+					&:not(:last-child)
+						margin-right 10px
+
+				& .catalog-item__button
+					padding 0
+
+					width 30px
+					height 30px
+
+					border 1px solid $line
+					border-radius 50%
+
+					&-black
+						background-color $black
+					
+					&-red
+						background-color $red
+
+		&__button
+			cursor pointer
+
+			transition-property border-color
+			transition-duration .3s
+
+			&:hover
+				border-color $pink
+			
+			&:disabled
+				color $lightGrey
+				pointer-events none
+
+			&-active
+				border-color $pink
+
+		&__price
+			margin-bottom 12px
+
+			display flex
+			align-items center
+
+			& span
+				display block
+
+			&-old
+				margin-right 20px
+
+				font-size 24px
+				line-height 36px
+				font-family $Regular
+
+				color $grey
+				text-decoration line-through
+
+			&-new
+				font-size 30px
+				line-height 35px
+				font-family $Bold
+
+				color $pink
+
+		&__order
+			padding 15px
+
+			display flex
+			align-items center
+			justify-content center
+
+			width 100%
+			height 60px
+
+			font-size 18px
+			line-height 30px
+			font-family $Semibold
+
+			color $white
+			background linear-gradient(0deg, #4776E6 0%, #8E54E9 100%), #E8A900
+			box-shadow 0px 4px 0px #375CB3
+			border none
+			border-radius 3px
+			cursor pointer
+			text-transform uppercase
+
+			transition-property transform
+			transition-duration .3s
+			
+			will-change transform
+
+			&:active
+				transform scale(0.9)
+
+		&__action
+			display flex
+			align-items center
+			justify-content center
+
+			width 60px
+			height 60px
+
+			position absolute
+			top 10px
+			left 10px
+
+			font-size 20px
+			line-height 36px
+			font-family $Bold
+
+			background-color $pink
+			border-radius 50%
+			color #E6E6E6
+
+@media(max-width 960px)
+	.catalog-item
+
+		&__image
+			max-height 450px
+
+@media(max-width 768px)
+	.catalog-item
+
+		&__image
+			max-height 350px
+
+		&__content
+			padding 15px
+
+		&__title
+			min-height 32px
+
+			font-size 16px
+
+		&__buttons
+
+			&-sizes
+
+				& .catalog-item__button
+					padding 0 5px
+					min-height 20px
+
+					font-size 16px
+
+			&-colors
+
+				& li
+
+				& .catalog-item__button
+
+					width 25px
+					height 25px
+
+		&__price
+			margin-bottom 10px
+
+			&-old
+				margin-right 15px
+
+				font-size 20px
+				line-height 32px
+
+			&-new
+				font-size 26px
+				line-height 38px
+
+		&__order
+			padding 10px
+
+			height 45px
+
+			font-size 16px
+			line-height 24px
+
+		&__action
+			width 45px
+			height 45px
+
+			font-size 16px
+			line-height 24px
+
+@media(max-width 660px)
+	.catalog-item
+
+		&__image
+			max-height 500px
+
+		&__content
+			padding 15px
+
+		&__title
+			min-height 32px
+
+			font-size 16px
+
+		&__buttons
+
+			&-sizes
+
+				& .catalog-item__button
+					padding 0 5px
+					min-height 20px
+
+					font-size 16px
+
+			&-colors
+
+				& li
+
+				& .catalog-item__button
+
+					width 25px
+					height 25px
+
+		&__price
+			margin-bottom 10px
+
+			&-old
+				margin-right 15px
+
+				font-size 20px
+				line-height 32px
+
+			&-new
+				font-size 26px
+				line-height 38px
+
+		&__order
+			padding 10px
+
+			height 45px
+
+			font-size 16px
+			line-height 24px
+
+		&__action
+			width 45px
+			height 45px
+
+			font-size 16px
+			line-height 24px
+
+@media(max-width 470px)
+	.catalog-item
+
+		&__image
+			max-height 350px
+
+@media(max-width 375px)
+	.catalog-item
+
+		&__image
+			max-height 270px

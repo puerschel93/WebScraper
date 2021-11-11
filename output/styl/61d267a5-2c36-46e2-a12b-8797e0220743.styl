@@ -1,0 +1,315 @@
+.dealers-page
+	// @media mqBigMobile
+	// 	padding-top: calc(40px + 54px)
+	// @media mqSemiMobile
+	// 	padding-top: calc(35px + 45px)
+		
+	.bottom-block
+		margin-top: 20px
+		@media mqBigMobile
+			margin-top: 00px
+			
+	& > .container
+		height: calc(100vh - 273px)
+		
+		@media mqBigTablet
+			height: calc(100vh - 251px)
+		@media mqSmallTablet
+			height: calc(100vh - 241px)
+			
+		@media mqBigMobile
+			height: calc(100vh - 210px)
+			
+		@media mqMidMobile
+			height: calc(100vh - 185px)
+		
+		.title, .breadcrumbs
+			position: relative
+			z-index: 2
+				
+	.world-map
+		position: absolute
+		width: 100%
+		height: calc(100vh - 127px - 112px)
+		z-index: 1
+		background: #d0d0d0
+		top: 112px
+		padding-left: 15%;
+		left: 0
+		@media mqBigTablet
+			padding-left: 10%
+			height: calc(100vh - 127px - 90px)
+		@media mqSmallTablet
+			padding-left: 5%
+			height: calc(100vh - 127px - 80px)
+		@media mqSmallTablet
+			height: calc(100vh - 127px - 63px)
+		@media mqBigMobile
+			top: 95px
+		@media mqMidMobile
+			top: 80px
+			height: calc(100vh - 127px - 38px)
+
+	.dealers
+		z-index: 2
+		position: relative
+		.dealers__search
+			background: #1f1f1f
+			padding: 36px 0
+			@media mqBigTablet
+				padding: 25px 0
+			@media mqSmallTablet
+				padding: 20px 0
+			&--wrap
+				display flex
+				// justify-content: space-between
+				width: 60%
+				margin: 0 20px
+				flex-wrap: wrap
+				@media mqSemiMobile
+					display: none
+			.btn
+				width: 220px
+				height: 55px
+				@media mqSmallTablet
+					width: 180px
+					font-size: 14px!important
+					padding: 10px
+				@media mqMidMobile
+					height: 45px
+					
+				&.btn--transparent
+					border-width: 2px
+					color: $c-white
+					font-size: 16px
+					font-weight: 600
+			.container
+				display: flex
+				justify-content: space-between
+				align-items: center
+			&--item
+				text-transform: uppercase
+				color: $c-white
+				cursor: pointer
+				margin: 0 9.7px
+				&:hover
+					text-decoration: underline
+		.dealers__countries
+			background: $c-white
+			padding: 57px 0
+			@media mqBigMobile
+				padding-top: 30px
+				padding-bottom: 30px
+			.container
+				display: flex
+				justify-content: space-between
+				flex-wrap: wrap
+				max-width: 1800px
+				margin-left: 145px
+				@media mqBigTablet
+					margin-left: 0
+			&--item
+				width: calc(100% / 5)
+				margin-bottom: 29px
+				cursor: pointer
+				text-transform: uppercase
+				@media mqBigTablet
+					text-align: center
+				@media mqBigMobile
+					margin-bottom: 16px
+					font-size: 14px
+					width: calc(100% / 3)
+				@media mqMidMobile
+					width: calc(100% / 2)
+				&:hover
+					text-decoration: underline
+
+.dealer-page
+	padding-top: 112px
+	@media mqBigMobile
+		padding-top: calc(40px + 54px)
+	@media mqSemiMobile
+		padding-top: calc(35px + 45px)
+	.breadcrumbs
+		margin-top: 38px
+
+	.text
+		font-size: 16px
+		color: #1f1f1f
+		line-height: 1.65em
+		letter-spacing: -0.4px
+		
+		& + .text 
+			margin-top: 30px
+
+	.dealer-top
+		height: 431px
+		position relative
+		@media mqBigMobile
+			height: calc(100vh - 95px)
+		@media mqSemiMobile
+			height: calc(100vh - 80px)
+		&--text
+			display flex
+			align-items: center
+			position absolute
+			bottom: 0px
+			top: 0
+			margin: auto
+			width: 650px
+			height: 112px
+			left: 181px
+			font-weight: 600
+			font-size: 54px
+			background: #fff
+			letter-spacing: 1px
+			// text-transform: uppercase
+			padding: 0 29px 0
+			border-left: 3px solid #f14a3f
+			@media mqBigTablet
+				left: 60px
+				width: 450px
+				font-size: 44px
+			@media mqBigMobile
+				left: 20px
+				height: 80px
+				bottom: 0
+				top: auto
+				font-size: 30px
+				width: 350px
+			@media mqMidMobile
+				width: 100%
+				left: 0
+				font-size: 24px
+				height: auto
+				padding: 15px 20px
+
+		.dropdown
+			position absolute
+			right: 201px
+			top: 124px
+			width: 332px
+			@media mqBigTablet
+				right: 100px
+				top: 80px
+			@media mqBigMobile
+				right: 20px
+				top: 40px
+				width: 260px
+			&--value
+				background: #fff
+				font-size: 18px
+				height: 46px
+				border: none
+				@media mqBigMobile
+					font-size: 16px
+				&:after
+					right: 18px
+			&__list
+				top: calc(100% + 3px)
+				&--item
+					display flex
+					align-items: center
+					font-size: 14px
+					background: #e8e8e8
+					padding: 16px 19px
+					svg 
+						margin: 0 7px 0px 9px
+						fill: #f14a3f
+						width: 15px
+						height: 15px
+		img 
+			width: 100%
+			display block
+			height: 100%
+			object-fit: cover
+	.dealer-details
+		margin-top: 45px
+		display flex
+		justify-content: space-between
+		@media mqSmallTablet
+			flex-wrap: wrap
+			flex-direction: column-reverse
+		& > div
+			&:first-child
+				width: calc(67%)
+				padding-right: 20px
+				@media mqSmallTablet
+					width: 100%
+					margin-top: 20px
+					padding: 0
+			&:last-child
+				width: calc(33% - 20px)
+				min-width: 480px
+				@media mqBigTablet
+					min-width: 400px
+				@media mqSmallTablet
+					min-width: 380px
+					padding: 0
+				@media mqMidMobile
+					min-width: 100%
+		&__info
+			margin-top: 5px
+			border: 2px solid #e8e8e8
+			padding: 28px 30px
+			display flex
+			justify-content: space-between
+			align-items: flex-start
+			@media mqBigMobile
+				margin-top: 15px
+			@media mqMidMobile
+				flex-wrap: wrap
+				justify-content: center
+			& > div
+				width: 69%
+				@media mqMidMobile
+					width: 100%
+					display: flex
+					flex-wrap: wrap
+					
+			img
+				margin-right: 20px
+			&--title
+				font-size: 18px
+				text-transform: uppercase
+				font-weight: 600
+				margin-top: 5px
+				@media mqMidMobile
+					width: 100%
+					text-align: center
+			&--position
+				color: #909090
+				font-size: 14px
+				margin-top: 8px
+				@media mqMidMobile
+					width: 100%
+					text-align: center
+			&--place
+				font-size: 14px
+				margin-top: 9px
+				font-weight: 500
+				@media mqMidMobile
+					width: 100%
+					text-align: center
+			&--phone, &--email
+				color: #909090
+				font-size: 16px
+				font-weight: 500
+				margin-top: 16px
+				display flex
+				align-items: center
+				@media mqMidMobile
+					width: 100%
+					justify-content: center
+				svg 
+					min-width: 14px
+					width: 14px
+					height: 14px
+					margin-right: 10px
+					margin-top: -4px
+					fill: #f14a3f
+			&--email
+				svg 
+					margin-top: 3px
+					width: 18px
+					height: 18px

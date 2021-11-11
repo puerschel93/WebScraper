@@ -1,0 +1,330 @@
+/**
+ * Analytics
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the LICENSE.md file.
+ *
+ * @author Marcel Scherello <analytics@scherello.de>
+ * @copyright 2021 Marcel Scherello
+ */
+
+#app-navigation:not(.vue) .app-navigation-entry-utils {
+    opacity: 0;
+}
+
+#app-navigation:not(.vue)>ul>li.active>.app-navigation-entry-utils:hover,
+#app-navigation:not(.vue)>ul>li.active>a:hover+.app-navigation-entry-utils,
+#app-navigation:not(.vue)>ul>li.active>.app-navigation-entry-utils:hover,
+#app-navigation:not(.vue)>ul>li.active>a:hover +.app-navigation-entry-utils:hover,
+{
+    background-color: var(--color-primary-light);
+}
+
+#app-navigation:not(.vue)>ul>li>a:hover +.app-navigation-entry-utils,
+{
+  opacity: 1;
+  background-color: var(--color-background-hover)
+}
+#app-navigation:not(.vue)>ul>li>ul>li>a:hover +.app-navigation-entry-utils,
+{
+  opacity: 1;
+}
+
+#app-navigation:not(.vue)>ul>li>.app-navigation-entry-utils:hover,
+#app-navigation:not(.vue)>ul>li>ul>li>.app-navigation-entry-utils:hover,
+{
+  opacity: 1;
+}
+
+#app-navigation:not(.vue) .app-navigation-entry-utils .app-navigation-entry-utils-menu-button>button, #app-navigation:not(.vue) .app-navigation-entry-deleted .app-navigation-entry-deleted-button {
+    opacity: remove;
+}
+
+#app-sidebar .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+}
+
+#app-sidebar .fileName h3 {
+  margin-left: 20px;
+}
+
+#analytics-settings li.analytics-settings-item {
+    background-size: 15px 15px;
+    background-position: 0 center;
+    opacity: 0.8;
+    line-height: 30px;
+    min-height: 30px;
+
+}
+
+#reportHeader {
+    text-align: center;
+}
+
+#reportMenuBar {
+    margin-bottom: 20px;
+}
+
+#reportSubHeader {
+    text-align: center;
+}
+
+#reportPlaceholder {
+    height: 5px;
+}
+
+#filterContainer {
+    width: 99%;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+#chartContainer {
+    position: relative;
+    min-width: 310px;
+    height:50vh;
+    width:99%;
+}
+
+#chartLegendContainer {
+    height:16px;
+}
+
+#tableSeparatorContainer {
+    margin-bottom: 40px;
+}
+
+#chartLegend {
+    right: 6%;
+    position: absolute;
+    padding-left: 70px;
+    opacity: 0.5;
+}
+
+#chartLegend:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#tableContainer {
+    width:100%;
+    height: 50%;
+}
+
+#noDataContainer {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.thresholdBullet {
+  margin: 10px;
+  width: 12px;
+  height: 12px;
+}
+
+.thresholdItem {
+  display: inline-flex;
+  width: 100%;
+}
+
+.thresholdText {
+  margin-top: 6px;
+  width: 50%;
+}
+
+.thresholdDelete {
+  margin-top: 12px;
+  width: 50%;
+}
+
+.input150 {
+  width: 150px;
+}
+
+.input250 {
+  width: 250px;
+}
+
+.optionsInput {
+  width: 130px;
+}
+
+.sidebarInput {
+  width: 200px;
+}
+
+table.dataTable tbody tr {
+  background-color: var(--color-main-background) !important;
+}
+
+.analytics-options {
+  opacity: 0.5;
+  background-size: 20px;
+  margin-left: 10px;
+  float: right;
+  height: 22px;
+  width: 22px;
+}
+
+.analytics-options:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.icon-analytics-filter-add {
+  @include icon-color('filteradd', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-options {
+  @include icon-color('options', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-save {
+  @include icon-color('save', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-save-warning {
+  @include icon-color('save', 'analytics', $color-warning, 1);
+}
+
+.icon-analytics-chart-options {
+  @include icon-color('chartoptions', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-refresh {
+  @include icon-color('refresh', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-forecast {
+  @include icon-color('forecast', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-chartTable {
+  @include icon-color('chartTable', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-chartArea {
+  @include icon-color('chartArea', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-chartBar {
+  @include icon-color('chartBar', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-chartDonut {
+  @include icon-color('chartDonut', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-chartTime {
+  @include icon-color('chartTime', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-chartLine {
+  @include icon-color('chartLine', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-chartNone {
+  @include icon-color('chartNone', 'analytics', $color-black, 1);
+}
+
+.icon-analytics-charts-wizard {
+    opacity: 0.5;
+    background-size: 50px;
+    height: 50px;
+    width: 70px;
+    float: left;
+}
+
+.icon-analytics-filter-remove {
+  @include icon-color('filterremove', 'analytics', $color-black, 1);
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.icon-analytics-drilldown {
+  @include icon-color('column', 'analytics', $color-black, 1);
+}
+
+.filterVisualizationItem {
+    background-color: var(--color-background-dark);
+    padding: 5px;
+    border-radius: 15px;
+    padding-left: 34px;
+    background-position: 10px center;
+    background-image: var(--icon-close-000);
+    background-repeat: no-repeat;
+    opacity: .5;
+    font-size: smaller;
+    cursor: pointer;
+}
+
+.filterVisualizationItem:hover {
+    opacity: 1;
+}
+
+.whatsNewPopover {
+  bottom: 35px !important;
+  left: 15px !important;
+  width: 270px;
+  z-index: 700;
+}
+
+.whatsNewPopover p {
+  width: auto !important;
+}
+
+.whatsNewPopover .caption {
+  font-weight: bold;
+  cursor: auto !important;
+}
+
+.whatsNewPopover .icon-close {
+  position: absolute;
+  right: 0;
+}
+
+.whatsNewPopover::after {
+  content: none;
+}
+
+.userGuidance {
+    color: var(--color-text-lighter);
+    font-style: italic;
+    text-align: center;
+}
+
+.action-separator {
+    height: 0;
+    margin: 5px 10px 5px 15px;
+    border-bottom: 1px solid var(--color-border-dark);
+    cursor: default;
+}
+
+.indicateImportantField {
+    border: 1px solid var(--color-warning) !important;
+}
+
+.favorite-mark {
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    line-height: 100%;
+}
+
+.favorite-star {
+    display: inline-block;
+    opacity: 0.5;
+}
+
+/**
+ * Print settings, better leave them at the eof
+ */
+@import 'print.scss';

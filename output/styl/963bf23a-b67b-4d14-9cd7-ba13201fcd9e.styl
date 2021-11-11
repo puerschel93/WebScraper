@@ -1,0 +1,513 @@
+h()
+  columns = 0 1 2 3 4
+  for col in columns
+    .h-{col}
+      width (col/columns[-1]*100) + '%'
+      flex-basis auto
+      box-sizing border-box
+      display block
+      padding-left 5px
+      padding-right 5px
+  for col in columns
+    .h-offset-{col}
+      margin-left: (col/columns[-1]*100) + '%'
+
+t()
+  columns = 0 1 2 3 4
+  for col in columns
+    .t-{col}
+      width (col/columns[-1]*100) + '%'
+      flex-basis auto
+      box-sizing border-box
+      display block
+      padding-left 11px
+      padding-right 11px
+  for col in columns
+    .t-offset-{col}
+      margin-left: (col/columns[-1]*100) + '%'
+
+d()
+  columns = 0 1 2 3 4
+  for col in columns
+    .d-{col}
+      width (col/columns[-1]*100) + '%'
+      flex-basis auto
+      box-sizing border-box
+      display block
+      padding-left 20px
+      padding-right 20px
+  for col in columns
+    .d-offset-{col}
+      margin-left: (col/columns[-1]*100) + '%'
+
+d-screen = 1248px
+t-screen = 768px
+h-screen = 312px
+
+.cnt
+  box-sizing border-box
+  padding 0 15px
+  width: 100%
+  @media(min-width: t-screen)
+    padding 0 39px
+    width 100%
+  @media(min-width: d-screen)
+    padding 0 84px
+    margin 0 auto
+
+.row
+  flex-basis 100%
+  margin 0 auto
+  flex-grow 1
+  display flex
+  display -webkit-flex
+  flex-flow column
+  justify-content flex-start
+  align-content flex-start
+  > *
+    box-sizing border-box
+  @media(min-width 768px)
+    max-width 680px
+    flex-flow row wrap
+  @media(min-width 1280px)
+    max-width 1112px
+    flex-flow row wrap
+
+.button-blue
+  width 280px
+  height 62px
+  border-radius 100px
+  background-color #4ab9ff
+  background-image linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 100%)
+  color #ffffff
+  font-family "DINPro"
+  font-size 14px
+  font-weight 500
+  line-height 18px
+  border none
+  transition all 0.3s ease-out
+  outline none
+  cursor pointer
+  z-index 5
+  &:hover
+    background-color #4ab9ff
+    background-image linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 100%)
+
+  &:active
+    border-radius 100px
+    background-color #4ab9ff
+    background-image linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.16) 100%)
+
+.button-white
+  width 240px
+  height 62px
+  border-radius 100px
+  background-color transparent
+  border 2px solid #4ab9ff
+  color #2d2d2d
+  font-family "DINPro"
+  font-size 14px
+  font-weight 500
+  line-height 18px
+  transition all 0.3s ease-out
+  outline none
+  text-align center
+  margin 0 auto
+  cursor pointer
+  &:hover
+    background-color #4ab9ff
+    background-image linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 100%)
+    color #FFFFFF
+
+  &:active
+    background-color #4ab9ff
+    background-image linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.16) 100%)
+
+
+.markers
+  width 150px
+  height auto
+  display flex
+  flex-direction row
+  justify-content center
+  align-items center
+
+  li
+    width 10px
+    height 10px
+    border 2px solid #4ab9ff
+    border-radius 100%
+    background-color transparent
+    margin 0 8px
+    &:hover
+      background-color #4ab9ff
+    &:active, &.slick-active
+      border 2px solid #3e9ad5
+      background-color #3d9ad5
+    button
+      display none
+
+
+.marker-active
+  width 14px
+  height 14px
+  border 2px solid #4ab9ff
+  background-color #4ab9ff
+
+.services-min
+  width 100%
+  height auto
+  position relative
+  top 0
+  background-color #f6f6f6
+  padding 20px 20px
+  background-size 550px 247px
+  background-repeat no-repeat
+  background-position bottom right
+  display flex
+  flex-direction column
+  justify-content flex-start
+  align-items flex-start
+  margin-bottom 20px
+  box-sizing border-box
+  cursor pointer
+  transition ease-out 0.3s
+  overflow hidden
+
+  &:hover
+    top -12px
+    box-shadow 0 5px 12px rgba(0,0,0,0.3);
+    .button-white
+      margin-top 51px
+      background-color #4ab9ff
+      background-image linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 100%)
+      color #FFFFFF
+
+
+  @media(min-width 768px)
+    max-width 668px
+    max-height 300px
+  @media(min-width 1280px)
+    max-width 537px
+    width 537px
+    height 300px
+
+
+  p
+    max-width 390px
+    height 33px
+    color #2d2d2d
+    font-family "DINPro"
+    font-size 22px
+    font-weight 300
+    line-height 28px
+    margin-bottom 71px
+    z-index 1
+    @media(min-width 768px)
+      font-size 26px
+      font-weight 300
+      line-height 33px
+
+  a
+    z-index 1
+    .button-white
+        margin-top 71px
+        margin-left 0
+
+
+.services-minna
+  width 100%
+  height auto
+  position relative
+  top 0
+  background-color #f6f6f6
+  padding 20px 20px
+  background-size 550px 247px
+  background-repeat no-repeat
+  background-position bottom right
+  display flex
+  flex-direction column
+  justify-content flex-start
+  align-items flex-start
+  margin-bottom 20px
+  box-sizing border-box
+  cursor pointer
+  overflow hidden
+
+  &:hover
+    top 0
+    box-shadow none
+    .button-white
+      margin-top 71px
+      background-color #f1f1f1
+      background-image none
+      color #000000
+
+  @media(min-width 768px)
+    max-width 668px
+    max-height 300px
+  @media(min-width 1280px)
+    max-width 537px
+    width 537px
+    height 300px
+
+  p
+    max-width 390px
+    height 33px
+    color #2d2d2d
+    font-family "DINPro"
+    font-size 22px
+    font-weight 300
+    line-height 28px
+    margin-bottom 71px
+    z-index 1
+    @media(min-width 768px)
+      font-size 26px
+      font-weight 300
+      line-height 33px
+
+  a
+    z-index 1
+    .button-white
+      margin-top 71px
+      margin-left 0
+
+.services-big
+  width 100%
+  height auto
+  position relative
+  top 0
+  background-color #f6f6f6
+  padding 20px 20px
+  background-size 550px 247px
+  background-repeat no-repeat
+  background-position bottom right
+  display flex
+  flex-direction column
+  justify-content flex-start
+  align-items flex-start
+  margin-bottom 20px
+  box-sizing border-box
+  cursor pointer
+  transition all 0.3s ease-out
+  overflow hidden
+
+  &:hover
+    top -12px
+    box-shadow 0 5px 12px rgba(0,0,0,0.3);
+    .button-white
+      margin-top 51px
+      background-color #4ab9ff
+      background-image linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.16) 100%)
+      color #FFFFFF
+
+
+  @media(min-width 768px)
+    max-width 668px
+    max-height 300px
+
+  @media(min-width 1280px)
+    width 1112px
+    max-width 1112px
+    height 300px
+
+  p
+    max-width 390px
+    height 33px
+    color #2d2d2d
+    font-family "DINPro"
+    font-size 22px
+    font-weight 300
+    line-height 28px
+    margin-bottom 71px
+    z-index 1
+    @media(min-width 768px)
+      font-size 26px
+      font-weight 300
+      line-height 33px
+
+  a
+    z-index 1
+
+    .button-white
+      margin-top 71px
+      margin-left 0
+      z-index 1
+
+.services-bigna
+  width 100%
+  height auto
+  position relative
+  top 0
+  background-color #f6f6f6
+  padding 20px 20px
+  background-size 550px 247px
+  background-repeat no-repeat
+  background-position bottom right
+  display flex
+  flex-direction column
+  justify-content flex-start
+  align-items flex-start
+  margin-bottom 20px
+  box-sizing border-box
+  cursor pointer
+  overflow hidden
+
+  &:hover
+    top 0
+    box-shadow none
+    .button-white
+      margin-top 71px
+      background-color #f1f1f1
+      background-image none
+      color #000000
+
+
+  @media(min-width 768px)
+    max-width 668px
+    max-height 300px
+
+  @media(min-width 1280px)
+    width 1112px
+    max-width 1112px
+    height 300px
+
+  p
+    max-width 390px
+    height 33px
+    color #2d2d2d
+    font-family "DINPro"
+    font-size 22px
+    font-weight 300
+    line-height 28px
+    margin-bottom 71px
+    z-index 1
+    @media(min-width 768px)
+      font-size 26px
+      font-weight 300
+      line-height 33px
+
+  a
+    z-index 1
+
+    .button-white
+      margin-top 71px
+      margin-left 0
+      z-index 1
+
+
+.s-bgna
+  background-image url("img/mortgage-p2.png")
+  background-size auto
+  background-repeat no-repeat
+  background-position right
+  z-index 0
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 118%
+  opacity 0.3
+  &:hover
+    top 0
+
+
+.inp
+  width 280px
+  height 58px
+  box-shadow inset 0 1px 2px rgba(0, 0, 0, 0.2)
+  border-radius 2px
+  border 1px solid #f2f2f2
+  background-color #ffffff
+  text-align center
+
+
+
+////---PLACEHOLDERS---////
+input[type='text']::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: #bfbfbf !important;
+}
+
+input[type='text']::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: #bfbfbf !important;
+}
+
+input[type='text']:-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: #bfbfbf !important;
+}
+
+input[type='text']:-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: #bfbfbf !important;
+}
+
+input[type='text']:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+input[type='text']:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+input[type='text']:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+input[type='text']:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+textarea::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: #bfbfbf !important;
+}
+
+textarea::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: #bfbfbf !important;
+}
+
+textarea:-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: #bfbfbf !important;
+}
+
+textarea:-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: #bfbfbf !important;
+}
+
+textarea:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+textarea:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+textarea:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+textarea:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}

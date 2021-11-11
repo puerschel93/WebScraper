@@ -1,0 +1,281 @@
+// Used in part from https://github.com/LukyVj/family.scss and https://github.com/nusususuzu/family.styl
+
+// Select all children from the first to **n**
+// @group with arguments
+// @name First
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the block directive]
+// @param {numeric} num - id of the child / number of columns
+// @require num - Cannot work with an empty argument
+is-first(num)
+    &:nth-child(-n + {num})
+        {block}
+
+is-first-row(num)
+    +first(num)
+        {block}
+
+
+// Select all children from the last to **n**
+// @group with arguments
+// @name last
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+// @param {numeric} num - id of the child / number of collumns
+// @require num - Cannot work with an empty argument
+is-last(num)
+    &:nth-last-child(-n + {num})
+        {block}
+
+is-last-row(num)
+    +last(num)
+        {block}
+
+is-unbalanced-last-row(num)
+    &:nth-of-type({num}n+1):nth-last-of-type(-n+{num}),
+    &:nth-of-type({num}n+1):nth-last-of-type(-n+{num}) ~ &
+        {block}
+
+
+// Select all children after the first to **n**
+// @group with arguments
+// @name after-first
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+// @param {numeric} num - id of the child
+// @require num - Cannot work with an empty argument
+is-after-first(num)
+    &:nth-child(n+{num + 1})
+        {block}
+
+is-after-first-of-type(num)
+    &:nth-of-type(n+{num + 1})
+        {block}
+
+
+// Select all children before **n** from the last
+// @group with arguments
+// @name from-end
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+// @param {numeric} num - id of the child
+// @require num - Cannot work with an empty argument
+is-from-end(num)
+    &:nth-last-child({num})
+        {block}
+
+
+// Select all children between **first** and **last**
+// @group with arguments
+// @name between
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+is-between(first,last)
+    &:nth-child(n+{first}):nth-child(-n+{last})
+        {block}
+
+
+// Select all even children between **first** and **last**
+// @group with arguments
+// @name even-between
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+is-even-between(first,last)
+    &:nth-child(even):nth-child(n + {first}):nth-child(-n + {last})
+        {block}
+
+
+// Select all odd children between **first** and **last**
+// @group with arguments
+// @name odd-between
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+is-odd-between(first,last)
+    &:nth-child(odd):nth-child(n + {first}):nth-child(-n + {last})
+        {block}
+
+
+// Select all **n** children between **first** and **last**
+// @group with arguments
+// @name n-between
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+is-n-between(num,first,last)
+    &:nth-child({num}n):nth-child(n + {first}):nth-child(-n + {last})
+        {block}
+
+
+// Select all children but **n**
+// @group with arguments
+// @name all-but
+// @access public
+// @block [ Write the style you want to apply to the childrent, and it will be added within the @block directive]
+// @param {numeric} num - id of the child
+// @require num - Cannot work with an empty argument
+is-all-but(num)
+    &:not(:nth-child({num}))
+        {block}
+
+
+// Select children each **n**
+// @group with arguments
+// @name every
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+// @param {numeric} num - id of the child
+// @require num - Cannot work with an empty argument
+is-every(num)
+    &:nth-child({num}n)
+        {block}
+
+
+// Select the **n** child from the start and the **n** child from the last
+// @group with arguments
+// @name from-first-last
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+// @param {numeric} num - id of the child
+// @require num - Cannot work with an empty argument
+is-from-first-last(num)
+    &:nth-child({num}),
+    &:nth-last-child({num})
+        {block}
+
+
+// Select the item in the middle of **n** child. Only works with odd number chain.
+// @group with arguments
+// @name middle
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+// @param {numeric} num - id of the child
+// @require num - Cannot work with an empty argument
+is-middle(num)
+    &:nth-child({round(num/2)})
+        {block}
+
+
+is-middle-of-3()
+    &:nth-of-type(3n-1):not(:last-child)
+        {block}
+
+
+// Select all children between the **n** first and the **n** last
+// @group with arguments
+// @name all-but-first-last
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+// @param {numeric} num - id of the child
+// @require num - Cannot work with an empty argument
+is-all-but-first-last(num)
+    &:nth-child(n+{num}):nth-last-child(n+{num})
+        {block}
+
+
+// This I/O mixin will only select the first of **x** items. It will not work if there is not as much as item as you set in **$limit**
+// @name first-of
+// @group I/O
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+is-first-of(limit)
+    &:nth-last-child({limit}):first-child
+        {block}
+
+
+// This I/O mixin will only select the last of **x** items. It will not work if there is not as much as item as you set in **$limit**
+// @name last-of
+// @group I/O
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+is-last-of(limit)
+    &:nth-of-type({limit}):nth-last-of-type(1)
+        {block}
+
+
+//  Select all even children
+// @group no arguments
+// @name even()
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+is-even()
+    &:nth-child(even)
+        {block}
+
+is-even-type()
+    &:nth-of-type(even)
+        {block}
+
+
+// Select all odd children
+// @group no arguments
+// @name odd
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+is-odd()
+    &:nth-child(odd)
+        {block}
+
+is-odd-type()
+    &:nth-of-type(odd)
+        {block}
+
+
+// Select only the first and last child
+// @group no arguments
+// @name first-last
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+is-first-last()
+    &:first-child,
+    &:last-child
+        {block}
+
+
+// Will only select the child if it's unique
+// @group no arguments
+// @name only()
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+is-only()
+    &:only-child
+        {block}
+
+
+// Will only select children if they are not unique. Meaning if there is at least 2 children, the style is applied.
+// @group no argumants
+// @name more-than-one
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+is-more-than-one()
+    &:not(:only-child)
+        {block}
+
+
+// This mixin is used to automatically sort z-index in numerical order. But it can also sort them
+// in anti-numerical order, depending the parameters you use.
+// @group using functions
+// @name child-index
+// @access public
+// @block [ Write the style you want to apply to the children, and it will be added within the @block directive]
+// @param {numeric} num - Number of children
+// @param {string} direction [forward] - Direction of the sort
+// @param {numeric} index [0] - Index of the sorting
+child-index(num, dir ection='forward', index=0)
+    for i in num
+        if direction == 'forward'
+            &:nth-child({i})
+                z-index: orderIndex(i, index)
+                {block}
+        if direction == 'backward'
+            &:nth-last-child({i})
+                z-index: orderIndex(i, index)
+                {block}
+
+
+// Used by the child-index mixin. It will returned the proper sorted numbers depending on the index value.
+// @name orderIndex
+// @access public
+// @param {numeric} num - Number of children
+// @param {numeric} index [0] - Index of the sorting
+orderIndex(i, index)
+  i = index + i
+  return i

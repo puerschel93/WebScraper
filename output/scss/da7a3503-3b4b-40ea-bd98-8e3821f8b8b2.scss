@@ -1,0 +1,246 @@
+@import "../../global.scss";
+
+.works{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url('../../background-images/code.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+    .arrow{
+        position: absolute;
+        cursor: pointer;
+
+
+        @include mobile {
+            display: none;
+        }
+
+        &.left{
+            left: 100px;
+        }
+        &.right{
+            right: 100px;
+        }
+    }
+
+    .slider{
+        height: 100%;
+        display: flex;
+        position: absolute;
+        left: 0;
+        transition: all 1s ease-out;
+        background-color:rgba(black, 0.6);
+
+        @include mobile {
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container{
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:black;
+
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+           
+            
+            
+
+            .item{
+                width:45%;
+                height: 75%;
+                background-color:rgba(white, 0.3);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-direction: column;
+                margin:0;
+                border-color:whitesmoke;
+                border-style: solid;
+                border-width: 1px; 
+                box-shadow: 0px 0px 20px 1px whitesmoke;
+
+                @include mobile {
+                    width: 90%;
+                    height:90%;
+                    margin:10%;   
+                }
+
+                    .top{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 15%;
+                        width:100%;
+
+                        
+
+                        .imgContainer{
+                            justify-content: center;
+                            display: flex;
+                            overflow: hidden;
+                            height: 60px;
+                            width: 140px;
+                            position: relative;
+
+                            @include mobile {
+                                height: 30px;
+                            }
+
+                            img{
+                                border-radius: 1px;
+                                background-color: rgb(238, 245, 245);
+                                border-radius: 10px;
+                                border-color: black;
+                                border-style: solid;
+                                border-width: 1px;  
+                            }
+
+                            a{
+                                position: absolute;
+                                height: 100%;
+                                width: 80%;
+                                opacity: 0; 
+                            } 
+                        }
+                        
+                    }
+
+                    .roles{
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        background-color: rgba(black,0.5);
+                        border-radius: 10px;
+                        box-shadow: 0px 0px 20px -1px grey; 
+                        width:90%;
+                        height:70%;
+                        border-color: whitesmoke;
+                        border-style:solid;
+                        border-width: 1px; 
+                        transition: all 1s ease-in-out;
+                        color:white;
+                        
+
+                        &:hover{
+                            transform: scale(1.05);
+                        }   
+
+                            h2{
+                                font-size: 50px; 
+                            
+                                @include mobile {
+                                    font-size: 20px;
+                                }
+                            }
+
+                            ul{
+                                width:100%;
+                                display: flex;
+                                align-items: center;
+                                flex-direction: column;
+                                justify-content: space-evenly;
+
+                                li{
+                                    font-size: 24px;
+                                    font-weight: bold;
+                                    display: flex;
+                                    margin: 1vh;
+
+                                    @include mobile {
+                                        font-size: 10px;
+                                    } 
+                                
+                                }
+                            }
+                            
+                    }
+
+                    .technologies{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        height: 18%;
+                        width: 100%;
+
+                       
+                            .images{
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-evenly;
+                                background-color:rgba(whitesmoke,0.9);
+                                height: 80%;
+                                border-color:whitesmoke;
+                                border-style: solid;
+                                border-width: 1px; 
+
+                               
+                                img{
+                                        width: 60px;
+                                        height: 64px; 
+
+                                        @include mobile {
+                                            height: 32px; 
+                                            width: 30px;
+                                        } 
+                                    }
+
+    
+                            }
+
+
+                    }
+
+            }
+        }
+    }
+
+    .bottomContainer{
+        height:13%;
+        width:12%;
+        position: absolute;
+        bottom: 10px;
+        flex-direction: column;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        @include mobile {
+            display:none;
+        }
+       
+        a{
+            text-decoration: none;
+            color: yellow;
+            animation: arrowBlink 2s infinite;
+
+
+            h3{
+                font-size: 30px;
+            }
+
+            .arrow {
+                display: flex;
+                justify-content: center;
+                position: relative;
+            }
+
+
+        }
+    }
+    
+
+}

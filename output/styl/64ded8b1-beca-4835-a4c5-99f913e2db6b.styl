@@ -1,0 +1,202 @@
+@import "inc/_var.styl"
+@import "inc/_mixins.styl"
+
+.idev
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  background: url("/bg4.jpg") no-repeat center
+  background-size: cover !important
+  &-nav
+    width: $nav_width
+    z-index: 1
+    .nav
+      $top_padding = 80px
+      &-left, &-right
+        display: flex
+        flex-direction: column
+        padding: 0
+        margin: 0
+        flex: 1 1 100%
+        height: 100vh
+        max-height: 100vh
+        box-sizing: border-box
+      &-left
+        li
+          display: inline-flex
+          justify-content: center
+          align-items: center
+          &.logo
+            height: $top_padding
+            __flex(0,0,center,center)
+            img
+              width: 60%
+            & + li
+              margin: 0
+          &.logout
+            margin-top: auto
+            margin-bottom: $p
+          & + li
+            margin-top: $p
+        .link
+          display: inline-flex
+          justify-content: center
+          align-items: center
+          width: 40px
+          height: @width
+          font-size: 18px !important
+          color: $light.text_light_color_secondary
+          &.active
+            color: $light.red
+      &-right
+        padding-left: 10px
+        h3
+          __flex(0, 0, 0, center)
+          height: $top_padding
+          font-size: 22px
+          padding-left: 6px
+          margin-bottom: 13px
+        &-list
+          __flex(0, column)
+          padding-bottom: $p2
+          padding-right: $p
+          h4
+            font-size: 12px
+            line-height: 12px
+            font-family: $font_sf_bold
+            letter-spacing: .5px
+            text-transform: uppercase
+            padding: 0 6px 12px
+          ul
+            width: 100%
+            __flex(null, column)
+            overflow: hidden
+          a
+            __flex()
+            color: $light.text_light_color
+            padding: 0 12px
+            font-size: 12px
+            line-height: 30px
+            border-radius: $border_radius
+            text-decoration: none
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
+            i
+              flex: 0 0 auto
+              font-size: 14px !important
+              width: 18px
+              margin-right: 6px
+              text-align: left
+            &.active
+              background-color: $light.red
+              background-image: $light.red_gradient
+  &-page
+    &-header
+      __flex(0, 0, 0, center)
+      margin-bottom: $p2
+      h1
+        font-size: 28px
+        line-height: 28px
+    &-actions
+      margin-bottom: $p2
+      .actions-right
+        __flex(0,0,flex-end,center)
+    &-table
+      position: relative
+      .el-table
+        max-height: calc(100vh - 72px - 64px - 44px - 36px)
+      .date
+        display: flex
+        flex-direction: column
+        font-size: 14px
+      .column-actions
+        .cell
+          __flex(0,0,flex-end,center)
+          .btn + .btn, .btn + span
+            margin-left: 12px
+      .column-link
+        a
+          display: flex
+          font-family: $font_sf_semibold
+      .pagination
+        __flex(0,column,flex-end,center)
+        position: absolute
+        left: 0
+        right: 0
+        bottom: -55px
+    &-form
+      form
+        display: flex
+        flex-direction: column
+        border: 1px solid $light.border_color
+        padding: $p3
+        border-radius: $border_radius
+      .form
+        &-label
+          height: $input_height
+          margin: 0 0 $input_bottom 0
+          padding: 0 $p
+          font-size: 18px
+          font-family: $font_sf_medium
+          __flex(0,0,flex-end,center)
+          border-radius: $border_radius
+          background-color: $light.bg_color_secondary
+        &-actions
+          __flex(0,0,flex-start,center)
+    &-view
+      __flex(0, column)
+      border: 1px solid $light.border_color
+      padding: $p3
+      border-radius: $border_radius
+      .view
+        &-label
+          height: $input_height
+          margin: 0 0 $input_bottom 0
+          padding: 0 $p
+          font-size: 18px
+          font-family: $font_sf_medium
+          __flex(0,0,flex-end,center)
+          border-radius: $border_radius
+          background-color: $light.bg_color_secondary
+        &-content
+          min-height: $input_height
+          margin: 0 0 $input_bottom 0
+          padding: 0 $p
+          font-size: 18px
+          font-family: $font_sf_regular
+          __flex(0,0,0,center)
+  &-breadcrumbs
+    __flex()
+    padding-left: 20px
+    margin-left: 20px
+    border-left: 1px solid $light.border_color
+    li
+      a
+        __flex(0, 0, 0, center)
+        color: $light.btn_color
+        padding: 3px 10px 3px 0
+        font-size: 14px
+        line-height: 14px
+        &.disabled
+          color: $light.text_color_secondary
+          pointer-events: none !important
+        i
+          display: inline-flex
+          font-size: 10px
+          margin-right: 10px
+          color: $light.btn_color !important
+        &:not(.item) i
+          font-size: 14px
+          margin: -2px 5px 0 0
+          color: $light.btn_color
+  &-content
+    z-index: 2
+  .total-count
+    height: $btn_height
+    display: inline-flex
+    align-items: center
+    border-radius: $border_radius
+    padding: 0 $p
+    font-size: 18px
+    background-color: $light.bg_color_secondary

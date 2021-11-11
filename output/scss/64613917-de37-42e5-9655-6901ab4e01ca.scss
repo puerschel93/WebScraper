@@ -1,0 +1,98 @@
+.features {
+  @media (min-width: 1680px) {
+    margin: 0% 20% 0% 20%;
+  }
+  @include breakpoint-up(large) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @include breakpoint-up(medium) {
+    text-align: left;
+  }
+
+  &__intro {
+    margin-bottom: 3.75rem;
+
+    @include breakpoint-up(large) {
+      width: 60%;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6vw 10vw;
+    margin: 0 auto;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(large) {
+      gap: 0vw 0vw;
+    }
+  }
+
+  &__item {
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #4054b2;
+    box-shadow: 0px 11px 16px 0px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s,
+      box-shadow 0.3s;
+    margin: 20px 35px 20px 35px;
+    padding: 5% 5% 5% 5%;
+    &:not(:last-child) {
+      padding-bottom: 2.5rem;
+    }
+
+    @include breakpoint-up(medium) {
+      flex: 0 0 50%;
+    }
+
+    @include breakpoint-up(large) {
+      flex: 1;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    img {
+      width: 20%;
+    }
+    @media (max-width: 480px) {
+      img {
+        width: 30%;
+      }
+    }
+    @include breakpoint-up(large) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 90px;
+    color: #5722cd;
+
+    @include breakpoint-up(large) {
+      font-size: 2rem;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    justify-content: left;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #7a7a7a;
+  }
+}

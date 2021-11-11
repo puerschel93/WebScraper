@@ -1,0 +1,43 @@
+.controls-Stack__content-wrapper {
+   position: relative;
+   display: flex;
+   height: 100%;
+}
+
+.controls-Stack__resizingLine {
+   position: absolute;
+   height: 100%;
+   z-index: 40; // https://docs.google.com/document/d/1jKYv2go53aYc-zjOhUERS0CzvfihVJ5ZdRrbN-WL9WA/edit
+}
+
+.ws-is-desktop-platform .controls-Stack__resizingLine {
+   left: 0;
+}
+
+.ws-is-mobile-platform .controls-Stack__resizingLine {
+   left: calc(var(--resizingLine_mobile_offset-left_stack) * -1);
+   width: var(--resizingLine_mobile_thickness_stack);
+   .controls-ResizingLine__areaWrapper_horizontal {
+      width: calc(var(--resizingLine_mobile_thickness_stack) - var(--resizingLine_mobile_offset-left_stack));
+   }
+}
+
+.controls-background-stack {
+   background-color: var(--background-color_stack);
+}
+
+.controls-Stack__content {
+   display: flex;
+   flex-grow: 1;
+   max-width: 100%;
+}
+
+// В целях оптимизации для стековых панелей, которые перекрыты верхними стековыми панелями, скрываем контент через display: none,
+// чтобы не видные пользователю элементы не тормозили браузер своей перерисовкой. Но оптимизировать нужно не все,
+// у стековых раскладок появилась левая контентая область, которая скрываться в этом случае не должна.
+// она не влияет на ширину и может быть не перекрыта. Каскадом определяем, какие части шаблона скрывать.
+.controls-Popup__hidden {
+   .controls-StackTemplate-content_wrapper, .controls-StackTemplate-shadow {
+      display: none;
+   }
+}

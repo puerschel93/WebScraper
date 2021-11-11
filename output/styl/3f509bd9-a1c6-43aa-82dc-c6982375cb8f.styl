@@ -1,0 +1,169 @@
+body
+  > main 
+    > *:first-child,
+    > .section:first-child
+      padding-top: 180px;
+
+.custom-navbar
+  z-index: 14;
+  width: 100vw;
+  position: fixed;
+  height: $height-navbar;
+  top: 0px;
+  left: 0px;
+  transition: all ease 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:before
+    content: '';
+    width: 100vw;
+    position: fixed;
+    background-color: white;
+    height: $height-navbar;
+    top: 0px;
+    left: 0px;
+    transition: transform ease 0.3s;
+    transform: translateY(0px);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  .brand
+    padding-top: 16px;
+    transition: all ease 0.3s;
+    transform-origin: center;
+    transform: scale(0.5);
+  .search-form
+    margin-top: 16px;
+
+.custom-menu
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease 0.3s;
+  z-index: 15;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  ul
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    li
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      > a
+        @extend .font-krub;
+        @extend .color-blue-4;
+        font-size: 16px;
+        display: inline-block;
+        padding: 4px 8px;
+        margin: 4px 8px;
+        font-weight: bold;
+        text-decoration: none;
+        border-bottom: 3px solid transparent;
+      &.current-menu-item
+        > a
+          border-color: inherit;
+
+.hamburguer-icon
+  z-index: 16;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: $height-navbar;
+  width: $height-navbar;
+  padding: 16px;
+  span
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 20px;
+    display: inline-block;
+    height: 3px;
+    width: 24px;
+    background-color: $color-primary;
+    transition: transform ease 0.3s;
+    transform-origin: center;
+    &:first-child
+      transform: translateY(-8px);
+    &:last-child
+      transform: translateY(8px);
+
+.state-scroll-top
+  .custom-navbar
+    transform: translateY(0px);
+    &:before
+      transform: translateY(-72px)
+    .brand
+      transform: translateY(64px) scale(1);
+
+.state-menu-open
+  .custom-menu
+    opacity: 1;
+    visibility: visible;
+  .hamburguer-icon
+    span
+      &:first-child
+        transform: translateY(0px) rotate(45deg);
+      &:last-child
+        transform: translateY(0px) rotate(-45deg);
+      &:nth-child(2)
+        transform: scale(0);
+
++above('md')
+  body
+    > main 
+      > *:first-child,
+      > .section:first-child
+        padding-top: 240px;
+  .custom-navbar
+    padding: 0 24px;
+    justify-content: space-between;
+    .brand
+      transform-origin: center left;
+      transform: scale(0.5);
+    .search-form
+      margin-top: 0;
+
++above('lg')
+  .state-scroll-top
+    .custom-navbar
+      .brand
+        transform: translateY(80px) scale(1);
+
++above('xl')
+  .custom-navbar
+    padding: 0 calc(50vw - 580px);
+  .custom-menu
+    opacity: 1;
+    visibility: visible;
+    background-color: transparent;
+    width: auto;
+    height: $height-navbar;
+    position: initial;
+    flex-direction: row;
+    ul
+      padding: 0 8px;
+      flex-direction: row;
+      li
+        > a
+          transition: border ease 0.3s;
+          &:hover
+            border-color: inherit;
+  .hamburguer-icon
+    display: none;
+
+  .state-scroll-top
+    .custom-navbar
+      transform: translateY(80px);
+      &:before
+        transform: translateY(-152px);
+      .brand
+        transform: translateY(0px) scale(1);
+  
+

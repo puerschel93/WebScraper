@@ -1,0 +1,316 @@
+.form{
+	.input-field{
+		padding: 20px;
+		border-radius: var(--r);
+		background: #fff;
+		border: 1px solid #E8E8E8;
+		transition: all var(--t);
+		cursor: pointer;
+		position: relative;
+
+		.field-label{
+			font-size: 12px;
+			line-height: 14px;
+			margin-bottom: 10px;
+			font-weight: 500;
+			color: #8C8C8C;
+			cursor: pointer;
+		}
+
+		input,
+		select,
+		textarea{
+			appearance: none;
+			padding: 0;
+			border: 0;
+			border-radius: 0;
+			box-shadow: none;
+			font-family: inherit;
+			color: var(--text-dark);
+			font-size: 16px;
+			line-height: 1.25;
+			background: transparent;
+			width: 100%;
+			display: block;
+
+			&:focus{
+				outline: none;
+			}
+		}
+
+		select{
+			cursor: pointer;
+		}
+
+		textarea{
+			height: 80px;
+			resize: none;
+			margin-bottom: 23px;
+		}
+
+		.field-allowed-count{
+			position: absolute;
+			white-space: nowrap;
+			right: 20px;
+			bottom: 20px;
+			font-size: 12px;
+			line-height: 14px;
+			font-weight: 500;
+			transition: all var(--t);
+
+			&.error{
+				color: var(--red);
+			}
+		}
+
+		&:focus-within{
+			border-color: var(--primary);
+		}
+
+		&.disabled{
+			background: #FAFAFA;
+			pointer-events: none;
+		}
+
+		&.password-field{
+			.forgot-link{
+				font-size: 12px;
+				line-height: 14px;
+				font-weight: 500;
+				color: var(--primary);
+				position: absolute;
+				right: 20px;
+				top: 20px;
+
+				&:hover,
+				&:focus{
+					color: var(--blue-800);
+				}
+			}
+		}
+
+		&.select-field{
+			.field-label{
+				pointer-events: none;
+			}
+
+			select{
+				padding: calc(20px + 18px + 10px) 20px 20px 20px;
+				margin: calc((20px + 18px + 10px) * -1) -20px -20px -20px;
+				width: calc(100% + 20px * 2);
+
+				@media screen and (max-width: 1599px){
+					padding: calc(16px + 16px + 8px) 16px 16px 16px;
+					margin: calc((16px + 16px + 8px) * -1) -16px -16px -16px;
+					width: calc(100% + 16px * 2);
+				}
+			}
+
+			&:after{
+				content: '';
+				display: block;
+				width: 11px;
+				height: 6px;
+				background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M.53.53c.3-.3.77-.3 1.06 0l3.55 3.55L8.7.53A.75.75 0 0 1 9.76 1.6L5.67 5.67c-.29.3-.76.3-1.06 0L.53 1.6a.75.75 0 0 1 0-1.06Z' fill='%23000'/%3E%3C/svg%3E") no-repeat center center / contain;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 20px;
+				z-index: 3;
+
+				@media screen and (max-width: 1599px){
+					right: 16px;
+				}
+			}
+		}
+
+		@media screen and (max-width: 1599px){
+			padding: 16px;
+
+			.field-label{
+				margin-bottom: 8px;
+			}
+
+			textarea{
+				height: calc(18px * 5);
+			}
+
+			&.password-field{
+				.forgot-link{
+					right: 16px;
+					top: 16px;
+				}
+			}
+
+			.field-allowed-count{
+				right: 16px;
+				bottom: 16px;
+			}
+		}
+	}
+
+	.form-fields{
+		display: grid;
+		grid-gap: 10px;
+
+		@media screen and (min-width: 576px){
+			&.columns-2{
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}
+}
+
+.checkbox,
+.radio{
+	display: block;
+	margin: 0 !important;
+
+	--padding: 20px;
+
+	@media screen and (max-width: 575px){
+		--padding: 12px;
+	}
+
+	input{
+		~ .fake-label{
+			padding: var(--padding);
+			padding-right: calc(var(--padding) * 2 + 19px);
+			position: relative;
+			cursor: pointer;
+			font-size: 16px;
+			line-height: 1.25;
+			display: block;
+			transition: all var(--t);
+			word-wrap: break-word;
+			color: var(--text-dark);
+
+			border: 1px solid #E8E8E8;
+
+			@media screen and (max-width: 1599px){
+				font-size: 14px;
+			}
+
+			a{
+				color: var(--primary);
+				font-weight: 600;
+
+				&:hover,
+				&:focus{
+					text-decoration: underline;
+				}
+			}
+
+			&:hover{
+				background: var(--blue-100);
+			}
+		}
+	}
+
+	.fields-group &{
+		&:first-child{
+			input ~ .fake-label{
+				border-top-left-radius: var(--r);
+				border-top-right-radius: var(--r);
+			}
+		}
+
+		&:not(:first-child){
+			input ~ .fake-label{
+				border-top: 0;
+			}
+		}
+
+		&:last-child{
+			input ~ .fake-label{
+				border-bottom-right-radius: var(--r);
+				border-bottom-left-radius: var(--r);
+			}
+		}
+	}
+}
+
+.radio{
+	input{
+		~ .fake-label{
+			&:before{
+				content: '';
+				display: block;
+				width: 19px;
+				height: 19px;
+				border-radius: 50%;
+				border: 1px solid #E8E8E8;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: var(--padding);
+				background: #fff;
+			}
+
+			&:after{
+				content: '';
+				display: block;
+				width: 7px;
+				height: 7px;
+				background: #000;
+				border-radius: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: calc(var(--padding) + 6px);
+				transition: all var(--t);
+				opacity: 0;
+			}
+		}
+
+		&:checked{
+			~ .fake-label{
+				&:after{
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.checkbox{
+	input{
+		~ .fake-label{
+			&:before{
+				content: '';
+				display: block;
+				width: 29px;
+				height: 29px;
+				border-radius: var(--r);
+				border: 1px solid #E8E8E8;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: calc(var(--padding) - 5px);
+				background: #fff;
+			}
+
+			&:after{
+				content: '';
+				display: block;
+				width: 13px;
+				height: 11px;
+				background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 11'%3E%3Cpath d='m11.41 1.41-6.88 8-3.12-3.64' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center center / contain;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: calc(var(--padding) - 5px + 8px);
+				transition: all var(--t);
+				opacity: 0;
+			}
+		}
+
+		&:checked{
+			~ .fake-label{
+				&:after{
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

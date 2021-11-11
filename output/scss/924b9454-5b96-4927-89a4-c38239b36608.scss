@@ -1,0 +1,121 @@
+@import '/src/assets/scss/breakpoints.scss';
+@import '/src/assets/scss/variables.scss';
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+        center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .wrapper {
+        width: 30%;
+        padding: $base-padding;
+        background: $white;
+
+          @include media('<=desktop') {
+            width: 50%;
+        }
+
+        @include media('<=tablet') {
+            width: 70%;
+        }
+
+        .titleWrapper {
+            display: flex;
+            justify-content: space-around;
+
+            h2 {
+                padding: 0 30px;
+                color: $darkGray;
+                border-bottom: 3px solid transparent;
+                cursor: pointer;
+
+                &:hover {
+                    color: gray;
+                }
+            }
+
+            .log {
+                border-bottom: 3px solid $gray;
+            }
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: $base-margin;
+
+            input {
+                min-width: 40%;
+                margin: $base-margin 0;
+                padding: $base-padding;
+                outline: none;
+                border: 1px solid $gray;
+                background: $white;
+
+                &:focus {
+                    border: 1px solid $darkGray;
+                }
+            }
+
+            .buttonWrapper {
+                margin-top: $base-margin;
+                display: flex;
+                justify-content: space-between;
+
+                button {
+                    padding: $base-padding 5px;
+                    font-size: $base-font-size;
+                    color: $darkGray;
+                    background-color: $white;
+                    border: 1px solid transparent;
+                    cursor: pointer;
+                    transition: 0.4s;
+
+                    &:first-child {
+                        border: 2px solid $gray;
+                        color: $gray;
+                        padding: $base-padding;
+
+                        &:disabled{
+                            opacity: 0.3;
+                            cursor: not-allowed;
+                        }
+
+                        &:hover {
+                            background-color: $gray;
+                            color: $white;
+                        }
+                    }
+
+                    &:hover {
+                        color: $gray;
+                        opacity: 0.9;
+                    }
+                }
+            }
+
+            span {
+                margin-top: 5px;
+                color: $red;
+            }
+
+            a {
+                margin: $base-margin 0px;
+                font-size: $base-font-size;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+}

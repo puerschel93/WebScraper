@@ -1,0 +1,175 @@
+@import './fonts'
+
+body
+  margin 0
+  font-family Arial, Helvetica, sans-serif
+  letter-spacing 3px
+  background #000
+  overflow-x hidden
+  overflow-y hidden
+  cursor url('~/assets/images/normal.cur'), default
+
+.scrollHidden
+  overflow hidden !important
+
+.container
+  width 1170px
+  margin 0 auto
+  padding 0 15px
+  box-sizing border-box
+
+.scene
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  z-index -1
+  transform scale(1.05)
+
+  &__wrapper
+    height 100%
+
+  &__bg
+    width 100%
+    height 100%
+    background no-repeat center /cover
+
+.subtitle
+  position relative
+  z-index 0
+  margin-top 0
+  text-align center
+  text-transform uppercase
+  font-size 48px
+  font-family MagistralC-Bold
+  color #fff
+  cursor url('~/assets/images/text.cur'), text
+
+  &:before,
+  &:after
+    content ''
+    position absolute
+    top 0
+    left 0
+    display block
+    width 100%
+    height 100%
+    opacity .8
+
+  &:before
+    z-index -2
+    color #f0f
+    animation glitch2 1s linear infinite
+
+  &:after
+    z-index -1
+    color #0ff
+    animation glitch2 1s reverse infinite
+
+@keyframes glitch
+  0%
+    clip rect(55px, 9999px, 56px, 0)
+
+  5%
+    clip rect(47px, 9999px, 30px, 0)
+
+  10%
+    clip rect(33px, 9999px, 36px, 0)
+
+  15%
+    clip rect(35px, 9999px, 9px, 0)
+
+  20%
+    clip rect(63px, 9999px, 59px, 0)
+
+  25%
+    clip rect(96px, 9999px, 98px, 0)
+
+  30%
+    clip rect(58px, 9999px, 77px, 0)
+
+  35%
+    clip rect(50px, 9999px, 34px, 0)
+
+  40%
+    clip rect(60px, 9999px, 72px, 0)
+
+  45%
+    clip rect(10px, 9999px, 81px, 0)
+
+  50%
+    clip rect(2px, 9999px, 60px, 0)
+
+  55%
+    clip rect(23px, 9999px, 89px, 0)
+
+  60%
+    clip rect(76px, 9999px, 91px, 0)
+
+  65%
+    clip rect(62px, 9999px, 30px, 0)
+
+  70%
+    clip rect(60px, 9999px, 73px, 0)
+
+  75%
+    clip rect(60px, 9999px, 87px, 0)
+
+  80%
+    clip rect(2px, 9999px, 14px, 0)
+
+  85%
+    clip rect(28px, 9999px, 87px, 0)
+
+  90%
+    clip rect(73px, 9999px, 50px, 0)
+
+  95%
+    clip rect(79px, 9999px, 70px, 0)
+
+  100%
+    clip rect(17px, 9999px, 79px, 0)
+
+@keyframes glitch2
+  0%, 100%
+    transform translate(0)
+
+  20%
+    transform translate(-2px, 2px)
+
+  40%
+    transform translate(-2px, -2px)
+
+  60%
+    transform translate(2px, 2px)
+
+  80%
+    transform translate(2px, -2px)
+
+@media (max-width 1199px)
+  .container
+    width 962px
+
+  .subtitle
+    &:before,
+    &:after
+      animation none
+
+@media (max-width 991px)
+  .container
+    width 738px
+
+  .subtitle
+    font-size 42px
+
+@media (max-width 767px)
+  .container
+    width 100%
+
+  .subtitle
+    font-size 36px
+
+@media (max-height 899px)
+  body
+    overflow-y auto

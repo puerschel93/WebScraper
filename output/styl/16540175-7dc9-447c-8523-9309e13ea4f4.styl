@@ -1,0 +1,404 @@
+#content
+    width: 100%;
+
+.slider-container
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+    background: $white
+    width: 100%
+
+.slider-item
+    position: relative;
+    display: flex
+    align-items: center;
+    justify-content: center
+    overflow: hidden
+    width: 100%
+    +media-lg()
+        padding-bottom: 30px
+    +media-xl()
+        padding-bottom: 0
+    img
+        max-width: 100%
+
+
+.slider-content
+    @extend .container
+    position: absolute
+    top: 0
+    padding-top: 40px
+    +media-custom()
+        padding-top: 60px
+    +media-fullscreen()
+        padding-top: 80px
+    h2
+        font-family: 'Bebas Neue';
+        font-size: 38px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.13;
+        margin-bottom: 12px
+        color: $white
+        +media-xl()
+            font-size: 42px
+        +media-xxl()
+            font-size: 50px
+        +media-xxl()
+            margin-bottom: 32px
+        +media-custom()
+            font-size: 55px
+        +media-fullscreen()
+            font-size: 60px
+
+.slider-menu
+    @extend .container
+    +media-lg()
+        position: absolute
+        bottom: 0
+
+.slider-menu-item
+    @extend .col-12
+    margin-bottom: 8px
+    +media-lg()
+        @extend .col-lg-4
+        margin-bottom: 0
+
+.slider-menu-content
+    a
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+        background-color: $white;
+        position: relative;
+        height: 88px;
+        font-family: 'Campton';
+        font-size: 15px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.53;
+        letter-spacing: normal;
+        color: $black;
+        +media-custom()
+            height: 141px;
+            font-size: 17px;
+        .icon-arrow
+            position: absolute;
+            right: 20px
+            bottom: auto
+            font-size: 30px
+            +media-custom()
+                right: 30px
+                bottom: 16px
+    img
+        margin: 0 20px
+        display: block
+        +media-custom()
+            margin: 0 40px
+
+.privileges-container, .blog-container
+    width: 100%
+    padding-top: 40px
+    padding-bottom: 64px
+    +media-lg()
+        padding-top: 80px
+        padding-bottom: 106px
+
+.privileges-container
+    +media-lg()
+        background: $white
+
+.privileges, .blog
+    @extend .container
+    h2
+        font-family: 'Bebas Neue';
+        font-size: 38px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color:$black;
+        margin-bottom: 16px
+        +media-lg()
+            font-size: 54px
+            margin-bottom: 32px
+    h4
+        font-size: 15px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 6px;
+        text-align: center;
+        color: $primaryblue;
+        margin-bottom: 6px
+        +media-lg()
+            font-size: 14px
+
+.privileges-item
+    @extend .col-lg-4
+    margin-bottom: 30px
+    &:last-child
+        margin-bottom: 0
+        .privileges-item-content
+            border-radius: 2px;
+            background-image: linear-gradient(96deg, #3689ac -4%, #2e7a9a 103%);
+            a
+                color: $white
+                .icon-arrow
+                    display: block;
+
+.privileges-item-content
+    height: 212px;
+    border-radius: 2px;
+    background: url("../img/privileges-item-content.svg") center center no-repeat;
+    background-size: cover;
+    padding: 20px
+    position: relative;
+    a
+        display: block;
+        font-family: 'Bebas Neue';
+        font-size: 38px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.16;
+        letter-spacing: normal;
+        color: $black;
+        height: 100%;
+        .icon-arrow
+            display: none;
+            font-size: 44px
+            position: absolute;
+            right: 24px;
+            bottom: 12px;
+            &:before
+                color: $white
+        img
+            position: absolute
+            z-index 0
+            &.privileges-item-content-img-1
+                right: 7px
+                bottom: 0
+            &.privileges-item-content-img-2
+                right: 22px
+                bottom: 21px
+            &.privileges-item-content-img-3
+                right: 25px
+                bottom: 10px
+            &.privileges-item-content-img-4
+                right: 16px
+                bottom: 0px
+            &.privileges-item-content-img-5
+                right: 0
+                bottom: 8px
+        .privileges-item-content-title
+            position relative
+            z-index 1
+
+.axess-app-container
+    display: flex
+    align-items: center
+    justify-content: center
+    position relative
+    background-image: radial-gradient(circle at 68% 83%, #56b8d3, #2b7da1 55%);
+    padding: 40px 0
+    overflow: hidden
+    +media-lg()
+        background: rgb(255,255,255);
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 100%);
+        padding: 0
+    img
+        display: none
+        +media-lg()
+            height: 470px
+            display: block
+
+.desktop-only-buttons
+    display: none
+    +media-lg()
+        display: block
+.mobile-only-buttons
+    display: block
+    +media-lg()
+        display: none
+
+.axess-app
+    @extend .container
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+    +media-lg()
+        position: absolute
+        top: 0
+    h2
+        font-family: 'Bebas Neue';
+        font-size: 48px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $white;
+        +media-lg()
+            max-width: 50%
+        br
+            +media-lg()
+                display: none
+    p
+        font-size: 18px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.56;
+        letter-spacing: normal;
+        color: $white;
+        margin-bottom: 16px
+        +media-lg()
+            max-width: 50%
+            margin-bottom: 28px
+        br
+            +media-lg()
+                display: none
+    .btn--icon
+        span[class^="icon-"], span[class*=" icon-"]
+            &.icon-info2
+                &:before
+                    color: $primaryblue
+            &:before
+                font-size: 24px
+
+.blog-container
+    text-align: center
+    +media-lg()
+        background: $white;
+    .btn
+        margin-top: 30px
+
+.primary-blog-item, .blog-item
+    h3
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $white;
+        position: absolute
+        text-align: left
+
+.blog-category
+    height: 30px
+    display: inline-flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $white;
+    position: absolute;
+        
+
+.blog-item
+    position relative
+    margin-bottom: 30px
+    img
+        max-width: 100%;
+        width: 100%
+        display: block
+    h3
+        font-size: 22px;
+        left: 39px
+        bottom: 24px
+        max-width: 60%;
+    .blog-category
+        left: 39px
+        top: 26px
+
+.primary-blog-item
+    @extend .col-12
+    position relative
+    margin-bottom: 30px
+    +media-lg()
+        margin-bottom: 0
+    img
+        max-width: 100%;
+        display: block;
+        height: 571px;
+        width: 100%;
+    .blog-filter
+        left: 0
+        right: 0
+    h3
+        font-size: 30px
+        left: 30px
+        bottom: 30px
+        max-width: 70%;
+    .blog-category
+        left: 30px
+        top: 30px
+
+.blog-filter
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    position: absolute;
+    left: 15px;
+    right: 15px
+    top: 0;
+
+
+.wings-card-container
+    display: flex
+    align-items: center
+    justify-content: center
+    position relative
+    background: url("../img/wings-card-bg.png") left top no-repeat;
+    background-size: cover;
+    padding-bottom: 78px
+
+.wings-card
+    @extend .container
+    position relative
+    height: 100%
+    text-align: center
+    +media-lg()
+        padding-top: 112px
+        text-align: left
+    img
+        width: 300px
+        margin: 0 auto;
+        display: block
+        +media-lg()
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 400px
+        +media-xl()
+            width: auto
+    h2
+        font-family: 'Bebas Neue';
+        font-size: 38px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $white;
+        margin-bottom: 16px
+        +media-lg()
+            max-width: 50%
+            margin-bottom: 30px
+            font-size: 48px;

@@ -1,0 +1,274 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// CHOIX UNIQUE // PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI 
+$picture-bg:no;
+$picture-bg-url:'../images/bg-wrapper.png';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container:0;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:0;
+
+// SIZE NAVIGATION
+$height-navigation:160;
+
+// VAR SITE TYPO
+$font-body:"Droid Serif",verdana,sans-serif;
+$font-title:"Droid Serif",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/paris";
+
+// IMPORT MODULE ANNONCES9
+@import "../../../slagence_X_V5/sources/scss/modules/annonces9";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra1";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//---------------------------------------------------------------------------------------------------
+//		PERSO FRISTOT02
+//---------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//---------------------------------------------------------------------------------------------------
+
+.container {
+	width: auto;
+	max-width: 1280px;
+	@media only screen and (max-width : 1310px) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------
+	//		BTN
+	//---------------------------------------------------------------------------------------------------
+
+.btn-important {
+	color: $color-nav-footer;
+	&:hover {
+		color: $color-nav-footer;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------------
+
+.ligne-social-langue {
+	height: 60px;
+    padding-top: 10px;
+    font-size: 1.3em;
+}
+
+.navigation {
+	border: none;
+}
+
+.menu-principal {
+	text-align: right;
+	>li {
+		padding: 0 20px;
+		@media only screen and (max-width : 1024px) {
+			padding: 0;
+		}
+		>a {			
+			&:after {
+	            display: block;
+	            content: "";
+	            width: 0%;
+	            height: 2px;
+	            background-color: $color-primary;
+	            margin-top: 10px;
+	            -webkit-transition: all .7s ease;
+	            		transition: all .7s ease;
+	         }
+	         &:hover {
+	            color: $color-nav-footer;	            
+	            &:after { 
+	            	background-color: $color-important; 
+	            	width: 100%;
+	            }
+	         }
+	    }
+	}
+}
+
+@media only screen and (max-width : 767px) {
+	.logo img {
+		width: 50% !important;
+	}
+}
+
+//---------------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------
+	//		EXTRA
+	//---------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage-extra .border-solid-bottom-primary-1 {
+	border: none;
+}
+
+	//---------------------------------------------------------------------------------------------------
+	//		MOTEUR
+	//---------------------------------------------------------------------------------------------------
+
+.h2-title-moteur {
+	margin-bottom: 10px;
+	@media only screen and (max-width : 767px) {
+		margin-bottom: auto;
+	}
+}
+
+.form-inline select {
+	height:50px;		
+    border-radius: 2px;
+    @media only screen and (max-width : 767px) {
+		height: auto;
+	}
+}
+
+.saisie-suggest {
+    -moz-border-radius: 2px !important;
+    -webkit-border-radius: 2px !important;
+    border-radius: 2px !important;
+    height: 50px !important;    
+    @media only screen and (max-width : 767px) {
+		height: auto !important;
+	}
+    
+}
+
+.bouton-rechercher-moteur {
+	height: 50px;
+	line-height: 40px;
+	@media only screen and (max-width : 767px) {
+		height: auto;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------
+	//		MODULE PA
+	//---------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage .height-190 {
+	height: 240px;
+}
+
+	//---------------------------------------------------------------------------------------------------
+	//		SEO
+	//---------------------------------------------------------------------------------------------------
+
+.bg-seo {
+	// background-image: url('../images/bg-seo.png');
+	// background-repeat: no-repeat;
+	// background-position: center top;
+	background-color: $color-block;
+	// border: solid 1px $color-action;
+	height: 567px;
+	@media only screen and (max-width : 767px) {
+		background-image: none;
+		height: auto;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------
+	//		SERVICES
+	//---------------------------------------------------------------------------------------------------
+
+.zone-pub {
+	background-color: $color-block;
+	@include border-radius(4px);
+	padding: 10px;
+}
+
+//---------------------------------------------------------------------------------------------------
+//		DETAIL PA
+//---------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//---------------------------------------------------------------------------------------------------
+
+.vertical-pano {
+	background: $color-body;
+}
+
+img {
+    width: auto\9;
+    height: auto;
+    max-width: 150%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+
+ 

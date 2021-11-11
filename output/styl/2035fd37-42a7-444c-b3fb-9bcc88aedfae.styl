@@ -1,0 +1,234 @@
+//hide autofill Safari icons in input fields
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+.btn{
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.btn-primary{
+  background-color: $green;
+  border-radius: 0;
+  font-weight: 600;
+  padding: 15px 30px;
+   transition: 0.3s;
+   -webkit-backface-visibility: hidden;
+   border: 2px solid $green!important;
+  &:hover{
+    background-color: $color_hover;
+    transform: scale(1.02);
+  }
+  &:focus{
+    outline: none
+    background-color: $color_hover;
+    color: white;
+    box-shadow: none;
+    border: 2px solid $green!important;
+    outline: none;
+  }
+  &:active{
+    outline: none
+    background-color: $color_hover!important;
+    color: white;
+    box-shadow: none!important;
+    border: 2px solid $gree!important;
+    outline: none;
+  }
+}
+
+
+.btn-secondary{
+  background-color: $dark;
+  color: white;
+  border-radius: 0;
+  font-weight: 600;
+  padding: 15px 30px;
+   transition: 0.3s;
+   -webkit-backface-visibility: hidden;
+   border: 2px solid $dark!important;
+  &:hover{
+    background-color: $color_hover_2;
+    transform: scale(1.02);
+  }
+  &:focus{
+    outline: none
+    background-color: $color_hover_2;
+    color: white;
+    box-shadow: none;
+    border: 2px solid $dark!important;
+    outline: none;
+  }
+  &:active{
+    outline: none
+    background-color: $color_hover_2!important;
+    color: white;
+    box-shadow: none!important;
+    border: 2px solid $dark!important;
+    outline: none;
+  }
+}
+
+.btn-disabled {
+    background: gray;
+    border-color: gray!important;
+    color: #bdbdbd;
+    &:hover{
+      background: gray;
+      border-color: gray!important;
+      color: #bdbdbd;
+    }
+    &:active{
+      background: gray;
+      border-color: gray!important;
+      color: #bdbdbd;
+    }
+    &:focus{
+      background: gray;
+      border-color: gray!important;
+      color: #bdbdbd;
+    }
+
+}
+.btn-bordered{
+  background-color: transparent;
+  border: 2px solid $green;
+  color: white;
+  border-radius: 0;
+  font-weight: 600;
+  padding: 15px 30px;
+   transition: 0.3s;
+   -webkit-backface-visibility: hidden;
+  &:hover{
+    background-color: $green;
+    transform: scale(1.02);
+    color: white;
+  }
+  &:focus{
+    outline: none
+    background-color: $green;
+    color: white;
+    box-shadow: none;
+    
+  }
+  &:active{
+    outline: none
+    background-color: $green;
+    color: white;
+    box-shadow: none;
+    
+  }
+}
+
+.btn-bordered-2{
+  background-color: transparent;
+  border: 2px solid $green;
+  color: $dark;
+  border-radius: 0;
+  font-weight: 600;
+  padding: 15px 30px;
+   transition: 0.3s;
+   -webkit-backface-visibility: hidden;
+  &:hover{
+    background-color: $green;
+    transform: scale(1.02);
+    color: white;
+  }
+  &:focus{
+    outline: none
+    background-color: $green;
+    color: white;
+    box-shadow: none;
+    
+  }
+  &:active{
+    outline: none
+    background-color: $green;
+    color: white;
+    box-shadow: none;
+    
+  }
+}
+
+.sdg-arrow{
+  &:after{
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: url(/wp-content/themes/dist/img/icons/arrow.svg) no-repeat center;
+  }  
+}
+
+.card-item {
+  i.sdg-icon.sdg-arrow {
+      //border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      background: $fadedPrimary;
+      float: right;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      transform: scale(0.9);
+  }  
+  &:hover{
+    
+     i.sdg-icon.sdg-arrow {
+        transform: scale(1);
+        background: $green;
+         &:after{
+          content: '';
+          position: absolute;
+          width: 18px;
+          height: 18px;
+          filter: brightness(7);
+          background: url(/wp-content/themes/dist/img/icons/arrow.svg) no-repeat center;
+        }  
+        
+     }
+  }
+}
+
+.select-group{
+  appearance none;
+  position relative;
+  select {
+    border: none ;
+    padding: 15px;
+    padding-left: 0;
+    padding-right: 35px;
+    background: none ;
+    border-bottom: 2px solid $green;
+    color: white;
+    width: 100%;
+    &:focus{
+      outline: none 
+    }
+  }
+  &::after{
+    content: '';
+    background-image: url("/wp-content/themes/dist/img/arrow-down.svg");
+    background-size: contain;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    pointer-events: none;
+    right: 10px;
+    top: 40px;
+  }
+}

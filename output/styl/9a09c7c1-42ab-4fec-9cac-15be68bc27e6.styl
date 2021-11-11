@@ -1,0 +1,110 @@
+// (c) Andrew Wei
+
+.log-styles
+  h1
+    margin(60px 0 15px)
+    size(auto null)
+    font($font-family-header, 3.125em, $font-weight-header-light)
+    line-height: 1.2em
+    text-align: left
+    color: get-color('true-white')
+    display: inline-block
+    position: relative
+
+  h2
+    margin(30px 0 15px)
+    font($font-family-header, 1.625em, $font-weight-header-light)
+    text-align: left
+    line-height: 1.2em
+    color: get-color('true-white')
+    display: block
+    position: relative
+
+    +screen('>=phablet')
+      margin(50px 0 15px)
+      font($size:2.25em)
+
+  h3
+    margin(40px 0 10px)
+    font($font-family-header, 1.5em, $font-weight-header-normal)
+    text-align: left
+    line-height: 1.2em
+    color: get-color('true-white')
+    display: block
+    position: relative
+
+  h4
+    margin(40px 0 10px)
+    font($font-family-header, 1.25em, $font-weight-header-bold)
+    text-align: left
+    color: get-color('true-white')
+    line-height: 1.2em
+    display: block
+    position: relative
+
+  h5
+    margin(30px 0 10px)
+    padding(null null null 20px)
+    font($font-family-header, 1.125em, $font-weight-header-bold)
+    color: get-color('true-white')
+    line-height: 1.2em
+    border-left: 4px solid get-color('true-white')
+    text-align: left
+    display: block
+    position: relative
+
+  h6
+    margin(30px 0 10px)
+    padding(null null null 20px)
+    font($font-family-header, 1em, $font-weight-header-bold)
+    line-height: 1.4em
+    color: #ccc
+    text-align: left
+    display: block
+    position: relative
+
+  p
+    font($font-family-content, 1em, $font-weight-content-normal)
+    color: #ccc
+
+    +screen('>=desktop')
+      font($size:18px)
+
+  p,
+  ol,
+  ul
+    & + p
+      margin(20px null null null)
+
+  em
+    font(null, inherit, inherit)
+    font-style: italic
+
+  strong
+    font(null, inherit, $font-weight-content-bold)
+    font-style: none
+    color: inherit
+
+  a
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+  blockquote
+    margin(20px 0 20px 40px)
+    padding(30px)
+    background-color: #20b684
+    border-radius: 4px
+    display: block
+    box-sizing: border-box
+
+    +screen('>=tablet')
+      margin(20px 40px)
+
+    p
+      font($size:.875em)
+      color: get-color('true-black')
+
+      +screen('>=desktop')
+        font($size:1em)

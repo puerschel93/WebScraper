@@ -1,0 +1,363 @@
+@import "abstracts/_variables.scss";
+@import "abstracts/mixins";
+
+html {
+    scroll-behavior: smooth;
+    background-image: $html-background;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wiki-site-wrapper {
+    display: grid;
+    grid-template-areas: "nav nav nav nav nav nav nav nav" "pt pt pt pt pt pt pt pt" "left left left left left left right right" "f f f f f f f f";
+    grid-gap: 0;
+    margin: 5% auto;
+    height: 90%;
+    width: 60%;
+    box-shadow: 0 0 10px #111111ad;
+    background-color: $background-color;
+
+    nav {
+        grid-area: nav;
+        grid-column: 1 / 9;
+        display: grid;
+        grid-template-areas: "logo logo title title title title title title" "logo logo nav-links nav-links nav-links nav-links nav-links nav-links";
+        justify-content: left;
+        font-weight: bold;
+        height: min-content;
+        background-position: bottom right;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-bottom: 2px inset brown;
+        background-image: $nav-gradient;
+
+        img {
+            grid-area: logo;
+            grid-row: 1 / 3;
+            grid-column: 1 / 3;
+            padding: 10px;
+            width: 100%;
+            text-decoration: none;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            color: black;
+        }
+        .world-name {
+            grid-area: title;
+            grid-row: 1;
+            grid-column: 3 / 9;
+            font-size: 1.75em;
+            margin: 0 0 0 2rem;
+            padding-top: 2%;
+            text-decoration: none;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            color: black;
+        }
+        .nav-container {
+            grid-area: nav-links;
+            margin-left: 1rem;
+            grid-row: 2;
+            grid-column: 3 / 7;
+        }
+        .dropdown {
+            @include nav-button;
+            @include root-nav-button;
+
+            position: relative;
+            display: inline-block;
+            margin-left: 5px;
+            padding: 0;
+            li {
+                list-style-type: none;
+            }
+        }
+        .dropdown-content {
+            @include nav-button;
+            display: none;
+            position: absolute;
+            z-index: 1;
+
+            a {
+                font-size: small;
+                text-align: center;
+                width: 100%;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            }
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    }
+
+    .page-title-container {
+        grid-area: pt;
+        grid-column: 1 / 9;
+        .page-title {
+            margin: 2.5%;
+            margin-bottom: 10px;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            font-size: 2rem;
+        }
+        .page-header-separator {
+            margin-bottom: 0;
+            padding-left: 2.5%;
+            background-color: black;
+            width: 90%;
+        }
+    }
+
+    .main-page-left {
+        grid-area: left;
+        grid-column: 1 / 7;
+        grid-row: 3;
+        padding-left: 15px;
+        text-align: left;
+
+        .quote {
+            font-size: large;
+            font-style: oblique;
+            text-align: center;
+            font-weight: bold;
+            width: 75%;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        .author {
+            font-style: italic;
+            margin: 5px;
+            text-align: center;
+        }
+        .article-title {
+            text-align: left;
+            padding: 3px;
+            width: 97%;
+            font-size: 26px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 2.5px double rgba(165, 42, 42, 0.4);
+        }
+        .article-container {
+            width: 100%;
+            display: table;
+        }
+
+        .article-container a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .article-container a:hover {
+            color: #a52a2a;
+        }
+
+        .article-container p {
+            text-align: justify;
+            text-indent: 20px;
+            font-size: 18px;
+            width: 90%;
+            margin: 1%;
+            padding-left: 10px;
+            line-height: 1.5;
+        }
+
+        .article-container h2 {
+            width: 80%;
+            font-size: 22px;
+            margin-bottom: 0px;
+        }
+
+        .article-pic-left {
+            margin: 0;
+            margin-left: 5px;
+            margin-right: 20px;
+            width: 25%;
+            float: left;
+        }
+
+        .article-pic-left figcaption {
+            color: black;
+            font-style: oblique;
+            padding: 2px;
+            text-align: center;
+        }
+
+        .article-pic-left img {
+            width: 100%;
+            border: 5px double brown;
+        }
+
+        .article-pic-right {
+            float: right;
+            display: block;
+            width: 25%;
+            margin: 0;
+            margin-left: 20px;
+            margin-right: 4%;
+        }
+
+        .article-pic-right img {
+            border: 5px double brown;
+            width: 100%;
+        }
+
+        .article-pic-right figcaption {
+            font-style: oblique;
+            text-align: center;
+            padding: 0;
+        }
+    }
+    .main-page-right {
+        grid-area: right;
+        padding-right: 15px;
+        grid-column: 7 / 9;
+        grid-row: 3;
+        transform: translate(0, -2px);
+        .article-container {
+            background-color: rgba(197, 167, 133, 0.596);
+            border: 6px ridge #a52a2a;
+            padding: 10px;
+        }
+        .article-title {
+            display: block;
+            font-size: larger;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 3px;
+            border: 1px double black;
+            height: min-content;
+        }
+
+        .main-page-right a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .main-page-right a:hover {
+            color: #a52a2a;
+        }
+    }
+    footer {
+        display: grid;
+        grid-area: f;
+        grid-template-columns: bl bl bm bm bm br br br;
+        padding: 10px;
+        & > section {
+            border: 4px ridge #a52a2a;
+            margin: 0 5px;
+        }
+        h2,
+        p {
+            text-align: center;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+
+        form {
+            padding: 15px;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 80%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #a52a2a;
+            color: black;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bolder;
+            border-radius: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #7a2020;
+        }
+        .bottom-l {
+            grid-area: bl;
+            grid-column: 1 / 2;
+            background-image: linear-gradient(
+                    to bottom,
+                    rgba(255, 235, 212, 0.8),
+                    rgba(255, 235, 212, 0.2),
+                    rgba(255, 235, 212, 0.1)
+                ),
+                url("/assets/river_mountains.jpeg");
+            background-position: left;
+        }
+
+        .bottom-l h2 {
+            margin: 10% 10px auto 10px;
+        }
+
+        .bottom-m {
+            grid-area: bm;
+            grid-column: 2 / 4;
+            background-image: linear-gradient(
+                    to bottom,
+                    rgba(255, 235, 212, 0.8),
+                    rgba(255, 235, 212, 0.2),
+                    rgba(255, 235, 212, 0.1)
+                ),
+                url("/assets/river_mountains.jpeg");
+            background-position: right;
+            text-align: center;
+            .download-button {
+                text-decoration: none;
+                font-family: "Times New Roman", Times, serif;
+                font-size: 24px;
+                font-weight: bolder;
+                color: black;
+                padding: 5%;
+                width: 80%;
+                cursor: pointer;
+                background-color: #a52a2a;
+                border: none;
+                border-radius: 10px;
+                box-shadow: 0 9px #999;
+            }
+
+            .download-button:hover {
+                background-color: #7a2020;
+            }
+
+            .download-button:active {
+                background-color: #a52a2a;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+        }
+
+        .bottom-m h2 {
+            margin: 10% 15px 20% 15px;
+        }
+
+        .bottom-r {
+            display: grid;
+            grid-area: br;
+            grid-column: 5 / 9;
+            background-color: rgba(207, 190, 171, 0.5);
+        }
+
+        .top-button {
+            margin-top: 90%;
+        }
+
+        .top-button a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .top-button a:hover {
+            color: #7a2020;
+        }
+    }
+}

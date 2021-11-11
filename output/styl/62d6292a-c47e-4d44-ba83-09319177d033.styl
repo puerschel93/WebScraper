@@ -1,0 +1,263 @@
+@import '../../styl/component-include.styl'
+
+//modals
+@import '../../modules/modals/style.styl'
+@import '../../styl/input-field.styl'
+  
+.btn,
+.btn-default
+
+  &,
+  a&
+    font-family "Open Sans",Helvetica,Arial,sans-serif
+    color #fff
+    padding 0 20px
+    border none
+    background-color: #6cc184;
+    font-size: 8pt;
+    line-height: 30px;
+
+    &:hover,
+    &:focus,
+    &:active
+    &:active:focus
+      outline none
+      box-shadow none
+      color #fff
+      opacity .7
+
+hr.i-size-L
+  margin 20px 0 19px !important
+
+.b-header-panel.b-ph-block
+  
+  &.i-ph-animated
+    
+    .b-ph-content
+      position static
+      width auto
+      opacity 1
+      
+    .b-ph
+      position absolute
+      top 0
+      left 0
+      opacity 0
+      z-index -1
+
+    .b-header-panel__bg
+      background-color #484848
+
+.b-header-panel
+  
+  a
+    color #fff
+    transition( opacity .3s ease )
+    
+    &:hover
+      color #fff
+      opacity .7
+      text-decoration none
+      
+    &:focus,
+    &:visited
+      color #fff
+
+  &__wrapper
+    display flex
+    align-items center
+    justify-content space-between
+    min-height 60px
+
+  &__logo
+    width 130px
+    margin-right 50px
+    
+    img
+      width 130px
+      height auto
+      
+  &__icons
+    width calc( 100% - 130px - 50px - 40% - 50px )
+    display flex
+    align-items center
+    justify-content flex-end
+    
+    @media( max-width 991px )
+      width  calc( 100% - 130px - 50px )
+    
+  &__icon
+    display inline-block
+    width 24px
+    height 24px
+    background-repeat no-repeat
+    background-position center
+    background-size contain
+    margin-right 25px
+      
+    @media( max-width 991px )
+      margin-right 15px
+    
+    &.i-menu
+      margin-right 0
+    
+  &__user
+    display inline-block
+    width 24px
+    height 24px
+    background-repeat no-repeat
+    background-position center
+    background-size contain
+    border-radius 50%
+    margin-left 25px
+    cursor pointer
+      
+    @media( max-width 991px )
+      margin-right 15px
+      margin-left 0
+      cursor default
+
+  &__profile-button
+    padding 0
+    width 30px
+    height 30px
+    rel()
+    float right
+    margin-left 14px
+    
+    &:after
+      content ' '
+      display block
+      position absolute
+      bottom 2px
+      right 2px
+      margin-left -2px
+      width 5px
+      height 5px
+      background embedurl( 'img/profile-pointer.gif' ) no-repeat 0 0
+      z-index 5
+
+  &__user-dropdown
+    rel()
+    
+    &-body
+      display none
+      position absolute
+      top 30px
+      right -7px
+      background #3c3c3c
+      padding 18px 20px
+      margin 0
+      border-radius( 3px )
+      list-style-type none
+      box-sizing( border-box )
+      width 200px
+      z-index 100
+        
+      a,
+      span
+        height 30px
+        line-height 30px
+        font-size 9pt
+        color #fff
+        display block
+        
+    for icon in 'profile' 'favorite' 'recipes' 'articles' 'subscribe' 'kitchen' 'logout' 
+      .i-{icon}
+        background embedurl( 'img/'+icon+'.png' ) no-repeat 5px center
+        padding-left 40px
+      
+  &__mobile-menu
+    position relative
+    
+    &-body
+      display none
+      position absolute
+      top 0
+      left 0
+      width 100%
+      background-color #484848
+      color #fff
+      padding 25px 0
+      z-index 100
+      
+      a
+        display block
+        font-size 15pt
+        font-weight bold
+        color #fff
+        text-align center
+        padding 3px 15px
+        
+        &.i-login
+          color #6fc086
+          
+        &.i-logout
+          color #cb999a
+        
+      hr
+        margin 0
+        padding 7px 0
+        
+      h6
+        text-align center
+        font-size 9pt
+          
+    &-icons
+      text-align center
+    
+      a
+        display inline-block
+        width 24px
+        height 24px
+        background-repeat no-repeat
+        background-position center
+        background-size contain
+        margin 0 7px
+        
+  &__mobile-user-menu
+    position relative
+    
+    &-body
+      display none
+      position absolute
+      top 0
+      left 0
+      width 100%
+      background-color #484848
+      color #fff
+      padding 25px 0
+      z-index 100
+      
+      a
+        display block
+        font-size 15pt
+        font-weight bold
+        color #fff
+        text-align center
+        padding 3px 15px
+      
+        &,
+        &:hover,
+        &:focus
+          color #cccccc
+        
+        &.i-login
+          color #6fc086
+          
+        &.i-logout
+          color #cb999a
+          
+  .modal-open &
+    padding-right 17px
+    margin-right -17px
+
+  &.i-fixed
+    width 100%
+    position fixed
+    top 0
+    left 0
+    z-index 1050
+    
+    .modal-open &
+      padding-right 17px

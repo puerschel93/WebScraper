@@ -1,0 +1,142 @@
+// libs
+@require '../../../node_modules/air-datepicker/dist/css/datepicker.min.css'
+
+@require '../dropdown/dropdown'
+
+.datepicker-container
+  display flex
+
+  &__main-field,
+  &__second-field
+    width 100%
+
+  &__second-field
+    margin-left 20px
+
+  &__dropdown-wrapper
+    margin-top 6px
+  
+  & .text-field
+    line-height 24px
+
+// dropdown datepicker menu from plugin
+.datepickers-container
+  @media (min-width smPhoneWidth) and (max-width 375px)
+    left -20px
+    
+  @media  (max-width smPhoneWidth)
+    left -40px
+    
+// for plugin
+.datepicker
+  font-family mainFont
+  width 318px
+  background default-color
+  border 1px solid fade-out(0.25)
+  border-radius 4px
+  box-shadow 0px 10px 20px fade-out(0.05)
+  
+  &.-from-bottom-
+    transform none
+
+  &--pointer
+    display none
+
+  &--nav
+    padding 17px 15px 22px 16px
+    letter-spacing 0.7px
+    border none
+
+    &-action
+      color regular-color
+
+      &:hover
+        background default-color
+
+    &-title
+      line-height 28px
+      text-align center
+      color primary-color
+      font-weight bold
+      font-size 18px
+
+      &:hover
+        background default-color
+
+  &--content
+    padding 0 20px
+    width 280px
+    min-height 240px
+
+  &--days-names
+    container(space-around)
+
+  &--day-name
+    width 40px
+    height 36px
+    font-size 12px
+    color regular-color
+    font-weight bold
+    flex-grow 0
+    text-transform none
+    cursor default
+
+  &--cell-day
+    position relative
+    width 39.85px
+    height 40px
+    padding-bottom 0.2px
+
+    font-size 12px
+    color fade-out(0.5)
+
+    &.-current-
+      color default-color
+      background linear-gradient(secondary-gradient)
+      border-radius 22px
+      font-weight bold
+
+    &.-selected-,
+    &.-focus-
+      border-radius  22px
+      background regular-color
+      color default-color
+      font-weight bold
+
+    &.-in-range-
+      background none
+
+    &.-range-from-::before,
+    &.-range-to-::before,
+    &.-in-range-::before
+      content ''
+      position absolute
+      z-index -1
+      width  39.85px
+      height 40px
+      color fade-out(0.5)
+      opacity 0.25
+      background linear-gradient(primary-gradient)
+
+    &.-range-from-::before
+      border-top-left-radius 100%
+      border-bottom-left-radius 100%
+
+    &.-range-to-::before
+      border-top-right-radius 100%
+      border-bottom-right-radius 100%
+ 
+  &--buttons
+    padding 9px 19px 10px
+    container()
+
+  &--button
+    flex 0
+    font-style normal
+    font-weight bold
+    font-size 12px
+    text-transform uppercase
+    color regular-color
+
+    &_hide
+      overflow hidden

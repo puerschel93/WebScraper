@@ -1,0 +1,318 @@
+@css {
+/*
+Vendors/Providers stylesheet
+computeproviders.styl
+*/
+}
+
+.stacks.step-creds
+
+  font-size                 14px
+
+  .listview-wrapper
+    height                  calc(100% \- 35px)
+
+  .kdformview
+    height                  calc(100% \- 210px)
+    overflow                auto
+
+    .advanced-field
+      display               none
+
+    &.in-advanced-mode
+      .advanced-field
+        display             block
+
+  form
+    .formline
+      margin                0 0 16px
+      borderBox()
+
+      .input-wrapper
+        margin              0
+        min-height          39px
+        display             flex
+        flex-direction      column
+        justify-content     center
+
+      &.button-field
+        clear               both
+        border              none
+        margin-top          6px
+        margin-bottom       10px !important
+
+  .kdlabel
+    font-size               14px
+    color                   #8D8D8D
+    margin                  0 0 7px
+    font-weight             200
+    line-height             39px
+    min-width               160px
+    fl()
+
+  .kdinput
+    rounded                 3px
+    background              #fff
+    border                  1px solid #C9C9C9
+    padding                 8px 13px 10px
+    font-size               14px
+    line-height             19px
+    color                   #4C4C4C
+    font-weight             600
+    opacity                 .99
+    margin                  0 20px 0 0
+
+    &.validation-error
+      border-color          #f13a18
+
+  .form-view
+    height                  calc(100% \- 160px) !important
+    border-bottom           1px solid #EEE !important
+    overflow                hidden
+
+  .credential-creation-intro
+    antialiased()
+    margin                  20px auto 40px
+    a
+      color                 $gray-4
+    h2
+      font-weight           $fw-bold
+      color                 $gray-4
+      margin                0 0 10px
+    ol
+      list-style            decimal inside none
+      li
+        color               $gray-12
+        line-height         24px
+    p
+      margin                4px 0
+
+  .credential-info
+    .custom-tag
+      margin-top            -10px !important
+      line-height           1
+
+
+.kdlistview
+  .no-item-found
+    color                   #878787
+    font-size               14px
+    padding                 24px 0
+    text-align              center
+
+.missingdata-view
+  .stacks
+    padding-top             10px
+
+    .credential-list
+      .credential-info
+        .title
+          top               0 !important
+          margin-top        -2px
+
+        .fields
+          rel()
+          top               -2px
+
+.stacks
+
+  .form-open
+    .credential-list
+      display               none
+    .add-big-btn
+      display               none
+
+
+.kdlistview.credential-list
+
+  .outline.kdbutton
+    background              none
+    border                  2px solid #4a4e52
+
+    &:active
+      span
+        color               #4a4e52
+
+    span
+      color                 #4a4e52
+      line-height           24px
+
+    &.primary
+      border-color          #f2778a
+
+      span
+        font-weight         400
+        color               #f2778a
+
+      &:hover
+        bg                  color, #f2778a  !important
+
+        span
+          color             #FFF
+
+  .credential-item
+    .buttons
+      top                   50% !important
+      vendor                transform, translateY(-50%)
+      margin                1px 0
+
+      button
+        vendor              transition, opacity .1s ease
+        min-width           80px
+        margin-left         15px
+        bg                  color, #FFF
+
+        .kdloader
+          margin-top        -3px
+
+        &.secondary
+          opacity           0
+
+      &:hover button
+        opacity             1
+
+
+  .credential-item
+    padding                 10px 0
+    font-size               14px
+    border-bottom           1px solid #ddd
+    borderBox()
+
+    .buttons
+      abs                   40% 0px 0 0
+
+    &:hover
+      .buttons button.secondary
+        opacity             1
+        pointer-events      auto
+
+    .warning-message
+      background            #FCFCE9
+      border                1px solid #D4D4A9
+      border-radius         4px
+      padding               5px
+      font-size             12px
+      color                 #888869
+      margin-top            3px
+      text-align            center
+
+    .credential-info
+      padding               10px 0 !important
+
+      .tag
+        line-height         1
+        font-size           10px
+        height              14px
+        top                 30px
+        abs()
+
+      .title
+        rel()
+        top                 -14px
+
+    .credential-info
+      padding               5px 0 0
+
+      .title
+        font-weight         bold
+        fl()
+
+      .tag
+        padding             0 3px
+        font-size           12px
+        background-color    #ddd
+        margin-right        10px
+        fl()
+
+      .custom-tag
+        font-size           10px
+        padding             0 4px
+        line-height         14px
+        margin-top          5px
+        margin-left         5px
+        background-color    #02A74D
+        color               #FFFFFF
+        cursor              default
+        fl()
+
+        &.private
+          background-color  #0269A7
+        &.public
+          background-color  darkgreen
+        &.group
+          background-color  #999
+        &.not-ready
+          background-color  darkred
+
+      cite
+        display             block
+        clear               left
+        font-size           12px
+        color               #999
+        font-style          italic
+
+  .customdata-item
+
+    &:hover
+      .credential-info
+        .fields
+          width             300px
+
+    .credential-info
+      padding               0 !important
+
+      .fields
+        vendor              transition, width .01s .01s ease
+        clear               left
+        opacity             .6
+        font-style          italic
+        font-size           13px
+        width               490px
+        text-overflow       ellipsis
+        overflow            hidden
+        white-space         nowrap
+
+        strong
+          font-weight       bold
+
+.kdmodal.ContentModal.content-modal
+  &.stack-template-preview
+  &.expanded-stack-template-preview
+
+    .kdmodal-inner
+      height                100%
+
+    .kdmodal-content
+      height                100%
+      border-bottom         1px solid #e4e4e4
+
+      .kdtabview
+        noScrollbar()
+
+    .kdtabhandlecontainer
+      border-bottom         1px solid #e4e4e4
+
+    .kdtabhandle
+    .kdtabhandlecontainer
+      height                42px !important
+      line-height           42px
+      box-shadow            none
+
+    .kdtabhandle
+      top                   1px
+      color                 #575757
+
+      &.active
+        box-shadow          none
+        bg                  color, #FFF !important
+        border              1px solid #E4E4E4
+        border-bottom       1px solid #FFF
+        rounded             4px 4px 0 0
+
+    .ace_gutter
+      bg                    color, #FFF
+      border-left           1px solid #e4e4e4
+
+    .ace_scroller
+      border-right          1px solid #e4e4e4
+      right                 0 !important

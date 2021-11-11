@@ -1,0 +1,186 @@
+.group-index {
+  background-color: #2f3136;
+  display: grid;
+  grid-template-rows: 3em 1fr 3em;
+
+  .group-index-header {
+    padding: 1em;
+    color: white;
+    display: flex;
+    box-shadow: 0 1px rgba(4, 4, 5, 0.2);
+    display: block;
+  }
+
+  .user-box {
+    background-color: #292b2f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .user-pfp {
+      width: 2em;
+      height: 2em;
+      background-color: lightgray;
+      border-radius: 50%;
+      margin-right: 0.5em;
+    }
+
+    .user-options {
+      display: flex;
+      align-items: center;
+    }
+
+    h3 {
+      color: white;
+      font-size: 0.8em;
+      font-weight: bold;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    i {
+      padding: 0.5em;
+      border-radius: 5px;
+      color: white;
+    }
+
+    i:hover {
+      background-color: #34383d;
+    }
+  }
+}
+
+.groups-container {
+  padding: 10px;
+
+  .friend {
+    display: flex;
+    background-color: #2f3136;
+    margin-bottom: 1em;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    color: #8e9297;
+    height: 35px;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    i {
+      font-size: 1.25em;
+      margin-right: 10px;
+    }
+
+    .friends-text {
+      font-size: 1em;
+    }
+  }
+
+  .friend:hover {
+    background-color: #33363c;
+    color: white;
+  }
+
+  .selected {
+    background-color: rgba(79, 84, 92, 0.32) !important;
+    color: white !important;
+
+    .group-info {
+      .group-name {
+        color: white;
+      }
+    }
+  }
+
+  .groups-prompt {
+    padding: 0px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      color: #8e9297;
+    }
+
+    .prompt-button {
+      cursor: pointer;
+      font-size: 22px;
+    }
+  }
+}
+
+.groups-prompt:hover .prompt-title {
+  color: #dcdddd;
+}
+
+.group {
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 5px;
+  padding-right: 15px;
+  margin-bottom: 3px;
+  width: 90%;
+
+  .group-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+    .group-icon {
+      width: 2em;
+      height: 2em;
+      background-color: #d3d3d3;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .group-name {
+      color: #8e9297;
+      font-size: 16px;
+      height: 1em;
+      width: 70%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .group-options {
+    visibility: hidden;
+  }
+}
+
+.group:hover {
+  background-color: #33363c;
+  cursor: pointer;
+
+  .group-name {
+    color: white;
+  }
+
+  .group-options {
+    visibility: visible;
+
+    i {
+      color: #8e9297;
+    }
+  }
+}
+
+.group-options:hover > i {
+  color: white !important;
+}

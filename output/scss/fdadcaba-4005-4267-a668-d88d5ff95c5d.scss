@@ -1,0 +1,97 @@
+#idea-view-container {
+    height: 100%;  // so that header can be expanded to fill 100% of the screen on click
+    position: relative;
+    overflow: auto;
+    scroll-snap-type: y proximity;  // and not mandatory: scroll is free from #body onward
+    scroll-padding-top: var(--toolbar-height);
+}
+
+#header {
+
+    #cover {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        border-radius: var(--border-radius);
+        scroll-snap-align: start;
+
+        #top-shadow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--toolbar-height);
+            background: linear-gradient(to bottom, var(--linear-gradient-color), transparent);
+        }
+
+        #bottom-strip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--large-spacing);
+            background: linear-gradient(to top, var(--linear-gradient-color), transparent);
+
+            .rating, #goal {
+                position: relative; // for absolutely positionned captions
+            }
+
+            #goal { 
+                cursor: pointer; 
+                
+                mat-icon {
+                    stroke: var(--background-color);
+                }
+            }
+
+            .caption {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 50px;
+                margin: 0;
+                text-align: center;
+                transform: translate(-50%, calc(100% + 6px));
+            }
+        }
+    }
+
+    #description {
+        padding: var(--large-spacing);
+        scroll-snap-align: start;
+
+        h1 { margin-top: 0; }
+    
+        #author-info {
+            cursor: pointer;
+        
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+#body {
+    padding-top: 0;
+    padding-left: var(--large-spacing);
+    padding-right: var(--large-spacing);
+    padding-bottom: var(--very-large-spacing);
+    scroll-snap-align: start;
+    scroll-margin-top: var(--large-spacing);
+}
+
+#talk-about-it {
+    margin-top: var(--large-spacing);
+    padding: var(--large-spacing);
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    cursor: pointer;
+    scroll-snap-align: end;
+
+    h1 { margin: 0; }
+
+    div { margin-bottom: var(--large-spacing); }
+}

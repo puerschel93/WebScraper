@@ -1,0 +1,334 @@
+//@import "../../../common/css/variable.styl"
+
+@keyframes bgscale {
+  0% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.home-wrap
+  .home-top
+    position relative
+    .home-notice-wrap
+      position absolute
+      bottom .46rem
+  .home-updown
+    position relative
+    padding-left .15rem
+    font-weight 100
+    &.up-i
+      color $home-font-up
+    //&:before
+    //  position absolute
+    //  top 50%
+    //  transform translate(0, -50%)
+    //  left 0
+    //  content ''
+    //  width .12rem
+    //  height .12rem
+    //  background $home-up no-repeat center center
+    //  background-size .12rem .12rem
+    &.down-i
+      color $home-font-down
+  //&:before
+  //  position absolute
+  //  top 50%
+  //  transform translate(0, -50%)
+  //  left 0
+  //  content ''
+  //  width .12rem
+  //  height .12rem
+  //  background $home-down no-repeat center center
+  //  background-size .12rem .12rem
+  .market-updown
+    position relative
+    font-weight 100
+    &.up-after
+      color $home-font-up
+    //&:after
+    //  position absolute
+    //  top 50%
+    //  transform translate(0, -50%)
+    //  right -.15rem
+    //  content ''
+    //  width .12rem
+    //  height .12rem
+    //  background $home-up no-repeat center center
+    //  background-size .12rem .12rem
+    &.down-after
+      color $home-font-down
+  //&:after
+  //  position absolute
+  //  top 50%
+  //  transform translate(0, -50%)
+  //  right -.15rem
+  //  content ''
+  //  width .12rem
+  //  height .12rem
+  //  background $home-down no-repeat center center
+  //  background-size .12rem .12rem
+  .hide
+    display none
+
+  //推荐交易对
+  .home-recommend
+    position absolute
+    bottom 0
+    width 100%
+    //padding .64rem 1.2rem .93rem
+    height .46rem
+    background $home-bg-recommend
+    box-shadow 0 1px 10px 1px rgba(0, 0, 0, 0.10)
+    ul
+      display -webkit-flex
+      display flex
+      justify-content space-between
+      width 12rem
+      height .46rem
+      margin 0 auto
+      line-height .46rem
+      //padding 0 1.2rem
+      li
+        position relative
+        //padding 0 .3rem
+        //@media (max-width: 1900px)
+        //  padding 0 .5rem
+        //@media (max-width: 1800px)
+        //  padding 0 .4rem
+        //@media (max-width: 1700px)
+        //  padding 0 .3rem
+        //@media (max-width: 1600px)
+        //  padding 0 .25rem
+        //@media (max-width: 1500px)
+        //  padding 0 .2rem
+        //@media (max-width: 1400px)
+        //  padding 0 .1rem
+        //@media (max-width: 1300px)
+        //  padding 0 .1rem
+        &:first-child
+          padding-left 0
+        &:last-child
+          padding-right 0
+          &:after
+            position absolute
+            top 0
+            right 0
+            content ''
+            background none
+        //&:after
+        //  position absolute
+        //  top .25rem
+        //  right 0
+        //  width 1px
+        //  height .14rem
+        //  content ''
+        //  background $colFFFF
+        //  opacity .1
+        span
+          color $home-font-recommendName
+          padding-right .2rem
+          font-size .16rem
+        b
+          color $home-font-recommendPrice
+          margin-right .15rem
+          font-size .12rem
+          font-weight 100
+        i
+          font-size .12rem
+          opacity .8
+
+  //市场
+  .home-market
+    width 12rem
+    padding-top .75rem
+    margin 0 auto
+    background $home-bg-main
+    .home-market-con
+      padding .5rem .6rem 1.17rem .54rem
+      box-shadow 0 1px 10px 0 rgba(0, 0, 0, 0.20)
+      border-radius 6px
+      background $home-bg-market
+    .market-nav
+      height .36rem
+      line-height .36rem
+      margin-bottom .48rem
+      ul
+        float left
+        li
+          position relative
+          float left
+          padding 0 .15rem
+          font-size .16rem
+          cursor pointer
+          span
+            display inline-block
+            padding .04rem .28rem
+            color $home-font-market
+            &.home-market-item-active
+              //color $colFFFF
+              //background $colB789
+              //border-radius .2rem
+              //box-shadow: 0 .07rem .3rem rgba(65, 139, 255, .4)
+              //margin 0 .14rem
+              display inline-block
+              width 100%
+              height 100%
+              background $market-active no-repeat
+              background-size 100% 100%
+              color $home-font-active
+          &:first-child
+            padding-left 0
+          &:last-child
+            padding-right 0
+            &:after
+              position absolute
+              top 0
+              right 0
+              content ''
+              background none
+          &:after
+            position absolute
+            top 50%
+            transform translateY(-50%)
+            right -.05rem
+            content '/'
+            color $home-line-main
+            opacity .1
+      .search_wrap
+        float right
+        width 2rem
+        height .32rem
+        margin-right -.15rem
+        .base-input-wrap
+          float left
+          height .32rem
+          //float right
+          //width 2rem
+          //height .36rem
+          //display flex
+          //justify-content center
+          input
+            width 1.58rem
+            height .32rem
+            background $home-bg-input
+            vertical-align top
+          button
+            width .44rem
+        //background-image linear-gradient(-123deg, #5C6265 0%, #2F3335 92%) !important
+        img
+          position relative
+          top -.05rem
+          left -.1rem
+          float right
+          width .42rem
+          height .42rem
+          //vertical-align top
+          cursor pointer
+
+    table
+      width 100%
+      .nothing-market-pair
+        color $home-font-normal
+        text-align center
+        border-bottom none
+        td
+          padding .3rem 0 0
+          font-size .2rem
+      tr
+        height .45rem
+        line-height .45rem
+      thead
+        tr
+          color $home-title-table
+        .sort-img-li
+          cursor pointer
+          img
+            width .16rem
+            height .16rem
+            position relative
+            top .03rem
+            left .06rem
+        th
+          text-align right
+          font-weight 100
+          &.left-th
+            text-align left
+          &:first-child
+            padding-left .2rem
+      tbody
+        tr
+          &.zone-name
+            td
+              //padding-left .34rem
+              letter-spacing 0.08px
+              color $home-font-marketTitle
+              p
+                padding-left .34rem
+                margin-bottom .19rem
+                font-size .2rem
+                font-weight 300
+                border-bottom 1px solid $home-line-zone-titleBottom
+                &:before
+                  position relative
+                  top .02rem
+                  left -.14rem
+                  display inline-block
+                  content ""
+                  width .04rem
+                  height .16rem
+                  background $home-line-zone-title
+          &.new-zone-name
+            td
+              padding-top .36rem
+          &.table-data
+            border-bottom 1px solid $home-line-market-light // $home-line-market
+            td
+              text-align right
+              padding-right .2rem
+              &.left-td
+                text-align left
+                padding-right 0
+              &:first-child
+                padding-left .2rem
+              &:last-child
+                padding-right .2rem
+            &:hover
+              background $home-bg-marketActive
+              box-shadow 0 1px 10px 0 rgba(0, 0, 0, 0.30)
+        td
+          font-weight 100
+          color $home-font-table
+          span
+            font-weight 100
+            color $home-font-table
+          .second-span
+            color $home-font-marketPrice
+            font-size .12rem
+          a
+            display inline-block
+            width 100%
+            font-weight 100
+            color $home-font-table
+          .market-up
+            color $home-font-up
+          .market-down
+            color $home-font-down
+        img
+          position relative
+          top .03rem
+          width .16rem
+          height .16rem
+          cursor pointer
+
+.kline-trend
+  position relative
+  top 0.05rem
+  width 1rem
+  height 0.2rem
+

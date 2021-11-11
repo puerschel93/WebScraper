@@ -1,0 +1,139 @@
+//main: style
+@import 'vars';
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-top: 110px;
+
+  width: 280px;
+  background-color: @backAll;
+  border-right: @borderRightOfSidebar;
+  overflow-y: auto;
+
+  & hr {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+  }
+
+
+  &__profile {
+    width: 90%;
+    margin: 0 auto 16px;
+
+    display: flex;
+    align-items: center;
+    padding: 16px;
+
+    background-color: @backOfProfile;
+
+    border-radius: 16px;
+    & img {
+      width: 48px;
+      height: 48px;
+
+      border-radius: 50%;
+      margin-right: 16px;
+    }
+  }
+
+  .sidebar__menu {
+    padding: 16px;
+
+    .sidebar__item {
+      align-items: center;
+
+      border-radius: 16px;
+
+      transition: background-color .3s linear;
+
+      &:hover {
+        background-color: rgba(#f4f5f7, .6);
+      }
+      &:hover .sidebar__link {
+        color: @colorOfTheSideBarHover!important;
+      }
+
+      &.active {
+        .sidebar__link {
+          font-weight: 500;
+          color: @colorOfTheSideBarActive!important;
+
+          & .link__svg svg {
+            fill: @colorOfTheSideBarActive;
+          }
+        }
+      }
+
+      .sidebar__link {
+        padding: 16px;
+        color: @colorOfTheSideBar;
+        font-weight: 500;
+        font-size: .9em;
+        display: flex;
+        align-items: center;
+        margin: 0!important;
+
+        transition: all .2s linear;
+      }
+
+      &:hover .link__svg svg {
+        fill: @colorOfTheSideBarHover;
+      }
+    }
+  }
+}
+
+
+//Styles for header and SideBar
+.link__svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+
+  & svg {
+    width: 100%;
+    height: 100%;
+    margin-right: 15px;
+    //fill: @colorOfTheSideBar;
+    background-size: cover;
+
+    transition: all .2s linear;
+
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+
+.profile__info {
+
+  .info__name {
+    font-size: .9em;
+    font-weight: 600;
+    color: @colorOfTheSideBarActive;
+    margin: 0;
+  }
+
+  .info__status {
+    font-size: .9em;
+    font-weight: 500;
+    color: @colorOfTheStatusSideBar;
+  }
+}
+
+//Styling nav link when it active
+.router-link-exact-active {
+
+  font-weight: 500;
+  color: @colorOfTheSideBarActive!important;
+
+  & .link__svg svg {
+    fill: @colorOfTheSideBarActive!important;
+  }
+}

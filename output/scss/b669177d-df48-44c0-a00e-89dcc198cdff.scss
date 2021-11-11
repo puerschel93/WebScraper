@@ -1,0 +1,427 @@
+.baner {
+   @media screen and (min-width: 576.9px) {
+      position: relative;
+      background-image: url('../../images/home-images/baner-images/baner-background.svg');
+      background-repeat: no-repeat;
+      background-position: center 30%;
+      background-size: cover;
+   }
+   @media screen and (max-width: 576.9px) {
+      background: url('../../images/home-images/baner-images/baner-background-mobile.jpg');
+      background-color: #26399E;
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: 100%;
+   }
+}
+.baner-header {
+   width: 100%;
+   min-height: 121px;
+   position: relative;
+
+   display: flex;
+   align-items: center;
+   min-height: 121px;
+
+   &__list-btn {
+      display: flex;
+      align-items: center;
+   }
+
+   &__logo {
+      flex: 0 1 157/1240 * 100%;
+
+      @media screen and (max-width: 768.9px){
+         flex: 1 1 auto;
+      }
+   }
+}
+.connect-wallet, 
+.mint-nft {
+   cursor: pointer;
+
+   text-align: center;
+   line-height: 121%;
+   font-size: 14px;
+   min-width: 127px;
+   border-radius: 3px;
+
+   
+}
+.mint-nft {
+   @extend %btn-gray;
+   @media screen and (max-width: 540.9px) {
+      display: none;
+   }
+}
+.connect-wallet {
+   @extend %btn-yellow;
+}
+.nav {
+   flex: 1 1 763/1240 * 100%;
+
+   &__link {
+      font-size: 14px;
+      line-height: 112%;
+      margin-left: 30px;
+      transition: color .3s;
+
+      @media screen and (max-width: 825.9px) {
+         margin-left: 10px;
+      }
+
+      &:first-child {
+         margin-left: 10px;
+      }
+
+      &:active {
+         color: #bdc6eb;
+      }
+   }
+
+   @media (any-hover: hover) {
+      &__link:hover {
+        color: #bdc6eb;
+      }
+   }
+
+   @media screen and (max-width: 768.9px){
+        
+      position: absolute;
+      top: 99%;
+      right: -15px;
+
+      
+
+      background: rgba(51, 72, 181, 0.9);
+      backdrop-filter: blur(10px);
+   }
+}
+
+.nav__link_mobile {
+   display: none;
+
+   @media screen and (max-width: 768.9px) {
+      display: block;
+   }
+}
+
+.nav__social-wrapper {
+   display: none;
+}
+.nav__social_item {
+   width: 24px;
+}
+
+@media screen and (max-width: 768.9px) {
+   .nav__social-wrapper {
+      display: block;
+   }
+
+   .nav__social_item + .nav__social_item{
+      margin-left: 34px;
+   }
+
+   .nav {
+      overflow: hidden;
+      height: 0;
+      transition: height .5s;
+      z-index: 10;
+
+
+      .nav-wrapper {
+         padding: 50px 0;
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+         width: 100vw;
+         min-height: 100%;
+      }
+      
+
+      &__link {
+         padding: 14px;
+         font-family: 'Gilroy', sans-serif;
+         font-style: normal;
+         font-weight: bold;
+         font-size: 32px;
+         line-height: 106.4%;
+
+         text-align: center;
+         letter-spacing: -0.02em;
+         margin-left: 0;
+
+         & + & {
+            padding-top: 14px;
+         }
+      }
+   }
+
+   .baner-header.change .nav{
+      height: 790px;
+   }
+}
+
+.burger {
+   display: none;
+
+   @media screen and (max-width: 768.9px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      margin-left: 20px;
+
+      cursor: pointer;
+   
+      &__line {
+         height: 4px;
+         background:  #fff;
+         transition: all .5s;
+      }
+   }
+}
+.baner-header.change .line-1 {
+   transform: rotateZ(-405deg) translate(-6px, 6px);
+   background-color: black;
+}
+.baner-header.change .line-2 {
+   opacity: 0;
+}
+.baner-header.change .line-3 {
+   transform: rotateZ(405deg) translate(-5px, -6px);
+   background-color: black;
+} 
+.baner-body {
+   padding: 364px 0 195px 0;
+   height: 100%;
+
+   @media screen and (max-width: 576.9px) {
+      padding: 200px 0 32px 0;
+
+      &__text {
+         margin: 24px 0 32px 0;
+      }
+   }
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   &__title {
+      @extend %h1;
+      text-align: center;
+      color: #fff;
+
+      @media screen and (max-width: 540.9px) {
+         font-size: 42px;
+         line-height: 108.9%;
+      }
+   }
+
+   &__text {
+      font-family: "Manrope", sans-serif;
+      font-weight: 600;
+      line-height: 23,56px;
+      color: #fff;
+
+      margin: 32px 0 52px 0;
+      max-width: 520px;
+
+      @media screen and (max-width: 720.9px) {
+         text-align: center;
+      }
+
+      @media screen and (max-width: 540.9px) {
+         margin: 24px 0 32px 0;
+      }
+      
+   }
+
+   &__btn {
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      text-align: center;
+      font-size: 14px;
+      line-height: 112%;
+      letter-spacing: -0.035em;
+      color: #343837;
+      padding: 24px;
+      background-color: #FEEB47;
+      box-shadow: 0px 0px 10px rgba(254, 235, 71, 0.46);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all .3s;
+
+      @media screen and (max-width: 320.9px) {
+         width: 100%;
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            background: #FFEF68;
+         }
+      }
+
+      &:active {
+         background: #EDDB41;
+      }
+   }
+}
+.agitation {
+   @media screen and (min-width: 576.9px) {
+      position: absolute;
+      bottom: -100px;
+      width: 100%;
+
+      &__mobile {
+         display: none;
+      }
+   
+      &__body {
+         display: flex;
+         align-items: center;
+         padding-right: 50px;
+   
+         height: 100%;
+         min-height: 204px;
+         background: url('../../images/home-images/baner-images/baner-coins.svg') 30% no-repeat, url('../../images/home-images/baner-images/baner-cup.svg') 100% center no-repeat;
+   
+         @media screen and (max-width: 720.9px) {
+            background-image:  url('../../images/home-images/baner-images/baner-coins.svg');
+         }
+      }
+      
+      &__cup {
+         display: none;
+         position: absolute;
+         left: 70%;
+         z-index: 0;
+         top: 50%;
+         transform: translate(0, -50%);
+         max-width: 120px;
+         min-height: 175px;
+   
+         @media screen and (max-width: 720.9px) {
+            display: block;
+         }
+      }
+   
+      &__item {
+         position: relative;
+         max-width: 268px;
+         margin-right: 20px;
+   
+         &:nth-child(4) {
+            position: relative;
+         }
+   
+         & + & {
+            margin-left: -40px;
+         }
+   
+         @media screen and (max-width: 868.9px) {
+           margin-right: 25px;
+         }
+   
+         @media screen and (max-width: 720.9px) {
+            & + & {
+               margin-left: -35px;
+            }
+         }
+   
+         @media screen and (max-width: 629.9px) {
+            margin-right: 25px;
+         }
+      }
+   
+      &__text {
+         position: absolute;
+         top: 25px;
+         left: 40px;
+   
+         font-weight: 700;
+         color: #343837;
+         letter-spacing: -0.02em;
+         max-width: 180px;
+   
+         @media screen and (max-width: 950.9px) {
+            left: 28px;
+            font-size: 17px;
+            max-width: 160px;
+         }
+   
+         @media screen and (max-width: 850.9px) {
+            left: 25px;
+            font-size: 15px;
+            max-width: 150px;
+         }
+   
+         @media screen and (max-width: 768.9px) {
+            font-size: 14px;
+            line-height: 125%;
+            letter-spacing: -0.065em;
+            max-width: 110px;
+         }
+   
+         @media screen and (max-width: 720.9px) {
+            left: 16px;
+            max-width: 101px;
+         }
+      }
+   
+      &__img img {
+         width: 100%;
+         height: 132px;
+      }
+   }
+   @media screen and (max-width: 576.9px) {
+      &__body {
+         display: none;
+      }
+   }
+}
+@media screen and (max-width: 576.9px) {
+   .mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #26399E;
+      background: url('../../images/home-images/baner-images/baner-coins.svg') center bottom no-repeat;
+      padding-bottom: 90px;
+
+
+      &__item {
+         position: relative;
+
+         & img {
+            width: 100%;
+            height: 100%;
+         }
+      }
+
+      &__text {
+         position: absolute;
+         z-index: 1;
+         top: 50%;
+         left: 10%;
+         transform: translate(0, -50%);
+
+         font-size: 14px;
+         letter-spacing: -0.035em;
+         font-weight: 700;
+         color: #343837;
+         text-align: center;
+
+         max-width: 253px;
+      }
+
+      &_text-modification {
+         left: 33%;
+      }
+   }
+}
+

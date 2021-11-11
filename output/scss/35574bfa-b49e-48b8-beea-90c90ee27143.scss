@@ -1,0 +1,436 @@
+/*
+ * Some Colors
+ */
+
+$urcd-color: #7d003c;
+// $urcd-color: #31A3DD; // ISAC COLOR
+$mute-color: #ccc;
+.textURcolor {
+    color: $urcd-color;
+}
+
+.textURcolorSuperLight {
+    color: lighten($urcd-color, 40.5%) !important;
+}
+
+
+/*
+ * Main Stuff
+ */
+
+body {
+    padding-top: 74px;
+}
+
+.navbar-default {
+    background: $urcd-color;
+    border-color: lighten($urcd-color, 13.5%);
+    .navbar-brand,
+    .navbar-nav>li>a {
+        color: #fff;
+    }
+}
+
+.navbar-brand {
+    cursor: default;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: #fff !important;
+}
+
+#loadingSpinnerContainer {
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    background: rgba($urcd-color, .75);
+}
+
+#loadingSpinnerContainer>h1 {
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#showAction,
+.areaLabel {
+    display: none;
+}
+
+#criteriaOutput {
+    margin-bottom: 15px;
+}
+
+.componentNameHeader {
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+.componentNameBinarySlider {
+    font-size: 15px;
+    line-height: 35px;
+    padding-right: 15px;
+    vertical-align: top;
+}
+
+.binaryComponentInfo,
+.ordinalComponentInfo {
+    font-size: 15px;
+    line-height: 35px;
+    padding-right: 15px;
+    vertical-align: top;
+}
+
+.binaryComponentInfo span.glyphicon {
+    font-size: 35px;
+}
+
+.nominalAttributesContainer {
+    position: relative;
+    width: 100%;
+}
+
+.nominalAttributesContainer>.nominalAttribute {
+    position: relative;
+    display: block;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.nominalAttributesContainer.triple>.nominalAttribute {
+    width: 33%;
+}
+
+.nominalAttributesContainer.fourfold>.nominalAttribute {
+    width: 25%;
+}
+
+.nominalAttributesContainer>.nominalAttribute>input {
+    display: none;
+}
+
+.nominalAttributesContainer>.nominalAttribute>label,
+.nominalAttributesContainer>.nominalAttribute>label>figure,
+.nominalAttributesContainer>.nominalAttribute>label>figcaption {
+    position: relative;
+    width: 100%;
+}
+
+.nominalAttributesContainer>.nominalAttribute>label>figcaption {
+    text-align: center;
+}
+
+.nominalAttributesContainer>.nominalAttribute>label>figure {
+    padding-top: 100%;
+    /* 1:1 Aspect Ratio */
+}
+
+.nominalAttributesContainer>.nominalAttribute>label>figure {
+    text-align: center;
+}
+
+.nominalAttributesContainer>.nominalAttribute>input~label:hover>figure,
+.nominalAttributesContainer>.nominalAttribute>input~label:hover>figcaption {
+    color: $urcd-color;
+    -webkit-filter: drop-shadow(0px 0px 5px $urcd-color);
+    filter: drop-shadow(0px 0px 5px $urcd-color);
+}
+
+.nominalAttributesContainer>.nominalAttribute>input:checked~label>figure,
+.nominalAttributesContainer>.nominalAttribute>input:checked~label>figcaption {
+    color: $brand-success;
+    -webkit-filter: drop-shadow(0px 0px 5px $brand-success);
+    filter: drop-shadow(0px 0px 5px $brand-success);
+}
+
+.ordinalAttributesContainer>input {
+    margin-bottom: 1em;
+}
+
+.ordinalAttributesContainer>table {
+    background: #ccc;
+    cursor: help;
+}
+
+.components.choose {
+    padding-bottom: 2em;
+}
+
+input#componentInput::-webkit-input-placeholder,
+input#criteriaInput::-webkit-input-placeholder {
+    transition: color 0.5s ease-in-out;
+}
+
+input#componentInput:-moz-placeholder,
+input#criteriaInput:-moz-placeholder {
+    transition: color 0.5s ease-in-out;
+}
+
+input#componentInput::-moz-placeholder,
+input#criteriaInput::-moz-placeholder {
+    transition: color 0.5s ease-in-out;
+}
+
+input#componentInput:-ms-input-placeholder,
+input#criteriaInput:-ms-input-placeholder {
+    transition: color 0.5s ease-in-out;
+}
+
+// Placeholder Error Color
+input#componentInput.noChoice::-webkit-input-placeholder,
+input#criteriaInput.noChoice::-webkit-input-placeholder {
+    color: $brand-danger;
+}
+
+input#componentInput.noChoice:-moz-placeholder,
+input#criteriaInput.noChoice:-moz-placeholder {
+    color: $brand-danger;
+}
+
+input#componentInput.noChoice::-moz-placeholder,
+input#criteriaInput.noChoice::-moz-placeholder {
+    color: $brand-danger;
+}
+
+input#componentInput.noChoice:-ms-input-placeholder,
+input#criteriaInput.noChoice:-ms-input-placeholder {
+    color: $brand-danger;
+}
+
+// Shortly Fade Placeholder by setting its color to white
+input#componentInput.chosen::-webkit-input-placeholder,
+input#criteriaInput.chosen::-webkit-input-placeholder {
+    color: white;
+}
+
+input#componentInput.chosen:-moz-placeholder,
+input#criteriaInput.chosen:-moz-placeholder {
+    color: white;
+}
+
+input#componentInput.chosen::-moz-placeholder,
+input#criteriaInput.chosen::-moz-placeholder {
+    color: white;
+}
+
+input#componentInput.chosen:-ms-input-placeholder,
+input#criteriaInput.chosen:-ms-input-placeholder {
+    color: white;
+}
+
+#criteriaListView {
+    display: none;
+}
+
+
+/*
+ * Matches Codes
+ */
+
+a#filter,
+a#changeView,
+button#componentWheel,
+a#requestEval {
+    margin-right: 15px;
+    float: left;
+    @media screen and (max-width: $screen-xs-max) {
+        float: right;
+    }
+}
+
+#poiCount {
+    margin: 0 25%;
+    padding: 25px 25px;
+    display: block;
+    font-size: 18px;
+    border-radius: 30px;
+    @media screen and (max-width: $screen-md-max) {
+        font-size: 15px;
+    }
+    .actualPoiNumber {
+        font-size: 36px;
+        line-height: 1.5em;
+    }
+}
+
+#poiCount.badge.success {
+    background-color: $brand-success;
+}
+
+#poiCount.badge.danger {
+    background-color: $brand-danger;
+}
+
+#noResultButton {
+    width: 100%;
+    font-size: 1.5em;
+    white-space: normal;
+    padding: 1em;
+}
+
+#compnentWheelContainer {
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    background: rgba($urcd-color, .75);
+}
+
+#wheelBlock {
+    // background: lighten($urcd-color, 50%);
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform: translate(50%, 50%);
+}
+
+#componentTextContainer {
+    display: flex;
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 25%;
+    bottom: 0%;
+}
+
+#coponentTextInfo {
+    display: flex;
+    justify-content: center;
+    /* align horizontal */
+    align-items: center;
+    /* align vertical */
+    position: absolute;
+    width: 70%;
+    height: 50%;
+    font-size: 2em;
+    color: white;
+}
+
+#selectViz-rankedSelectionList .choosenStarAgregation {
+    top: 5px;
+}
+
+.viewLinkBlock a,
+.viewLinkBlock a:visited,
+.viewLinkBlock a h2,
+.viewLinkBlock a:visited h2,
+.viewLinkBlock a .thumbnail,
+.viewLinkBlock a:visited .thumbnail {
+    text-decoration: none;
+    color: $urcd-color;
+    border-color: $urcd-color;
+}
+
+.viewLinkBlock a:active,
+.viewLinkBlock a:hover,
+.viewLinkBlock a:focus,
+.viewLinkBlock a:active h2,
+.viewLinkBlock a:hover h2,
+.viewLinkBlock a:focus h2,
+.viewLinkBlock a:active .thumbnail,
+.viewLinkBlock a:hover .thumbnail,
+.viewLinkBlock a:focus .thumbnail {
+    text-decoration: none;
+    color: lighten($urcd-color, 13.5%);
+    border-color: lighten($urcd-color, 13.5%);
+}
+
+#listView .panel-heading {
+    cursor: pointer;
+}
+
+#listView .choosenSelection .binaryComponentInfo,
+#listView .choosenSelection .ordinalComponentInfo {
+    display: block;
+}
+
+#listView .choosenSelection .binaryComponentInfo>span,
+#listView .choosenSelection .ordinalComponentInfo>span {
+    position: relative;
+    top: 12px;
+}
+
+#listView .choosenSelection .binaryComponentInfo>span:first-child,
+#listView .choosenSelection .ordinalComponentInfo>span:first-child {
+    margin-left: 5px;
+}
+
+#listView .otherComponents .binaryComponentInfo span.glyphicon {
+    font-size: 18px;
+    color: black;
+}
+
+.listMoreInfo>span.caret {
+    transition: all 1s ease;
+}
+
+.listMoreInfo.showMore>span.caret {
+    transform: rotate(-180deg);
+}
+
+.componentOverview h4>span.label {
+    display: inline-block;
+    width: 100%;
+}
+
+li.binaryComponentContainer label span.slider {
+    cursor: inherit;
+}
+
+li.nominalComponentContainer span.componentNameNominalComponent,
+li.nominalComponentContainer span.attributeNameNominalAttribute {
+    font-size: 15px;
+}
+
+li.nominalComponentContainer>div.nominalAttribute>figure.attrIcons {
+    width: 50px;
+    height: 50px;
+}
+
+li.ordinalComponentContainer>input[type="range"] {
+    width: calc(100% - 45px);
+}
+
+.choosenSelection {
+    .nominalComponentInfo {
+        line-height: 4.2em;
+    }
+}
+
+.otherComponents {
+    .nominalComponentInfo {
+        line-height: 4.2em;
+    }
+    .ordianalComponentContainer {
+        min-height: 35px;
+    }
+    .ordianalComponentInfo {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-brand {
+        font-size: 15px;
+    }
+}

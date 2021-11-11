@@ -1,0 +1,340 @@
+zhitc-arrow(color=#898989)
+    content ''
+    position absolute
+    top 50%
+    height 8px
+    width 8px
+    right 10px
+    margin-top -4px
+    border-top 1px solid color
+    border-right 1px solid color
+    transform rotate(45deg)
+text-ellipsis()
+    white-space nowrap
+    word-wrap normal
+    overflow hidden
+    text-overflow ellipsis
+    display inline-block
+zhitc-gap()
+    height: 1px
+    background-color: #e1e1e1
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+        transform: scaleY(.5)
+zhitc-text()
+    border 1px solid #999
+    padding rem(10)
+    line-height rem(20)
+    min-height rem(20)
+    -webkit-tap-highlight-color transparent
+    appearance none
+    color #333
+    &[readonly="readonly"]
+        background #999
+        cursor default
+rem($value)
+    if unit($value) == 'px' || unit($value) == ''
+        $value = round($value / 14, 3)
+    unit($value, 'rem')
+
+
+pink = #ff4683
+border-color = #e1e1e1
+retina(topColor=transparent, rightColor=transparent, bottomColor=transparent, leftColor=transparent, w=1px)
+  border-top w solid topColor
+  border-right w solid rightColor
+  border-bottom w solid bottomColor
+  border-left w solid leftColor
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+    border none
+    background-image -webkit-linear-gradient(90deg, topColor, topColor 50%, transparent 50%), -webkit-linear-gradient(180deg, rightColor, rightColor 50%, transparent 50%), -webkit-linear-gradient(90deg, bottomColor, bottomColor 50%, transparent 50%), -webkit-linear-gradient(0, leftColor, leftColor 50%, transparent 50%)
+    background-image linear-gradient(180deg, topColor, topColor 50%, transparent 50%), linear-gradient(270deg, rightColor, rightColor 50%, transparent 50%), linear-gradient(0deg, bottomColor, bottomColor 50%, transparent 50%), linear-gradient(90deg, leftColor, leftColor 50%, transparent 50%)
+    background-size 100% w, w 100%, 100% w, w 100%
+    background-repeat no-repeat
+    background-position top, right top, bottom, left top
+
+top-bottom-1px(color=transparent, w=1px)
+  border-left none
+  border-right none
+  retina(color, transparent, color, transparent)
+
+.top-bottom-1px
+  top-bottom-1px()
+
+top-1px(color=transparent, w=1px)
+  border-top w solid color
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+    border none
+    background-image -webkit-linear-gradient(90deg, color, color 50%, transparent 50%)
+    background-image linear-gradient(180deg, color, color 50%, transparent 50%)
+    background-size 100% w
+    background-repeat no-repeat
+    background-position top
+
+.top-1px
+  top-1px()
+
+right-1px(color=transparent, w=1px)
+  border-right w solid color
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+    border none
+    background-image -webkit-linear-gradient(180deg, color, color 50%, transparent 50%)
+    background-image linear-gradient(270deg, color, color 50%, transparent 50%)
+    background-size w 100%
+    background-repeat no-repeat
+    background-position right
+
+.right-1px
+  right-1px()
+
+bottom-1px(color=transparent, w=1px)
+  border-bottom w solid color
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+    border none
+    background-image -webkit-linear-gradient(90deg, color, color 50%, transparent 50%)
+    background-image linear-gradient(0deg, color, color 50%, transparent 50%)
+    background-size 100% w
+    background-repeat no-repeat
+    background-position bottom
+
+.bottom-1px
+  bottom-1px()
+
+left-1px(color=transparent, w=1px)
+  border-left w solid color
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+    border none
+    background-image -webkit-linear-gradient(0deg, color, color 50%, transparent 50%)
+    background-image linear-gradient(90deg, color, color 50%, transparent 50%)
+    background-size w 100%
+    background-repeat no-repeat
+    background-position left
+
+.left-1px
+  left-1px()
+
+small-font-size(size=12)
+  font-size 12px
+  transform scale((size / 12))
+  transform-origin 50% 50%
+
+nuomi-tag()
+  display inline-block
+  padding 0 5px
+  box-sizing border-box
+  line-height 21.3px
+  color #fa4982
+  border-radius 2px
+  border 1px solid #fa4982
+  small-font-size(9)
+  transform-origin 100% 0%
+
+.nuomi-tag
+  nuomi-tag()
+
+// box-sizing
+box-sizing(content=content-box)
+  -webkit-box-sizing content
+  box-sizing content
+
+.box-sizing
+  box-sizing()
+
+border-with-radius(borderColor, borderTopWidth=1px, borderRightWidth=1px, borderBottomWidth=1px, borderLeftWidth=1px, radius1=0, radius2=0, radius3=0, radius4=0)
+  position: relative
+  border-top: borderTopWidth solid borderColor
+  border-right: borderRightWidth solid borderColor
+  border-bottom: borderBottomWidth solid borderColor
+  border-left: borderLeftWidth solid borderColor
+  border-radius: radius1 radius2 radius3 radius4
+
+  @media (-webkit-min-device-pixel-ratio:2), (min-device-pixel-ratio: 2)
+    border: none
+
+    &:after
+      content: ' '
+      display: block
+      box-sizing: border-box
+      absolute: -50% -50% -50% -50%
+      border-top: borderTopWidth solid borderColor
+      border-right: borderRightWidth solid borderColor
+      border-bottom: borderBottomWidth solid borderColor
+      border-left: borderLeftWidth solid borderColor
+      pointer-events: none // 解决挡住点击事件的问题
+      transform: scale(.5)
+      transform-origin: 50% 50%
+      width: 200%
+      border-radius: (radius1 * 2) (radius2 * 2) (radius3 * 2) (radius4 * 2)
+
+border-2x-common()
+    content: ' '
+    display: block
+    box-sizing: border-box
+    position: absolute
+    top: 0;
+    right: -100%;
+    bottom: -100%;
+    left: 0;
+    pointer-events: none // 解决挡住点击事件的问题
+    transform: scale(.5)
+    transform-origin: 0 0
+
+border-top-1px(color=transparent, w=1px)
+  position: relative
+  border-top: w solid color
+  @media (-webkit-min-device-pixel-ratio:2), (min-device-pixel-ratio: 2)
+    border: none
+    &:after
+        border-top: w solid color
+        border-2x-common()
+
+border-left-1px(color=transparent, w=1px)
+  position: relative
+  border-left: w solid color
+  @media (-webkit-min-device-pixel-ratio:2), (min-device-pixel-ratio: 2)
+    border: none
+    &:after
+        border-left: w solid color
+        border-2x-common()
+
+border-bottom-1px(color=transparent, w=1px)
+  position: relative
+  border-bottom: w solid color
+  @media (-webkit-min-device-pixel-ratio:2), (min-device-pixel-ratio: 2)
+    border: none
+    &:after
+        border-bottom: w solid color
+        border-2x-common()
+
+border-right-1px(color=transparent, w=1px)
+  position: relative
+  border-right: w solid color
+  @media (-webkit-min-device-pixel-ratio:2), (min-device-pixel-ratio: 2)
+    border: none
+    &:after
+        border-right: w solid color
+        border-2x-common()
+
+// flex
+flex-box()
+    display -webkit-box
+    display -moz-box
+    display -ms-flexbox
+    display -webkit-flex
+    display flex
+
+.flexbox
+    flex-box()
+
+flex-flex(num=1)
+    -webkit-box-flex num
+    -webkit-flex num
+    flex num
+
+.flex
+    flex-flex()
+
+flex-align-items(value=center)
+    -webkit-align-items value
+    align-items value
+    -webkit-box-align value
+    box-align value
+
+.align-items
+    flex-align-items()
+
+flex-justify-content(value=center)
+    justify-content value
+
+.justify-content
+    flex-justify-content()
+    
+// Transform
+// -----------------------------------------------------------------------------
+transform() {
+    -webkit-transform arguments
+    -moz-transform arguments
+    -ms-transform arguments
+    -o-transform arguments
+    transform arguments
+}
+
+.transform
+  transform()
+
+// Simple Icon Shape
+// -----------------------------------------------------------------------------
+// 向上的实体三角箭头
+icon-triangle-up(w=1px, color=transparent) {
+    width 0
+    height 0
+    overflow hidden
+    
+    border-left w dashed transparent
+    border-right w dashed transparent
+    border-bottom w solid color
+}
+
+.icon-triangle-up
+  icon-triangle-up()
+
+// 向下的实体三角箭头
+icon-triangle-down(w=1px, color=transparent) {
+    width 0
+    height 0
+    overflow hidden
+    
+    border-left w dashed transparent
+    border-right w dashed transparent
+    border-top w solid color
+}
+
+.icon-triangle-down
+  icon-triangle-down()
+
+// 向右的空心三角箭头
+icon-arrow-right(w=8px, h=8px, lineW=1px, color=transparent) {
+    width: w;
+    height: h;
+    border-top: lineW solid color;
+    border-right: lineW solid color;
+    transform(rotate(45deg));
+}
+
+.icon-arrow-right
+  icon-arrow-right()
+
+// 向左的空心三角箭头
+icon-arrow-left(w=8px, h=8px, lineW=1px, color=transparent) {
+    width: w;
+    height: h;
+    border-top: lineW solid color;
+    border-left: lineW solid color;
+    transform(rotate(-45deg));
+}
+
+.icon-arrow-left
+  icon-arrow-left()
+
+// 向下的空心三角箭头
+icon-arrow-down(w=8px, h=8px, lineW=1px, color=transparent) {
+    width: w;
+    height: h;
+    border-bottom: lineW solid color;
+    border-left: lineW solid color;
+    transform(rotate(-45deg));
+}
+
+.icon-arrow-down
+  icon-arrow-down()
+
+// 向上的空心三角箭头
+icon-arrow-up(w=8px, h=8px, lineW=1px, color=transparent) {
+    width: w;
+    height: h;
+    border-top: lineW solid color;
+    border-left: lineW solid color;
+    transform(rotate(45deg));
+}
+
+.icon-arrow-up
+  icon-arrow-up()

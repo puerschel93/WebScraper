@@ -1,0 +1,269 @@
+@import "color";
+// BG UNI
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:260;
+
+// VARIABLE SITE TYPO
+$font-body:"Roboto",arial,verdana,sans-serif;
+$font-title:"Titillium Web",arial,sans-serif;
+$font-deco:"Tangerine",cursive;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.7em;
+$font-size-title:1.9em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN TOP NAV
+$margin-top-navigation:8;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:0;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib6";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES3
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE PUB LIB1 = MODELE BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+.navigation {
+	@include gradient-secondary;
+}
+
+
+
+//------------------------------------------------------------------------------------------------------
+//		PERSO HEBERT
+//------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------
+//		GENERAL
+//------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//------------------------------------------------------------------------------------------------------
+
+.container {
+   width: auto;
+   max-width: 1280px;
+   @media only screen and (max-width : 1310px) {
+       padding-left: 15px;
+       padding-right: 15px;
+   }
+}
+
+.typo-deco {
+	font-family: $font-deco;
+}
+
+	//------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//------------------------------------------------------------------------------------------------------
+
+.btn-nouveau {
+	color: $color-important;
+	font-weight: bold;
+    font-size: 1em;
+}
+
+.icon-v5-heart {
+	color: $color-important;
+}
+
+.btn-cdc .opacity-4 {
+	opacity: 1;
+}
+
+	//------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//------------------------------------------------------------------------------------------------------
+
+.navigation {
+	background-image: none;
+}
+
+.menu-principal {
+	font-size:1.0em;
+	line-height: 95px;
+	@media only screen and (max-width : 1280px) {
+		font-size: 1.0em;
+	}
+	>li {
+		background:none;
+		padding: 0px 10px;
+		&:hover {
+			background:none;
+		}
+		>a {
+			background: none;
+			color: $color-primary;
+			&:after {
+	            display: block;
+	            content: "";
+	            width: 0%; height: 2px;
+	            background-color: $color-primary;
+	            margin-top: 5px;
+	            -webkit-transition: all .7s ease;
+	            		transition: all .7s ease;
+	         }
+	         &:hover {
+	            color: $color-primary;
+	            background: none;
+	            &:after {
+	            	background-color: $color-important;
+	            	width: 100%;
+	            }
+	         }
+	    }
+	}
+}
+
+	//------------------------------------------------------------------------------------------------------
+	//		SERVICES -- INCL_CONF_REF
+	//------------------------------------------------------------------------------------------------------
+
+.encart-index {
+	height: 370px;
+	@media only screen and (max-width : 767px) {
+		height: auto;
+	}
+}
+
+
+#Encart_Agence p, #Encart_Region p {
+	height: 0px;
+	display: none;
+	-webkit-transition: all .7s ease;
+	            		transition: all .7s ease;
+}
+
+#Encart_Agence:hover p, #Encart_Region:hover p {
+	height: auto;
+	display: block;
+	-webkit-transition: all .7s ease;
+	            		transition: all .7s ease;
+}
+
+.slogan {
+	margin-top: -90px;
+    font-size: 4.2em;
+
+}
+
+	//------------------------------------------------------------------------------------------------------
+	//		ESTIMATINO
+	//------------------------------------------------------------------------------------------------------
+
+.adresse-estimation {
+	display: none;
+}
+
+	//------------------------------------------------------------------------------------------------------
+	//		AGENCE
+	//------------------------------------------------------------------------------------------------------
+
+.bloc-annonces-agence {
+	display: none;
+}
+
+	//------------------------------------------------------------------------------------------------------
+	//		LISTING PA
+	//------------------------------------------------------------------------------------------------------
+
+.refannonce {
+	font-weight: bold;
+}
+
+.quartier-annonce {
+	display: none;
+}
+
+	//------------------------------------------------------------------------------------------------------
+	//		RS
+	//------------------------------------------------------------------------------------------------------
+body > header > aside > div > div > ul > li:nth-child(3) > a {
+	pointer-events: none;
+	cursor: default;
+}
+
+body > header > aside > div > div > ul > li:nth-child(4) > a {
+	pointer-events: none;
+	cursor: default;
+}
+
+body > footer > div > div:nth-child(2) > div.span4 > div.row-fluid.social-footer > div.span7.margin-top-5.margin-bottom-5.social-ico-footer.display-inline > a.facebook-footer {
+	pointer-events: none;
+	cursor: default;
+}
+
+body > footer > div > div:nth-child(2) > div.span4 > div.row-fluid.social-footer > div.span7.margin-top-5.margin-bottom-5.social-ico-footer.display-inline > a.twitter-footer {
+	pointer-events: none;
+	cursor: default;
+}
+
+body > header > aside > div > div > ul > li:nth-child(5) > a  {
+	pointer-events: none;
+	cursor: default;
+}
+
+body > header > aside > div > div > ul > li:nth-child(5) > a {
+	pointer-events: none;
+	cursor: default;
+}
+
+body > header > aside > div > div > ul > li:nth-child(6) > a {
+	pointer-events: none;
+	cursor: default;
+}
+

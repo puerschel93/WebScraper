@@ -1,0 +1,134 @@
+@import "base/_variables.scss";
+
+.header-menu {
+    &__outer {
+        bottom: 0;
+        background-color: rgba(#000F34, 0.35);
+        display: none;
+        left: 0;
+        overflow: hidden;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 11;
+        @media(min-width: 768px) {
+            background: none;
+            display: block;
+            overflow: visible;
+            position: static;
+        }
+    }
+
+    &__inner {
+        background-color: #fff;
+        height: 100%;
+        overflow-y: auto;
+        padding: 60px 20px 40px;
+        max-width: 320px;
+        margin-left: auto;
+        position: relative;
+        transition: transform 0.3s;
+        transform: translateX(100%);
+
+        &.is-open {
+            transform: translateX(0);
+        }
+        @media(min-width: 768px) {
+            align-items: center;
+            background: none;
+            display: flex;
+            height: auto;
+            max-width: 100%;
+            overflow: visible;
+            padding: 0;
+            position: static;
+            transform: none;
+        }
+    }
+
+    &__closer {
+        align-items: center;
+        border-radius: 4px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        left: auto;
+        padding: 0;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        transition: background-color 0.3s;
+        width: 40px;
+        @media(min-width: 768px) {
+            display: none;
+        }
+
+        &:focus,
+        &:hover {
+            .icon {
+                stroke: $secondary-full;
+            }
+        }
+
+        .icon {
+            stroke: $secondary-medium;
+        }
+    }
+}
+
+.header-menu-opener {
+    align-items: center;
+    border-radius: 4px;
+    background-color: $primary-medium;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 1.25;
+    letter-spacing: 0.2px;
+    padding: 0 8px;
+    transition: background-color 0.3s;
+    @media(min-width: 768px) {
+        display: none;
+    }
+
+    &:focus,
+    &:hover {
+        background-color: $primary-full;
+    }
+}
+
+.header-submenu {
+    .dropdown-container__toggler {
+        @media(max-width: 767px) {
+            display: none;
+        }
+    }
+
+    .dropdown {
+        @media(max-width: 767px) {
+            box-shadow: none;
+            border-radius: 0;
+            display: block;
+            opacity: 1;
+            position: static;
+            transform: none;
+        }
+        left: auto;
+        right: 0;
+        min-width: 190px;
+    }
+
+    .dropdown-list {
+        @media(max-width: 767px) {
+            max-height: none;
+        }
+    }
+}

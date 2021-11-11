@@ -1,0 +1,96 @@
+
+.btn {
+  /* Styling the button element */
+  /* Pseudo class for the button */
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: $default-font-size;
+  }
+
+  /* hovering over the button make the button appear to rise off the page with motion and shadow */
+  &:hover {
+    transform: translateY(-.3rem);
+    /* box-shadow: shadowInXDirection shadowInYDirection shadowBlur shadowColorAndOpacity*/
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+    /* after psuedo element only when button is in the hover state */
+    /* here the button grows and fades out or makes the element become invisible */
+    &::after {
+      /* scale multiplies the size of the element. for example a scale value 2 doubles the size of the element */
+      transform: scaleX(1.4) scaleY(1.6);
+      /* going to opacity 0 fades the element out */
+      opacity: 0;
+    }
+  }
+
+  /* clicking on the button makes the button appear to be clicked down and closer to the page with motion down from hover state and a smaller and less blurry shadow */
+  &:active {
+    transform: translateY(-.1rem);
+      /* box-shadow: shadowInXDirection shadowInYDirection shadowBlur shadowColorAndOpacity*/
+      box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  /* adds an element that looks exactly lie the existing button and is put behind the and hovering out of the element the hidden pseudo-element goes back behind the element.  */
+  /* psuedo elements do not appear without defining the content and display properties */
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    /* absolute position needs a reference; the reference is the first element with a relative position that it can find, in this case it is the button (&:link)  */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+  &--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+  }
+}
+
+// display set to inline block so that box model properties can be applied to the element.
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    transform: translateY(0);
+  }
+
+
+}

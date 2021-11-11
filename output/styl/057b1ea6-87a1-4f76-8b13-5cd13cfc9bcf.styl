@@ -1,0 +1,510 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+* html .clearfix,
+:first-child+html .clearfix {
+    zoom: 1
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  opacity: 1;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  opacity: 1;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 18- */
+  opacity: 1;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+a { text-decoration: none; }
+
+input,
+select,
+textarea,
+button {
+  font-family: 'Campton';
+  font-weight: normal;
+  font-size: 14px;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+    font-family: 'Campton';
+    font-size: 14px;
+    font-weight: normal;
+    height: 100%;
+    width: 100%;
+    background-color: $secondarywhite;
+}
+@media screen and (max-width: 992px) {
+  body {
+    padding-top: 72.3px
+  }
+}
+@font-face {
+    font-family: 'Campton';
+    src: url('../fonts/subset-Campton-Thin.woff2') format('woff2'),
+        url('../fonts/subset-Campton-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Campton';
+    src: url('../fonts/subset-Campton-ExtraLight.woff2') format('woff2'),
+        url('../fonts/subset-Campton-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Campton';
+    src: url('../fonts/subset-Campton-Light.woff2') format('woff2'),
+        url('../fonts/subset-Campton-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Campton';
+    src: url('../fonts/subset-Campton-Book.woff2') format('woff2'),
+        url('../fonts/subset-Campton-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Campton';
+    src: url('../fonts/subset-Campton-Medium.woff2') format('woff2'),
+        url('../fonts/subset-Campton-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Campton';
+    src: url('../fonts/subset-Campton-SemiBold.woff2') format('woff2'),
+        url('../fonts/subset-Campton-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Campton';
+    src: url('../fonts/subset-Campton-Bold.woff2') format('woff2'),
+        url('../fonts/subset-Campton-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Campton';
+    src: url('../fonts/subset-Campton-ExtraBold.woff2') format('woff2'),
+        url('../fonts/subset-Campton-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Campton';
+    src: url('../fonts/subset-Campton-Black.woff2') format('woff2'),
+        url('../fonts/subset-Campton-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/subset-BebasNeue-Thin.woff2') format('woff2'),
+        url('../fonts/subset-BebasNeue-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/subset-BebasNeueLight.woff2') format('woff2'),
+        url('../fonts/subset-BebasNeueLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Book';
+    src: url('../fonts/subset-BebasNeueBook.woff2') format('woff2'),
+        url('../fonts/subset-BebasNeueBook.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/subset-BebasNeueRegular.woff2') format('woff2'),
+        url('../fonts/subset-BebasNeueRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/subset-BebasNeueBold.woff2') format('woff2'),
+        url('../fonts/subset-BebasNeueBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?gk4r75');
+  src:  url('../fonts/icomoon.eot?gk4r75#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?gk4r75') format('truetype'),
+    url('../fonts/icomoon.woff?gk4r75') format('woff'),
+    url('../fonts/icomoon.svg?gk4r75#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-tooltip:before {
+  content: "\e905";
+  color: #48b4ca;
+}
+.icon-cross:before {
+  content: "\e900";
+}
+.icon-download:before {
+  content: "\e904";
+  color: #3281a3;
+}
+.icon-tick-2:before {
+  content: "\e901";
+}
+.icon-close2:before {
+  content: "\e903";
+  color: #fff;
+}
+.icon-instagram .path1:before {
+  content: "\e908";
+  color: rgb(0, 0, 0);
+}
+.icon-instagram .path2:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-instagram .path3:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-instagram .path4:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-instagram .path5:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-facebook .path1:before {
+  content: "\e90d";
+  color: rgb(0, 0, 0);
+}
+.icon-facebook .path2:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(59, 89, 152);
+}
+.icon-facebook .path3:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-twitter .path1:before {
+  content: "\e910";
+  color: rgb(0, 0, 0);
+}
+.icon-twitter .path2:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(38, 166, 209);
+}
+.icon-twitter .path3:before {
+  content: "\e912";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-like:before {
+  content: "\e913";
+  color: #48b4ca;
+}
+.icon-filtre:before {
+  content: "\e914";
+  color: #48b4ca;
+}
+.icon-tumu:before {
+  content: "\e915";
+  color: #48b4ca;
+}
+.icon-gurme:before {
+  content: "\e916";
+  color: #48b4ca;
+}
+.icon-fly2:before {
+  content: "\e917";
+  color: #48b4ca;
+}
+.icon-smile:before {
+  content: "\e918";
+  color: #48b4ca;
+}
+.icon-warning .path1:before {
+  content: "\e919";
+  color: rgb(43, 125, 161);
+}
+.icon-warning .path2:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-android:before {
+  content: "\e91b";
+  color: $primaryblue;
+}
+.icon-info2:before {
+  content: "\e91c";
+  color: $primaryblue;
+}
+.icon-info:before {
+  content: "\e91d";
+}
+.icon-arrow:before {
+  content: "\e91e";
+  color: #93c9e0;
+}
+.icon-checkbox-selected .path1:before {
+  content: "\e920";
+  color: rgb(48, 125, 158);
+}
+.icon-checkbox-selected .path2:before {
+  content: "\e921";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-close:before {
+  content: "\e923";
+}
+.icon-arti:before {
+  content: "\e924";
+}
+.icon-sour:before {
+  content: "\e925";
+}
+.icon-up:before {
+  content: "\e926";
+  color: $primaryblue;
+}
+.icon-down:before {
+  content: "\e927";
+  color: $primaryblue;
+}
+.icon-search2:before {
+  content: "\e928";
+  color: $darkblue;
+}
+.icon-search .path1:before {
+  content: "\e929";
+  color: rgb(255, 255, 255);
+}
+.icon-search .path2:before {
+  content: "\e92a";
+  margin-left: -1em;
+  color: rgb(37, 124, 163);
+}
+.icon-search .path3:before {
+  content: "\e92b";
+  margin-left: -1em;
+  color: rgb(53, 112, 137);
+}
+.icon-profile:before {
+  content: "\e92c";
+}
+.icon-calender:before {
+  content: "\e92d";
+}
+.icon-card:before {
+  content: "\e92e";
+}
+.icon-thick:before {
+  content: "\e92f";
+  color: #48b4ca;
+}
+.icon-location:before {
+  content: "\e930";
+  color: #48b4ca;
+}
+.icon-shopping:before {
+  content: "\e931";
+  color: #48b4ca;
+}
+.icon-transfer:before {
+  content: "\e932";
+  color: #48b4ca;
+}
+.icon-fly:before {
+  content: "\e933";
+  color: #48b4ca;
+}
+.icon-memeber-business:before {
+  content: "\e934";
+  color: #48b4ca;
+}
+.icon-vale:before {
+  content: "\e935";
+  color: #48b4ca;
+}
+.icon-3:before {
+  content: "\e936";
+  color: #48b4ca;
+}
+.icon-star:before {
+  content: "\e937";
+  color: #48b4ca;
+}
+.icon-car:before {
+  content: "\e938";
+  color: #48b4ca;
+}
+.icon-person:before {
+  content: "\e939";
+  color: #48b4ca;
+}
+.icon-flight:before {
+  content: "\e93a";
+  color: #48b4ca;
+}
+.icon-card3:before {
+  content: "\e900";
+  color: $darkblue;
+}
+
+blockquote {
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  color: $darkgrey;
+  margin-top: 16px
+  margin-bottom: 24px
+  display: block
+  max-width: 760px
+}

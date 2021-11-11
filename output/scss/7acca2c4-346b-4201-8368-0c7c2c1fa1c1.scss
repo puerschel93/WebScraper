@@ -1,0 +1,177 @@
+/* INTERNE-CONTACT-PAGE - PAGES */
+
+.interne.contact {
+
+    .aside {
+        background: url("/img/interne/contact/banner.png") no-repeat 55% 0%;
+        
+        @include bp-xs {
+            background: url("/img/interne/contact/banner-responsive.png") no-repeat 0% 100%;
+            height: 529px;
+        }
+
+        .full-padding {
+            padding-right: 150px;
+
+            @include bp-xs {
+                padding-right: 0;
+            }
+        }
+        
+        &__title {
+
+            @include bp-xs {
+                bottom: unset;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+            }
+
+            &--title {
+                white-space: nowrap;
+                font-weight: 600;
+                font-size: 42px;
+                margin-bottom: 50px;
+
+                @include bp-xl {
+                   font-size: 32px;
+                   margin-bottom: 25px;
+                }
+
+                @include bp-xs {
+                    font-size: 24px;
+                    line-height: 29px;
+                    color: $secondary-color;
+                }
+            }
+
+        }
+
+        .form-group.select-white {
+            width: 400px;
+
+            @include bp-xl {
+                width: 315px;
+            }
+
+            @include bp-xs {
+                width: 300px;
+            }
+
+            select {
+                border: 1px solid $white;
+                height: 48px;
+                font-weight: 500;
+                font-size: 16px;
+                width: 100%;
+            }
+
+            &::after {
+                color: $secondary-color-50;
+            }
+        }
+    }
+
+    .content {
+
+        .form-contact {
+            max-width: 550px;
+            margin: 0 auto;
+
+            @include bp-xs {
+                margin-top: 70px;
+            }
+
+            label {
+                @include bp-xl {
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+
+                @include bp-xs {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+
+            &__title {
+                margin-bottom: 50px;
+
+                @include bp-xl {
+                    margin-bottom: 25px;
+                }
+            }
+
+            .form-double-element {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                @include bp-xs {
+                    display: block;
+                }
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+
+                input, textarea {
+                    border: none;
+                    background: $bg-grey;
+                    font-size: 16px;
+                    color: $secondary-color;
+
+                    @include bp-xs {
+                        font-size: 14px;
+                        background: $white;
+                    }
+                }
+
+                input {
+                    height: 48px;
+                    
+                    &[type='email'] {
+                        width: 100%;
+                    }
+
+                    @include bp-xl {
+                        width: 190px;
+                    }
+
+                    @include bp-xs {
+                        width: 100%;
+                    }
+                }
+
+                textarea {
+                    height: 185px;
+                }
+
+            }
+            
+            .button-box {
+                text-align: right;
+
+                @include bp-xl {
+                   text-align: center;
+                }
+            }
+
+            button {
+                margin-top: 50px;
+
+                @include bp-xl {
+                    margin-top: 25px;
+                }
+
+                @include bp-xs {
+                    width: 100%;
+                    margin-bottom: 50px;
+                }
+            }
+        }
+
+    }
+
+}

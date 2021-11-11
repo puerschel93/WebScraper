@@ -1,0 +1,299 @@
+.container-curriculum {
+    max-width: 1430px;
+    margin: 1rem auto 0;
+    display: flex;
+    // @include xs {
+    //     width: 100%;
+    // }
+
+    .cvContente {
+        // margin-left: 28px;
+        box-shadow: 0 3px 10px #b2b2b2;
+        width: 100%;
+        background: $perso-color-tansp2;
+        margin-bottom: 15px;
+        padding: 1rem;
+        border-radius: 25px;
+        display: grid;
+        min-height: $perso-minHeight;
+
+        h1 {
+            text-align: center;
+            width: 58%;
+            height: 50px;
+            color: white;
+            font-family: $perso-font-4;
+            background-color: $perso-black2;
+            border-radius: $perso-borderRadius;
+            justify-self: center;
+        }
+
+        .data-cv {
+            .title {
+                width: 80%;
+                height: 55px;
+                background: rgba(196, 196, 196, 0.35);
+                color: white;
+                margin: 15px auto;
+                clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                h3 {
+                    &>span {
+                        color: $perso-black2;
+                        display: inline-block;
+                        margin: 0 16px;
+                    }
+
+                }
+            }
+
+            &:nth-child(1) h3>span {
+                margin: 0 5px;
+            }
+
+            &:nth-child(2) h3>span {
+                margin: 0 36px;
+            }
+
+            &:nth-child(3) {
+                table{display:none}
+                .title {
+                    margin-bottom: -0px;
+                    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 100%, 80% 100%, 0% 100%, 0% 80%, 0% 20%);
+                }
+            }
+
+            &:nth-child(4) {
+                .title {
+                    margin-top: 0;
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+                }
+
+                h3>span {
+                    margin: 0 13px;
+                }
+            }
+
+            &:nth-child(5) h3>span {
+                margin: 0 60px;
+            }
+
+            &:nth-child(6) h3>span {
+                margin: 0 23px;
+            }
+
+            &:nth-child(7) h3>span {
+                margin: 0 54px;
+            }
+
+            &:nth-child(8) h3>span {
+                margin: 0 38px;
+            }
+
+            table {
+                tr {
+                    color: $perso-bg-gradien2;
+                    line-height: 25px;
+                    font-size: medium;
+                    flex-direction: column;
+                    display: flex;
+                }
+            }
+        }
+    }
+
+
+    .container-skills {
+        .skills {
+            background: rgba(255, 255, 255, 0.1) !important;
+            font-family: "Nova Round", cursive;
+            height: 100%;
+            padding: 26px 0 11px;
+            min-height: 95vh;
+            min-width: 264px;
+            border-radius: 25px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            .id {
+                text-align: center;
+                user-select: none;
+
+                .contact-cv,
+                .formation,
+                .competence,
+                .soft-skills,
+                .hard-skills {
+                    @include glassmorphLv2;
+                    line-height: 35px;
+
+                    h2 {
+                        margin-bottom: 10px;
+                        font-family: $perso-font-4;
+                        color: white;
+                        background-color: $perso-black2;
+                        border-radius: $perso-borderRadius;
+                    }
+                }
+
+                // .hard-skills {
+                //     h3{span {color: #36D0EA;}}
+                // }
+                .formation {
+                    p {
+                        u {
+                            color: white;
+                            font-size: large;
+                        }
+
+                        cite {
+                            font-size: medium;
+                        }
+                    }
+                }
+                .idContent {
+                    font-family: "Merienda one", sans-serif;
+                    h3 {
+                        margin: 0.5rem 0 0.3rem;
+                    }
+                    & > p {
+                        font-size: large;
+                        font-weight: bold;
+                        color: #36D0EA;
+                        margin-bottom: 0.5rem;
+                        text-decoration: underline;
+                        text-decoration-style: double;
+                    }
+                }
+                .contact-cv {
+                    
+                    address {
+                        p {
+                            @include glassmorphText;
+                            margin-top: 12px;
+
+                            &:nth-child(6) {
+                                a {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    i {
+                                        margin-right: 10px;
+                                        color: #0a66c2;
+                                        font-size: larger;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1109px) {padding: 0 10px;.cvContente{margin-left: 28px;}}
+    
+    @media (max-width: 1108px) {
+        margin: 0.2rem auto 0;
+        flex-direction: column-reverse;
+        position: relative;
+
+
+        .cvContente {
+            padding: 0;
+            h1 {
+                width: 65%;
+            }
+
+            .content-parcour {
+                padding: 0 0 1rem 0.2rem;
+            }
+        }
+
+        .idContent {
+            background: url(../../media/cover_overlay.png) no-repeat center/100% 100%,url(../../media/cover.jpg) no-repeat center/cover;
+            position: relative;
+            width: 100%;
+            margin: 0 auto 30px;
+            height: 300px;
+            border-radius: 25px 25px 0 0;
+
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+            img {
+                margin: 20px auto;
+            }
+            h3 {margin-top: 0}
+
+            button {
+                width: 200px;
+                background: #292A72;
+                color: white;
+                font-size: medium;
+                margin: auto;
+                padding: 8px 20px;
+                border: 2px solid transparent;
+                border-radius: 8px;
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+    }
+
+    @media (min-width: 600px) {.table-cv{padding-left: 25px;}}
+
+    @media (max-width: 650px) {
+        .cvContente {
+            padding: 0;
+            h1 {
+                width: 98%;
+                font-size: x-large;
+                display: grid;
+                align-items: center;
+            }
+            .data-cv:nth-child(6) h3 > span {margin: 0 58px;}
+            .title {
+                width: 99%;
+                margin-right: 0.2rem;
+                h3 {font-size: medium;}
+            }
+        }
+
+        .content-parcour {
+            padding: 0 0 1rem 0.2rem;
+        }
+    }
+
+}
+
+.swal2-show {
+    background: $perso-bg-gradien2;
+
+    .swal2-html-container {
+        @include glassmorphLv2;
+        width: 65%;
+        padding: 20px;
+
+        h1 {
+            margin-bottom: 10px;
+            font-family: $perso-font-4;
+            color: white;
+            background-color: $perso-black2;
+            border-radius: $perso-borderRadius;
+        }
+
+        p {
+            @include glassmorphText;
+            width: 90%;
+            margin: 10px auto;
+            padding: 15px;
+            color: #333;
+        }
+    }
+}

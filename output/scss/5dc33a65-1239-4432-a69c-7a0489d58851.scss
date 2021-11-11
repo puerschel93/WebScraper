@@ -1,0 +1,258 @@
+@use "sass:math";
+//<МИКСИНЫ>===============================================================================================
+@import "mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+@import url(https://fonts.googleapis.com/css?family=Montserrat:,regular,500,600,700,900,&display=swap&subset=cyrillic-ext);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:700&display=swap&subset=cyrillic-ext);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,500,700,900&display=swap&subset=cyrillic-ext);
+@import "fonts";
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+@import "icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "Montserrat";
+$fontSize: 16;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>==========================================================================================================
+$minWidth: 320px;
+$maxWidth: 1600;
+$maxWidthContainer: 1170;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #2d2d2d;
+$grey: #535554;
+$lightGrey: #c4c4c4;
+$yellow: #fcb427;
+$orange: #ff971d;
+$white: #f3f3f3;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+body {
+	color: $mainColor;
+	background: #e5e5e5;
+	&._lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	@media (max-width: $md1 + px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 15px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms";
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "datepicker";
+//@import "lightgallery";
+//@import "pagging";
+@import "nouislider";
+@import "popup";
+@import "header";
+@import "footer";
+@import "home";
+@import "map";
+@import "catalog";
+@import "contacts";
+@import "product";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	flex: 1 1 auto;
+
+	// .page__intro-slider
+
+	&__intro-slider {
+		padding: 0px 0px 75px 0px;
+		@media (max-width: $md2+px) {
+			padding: 0;
+		}
+	}
+
+	// .page__arenda-slider
+
+	&__arenda-slider {
+		padding: 50px 0px 0px 0px;
+		@media (max-width: $md1+px) {
+			padding: 163px 0px 60px 0px;
+		}
+		@media (max-width: $md2+px) {
+			padding: 50px 0px 60px 0px;
+		}
+	}
+
+	// .page__benefits
+
+	&__benefits {
+		padding: 126px 0px 34px 0px;
+		@media (max-width: $md2+px) {
+			padding: 88px 0px 76px 0px;
+		}
+	}
+
+	// .page__numbers
+
+	&__numbers {
+		margin: 0px 0px 120px 0px;
+	}
+
+	// .page__projects-slider
+
+	&__projects-slider {
+		padding: 50px 0px;
+		margin: 0px 0px 120px 0px;
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 70px 0px;
+		}
+	}
+
+	// .page__products-slider
+
+	&__products-slider {
+		margin: 0px 0px 120px 0px;
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 100px 0px;
+		}
+	}
+
+	// .page__coast
+
+	&__coast {
+		margin: 0px 0px 50px 0px;
+	}
+
+	// .page__supply
+
+	&__supply {
+		margin-bottom: 157px;
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 50px 0px;
+		}
+	}
+
+	// .page__about
+
+	&__about {
+		margin: 0px 0px 120px 0px;
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 50px 0px;
+		}
+	}
+
+	// .page__services
+
+	&__services {
+		margin: 0px 0px 125px 0px;
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 50px 0px;
+		}
+	}
+	// .page__arenda-msk
+
+	&__arenda-msk {
+		margin: 0px 0px 120px 0px;
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 50px 0px;
+		}
+	}
+
+	// .page__questions
+
+	&__questions {
+	}
+
+	// .page__map
+
+	&__map {
+	}
+
+	// .page__catalog
+
+	&__catalog {
+		margin: 0px 0px 120px 0px;
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 30px 0px;
+		}
+	}
+
+	// .page__help
+
+	&__help {
+		margin: 0px 0px 120px 0px;
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 103px 0px;
+		}
+	}
+
+	// .page__info
+
+	&__info {
+		margin: 0px 0px 120px 0px;
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 0px 0px;
+		}
+	}
+
+	// .page__contacts
+
+	&__contacts {
+	}
+
+	// .page__similar-slider
+
+	&__similar-slider {
+		margin: 0px 0px 100px 0px;
+		@media (max-width:$md2+px){
+			margin: 0px 0px 120px 0px;
+		}
+	}
+}
+//===================================================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================

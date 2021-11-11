@@ -1,0 +1,177 @@
+@import "color";
+// BG SOLO
+$bg-uni: yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg: yes;
+$picture-bg-url: "../images/dark_wall.png";
+$picture-bg-repeat-horizontal: no;
+
+// SIZE SCROLLING
+$height-scrolling: 600;
+
+// SIZE NAVIGATION
+$height-navigation: 90;
+$margin-top-under-nav-fixe: 166;
+
+// VAR SITE TYPO
+$font-body: "Source Sans Pro",verdana,sans-serif;
+$font-title: "Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text: 1.5em;
+$font-size-title: 1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title: uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title: normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi: no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// PERSO
+
+.cookie-banner {
+    top: auto;
+    bottom: 0;
+    background-color: $color-action;
+}
+
+.container {
+    width: auto;
+    max-width: 1280px;
+    @media only screen and (max-width : 1310px) {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+.navigation {
+    border-bottom-color: darken($color-block,10);
+    box-shadow: none;
+}
+
+.menu-principal {
+     > li {
+         > a {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    }
+}
+
+.navigation-scroll {
+	height: 50px;
+	background: $color-primary;
+}
+
+.menu-principal-scroll, .logo-scroll {
+	margin-top: -22px;
+    li>a {
+        line-height: 22px;
+    }
+}
+
+.bg-mini-moteur,
+.mini-moteur {
+    margin-top: 176px;
+}
+
+.titre-pub,
+.titre-extra {
+    color: $color-primary;
+}
+
+@media only screen and (max-width: 767px) {
+    .logo img {
+        width: 45% !important;
+    }
+    .btn-important {
+        background-image: linear-gradient(to bottom, #888888 0%,#8a8a8a 30%);
+    .btn-important .typo-action {
+    color: #ffffff;
+}
+    &:hover {
+    Background :$color-primary;
+ }
+
+    }
+
+    .bg-mini-moteur,
+    .mini-moteur {
+        margin-top: 0;
+    }
+}
+
+
+@-webkit-keyframes scale-in-center {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes scale-in-center {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+
+.scale-in-center {
+    -webkit-animation: scale-in-center 2s cubic-bezier(.250, .460, .450, .940) both;
+    animation: scale-in-center 2s cubic-bezier(.250, .460, .450, .940) both;
+}
+
+.scale-in-center-delay {
+    -webkit-animation: scale-in-center 2s cubic-bezier(.250, .460, .450, .940) both;
+    animation: scale-in-center 2s cubic-bezier(.250, .460, .450, .940) both;
+    @media only screen and (max-width : 767px) {
+        -webkit-animation: scale-in-center 2s cubic-bezier(.250, .460, .450, .940) both;
+        animation: scale-in-center 2s cubic-bezier(.250, .460, .450, .940) both;
+    }
+}

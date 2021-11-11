@@ -1,0 +1,321 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:1004;
+
+// SIZE NAVIGATION
+$height-navigation:80;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES11
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU ORPI
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+.padding-top-30 {
+	padding-top:30px;
+}
+
+.aside-home-2 {
+	background-image:url('../images/homepage/homepage_scrolling_2.jpg');
+	background-color:$color-body;
+	background-position:top center;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+}
+
+.aside-home-3 {
+	background-image:url('../images/homepage/homepage_scrolling_3.jpg');
+	background-color:$color-body;
+	background-position:top center;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+}
+
+
+
+
+
+.menu-principal>li>a {
+padding: 0px 6px;
+}
+
+.bg-inside {
+	background-image:url('../images/inside/inside_scrolling.jpg');
+	background-color:$color-body;
+	background-position:top center;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+}
+
+
+
+
+
+// SCROLL ARROW
+
+.arrow-wrap {
+    position:absolute;
+    z-index:125;
+    left:50%;
+    bottom:10em;
+    margin-left:-5em;
+    background:$color-important;
+    width:10em;
+    height:10em;
+    padding:4em 2em;
+    border-radius:50%;
+    opacity:0.7;
+    font-size:0.5em;
+    display:block;
+    box-shadow:0px 0px 5px 0px #333;
+    .arrow {
+        float:left;
+        position:relative;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 3em 3em 0 3em;
+        border-color: #ffffff transparent transparent transparent;
+        -webkit-transform:rotate(360deg);
+        &:after {
+            content:'';
+            position:absolute;
+            top:-3.2em;
+            left:-3em;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 3em 3em 0 3em;
+            border-color: $color-important transparent transparent transparent;
+            -webkit-transform:rotate(360deg)
+        }
+    }
+}
+
+.hint {
+    position:absolute;
+    top:0.6em;
+    width:100%;
+    left:0;
+    font-size:2em;
+    font-style:italic;
+    text-align:center;
+    color:#fff;
+    opacity:0;
+}
+
+.arrow-wrap:hover .hint {
+    opacity:1;
+}
+
+
+@-webkit-keyframes arrows {
+    0% { top:0; }
+    10% { top:12%; }
+    20% { top:0; }
+    30% { top:12%; }
+    40% { top:-12%; }
+    50% { top:12%; }
+    60% { top:0; }
+    70% { top:12%; }
+    80% { top:-12%; }
+    90% { top:12%; }
+    100% { top:0; }
+}
+
+.arrow-wrap .arrow {
+    -webkit-animation: arrows 2.8s 0.4s;
+    -webkit-animation-delay: 3s;
+}
+
+// END SCROLL
+
+
+
+//------------------------------------------------------------------------------------------------------
+//		PERSO LORIMMO91
+//------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------
+//		INDEX
+//------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------
+	//		ASIDE 1
+	//------------------------------------------------------------------------------------------------------
+
+.btn-extra {
+	top: -90px;
+    right: -90px;
+}
+
+#Menu-bloc > span[class="hidden-phone"] {
+	display:none;
+}
+
+
+
+.titre-milieu {
+	margin-top:160px;
+}
+
+@media only screen and (max-width : 767px) {
+    .titre-milieu {
+		margin-top:0px;
+	}
+}
+
+
+// BLOCS INDEX
+#div_moteur {
+	margin-top:360px;
+	height: 140px;
+	.bg-white {
+		background-color:rgba($color-primary,0.8);
+	}
+}
+
+#div_estimation, #div_suivi {
+	margin-top:-110px;
+	height: 90px;
+}
+
+.bloc-index > [class*="span"] {
+	padding:24px 0;
+	background-color:rgba($color-primary,0.8);
+	font-family:$font-title;
+	font-size:1.3em;
+	text-transform:uppercase;
+	color:$color-action;
+	border-radius:5px;
+	-moz-box-shadow: inset 0 -1px 1px rgba($color-primary,0.5);
+	-webkit-box-shadow: inset 0 -1px 1px rgba($color-primary,0.5);
+	box-shadow: inset 0 -1px 1px rgba($color-primary,0.5);
+	margin-bottom: 80px;
+	cursor: pointer;
+	margin-top:465px;
+	margin-left:4px;
+}
+.bloc-index > [class*="span"]:hover {
+	text-decoration:none;
+	background:$color-primary;
+}
+
+.bloc-index .icon-v5 {
+	display:block;
+	margin-bottom:5px;
+	font-size:3.5em;
+
+}
+
+	//------------------------------------------------------------------------------------------------------
+	//		ASIDE 2
+	//------------------------------------------------------------------------------------------------------
+
+.img-homepage {
+	border:solid 5px $color-body;
+}
+
+.ligne-titre {
+	margin-bottom: 30px;
+	margin-top: 80px;
+}
+
+.hover-infos-bien .bg-black {
+	background:$color-action;
+}
+
+	//------------------------------------------------------------------------------------------------------
+	//		ASIDE 3
+	//------------------------------------------------------------------------------------------------------
+
+.bg-white-index {
+	background-color:rgba($color-body,0.8);
+	padding:10px;
+	@include border-radius (4px);
+}
+
+.margin-top-270 {
+	margin-top:270px;
+}
+
+.zone-pub {
+	background:none;
+}
+
+	//------------------------------------------------------------------------------------------------------
+	//		ASIDE 4
+	//------------------------------------------------------------------------------------------------------
+
+.aside-home-4 {
+	background-image:url('../images/homepage/homepage_scrolling_4.jpg');
+	background-color:$color-body;
+	background-position:top center;
+	background-repeat:no-repeat;
+}
+
+.titre-pub {
+	font-size:1.5em;
+}
+
+.pub-wordpress-helsinki, .pub-social-helsinki {
+	background-color:rgba($color-body,0.8);
+	box-shadow:none;
+	margin-top:40px;
+	@include border-radius (4px);
+}

@@ -1,0 +1,176 @@
+.section_restaurants{
+    background-color: #f6f6f6;
+
+    h2{
+        margin-left: 16px;
+        margin-top: 70px;
+        padding-top: 50px;
+    }
+
+    .gallerie_restaurants{
+        display: grid;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+
+        grid-template-areas: 
+            "restaurant_la_palette_du_gout"
+            "restaurant_la_note_enchantee"
+            "restaurant_a_la_francaise"
+            "restaurant_le_delice_des_sens";
+
+
+        margin-left: 16px;
+        margin-right: 16px;
+
+
+        #restaurant_la_palette_du_gout{
+            grid-area: restaurant_la_palette_du_gout;
+        }
+
+        #restaurant_la_note_enchantee{
+            grid-area: restaurant_la_note_enchantee;
+        }
+
+        #restaurant_a_la_francaise{
+            grid-area: restaurant_a_la_francaise;
+        }
+
+        #restaurant_le_delice_des_sens{
+            grid-area: restaurant_le_delice_des_sens;
+        }
+
+        .new{
+            position: relative; //Ce parent doit être en position relative pour permettre une position absolute à l'enfant
+
+            span{
+                position: absolute;
+                height: 32px;
+                width: 80px;
+                right: 16px;
+                top: 16px;
+                background-color: #99e2d0;
+                color: #008766;
+                display: grid;
+                place-items: center;    //Éléments centrés horizontalement et verticalement
+                border-radius: 2px;
+            }
+
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+            margin-bottom: 20px;
+            transition-duration: 0.3s;
+
+            &:hover{
+                transform: scale(1.05);
+            }
+
+
+            article{
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                border-radius: 16px;
+
+                img{
+                    height: 210px;
+                    object-fit: cover;
+                    border-radius: 16px 16px 0px 0px;
+                }
+
+                .description_restaurant
+                {
+                    display: flex;
+                    flex-direction: column;
+                    padding-left: 10px;
+                    margin-bottom: -10px;
+                    position: relative;
+
+                    h3, p{
+                        margin-bottom: 0px;
+                    }
+
+
+                    .fas{
+                        opacity: 0;
+                        transition-duration: 0.3s;
+                        
+                        position: absolute; /*Absolute, sinon les coeurs ne sont pas ensembles*/
+
+                        &:hover{
+                            opacity: 100%;
+                            background-clip: text;  /*La propriété background-clip définit la façon dont l'arrière-plan d'un élément (que ce soit l'image ou la couleur) s'étend sous la boîte de bordure, la boîte de remplissage (padding) ou la boîte de contenu.*/
+                            -webkit-background-clip: text;
+                            color: transparent;
+                            background-image: linear-gradient(to bottom right, #ec73da, $couleur-primaire);
+                            transform: scale(1.09);
+                        }
+
+                    }
+
+                    i{
+                        align-self: flex-end;
+                        position: relative; /*Pour gérer position coeurs*/
+                        bottom: 50px;
+                        right: 30px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 768px){
+    .section_restaurants{
+        .gallerie_restaurants{
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+    
+            grid-template-areas: 
+                "restaurant_la_palette_du_gout          restaurant_la_note_enchantee"
+                "restaurant_a_la_francaise              restaurant_le_delice_des_sens";
+
+            a{
+                flex-basis: 25%;
+                margin-right: 16px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px){
+    .section_restaurants{
+        .gallerie_restaurants{
+            a{
+                flex-basis: 10%;
+            }
+        }
+    }
+}
+
+@media (min-width: 1441px){
+    .section_restaurants{
+        h2{
+            max-width: 1440px;
+            margin: 70px auto 20px auto;
+        }
+
+        .gallerie_restaurants{
+            max-width: 1440px;
+            margin: auto;
+
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr;
+    
+            grid-template-areas: 
+                "restaurant_la_palette_du_gout          restaurant_la_note_enchantee            restaurant_a_la_francaise           restaurant_le_delice_des_sens";
+        }
+    }
+}

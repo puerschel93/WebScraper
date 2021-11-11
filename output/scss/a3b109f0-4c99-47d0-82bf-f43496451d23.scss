@@ -1,0 +1,164 @@
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  font-family:"Raleway";
+  font-weight: 300;
+   
+  
+  &::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    background-color: white;
+z-index: 2;
+    
+}
+
+&__body {
+    position: relative;
+    // z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+&__logo {
+    width: 50%;
+    font-family:'Raleway';
+     font-size:30px;
+     text-decoration: none;
+     color: black;
+     position: relative;
+     z-index: 3;
+     padding: 0;
+}
+&__logo:hover {
+    color: black;
+    }
+
+&__burger {
+    display: none;
+  
+}
+// &__menu {
+ 
+// }
+&__list {
+    display: flex;
+    margin: 0; 
+    position: relative;
+    z-index: 2;
+    font-family:'Raleway';
+    
+    & li {
+        list-style: none;
+        margin-left: 20px;
+        font-family: 'Raleway';
+    }
+}
+&__link {
+    color: black;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+border-top: 1px solid white;
+font-family: "Raleway";
+font-weight: 700;
+   
+}
+@media (min-width:767px)  {
+   
+&__link:hover {
+    border-top:1px solid #ff6033 ;
+    color: black;
+    // color:#ff6033 ;
+    }
+}
+@media (max-width:767px)  {
+    body.lock {
+        overflow: hidden;
+    }
+
+    &__body {
+        height: 50px;
+    }
+   &__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 3;
+    & span {
+        position: absolute;
+        background-color: black;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+        transition: all 0.3s ease 0s;
+    }
+&::before,
+&::after {
+content:'';
+background-color: black;
+position: absolute;
+width: 100%;
+height: 2px;
+left: 0;
+transition: all 0.3s ease 0s;
+}
+&::before {
+    top: 0;
+}
+&::after {
+bottom:0;
+}
+&.active span {
+transform: scale(0);
+}
+&.active::before {
+    transform:rotate(45deg);
+    top: 9px;
+
+}
+&.active::after {
+    transform:rotate(-45deg);
+    bottom: 9px;
+
+}
+   }
+   &__menu {
+       position: fixed;
+       top: -100%;
+       left: 0;
+       width: 100%;
+       height: 30%;
+       overflow: auto;
+       transition: all 0.3s ease 0s;
+       background-color: white;
+       padding: 70px 10px 20px 10px;
+   }
+   &__menu.active {
+       top: 0;
+   }
+
+   &__list {
+       display: block;
+       &__list li {
+           margin: 0px 0px 20px 0px;
+       }
+   }
+   &__link {
+       font-size: 24px;
+   }
+   
+}
+}

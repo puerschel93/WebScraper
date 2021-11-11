@@ -1,0 +1,419 @@
+@import '../../../variables';
+@import "../../../../node_modules/bootstrap/scss/mixins/border-radius";
+@import "../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+
+.shop-sidebar {
+  max-width: 22rem;
+}
+
+.max-height-13 {
+  max-height: 13rem;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-track {
+	  background-color: $gray-200;
+    border-radius: 0.2rem;
+  }
+
+  &::-webkit-scrollbar-thumb{
+	  border: 0.2rem solid $gray-500;
+  }
+}
+
+.text-muted {
+  margin-right: 0.5rem;
+}
+
+// Off-canvas base styles
+.offcanvas {
+  will-change: transform, box-shadow;
+  transition: transform .4s cubic-bezier(.165, .84, .44, 1), box-shadow .3s ease;
+  box-shadow: none;
+  visibility: visible !important;
+  position: absolute !important;
+
+  // Add compatibility with new Bootstrap offcanvas component
+  &:not(.offcanvas-end):not(.offcanvas-bottom) {
+    top: 0;
+    left: 0;
+    width: $offcanvas-horizontal-width;
+    border-right: $offcanvas-border-width solid $offcanvas-border-color;
+    transform: translateX(-100%);
+  }
+
+  // Show offcanvas
+  &.show {
+    transform: none !important;
+    box-shadow: $offcanvas-box-shadow !important;
+  }
+}
+    
+// Offcanvas Header and Footer  
+.offcanvas-header, .offcanvas-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  padding: $offcanvas-padding-y $offcanvas-padding-x;
+
+  .bg-dark & {
+    background-color: rgba($white, .05);
+  }
+}
+
+// Control the breakpoint at which off-canvas expands or collapses
+@include media-breakpoint-up(lg) {
+
+  // Expand off-canvas from lg breakpoint
+  .offcanvas-expand {
+    transform: none !important;
+    z-index: $zindex-fixed + 1;
+    &.offcanvas-start,
+    &.offcanvas-end,
+    &.offcanvas-bottom { transform: none !important; }
+  }
+
+  // Collapse off-canvas down from lg breakpoint
+  .offcanvas-collapse {
+    display: block;
+    position: static;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    background-color: transparent;
+
+    .offcanvas-header,
+    .offcanvas-footer { display: none; }
+
+    .offcanvas-body {
+      padding: 0;
+      overflow: initial;
+    }
+
+    &.rounded-3 {
+      border-radius: $border-radius-lg !important;
+    }
+  }
+
+  // Off-canvas enabled container (for layouts with fixed side navigation)
+  .offcanvas-enabled {
+    padding-left: $offcanvas-horizontal-width1 + 1.5rem;
+
+    &.offcanvas-end {
+      padding: {
+        right: $offcanvas-horizontal-width1 + 1.5rem;
+        left: 0;
+      }
+    }
+  }
+}
+
+.py-grid-gutter {
+  padding-top:1.875rem !important;
+  padding-bottom:1.875rem !important
+}
+.px-lg-grid-gutter {
+  padding-right:1.875rem !important;
+  padding-left:1.875rem !important
+}
+.w-100 {
+  width: 100% !important;
+}
+.shadow-lg{
+  box-shadow:0 .3rem 1.525rem -0.375rem rgba(0,0,0,.1) !important
+}
+.py-1 {
+  padding-bottom: 0.25rem !important;
+  padding-top: 0.25rem !important;
+}
+
+.searchIcon {
+  position: absolute;
+  margin-left: 16.5rem !important;
+  top: 0.4rem;
+  color: $gray-700;
+  font-size: 0.8rem;
+}
+
+// Widget categories
+.widget {
+  .tns-carousel .tns-nav { padding-top: .5rem; }
+}
+.widget-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  &[data-simplebar] {
+    overflow-x: hidden;
+  }
+}
+.widget-title {
+  margin-bottom: $spacer * 1.125;
+  font: {
+    size: $widget-title-font-size;
+    weight: $widget-title-font-weight;
+  }
+}
+
+// Widget: Categories
+.widget-categories {
+  .accordion-item {
+    border: 0;
+    border-radius: 0;
+  }
+  .accordion-body {
+    padding: $accordion-body-padding-y * .5 0;
+  }
+  .accordion-button {
+    text-decoration: none;
+    padding: ($accordion-padding-y * .444) 0;
+    background: none;
+    border-radius: $accordion-icon-box-border-radius;
+    color: $primary-red;
+    font: {
+      size: $widget-categories-font-size;
+      weight: normal;
+    }
+    box-shadow: none;
+    &::after {
+      width: $widget-categories-indicator-size;
+      height: $widget-categories-indicator-size;
+      border-radius: $accordion-icon-box-border-radius;
+      padding-top: .0625rem;
+      background: {
+        color: $widget-categories-indicator-active-bg;
+        image: none;
+      }
+      text-align: center;
+      line-height: $widget-categories-indicator-size;
+    }
+    &.collapsed {
+      color: $widget-categories-color;
+      &::after {
+        background-color: $accordion-icon-box-bg;
+      }
+      .accordion-icon {
+        transform: rotate(-180deg);
+      }
+    }
+    &:hover {
+      color: $primary-red;
+      &::after {
+        background-color: $widget-categories-indicator-hover-bg;
+      }
+    }
+  }
+  .widget-list-item {
+    margin-bottom: .375rem;
+    padding-left: .75rem;
+  }
+
+  .accordion-icon {
+    padding: 0.3rem;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    font-size: 0.75rem;
+  }
+}
+
+// Widget: Links
+.widget-list-item {
+  margin-bottom: $spacer * .5;
+  &:last-child { margin-bottom: 0; }
+}
+.widget-list-link {
+  display: block;
+  transition: $widget-transition;
+  color: $widget-links-dark-color;
+  text-decoration: none;
+  font: {
+    size: $widget-links-font-size;
+    weight: $widget-links-font-weight;
+  }
+  &:hover {
+    color: $primary-red;
+  }
+}
+.active > .widget-list-link {
+  color: $widget-links-dark-active-color;
+}
+.widget-light {
+  .widget-list-link {
+    color: $widget-links-light-color;
+    &:hover {
+      color: $widget-links-light-hover-color;
+    }
+  }
+  .active > .widget-list-link {
+    color: $widget-links-light-active-color;
+  }
+}
+
+// Styles for Price range slider
+.range-slider {
+  .form-control {
+    margin-bottom: 0;
+  }
+
+  .currency::after {
+    content: '\20B9';
+  }
+  
+  .noUi-connect {
+    background-color: $primary-red;
+  }
+
+  .noUi-handle {
+    top: 50%;
+    width: 1.375rem;
+    height: 1.375rem;
+    margin-top: -0.6875rem;
+    margin-right: 0.3rem;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 0.125rem 0.5625rem -0.125rem rgb(0 0 0 / 25%);
+
+    &::after, &::before {
+      background: none;
+    }
+  }
+
+  .noUi-tooltip {
+    padding: 0.25rem 0.5rem;
+    border: 0;
+    background-color: $gray-800;
+    color: $white;
+    font-size: .75rem;
+    line-height: 1.2;
+    border-radius: 0.25rem;
+
+    &::before {
+      content: '\20B9';
+    }
+  }
+
+  .noUi-value {
+    padding-top: 0.125rem;
+    color: $gray-700;
+    font-size: .8125rem;
+  }
+
+  .noUi-target {
+    height: 0.1875rem;
+    margin: 3.5rem 0;
+    border: 0;
+    background-color: $range-slider-color;
+    box-shadow: none;
+  }
+
+  .noUi-marker {
+    width: 0.1rem;
+    background-color: $range-slider-marker-color;
+    &.noUi-marker-large {
+      height: 0.75rem;
+    }
+  
+    &.noUi-marker-normal {
+      display: none !important;
+    }
+  }
+}
+
+.form-check-input {
+  &:checked {
+    background-color: $primary-red;
+    border-color: $primary-red;
+    box-shadow: none;
+  }
+  &:not(:checked) {
+    box-shadow: none;
+  }
+}
+
+.widget-filter-list {
+  font-size: 0.8375rem;
+  font-weight: normal;
+}
+
+// filter colors module
+.form-option {
+  padding-left: 0;
+  &.form-check-inline {
+    margin-right: ($spacer * .25);
+  }
+  .form-check-input {
+    border: 0;
+    background: none;
+    display: none;
+  }
+}
+.form-option-label {
+  position: relative;
+  min-width: $form-option-size;
+  height: $form-option-size;
+  margin-bottom: 0;
+  padding: {
+    top: .0625rem;
+    right:$form-option-padding-x;
+    left: $form-option-padding-x;
+  }
+  transition: $form-option-transition;
+  border: $form-option-border-width solid $form-option-border-color;
+  @include border-radius($form-option-border-radius);
+  color: $form-option-color;
+  font: {
+    size: $form-option-font-size;
+    weight: $form-option-font-weight;
+  }
+  text-align: center;
+  line-height: ($form-option-size - .25rem);
+  cursor: pointer;
+  &:hover {
+    border-color: $form-option-hover-border-color;
+    color: $form-option-hover-color;
+  }
+}
+.form-option-color {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: ($form-option-size - .5rem);
+  height: ($form-option-size - .5rem);
+  margin: {
+    top: -(($form-option-size - .5rem) * .5);
+    left: -(($form-option-size - .5rem) * .5);
+  }
+  background: {
+    position: top left;
+    size: ($form-option-size - .5rem) ($form-option-size - .5rem);
+    repeat: no-repeat;
+  }
+}
+
+.form-check-input:checked ~ .form-option-label {
+  border-color: $form-option-active-border-color;
+  color: $form-option-active-color;
+}
+
+.color-label {
+  font-size: 0.75rem;
+}
+
+.color-width {
+  width: 4rem;
+}
+
+@each $key, $color in $colors-enum {
+  .label-color-#{$key} {
+    background-color: $color;
+  }
+}

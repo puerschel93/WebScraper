@@ -1,0 +1,645 @@
+.about {
+  padding: 100px 0px 130px 0px;
+
+  @include media-w($sxla) {
+    padding: 80px 0px 110px 0px;
+  }
+
+  @include media-w($sm) {
+    padding: 70px 0px 90px 0px;
+  }
+
+  @include media-w($sms) {
+    padding: 40px 0px 40px 0px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @include media-w($md) {
+      max-width: 930px;
+    }
+
+    @include media-w($sm) {
+      max-width: 678px;
+      margin-left: 0px;
+      margin-bottom: 50px;
+    }
+
+    @include media-w($sms) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include media-w($xs) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    max-width: 653px;
+    @include overflow($row-3);
+
+    @include media-w($sxla) {
+      max-width: 482px;
+    }
+
+    @include media-w($sm) {
+      max-width: 354px;
+    }
+
+    @include media-w($smz) {
+      max-width: 290px;
+    }
+
+    @include media-w($sms) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    @include media-w($xxsl) {
+      margin-left: 33px;
+    }
+  }
+
+  &__text {
+    max-width: 383px;
+    @include overflow($row-4);
+
+    @include media-w($sxla) {
+      max-width: 323px;
+    }
+
+    @include media-w($sm) {
+      max-width: 279px;
+    }
+
+    @include media-w($smz) {
+      max-width: 290px;
+    }
+
+    @include media-w($sms) {
+      text-align: center;
+    }
+
+    @include media-w($xs) {
+      margin-bottom: 60px;
+    }
+
+    @include media-w($xxsl) {
+      margin-left: 26px;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+
+    @include media-w($sxla) {
+      max-width: 930px;
+      height: 504px;
+    }
+
+    @include media-w($sm) {
+      max-width: 708px;
+      height: 372px;
+    }
+
+    @include media-w($smz) {
+      max-width: 608px;
+      height: 272px;
+    }
+
+    @include media-w($sms) {
+      max-width: 508px;
+      height: 252px;
+    }
+
+    @include media-w($smm) {
+      max-width: 408px;
+      height: 242px;
+    }
+
+    @include media-w($xs) {
+      max-width: 308px;
+      height: 232px;
+    }
+
+    @include media-w($xxs) {
+      max-width: 290px;
+      height: 220px;
+    }
+  }
+
+  &__slider {
+    display: flex;
+    margin-bottom: 122px;
+
+    @include media-w($lg) {
+      margin-bottom: 104px;
+    }
+
+    @include media-w($smx) {
+      margin-bottom: 83px;
+    }
+
+    @include media-w($smz) {
+      margin-bottom: 37px;
+    }
+  }
+
+  &__slider-item {
+    @include media-w($smx) {
+      width: 10px;
+    }
+  }
+
+  &__slider-item {
+    margin: 0px 15px 0px;
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    max-width: 125px;
+
+    @include media-w($md) {
+      bottom: 30px;
+      left: 47%;
+      max-width: 125px;
+    }
+
+    @include media-w($sm) {
+      bottom: 25px;
+      left: 50%;
+      max-width: 70px;
+    }
+
+    @include media-w($xs) {
+      bottom: 19px;
+      left: 50%;
+    }
+
+  }
+
+  .slick-dots button {
+    width: 20px;
+    height: 20px;
+    font-size: 0px;
+    margin-right: 15px;
+    background-color: $bg-dark;
+    border: 1px solid transparent;
+
+    @include media-w($sm) {
+      width: 10px;
+      height: 10px;
+      margin-right: 10px;
+    }
+  }
+
+  .slick-active button {
+    background-color: $accent;
+  }
+
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    padding: 14px 20px;
+    width: 60px;
+    height: 60px;
+    border: 3px solid $accent;
+    z-index: 9;
+
+    @include media-w($md) {
+      padding: 17px 17px;
+      width: 50px;
+      height: 50px;
+    }
+
+    @include media-w($sm) {
+      padding: 14px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .slick-prev {
+    left: 282px;
+
+    svg {
+      fill: #2B2B2B;
+    }
+
+    @include media-w($sxla) {
+      left: 17%;
+    }
+
+    @include media-w($md) {
+      left: 8%;
+    }
+
+    @include media-w($sm) {
+      left: 8%;
+    }
+  }
+
+  .slick-next {
+    right: 284px;
+
+    svg {
+      fill: #2B2B2B;
+    }
+
+    @include media-w($sxla) {
+      right: 17%;
+    }
+
+    @include media-w($md) {
+      right: 7%;
+    }
+
+    @include media-w($sm) {
+      right: 19%;
+    }
+  }
+
+  &__bottom {
+    @include media-w($lg) {
+      max-width: 930px;
+    }
+
+    @include media-w($mdb) {
+      margin-left: 0px;
+    }
+
+    @include media-w($md) {}
+
+    @include media-w($mdl) {
+      margin-left: 0px;
+    }
+
+    @include media-w($smx) {
+      margin-left: -19px;
+    }
+  }
+
+  &__bottom-upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+
+    @include media-w($lg) {
+      margin-bottom: 63px;
+    }
+
+    @include media-w($smx) {
+      margin-bottom: 54px;
+    }
+
+    @include media-w($smz) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    @include media-w($xxsl) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__title-bottom {
+    position: relative;
+    padding-left: 80px;
+
+    @include media-w($lg) {
+      padding-left: 69px;
+    }
+
+    @include media-w($sm) {
+      padding-left: 69px;
+    }
+
+    @include media-w($smz) {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    @include media-w($xxsl) {
+      padding-left: 0px;
+      margin-left: 55px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: $accent;
+
+      @include media-w($sm) {
+        width: 30px;
+        top: 44%;
+        left: 20px;
+      }
+
+      @include media-w($xxsl) {
+        display: none;
+      }
+    }
+  }
+
+  &__bottom-text {
+    max-width: 730px;
+
+    @include media-w($lg) {
+      max-width: 610px;
+    }
+
+    @include media-w($sm) {
+      max-width: 442px;
+    }
+
+    @include media-w($xxsl) {
+      margin-left: 33px;
+    }
+
+  }
+
+  &__bottom-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+
+    @include media-w($smx) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-left: 18px;
+      grid-row-gap: 19px;
+    }
+
+    @include media-w($smz) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @include media-w($xxsl) {
+      margin-left: 35px;
+      grid-row-gap: 15px;
+    }
+  }
+
+  &__bottom-item {
+    border: 1px solid $line;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-w($lg) {
+      max-width: 290px;
+    }
+
+    @include media-w($smx) {
+      max-width: 100%;
+    }
+
+    @include media-w($xxsl) {
+      max-width: 290px;
+    }
+
+    &--one {
+      padding: 43px 25px;
+
+      & svg {
+        width: 60px;
+        height: 60px;
+
+        @include media-w($xxsl) {
+          width: 50px;
+          height: 50px;
+          margin-bottom: 15px;
+          margin-left: 17px;
+        }
+      }
+
+      @include media-w($lg) {
+        padding: 45px 20px;
+      }
+
+      @include media-w($smx) {
+        @include media-w($smx) {
+          padding: 43px 37px 45px;
+        }
+      }
+
+      @include media-w($xxsl) {
+        padding: 36px 20px;
+      }
+    }
+
+    &--two {
+      padding: 43px 25px;
+
+      & svg {
+        width: 60px;
+        height: 60px;
+
+        @include media-w($xxsl) {
+          width: 50px;
+          height: 50px;
+          margin-bottom: 17px;
+          margin-left: 15px;
+        }
+      }
+
+      @include media-w($lg) {
+        padding: 45px 20px;
+      }
+
+      @include media-w($smx) {
+        padding: 43px 37px 45px;
+      }
+
+      @include media-w($xxsl) {
+        padding: 39px 20px;
+      }
+    }
+
+    &--tree {
+      padding: 31px 25px;
+
+      & svg {
+        width: 60px;
+        height: 60px;
+
+        @include media-w($xxsl) {
+          width: 50px;
+          height: 50px;
+          margin-left: 16px;
+          margin-bottom: 13px;
+        }
+      }
+
+      @include media-w($lg) {
+        padding: 35px 20px;
+      }
+
+      @include media-w($smx) {
+        padding: 36px 37px;
+      }
+
+      @include media-w($xxsl) {
+        padding: 39px 20px 22px;
+      }
+    }
+
+    &--four {
+      padding: 43px 25px;
+
+      & svg {
+        width: 60px;
+        height: 60px;
+
+        @include media-w($xxsl) {
+          width: 50px;
+          height: 50px;
+          margin-left: 15px;
+          margin-bottom: 13px;
+        }
+      }
+
+      @include media-w($lg) {
+        padding: 45px 20px;
+      }
+
+      @include media-w($smx) {
+        padding: 46px 37px;
+      }
+
+      @include media-w($xxsl) {
+        padding: 39px 20px;
+      }
+    }
+
+    &--five {
+      padding: 31px 25px;
+
+      & svg {
+        width: 60px;
+        height: 60px;
+
+        @include media-w($xxsl) {
+          width: 50px;
+          height: 50px;
+          margin-left: 15px;
+          margin-bottom: 13px;
+        }
+      }
+
+      @include media-w($lg) {
+        padding: 36px 26px;
+      }
+
+      @include media-w($smx) {
+        padding: 32px 41px;
+      }
+
+      @include media-w($xxsl) {
+        padding: 39px 20px 22px;
+      }
+    }
+
+    &--six {
+      padding: 31px 25px;
+
+      & svg {
+        width: 60px;
+        height: 60px;
+
+        @include media-w($xxsl) {
+          width: 50px;
+          height: 50px;
+          margin-left: 15px;
+          margin-bottom: 14px;
+        }
+      }
+
+      @include media-w($lg) {
+        padding: 36px 20px;
+      }
+
+      @include media-w($smx) {
+        padding: 33px 37px;
+      }
+
+      @include media-w($xxsl) {
+        padding: 39px 20px 22px;
+      }
+    }
+  }
+
+  &__bottom-svg {
+    margin-bottom: 30px;
+    fill: $accent;
+
+    @include media-w($lg) {
+      margin-bottom: 28px;
+    }
+
+    @include media-w($smx) {
+      margin-bottom: 31px;
+    }
+  }
+
+  &__bottom-text {
+    text-align: center;
+    line-height: 1.2;
+    @include overflow($row-3);
+
+    @include media-w($smx) {
+      font-size: 16px;
+    }
+
+    @include media-w($xxsl) {
+      font-size: 14px;
+      margin-left: 0;
+    }
+
+    &--upper {
+      text-align: left;
+
+      @include media-w($lg) {
+        line-height: 1.5;
+      }
+
+      @include media-w($smx) {
+        font-size: 14px;
+      }
+
+      @include media-w($smz) {
+        text-align: center;
+      }
+
+      @include media-w($xxsl) {
+        max-width: 290px;
+        font-size: 12px;
+        margin-left: 27px;
+      }
+    }
+  }
+}

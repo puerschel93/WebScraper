@@ -1,0 +1,131 @@
+$dark-blue: rgb(11,32,39);
+$petrol-blue: rgb(64,121, 140);
+$aquamarine: rgb(112, 169, 161);
+$grey: rgb(207, 215, 199);
+$white: rgb(246, 241, 209);
+
+html { scroll-behavior: smooth; }
+
+body{
+    background-color: $dark-blue;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+#naving-bar{
+    background: $petrol-blue;
+    
+}
+
+#Home, #Portfolio, #Contact{
+    color:$white;
+}
+
+#introMsg {
+    color: $white;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 5rem;
+    margin-bottom: 15rem;
+
+    .highlighted {
+        color: $aquamarine;
+        font-size: 4.8rem;
+    }
+
+    #down {
+        width: 10rem;
+    }
+
+    #down:hover {
+        /*This animation belongs to:
+            https://www.w3schools.com/howto/howto_css_shake_image.asp
+        */
+        animation: shake 0.5s;
+      
+        animation-iteration-count: infinite;
+      }
+      
+      @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+}
+
+#portfolio {
+    color: $white;
+    margin-top: 1rem;
+    margin-bottom: 25rem;
+}
+
+#contact {
+    color: $white;
+    margin-top: 10rem;
+
+    .pic-container {
+        display: grid; 
+        grid-auto-columns: 1fr; 
+        grid-auto-rows: 1fr; 
+        grid-template-columns: 0.5fr 1fr 0.5fr; 
+      
+      .me { 
+          margin-top: 1.5rem;
+          grid-area: 1 / 2 / 2 / 3; 
+
+          #pic{ width: 18rem; }
+        
+        }
+    }
+
+    .text-container{ 
+        font-family: 'Nanum Pen Script', cursive;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        margin-left: 25%;
+        margin-top: 1rem;
+        width: 35rem; 
+    }
+}
+
+.works-wrapper {
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    div img {
+        width: 100%;
+    }
+    
+}
+
+
+footer { 
+    background: $petrol-blue; 
+    color: white;
+}
+
+
+
+$breakpoint: 682px;
+
+@media ( max-width: $breakpoint ) {
+    #portfolio{
+        background-color: greenyellow;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: stretch;
+      }
+      
+      .works-wrapper div {
+        flex-shrink: 1;
+        flex-basis: auto;
+        align-self: auto;
+      }
+      
+}
+

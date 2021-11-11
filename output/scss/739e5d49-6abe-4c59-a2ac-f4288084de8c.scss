@@ -1,0 +1,106 @@
+@import "./component/ast/scss/mixin";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+
+  @media (min-width: 1140px) {
+    @include containerMedia(1120px);
+  }
+
+  @media (min-width: 1040px) and (max-width: 1139px) {
+    @include containerMedia(1024px);
+  }
+
+  @media (min-width: 940px) and (max-width: 1039px) {
+    @include containerMedia(920px);
+  }
+
+  //  @media (min-width: 780px) and (max-width: 939px) {
+  //     @include containerMedia(768px)
+  //  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.col-3 {
+  @include col($width: 25%);
+}
+
+.col-4 {
+  @include col($width: 33.33%);
+}
+
+.col-6 {
+  @include col($width: 50%);
+}
+
+.col-8 {
+  @include col($width: 66.64%);
+}
+
+.col-9 {
+  @include col($width: 74.97%);
+}
+
+.col-12 {
+  @include col($width: 100%);
+}
+
+@media (max-width: 1024px) {
+  .col-lg-12 {
+    @include col($width: 100%);
+  }
+}
+
+@media (max-width: 940px) {
+  .col-md-6 {
+    @include col($width: 50%);
+  }
+
+  .col-md-12 {
+    @include col($width: 100%);
+  }
+}
+
+@media (max-width: 576px) {
+  .col-sm-12 {
+    @include col($width: 100%);
+  }
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.btnActive {
+  color: $buttonBg;
+}

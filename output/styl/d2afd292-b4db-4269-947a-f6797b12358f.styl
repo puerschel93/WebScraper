@@ -1,0 +1,97 @@
+/** SWIPER **/
+.swiper
+
+    &-button
+
+        &-disabled
+            opacity .25 !important
+
+        &-prev, &-next
+            width 60px
+            height @width
+            vendor(border-radius, 50%)
+            background background-brown
+            outline none
+            font-size 18px
+            line-height @width
+            text-align center
+            display inline-block
+            color #fff
+            overflow hidden
+            border 2px solid @background
+
+            &::after
+                display none
+
+            .fa-angle-right
+            .fa-angle-left
+                position absolute
+                left 50%
+                top 50%
+                vendor(animation, all 0.7s ease)
+                vendor(transform, translateX(-50%) translateY(-50%))
+                will-change transform
+
+            .fa-angle-left
+                margin-left -1px
+
+            .fa-angle-right
+                margin-left 2px
+
+        &-opacity
+            background-color transparent
+
+
+    &-pagination
+        padding 15px 0
+        position static
+        text-align center
+
+        &-bullet
+            width 7px
+            height @width
+            background-color #939393
+            margin 0 16px
+            opacity 1
+            outline none !important
+            position relative
+
+            svg
+                display none
+                width 60px
+                vendor(transform, rotate(-80deg))
+                position absolute
+                top 50%
+                left 50%
+                margin-top -45px
+                margin-left -10px
+
+                circle
+                    fill none
+                    stroke-width 3
+                    stroke background-brown
+
+                    &.default
+                        opacity 0
+                        stroke-dasharray 125.6
+
+                        &.inner
+                            opacity 1
+                            stroke-dashoffset 125.6
+                            vendor(animation, circle-default 5.4s ease)
+
+
+
+            &-active
+                background-color background-brown
+
+                svg
+                    display inline-block
+
+
+@keyframes circle-default {
+    to {
+        stroke-dashoffset 0
+    }
+}
+/** END SWIPER **/

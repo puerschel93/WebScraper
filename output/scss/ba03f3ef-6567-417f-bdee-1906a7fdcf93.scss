@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Kumbh+Sans:wght@300&display=swap');
+@import 'reset';
+@import 'colors';
+
+@mixin FLEXCREATOR($justifyContentValue,$alignItemsValue) {
+    display: flex;
+    justify-content: $justifyContentValue;
+    align-items: $alignItemsValue;
+}
+
+header {
+    @include FLEXCREATOR(space-between,baseline);
+    padding: 30px 0px;
+
+    nav {
+        @include FLEXCREATOR(center,baseline);
+        list-style-type: none;
+
+        li {
+            margin-right: 20px;
+            cursor: pointer;
+            font: {
+                weight: 500;
+            }
+        }
+
+        .site-name {
+            font: {
+                size: 30px;
+                weight: 700;
+            }
+            margin-right: 50px;
+        }
+    }
+
+    .user-profile {
+        @include FLEXCREATOR(center, center);
+
+        .cart-item {
+            background: {
+                image: url('../images/icon-cart.svg');
+                repeat: no-repeat;
+                size: 20px;
+            }
+
+            height: 20px;
+            width: 20px;
+            margin-right: 40px;
+            cursor: pointer;
+        }
+
+        .user-image {
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+        }
+    }
+}
+
+main {
+    @include FLEXCREATOR(center, center);
+    padding: 50px 0px;
+
+    .produc-img {
+        width: 460px;
+        height: 460px;
+        border-radius: 10px;
+    }
+
+    .diffrent-deg-imgs {
+        @include FLEXCREATOR(center, center);
+        margin-top: 20px;
+
+        img {
+            margin-right: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+
+            &:hover {
+                outline: 3px solid $orange;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .product-container {
+        margin-left: 40px;
+
+        .company-name {
+            font: {
+                size: 13px;
+                weight: 700;
+            }
+
+            color: $orange;
+        }
+
+        .section-title {
+            font: {
+                size: 55px;
+                weight: 900;
+            }
+
+            max-width: 700px;
+            margin: 20px 0px;
+        }
+
+        .section-desc {
+            font-weight: 600;
+            max-width: 400px;
+            color: $grayishBlue;
+        }
+    }
+
+    .price-container {
+        @include FLEXCREATOR(flex-start, center);
+        margin: 20px 0px;
+
+        .origin-price {
+            font: {
+                size: 26px;
+                weight: 900;
+            }
+        }
+
+        .off-price {
+            @include FLEXCREATOR(center, center);
+            background-color: $paleOrange;
+            color: $orange;
+            font-weight: 800;
+            width: 40px;
+            height: 25px;
+            margin-left: 20px;
+            border-radius: 6px;
+
+        }
+    }
+
+    .add-cart-container {
+        @include FLEXCREATOR(flex-start, center)
+    }
+
+    .old-price {
+        color: $grayishBlue;
+        text-decoration: line-through;
+        margin-bottom: 30px;
+    }
+
+    .counter-product {
+        @include FLEXCREATOR(center, center);
+        width: 120px;
+        height: 40px;
+        background-color: $lightgrayishBlue;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 10px;
+
+        .product-count {
+            font-size: 14px;
+            margin: 0px 28px;
+        }
+    
+        .operation {
+            color: $orange;
+            cursor: pointer;
+        }
+
+    }
+
+    .add-product {
+        color: $white;
+        width: 200px;
+        height: 50px;
+        background-color: $orange;
+        margin-left: 50px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+}
+
+
+@media screen and (max-width: 932px) {
+
+    body {
+        padding: 0px 10px;
+    }
+
+    header {
+        nav li {
+            display: none;
+        }
+        
+        .site-name {
+            display: block !important;
+            background: {
+                image: url(../images/icon-menu.svg);
+                repeat: no-repeat;
+                position: center;
+                size: 20px;
+            }
+            height: 30px;
+            width: 30px;
+            padding-left: 80px;
+        } 
+    }
+
+    hr {
+        display: none;
+    }
+
+    main {
+        flex-direction: column; 
+        margin-left: 25px;
+
+        .produc-img {
+            max-width: 100%;
+        }
+    }
+
+    .product-container {
+        margin-top: 40px;
+    }
+}

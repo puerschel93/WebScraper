@@ -1,0 +1,119 @@
+.restaurants-container {
+    background-color: color($tertiary, xlight);
+}
+
+#restaurants {
+    margin: 0 auto;
+}
+
+.restaurants-content {
+    @include tablet-desktop {
+        @include flex-between;
+    }
+}
+
+.restaurant-card {
+    @include center-in-box;
+    @include shadow;
+    @include card-style;
+
+    @include tablet-desktop {
+        width: calc(100%/2 - $card-bottom-spacing);
+        margin-bottom: $card-bottom-spacing * 2;
+    }
+
+    &__icon {
+        font-size: $icon-size;
+        position: absolute;
+        bottom: calc(math.div($box-height, 2) - math.div($icon-size, 2));
+        right: 1rem;
+
+        @include desktop-only {
+            bottom: calc(math.div($box-height * $coeff, 2) - math.div($icon-size, 2));
+        }
+    }
+}
+
+.restaurant-card-heading {
+    position: relative;
+    height: $box-height * 2.5;
+
+    @include desktop-only {
+        height: map-get(restaurant-card-height(), height-img);
+        max-height: map-get(restaurant-card-height(), max-height-img);
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-right-radius: $card-corner;
+        border-top-left-radius: $card-corner;
+    }
+
+    &__flag {
+        position: absolute;
+        top: 0.8rem;
+        right: 0.8rem;
+        background-color: $flag-color;
+        color: color($flag-color, xdark);
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 0.3rem 0.6rem;
+        border-radius: 2px;
+
+        @include desktop-only {
+            font-size: 0.8rem * 1.5;
+        }
+    }
+}
+
+.restaurant-card-content {
+    @include center-in-box;
+
+    flex-direction: row;
+    justify-content: space-between;
+    height: $box-height;
+
+    @include desktop-only {
+        height: $box-height * 1.5;
+    }
+
+    padding: 0 1rem;
+
+    &__details {
+        @include center-in-box;
+        align-items: flex-start;
+        flex-grow: 1;
+        width: 100%;
+
+        &>* {
+            margin: 0;
+            padding-bottom: 0.2rem;
+            padding-top: 0.2rem;
+        }
+    }
+
+    &__text {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transform: none;
+
+        @include desktop-only {
+            height: $text-size * $coeff;
+            vertical-align: text-bottom;
+        }
+    }
+
+    &__price {
+        font-weight: bold;
+        float: right;
+        margin: 0;
+
+        @include desktop-only {
+            font-size: $text-size * $coeff;
+        }
+    }
+}

@@ -1,0 +1,186 @@
+@require '_lib'
+
+// -- Global Colors
+
+:root
+  // Monochrome Colors
+  colvar-set('white',      rgb(245, 245, 245))
+  colvar-set('lightgray',  rgb(185, 185, 185))
+  colvar-set('gray',       rgb(60, 50, 55))
+  colvar-set('black',      rgb(20, 20, 20))
+
+  // Accent Colors
+  colvar-set('accent-1', rgb(135, 0, 5))
+  colvar-set('accent-2', rgb(30, 120, 210))
+
+  // Hints
+  colvar-set('hint', rgb(50, 150, 255))
+
+  // Contextual Colors
+  colvar-set('success', rgb(30, 180, 65))
+  colvar-set('danger',  rgb(180, 45, 10))
+  colvar-set('warning', rgb(240, 125, 0))
+  colvar-set('info',    rgb(20, 125, 205))
+
+  // Misc Colors
+  colvar-set('text-highlight', rgb(255,255,0))
+  colvar-set('text-select',    rgba(50, 150, 255, 0.25))
+  colvar-set('link-ext',       rgb(50, 150, 255))
+  colvar-set('link-int',       rgb(180, 0, 20))
+
+  // Critical Colors
+  colvar-set('critic-inserted',    rgb(50, 255, 65))
+  colvar-set('critic-deleted',     rgb(255, 50, 20))
+  colvar-set('critic-sub-arrow',   rgb(255, 150, 20))
+  colvar-set('critic-highlighted', rgb(200, 120, 200))
+  colvar-set('critic-comment',     rgb(50, 150, 255))
+
+// -- Light / Dark Colors
+
+.light
+  colvar-set('text',        rgb(30, 25, 25))
+  colvar-set('text-subtle', rgb(55, 55, 60))
+  colvar-set('text-dim',    rgb(120, 120, 125))
+  colvar-set('background',  rgb(245, 245, 245))
+  colvar-set('border',      rgb(220, 220, 220))
+
+  // Contrasting (opposite) colors
+  colvar-set('con-text',        rgb(235, 225, 230))
+  colvar-set('con-text-subtle', rgb(205, 200, 200))
+  colvar-set('con-text-dim',    rgb(190, 185, 185))
+  colvar-set('con-background',  rgb(43, 43, 50))
+  colvar-set('con-border',      rgb(65, 65, 75))
+
+  color: colvar('text')
+  background: colvar('background')
+
+.dark
+  colvar-set('text',        rgb(235, 225, 230))
+  colvar-set('text-subtle', rgb(205, 200, 200))
+  colvar-set('text-dim',    rgb(190, 185, 185))
+  colvar-set('background',  rgb(43, 43, 50))
+  colvar-set('border',      rgb(65, 65, 75))
+
+  // Contrasting (opposite) colors
+  colvar-set('con-text',        rgb(30, 25, 25))
+  colvar-set('con-text-subtle', rgb(55, 55, 60))
+  colvar-set('con-text-dim',    rgb(120, 120, 125))
+  colvar-set('con-background',  rgb(245, 245, 245))
+  colvar-set('con-border',      rgb(220, 220, 220))
+
+  color: colvar('text')
+  background: colvar('background')
+
+.codetheme-dark
+  --colcode-background: #282B34
+  --colcode-hover:      #2B2F3B
+  --colcode-border:     #3A3A44
+  --colcode-selection:  #4B5365A6
+  --colcode-accent:     #3296FF
+
+  --colcode-content:    #AFB4BE
+  --colcode-comment:    #5C6370
+  --colcode-commentdoc: #687387
+  --colcode-punct:      #646473
+  --colcode-markup:     #7886A5
+  --colcode-link:       #64A0FF
+
+  --colcode-special:    #E06C75
+  --colcode-invalid:    #FF3214
+
+  --colcode-inserted:   #54D169
+  --colcode-changed:    #FF9614
+  --colcode-important:  #FFCB6BEE
+  --colcode-highlight:  #C878C8
+  --colcode-note:       #5694D6
+
+  --colcode-keyword:    #C678DD
+  --colcode-logical:    #C678DD
+  --colcode-operator:   #56B6C2
+  --colcode-string:     #98C379
+  --colcode-entity:     #98C379
+  --colcode-type:       #E5C07B
+  --colcode-ident:      #2D8EDF
+  --colcode-function:   #61AFEF
+  --colcode-constant:   #D19A66
+  --colcode-property:   #E06C75
+  --colcode-tag:        #E06C75
+  --colcode-id:         #2D8EDF
+  --colcode-class:      #98C379
+  --colcode-attribute:  #FFCB6B
+
+.codetheme-light
+  --colcode-background: #F0F0F2
+  --colcode-hover:      #E8E8ED
+  --colcode-border:     #D2D2D7
+  --colcode-selection:  #3296FF20
+  --colcode-accent:     #1262B5
+
+  --colcode-content:    #222222
+  --colcode-comment:    #666666
+  --colcode-commentdoc: #666688
+  --colcode-punct:      #818D94
+  --colcode-markup:     #2269A8
+  --colcode-link:       #64A0FF
+
+  --colcode-special:    #EC1C12
+  --colcode-invalid:    #FF3214
+
+  --colcode-inserted:   #54D169
+  --colcode-changed:    #FF9614
+  --colcode-important:  #FFCB6BEE
+  --colcode-highlight:  #C878C8
+  --colcode-note:       #5694D6
+
+  --colcode-keyword:    #C708FF
+  --colcode-logical:    #C708FF
+  --colcode-operator:   #41B2D1
+  --colcode-string:     #10AB00
+  --colcode-entity:     #10AB00
+  --colcode-type:       #9C8922
+  --colcode-ident:      #005296
+  --colcode-function:   #3394CC
+  --colcode-constant:   #BB5F00
+  --colcode-property:   #EC1C12
+  --colcode-tag:        #EC1C12
+  --colcode-id:         #3394CC
+  --colcode-class:      #10AB00
+  --colcode-attribute:  #FFCB6B
+
+
+// -- Global Layout
+:root
+  --layout-navbar-height: 2.5rem
+  --layout-sidebar-width: 16rem
+  --layout-body-max-width: 45rem
+  --layout-body-side-gap: 1.5rem
+
+  --layout-header-height: 8rem
+  --layout-header-height-edit: 3.5rem
+  --layout-top-max-width: 60rem
+
+  --layout-footer-height: 2rem
+
+  // Layout variables for smaller devices
+  +match-media(thin, below)
+    --layout-navbar-height: 3rem
+    --layout-sidebar-width: 16rem
+    --layout-body-max-width: 45rem
+    --layout-body-side-gap: 1rem
+
+    --layout-header-height: 5rem
+    --layout-header-height-edit: 3rem
+    --layout-top-max-width: 60rem
+
+  // Variables that probably shouldn't be edited
+
+  --layout-header-height-scalefactor: calc(var(--layout-header-height) / 8)
+  //                        Center of screen | Offset to left edge of body | Remove the offset caused by sidebar
+  //                                     v                  v                           v
+  --layout-body-centering-factor: calc((50vw - (var(--layout-body-max-width) / 2)) - var(--layout-sidebar-width))
+  // Total height of the header + navbar
+  --layout-total-header-height: calc(var(--layout-header-height) + var(--layout-navbar-height))
+
+// Misc. Variables
+:root
+  --icon-text-input: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='white'%3E%3Cpath fill-rule='evenodd' d='M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/%3E%3Cpath fill-rule='evenodd' d='M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z'/%3E%3C/g%3E%3C/svg%3E")

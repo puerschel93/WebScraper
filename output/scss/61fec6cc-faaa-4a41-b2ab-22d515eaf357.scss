@@ -1,0 +1,266 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container:0;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:150;
+
+// SIZE NAVIGATION
+$height-navigation:70;
+
+// VAR SITE TYPO
+$font-body:"PT Sans",arial,verdana,sans-serif;
+$font-title:"PT Sans",arial,verdana,sans-serif;
+
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:2.0em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/paris";
+
+// IMPORT MODULE ANNONCES8
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// SPRITE NOIR
+@import "../../../slagence_X_V5/sources/scss/sprites/social-noir";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//---------------------------------------------------------------------------------------------------------------------
+//		PERSO TRANS67000
+//---------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		TYPO
+	//---------------------------------------------------------------------------------------------------------------------
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?qi2zbk');
+  src:  url('../fonts/icomoon.eot?qi2zbk#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?qi2zbk') format('truetype'),
+    url('../fonts/icomoon.woff?qi2zbk') format('woff'),
+    url('../fonts/icomoon.svg?qi2zbk#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-perso-"], [class*=" icon-perso-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-perso-home:before {
+  content: "\e900";
+}
+.icon-perso-office:before {
+  content: "\e903";
+}
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//---------------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:960px;
+	}
+}
+
+.width-100-pourcent {
+	width: 100% !important;
+}
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------------------------------
+
+.menu-principal>li>a {
+	color:$color-important;
+	background:none;
+	padding: 8px 24px;
+    font-size: 1.2em;
+    @media only screen and (max-width : 1280px) {
+		padding: 8px 12px;
+	    font-size: 1.0em;
+    }
+}
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		FOOTER
+	//---------------------------------------------------------------------------------------------------------------------
+
+footer.bg-primary {
+	background:$color-body;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		MOTEUR
+	//---------------------------------------------------------------------------------------------------------------------
+.btn-index {
+	padding:15px !important;	
+}
+
+.h2-title-moteur, .form-inline, .btn-moteur {
+	display:none;
+}
+
+@media only screen and (max-width : 767px) {
+	body > section > div > div > div > div:nth-child(3) > div.row-fluid > div {
+		display:none !important;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//---------------------------------------------------------------------------------------------------------------------
+
+.module-typebien-annonces {
+	margin-top: 60px;
+}
+
+@media only screen and (max-width : 767px) {
+	.module-annonces-homepage {
+		background:$color-block !important;		
+		color:$color-nav-footer !important;		
+	}
+	.homepage-bloc-type-bien-transaction .bg-white {
+		background:$color-block !important;		
+	}
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+	background:$color-action !important;		
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+	background:$color-important !important;			
+}
+
+.owl-theme .owl-dots .owl-dot span {
+	background:$color-action !important;				
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+//		LISTING PA
+//---------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		REFERENCE
+	//---------------------------------------------------------------------------------------------------------------------
+
+.recherche-ref-liste {
+	width: 23.404255319148934%;
+}
+
+.bouton-search-ref-envoi {
+	background:$color-action;
+	color:$color-body;
+	&:hover {
+		background:$color-action-light-10;
+		color:$color-body;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		VISUELS
+	//---------------------------------------------------------------------------------------------------------------------
+
+.photo-agence-annonces .height-130 {
+	height: 200px;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+//		DETAIL AGENCE
+//---------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		COORDONNEES
+	//---------------------------------------------------------------------------------------------------------------------
+
+.agence-responsable {
+	display:none;	
+}
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		HORAIRES
+	//---------------------------------------------------------------------------------------------------------------------
+
+.horaires-agence {
+	display:none;
+}

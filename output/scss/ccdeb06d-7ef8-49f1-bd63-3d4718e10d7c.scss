@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+  // border: red 2px solid;
+}
+
+html {
+  // This defines what 1 rem is, in this case it's 62.5% of the original preset 16px. So the new base for rem is 10px.
+  font-size: 62.5%;
+
+  @include respond(tablet-landscape) {
+    // Width < 1200?
+    font-size: 56.25%; // 1 rem is now 9px
+  }
+
+  @include respond(tablet-portrait) {
+    // Width < 900?
+    font-size: 50%; // 1 rem is now 8px
+  }
+
+  @include respond(big-desktop) {
+    // Width > 1800?
+    font-size: 80%; // 1 rem is now 12 pixels
+  }
+}
+
+body {
+  box-sizing: border-box;
+
+  @include respond(tablet-portrait) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-black;
+}

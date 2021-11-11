@@ -1,0 +1,177 @@
+@import (reference) './variables.less';
+
+//fonts
+@font-face {
+	font-family: 'Roboto';
+	src:
+			url('../assets/fonts/Roboto-Regular.woff') format('woff'),
+			url('../assets/fonts/Roboto-Regular.ttf') format('truetype'),
+			url('../assets/fonts/Roboto-Regular.eot') format('eot');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src:
+			url('../assets/fonts/Roboto-Medium.woff') format('woff'),
+			url('../assets/fonts/Roboto-Medium.ttf') format('truetype'),
+			url('../assets/fonts/Roboto-Medium.eot') format('eot');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src:
+			url('../assets/fonts/Roboto-Bold.woff') format('woff'),
+			url('../assets/fonts/Roboto-Bold.ttf') format('truetype'),
+			url('../assets/fonts/Roboto-Bold.eot') format('eot');
+	font-weight: 700;
+	font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	color: @color-text;
+	min-height: 100vh;
+	font-family: 'Roboto', Helvetica, Arial sans-serif;
+	font-size: 14px;
+	line-height: 1.3;
+	cursor: default;
+	min-width: 320px;
+	background-color: #F5F5F5;
+
+	&.scroll-hide {
+		overflow: hidden;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+button {
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.1;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+body {
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+.main-wrapper {
+	overflow: hidden;
+}
+
+.container {
+	padding: 0 16px;
+	width: 100%;
+
+	@media(min-width: @desktop) {
+		padding: 0 16px;
+		max-width: 1240px;
+		margin: 0 auto;
+	}
+}
+
+.page-wrapper {
+	margin: 60px 0 100px;
+}
+
+.page-title {
+	margin-bottom: 40px;
+	font-size: 28px;
+	text-align: center;
+
+	@media(min-width: @tablet) {
+		font-size: 40px;
+	}
+}
+
+.points-bg {
+	position: relative;
+	//overflow: hidden;
+
+	&:before,
+	&:after {
+		top: 50%;
+		content: '';
+		position: absolute;
+		width: 230px;
+		height: 140px;
+		background-image: url('.././static/points.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		transform: translateY(-50%);
+		display: none;
+		z-index: 1;
+
+		@media (min-width: @full) {
+			display: block;
+		}
+	}
+
+	&:before {
+		left: -150px;
+
+		@media (min-width: 1700px) {
+			left: 0;
+		}
+	}
+
+	&:after {
+		right: -150px;
+
+		@media (min-width: 1700px) {
+			right: 0;
+		}
+	}
+}
+
+.section-title {
+	font-size: 24px;
+	margin-bottom: 24px;
+	text-align: center;
+
+	@media (min-width: @tablet) {
+		font-size: 32px;
+		margin-bottom: 48px;
+	}
+
+	@media (min-width: @desktop) {
+		font-size: 42px;
+		text-align: left;
+	}
+}
+
+@keyframes show-block {
+	0% { opacity: 0; transform: translateY(20px); }
+	100% { opacity: 1;  transform: translateY(0); }
+}

@@ -1,0 +1,44 @@
+@import "./helpers";
+@import "./variables";
+@import "./mediaQueries";
+
+// #region MOBILE
+
+.menuTitleMobile {
+    @include flexCenter();
+    @include textCustom($mainFont, regular, normal, $pure-white);
+}
+
+.menuItemMobile {
+    font-family: $mainFont;
+}
+
+.mobileToolbar {
+    @include flexCenter();
+    height: 36px;
+}
+
+// #region DESKTOP
+
+.fullHeader {
+    @include flexEnd();
+    flex-direction: row; 
+    margin-right: 24px;
+    border-bottom: solid 1px $main-color;
+}
+
+.menuItemDesktop {
+    @include textCustom($mainFont, regular, normal, $main-color);
+    text-decoration: none;
+}
+
+// #region MAIN/STANDARD
+
+.mainTitle {
+    @include flexCenter();
+    @include textCustom($mainFont, regular, normal, $main-color);
+}
+
+.centerItems {
+    @include flexCenter();
+}

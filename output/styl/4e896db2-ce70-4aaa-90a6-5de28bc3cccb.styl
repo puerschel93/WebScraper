@@ -1,0 +1,96 @@
+vendor(property, value)
+    -webkit-{property}  value
+    -moz-{property}     value
+    -ms-{property}      value
+    {property}          value
+
+
+imagecover(fit = cover, position = center center)
+    object-fit fit
+    -o-object-fit fit
+    object-position position
+    -o-object-position position
+
+
+flexs(arg = '', property = true)
+    if property == true
+        display -webkit-box
+        display -webkit-flex
+        display -ms-flexbox
+        display flex
+
+    if property == 'inline'
+        display -webkit-box
+        display -webkit-inline-flex
+        display -ms-flexbox
+        display inline-flex
+
+    if arg == 'center-vertical'
+        -webkit-align-items center
+        -webkit-box-align center
+        -ms-flex-align center
+        align-items center
+
+    if arg == 'justified'
+        -webkit-box-pack justify
+        -webkit-justify-content space-between
+        -ms-flex-pack justify
+        justify-content space-between
+
+    if arg == 'flex-wrap'
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+
+before-or-after-absolute(content = '')
+    content content
+    display block
+    position absolute
+
+lnk(bordercolor, property = 'border')
+    text-decoration none
+    outline none !important
+    background-image -webkit-linear-gradient(bottom,transparent 0,bordercolor 0,bordercolor 1px,transparent 1px)
+    background-image -o-linear-gradient(bottom,transparent 0,bordercolor 0,bordercolor 1px,transparent 1px)
+    background-image linear-gradient(to top,transparent 0,bordercolor 0,bordercolor 1px,transparent 1px)
+
+    if property == 'border'
+        -webkit-background-size 100% 100%
+        background-size 100% 100%
+    else
+        -webkit-background-size 0% 100%
+        background-size 0% 100%
+
+    background-repeat no-repeat
+    background-position left
+    -webkit-transition -webkit-background-size .3s, color .3s
+    transition -webkit-background-size .3s, color .3s
+    -o-transition background-size .3s, color .3s
+    transition background-size .3s, color .3s
+    transition background-size .3s, -webkit-background-size .3s, color .3s
+
+    &:hover
+        if property == 'border'
+            -webkit-background-size 0% 100%
+            background-size 0% 100%
+        else
+            -webkit-background-size 100% 100%
+            background-size 100% 100%
+
+
+placeholder()
+    &::-webkit-input-placeholder
+        {block}
+    &:-moz-placeholder
+        {block}
+    &::-moz-placeholder
+        {block}
+    &:-ms-input-placeholder
+        {block}
+
+gradient()
+    background rgb(254,229,178)
+    background -moz-linear-gradient(top,  rgba(254,229,178,1) 0%, rgba(195,139,66,1) 100%)
+    background -webkit-linear-gradient(top,  rgba(254,229,178,1) 0%,rgba(195,139,66,1) 100%)
+    background linear-gradient(to bottom,  rgba(254,229,178,1) 0%,rgba(195,139,66,1) 100%)

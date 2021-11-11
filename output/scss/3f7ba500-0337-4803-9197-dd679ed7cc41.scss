@@ -1,0 +1,144 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:365;
+
+// VAR SITE TYPO
+$font-body:"proxima-nova",arial,verdana,sans-serif;
+$font-title:"clavo",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.4em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:300;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:0;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib6";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE SOUS MENU LIB1
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MODULE ANNONCES1
+@import "../../../slagence_X_V5/sources/scss/modules/annonces1";
+
+// IMPORT MODULE EXTRA2
+@import "../../../slagence_X_V5/sources/scss/extra/extra12";
+
+// IMPORT MODULE PUB LIB1
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT MODULE PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+@import "../../../slagence_X_V5/sources/scss/multiple-select.scss";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT CHOSEN
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+/* MOTEUR HP */
+.moteur-avantage .bouton-rechercher-moteur {
+padding: 4px 13px;
+}
+
+/* H1 - SLOGAN */ 
+.slogan-index {
+margin-top:12px;
+}
+
+.text-shadow-perso {
+	@include text-shadow (1px 1px 10px $color-primary);
+}
+
+/* NAV */
+.menu-principal {
+font-size:1.6em;
+	>li>a {
+	box-shadow:none;
+	color:$color-secondary;
+	background-color:transparent;
+	background-image:none;
+	padding:13px 10px;
+		&:hover {
+		background-color:darken($color-block,3);
+		}
+	}
+}
+
+.navigation, footer.bg-primary {
+	@include background-image(linear-gradient(to bottom right, lighten($color-secondary,5) 0%, $color-primary 33%, $color-primary 67%, lighten($color-secondary,5) 100%));
+}
+
+.menu-espace-client>a {
+color:darken($color-secondary,10);
+}
+
+
+/* PAGE DETAIL */
+.breadcrumb .typo-important {
+color:darken($color-important,18);
+}
+
+/* ANNONCES HP CORRECTION COLOR FIREFOX */
+.module-annonces-homepage li {
+color:$color-primary;
+}
+
+.module-annonces-homepage:hover li {
+color:$color-nav-footer;
+}
+
+.module-annonces-homepage:hover	li.module-villes-annonces.ville {
+	color:lighten($color-action,23) !important;
+}
+
+/* CORRECTION COULEUR TYPO ACTION */
+.bloc-prase-nb .typo-action, .bloc-detail-prix, .module-villes-annonces.ville, .module-annonces-homepage .h2-like {
+color:lighten($color-action,23);
+}
+

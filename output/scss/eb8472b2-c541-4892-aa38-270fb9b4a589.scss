@@ -1,0 +1,88 @@
+@import '../../../vars.scss';
+
+.contianer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    z-index: -1;
+}
+
+.menu {
+    max-width: 200px;
+    margin: 30px auto;
+
+    &__ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    & a {
+        display: block;
+        color: $main-color;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        text-align: center;
+
+        &:hover {
+            color: $main-color-hover;
+        }
+    }
+
+    &__close {
+        display: none;
+        position: relative;
+        margin-left: auto;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transform: rotate(45deg);
+
+        @media screen and (max-width: 991px) {
+            display: block;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            border-radius: 5px;
+            background-color: $main-color;
+        }
+        
+        &::before {
+            width: 100%;
+            height: 2px;
+            left: 0;
+            top: 50%;
+            margin-top: -1px;
+        }
+
+        &::after {
+            width: 2px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        &:hover {
+            &::before,
+            &::after {
+                background-color: $main-color-hover;
+            }
+        }
+    }
+}

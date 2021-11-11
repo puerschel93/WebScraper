@@ -1,0 +1,108 @@
+$roundbtn-color = rgb(1,199,0);
+$roundbtn-border = rgb(2,168,0);
+$roundbtn-background = rgb(8,41,50);
+$roundbtn-hover-color = rgb(230,0,86);
+$roundbtn-hover-border = rgb(197,7,79);
+$roundbtn-hover-background = rgb(41,34,5);
+$roundbtn-text-color = rgb(255,247,246);
+$roundbtn-shadow = rgb(0,0,0);
+
+$roundbtnsize = 40px;
+$roundbtn-bkgsize = 46px;
+
+.roundbtn
+  position relative
+  cursor pointer
+  
+  .roundbtn-text
+    position relative
+    display inline-block
+    vertical-align top
+    font-size 20px
+    line-height $roundbtn-bkgsize
+    color $roundbtn-text-color
+    text-shadow 2px 0 0 $roundbtn-shadow, -2px 0 0 $roundbtn-shadow, 0 2px 0 $roundbtn-shadow, 0 -2px 0 $roundbtn-shadow, 1px 1px $roundbtn-shadow, -1px -1px 0 $roundbtn-shadow, 1px -1px 0 $roundbtn-shadow, -1px 1px 0 $roundbtn-shadow;
+    
+  .roundbtn-btn
+    position relative
+    display inline-block
+    margin-left 15px
+    vertical-align top
+  
+    .roundbtn-back
+      position absolute
+      width $roundbtn-bkgsize
+      height $roundbtn-bkgsize
+      left -3px
+      top 3px
+      background $roundbtn-background
+      border-radius 50%
+      
+    .roundbtn-front
+      position absolute
+      left 0px
+      top 0px
+      width $roundbtnsize
+      height $roundbtnsize
+      border-radius 50%
+      background $roundbtn-color
+      padding 0px
+      border-bottom 5px solid $roundbtn-border
+      text-align center
+      color white
+      font-size 22px
+      font-weight bold
+      text-shadow 3px 0 0 gray
+      line-height $roundbtnsize
+    
+  &:hover
+    .roundbtn-btn
+      .roundbtn-back
+        position absolute
+        width $roundbtn-bkgsize
+        height $roundbtn-bkgsize
+        left -3px
+        top 3px
+        background $roundbtn-hover-background
+        border-radius 50%
+        
+      .roundbtn-front
+        position absolute
+        left 0px
+        top 0px
+        width $roundbtnsize
+        height $roundbtnsize
+        border-radius 50%
+        background $roundbtn-hover-color
+        padding 0px
+        line-heght 30px
+        border-bottom 5px solid $roundbtn-hover-border
+      
+  &:focus
+    outline none
+      
+  &:active
+    outline none
+    
+    .roundbtn-btn 
+      .roundbtn-back
+        position absolute
+        width $roundbtn-bkgsize
+        height $roundbtn-bkgsize
+        left -3px
+        top 3px
+        background $roundbtn-hover-background
+        border-radius 50%
+        
+      .roundbtn-front
+        position absolute
+        left 0px
+        top 3px
+        width $roundbtnsize
+        height $roundbtnsize
+        border-radius 50%
+        background $roundbtn-hover-color
+        border-bottom 5px solid $roundbtn-hover-border
+        
+      .roundbtn-inside
+        top 5px

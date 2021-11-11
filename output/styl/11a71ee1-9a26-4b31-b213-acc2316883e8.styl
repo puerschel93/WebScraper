@@ -1,0 +1,416 @@
+// 我的员工列表页面
+input {
+  outline: none;
+
+  &::-webkit-input-placeholder {
+    c(#999);
+  }
+}
+
+.search-bar {
+  padding: 14px 24px;
+
+  input {
+    width: 100%;
+    bg(#F6F6F6);
+    h(72);
+    lh(72);
+    ft(28);
+    c(#333);
+    text-c();
+  }
+}
+
+.staff-list-wrap {
+  bg(#fff);
+
+  .sl-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    lh(98);
+    c(#fff);
+    ft(32);
+    border-top: 1PX solid #EDEDED;
+    bg(#FF5638);
+    letter-spacing: 1PX;
+    text-c();
+  }
+
+  .sl-footer.isIphoneX {
+    padding-bottom: 34px;
+  }
+
+  .sl-header {
+    border-bottom: 1PX solid #EDEDED;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    bg(#fff);
+    z-index: 1;
+
+    .search-bar {
+      input {
+        text-align: left;
+        padding-left: 10px;
+        margin-left: 1rem;
+        flex-grow: 0;
+        width: 80%;
+      }
+    }
+
+    .search_button {
+      border: none;
+      bg(none);
+      position: fixed;
+      right: 5%;
+      top: 0.7rem;
+      padding: 5px;
+      display: inline-block;
+    }
+  }
+
+  .sl-content /deep/ {
+    .list {
+      top: 90px;
+      bottom: 98px;
+    }
+  }
+}
+
+// 员工详情页面
+.staff-detail-wrap {
+  .sd-info {
+    padding: 0 24px;
+    bg(#fff);
+
+    li {
+      border-bottom: 1PX solid #EDEDED;
+      padding: 24px 0;
+      flex();
+      align-items: center;
+      justify-content: space-between;
+      ft(30);
+      c-6();
+
+      span {
+        c-3();
+      }
+    }
+
+    .header-pic {
+      flex();
+      justify-content: flex-start;
+      align-items: center;
+      padding: 30px 0;
+
+      img {
+        w(120);
+        h(120);
+        mr(24);
+      }
+
+      h5 {
+        ft(34);
+        c-3();
+        font-weight: 600;
+      }
+    }
+
+    .special-li {
+      border-bottom: none;
+      mb(20);
+    }
+  }
+
+  .sd-oprate {
+    bg(#fff);
+
+    li {
+      lh(98);
+      text-c();
+      ft(32);
+      border-bottom: 1PX solid #EDEDED;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .sd-c-b {
+      c(#477AAC);
+    }
+
+    .sd-c-o {
+      c(#FF5638);
+    }
+  }
+
+  .b-oprate {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    bg(#fff);
+    lh(98);
+    flex();
+
+    span {
+      ft(32);
+      flex-1();
+      flex-center();
+      bg(#FF5638);
+      c(#fff);
+      letter-spacing: 1.2;
+
+      &.refuse {
+        c(#FF5638);
+        bg(#fff);
+      }
+    }
+  }
+
+  .b-oprate.isIphoneX {
+    padding-bottom: 34px;
+  }
+}
+
+// 编辑员工信息页面
+.staff-edit-wrap {
+  bg(#fff);
+
+  .staff-info-list {
+    li {
+      margin: 0 24px;
+      flex();
+      align-items: center;
+      justify-content: flex-start;
+      border-bottom: 1PX solid #EDEDED;
+      lh(90);
+      h(90);
+      ft(30);
+      c-3();
+
+      span {
+        c-6();
+        mr(12);
+        min-width: 150px;
+      }
+
+      input {
+        width: 100%;
+        height: 100%;
+        flex-1();
+
+        &::-webkit-input-placeholder {
+          c(#bdbdbd);
+        }
+      }
+
+      div {
+        flex-1();
+        h(90);
+      }
+
+      i {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .close {
+        w(32);
+        h(32);
+        background-image: url('../../../assets/images/close_icon1.png');
+      }
+
+      .position {
+        w(48);
+        h(48);
+        background-image: url('../../../assets/images/address_position_icon.png');
+      }
+
+      .extension {
+        w(16);
+        h(26);
+        background-image: url('../../../assets/images/icon-enter.png');
+      }
+
+      .discount-int {
+        w(180);
+        mr(10);
+      }
+    }
+
+    .special-li {
+      border-bottom: none;
+    }
+
+    .h20 {
+      width: 100%;
+      h(20);
+      bg(#F6F6F6);
+    }
+  }
+
+  .staff-info-btn {
+    bg(#BDBDBD);
+    width: 100%;
+    lh(98);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-c();
+    ft(32);
+    c(#fff);
+
+    &.achieve {
+      bg(#FF5638);
+    }
+  }
+
+  .staff-info-btn.isIphoneX {
+    padding-bottom: 34px;
+  }
+}
+
+// 弹出层
+.popup-wrap {
+  .pw-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 60%;
+    max-height: 70%;
+    overflow-y: scroll;
+    z-index: 9;
+    bg(#fff);
+
+    .header {
+      padding: 24px;
+      ft(36);
+      c-3();
+      font-weight: 600;
+      flex();
+      align-items: center;
+      justify-content: space-between;
+
+      i {
+        w(40);
+        h(40);
+        background-image: url('../../../assets/images/role_icon_2.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    .list {
+      ft(30);
+      c-3();
+      padding: 0 24px;
+
+      li {
+        padding: 24px 0;
+      }
+
+      .active {
+        border-bottom: 1PX solid #FF5638;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          w(40);
+          h(40);
+          background-image: url('../../../assets/images/role_icon_1.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+
+    .btn {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      ft(32);
+      c(#fff);
+      bg(#FF5638);
+      lh(98);
+      text-c();
+    }
+  }
+
+  .pop-mask {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+}
+
+.empty-wrap {
+  pt(250);
+  bg(#F6F6F6);
+  flex();
+  align-items: center;
+  flex-direction: column;
+
+  i {
+    w(340);
+    h(340);
+    background-image: url('../../../assets/images/empty_icon_1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  span {
+    ft(30);
+    c-9();
+  }
+}
+
+.option-list {
+  padding: 0 24px;
+  li {
+    border-bottom: 1PX solid #EDEDED;
+    ft(30);
+    c-3();
+    padding: 16px 0;
+    flex();
+    align-content: center;
+    justify-content: space-between;
+
+    span {
+      lh(56);
+      color: #666;
+    }
+
+    i {
+      w(102);
+      h(56);
+      background-image: url('../../../assets/images/set_close_icon.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &.open {
+        background-image: url('../../../assets/images/set_open_icon.png');
+      }
+    }
+  }
+}

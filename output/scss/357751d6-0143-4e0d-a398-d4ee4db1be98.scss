@@ -1,0 +1,112 @@
+#search_multi {
+  @include clearfix();
+  margin: -(0.3em) 2vw 2vw;
+  form {
+    input {
+      width: 96%;
+      border: 1px solid $gray;
+      border-radius: 4px;
+      padding: 1% 2%;
+      font-size: 0.75em;
+    }
+  }
+
+  #genre_form {
+    .search_description {
+      font-size: 0.8em;
+      padding: 0.3em 0.6em;
+    }
+    #delete_genre {
+      float: right;
+      position: relative;
+      top: -35px;
+      display: none;
+      width: 20px;
+      padding-left: 10px;
+    }
+  }
+  #name_form {
+    .search_description {
+      font-size: 0.8em;
+      padding: 0.3em 0.6em;
+    }
+    #delete_words {
+      float: right;
+      position: relative;
+      top: -35px;
+      display: none;
+      width: 20px;
+      padding-left: 10px;
+    }
+  }
+  #search_by_location {
+    @include clearfix();
+    //display: none;
+    .search_description {
+      font-size: 0.8em;
+      padding: 0.3em 0.6em;
+    }
+    .candidate {
+      float: left;
+      width: 30%;
+      font-size: 0.8em;
+      text-align: center;
+      padding: 0.25em;
+      img, i.fa {
+        height: 1.5em;
+        margin: 0 auto;
+        display: block;
+      }
+      i.fa:before { font-size: 1.25em; }
+    }
+  }
+  #suggested_genres_list {
+    li.genre {
+      display: inline-block;
+      border: 1px solid $gray;
+      border-radius: 4px;
+      padding: 0 2vw;
+      margin: 4px;
+      font-size: 80%;
+      span.remove, span.add {
+        padding-right: 4px;
+      }
+    }
+  }
+  input[type="radio"]{
+    display: none;
+  }
+  input[type="radio"] + .candidate{
+    position: relative;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+  input[type="radio"]:checked + .candidate{
+    background-repeat: no-repeat;
+    background-size:contain;
+    color: #2A7AB8;
+  }
+  input[type="submit"]:disabled {
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid $gray;
+    color: gray;
+    -webkit-appearance: none;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  input[type="submit"] {
+    width: 100%;
+    background-color: #8fc31f;
+    border: 2px solid #8fc31f;
+    color: #fff;
+    -webkit-appearance: none;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

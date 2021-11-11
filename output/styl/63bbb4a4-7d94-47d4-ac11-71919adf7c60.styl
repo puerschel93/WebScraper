@@ -1,0 +1,193 @@
+::-moz-selection
+    background : $selection.bgc
+    color : $selection.color
+    text-shadow : none
+
+::selection
+    background : $selection.bgc
+    color : $selection.color
+    text-shadow : none
+
+/* IE 10+ */
+::-webkit-input-placeholder
+    color : $placeholders.normal
+:-moz-placeholder
+    color : $placeholders.normal
+/* FF 4-18 */
+::-moz-placeholder
+    color : $placeholders.normal
+/* FF 19+ */
+:-ms-input-placeholder
+    color : $placeholders.normal
+
+if $placeholders.focus
+    /* Input placeholder color
+     ========================================================================== */
+    /* IE 10+ */
+    input:focus::-webkit-input-placeholder
+        color : $placeholders.focus
+    input:focus:-moz-placeholder
+        color : $placeholders.focus
+    /* FF 4-18 */
+    input:focus::-moz-placeholder
+        color : $placeholders.focus
+    /* FF 19+ */
+    input:focus:-ms-input-placeholder
+        color : $placeholders.focus
+
+*
+    min-width 0
+    min-height 0
+    -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+    box-sizing border-box
+    outline none
+
+html
+    font-size : $html.fontSize
+    font-family : $html.family
+    font-weight : $html.weight
+    color : $html.color
+    background-color : $html.bgc
+
+    font-feature-settings : kern, liga, onum
+    -webkit-font-smoothing : antialiased
+    -webkit-text-size-adjust : 100%
+    -ms-text-size-adjust : 100%
+
+body
+    font-size : inherit
+    font-family : inherit
+    font-weight : inherit
+    color : inherit
+    background-color : inherit
+
+blockquote
+    font-style       : $blockquote.font.style
+    padding          : 15px
+    padding-left     : $blockquote.gutter
+    border-left      : $blockquote.border.size solid $blockquote.border.color
+    background-color : rgba($blockquote.border.color, .03)
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6
+    font-family    : $headings.family
+    font-weight    : $headings.weight
+    color          : $headings.color
+    text-transform : $headings.transform
+    
+    &::-moz-selection
+        background : $selection.bgc
+        color : $selection.color
+        text-shadow : none
+
+    &::selection
+        background : $selection.bgc
+        color : $selection.color
+        text-shadow : none
+
+template, /* 1 */
+[hidden]
+    display none
+
+// font weights
+for $weight, $value in $fontWeight
+    .font-{$weight}
+        font-weight : $value
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden
+    border 0
+    clip rect(0 0 0 0)
+    height 1px
+    margin -1px
+    overflow hidden
+    padding 0
+    position absolute
+    width 1px
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus
+    clip auto
+    height auto
+    margin 0
+    overflow visible
+    position static
+    width auto
+
+svg:not(:root)
+    overflow hidden
+    
+
+.site-width 
+    max-width 1180px
+    width 100% 
+    margin 0 auto 
+    padding-left 20px
+    padding-right 20px
+.white-back
+    border-radius 31px 20px 20px
+    background-color #ffffff
+    padding 79px 80px 67px 75px
+
+.site-btn
+    font-size 18px
+    color #fff
+    font-weight 700
+    text-decoration none
+    text-transform uppercase
+    min-width 205px
+    text-align center    
+    display block
+    background-color #13acc3
+    background-image linear-gradient(42deg, rgba(11, 112, 183, 0.59) 0%, rgba(11,183,183,0) 100%)
+    border none 
+    border-radius 23px
+    padding 8px
+    cursor pointer
+    transition background-color .3s
+    &:hover
+        background-color lighten(#13acc3, 20%)
+    &:active
+        background-color darken(#13acc3, 20%)  
+.registration, cabinet-icon
+    .svg-icon 
+        width 30px 
+        height 30px
+.cabinet-icon
+    .svg-icon 
+        width 30px 
+        height 30px
+.vhod
+    .svg-icon 
+        width 30px 
+        height 30px
+.app--catalog 
+    .b-form__section 
+        padding 0 20px
+        margin-top 80px
+        @media all and (max-width 600px)
+            margin-top 30px
+.app--catalog, .app--contacts, .app--idea, .app--news    
+    .site-width 
+        padding-left 20px
+        padding-right 20px
+        @media all and (max-width 600px)
+            padding-left 15px
+            padding-right 15px
+    .white-back
+        @media all and (max-width 600px)
+            padding 80px 15px
+.app--contacts 
+    @media all and (max-width 550px)
+        .white-back
+            padding 10px 15px 40px 15px
+
+.app--idea
+    .white-back
+        @media all and (max-width 480px)
+            padding 30px 15px

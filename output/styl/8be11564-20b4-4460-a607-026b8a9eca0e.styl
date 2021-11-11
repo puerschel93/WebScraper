@@ -1,0 +1,234 @@
+/*
+Available buttons:
+  btn-bar
+  btn-bar-hollow
+  btn-content-solid
+  btn-content-hollow-primary
+  btn-content-hollow-secondary
+*/
+
+/***********************
+**** START DEPRECATE ***
+***********************/
+
+// Botones
+.sp-btn
+  border-radius: 4px
+  min-width: 50px
+  padding: 12px
+  height: 44px
+  display: flex
+  justify-content: center
+  align-items: center
+  box-sizing: border-box
+  cursor: pointer
+  background-color: $color-gray-200
+  // transition-general()
+  &.-red
+    background-color: $color-primary
+    color: white
+    &:hover
+      background-color: $color-primary
+  &.-white
+    background-color: white
+    &:hover
+      background-color: white
+      box-shadow: 0px 0px 4px 1px alpha(black, 0.1)
+  &.-white-gray
+    background-color: white
+    transition: none
+    &:hover
+      background-color: $color-gray-200
+      // box-shadow: 0px 0px 4px 1px alpha(black, 0.1)
+  &.-blue
+    background-color: $color-default-action
+    color: white
+    &:hover
+      box-shadow: 0px 0px 4px 1px alpha($color-default-action, 0.6)
+  &.-reddark-white
+    background-color: $color-primary
+    &:hover
+      color: $color-primary
+      background-color: white
+  &.-whatsapp
+    color: white
+    background-color: $color-whatsapp
+    &:hover
+      background-color: $color-whatsapp
+      box-shadow: 0px 0px 4px 1px alpha($color-whatsapp, 0.6)
+  
+
+.style-guide
+  .button
+    border-radius: 4px
+    height: 44px
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 0 30px
+    transition: all 0.25s
+    font-size: 16px
+    font-weight: 700
+    box-sizing: border-box
+    cursor: pointer
+    // &.-first
+    // &.-danger
+  .button.-action
+    color: white
+    background-color: $color-default-action
+  .button:hover
+    opacity: 0.8
+    box-shadow: 0 0 3px rgba(45,114,183,0.8)
+
+/***********************
+***** END DEPRECATE ****
+***********************/
+
+._btn
+  font-weight: 400;
+  color: $color-dark
+  white-space: nowrap;
+  user-select: none;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: transparent
+  position: relative
+  min-height: 40px;
+  box-sizing: border-box;
+  line-height: 1
+  &:focus
+    outline: none
+
+._btn-bar
+  padding: .25rem .75rem;
+  border-radius: .25rem;
+  font-family: $font-family-semibold
+  font-size: 1.125rem
+  background-color: $color-primary
+  color: white
+  min-height: 44px;
+  &:hover
+  &:focus
+    border-color: $color-primary-light
+  &:active
+    background-color:  $color-primary-light !important
+
+._btn-content
+  font-family: $font-family-bold
+  padding: 0.625em 1.5em
+  border-radius: 2rem;
+  background-color: $color-primary
+  color: white
+  &:focus
+    box-shadow: 0 0 0 2px alpha($color-default-action, 0.55)
+  &:hover
+    background-color: $color-primary-dark
+  &:active
+    border-color: $color-primary
+    background-color: $color-primary-light
+  &.-small
+    height: auto
+    line-height: 36px
+    min-height: 0
+    font-size: 14px
+    padding-top: 0
+    padding-bottom: 0
+    text-align: center
+    display: block
+    box-sizing: content-box
+
+._btn-content-rectagle
+  width: 100%
+  font-family: $font-family-ubuntu
+  padding: 16px 8px
+  border-radius: .25rem
+  background-color: $color-primary
+  color: white
+  &:focus
+    box-shadow: 0 0 0 2px alpha($color-default-action, 0.55)
+  &:hover
+    background-color: $color-primary-dark
+  &:active
+    border-color: $color-primary
+    background-color: $color-primary-light
+  &.-small
+    height: auto
+    line-height: 36px
+    min-height: 0
+    font-size: 14px
+    padding-top: 0
+    padding-bottom: 0
+    text-align: center
+    display: block
+    box-sizing: content-box
+
+._btn-content-rectagle-orange
+  width: 100%
+  font-family: $font-family-ubuntu
+  padding: 16px 8px
+  border-radius: .25rem
+  background-color: $color-primary-orange
+  color: white
+  &:focus
+    box-shadow: 0 0 0 2px alpha($color-default-action, 0.55)
+  &:hover
+    background-color: $color-primary-lightorange
+  &:active
+    border-color: $color-primary-mediumorange
+    background-color: $color-primary-mediumorange
+  &.-small
+    height: auto
+    line-height: 36px
+    min-height: 0
+    font-size: 14px
+    padding-top: 0
+    padding-bottom: 0
+    text-align: center
+    display: block
+    box-sizing: content-box
+
+._btn-hollow
+  background-color: transparent
+  &:hover
+    color: white
+
+._btn-hollow-primary
+  color: $color-primary
+  border-color: $color-primary
+  &:hover
+    background-color: $color-primary
+  &:active
+    background-color:  $color-primary-light
+
+._btn-hollow-secondary
+  color: $color-dark
+  border-color: $color-dark
+  &:hover
+    background-color: $color-dark
+  &:active
+    border-color: $color-dark
+    background-color: alpha($color-dark, 0.75)
+
+// Use ONLY this buttons
+.btn-content-solid
+  @extend ._btn, ._btn-content
+
+.btn-content-solid-2
+  @extend ._btn, ._btn-content-rectagle
+
+.btn-content-solid-rectagle-organge
+  @extend ._btn, ._btn-content-rectagle-orange
+
+
+.btn-bar
+  @extend ._btn, ._btn-bar
+
+.btn-bar-hollow
+  @extend ._btn, ._btn-bar, ._btn-hollow, ._btn-hollow-primary
+
+.btn-content-hollow-primary
+  @extend ._btn, ._btn-content, ._btn-hollow, ._btn-hollow-primary
+  
+.btn-content-hollow-secondary
+  @extend ._btn, ._btn-content, ._btn-hollow, ._btn-hollow-secondary

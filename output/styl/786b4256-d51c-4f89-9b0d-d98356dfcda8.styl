@@ -1,0 +1,240 @@
+// 主题调色板
+
+// 原主题预设变量
+// 颜色
+// $accentColor = #3eaf7c
+// $textColor = #2c3e50
+// $borderColor = #eaecef
+// $codeBgColor = #282c34
+// $arrowBgColor = #ccc
+// $badgeTipColor = #42b983
+// $badgeWarningColor = darken(#ffe564, 35%)
+// $badgeErrorColor = #DA5961
+// 布局
+// $navbarHeight = 3.6rem
+// $sidebarWidth = 20rem
+// $contentWidth = 740px
+// $homePageWidth = 960px
+// 代码块
+// $lineNumbersWrapperWidth = 3.5rem
+
+//@require './code-theme'
+
+//***vdoing主题-变量***//
+// 颜色
+$bannerTextColor = #fff // 首页banner区(博客标题)文本颜色
+//$accentColor = #11A8CD 
+$accentColor = #3eaf7c
+$activeColor = #ff5722
+$arrowBgColor = #ccc
+$badgeTipColor = #42b983
+$badgeWarningColor = darken(#ffe564, 35%)
+$badgeErrorColor = #DA5961
+
+// 布局
+$navbarHeight = 3.6rem
+$sidebarWidth = 18rem
+$contentWidth = 860px
+$homePageWidth = 1100px
+$rightMenuWidth = 230px // 右侧菜单
+
+// 代码块
+$lineNumbersWrapperWidth = 2.5rem
+
+// 浅色模式  #fbfbfb
+.theme-mode-light
+  --bodyBg: #fff
+  --mainBg: rgba(255,255,255,1)
+  --sidebarBg: rgba(255,255,255,.8)
+  --blurBg: rgba(255,255,255,.9)
+  --customBlockBg: #f1f1f1
+  --textColor: #00323c
+  --textLightenColor: #3eaf7c
+  --borderColor: rgba(0,0,0,.15)
+  --codeBg: #252526
+  --codeColor: #fff
+  codeThemeDark()
+ // --codeBg: #fbfbfb
+ // --codeColor: #525252
+ // codeThemeLight()
+
+// 深色模式
+.theme-mode-dark
+  --bodyBg: rgb(39,39,43)
+  --mainBg: rgba(30,30,34,1)
+  --sidebarBg: rgba(30,30,34,.8)
+  --blurBg: rgba(30,30,34,.8)
+  --customBlockBg: rgb(39,39,43)
+  --textColor: rgb(155,155,170)
+  --textLightenColor: #3eaf7c
+  --borderColor: #2C2C3A
+  --codeBg: #252526
+  --codeColor: #fff
+  codeThemeDark()
+
+// 阅读模式
+.theme-mode-read
+  --bodyBg: rgb(236,236,204)
+  --mainBg: rgba(245,245,213,1)
+  --sidebarBg: rgba(245,245,213,.8)
+  --blurBg: rgba(245,245,213,.9)
+  --customBlockBg: rgb(236,236,204)
+  --textColor: #704214
+  --textLightenColor: #996633
+  --borderColor: rgba(0,0,0,.15)
+  --codeBg: #282c34
+  --codeColor: #fff
+  codeThemeDark()
+
+// =========================自定义======================================
+
+// 文章宽度
+.page {
+  & > * {
+    max-width: 1160px;
+  }
+}
+.theme-vdoing-content {
+  &:not(.custom) {
+    max-width: 1160px;
+  }
+}
+
+.page-nav, .page-nav .inner {
+  max-width: 1160px;
+}
+
+.articleInfo-wrap {
+  .articleInfo {
+    width: 1160px;
+  }
+}
+
+
+.theme-vdoing-content {
+  &.custom {
+    img {
+      border: 1px solid #ebeef5;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    }
+  }
+  &:not(.custom) {
+    img {
+      border: 1px solid #ebeef5;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    }
+  }
+}
+
+body .theme-vdoing-content pre, body .theme-vdoing-content pre[class*=language-] {
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+
+div[class*=language-].line-numbers-mode {
+  &:after {
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  }
+}
+
+.nav-links {
+  margin-right: 30px;
+}
+
+.code-copy {
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.home-wrapper {
+  .banner {
+    .banner-conent {
+      padding-top: 2rem !important;
+    }
+  }
+}
+
+.home-wrapper {
+  .banner {
+    min-height: 450px !important;
+  }
+}
+
+
+
+.column-wrapper {
+  img {
+    display: none;
+  }
+}
+
+.right-menu-wrapper {
+  font-size: 1.2rem;
+}
+
+.catalogue-wrapper {
+  .catalogue-content {
+    dl {
+      dd {
+        margin-left: 8rem !important;
+        margin-right: -1rem !important;
+      }
+    }
+  }
+}
+
+.catalogue-wrapper {
+  .catalogue-content {
+    dl {
+      &:not(.inline) {
+        dt {
+          padding-left: 3rem;
+        }
+      }
+    }
+  }
+}
+
+.home-wrapper {
+  .main-wrapper {
+    .main-left {
+      .card-box {
+        margin-bottom: 0.9rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+.home-wrapper {
+  .banner {
+    .banner-conent {
+      .features {
+        padding: 1rem 0 !important;
+        margin-top: 1.5rem !important;
+      }
+    }
+  }
+}
+
+.home-wrapper {
+  .banner {
+    .banner-conent {
+      .hero {
+        margin-top: 1rem !important;
+      }
+    }
+  }
+}
+
+.home-wrapper {
+  .banner {
+    /*display: none;*/
+  }
+}
+.no-sidebar {
+  .footer {
+    padding-top: 18rem !important;
+  }
+}

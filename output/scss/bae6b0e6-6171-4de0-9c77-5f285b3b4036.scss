@@ -1,0 +1,155 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:470;
+
+// VARIABLE SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Open Sans Condensed",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:700;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:yes;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:180;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces13";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra13";
+
+
+////////////////////////  MISE EN FORME HEADER  ////////////////////////
+// LOGO
+header .logo {
+margin-top:-28px;
+margin-left:30px;
+}
+// MENU PRINCIPAL
+.menu-principal {
+font-size:1.1em;
+> li > a {
+border-radius:50%; 
+border:1px solid $color-block;
+background-color:$color-primary; 
+width: 90px; 
+height: 90px; 
+line-height: 86px; 
+color:$color-nav-footer; 
+text-align:center; 
+margin:10px 0; 
+padding:2px;
+&:hover {
+background-color:$color-action; 
+color:$color-nav-footer;
+}
+}
+}
+//////////////////////// FIN MISE EN FORME HEADER ////////////////////////
+
+
+////////////////////////  HOMEPAGE INCL_PUB_PERSO  ////////////////////////
+// BARRES HR + BTN EXCLUS MASQUES
+.module-homepage {
+hr, .btn-exclusif {
+display:none;
+}
+.next-module {
+margin-right:-18px;
+} 
+.prev-module {
+margin-left:-18px;
+}
+}
+// CORRECTION HAUTEUR MODULE ANNONCES 13
+.module-homepage.height-320 {
+height:auto;
+}
+// MISE EN FORME BOUTON MODULE ANNONCES 13 TOUTES NOS EXCLUS QUI FIGURE DANS INCL_CONF_REF
+.btn-ttexclus {
+font-family:"proxima-nova",verdana,sans-serif;
+font-weight:400;
+text-transform:none;
+font-size:0.5em;
+}
+// MISE EN FORME TEXTE DE PRESENTATION
+.bg-blok {
+background-color:$color-block;
+}
+
+// PADDING SUR ANNONCES MODULE EXTRA
+.module-annonces-homepage {
+	@include box-shadow($color-gris 0px 2px 5px);
+.pagination-left {
+padding-left:3px;
+}
+}
+
+// IMAGE BG PUB PROMOTEUR IMMOBILIER (Soit vous appellez une nouvelle image, soit vous remplacez l'image du dossier /images)
+.pub-promoteur {
+	background-image:url('../images/pub-promoteur.png');
+}
+
+// BORDURE SUR PAVES PUB
+.border-grey {
+border:1px solid $color-bordure-gris;
+}
+
+////////////////////////  FIN HOMEPAGE INCL_PUB_PERSO  ////////////////////////
+
+

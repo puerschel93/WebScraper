@@ -1,0 +1,99 @@
+.products
+    padding: gap 0
+
+    &__title
+        padding: 25px 0
+        text-align: center
+        text-transform: uppercase
+        font-weight: bold
+        font-size: 20px
+
+        span
+            color: var(--primary)
+
+    &__case
+        padding: 2px
+        box-shadow: inset 0 0 0 1px rgba(var(--products-border-color), .2)
+
+        &:hover
+            @media media-min-lg
+                box-shadow: inset 0 0 0 2px var(--primary)
+
+    .owl-page
+        span
+            width: 8px
+            height: 8px
+            background: #ccc
+            opacity: 1
+
+        &.active
+            span
+                background: var(--primary)
+
+.product
+    &__name
+        color: var(--products-color)
+        font-weight: bold
+        font-size: 14px
+
+    &__main
+        padding: 0 gap
+        text-align: center
+
+        .preco-parcelado
+            display: none
+
+        .preco-parcelado-sem-juros
+            color: var(--products-color)
+            font-weight: bold
+            font-size: 12px
+
+            &:before
+                content: 'Parcele em até '
+
+            .upto, .de, .value
+                display: none
+
+            .num, .s-juros
+                color: var(--primary)
+
+        .old-price
+            .label
+                display: none
+
+            .price
+                text-decoration: none
+
+                span
+                    color: var(--old-price)
+                    text-decoration: line-through
+                    font-weight: medium
+                    font-size: 12px
+
+        .regular-price, .special-price, .minimal-price
+            .label
+                display: none
+
+            .price span
+                color: var(--special-price)
+                font-weight: bold
+                font-size: 20px
+
+    &__footer
+        padding: 0 gap 30px
+
+        .button
+            padding: 0
+            width: 100%
+            height: 36px
+            border-radius: var(--radius)
+            background: var(--button-hover)
+            box-shadow: none
+            text-transform: uppercase
+            letter-spacing: .01rem
+            font-weight: bold
+            font-size: 14px
+            line-height: 36px
+
+            &:hover
+                background: var(--button)

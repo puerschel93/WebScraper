@@ -1,0 +1,134 @@
+.Projects
+  max-width: 1024px
+  margin: 0 auto
+  padding-top: 100px
+
+  h1
+    text-align: center
+
+  .Project
+    display: grid
+    align-items: center;
+    margin-bottom: 80px
+
+    .Project-pictures
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin 30px 15px
+
+      button
+        outline: none;
+        border-radius: 40px
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        border: none
+        background-color: transparent
+        box-shadow: 0px 0px 5px 3px rgba(90, 90, 90, 0.1)
+
+        .button-previous-next
+          text-align: center
+          height: 25px
+          width: 25px
+
+      button:hover
+        background-color: rgba(170, 150, 150, 0.5)
+      figure
+        position: relative
+
+        .Project-picture
+          height:  160px
+          border-radius: 15px
+          background-color: rgba(170, 150, 150, 0.5)
+          cursor: pointer
+
+        figcaption
+          position: absolute;
+          top: 165px;
+          left: 15px
+          margin:0 auto
+          display:none
+          transition: all 350ms ease-out
+
+
+      figure:hover > figcaption
+        display:block
+
+
+    .Project-description
+      margin 10px 0px 10px 25px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      gap: 20px
+
+      h2
+        color: var(--color1)
+
+      h4
+        line-height: 2.3rem
+
+@media (min-width:400px)
+  .Projects
+    .Project
+      .Project-pictures
+        figure
+          .Project-picture
+            height:  180px
+          figcaption
+            top: 185px
+
+@media (min-width:500px)
+  .Projects
+    .Project
+      .Project-pictures
+        figure
+          .Project-picture
+            height:  240px
+          figcaption
+            top: 245px
+
+@media (min-width:600px)
+  .Projects
+    .Project
+      .Project-pictures
+        figure
+          .Project-picture
+            height:  300px
+          figcaption
+            top: 305px
+
+@media (min-width:700px)
+  .Projects
+    .Project
+      .Project-pictures
+        figure
+          .Project-picture
+            height:  360px
+          figcaption
+            top: 365px
+
+
+@media (min-width:900px)
+  .Projects
+    .Project
+      display: grid
+      grid-template-columns: 3fr 2fr
+      margin: 40px 0px 80px 0px
+
+      .Project-pictures
+        grid-column: 1/2
+        grid-row: 1/2
+        margin: 0
+
+        figure
+          .Project-picture
+            height:  320px
+          figcaption
+              top: 305px
+
+      .Project-description
+        grid-column: 2/3
+        grid-row: 1/2

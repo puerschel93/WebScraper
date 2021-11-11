@@ -1,0 +1,248 @@
+//=======================
+// Base
+//=======================
+// Add whichever you need or, preferably, just copy the code from those files. Especially the breakpoints and helper variables
+// @require 'base/reset'
+@require 'base/variables'
+@require 'base/helpers'
+@require 'base/colors'
+// @require 'base/layout'
+// @require 'base/unicode'
+@require 'base/fonts'
+
+//=======================
+// Fonts
+//=======================
+// See base/fonts for full listing
+// If you need set-font, make sure to include the base/fonts file
+// Note all projects require Benton Bold and Miller-Regular so don't change em
+
+// Just set these classes in the HTML
+// set-font('benton-bold') /* Graphic headlines */
+// set-font('benton-regular')  Graphic subheads
+// set-font('bentonsanscond-regular') /* Graphic byline and source */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family 'Raleway', sans-serif !important
+}
+
+#top-numbers
+  display flex
+  justify-content flex-end
+
+  .top__num
+    color $gray-dark
+    &:first-child
+      margin-right 1em
+
+    &--figure
+      font-size 1.3em
+
+    &--legend
+      .num__legend
+        height .6em
+        width @height
+        border-radius 50%
+        display inline-block
+        margin-right 5px
+        color $gray
+
+        &--estimated
+          background #2369E3
+
+        &--historical
+          background #F3A536
+
+#line-chart
+  height 400px
+  margin 1em 0
+  +mq(bp-2)
+    height 600px
+
+  .overlay
+    fill none
+    pointer-events all
+
+  .line-historical_total
+    fill none
+    stroke #F3A536
+    stroke-width 2
+
+  .line-wrapper-historical_total
+    .line-point
+      fill #F3A536 !important
+
+  .line-current_total
+    stroke $globe-link
+    stroke-width 3
+    fill none
+
+  .line-wrapper-current_total
+    .line-point
+      fill $globe-link !important
+
+  .line-current-total-fill
+    fill #EBF5FB
+
+  .hoverCircle
+    stroke #fff
+    stroke-width 4
+
+  .circle-historical_total
+    fill #F3A536
+    stroke #fff
+
+  .circle-current_total
+    fill $globe-link
+    stroke #fff
+
+
+  .grid
+    path
+      display none
+      stroke-width 0
+
+    .tick
+      line
+        stroke $gray-light
+      text
+        display none
+
+  .x.axis
+    font-family 'Raleway', sans-serif
+    .domain
+      stroke $gray-light
+    .tick
+      line
+        stroke $gray-light
+      text
+        font-size 1.1em
+
+  .y.axis
+    font-family 'Raleway', sans-serif
+    .domain
+      stroke $gray-light
+    .tick line
+      stroke $gray-light
+
+#big-numbers
+  display flex
+  flex-direction column
+  justify-content space-evenly
+  font-family 'Raleway', sans-serif
+  height auto
+  margin 1em 0 0 0
+
+  +mq(bp-2)
+    height 250px
+
+  .number__data
+    color $offwhite
+    width 100%
+    margin-bottom .5em
+    // text-align center
+    text-transform uppercase
+    font-size 1em
+    border-radius 25px
+    display flex
+    flex-direction column
+    justify-content space-between
+    align-items center
+    +mq(bp-2)
+      font-size 1.2em
+
+    &--1
+      background #BE0712
+    &--2
+      background #FD8832
+    &--3
+      background #FDBF2D
+      color $offblack
+
+  .number__figure
+    .bold
+      font-weight bold
+    .small
+      font-size 0.6em
+
+.pie__wrapper
+  border-radius 50px
+  border 5px solid #1B86A8
+  padding 5px
+  font-family 'Raleway', sans-serif
+  margin 1em 0
+
+  .pie__hed
+    text-transform uppercase
+    text-align center
+    color #1B86A8
+
+#pie-chart
+  height 200px
+  +mq(bp-2)
+    width 100%
+    height 200px
+  +mq(bp-3)
+    height 250px
+  // +mq(bp-5)
+  //   height 250px
+
+
+.graphic__legend
+  display flex
+  flex-wrap wrap
+  justify-content space-evenly
+  &--row
+    .legend-item
+      .legend-text
+        font-size 0.7em
+        vertical-align text-bottom
+        margin-right 3px
+        display inline-block
+        +mq(bp-2)
+          vertical-align middle
+
+      .legend-box
+        height .55em
+        width @height
+        border-radius 50%
+        display inline-block
+        // margin-right .2em
+        +mq(bp-2)
+          height .7em
+          width @height
+
+        &-1
+          background #1188AA
+
+        &-2
+          background #004455
+
+        &-3
+          background #66BBFF
+
+        &-4
+          background #77CCBB
+
+.table__hed
+  color #97040B
+  text-transform uppercase
+
+#event-table
+  overflow-x scroll
+  display block
+  +mq(bp-2)
+    display table
+  th
+    background #efefef
+    border-right 1px solid $offblack
+    margin-left 5px
+    color #000
+
+  tr
+    color #42A2CF
+
+    &:nth-child(even)
+      background #efefef

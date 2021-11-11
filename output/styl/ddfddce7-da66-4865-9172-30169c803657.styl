@@ -1,0 +1,130 @@
+@import 'colors'
+@import 'layout'
+
+border-color = color-grey-80
+
+img-translate = 50%
+
+/*
+ * Matches
+ */
+
+#messaging-main
+  overflow-y hidden
+
+  &>ul
+    height 100%
+    overflow-y auto
+
+.matches-list-item
+  @media (max-width: screen-xs-max)
+    background-color color-white
+    border-bottom 1px solid border-color
+
+  @media (min-width: screen-sm-min)
+    margin-bottom .5em
+
+    .match-card-avatar > .img-container > img
+      filter blur(1px)
+
+.match-card
+  position relative
+  left 0
+  transition left .2s ease-in-out
+
+  &.slide-left
+    position relative
+    left -200px
+
+.match-card,
+.match-card-controls
+  background-color color-white
+
+.match-latest-message
+  text-overflow ellipsis
+  white-space nowrap
+  overflow hidden
+
+.match-unread-badge
+  height .8em
+  width .8em
+  position absolute
+  right 5%
+  top 75%
+  z-index 9980
+  border-radius 50%
+  background-color color-green-1
+
+.match-card-detail,
+.match-card-avatar
+  cursor pointer
+  height 100%
+
+.match-card-avatar
+  > .img-container
+    position relative
+    height 5em
+    width 5em
+    left img-translate
+
+    img,
+    .filter
+      height 100%
+      width 100%
+
+    .filter
+      position absolute
+      top 0
+      left 0
+      border-radius 50%
+      background rgba(255,255,255,.3)
+      z-index 9979
+      visibility visible
+      blur(5px)
+
+      @media (max-width: screen-xs-max)
+        visibility hidden
+
+  .alt-img ~ .filter
+    visibility hidden
+
+  &.active > .img-container
+    & > img
+      filter none
+
+    & > .filter
+      visibility hidden
+
+div.match-card-detail
+  padding-left 3.5em
+
+  > div
+    margin .25em 0
+
+// Controls revealed on the right side of match card
+.match-card-controls
+  position absolute
+  right 0
+  transition right .2s ease-in-out
+
+  &.grow[class*='col-']
+    position absolute
+    right -200px
+
+/*
+ * Match popup (toaster)
+ */
+.match-toaster
+  background-color rgba(0,0,0,0.5)
+  color color-white
+  border 1px solid black
+  cursor pointer
+
+  @media (max-width: screen-xs-max)
+    width 90%
+    margin auto
+
+  button
+    color color-black
+    opacity 1
+    text-shadow none

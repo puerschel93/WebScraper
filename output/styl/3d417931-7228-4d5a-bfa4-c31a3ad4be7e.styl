@@ -1,0 +1,429 @@
+/**
+ * Copyright 2019 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+@require '../../../coral-theme-spectrum/src/styles/vars.css';
+
+$card-border-size = var(--spectrum-medium-card-border-size);
+$card-border-radius = var(--spectrum-medium-card-border-radius);
+$card-overlay-height = 96px;
+$card-stack-offset = 3px;
+$card-width = var(--spectrum-medium-card-min-width); // borders are not included
+$card-min-height = 175px; // borders are not included
+$card-condensed-height = 229px;
+$card-condensed-wrapper-height = 160px;
+$card-asset-lowResolution-padding = 16px;
+
+// main container of the card
+._coral-Card {
+  display: block;
+
+  // used to place the banners
+  position: relative;
+  vertical-align: top;
+
+  border: $card-border-size solid;
+  border-radius: $card-border-radius;
+
+  min-height: $card-min-height;
+  min-width: $card-width;
+}
+
+._coral-Card--fixedWidth {
+  display: inline-block;
+  width: $card-width;
+}
+
+// used in case it needs to show a stack underneath
+._coral-Card--stacked {
+  margin-bottom: 8px;
+
+  &:before,
+  &:after {
+    content: " ";
+    position: absolute;
+    height: 3px;
+    pointer-events: none;
+    border-bottom: $card-border-size solid;
+    border-left: $card-border-size solid;
+    border-right: $card-border-size solid;
+    border-bottom-left-radius: $card-border-radius;
+    border-bottom-right-radius: $card-border-radius;
+  }
+
+  &:before {
+    bottom: -9px;
+    left: 2*$card-stack-offset;
+    right: 2*$card-stack-offset;
+  }
+
+  &:after {
+    bottom: -5px;
+    left: $card-stack-offset;
+    right: $card-stack-offset;
+  }
+}
+
+// condensed modifier used to represent projects
+._coral-Card--inverted,
+._coral-Card--condensed {
+
+  // fixes the size of the asset to match the card
+  coral-card-asset {
+    height: $card-condensed-height;
+  }
+
+  ._coral-Card-wrapper {
+    position: absolute;
+    top: 0;
+    height: $card-condensed-wrapper-height;
+    width: 100%;
+
+    border-radius: $card-border-radius $card-border-radius 0 0;
+  }
+
+  // hidden cause otherwise it would not fit
+  coral-card-description {
+    display: none;
+  }
+
+  // positioned at the bottom of the wrapper
+  coral-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  coral-card-overlay {
+    display: none;
+  }
+}
+
+._coral-Card--condensed {
+  ._coral-Card-wrapper {
+    border-bottom: $card-border-size solid;
+  }
+}
+
+._coral-Card--asset {
+  ._coral-Card-wrapper {
+    display: none;
+  }
+}
+
+._coral-Card--inverted,
+._coral-Card--condensed,
+._coral-Card--asset {
+  coral-card-asset {
+    border-bottom-left-radius: $card-border-radius;
+    border-bottom-right-radius: $card-border-radius;
+  }
+}
+
+._coral-Card-wrapper {
+  display: block;
+  position: relative;
+  border-bottom-left-radius: $card-border-radius;
+  border-bottom-right-radius: $card-border-radius;
+}
+
+coral-card-info {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  // forces the top radius
+  border-top-left-radius: $card-border-radius;
+  border-top-right-radius: $card-border-radius;
+}
+
+coral-card-asset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+  width: 100%;
+  height: auto;
+  // in case the asset is not big enough, then the asset maintains the expected size
+  min-height: $card-min-height;
+
+  border-top-left-radius: $card-border-radius;
+  border-top-right-radius: $card-border-radius;
+
+  // this needs to be added to be able to show the round borders
+  overflow: hidden;
+
+  // forces the content to take the full width
+  > * {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  > img {
+    margin: 0 auto;
+
+    width: auto;
+
+    min-height: 1px; // to avoid stretched images in IE11 and Chrome (Canary)
+    max-width: 100%;
+
+    opacity: 1;
+    transition: opacity var(--spectrum-global-animation-duration-2000) var(--spectrum-global-animation-ease-in-out);
+
+    object-fit: cover;
+
+    &.is-loading {
+      opacity: 0;
+    }
+  }
+}
+
+._coral-Card--quiet {
+  coral-card-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  coral-card-asset {
+    border-radius: $card-border-radius;
+  }
+}
+
+// properties
+coral-card-propertylist {
+  display: block;
+  padding-top: var(--spectrum-medium-card-body-content-height);
+
+  > ._coral-Card-property {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--spectrum-medium-card-body-header-height);
+    float: left;
+    margin-right: 6px;
+    margin-bottom: 0;
+  }
+}
+
+coral-card-description {
+  padding-top: var(--spectrum-medium-card-body-content-height);
+}
+
+coral-card-description:first-of-type,
+coral-card-propertylist:first-of-type {
+  border-top-width: $card-border-size;
+  border-top-style: solid;
+}
+
+._coral-Card-property-icon + coral-card-property-content:not(:empty) {
+  margin-left: 6px;
+}
+
+._coral-Card-property-icon {
+  flex-shrink: 0;
+}
+
+coral-card-overlay {
+  display: block;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1*$card-overlay-height;
+  height: $card-overlay-height;
+  font-size: var(--spectrum-medium-body-small-text-size);
+}
+
+coral-card-content {
+  display: block;
+  padding-top: var(--spectrum-medium-card-body-padding-top);
+  padding-left: var(--spectrum-medium-card-body-padding-left);
+  padding-right: var(--spectrum-medium-card-body-padding-right);
+  padding-bottom: var(--spectrum-medium-card-body-padding-bottom);
+}
+
+coral-card-overlay:empty,
+coral-card-propertylist:empty,
+coral-card-content:empty {
+  display: none;
+}
+
+coral-card-content,
+coral-card-context,
+coral-card-title,
+coral-card-subtitle,
+coral-card-description {
+  display: block;
+}
+
+coral-card-title,
+coral-card-subtitle,
+coral-card-description,
+coral-card-context {
+  // in case the title is in an anchor
+  text-decoration: none;
+  // in case content overflows
+  overflow-y: auto;
+}
+
+// Increase specificity
+._coral-Card {
+  coral-card-context {
+    font-size: var(--spectrum-medium-card-subtitle-text-size);
+    letter-spacing: var(--spectrum-medium-card-subtitle-letter-spacing);
+    text-transform: var(--spectrum-medium-detail-text-transform);
+  }
+
+  coral-card-title + coral-card-subtitle,
+  coral-card-title + coral-card-context {
+    margin-top: 6px;
+  }
+}
+
+coral-card-subtitle {
+  font-size: var(--spectrum-medium-detail-text-size);
+  letter-spacing: var(--spectrum-medium-detail-text-letter-spacing);
+  text-transform: var(--spectrum-medium-detail-text-transform);
+}
+
+coral-card-context + coral-card-description,
+coral-card-title + coral-card-description {
+  margin-top: var(--spectrum-medium-card-body-padding-top);
+}
+
+coral-card-context + coral-card-propertylist,
+coral-card-title + coral-card-propertylist,
+coral-card-subtitle + coral-card-propertylist,
+coral-card-description + coral-card-propertylist {
+  margin-top: var(--spectrum-medium-card-body-padding-top);
+}
+
+// added ._coral-Alert due to specificity of the classes vs tags
+coral-card-info > coral-alert._coral-Alert {
+  display: inline-block;
+
+  border: none;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 4px 4px 0 0;
+  min-width: auto;
+  min-height: auto;
+
+  coral-alert-header,
+  coral-alert-content {
+    display: block;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  coral-alert-content {
+    margin: 0;
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+// added ._coral-Label due to specificity of the classes vs tags
+coral-card-info > coral-tag._coral-Label {
+  margin: 4px 4px 0 0;
+}
+
+coral-card-info {
+  & > coral-tag,
+  & > coral-alert {
+    position: relative;
+    top: -14px;
+    right: -14px;
+    z-index: 1;
+
+    float: right;
+    clear: both;
+  }
+}
+
+._coral-Card--overflow coral-card-info {
+  // todo scroll or hidden ?
+  overflow: hidden;
+  z-index: 1;
+
+  & > coral-alert._coral-Alert {
+    position: static;
+
+    &:last-of-type {
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.coral--large {
+  coral-card-overlay {
+    font-size: var(--spectrum-large-card-subtitle-text-size);
+  }
+
+  ._coral-Card {
+    coral-card-context {
+      font-size: var(--spectrum-large-card-subtitle-text-size);
+    }
+  }
+
+  coral-card-content {
+    padding-top: var(--spectrum-large-card-body-padding-top);
+    padding-left: var(--spectrum-large-card-body-padding-left);
+    padding-right: var(--spectrum-large-card-body-padding-right);
+    padding-bottom: var(--spectrum-large-card-body-padding-bottom);
+  }
+
+  coral-card-title {
+    font-size: var(--spectrum-large-card-title-text-size);
+  }
+
+  coral-card-subtitle {
+    font-size: var(--spectrum-large-card-subtitle-text-size);
+  }
+
+  ._coral-Card--quiet {
+    coral-card-content {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  ._coral-Card--inverted ._coral-Card-wrapper {
+    height: 200px;
+  }
+
+  coral-card-info > coral-alert._coral-Alert {
+    padding: 4px 8px;
+    min-width: auto;
+    min-height: auto;
+
+    coral-alert-header,
+    coral-alert-content {
+      font-size: var(--spectrum-large-banner-text-size);
+    }
+  }
+}
+
+@require 'light';
+@require 'lightest';
+@require 'dark';
+@require 'darkest';

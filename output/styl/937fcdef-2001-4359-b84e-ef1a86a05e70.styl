@@ -1,0 +1,470 @@
+// MAIN FIXES
+.md-app
+  height 100vh
+.md-drawer
+  width: 300px!important
+.md-app-scroller
+.md-app-content
+  background: #F5F5F5 !important
+  border-left: none
+  box-shadow:  inset 5px 0 5px -5px $cgray2
+  padding: 0!important
+sup
+  top: -.3em!important
+
+.has-elevation-4
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+
+.padded-page
+  padding: 16px
+  @media $small-only
+    padding: 0px
+
+.margined-page
+  margin: 16px
+  @media $small-only
+    margin: 0px
+
+// COMMON PAGE WHITE
+.common-page
+  @extends .has-elevation-4;
+  background: #ffffff
+  padding: 16px
+  margin-bottom: 16px;
+  @media $small-only
+    margin-bottom: 0px;
+    height auto
+    box-shadow: none
+  .title
+    color: $cgray1
+    font-weight: 500
+  .title-info
+    color: $cgray2
+    font-size: 13px
+    line-height: 1.4
+
+// COMMON PLAYER INFO
+.common-player-info
+  text-align: center
+  .md-avatar
+    @extends .has-elevation-4;
+    margin-bottom: 10px
+  .name
+    color: $cc1
+    font-size: 16px
+  .team
+    color: $cgray2
+    font-size: 14px
+    line-height: 1
+  .with-menu-box
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    align-items: flex-end
+    @media $small-only
+      flex-flow: column nowrap
+      align-items: center
+    .player-info
+      margin-right: 10px
+      @media $small-only
+        margin-right: 0px
+        margin-bottom: 10px
+    .md-menu
+      margin-bottom: 5px;
+      .md-icon
+        width: 18px;
+        min-width: 18px;
+        height: 18px;
+        font-size: 18px!important;
+
+
+
+// LINKS
+a, a:hover, a:visited, a:link, a:active, a > *
+  text-decoration: none !important
+
+// STEPPERS
+.has-steppers
+  background: #fff
+  padding: 16px
+  .md-title
+    color: $cgray1
+  .md-stepper-header.md-done
+    .md-stepper-number .md-icon svg
+      fill: #fff !important
+.md-steppers
+  .md-stepper-header
+    .md-stepper-number
+      background: $clblue !important
+      color: #fff
+    .md-disabled
+      .md-stepper-description
+        display none
+    &.md-active
+      .md-stepper-number
+        color: #fff !important
+  @media $small-only
+    .md-stepper
+      &:after
+        display none
+      .md-stepper-header
+        .md-ripple
+          padding: 0 24px 0 0px!important
+          .md-button-content
+            padding-left: 0!important
+      .md-stepper-content
+        padding: 0
+      .steppers-btns
+        width: 100%
+        display: flex
+        flex-flow: column nowrap
+        justify-content: center
+        align-items: center
+        .md-button
+          margin: 8px 0
+
+// MD-BUTTONS
+.md-button
+  .md-ripple
+    padding: 0 14px
+// Light Blue button
+.md-button.md-accent.lblue
+  color $clblue
+  .md-button-content .md-icon
+    color $clblue
+  &.md-raised
+    background-color $clblue !important
+  &[disabled]
+    // opacity: .4
+    // color: $cgray4
+    color: rgba(0,0,0,.26)!important
+    background-color: rgba(0,0,0,.12)!important
+// Light Blue FAB button
+.md-button.md-fab.lblue
+  color $clblue
+  .md-button-content .md-icon
+    color #fff!important
+  &:not([disabled])
+    background-color: $clblue!important
+  &[disabled]
+    color: rgba(0,0,0,.26)!important
+    background-color: rgba(0,0,0,.12)!important
+
+// MD-SWITCH
+.md-switch.md-accent.lblue
+  .md-switch-container
+    background-color: $clblue2
+  &.md-checked
+    .md-switch-thumb
+      background-color: $clblue
+
+// MD-CHECKBOX
+.md-checkbox
+  .md-checkbox-label
+    height auto!important
+  label
+    line-height: 1.2
+    text-align: left
+.md-checkbox.lblue
+  &.md-checked
+    .md-checkbox-container
+      background-color: $clblue
+      border-color: $clblue
+
+// MD-INPUT
+.md-field
+  &.md-disabled
+    input
+      -webkit-text-fill-color: $cgray2!important
+      color: $cgray2!important
+    &:after
+      background-color: $cgray3!important
+      background-image: none!important
+    .md-prefix
+      color: $cgray2!important
+
+
+
+// MD-RADIO
+.md-radio.lblue
+  .md-radio-container
+    border-color: $clblue!important
+    &:after
+      background-color: $clblue!important
+
+// MD-AVATAR MD-ICON
+.md-avatar-icon .md-icon
+  color: #fff!important
+
+// MD-AVATAR
+.md-avatar
+  &.md-size-c
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    font-size: 44px!important
+
+// MD-ICONS
+.md-icon
+  &.md-size-c
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    font-size: 34px!important
+
+// MD-CHIP
+.md-chip.lblue
+  background: #fff
+  border 1px solid $clblue
+  color: $clblue
+  .md-button
+    background: $clblue
+  &:hover
+    background-color: #fff!important
+    color: $clblue!important
+    .md-button
+      background: $clblue!important
+      svg 
+        fill: #fff!important
+    &.add
+      cursor pointer
+.md-chip.blue
+  background: $clblue
+  border 1px solid $clblue
+  color: #fff
+  cursor pointer
+  &.with-icon
+    padding-right: 30px
+  .md-icon
+    color: #fff
+    font-weight: bold
+
+
+// MD-DATEPICKER
+.md-datepicker-dialog
+  flex-flow: column nowrap
+  .md-datepicker-header
+    color: #ffffff!important
+    .md-datepicker-dayname
+      display inline!important
+  .md-datepicker-body
+    .md-datepicker-day-button.md-datepicker-selected
+      color: #fff!important
+    .md-dialog-actions.md-datepicker-body-footer
+      .md-button
+        color: $clblue
+.md-datepicker.no-date-icon
+  i.md-date-icon
+    display none
+  label
+    left 12px
+// City-State-ZIP in one row
+.address-info
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  align-items: center
+  max-width: 100%
+  @media $small-only
+    flex-flow: column nowrap
+  & > div:nth-child(1)
+    width: 200px
+    @media $small-only
+      width: 100%
+  & > div:nth-child(2)
+    width: 110px
+    @media $small-only
+      width: 100%
+  & > div:nth-child(3)
+    width: 110px
+    @media $small-only
+      width: 100%
+  &.no-zip
+    & > div:nth-child(1)
+      width: 64%
+      @media $small-only
+        width: 100%
+    & > div:nth-child(2)
+      width: 35%
+      @media $small-only
+        width: 100%
+
+// MD-SELECT 
+.md-select-menu.md-menu-content
+  z-index 12
+  .md-list
+    .md-list-item.md-selected
+      .md-list-item-content:hover
+        color white
+
+// MD-MENU
+.md-menu-content
+  z-index 12
+  .md-list-item-container
+    color: $clblue
+    text-align: right
+    &.md-list-item-button
+      color: $clblue
+    &:hover
+      background: $clblue!important
+      color: #fff!important
+      cursor: pointer
+
+// PLACEHOLDER MIXIN
+mixin-placeholder(c)
+  &::-webkit-input-placeholder
+    color: c;
+  &::-moz-placeholder
+    color: c;
+  &:-ms-input-placeholder
+    color: c;
+  &:-moz-placeholder
+    color: c;
+
+// STRIPE CARD OVERRIDE
+.StripeElement
+  background-color: white
+  height: 40px
+  padding: 10px 0px
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42)
+  transition all ease 400ms
+  margin: 4px 0 24px
+  position relative
+  &.StripeElement--focus
+    border-bottom: 2px solid $ca1
+    border-color: $ca1
+  &.StripeElement--invalid
+    border-color: #ff1744
+    &:after
+      content: 'Invalid card info'
+      position: absolute
+      top: 40px
+      left: 0px
+      color: #ff1744
+      opacity 1
+      font-weight: 400
+      font-size: 12px
+  &.StripeElement--webkit-autofill
+    background-color: #fefde5 !important
+
+
+// Input type number remove arrows
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+// BREADCRUMBS
+.breadcrums-box
+  display: flex
+  flex-flow: row nowrap
+  justify-content: flex-start
+  align-items: center
+  color: $clblue
+  font-size: 12px
+  font-weight: bold
+  cursor pointer
+  @media $small-only
+    padding: 16px 0 0 16px
+  .md-icon
+    font-weight: normal
+    margin 0 5px
+    color: $clblue!important
+    @media $small-only
+      margin 0 2px
+    &:first-child
+      margin-left: 0
+
+// TABS WITH NO BACK
+.md-tabs.tabs-lblue
+  @media $small-only
+    padding: 16px
+  .md-tabs-navigation
+  .md-content
+    background: transparent
+  .md-tabs-navigation
+    .md-button
+      color: $clblue
+      &.md-active
+        color: $clblue
+    .md-tabs-indicator
+      background-color: $clblue
+  .md-content 
+    .md-tab
+      padding: 16px 2px
+
+.custom-select
+.custom-input-small
+  max-width: 300px
+.custom-input
+  width 100%
+  background: transparent 
+  border: none 
+  outline: solid transparent
+  // -webkit-appearance: none
+  // -moz-appearance: none
+  // text-indent: 1px
+  // text-overflow: ''
+
+// SNACKBAR
+.md-snackbar
+  .md-snackbar-content
+    display: flex
+    flex-flow: column nowrap
+    justify-content: space-around
+    align-items: flex-start
+
+// TEXT
+.centered
+  text-align: center
+.title
+  color: $cgray1
+  font-weight: 500
+  font-size: 18px
+.title-big
+  color: $cgray1
+  font-weight: 500
+  font-size: 20px
+.title-info
+  color: $cgray2
+  font-size: 13px
+  line-height: 1.4
+.bold
+  font-weight: 500
+.bolder
+  font-weight: 600
+.caption
+  color: $cgray2
+  font-size: 11px
+  line-height: 1.4
+  &.red
+    color: $cred
+.field-caption
+  @extends .caption;
+  margin-top: -18px
+  margin-bottom: 15px
+.number-big
+  font-size: 22px
+  font-weight: 600
+
+// COLORS
+.cred
+  color $cred!important
+.cblue
+  color $cblue!important
+.clblue
+  color $clblue!important
+.cgreen
+  color $cgreen!important
+.ca1
+  color $ca1!important
+.cgray
+  color $cgray1!important
+.cgray2
+  color $cgray2!important
+.cyellow
+  color $cyellow!important

@@ -1,0 +1,483 @@
+.stories {
+  .banner {
+    width: 100%;
+    position: relative;
+
+    & img {
+      height: 570px;
+      object-fit: cover;
+      display: block;
+
+      @include pad {
+        height: 300px;
+        margin-bottom: 25px;
+      }
+
+      @include mobile {
+        height: 200px;
+        margin-bottom: 25px;
+      }
+    }
+
+    &__mask {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      @include pad {
+        display: none;
+      }
+    }
+
+    & h1 {
+      font-size: 48px;
+      font-weight: $bold;
+      color: $color-white;
+      position: absolute;
+      right: 50%;
+      top: 20%;
+      transform: translatex(50%);
+
+      @include mobile {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .form {
+    width: 950px;
+    max-width: 100%;
+    padding: 0 18px;
+    position: absolute;
+    right: 50%;
+    top: 35%;
+    transform: translatex(50%);
+    display: flex;
+    justify-content: space-between;
+
+    @include pad {
+      top: 50%;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &__menu {
+      display: flex;
+      margin-left: 10px;
+    }
+
+    &__select {
+      position: relative;
+
+      & select {
+        font-size: 16px;
+        color: $color-primary;
+        font-weight: $bold;
+        width: 90px;
+        height: 44px;
+        border-radius: 10px;
+        margin: 0 5px;
+        border: 0;
+        outline: none;
+        padding: 0 5px 0 15px;
+        background-color: $color-white;
+      }
+      &::after {
+        content: "\f078";
+        font-weight: 900;
+        font-family: 'Font Awesome 5 Free';
+        pointer-events: none;
+        position: absolute;
+        right: 18px;
+        top: 13px;
+      }
+    }
+
+    &__btn {
+      font-size: 16px;
+      font-weight: $bold;
+      width: 90px;
+      height: 44px;
+      border-radius: 10px;
+      margin: 0 5px;
+      cursor: pointer;
+
+      &--1 {
+        color: $color-white;
+        background-color: $color-orange;
+      }
+
+      &--2 {
+        color: $color-orange;
+        background-color: $color-white;
+        border: 1px solid $color-orange;
+      }
+    }
+    
+  }
+
+  .main {
+    padding: 0 18px;
+
+    &__container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &__wrap {
+      margin-bottom: 100px;
+    }
+
+    &__title {
+      font-size: 24px;
+      font-weight: $bold;
+      margin-bottom: 15px;
+
+      &::before {
+        content: '|';
+        color: transparent;
+        display: inline-block;
+        width: 6px;
+        border-radius: 10px;
+        margin-right: 5px;
+      }
+
+      &--1::before {
+        background-color: $color-purple;
+      }
+
+      &--2::before {
+        background-color: $color-orange;
+      }
+
+      &--3::before {
+        background-color: $color-green;
+      }
+    }
+
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 25px;
+
+      & li {
+        width: 100%;
+      }
+    }
+  }
+
+  .results {
+    padding: 0 18px;
+  
+    &__content {
+      width: 1200px;
+      max-width: 100%;
+      height: 55vh;
+      margin: 0 auto;
+      position: relative;
+  
+      @include desktop {
+        height: 100%;
+      }
+  
+      @include ipadPro {
+        margin-bottom: 198px;
+      }
+    }
+  
+    &__block {
+      width: 100%;
+      height: 250px;
+      background-color: $color-white;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      top: -250px;
+  
+      @include pad {
+        display: none;
+      }
+  
+      @include ipadPro {
+        display: none;
+      }
+    }
+    
+    &__cardBox {
+      width: 100%;
+      background-color: $color-white;
+      padding: 0 18px;
+      transform: translateY(-220px);
+  
+      @include pad {
+        transform: translateY(0);
+        padding: 0;
+      }
+  
+      @include ipadPro {
+        transform: translateY(0);
+        padding: 0;
+      }
+    }
+  
+    &__title {
+      font-size: 24px;
+      font-weight: $bold;
+      margin-bottom: 20px;
+  
+      &::before {
+        content: '|';
+        color: transparent;
+        display: inline-block;
+        width: 6px;
+        border-radius: 10px;
+        margin-right: 5px;
+      }
+  
+      &--1::before {
+        background-color: $color-purple;
+      }
+  
+      &--2::before {
+        background-color: $color-orange;
+      }
+  
+      &--3::before {
+        background-color: $color-green;
+      }
+    }
+  
+    &__marks {
+      display: flex;
+      margin-bottom: 30px;
+  
+      & li {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 8px 20px;
+        border: 1px solid #AEAEAE;
+        border-radius: 20px;
+        margin-right: 12px;
+        cursor: pointer;
+  
+        &:hover {
+          color: $color-white;
+          background-color: $color-orange;
+          border: 1px solid transparent;
+        }
+      }
+    }
+  
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(250px, 1fr));
+      grid-gap: 25px;
+  
+      @include desktop {
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+      }
+  
+      @include pad {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+      }
+  
+      @include mobile {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+  
+      & li {
+        width: 100%;
+      }
+    }
+  
+    &__error {
+      font-size: 20px;
+      font-weight: $bold;
+      display: flex;
+      justify-content: center;
+      text-align: start;
+      margin: 70px 0 100px;
+    }
+
+    &__pages {
+      display: flex;
+      justify-content: center;
+      margin: 75px 0;
+
+      &--other {
+        display: flex;
+        align-items: center;
+        margin: 0 20px;
+
+        & li {
+          font-size: 18px;
+          font-weight: $regular;
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          border-radius: 100%;
+          text-align: center;
+          margin: 0 6px;
+          cursor: pointer;
+          transition: all .4s ease-out;
+          
+
+          &:hover {
+            color: $color-white;
+            background-color: $color-orange;
+          }
+        }
+      }
+      
+      &-btn{
+        & button {
+          font-size: 20px;
+          width: 30px;
+          height: 30px;
+          color: $color-orange;
+          border: 1px solid $color-orange;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+
+        &--gray {
+          color: #CFCFCF !important;
+          border: 1px solid #E5E5E5 !important;
+        }
+      }
+
+      &-lastOff,
+      &-nextOff {
+        margin: 0 10px;
+      }
+      
+      & .curPageStyle {
+        color: $color-white;
+        background-color: $color-orange;
+      }
+    }
+  }
+
+  .filter {
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 18px;
+    position: fixed;
+    left: 50%;
+    top: 30%;
+    transform: translate3d(-50%, 0, 0);
+    padding: 0 18px;
+    z-index: 11;
+
+    &__content {
+      padding: 30px 18px 20px;
+      background-color: $color-white;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    &__keyword {
+      margin: 20px 0 30px;
+      display: flex;
+
+      & i {
+        color: $color-orange;
+        font-size: 24px;
+        margin-right: 10px;
+      }
+      
+      & input {
+        width: 100%;
+        font-size: 16px;
+        border-bottom: 1px solid $color-orange;
+        padding: 0 0 5px 5px;
+      }
+    }
+
+    &__wrap {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    &__title {
+      width: 10%;
+      font-size: 18px;
+      font-weight: $bold;
+    }
+
+    &__items {
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;      
+
+      & label {
+        display: inline-block;
+        font-weight: $regular;
+        padding: 6px 25px;
+        border-radius: 20px;
+        border: 1px solid #AEAEAE;
+        margin: 0 5px 8px;
+        cursor: pointer;
+
+        &:hover {
+          color: $color-white;
+          background-color: $color-orange;
+          border: 1px solid transparent;
+        }
+      }
+
+      & input:checked + label {
+        color: $color-white;
+        background-color: $color-orange;
+        border: 1px solid transparent;
+      }
+    }
+
+    &__btns {
+      display: flex;
+      justify-content: space-between;
+
+      & button {
+        font-size: 16px;
+        font-weight: $medium;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      &--clear {
+        width: 28%;
+        background-color: $color-white;
+        border: 1px solid #AEAEAE;
+
+        &:hover {
+          color: $color-white;
+          background-color: #AEAEAE;
+        }
+      }
+
+      &--search {
+        width: 70%;
+        color: $color-white;
+        background-color: $color-orange;
+
+        &:hover {
+          background-color: #e24511;
+        }
+      }
+    }
+
+    &__close {
+      font-size: 24px;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      cursor: pointer;
+    }
+  }
+}

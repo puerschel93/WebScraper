@@ -1,0 +1,408 @@
+#Dashboard{
+    #audience{
+        .leftPart{
+            padding: 24px 24px 0px 32px;
+            position: absolute;
+            left: 0px;
+            z-index: 10;
+            top: 0px;
+            height: calc(100vh - 60px);
+        }
+
+        .rightPart{
+            position: absolute;
+            left: 80%;
+            z-index: 10;
+            top: 0px;
+            padding: 24px;
+            height: 100%;
+        }
+
+        .filterIcon{
+            height: 40px;
+            width: 40px;
+            border-radius: 4px;
+            border: 1px solid $widgetEditorBorder;
+            position: relative;
+        }
+
+        .dateFilter{
+            position: absolute;
+            top: 32px;
+            z-index: 100;
+            right: 0px;
+            background-color: white;
+        }
+
+        .userImagePart{
+            width        : 40px;
+            height       : 40px;
+            border-radius: 50%;
+        }
+
+        .campaign-dropdown{
+            margin-top: 0px;
+        }
+
+        .subscriber-dropdown, .campaign-dropdown{
+            background: white;
+            border: 1px solid rgb(227, 226, 226);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .subscriber-dropdown {
+            max-height: 210px;
+            overflow  : auto;
+            width     : 100%;
+            margin-top: 2.5px;
+            position  : absolute;
+            left      : 0;
+            z-index   : 100;
+            >div{
+                padding      : 9px 12px;
+                border-bottom: 0.5px solid rgb(227, 226, 226);
+            }
+            div:hover{
+                background-color: rgb(227, 226, 226);
+            }
+        }
+            .campaign-dropdown{
+                margin-left: 16px;
+                position: relative;
+                width: 30%;
+                padding: 6px 12px;
+                .category-dropdown{
+                    width        : 100%;
+                    border-radius: 8px;
+                    left         : 0;
+                }
+        }
+
+        .addCustomerBtn{
+            width           : 40px;
+            height          : 40px;
+            border-radius   : 50%;
+            background-color: #EAEAEC;
+            outline         : 0px;
+            border          : 0px;
+            margin-left     : auto;
+        }
+        
+        .addCustomerBtn:hover{
+            background-color: #E2E3E4;
+        }
+
+        .addCustomerBtn:focus{
+            background-color: #DCDEDF;
+        }
+
+        .emptyScreen{
+            height: calc(100vh - 150px);
+        }
+        
+        #singleCustomerInfo , #PersonalInformation, #CustomerAnalysis, #Verification{
+
+            .customerNameHeader{
+                padding        : 16px 32px;
+                display        : flex;
+                flex-direction : row;
+                justify-content: space-between;
+                align-items    : center;
+            }
+            
+            .tabSection{
+                padding: 0px 0px 0px 32px;
+            }
+
+            .customerStatus{
+                height: 70vh;
+            }
+
+            .leftPanel{
+                width       : 239px;
+                border-right: 0.5px solid $textFieldBackground;
+            }
+
+            .statusShowBox , .activeStatusShow{
+                width        : fit-content;
+                border       : 1px solid $selectGreenBackgroundColor;
+                box-sizing   : border-box;
+                border-radius: 4px;
+                padding      : 4px;
+                color        : $selectGreenBackgroundColor !important;
+            }
+
+            .statusShowBox{
+                height: 32px;
+            }
+
+            .activeStatusShow{
+                height: 24px;
+            }
+
+            .selected{
+                background-color: #ECF4FD;
+                border-radius   : 4px;
+                cursor          : pointer;
+                color           : $themeColor !important;
+            }
+
+            .topHeaderSection{
+                padding      : 16px 24px;
+                margin       : 0px -32px;
+                display      : flex;
+                border-bottom: 0.5px solid $textFieldBackground;
+            }
+
+            .copyPass{
+                display: block !important;
+            }
+        
+
+            .bottomSection{
+                padding: 24px;
+            } 
+
+            .perkCardSection{
+                height: 260px;
+            }
+
+            .perkCard{
+                border-radius  : 4px;
+                padding        : 32px 24px;
+                display        : flex;
+                justify-content: space-between;
+            }
+
+            .bottomFadePart{
+                position     : absolute;
+                bottom       : 0px;
+                border-radius: 0px 0px 4px 4px;
+                height       : 80px;
+                padding      : 8px 24px;
+                width        : inherit;
+                left         : 0px;
+            }
+
+            .detailSection{
+                padding      : 16px;
+                border       : 0.5px solid $textFieldBackground;
+                border-radius: 4px;
+            }
+
+            .progressBarParent{
+                width           : 100%;
+                height          : 10px;
+                background-color: $cE6E6E6;
+                border-radius   : 24px;
+            }
+
+            .progressBarChild{
+                position     : absolute;
+                top          : 0px;
+                left         : 0px;
+                border-radius: inherit;
+                height       : inherit;
+            }
+
+            .Bronze{
+                .progressBarChild{
+                    background: linear-gradient(90deg, #B79891 0%, #94716B 100%), #737475;
+                }
+
+                .perkCard{
+                    background: linear-gradient(103.31deg, #D49459 0%, #D08967 100%);
+                }   
+
+                .bottomFadePart{
+                    background: linear-gradient(90deg, #D18C52 0%, rgba(202, 121, 74, 0.1) 100%);
+                }
+            }
+
+            .Silver{
+                .progressBarChild{
+                    background: linear-gradient(90deg, #232526 0%, #414345 100%);
+                }
+
+                .perkCard{
+                    background: linear-gradient(103.31deg, #F2F2F2 0%, #DEDEDE 100%);
+                }   
+
+                .bottomFadePart{
+                    background: radial-gradient(100% 3154.84% at 0% 100%, rgba(0, 0, 0, 0.59) 0%, rgba(151, 151, 151, 0.06) 100%);
+                }
+
+                .headingH3, .subtitle1{
+                    color: $selectButtonColor !important;
+                }
+            }
+
+            .Gold{
+                .progressBarChild{
+                    background: linear-gradient(90deg, #F4BC69 0%, #FFC837 100%);
+                }
+
+                .perkCard{
+                    background: linear-gradient(90deg, #F4BC69 0%, #FFC837 100%);
+                }   
+
+                .bottomFadePart{
+                    background: linear-gradient(90deg, rgba(255, 128, 8, 0.6) -102.94%, #F5BC6C 100%), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+                }
+            }
+
+            .singleType{
+                padding     : 8px;
+                color       : $tableActionDropdownColor;
+                margin-right: 8px;
+                font-size   : 14px;
+            }
+
+            .daysBlock{
+                padding         : 4px;
+                background-color: $cF6F6F9;
+                border-radius   : 4px;
+                font-size       : 14;
+                color           : $blockColor;
+                font-weight     : 5;
+                
+            }
+
+            .singleStatusRow{
+                padding      : 16px;
+                border-bottom: 0.5px solid $textFieldBackground;
+                width        : 120%;
+                margin       : 0px -32px;
+            }
+
+            .tag{
+                background-color: $cF6F6F9;
+                padding         : 4px;
+                border-radius   : 4px;
+            }
+
+            .tag::before{
+                content: '😍 ';
+            }
+
+        }
+
+    }
+
+    #HomeAnalytics{
+        padding: 0px 80px;
+
+        .singleDetail{
+            padding: 24px;
+            width  : 30%;
+            box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .backgroundImageGraph{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .dateInput{
+            border-radius: 4px;
+            padding      : 4px 12px;
+            width        : 200px;
+            border       : 1px solid $textFieldBorderColor;
+            cursor       : pointer;
+            font-size    : 14px;
+            font-weight  : Poppins;
+        }
+
+        .dateInput:focus{
+            border: 1px solid $textFieldBorderHoverColor;
+        }
+
+        .revenueGraph, .memberGraph, .pointGraph{
+            box-sizing: border-box;
+            box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            padding: 16px 8px;
+            min-height: 500px;
+            position: relative;
+
+        }
+    }
+
+    .brandBox {
+        cursor: pointer;
+        width: 96%;
+        margin: auto;
+        height: 128px;
+        box-shadow: 0px -4px 28px rgba(0, 0, 0, 0.08), 0px 70px 100px rgba(0, 0, 0, 0.08);
+        border-radius: 5px;
+    }
+    .brandBox:hover {
+        background-color:$cFAFAFA;
+    }
+    .paragraphsm {
+        text-align: center;
+    }
+    .brandInfo {
+        text-align: center;
+    }
+
+    .current {
+        width: 96%;
+        margin: auto;
+    }
+
+    .progressBar {
+        width: 50px;
+        height: 50px;
+        background-color: none !important;
+        margin-top: 57px;
+        margin-right: 16px;
+    }
+    .CircularProgressbar {
+        background-color: none !important;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 50px !important;
+    }
+    .progress {
+        background-color: none !important;
+    }
+    
+
+    #Audience{
+        padding: 16px 32px;
+    }
+}
+
+
+
+
+.headerModal {
+    width: 100%;
+    height: 121px;
+    border-bottom: 1px solid $cE0E0E0;
+}
+
+.MuiInputAdornment-filled {
+    margin-top: 0px !important;
+}
+
+.modalbox {
+    height: 250px;
+    width: 250px;
+    box-shadow: 0px 0px 30px rgba(204, 204, 204, 0.3);
+}
+
+.closeModal {
+    position: fixed;
+    top: 21px;
+    right: 21px;
+    cursor: pointer;
+}
+

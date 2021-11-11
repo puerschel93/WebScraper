@@ -1,0 +1,425 @@
+/* CLASE SECTION */
+$cardFront: #a05f5f82;
+$cardSide: #aae1f1;
+
+$cardFrontPokedex: gray;
+$cardSidePokedex: #e7d4d4;
+
+$cardFrontQuiz:#aae1f1;
+$cardSideQuiz: #9281618f;
+
+$cardFrontAbout: #080041a3;
+$cardSideAbout: #580dc582;
+
+$cardFrontContact: #e0c849;
+$cardSideContact: #e377d261;
+
+
+$cardHeightSmall: 340px;
+$cardHeightBig: 440px;
+$fastTransition: .2s;
+$mediumTransition: .5s;
+$slowTransition: 1.5s;
+$verySlowTransition: 2s;
+
+$goOut: 120vw;
+
+
+@mixin generalSection {
+	overflow: hidden;
+	margin: 2rem 1rem;
+	font-family: $normal;
+	box-shadow: 0px 0px 8px #091353;
+	border-radius: $borderRadius;
+}
+.section {
+	@include generalSection;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: $cardHeightSmall;
+	text-align: center;
+	background-color: $lightbg;
+
+	@include square_pc {
+		height: $cardHeightBig;
+	}
+	&__firstCard {
+		width: 100%;
+		height: $cardHeightSmall;
+		margin: auto;
+		position: relative;
+		top: 0px;
+		left: 0px;
+		background-color: $cardFront;
+		overflow: hidden;
+		border-radius: $borderRadius;
+		transition: $mediumTransition;
+		@include square_pc {
+			height: $cardHeightBig;
+		}
+		& h2 {
+			position: relative;
+			top: 85px;
+			font-family:$title2;
+			margin: 1rem;
+			border-radius: $borderRadius;
+			padding: 5rem;
+			font-size: 5rem;
+			text-align: center;
+			background-color:#ffffff52;
+			transition: $fastTransition;
+			z-index:2;
+			@include tablet {
+				font-size: 7rem;
+				top:78px;
+				width: 340px;
+				margin: auto;
+			}
+			@include square_pc {
+				font-size: 14rem;
+				top:86px;
+				width: 650px;
+			}
+		}
+		&__imgRight {
+			width: 400px;
+			position:relative;
+			opacity: .4;
+			bottom:155px;
+			left: 35px;
+			z-index:1;
+			transition: $fastTransition;
+			@include tablet {
+				width: 475px;
+				bottom: 210px;
+				left: 328px;
+			}
+			@include square_pc {
+				left: 510px;
+			}
+			@include wide_pc {
+				left: 695px;
+				width:675px;
+				bottom: 341px;
+			}
+			& img {width:100%;}
+
+		}
+		&__imgLeft {
+			@extend .section__firstCard__imgRight;
+			bottom: 199px;
+			left: 14px;
+			@include wide_pc {
+				bottom: 350px;
+			}
+			& img {width:100%;}
+		}
+	}
+	&__secondCard {
+		overflow: hidden;
+		position: relative;
+		top: 0px;
+		right:$goOut;
+		display: none;
+		flex-flow: row;
+		align-items: center;
+		justify-content: space-around;
+		height: 0%;
+		transition: $fastTransition;
+		background-color: $cardSide;
+		border-radius: $borderRadius;
+		opacity: 0.1;
+		z-index: 2;
+		&__mainBlock {
+			display: none;
+			flex-flow: column;
+			align-items: center;
+			justify-content: center;
+		}
+		& h2 {
+			display:none;
+			font-size: 3rem;
+			font-family: $title2;
+			@include tablet {
+				font-size: 5.5rem;
+			}
+		}
+		& p{	
+			display:none;
+			font-size: 1.5rem;
+			@include tablet {
+				font-size: 2rem;
+			}
+		}
+		&__text {
+			background-color: $lightbg;
+			margin: 1rem;
+			border-radius: $borderRadius;
+			padding: 2rem;
+			@include tablet {
+				width: 400px;
+			}
+		}
+		& p strong {
+			font-weight: $bold;
+		}
+		& p a {
+			text-decoration: none;
+			color: black;
+		}
+		&__img {
+			display:none;
+			width: 26px;
+			margin: 0px auto;
+			& img {width: 100%;}
+		}
+		&__bg {
+			position: relative;
+			bottom: 278px;
+			right: 66px;
+			width: 400px;
+			height: 0%;
+			opacity: .2;
+			z-index: 1;
+			@include wide_pc {
+				bottom: 424px;
+				right:-352px;
+				width:595px;
+				& img {width:100%;}
+			}
+		}
+		&__subBlock {
+			display: none;
+			& h3 {
+				font-size: $title2;
+				font-size: 3.7rem;
+				transition: $slowTransition;
+				margin-bottom: 2rem;
+			}
+			& ul li {
+				font-family: $normal;
+				font-size: 2rem;
+				transition: $verySlowTransition;
+				padding-bottom:1.3rem;
+				list-style-position: initial;
+				text-align: left;
+				& span {
+					background-color:$lightbg;
+					padding:.5rem;
+					border-radius: $borderRadius;
+					margin-right: 1rem;
+				}
+			}
+		}
+	}
+	&:hover {
+		display: block;
+	}
+	&:hover .section__firstCard {
+			left: $goOut;
+			height: 0%;
+			& h2 {
+				right: $goOut;
+			}
+			&__imgRight {
+				left: $goOut;
+			}
+			&_imgLeft {
+				right: $goOut;
+			}
+		}
+	&:hover .section__secondCard {
+		display:flex;
+		height: $cardHeightSmall;
+		width: 100%;
+		right: 0px;
+		opacity: 1;
+		@include square_pc {
+			height: $cardHeightBig;
+			&__subBlock {
+				display: flex;
+				flex-flow: column;
+				align-items: center;
+				justify-content: center;
+				width: 39%;
+				height: calc(#{$cardHeightBig} - 30px);
+				border-radius: $borderRadius;
+				box-shadow: 4px -2px 8px $mainbg;
+				padding: 1rem;
+				background-color: $secbg;
+				position:relative;
+				z-index: 3;
+				@include wide_pc {
+					padding: 1rem 7rem;
+				}
+				& h3 {
+					animation-name: showUp;
+					animation-duration: 3s;
+				}
+				& h3.contrast {
+					background-color: $lightbgtrans;
+					padding: 1rem;
+					border-radius: $borderRadius;
+				}
+				&__quickSearch {
+					background-color: $lightbgtrans;
+					border: $borderRadius;
+					display: flex;
+					align-items: center;
+					padding: .5rem 1rem;
+					& label {
+						font-size: 2rem;
+					}
+					& input {
+						font-size: 2rem;
+						padding: .5rem;
+						text-align: center;
+						width: 70px;
+						margin: auto 1rem;
+					}
+					& button {
+						position:relative;
+						padding: .5rem;
+						font-size: 2rem;
+						border: none;
+						background: none;
+						font-weight:$bold;
+						& div {
+							position: relative;
+							width: 45px;
+							height: 0;
+							bottom: 18px;
+							left: 21px;
+							& img {width:100%;}
+						}
+					}
+				}
+				&__quiz {
+					&__header {
+						color: white;
+						font-family: $title2;
+						font-size: 4rem;
+						animation-name: lightChange;
+						animation-duration: 1.25s;
+						animation-iteration-count: infinite;
+						animation-direction: alternate;
+					}
+					&__text {
+						color: white;
+						$font-family: $normal;
+						font-size: 2rem;
+						animation-name: showFromAbove;
+						animation-duration: 1s;
+						&__enfasis {
+						background-color: $lightbgtrans;
+						border-radius: $borderRadius;
+						padding: .5rem;
+						margin-right:1rem;
+						color: black;
+						font-weight: $bold;
+						animation-name: showFromAbove;
+						animation-duration: .7s;
+						}
+					}
+				}
+				&__jigglyCard {
+					& p {
+						background-color: $lightbgtrans;
+						border-radius: $borderRadius;
+						padding: 1rem;
+						position: relative;
+						width: 80%;
+						margin: auto;
+						animation-name: showup;
+						animation-duration: 1s;
+					}
+					& div {
+						width: 100px;
+						height: 0px;
+						position:relative;
+						bottom: 37px;
+						z-index: 3;
+						& img {width: 100%;}
+					}
+				}
+				&__contact {
+					& h3 {
+						@extend .section__secondCard__subBlock__quiz__header;
+					}
+					& p {
+						@extend .section__secondCard__subBlock__quiz__text;
+						& span {
+							@extend .section__secondCard__subBlock__quiz__text__enfasis;
+						}
+					}
+				}
+				& ul li {
+					position: relative;
+					animation-name: showFromRight;
+				}
+				& ul li:first-child {
+					animation-duration: .5s;
+				}
+				& ul li:nth-child(2) {
+					animation-duration: .9s;
+				}
+				& ul li:last-child {
+					animation-duration: 1.2s;
+				}
+			}
+		}
+		&__mainBlock {
+			display:flex;
+			height: $cardHeightSmall;
+			width: 100%;
+			@include square_pc {
+				height: $cardHeightBig;
+				width: 50%;
+			}
+		}
+		& h2 {
+			display: block;
+			z-index: 2;
+		}
+		& p {
+			display: block;
+			z-index: 2;
+		}
+		&__img {
+			display: block;
+		}
+	}
+}
+
+/* BG alternativos para cada sección Variables */
+/* Vars $ al comienzo de página */
+
+.pokedexFrontCard {background-color:$cardFrontPokedex;}
+.pokedexSideCard {background-color: $cardSidePokedex;}
+
+.quizFrontCard {background-color:$cardFrontQuiz;}
+.quizSideCard {background-color: $cardSideQuiz;}
+
+.aboutFrontCard {background-color:$cardFrontAbout;}
+.aboutSideCard {background-color: $cardSideAbout;}
+
+.contactFrontCard {background-color:$cardFrontContact;}
+.contactSideCard {background-color: $cardSideContact;}
+
+.pokedexThirdCard {
+	background: url('../img/day_bg.png');
+	background-size: cover; 
+}
+.quizThirdCard {
+	background: url('../img/night_bg.png');
+	background-size: cover;
+}
+.aboutThirdCard {
+	background: url('../img/home_bg.png');
+	background-size: cover;
+}
+.contactThirdCard {
+	background: url('../img/night_bg.png');
+	background-size: cover;
+}

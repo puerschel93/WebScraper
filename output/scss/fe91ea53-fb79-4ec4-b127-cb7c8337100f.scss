@@ -1,0 +1,224 @@
+.navbar {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: $height_navbar;
+  background-image: linear-gradient(to bottom, $gradient-linear_navbar);
+  color: $color_white;
+
+  &::before {
+    position: absolute;
+    width: 480px;
+    content: url('../../../public/images/navbar-banner.svg');
+
+    @include pc-width() {
+      margin-left: -$layout-size_big;
+    }
+
+    @include pad-under-width() {
+      right: 0;
+      height: 100%;
+      background-image: url('../../../public/images/navbar-banner--phone.svg');
+      background-position: right;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      content: '';
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+
+    @extend %flex-row-between;
+    @extend %layout_container;
+  }
+
+  &__preview-number {
+    display: inline-flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+
+    @include phone-width() {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__link-items {
+    display: inline-flex;
+
+    @include pad-under-width() {
+      display: none;
+    }
+
+    a {
+      color: $color_white;
+    }
+
+    >li {
+      margin-right: $layout-size_small;
+
+      @extend %flex-center;
+
+      @include pc-width() {
+        margin-right: $layout-size_small/3;
+        letter-spacing: 3px;
+      }
+
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__item-title {
+    position: relative;
+    cursor: pointer;
+
+    &:hover>ul {
+      transform: scaleY(1);
+    }
+
+    &::after {
+      margin-left: 5px;
+      content: url('../../../public/images/icon-arrow-dropdown-circle.svg');
+    }
+
+    >ul {
+      position: absolute;
+      top: $layout-size_big*1.5;
+      z-index: $z-index_basic;
+      padding: 20px 0;
+      width: 175px;
+      transition: transform 300ms ease-out;
+      transform: scaleY(0);
+      transform-origin: top;
+
+      @extend %flex-column-center;
+
+      &::before {
+        z-index: $z-index_background;
+        border: 2px solid $color_auxiliary;
+        border-radius: 5px;
+        background-image: linear-gradient(to bottom right, $gradient-linear_navbar-block);
+        opacity: 0.7;
+
+        @extend %pseudo-element--full;
+      }
+
+      li {
+        margin-bottom: 15px;
+        transition: transform 300ms ease-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        &:nth-last-child(1) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // RWD - phone menu code
+  &__trigger-btn {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    z-index: $z-index_basic;
+    display: none;
+    width: 50px;
+    height: 50px;
+
+    @include pad-width() {
+      right: -40px;
+    }
+
+    @include pad-under-width() {
+      display: flex;
+    }
+
+    @extend %flex-center;
+
+    span {
+      position: absolute;
+      width: 40px;
+      height: 3px;
+      border-radius: 10px;
+      background-color: $color_white;
+      transition: 300ms;
+
+      &:nth-child(1) {
+        margin-top: 20px;
+      }
+
+      &:nth-last-child(1) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &.active {
+      span {
+        background-color: $color_auxiliary;
+      }
+
+      span:nth-child(1) {
+        margin-top: 0px;
+        transform: rotateZ(45deg);
+      }
+
+      span:nth-child(2) {
+        margin-top: 0px;
+        transform: rotateZ(135deg);
+      }
+
+      span:nth-last-child(1) {
+        margin-bottom: 0px;
+        transform: rotateZ(225deg);
+      }
+
+      &+.navbar__link-items {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        display: flex;
+        overflow: auto;
+        flex-direction: column;
+        padding: $layout-size_small;
+        width: 100%;
+        height: calc(100vh - 60px);
+        border: 2px solid $color_auxiliary;
+        border-radius: 5px;
+        background-image: linear-gradient(to bottom right, $gradient-linear_navbar-block);
+        font-size: 1.5rem;
+        opacity: 0.9;
+
+        >li {
+          justify-content: flex-start;
+          margin-bottom: $layout-size_small;
+
+          &.navbar__item-title {
+            align-items: flex-start;
+            flex-direction: column;
+            margin-right: 0px;
+
+            &::after {
+              position: absolute;
+              top: -5px;
+              right: 0;
+            }
+
+            >ul {
+              position: relative;
+              top: 5px;
+              width: 100%;
+              transform: scale(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

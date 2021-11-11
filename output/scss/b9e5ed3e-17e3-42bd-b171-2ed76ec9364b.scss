@@ -1,0 +1,383 @@
+.button,
+.input,
+.output,
+.select,
+.textarea {
+  border: 1px solid transparent;
+  display: inline-block;
+  height: calc(var(--h) + (var(--y) / 2));
+  padding: calc(var(--y) / 4) calc(var(--x) / 2);
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+  width: auto;
+  z-index: 0;
+  &:focus {
+    @extend :focus-visible;
+  }
+}
+
+.button,
+.button:any-link {
+  background: var(--fill-button);
+  border-color: var(--stroke-button);
+  border-radius: var(--arc-button);
+  border-width: 0;
+  box-shadow: var(--shadow-button);
+  color: var(--color-button);
+  text-align: center;
+  @each $v in (hover, focus, active, disabled) {
+    &:#{$v} {
+      background: var(--fill-button--#{$v}, var(--fill-button));
+      border-color: var(--stroke-button--#{$v}, var(--stroke-button));
+      border-radius: var(--arc-button--#{$v}, var(--arc-button));
+      box-shadow: var(--shadow-button--#{$v}, var(--shadow-button));
+      color: var(--color-button--#{$v}, var(--color-button));
+    }
+  }
+  &.as\:link {
+    background: none;
+    border-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    color: var(--color-link);
+    @each $v in (hover, focus, active) {
+      &:#{$v} {
+        background: none;
+        border-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        color: var(--color-link--#{$v}, var(--color-link));
+      }
+    }
+  }
+  .title {
+    > .icon {
+      &:first-child {
+        margin-left: calc(var(--x) / -4);
+      }
+      &:last-child {
+        margin-right: calc(var(--x) / -4);
+      }
+      &.caret {
+        margin-left: calc(var(--x) / -4);
+        margin-right: calc(var(--x) / -4);
+      }
+    }
+  }
+}
+
+.input,
+.textarea {
+  background: var(--fill-input);
+  border-color: var(--stroke-input);
+  border-radius: var(--arc-input);
+  box-shadow: var(--shadow-input);
+  color: var(--color-input);
+  width: var(--width-input);
+  @each $v in (read-write, hover, focus, active, read-only, disabled) {
+    &:#{$v} {
+      background: var(--fill-input--#{$v}, var(--fill-input));
+      border-color: var(--stroke-input--#{$v}, var(--stroke-input));
+      box-shadow: var(--shadow-input--#{$v}, var(--shadow-input));
+      color: var(--color-input--#{$v}, var(--color-input));
+    }
+  }
+  @each $v in (valid, invalid) {
+    &[pattern],
+    &[required] {
+      &:focus:#{$v} {
+        background: var(--fill-input--#{$v}, var(--fill-input));
+        border-color: var(--stroke-input--#{$v}, var(--stroke-input));
+        box-shadow: var(--shadow-input--#{$v}, var(--shadow-input));
+        color: var(--color-input--#{$v}, var(--color-input));
+      }
+    }
+  }
+}
+
+.input {
+  &[type='file'],
+  &[type='range'] {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    // height: var(--y);
+    line-height: var(--y);
+    padding: 0;
+  }
+  &[type='file'] {
+    line-height: normal;
+  }
+}
+
+.input {
+  &[type='checkbox'],
+  &[type='image'],
+  &[type='radio'] {
+    background: none;
+    border: 0;
+    height: var(--z);
+    line-height: var(--z);
+    margin: 0;
+    padding: 0;
+    width: var(--z);
+  }
+  &[type='color'] {
+    height: calc(var(--y) * 1.5);
+    padding: 0;
+    width: calc(var(--x) * 1.5);
+    &::-moz-color-swatch {
+      border: 0;
+    }
+    &::-webkit-color-swatch {
+      border: 0;
+    }
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+  }
+  &[type='image'] {
+    box-shadow: none;
+    height: auto;
+    width: auto;
+  }
+  &[type='number'] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      @include appearance(none);
+      margin: 0;
+    }
+  }
+  &[type='number'],
+  &[type='search'] {
+    @include appearance(textfield);
+  }
+}
+
+.output {
+  background: var(--fill-output);
+  border-color: var(--stroke-output);
+  border-radius: var(--arc-output);
+  box-shadow: var(--shadow-output);
+  color: var(--color-output);
+  @each $v in (hover, focus, active) {
+    &:#{$v} {
+      background: var(--fill-output--#{$v}, var(--fill-output));
+      border-color: var(--stroke-output--#{$v}, var(--stroke-output));
+      border-radius: var(--arc-output--#{$v}, var(--arc-output));
+      box-shadow: var(--shadow-output--#{$v}, var(--shadow-output));
+      color: var(--color-output--#{$v}, var(--color-output));
+    }
+  }
+}
+
+.select {
+  -moz-padding-start: calc((var(--x) / 2) - 3px); // <https://github.com/twbs/bootstrap/issues/32636>
+  appearance: none;
+  background: var(--fill-input);
+  border-color: var(--stroke-input);
+  border-radius: var(--arc-input);
+  box-shadow: var(--shadow-input);
+  color: var(--color-input);
+  width: var(--width-input);
+  @each $v in (hover, focus, active, disabled) {
+    &:#{$v} {
+      background: var(--fill-input--#{$v}, var(--fill-input));
+      border-color: var(--stroke-input--#{$v}, var(--stroke-input));
+      box-shadow: var(--shadow-input--#{$v}, var(--shadow-input));
+      color: var(--color-input--#{$v}, var(--color-input));
+    }
+  }
+  &[multiple] {
+    height: auto;
+    optgroup,
+    option {
+      background: none;
+    }
+  }
+  optgroup,
+  option {
+    background: var(--fill-input);
+    color: var(--color-input);
+    margin: 0;
+    padding: 0;
+    @each $v in (disabled) {
+      &:#{$v} {
+        background: var(--fill-input--#{$v}, var(--fill-input));
+        color: var(--color-input--#{$v}, var(--color-input));
+      }
+    }
+  }
+  optgroup {
+    font-weight: bold;
+    option {
+      font-weight: normal;
+      padding-left: calc(var(--x) / 3);
+    }
+  }
+  &:not([multiple]) {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.width {
+  display: flex;
+  width: 100%;
+}
+
+.textarea {
+  min-height: calc(var(--y) * 3.75);
+  overflow: auto;
+  resize: vertical;
+  &.height {
+    height: calc(var(--y) * 10.75);
+  }
+}
+
+label {
+  > input {
+    &[type='checkbox'],
+    &[type='radio'] {
+      + span {
+        display: inline-flex;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// Custom appearance for modern browser(s)
+.input {
+  &[type='checkbox'],
+  &[type='radio'] {
+    @include appearance(none);
+    background: var(--fill-button);
+    border-color: var(--stroke-button);
+    border-radius: var(--arc-button);
+    box-shadow: var(--shadow-button);
+    color: var(--color-button);
+    &::before {
+      background: var(--fill);
+      bottom: 2px;
+      content: "";
+      left: 2px;
+      position: absolute;
+      right: 2px;
+      top: 2px;
+    }
+    @each $v in (hover, focus, active, disabled) {
+      &:#{$v} {
+        background: var(--fill-button--#{$v}, var(--fill-button));
+        border-color: var(--stroke-button--#{$v}, var(--stroke-button));
+        box-shadow: var(--shadow-button--#{$v}, var(--shadow-button));
+        color: var(--color-button--#{$v}, var(--color-button));
+      }
+    }
+  }
+  &[type='checkbox'] {
+    &:checked {
+      &::before {
+        @include transform(rotate(45deg));
+        background: none;
+        border-bottom: 2px solid var(--color-button);
+        border-right: 2px solid var(--color-button);
+        bottom: 4px;
+        left: 5px;
+        right: 5px;
+        top: 1px;
+        visibility: visible;
+      }
+    }
+    @each $v in (hover, focus, active, disabled) {
+      &:#{$v} {
+        &::before {
+          border-bottom-color: var(--color-button--#{$v});
+          border-right-color: var(--color-button--#{$v});
+        }
+      }
+    }
+  }
+  &[type='radio'] {
+    &,
+    &::before {
+      border-radius: 100%;
+    }
+    &:checked {
+      &::before {
+        background: none;
+        border: 2px solid;
+        border-color: var(--fill);
+        visibility: visible;
+      }
+    }
+    @each $v in (hover, focus, active, disabled) {
+      &:#{$v} {
+        &::before {
+          border-color: var(--fill--#{$v}, var(--fill));
+        }
+      }
+    }
+  }
+  &[type='range'] {
+    @include appearance(none);
+    &::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+      background: var(--stroke-input);
+      border: 0;
+      height: 2px;
+      overflow: visible;
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: var(--fill-button);
+      border-color: var(--stroke-button);
+      border-radius: var(--arc-button);
+      border-width: 0;
+      box-shadow: var(--shadow-button);
+      color: var(--color-button);
+      height: var(--y);
+      margin-top: calc(calc(var(--y) / -2) + 1px); // Magic! :(
+      width: calc(var(--x) / 2);
+    }
+    &::-moz-range-track {
+      background: var(--stroke-input);
+      border: 0;
+      height: 2px;
+    }
+    &::-moz-range-thumb {
+      background: var(--fill-button);
+      border-color: var(--stroke-button);
+      border-radius: var(--arc-button);
+      border-width: 0;
+      box-shadow: var(--shadow-button);
+      color: var(--color-button);
+      height: var(--y);
+      margin-top: calc(calc(var(--y) / -2) + 1px); // Magic! :(
+      width: calc(var(--x) / 2);
+    }
+  }
+  @each $v in (hover, focus, active, disabled) {
+    &:#{$v} {
+      &::-webkit-slider-runnable-track {
+        background: var(--stroke-input--#{$v}, var(--stroke-input));
+      }
+      &::-moz-range-track {
+        background: var(--stroke-input--#{$v}, var(--stroke-input));
+      }
+      &::-webkit-slider-thumb {
+        background: var(--fill-button--#{$v}, var(--fill-button));
+        border-color: var(--stroke-button--#{$v}, var(--stroke-button));
+        box-shadow: var(--shadow-button--#{$v}, var(--shadow-button));
+        color: var(--color-button--#{$v}, var(--color-button));
+      }
+      &::-moz-range-thumb {
+        background: var(--fill-button--#{$v}, var(--fill-button));
+        border-color: var(--stroke-button--#{$v}, var(--stroke-button));
+        box-shadow: var(--shadow-button--#{$v}, var(--shadow-button));
+        color: var(--color-button--#{$v}, var(--color-button));
+      }
+    }
+  }
+}

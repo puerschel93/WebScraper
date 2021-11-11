@@ -1,0 +1,302 @@
+$bfr-b-color: lightskyblue;
+
+$b1-color: #fff;
+$b1-blg1-color: #03a9f4;
+$b1-blg2-color: #f441a5;
+$b1-blg3-color: #ffeb3b;
+$b1-blg4-color: #03a9f4;
+
+$b2-color: lightcyan;
+$b2-hover-color: lightcoral;
+$b2-b-color: lightskyblue;
+$b2-hover-b-color: lightgreen;
+$b2-hover-bs-color: lightpink;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50vw;
+    height: 33vh;
+    margin: 0 25vw;
+}
+
+.container-buttons-row1 {
+    background: $bfr-b-color;
+}
+
+.row1-button1 {
+    //position: absolute;
+    //transform: translate(-50%, -50%);
+    width: 200px;
+    text-align: center;
+    line-height: 60px;
+    color: $b1-color;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    //font-family: sans-serif;
+    //box-sizing: border-box;
+    z-index: 1;
+
+    background: 
+    linear-gradient(90deg, $b1-blg1-color, $b1-blg2-color, $b1-blg3-color, $b1-blg4-color);
+    background-size: 400%;
+    
+    border-radius: 30px;
+
+    // &::before {
+    //     content: '';
+    //     // position: absolute;
+    //     top: -5px;
+    //     left: -5px;
+    //     right: -5px;
+    //     bottom: -5px;
+    //     z-index: -1;
+
+    //     background: 
+    //     linear-gradient(90deg, $b1-blg1-color, $b1-blg2-color, $b1-blg3-color, $b1-blg4-color);
+    //     background-size: 400%;
+        
+    //     border-radius: 40px;
+    //     opacity: 0;
+    //     transition: .5s;
+    // }
+
+    &:hover {
+        animation: animate 8s linear infinite;
+
+        // &::before {
+        //     filter: blur(20px);
+        //     opacity: 1;
+        //     animation: animate 8s linear infinite;
+        // }
+    }
+}
+
+.row1-button2__container {
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    //min-height: 100vh;
+    background: $b2-b-color;
+}
+
+.row1-button2 {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: $b2-color;
+    text-transform: none;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: .2s;
+
+    &:hover {
+        color: $b2-hover-color;
+        background: $b2-hover-b-color;
+        box-shadow: 
+            0 0 10px $b2-hover-bs-color, 
+            0 0 40px $b2-hover-bs-color, 
+            0 0 80px $b2-hover-bs-color;
+        transition-delay: 1s;
+
+        span {
+            transition: 1s;
+        }
+    }
+
+    &:hover span:nth-child(1) {
+        left: 100%;
+    }
+
+    &:hover span:nth-child(3) {
+        right: 100%;
+        transition-delay: .5s;
+    }
+
+    &:hover span:nth-child(2) {
+        top: 100%;
+        transition-delay: .25s;
+    }
+
+    &:hover span:nth-child(4) {
+        bottom: 100%;
+        transition-delay: .75s;
+    }
+}
+
+.row1-button2__border {
+    position: absolute;
+    display: block;
+
+    &:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, lightgreen)
+    }
+
+    &:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, lightgreen)
+    }
+
+    &:nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, lightgreen)
+    }
+
+    &:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, lightgreen)
+    }
+}
+
+.button-row2 {
+    display: inline-block;
+}
+
+.container-buttons-row2 {
+    text-align: center;
+
+    .btn {
+        border: 1px solid #3498db;
+        background: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-family: "montserrat";
+        cursor: pointer;
+        margin: 10px;
+        transition: .8s;
+        position: relative;
+        overflow: hidden;
+
+        &.btn3, &.btn4 {
+            color: #3498db;
+        }
+
+        &.btn5, &.btn6 {
+            color: #fff;
+        }
+
+        &.btn3:hover, &.btn4:hover {
+            color: #fff
+        }
+
+        &.btn5:hover, &.btn6:hover {
+            color: #3498db;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: #3498db;
+            z-index: -1;
+            transition: .8s;
+        }
+
+        &.btn3::before, &.btn5::before {
+            top: 0;
+            border-radius: 0 0 50% 50%;
+        }
+
+        &.btn4::before, &.btn6::before {
+            bottom: 0;
+            border-radius: 50% 50% 0 0;
+        }
+
+        &.btn5::before, &.btn6::before {
+            height: 180%;
+        }
+
+        &.btn3:hover::before, &.btn4:hover::before {
+            height: 180%;
+        }
+
+        &.btn5:hover::before, &.btn6:hover::before {
+            height: 0%;
+        }
+
+    }
+}
+
+.middle {
+    position: absolute;
+    //transform: translate(-50%, -50%);
+    text-align: center;
+
+    .btn {
+        background: none;
+        border: 2px solid #000;
+        font-family: "montserrat", sans-serif;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        min-width: 200px;
+        margin: 10px;
+        cursor: pointer;
+        transition: color .4s linear;
+        position: relative;
+        
+        &:hover {
+            color: #fff;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: -1;
+            transition: transform .5s;
+            transform-origin: 0 0;
+            transition-timing-function: cubic-bezier(.5, 1.6, .4, .7);
+        }
+
+        &.btn1::before {
+            transform: scaleX(0);
+        }
+        &.btn2::before {
+            transform: scaleY(0);
+        }
+        &.btn1:hover::before {
+            transform: scaleX(1);
+        }
+        &.btn2:hover::before {
+            transform: scaleY(1);
+        }
+    }
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}

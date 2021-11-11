@@ -1,0 +1,159 @@
+.main-nav {
+  position: relative;
+  width: 100%;
+  padding: 29px 5.2%;
+  margin: 0 auto;
+  max-width: 1920px;
+  box-sizing: border-box;
+}
+
+.main-nav__wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.main-nav__toggle {
+  display: none;
+  height: 60px;
+  width: 93px;
+  margin-right: 60px;
+  border: none;
+  background-color: transparent;
+}
+
+.main-nav__toggle div {
+  height: 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.main-nav__toggle div:first-child {
+  margin-top: 0;
+  width: 50%;
+}
+
+.main-nav__toggle div:nth-child(3) {
+  width: 70%;
+}
+
+.main-nav__logo-wrapper {
+ height: 60px;
+}
+
+.main-nav__logo-wrapper a {
+  display: block;
+  height: 100%;
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  margin-left: 4.42%;
+  max-width: 830px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.main-nav__list li {
+  margin-right: 42px;
+}
+
+.main-nav__list li:first-child {
+  margin-left: 0;
+}
+
+.main-nav__list a {
+  display: block;
+  height: 100%;
+  padding: 20px 0;
+  font-family: $montserrat;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  box-sizing: border-box;
+
+  &:hover {
+    color: #c2ab81;
+  }
+}
+
+.main-nav__user-wrapper {
+  margin-left: auto;
+  display: flex;
+}
+
+.main-nav__phone {
+  position: relative;
+  width: 93px;
+  height: 60px;
+  margin-right: 13px;
+  border: 1px solid #ffffff;
+  transform: skew(-20deg);
+  box-sizing: border-box;
+}
+
+.main-nav__phone a {
+  display: block;
+  height: 100%;
+  background-color: transparent;
+}
+
+.main-nav__phone svg {
+  margin-left: 36px;
+  margin-top: 20px;
+}
+
+@media (min-width: 1920px) {
+  .main-nav {
+    padding: 29px 100px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .main-nav {
+    position: initial;
+  }
+
+  .main-nav__toggle {
+    display: block;
+  }
+
+  .main-nav--closed .main-nav__list {
+    display: none;
+  }
+
+  .main-nav--opened .main-nav__list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 118px;
+    margin: 0;
+    padding: 54px 5.2%;
+    background-color: $bg-color;
+    width: 100%;
+    max-width: 100%;
+    z-index: 10;
+  }
+
+  .main-nav__list li {
+    margin-right: 42px;
+  }
+
+  .main-nav__list li:first-child {
+    margin-left: 0;
+  }
+
+  .main-nav__list a {
+    color: $bg-color;
+    text-shadow: 1px 0 0 #808080,
+    -1px 0 0 #808080,
+    0 1px 0 #808080,
+    0 -1px 0 #808080;
+  }
+}

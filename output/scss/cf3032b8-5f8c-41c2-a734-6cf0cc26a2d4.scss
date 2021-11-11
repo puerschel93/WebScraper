@@ -1,0 +1,330 @@
+@use "_global" as *;
+@use "_mixin" as *;
+
+.bannerMain {
+  &__top {
+    z-index: 1;
+    position: relative;
+    height: 55vw;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7vw), 0 100%);
+    margin-bottom: -7vw;
+    background-image: url("img/tech_img/imgix-1500.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    //background-origin: center;
+    h1 {
+      position: absolute;
+      bottom: calc(7vw - 1em);
+      right: 4%;
+      transform: rotate(-3.8deg);
+      font-family: "Audiowide", cursive;
+      font-size: 1.5em;
+      color: var(--black);
+      margin-bottom: 0;
+      padding-bottom: 10px;
+      letter-spacing: 2px;
+      text-shadow: 0px 0px 10px var(--white);
+    }
+  }
+  &__title {
+    position: relative;
+    height: calc(5vw + 5em);
+    width: 100%;
+    z-index: 0;
+    background-image: url("img/background_2.png");
+    background-size: cover;
+    background-position: top;
+    background-color: rgb(70, 70, 70);
+    border-bottom: 3px solid var(--jsThemeClr);
+    box-shadow: 0px 3px 3px rgb(70, 70, 70); 
+    h2 {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      bottom: 10px;
+      color: var(--jsThemeClr);
+      font-weight: 900;
+      font-size: calc(2vw + 1em);
+      letter-spacing: 0.25em;
+      text-shadow: 0px 0px 7px var(--black);
+    }
+  }
+}
+.banner {
+  &__top {
+    z-index: 1;
+    position: relative;
+    height: 20vw;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7vw), 0 100%);
+    margin-bottom: -7vw;
+    background-color: whitesmoke;
+    h1 {
+      position: absolute;
+      bottom: calc(7vw - 1em);
+      right: 4%;
+      transform: rotate(-3.8deg);
+      font-family: "Audiowide", cursive;
+      font-size: 2em;
+      color: var(--black);
+      margin-bottom: 0;
+      padding-bottom: 20px;
+      letter-spacing: 2px;
+      //text-shadow: 0px 0px 10px var(--black);
+    }
+    .skills {
+      padding: 1em;
+      .logo-bar__img {
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 800px;
+        bottom: 0.5rem;
+        text-align: center;
+        img {
+          margin: 5px;
+          max-width: calc(3vw + 3em);
+        }
+      }
+      h1 {
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+        text-align: center;
+        font-family: "Audiowide", cursive;
+        font-size: calc(1vw + 1rem);
+        color: var(--themeTxtClr);
+        text-shadow: 0px 0px 3px var(--black);
+        letter-spacing: 5px;
+      }
+      h3 {
+        padding-bottom: 1em;
+        font-family: "montserrat";
+        text-align: center;
+        letter-spacing: 1px;
+        color: var(--black);
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    height: calc(5vw + 5em);
+    width: 100%;
+    background-color: var(--bgFilterBlkDrk);
+    h2 {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      bottom: calc(1vw + .5em);
+      color: var(--jsThemeClr);
+      font-size: calc(2vw + 1em);
+      letter-spacing: 0.25em;
+      text-shadow: 0px 0px 5px var(--black);
+    }
+  }
+}
+.greeting {
+  width: 100%;
+  padding: 4em 0;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Bedrock";
+  color: var(--jsThemeClr);
+  text-shadow: 0px 0px 5px var(--black);
+  letter-spacing: 2px;
+}
+/*
+.homeWork-top {
+  z-index: 1;
+    position: relative;
+    height: 45vw;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7vw), 0 100%);
+    margin-bottom: -7vw;
+  background-image: url("img/tech_img/mwesigwa-joel-1500.jpg");
+  background-size: cover;
+  background-position: center;
+  h1 {
+    position: absolute;
+      bottom: calc(7vw - 1em);
+      right: 4%;
+      transform: rotate(-3.8deg);
+      font-family: "Audiowide", cursive;
+      font-size: 1.5em;
+      color: var(--themeTxtClr);
+      margin-bottom: 0;
+      padding-bottom: 10px;
+      letter-spacing: 2px;
+      text-shadow: 0px 0px 10px var(--black);
+  }
+}
+.homeWork-title {
+  position: relative;
+    height: calc(5vw + 5em);
+    width: 100%;
+    background-color: var(--bgPrimary);
+    z-index: 0;
+  background-image: url("img/background_2.png");
+  background-size: cover;
+  background-position: center;
+  h2{
+    position: absolute;
+      width: 100%;
+      text-align: center;
+      top: calc(1vw + 1.75em);
+      //font-family: "Audiowide";
+      color: var(--darkModeTxt);
+      font-size: calc(2vw + 1em);
+      letter-spacing: 0.25em;
+      //text-shadow: 0px 0px 7px var(--black);
+  }
+}
+
+.program-top {
+  z-index: 1;
+    position: relative;
+    height: 45vw;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7vw), 0 100%);
+    margin-bottom: -7vw;
+  
+  background-size: cover;
+  background-position: center;
+  h1 {
+    position: absolute;
+      bottom: calc(7vw - 1em);
+      right: 4%;
+      transform: rotate(-3.8deg);
+      font-family: "Audiowide", cursive;
+      font-size: 1.5em;
+      color: var(--themeTxtClr);
+      margin-bottom: 0;
+      padding-bottom: 10px;
+      letter-spacing: 2px;
+      text-shadow: 0px 0px 10px var(--black);
+  }
+}
+.program-title {
+  position: relative;
+    height: calc(5vw + 5em);
+    width: 100%;
+    background-color: var(--bgPrimary);
+    z-index: 0;
+  background-image: url("img/background_2.png");
+  background-size: cover;
+  background-position: center;
+  h2{
+    position: absolute;
+      width: 100%;
+      text-align: center;
+      top: calc(1vw + 1.75em);
+      //font-family: "Audiowide";
+      color: var(--darkModeTxt);
+      font-size: calc(2vw + 1em);
+      letter-spacing: 0.25em;
+      //text-shadow: 0px 0px 7px var(--black);
+  }
+}
+*/
+
+@media screen and (min-width: 310px) {
+  .bannerMain {
+    &__top {
+      h1{
+        font-size: 1.5em;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .bannerMain{
+    &__title{
+      height: calc(6vw + 6em);
+    }
+  }
+  .banner {
+    &__top {
+      height: 15vw;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .bannerMain {
+    &__top{
+      background-position: center;
+      background-size: cover;
+        h1{
+          font-size: 2em;
+        }
+      }
+    &__title {
+      height: calc(6vw + 6em);
+      h2 {
+        letter-spacing: 0.25em;
+      }
+    }
+  }
+  .banner {
+    &__title {
+      h2 {
+        bottom: calc(0.5vw + 0.25em);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  
+  .banner {
+    &__top{
+      height: 13vw;
+      max-height: 130px;
+      h1{
+        font-size: 2.5em;
+      right: 10%;
+      padding-bottom: 15px;
+      }
+    }
+    &__title {
+      height: calc(5.5vw + 6em);
+      max-height: 130px;
+    }
+  }
+  .greeting{
+    font-size: 26px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bannerMain {
+    &__top {
+      height: 40vw;
+    }
+    &__title {
+      height: 175px;
+      font-size: calc(1.75vw + 1em);
+      bottom: 20px;
+    }
+  }
+  .banner {
+    &__title {
+      h2 {
+        bottom: calc(0.3vw + 0.2em);
+      }
+    }
+  }
+  .greeting{
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bannerMain {
+    &__title {
+      height: 200px;
+    }
+  }
+}

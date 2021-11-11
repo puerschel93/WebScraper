@@ -1,0 +1,328 @@
+@import '~common/stylus/mixin'
+
+body
+  // 内容仓库修改按钮
+  .el-dialog
+    .modifyBtn
+      float right
+      z-index 11
+      position absolute
+      right 70px
+  // 发布渠道样式
+  .modular
+    li
+      .xRead
+        bg-image('icon-Xbook')
+      .weChat
+        bg-image('icon-weChat')
+      .sina
+        bg-image('icon-sina')
+      .eCommerce
+        bg-image('icon-ECommerce')
+      .xTeach
+        bg-image('icon-xTeach')
+      .xLibrary
+        bg-image('icon-xLibrary')
+      .xQrcode
+        bg-image('icon-xQrcode')
+  // 表单禁用状态
+  input[disabled], textarea[disabled]
+    background #f3f3f3
+  fieldset[disabled]
+    input[type='text'], textarea
+      background #f3f3f3
+    button, button:hover, button.is-plain, button.is-plain:hover
+      cursor no-drop
+      background #f3f3f3
+      color #ddd
+      border-color #ddd
+    i
+      color #ddd
+  .iconRotate
+    border 1px solid #44c3aa
+    &.up
+      i
+        transform rotate(90deg)
+    &.down
+      i
+        transform rotate(-90deg)
+    i
+      color #44c3aa
+  .el-button.is-disabled
+    i
+      color #ddd
+  .el-tree-node__content
+    height 40px
+    line-height 40px
+    .el-tree-node__expand-icon
+      // color #c0c4cc
+    .custom-tree-node
+      display flex
+      flex 1
+      align-items center
+      justify-content space-between
+  .el-dropdown-menu
+    min-width 100px
+  .el-dialog__body
+    padding 20px
+  .release-tab
+    .el-tree-node__content
+      height 40px
+      line-height 40px
+      .el-tree-node__expand-icon
+        // color #c0c4cc
+      .custom-tree-node
+        display flex
+        flex 1
+        align-items center
+        justify-content space-between
+    &.el-tabs--border-card
+      .el-tabs__content
+        padding 20px 0
+      border none
+      .tabs-nav
+        .el-tabs__content
+          padding 0
+        .el-tabs__nav
+          padding 0
+          .el-tabs__item:nth-child(2)
+            padding-left 0
+      .el-tabs__nav
+        padding-left 20px
+        padding-top 10px
+      >.el-tabs__header
+        .el-tabs__item.is-active
+          border-top 1px solid #dcdfe6
+          border-top-left-radius 5px
+          border-top-right-radius 5px
+  .tabs-nav
+    .el-tabs__item
+      line-height 40px
+      font-size 14px
+  .el-dialog__headerbtn:focus .el-dialog__close, .el-dialog__headerbtn:hover .el-dialog__close
+    color #44C3AA
+  .no-footer
+    .el-dialog__body
+      display none
+  .noPadding
+    .el-dialog__header
+      padding 0
+    .el-dialog__headerbtn:focus .el-dialog__close, .el-dialog__headerbtn:hover .el-dialog__close, .el-dialog__close
+      color #fff
+  .restBody
+    .el-dialog__body
+      padding 0
+  .restBody2
+    .el-dialog__body
+      padding 0 20px
+  .el-tabs__content
+    font-size 14px
+  /* 重置时间选择器颜色 */
+  .el-range-editor.is-active, .el-range-editor.is-active:hover, .el-date-table td.today span, .el-select-dropdown__item.selected, .el-date-table td.available:hover, .el-select .el-input.is-focus .el-input__inner, .el-select .el-input__inner:focus
+    border-color #44C3AA
+    color #44C3AA
+  /* 重置按钮样式 */
+  .el-button+.el-button
+    margin-left 0
+  .el-button
+    margin-right 10px
+  .el-button+.el-button
+    margin-left 0
+  .el-button--primary.is-plain.is-disabled, .el-button--primary.is-plain.is-disabled:hover
+    color #AFAFAF
+    background-color #fff
+    border-color #DCE0E6
+  /* 表格重置 */
+  .table
+    table-layout fixed
+    width 100%
+    // min-width 600px
+    border-spacing 0
+    border-collapse collapse
+    display table
+    &.border
+      border 1px solid #ddd
+      tr
+        border 1px solid #ddd
+    thead
+      display table-header-group
+      vertical-align middle
+      border-color inherit
+      background #efefef
+    tbody
+      display table-row-group
+      vertical-align middle
+      border-color inherit
+    tbody > tr:hover
+      background #fafafa
+    tbody > tr:nth-child(2n)
+      background #efefef
+    tr
+      display table-row
+      vertical-align inherit
+      border-color inherit
+      height 50px
+    th, td
+      padding 8px
+      line-height 20px
+      vertical-align middle
+      word-break break-all
+      text-align left
+  /* 重置时间选择器 */
+  .el-date-editor .el-range-input
+    width 120px
+    height 100%
+  .el-range-editor.el-input__inner
+    max-width 330px
+  /* 样式重置 */
+  .el-button--primary.is-plain:hover, .el-button--primary.is-plain:focus, .el-button--primary.is-plain, .el-button--primary:hover, .el-button--primary:focus, .el-button--primary
+    background #44C3AA
+    border-color #44C3AA
+    color #fff
+  .el-button--primary.is-plain
+    border-color #44C3AA
+    color #44C3AA
+    background #fff
+  .el-button--info
+    color #fff
+    background-color #92A1B0
+    border-color #92A1B0
+  .el-button:focus, .el-button:hover
+    color none
+  .el-button:focus, .el-button:hover
+    color none
+  .el-radio-button__inner:hover
+    color #44c3aa
+  .el-radio-button__orig-radio:checked+.el-radio-button__inner
+    background-color #44c3aa
+    border-color #44c3aa
+    box-shadow -1px 0 0 0 #44c3aa
+  /* 重置tabs导航 */
+  .el-tabs__item
+    line-height 22px
+    font-size 16px
+  .el-tabs__item:hover
+    color #44C3AA
+  .el-tabs__item.is-disabled:hover
+    color #c0c4cc
+  .el-tabs__active-bar
+    background-color #44C3AA
+  .el-tabs__item.is-active
+    color #44C3AA
+  .el-tabs--border-card>.el-tabs__header .el-tabs__item
+    line-height 40px
+  .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active
+    color #44c3aa
+  .el-tabs--border-card>.el-tabs__header .el-tabs__item:hover
+    color #44c3aa
+  .el-menu-vertical-demo:not(.el-menu--collapse)
+    width 220px
+    height 100%
+  .el-menu--collapse
+    width 70px
+    min-height 100%
+  .collapse-transition
+    transition none
+  /* 重置输入框字体 */
+  input.form-control
+    font-size 14px
+  /* 重置搜索框input的长度 */
+  .serachWrap
+    background #fff
+    margin 20px 0
+    padding 17px 9px
+    padding-bottom 0
+    .group-inline
+      margin-bottom 17px
+    input, select
+      width 145px
+      height 40px
+      line-height 40px
+      min-width inherit
+    .right
+      text-align right
+      float right
+  /* 分页样式 */
+  .pageWrap
+    text-align center
+    padding 20px 0
+    margin-top 30px
+  .el-pagination.is-background .el-pager li:not(.disabled).active
+    background-color #44C3AA
+  .el-pagination.is-background .el-pager li:not(.disabled):hover
+    color #44C3AA
+    background-color #f4f4f5
+    border 1px solid #44C3AA
+  .el-pager li.active
+    color #44c3aa
+    cursor default
+  /* 重置进度 */
+  .el-progress__text
+    color #409e00 !important
+    font-size 18px !important
+  .el-input.is-active .el-input__inner, .el-input__inner:focus
+    border-color #44C3AA
+    outline 0
+  .el-pagination__sizes .el-input .el-input__inner:hover
+    border-color #44C3AA
+  .coverBox
+    overflow hidden
+    padding-left 120px
+    box-sizing border-box
+    >div
+      float left
+      .detailmain
+        padding-left 20px
+        width 400px
+        text-align left
+        .wrap
+          width 100%
+  .muluWrap
+    .left
+      max-height 500px
+      max-height 70vh
+    .right
+      max-height 500px
+      max-height 70vh
+      overflow auto
+  .muluList
+    .el-tree-node__label
+      display inline-block
+      max-width 250px
+      overflow hidden
+      text-overflow ellipsis
+      white-space nowrap
+    .el-tree-node__content
+      height 40px
+      line-height 40px
+  .cover-photo
+    max-width 47px
+    max-height 59px
+    vertical-align middle
+  .bookName
+    width calc(100% - 55px)
+    display inline-block
+    padding-left 5px
+    vertical-align middle
+  /* 去掉翻页按钮左边距 */
+  .el-pagination__jump
+    margin-left 0
+.el-message
+  top 50%
+  margin-top -24px
+a:link
+  color #000
+  cursor pointer
+  text-decoration none
+a:hover
+  color #000
+  cursor pointer
+  text-decoration none
+a:active
+  color #000
+  cursor pointer
+  text-decoration none
+a:visted
+  color #000
+  cursor pointer
+  text-decoration none

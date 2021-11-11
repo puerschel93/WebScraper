@@ -1,0 +1,582 @@
+@use "./abstracts" as abs;
+@use "./variables" as var;
+
+form {
+  @include abs.flex-column;
+  input {
+    margin: 8px;
+  }
+}
+
+//HOMEPAGE
+.homepageContainer {
+  @include abs.flex-column;
+  justify-content: space-evenly;
+  height: 80%;
+
+  .textContainer {
+    @include abs.flex-column;
+    h2 {
+      color: var.$primary-dark;
+    }
+
+    p {
+      @include var.ag_body2;
+      margin: 16px;
+      text-align: center;
+    }
+  }
+}
+
+.homepageBtn {
+  border: 0px solid black;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  outline: none;
+  background-color: var.$peach-primary;
+  color: white;
+  width: 275px;
+  height: 30px;
+}
+//Login and Signup
+.loginAndSignupContainer {
+  height: 100vh;
+  @include abs.flex-column;
+}
+
+//DISCOVER
+.searchbarContainer {
+  @include abs.flex-row;
+  width: 100%;
+  height: 100px;
+
+  .clearSearchterm {
+    @include abs.flex-column;
+    // border: 1px solid black;
+    height: 25px;
+    width: 25px;
+    font-weight: bold;
+    color: crimson;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  input {
+    height: 25px;
+    width: 60%;
+    outline: none;
+    border: 1px solid grey;
+    box-shadow: 0px 0px 10px 0px lightgray;
+    background-color: none;
+  }
+
+  button {
+    height: 29px;
+    width: 50px;
+    background: none;
+    outline: none;
+    border: 1px solid grey;
+  }
+}
+
+.categoriesContainer {
+  // border: 1px solid black;
+  width: 100%;
+  height: 30%;
+  margin-top: 50px;
+  margin-bottom: 2%;
+
+  h3 {
+    color: var.$text-color-green;
+    margin: 5% 5%;
+    font-weight: bold;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .categoryCardContainer {
+    @include abs.flex-row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 2px;
+    margin: 8px 0px;
+    height: 40px;
+    box-shadow: 0px 5px 5px 1px grey;
+
+    p {
+      color: var.$txt-color;
+      margin: 0%;
+      margin-left: 5px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    i {
+      margin-right: 5%;
+      color: grey;
+    }
+  }
+}
+
+.recomendedContainer {
+  @include abs.flex-column;
+  width: 100%;
+  font-family: var.$ad-card-font;
+  margin-bottom: 150px;
+
+  h3 {
+    color: var.$text-color-green;
+    margin: 5% 5%;
+    font-weight: bold;
+    align-self: flex-start;
+  }
+
+  .adCardContainer {
+    width: 90%;
+    height: 250px;
+    padding: 8px;
+    // border: 1px solid black;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0.2px black;
+    border-radius: 5px;
+    margin-bottom: 10%;
+
+    h1 {
+      margin: 0%;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .pricePlaceContainer {
+      @include abs.flex-row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .picContainer {
+      @include abs.flex-row;
+      height: 60%;
+
+      img {
+        height: 150px;
+        width: 150px;
+      }
+    }
+
+    button {
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: bold;
+      text-decoration: underline;
+      color: #f88472;
+    }
+  }
+}
+
+//BTN
+.mainBtn {
+  border: 0px solid black;
+  border-radius: 10px;
+  height: 50px;
+  width: 80%;
+  background-color: var.$primary;
+  @include var.ag_body_bold;
+  color: white;
+  margin: 10% 0%;
+  align-self: center;
+}
+
+//ADD FORM
+.addFormContainer {
+  margin-top: 50px;
+  width: 100%;
+
+  #category {
+    outline: none;
+    height: 40px;
+    border: none;
+    width: 99%;
+    margin: 0%;
+    font-family: var.$ad-card-font;
+  }
+
+  i {
+    font-size: 1.5rem;
+    margin-left: 5%;
+  }
+  form {
+    width: 100%;
+    @include abs.flex-column;
+    align-items: flex-start;
+
+    .chooseFileContainer {
+      @include abs.flex-column;
+      background-color: white;
+      width: 100%;
+      height: 70px;
+
+      .fileInput {
+        width: 60%;
+      }
+
+      .chooseImgBtn {
+        cursor: pointer;
+      }
+
+      .infoText {
+        font-size: var.$text-smaller;
+      }
+    }
+
+    textarea {
+      border: none;
+      resize: none;
+      width: 99%;
+      height: 60px;
+      outline: none;
+      font-family: var.$ad-card-font;
+
+      &::placeholder {
+        font-family: var.$ad-card-font;
+        color: black;
+      }
+    }
+
+    label {
+      margin: 3%;
+    }
+
+    .inputDescTitle {
+      margin-bottom: 5%;
+    }
+
+    input {
+      outline: none;
+      border: none;
+      height: 40px;
+      width: 99%;
+      margin: 0%;
+      font-family: var.$ad-card-font;
+
+      &::placeholder {
+        font-family: var.$ad-card-font;
+        color: black;
+      }
+    }
+
+    .linkTag {
+      color: var.$primary;
+    }
+
+    .optionsContainer {
+      background-color: white;
+      width: 100%;
+      @include abs.flex-column;
+      align-items: flex-start;
+      font-family: var.$ad-card-font;
+
+      .adressContainer {
+        width: 100%;
+        #adress {
+          outline: none;
+          border: 1px solid black;
+          height: 40px;
+          border: none;
+          width: 99%;
+          margin: 0%;
+          font-family: var.$ad-card-font;
+        }
+      }
+
+      div {
+        @include abs.flex-row;
+        justify-content: space-between;
+        width: 50%;
+        input {
+          margin: 0%;
+          margin-left: 5%;
+          width: 10%;
+        }
+      }
+
+      p {
+        @include var.body_small;
+        width: 90%;
+        padding: 8px;
+      }
+    }
+  }
+}
+
+//CategoryPage
+.categoryPageContainer {
+  @include abs.flex-column;
+  margin-top: 50px;
+
+  i {
+    align-self: flex-start;
+    font-size: 1.5rem;
+    margin-left: 5%;
+    margin-bottom: 10%;
+  }
+
+  .adCardContainer {
+    width: 90%;
+    height: 250px;
+    padding: 8px;
+    // border: 1px solid black;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0.2px black;
+    border-radius: 5px;
+    margin-bottom: 10%;
+
+    h1 {
+      margin: 0%;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .pricePlaceContainer {
+      @include abs.flex-row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .picContainer {
+      @include abs.flex-row;
+      height: 60%;
+
+      img {
+        height: 150px;
+        width: 150px;
+      }
+    }
+
+    button {
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: bold;
+      text-decoration: underline;
+      color: #f88472;
+    }
+  }
+}
+
+//AD PAGE
+.adPageContainer {
+  @include abs.flex-column;
+  color: var.$txt-color;
+  background-color: white;
+
+  .calendarContainer {
+    @include abs.flex-column;
+    justify-content: space-between;
+    width: 99%;
+    height: 100vh;
+    color: var.$primary;
+
+    a {
+      text-decoration: none;
+      outline: none;
+      @include abs.flex-column;
+      width: 80%;
+    }
+
+    .infoContainer {
+      @include abs.flex-column;
+    }
+
+    .calendarHeader {
+      background-color: var.$primary-light;
+      width: 100%;
+
+      div {
+        @include abs.flex-row;
+        justify-content: space-between;
+        width: 82%;
+
+        i {
+          margin-left: 5%;
+        }
+      }
+
+      .calendarBack {
+        position: static;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .goBack {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    font-size: 1.5rem;
+  }
+
+  .contentContainer {
+    width: 90%;
+  }
+
+  .container1 {
+    margin: 0%;
+    width: 90%;
+    @include abs.flex-column;
+    align-items: flex-start;
+
+    p {
+      margin: 0%;
+    }
+  }
+
+  h4 {
+    margin: 0%;
+  }
+
+  .priceList {
+    margin: 0%;
+    padding: 0%;
+    list-style: none;
+
+    p {
+      font-style: italic;
+    }
+  }
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var.$txt-color;
+  }
+}
+
+.rentalcondsContainer {
+  margin-top: 50px;
+  i {
+    margin-left: 5%;
+    font-size: 1.5rem;
+  }
+}
+
+// Rent a add
+.rentAdContainer {
+  @include abs.flex-column;
+  color: var.$txt-color;
+
+  h1 {
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+    box-shadow: 0px 4px 10px 0px grey;
+    .content {
+      width: 80%;
+      @include abs.flex-row;
+      justify-content: space-between;
+      img {
+        width: 140px;
+        height: 120px;
+      }
+      div {
+        height: 100%;
+        @include abs.flex-column;
+        h3 {
+          margin: 0%;
+          margin-bottom: 10%;
+        }
+      }
+    }
+  }
+
+  .time {
+    @include abs.flex-column;
+    font-weight: bold;
+  }
+
+  .formContainerRent {
+    width: 100%;
+    @include abs.flex-column;
+    form {
+      @include abs.flex-column;
+      align-items: flex-start;
+      margin-bottom: 60px;
+      width: 90%;
+
+      label {
+        color: var.$txt-color;
+        text-decoration: underline;
+        margin: 2%;
+      }
+
+      .rentFormItemContainer {
+        @include abs.flex-row;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 2%;
+
+        input {
+          border: 1px solid grey;
+          width: 16px;
+          height: 16px;
+          margin: 0%;
+        }
+
+        span,
+        a {
+          color: var.$txt-color;
+          @include var.ag_body_semibold;
+          margin-left: 5%;
+        }
+      }
+    }
+  }
+}
+
+.payContainer {
+  @include abs.flex-column;
+  justify-content: space-around;
+  height: 100vh;
+  .swishLogo {
+    width: 90%;
+    height: 50%;
+  }
+
+  .cardLogo {
+    width: 80%;
+    height: 40%;
+  }
+}
+
+.addCompleteContainer {
+  @include abs.flex-column;
+  justify-content: space-evenly;
+  height: 80vh;
+
+  .textContainer {
+    @include abs.flex-column;
+
+    h1 {
+      color: var.$primary-dark;
+    }
+
+    p {
+      width: 80%;
+      text-align: center;
+      @include var.ag_body;
+      color: var.$txt-color;
+    }
+  }
+}

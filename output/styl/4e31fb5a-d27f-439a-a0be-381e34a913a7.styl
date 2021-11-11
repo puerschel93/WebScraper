@@ -1,0 +1,439 @@
+$layout-transition = all .12s ease-in
+
+.u-main
+  width: 100%
+  overflow: auto
+  height: 100%
+  padding: 0 30px
+  position: relative
+  calc_size = $header-menu-height + $header-nav-height
+  height: "calc(100% - %s)" % (calc_size)
+
+  &.u-no-nav{
+    calc_size = $header-menu-height
+    height: "calc(100% - %s)" % (calc_size)
+  }
+
+.u-main-content
+  &.content-flex
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-flow: wrap
+    flex-flow: wrap
+    -webkit-box-flex: 1
+    -ms-flex: 1
+    flex: 1
+    -ms-flex-line-pack: start
+    align-content: flex-start
+    height: 100%
+    overflow: overlay
+    padding: 0 40px 50px 50px
+    overflow-x: hidden
+
+.u-layout
+  width 100%
+  min-height 100vh
+
+.u-layout-header
+  box-shadow $layout-header-shadow
+  &-hidden
+    transform translateY(-110%)
+
+.u-layout-footer
+  box-shadow $layout-footer-shadow
+  &-hidden
+    transform translateY(110%)
+
+.u-layout-drawer
+  position absolute
+  top 0
+  bottom 0
+  background $layout-aside-background
+  z-index $z-side
+  &.on-top
+    z-index $z-drawer //$z-fixed-drawer
+.u-layout-drawer-delimiter
+  box-shadow $layout-aside-shadow
+.u-layout-drawer-left
+  left 0
+  transform translateX(-100%)
+.u-layout-drawer-right
+  right 0
+  transform translateX(100%)
+
+.u-layout, .u-layout-header, .u-layout-footer, .u-layout-page
+  position relative
+
+.u-layout-page
+  height 100%
+  overflow auto
+
+.u-layout-header, .u-layout-footer
+  z-index $z-marginals
+
+.u-layout-backdrop
+  z-index ($z-drawer - 1) !important // replace $z-fixed-drawer
+  will-change background-color
+
+
+.u-layout-drawer-mini
+  padding 0 !important
+  .u-item, .u-item-side
+    text-align center
+    justify-content center
+  .u-mini-drawer-hide,
+  .u-collapsible-inner > div:last-of-type, .u-list-header, .u-item-main, .u-item-side-right
+    display none
+
+.u-layout-drawer-normal
+  .u-mini-drawer-only
+    display none
+
+.u-layout-drawer-mobile
+  .u-mini-drawer-only, .u-mini-drawer-hide
+    display none
+
+
+.u-layout-drawer-opener
+  z-index ($z-marginals + 1)
+  height 100vh
+  width 15px
+
+.u-page-sticky-shrink
+  pointer-events none
+  > span
+    pointer-events auto
+
+body.u-ios-statusbar-padding
+  .u-layout-header > .u-toolbar:nth-child(2),
+  .u-layout-header > .u-tabs:nth-child(2) .u-tabs-head
+  .u-layout-drawer.top-padding
+    padding-top $toolbar-height
+    min-height ($toolbar-min-height + $toolbar-height )
+
+body.u-ios-statusbar-x
+  .u-layout-header > .u-toolbar:nth-child(2),
+  .u-layout-header > .u-tabs:nth-child(2) .u-tabs-head
+  .u-layout-drawer.top-padding
+    padding-top env(safe-area-inset-top)
+  .u-layout-footer > .u-toolbar:last-child,
+  .u-layout-footer > .u-tabs:last-child .u-tabs-head
+  .u-layout-drawer.top-padding
+    padding-bottom env(safe-area-inset-bottom)
+    min-height ($toolbar-min-height + $toolbar-height)
+
+/* body */
+.u-layout-animate .u-layout-transition
+  transition $layout-transition
+.u-body-drawer-toggle
+  overflow-x hidden
+/* body - end */
+
+/**
+  Header
+ */
+.u-header
+  margin-top: 0
+  transition: all 0.5s
+  position: relative
+  z-index: $z-navbar
+
+.u-header .u-top-header
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  height: 56px
+  padding: 0 20px
+  position: relative
+
+.u-header .u-left-side
+  position: absolute
+  top: 0
+  z-index: 5
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  height: 56px
+
+.u-header .u-left-side .u-app-name
+  margin-left: 26px
+  color: #fff
+  font: 18px $font-family-base
+
+.u-header .u-left-side .ico-menu
+  font-size: 20px
+  transition: all 0.3s
+  padding: 4px
+  border-radius: 50%
+  margin-left: 4px
+
+.theme-default .u-header
+  background-color: #0081ff
+
+.theme-default .u-header .u-left-side .ico-menu
+  color: #fff
+
+.u-header .u-left-side :hover.ico-menu
+  background-color: rgba(255, 255, 255, 0.2)
+
+.u-header .u-header-right-side
+  position: absolute
+  right: 45px
+  top: 0
+  z-index: 5
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  height: 56px
+
+.u-header .u-top-header a.u-active
+  position: relative
+
+a.u-active, a:hover
+  color: #0154a5
+
+.u-header-actions
+  font-size: 14px
+  margin-left: 12px
+
+.u-header-actions:before, .u-header-actions:after
+  font-size: 20px
+  font-weight: normal
+
+.theme-default .u-header-actions
+  color: rgba(255, 255, 255, 0.6)
+  font-size 24px
+  display flex
+
+.theme-default .u-header-actions:hover,
+.theme-default .u-header-actions:hover
+  color: #fff
+
+.u-header .u-header-right-side .u-user-photo
+  position: relative
+  margin-left: 10px
+
+.u-header .u-header-right-side .u-user-photo:after
+  position: absolute
+  font: 15px "Font Awesome 5 Pro"
+  content: "\f142"
+  font-weight 900
+  top: 0
+  bottom: 0
+  right: -12px
+  left: 0
+  text-align: right
+  padding-top: 10px
+
+.theme-default .u-header .u-header-right-side .u-user-photo:after
+  color: rgba(255, 255, 255, 0.8)
+
+.theme-default .u-header .u-header-right-side .u-user-photo:hover:after
+  color: #fff
+
+.u-header .u-nav
+  position: relative
+  box-shadow: inset 0 0 172px rgba(0, 0, 0, 0.1)
+  height: 50px
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  -webkit-box-pack: justify
+  -ms-flex-pack: justify
+  justify-content: space-between
+  padding: 0 20px 0 72px
+
+.u-header .u-nav .u-back
+  position: absolute
+  opacity: 0.5
+  left: 10px
+  cursor: pointer
+  top: 0
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  height: 50px
+  width: 60px
+
+.theme-default .u-header .u-nav .u-back
+  color: #fff
+
+.u-header .u-nav ul
+  -webkit-box-flex: 1
+  -ms-flex: 1
+  flex: 1
+  height: 50px
+
+.u-header .u-nav ul.u-nav-header li
+  float: left
+  margin-left: 2px
+
+.u-header .u-nav ul.u-nav-header a
+  padding: 19px 10px 12px 10px
+  font: 14px $font-family-base
+  font-weight: 500
+  opacity: 0.5
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  line-height: 1.2
+
+.theme-default .u-header .u-nav ul.u-nav-header a
+  color: #fff
+
+.u-header .u-nav ul.u-nav-header a.u-active, .u-header .u-nav ul.u-nav-header a:hover
+  opacity: 1
+
+.theme-default .u-header .u-nav ul.u-nav-header a.u-active,
+.theme-default .u-header .u-nav ul.u-nav-header a:hover
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5)
+
+.u-header .u-nav .u-i-actions
+  display: flex;
+  align-items: center;
+.u-header .u-nav .u-i-actions .u-btn-outline
+  display: -webkit-inline-box !important
+  display: -ms-inline-flexbox !important
+  display: inline-flex !important
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  border: 0 !important
+  font: 14px $font-family-base
+  font-weight: 500
+  margin-right: 10px
+  min-height: 32px
+  padding: 5px 10px 6px 10px
+  position: relative
+
+.theme-default .u-header .u-nav .u-i-actions .u-btn-outline
+  background: rgba(255, 255, 255, 0.1) !important
+  color: #fff
+
+.u-single-badge
+  border-radius: 2px
+  font-size: 10px
+  padding: 4px
+  display: -webkit-inline-box !important
+  display: -ms-inline-flexbox !important
+  display: inline-flex !important
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  min-width: 20px
+  height: 16px
+  font-weight: normal
+  margin-right: 5px
+
+.theme-default .u-single-badge
+  background: rgba(255, 255, 255, 0.1)
+  color: #fff
+
+.u-improvements .u-ico-improvements
+  position: relative
+  top: -2px
+  right: -3px
+
+.u-header .u-nav .u-i-actions [class*="u-ico"], .u-header .u-nav .u-i-actions .app-icon
+  font-size: 20px
+// margin: -4px 4px 0 4px
+
+.theme-default .u-header .u-nav .u-i-actions [class*="u-ico"], .theme-default .u-header .u-nav .u-i-actions .app-icon
+  color: rgba(255, 255, 255, 0.6)
+
+.u-header .u-nav .u-i-actions .u-btn-outline:hover
+  border: 0 !important
+
+.theme-default .u-header .u-nav .u-i-actions .u-btn-outline:hover
+  background: rgba(255, 255, 255, 0.2) !important
+
+.u-header .u-nav .u-i-actions .u-btn-outline span
+  opacity: 0.5 !important
+
+.theme-default .u-header .u-nav .u-i-actions .u-btn-outline span
+  color: #fff !important
+
+.u-header .u-nav .u-i-actions .u-active, .u-header .u-nav .u-i-actions .app-icon:hover, .u-header .u-nav .u-i-actions a:hover .app-icon
+  background: none
+  color: #fff
+
+.u-header .u-nav ul .u-separator
+  position: relative
+  display: block
+  width: 34px
+  height: 50px
+
+.u-header .u-nav ul .u-separator:before
+  content: ""
+  position: absolute
+  top: 10px
+  height: 30px
+  left: 50%
+  margin-left: -1px
+  opacity: 0.3
+  width: 1px
+
+.theme-default .u-header .u-nav ul .u-separator:before
+  background: #fff
+
+.u-header .u-nav ul.u-nav-header a .app-icon, .u-header .u-nav ul.u-nav-header a [class*="u-pipe-ico"]
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: center
+  -ms-flex-align: center
+  align-items: center
+  margin-right: 6px
+  margin-left: -8px
+
+.u-header .u-nav ul.u-nav-header a.u-no-border-bottom.active, .u-header .u-nav ul.u-nav-header a.u-no-border-bottom:hover
+  border-bottom: 0
+
+//End Header
+
+.layout-padding
+  @media (max-width $breakpoint-sm-max)
+    padding 1.5rem .5rem
+    &.horizontal
+      padding 0 .5rem
+  @media (min-width $breakpoint-md-min) and (max-width $breakpoint-md-max)
+    padding 1.5rem 2rem
+    margin auto
+    &.horizontal
+      padding 0 2rem
+  @media (min-width $breakpoint-lg-min) and (max-width $breakpoint-lg-max)
+    padding 2.5rem 3rem
+    margin auto
+    &.horizontal
+      padding 0 3rem
+  @media (min-width $breakpoint-xl-min)
+    padding 3rem 4rem
+    margin auto
+    &.horizontal
+      padding 0 4rem
+

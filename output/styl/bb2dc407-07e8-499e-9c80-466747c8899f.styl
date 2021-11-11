@@ -1,0 +1,99 @@
+// @domain      ELEMENT MARGINS
+// @namespace   iso:
+// +++++++++++++++++++++++++++++++++++++++++
+isoLimit = limits.isolations
+
+
+iso
+    if !!((isoLimit)px)
+        &:xyEq
+            +at-breaks()
+                --iso-xyEq: 1px
+                margin: var(--iso-xyEq)
+
+        &:xEq
+            +at-breaks()
+                --iso-xEq: 1px
+                margin-left: var(--iso-xEq)
+                margin-right: var(--iso-xEq)
+
+        &:xEqAuto
+            +at-breaks()
+                --iso-xEq: auto
+
+        &:xStart
+            +at-breaks()
+                --iso-xStart: 1px
+                margin-left: var(--iso-xStart)
+
+        &:xStartAuto
+            +at-breaks()
+                --iso-xStart: auto
+
+        &:xEnd
+            +at-breaks()
+                --iso-xEnd: 1px
+                margin-right: var(--iso-xEnd)
+
+        &:xEndAuto
+            +at-breaks()
+                --iso-xEnd: auto
+
+        &:yEq
+            +at-breaks()
+                --iso-yEq: 1px
+                margin-top: var(--iso-yEq)
+                margin-bottom: var(--iso-yEq)
+
+        &:yStart
+            +at-breaks()
+                --iso-yStart: 1px
+                margin-top: var(--iso-yStart)
+
+        &:yStartAuto
+            +at-breaks()
+                --iso-yStart: auto
+
+        &:yEnd
+            +at-breaks()
+                --iso-yEnd: 1px
+                margin-bottom: var(--iso-yEnd)
+
+        &:yEndAuto
+            +at-breaks()
+                --iso-yEnd: auto
+
+
+        for i in (isoLimit)
+            num = i/100
+            num = (i is 0) ? 0 : num
+            num = (i is 10) ? .125 : num
+            setIso = flow(num)
+
+            &:xyEq{i}
+                +at-breaks()
+                    --iso-xyEq: setIso
+
+            &:xEq{i}
+                +at-breaks()
+                    --iso-xEq: setIso
+
+            &:xStart{i}
+                +at-breaks()
+                    --iso-xStart: setIso
+
+            &:xEnd{i}
+                +at-breaks()
+                    --iso-xEnd: setIso
+
+            &:yEq{i}
+                +at-breaks()
+                    --iso-yEq: setIso
+
+            &:yStart{i}
+                +at-breaks()
+                    --iso-yStart: setIso
+
+            &:yEnd{i}
+                +at-breaks()
+                    --iso-yEnd: setIso

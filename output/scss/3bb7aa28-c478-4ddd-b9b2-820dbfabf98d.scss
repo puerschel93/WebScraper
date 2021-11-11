@@ -1,0 +1,202 @@
+@import '@styles/variables';
+
+.citation {
+  background-color: $colorPrimaryWhite;
+  border-radius: 8px;
+  padding: 16px 24px 48px;
+  height: 100%;
+  &List {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    &Header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+}
+
+.header {
+  &Content {
+    flex: 1 0;
+    margin-bottom: 10px;
+    @include BodyLarge-MEDIUM;
+  }
+  &Actions {
+    flex: 1 0 145px;
+    max-width: 145px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+    @include BodyLarge-MEDIUM;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid $colorPrimaryGray;
+  &Content {
+    flex: 1 0;
+    @include BodyLarge-REGULAR;
+    span {
+      color: $colorPrimaryBlue;
+    }
+  }
+  &Actions {
+    flex: 1 0 145px;
+    max-width: 145px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &Remove {
+    background-color: $colorPrimaryGray;
+    padding: 6px;
+    margin-right: 8px;
+  }
+  &Field {
+    position: relative;
+    &:after {
+      content: '%';
+      @include BodyLarge-REGULAR;
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    input {
+      padding: 6px 16px 6px 6px;
+      @include BodyLarge-REGULAR;
+      background-color: $colorPrimaryGray;
+      border: none;
+      text-align: left;
+      border-radius: 4px;
+    }
+  }
+}
+
+.heading {
+  @include BodyLarge-MEDIUM;
+  color: rgba($colorPrimaryBlack, 0.9);
+  margin-bottom: 16px;
+}
+
+.error {
+  @include BodyLarge-MEDIUM;
+  color: rgba($colorSupportRed, 0.9);
+  margin-bottom: 16px;
+}
+
+.closeBtn {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.modalHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.modalTitle {
+  @include HeadingSmall-MEDIUM;
+}
+
+.modalContent {
+  background-color: $colorPrimaryWhite;
+  padding: 16px 24px;
+  border-radius: 0 0 8px 8px;
+  width: 80vw;
+  @media(max-width: 767px) {
+    width: calc(100vw - 32px);
+  }
+}
+
+.searchForm {
+  margin-left: 24px;
+  margin-right: auto;
+  width: 53.5%;
+}
+
+.searchFormModal {
+  width: 100%;
+}
+
+.searchBtn {
+  display: flex;
+  margin-left: auto;
+}
+
+
+.actions {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 24px;
+  position: absolute;
+  bottom: 16px;
+  right: 0;
+  &Success {
+    @media(max-width: 767px) {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+@mixin btn {
+  border: none;
+  padding: 0 8px;
+  @include BodySmall-REGULAR;
+  position: relative;
+  svg {
+    margin: 0 4px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.btn {
+  &Prev {
+    color: rgba($colorPrimaryBlack, 0.5);
+    @include btn;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 4px;
+      bottom: 4px;
+      border-right: 1px solid rgba($colorPrimaryBlack, 0.2);
+    }
+    svg {
+      path {
+        fill: rgba($colorPrimaryBlack, 0.5);
+      }
+    }
+  }
+  &Next {
+    color: $colorPrimaryBlue;
+    @include btn;
+    svg {
+      path {
+        fill: $colorPrimaryBlue;
+      }
+    }
+  }
+}

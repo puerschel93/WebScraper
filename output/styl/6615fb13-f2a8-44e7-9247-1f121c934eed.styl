@@ -1,0 +1,196 @@
+/*modals-container ve icerigi silinebilir*/
+.modals-container
+    @extend .container
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column;
+    padding-top: 100px
+    h1
+        font-size: 42px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.19;
+        letter-spacing: normal;
+        text-align: center;
+        color:$black ;
+        font-family: 'Bebas Neue';
+    .btn
+        margin-bottom: 20px
+
+
+.modal
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(33, 33, 33, 0.8);
+  left: 0;
+  top: 0;
+  visibility: hidden
+  opacity: 0
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  transition: all ease 0.3s
+  overflow-x: auto
+  padding: 0 20px;
+  +media-md()
+    align-items: center
+    overflow-x: inherit
+  &.active
+      visibility: visible
+      opacity: 1
+
+.modal-container
+    width: 100%;
+    max-width: 751px
+    border-radius: 3px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+    background-color: $white;
+    position relative
+    margin: 20px 0;
+    overflow: hidden
+    .modal-content
+        box-shadow: none
+        border-radius: none
+        padding: 40px
+        margin:0;
+    .close-modal
+        span
+            &:before
+                color: $white
+
+.modal-content
+    width: 100%;
+    max-width: 751px
+    border-radius: 3px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+    background-color: $white;
+    min-height: 356px
+    position relative
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    padding: 60px
+    margin: 20px 0;
+    .btn--primary
+        margin: 0
+    .form-container
+        width: 100%;
+        max-width: 415px
+    h2
+        font-size: 42px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.19;
+        letter-spacing: normal;
+        text-align: center;
+        color:$black ;
+        font-family: 'Bebas Neue';
+        margin-bottom: 24px
+        &:last-child
+            margin-bottom: 0
+    h3
+        font-size: 22px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: center;
+        color: $black;
+        margin-bottom: 30px
+        &:last-child
+            margin-bottom: 0
+    p
+        font-size: 18px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.56;
+        letter-spacing: normal;
+        text-align: center;
+        color: $darkgrey;
+        margin-bottom: 24px
+        &:last-child
+            margin-bottom: 0
+
+.close-modal
+    position: absolute
+    right: 10px
+    top: 10px
+    span
+        width: 42px
+        height: 42px
+        display: flex
+        align-items: center
+        justify-content: center
+        &:before
+            width: 24px
+            height: 24px
+            font-size: 24px
+            color: #bbbbbb
+
+.modal-icon
+    margin-bottom: 32px
+    span
+        font-size: 100px
+        &:before
+            color: #48b4ca;
+
+.modal-download-buttons
+    .btn
+        min-width: 180px
+        +media-max-sm()
+            margin-bottom: 12px
+            width: 100%
+
+
+.modal-seperator
+    position relative
+    padding: 0 30px
+    margin: 26px 0 20px 0
+    &:before
+        content: ''
+        width: 100%
+        height: 1px
+        background-color: #bbbbbb
+        position: absolute;
+        left: 0;
+        top: 15px;
+        z-index: 0
+    span
+        width: 57px
+        background: $white
+        position relative
+        z-index: 1
+        padding: 0 10px;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.75;
+        letter-spacing: normal;
+        text-align: center;
+        color: $darkgrey;
+
+.modal-hero-area
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    h2
+        font-size: 42px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.19;
+        letter-spacing: normal;
+        color: $white;
+        font-family: 'Bebas Neue';
+        position: absolute
+        left: 60px
+        top: auto

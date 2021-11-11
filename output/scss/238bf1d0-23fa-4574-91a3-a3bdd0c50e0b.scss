@@ -1,0 +1,257 @@
+@import '@/styles/abstracts/mixins';
+
+button, input[type='submit'], .file-input-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5 * $unit $unit;
+    gap: 12px;
+
+    background: $primary;
+    border-radius: 3px;
+    cursor: pointer;
+    border: transparent;
+    outline: transparent;
+    width: fit-content;
+    max-width: 100%;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+
+    h1, h2, h3, h4, h5, p, small, i, span {
+        width: fit-content;
+        color: $primary-contrast;
+        text-align: center;
+    }
+
+    &:hover {
+        background: transparent;
+        box-sizing: border-box;
+        outline: 3px solid $primary;
+
+        @include shadow;
+    }
+    
+    &:active {
+        transition: none;
+        box-shadow: none;
+        text-shadow: none;
+    }
+
+    &:disabled {
+        background: $light-border;
+        outline: 3px solid $light-border;
+        color: $white;
+        cursor: default;
+        box-shadow: none;
+        text-shadow: none;
+
+        h1, h2, h3, h4, h5, p, small, i, span {
+            color: $white;
+        }
+    }
+
+    &.blue {
+        background: $secondary;
+
+        h1, h2, h3, h4, h5, p, small, i, span {
+            color: $secondary-contrast;
+        }
+
+        &:hover {
+            background: transparent;
+            outline: 3px solid $secondary;
+
+            h1, h2, h3, h4, h5, p, small, i, span {
+                color: $secondary;
+            }
+        }
+
+        &:disabled {
+            background: $light-border;
+            outline: 3px solid $light-border;
+            color: $white;
+            cursor: default;
+            box-shadow: none;
+            text-shadow: none;
+    
+            h1, h2, h3, h4, h5, p, small, i, span {
+                color: $white;
+            }
+        }
+    }
+
+    &.secondary {
+        background: rgba(255, 255, 255, 0.0);
+        box-sizing: border-box;
+        outline: 3px solid $primary;
+
+        h1, h2, h3, h4, h5, p, small, i, span {
+            color: $primary;
+        }
+
+        &:hover {
+            background: $primary;
+
+            @include shadow;
+        }
+
+        &:active {
+            background: $primary;
+            transition: none;
+            box-shadow: none;
+            text-shadow: none;
+        }
+
+        &:disabled {
+            background: rgba(255, 255, 255, 0.0);
+            color: $light-border;
+            border: none;
+            outline: 3px solid $light-border;
+            cursor: default;
+            box-shadow: none;
+            text-shadow: none;
+
+            h1, h2, h3, h4, h5, p, small, i, span {
+                color: $light-border;
+            }
+        }
+
+        &.blue {
+            background: rgba(255, 255, 255, 0.0);
+            outline: 3px solid $secondary;
+
+            h1, h2, h3, h4, h5, p, small, i, span {
+                color: $secondary;
+            }
+
+            &:hover {
+                background: $secondary;
+
+                @include shadow;
+
+                h1, h2, h3, h4, h5, p, small, i, span {
+                    color: $secondary-contrast;
+                }
+            }
+    
+            &:active {
+                background: $secondary;
+                transition: none;
+                box-shadow: none;
+                text-shadow: none;
+            }
+
+            &:disabled {
+                background: transparent;
+                color: $light-border;
+                outline: 3px solid $light-border;
+                cursor: default;
+                box-shadow: none;
+                text-shadow: none;
+
+                h1, h2, h3, h4, h5, p, small, i, span {
+                    color: $light-border;
+                }
+            }
+        } 
+
+        &.red {
+            background: rgba(255, 255, 255, 0.0);
+            outline: 3px solid $red;
+
+            h1, h2, h3, h4, h5, p, small, i, span {
+                color: $red;
+            }
+
+            &:hover {
+                background: $red;
+
+                @include shadow;
+
+                h1, h2, h3, h4, h5, p, small, i, span {
+                    color: $white;
+                }
+            }
+    
+            &:active {
+                background: $red;
+                transition: none;
+                box-shadow: none;
+                text-shadow: none;
+            }
+
+            &:disabled {
+                background: transparent;
+                color: $light-border;
+                outline: 3px solid $light-border;
+                cursor: default;
+                box-shadow: none;
+                text-shadow: none;
+
+                h1, h2, h3, h4, h5, p, small, i, span {
+                    color: $light-border;
+                }
+            }
+        } 
+    }
+
+    &.transparent {
+        justify-content: flex-start;
+        background: none;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 0px;
+        overflow: visible;
+
+        h1, h2, h3, h4, h5, p, small, i, span {
+            color: $gray-700;
+            text-align: left;
+        }
+
+        &:active {
+            h1, h2, h3, h4, h5, p, small, i, span {
+                color: $secondary-600;
+            }
+        }
+
+        &:disabled {
+            h1, h2, h3, h4, h5, p, small, i, span {
+                color: $light-border;
+                text-shadow: none;
+            }
+        }
+    }
+
+    &.link {
+        background: none;
+        border: none;
+        outline: none;
+        box-shadow: none;
+
+        h1, h2, h3, h4, h5, p, small, i, span {
+            color: $black;
+            text-decoration: underline;
+
+        }
+
+        &:active {
+            h1, h2, h3, h4, h5, p, small, i, span {
+                @include text-shadow($blur: 4px, $spread: 6px);
+            }
+        }
+
+        &:hover {
+            h1, h2, h3, h4, h5, p, small, i, span {
+                color: $primary-850;
+            }
+        }
+
+        &:disabled {
+            color: $light-border;
+            cursor: default;
+            text-shadow: none;            
+        }
+    }
+}

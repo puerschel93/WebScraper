@@ -1,0 +1,194 @@
+$ease = cubic-bezier(0.46,0.03,0.52,0.96)
+
+html
+body
+  cursor none !important
+
+html *
+  cursor none !important
+
+@media (hover: none)
+  #cursor
+  #cursor__outer
+    display none
+
+#cursor
+#cursor__outer
+  position fixed
+  transform translate3d(0, 0, 0)
+  -webkit-backface-visibility hidden
+  -moz-backface-visibility hidden
+  backface-visibility hidden
+  pointer-events none
+
+  html.touchevents &
+    display none !important
+
+#cursor
+  display flex
+  align-items center
+  justify-content center
+  height 60px
+  width 60px
+  top -30px
+  left -30px
+  border-radius 999rem
+  z-index 9001
+
+  &::before
+    content ''
+    position absolute
+    height 60px
+    width 60px
+    top 50%
+    left 50%
+    margin -30px 0 0 -30px
+    background $white
+    border-radius 100%
+    opacity 1
+    transform scale(0)
+    z-index 9999
+  
+  &::after
+    content ''
+    position absolute
+    height 7px
+    width 7px
+    top 50%
+    left 50%
+    margin-top -3.5px
+    margin-left -3.5px
+    border-radius 999rem
+    background-color rgba($white, 0.9)
+    box-shadow 0 0 0.5rem rgba($black, 0.01)
+    transition height .3s $ease, width .3s $ease, top .3s $ease, left .3s $ease, background-color .3s ease
+    z-index 9001
+    
+  &.touch
+    &::after
+      background-color #0000
+      box-shadow none
+    
+  &.click
+    &::before
+      transition transform .5s ease, opacity .5s ease
+      opacity 0
+      transform scale(1)
+
+  &.hover
+    &::after
+      width 30px
+      height 30px
+      margin-top -15px
+      margin-left -15px
+      background-color rgba($white, .4)
+
+  &.ring
+    &::after
+      background-color rgba($white, 1)
+
+  &.zoom-in
+  &.zoom-out
+  &.chevron-left
+  &.chevron-right
+  &.chevron-down
+  &.chevron-up
+  &.l-o-r
+    color white
+
+    &::after
+      display none
+
+#cursor__outer
+  display flex
+  justify-content center
+  align-items center
+  height 32px
+  width 32px
+  top -16px
+  left -16px
+  border-radius 9999px
+  opacity 1
+  background-color rgba($white, .05)
+  border 1px solid rgba($white, .75)
+  box-shadow 0 0 10px rgba($black, 0.1)
+  font-size rem(24)
+  transition height .3s $ease, width .3s $ease, top .3s $ease, left .3s $ease, background-color .3s ease, border-color .3s ease .2s
+  z-index 9000
+  color currentColor
+  
+  &.touch
+    display none
+
+  &.hover
+    width 50px
+    height 50px
+    top -25px
+    left -25px
+    background-color rgba($white, 0)
+    border-color rgba($neon, 0)
+
+  &.ring
+    width 76px
+    height 76px
+    top -38px
+    left -38px
+    background-color rgba($white, 0)
+    border-color currentColor
+    transition height .3s $ease, width .3s $ease, top .3s $ease, left .3s $ease, background-color .3s ease, border-color .3s ease
+
+  &.zoom-in
+  &.zoom-out
+  &.chevron-left
+  &.chevron-right
+  &.chevron-down
+  &.chevron-up
+    width 50px
+    height 50px
+    top -25px
+    left -25px
+    background-color rgba($white, 0)
+    border-color currentColor
+    transition height .3s $ease, width .3s $ease, top .3s $ease, left .3s $ease, background-color .3s ease, border-color .3s ease
+
+  &.l-o-r
+    width 56px
+    height 56px
+    top -28px
+    left -28px
+    background-color rgba($neon, .33)
+    border-color #0000
+    transition height .3s $ease, width .3s $ease, top .3s $ease, left .3s $ease, background-color .3s ease, border-color .3s ease
+
+$cursorOffset = -28px
+
+.cursor__icon
+  font-size rem(24)
+  z-index 9000
+  
+  &_left
+    position relative
+    animation iconleft .15s linear
+    left $cursorOffset
+    animation-iteration-count 1
+    font-style 14px
+  
+  &_right
+    position relative
+    animation iconright .15s linear
+    right $cursorOffset
+    animation-iteration-count 1
+    font-style 16px
+
+@keyframes iconleft {
+  0% {left: 0px}
+  100% {left: $cursorOffset}
+}
+
+@keyframes iconright {
+  0% {right: 0px}
+  100% {right: $cursorOffset}
+}
+
+.is-magnetic_active > *
+  pointer-events none

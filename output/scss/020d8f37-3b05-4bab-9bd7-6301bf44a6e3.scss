@@ -1,0 +1,485 @@
+.recording-course-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+
+  &__dialog {
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    max-width: 942px;
+    min-height: 438px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--color-white);
+    background-color: var(--color-light-blue);
+    background-image:
+      url('../wp-content/themes/trading/august/img/recording-course-modal-bg.svg'),
+      linear-gradient(259.61deg, #3672C7 -20.28%, #13376B 113.92%, #13376B 113.92%);
+    background-repeat: no-repeat;
+    background-position: right bottom 18px, center;
+    border-radius: 20px;
+    overflow-y: auto;
+  }
+
+  &__content {
+    padding: 25px 53px;
+    padding-bottom: 35px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    display: flex;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &-icon {
+      fill: var(--color-white);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 36px;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 130%;
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: 1fr 1.04fr .96fr;
+    align-items: start;
+  }
+
+
+  &__item-prices {
+    grid-row-start: 2;
+  }
+
+  &__item-lists {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    padding-right: 25px;
+  }
+
+  &__item-plan {
+    grid-row: 1 / span 2;
+  }
+
+  &__toggle {
+    grid-column-end: span 2;
+    position: relative;
+    display: flex;
+    margin-bottom: 23px;
+    width: fit-content;
+    box-sizing: border-box;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background-color: #727272;
+      border-radius: 3px;
+    }
+
+    &-button {
+      position: relative;
+      padding: 0;
+      padding-bottom: 19px;
+      color: #BABABA;
+      font-size: 20px;
+      line-height: 130%;
+      text-align: left;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 3px;
+        background-color: transparent;
+        border-radius: 3px;
+      }
+
+      &:first-child {
+        padding-right: 40px;
+      }
+
+      &:last-child {
+        padding-left: 40px;
+      }
+
+      &_active {
+        color: var(--color-white);
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 130%;
+
+        &::before {
+          background-color: var(--color-primary);
+        }
+      }
+    }
+  }
+
+  &__controls {
+    grid-column: 1 / span 2;
+    display: none;
+    margin-bottom: 45px;
+
+    &-prev,
+    &-next {
+      position: relative;
+      padding: 0;
+      width: 70px;
+      height: 70px;
+      background-color: var(--color-primary);
+      border: none;
+      cursor: pointer;
+    }
+
+    &-prev {
+      background-color: #CD1A1A;
+      z-index: 1;
+    }
+
+    &-next {
+      transform: translate(-10px, 20px);
+    }
+
+    &-icon {
+      fill: var(--color-white);
+    }
+  }
+
+  &__prices {
+    &_hidden {
+      display: none !important;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 130%;
+
+    &-desc {
+      display: block;
+      margin-top: 4px;
+      color: #BABABA;
+      font-size: 14px;
+      line-height: 130%;
+    }
+  }
+
+  &__price-full {
+    margin: 0;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+
+    &-desc {
+      display: block;
+      margin-top: 4px;
+      color: #BABABA;
+      font-size: 12px;
+      line-height: 130%;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &-item + &-item {
+      margin-top: 15px;
+    }
+
+    &-item {
+      position: relative;
+      padding-left: 18px;
+      font-size: 16px;
+      line-height: 130%;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 0;
+        display: block;
+        width: 12px;
+        height: 12px;
+        background-color: #C4C4C4;
+        border-radius: 50%;
+      }
+    }
+
+    &_hidden {
+      display: none !important;
+    }
+  }
+
+  &__plan {
+    margin: 0;
+    margin-top: -4px;
+    padding: 0;
+    list-style-type: none;
+
+    &-item + &-item {
+      margin-top: 10px;
+    }
+
+    &-item {
+      font-weight: bold;
+      font-size: 35px;
+      line-height: 130%;
+
+      &:first-child {
+        font-size: 50px;
+      }
+
+      &:nth-child(2) {
+        font-size: 40px;
+      }
+    }
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: 263px 263px ;
+    gap: 12px;
+    margin-top: 50px;
+  }
+
+  &__buy,
+  &__installment {
+    border-radius: 10px;
+  }
+
+  @media (max-width: 1439px) {
+    &__dialog {
+      max-width: 748px;
+    }
+
+    &__content {
+      padding: 32px;
+    }
+
+    &__close {
+      top: 15px;
+      right: 20px;
+    }
+
+    &__title {
+      margin-bottom: 34px;
+      font-size: 28px;
+    }
+
+    &__box {
+      grid-template-columns: 1fr 1.3fr .7fr;
+    }
+
+    &__item-lists {
+      padding-left: 50px;
+    }
+
+    &__plan {
+      margin-top: 40px;
+
+      &-item + &-item {
+        margin-top: 16px;
+      }
+
+      &-item {
+        &:nth-child(n) {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    &__dialog {
+      max-width: 738px;
+    }
+
+    &__title {
+      margin-bottom: 24px;
+      padding-right: 26px;
+      max-width: 506px;
+    }
+
+    &__item-lists {
+      padding-left: 25px;
+    }
+  }
+
+  @media (max-width: 833px) {
+    &__dialog {
+      height: 100%;
+      max-width: 100%;
+      border-radius: 0;
+      background-image: linear-gradient(259.61deg, #3672C7 -20.28%, #13376B 113.92%, #13376B 113.92%);
+      background-position: center;
+    }
+
+    &__close {
+      top: 17px;
+      right: 18px;
+    }
+
+    &__title {
+      margin-bottom: 32px;
+    }
+
+    &__box {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__item-lists {
+      grid-column: 1 / span 2;
+      grid-row: 3;
+      margin-top: 25px;
+      padding: 0;
+    }
+
+    &__item-plan {
+      grid-column: 2;
+      grid-row: 2;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__toggle {
+      width: 100%;
+
+      &-button {
+        flex-grow: 1;
+
+        &:first-child {
+          padding-right: 30px;
+        }
+
+        &:last-child {
+          padding-left: 30px;
+          text-align: right;
+        }
+      }
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px 19px;
+
+      &-item + &-item {
+        margin: 0;
+      }
+    }
+
+    &__plan {
+      margin: 0;
+    }
+
+    &__footer {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 499px) {
+    &__title {
+      margin-bottom: 24px;
+    }
+
+    &__close {
+      top: 13px;
+      right: 18px;
+    }
+
+    &__toggle {
+      margin-bottom: 16px;
+    }
+
+    &__controls {
+      display: block;
+    }
+
+    &__item-lists {
+      grid-row: 4;
+      margin-top: 35px;
+    }
+
+    &__item-prices {
+      grid-row: 3;
+    }
+
+    &__item-plan {
+      grid-row: 3;
+    }
+
+    &__toggle {
+      &-button {
+        flex-grow: 0;
+        display: none;
+
+        &:last-child {
+          margin-left: auto;
+        }
+
+        &_active {
+          display: block;
+        }
+      }
+    }
+
+    &__list {
+      grid-template-columns: 1fr;
+      gap: 16px;
+
+      &-item {
+        padding-left: 30px;
+        font-size: 20px;
+      }
+    }
+
+    &__plan {
+      &-item + &-item {
+        margin-top: 27px;
+      }
+
+      &-item {
+        &:nth-child(n) {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &__footer {
+      margin-top: 45px;
+    }
+  }
+}

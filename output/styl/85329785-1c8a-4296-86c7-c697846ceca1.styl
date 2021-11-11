@@ -1,0 +1,278 @@
+// Item
+// 
+// An item view presents related site content.  Items must manually be given a width and height that match up to the content that it displays. Content must also be truncated so that each item will not exceed the maximum height.
+//
+// Markup:
+// <div class="ui items">
+//   <div class="item">
+//     <div class="image">
+//       <img src="http://placehold.it/200x200">
+//       <a class="like ui corner label">
+//         <i class="like icon"></i>
+//       </a>
+//     </div>
+//     <div class="content">
+//       <div class="name">Cute Dog</div>
+//       <p class="description">This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.</p>
+//       <div class="extra">
+//           199 votes
+//       </div>
+//     </div>
+//   </div>
+//   <div class="item">
+//     <div class="image">
+//       <img src="http://placehold.it/200x200">
+//       <a class="like ui corner label">
+//         <i class="like icon"></i>
+//       </a>
+//     </div>
+//     <div class="content">
+//       <div class="meta">5 days ago</div>
+//       <div class="name">Faithful Dog</div>
+//       <p class="description">Sometimes its more important to have a dog you know you can trust. But not every dog is trustworthy, you can tell by looking at its smile.</p>
+//       <div class="extra">
+//           311 votes
+//       </div>
+//     </div>
+//   </div>
+//   <div class="item">
+//     <div class="image">
+//       <img src="http://placehold.it/200x200">
+//       <a class="like ui corner label">
+//         <i class="like icon"></i>
+//       </a>
+//     </div>
+//     <div class="content">
+//       <div class="name">Silly Dog</div>
+//       <p class="description">Silly dogs can be quite fun to have as companions. You never know what kind of ridiculous thing they will do.</p>
+//       <div class="extra">
+//           522 votes
+//       </div>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide 4.3
+
+// Basic Item List
+// 
+// A basic item list.
+//
+// Markup:
+// <div class="ui text items">
+//   <div class="item">
+//     <div class="content">
+//       <div class="meta">2 days ago</div>
+//       <div class="name">Cute Dog</div>
+//       <p class="description">This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.</p>
+//     </div>
+//     <div class="extra">
+//         199 votes
+//     </div>
+//   </div>
+//   <div class="item">
+//     <div class="content">
+//       <div class="meta">5 days ago</div>
+//       <div class="name">Faithful Dog</div>
+//       <p class="description">Sometimes its more important to have a dog you know you can trust. But not every dog is trustworthy, you can tell by looking at its smile.</p>
+//     </div>
+//     <div class="extra">
+//         311 votes
+//     </div>
+//   </div>
+//   <div class="item">
+//     <div class="content">
+//       <div class="meta">1 week ago</div>
+//       <div class="name">Silly Dog</div>
+//       <p class="description">Silly dogs can be quite fun to have as companions. You never know what kind of ridiculous thing they will do.</p>
+//     </div>
+//     <div class="extra">
+//         522 votes
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide 4.3.1
+
+.text.items .item
+	min-height 			150px
+
+// Stackable Items
+// 
+// An item view can have its items take the full width when below a browser resolution threshold to allow for content to display properly at small sizes
+//
+// Markup:
+// <div class="ui stackable items">
+//   <div class="item">
+//     <div class="image">
+//       <img src="http://placehold.it/200x200">
+//       <a class="like ui corner label">
+//         <i class="like icon"></i>
+//       </a>
+//     </div>
+//     <div class="content">
+//       <div class="name">Cute Dog</div>
+//       <p class="description">This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.</p>
+//       <div class="extra">
+//           199 votes
+//       </div>
+//     </div>
+//   </div>
+//   <div class="item">
+//     <div class="image">
+//       <img src="http://placehold.it/200x200">
+//       <a class="like ui corner label">
+//         <i class="like icon"></i>
+//       </a>
+//     </div>
+//     <div class="content">
+//       <div class="meta">5 days ago</div>
+//       <div class="name">Faithful Dog</div>
+//       <p class="description">Sometimes its more important to have a dog you know you can trust. But not every dog is trustworthy, you can tell by looking at its smile.</p>
+//       <div class="extra">
+//           311 votes
+//       </div>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide 4.3.2
+
+// Connected Items
+// 
+// An item list can be automatically sized to be even height. Connected item lists cannot display extra information. A connected row must also assume an arbitrary column width unless specified.
+//
+// Markup:
+// <div class="ui connected items">
+//   <div class="row">
+//     <div class="item">
+//       <div class="image">
+//         <img src="http://placehold.it/200x200">
+//       </div>
+//       <div class="content">
+//         <div class="name">Cute Dog</div>
+//         <p class="description">This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.</p>
+//       </div>
+//     </div>
+//     <div class="item">
+//       <div class="image">
+//         <img src="http://placehold.it/200x200">
+//       </div>
+//       <div class="content">
+//         <div class="name">Faithful Dog</div>
+//         <p class="description">Sometimes its more important to have a dog you know you can trust. But not every dog is trustworthy, you can tell by looking at its smile.</p>
+//       </div>
+//     </div>
+//     <div class="item">
+//       <div class="image">
+//         <img src="http://placehold.it/200x200">
+//       </div>
+//       <div class="content">
+//         <div class="name">Silly Dog</div>
+//         <p class="description">Silly dogs can be quite fun to have as companions. You never know what kind of ridiculous thing they will do.</p>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+// <div class="ui six connected items">
+//   <div class="row">
+//     <div class="item">
+//       <div class="content">
+//         <div class="name">Cute Dog</div>
+//         <p class="description">This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.</p>
+//       </div>
+//     </div>
+//     <div class="item">
+//       <div class="content">
+//         <div class="name">Faithful Dog</div>
+//         <p class="description">Sometimes its more important to have a dog you know you can trust. But not every dog is trustworthy, you can tell by looking at its smile.</p>
+//       </div>
+//     </div>
+//     <div class="item">
+//       <div class="content">
+//         <div class="name">Silly Dog</div>
+//         <p class="description">Silly dogs can be quite fun to have as companions. You never know what kind of ridiculous thing they will do.</p>
+//       </div>
+//     </div>
+//     <div class="item">
+//       <div class="content">
+//         <div class="name">Cute Dog</div>
+//         <p class="description">This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.</p>
+//       </div>
+//     </div>
+//     <div class="item">
+//       <div class="content">
+//         <div class="name">Faithful Dog</div>
+//         <p class="description">Sometimes its more important to have a dog you know you can trust. But not every dog is trustworthy, you can tell by looking at its smile.</p>
+//       </div>
+//     </div>
+//     <div class="item">
+//       <div class="content">
+//         <div class="name">Silly Dog</div>
+//         <p class="description">Silly dogs can be quite fun to have as companions. You never know what kind of ridiculous thing they will do.</p>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide 4.3.4
+
+// Item Column Count
+// 
+// An item list can list how many columns should exist in a row
+//
+// .connected - A connected item list with a specified column count
+//
+// Markup:
+// <div class="ui four {$modifiers} items">
+//   <div class="item">
+//     <div class="image">
+//       <img src="http://placehold.it/200x200">
+//       <a class="star ui corner label">
+//         <i class="star icon"></i>
+//       </a>
+//     </div>
+//     <div class="content">
+//       <div class="name">Cute Dog</div>
+//       <p class="description">This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.</p>
+//     </div>
+//   </div>
+//   <div class="item">
+//     <div class="image">
+//       <img src="http://placehold.it/200x200">
+//       <a class="star ui corner label">
+//         <i class="star icon"></i>
+//       </a>
+//     </div>
+//     <div class="content">
+//       <div class="name">Faithful Dog</div>
+//       <p class="description">Sometimes its more important to have a dog you know you can trust. But not every dog is trustworthy, you can tell by looking at its smile.</p>
+//     </div>
+//   </div>
+//   <div class="item">
+//     <div class="image">
+//       <img src="http://placehold.it/200x200">
+//       <a class="star ui corner label">
+//         <i class="star icon"></i>
+//       </a>
+//     </div>
+//     <div class="content">
+//       <div class="name">Silly Dog</div>
+//       <p class="description">Silly dogs can be quite fun to have as companions. You never know what kind of ridiculous thing they will do.</p>
+//     </div>
+//   </div>
+//   <div class="item">
+//     <div class="image">
+//       <img src="http://placehold.it/200x200">
+//       <a class="star ui corner label">
+//         <i class="star icon"></i>
+//       </a>
+//     </div>
+//     <div class="content">
+//       <div class="name">Happy Dog</div>
+//       <p class="description">Happy dogs are pretty interesting if you are an unhappy person.</p>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide 4.3.5

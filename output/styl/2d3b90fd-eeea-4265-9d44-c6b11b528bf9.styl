@@ -1,0 +1,431 @@
+@css {
+/*
+Home My Account styles
+*/
+}
+
+.HomeAppView .my-account
+  font-size                 14px
+
+  button:focus
+    border 0px
+    box-shadow 0 0 0
+
+.my-account .HomeAppView--section
+  rel()
+  label
+    color                   #9F9F9F
+
+  .kdlistitemview
+    overflow                hidden
+    height                  70px
+    borderizeListItems      0px, 1px solid #EBEBEB
+
+  &.profile
+    display                 inline-block
+
+    .HomeAppView--form
+      overflow              hidden
+      padding-top           0
+      fr()
+      width                 440px
+
+      .firstname
+      .lastname
+        padding-right       10px
+        width               50%
+
+      .lastname
+        padding-left        0px
+
+      .email
+      .username
+        width               100%
+
+      .username
+        &:before
+          content           ''
+          r-sprite          home lock
+          abs               40px 25px 0 0
+          opacity           .5
+
+      input.kdinput
+        padding             10px 14px
+        width               100%
+
+      input[type=file]
+        width               112px
+
+      button
+        fr()
+        right               10px
+
+
+    .HomeAppView--account-avatar-wrapper
+      fl()
+      width                 170px
+      height                270px
+
+      a
+        display             inline-block
+        width               130px
+        text-align          center
+
+        &.HomeAppView--link.primary
+          margin            185px 40px 20px 0
+
+      .HomeAppView--account-avatar-spinner
+        abs                 60px 0 0 37px
+      .HomeAppView--account-avatar
+        top                 55px
+        left                30px
+        size                132px 132px
+        overflow            visible
+        .badge
+          abs               0 0px 10px 0
+          margin            0
+          padding           5px 10px 2px 20px
+          color             white
+          font-size         12px
+          line-height       12px
+          height            14px
+          rounded           11px
+          &::before
+            content         ''
+            abs             5px 0 0 6px
+          &.owner
+            bg              color #48BA7D
+            &::before
+              r-sprite      app badge_icon_owner
+          &.admin
+            bg              color #FFC442
+            &::before
+              r-sprite      app badge_icon_admin
+          &.compact
+            font-size       0
+            padding         3px 10px 4px 11px
+            &::before
+              left          3px
+
+      button[type=submit]
+        height              37px
+        fr()
+        .button-title
+          font-size         14px
+
+  &.password
+    .HomeAppView--form
+      overflow              hidden
+      padding-top           0
+      div.Formline--half
+        padding-right       8px
+        width               auto
+
+      .formline.button-field
+        border              none !important
+
+      input.kdinput
+        width               184px
+
+      a
+        right               66px
+        bottom              58px
+        abs()
+
+    .button-wrapper
+      padding-top           20px
+      border-top            1px solid #DDDDDD
+      display               inline-block
+      width                 100%
+      a
+        fl()
+        margin-top          15px
+        width               200px
+        display             block
+
+      button.update-button
+        float               right
+
+      .update-button:focus
+        border              0px
+
+
+  &.security
+    overflow                hidden
+    height                  360px
+
+    &.enabled2Factor
+      display flex
+
+    .enabled-intro
+      width  352px
+      border-right          1px solid #D9D9D9
+      rel()
+      .HomeAppView--link
+        abs 0 0 0px 0
+
+      p
+        width               300px
+      .status
+        font-size           12px
+        font-weight         300
+        vertical-align      top
+        line-height         15px
+        color               #ACACAC
+        text-rendering      geometricPrecision
+        dIBlock()
+
+        strong
+          color             #48BA7D
+          font-size         20px
+          font-weight       400
+          margin-bottom     3px
+          dBlock()
+      .info
+        font-size           12px
+        color               #ACACAC
+        font-weight         300
+        margin-top          20px
+
+    .AppModal-form
+      size                  375px 300px
+      border                1px solid #d0d0d0
+      rounded               4px
+      fr()
+      rel()
+      borderBox()
+
+      &.enabled-form
+        width               300px
+        border              none
+        float               none
+        padding-top         12px
+        height              auto
+        margin 0px
+        padding 0px
+
+        div.Formline--half
+          padding-right 0px
+          height            42px
+          &.disable-2-factor
+          &.password
+            width           262px
+            margin-left     10px
+            float           left
+            button
+              width         100%
+            input
+              width         250px
+          .input-wrapper
+            overflow        visible
+
+      input
+        width               100%
+
+      .button-field
+        border-top          none !important
+        bottom              -10px
+        left                8px
+        padding-top         0 !important
+
+        button
+          float             none
+          rounded           4px
+          height            42px
+          width             334px !important
+          .button-title
+            font-size       15px
+
+        button.enable-tf
+          padding           0px
+          margin-left       0px
+          .button-title
+            line-height     42px !important
+
+      .formline.password
+      .formline.tfcode
+        float               right
+        width               215px
+        padding-right       20px
+
+      .qrcode-view
+        size                130px 130px
+        padding             8px
+        border              1px solid #d0d0d0
+        z-index             1
+        abs                 45px 0 0 20px
+        borderBox()
+
+        img
+          size              115px 115px
+
+        .HomeAppView--link
+          margin            15px auto
+          width             117px
+          text-align        center
+          dBlock()
+
+      .qrcode-label
+        abs                 -22px 0 0 0
+
+    .instructions
+      top                   30px
+      abs()
+
+      .intro
+        width               200px
+        line-height         24px
+
+      ul
+        margin              20px 0 59px
+        width               200px
+
+        li
+          line-height       normal
+          margin-bottom     15px
+
+      .learn-link
+        margin-right        50px
+
+
+  &.integrations
+    .container
+      height                40px
+      borderBox()
+
+      &:hover
+        border-bottom       1px solid #ccc
+        cite
+          visibility        visible
+        token
+          display           block
+          opacity           0
+
+      > div
+        margin-top          12px
+        fl()
+
+        token
+          display           none
+          abs               0px, 0px
+
+        cite
+          font-size         12px
+          font-weight       bold
+          margin-left       5px
+          color             #769ecc
+          cursor            pointer
+          visibility        hidden
+
+      .kdloader
+        height              20px
+        width               70px
+        right               10px
+        background          rgba(255,255,255,0.5)
+        text-align          right
+        padding-top         14px
+        abs()
+
+      .scope
+        background          #eee
+        color               #666
+        padding             1px 4px
+        position            absolute
+        right               130px
+        max-width           290px
+        overflow            hidden
+        text-overflow       ellipsis
+        white-space         nowrap
+        font-size           13px
+
+      .integration-switch
+        margin-top          10px
+        fr()
+
+  &.sessions
+    .session-info
+      display               block
+      margin                10px 0 0 0px
+      fl()
+
+      .last-access
+        text-align          left
+        font-size           14px
+        line-height         20px
+        color               #8E8E8E
+        letter-spacing      0px
+
+      .group-name
+        display             inline-block
+        max-width           300px
+        line-height         25px
+        height              23px
+        margin-right        5px
+        color               #929292
+        ellipsis()
+
+      .api:after
+      .active:after
+        content             'Active'
+        font-size           12px
+        line-height         12px
+        font-weight         300
+        background-color    #48BA7D
+        padding             3px 10px 0px
+        letter-spacing      0.2px
+        color               #FFFFFF
+        size                42px 14px
+        text-align          center
+        margin-top          3px
+        display             inline-block
+        vertical-align      top
+
+      .active:after
+        content             'Active'
+
+      .api:after
+        content             'API Session'
+        width               68px
+        background-color    #999
+
+    .delete-button
+      fr()
+
+      button
+        margin-top          20px
+        bg                  color, transparent
+
+      .button-title
+        color               #769ecc
+        font-size           14px
+
+  .HomeAppView--account-avatarArea-links
+    clear                   both
+    text-align              right
+    overflow                hidden
+    margin-bottom           20px
+    padding-right           20px
+    rel()
+
+    .HomeAppView--link
+      margin-left           40px
+
+  .HomeAppView--account-avatarArea-links-upload
+    size                    112px 26px !important
+    left                    42px
+    top                     204px
+    z-index                 2
+    opacity                 0
+    abs()
+    pointer()
+    borderBox()
+
+.HomeAppView--section.credentials
+
+  .filter-view
+    hidden()
+
+.delete-account
+  margin                    32px 0px 30px 47px
+  color                     #f2778a
+  cursor                    pointer

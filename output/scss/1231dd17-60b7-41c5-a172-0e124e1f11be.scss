@@ -1,0 +1,494 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing:border-box;
+}
+._container {
+   max-width: 600px;
+   margin: 150px auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+/*---WATCH-------------------------------------------*/
+@keyframes lets_go_sec{
+   from{
+      transform: rotate(270deg);
+   }
+   to{
+      transform: rotate(630deg);
+   }
+}
+@keyframes lets_go_min{
+   from{
+      transform: rotate(305deg);
+   }
+   to{
+      transform: rotate(665deg);
+   }
+}
+@keyframes lets_go_clock{
+   from{
+      transform: rotate(270deg);
+   }
+   to{
+      transform: rotate(630deg);
+   }
+}
+.clock__oval{
+   width: 110px;
+   height: 37px;
+   border: 1px solid pink;
+   background: rgb(212, 214, 66);
+   border-radius: 50%;
+   margin-bottom: 10px;
+   position: relative;
+}
+.clock__oval::after{
+   content: '';
+   position: absolute;
+   width: 20px;
+   height: 11px;
+   border: 1px solid pink;
+   
+   background: rgb(212, 214, 66);
+   top: 33px;
+   left: 43px;
+
+}
+.clock__oval::before{
+   content: '';
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   border: 1px solid pink;
+   border-radius: 50%;
+   background: rgb(212, 214, 66);
+   top: -22px;
+   left: 45px;
+}
+.clock__square{
+   border: 3px solid pink;
+   padding: 15px;
+   width: 536px;
+   height: 536px;
+   background: rgb(212, 214, 66);
+   position: relative;
+   border-radius: 15px;
+}
+.clock__square::after{
+   content: "";
+  position: absolute;
+  right: 14px;
+  bottom: -59px;
+  border: 24px solid transparent;
+  border-top: 32px solid rgb(212, 214, 66);
+}
+.clock__square::before{
+   content: "";
+  position: absolute;
+  left: 14px;
+  bottom: -59px;
+  border: 24px solid transparent;
+  border-top: 32px solid rgb(212, 214, 66);
+}
+.clock__circle {
+   width: 500px;
+   height: 500px;
+   border: 4px solid pink;
+   border-radius: 50%;
+   position: relative;
+   background: rgb(206, 206, 196);
+}
+.clock__arrow{
+   position: absolute;
+   width: 100px;
+   height: 10px;
+   top: calc(250px - 10px);
+   left: calc(250px - 3px);
+   background: #000;
+   transform-origin: 0;
+   animation: lets_go_clock 216000s steps(60, end) infinite;
+}
+.sec__arrow {
+   position: absolute;
+   width: 150px;
+   height: 3px;
+   top: calc(250px - 6px);
+   left: calc(250px - 3px);
+   background: rgb(226, 30, 30);
+   transform-origin: bottom left;
+   animation: lets_go_sec 60s steps(60, end) infinite;
+   
+
+}
+.sec__arrow::after{
+   content: '';
+   border: 1px solid rgb(226, 30, 30);
+   border-radius: 50%;
+   background: rgb(226, 30, 30);
+   width: 10px;
+   height: 10px;
+   position: absolute;
+   top: -120%;
+   right: 9%;
+
+}
+.min__arrow {
+   position: absolute;
+   width: 120px;
+   height: 6px;
+   top: calc(250px - 6px);
+   left: calc(250px - 3px);
+   background: #000;
+   transform-origin: 0;
+   transform: rotate(270deg);
+   animation: lets_go_min 3600s steps(60, end) infinite;
+}
+.center {
+   position: absolute;
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   top: calc(250px - 10px);
+   left: calc(250px - 10px);
+   background: rgba(81, 200, 230, 0.801);
+
+}
+.clock__number_one {
+   width: 20px;
+   height: 20px;
+   padding: 18px;
+   border: 1px solid green;
+   border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   top: calc(250px - 187px);
+   right: calc(250px - 142px);
+}
+.clock__number_two {
+   width: 20px;
+   height: 20px;
+   padding: 18px;
+   border: 1px solid green;
+   border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   top: calc(250px - 111px);
+   right: calc(250px - 209px);
+}
+.clock__number_three {
+   width: 20px;
+   height: 20px;
+   padding: 18px;
+   border: 1px solid green;
+   border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   top: calc(250px - 20px);
+   right: calc(250px - 236px);
+}
+.clock__number_four {
+   width: 20px;
+   height: 20px;
+   padding: 18px;
+   border: 1px solid green;
+   border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   bottom: calc(250px - 111px);
+   right: calc(250px - 209px);
+}
+.clock__number_five {
+   width: 20px;
+   height: 20px;
+   padding: 18px;
+   border: 1px solid green;
+   border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   bottom: calc(250px - 187px);
+   right: calc(250px - 142px);
+}
+.clock__number_six {
+   width: 20px;
+   height: 20px;
+   padding: 18px;
+   border: 1px solid green;
+   border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   bottom: calc(250px - 236px);
+   left: calc(250px - 20px);
+}
+.clock__number_seven {
+   width: 20px;
+   height: 20px;
+   padding: 18px;
+   border: 1px solid green;
+   border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   bottom: calc(250px - 187px);
+   left: calc(250px - 142px);
+}
+.clock__number_eight {
+  width: 20px;
+  height: 20px;
+  padding: 18px;
+  border: 1px solid green;
+  border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   bottom: calc(250px - 111px);
+   left: calc(250px - 209px);
+}
+.clock__number_nine {
+   width: 20px;
+   height: 20px;
+   padding: 18px;
+   border: 1px solid green;
+   border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   top: calc(250px - 20px) ;
+   left: calc(250px - 236px);
+}
+.clock__number_ten {
+  width: 20px;
+  height: 20px;
+  padding: 18px;
+  border: 1px solid green;
+  border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   top: calc(250px - 111px);
+   left: calc(250px - 209px);
+}
+.clock__number_eleven {
+  width: 20px;
+  height: 20px;
+  padding: 18px;
+  border: 1px solid green;
+  border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   top: calc(250px - 187px);
+   left: calc(250px - 142px);
+}
+.clock__number_twelve {
+  width: 20px;
+  height: 20px;
+  padding: 18px;
+  border: 1px solid green;
+  border-radius: 50%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 20px;
+   background: rgba(81, 200, 230, 0.801);
+   top: calc(250px - 236px);
+   left: calc(250px - 20px);
+}
+/*------TRAFFIC LIGHTS--------------------------*/
+.block__traffic_lights{
+   width: 500px;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   flex-direction: row;
+}
+.block__traffic_lights::before{
+   content: 'Cветoфор слева работает при обновлении страницы';
+   position: absolute;
+   font-size: 20px;
+   top: 143px;
+   left: 0px;
+}
+@keyframes color_red{
+   to{
+   background: #ff0000;      
+   }
+}
+@keyframes color_yellow{
+   to{
+   background: yellow;      
+   }
+}
+@keyframes color_green{
+   to{
+   background: #00ff00;      
+   }
+}
+.traffic__lights {
+   width: 100px;
+   height: 300px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   border-radius: 15px;
+   margin: 200px 0px 0px 0px;
+   padding: 10px 0px 10px 0px;
+   position: relative;
+   background: #000;
+   z-index: 8;
+}
+.traffic__lights_red {
+   width: 90px;
+   flex: 0 1 30%;
+   border-radius: 50%;
+   background: beige;
+   opacity: 0.9;
+   z-index: 2;
+   animation: color_red 5s ease;
+}
+.traffic__lights_yellow {
+   width: 90px;
+   flex: 0 1 30%;
+   border-radius: 50%;
+   background: beige;
+   opacity: 0.9;
+   z-index: 2;
+   animation: color_yellow 5s ease 5s;
+}
+.traffic__lights_green {
+   width: 90px;
+   flex: 0 1 30%;
+   border-radius: 50%;
+   background: beige;
+   opacity: 0.9;
+   z-index: 2;
+   animation: color_green 5s ease 10s;
+}
+.traffic__lights> *:not(:last-child){
+   margin: 0px 0px 10px 0px;
+}
+@keyframes color_position{
+      0%{
+        background: red;
+        top: 3px;
+      }
+      25%{
+        background: #fff;
+       top: 102px;
+      }
+      50%{
+         background: yellow;
+        top: 102px;
+       }
+       75%{
+         background: #fff;
+        top: 202px;
+       }
+      100%{
+        background: green;
+       top: 202px;     
+      }
+   }
+   .traffic__lights_position {
+      width: 100px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 15px;
+      margin: 200px 0px 0px 0px;
+      padding: 5px 0px 0px 0px;
+      position: relative;
+      background: #000;
+      z-index: 8;
+   }
+   .traffic__lights_position>*:not(:last-child){
+      margin: 0px 0px 10px 0px;
+   }
+   .circle_position{
+   width: 90px;
+   height: 89px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   border-radius: 50%;
+   position: absolute;
+   color: grey;
+   left: 4px;
+   top: 5px;
+   z-index: 3;
+   animation-timing-function: ease, step-start, cubic-bezier(.1, .3, .3, .1);
+   animation: color_position 4s 4s infinite;
+}
+.traffic__lights_one{
+   width: 90px;
+   flex: 0 1 30%;
+   border-radius: 50%;
+   background: beige;
+   opacity: 0.6;
+   z-index: 2; 
+}
+.traffic__lights_two{
+   width: 90px;
+   flex: 0 1 30%;
+   border-radius: 50%;
+   background: beige;
+   opacity: 0.6;
+   z-index: 2;  
+}
+.traffic__lights_three{
+   width: 90px;
+   flex: 0 1 30%;
+   border-radius: 50%;
+   background: beige;
+   opacity: 0.6;
+   z-index: 2;
+}
+

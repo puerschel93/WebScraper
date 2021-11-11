@@ -1,0 +1,270 @@
+/**
+ * [Utility First Class (Stylus Version)]
+ * Function: generate the right selector.
+ * @author: xiaoluoboding
+ * @param: {string} size - eg. sm / md / lg / xl
+ * @param: {string} prefix - eg. text
+ * @param: {string} modifier - eg. left / center / right / justifiy
+ * @param: {string} variant - eg. hover / active
+ * @return: {string} utility selector
+ */
+get-selector($size, $prefix, $modifier, $variant, $property) {
+  $spaceBetweenModifier = '> :not(template) ~ :not(template)'
+
+  $baseSelector = match('^-', $modifier) ? ('-' + $prefix + $modifier) : join('-', $prefix, $modifier)
+
+  $rightModifier = ($modifier == default) ? $prefix : $baseSelector
+
+  $rightPrefix = ($prefix == none) ? $modifier : $rightModifier
+
+  $rightVariant = ($variant is not null) ? ($variant + "\:" + $rightPrefix + ":" + $variant) : $rightPrefix
+
+  $rightSize = ($size is not null) ? join('\:', $size, $rightVariant) : $rightVariant
+
+  $result = (match('^divide', $prefix) and ($property is 'border-color')) ? ($rightSize + ' ' + $spaceBetweenModifier) : $rightSize
+
+  return $result
+}
+
+///
+/// calc space / divide width
+/// @author xiaoluoboding
+/// @param {string} $size
+/// @param {string} $value
+/// @return {string}  - result
+///
+calc-width-value($size, $value) {
+  $size-value = 'calc(%s * %s)' % ($size $value)
+  $result = $value is '0' ? 0 : $size-value
+  return $result
+}
+
+///
+/// get the rgba color
+/// @author xiaoluoboding
+/// @param {hex color} $color
+/// @param {string} $variable
+/// @return {string}  - result eg: rgba(0, 0, 0, var(--bg-opacity));
+///
+rgba-color($color, $variable) {
+  $result = 'rgba(' + red($color) + ', ' + green($color) + ', ' + blue($color) + ', var(' + $variable + '))'
+  return $result
+}
+
+/**
+ * [Utility First Class (Stylus Version)]
+ * Function: Utility class generator like tailwindcss but in pure stylus.
+ * @author: xiaoluoboding
+ * @param: [$themePairs]
+ *     eg: textAlign: {
+             left: 'left',
+             center: 'center',
+             right: 'right',
+             justify: 'justify'
+           }
+ * @param: [[$variantList]]
+ *     eg: textAlign: 'responsive'
+ * @param: [$size]
+ *     eg: sm, md, lg, xl
+ * @param: [$prefix]
+ *     eg: text
+ * @param: [$property]
+ *     eg: text-align
+ * Code for fun!
+ */
+class-generator($themePairs, $variantList, $size = null, $prefix, $property, $propAlias) {
+  // loop theme pairs
+  loop-themes($variant = null) {
+    // p($variant)
+    for key, value in $themePairs {
+      // unquote theme pairs
+      $modifier = replace('\/', '\/', key)
+      $value = convent-string(value)
+      
+      $selector = get-selector($size, $prefix, $modifier, $variant, $property)
+
+      .{$selector} {
+        if (typeof($property) is 'object') {
+          // generate multiple line properties class
+          for $prop in keys($property) {
+            {$prop} $value
+          }
+        } else {
+          // generate only one line property class
+          {$property} $value
+        } 
+      }
+    }
+  }
+
+  // loop placeholder
+  loop-placeholder($variant = null) {
+    // .placeholder-gray-color:-ms-input-placeholder
+    // .placeholder-gray-color::-ms-input-placeholder
+    // .placeholder-gray-color::placeholder
+    $pseudoList = ':-ms-input-placeholder' '::-ms-input-placeholder' '::placeholder'
+    for key, value in $themePairs {
+      // unquote theme pairs
+      $modifier = replace('\/', '\/', key)
+      $value = convent-string(value)
+
+      // seems like "placeholder-gray-color"
+      $basicSelector = join('-', $prefix, $modifier)
+      // seems like "sm\:placeholder-gray-color"
+      $rightSize = ($size == null) ? $basicSelector : join('\:', $size, $basicSelector)
+      // seems like "focus\:placeholder-gray-color:focus"
+      $selector = $variant == null ? $rightSize : ($variant + "\:" + $rightSize + ":" + $variant)
+
+      if (match('Color', $propAlias)) {
+        $opacity-alias = replace('Color', 'Opacity', $propAlias)
+
+        $opacity-variable = unquote($preset[$opacity-alias][1])
+
+        for $pseudo in $pseudoList {
+          // seems like .placeholder-gray-color::placeholder
+          .{$selector}{$pseudo} {
+            if (match('(transparent|current)', $modifier)) {
+              {$property} $value
+            } else {
+              {$opacity-variable}: 1
+              {$property} $value
+              {$property} unquote(rgba-color($value, $opacity-variable))
+            }
+          }
+        }
+      } else {
+        for $pseudo in $pseudoList {
+          .{$selector}{$pseudo} {
+            {$property} $value
+          }
+        }
+      }
+    }
+  }
+
+  // loop space-between or divide-width or divide-opacity
+  loop-space-between($variant = null) {
+    for key, value in $themePairs {
+      // unquote theme pairs
+      $modifier = replace('\/', '\/', key)
+      $value = convent-string(value)
+
+      // get the right selector
+      $selector = get-selector($size, $prefix, $modifier, $variant, $property)
+      .{$selector} > :not(template) ~ :not(template) {
+        if (match('Opacity', $propAlias)) {
+          {$property} $value
+        } else {
+          if (typeof($property) is 'object') {
+            // generate multiple line properties class
+            if ($modifier is 'reverse') {
+              $prop = '--' + $prefix + '-' + $modifier
+              {$prop} 1
+            } else {
+              for $prop, $propValue in $property {
+                $selectorValue = calc-width-value($value, convent-string($propValue))
+                {$prop} $selectorValue
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // loop color
+  loop-color-theme($variant = null) {
+    for key, value in $themePairs {
+      // p($themePairs)
+      // unquote theme pairs
+      $modifier = replace('\/', '\/', key)
+      $value = convent-string(value)
+      
+      $selector = get-selector($size, $prefix, $modifier, $variant, $property)
+
+      $opacity-alias = replace('Color', 'Opacity', $propAlias)
+
+      $opacity-variable = unquote($preset[$opacity-alias][1])
+
+      .{$selector} {
+        if (match('^(transparent|current)', $modifier)) {
+          {$property} $value
+        } else {
+          {$opacity-variable}: 1
+          {$property} $value
+          {$property} unquote(rgba-color($value, $opacity-variable))
+        }
+      }
+    }
+  }
+  
+  // loop gradient color
+  loop-gradient-color($variant = null) {
+    for key, value in $themePairs {
+      // p($themePairs)
+      // unquote theme pairs
+      $modifier = replace('\/', '\/', key)
+      $value = convent-string(value)
+      
+      $selector = get-selector($size, $prefix, $modifier, $variant, $property)
+
+      .{$selector} {
+        if (match('^(transparent|current)', $modifier)) {
+          {$property} $value
+        } else {
+          // transparent color function
+          if (match('from', $prefix)) {
+            {$property} $value
+            --gradient-color-stops unquote('var(--gradient-from-color),var(--gradient-to-color, ' + rgba($value, 0) + ')')
+          } else if (match('via', $prefix)) {
+            {$property} $value
+            // --gradient-color-stops var(--gradient-from-color),var(--gradient-via-color),var(--gradient-to-color, {$transparentColor})
+            --gradient-color-stops unquote('var(--gradient-from-color),var(--gradient-via-color),var(--gradient-to-color, ' + rgba($value, 0) + ')')
+          } else {
+            {$property} $value
+          }
+        }
+      }
+    }
+  }
+
+  if (match('Color', $propAlias)) {
+    if (match('^placeholder', $prefix)) {
+      loop-placeholder()
+    } else if (match('gradientColorStops', $propAlias)) {
+      loop-gradient-color()
+    } else {
+      loop-color-theme()
+    }
+  } else if (match('^placeholder-opacity', $prefix)) {
+    loop-placeholder()
+  } else if (match('^(space-|divide-x|divide-y|divide-opacity)', $prefix)) {
+    loop-space-between()
+  } else {
+    loop-themes()
+  }
+
+  loop-variants() {
+    for $variant in $variantList {
+      if ($variant is not 'responsive') {
+        if (match('Color', $propAlias)) {
+          if (match('^placeholder', $prefix)) {
+            loop-placeholder($variant)
+          } else if (match('gradientColorStops', $propAlias)) {
+            loop-gradient-color($variant)
+          } else {
+            loop-color-theme($variant)
+          }
+        } else if (match('^placeholder-opacity', $prefix)) {
+          loop-placeholder($variant)
+        } else if (match('^(space-|divide-x|divide-y|divide-opacity)', $prefix)) {
+          loop-space-between($variant)
+        } else {
+          loop-themes($variant)
+        }
+      }
+    }
+  }
+
+  loop-variants()
+}

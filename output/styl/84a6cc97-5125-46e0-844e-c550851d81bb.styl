@@ -1,0 +1,276 @@
+$highlight_theme = hexo-config("highlight_theme")
+
+if $highlight_theme == "normal"
+  $highlight-background   = #f7f7f7
+  $highlight-current-line = #efefef
+  $highlight-selection    = #d6d6d6
+  $highlight-foreground   = #4d4d4c
+  $highlight-comment      = #8e908c
+  $highlight-red          = #c82829
+  $highlight-orange       = #f5871f
+  $highlight-yellow       = #eab700
+  $highlight-green        = #718c00
+  $highlight-aqua         = #3e999f
+  $highlight-blue         = #4271ae
+  $highlight-purple       = #8959a8
+  $highlight-gutter       = {
+    color: #869194,
+    bg-color: #eff2f3
+  }
+
+if $highlight_theme == "night"
+  $highlight-background   = #1d1f21
+  $highlight-current-line = #282a2e
+  $highlight-selection    = #373b41
+  $highlight-foreground   = #c5c8c6
+  $highlight-comment      = #969896
+  $highlight-red          = #cc6666
+  $highlight-orange       = #de935f
+  $highlight-yellow       = #f0c674
+  $highlight-green        = #b5bd68
+  $highlight-aqua         = #8abeb7
+  $highlight-blue         = #81a2be
+  $highlight-purple       = #b294bb
+  $highlight-gutter       = {
+    color: lighten($highlight-background, 50%),
+    bg-color: darken($highlight-background, 100%)
+  }
+
+if $highlight_theme == "night eighties"
+  $highlight-background   = #2d2d2d
+  $highlight-current-line = #393939
+  $highlight-selection    = #515151
+  $highlight-foreground   = #cccccc
+  $highlight-comment      = #999999
+  $highlight-red          = #f2777a
+  $highlight-orange       = #f99157
+  $highlight-yellow       = #ffcc66
+  $highlight-green        = #99cc99
+  $highlight-aqua         = #66cccc
+  $highlight-blue         = #6699cc
+  $highlight-purple       = #cc99cc
+  $highlight-gutter       = {
+    color: $highlight-comment,
+    bg-color: darken($highlight-background, 40%)
+  }
+
+if $highlight_theme == "night blue"
+  $highlight-background   = #002451
+  $highlight-current-line = #00346e
+  $highlight-selection    = #003f8e
+  $highlight-foreground   = #ffffff
+  $highlight-comment      = #7285b7
+  $highlight-red          = #ff9da4
+  $highlight-orange       = #ffc58f
+  $highlight-yellow       = #ffeead
+  $highlight-green        = #d1f1a9
+  $highlight-aqua         = #99ffff
+  $highlight-blue         = #bbdaff
+  $highlight-purple       = #ebbbff
+  $highlight-gutter       = {
+    color: $highlight-comment,
+    bg-color: darken($highlight-background, 60%)
+  }
+
+if $highlight_theme == "night bright"
+  $highlight-background   = #000000
+  $highlight-current-line = #2a2a2a
+  $highlight-selection    = #424242
+  $highlight-foreground   = #eaeaea
+  $highlight-comment      = #969896
+  $highlight-red          = #d54e53
+  $highlight-orange       = #e78c45
+  $highlight-yellow       = #e7c547
+  $highlight-green        = #b9ca4a
+  $highlight-aqua         = #70c0b1
+  $highlight-blue         = #7aa6da
+  $highlight-purple       = #c397d8
+  $highlight-gutter       = {
+    color: lighten($highlight-background, 40%),
+    bg-color: lighten($highlight-background, 16%)
+  }
+
+$code-block
+  overflow auto
+  margin 20px 0
+  line-height 1.6
+  color $highlight-foreground
+  background $highlight-background
+
+.highlight
+  position relative
+  padding-top 20px
+  @extend $code-block
+  pre, code
+    font-family font-mono
+  pre
+    display block
+    @extend $code-block
+    margin 0
+    border none
+  code
+    padding: 0
+    background none
+    text-shadow none
+  table
+    margin: 0
+    width: inherit
+  td
+    border: none
+    padding: 0
+  figcaption
+    clearfix()
+    margin-bottom: 1em
+    line-height: 1em
+    font-size: .875em
+    color: $highlight-comment
+    a
+      float right
+  .gutter pre
+    padding-left 10px
+    padding-right 10px
+    text-align: right
+    color: $highlight-gutter.color
+    background-color: $highlight-gutter.bg-color
+  .code pre
+    padding-left 10px
+  .line.marked
+    background: $highlight-selection
+
+  .gist
+    border-style: solid
+    border-color: color-border
+    border-width: 1px 0
+    background: $highlight-background
+    padding: 15px
+    .gist-file
+      border: none
+      font-family: font-mono
+      margin: 0
+      .gist-data
+        background: none
+        border: none
+        .line-numbers
+          background: none
+          border: none
+          padding: 0 20px 0 0
+        .line-data
+          padding: 0 !important
+      .highlight
+        margin: 0
+        padding: 0
+        border: none
+      .gist-meta
+        background: $highlight-background
+        color: $highlight-comment
+        font: 0.85em font-sans
+        text-shadow: 0 0
+        padding: 0
+        a
+          color: #343434
+          font-weight: normal
+          &:hover
+            text-decoration: underline
+
+.highlight:before
+  position: absolute
+  top: 0
+  right: 0
+  padding 0 5px
+  line-height: 20px
+  font-size .875em
+  color: $highlight-foreground
+  font-family: font-mono
+  text-align: center
+  z-index 9
+
+.highlight:after
+  content ''
+  position: absolute
+  top: 0
+  right: 0
+  height 20px
+  width 100%
+  background $highlight-gutter.bg-color
+
+.highlight.xml:before
+  content: "XML"
+.highlight.html:before
+  content: "HTML"
+.highlight.css:before
+  content: "CSS"
+.highlight.javascript:before
+  content: "Javascript"
+.highlight.ruby:before
+  content: "Ruby"
+.highlight.python:before
+  content: "Python"
+.highlight.perl:before
+  content: "Perl"
+.highlight.tex:before
+  content: "Tex"
+.highlight.c:before
+  content: "C"
+.highlight.java:before
+  content: "Java"
+.highlight.vue:before
+  content: "Vue"
+.highlight.stylus:before
+  content: "stylus"
+.highlight.less:before
+  content: "less"
+.highlight.scss:before
+  content: "SCSS"
+
+pre
+  .comment
+  .title
+    color: $highlight-comment
+  .variable
+  .attribute
+  .tag
+  .regexp
+  .ruby .constant
+  .xml .tag .title
+  .xml .pi
+  .xml .doctype
+  .html .doctype
+  .css .id
+  .css .class
+  .css .pseudo
+    color: $highlight-red
+  .number
+  .preprocessor
+  .built_in
+  .literal
+  .params
+  .constant
+  .command
+    color: $highlight-orange
+  .class
+  .ruby .class .title
+  .css .rules .attribute
+  .string
+  .value
+  .inheritance
+  .header
+  .ruby .symbol
+  .xml .cdata
+  .number
+  .formula
+    color: $highlight-green
+  .title
+  .css .hexcolor
+    color: $highlight-aqua
+  .function
+  .python .decorator
+  .python .title
+  .ruby .function .title
+  .ruby .title .keyword
+  .perl .sub
+  .javascript .title
+  .coffeescript .title
+    color: $highlight-blue
+  .keyword
+  .javascript .function
+    color: $highlight-purple

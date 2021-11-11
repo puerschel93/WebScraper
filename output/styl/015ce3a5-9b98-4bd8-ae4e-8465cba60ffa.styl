@@ -1,0 +1,261 @@
+h1
+  color var(--regular-title-color)
+  font-family $font-family-serif
+  font-size 3.5em
+
+h2
+  font-size 1.5em
+
+h3
+  font-size 1.25em
+
+h4, h5, h6
+  font-size 1em
+
+h2, h3, h4, h5, h6
+  font-family $font-family-sans
+  color var(--regular-title-color)
+
+h1, h2, h3, h4, h5, h6
+  font-weight normal
+  margin 0 0 0.25em
+  line-height 1em
+
+p, li
+  font-size 24px
+  line-height 1.5em
+
+strong
+  font-weight bold
+  color darken($accent-color, 30%)
+
+article
+  font-family $font-family-sans
+
+figure
+  margin 0
+  & > p 
+    margin 0
+
+a:link,
+a:visited
+  color var(--link-color)
+  text-decoration none
+a:hover
+  text-decoration underline
+
+code
+  font-size .75em
+  background-color var(--inline-code-bg-color)
+  color inherit
+  border-radius 3px
+
+pre > code
+  font-size 0.83333em
+  background-color inherit
+  border-radius inherit
+  color inherit
+
+pre
+  color var(--block-code-text-color)
+  background var(--block-code-bg-color)
+  border-radius .15em
+  padding 0.5em
+  overflow-x auto
+  outline 1px solid #c0c0c0
+  box-shadow 3px 3px 10px var(--shadow-color)
+  // for code not to exceed the slide width
+  max-width $slide-width - 40px
+
+
+pre code span
+  word-wrap break-word
+  word-break break-all
+
+p
+  text-align justify
+h1 > code
+h2 > code
+h3 > code
+h4 > code
+h5 > code
+h6 > code
+  background-color inherit
+  border-radius inherit
+
+ul, ol
+  display block
+  &.no-list-icon
+    list-style-type none
+  &.columns-3
+    display flex
+    flex-direction row
+    & > li
+      flex 1
+      &:not(:last-of-type)
+        margin-right 1em
+      & > h1,
+      & > h2,
+      & > h3,
+      & > h4,
+      & > h5,
+      & > h6
+        font-size 1.25em
+
+dt
+  float left
+  clear left
+  width var(--definition-list-width)
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+  text-align right
+  font-weight bold
+  padding-right 1em
+  position relative
+dd
+  margin-left calc(var(--definition-list-width) + var(--definition-list-spacing))
+dt, dd
+  margin-bottom .5em
+dl
+  clearfix()
+  &.width-10
+    --definition-list-width 10%
+  &.width-20
+    --definition-list-width 20%
+  &.width-30
+    --definition-list-width 30%
+  &.width-40
+    --definition-list-width 40%
+  &.width-50
+    --definition-list-width 50%
+
+
+del
+  color gray
+
+abbr[title]
+  border-bottom initial
+
+button
+  color var(--button-color)
+
+table
+  border-collapse collapse
+  border-spacing 0
+  border-bottom 3px solid var(--table-border-color)
+  border-top 3px solid var(--table-border-color)
+  border-left none  
+  border-right none
+  box-shadow 10px 10px 10px var(--shadow-color)
+
+thead
+  background var(--table-head-bg)
+  border-bottom 3px solid var(--table-border-color);
+  code
+    background var(--text-color);
+    color var(--presentation-color)
+
+tfoot
+  background var(--table-foot-bg)
+  color var(--table-foot-color)
+
+tr
+  border-top 1px solid var(--table-row-border-color)
+  background-color initial
+  &:nth-of-type(even)
+    background-color var(--table-row-bg-even)
+
+th
+  color var(--table-head-color)
+  font-weight normal
+  text-align inherit
+
+td, th
+  padding .3em .5em
+
+table.aero-rows
+  td
+    padding-top .8em
+    padding-bottom .8em
+
+table.aero-columns
+  td
+    padding-left 1em
+    padding-right 1em
+
+
+blockquote
+  position relative
+  margin 0.25em 0
+  padding 0.25em 40px
+  background var(--quote-bg)
+  box-shadow 4px 4px 4px var(--shadow-color)
+  line-height 1.45
+  font-size 18px
+  font-family Georgia, serif
+  font-style italic
+  color var(--quote-color)
+  border 1px solid var(--quote-border-color)
+  &.centered
+    margin-left auto
+    margin-right auto
+  > p
+    margin 0.5em auto
+  &::before
+    content "\201C"
+    display block
+    position absolute
+    left -0.25em
+    top -0.25em
+    font-size 80px
+    color var(--quote-quotes-color)
+  & cite
+    display block
+    margin-top 5px
+    font-size 75%
+    color var(--quote-cite-color)
+    &::before
+      content "\2014 \2009"
+
+kbd
+  padding .1em .6em
+  font-size .8em
+  border 1px solid #ccc
+  font-family Consolas, Menlo, Monaco, monospace
+  background-color #f7f7f7
+  color #333
+  box-shadow 0 4px 0 var(--shadow-color), 0 0 0 2px #fff inset
+  border-radius 3px
+  display inline-block
+  margin 0 .1em
+  text-shadow 0 1px 0 #fff
+  line-height 1.3
+  white-space nowrap
+  position relative
+  top 0
+  transition top 40ms ease-out, box-shadow 40ms ease-out
+  &:hover
+    top 4px
+    box-shadow 0 0 0 var(--shadow-color), 0 0 0 2px #fff inset
+
+figcaption
+  background-color var(--figcaption-bg)
+  padding 5px
+  margin-bottom 3px
+
+figure.embedded-caption
+  position relative
+  p
+    margin 0
+  figcaption
+    position absolute
+    background-color rgba(black, .25)
+    &.caption-bottom
+      bottom 1em
+    &.caption-top
+      top 1em
+    &.caption-top
+    &.caption-bottom
+      left 0
+      right 0

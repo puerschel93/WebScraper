@@ -1,0 +1,185 @@
+div.about-me {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#2C90C4, #31CCB0);
+  overflow: hidden;
+
+  h1 {
+    font-size: 42pt;
+    margin: 0;
+    position: relative;
+    font-family: 'Garment';
+    color: white;
+    top: 5vw;
+    left: 5vw;
+    width: 50vw;
+  }
+
+  hr {
+    width: 0;
+    margin-left: 5vw;
+    margin-top: 5vw;
+    border: none;
+    border-bottom: 5px solid white;
+
+    @keyframes load {
+      from { width: 0; }
+      to { width: 90vw; }
+    }
+    
+    &.load {
+      animation-name: load;
+      animation-duration: 30s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  div.section {
+    display: flex;
+    flex-direction: column;
+    margin-top: -5vw;
+    
+    h2 {
+      font-size: 16pt;
+      text-shadow: 1px 1px 1px #999;
+      font-family: Futura;
+      color: #ddd;
+      margin: 0;
+      position: relative;
+      top: 5vw;
+      left: 5vw;
+
+      i {
+        opacity: 0;
+      }
+    }
+
+    h2:hover {
+      cursor: pointer;
+      
+      @keyframes fade {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      i {
+        animation-name: fade;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+      }
+
+      i:nth-child(2) {
+        animation-delay: 0.25s;
+      }
+
+      i:last-child {
+        animation-delay: 0.5s;
+      }
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+      font-size: 12pt;
+      font-family: Futura;
+      color: white;
+      margin: 0;
+      margin-top: 3vw;
+      position: relative;
+      top: 5vw;
+      left: 5vw;
+      width: 90vw;
+
+      li {
+        margin: 8pt;
+      }
+    }
+
+    img {
+      width: 80vw;
+      margin-top: 50px;
+      margin-left: 10vw;
+    }
+
+    div.engineer {
+      display: none;
+      img {
+        width: 35vh;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 94pt;
+    }
+
+    hr {
+      width: 0;
+
+      @keyframes load {
+        from { width: 0; }
+        to { width: 50vw; }
+      }
+
+      &.load {
+        animation-name: load;
+        animation-duration: 30s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    }
+
+    div.section {
+      display: flex;
+      flex-direction: row;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+
+        h2 {
+          font-size: 36pt;
+        }
+
+        ul {
+          font-size: 20pt;
+
+          li {
+            margin: 10pt;
+            color: #eee;
+            text-shadow: 1px 1px 1px #999;
+          }
+
+          li:hover {
+            color: white;
+            text-shadow: 1px 1px 1px #aaa;
+          }
+        }
+      }
+
+      img {
+        position: absolute;
+        right: 3vw;
+        top: 110vh;
+        margin: 0;
+        width: 50vw;
+      }
+
+      div.engineer {
+        h2 {
+          font-size: 24pt;
+          margin: 0;
+        }
+        ul {
+          margin: 0;
+          width: 55vw;
+        }
+        img {
+          width: 40vw;
+        }
+      }
+    }
+  }
+}

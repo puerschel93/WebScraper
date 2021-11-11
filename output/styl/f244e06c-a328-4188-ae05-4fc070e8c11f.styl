@@ -1,0 +1,180 @@
+.header
+  position relative
+
+  // min-height 855px
+
+  color main-color-1
+
+  &_videoWrap
+    position absolute
+    top 0
+    left 0
+    z-index -1
+
+    width 100%
+    height 100%
+    overflow hidden
+
+    //background-color rgba(0, 0 ,0, .7)
+
+    & video
+      display block
+      width 100%
+      height auto
+
+      @media(max-width bTablet)
+        display none
+
+    &::before
+      position absolute
+      content ""
+
+      display block
+      width 100%
+      height 100%
+
+      background-color rgba(0, 0 ,0, .7)
+
+  &_back
+    display none
+    width 100%
+    height 100%
+
+    object-fit cover
+    object-position center
+
+    @media(max-width bTablet)
+      display block
+
+  &_headLine
+    display flex
+    align-items center
+    justify-content center
+    padding 20px 0
+    border-bottom 1px solid main-color-1
+
+  &_title
+    margin 0
+
+    font-size 40px
+    text-align center
+    font-weight bold
+
+    @media(max-width bSmallTablet)
+      font-size 30px
+      
+
+  &_wrap
+    max-width desktopWidth
+    margin 0 auto
+    padding 100px 0
+    display flex
+    align-items center
+    justify-content space-between
+
+    @media(max-width bTablet)
+      padding 80px 0
+      max-width tabletWidth
+
+    @media(max-width bSmallTablet)
+      padding 65px 0
+      max-width smallTabletWidth
+
+    @media(max-width bPhone)
+      padding 50px 20px
+
+    @media(max-width bSmallPhone)
+      flex-direction column
+      padding 40px 15px
+
+    @media(max-width bSmallestPhone)
+      padding 35px 10px
+
+  &_photo
+    display block
+    width 250px
+    height auto
+
+    object-fit contain
+    object-position center
+
+    @media(max-width bTablet)
+      width 200px
+
+    @media(max-width bSmallTablet)
+      width 150px
+
+    @media(max-width bSmallPhone)
+      margin-bottom 20px
+
+    @media(max-width bSmallestPhone)
+      width 120px
+
+  &_desc
+    display flex
+    flex-direction column
+    align-items flex-start
+    max-width 600px
+
+    @media(max-width bSmallTablet)
+      max-width 400px
+
+    @media(max-width bPhone)
+      align-items center
+      max-width 350px
+
+    @media(max-width bSmallPhone)
+      width 100%
+      max-width none
+
+  &_items
+    display block
+    margin-bottom 100px
+
+    @media(max-width bTablet)
+      margin-bottom 70px
+
+    @media(max-width bSmallTablet)
+      margin-bottom 40px
+
+    @media(max-width bPhone)
+      margin-bottom 30px
+
+  &_item
+    display flex
+    align-items center
+    margin-bottom 50px
+
+    font-size 30px
+
+    @media(max-width bTablet)
+      margin-bottom 35px
+
+      font-size 25px
+
+    @media(max-width bSmallTablet)
+      margin-bottom 25px
+
+      font-size 20px
+
+    @media(max-width bPhone)
+      margin-bottom 20px
+
+      text-align center
+      font-size 16px
+
+    &:last-child
+      margin-bottom 0
+
+    &:before
+      content ""
+
+      display block
+      width 15px
+      height 3px
+      margin-right 15px
+
+      background-color main-color-1
+
+      @media(max-width bPhone)
+        display none

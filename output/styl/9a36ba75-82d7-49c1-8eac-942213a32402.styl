@@ -1,0 +1,339 @@
+// @domain      ELEMENT DIMENSIONS
+// @namespace   aspect (layout)
+// +++++++++++++++++++++++++++++++++
+
+// for View (vw, vh) should we use vmin or vmax?
+
+aspect{":"}
+    +at-breaks()
+        --aspect-xy: none
+        --aspect-height: none
+        --aspect-width: none
+
+aspect
+    &:xyEq
+        +at-breaks()
+            --aspect-xy: 1px
+            // overflow: hidden
+
+    &:x
+        +at-breaks()
+            width: 100%
+            max-width: var(--aspect-width, none)
+
+    &:xAuto
+        +at-breaks()
+            --aspect-width: none
+            width: auto
+
+    &:xEq
+        +at-breaks()
+            --aspect-width: 1px
+
+    &:y
+        +at-breaks()
+            max-height: var(--aspect-height, none)
+            min-height: var(--aspect-height, none)
+
+    &:yAuto
+        +at-breaks()
+            --aspect-height: none
+            height: auto
+
+    &:yEq
+        +at-breaks()
+            --aspect-height: 1px
+
+
+    &:xy
+        +at-breaks()
+            max-height: var(--aspect-xy, none)
+            min-height: var(--aspect-xy, none)
+            max-width: var(--aspect-xy, none)
+
+    &:xyAuto
+        +at-breaks()
+            --aspect-xy: none
+
+
+    &:hFull
+        if (maxSiteWidth)
+            +at-breaks()
+                padding-left: var(--site-content-area)
+                padding-right: var(--site-content-area)
+
+    &:vFull
+        +at-breaks()
+            max-height: none
+            min-height: 100vh
+
+
+
+// +++++++++++++++++++++++++++++++++
+//  ELEMENT PERCENTAGE DIMENSIONS
+//  xEq--pct, yEq--pct, xyEq--pct
+
+dxPctLimits = limits.dxPct
+dyPctLimits = limits.dyPct
+dxyPctLimits = limits.dxyPct
+
+aspect
+    if !!((dxyPctLimits)px)
+        &:xyEq
+            for num in range(dxyPctLimits[0], dxyPctLimits[1] || 100, dxyPctLimits[2] || 5)
+                &{num}--pct
+                    +at-breaks()
+                        --aspect-xy: '%s%' % num
+
+                if num == 30
+                    &33--pct
+                        +at-breaks()
+                            --aspect-xy: 33%
+
+                if num == 65
+                    &66--pct
+                        +at-breaks()
+                            --aspect-xy: 66%
+
+    if !!((dxPctLimits)px)
+        &:xEq
+            for num in range(dxPctLimits[0], dxPctLimits[1] || 100, dxPctLimits[2] || 5)
+                &{num}--pct
+                    +at-breaks()
+                        --aspect-width: '%s%' % num
+
+                if num == 30
+                    &33--pct
+                        +at-breaks()
+                            --aspect-width: 33%
+
+                if num == 65
+                    &66--pct
+                        +at-breaks()
+                            --aspect-width: 66%
+
+    if !!((dyPctLimits)px)
+        &:yEq
+            for num in range(dyPctLimits[0], dyPctLimits[1] || 100, dyPctLimits[2] || 5)
+                &{num}--pct
+                    +at-breaks()
+                        --aspect-height: '%s%' % num
+
+                if num == 30
+                    &33--pct
+                        +at-breaks()
+                            --aspect-height: 33%
+
+                if num == 65
+                    &66--pct
+                        +at-breaks()
+                            --aspect-height: 66%
+
+
+
+// +++++++++++++++++++++++++++++++++
+//  ELEMENT VERTICAL RHYTHM DIMENSIONS
+//  xEq--rhy, yEq--rhy, xyEq--rhy
+
+aspect
+    if !!((limits.dxRhy)px)
+        &:xEq
+            for i in (limits.dxRhy)
+                num = (i is 0) ? 0 : (i/100)
+                num = (i is 10) ? .125 : num
+                num = (i is 33) ? .375 : num
+                num = (i is 66) ? .625 : num
+
+                &{i}--rhy
+                    +at-breaks()
+                        --aspect-width: flow(num)
+
+    if !!((limits.dyRhy)px)
+        &:yEq
+            for i in (limits.dyRhy)
+                num = (i is 0) ? 0 : (i / 100)
+                num = (i is 10) ? .125 : num
+                num = (i is 33) ? .375 : num
+                num = (i is 66) ? .625 : num
+
+                &{i}--rhy
+                    +at-breaks()
+                        --aspect-height flow(num)
+
+    if !!((limits.dxyRhy)px)
+        &:xyEq
+            for i in (limits.dxyRhy)
+                num = (i is 0) ? 0 : (i / 100)
+                num = (i is 10) ? .125 : num
+                num = (i is 33) ? .375 : num
+                num = (i is 66) ? .625 : num
+
+                &{i}--rhy
+                    +at-breaks()
+                        --aspect-xy: flow(num)
+
+
+
+// +++++++++++++++++++++++++++++++++
+//  ELEMENT VIEWPORT WIDTH DIMENSIONS
+//  view--xEq, view--yEq, view--xyEq
+
+dxVwLimits = limits.dxView
+dyVwLimits = limits.dyView
+dxyVwLimits = limits.dxyView
+
+aspect
+    if !!((dxVwLimits)px)
+        &:xEq
+            &--view
+                +at-breaks()
+                    --aspect-width: 1vw
+
+            for num in range(dxVwLimits[0], dxVwLimits[1] || 100, dxVwLimits[2] || 5)
+                &{num}--view
+                    +at-breaks()
+                        --aspect-width: '%svw' % num
+
+                if num == 30
+                    &33--view
+                        +at-breaks()
+                            --aspect-width: 33vw
+
+                if num == 65
+                    &66--view
+                        +at-breaks()
+                            --aspect-width: 66vw
+
+    if !!((dyVwLimits)px)
+        &:yEq
+            &--view
+                +at-breaks()
+                    --aspect-height: 1vw
+                    overflow: hidden
+
+            for num in range(dyVwLimits[0], dyVwLimits[1] || 100, dyVwLimits[2] || 5)
+                &{num}--view
+                    +at-breaks()
+                        --aspect-height: '%svw' % num
+
+                if num == 30
+                    &33--view
+                        +at-breaks()
+                            --aspect-height: 33vw
+
+                if num == 65
+                    &66--view
+                        +at-breaks()
+                            --aspect-height: 66vw
+
+    if !!((dxyVwLimits)px)
+        &:xyEq
+            &--view
+                +at-breaks()
+                    --aspect-xy: 1vw
+                    overflow: hidden
+
+            for num in range(dxyVwLimits[0], dxyVwLimits[1] || 100, dxyVwLimits[2] || 5)
+                &{num}--view
+                    +at-breaks()
+                        --aspect-xy: '%svw' % num
+
+                if num == 30
+                    &33--view
+                        +at-breaks()
+                            --aspect-xy: 33vw
+
+                if num == 65
+                    &66--view
+                        +at-breaks()
+                            --aspect-xy: 66vw
+
+
+
+// +++++++++++++++++++++++++++++++++
+//  ELEMENT TEXT RELATIVE DIMENSIONS
+//  xEq--text, yEq--text, xyEq--text
+
+aspect
+    if !!((limits.dxText)px)
+        &:xEq
+            for i in (limits.dxText)
+                num = (i is 0) ? 0 : i
+                num = (i is 10) ? .125 : num
+
+                &{i}--text
+                    +at-breaks()
+                        --aspect-width: num * .01em
+
+    if !!((limits.dyText)px)
+        &:yEq
+            for i in (limits.dyText)
+                num = (i is 0) ? 0 : i
+                num = (i is 10) ? .125 : num
+
+                &{i}--text
+                    +at-breaks()
+                        --aspect-height: num *.01em
+
+    if !!((limits.dxyText)px)
+        &:xyEq
+            for i in (limits.dxyText)
+                num = (i is 0) ? 0 : i
+                num = (i is 10) ? .125 : num
+
+                &{i}--text
+                    +at-breaks()
+                        --aspect-xy: num *.01em
+
+
+
+// +++++++++++++++++++++++++++++++++
+//  ELEMENT RATIO DIMENSIONS
+//  ___--ratio
+
+--ratio
+    if (!!(limits.aspectRatios))
+        +at-breaks()
+            --aspect-ratio: 100%
+            position: relative
+            overflow: hidden
+            padding: 0
+
+            &::before
+                content: ''
+                display: block
+                height: 0
+                padding-bottom: var(--aspect-ratio, 100%)
+
+            > img
+                height: 100%
+                width: 100%
+                object-fit: cover
+
+aspect
+    if (!!(limits.aspectRatios))
+        for item in (limits.aspectRatios)
+            if item == "hLetter"
+                &:hLetter--ratio
+                    +at-breaks()
+                        --aspect-ratio: 77.272% // (100% * (8.5 / 11))
+
+            else if item == "vLetter"
+                &:vLetter--ratio
+                    +at-breaks()
+                        --aspect-ratio: 129.412% // (100% * (11 / 8.5))
+
+            else if item == "Silver"
+                &:silver--ratio
+                    +at-breaks()
+                        --aspect-ratio: 41.425% // calc(100% / 2.414)
+
+            else if item == "Golden"
+                &:golden--ratio
+                    +at-breaks()
+                        --aspect-ratio: 61.801% // calc(100% / 1.618)
+
+            else
+                &:{item[0]}x{item[1]}--ratio
+                    +at-breaks()
+                        --aspect-ratio: (100% / (item[0]/item[1]))

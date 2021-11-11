@@ -1,0 +1,274 @@
+@require 'components/_variables';
+@require 'components/_mixins';
+@require 'components/normalize';
+@require 'components/iconizer';
+// @require 'components/wordpress';
+
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  25% {
+      opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  25% {
+      opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+*
+  min-width 0
+  min-height 0
+  box-sizing: border-box
+  -webkit-tap-highlight-color rgba(0,0,0, 0)
+
+  &::before,
+  &::after
+    box-sizing: border-box
+
+html
+  font-family sans-serif
+  -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+  // -webkit-font-smoothing antialiased
+  // -ms-text-size-adjust 100%
+
+body
+  font-family: $body.fontFamily
+  font-size: $body.fontSize
+  font-weight: $body.fontWeight
+  line-height: $body.lineHeight
+  color: $body.color
+  background-color: $body.bgc
+
+  @media (min-width: $desc)
+    font-size 16px
+
+
+svg:not(:root)
+  overflow hidden
+
+blockquote
+  margin-left 0
+  padding: 15px
+  padding-left: 20px
+  border-left: 5px solid $color2
+  background-color: rgba($color2, .03)
+
+.theme-color
+  color: $colors.primary
+
+/**
+ * The CSS class screen-reader-text
+ *
+ * @link https://make.wordpress.org/accessibility/handbook/markup/the-css-class-screen-reader-text/
+ */
+.visuallyhidden,
+.screen-reader-text
+  border: 0
+  clip: rect(1px, 1px, 1px, 1px)
+  clip-path: inset(50%)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
+  word-wrap: normal !important
+
+  &:active,
+  &:focus
+    background-color: #eee
+    clip: auto !important
+    clip-path: none
+    color: #444
+    display: block
+    font-size: 1em
+    height: auto
+    left: 5px
+    line-height: normal
+    padding: 15px 23px 14px
+    text-decoration: none
+    top: 5px
+    width: auto
+    z-index: 100000 /* Above WP toolbar. */
+
+
+.site-width
+  max-width 1060px
+  margin-left auto
+  margin-right auto
+  padding-left 20px
+  padding-right 20px
+
+  @media (min-width: $tablet)
+    padding-left 20px
+    padding-right 20px
+
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="number"],
+textarea
+    -webkit-appearance none
+    -webkit-box-shadow none
+    box-shadow none
+    border 2px solid #ECE8FD
+    background #ECE8FD
+    width 100%
+    max-width 100%
+    padding 0 20px
+    border-radius 25px
+    height 50px
+    color #12152A
+    font-weight 400
+    font-size 14px
+    outline none
+    transition all 0.3s ease
+
+    &.error
+        border-color #DF125C
+
+    &::placeholder
+      color rgba(#12152A, 0.5)
+
+input::-webkit-outer-spin-button
+input::-webkit-inner-spin-button
+    -webkit-appearance none
+
+input[type="number"]
+    -moz-appearance textfield
+
+textarea
+  height auto
+  padding 15px 20px
+
+img
+  max-width 100%
+  vertical-align middle
+
+a
+  color $color2
+  text-decoration underline
+  transition all 0.3s ease
+  position relative
+
+  &:hover
+    text-decoration none
+
+  &.phone
+    text-decoration none
+    color inherit
+
+p
+  margin-top 0
+  margin-bottom 30px
+
+div > p:last-child
+  margin-bottom 0
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5
+  color #000000
+  font-weight 400
+  line-height 1.2
+
+h1, .h1
+  font-size 30px
+  margin 0
+  font-weight bold
+  margin-bottom 35px
+
+  @media (min-width: $desc)
+    font-size 80px
+    margin-bottom 60px
+
+h2, .h2
+  font-size 28px
+  margin-top 0
+  margin-bottom 20px
+
+  @media (min-width: $desc)
+    font-size 60px
+
+h3, .h3
+  font-size 26px
+
+  @media (min-width: $desc)
+    font-size 50px
+
+h4, .h4
+  font-size 24px
+
+  @media (min-width: $desc)
+    font-size 40px
+
+h5, .h5
+  font-size 22px
+
+  @media (min-width: $desc)
+    font-size 35px
+
+h6, .h6
+  font-size 20px
+  @media (min-width: $desc)
+    font-size 30px
+
+a.site-btn,
+.site-btn
+  position relative
+  display inline-block
+  text-decoration none
+  text-align center
+  border none
+  box-shadow none
+  background none
+  transition background .3s ease
+  cursor pointer
+  border-radius 0px 25px 25px 25px
+  padding 18px 28px
+  font-size 14px
+  line-height 1
+  font-weight 600
+
+  &--1
+    background $color2
+    color #FFFFFF
+
+    &:hover
+      background lighten($color2, 6)
+
+    &.disabled
+      background lighten($color2, 6)
+      cursor default
+
+
+@require '../_blocks/**/*.styl';

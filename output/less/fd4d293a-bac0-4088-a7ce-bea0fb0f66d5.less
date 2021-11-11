@@ -1,0 +1,87 @@
+@import '/src/assets/style/common.less';
+
+.official {
+  display: flex;
+  margin-bottom: 30px;
+
+  &__left {
+    flex-shrink: 0;
+    height: 170px;
+    position: relative;
+    width: 170px;
+  }
+
+  &__img {
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__right {
+    flex: 1;
+    margin-left: 33px;
+  }
+
+  &__item {
+    align-items: center;
+    border-radius: 4px;
+    display: flex;
+    height: 34px;
+    justify-content: space-between;
+    padding: 0 10px;
+
+    &:nth-child(-n + 3) strong {
+      color: #d34339;
+    }
+
+    &:nth-child(4) strong {
+      color: #acacac;
+    }
+
+    &:nth-child(5) strong {
+      color: #969696;
+    }
+
+    &:nth-child(2n + 1) {
+      background-color: #faf9fb;
+    }
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    &-left {
+      align-items: center;
+      display: flex;
+      flex: 1;
+
+      div {
+        color: #a3a3a2;
+        flex-basis: 30px;
+        flex-shrink: 0;
+        text-align: center;
+        transform: scale(0.5);
+      }
+    }
+
+    &-right {
+      align-items: center;
+      color: #979696;
+      display: flex;
+      justify-content: flex-end;
+      width: 160px;
+      .ellipsis();
+    }
+  }
+
+  &__all {
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    margin-top: 10px;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}

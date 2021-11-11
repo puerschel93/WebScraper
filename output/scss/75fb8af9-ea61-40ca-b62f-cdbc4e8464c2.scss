@@ -1,0 +1,400 @@
+@use "sass:map";
+
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2)
+    format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2)
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmWUlfChc4AMP6lbBP.woff2)
+    format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2)
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vq_SuW-AJi8SJQtQ4Y.woff)
+    format('woff');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vq_ROW-AJi8SJQt.woff)
+    format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@for $i from 1 through 7 {
+  .text-style-#{$i},
+  %text-style-#{$i},
+  .text-bold-style-#{$i},
+  %text-bold-style-#{$i} {
+    color: $color-text-black;
+  }
+}
+
+@for $i from 2 through 7 {
+  .text-links-style-#{$i},
+  %text-links-style-#{$i} {
+    color: $color-actions-primary-default;
+    &:hover {
+      color: $color-actions-primary-hover;
+    }
+  }
+}
+
+$theme-font-size: (
+  1: $font-style-1-font-size,
+  2: $font-style-2-font-size,
+  3: $font-style-3-font-size,
+  4: $font-style-4-font-size,
+  5: $font-style-5-font-size,
+  6: $font-style-6-font-size,
+  7: $font-style-7-font-size,
+);
+
+$theme-font-family: (
+  1: $font-style-1-font-family,
+  2: $font-style-2-font-family,
+  3: $font-style-3-font-family,
+  4: $font-style-4-font-family,
+  5: $font-style-5-font-family,
+  6: $font-style-6-font-family,
+  7: $font-style-7-font-family,
+);
+
+$theme-font-weight: (
+  1: $font-style-1-font-weight,
+  2: $font-style-2-font-weight,
+  3: $font-style-3-font-weight,
+  4: $font-style-4-font-weight,
+  5: $font-style-5-font-weight,
+  6: $font-style-6-font-weight,
+  7: $font-style-7-font-weight,
+);
+
+$theme-text-decoration: (
+  1: $font-style-1-text-decoration,
+  2: $font-style-2-text-decoration,
+  3: $font-style-3-text-decoration,
+  4: $font-style-4-text-decoration,
+  5: $font-style-5-text-decoration,
+  6: $font-style-6-text-decoration,
+  7: $font-style-7-text-decoration,
+);
+
+$theme-line-height: (
+  1: $font-style-1-line-height,
+  2: $font-style-2-line-height,
+  3: $font-style-3-line-height,
+  4: $font-style-4-line-height,
+  5: $font-style-5-line-height,
+  6: $font-style-6-line-height,
+  7: $font-style-7-line-height,
+);
+
+@mixin text-style($size) {
+  font-size: map-get($theme-font-size, $size);
+  font-family: map-get($theme-font-family, $size);
+  font-weight: map-get($theme-font-weight, $size);
+  text-decoration: map-get($theme-text-decoration, $size);
+  line-height: map-get($theme-line-height, $size);
+}
+
+@for $i from 1 through 7 {
+  .text-style-#{$i},
+  %text-style-#{$i} {
+    @include text-style($i);
+  }
+}
+
+.text-bold-style-1,
+%text-bold-style-1 {
+  font-size: $font-bold-style-1-font-size;
+  font-family: $font-bold-style-1-font-family;
+  font-weight: $font-bold-style-1-font-weight;
+  text-decoration: $font-bold-style-1-text-decoration;
+  line-height: $font-bold-style-1-line-height;
+}
+
+.text-bold-style-2,
+%text-bold-style-2 {
+  font-size: $font-bold-style-2-font-size;
+  font-family: $font-bold-style-2-font-family;
+  font-weight: $font-bold-style-2-font-weight;
+  text-decoration: $font-bold-style-2-text-decoration;
+  line-height: $font-bold-style-2-line-height;
+}
+
+.text-bold-style-3,
+%text-bold-style-3 {
+  font-size: $font-bold-style-3-font-size;
+  font-family: $font-bold-style-3-font-family;
+  font-weight: $font-bold-style-3-font-weight;
+  text-decoration: $font-bold-style-3-text-decoration;
+  line-height: $font-bold-style-3-line-height;
+}
+
+.text-bold-style-4,
+%text-bold-style-4 {
+  font-size: $font-bold-style-4-font-size;
+  font-family: $font-bold-style-4-font-family;
+  font-weight: $font-bold-style-4-font-weight;
+  text-decoration: $font-bold-style-4-text-decoration;
+  line-height: $font-bold-style-4-line-height;
+}
+
+.text-bold-style-5,
+%text-bold-style-5 {
+  font-size: $font-bold-style-5-font-size;
+  font-family: $font-bold-style-5-font-family;
+  font-weight: $font-bold-style-5-font-weight;
+  text-decoration: $font-bold-style-5-text-decoration;
+  line-height: $font-bold-style-5-line-height;
+}
+
+.text-bold-style-6,
+%text-bold-style-6 {
+  font-size: $font-bold-style-6-font-size;
+  font-family: $font-bold-style-6-font-family;
+  font-weight: $font-bold-style-6-font-weight;
+  text-decoration: $font-bold-style-6-text-decoration;
+  line-height: $font-bold-style-6-line-height;
+}
+
+.text-bold-style-7,
+%text-bold-style-7 {
+  font-size: $font-bold-style-7-font-size;
+  font-family: $font-bold-style-7-font-family;
+  font-weight: $font-bold-style-7-font-weight;
+  text-decoration: $font-bold-style-7-text-decoration;
+  line-height: $font-bold-style-7-line-height;
+}
+
+.text-links-style-2,
+%text-links-style-2 {
+  font-size: $font-links-style-2-font-size;
+  font-family: $font-links-style-2-font-family;
+  font-weight: $font-links-style-2-font-weight;
+  text-decoration: $font-links-style-2-text-decoration;
+  line-height: $font-links-style-2-line-height;
+}
+
+.text-links-style-3,
+%text-links-style-3 {
+  font-size: $font-links-style-3-font-size;
+  font-family: $font-links-style-3-font-family;
+  font-weight: $font-links-style-3-font-weight;
+  text-decoration: $font-links-style-3-text-decoration;
+  line-height: $font-links-style-3-line-height;
+}
+
+.text-links-style-4,
+%text-links-style-4 {
+  font-size: $font-links-style-4-font-size;
+  font-family: $font-links-style-4-font-family;
+  font-weight: $font-links-style-4-font-weight;
+  text-decoration: $font-links-style-4-text-decoration;
+  line-height: $font-links-style-4-line-height;
+}
+
+.text-links-style-5,
+%text-links-style-5 {
+  font-size: $font-links-style-5-font-size;
+  font-family: $font-links-style-5-font-family;
+  font-weight: $font-links-style-5-font-weight;
+  text-decoration: $font-links-style-5-text-decoration;
+  line-height: $font-links-style-5-line-height;
+}
+
+.text-links-style-6,
+%text-links-style-6 {
+  font-size: $font-links-style-6-font-size;
+  font-family: $font-links-style-6-font-family;
+  font-weight: $font-links-style-6-font-weight;
+  text-decoration: $font-links-style-6-text-decoration;
+  line-height: $font-links-style-6-line-height;
+}
+
+.text-links-style-7,
+%text-links-style-7 {
+  font-size: $font-links-style-7-font-size;
+  font-family: $font-links-style-7-font-family;
+  font-weight: $font-links-style-7-font-weight;
+  text-decoration: $font-links-style-7-text-decoration;
+  line-height: $font-links-style-7-line-height;
+}
+
+p,
+label,
+input,
+select,
+textarea {
+  @extend %text-style-6;
+  display: block;
+}
+
+b,
+em,
+strong {
+  @extend %text-bold-style-6;
+}
+
+a {
+  @extend %text-links-style-6;
+}
+
+small,
+.input-help-text,
+.text-small {
+  @extend %text-style-7;
+  &a,
+  a {
+    @extend %text-links-style-7;
+  }
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  overflow: hidden;
+}
+
+.ellipsis,
+%ellipsis {
+  @include ellipsis();
+}
+
+@mixin text-muted {
+  color: $color-text-gray;
+}
+
+.text-muted,
+%text-muted {
+  @include text-muted();
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    @extend %text-style-#{$i};
+  }
+}
+
+.button,
+a.button,
+%button,
+button,
+input[type='submit'],
+input[type='button'],
+input[type='reset'] {
+  word-break: break-word;
+  text-align: center;
+  @extend %text-bold-style-7;
+  line-height: $magic-number * 2;
+  &.button-large {
+    @extend %text-bold-style-6;
+    color: $color-text-white;
+  }
+}
+
+.text-danger,
+button.text-danger,
+a.text-danger,
+%text-danger {
+  color: $color-text-danger;
+}
+
+.text-error,
+%text-error {
+  @extend %text-danger;
+  &:before {
+    content: $icon-warning-triangle;
+    margin-right: $magic-number / 2;
+  }
+  svg {
+    fill: $color-text-danger;
+  }
+}
+
+.text-positive,
+%text-positive {
+  color: $color-text-success;
+  svg {
+    fill: $color-text-success;
+  }
+}
+
+.text-success,
+%text-success {
+  @extend %text-positive;
+  &:before {
+    content: $icon-checkmark;
+    margin-right: $magic-number / 2;
+  }
+}
+
+// I have no idea how to get Figma to manage this correctly, the exisitng mixins are not suitable
+// I'm fixing it like this for now because this is better than literally nothing.
+code,
+.text-monospace-style-6,
+.text-monospace-bold-style-6,
+code b,
+code strong {
+  font-family: $font-monospace-style-6-font-family;
+  font-size: $font-monospace-style-6-font-size;
+  font-weight: $font-monospace-style-6-font-weight;
+  line-height: $font-monospace-style-6-line-height;
+  text-decoration: $font-monospace-style-6-text-decoration;
+}
+.text-monospace-bold-style-6,
+code b,
+code strong {
+  font-weight: $font-monospace-bold-style-6-font-weight;
+}

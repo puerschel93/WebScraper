@@ -1,0 +1,293 @@
+$red: #FF6F60;
+$grey: #8D96A7;
+$off-black: #2C3547;
+$white1: #fff;
+$white2: #F8F8F8;
+$blue: #6F60FF;
+$font-sans: 'DM Sans', sans-serif;
+$font-mono: 'DM Mono', monospace;
+$tablet-width: 768px;
+$desktop-width: 1200px;
+
+body {
+    background: $white1;
+    font-family: $font-mono;
+    font-weight: 400;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 95vw;
+    padding-left: .5em;
+    padding-right: .5em;
+    margin: 2em auto;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0;
+
+    .grid-item {
+        padding: 2em .5em;
+        position: relative;
+    }
+}
+
+// Product Card
+.product-card {
+    position: relative;
+}
+
+// Product Image
+.product-image {
+    max-width: 100%;
+    border-radius: 4px;
+    position: relative;
+
+    .image-wrapper {
+        position: relative;
+
+        img {
+            width: 100%;
+            min-height: auto;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .image-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity .25s ease-out;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+ // Product Badge
+.product-badge {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    text-transform: uppercase;
+    padding: .3em .5em;
+    border-radius: 4px;
+    display: inline-block;
+    z-index: 5;
+    color: $white1;
+    font-weight: 400;
+    font-family: $font-sans;
+    &.sale {
+        background: $red;
+    }
+    &.new {
+        background: $blue;
+    }
+
+}
+
+// Wishlist
+.add-wishlist {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    border: none;
+    background: none;
+    z-index: 5;
+    
+    .heart {
+        display: block;
+        background: url(https://cdn.anthonykusuma.com/img/theworkingparty/heart.svg) no-repeat center;
+        background-size: contain;
+        width: 2rem;
+        height: 2rem;
+        transition: all .25s ease-in-out;
+        cursor: pointer;
+    }
+
+    &.added .heart {
+        display: block;
+        background: url(https://cdn.anthonykusuma.com/img/theworkingparty/heart-red.svg) no-repeat center;
+        background-size: contain;
+        width: 2rem;
+        height: 2rem;
+        transition: all .25s ease-in-out;
+        cursor: pointer;
+    }
+}
+
+// Quick Buy
+.quickbuy-container {
+    position: absolute;
+    bottom: 0;
+    left: 1em;
+    right: 1em;
+    z-index: 3;
+    padding-bottom: 1em;
+
+    .main-btn {
+        width: 100%;
+        background: $white1;
+        padding: 1rem;
+        text-transform: uppercase;
+        font-family: $font-mono;
+        border-radius: 4px;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &.disabled {
+            cursor: not-allowed;
+            color: $grey;
+        }
+    }
+
+    .size-selection {
+        display: none;
+        transition: all .25s ease-in-out;
+    }
+
+    .size-list {
+        background: $white1;
+        padding: 2rem 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        button {
+            box-sizing: border-box;
+            font-family: $font-mono;
+            background: $white1;
+            border-radius: 2px;
+            color: $off-black;
+            border: 1px solid $grey;
+            cursor: pointer;
+            margin: .25rem .5rem;
+            padding: .5rem;
+            text-align: center;
+            min-width: 3rem;
+            font-size: 1rem;
+            display: inline-block;
+
+            &.selected {
+                background: $off-black;
+                color: $white2;
+                border-color: $off-black;
+            }
+
+            &.oos {
+                text-decoration: line-through;
+                color: $grey;
+            }
+        }
+    }
+}
+
+
+// Product Info
+.product-info {
+    background: $white1;
+    a {
+        text-decoration: none;
+        color: $grey;
+        h4 {
+            font-weight: 400;
+            display: inline-block;
+            font-family: $font-sans;
+            span {
+                color: $off-black;
+                display: block;
+                text-transform: uppercase;
+                font-family: $font-mono;
+            }
+        }
+    }
+}
+
+// Product Price
+.product-price {
+    color: $off-black;
+    
+    .sale {
+        color: $red;
+        margin-right: .2em;
+        &-before {
+            color: $grey;
+            text-decoration: line-through;
+        }
+    }
+}
+
+// Snackbar
+.snackbar {
+    visibility: hidden;
+    min-width: 200px;
+    margin-left: -100px;
+    background-color: $off-black;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 1em;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    bottom: 30px;
+    
+    &.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 1.5s;
+        animation: fadein 0.5s, fadeout 0.5s 1.5s;
+    }
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+@media screen and (min-width: $tablet-width) {
+    .grid {
+        flex-shrink: 0;
+        flex-direction: row;
+
+        .grid-item {
+            flex-basis: 50%;
+        }
+    }
+
+    
+}
+
+@media screen and (min-width: $desktop-width) {
+    .grid .grid-item {
+        flex-basis: 25%;
+    }
+
+    .quickbuy-container .size-list button {
+        font-size: .9rem;
+    }
+}

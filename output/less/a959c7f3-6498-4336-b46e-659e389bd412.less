@@ -1,0 +1,625 @@
+// compress: false, sourceMap: true
+
+body {
+    margin: 0;
+    font-family: "Arbutus Slab", serif;
+    font-size: 16px;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+.bg {
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    background: url("../img/bg-op.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    height: 510px;
+    margin: 80px auto 0;
+
+    background-color: #ade8dd;
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 20px #ffffff;
+    filter: drop-shadow(0px 1px 30px #27346a);
+    justify-content: center;
+}
+
+// Left //
+
+.left {
+    width: 45%;
+
+    box-shadow: inset 1px 1px 20px #ffffff;
+    border-radius: 10px;
+}
+
+.header_left {
+    font-size: 24px;
+    margin-top: 16px;
+    color: #2432b3;
+    text-align: center;
+}
+
+.org {
+    margin-top: 24px;
+    font-size: 16px;
+    color: #008dc9;
+    font-family: Eater, cursive;
+    text-align: center;
+}
+
+.inner_card {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    max-width: 300px;
+    box-shadow: inset 1px 1px 20px #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.inner_card_left {
+    width: 33.33333%;
+    border-right: 1px solid #fff;
+}
+
+.mask {
+    padding: 28px 0;
+    text-align: left;
+}
+
+.mask_mob {
+    display: none;
+}
+
+.mask_photo {
+    width: 100px;
+    height: 94px;
+}
+
+.inner_card_right {
+    width: 66.66666%;
+}
+
+.inner_card_text {
+    margin-top: 20px;
+    font-size: 12px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inner_card_text::after {
+    content: "";
+    display: block;
+    width: 171px;
+    height: 2px;
+    margin: 14px auto 24px;
+    background-color: #fff;
+}
+
+.inner_card_text_mob {
+    display: none;
+}
+
+.weeks_price {
+    display: flex;
+    text-align: center;
+}
+
+.weeks {
+    padding: 8px;
+    margin-left: 14px;
+    font-size: 12px;
+    min-width: 80px;
+    border: 1px solid #000;
+}
+
+.weeks:last-child {
+    margin-left: 12px;
+}
+
+.more_less {
+    cursor: pointer;
+}
+
+.checkbox_gift {
+    display: none;
+}
+
+.friends {
+    display: none;
+}
+
+.total {
+    margin-top: 24px;
+    margin-right: 30px;
+    margin-bottom: 43px;
+    text-align: right;
+    text-decoration: underline;
+}
+
+.total_mob {
+    display: none;
+}
+
+.checkout_block {
+    text-align: center;
+}
+
+.submit_btn {
+    font-family: "Arbutus Slab", serif;
+    color: #000000;
+    background: inherit;
+
+    padding: 12px 16px;
+    font-size: 20px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: inset 1px 1px 20px #ffffff;
+    cursor: pointer;
+    transition: font-size 0.1s linear;
+}
+
+.submit_btn:hover {
+    font-size: 1.4rem;
+}
+
+.cancel {
+    margin-top: 24px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: font-size 0.1s linear;
+}
+
+.cancel:hover {
+    font-size: 1.1rem;
+}
+
+// Right //
+
+.right {
+    width: 55%;
+    box-shadow: inset 1px 1px 20px #ffffff;
+    border-radius: 10px;
+}
+
+.header_right {
+    font-size: 24px;
+    margin-top: 16px;
+    color: #2432b3;
+    text-align: center;
+}
+
+.logos {
+    display: flex;
+    margin: 16px auto 32px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_img {
+    margin-right: 40px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.active {
+    opacity: 1;
+}
+
+.logo_img:last-child {
+    margin-right: 0;
+}
+
+.logo_img:hover {
+    opacity: 1;
+}
+
+.inner_right {
+    display: flex;
+    margin-left: 60px;
+}
+
+.card_name {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.name {
+    height: 40px;
+    margin-bottom: 16px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.name_input {
+    position: absolute;
+    width: 280px;
+    padding-left: 48px;
+    height: 40px;
+
+    font-size: 16px;
+    font-family: "Arbutus Slab", serif;
+    color: #000;
+    outline: 0;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.name_input::placeholder {
+    font-size: 16px;
+    color: #000;
+}
+
+.icons {
+    position: relative;
+    left: 8px;
+    top: 8px;
+    z-index: 1;
+}
+
+.icon_card {
+    top: 11px;
+}
+
+.date_cvv {
+    display: flex;
+}
+
+.exp_date_cvv_text {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.exp_date_cvv_input {
+    width: 120px;
+    height: 30px;
+    font-size: 10px;
+
+    outline: 0;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.cvv {
+    margin-left: 32px;
+}
+
+.cvv_input {
+    width: 80px;
+    padding-left: 10px;
+    font-size: 30px;
+    letter-spacing: 0.2em;
+}
+
+.checkbox {
+    margin-top: 12px;
+    position: relative;
+}
+
+.checkbox_terms {
+    display: none;
+}
+
+.checkbox_input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+
+.checkbox_label {
+    font-size: 12px;
+    padding-left: 30px;
+}
+
+.checkbox_label::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.checkbox_label::after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+
+    background: url(../img/check.svg) no-repeat;
+    background-size: 16px 16px;
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.checkbox_input:checked + .checkbox_label::before {
+    background-color: #ade8dd;
+    border-color: #fff;
+}
+
+.checkbox_input:checked + .checkbox_label::after {
+    opacity: 1;
+}
+
+.end {
+    display: flex;
+    margin-top: 24px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.end_text_mob {
+    display: none;
+}
+
+.confirm {
+    margin-left: 48px;
+}
+
+.confirm_btn {
+    padding: 10px 12px;
+}
+
+/* MOBILE */
+
+/* First Screen */
+
+@media (max-width: 800px) {
+    .bg {
+        display: none;
+    }
+}
+
+@media (max-width: 415px) {
+    .bg {
+        display: flex;
+    }
+
+    .container {
+        height: auto;
+        margin: auto;
+    }
+
+    .left {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .header_left {
+        margin-top: 24px;
+    }
+
+    .org {
+        margin-bottom: 16px;
+    }
+
+    .mask_mob {
+        display: flex;
+        justify-content: center;
+    }
+
+    .inner_card {
+        min-width: 350px;
+        height: 120px;
+        border: 2px solid #ffffff;
+        border-radius: 0;
+        box-shadow: 1px 1px 10px 1px #000000;
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inner_card_left {
+        width: 50%;
+        border-right: 0;
+    }
+
+    .inner_card_text_mob {
+        display: flex;
+        height: 90px;
+        padding-right: 20px;
+        font-size: 24px;
+        border-right: 1px solid #fff;
+        text-align: center;
+    }
+
+    .inner_card_text {
+        display: none;
+    }
+
+    .mask {
+        display: none;
+    }
+
+    .inner_card_right {
+        width: 50%;
+    }
+
+    .weeks_price_mob {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .weeks_mob {
+        min-width: 100px;
+        margin-left: 0;
+        margin-bottom: 8px;
+    }
+
+    .weeks_mob:last-child {
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+
+    .checkbox_gift {
+        position: relative;
+        display: flex;
+        margin-top: 16px;
+        margin-left: 32px;
+    }
+
+    .checkbox_label_mob {
+        font-size: 16px;
+    }
+
+    .friends {
+        display: flex;
+        max-width: 350px;
+        height: 80px;
+        margin-top: 24px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid #ffffff;
+        box-shadow: 1px 1px 10px 1px #000000;
+        vertical-align: middle;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .friends_text {
+        font-size: 18px;
+    }
+
+    .order_btn {
+        font-family: "Arbutus Slab", serif;
+        color: #000000;
+        background: inherit;
+        width: 100px;
+        height: 40px;
+        margin-left: 16px;
+
+        font-size: 24px;
+        border: 1px solid #fff;
+
+        box-shadow: 1px 1px 10px 1px #000000;
+        cursor: pointer;
+    }
+
+    .total {
+        display: none;
+    }
+
+    .total_mob {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 32px 24px;
+        margin-top: 40px;
+        margin-left: 32px;
+        text-decoration: underline;
+    }
+
+    .submit_btn:hover {
+        font-size: 20px;
+    }
+
+    .checkout_block_mob {
+        margin-bottom: 52px;
+    }
+
+    .cancel {
+        display: none;
+    }
+
+    /* Second Screen */
+
+    .right {
+        width: 100%;
+    }
+
+    .inner_right {
+        margin-left: 48px;
+    }
+
+    .header_right {
+        margin-top: 24px;
+    }
+
+    .exp_date_cvv_input {
+        height: 40px;
+    }
+
+    .checkbox {
+        margin-top: 24px;
+    }
+
+    .checkbox_terms {
+        display: flex;
+        margin-top: 24px;
+        position: relative;
+    }
+
+    .terms {
+        color: #2432b3;
+        cursor: pointer;
+    }
+
+    .end {
+        width: 100%;
+        display: inline;
+        flex-wrap: wrap;
+    }
+
+    .end_text {
+        display: none;
+    }
+
+    .end_text_mob {
+        display: flex;
+        margin-top: 120px;
+        margin-bottom: 24px;
+        justify-content: center;
+    }
+
+    .confirm_mob {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 52px;
+    }
+}

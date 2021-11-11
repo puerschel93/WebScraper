@@ -1,0 +1,148 @@
+.header
+  wrapper()
+  // padding-bottom 17px
+  box-sizing border-box
+
+.headerTop
+  padding-top 15px
+  padding-bottom 12px
+  display flex
+  justify-content space-between
+  align-items center
+  img
+    display block
+    object-fit cover
+    width 100%
+  .headerTop__flagBox
+    lg(display, none)
+  .headerTopLogoBox
+    lg(margin, 0 auto)
+
+.headerMenuWrapper
+  padding 21px 0px 18px
+  border-top 1px dashed #777
+  border-bottom 1px dashed #777
+  padding-bottom cw(17)
+  lg(display, none)
+  &--mobile
+    display block!important
+    position: fixed;
+    top 0
+    left: 0;
+    right: 0;
+    bottom: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #eee;
+    z-index: 9;
+    border none
+    .headerMenuList
+      flex-direction column
+      align-items center
+      padding-right 50px
+      padding-left 50px
+      li 
+        margin 13px auto
+        text-align center
+        a 
+          fz(20)
+          line-height 1.4
+
+.headerMenuList
+  display flex
+  justify-content space-between
+  li
+    a 
+      text-decoration none
+      fz(20)
+      line-height 1.27%
+      color #000000
+      // xxl(color, red)
+      @media (max-width: 1500px)
+        fz(17)
+      @media (max-width: 1400px)
+        fz(16)
+      @media (max-width: 1300px)
+        fz(14)
+      &:hover
+        @media (min-width: 1200px)
+          text-decoration underline
+
+// mobile menu
+/* mobile menu css */
+.mobileMenu {
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    position: absolute;
+    top: 25px;
+    right: 18px;
+}
+.mobileMenuBtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+}
+.mobileMenuBtn::before,
+.mobileMenuBtn::after {
+    content: "";
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+    display: block;
+    margin-bottom: 4px;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    -o-transition: transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.mobileMenuBtn::after {
+    margin-bottom: 0;
+    margin-right: 6px;
+    width: 24px;
+    margin-left: auto;
+}
+.mobileMenuBtn--active {
+    position: fixed;
+    z-index: 999;
+}
+.mobileMenuBtn__line {
+    background-color: #000;
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin-bottom: 4px;
+    opacity: 1;
+    -webkit-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+.mobileMenuBtn.mobileMenuBtn--active .mobileMenuBtn__line {
+    opacity: 0;
+    -webkit-transition: opacity 0s;
+    -o-transition: opacity 0s;
+    transition: opacity 0s;
+}
+.mobileMenuBtn.mobileMenuBtn--active::after {
+    width: 24px;
+    -webkit-transform: translateY(-6px) rotate(-135deg);
+    -ms-transform: translateY(-6px) rotate(-135deg);
+    transform: translateY(-6px) rotate(-135deg);
+}
+.mobileMenuBtn.mobileMenuBtn--active::before {
+    -webkit-transform: translateY(6px) rotate(135deg);
+    -ms-transform: translateY(6px) rotate(135deg);
+    transform: translateY(6px) rotate(135deg);
+}
+
+@media (max-width:1200px)
+  .mobileMenu {
+    display: block;
+    z-index 10
+  }
+
+/* mobile menu css end */

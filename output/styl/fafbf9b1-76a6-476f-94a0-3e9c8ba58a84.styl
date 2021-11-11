@@ -1,0 +1,379 @@
+/* CUSTOM STORY STYLE */
+.interactive
+  position relative
+
+  &__tooltip
+    position absolute
+    height auto
+    width auto
+    min-width 300px
+    max-width 600px
+    max-height 450px
+    border 2px solid
+    padding 4px
+    transition top 0.5s, left 0.5s, right 0.5s, opacity 0.25s
+    pointer-events none
+    opacity 0
+    background-color white
+    z-index 1002
+    &.visible
+      opacity 0.95
+    @media (max-width: $mobile-sm)
+      border-radius 0px
+      position fixed
+      bottom 0px
+      top auto
+      left 0px
+      height 15vh
+      width 100vw
+      &.visible
+        pointer-events initial // allow click out of tooltip
+      &:before
+        display: none
+    &_tail
+      position absolute
+      top -14px
+      left -8px
+      height 16px
+      width 0px
+      transform rotate(-45deg)
+      border 1px solid
+    &.flip .interactive__tooltip_tail
+      left auto
+      right -8px
+      transform rotate(45deg)
+
+    &_question
+      position relative
+      set-type-size(medium, false)
+      font-weight bold
+      margin-bottom 4px
+      white-space nowrap
+    &_category
+      font-family $national
+      text-transform uppercase
+      set-type-size(xx-small, false)
+      color #4BB650
+      .icon
+        opacity 0.75
+        display inline-block
+        float right
+        margin-right 2px
+        height 16px
+        width 16px
+
+    .image-question
+      object-fit contain
+      max-width 100%
+      max-height 390px
+      @media (max-width: $mobile-sm)
+        opacity 0
+
+  &__img
+    display block
+    position absolute
+    height auto
+    width 240px
+    top 40px
+    right calc(50% + 20rem + 20px)
+    opacity 0
+    transition opacity 0.25s
+    &.populated
+      opacity 1
+    @media (max-width: $mobile-lg)
+      position relative
+      top auto
+      right auto
+      margin 0 auto
+    @media (max-width: $mobile-sm)
+      position relative
+      top auto
+      right auto
+      margin 0 auto
+  &__step-start
+    position absolute
+    display flex
+    align-items center
+    font-family $national
+    text-transform uppercase
+    set-type-size(x-small, true)
+    pointer-events initial
+    right calc(50% + 20rem + 210px)
+    top 235px
+    z-index 2
+    @media (max-width: $mobile-sm)
+      display none
+    img
+      cursor pointer
+      display inline
+      width 20px
+      height 20px
+
+  &__story-intro
+    display block
+    max-width $column-width
+    margin 0 auto
+    height 0
+    opacity 0
+    transition opacity 0.5s, height 0.5s
+    &.populated
+      height auto
+      opacity 1
+    @media (max-width: $mobile-sm)
+      padding 0px 10px
+
+  .sticky-container
+    display grid
+    grid-template-columns 2fr 3fr 2fr
+    grid-column-gap 20px
+    position relative
+    margin 0 auto
+    margin-top 1rem
+    text-align center
+    @media (max-width: $mobile-sm)
+      grid-template-columns 0fr 1fr 0fr
+      grid-column-gap 0px
+
+    .interactive__labels
+      position absolute
+      display block
+      width 100%
+      top 0px
+      left 0px
+      grid-column 2/3
+      margin-top 1rem
+      @media (max-width: $mobile-sm)
+        z-index 2
+        pointer-events none
+      .label
+        position absolute
+        width 100%
+        left 0px
+        text-align left
+        border-bottom 1px solid black
+        transition left 0.5s 0.25s, width 0.5s 0.25s
+        &.current.has-story-step
+          left -270px
+          width calc(100% + 270px)
+          transition left 0.5s 0s, width 0.5s 0s
+          .story-step
+            opacity 1
+            transition opacity 0.5s 0.25s
+        @media (max-width: $mobile-sm)
+          border-bottom 1px solid #00000028
+          &.current.has-story-step
+            left 0px
+            width 100%
+
+        .year
+          font-size 40px
+          line-height 40px
+          font-family $tiempos
+          @media (max-width: $mobile-sm)
+            opacity 0.2
+            font-size 150px
+            text-align center
+            line-height 23px
+        .story-step
+          position absolute
+          top 40px
+          width 250px
+          opacity 0
+          z-index 5
+          pointer-events none // overlap with circles
+          transition opacity 0.25s 0s
+          @media (max-width: $mobile-sm)
+            padding 5px
+            top 75px
+            width 100vw
+            background-color #ffffffbb
+          &-header
+            set-type-size(small, false)
+            font-weight 600
+            margin-top: 10px
+            @media (max-width: $mobile-sm)
+              margin-top 0px
+          &-body
+            set-type-size(x-small)
+            line-height 16px
+            margin-bottom 15px
+            margin-top: 10px
+            @media (max-width: $mobile-sm)
+              set-type-size(xx-small, true)
+              margin-top 0px
+              margin-bottom 0px
+              line-height 12px
+          &-up
+            position absolute
+            top -70px
+          &-down,
+          &-up
+            display flex
+            align-items center
+            font-family $national
+            text-transform uppercase
+            set-type-size(x-small, true)
+            pointer-events initial
+            @media (max-width: $mobile-sm)
+              display none
+            img
+              cursor pointer
+              display inline
+              width 20px
+              height 20px
+          .step-legend
+            display block
+            margin-top: 10px
+            @media (max-width: $mobile-sm)
+              margin-top 0px
+              line-height 16px
+            &-row
+              height 20px
+              font-family $national-narrow
+              text-transform uppercase
+              @media (max-width: $mobile-sm)
+                display inline-block
+                margin-right 10px
+                height 16px
+              &-circle,
+              &-term,
+              &-number
+                set-type-size(x-small, true)
+                display inline-block
+                @media (max-width: $mobile-sm)
+                  set-type-size(xx-small, true)
+              &-circle
+                height 8px
+                width 8px
+                border-radius 4px
+              &-number
+                width 20px
+                text-align right
+                @media (max-width: $mobile-sm)
+                  width auto
+                  font-weight bold
+              &-term
+                width 90px
+                @media (max-width: $mobile-sm)
+                  width auto
+
+    .annotations
+      position absolute
+      width 100%
+      @media (max-width: $mobile-sm)
+        opacity 0
+      .annotation
+        position absolute
+        color #aeaeae
+        font-family $national-narrow
+        text-transform uppercase
+        text-align center
+        set-type-size(x-small)
+        transition opacity 0.5s
+        &:nth-child(1)
+          top 80px
+          left calc(50%)
+        &:nth-child(2)
+          top 250px
+          left calc(34%)
+          width 120px
+
+    .interactive__svg
+      display block
+      margin-top 1rem
+      text-align center
+      grid-column 2 / 3
+      z-index 1
+
+      .line
+        fill none
+        &.inactive
+          stroke #aeaeae
+
+      circle
+        stroke-width 1px
+        stroke white
+        transition fill 0.25s
+        &.active
+          stroke black
+        &.inactive
+          fill #aeaeae
+      @media (max-width: $mobile-sm)
+        margin 0
+
+    .interactive__history
+      display block
+      position relative
+      grid-column 3 / 4
+      margin-top 1rem
+      &_flag
+        position absolute
+        width 1px
+        border 1px solid #6bcff6
+        text-align left
+        &_years
+          top -12px
+          set-type-size(xx-small, true)
+          font-weight bold
+        &_event
+          top 2px
+          set-type-size(xxx-small)
+          line-height 10px
+          width 200px
+        &_years, &_event
+          position absolute
+          left 7px
+          min-width 120px
+          z-index 1
+          background-color #ffffff88
+        &:before
+          position absolute
+          content ''
+          width 4px
+          height 4px
+          top -4px
+          left -4px
+          background-color white
+          border-radius 4px
+          border 2px solid #6bcff6
+        &:not(.one-year-only):after
+          position absolute
+          content ''
+          width 4px
+          height 4px
+          bottom -4px
+          left -4px
+          background-color white
+          border-radius 4px
+          border 2px solid #6bcff6
+        &.y-offset
+          .interactive__history_flag_years,
+          .interactive__history_flag_event
+            transform translateY(24px)
+      @media (max-width: $mobile-sm)
+        visibility hidden
+        position absolute
+        width 0
+        grid-column 1 / 2
+      &_tick
+        position absolute
+        width 19px
+        height 0px
+        border 0.5px solid #aeaeaa
+        left -9px
+
+    .interactive__legend
+      position fixed
+      left 5%
+      bottom 10vh
+      width 23.33%
+      transition opacity 0.25s
+      opacity 0
+      pointer-events none
+      &.visible
+        opacity 1
+      &_tile
+        set-type-size(x-small, true)
+        margin-right 5px
+        padding 2px
+        display inline-block

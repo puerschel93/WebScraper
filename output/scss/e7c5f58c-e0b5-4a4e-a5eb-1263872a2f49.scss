@@ -1,0 +1,481 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.site {
+    background-image: url('https://tnp-portfolio.com/wp-content/uploads/2021/10/hero-scaled.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+
+    .nav-wrapper {
+        margin-bottom: 2em;
+    }
+}
+
+.screen {
+    background-color: rgba(153,153,255,.4);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding: 4em 0;
+}
+
+/* Logo 
+-------------------------*/
+
+.main {
+
+    .logo {
+      text-decoration: none;
+      margin: 0 0 2.5em;
+      font-size: 40px;
+      font-size: 4rem;
+
+      &-wrapper {
+        
+        .header-subtext {
+          line-height: 30px;
+        }
+      }
+  
+      span {
+        text-shadow: 0 0 10px $color__black;
+      }
+      
+      &__subtitle {
+        text-align: center;
+        color: $color__body;
+        font-size: 20px;
+        font-size: 2rem;
+        font-family: $font__alianza;
+        font-weight: bold;
+        margin-top: .5em;
+        text-shadow: 0 0 10px $color__black;
+  
+        &.active {
+          color: $color__black;
+        }
+      }
+    }
+  
+    .select {
+      text-align: right;
+    }
+  }
+  
+@media (min-width: 768px) {
+
+  .main {
+
+    .logo {
+      font-size: 55px;
+      font-size: 5.5rem;
+
+      &__subtitle {
+        font-size: 25px;
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+
+  .main {
+
+    .logo {
+      font-size: 62px;
+      font-size: 6.2rem;
+
+      &__subtitle {
+        font-size: 30px;
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .main {
+
+    .logo {
+      font-size: 80px;
+      font-size: 8rem;
+
+      &__subtitle {
+        font-size: 35px;
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+/* Modal 
+-------------------------*/
+
+.modal {
+
+    &-header .close {
+        font-size: 30px;
+        font-size: 3rem;
+    }
+
+    &-content {
+        background-color: $color__body;
+    }
+
+    &-title {
+        font-family: $font__main;
+        color: $color__text-main;
+        font-size: 20px;
+        font-size: 2rem;
+        font-style: italic;
+    }
+
+    &-body {
+        padding: 1em 0;
+        border: none;
+        border-top: 1px solid $color__black;
+    }
+
+    &-footer {
+        display: block;
+    }
+
+    p {
+        font-family: $font__main;
+        color: $color__text-main;
+        text-align: left;
+        line-height: 1.5;
+    }
+
+    .description {
+        font-size: 14px;
+        font-size: 1.4rem;
+    }
+
+    @media (min-width: 768px) {
+
+        &-title {
+            font-size: 22px;
+            font-size: 2.2rem;
+        }
+
+        &-dialog {
+            min-width: 675px;
+        }
+    }
+
+    @media (min-width: 992px) {
+
+        &-title {
+            font-size: 25px;
+            font-size: 2.5rem;
+        }
+
+        &-dialog {
+            min-width: 750px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+
+        &-body {
+            padding: 2em 3em;
+        }
+
+        &-title {
+            font-size: 28px;
+            font-size: 2.8rem;
+        }
+
+        &-dialog {
+            min-width: 1000px;
+        }
+    }
+
+    @media (min-width: 1440px) {
+
+        &-title {
+            font-size: 30px;
+            font-size: 3rem;
+        }
+
+        &-dialog {
+            min-width: 1230px;
+        }
+    }
+}
+
+.modal-title {
+    text-decoration: none !important;
+}
+
+.modal-footer {
+    border-top: 1px solid $color__modal-border;
+}
+
+.moda-footer.flex {
+    display: flex;
+}
+
+.modalChoice {
+    display: none;
+}
+
+.modalChoiceClients {
+
+    img {
+        transform: scale(0.7);
+    }
+}
+
+.clientContent {
+
+    a {
+        max-width: 300px;
+        background-color: $color__pink-red;
+        border-radius: 10px;
+        padding: 2em 0;
+        opacity: 0.7;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.modalChoice.active {
+    display: block;
+}
+
+/* Modal Dashboard
+-------------------------*/
+
+.dashboard {
+    padding: 1.5em 0;
+
+    @media (min-width: 768px) {
+        padding: 1.5em 1em 1em;
+    }
+
+    .description {
+        font-size: 20px;
+        font-size: 2rem;
+        margin-bottom: 1em;
+    }
+
+    h2 {
+        text-align: left;
+        text-decoration: none;
+        margin-bottom: .2em;
+    }
+
+    .calculator {
+        width: 100%;
+        display: flex;
+        margin-bottom: 4em;
+
+        form {
+
+            @media (min-width: 768px) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            @media (min-width: 992px) {
+                max-width: 490px;
+            }
+        }
+
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            margin: 0 3em 2em 0;
+
+            &.email {
+                flex-basis: 100%;
+                margin-top: 2em;
+            }
+        }
+
+        label {
+            font-size: 16px;
+            font-size: 1.6rem;
+        }
+
+        select, fieldset input {
+            font-size: 20px;
+            font-size: 2rem;
+            border: none;
+            border-bottom: 2px solid $color__black;
+            background-color: $color__body;
+            color: $color--text-main;
+            margin-top: 0;
+        }
+
+        fieldset input {
+            padding-left: .35em;
+        }
+
+        input {
+            margin-top: 1.25em;
+            color: #fff;
+            font-size: 20px;
+            font-size: 2rem;
+            background-color: $color__black;
+            border: 3px solid $color__black;
+            border-radius: 2px;
+            padding: .35em 2em .5em;
+            opacity: 0.75;
+            
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .panel_wrapper {
+        display: none;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &.flex {
+            display: block;
+
+            @media (min-width: 992px) {
+                display: flex;
+            }
+        }
+    }
+
+    .panel {
+        display: flex;
+        padding: 1em;
+        background-color: $color__red;
+        border-radius: 15px;
+        opacity: 0.7;
+        max-width: 250px;
+        margin: 0 0 2em;
+        flex-basis: 100%;
+
+        @media (min-width: 992px) {
+            margin: 0 auto 2em;
+            max-width: 230px;
+        }
+
+        @media (min-width: 1200px) {
+            flex-basis: 30%;
+            margin: 0 0 2em;
+        }
+
+        @media (min-width: 1440px) {
+            max-width: 280px;
+        }
+
+        &.opague {
+            opacity: 1;
+        }
+
+        &_left {
+            flex-basis: 50%;
+        }
+
+        &_right {
+
+            p {
+                transform: rotate(33deg);
+                margin-top: 1.25em;
+                font-size: 22px;
+                font-size: 2.2rem;
+                border-bottom: 2px solid #fff;
+
+                @media (min-width: 1440px) {
+                    font-size: 28px;
+                    font-size: 2.8rem;
+                }
+            }
+        }
+
+        &_center {
+            flex-basis: 100%;
+        }
+
+        .number {
+            font-size: 5em;
+            font-style: italic;
+            border-bottom: 2px solid #fff;
+            flex-basis: 100%;
+        }
+
+        .salary {
+            font-size: 3em;
+            font-style: italic;
+            border-bottom: 2px solid #fff;
+            margin-top: 1em;
+        }
+
+        .state {
+            font-size: 3em;
+            font-style: italic;
+            border-bottom: 2px solid #fff;
+            margin-top: 1em;
+        }
+
+        .profession {
+
+            @media (min-width: 1200px) {
+                margin-left: 1em;
+            }
+        }
+
+        p {
+            color: #fff;
+        }
+    }
+}
+
+.contactInfo {
+
+    &.flex {
+        display: flex;
+        align-items: center;
+    }
+    
+    p {
+        text-align: center;
+    }
+}
+
+.github {
+    transform: scale(.7);
+}
+
+.demo-github {
+    display: flex;
+    
+    img {
+        transform: scale(.7);
+    }
+
+    p {
+        align-self: center;
+    }
+    
+    a {
+        text-decoration: underline;
+        color: $color__orchid;
+        font-weight: bold;
+
+        &:hover {
+            color: $color__red;
+        }
+    }
+}

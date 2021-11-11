@@ -1,0 +1,147 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:365;
+
+// VAR SITE TYPO
+$font-body:"proxima-nova",verdana,sans-serif;
+$font-title:"proxima-nova",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN TOP NAV
+$margin-top-navigation:0;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:0;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/extra/extra13";
+
+// IMPORT MODULE PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// SPRITE NOIR
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU LIB1
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+/* GENERAL */
+.bold {font-weight:700;}
+hr {
+border-color:darken($color-body,12);
+}
+.btn-simul {
+padding:20px;
+}
+
+/* NAV */
+.menu-principal {
+font-size:1.2em;
+	> li {
+	width:130px;
+	margin-left:7px;
+		> a {
+		background-image:none;
+		text-transform:uppercase;
+		padding-top:14px;
+		padding-bottom:12px;
+		font-weight:700;
+			&:hover {
+			background-image:none;
+			background-color:transparent;
+			}
+		}
+	}	
+}
+
+.navigation {
+	@include box-shadow(0px 2px 3px 0px #555555);
+}
+
+
+.nav-social, aside .texte-info-agences, #numero-telephonez-nous-header1 {
+font-size:1.2em;
+} 
+
+/* ON FAIT MUMUSE AVEC LA COULEUR DES ONGLETS */
+li.menu-vente-perso>a {background-color:$color-action; &:hover {background-color:darken($color-action,5)}}
+li.menu-neuf>a {background-color:$color-vert; &:hover {background-color:darken($color-vert,5)}}
+li.menu-location>a {background-color:$color-jaune; &:hover {background-color:darken($color-jaune,5)}}
+li.menu-gestion>a {background-color:$color-gris; &:hover {background-color:darken($color-gris,5)}}
+li.menu-estimation>a {background-color:$color-rouge; &:hover {background-color:darken($color-rouge,5)}}
+li.menu-financement>a {background-color:$color-rose !important; &:hover {background-color:darken($color-rose,5)}}
+
+li.menu-financement .openSub .small{
+background-color:$color-rose;
+}
+li.menu-financement .menu-sub ul li a {
+border-bottom:1px solid lighten($color-rose,5);
+	&:hover {background-color:darken($color-rose,5);}
+}
+
+
+// GESTION DES PUBS PAGE HP
+.pub-agence {
+	background-image:url('/z/webagency/A_ID3X/casapro77_39977/images/picto-agence.jpg');
+	.ie7 &, .ie8 & {
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/z/webagency/A_ID3X/casapro77_39977/images/picto-agence.jpg', sizingMethod='image'); 
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/z/webagency/A_ID3X/casapro77_39977/images/picto-agence.jpg', sizingMethod='image')";
+  }
+}
+
+/* PAGE AGENCE */
+.radius-5 { @include border-radius(5px);}

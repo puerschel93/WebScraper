@@ -1,0 +1,391 @@
+@import 'whitespace-reset-modified.css'
+
+body
+  background: url('/images/background-image.png') repeat
+  font: normal 14px 'Lucianda', Helvetica, Arial, sans-serif
+  > header
+    width: 1000px
+    border-bottom: 1px solid #787878
+    overflow: hidden
+    margin: 0 auto
+    padding: 50px 0
+    .logo
+      float: left
+      cursor: pointer
+    .cart
+      width: 220px
+      float: right
+      span
+        display: inline-block
+        box-sizing: border-box
+        font-size: 10px
+        font-size: 10px
+        letter-spacing: 1px
+      span.left
+        width: 40%
+        color: #ff3170
+        text-transform: uppercase
+      span.right
+        width: 60%
+        color: #fff
+        position: relative
+        padding: 7px 15px 7px 10px
+        background: linear-gradient(to bottom, #d60041 0%, #a90040 100%)
+        text-transform: uppercase
+        &:hover
+          background: linear-gradient(to bottom, #a90040 0%, #d60041 100%)
+        &:before
+          content: ''
+          display: block
+          width: 0
+          height: 0
+          position: absolute
+          left: 0
+          top: 0
+          border-top: 14px solid #000
+          border-right: 14px solid transparent
+          border-bottom: 14px solid transparent
+          border-left: 14px solid #000
+      span.left
+        width: 50%
+        padding: 8px 5px
+        text-align: center
+        background: #000
+        color: #b0b0b0
+      span.right
+        width: 50%
+        text-align: center
+      span.count
+        font-size: 12px
+  > footer
+    width: 1000px
+    border-bottom: 1px solid #787878
+
+a
+  text-decoration: none
+  &:focus, &:active
+    outline: none
+
+main
+  width: 1000px
+  margin: 0 auto
+  ul
+    font-size: 0
+    li
+      width: 200px
+      display: inline-block
+      font-size: 14px  
+
+#cart
+  display: none
+  height: 120px
+  overflow: hidden
+  background: #000
+  color: #fff
+  ul
+    float: left
+    height: inherit
+    width: 700px
+    font-size: 0
+    li
+      position: relative
+      width: 100px
+      text-align: right
+      font-size: 11px
+      img
+        width: 100%
+      &:hover
+        cursor: pointer
+        &:after
+          position: absolute
+          box-sizing: border-box
+          height: 100px
+          width: 100px
+          padding: 30px
+          top: 0
+          left: 0
+          background: rgba(0,0,0,0.6)
+          content: url('/images/delete-x.png')
+          text-align: center
+  section
+    float: right
+    width: 200px
+    padding: 20px 0 10px 15px
+    background: #1f1f1f
+    h3
+      font-size: 10px
+      text-transform: uppercase
+      color: #b0b0b0
+    .total
+      margin: 5px 0
+      font-size: 30px
+    footer
+      a
+        text-align: right
+        font-size: 10px
+        display: inline-block
+        box-sizing: border-box
+        font-size: 10px
+      a.left
+        width: 40%
+        color: #ff3170
+        text-transform: uppercase
+      a.right
+        width: 60%
+        color: #fff
+        position: relative
+        padding: 7px 15px 7px 10px
+        background: linear-gradient(to bottom, #d60041 0%, #a90040 100%)
+        text-transform: uppercase
+      a.right
+        &:hover
+          background: linear-gradient(to bottom, #a90040 0%, #d60041 100%)
+        &:before
+          content: ''
+          display: block
+          width: 0
+          height: 0
+          position: absolute
+          left: 0
+          top: 0
+          border-top: 14px solid #1f1f1f
+          border-right: 14px solid transparent
+          border-bottom: 14px solid transparent
+          border-left: 14px solid #1f1f1f
+
+#items
+  li
+    position: relative
+    height: 340px
+    margin: 20px 0 0 0
+    background: #fff
+    box-sizing: border-box
+    &:nth-child(5n)
+      article
+        box-shadow: none
+    header
+      position: relative
+      margin: 0
+      padding: 0
+      border: none
+      cursor: pointer
+      &:hover
+        h2
+          color: #000
+        &:after
+          position: absolute
+          box-sizing: border-box
+          height: 200px
+          width: 200px
+          padding: 70px
+          top: 0
+          left: 0
+          background: rgba(0,0,0,0.6)
+          content: url('/images/arrow-right.png')
+          text-align: center
+      h2
+        margin: 25px 0 10px 0
+        text-align: center
+        text-transform: capitalize
+        font-weight: normal
+        font-size: 20px
+        letter-spacing: 1px
+        color: #ab7829
+    p
+      margin: 0 0 20px 0
+      text-align: center
+      letter-spacing: 1px
+      color: #b0b0b0
+    .add_cart
+      display: block
+      padding: 13px 0
+      border-top: 1px dotted #b0b0b0
+      text-align: center
+      text-transform: uppercase
+      font-size: 12px
+      cursor: pointer
+      color: #d60041
+      &:before
+        content: '+'
+        margin: 0 5px 0 0
+        display: inline-block
+        font-size: 14px
+        font-weight: bold
+      &:hover
+        color: #fff
+        background: #d60041
+        transition: color 0.75s, background 0.75s  
+  article
+    position: absolute
+    box-shadow: 2px 0px 2px -2px #888
+    z-index: 10
+
+#item_details
+  position: relative
+  width: 1000px
+  min-height: 590px
+  margin: 20px 0 0 0
+  background: url('/images/sushi-preview.png')
+  > div
+    position: absolute
+    height: 200px
+    top: 50%
+    margin: -100px 0 0 0
+    font-size: 0
+    > *
+      box-sizing: border-box
+      display: inline-block
+      height: inherit
+      font-size: 12px
+      vertical-align: middle
+    .nav
+      width: 100px
+      padding: 80px 0 0 0
+      background: #000
+      text-align: center
+      cursor: pointer
+      &:hover
+        color: #000
+        background: #d60041
+        transition: color 0.35s, background 0.35s
+    article
+      width: 400px
+      background: #fff
+      h1
+        margin: 25px 0 5px 25px
+        font-size: 35px
+        font-weight: normal
+      p
+        margin: 0 0 0 25px
+      footer
+        margin: 45px 0 0 0
+        border-top: 1px dotted #b0b0b0
+        > *
+          display: inline-block
+        h2
+          margin: 20px 0 0 25px
+          font-size: 30px
+          font-weight: normal
+          color: #787878
+        .add_cart
+          float: right
+          margin: 20px 25px 0 0
+          color: #fff
+          position: relative
+          padding: 7px 15px 7px 10px
+          background: linear-gradient(to bottom, #d60041 0%, #a90040 100%)
+          text-transform: uppercase
+          &:hover
+            background: linear-gradient(to bottom, #a90040 0%, #d60041 100%)
+          &:before
+            content: '+'
+            margin: 0 5px 0 0
+            display: inline-block
+            font-size: 14px
+            font-weight: bold
+      .close
+        float: right
+        margin: 10px 20px 0 0
+        transform: rotate(45deg)
+        font-size: 25px
+        color: #000
+    aside
+      width: 200px
+      padding: 0 20px
+      box-shadow: -1px 0px 2px 0px #aaa
+      background: #fff
+      h3
+        margin: 30px 0 15px 0
+        font-size: 13px
+        text-align: center
+        letter-spacing: 0.5px
+      table
+        width: 100%
+        tr
+          td
+            color: #787878
+          + td
+            text-align: right
+            color: #000
+
+#checkout
+  > div
+    background: url('/images/sushi-preview.png')
+    height: 60px
+  > div.img_top
+    background-position: top
+  > div.img_bottom
+    background-position: bottom
+  > section
+    padding: 55px 100px
+    background: #fff
+    h1
+      margin: 0 0 60px 0
+      font-size: 40px
+    table
+      width: 800px
+      border-collapse: collapse
+      text-align: left
+      thead
+        text-transform: uppercase
+      tbody
+        td
+          border-top: 1px solid #b0b0b0
+          border-bottom: 1px solid #b0b0b0
+          img
+            height: 100px
+      td
+        &:nth-child(2)
+          font-size: 20px
+        &:nth-child(3)
+          font-weight: bold
+          .quantity_modifier
+            margin: 0 10px
+            vertical-align: middle
+            border-radius: 100%
+            font-size: 12px
+            cursor: pointer
+          p
+            display: inline-block
+        &:nth-child(4)
+          font-size: 20px
+          letter-spacing: 2px
+          text-align:right
+      th
+        &:nth-child(4)
+          text-align:right
+    > p
+      margin: 15px 0 0 0
+      text-align: right
+      font-size: 10px
+      text-transform: uppercase
+      color: #787878
+      .total
+        margin: 0 0 0 10px
+        font-size: 30px
+        letter-spacing: 2px
+        color: #000
+    footer
+      margin: 50px 0 0 0
+      text-align: right
+      a
+        color: #ff3170
+        text-transform: uppercase
+      form
+        display: inline-block
+        margin: 0 0 0 20px
+        input
+          border: none
+          color: #fff
+          position: relative
+          padding: 7px 15px 7px 10px
+          background: linear-gradient(to bottom, #d60041 0%, #a90040 100%)
+          text-transform: uppercase
+          font-size: 14px
+          padding: 15px
+          &:hover
+            background: linear-gradient(to bottom, #a90040 0%, #d60041 100%)
+
+body > footer
+  margin: 50px auto
+

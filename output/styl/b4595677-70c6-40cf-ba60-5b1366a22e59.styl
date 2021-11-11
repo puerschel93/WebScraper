@@ -1,0 +1,500 @@
+/* Market Tickers */
+.market-ticker
+  @extends .container
+  &.edit-on
+    color #999
+    .market-ticker-header
+      background #fff
+      .edit-ticker
+        color inherit
+    .rate
+      display none
+    .hide-coin
+    .show-coin
+    .move-coin
+    .add-coin
+      display block
+
+  .edit-ticker
+    float right
+    font-size 15px
+    color #999
+    &:hover
+      color $blue
+      text-decoration none   
+
+  a
+    display block
+    clearfix()
+    height 29px
+    padding 6px
+    margin 3px
+
+.market-ticker-coins
+  ul
+    reset-list()
+
+.add-coin
+  display none
+  padding 10px
+  background #f9f9f9
+  border-top 1px dotted #ecedef
+  select
+    width 100%
+
+.coin-stats
+  ul
+    reset-list()
+    padding 10px
+  li
+    margin-bottom 5px
+    &:last-child
+      margin 0
+  label
+  div
+    display inline-block
+  label
+    width 100px
+
+.rate
+  &.on-hold
+    color $text-color
+  &.none
+    color $text-color
+    &:after
+      display inline-block
+      content ""
+      vertical-align middle
+      width 6px
+      height 2px
+      background $text-color
+      margin-left 3px
+  &.up
+    color $teal
+    transition color .3s ease-out
+    &:after
+      display inline-block
+      content ""
+      vertical-align middle
+      width 0
+      height 0
+      margin-left 3px
+      border-style solid
+      border-width 0 4px 5px 4px
+      border-color transparent transparent $teal transparent
+  &.down
+    color $red
+    transition color .3s ease-out
+    &:after
+      display inline-block
+      content ""
+      vertical-align middle
+      width 0
+      height 0
+      margin-left 3px
+      border-style solid
+      border-width: 5px 4px 0 4px
+      border-color: $red transparent transparent transparent
+
+.market-ticker-coin
+  clearfix()
+  border-bottom 1px solid #ecedef
+  border-top 1px solid #ecedef
+  cursor pointer
+  margin-bottom -1px
+  margin-top -1px
+  &.active
+    a
+      color #fff
+      border-radius 2px
+      border 0
+      background $blue
+      font-weight bold
+      .rate
+      &:hover
+        color #fff !important
+  
+    .rate.up:after
+      border-color transparent transparent #fff transparent
+    .rate.down:after
+      border-color #fff transparent transparent transparent
+            
+  &:hover
+    color $blue
+
+  .hide-coin
+  .move-coin
+    display none
+  .hide-coin
+    color #da4444
+    margin-right 5px
+    i
+      vertical-align -1px
+    &:hover
+      text-decoration none
+  .hide-coin
+  .label
+    float left
+  .move-coin
+    cursor ns-resize
+    float right
+    margin-left 5px
+    i
+      vertical-align middle
+  .rate
+    float right
+
+/* Center */
+.abbreviation
+  border-right 1px solid #e0e0e0
+  display inline-block
+  line-height 20px
+  padding 10px
+  margin -10px
+  margin-right 10px
+
+.coin-icon
+  vertical-align text-top
+  background url(CDN("/img/coin-icons.png")) no-repeat
+  height 20px
+  width 20px
+  &.litecoin
+    background-position 0 0
+  &.peercoin
+    background-position -20px 0
+  &.dogecoin
+    background-position -40px 0
+  &.namecoin
+    background-position -60px 0
+  &.darkcoin
+    background-position -80px 0
+  &.blackcoin
+    background-position -100px 0
+  &.primecoin
+    background-position -120px 0
+  &.vertcoin
+    background-position -140px 0
+  &.cryptometh
+    background-position -160px 0
+  &.guldencoin
+    background-position -180px 0
+  &.tacocoin
+    background-position -200px 0
+  &.bitcoin
+    background-position -220px 0
+  &.xtracoin
+    background-position -240px 0
+  &.bankcoin
+    background-position -260px 0
+  &.bitraam
+    background-position -280px 0
+  &.homocoin
+    background-position -300px 0
+  &.maxcoin
+    background-position -320px 0
+  &.violincoin
+    background-position -340px 0
+  &.antarcticcoin
+    background-position -360px 0
+  &.vericoin
+    background-position -380px 0
+  &.indocoin
+    background-position -400px 0
+  &.gridcoin
+    background-position -420px 0
+  &.caix
+    background-position -440px 0
+  &.distrocoin
+    background-position -460px 0
+  &.logicoin
+    background-position -480px 0
+  &.sharecoin
+    background-position 0 -20px
+  &.cinni
+    background-position -20px -20px
+  &.coffeecoin
+    background-position -40px -20px
+  &.reddcoin
+    background-position -60px -20px
+  &.highfivecoin
+    background-position -80px -20px
+  &.ratcoin
+    background-position -100px -20px
+  &.magicoin
+    background-position -120px -20px
+  &.scotcoin
+    background-position -140px -20px
+  &.limecoin
+    background-position -160px -20px
+  &.ultracoin
+    background-position -180px -20px
+  &.carpediemcoin
+    background-position -200px -20px
+  &.nautiluscoin
+    background-position -220px -20px
+  &.confessioncoin
+    background-position -240px -20px
+  &.goodcoin
+    background-position -260px -20px
+  &.quarkcoin
+    background-position -280px -20px
+  &.curecoin
+    background-position -300px -20px
+  &.coinaaa
+    background-position -320px -20px
+  &.mastiffcoin
+    background-position -340px -20px
+  &.x11coin
+    background-position -360px -20px
+  &.boostcoin
+    background-position -380px -20px
+  &.frankocoin
+    background-position -400px -20px
+  &.mugatucoin
+    background-position -420px -20px
+  &.gameleaguecoin
+    background-position -440px -20px
+  &.donationcoin
+    background-position -460px -20px
+  &.feathercoin
+    background-position -480px -20px
+  &.casinocoin
+    background-position 0px -40px
+  &.worldcoin
+    background-position -20px -40px
+  &.unobtanium
+    background-position -40px -40px
+  &.freicoin
+    background-position -60px -40px
+  &.plusevcoin
+    background-position -80px -40px
+  &.libertycoin
+    background-position -100px -40px
+  &.auroracoin
+    background-position -120px -40px
+  &.zetacoin
+    background-position -140px -40px
+  &.talkcoin
+    background-position -160px -40px
+  &.switzerlandcoin
+    background-position -180px -40px
+  &.cloakcoin
+    background-position -200px -40px
+
+
+.coin-stats
+  @extends .container
+  background #f9f9f9
+  .last-price
+    font-weight bold
+
+
+.graph
+  width 100%
+  height 300px
+
+#trade .chart
+  margin 0 0 10px 0
+
+/* Order Boxes */
+.two-col-wrap
+  width 50%
+  float left
+  &:first-child > div
+    margin-right 10px
+
+.order-box
+  @extends .container
+  min-height 287px
+  .currency-input
+    width 100%
+    margin-bottom 10px
+
+.amount
+  font-weight bold
+
+.header-balance
+  float right
+
+.header-aside
+  float right
+  line-height 20px
+  a
+    font-weight bold
+
+.market-title
+  @extends .con-header
+  color $text-color
+  padding 10px
+  margin 0 0 10px 0
+  font-size 16px
+  line-height 16px
+  font-weight 500
+
+.market-type
+  clearfix()
+  border-bottom 1px solid #ecedef
+  label
+    padding 10px
+    width 50%
+    display block
+    float left
+    &:first-child
+      border-right 1px solid #ecedef
+  input[type="radio"]
+    margin-right 5px
+  i
+    font-style normal
+    cursor pointer
+    &:hover
+      color $blue
+
+.limit-order
+  padding 10px
+  label
+    margin-bottom 5px
+    display block
+.confirm-order
+  button
+    width 100%
+    padding 0
+    height 30px
+    line-height 30px
+
+#buy-box
+  .confirm-order
+    button
+      btn($teal)
+
+#sell-box
+  .confirm-order
+    button
+      btn($red)
+
+.order-overview
+  width 100%
+  margin-bottom 10px
+  font-size 13px
+  th
+    padding 7px 5px
+    font-weight normal
+  td
+    padding 7px 5px
+  .subtotal
+  .to-receive
+    background #f9f9f9
+  .to-receive
+    padding 8px 5px
+    font-size 14px
+    th
+      font-weight bold
+
+.overlay-amount
+  position absolute
+  line-height 28px
+  top 0
+  right 10px
+  height 20px
+  color #808080
+  z-index 2
+
+/* Order Book */
+.order-book-wrap
+  width 50%
+  float left
+  &:first-child
+    .order-book
+      margin-right 10px
+
+.order-book
+  @extends .container
+  max-height 500px
+  .order-book-order
+    cursor pointer
+
+.trade-history
+  max-height 500px
+  
+.order-book-total
+  float right
+  color #999
+  line-height 16px
+  margin 0
+  font-style italic
+
+.table-wrap
+  overflow-y auto
+  overflow-x hidden
+  max-height 440px
+
+.trade-data
+  width 100%
+  border-collapse separate
+  th
+  td
+    padding 6px 10px
+  
+  th
+    vertical-align top
+    width 100px
+    white-space nowrap
+    padding 0 10px
+    border-bottom 1px solid #e0e0e0
+    color #777c86
+    font-weight 800
+    height 29px
+    line-height 29px
+    text-align left
+    font-size .8em
+    text-transform uppercase
+    box-shadow 0 1px 0 rgba(#000,.03)
+    background-color #fff
+    background linear-gradient(#fff, rgba(248,248,248,.9) 100%)
+  .wall
+    font-weight bold
+  tr:nth-child(even)
+    background-color #f9f9f9
+  tr.highlight
+    td
+      color $lightgray  
+  .buy
+    .trade-type
+    .trade-amount
+      color $teal
+  .sell
+    .trade-type
+    .trade-amount
+      color $red
+
+  .trade-type
+    text-transform uppercase
+
+  .action
+    background #fff
+    color inherit
+    position relative
+    border-radius 3px
+    padding 2px 5px
+    text-transform uppercase
+    border 1px solid $border-color
+    font-size 12px
+    margin 0
+    transition all .1s linear
+    &:hover
+      color $blue
+      text-decoration none
+      border-color $blue
+    &:active
+      top 1px
+    &.cancel
+      &:hover
+        color $red
+        border-color $red
+      &:active
+        top 1px
+
+@media screen and (max-width: 800px)
+  .two-col-wrap
+    width 100%
+  .two-col-wrap:first-child > div
+    margin 0 0 10px 0

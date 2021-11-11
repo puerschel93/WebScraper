@@ -1,0 +1,342 @@
+/*!*********** Ad dialog ***************/
+.ad-modal
+    modal-template(48%)
+    &__content
+        margin-bottom: 50px;
+        &:after
+            content: " "; /* Older browser do not support empty content */
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+    &__before, &__after
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        img
+            width: auto;
+    &__before
+        left: 5%;
+    &__after
+        right: 5%;
+    &__body
+        width: 98%;
+        margin: auto;
+        padding: 25px 0 10px 0;
+        overflow: hidden;
+        &__with_comment
+            width: 70%;
+            padding: 25px 25px 10px 20px;
+            overflow: hidden;
+            float: left;
+            box-sizing: border-box;
+    &__header
+        width: 98%;
+        margin: auto;
+        padding: 0;
+        overflow: hidden;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        & .ad_head_buttons
+            width: auto;
+            height: 31px;
+            display: block;
+            max-width: 213px;
+            float: left;
+            overflow: hidden;
+            &__b
+                display: block;
+                border-radius: 5px;
+                background: #15499f
+                color: #fff
+                border: 1px solid #15499f;
+                float: left;
+                padding: 5px 5px 0 5px;
+                height: 28px;
+                margin-right: 7px;
+                transition: all 0.4s ease
+                cursor: pointer;
+                &.ad_b_photo_video img
+                    content:url(../../img/icons/ad_photo_video.png);
+                &.ad_b_map img
+                    content:url(../../img/icons/ad_map.png);
+                &.ad_b_location img
+                    content:url(../../img/icons/ad_location.png);
+                &:hover, &.active
+                    color: #15499f;
+                    background: #fff;
+                    &.ad_b_photo_video img
+                        content:url(../../img/icons/ad_photo_video_blue.png);
+                    &.ad_b_map img
+                        content:url(../../img/icons/ad_map_blue.png);
+                    &.ad_b_location img
+                        content:url(../../img/icons/ad_location_blue.png);
+        & .ad_head_r_buttons
+            width: 100%;
+            height: 31px;
+            display: block;
+            max-width: 70%;
+            float: right;
+            overflow: hidden;
+            &__b
+                display: block;
+                color: #263238;
+                float: right;
+                height: 28px;
+                margin-left: 10%;
+                font-size: 1.4em;
+                & img
+                    margin-right: 7px;
+
+    &__head_body
+        width: 100%;
+        max-height: 440px;
+        overflow: hidden;
+        position: relative;
+        & .head_slider
+            width: 100%;
+            max-height: 440px;
+            & .head_slide
+                width: 100%;
+                & img
+                    width: 100%
+            &__before, &__after
+                position: absolute;
+                top:38%;
+                color: #fff;
+                font-size: 4.5em;
+                cursor: pointer;
+            &__before
+                left: 20px;
+            &__after
+                right: 20px;
+            &__size_up
+                position: absolute;
+                bottom: 5%;
+                right: 3%;
+                cursor: pointer;
+                & img
+                    width: 100%;
+
+.ad_header
+    width: 100%;
+    overflow: hidden;
+    &__title
+        width: 50%;
+        float: left;
+        color: #37474f;
+        font-size: 1.5em;
+        font-weight: 600;
+    &__price
+        float: right;
+        color: #546e7a;
+        font-size: 1.5em;
+        font-weight: 600;
+        &__before
+            color: #15499f;
+            text-decoration: line-through;
+        &__current
+            color: #558b2f
+
+.ad_timer
+    color: #363636;
+    font-size: 0.9em;
+    width: auto;
+    overflow: hidden;
+    float: right;
+    margin-top: 10px;
+    &__v
+        display: block;
+        text-align: center;
+        float: left;
+        & small
+            font-size: 70%
+        &:after
+            content: ':';
+            display: block;
+            float: right;
+            position: relative;
+            top: -24px;
+        &:last-child:after
+            content: '';
+
+.ad_prop
+    margin-top: 10px;
+    overflow: hidden;
+    &_item
+        width: 60%;
+        float: left;
+        margin-top: 15px;
+        &__val
+            display: inline-block;
+            color: #15499f;
+            margin-right: 5px;
+            font-weight: 700;
+        &__img
+            display: block;
+            margin: 2px auto;
+    &_owner
+        width: 20%;
+        float: right;
+        overflow: hidden;
+        &__logo
+            width: 64px;
+            height: 64px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 1px solid #15499f;
+            float: left;
+            & img
+                width: 100%;
+        &__stat
+            display: block;
+            float: right;
+            color: #37474f;
+            font-size: 1.05em;
+            &_onlain
+                display: block;
+                float: left;
+                width: 100%;
+                margin-top: 10px;
+                & .circle
+                    width: 10px;
+                    height: 10px;
+                    display: block;
+                    float: left;
+                    background: #d41f26;
+                    border-radius: 50%;
+                    margin-right: 7px;
+                    margin-top: 3px;
+                &.active .circle
+                    background: #8bc34a
+
+            &_chat
+                display: block;
+                float: left;
+                width: 100%;
+                margin-top: 3px;
+                font-weight: 600;
+                & img
+                    width: auto
+                &_text
+                    display: inline-block;
+                    position: relative;
+                    top: -4px;
+                    border-bottom: 1px dotted #37474f;
+
+.ad_panel
+    padding: 10px;
+    box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.75);
+    margin: 5px 0 10px 0;
+    overflow: hidden;
+    z-index: 12;
+    position: relative;
+    background: #fff;
+    &__title
+        float: left;
+        color: #15499f;
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 5px 0 0 1px;
+    &__buttons
+        float: left;
+    &__button
+        button-login-template(#15499f, #fff, #fff)
+        border: 1px solid #15499f;
+        box-shadow: none;
+        width: auto;
+        display: inline-block;
+        margin: 0 5px 7px 0;
+        &.active, &:hover
+            color: #15499f
+            border: 1px solid #15499f;
+
+    &__contacs
+        float: right;
+        color: #558b2f;
+        font-size: 1.15em;
+        font-weight: 600;
+        &__bordered
+            padding-left: 15px;
+            border-left: 1px dotted #263238;;
+    &__phones
+        overflow: hidden;
+    &__phone
+        margin-right: 7px;
+    &__email
+        visibility: visible;
+
+.ad_text_block
+    font-size: 1.2em;
+    max-height: 500px;
+
+.ad_text_block_with_comment
+    float: left;
+    font-size: 1.2em;
+    width: 70%;
+    padding-right: 10px;
+
+
+
+.ad_comments
+    width: 30%;
+    float: left;
+    position: relative;
+    top: -25px;
+    padding: 25px 15px 15px 15px;
+    box-shadow: 0px 0px 23px 1px #737373;
+    height: 500px;
+    margin-bottom: -25px;
+
+    &__title
+        display: block;
+        margin: 10px 0;
+        font-size: 1.5em;
+        color: #15499f;
+        font-weight: 600;
+    &__lists
+        overflow: hidden;
+        height: 371px;
+        width: 100%;
+        position: relative;
+        right: -8px;
+        padding-right: 25px;
+    .ad_comment
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 7px;
+        &__image
+            float: left;
+            margin: 0 4% 0 1%;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 17%;
+            & img
+                width: 100%;
+        &__text_block
+            visibility: visible;
+        &__title
+            color: #15499f;
+            font-size: 0.9em;
+            font-weight: 600;
+        &__date
+            color: #558b2f
+        &__text
+            font-size: 0.85em;
+        &__bottom
+            font-size: 0.9em;
+            & a
+                color: #15499f;
+        &__bottom__date
+            color: #546e7a;
+    .ad_input_block
+        position: absolute;
+        bottom: 0px;
+        width: 90%;
+        &__val
+            border: 1px solid #15499f;
+            border-radius: 7px;
+            outline: 0;
+            padding: 5px;
+            resize: none;
+            width: 100%;

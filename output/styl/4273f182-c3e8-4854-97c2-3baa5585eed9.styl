@@ -1,0 +1,362 @@
+// app global css
+
+@font-face
+  font-family customfont
+  src url(../assets/FiraSans-Regular.ttf)
+
+* {
+  font-family 'customfont'
+};
+
+
+.logo-layout {
+  margin-top: 10px;
+  max-width: 200px;
+  min-height: 45px;
+
+};
+
+.icon {
+  color: white;
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+};
+
+.container:hover .overlay {
+  opacity: 1;
+};
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: rgba(0, 0, 0, 0.3);
+};
+
+.playlistHover, .usuarioHover {
+  -webkit-transition: filter 0.3s;  /* For Safari 3.1 to 6.0 */
+  transition: filter 0.3;
+}
+
+.playlistHover:hover, .usuarioHover:hover {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  cursor: pointer;
+
+}
+
+@media (max-width: 800px) {
+  .logo-layout {
+    content:url("./../assets/caliope-logo.svg");
+  }
+};
+
+@media (min-width: 800px) {
+  .logo-layout {
+    content:url("./../assets/caliope-soloIcon.svg");
+  }
+};
+
+
+.bg-black-gradient {
+  background: rgb(11,11,11);
+  background: linear-gradient(0deg, rgba(11,11,11,1) 0%, rgba(43,43,43,1) 100%);
+};
+
+.bg-blue-gradient {
+  background: #373b44; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #373b44, #4286f4); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #373b44, #4286f4);
+}
+
+.bg-no-opacity {
+  background: rgba(0, 0, 0, 0);
+};
+
+.mb-less-5 {
+  margin-bottom: -5px;
+};
+
+.text-align-center {
+  text-align: center;
+};
+
+.text-weight-bold-450 {
+  font-weight: 450;
+}
+
+.bg-img {
+  background-image: url("../statics/carousel/wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: none;
+};
+
+
+.portada{
+  background: linear-gradient(to right bottom, rgb(0, 51, 204) 0%, rgb(0, 255, 153) 100%);
+  height: calc(100vh - 51px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+};
+
+  #home-publica:hover{
+    cursor:pointer;
+  }
+.q-toolbar__title p{
+  margin-bottom:0;
+};
+
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+  p{
+    margin:0;
+  }
+
+.enunciado{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pregunta{
+  width:70%;
+  margin-bottom: 50px;
+}
+
+.usuario{
+  border:1px solid black;
+  padding:10px;
+}
+
+.cancion, .playlist{
+  border: 1px solid black;
+  padding: 20px;
+  margin-bottom: 20px;
+  height: 100px;
+  position: relative;
+  background-color: lightgray;
+  };
+
+.cancion-opciones{
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 20px;
+  height: -webkit-fill-available;
+  justify-content: space-between;
+};
+
+.cancion-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: -webkit-fill-available;
+}
+
+.playButton {
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+};
+
+button:hover {
+  background-color:rgba(0, 0, 0, 0);
+};
+
+.underlineHover {
+    -webkit-transition: color 0.3s; /* For Safari 3.1 to 6.0 */
+    transition: color 0.3s;
+  };
+
+.underlineHover:hover {
+  color: white;
+  cursor: pointer;
+};
+
+.likeHover {
+  -webkit-transition: color 0.3s, font-size 0.3s;  /* For Safari 3.1 to 6.0 */
+  transition: color 0.3, font-size 0.3s;
+};
+
+.likeHover:hover {
+  color: red;
+  cursor: pointer;
+  font-size: 28px;
+};
+
+.m-20 {
+  margin: 0 20px;
+};
+
+.font-size25 {
+  font-size: 25px;
+}
+
+.font-size55 {
+  font-size: 55px;
+}
+
+.menu-lateral{
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid;
+  padding: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  #menu-superior {
+    display: flex;
+    flex-direction column;
+  }
+
+  .portada h1{
+    font-size: 60px;
+  }
+
+  .portada h4{
+    font-size: 20px;
+  }
+};
+
+// Reproductor
+
+body {
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+.range-slider {
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.62);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding: 0 12px;
+  border-radius: 4px;
+}
+.range-slider span {
+  color: #f7f7f7;
+  font-size: 14px;
+  line-height: 14px;
+  margin-right: 8px;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  background: transparent;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #D8D8D8;
+  border-radius: 3px;
+  border: 0px solid #000000;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.32);
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: #44BFA3;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #D8D8D8;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #D8D8D8;
+  border-radius: 3px;
+  border: none;
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.32);
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: #44BFA3;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #D8D8D8;
+  border: none;
+  border-radius: 6px;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #D8D8D8;
+  border: none;
+  border-radius: 6px;
+}
+
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.32);
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 8px;
+  background: #44BFA3;
+  cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #D8D8D8;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #D8D8D8;
+}

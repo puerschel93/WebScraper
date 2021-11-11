@@ -1,0 +1,233 @@
+$primary-color:linear-gradient(rgb(202, 247, 202), white);
+$secondary-color:#9fee94;
+$terciary-color: white;
+$font-color: black;
+$box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.6);
+$limit: 10;
+$unit: 8px;
+$background-color: #b9ffb0;
+$bold: white;
+$color: black;
+@function size($value) {
+    @return $value * $unit;
+}
+
+@mixin global {
+    padding: 0;
+    margin: 0;
+}
+
+@mixin btn($background-color, $bold, $color) {
+    background-color: $secondary-color;
+    color: $font-color;
+    padding: 5px 15px 5px 15px;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    @if($bold=="true") {
+        font-weight: bolder;
+    }
+}
+
+* {
+    @include global;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: $primary-color;
+    font-family: "Sofia", sans-serif;
+    text-decoration: none;
+}
+
+// a {
+//     color: $font-color;
+//     text-decoration: none;
+// }
+// h2 {
+//     font-weight: bolder;
+//     font-size: size(6);
+// }
+// h3 {
+//     font-weight: lighter;
+//     font-size: size(3);
+// }
+.container {
+    background-image: url("../img/bodaHeader3.jpg");
+    // margin: 5px 10px 0px 50px;
+    padding: 100px 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    background-color: white;
+    background-size: 100% 100%;
+    width: 1400px;
+    margin-left: 100px;
+}
+
+.carousel-inner {
+    width: 1380px;
+    margin-left: 50px;
+}
+
+.carousel-inner img {
+    height: 700px;
+    width: 1400px;
+    margin-left: 42px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    background-size: 100% 100%;
+    // padding: 50px;
+}
+
+#contenedor {
+    animation-duration: 5s;
+    animation-name: aparecer;
+    animation-iteration-count: infinite;
+    // box-shadow: 0 4px 10px rgb(0 0 0 / 30%);
+    // right: px;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+// .menu ul li {
+//     margin: 0;
+//     padding: 0;
+//     list-style: none;
+// }
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border-radius: 100%;
+    text-align: center;
+}
+
+ul.slider {
+    // position: relative;
+    height: 400px;
+    background-image: cover;
+    width: 1250;
+}
+
+ul.slider li {
+    position: absolute;
+    left: 5;
+    top: 0;
+    opacity: 0;
+    width: 1000px;
+    height: inherit;
+    background-color: wheat;
+    transition: opacity .5s;
+}
+
+ul.slider li img {
+    height: 400px;
+    object-fit: cover;
+}
+
+ul.slider li:first-child {
+    opacity: 1;
+}
+
+ul.slider li:target {
+    opacity: 2;
+}
+
+main .titulo {
+    // margin-left: 300px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.vestidos-contenedor {
+    height: 1300px;
+    width: 1340px;
+    margin-left: 90px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    // background-size: 100% 100%;
+    background-position: center;
+    // margin-right: 400px;
+    background-image: url(../img/fondo.jpg);
+    padding: $box-shadow;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.card-img-top {
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+ul {
+    @include global;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    li {
+        display: inline-flex;
+        a {
+            @include btn($background-color,
+            $bold: "true", $color: $secondary-color);
+            font-weight: normal;
+            &:hover {
+                @include btn ($secondary-color,
+                $terciary-color,
+                "false");
+                box-shadow: $box-shadow;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+.containerTitulo {
+    font-size: 60px;
+    text-align: justify;
+}
+
+footer {
+    padding: 100px;
+    width: 1340px;
+    margin-top: 20px;
+    margin-left: 90px;
+    display: inline-flex;
+    background-image: url(../img/lineas-abstractas-onda-suave-verde_1017-24872.jpg);
+    background-size: cover;
+    // margin: 5px 0px 0px 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    .a {
+        @include btn($background-color,
+        $bold: "true", $color: $secondary-color);
+        font-weight: normal;
+        &:hover {
+            @include btn ($secondary-color,
+            $terciary-color,
+            "false");
+            box-shadow: $box-shadow;
+            font-weight: normal;
+        }
+    }
+}

@@ -1,0 +1,245 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:1200;
+
+// SIZE NAVIGATION
+$height-navigation:68;
+
+$margin-top-under-nav-fixe:107;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Yanone Kaffeesatz",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.5em;
+$font-size-title:2.2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+
+// PERSO ASI67 //
+
+// GENERAL //
+	// BORDER SUPPL //
+.border-solid-action-1 {
+	border:solid 1px $color-action;
+}
+
+	// BG INSIDE //
+.margin-top-under-nav-fixe {
+	@include background-image(linear-gradient(to right, $color-primary, lighten($color-secondary,45), $color-primary));	
+}
+
+	// MARGIN SUPPL //
+.margin-top-240 {
+	margin-top:240px;
+}
+
+// MENU & NAV //
+	// MISE EN FORME BORDER //
+.menu-principal {
+	font-size:1.05em;
+	>li>a {
+		line-height:68px;	
+	}
+}	
+.menu-vente, .menu-estimation {
+	border-bottom:solid 5px $color-action;
+}
+
+.menu-location, .menu-gestion, .menu-syndic {
+	border-bottom:solid 5px $color-secondary;
+}
+
+.menu-agences, .menu-outils, .menu-assurance, .menu-suivi {
+	border-bottom:solid 5px $color-secondary-light-20;
+}
+
+li.menu-suivi {
+	background:lighten($color-action,50);
+}
+
+	// PLACEMENT LOGO //
+.logo {	
+	@include single-box-shadow;
+}
+	// BTN ESPACE CLIENT //
+.dropdown .btn-mini {
+	font-size: 1.2em;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+// INDEX //
+	// VISUELS //
+		// PLACEMENT MOTEUR //
+.titre-bas {
+	margin-top:455px;	
+	@media only screen and (max-width : 767px) {
+		margin-top:0px;
+	}
+}
+.h1-index {
+	background-color:rgba($color-body,0.9);
+	color:$color-nav-footer;
+	padding:10px;
+	width:100%;
+	display: block;
+    margin-bottom: -10px;
+	@media only screen and (max-width : 767px) {
+		margin-bottom:0px;
+	}
+}
+		// PLACEMENT ASIDE 2 //
+.aside-home-2 {
+    z-index: 125;
+    margin-top: -520px;
+}
+
+	// MODULE PA //
+		// AJOUT BG //
+.module-homepage {
+	background-color:rgba($color-body,0.9);
+	padding:10px;
+}
+
+
+	// EXTRA //
+		// PLACEMENT TITRE //
+.aside-extra {
+	height:600px;
+}
+
+.titre-extra {
+	margin-top:125px;
+	background:rgba($color-primary,0.7);
+	padding:10px;
+}
+	// PUB CLASSIQUE //
+		// MISE EN FORME //
+
+.zone-pub {
+background:$color-block;
+}
+
+.pub-syndic {
+	background-image:url('../images/picto-syndic.jpg');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-syndic.jpg', sizingMethod='image'); 
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-syndic.jpg', sizingMethod='image')";
+}
+.text-syndic {
+border-top:8px solid $color-secondary;
+}
+.pub-gestion {
+	background-image:url('../images/picto-gestion.jpg');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-gestion.jpg', sizingMethod='image'); 
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-gestion.jpg', sizingMethod='image')"; 
+}
+.text-gestion {
+border-top:8px solid $color-secondary;
+}
+.pub-transac {
+	background-image:url('../images/picto-transac.jpg');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-transac.jpg', sizingMethod='image'); 
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-transac.jpg', sizingMethod='image')";
+}
+.text-transac {
+border-top:8px solid $color-action;
+}
+.pub-outils {
+	background-image:url('../images/picto-outils.jpg');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-outils.jpg', sizingMethod='image'); 
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-outils.jpg', sizingMethod='image')";
+}
+.text-outils {
+border-top:8px solid $color-secondary-light-20;
+}
+.pub-qui {
+	background-image:url('../images/picto-qui.jpg');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-qui.jpg', sizingMethod='image'); 
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-qui.jpg', sizingMethod='image')";
+}
+.text-qui {
+border-top:8px solid $color-secondary-light-20;
+}
+.pub-demo {
+	background-image:url('../images/picto-demo.jpg');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-demo.jpg', sizingMethod='image'); 
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/picto-demo.jpg', sizingMethod='image')";
+}
+.text-demo {
+border-top:8px solid $color-secondary-light-20;
+}
+	
+	// PUB FULL //
+		// FIXING HEIGHT //
+.pub-wordpress-helsinki {
+	
+}
+.pub-estimation-helsinki {
+	height:600px;
+}
+		// PLACEMENT TITRE //
+.pub-estimation-helsinki .titre-pub {
+	margin-top:25px;
+	background:rgba($color-primary,0.7);
+	padding:10px;
+}
+
+// DETAIL AGENCE //
+	// SUPP HORAIRES //
+.horaires-agence {
+	display:none;
+}

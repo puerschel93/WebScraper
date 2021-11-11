@@ -1,0 +1,107 @@
+@import '../../../assets/sass/themes.scss';
+
+.NavigationItem {
+    overflow: hidden;
+
+    a {
+        text-decoration: none;
+    }
+
+    a.active,
+    a:active {
+        background-position: 0 1.04em;
+        background-repeat: repeat-x;
+        background-size: 8px 0.75rem;
+    }
+
+    button {
+        font-family: Fulbo-Argenta;
+        list-style: none;
+        font-size: $headingFontSize;
+        border: 1px solid transparent;
+        outline: none;
+        height: 100%;
+        padding: 0;
+        background: none;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .RippleEffect {
+        height: $headingFontSize;
+        position: absolute;
+        border-radius: 50%;
+        width: 50px;
+        animation: ripple-animation 2s;
+        height: 27px;
+        width: 27px;
+    }
+    
+    //dark theme specific styling
+    @include darkTheme {
+        button, a {
+            color: $default-dark;
+        }
+
+        a.active,
+        a:active {
+            color: $default-dark;
+            background-image: linear-gradient(to right, $accent-dark, $accent-dark);
+        }
+
+        button:focus {
+            background-position: 0 1.04em;
+            background-repeat: repeat-x;
+            background-size: 8px 0.25rem;
+            background-image: linear-gradient(to right, $accent-dark, $accent-dark);
+        }
+
+        .RippleEffect {
+            background: $accent-dark;
+        }
+    }
+    
+    //light theme specific styling
+    @include lightTheme {
+        button, a {
+            color: $default-light;
+        }
+
+        a.active,
+        a:active {
+            color: $default-light;
+            background-image: linear-gradient(to right, $accent47-light, $accent47-light);
+        }
+
+        button:focus {
+            background-position: 0 1.04em;
+            background-repeat: repeat-x;
+            background-size: 8px 0.25rem;
+            background-image: linear-gradient(to right, $accent47-light, $accent47-light);
+        }
+
+        .RippleEffect {
+            background: $accent-light;
+        }
+    }
+}
+  
+@keyframes ripple-animation {
+    from {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+    to {
+        transform: scale(100);
+        opacity: 0;
+    }
+}
+
+@keyframes animatedBackground {
+	from {
+        background-position: 0 0;
+    }
+	to {
+        background-position: 100% 0;
+    }
+}

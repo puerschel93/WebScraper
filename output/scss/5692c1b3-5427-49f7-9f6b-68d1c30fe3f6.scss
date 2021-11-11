@@ -1,0 +1,168 @@
+@import './../variant//varinant';
+@import './../mixin';
+.containerWrapFilter{
+ 
+  padding-bottom: 20px;
+  @media (min-width:740px){
+    @include box-style;
+  }
+}
+.wrapFilter {
+
+  &__head {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__title {
+      margin-left: 10px;
+      font-weight: bold;
+
+    }
+  }
+
+  &__body {
+   animation: appear ease-in 0.2s;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+
+    &__item {
+      flex-basis: 33.333%;
+
+      .title {
+        padding: 10px;
+        color: $second-color;
+        background: $main-color;
+          }
+
+      .content {
+        padding: 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &__size {
+          width: 50px;
+          height: 30px;
+          background: $second-color;
+          color: $main-color;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          border:1px solid $main-color;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.8;
+          }
+
+        }
+
+        &__color {
+          border: 1px solid $main-color;
+          cursor: pointer;
+          width: 50px;
+          height: 30px;
+          color: $second-color;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        &__colorActive {
+          transition: all ease-in 0.2s;
+          transform: scale(1.2);
+          border: 2px solid $main-color;
+        }
+
+        &__sizeActive {
+          transition: all ease-in 0.2s;
+          background-color: $main-color;
+          color: $second-color;
+        }
+        &__price{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          margin-top: 10px;
+        }
+      }
+    }
+    @media (max-width:1023px){
+      flex-direction: column;
+      
+    }
+  }
+  &__action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .filterAction{
+      @include button-style;
+      width: 100px;
+
+      color: $second-color;
+      background: $main-color;
+      margin-right: 10px;
+      cursor: pointer;
+      &:hover{
+        opacity: 0.8;
+      }
+
+    }
+    .resetAction{
+      @include button-style;
+      width: 100px;
+      background: transparent;
+      color: $main-color;
+      border:1px solid $main-color;
+      cursor: pointer;
+       margin-left: 10px;
+    }
+  }
+}
+@keyframes appear {
+  0%{
+    // transform:translateY(-0%);
+    opacity: 0;
+    transform:scale(0)
+  }
+  100%{
+    // height: 100%;
+    opacity: 1;
+    // transform:translateY(100%);
+    transform:scale(1)
+
+
+  }
+}
+.wrapFilter__headMobile{
+  display: none;
+}
+@media (max-width:740px){
+  .wrapbody{
+    display: none;
+  }
+  .wrapFilter__head{
+    display: none;
+  }
+  .wrapFilter__headMobile{
+    display: block;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

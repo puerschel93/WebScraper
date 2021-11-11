@@ -1,0 +1,303 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:540;
+
+// VARIABLE SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Open Sans Condensed",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:yes;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:260;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces9";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//---------------------------------------------------------------------------------------------------------------------
+//		PERSO SITIMMO38
+//---------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//---------------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:960px;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		BTN
+	//---------------------------------------------------------------------------------------------------------------------
+
+/*.btn-important {
+	color: $color-nav-footer;
+	&:hover {
+		color: $color-nav-footer;
+	}
+}
+*/
+	//---------------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------------------------------
+
+.navigation {
+	border-bottom: solid 1px $color-secondary;
+}
+
+.navigation  .container, .ligne-social-langue .container {
+	width: 100%;
+}
+
+.menu-principal {	
+	    font-size: 1.3em;
+	    @media only screen and (max-width : 1367px) {
+	    	font-size: 1.08em;
+	    }
+	>li {
+	    padding: 10px 20px;	    
+	    @media only screen and (max-width : 1367px) {
+	    	padding: 10px 0px;
+	    }
+	    &:hover {
+	    	background-color: $color-primary;
+	    }	    
+	    >a {
+			border-bottom: none;
+			background-color: $color-body;
+			padding-top: 16px;
+			&:after {
+	            display: block;
+	            content: "";
+	            width: 50%;
+	            height: 2px;
+	            background-color: transparent;
+	            margin-top: 5px;
+	            -webkit-transition: background-color .3s ease;
+	            		transition: background-color .3s ease;
+	         }
+	         &:hover {
+	            color: $color-secondary;
+	            background-color: $color-primary;
+	            &:after { background-color: $color-secondary; }
+	         }
+	    }
+	}
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		TTL
+	//---------------------------------------------------------------------------------------------------------------------
+
+.h1-index {
+	background-color: rgba($color-primary, 0.7);
+}
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		MINI MOTEUR
+	//---------------------------------------------------------------------------------------------------------------------
+
+.form-inline, .bg-mini-moteur {
+	    margin-bottom: 50px;
+}
+
+.bg-mini-moteur {
+	background: $color-secondary;
+}
+
+.bg-encart {
+	background-color: rgba($color-block,0.8);
+	padding: 10px;
+	@include border-radius (8px);
+	text-shadow: none;
+	a {
+		color: $color-important;
+		&:hover {
+			text-decoration: none;
+		}		
+	}
+	&:hover {
+		@include transition-property(all);
+		@include transition-duration(0.3s);
+		@include transition-timing-function(ease-in);
+		background-color: rgba($color-block,1);
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		SEO
+	//---------------------------------------------------------------------------------------------------------------------
+
+.rs-seo a:hover {
+	text-decoration: none;
+}
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//---------------------------------------------------------------------------------------------------------------------
+
+.box-module-home {
+	background: lighten($color-block,100);
+	padding: 10px;
+	@include border-radius (4px);
+}
+
+.module-homepage .height-190 {
+	height: 240px;
+}
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		PUB FULL
+	//---------------------------------------------------------------------------------------------------------------------
+
+.bg-pub-bottom .container:first-child {
+	width: 100%;
+}
+
+/*.pub-alerte-helsinki {
+	width: 1280px;
+    margin: auto;
+    box-shadow: none;
+    @media only screen and (max-width : 1280px) {
+		width:960px;
+	}
+}*/
+
+.zone-pub {
+	height: 260px;
+}
+
+.encart-pub-boite {
+	background-size: cover !important;
+	height: 125px;
+}
+
+.pub-services-helsinki {
+	background-image: url('../images/pub/homepage_scrolling_services.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed
+}
+
+.pub-blog-helsinki {
+	background-image: url('../images/pub/homepage_scrolling_blog.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed
+}
+
+.pub-contact-helsinki {
+	background-image: url('../images/pub/homepage_scrolling_contact.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed
+}
+
+.bg-poly-blue {
+	background-color: rgba($color-block, 0.8);
+	margin-top: 70px;
+	.typo-white {
+		color: $color-font-body;
+	}
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+//		DETAIL PA
+//---------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//---------------------------------------------------------------------------------------------------------------------
+
+.vertical-pano {
+	background: $color-block;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+//		LISTING PA
+//---------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------
+	//		INFOS
+	//---------------------------------------------------------------------------------------------------------------------
+
+.infos-bien {
+	display: none;
+}
+
+.recherche-annonces a span[itemprop="description"] {
+	color: lighten($color-body,100);
+}
+

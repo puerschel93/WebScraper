@@ -1,0 +1,343 @@
+// divider margin needs to be half the line-height
+$line-height: 2.5;
+$divider-margin: 1.25rem;
+
+.filter-bar-container {
+    margin-bottom: 2 * $spacer;
+}
+
+.filter-bar {
+    background-color: $brand-secondary;
+    color: $white;
+    font-size: $font-size-lg;
+    line-height: $line-height;
+    z-index: 2;
+}
+
+.filter-bar--horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 1.5 * $padding 2 * $padding;
+}
+
+.filter-bar--stacked {
+    padding: $padding;
+    margin-bottom: $spacer;
+}
+
+.filter-bar__dropdown {
+    margin-left: $spacer;
+    margin-right: $spacer;
+}
+
+.filter-bar__btn {
+    color: $white;
+    font-weight: normal;
+    font-style: italic;
+    border-radius: 0;
+
+    &:focus,
+    &:hover,
+    &:active,
+    &:disabled {
+        color: $white;
+        border-color: $white;
+    }
+}
+
+.filter-bar__btn--truncate {
+    @include text-truncate;
+    width: 12rem;
+}
+
+.filter-bar__btn--wide {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-top: $spacer;
+}
+
+.filter-bar__btn--unselected {
+    border-bottom: 1px dotted $white;
+    padding: 0;
+    text-align: left;
+
+    // leave space for caret
+    padding-right: 1.5rem;
+    position: relative;
+
+    i {
+        position: absolute;
+        top: 0.5rem;
+        right: 5px;
+    }
+}
+
+.filter-bar__btn--selected {
+    border: 1px solid $white;
+    font-size: $font-size-base;
+
+    // leave space for caret
+    padding-right: 2.2rem;
+    position: relative;
+
+    i {
+        position: absolute;
+        top: 0.6rem;
+        right: 0.7rem;
+    }
+}
+
+.filter-bar__btn--light {
+    font-size: $font-size-sm;
+    color: $white;
+    margin-left: 2 * $spacer;
+
+    &:focus,
+    &:hover,
+    &:active,
+    &:disabled {
+        color: $white;
+    }
+}
+
+.filter-bar__btn--light-homepage {
+    font-size: $font-size-base;
+    margin-left: 2 * $spacer;
+}
+
+.filter-bar--open {
+    background-color: $bg-secondary;
+    color: $text-color;
+
+    .filter-bar__btn,
+    .filter-bar__btn--light {
+        color: $text-color;
+
+        &:focus,
+        &:hover,
+        &:active,
+        &:disabled {
+            color: $text-color;
+            border-color: $text-color;
+        }
+    }
+
+    .filter-bar__btn--unselected {
+        border-bottom: 1px dotted $text-color;
+    }
+
+    .filter-bar__btn--selected {
+        border: 1px solid $text-color;
+    }
+}
+
+.filter-bar__menu {
+    background-color: $bg-secondary;
+    position: relative;
+    z-index: 2;
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .filter-secondary__btn {
+        display: block;
+        margin: auto;
+    }
+
+    .form-group {
+        margin-bottom: 2 * $spacer;
+    }
+
+    @media screen and (min-width: $breakpoint-xs) {
+        padding: 2 * $padding;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+        padding: 0.5 * $padding 4 * $padding 2 * $padding 4 * $padding;
+    }
+}
+
+.filter-bar__dropdown-menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    @media screen and (min-width: $breakpoint-md) {
+        margin-top: $spacer;
+    }
+}
+
+.filter-bar__question {
+    font-size: $font-size-xl;
+    color: $text-color;
+
+    @media screen and (min-width: $breakpoint-xs) {
+        margin-top: 0;
+    }
+}
+
+.filter-bar__option {
+    font-size: $font-size-base;
+    color: $brand-secondary;
+
+    &:focus,
+    &:hover,
+    &:active,
+    &:disabled {
+        color: $brand-primary;
+    }
+}
+
+.filter-bar__option.active {
+    color: $brand-primary;
+}
+
+.filter-bar__option-divider {
+    margin-top: $divider-margin;
+    margin-bottom: $divider-margin;
+    border-top: 2px solid $white;
+}
+
+@media screen and (max-width: $breakpoint-md-down) {
+    .filter-bar--horizontal {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .filter-bar__project-text {
+        display: block;
+        width: 100%;
+        font-size: $font-size-lg;
+    }
+
+    .filter-bar__dropdown {
+        margin-left: 0;
+        width: 40%;
+    }
+
+    .filter-bar__btn--truncate {
+        width: 100%;
+    }
+
+    .filter-bar__btn--light,
+    .filter-bar__btn--light-homepage {
+        margin-left: 0;
+    }
+}
+
+// secondary search
+
+.filter-bar__search {
+    display: inline;
+    width: calc(100% - 63px);
+    margin-bottom: 2 * $spacer;
+
+    @media screen and (min-width: $breakpoint-xs) {
+        width: calc(100% - 51px);
+    }
+}
+
+// secondary radio group
+.filter-bar__menu-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.filter-bar__menu-radio-part,
+.filter-bar__menu-radio-proj {
+    width: 100%;
+    margin-bottom: 2 * $spacer;
+
+    .btn-group {
+        margin-top: $spacer;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+
+    .switch--btn {
+        font-weight: normal;
+        padding-left: 0.5 * $padding;
+        padding-right: 0.5 * $padding;
+    }
+}
+
+.filter-bar__menu-radio-part {
+    .switch--btn {
+        min-width: 15%;
+        flex-grow: 1;
+    }
+}
+
+.filter-bar__menu-radio-proj {
+    margin-bottom: 2 * $spacer;
+
+    .switch--btn {
+        min-width: 20%;
+        flex-grow: 1;
+    }
+}
+
+@media screen and (min-width: $breakpoint-md) {
+    .filter-bar__menu-radio-part {
+        width: 56%;
+
+        .switch--btn {
+            width: 25%;
+        }
+    }
+
+    .filter-bar__menu-radio-proj {
+        width: 39%;
+        margin-left: 2 * $spacer;
+    }
+}
+
+// modal for mobile secondary filters
+.filter-secondary__modal {
+    display: block;
+}
+
+.filter-secondary__modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.filter-secondary__modal-content {
+    background-color: $bg-secondary;
+    font-size: $font-size-base;
+
+    .filter-secondary__btn {
+        width: 100%;
+        margin: 2 * $spacer 0 $spacer 0;
+    }
+}
+
+// to close primary filter on click away
+.outer-handler {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    display: none;
+}
+
+// for large screen (general sibling selector)
+.filter-bar--open ~ .outer-handler {
+    z-index: 1;
+    display: block;
+}
+
+// for smaller screens
+.filter-bar--open.filter-bar--stacked {
+    position: relative;
+}

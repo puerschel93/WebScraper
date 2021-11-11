@@ -1,0 +1,195 @@
+/* INTERNE - COMPONENTS */
+
+.interne {
+
+    h4 {
+        @include bp-xs {
+            font-size: 20px;
+        }
+    }
+
+    .top-bar {
+        margin-top: 55px;
+
+        @include bp-xl {
+            margin-top: 25px;
+        }
+
+        @include bp-xs {
+            margin-top: 15px;
+        }
+
+        &__menu {
+            margin-left: 100px;
+
+            @include bp-xs {
+                margin-left: 0;
+            }
+
+            .burger {
+                @include bp-xl {
+                    width: 29px;
+                    height: 24px;
+                    margin-top: 5px;
+                }
+
+                @include bp-xs {
+                    display: none;
+                }
+
+                &--responsive {
+                    display: none;
+
+                    @include bp-xs {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &__account {
+            border: 2px solid $primary-color;
+
+            @include bp-xl {
+                padding: 15px 10px;
+                width: 200px;
+                flex: none;
+                font-size: 12px;
+            }
+
+            &:hover {
+                background: $primary-color;
+            }
+        }
+        
+        &__logo {
+
+            .logo {
+                @include bp-xl {
+                    width: 220px;
+                }
+
+                @include bp-xs {
+                    display: none;
+                }
+
+                &--responsive {
+                    display: none;
+
+                    @include bp-xs {
+                        display: block;
+                        position: relative;
+                        top: 9px;
+                    }
+                }
+            }
+
+        }
+
+        select {
+            padding: 19.5px 23px;
+            padding-right: 60px;
+            width: auto;
+            height: auto;
+            font-size: 18px;
+            font-weight: 500;
+
+            @include bp-xl {
+                padding: 13px 15px;
+                padding-right: 41px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .aside {
+        background: url("/img/interne/about/banner.png") no-repeat 90% 70%;
+        position: fixed;
+        height: 100vh;
+
+        @include bp-xl {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        @include bp-xs {
+            position: relative;
+            height: 215px;
+            margin: 0 15px;
+            padding: 0 33px;
+            background-size: cover;
+        }
+
+        .full-padding {
+            padding-right: 0;
+
+            @include bp-xs {
+                padding: 0;
+            }
+        }
+
+        &__title {
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+
+            @include bp-xs {
+                top: unset;
+                transform: unset;
+                bottom: 70px;
+                left: 50%;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+
+                &--title {
+                    color: $white;
+                    font-size: 32px;
+                }
+            }
+            
+        }
+    }
+
+    .content {
+        background: $white;
+        margin-left: auto;
+        min-height: 100vh;
+
+        @include bp-xl {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        @include bp-xs {
+            background: $bg-grey;
+            padding-bottom: 50px;
+        }
+
+        .full-padding {
+            @include bp-xl {
+                padding-left: 0;
+            }
+        }
+        
+        &__elements {
+            margin-top: 100px;
+
+            @include bp-xl {
+                margin-top: 50px;
+            }
+
+            @include bp-xs {
+                margin-top: 25px;
+            }
+        }
+
+        .top-bar--hide-responsive {
+            @include bp-xs {
+                display: none;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,256 @@
+$body-color   = #111
+$wrapper-size = 300px
+$off-opacity  = .15
+$transition   = .5s
+$size = $wrapper-size * .5
+$retreat-scale = .25
+$control-color = #fafafa
+$colors = #f22613 #f9690e #e9d460 #00b16a #be90d4 #8e44ad
+
+@keyframes axial-spin
+  from
+    transform rotateX(45deg) rotateY(45deg)
+  to
+    transform rotateX(405deg) rotateY(765deg)
+
+@keyframes entrance
+  from
+    transform rotateX(45deg) rotateY(45deg)
+
+/**
+  * Accessibility styles for our screen reader list of images
+*/
+.content
+  overflow hidden
+
+.photo-cube--accessible
+  left 100%
+  list-style none
+  opacity 0
+  position fixed
+  top 0
+
+/**
+  * How each control dictates the rotation of the cube
+*/
+.photo-cube__control
+  z-index 2
+
+  for $idx in (1..6)
+    &:nth-of-type({$idx})
+      &:checked ~ .photo-cube__indicators .photo-cube__indicator:nth-of-type({$idx})
+        opacity 1
+
+  &:nth-of-type(1)
+    &:checked ~ .photo-cube
+      transform rotateX(0deg) rotateY(0deg)
+
+  &:nth-of-type(6)
+    &:checked ~ .photo-cube
+      transform rotateX(90deg) rotateY(0deg)
+
+  &:nth-of-type(3)
+    &:checked ~ .photo-cube
+      transform rotateX(180deg) rotateY(0deg)
+
+  &:nth-of-type(5)
+    &:checked ~ .photo-cube
+      transform rotateX(270deg) rotateY(0deg)
+
+  &:nth-of-type(4)
+    &:checked ~ .photo-cube
+      transform rotateX(360deg) rotateY(90deg)
+
+  &:nth-of-type(2)
+    &:checked ~ .photo-cube
+      transform rotateX(360deg) rotateY(-90deg)
+
+
+.content
+  height $wrapper-size
+  left 50%
+  margin-left -($wrapper-size / 2)
+  margin-top -($wrapper-size / 2)
+  position absolute
+  top 50%
+  transform scale($retreat-scale)
+  transition all $transition ease 0s
+  width $wrapper-size
+  &:hover
+    transform scale(1)
+    transition all $transition ease 0s
+
+    .photo-cube__wrapper
+      animation entrance $transition ease
+      transform rotate(0deg)
+      transition all $transition ease 0s
+
+    .photo-cube__indicators
+      opacity 1
+
+    .photo-cube__control
+      for $idx in (1..6)
+        &:nth-of-type({$idx})
+          &:checked ~ .photo-cube .photo-cube__panel:nth-of-type({$idx})
+            opacity 1
+
+          &:checked ~ .photo-cube__actions--right .photo-cube__action:nth-of-type({$idx})
+          &:checked ~ .photo-cube__actions--left .photo-cube__action:nth-of-type({$idx})
+            transition opacity $transition ease 0s
+            display block
+
+            &:hover
+              opacity 1
+
+.photo-cube__wrapper
+  animation axial-spin 10s infinite linear
+  height $wrapper-size
+  left 50%
+  margin-left -($wrapper-size / 2)
+  margin-top -($wrapper-size / 2)
+  position absolute
+  top 50%
+  transform scale($retreat-scale)
+  transform-style preserve-3d
+  transition all $transition ease 0s
+  width  $wrapper-size
+
+.photo-cube
+  height $size
+  left 50%
+  margin-left -($size / 2)
+  margin-top -($size / 2)
+  position absolute
+  top 50%
+  transform rotateX(45deg) rotateY(45deg)
+  transform-style preserve-3d
+  transition all $transition ease 0s
+  width  $size
+
+
+  &__panel
+    height 100%
+    left 0
+    position absolute
+    opacity $off-opacity * 3
+    top 0
+    transition all $transition ease 0s
+    width  100%
+
+  &__panel:nth-of-type(3)
+    background $colors[0]
+    transform translateZ(-($size / 2)) rotateY(180deg) rotate(180deg)
+
+  &__panel:nth-of-type(2)
+    background $colors[1]
+    transform rotateY(-270deg) translateX($size / 2)
+    transform-origin top right
+
+  &__panel:nth-of-type(1)
+    background $colors[2]
+    transform translateZ($size / 2)
+
+  &__panel:nth-of-type(4)
+    background $colors[3]
+    transform rotateY(270deg) translateX(-($size / 2))
+    transform-origin center left
+
+  &__panel:nth-of-type(5)
+    background $colors[4]
+    transform rotateX(90deg) translateY(-($size / 2))
+    transform-origin top center
+
+  &__panel:nth-of-type(6)
+    background $colors[5]
+    transform-origin bottom center
+    transform rotateX(-90deg) translateY($size / 2)
+
+  &__indicators
+    bottom 0
+    left 0
+    opacity 0
+    padding 25px
+    position absolute
+    right 0
+    transition all $transition ease 0s
+
+  &__control
+    display none
+
+  &__actions
+    &--left
+      .photo-cube__action
+        left 0
+        top 50%
+        transform translateY(-50%)
+
+        &:before
+          transform translate(-40%, -50%) rotate(135deg)
+
+    &--right
+      .photo-cube__action
+        right 0
+        top 50%
+        transform translateY(-50%)
+
+  $action-size = 20px
+  &__action
+    animation none
+    background-color $control-color
+    border-radius 100%
+    cursor pointer
+    height $action-size
+    display none
+    opacity $off-opacity
+    position absolute
+    transition opacity $transition ease 0s
+    width $action-size
+    z-index 3
+
+    &:before
+      border-bottom solid 2px $body-color
+      border-right solid 2px $body-color
+      content ''
+      display block
+      height 25%
+      left 50%
+      position absolute
+      top 50%
+      transform translate(-70%, -50%) rotate(-45deg)
+      width 25%
+
+  $indicator-size = 10px
+  &__indicator
+    background $control-color
+    background-color $control-color
+    border-radius 100%
+    cursor pointer
+    display inline-block
+    height $indicator-size
+    margin 2px
+    opacity $off-opacity
+    width $indicator-size
+
+@keyframes fadeIn
+  from
+    opacity 0
+  to
+    opacity 1
+
+*
+  box-sizing border-box
+  animation  fadeIn .5s
+
+body
+  background-color $body-color
+  text-align       center
+  color            $control-color
+
+$photos = 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/280h/FHTED9EQ3B.jpg' 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/280h/RM97YA77HX.jpg' 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/280h/MRXXRJ47PH.jpg' 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/280h/JHPVE3XLUE.jpg' 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/280h/330ED98119.jpg' 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/280h/I4HKV8YZYF.jpg'
+
+for $panel in (1..6)
+  .photo-cube__panel:nth-of-type({$panel})
+      $photo = $photos[$panel - 1]
+      background-image url($photo)
+      background-size cover
+      background-position center

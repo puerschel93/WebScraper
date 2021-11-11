@@ -1,0 +1,173 @@
+.block--staff-member
+  a
+    box-shadow $module-person-shadow
+    display block
+    height $module-person-image-size-mobile
+    padding rem(22px) rem(22px) rem(10px) $module-person-image-size-mobile
+    position: relative
+    text-align right
+    text-decoration none
+    &:hover
+      // box-shadow $module-person-shadow-hover
+      text-decoration none !important
+
+    +above(m)
+      height 100%
+      padding rem(60px) rem(10px) rem(57.5px)
+      text-align center
+
+    > figure
+      display block
+      margin 0
+      position absolute
+      left 0
+      top 0
+      height $module-person-image-size-mobile
+      width $module-person-image-size-mobile
+
+
+      &.desktop
+        display none
+        visibility hidden
+      +above(m)
+        &.mobile
+          display none
+          visibility hidden
+        &.desktop
+          display block
+          visibility visible
+
+      +above(m)
+        // width 65%
+        width: 'calc(%s + %s)' % (65% rem(20px))
+        position: relative
+        margin: 0 auto rem(55.5px)
+        height: auto
+        line-height: 0
+        img
+          border 10px solid $white
+          box-shadow $module-person-shadow
+        &, img, &:before
+          border-radius 50%
+
+    h3
+      color $module-person-name-color
+      font-size $module-person-name-size-mobile
+      line-height 1
+      margin 0 0 rem(8px) 0
+      white-space initial
+      +above(m)
+        font-size $module-person-name-size-desktop
+    h4
+      color $module-person-title-color
+      font-family $module-person-title-font
+      font-size $module-person-title-size-mobile
+      font-style $module-person-title-style
+      line-height $line-height-title
+      margin 0
+      white-space initial
+      +above(m)
+        font-size $module-person-title-size-desktop
+
+
+.block--contact-person
+  border-top $module-person-contact-top-border
+  margin-top rem(26px)
+  padding-top rem(32px)
+  +above(m)
+    margin-top rem(77px)
+    padding-top rem(64px)
+
+  > h4
+    font-family $module-person-contact-person-title-font
+    color $module-person-contact-person-title-color
+    font-size $module-person-contact-person-title-size-mobile
+    margin-top 0
+    +above(m)
+      font-size $module-person-contact-person-title-size-desktop
+  > ul
+    list-style none
+    padding 0
+  .block--staff-member
+    margin-bottom rem(28px)
+  .block--staff-member a
+
+    &:after
+      background-color: $module-person-contact-arrow-color
+      background-repeat: no-repeat
+      background-size: cover
+      content: ' '
+      display inline-block
+      position absolute
+      right 'calc((%s * (-%s/%s * -%s) - (%s - %s * (-%s/%s * -%s)) + %s) - %s)' % (100vw 2 36 1 30px 30px 2 36 1 30px rem(16px))
+      top 'calc(%s - (%s/2))' % (50% rem(16px))
+      height rem(16px)
+      width rem(16px)
+      mask: embedurl("../sprites/arrow-right.svg", "utf8") no-repeat 50% 50%/12px 12px
+      margin-left: 0.15em
+      transition: background-color $transition-timing, transform $transition-timing
+      vertical-align middle
+
+
+
+    +above(m)
+      display flex
+      height auto
+      padding-left rem(25.5px)
+      padding-right 'calc(%s * (-%s/%s * -%s) - (%s - %s * (-%s/%s * -%s)) + %s)' % (100vw 2 36 1 30px 30px 2 36 1 30px)
+      padding-top rem(21px)
+      padding-bottom rem(21px)
+      &:hover
+        &:after
+          transform translateX(0.35em)
+
+    > figure
+      +above(m)
+        &.desktop
+          display inline-block
+        width $module-person-contact-image-size-desktop
+        margin 0
+        vertical-align top
+        img
+          border $module-person-contact-image-border-width-desktop solid $white
+
+    .block--staff-member--name
+      padding-left rem(12px)
+      text-align left
+      +above(m)
+        display inline-block
+        padding-left rem(24px)
+        width 'calc(%s - %s)' % (100% $module-person-contact-image-size-desktop)
+        white-space initial
+        h3
+          margin-top .5em
+
+  dl
+    dt
+    dd
+      display inline-block
+      font-size $module-person-contact-list-size-mobile
+      +above(m)
+        font-size $module-person-contact-list-size-desktop
+    dt
+      font-weight $module-person-contact-list-title-weight
+
+      &:before
+        background-color: $module-person-contact-list-color
+        background-repeat: no-repeat
+        background-size: cover
+        content: " "
+        display inline-block
+        height $module-person-contact-list-size-mobile
+        width $module-person-contact-list-size-mobile
+
+        transition: background-color $transition-timing
+        margin-right: 0.4em
+        vertical-align baseline
+        mask: embedurl("../sprites/carrot.svg", "utf8") no-repeat 50% 50%/100% auto
+
+    dd
+      font-style $module-person-contact-list-list-style
+      margin 0
+      &:not(:last-child):after
+        content ', '

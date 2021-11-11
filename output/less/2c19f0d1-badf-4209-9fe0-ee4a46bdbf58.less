@@ -1,0 +1,105 @@
+.opacity (@opacity: 0.5) {
+    -webkit-opacity: @opacity;
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+}
+.for(@list, @code) {
+    & {
+        .loop(@i:1) when (@i =< length(@list)) {
+            @value: extract(@list, @i);
+            @code();
+            .loop(@i + 1);
+        }
+        .loop();
+    }
+}
+.btn_mixin(@padding_top_bottom, @padding_left_right,@width,@font_size) {
+    text-align: center;
+    font-family: @font_secondary_b, sans-serif;
+    display: inline-block;
+    color: @white;
+    padding: @padding_top_bottom @padding_left_right;
+    width: @width;
+    font-size: @font_size;
+}
+.sub-menu__line-add {
+    content: "|";
+    margin-right: 1.6rem;
+    margin-left: 1.6rem;
+}
+.sub-menu__first-line-del {
+    content: "";
+    margin-left: 0;
+    margin-right: 0;
+}
+.circle(@bg-color) {
+    content: "";
+    margin-top: -2px;
+    height: 16px;
+    width: 16px;
+    background-color: @bg-color;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 2rem;
+    margin-left: -4rem;
+    vertical-align: top;
+}
+.task-list__padding-wrapper(@t,@l,@r) {
+    padding-top: @t;
+    padding-left: @l;
+    padding-right: @r;
+}
+
+.priority(@bg_color, @bg_color_hover) {
+    .task-list__title {
+        color: @bg_color;
+    }
+    .task-list__estimation {
+        background-color: @bg_color;
+        &:hover {
+            background-color: @bg_color_hover;
+            cursor: pointer;
+        }
+    }
+}
+.category(@bg_color, @bg_color_pressed) {
+    &::before {
+        border-color: @bg_color;
+    }
+    .global-list__radio-control {
+        background-color: @bg_color;
+        &::before {
+            background-color: @bg_color;
+        }
+    }
+    .global-list__radio-label {
+        color: @bg_color;
+    }
+    .task-list__icon-trash {
+        background-color: @bg_color;
+
+        &:hover {
+            cursor: pointer;
+            background-color: @bg_color_pressed;
+        }
+    }
+    .task-list__icon-close {
+        background-color: @bg_color;
+
+        &:hover {
+            cursor: pointer;
+            background-color: @bg_color_pressed;
+        }
+    }
+}
+.cycleCircleUp(@category_other) {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    width: 5px;
+    height: 5px;
+    background-color: @category_other;
+    position: absolute;
+    border-radius: 50%;
+}

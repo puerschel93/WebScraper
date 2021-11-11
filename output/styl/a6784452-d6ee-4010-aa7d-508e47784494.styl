@@ -1,0 +1,126 @@
+.dashboard
+    &-container
+        @extend .rel
+        width 100%
+        background #f5f5f5
+    &-height
+        height 100%
+    &-scroll
+        overflow-y auto
+    &-user
+        @extend .fixed
+        top 130px
+        bottom 20px
+        left 20px
+        width 240px
+        background #fff
+        &-swarrp
+            padding 20px
+        &-info
+            padding-top 10px
+            overflow hidden
+        &-img
+            @extend .rel
+            @extend .f-l
+            width 73px
+            height 73px
+            margin-right 15px
+            img
+                width 100%
+                height 100%
+                border-radius 50%
+                overflow hidden
+            span
+                @extend .abs
+                right -6px
+                bottom 0
+                display block
+                width 20px
+                height 20px
+                text-align center
+                color #fff
+                border-radius 10px
+                background #3366cc
+                cursor pointer
+        &-msg
+            padding-top 10px
+            color #333
+            font-size 12px
+        &-time
+            border-top 1px solid #f5f5f5
+            ul
+                margin-left 30px
+                border-left 1px solid #f5f5f5
+            li
+                @extend .rel
+                padding-top 10px
+                padding-left 30px
+                span
+                    display block
+                    color #333
+                    font-size 14px
+                    padding-bottom 5px
+                p
+                    color #666
+                    font-size 12px
+                    line-height 2em
+                &:after
+                    content ''
+                    display block
+                    @extend .abs
+                    left 0
+                    top 20px
+                    width 15px
+                    border-bottom 1px solid #f5f5f5
+                &.active
+                    &:before
+                        content ''
+                        display block
+                        @extend .abs
+                        left 15px
+                        top 20px
+                        width 6px
+                        height 6px
+                        margin-top -3px
+                        border-radius 3px
+                        overflow hidden
+                        background #8fc7ef
+                    
+    &-state
+        margin-top 15px
+        .el-progress
+            margin-top 4px
+            line-height 12px
+        .el-progress-bar
+            padding-right 0
+        .el-progress-bar__outer
+            background #d5e2eb
+        .el-progress.is-exception .el-progress-bar__inner
+            background #4395cf
+        &.exception
+            .el-progress-bar__outer
+                background #f1e0de
+            .el-progress.is-exception .el-progress-bar__inner
+                background #ff6c60
+                
+    &-main
+        padding 20px
+        &.dashboard-rightMain
+            padding-left 280px
+        .box-card
+            box-shadow none
+            border-radius 0
+            border none
+            .el-button
+                padding 0 5px
+                margin 15px 5px
+                line-height 18px
+            .el-card__body
+                padding 0
+        .el-card__header
+            padding 0 20px
+            line-height 50px
+            border-bottom-color #f5f5f5
+        .clearfix
+            font-size 18px
+            color #414548

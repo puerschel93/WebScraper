@@ -1,0 +1,347 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+@import "./mixins";
+
+.contact{
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  flex-direction: column;  
+  
+    &-head{
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-height: 85vh;
+      background-image: url('/img/vahida-send.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      
+
+      @include respond(maxNavBar){                                   
+        min-height: 250px;  
+        background-size: contain; 
+        background-repeat: no-repeat;          
+      }
+    }
+
+    &-section{
+      top: 100%;
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+
+        &-first{
+          display: flex;
+          width: 100%;
+          height: auto;          
+          flex-direction: column;
+
+          &-head{
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+
+            &-main{
+              display: block;
+              width: 100%;
+              font-size: 3rem;
+              margin: 5% auto 0% auto;
+              font-family: 'Lato';
+              font-weight: 300;
+            }
+
+            &-sub{
+              display: block;
+              margin: 2% auto;
+              padding: 0% 10% 0% 10%;
+              font-size: 1.5rem;
+              font-family: 'Lato';
+              
+              @include respond(maxNavBar){                                   
+                padding: 0%;                   
+              }
+            }
+
+          }
+
+          &-content{
+            display: flex;
+            margin: 0% auto 2% auto;
+            width: 85%;
+            height: 100%;            
+            flex-direction: row;
+
+            &-left{
+              display: flex;
+              width: 50%;
+              height: auto;              
+              margin-right: 2%;
+
+              &-content{
+                display: flex;
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                padding: 5%;      
+                border: solid $main-color 3px;           
+                
+                &-head{
+                  width: 100%;
+                  height: auto;
+                  font-family: 'Lato';
+                  text-transform: uppercase;
+                  font-size: 1.8rem;
+                  text-align: left;
+                  font-weight: 300;
+                }
+
+                &-text{
+                  width: 100%;
+                  height: auto;
+                  font-size: 1.1rem;
+                  text-align: justify;
+                  hyphens: auto;
+                  margin-top: 5%;
+                                   
+                 
+
+                  &-btn{
+                    display: flex;
+                    width: 100%;
+                    height: auto;  
+                    margin: 5% auto; 
+                    
+                    &:first-child {
+                      margin: 0% auto 5% auto;                                                                                  
+                    }
+                    
+  
+                    &-facebook{
+                      display: flex;                    
+                      padding: 3%;                    
+                      width: 100%;
+                      background-color: $facebook-bg-color;   
+                      text-decoration: none;                 
+                      
+                      
+                      &-icon{
+                        font-size: 2rem;
+                        color: $white-color;
+                        margin: auto 0% auto 0%;
+                      }
+  
+                      &-link{
+                        text-decoration: none;
+                        margin: 0% 0% 0% 2%;
+                        font-family: 'Lato';
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        color: $white-color;
+                      }                     
+                      
+                    }
+
+                    &-instagram{
+                      display: flex;                    
+                      padding: 3%;                    
+                      width: 100%;
+                      background: $instagram-bg-color;
+                      text-decoration: none;
+                      
+                      
+                      &-icon{
+                        font-size: 2rem;
+                        color: $white-color;
+                        margin: auto 0% auto 0%;
+                      }
+  
+                      &-link{
+                        text-decoration: none;
+                        margin: 0% 0% 0% 2%;
+                        font-family: 'Lato';
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        color: $white-color;
+                      }                     
+                      
+                    }
+
+                    &-phone{
+                      display: flex;                    
+                      padding: 3%;                    
+                      width: 100%;
+                      background: $phone-bg-color;
+                      text-decoration: none;
+                      
+                      &-icon{
+                        font-size: 2rem;
+                        color: $white-color;
+                        margin: auto 0% auto 0%;
+                      }
+  
+                      &-link{
+                        text-decoration: none;
+                        margin: 0% 0% 0% 2%;
+                        font-family: 'Lato';
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        color: $white-color;
+                      }                     
+                      
+                    }
+                    @include respond(maxNavBar){                                   
+                      margin: 0% 0% 5% 0%;            
+                    }
+                  }
+                  
+                 
+                }
+
+                
+                @include respond(maxNavBar){                                   
+                  padding: 0% 2% 0% 2%;     
+                  border: none;                
+                }
+              }
+
+              @include respond(maxNavBar){                                   
+                width: 100%;
+                margin: 5% auto;
+              }
+            }
+
+            &-right{
+              display: flex;
+              width: 50%;
+              height: 100%;              
+
+              &-content{
+                display: flex;
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                padding: 5%;   
+                border: solid $main-color 3px;             
+                
+                &-head{
+                  width: 100%;
+                  height: auto;
+                  font-family: 'Lato';
+                  text-transform: uppercase;
+                  font-size: 1.8rem;
+                  text-align: left;
+                  font-weight: 300;
+                }
+
+                &-text{
+                  width: 100%;
+                  height: auto;
+                  font-size: 1.1rem;
+                  text-align: justify;
+                  hyphens: auto;
+                  margin: 2% auto;
+
+                  &-form{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    &-nameLbl{
+                      font-size: 2rem;
+                      font-family: 'Cinzel', serif;
+                      margin: 0% 0% 2% 0%;
+                      color: $color-glow-close-red;
+                      opacity: 0;
+                      visibility: hidden;                      
+                    }
+
+                    &-nameInput{
+                      display: block;
+                      background-color: $ligth-gray-color;
+                      margin: 0% 0% 5% 0%;                      
+                      font-size: 2rem;
+                      font-family: 'Cinzel', serif;
+                      border: none;
+                    }
+
+                    &-emailInput{
+                      display: block;
+                      background-color: $ligth-gray-color;
+                      margin: 0% 0% 5% 0%;                      
+                      font-size: 2rem;
+                      font-family: 'Cinzel', serif;
+                      border: none;
+                    }
+
+                    &-textInput{
+                      display: block;
+                      background-color: $ligth-gray-color;                      
+                      font-size: 2rem;
+                      font-family: 'Cinzel', serif;
+                      border: none;
+                      height: 30vh;
+                    }
+                  }
+
+                  &-btn{
+                    display: flex;
+                    width: 100%;
+                    height: auto;  
+                    margin: 5% auto;
+
+                    &-email{
+                      display: flex;                    
+                      padding: 3%;                    
+                      width: auto;
+                      background: $main-color;                      
+                      cursor: pointer;
+                      
+                      &-icon{
+                        font-size: 2rem;
+                        color: $white-color;
+                        margin: auto 0% auto 0%;
+                      }
+  
+                      &-link{
+                        text-decoration: none;
+                        margin: 0% 0% 0% 2%;
+                        font-family: 'Lato';
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        color: $white-color;
+                        cursor: pointer;
+                      }                     
+                      
+                    }
+                  
+                  }
+                }
+                
+                @include respond(maxNavBar){                                   
+                  padding: 0% 2% 0% 2%;     
+                  border: none;              
+                }
+              }
+              @include respond(maxNavBar){                                   
+                width: 95%;                
+                
+              }
+            }
+
+            @include respond(maxNavBar){                                   
+              flex-direction: column;
+            }
+          }
+        }          
+
+    }
+
+    @include respond(maxNavBar){                                   
+     height: 100vh;
+    }
+
+}

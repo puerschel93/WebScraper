@@ -1,0 +1,182 @@
+// COLOR DEFAULT ACTION
+$color-btn-action:false !default;
+.btn {
+	font-size:$font-size-text * 0.9;
+  display: inline-block;
+  *display: inline;
+  padding: 5px 10px;
+  margin-bottom: 0;
+  line-height: 20px;
+  *line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+ @if $arrondi == yes {
+	  background-repeat: repeat-x;
+	  @include border-radius(3px);
+  }
+  *zoom: 1;
+}
+.btn:first-child {
+  *margin-left: 0;
+}
+.btn.disabled,
+.btn[disabled] {
+  cursor: default;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.btn-large {
+  padding: 9px 14px;
+  font-size:$font-size-text * 0.9;
+  line-height: normal;
+  text-transform:uppercase;
+  @extend .font-title;
+  @if $arrondi == yes {
+ 	 @include border-radius(5px);
+ 	}
+}
+.btn-small {
+  line-height: 20px;
+  *line-height: 20px;
+  font-size:$font-size-text * 0.7;
+}
+.btn-mini {
+  padding: 2px 6px;
+  line-height: 17px;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block{
+  width: 100%;
+}
+input[type="submit"].btn {
+  *padding-top: 3px;
+  *padding-bottom: 3px;
+}
+input[type="submit"].btn::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+input[type="submit"].btn.btn-large {
+  *padding-top: 7px;
+  *padding-bottom: 7px;
+}
+input[type="submit"].btn.btn-small {
+  *padding-top: 3px;
+  *padding-bottom: 3px;
+}
+input[type="submit"].btn.btn-mini {
+  *padding-top: 1px;
+  *padding-bottom: 1px;
+}
+// BTN ACTION
+.btn-action {
+	@if $color-btn-action != false {
+		color:$color-btn-action;
+	} @else {
+		@include lightnessColor($color-action,no);
+	}
+	text-decoration:none;
+	// COLOR ONLY;
+	background:$color-action;
+	// HOVER
+	&:hover {
+		text-decoration:none;
+		// COLOR ONLY
+		color:#fff;
+		background:darken($color-action,4);
+	}
+}
+// BTN ACTION NO GRADIENT
+.btn-action-no-gradient {
+	@if $color-btn-action != false {
+		color:$color-btn-action;
+	} @else {
+		@include lightnessColor($color-action,no);
+	}
+	border: 1px solid $color-action;
+	text-decoration:none;
+	// COLOR ONLY 
+	background-color:$color-action;
+	@include transition-bg;
+	// HOVER
+	&:hover {
+		text-decoration:none;
+		color:$color-primary-light-100;
+		// COLOR ONLY 
+		background-color:darken($color-action,10);
+	}
+}
+// BTN IMPORTANT
+.btn-important {
+	color:#ffffff;
+	background-color: $color-important;
+	@include background-image(linear-gradient(top, lighten($color-important,10) 0%, lighten($color-important,3) 50%, lighten($color-important,2) 51%, darken($color-important,5) 100%));
+	@include filter-gradient(lighten($color-important,10),lighten($color-important,1),vertical);
+	background-repeat: repeat-x;
+	border: 1px solid darken($color-important,5);
+	&:hover {
+		color:#ffffff;
+		text-decoration:none;
+		@include background-image(linear-gradient(bottom, lighten($color-important,12) 0%, lighten($color-important,6) 50%, lighten($color-important,5) 51%, darken($color-important,0) 100%));
+		@include filter-gradient(lighten($color-important,12),lighten($color-important,3),vertical);
+	}
+}
+.btn-important a {
+	color:#ffffff;
+}
+// BTN NEUTRE
+.btn-neutre {
+	color:#ffffff;
+	background:darken($color-action,5);
+	&:hover {
+		background:darken($color-action,5);
+		color:#ffffff;
+		text-decoration:none;
+	}
+	//@extend .pie;
+}
+// BTN pour le téléphonez nous de la page détail
+.btn-detail-tel {
+  padding-top: 2px;
+  padding-bottom: 1px;
+}
+.btn-detail-tel #texte-telephonez-nous-detail{
+	padding-top: 7px;
+	padding-bottom: 8px;
+	display: block;
+}
+/* TABLET PORTRAIT */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+.btn {
+	$calculbtn:$font-size-text;
+	display:inline-block;
+	padding:$calculbtn / 4;
+	width: auto;
+	margin-bottom:10px;
+	font-weight:bold;
+	}
+}
+/* PORTRAIT TO LANDSCAPE MOBILE */
+@media only screen and (max-width : 767px) {
+.btn-important {
+	$calculbtn:$font-size-text;
+	display:inline-block;
+	padding:$calculbtn / 4;
+	margin-bottom:10px;
+	font-weight:bold;
+	}
+}

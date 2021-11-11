@@ -1,0 +1,132 @@
+@import "../../shared/styles/variables";
+@import "../../shared/styles/mixin";
+.container {
+    .wpb-row-1 {
+        @include flex(column, center, center);
+        margin-top: 140px;
+        height: 521px;
+        background-image: url("../../../assets/images/bg-3-1.jpg");
+        background-position: center;
+        background-size: cover;
+        .title {
+            width: 90%;
+            margin: auto;
+            position: relative;
+            .layer-1 {
+                font-size: 300px;
+                font-family: $secondary-font;
+                color: $primery-text-color;
+                opacity: 0.15;
+            }
+            .layer-2 {
+                font-size: 80px;
+                font-family: $secondary-font;
+                position: absolute;
+                line-height: 96px;
+                left: 0;
+                top: 29%;
+                color: $primery-text-color;
+            }
+            .layer-3 {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                font-family: $secondary-font;
+                font-size: 90px;
+                color: rgb(246, 198, 41);
+            }
+            @media screen and(max-width:$media-lg) {
+                .layer-1{
+                    font-size: 280px;
+                }
+                .layer-2 {
+                    font-size: 75px;
+                }
+                .layer-3 {
+                    font-size: 83px;
+                }
+            }
+        
+            @media screen and (max-width: $media-md) {
+               .layer-1{
+                   font-size: 208px;
+               }
+               .layer-2{
+                   font-size: 48px;
+               }
+               .layer-3{
+                   font-size: 50px;
+               }
+            }
+        }
+    }
+    .slider-wrapper {
+        @include flex(row, space-between, normal);
+        width: 90%;
+        margin: -90px auto 0;
+        .slider-item {
+            background-color: $primery-text-color;
+            height: 268px;
+            width: 48%;
+            padding: 30px 50px;
+            .review-author {
+                @include flex(row, flex-start, normal);
+                img {
+                    margin: 0 30px 0 0;
+                    @media screen and(max-width:$media-xxl) {
+                        width: 56px;
+                        height: 56px;
+                    }
+                }
+                .autor-info {
+                    width: 100%;
+                    h4 {
+                        font-size: 22px;
+                        margin: 0 0 10px;
+                        font-family: $primary-font;
+                        color: $secondary-text-color;
+                    }
+                    div {
+                        font-size: 13px;
+                        font-family: $primary-font;
+                        color: #b5b5b5;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+            .review-content {
+                margin: 25px 0 0;
+                p {
+                    font-size: 13px;
+                    line-height: 24px;
+                    color: #1e1e1e;
+                    font-family: $monserat-regular;
+                }
+            }
+            @media screen and(max-width:$media-xxl) {
+                height: 310px;
+            }
+            @media screen and(max-width:$media-xl) {
+                height: 290px;
+            }
+            @media screen and(max-width:$media-xl) {
+                height: 475px;
+            }
+        }
+    }
+    .empty-space {
+        @include flex(row, center, normal);
+        width: 90%;
+        margin: 0 auto;
+        height: 82px;
+        .page {
+            margin: 50px 20px 0 0;
+            width: 8px;
+            height: 8px;
+            outline: none;
+            border: none;
+            border-radius: 100px;
+            background-color: #b5b5b5;
+        }
+    }
+}

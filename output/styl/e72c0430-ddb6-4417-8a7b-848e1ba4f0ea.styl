@@ -1,0 +1,23 @@
+/*!-----------------------------------------------------------------
+  .menu-toogle - модуль переключения меню на маленьких экранах
+ -----------------------------------------------------------------*/
+.hamburger
+	display none
+	position relative
+	z-index 2
+	+mema(800px)
+		display block
+		size 30px
+		background url(/img/menu.png)
+		background-size 30px
+		background-repeat no-repeat
+		background-position center
+		cursor pointer
+	&.is-active
+		background url(/img/close.png)
+		background-size 25px
+		background-repeat no-repeat
+		background-position center
+		filter invert(1)
+.is-sticky .hamburger
+	filter invert(1)

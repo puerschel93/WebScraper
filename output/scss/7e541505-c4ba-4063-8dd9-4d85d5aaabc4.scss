@@ -1,0 +1,271 @@
+// VARIABLES
+$display: inline-block;
+$inputWidth: 150px;
+$formWidth: 360px;
+$leftSideLabelWith: 101px;
+
+// COLORS
+$color-1: #539edb;
+$color-2: #ffffff;
+$color-3: #ffffff99;
+$color-4: lightgray;
+$color-5: red;
+$color-6: #6ca8cf91;
+
+// ********************** //
+// ********************** //
+
+// FUNCTIONS
+@mixin FormeStyle() {
+    width: 360px;
+    direction: rtl;
+    border: 3px solid #4d536e47;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+@mixin inputStyle() {
+    width: $inputWidth;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid darkgrey;
+    background: #00000000;
+}
+
+@mixin beFlex {
+    display: flex;
+    justify-content: space-around;
+}
+// ********************** //
+// ********************** //
+
+// GENERAL SETTING
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 80%;
+    margin: 0 auto;
+    min-width: 500px;
+}
+
+.form-control {
+    margin: 15px 0;
+}
+
+label {
+    &.required::after {
+        content: "*";
+        color: $color-5;
+    }
+}
+
+input {
+    @include inputStyle();
+}
+
+select {
+    border: none;
+    padding: 3px;
+    border-radius: 4px;
+    background: #4d536e2e;
+}
+// ********************** //
+// ********************** //
+
+// GENERAL ELEMENT
+nav {
+    direction: rtl;
+    background: $color-1;
+    > * {
+        color: $color-2;
+    }
+    :first-child {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+// ********************** //
+// ********************** //
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #e1e1e187;
+    :first-child {
+        margin-top: 20px;
+        margin-bottom: 3px;
+        text-shadow: 1px 4px 5px #eeff40;
+    }
+    :nth-child(2) {
+        color: $color-5;
+    }
+}
+
+// CLASSES
+.article-a {
+    background-color: #e1e1e187;
+    padding: 17px;
+    .container {
+        @include beFlex();
+        .left-side {
+            @include FormeStyle();
+            .form-control {
+                label {
+                    display: $display;
+                    width: $leftSideLabelWith;
+                }
+                input {
+                    @include inputStyle();
+                }
+            }
+        }
+        .right-side {
+            @include FormeStyle();
+            .form-control {
+                label {
+                    display: $display;
+                    width: 83px;
+                }
+                input {
+                    @include inputStyle();
+                }
+            }
+        }
+    }
+}
+
+.article-b {
+    background-color: #e1e1e187;
+    margin-top: 5px;
+    margin-top: 20px;
+    @include beFlex();
+    direction: rtl;
+    .form-control-group {
+        @include FormeStyle();
+        border: none;
+        .form-control {
+            label {
+                display: $display;
+                width: $leftSideLabelWith;
+            }
+            input {
+                @include inputStyle();
+            }
+        }
+    }
+}
+
+.form-gender-container{
+    padding: 7px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    background-color: #e1e1e187;
+    h4 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .form-gender {
+        display: flex;
+        justify-content: center;
+   
+        input[type="checkbox"] {
+            width: 20px;
+        }
+        .form-control-gender {
+            margin-right: 20px;
+        }
+    }
+}
+
+
+.notes {
+    margin-bottom: 20px;
+    :first-child,
+    :last-child {
+        text-align: right;
+    }
+
+    .text-area {
+        width: -webkit-fill-available;
+        border: slategrey;
+        background: #e1e1e187;
+        border-radius: 5px;
+    }
+}
+.buttons {
+    @include beFlex();
+    button {
+        font-size: 25px;
+        width: 119px;
+        border: none;
+        border-radius: 5px;
+        padding: 3px;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+        color: #ffffff;
+    }
+
+    :first-child {
+        background-color: #434548;
+        &:hover {
+            background-color: darken(#434548, 10%);
+        }
+    }
+
+    :last-child {
+        background-color: #4d536e;
+        &:hover {
+            background-color: darken(#4d536e, 10%);
+        }
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .left-side {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 872px) {
+    .article-a .container .left-side .form-control label,
+    .article-a .container .right-side .form-control label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .article-a .container .left-side,
+    .article-a .container .right-side {
+        width: 260px;
+    }
+    .left-side {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .left-side,
+    .right-side {
+        width: 215px;
+    }
+    .article-b {
+      .form-control-group:first-child{
+       margin-right: 20px;
+       }  
+    }
+    .notes{
+        margin-right: 20px;
+    }
+    select {
+        position: relative;
+        bottom: 24px;
+        right: -55px;
+    }
+}

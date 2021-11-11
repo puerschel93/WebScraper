@@ -1,0 +1,146 @@
+@mixin arrow {
+  position: relative;
+  top: 15px;
+  right: 25px;
+  display: none;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.menu-container {
+  width: 100%;
+  font-family: "Yes";
+  background-image: url("../img/background-food.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: $yellow;
+}
+
+.menu-limiter {
+  display: flex;
+  width: 1400px;
+  padding: 50px 0px;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.menu {
+  width: 500px;
+  text-align: center;
+  padding: 30px 0px;
+}
+.menu-h1 {
+  font-weight: normal;
+  font-size: 40px;
+}
+.menu-item {
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.menu-food {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $yellow;
+}
+.menu-h2 {
+  font-weight: normal;
+}
+.menu-p {
+  font-family: "Lato";
+  color: black;
+  text-align: start;
+}
+.menu-special {
+  padding: 5px;
+  border: 1px solid $yellow;
+}
+.special {
+  position: relative;
+  background-color: $yellow;
+  color: white;
+  width: 80px;
+  height: 22px;
+  right: -420px;
+  font-family: "Lato";
+}
+.menu-arrow-down,
+.menu-arrow-up {
+  @include arrow();
+}
+
+@media screen and (max-width: 1440px) {
+  .menu-limiter {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .menu-limiter {
+    flex-direction: column;
+  }
+  .menu {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-decor {
+    display: none;
+  }
+  .menu-limiter {
+    flex-direction: column;
+    width: 100%;
+  }
+  .menu {
+    margin: auto;
+    padding: 0;
+  }
+  .menu-h1 {
+    margin: 10px 0px;
+  }
+  .menu-arrow-down {
+    display: block;
+  }
+  .menu.active .menu-content {
+    height: auto;
+  }
+  .menu.active .menu-arrow-down {
+    display: none;
+  }
+  .menu.active .menu-arrow-up {
+    display: block;
+  }
+  .menu-head {
+    border-bottom: 1px solid $yellow;
+    text-align: start;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu-content {
+    margin: 10px 0px;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .menu {
+    width: 90%;
+  }
+  .special {
+    right: -75%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .menu-h1 {
+    font-size: 30px;
+  }
+  .menu-arrow-down,
+  .menu-arrow-up {
+    font-size: 20px;
+  }
+}

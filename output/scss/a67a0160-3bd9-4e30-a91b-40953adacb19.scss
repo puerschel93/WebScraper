@@ -1,0 +1,217 @@
+
+
+.black-nav{
+	/*  
+    elementui主题， 如何动态设置scss变量的值？
+	https://www.h5w3.com/104106.html
+	
+	导航栏 */
+	$menuBg : #28333e;//背景色
+	$color:#bfcbd9;//默认字体颜色
+	$primaryColor:#ff9800;
+	font-weight: 500 ;
+	color:white;
+	&{
+		*{  
+			color:inherit !important;
+			font-weight:inherit !important;
+		}
+	}
+    
+	
+	.sidebar-container {
+	    background-color: $menuBg  !important;//侧边栏背景色
+	}
+	.el-menu-item{//权重最低的 子叶选项         会被 //非一级的某行菜单栏 样式覆盖
+		background-color: $menuBg  !important;//背景颜色
+		color:$color ;        // 默认字体颜色
+
+		&:hover {
+		  color: $primaryColor !important;    //字体颜色
+	      i{
+	      		color: $primaryColor !important;    //字体颜色 
+	      }
+		}
+	}
+	.el-submenu__title{//权重最低的 母目录
+		background-color: $menuBg  !important;  //背景颜色
+		color:$color;       // 默认字体颜色
+
+		&:hover {
+		  color: $color !important;    //字体颜色
+		  i{
+		  		color: $color !important;    //字体颜色 
+		  }
+		}
+	}
+	
+	
+	
+	.el-submenu .el-menu-item {//非一级的某行菜单栏
+	    background-color: rgb(52, 63, 74) !important; //背景色
+
+	    &:hover {
+		  color: $primaryColor !important;    //字体颜色
+		  i{
+			 color: $primaryColor !important;    //字体颜色 
+		  }
+	    }
+	}
+	
+	.el-menu li.is-active.el-menu-item{// 某行激活的菜单栏            多选择器是为了权重
+		color: white !important;    // 字体激活颜色
+		background-color: $primaryColor !important;   // 背景激活颜色
+		&:hover {
+		  i{
+		  		color: white !important;    //字体颜色 
+		  }
+		}
+	}
+	.is-active > .el-submenu__title {//当点击了子菜单时的父菜单
+	  color: $color !important; //的文本颜色
+	}
+	
+	/* tagView */
+	.tags-view-container{
+		.tags-view-item{
+			display: inline-block;
+			position: relative;
+			cursor: pointer;
+			height: $tags-view-item; //改item高度 就修改这个 3
+			line-height: $tags-view-item; //改item高度 就修改这个 4
+			border: 1px solid #d8dce5;
+			color: #495060;
+			background: #fff;
+			padding: 0 8px;
+			font-size: 12px;
+			margin-left: 5px;
+			margin-top: 4px;
+			border-radius: 2.5px;
+			&:first-of-type {
+			  margin-left: 15px;
+			}
+			&:last-of-type {
+			  margin-right: 15px;
+			}
+			&.active {
+			  background-color: $primaryColor !important;
+			  color: white !important; 
+			  border-color: $primaryColor !important; 
+			  // 前面的圆点
+			  &::before {
+			    content: "";
+			    background: $primaryColor !important; 
+			  }
+			}
+			// 关闭按钮
+			.el-icon-close {
+			  width: 16px;
+			  height: 16px;
+			  vertical-align: 2px;
+			  border-radius: 50%;
+			  text-align: center;
+			  transition: all 0.3s; //cubic-bezier(0.645, 0.045, 0.355, 1)
+			  transform-origin: 100% 50%;
+			  &:before {
+			    transform: scale(0.6);
+			    display: inline-block;
+			    vertical-align: -3px;
+			  }
+			  &:hover {
+			    background-color: #b4bccc;//#b4bccc;
+			    color: white;
+			  }
+			}
+		}
+	}
+	/* head-top */
+	.head-top{
+		background-color: black;
+		.change_isCollapse{/* 折叠 */
+			color: white !important;
+		}
+		.el-breadcrumb{/* 面包屑 */
+			color: white !important;
+			*{
+				color: inherit !important;
+			}
+			.el-breadcrumb__item:hover>.el-breadcrumb__inner>a{
+				color: $primaryColor !important;
+			}
+			/* 最后一个面包屑 */
+			.el-breadcrumb__item:last-child>.el-breadcrumb__inner>a{
+				color: white  !important;
+			}
+			.el-breadcrumb__item:last-child:hover>.el-breadcrumb__inner>a{
+				color: white  !important;
+			}
+		}
+		.el-dropdown{
+			color: white !important;
+			*{
+				color: inherit !important;
+			}
+		}
+		// 设置按钮
+		.setup{
+			color: white !important;
+			&:hover{
+				color: black !important;
+			}
+		}
+	}
+	/* 标题 */
+	.sidebar-logo-container{
+		// background-color: $primaryColor;
+	}
+	/* element ui*/
+	 .el-button--primary, 
+	 .el-checkbox__input.is-checked .el-checkbox__inner, 
+	 .el-checkbox__input.is-indeterminate .el-checkbox__inner, 
+	 .el-pagination.is-background .el-pager li:not(.disabled).active, 
+	 .el-radio__input.is-checked .el-radio__inner, 
+	 .el-date-table td.current span,
+	 
+	 .el-switch.is-checked .el-switch__core {
+	    background: $primaryColor ;
+        border-color: $primaryColor ;
+	}
+	.el-textarea__inner:focus,
+	.el-input__inner:focus,
+	.el-checkbox__input:hover .el-checkbox__inner, 
+	.el-checkbox__input:visited .el-checkbox__inner, 
+	.el-checkbox__input.is-focus .el-checkbox__inner,
+	.el-select .el-input.is-focus .el-input__inner,
+	.el-select .el-input .el-input__inner:hover,
+	.el-radio__input:hover .el-radio__inner{
+		border-color: $primaryColor ;
+	}
+	 .el-select-dropdown__item.selected,
+	 .el-pagination.is-background .el-pager li:not(.disabled):hover,
+	 .el-button--default:not(.el-button--primary):active, 
+	 .el-button--default:not(.el-button--primary):focus, 
+	 .el-button--default:not(.el-button--primary):hover, 
+	 .el-button--text, 
+	 .el-cascader-node.in-active-path, 
+	 .el-cascader-node.is-active, 
+	 .el-cascader-node.is-selectable.in-checked-path, 
+	 .el-checkbox__input.is-checked+.el-checkbox__label, 
+	 .el-dropdown-menu__item:focus, 
+	 .el-dropdown-menu__item:not(.is-disabled):hover, 
+	 .el-loading-spinner .el-loading-text, 
+	 .el-loading-spinner i, 
+	 .el-radio-button__orig-radio:not(:checked)+.el-radio-button__inner:hover, 
+	 .el-radio__input.is-checked+.el-radio__label, 
+	 .el-tabs__item.is-active, 
+	 .el-tabs__item:hover, 
+	 .el-tag:not(.el-tag--danger):not(.el-tag--success):not(.el-tag--info):not(.el-tag--warning), 
+	 .el-upload--picture-card:hover, 
+	 .el-date-table td.today span,
+	 .el-date-table td:hover,
+	 .el-upload:focus {
+	    color: $primaryColor ;
+	}
+	.el-loading-spinner .path{
+		stroke:$primaryColor ;
+	}
+}

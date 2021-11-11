@@ -1,0 +1,469 @@
+@import 'nib'
+@import '../../node_modules/jeet/stylus/jeet/*'
+@import '_mixins.styl'
+
+// Media queries
+$xl = 1600px
+$lg = 1260px
+$md = 1023px
+$sm = 767px
+
+// Colors
+$primary ?= #fff
+$secondary ?= #000
+$accent ?= #ff0000
+
+// Metrics
+$padding = 4vh
+$kinetic = cubic-bezier(0.77, 0, 0.175, 1)
+
+// CSS Reset
+global-reset()
+
+webfont('NN', 'NM', true, 'normal')
+
+body,html
+	width 100%
+	-webkit-text-size-adjust 100%
+	background $primary
+
+html
+	font-size 62.5%
+
+body
+	text-rendering optimizeLegibility
+	font-smoothing()
+	font-family 'NM', 'Helvetica', 'Arial', sans-serif
+	font-size 3vh
+	+below($md)
+		font-size 4vw
+
+h1
+	text-transform uppercase
+	font-size 5vh
+	+below($md)
+		font-size 7vw
+
+p
+	margin-bottom 1em
+	line-height 100%
+
+p:last-child
+	margin-bottom 0
+
+img.lazyimg
+	transition(opacity 300ms ease)
+	opacity 0
+img.lazyimg
+	&.flickity-lazyloaded, &.lazyloaded
+		opacity 1
+
+button, .btn
+	cursor pointer
+	padding .3em
+
+button:disabled
+	cursor not-allowed
+	color $secondary
+
+::selection
+	background $secondary
+	
+::-moz-selection
+	background $secondary
+
+*
+	hideselect()
+	box-sizing(border-box)
+
+a, a:hover, a:visited, a:focus
+	color inherit
+	text-decoration none
+	cursor pointer
+
+#outdated
+	display none
+	text-align center
+	position fixed
+	width 100%
+	height 100%
+	top 0
+	left 0
+	background $primary
+	z-index 900
+	a
+		border-bottom 1px solid
+	.inner
+		padding 8rem 20%
+
+.no-js, .no-svg, .no-flexbox
+	#outdated
+		display block
+
+// @keyframes color {
+//     100%, 0% {
+//         stroke: #40382e
+//     }
+//     40% {
+//         stroke: #0f0f0f
+//     }
+//     66% {
+//         stroke: #40382e
+//     }
+//     80%, 90% {
+//         stroke: #0f0f0f
+//     }
+// }
+
+@keyframes rotate {
+    100% {
+        transform(rotate(360deg))
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0
+    }
+    30% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px
+    }
+}
+
+.loader
+	position fixed
+	width 100%
+	height 100%
+	top 0
+	left 0
+	background $primary
+	z-index 10000
+	.spinner
+		width 50px
+		height 50px
+		align()
+		.circular
+			animation rotate 2s linear infinite
+			height 100%
+			transform-origin center center
+			width 100%
+			position absolute
+			top 0
+			bottom 0
+			left 0
+			right 0
+			margin auto
+			.path
+				stroke $secondary
+				stroke-dasharray 1, 200
+				stroke-dashoffset 0
+				animation dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite
+
+.credits
+	position fixed
+	transform(translateX(90%) rotate(-90deg))
+	transform-origin left
+	bottom 2vh
+	right 2vh
+	font-size .6em
+
+.menu
+	mix-blend-mode difference
+	color $primary
+	h1
+		display inline-block
+		margin-bottom .5em
+		position relative
+	ul
+		display none
+	li
+		text-transform lowercase
+	h1:hover::after
+		+above($md + 1)
+			content ''
+			width 100%
+			height .08em
+			position absolute
+			bottom -1vh
+			left 0
+			background $primary
+	h1.active::after
+		content ''
+		width 100%
+		height .08em
+		position absolute
+		bottom -1vh
+		left 0
+		background $primary
+
+#main-menu
+	position fixed
+	top $padding
+	left $padding
+	z-index 100
+
+#shop-link-l
+	display none
+
+#shop-menu
+	text-align right
+	position fixed
+	top $padding
+	right $padding
+	z-index 100
+
+#container
+	min-height 100vh
+	background $primary
+
+.inner.project
+	+below($md)
+		span(1)
+	#slide-caption
+		position fixed
+		bottom ($padding/2)
+		left $padding
+		z-index 100
+		+below($md)
+			span(1)
+			position static
+			padding ($padding/2) $padding
+			background $primary
+		p
+			display inline
+
+.slider
+	height 93vh
+	+below($md)
+		span(1)
+		height auto
+	img
+		display block
+	.flickity-viewport
+		height 100%
+	.content-item
+		height 100%
+		+below($md)
+			height auto
+			span(1)
+			img, video
+				width 100%
+				height auto
+	.video-item
+		+below($md)
+			display none
+	.text-item
+		width 90vh
+		+below($md)
+			width auto
+		div
+			padding $padding
+
+.inner.home
+	height 100vh
+	background-size cover
+	background-position center
+
+.inner.page
+	padding 15vh 4vh 0
+	img
+		max-width 100%
+	+above($md + 1)
+		span(1/2)
+		padding-right none
+
+.inner.page.cart
+	+above($md + 1)
+		span(1)
+
+.inner.product
+	.col
+		span(1/2)
+		height 100vh
+		overflow hidden
+		+below($md)
+			stack()
+			overflow initial
+			height auto
+		img
+			width auto
+			max-width 100%
+			max-height 100%
+			+below($md)
+				width 100%
+				height auto
+	.infos
+		position relative
+		padding $padding ($padding*3) $padding $padding
+		border-left .18em solid
+		+below($md)
+			border none
+			padding-left $padding
+			padding-bottom 20vh
+		.text
+			margin-bottom 2em
+		.meta.cf
+			font-size 5vh
+			+below($md)
+				font-size 7vw
+			li
+				display inline-block
+			li:first-child
+				margin-right 3em
+		.nextprev
+			position absolute
+			bottom $padding
+			left $padding
+			width calc(100% - 8vh)
+			flexbox()
+			justify-content space-between
+
+body.home
+	#main-menu
+		ul
+			display block
+
+body.page, body.project
+	#main-menu
+		h1::after
+			content ''
+			width 100%
+			height .08em
+			position absolute
+			bottom -1vh
+			left 0
+			background $primary
+
+body.shop
+	#shop-link-l
+		display inline-block
+	#shop-menu
+		display none
+		h1::after
+			content ''
+			width 100%
+			height .08em
+			position absolute
+			bottom -1vh
+			left 0
+			background $primary
+	.products
+		.page-content
+			//padding 15vh 30%
+			.content-item
+				span(1/3)
+				+below($md)
+					stack()
+				img
+					display block
+					width 100%
+					height auto
+				.item-caption
+					height 8%
+					form
+						display block
+						height 100%
+					.flex
+						display block
+						height 100%
+						button
+							cursor pointer
+							span(1)
+							height 100%
+							//border .1em solid
+							//border-right none
+							border none
+							text-align center
+						button:nth-of-type(2)
+							+above($md + 1)
+								display none
+			.content-item:last-child
+				.item-caption
+					.flex
+						button
+							//border-right .1em solid
+			.content-item:nth-child(3n+1)
+				.item-caption
+					.flex
+						button
+							border-left none
+			.content-item:nth-child(3n)
+				.item-caption
+					.flex
+						button
+							border-right none
+			.content-item:hover
+				.item-caption
+					.flex
+						button:nth-of-type(1)
+							+above($md + 1)
+								display none
+						button:nth-of-type(2)
+							+above($md + 1)
+								display block
+	.slider
+		height 100vh
+		//padding-top 13vh
+		.flickity-viewport
+			height 100%
+		.content-item
+			height 92%
+		.item-caption
+			height 8%
+			form
+				display block
+				height 100%
+			.flex
+				display block
+				height 100%
+				button
+					cursor pointer
+					span(1/2)
+					height 100%
+					border none
+					border-top .1em solid
+					border-bottom .1em solid
+					border-left .1em solid
+					text-align center
+	#shop-menu
+		ul
+			display block
+	.btn.add, .btn.remove
+		cursor pointer
+		border .1em solid
+		border-radius 100%
+		height 4vh
+		width 4vh
+		display inline-block
+		text-align center
+		padding 0
+		//padding-bottom .5vh
+	table
+		width 100%
+	td, th
+		border-bottom .1em solid $secondary
+	th, td
+		padding .2em 0
+	th.head
+		padding-bottom .8em
+	table:last-child
+		border none
+	#pay
+		font-size 5vh
+		margin-top 1em
+		text-align right
+		+below($md)
+			font-size 7vw
+	button
+		border .08em solid $secondary
+		background transparent
+
+body.project
+	+above($md + 1)
+		overflow hidden

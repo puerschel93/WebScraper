@@ -1,0 +1,643 @@
+@mixin sm {
+	@media(min-width: $sm) {
+		@content
+	}
+}
+
+@mixin sm-break {
+	@media(max-width: $sm - 0.1px) {
+		@content
+	}
+}
+
+@mixin md {
+	@media(min-width: $md) {
+		@content
+	}
+}
+
+@mixin md-break {
+	@media(max-width: $md - 0.1px) {
+		@content
+	}
+}
+
+@mixin lg {
+	@media(min-width: $lg) {
+		@content
+	}
+}
+
+@mixin lg-break {
+	@media(max-width: $lg - 0.1px) {
+		@content
+	}
+}
+
+@mixin xl {
+	@media(min-width: $xl) {
+		@content
+	}
+}
+
+@mixin xl-break {
+	@media(max-width: $xl - 0.1px) {
+		@content
+	}
+}
+
+%col-extend {
+	position: relative;
+	padding: 0 $padding-col;
+	width: 100%;
+}
+
+.row {
+	// margin: 0 (-$padding-col);
+	row-gap: $padding;
+	display: flex;
+	flex-wrap: wrap;
+
+	&.center {
+		justify-content: center;
+	}
+
+	&.center-y {
+		align-items: center;
+	}
+
+	&.pd-0 {
+		margin: 0;
+
+		>* {
+			padding: 0;
+		}
+	}
+
+	&.pd-5 {
+		margin: 0 -5px;
+
+		>* {
+			padding: 0 5px;
+		}
+	}
+
+	&.pd-2 {
+		margin: 0 -2px;
+
+		>* {
+			padding: 0 2px;
+		}
+	}
+}
+
+.col-padding {
+	padding: 0 $padding-col;
+}
+
+.container {
+	width: $container + $container-padding * 2;
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 $container-padding;
+}
+.container-full{
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 $container-padding;
+}
+// .container-fuild{
+// 	padding: 0 $container-padding;
+// }
+
+.container-mid {
+	width: $container-width-mid;
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 $container-padding;
+}
+.container-min{
+	width: $container-min-width;
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 $container-padding;
+}
+
+
+@each $i in (1000, 1100, 1200, 1300, 1400) {
+	.container-#{$i} {
+		margin: 0 auto;
+		max-width: #{$i}px;
+		padding: 0 $container-padding;
+	}
+}
+
+
+
+.pull-right {
+	margin: 0 0 0 auto;
+}
+
+.list-wraper5 {
+	display: flex;
+	flex-wrap: wrap;
+
+	>* {
+		width: 20%;
+	}
+}
+
+.list-wraper4 {
+	display: flex;
+	flex-wrap: wrap;
+
+	>* {
+		width: 25%;
+	}
+}
+
+/* ---------------FLEX---------------- */
+
+
+.grid,
+.flex {
+	--column-gap: 0px;
+	--row-gap: 0px;
+
+	display: flex;
+
+	@each $i in $gap {
+		&.-gap-#{$i} {
+			--column-gap: #{$i}px;
+			--row-gap: #{$i}px;
+		}
+
+		&.-row-gap-#{$i} {
+			--row-gap: #{$i}px;
+		}
+
+		&.-col-gap-#{$i} {
+			--column-gap: #{$i}px;
+		}
+	}
+
+	&.-v {
+		flex-direction: column;
+
+		&.-center-xy {
+			justify-content: center;
+			align-items: center;
+		}
+
+		&.-center-y {
+			justify-content: center;
+		}
+
+		&.-center-x {
+			align-items: center;
+		}
+
+		&.-justify {
+			align-items: space-between;
+		}
+	}
+
+	&:not(.-v) {
+		&.-center-xy {
+			justify-content: center;
+			align-items: center;
+		}
+
+		&.-center-y {
+			align-items: center;
+		}
+
+		&.-center-x {
+			justify-content: center;
+		}
+
+		&.-justify {
+			justify-content: space-between;
+		}
+	}
+
+	&.center {
+		justify-content: center;
+	}
+
+	&.right {
+		justify-content: flex-end;
+	}
+
+	&.wrap {
+		flex-wrap: wrap;
+	}
+
+
+
+	&.-flex-x {
+		flex-direction: columns;
+	}
+
+	column-gap: var(--column-gap);
+	row-gap: var(--row-gap);
+
+	@for $i from 1 through 12 {
+
+		&.-col-#{$i} {
+			flex-wrap: wrap;
+
+			>* {
+				width: calc(#{100% / $i} + var(--column-gap) / #{$i} - var(--column-gap));
+			}
+		}
+
+		@each $name,
+		$value in $grid {
+			@media(min-width: $value - 0.1px) {
+				&.-col-#{$name}-#{$i} {
+					flex-wrap: wrap;
+
+					>* {
+						width: calc(#{100% / $i} + var(--column-gap) / #{$i} - var(--column-gap));
+					}
+				}
+			}
+
+		}
+	}
+
+	@each $name,
+	$value in $grid {}
+}
+
+.flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+@each $name,
+$width in $grid {
+	@for $i from 1 through 12 {
+		.flex-#{$name}-#{$i} {
+			@extend %col-extend;
+		}
+
+		.col-#{$name}-#{$i} {
+			@extend %col-extend;
+		}
+	}
+
+	.flex-#{$name} {
+		@extend %col-extend;
+	}
+}
+
+
+@each $name,
+$width in $grid {
+
+
+
+
+	.col-#{$name} {
+		@extend %col-extend;
+	}
+
+
+	@media(min-width: $width) {
+
+		@for $i from 1 through 12 {
+
+			.col-#{$name}-#{$i} {
+				// width: $i * 100% / 12;
+				flex-basis: $i * 100% / 12;
+			}
+
+
+			.push-#{$name}-#{$i} {
+				position: relative;
+				left: $i * 100% / 12;
+			}
+
+
+			.flex-#{$name}-#{$i} {
+				flex: $i;
+				padding: 0 $padding-col;
+			}
+
+			.flexw-#{$name}-#{$i} {
+				width: $i * 100% / 12;
+			}
+
+
+			.max-#{$name}-#{$i} {
+				max-width: $i / 12 *$container;
+			}
+
+			.width-#{$name}-#{$i} {
+				width: $i / 12 *$container;
+			}
+		}
+
+
+		.flex-#{$name} {
+			display: flex;
+		}
+
+		.col-#{$name} {
+			flex: 1;
+		}
+	}
+
+	@media(max-width: $width - 0.1px) {
+		@for $i from 1 through 12 {
+			.col-#{$name}-break-#{$i} {
+				width: $i * 100% / 12;
+				min-width: $i * 100% / 12;
+			}
+		}
+	}
+
+
+
+	@for $i from 1 through 12 {
+		.flex-#{$name}-#{$i} {
+			@extend %col-extend;
+		}
+	}
+}
+
+@for $i from 1 through 12 {
+	.flex-#{$i} {
+		flex: $i;
+		// padding: 0 $padding-col;
+	}
+
+	.flexw-#{$i} {
+		width: $i * 100% / 12;
+	}
+
+	.max-#{$i} {
+		max-width: $i / 12 *$container;
+	}
+
+	.width-#{$i} {
+		width: $i / 12 *$container;
+	}
+
+	.col-#{$i} {
+
+		flex-basis: $i * 100% / 12;
+		// padding: 0 $padding-col;
+	}
+
+	.flex#{$i} {
+		display: flex;
+		flex-wrap: wrap;
+
+		>* {
+			width: 100% / $i;
+		}
+	}
+}
+
+/* ----------------------- MAX WIDTH ------------------------- */
+
+
+@each $name,
+$width in $grid {
+	.break-#{$name} {
+		display: block;
+	}
+}
+
+
+.main-header,
+.main-container {
+	// max-width: $container-width;
+	margin: 0 auto;
+}
+
+
+.m-b-lg {
+	margin-bottom: $margin-lg;
+}
+
+.m-b-md {
+	margin-bottom: $margin-md;
+}
+
+.m-b-sm {
+	margin-bottom: $margin-sm;
+}
+
+.m-b {
+	margin-bottom: $margin;
+}
+
+
+
+
+.m-t-lg {
+	margin-top: $margin-lg;
+}
+
+.m-t-md {
+	margin-top: $margin-md;
+}
+
+.m-t-sm {
+	margin-top: $margin-sm;
+}
+
+.m-t {
+	margin-top: $margin;
+}
+
+@each $i in $gap {
+	.p-t-#{$i} {
+		padding-top: #{$i}px;
+	}
+
+	.p-b-#{$i} {
+		padding-bottom: #{$i}px;
+	}
+
+	.p-l-#{$i} {
+		padding-left: #{$i}px;
+	}
+
+	.p-r-#{$i} {
+		padding-right: #{$i}px;
+	}
+
+	.p-h-#{$i} {
+		padding-left: #{$i}px;
+		padding-right: #{$i}px;
+	}
+
+	.p-v-#{$i} {
+		padding-top: #{$i}px;
+		padding-bottom: #{$i}px;
+	}
+
+	.m-t-#{$i} {
+		margin-top: #{$i}px;
+	}
+
+	.m-b-#{$i} {
+		margin-bottom: #{$i}px;
+	}
+
+	.m-l-#{$i} {
+		margin-left: #{$i}px;
+	}
+
+	.m-r-#{$i} {
+		margin-right: #{$i}px;
+	}
+
+	.m-h-#{$i} {
+		margin-left: #{$i}px;
+		margin-right: #{$i}px;
+	}
+
+	.m-v-#{$i} {
+		margin-top: #{$i}px;
+		margin-bottom: #{$i}px;
+	}
+}
+
+
+.w-100 {
+	width: 100%;
+}
+
+.h-100 {
+	height: 100%;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.f-center-y {
+	align-items: center;
+}
+
+.m-l-10 {
+	margin-left: 10px;
+}
+.f-center-x{
+	justify-content: center;
+}
+.items-center{
+	align-items: center;
+}
+.text-center{
+	text-align: center;
+}
+.w-full{
+	width: 100%;
+}
+.justify-space-between{
+	justify-content: space-between;
+}
+.justify-between{
+	justify-content: space-between;
+}
+.flex-wrap{
+	flex-wrap: wrap;
+}
+.flex-row{
+	display: flex;
+	flex-direction: row;
+}
+.justify-center{
+	justify-content: center;
+}
+.justify-start{
+	justify-content: flex-start;
+}
+.min-width{
+	min-width: var(--min-width, unset);
+}
+.max-width{
+	max-width: var(--max-width, unset);
+}
+@each $var in (10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100) {
+	.gap-#{$var}{
+		gap: #{$var}px;
+	}
+	.gap-col-#{$var}{
+		column-gap: #{$var}px;
+	}
+	.gap-row-#{$var}{
+		row-gap: #{$var}px;
+	}
+	.m-t-#{$var}{
+		margin-top: #{$var}px;
+	}
+	.m-b-#{$var}{
+		margin-bottom: #{$var}px;
+	}
+	.m-l-#{$var}{
+		margin-left: #{$var}px;
+	}
+	.m-r-#{$var}{
+		margin-right: #{$var}px;
+	}
+	.m-#{$var}{
+		margin: #{$var}px;
+	}
+	.m-h-#{$var}{
+		margin-right: #{$var}px;
+		margin-left: #{$var}px;
+	}
+	.m-v-#{$var}{
+		margin-top: #{$var}px;
+		margin-bottom: #{$var}px;
+	}
+
+
+	.p-t-#{$var}{
+		padding-top: #{$var}px;
+	}
+	.p-b-#{$var}{
+		padding-bottom: #{$var}px;
+	}
+	.p-l-#{$var}{
+		padding-left: #{$var}px;
+	}
+	.p-r-#{$var}{
+		padding-right: #{$var}px;
+	}
+	.p-#{$var}{
+		padding: #{$var}px;
+	}
+	.p-h-#{$var}{
+		padding-left: #{$var}px;
+		padding-right: #{$var}px;
+	}
+	.p-v-#{$var}{
+		padding-top: #{$var}px;
+		padding-bottom: #{$var}px;
+	}
+}
+.m-t-auto{
+	margin-top: auto
+}
+
+
+@each $var in (space-around, space-between, flex-start, flex-end, center) {
+	.justify-#{$var}{
+		justify-content: $var;
+	}
+
+	.items-#{$var}{
+		align-items: $var;
+	}
+}

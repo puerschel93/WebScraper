@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+.container {
+  height: 100%;
+  margin-bottom: 117px;
+  animation: opacity 0.8s ease-in-out;
+
+  h2 {
+    text-align: center;
+  }
+
+  .title {
+    font-size: 30px;
+    padding: 20px 0px 15px 20px;
+    color: #4b86c2;
+    font-family: 'Itim', cursive;
+
+  }
+
+  .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .about-section {
+      p {
+        padding-left: 15px;
+        font-size: 20px;
+        color: #1865b1de;
+        font-family: 'Itim', cursive;
+        margin-bottom: 12px;
+      }
+
+      .divider {
+        margin-top: 5px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.411);
+        padding: 5px 10px;
+        width: 600px;
+        margin-left: 20px;
+      }
+
+      .hobbies {
+        list-style-type: none;
+        color: #11477e;
+        font-size: 18px;
+        padding-left: 15px;
+
+        .hobbyEl {
+          margin: 10px;
+          font-family: 'Itim', cursive;
+        }
+      }
+
+      table {
+        color: #11477e;
+        font-family: 'Itim', cursive;
+
+        th {
+          font-size: 19px;
+        }
+
+        td {
+          text-align: center;
+          padding: 5px 20px;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .image-section {
+      display: flex;
+      width: 500px;
+      height: 500px;
+
+      img {
+        object-fit: contain;
+        width: 100%;
+        filter: drop-shadow(2px 4px 5px);
+      }
+    }
+
+  }
+
+  .services-section {
+    display: flex;
+    justify-content: space-evenly;
+    perspective:100rem;
+    .service-1{
+      transform:rotateY(20deg);
+    }
+    .service-3{
+      transform:rotateY(-20deg);
+    }
+    .service-2{
+      text-shadow: 0px 0px 2px  #fff;
+      color:rgba(255, 255, 255, 0.705);
+    }
+    .service {
+      border: 2px solid rgb(63, 103, 189);
+      border-radius: 10%;
+      background-color: rgb(63, 103, 189);
+      margin: 10px -12px;
+      width: 400px;
+      color: whitesmoke;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      filter: drop-shadow(1px 3px 5px black);
+      transition:all .2s;
+      font-family: "Itim",sans-serif;
+
+      &:hover {
+        border: 2px solid rgb(10, 37, 97);
+        background-color: rgb(10, 33, 82);
+      }
+
+      .service-name {
+        text-align: center;
+        font-size: 20px;
+      }
+
+      .service-icon {
+        color: rgb(20, 61, 136);
+        margin: 10px 5px;
+        padding: 10px;
+        align-self: center;
+        background-color: whitesmoke;
+        border-radius: 50%;
+        border: 1px solid rgb(20, 61, 136);
+      }
+
+      .textService {
+        text-align: center;
+        margin: 10px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media screen and (max-width:700px) {
+    .services-section {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+@media (max-width:1201px){
+  .container{
+
+    margin-bottom:150px;
+  }
+}
+  @media (max-width:1200px) {
+
+    .content-container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .about-section {
+        p {
+          padding-left: 5px;
+        }
+
+        .divider {
+          width: 80%;
+        }
+      }
+
+      .image-section {
+        width: 480px;
+        align-items: center;
+        justify-self: center;
+      }
+    }
+    .services-section{
+      flex-direction: column;
+      align-items: center;
+      justify-content:center;
+      .service-1{
+        transform:rotateY(0);
+      }
+      .service-2{
+        color:whitesmoke;
+        text-shadow:none;
+      }
+      .service-3{
+        transform:rotateY(0);
+      }
+    }
+  }
+
+  @media (max-width:540px) {
+    .title {
+      font-size: 25px;
+    }
+
+    .content-container {
+      .about-section {
+        p {
+          font-size: 16px;
+        }
+
+        .hobbies {
+          font-size: 15px;
+        }
+
+        table {
+          th {
+            font-size: 17px;
+          }
+
+          td {
+            padding: 5px 15px;
+            font-size: 14px;
+          }
+
+        }
+      }
+
+      .image-section {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-self: center;
+        padding-top: 10px;
+      }
+    }
+
+    .services-section {
+      .service {
+        width: 300px;
+      }
+
+      .service-name {
+        font-size: 18px;
+      }
+
+      .textService {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width:280px) {
+    .content-section {
+      .about-section {
+        p {
+          font-size: 16px;
+        }
+
+        table {
+          th {
+            font-size: 15px;
+          }
+
+          td {
+            font-size: 13px;
+          }
+        }
+      }
+
+      .image-section {
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-self: center;
+        padding-top: 10px;
+      }
+    }
+
+    .services-section {
+      .service {
+        width: 80%;
+        font-size:15px;
+      }
+    }
+  }
+
+  @media (min-height:1366px) {
+    .container {
+      height: 100vw;
+      margin-bottom: 141px;
+
+      .content-container {
+        flex-direction: column;
+      }
+    }
+  }
+
+}
+
+@keyframes opacity {
+  0% {
+    opacity: (0.6)
+  }
+
+  100% {
+    opacity: (1)
+  }
+}

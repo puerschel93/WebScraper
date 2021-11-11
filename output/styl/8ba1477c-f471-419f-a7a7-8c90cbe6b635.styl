@@ -1,0 +1,442 @@
+typewriter = "Courier New", Courier, monospace
+loraRegular = 'Lora Regular', Georgia, Tahoma, serif
+openSansRegular = "Open Sans Regular", Helvetica, arial, sans-serif
+
+darkBlue = #15161A
+darkGrey= #222
+
+@import '_partials/fonts.styl'
+@import '_partials/reset.styl'
+@import '_partials/form.styl'
+
+html
+  font-size 10px
+
+body
+  margin 0
+  padding 0
+  font-family openSansRegular
+  background-color black
+  color #fff
+
+h1, h2, h3, h4, h5, h6
+  font-family loraRegular
+  margin-bottom .5em
+
+h1, h2, h3, h4, h5, h6, p
+  line-height 1.8em
+
+a
+  color white
+
+  &:focus
+    text-decoration none
+
+button
+  padding 1rem
+  background-color #1A1F33
+  border 1px solid #535766
+  color white
+  font-size 1.2rem
+  display flex
+  align-items center
+  justify-content center
+  white-space nowrap
+
+  &.warning
+    background-color darkred
+    border 1px solid red
+
+    &:hover
+      background-color red
+
+  img 
+    margin 0 1rem 0 0
+    width 2rem
+    max-height 2rem
+    max-width 2rem
+
+  &::-moz-focus-inner
+    border 0
+
+  &:hover, &:focus
+    background-color #535766
+    cursor pointer
+    outline none
+
+.App
+  margin 0 auto
+  padding 0 3rem
+  box-sizing border-box
+  background-image url('/images/london-pub-bg.jpg')
+  background-repeat no-repeat
+  background-size 100%
+  background-color darkBlue
+
+.Error
+  display block
+  font-size 1.2rem
+  margin-bottom 1rem
+  width 100%
+  box-sizing border-box
+  padding 1rem
+  background-color darkred
+  border 1px solid red
+
+  &__light
+    background-color #1A1F33
+
+.container
+  max-width 1240px
+  margin 0 auto
+  padding 0 1rem
+
+.Modals
+  position absolute
+  z-index 999
+  top 0
+
+.AdminBar
+  background-color #27304C
+  padding 0.5rem 0
+  user-select none
+  position fixed
+  z-index 9
+  left 0
+  width 100%
+  margin-top -30px
+  box-sizing border-box
+
+  .container
+    display flex
+    align-items center
+    justify-content space-between
+
+.admin
+  margin-top 30px
+
+.Nav
+  padding 5rem 1rem 3rem 1rem
+  display flex
+  justify-content space-between
+  align-items center
+  flex-wrap wrap
+
+  &__logo
+    width 24rem
+    height 10rem
+
+
+  &__items
+    display flex
+    flex-wrap wrap
+    margin-right -1rem
+
+    a
+      padding .5rem 1rem
+
+    a:hover
+      text-decoration none
+      background-color #1A1F33
+      outline 1px solid #535766
+
+    li
+      margin-left 3rem
+      font-size 1.5rem
+      font-family openSansRegular
+      text-transform uppercase
+      letter-spacing 0.2em
+
+.Gallery
+  display flex
+  flex-wrap wrap
+  align-items flex-start
+
+  &__categories
+    display flex
+    flex-wrap wrap
+    width 100%
+    align-items center
+    justify-content center
+    margin-bottom 3rem
+
+    button
+      background none 
+      border none
+      text-transform uppercase
+      font-family openSansRegular
+      letter-spacing 0.2em
+      padding .5rem 1rem
+      margin 0 .5rem .5rem .5rem
+
+      &.selected
+        background #1A1F33 !important
+        outline 1px solid #535766 !important
+
+      &:hover
+        background #535766
+        outline 1px solid #535766
+
+  &__item
+    width calc(25% - .5rem)
+    margin-right .666rem
+    margin-bottom .666rem
+    box-sizing border-box
+    position relative
+    display block
+
+    &:hover .Gallery__item--admin
+      opacity 1
+
+    &:nth-child(4n)
+      margin-right 0
+
+    &--image 
+      min-width 100%
+      min-height 100%
+      object-fit cover
+      position absolute
+      top 50%
+      left 50%
+      transform translateY(-50%) translateX(-50%)
+      opacity 0
+      transition all 0.5s
+      will-change opacity
+
+      &:hover
+        opacity 0.8 !important
+        transform scale(1.05) translateY(-47.5%) translateX(-47.5%)
+        cursor pointer
+
+      &.loaded
+        opacity 1
+
+      &--wrapper
+        position relative
+        padding-top 100%
+        background-color #222
+        overflow hidden
+        display flex
+
+        &:hover
+          background-color white
+    
+    &--admin
+      position absolute
+      top 1rem
+      right 1rem
+      z-index 2
+      display flex
+      opacity 0
+      transition opacity 0.5s
+
+      button
+        padding .5rem .75rem
+        margin-left 1rem
+
+      &--delete
+        background-color darkred
+        border 1px solid red
+
+        &:hover
+          background-color red
+
+.Profile
+  padding 5rem 1rem
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+
+  .About
+    width 50%
+    min-width 40rem
+    display flex
+    align-items flex-start
+    flex-direction row
+
+    &__image
+      width 10rem
+      border-radius 100%
+      margin-right 3rem
+      flex-shrink 0
+
+  .Gear
+    width 25%
+    min-width 25rem
+
+    li
+      margin-bottom 1rem
+
+.Footer
+  background-color #000
+  margin 0 -3rem
+  padding 0 3rem
+  font-size .8em
+  width 100%
+
+  a
+    font-weight bold
+
+  .container
+    display flex
+    flex-wrap wrap
+    align-items center
+    justify-content space-between
+
+  &--login
+    padding 1rem
+
+    &:hover
+      background-color #535766
+      cursor pointer
+      text-decoration none
+
+.Modal
+  width 100%
+  height 100%
+  box-sizing border-box
+  background-color rgba(0,0,0,0.7)
+  position fixed
+  left 0
+  display flex
+  align-items center
+  justify-content center
+  z-index 9
+
+  // Added to <body> when lightbox is open
+  &__active
+    overflow hidden
+
+  &__close
+    position absolute
+    right 1rem
+    top 1rem
+    width 2rem
+    height 2rem
+    line-height 0
+    font-size 2rem
+    display flex
+    align-items center
+    justify-content center
+    user-select none
+
+    &:hover
+      background-color #535766
+      cursor pointer
+
+  &__window
+    background-color darkBlue
+    padding 3rem
+    display flex
+    flex-direction column
+    box-sizing border-box
+    position relative
+    border-radius 5px
+    overflow hidden
+    max-width 90%
+    max-height 90%
+    
+.fade
+  opacity 0 !important
+
+.AddPhoto, .Lightbox
+  display flex
+  align-items flex-start
+
+  &__photo
+    margin -3rem 3rem -3rem -3rem
+    transition opacity 1s
+    opacity 1
+    align-self stretch
+    min-height 100%
+    background-color black
+    display flex
+    align-items center
+    justify-content center
+
+    img
+      max-height 80vh
+      max-width 100%
+      width auto
+
+  &__no-meta .Lightbox__photo
+    margin -3rem
+
+  &__meta
+    display flex
+    justify-content left
+    flex-direction column
+    box-sizing border-box
+    width 300px
+
+    &--file-drop
+      width 0.1px
+      height 0.1px
+      opacity 0
+      position absolute
+
+      & + label
+        padding 6rem 1rem
+        border 2px dashed #535766
+        display flex
+        flex-direction column
+        align-items center
+        justify-content center
+        border-radius 10px
+
+        &:hover
+          background-color #343640
+          cursor pointer
+
+        img
+          max-width 5rem
+          margin-bottom 1rem
+
+    &--inputs
+      display flex
+      flex-wrap wrap
+      justify-content space-between
+
+      &--input
+        width 48%
+
+    &--content
+      border none
+      font-family typewriter
+
+  &__pagination
+    position absolute
+    font-size 4rem
+    padding 0 1.5rem
+    background-color rgba(255,255,255,0.2)
+    user-select none
+    z-index 9
+
+    &:hover
+      cursor pointer
+      background-color rgba(255,255,255,0.5)
+
+    &--next
+      right 2%
+
+    &--prev
+      left 2%
+
+.DeletePhoto
+
+  &__image
+    margin 1rem 0 2rem 0
+
+  > div
+    display flex
+    justify-content space-between
+
+    button
+      width 47%
+
+
+@media(max-width 1024px)
+  @import '_mediaQueries/tablet.styl'
+
+@media(max-width 767px)
+  @import '_mediaQueries/mobile.styl'

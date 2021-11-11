@@ -1,0 +1,458 @@
+// START: BEAUTY TEST
+.section-hero {
+    .img-wrap {
+        height: 100vh;
+        min-height: 640px;
+        position: relative;
+        overflow: hidden;
+
+        @media (max-width: 767px) {
+            img {
+                object-position: bottom;
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.section-products {
+    min-height: 640px;
+    position: relative;
+
+    .sticky-column {
+        @media (min-width: 768px) {
+            position: sticky;
+            top: 115px;
+        }
+    }
+    .sticky-column-bottom {
+        @media (min-width: 768px) {
+            position: sticky;
+            bottom: 30px;
+        }
+    }
+
+    .product-results {
+        .product-results-item {
+            margin-top: 25px;
+            &:first-child {
+                margin-top: 0px;
+            }
+
+            @media (min-width: 992px) {
+                &:nth-child(2) {
+                    margin-top: 0px;
+                }
+            }
+            @media (max-width: 767px) {
+                &:nth-child(2) {
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+}
+
+.wizzard-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    min-height: 640px;
+    transition: opacity 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    z-index: 9;
+
+    @media (min-width: 768px) {
+        .wizzard-numbers {
+            padding-top: 90px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        position: fixed;
+        overflow: auto;
+        padding: 140px 0 0px;
+        justify-content: start;
+    }
+
+    // SET OUT OFF BOUNDS
+    top: -2000%;
+    left: -2000%;
+    pointer-events: none;
+
+    &.show {
+        opacity: 1;
+        top: 0;
+        left: 0;
+        pointer-events: unset;
+    }
+
+    .step-wrapper {
+        display: none;
+
+        @media (max-width: 767px) {
+            padding-bottom: 70px;
+        }
+
+        &.step-active {
+            display: block;
+        }
+
+        .answer-wrapper {
+            .answer {
+                background-color: #ffffff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: auto;
+                margin-right: auto;
+                transition: border-color 0.2s ease;
+                border: 2px solid #ffffff;
+                cursor: pointer;
+
+                &-circle {
+                    height: 194px;
+                    width: 194px;
+                    border-radius: 100%;
+
+                    @media (max-width: 991px) {
+                        height: 130px;
+                        width: 130px;
+                    }
+                    @media (max-width: 767px) {
+                        height: 100px;
+                        width: 100px;
+                        padding: 22px;
+                    }
+                }
+
+                &-small-circle {
+                    height: 100px;
+                    width: 100px;
+                    border-radius: 100%;
+
+                    @media (max-width: 767px) {
+                        height: 60px;
+                        width: 60px;
+                    }
+                }
+
+                &-rectangle {
+                    padding: 25px 30px;
+                }
+            }
+            input {
+                display: none;
+            }
+
+            input:checked {
+                & + label {
+                    .answer {
+                        border: 2px solid #262626;
+                    }
+                }
+            }
+
+            &:hover {
+                .answer {
+                    border: 2px solid #262626;
+                }
+
+                input:not(:checked) {
+                    & + label {
+                        .answer {
+                            border: 2px solid #262626;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 768px) {
+            .btn-wrapper {
+                position: fixed;
+                left: 50%;
+                width: 100%;
+                bottom: 100px;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .btn-wrapper {
+                padding-bottom: 100px;
+            }
+        }
+    }
+
+    label {
+        margin-bottom: 30px;
+    }
+}
+// END: BEAUTY TEST
+
+// START: ON THE SKIN
+.section-grid {
+    .img-wrap {
+        position: relative;
+        cursor: pointer;
+        height: 100%;
+
+        &.absolute-caption {
+            figcaption {
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.2s ease;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                color: white;
+            }
+        }
+        &:hover {
+            &.absolute-caption {
+                figcaption {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+
+        .grid-item {
+            position: relative;
+        }
+
+        @media (min-width: 992px) {
+            .grid-item:first-child {
+                grid-row: span 2;
+                grid-column: span 2;
+            }
+
+            $i: 8;
+            @while $i < 100 {
+                .grid-item:nth-child(#{$i}) {
+                    grid-row: span 2;
+                    grid-column: span 2;
+                }
+                $i: $i + 10;
+            }
+
+            $i: 11;
+            @while $i < 100 {
+                .grid-item:nth-child(#{$i}) {
+                    grid-row: span 2;
+                    grid-column: span 2;
+                }
+                $i: $i + 10;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .grid-item:first-child {
+                grid-row: span 1;
+                grid-column: span 4;
+            }
+
+            $i: 4;
+            @while $i < 100 {
+                .grid-item:nth-child(#{$i}) {
+                    grid-row: span 2;
+                    grid-column: span 2;
+                }
+                $i: $i + 10;
+            }
+
+            $i: 7;
+            @while $i < 100 {
+                .grid-item:nth-child(#{$i}) {
+                    grid-row: span 2;
+                    grid-column: span 2;
+                }
+                $i: $i + 10;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            grid-template-columns: repeat(2, 1fr);
+
+            .grid-item:first-child {
+                grid-row: span 1;
+                grid-column: span 2;
+            }
+
+            $i: 6;
+            @while $i < 100 {
+                .grid-item:nth-child(#{$i}) {
+                    grid-row: span 2;
+                    grid-column: span 2;
+                }
+                $i: $i + 5;
+            }
+        }
+    }
+}
+
+.gallery-modal {
+    @media (max-width: 991.98px) {
+        height: 100vh;
+        // width: 100vh;
+    }
+
+    .icon-modal-close {
+        color: #262626;
+
+        @media (max-width: 991.98px) {
+            color: white;
+        }
+    }
+
+    .swiper-gallery {
+        .swiper-slide {
+            background-color: white;
+            .product-item {
+                .product-item-image {
+                    img {
+                        height: 65px;
+                        width: 51px;
+                        object-fit: contain;
+
+                        @media (max-width: 767.98px) {
+                            width: 100%;
+                            height: auto;
+                            // object-fit: cover;
+                        }
+                    }
+                    figure {
+                        position: relative;
+                    }
+                }
+            }
+
+            @media (max-width: 991.98px) {
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+        }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        @media (max-width: 767.98px) {
+            display: block !important;
+        }
+    }
+
+    .swiper-button {
+        @media (min-width: 992px) {
+            &.swiper-button-prev {
+                margin-left: -65px;
+            }
+            &.swiper-button-next {
+                margin-right: -65px;
+            }
+
+            @media (max-width: 1024px) {
+                &.swiper-button-prev {
+                    margin-left: -5px;
+                }
+                &.swiper-button-next {
+                    margin-right: -5px;
+                }
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            &.swiper-button-prev {
+                left: 15px;
+            }
+            &.swiper-button-next {
+                right: 15px;
+            }
+        }
+    }
+
+    .circle-index {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 20px;
+        width: 20px;
+        background-color: #faf2fa;
+        border-radius: 100%;
+
+        font-family: GT Walsheim;
+        font-size: 12px;
+        color: #0a0a0a;
+        letter-spacing: 0.2px;
+        text-align: center;
+        line-height: 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    color: #0a0a0a;
+    background: #f06c4e;
+    border: 1px solid #f06c4e;
+}
+
+// END: ON THE SKIN
+
+//Start Glassy
+.glassy_hero_mobile {
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    .glassy_hero_desktop {
+        display: none;
+    }
+    .glassy_hero_mobile {
+        display: block;
+    }
+}
+
+.glassy-stickers {
+    overflow: hidden;
+    padding: 100px 0;
+    & .marquee {
+     margin: 10px 0;   
+    }
+}
+
+.sticker-glassy:after {
+    background: url('https://cdn.shopify.com/s/files/1/1099/2810/files/something-fresh_pink_opt.svg?v=1635870776') no-repeat;
+    content: "";
+    background-size: contain;
+    position: absolute;
+    top: -50px;
+    height: 85px;
+    width: 85px;
+    left: 40%;
+    margin: 0 auto;
+    z-index: 0;
+    animation: spin 12s linear infinite;
+  }
+@media (max-width: 767.98px) {
+    .sticker-glassy:after {  
+    height: 66px;
+    width: 66px;
+    }
+}

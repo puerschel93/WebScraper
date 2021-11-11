@@ -1,0 +1,413 @@
+// =====================================================
+// Part specific
+// =====================================================
+$mainFont = 'Nunito', sans-serif
+$accentFont = 'Aldrich', sans-serif
+$darkFontColor = #000000b2
+$mainLineHeight = 1.4
+$border-base = #ffffff33
+
+// Global Styles
+.spa-template
+  font-family $mainFont
+  font-size $fontSize
+  box-sizing border-box
+  line-height $mainLineHeight
+
+  .container
+    width 100%
+    max-width 198rem
+    margin 0 auto
+    padding 0 1.5rem
+
+  p
+    font-size 1.8rem
+
+  section
+    padding 10rem 0
+
+  header
+    width 100%
+    height 5rem
+    position absolute
+    top 0
+    left 0
+    z-index 1
+
+    nav
+      width 100%
+      display flex
+      align-items center
+      justify-content space-between
+      padding 1rem 0
+      border-bottom 1px solid $border-base
+
+    .nav-brand
+      width 2rem
+
+    .menu-icons i
+      font-size 3.5rem
+      color $colorGrey3
+      cursor pointer
+
+    .nav-list
+      display flex
+      width 25rem
+      height 100vh
+      background-color $colorSoft4
+      position fixed
+      top 0
+      right -26rem
+      flex-direction column
+      align-items center
+      justify-content center
+      z-index 1500
+      transition all 650ms ease-in-out
+
+    .nav-list.active
+      right 0
+
+    .nav-item
+      margin 1.5rem 0
+
+    .nav-link
+      font-size 1.6rem
+      text-transform uppercase
+      color $darkFontColor
+
+    .close
+      position absolute
+      top 1rem
+      left 1.5rem
+      color $colorPink1
+
+  footer
+    padding 2.5rem
+    background-color $colorSoft4
+    text-align center
+    color $darkFontColor
+
+  .btn
+    font-size 1.6rem
+    position absolute
+    background-color $colorPink1
+    border-radius 2rem
+    color $colorGrey3
+    display inline-flex
+    left 50%
+    transform translate(-50%, -50%)
+    margin 3.2em 0
+    padding 0.5em 1.5em
+    text-transform uppercase
+    transition background-color 650ms
+
+  .btn:hover
+    background-color $colorPink2
+
+  // Section One
+  .one
+    width 100%
+    height 80rem
+    background linear-gradient(135deg, $colorBlue2 0%, $colorPurple2 100%), url('https://picsum.photos/1200/800?random=1') center no-repeat
+    background-size cover
+    position relative
+
+  .one::before
+    content ''
+    position absolute
+    left 0
+    bottom -1px
+    width 100%
+    height 4.7rem
+    background url('/assets/img/wave-small.png') center no-repeat // round
+    background-size cover
+
+  .one-main-message
+    width 100%
+    max-width 50rem
+    color $colorGrey3
+    text-transform uppercase
+    transform translateY(25%)
+
+  .one-main-message h3
+    font-size 1.6rem
+
+  .one-main-message h1
+    font-family $accentFont
+    font-size 4rem
+    margin 1rem 0
+
+  .one-main-message p
+    text-transform lowercase
+
+  // Section Two
+  .two
+    padding 0
+
+  .title-heading
+    text-align center
+    text-transform uppercase
+    margin-bottom 10rem
+    color $darkFontColor
+
+  .title-heading h3
+    font-size 1.4rem
+
+  .title-heading h1
+    font-family $accentFont
+    font-size 2rem
+    margin 0.5rem 0 1rem
+
+  .title-heading p
+    text-transform lowercase
+
+  .two-grid, .four-grid
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(25rem, 1fr))
+    grid-gap 2.5rem
+
+  .two-grid-item
+    height 45rem
+    padding 4rem
+    color $colorGrey3
+    position relative
+    display grid
+    flex-direction column
+    justify-content center
+    cursor pointer
+    z-index 1
+    align-self center
+    justify-self center
+
+    p
+      font-size 1.6rem
+
+    i
+      font-size 6rem
+      color $colorPink1
+      align-self center
+      justify-self center
+
+    h1
+      font-family $accentFont
+      font-size 2.4rem
+      text-transform uppercase
+      margin 1em 0
+      align-self center
+      justify-self center
+
+  .two-grid-item::before
+    content ''
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background linear-gradient(135deg, $colorBlue2 0%, $colorPurple2 100%)
+    z-index -1
+
+  .card-1
+    background url('https://picsum.photos/640/640?random=1') center no-repeat // /id/1036
+
+  .card-2
+    background url('https://picsum.photos/640/640?random=2') center no-repeat // /id/1015
+
+  .card-3
+    background url('https://picsum.photos/640/640?random=3') center no-repeat // /id/103
+
+  // Section Three - Testimonials
+  .three
+    width 100%
+    height 100vh
+    background linear-gradient(135deg, $colorBlue2 0%, $colorPurple2 100%), url('https://picsum.photos/1200/800?random=2') center no-repeat fixed
+    background-size cover
+    position relative
+
+  .three::before
+    content ''
+    position absolute
+    top -3px
+    left 0
+    width 100%
+    height 4.7rem
+    background url('/assets/img/wave-small-reversed.png') center no-repeat // round
+    background-size cover
+
+  .three-testimonial
+    width 100%
+    color $colorGrey3
+    position absolute
+    top 65%
+    left 50%
+    transform translate(-50%, -50%)
+    text-align center
+
+  .testimonial-text-box
+    padding 0 1.5rem
+    margin-bottom 2rem
+    position relative
+
+  .testimonial-text-box i
+    position absolute
+    top -8rem
+    left 50%
+    transform translateX(-50%)
+    font-size 8rem
+    color $colorPink1
+    opacity 0.5
+    z-index -1
+
+  .testimonial-customer img
+    width 10rem
+    height 10rem
+    border-radius 100%
+    border 3px solid $colorPink1
+
+  // Section Four
+
+
+  // Media queries
+  @media screen and (min-width $xs)
+    .one-main-message
+      transform translateY(5%)
+
+    .one, .three
+      height 56rem
+
+  @media screen and (min-width $sm)
+    .one::before
+      height 10rem
+      background url('/assets/img/wave-medium.png') center
+      background-size cover
+
+    .two-grid
+      .two-grid-item
+        height 45rem
+
+      p
+        font-size 1.6em
+
+      h1
+        font-size 2.4em
+
+      i
+        font-size 5em
+
+    .three::before
+      height 10rem
+      background url('/assets/img/wave-medium-reversed.png') center
+      background-size cover
+
+    .one, .three
+      height 55rem
+
+  @media screen and (min-width $md)
+    header
+      height 8rem
+
+      .nav-brand
+        width 3.5rem
+
+      .nav-list
+        width initial
+        height initial
+        background-color transparent
+        position initial
+        top initial
+        right initial
+        flex-direction row
+        transition initial
+
+      .menu-icons
+        display none
+
+      .nav-item
+        margin 0 2.5rem
+
+      .nav-link, .current
+        color $colorGrey3
+        position relative
+        font-size 1.8rem
+
+      .nav-link::before, .current::before
+        content ''
+        position absolute
+        left 0
+        bottom -0.5rem
+        background-color $colorPink1
+        width 100%
+        height 2px
+        transform scaleX(0)
+        transform-origin left
+        transition transform 650ms
+
+      .current::before
+        transform scaleX(1)
+
+      .nav-link:hover::before
+        transform scaleX(1)
+
+    .one, .three
+      height 60rem
+
+    .one::before
+      height 18rem
+      background url('/assets/img/wave-large.png') center
+      background-size cover
+
+    .three::before
+      height 18rem
+      background url('/assets/img/wave-large-reversed.png') center
+      background-size cover
+
+    .one-main-message
+      transform translateY(20%)
+
+    .title-heading h1
+      font-size 2.5rem
+
+    .two-grid
+      .two-grid-item
+        height 55rem
+
+      p
+        font-size 1.8em
+
+      h1
+        font-size 2.5em
+
+      i
+        font-size 6em
+
+  @media screen and (min-width $ml)
+    .two-grid
+      .two-grid-item
+        height 55rem
+
+      p
+        font-size 2em
+
+      h1
+        font-size 2.5em
+
+      h3
+        font-size 3em
+
+    .one, .three
+      height 60rem
+
+  @media screen and (min-width $lg)
+    .one, .three
+      height 60rem
+
+    .one-main-message
+      transform translateY(20%)
+
+  @media screen and (min-width $xl)
+    .one::before
+    .three::before
+      height 32rem
+    .one
+    .three
+      height 70rem
+

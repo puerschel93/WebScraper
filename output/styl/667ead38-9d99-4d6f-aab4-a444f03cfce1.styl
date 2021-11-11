@@ -1,0 +1,310 @@
+@import 'nib'
+@import 'jeet'
+@import 'typographic'
+@import '020_colorsTheme/*.import'
+@import s(basePath, animate)
+@import s(basePath, input)
+
+.main-container
+  .router-container
+    // Base class for radio button
+    span.choice
+      display inline-block
+      >input
+        transform translateX(-10000px)
+      >label
+        cursor pointer
+        display block
+        position relative
+        transition background-color defaultTransitionValue
+        width 100%
+        >span
+          pointer-events none
+          width calc(100% - 8em)
+        &::before, &::after
+          content ''
+          display block
+          transition background-color defaultTransitionValue
+        &::before
+          size 14px
+          border-radius @width
+          background brandColor
+          absolute bottom left
+        &::after
+          size 6px
+          border-radius @width
+          background brandColor
+          absolute bottom 4px left 4px
+    input:checked + label::after
+      background bgColor
+    // Base class for input text/email/phone
+    fieldset, .input-contact, .choice-and-option
+      cpInput(brandColor, bgColor, brandColor)
+      >span.input
+        width 100%
+        max-width 100%
+        font-size 12px
+        margin-top @font-size
+        margin-bottom 4*@font-size
+        line-height 1.2*@font-size
+        ::selection
+          color brandColor
+          background lighten(brandColor, 90%)
+        >input
+          absolute top left
+          width 100%
+          padding .8*@font-size
+          border-radius roundCorner
+          font-size @font-size
+          transition opacity defaultTransitionValue
+        >label
+          pointer-events none
+          padding 0 @font-size
+          transition opacity defaultTransitionValue
+          >span
+            pointer-events none
+            padding 0
+            absolute top (0.8*@font-size) left @font-size
+            width auto
+            color bgColor
+            transition transform defaultTransitionValue, color defaultTransitionValue
+        >input:focus, >input.filled
+          + label
+            span
+              transform translate3d(-@font-size, (-2.3*@font-size), 0)
+              color brandColor
+        >input:disabled
+          pointer-events none
+          opacity .5
+          + label
+            opacity .5
+    // Base class for classical checkbox
+    fieldset
+      span.checkbox
+        [type="checkbox"]:not(:checked), [type="checkbox"]:checked
+          position absolute
+          left -9999px
+        [type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label
+          max-width 300px
+          position relative
+          padding-left 25px
+          cursor pointer
+        [type="checkbox"]:not(:checked) + label:before, [type="checkbox"]:checked + label:before
+          content ''
+          absolute top .2em left
+          size 1.2em
+          border 1px solid brandColor
+          border-radius roundCorner
+        [type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after
+          content '\f00c'
+          absolute top left .1em
+          font-family FontAwesome
+          font-size 1em
+          color brandColor
+          background-color transparent
+          transition opacity defaultTransitionValue, transform defaultTransitionValue
+        // Not checked
+        [type="checkbox"]:not(:checked) + label:after
+          opacity 0
+          transform scale(0)
+        // Checked
+        [type="checkbox"]:checked + label:after
+          opacity 1
+          transform scale(1)
+    section.subscription
+      article.header
+        width 100%
+        h1, p
+          text-align center
+        p:not(.error)
+          margin-top 0
+          text-transform uppercase
+          font-size 0.9em
+          font-weight bold
+      article.form
+        relative top left
+        // Cookie mask
+        .cookieMask
+          absolute top left
+          size 100%
+          background rgba(bgColor, .8)
+          z-index 2500
+          p
+            absolute top 50% left
+            center(960px)
+            width 100%
+            transform translate3d(0, -50%, 0)
+            font-size 2em
+            font-weight bold
+            font-family BaronNeue
+            color brandColor
+            text-align center
+        // Subscription mask: User has alread validated its payment
+        .alreadyPaid, .endSubscription
+          absolute top left
+          size 100%
+          background rgba(bgColor, .8)
+          z-index 2500
+          animation fadeIn defaultTransitionValue
+          div
+            absolute top 50% left 50%
+            center(600px)
+            width 100%
+            transform translate3d(-50%, -50%, 0)
+            padding 2em
+            border 3px solid brandColor
+            border-radius roundCorner
+            background darkgray
+            p
+              pointer-events none
+              text-align center
+              font-weight bold
+              font-size 1.6em
+              font-family $helvetica
+              text-transform uppercase
+              color bgColor
+            p:last-of-type
+              margin-bottom 0
+        p.error
+          margin -2em 0 0 0
+        form
+          display flex
+          flex-wrap wrap
+          justify-content space-between
+          margin 3em 0 0 0
+          padding 0
+          >fieldset, .group-contact-submit
+            flex-grow 1
+            flex-shrink 0
+            margin 0
+            padding 0 .5em
+            min-width maxSize*.3
+          >fieldset, .group-contact-submit fieldset
+            border none
+            // Profil selection
+            .input-profil
+              width 100%
+              display flex
+              flex-wrap nowrap
+              justify-content space-between
+              .choice-and-option
+                flex-grow 0
+                flex-shrink 0
+                display block
+                relative top left
+                size 100px 170px
+                span.choice
+                  size 100px 125px
+                  text-align center
+                  display block
+                  relative top left
+                  >label
+                    absolute top left
+                    display block
+                    size 100px
+                    border 2px solid brandColor
+                    color brandColor
+                    border-radius @width
+                    transition background-color defaultTransitionValue
+                    >span
+                      display block
+                      width 100%
+                      font-size 10px
+                      line-height 1.1*@font-size
+                      text-transform uppercase
+                    &::before, &::after
+                      content ''
+                      display block
+                      transition background-color defaultTransitionValue
+                    &::before
+                      absolute bottom -22px left 41px
+                    &::after
+                      absolute bottom -18px left 45px
+                  >input:checked + label
+                    background lighten(brandColor, 80%)
+                select
+                  font-size 12px
+                  width 100%
+                  margin-top 10px
+                &:nth-of-type(1) span.choice label >span
+                  margin-top 27pxpx
+                &:nth-of-type(2) span.choice label >span
+                  margin-top 32px
+                &:nth-of-type(3) span.choice label >span
+                  margin-top 42px
+            // Button for contact profile
+            .input-contact
+              margin-top 1em
+              width 100%
+            legend
+              font-size 80%
+              margin-left 0
+              padding-left 0
+              font-weight 300
+            // Animal ownership selection
+            .input-animalOwnership
+              opacity 0
+              display block
+              height 0
+              transition opacity defaultTransitionValue, height defaultTransitionValue
+              select
+                width 100%
+              label
+                font-size 80%
+                padding-bottom 0
+              &.shown
+                opacity 1
+                height 3.9em
+                padding-top .4em
+          .group-contact-submit
+            fieldset
+              padding 0
+              border 0
+              margin-bottom 0
+            // Inlined radio button
+            span.choice
+              width 100%
+              label
+                margin 0
+                padding 0
+                line-height 1em
+                relative bottom 16px left 24px
+                &::before
+                  absolute bottom 0 left -18px
+                &::after
+                  absolute bottom 4px left -14px
+              &:nth-child(3)
+                width 30%
+            // Input phone
+            fieldset
+              span.input
+                width 65%
+                margin-top 0
+                font-size 12px
+                >input
+                  font-size 12px
+            // Amounts
+            .priceTag
+              opacity 0
+              transition opacity defaultTransitionValue
+              h3
+                margin-top .3em
+                font-family BaronNeue
+              span.amount
+                font-family $courier
+            // Subscription button
+            button
+              margin 1em auto
+              text-transform uppercase
+              line-height 2.8em
+              border 2px solid brandColor
+              background bgColor
+              border-radius (roundCorner/2)
+              transition color defaultTransitionValue,transform defaultTransitionValue,border-color defaultTransitionValue
+              color brandColor
+              &not(:disabled):hover
+                transform scale3d(1.01, 1.01, 1)
+                border-color darken(brandColor, 10%)
+                color darken(brandColor, 10%)
+              &:disabled
+                opacity .5

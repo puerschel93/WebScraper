@@ -1,0 +1,590 @@
+* {
+  padding: 0;
+  margin: 0;
+  transition: all 0.2s linear;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 100%;
+  font-family: "Poppins", sans-serif;
+}
+nav {
+  z-index: 1030;
+}
+nav #navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  height: 12vh;
+  background: #222222;
+  border-bottom: 1px solid #706f6f;
+  width: 100%;
+}
+nav .logo-header {
+  display: flex;
+  align-items: center;
+}
+.logo-header p {
+  position: relative;
+  top: -2.2rem;
+  left: 1rem;
+}
+.Youtube img {
+  padding-top: 7em;
+  padding-left: 1.5em;
+}
+.logo-header span {
+  letter-spacing: -2px;
+}
+nav .input-group input {
+  border: 1px solid white;
+}
+nav input[type="text"] {
+  width: 40vw;
+  height: 25px;
+  border-radius: 0;
+  margin-left: 115px;
+}
+nav button[type="submit"] {
+  margin-right: 195px;
+  height: 28px;
+  width: 3vw;
+}
+nav .icon-header {
+  display: flex;
+  margin-right: 1.5em;
+}
+nav .input-header {
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+nav .icon-header img {
+  width: 2.4vw;
+  margin-left: 1.2rem;
+  height: 3.5rem;
+  cursor: pointer;
+}
+.fa-bars {
+  font-size: 1.6rem;
+  padding-top: 0.2em;
+  padding-left: 1em;
+}
+nav .microphone-bg .fa-microphone {
+  color: rgb(136, 130, 130);
+  font-size: 1.3rem;
+  position: absolute;
+  left: 12px;
+  top: 10px;
+}
+nav .microphone-bg {
+  position: relative;
+  margin-left: -185px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.user-icon img {
+  width: 3vw;
+}
+
+// Media queries
+
+// Media @1024px
+@media (max-width: 1024px) {
+  nav input[type="text"] {
+    width: 32vw;
+  }
+}
+// Media @992px
+@media (max-width: 992px) {
+  nav input[type="text"] {
+    width: 30vw;
+  }
+}
+// Media @768px
+@media (max-width: 768px) {
+  nav input[type="text"] {
+    width: 18vw;
+  }
+}
+// Media @480px
+@media (max-width: 480px) {
+  nav input[type="text"] {
+    display: none;
+  }
+  .fa-bars {
+    display: none;
+  }
+  .Youtube img {
+    position: relative;
+    left: -25px;
+  }
+  .Youtube p {
+    position: relative;
+    left: -10px;
+    top: -30px;
+  }
+}
+
+// Header container
+
+header {
+  position: fixed;
+  top: 76px;
+  left: 229px;
+  height: auto;
+  z-index: 1030;
+}
+header .preview-cont {
+  display: flex;
+  background: #222222;
+  position: fixed;
+  border-bottom: 1px solid #b1adad;
+  width: 100%;
+}
+header .preview-cont p:nth-child(1) {
+  color: #fff;
+  padding: 0.6em;
+  margin-top: 1em;
+  margin-left: 1em;
+  border-radius: 75px;
+}
+header .preview-cont p:nth-child(2),
+P:nth-child(3),
+p:nth-child(4),
+p:nth-child(5),
+p:nth-child(6),
+p:nth-child(7),
+p:nth-child(8),
+p:nth-child(9),
+p:nth-child(10),
+p:nth-child(11),
+p:nth-child(12) {
+  color: #fff;
+  background: #3f3e3e;
+  padding: 0.6em;
+  margin-top: 1em;
+  margin-left: 1em;
+  border-radius: 75px;
+}
+
+// Main container
+
+main {
+  display: grid;
+  grid-template-columns: 17% 83%;
+}
+main aside {
+  display: flex;
+  flex-direction: column;
+  background: #3f3e3e;
+  position: fixed;
+  top: 76px;
+  width: 17%;
+  height: 550px;
+}
+main aside:hover {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+aside .donut {
+  background: #3f3e3e;
+}
+main aside .home {
+  background: #888585;
+}
+aside .first-aside,
+.fourth-aside,
+.fifth-aside {
+  border-bottom: 1px solid #706f6f;
+}
+aside .second-aside {
+  margin-top: 0.5em;
+  border-bottom: 1px solid #706f6f;
+}
+aside .third-aside {
+  border-bottom: 1px solid #706f6f;
+}
+.first-aside .you-music {
+  margin-bottom: 0.5em;
+}
+.second-aside .show-more {
+  margin-bottom: 0.5em;
+}
+.third-aside .show-mores {
+  margin-bottom: 0.5em;
+}
+.third-aside > p {
+  padding-left: 2em;
+  padding-top: 1em;
+}
+.fourth-aside > p {
+  padding-left: 2em;
+  padding-top: 1em;
+}
+.third-aside .sensor-top img {
+  padding-left: 1.4em;
+  filter: sepia(1) saturate(8);
+}
+.third-aside .sensor-btm img {
+  padding-left: 2.2rem;
+  filter: sepia(1) saturate(8);
+}
+.third-aside .dot-top {
+  padding-left: 2.1em;
+}
+.third-aside .dot-btm {
+  padding-left: 1.2em;
+}
+.third-aside .dot-btmlast {
+  padding-left: 0.9em;
+}
+.third-aside .fa-circle {
+  color: #4141f0;
+  font-size: 0.3rem;
+}
+.fourth-aside .sports {
+  margin-bottom: 0.5em;
+}
+.fifth-aside .settings {
+  margin-top: 0.5em;
+}
+.fifth-aside .feedback {
+  margin-bottom: 0.5em;
+}
+aside p {
+  font-size: 0.9rem;
+}
+aside .home a,
+.explore a,
+.subscribe a,
+.you-music a,
+.ytmusic a,
+.library a,
+.history a,
+.your-vids a,
+.watch-later a,
+.liked-vids a,
+.show-more a,
+.bright-side a,
+.crafts-lee a,
+.cold-fusion a,
+.crash-course a,
+.traversy-media a,
+.yale-uni a,
+.show-mores a,
+.yt-premium a,
+.gaming a,
+.live a,
+.sports a,
+.settings a,
+.report a,
+.help a,
+.feedback a {
+  display: flex;
+  color: #222222;
+  text-decoration: none;
+  padding-top: 1em;
+  padding-left: 1.5em;
+}
+aside .explore:hover,
+.subscribe:hover,
+.ytmusic:hover,
+.you-music:hover,
+.library:hover,
+.history:hover,
+.your-vids:hover,
+.watch-later:hover,
+.liked-vids:hover,
+.show-more:hover,
+.bright-side:hover,
+.crafts-lee:hover,
+.cold-fusion:hover,
+.crash-course:hover,
+.traversy-media:hover,
+.yale-uni:hover,
+.show-mores:hover,
+.yt-premium:hover,
+.gaming:hover,
+.live:hover,
+.sports:hover,
+.settings:hover,
+.report:hover,
+.help:hover,
+.feedback:hover {
+  background: #888585;
+}
+main aside a .fa-home {
+  font-size: 1.5rem;
+  color: #fff;
+}
+main aside a p {
+  padding-left: 1.2em;
+}
+.last-aside .top-links,
+.bottom-links {
+  margin-top: 1em;
+  margin-left: 1.5em;
+}
+.top-links a,
+.bottom-links a {
+  font-size: 0.7rem;
+  color: #c7c1c1;
+  text-decoration: none;
+  padding-left: 0.1em;
+}
+.copyright p {
+  padding-left: 1.5em;
+  color: #706f6f;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+section {
+  position: absolute;
+  top: 152px;
+  left: 229px;
+  width: 83%;
+  min-height: 300vh;
+  background: #222222;
+  z-index: -1000;
+}
+section .main-feeds {
+  z-index: -1000;
+}
+
+/* First video category */
+#first-vids-category,
+#second-vids-category,
+#third-vids-category,
+#fourth-vids-category {
+  display: flex;
+}
+#vids-bg,
+#vids-real {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  max-width: 14.5rem;
+  width: 100%;
+  height: 32vh;
+  margin: 1rem;
+  padding: 1.051%;
+  background-color: #222222;
+}
+#vids-bg:hover {
+  background: rgb(83, 82, 82);
+  cursor: pointer;
+  transition: 0.6s;
+}
+.vids-link {
+  text-decoration: none;
+  color: #fff;
+}
+.vids-link:hover {
+  color: #fff;
+}
+/* Chegg Ad Link on Video */
+.chegg-ad-link {
+  position: absolute;
+  top: 100px;
+  right: 25px;
+  background: black;
+  width: 30px;
+  height: 5vh;
+}
+.chegg-ad-img {
+  position: relative;
+  top: 3px;
+  right: -8px;
+  filter: invert(100%) sepia(100%) saturate(0%) brightness(103%) contrast(100%);
+  width: 16px;
+}
+#vids-b {
+  max-width: 14.5rem;
+  width: 100%;
+  height: 20vh;
+}
+/* Chegg Ads top */
+.chegg-ads .chegg-ads-title {
+  display: flex;
+  justify-content: space-between;
+}
+.chegg-ads .chegg-ads-title p {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -1px;
+}
+.chegg-ads-text {
+  color: #aca2a2;
+  font-size: 0.7rem;
+  font-weight: 400;
+  position: relative;
+  top: -5px;
+}
+/* Chegg Ads below */
+.chegg-bg {
+  display: flex;
+  gap: 10px;
+  margin-top: -12px;
+}
+.chegg-ad-bg {
+  color: #fff;
+  background: rgb(245, 169, 4);
+  padding: 0.1em;
+}
+.chegg-name {
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+/* Photoshop video */
+.photoshop-timer {
+  position: absolute;
+  top: 115px;
+  right: 25px;
+  background: black;
+  width: 50px;
+  height: 3vh;
+}
+.photoshop-timer-text {
+  position: relative;
+  top: 1px;
+  right: -3px;
+  color: #fff;
+  font-size: 0.8rem;
+}
+.photoshop .photoshop-title {
+  display: flex;
+  gap: 10px;
+}
+.photoshop-title .photoshop-title-img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+.photoshop-title p {
+  font-size: 0.8rem;
+}
+.photoshop-stat {
+  margin-left: 2.8em;
+  margin-top: -0.7em;
+}
+.photoshop-stat p {
+  font-size: 0.9rem;
+}
+.photoshop-stat p:nth-child(2) {
+  margin-top: -1em;
+}
+.verified {
+  background: #504f4f;
+  border-radius: 50%;
+  width: 15px;
+}
+/* Laolu Mix */
+.laolu-mix-bg {
+  position: absolute;
+  bottom: 87px;
+  right: 12px;
+  background: rgba(101, 62, 61, 0.8);
+  width: 14rem;
+  height: 3.5vh;
+}
+.laolu-mix-img {
+  position: relative;
+  left: 100px;
+  filter: invert(100%) sepia(100%) saturate(0%) brightness(103%) contrast(100%);
+  width: 24px;
+}
+/* Stanford Uni */
+.stanford-stat {
+  margin-left: 2.8em;
+  margin-top: -0.7em;
+}
+.stanford-stat p {
+  font-size: 0.9rem;
+}
+.stanford-stat p:nth-child(1) {
+  font-size: 0.8rem;
+}
+.stanford-stat p:nth-child(2) {
+  margin-top: -1em;
+}
+
+/* Second video category */
+
+.supersport-timer {
+  position: absolute;
+  top: 115px;
+  right: 25px;
+  background: black;
+  width: 30px;
+  height: 3vh;
+}
+.supersport-timer-text {
+  position: relative;
+  top: -0.5px;
+  right: -2px;
+  color: #fff;
+  font-size: 0.8rem;
+}
+.supersport-title p {
+  font-size: 0.8rem;
+}
+.supersport-stat {
+  margin-left: 2.8em;
+  margin-top: -0.7em;
+}
+.supersport-stat p:nth-child(1) {
+  font-size: 0.9rem;
+}
+.supersport-stat p:nth-child(2) {
+  font-size: 0.8rem;
+  margin-top: -1em;
+}
+.superbook-timer {
+  position: absolute;
+  top: 115px;
+  right: 25px;
+  background: black;
+  width: 40px;
+  height: 3vh;
+}
+.superbook-timer-text {
+  position: relative;
+  top: -0.5px;
+  right: -2px;
+  color: #fff;
+  font-size: 0.8rem;
+}
+/* Fourth vids category */
+.chigozie-mix-bg {
+  position: absolute;
+  bottom: 87px;
+  right: 12px;
+  background: rgba(64, 77, 89, 0.8);
+  width: 14rem;
+  height: 3.5vh;
+}
+.chigozie-mix-img {
+  position: relative;
+  left: 100px;
+  filter: invert(100%) sepia(100%) saturate(0%) brightness(103%) contrast(100%);
+  width: 24px;
+}
+.correal {
+  color: #aca2a2;
+  font-size: 0.7rem;
+  font-weight: 400;
+}

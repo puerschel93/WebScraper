@@ -1,0 +1,489 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:1000;
+
+// SIZE NAVIGATION
+$height-navigation: 40;
+$margin-top-under-nav-fixe: 182;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Open Sans",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.5em;
+$font-size-title:1.7em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces18";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+
+// -------------------------------------------
+// -- GLOBAL
+// -------------------------------------------
+
+.container  {
+   width: 1280px;
+   @media only screen and (max-width : 1280px) {
+      width: 960px
+   }
+}
+
+
+
+// -------------------------------------------
+// -- HEADER
+// -------------------------------------------
+
+.navigation {
+   border: 0;
+   box-shadow: none;
+   height: 140px;
+   @media only screen and (max-width : 414px) {
+    height: auto;
+   }
+}
+
+.bg-navigation { background-color: rgba($color-action,1); }
+
+.menu-principal {
+  margin-top: -20px;
+  font-size: 0.9em;
+  @media only screen and (max-width : 768px) {
+    margin-top: auto;
+  }
+  > li {
+    border: 0;    
+    > a {
+      padding: 0px 40px;
+      @media only screen and (max-width : 1024px) {
+      	padding: 0px 5px;
+      }
+      &:hover { 
+        background-color:$color-action;
+      }
+    }
+  }
+}
+
+#menuNavigation > li.dropdown {
+  display: none;
+}
+
+.btn-menu {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+}
+
+.fix-rss, .fix-contact {
+	display: none;
+}
+
+// -------------------------------------------
+// -- HOMEPAGE
+// -------------------------------------------
+
+header + aside.bg-container-100 {
+   position: absolute;
+   width: 100%;
+   z-index: 100;
+   border: 0;
+   top:  681px;
+   &.margin-navigation { margin-top: 0; }
+}
+
+.aside-home-1 {
+   margin-top: -40px;
+}
+
+header + aside #Mini_Moteur { padding: 15px 0; }
+
+.aside-txt-home {  
+  background-image: url('../images/homepage/homepage_scrolling_4.jpg');
+  background-repeat: no-repeat;
+  background-color: $color-body;
+  height: $height-scrolling+px;
+}
+
+.bg-seo {
+  background-color: rgba($color-block,0.9);
+  padding: 20px;
+  // color: $color-nav-footer;
+}
+
+.aside-services {
+  background-image: url('../images/homepage/homepage_scrolling_5.jpg');
+  background-repeat: no-repeat;
+  background-color: $color-body;
+  // height: $height-scrolling+px;
+}
+
+.pub-alerte-helsinki,
+.pub-estimation-helsinki { height: $height-scrolling+px; }
+
+/*.aside-qsn {
+   background: url(../images/homepage/homepage_scrolling_4.jpg) center center no-repeat;
+   height: $height-scrolling+px;
+}*/
+
+.bg-moteur { background-color: rgba($color-primary,0.25); }
+
+.form-inline select {
+   height:40px;
+}
+
+.saisie-suggest {
+    height: 40px !important;    
+}
+
+.bouton-rechercher-moteur {
+   height: 40px;
+   line-height: 30px;
+}
+
+   /* --------------------------------------------------------------------- */
+   /* -- STATS - 
+   /* --------------------------------------------------------------------- */
+
+.stats-icon {
+    display: table-cell;
+    width: 100px;
+    min-width: 100px;
+    height: 100px;
+    color: lighten($color-important,100);
+    border-radius: 50%;
+    background-color: $color-important;
+    font-size: 3.5em;
+    line-height: 100px;
+    text-align: center;
+}
+
+.stats-label {
+    display: table-cell;
+    padding: 0 2rem 0 1.5rem;
+    vertical-align: middle;
+    font-size: 1.125em;
+    line-height: 1.2;
+}
+.stats-nbr {
+    display: block;
+    font-family: $font-title;
+    font-size: 2.2222em;
+    letter-spacing: .3rem;
+}
+
+.owl-prev, .owl-next {
+   display: none;
+}
+
+
+
+// -------------------------------------------
+// -- MODULES
+// -------------------------------------------
+
+.aside-home-2 {
+   // margin-top: -55px;
+   background-color: $color-block;
+   box-shadow: none;
+}
+
+body > section > aside.bg-container-100.relative.box-shadow-bottom.aside-home-2 > div.relative > div > div {
+   margin-bottom: 0;
+}
+
+.bg-infos-annonce {
+  background-color: darken($color-block,10);
+  padding-right: 20px;  
+}
+
+
+.partenaires-carousel {
+   overflow: hidden;
+   img { 
+      margin-left: 10px;
+   }
+}
+// -------------------------------------------
+// -- AGENCES LISTE
+// -------------------------------------------
+
+.listing-agences-fax {
+    display: none;
+}
+
+
+// -------------------------------------------
+// -- IMMO
+// -------------------------------------------
+
+#Carousel_Immo .active {
+   display: inline-block;
+}
+
+.time-line {
+  border-color: lighten($color-action,5);
+}
+
+.typo-time-line {
+  color: lighten($color-action,5); 
+}
+
+.time-line-juridique {
+ border-color: $color-action; 
+}
+
+// -------------------------------------------
+// -- MQs
+// -------------------------------------------
+
+@media screen and (max-width: 767px) {
+   .aside-home-1,
+   .aside-home-2,
+   .aside-qsn,
+   .aside-services,
+   .aside-txt-home { height: auto; }
+   .bg-white-opacity, .module-homepage { margin-top: 20px; }
+   .logo img { width: 25% !important; }
+   .titre-bas h1 .biggest {
+      font-size: 0.9em;
+      text-shadow: none;
+      color: black;
+      margin-top: 16px;
+      display: block;
+   }
+   header + aside.bg-container-100 {
+      position: static;
+      top: inherit;
+   }
+   .margin-top-200 {
+    margin-top: 20px;
+   }
+}
+
+
+.bg-secondary {
+    background-color: #ac182e;
+}
+
+// -------------------------------------------
+// -- TESTS
+// -------------------------------------------
+
+.container-immo {
+  width: 100%;
+}
+
+.aside-txt-immo {  
+	background-image: url('../images/homepage/homepage_scrolling_4.jpg');
+	background-repeat: no-repeat;
+	background-color: $color-body; 
+	height: 100%;
+	padding-top: 20px; 
+}
+
+// -------------------------------------------
+// -- GESTION
+// -------------------------------------------
+
+.aside-txt-gestion {  
+	background-image: url('../images/gestion/bg-gestion.jpg');
+	background-repeat: no-repeat;
+	background-color: $color-body; 
+}
+
+// -------------------------------------------
+// -- LE GROUPE
+// -------------------------------------------
+
+.aside-txt-groupe {  
+	// background-image: url('../images/legroupe/bg-legroupe.jpg');
+	background-repeat: no-repeat;
+	background-color: $color-body; 
+  @media only screen and (max-width : 768px) {
+    .pull-left {
+      float: none;
+    }
+    .margin-top-100 {
+      margin-top: 10px;
+    }
+    .margin-top-50 {
+      margin-top: 10px;
+    }
+  }
+}
+
+
+// -------------------------------------------
+// -- VENDRE
+// -------------------------------------------
+
+#PopEstimation {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 30rem;
+  text-align: center;
+  font-weight: bold;
+  background-color: $color-action;
+  padding: 20px;
+  @include border-top-radius(8px);
+  color: $color-nav-footer;
+  z-index: 1500;
+}
+
+.container-immo-vendre {
+  background-image: url('../images/vendre/bg-vendre.jpg');
+  background-repeat: no-repeat;
+  background-color: $color-body; 
+  @media only screen and (max-width : 768px) {
+    background-image: none;
+  }
+}
+
+.timeline {
+	min-width: 300px;
+	max-width: 500px;
+	margin: auto;
+	div {
+		font-size: 1em;
+		line-height: 1.75em;
+		border-top: 3px solid;
+		border-image: linear-gradient(to right, $color-important 0%, $color-secondary 100%);
+		border-image-slice: 1;
+		border-width: 3px;
+		margin: 0;
+		padding: 40px;
+		counter-increment: section;
+		position: relative;  
+    @media only screen and (max-width : 768px) {
+      border-top: none;
+    }
+
+		//numbers
+		&:before {
+			content: counter(section);
+			position: absolute;
+			border-radius: 50%;
+			padding: 10px;
+			height: 1.25em;
+			width: 1.25em;
+			background-color: $color-important;
+			text-align: center;
+			line-height: 1.25em;
+			color: $color-body;
+			font-size: 1em;
+		}
+	}
+	//odd number borders
+	div:nth-child(even) {
+		border-right: 3px solid;
+		padding-left: 0;
+		text-align: right;
+    @media only screen and (max-width : 768px) {
+      border-right: none;
+      text-align: justify;
+    }
+		&:before {
+			left: 100%; 
+			margin-left: -20px;
+	}
+	}
+	//even number borders
+	div:nth-child(odd) {
+		border-left: 3px solid;
+		padding-right: 0;
+		text-align: justify;
+    @media only screen and (max-width : 768px) {
+      border-left: none;
+    }
+		&:before {
+			right: 100%; 
+			margin-right: -20px;     
+		}
+	}
+	//handle first and last
+	div:first-child {
+		border-top: 0;
+		border-top-right-radius:0;
+		border-top-left-radius:0;
+	}
+	div:last-child {
+		border-bottom-right-radius:0;
+		border-bottom-left-radius:0;
+	}
+}
+
+
+.adresse-estimation {
+  display: none;
+}
+
+// -------------------------------------------
+// -- EQUIPE
+// -------------------------------------------
+
+#PopRejoindre {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 30rem;
+  text-align: center;
+  font-weight: bold;
+  background-color: $color-action;
+  padding: 20px;
+  @include border-top-radius(8px);
+  color: $color-nav-footer;
+  z-index: 1500;
+}

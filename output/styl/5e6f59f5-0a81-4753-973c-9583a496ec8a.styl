@@ -1,0 +1,440 @@
+$filterEmphasisColor = $blueTintedBlack
+
+.site-drawer {
+    box-shadow -2px 1px 2px rgba(0, 0, 0, 0.2)
+    background $drawerBackgroundColor
+    font-size 12px
+    position relative
+    background $drawerBackgroundColor
+    &__content {
+        background white
+    }
+    &__header {
+        //border-bottom 1px solid $stripeBorderColor
+        box-shadow 0 2px 3px rgba(0,0,0,0.2)
+        background $searchBar_backgroundColor
+        color $searchBar_color
+        //padding 0 20px
+        position relative
+        &__title {
+            font-size 14px
+            > a, > span {
+                font-weight 700
+                text-align center
+                display block
+                height $searchTabBar-height
+                line-height $searchTabBar-height
+                color inherit
+            }
+        }
+    }
+
+    &__section {
+        background $drawerBackgroundColor
+        color $drawerTextColor
+        &__content {
+            padding 10px
+        }
+    }
+
+    //&__footer {
+    //	position relative
+    //	>div {
+    //		vertically-align()
+    //	}
+    //	background white
+    //	position relative
+    //	width 100%
+    //	z-index 20
+    //	overflow hidden
+    //	height vrBlock(2)
+    //	border-top 1px solid $stripeBorderColor
+    //}
+
+    &__search-bar {
+        position relative
+        border-bottom 1px solid $stripeBorderColor
+        input {
+            width calc(100% - 30px)
+            border none
+            margin 10px 0
+            outline none
+            padding 0 20px
+        }
+        button {
+            position absolute
+            right 0
+            background none
+            border none
+            font-size 20px
+            margin 5px 10px
+        }
+        .dropdown-menu {
+            width 100%
+            overflow hidden
+            border-radius 0
+            a {
+                text-overflow ellipsis
+                overflow hidden
+            }
+        }
+    }
+
+    &__section {
+        padding-bottom 150px
+        &__content {
+            padding 10px 20px
+        }
+    }
+    &__tabs {
+        display flex
+        overflow auto
+        a {
+            display inline-block
+            flex 1 0 auto
+            text-align center
+            padding 5px
+            div {
+                font-size 20px
+            }
+            span {
+                font-size 10px
+            }
+        }
+    }
+
+    &__section {
+        &__content {
+        }
+    }
+    &__toggle {
+        position absolute
+        display block
+        width 25px
+        height $searchTabBar-height
+        right 100%
+        top $searchTabBar-height
+        background #6eb3e0
+        box-shadow -2px 2px 3px rgba(0,0,0,0.2)
+        &:before {
+            display block
+            content ''
+            triangle 'left' 5px #fff
+            position relative
+            top 18px
+            right -11px
+        }
+    }
+    &.is-active {
+        .site-drawer__toggle {
+            &:before {
+                border none
+                triangle 'right' 5px #fff
+            }
+        }
+    }
+
+}
+
+.site-drawer {
+    &__transclude {
+        position relative // only because of yet another ie bug - EDGE
+    }
+    &__bar {
+        display flex
+        padding 0
+        &__action, &__title, &__icon {
+            flex 1 1 auto
+            text-align center
+            height $searchTabBar-height
+            line-height $searchTabBar-height
+            position relative
+            &:hover {
+                text-decoration none
+                //	background darken($drawerSecondaryBackgroundColor, 5)
+            }
+        }
+        &__action {
+            max-width 50%
+            text-transform uppercase
+            color $linkColor
+        }
+        &__icon {
+            width vrBlock(1.5)
+            margin 0 20px
+            font-size 22px
+            text-align center
+            display block
+            flex 0 0 auto
+            border-radius 50%
+            &:hover, &:focus {
+                text-decoration none
+                //background rgba(0,0,0,0.08)
+            }
+            .count {
+                position absolute
+                bottom 2px
+                left 15px
+            }
+        }
+        &__title {
+            font-size 14px
+            > a, > span {
+                font-weight 700
+                text-align center
+                display block
+                height $searchTabBar-height
+                line-height $searchTabBar-height
+                color inherit
+            }
+            .stripe-menu {
+                top vrBlock(1)
+                left 0
+                right 0!important
+                margin 0
+                .stripe-menu__drop-down {
+                    left 0!important
+                    right 0!important
+                    width 100%
+                    line-height vrBlock(1)
+                }
+            }
+        }
+    }
+}
+
+.site-drawer__bar__action--hover-only {
+    visibility hidden
+}
+
+.filter-group {
+    border-bottom 1px solid $stripeBorderColor
+    &:hover {
+        .site-drawer__bar__action--hover-only {
+            visibility visible
+        }
+    }
+    &__header {
+        background white
+    }
+
+    h4 {
+        font-weight 600
+        padding 12px 20px
+        font-size 12px
+        margin 0
+        [class^="gb-icon-"], [class*=" gb-icon-"] {
+            font-size 20px
+            position relative
+            top -3px
+            display inline
+            height vrBlock(1)
+        }
+    }
+    input[type=checkbox], input[type=radio] {
+        margin-top 3px
+    }
+    &__filter {
+        > * {
+            border-bottom 1px solid $stripeBorderColor
+            &:last-child {
+                border-bottom none
+            }
+        }
+        > .is-padded {
+            padding 0 20px
+        }
+    }
+    &__filter {
+        background $drawerSecondaryBackgroundColor
+        border-top 1px solid $stripeBorderColor
+        &--collapsed {
+            border-color $drawerBackgroundColor
+            background $drawerBackgroundColor
+        }
+        label {
+            width 100%
+        }
+        .gb-btn-group {
+            >label, >a {
+                width auto
+            }
+        }
+        &__search {
+            position relative
+            padding 0
+            input {
+                width 100%
+                background none
+                border none
+                padding 10px 20px
+                outline 0
+            }
+        }
+        &__name {
+            position relative
+            display flex
+            //width 100%
+            span {
+                flex 1 1 auto
+                position relative
+            }
+            &__title {
+                white-space nowrap
+                text-overflow ellipsis
+                overflow hidden
+            }
+            &__bar {
+                position absolute
+                bottom -0.125rem
+                height 1.5rem
+                width 0%
+                background #d6e1e6
+                transition width 200ms ease
+            }
+            &__count {
+                color darken($drawerSecondaryBackgroundColor, 30)
+                padding-left 5px
+                text-align right
+                flex 0 0 auto
+            }
+        }
+    }
+    &__count {
+        color #c3c3c3
+    }
+    &__accepted {
+        padding-left: 20px
+        a {
+            color: inherit
+            &:hover {
+                text-decoration: underline; 
+                }
+        }
+    }
+}
+.rtl {
+    .filter-group__filter__name {
+        text-align right
+    }
+    .filter-group__filter__name__count {
+        text-align left
+        direction ltr
+    }
+    .filter-group__filter__name__title {
+        padding-left 5px
+    }
+}
+
+.filter-group__filter__name:hover {
+    .filter-group__filter__name__count {
+        color darken($drawerSecondaryBackgroundColor, 50)
+    }
+    .filter-group__filter__name__bar {
+        background darken(#d6e1e6, 5)
+    }
+}
+
+.filter-group__filter--facet {
+    @extends .filter-group__filter
+    overflow hidden
+}
+
+.filter-group--links {
+    @extends .filter-group
+    overflow hidden
+    border none
+    a {
+        display block
+        margin -5px 20px 10px 20px
+        //line-height vrBlock(1.25)
+        color inherit
+        font-size 12px
+        &::first-letter {
+            text-transform uppercase
+        }
+        height 20px
+        &:first-child {
+            margin-top 10px
+        }
+    }
+}
+
+.site-drawer__comment {
+    margin 50px 20px
+    font-size 14px
+    color #888
+    text-align center
+}
+
+.gb-btn-group {
+    //background $greyBackground
+    border 25px
+    border-radius 25px
+    display block
+    > label, > a {
+        border none
+        box-shadow none
+        border-radius 25px
+        padding 3px 10px
+        margin 3px 0
+        margin-right 3px
+        display inline-block
+        font-weight normal
+        color inherit
+        &:first-of-type {
+            margin-left 3px
+        }
+        &.active {
+            background $filterEmphasisColor
+            color white
+            &:hover {
+                color white
+            }
+        }
+        &:hover {
+            text-decoration none
+        }
+    }
+}
+
++isAbove($laptop) {
+    .site-drawer {
+        box-shadow 2px 1px 2px rgba(0, 0, 0, 0.2)
+        &__header {
+            &__close {
+                visibility none
+            }
+        }
+    }
+    .rtl {
+        .site-drawer {
+            box-shadow -2px 1px 2px rgba(0, 0, 0, 0.2)
+        }
+    }
+    .site-drawer__toggle {
+        display none
+    }
+}
+
++isAbove($desktop) {
+    .drawer-padding {
+        padding-left $filterDrawerWidth
+    }
+}
+
+//.attention {
+//	color #3b99fc !important
+//}
+//@keyframes colours {
+//	0% {color: #39f;}
+//	50% {color: #27c;}
+//}
+//
+//.attention {
+//	animation-direction normal
+//	animation-duration 2s
+//	animation-iteration-count infinite
+//	animation-name colours
+//	animation-timing-function ease
+//}

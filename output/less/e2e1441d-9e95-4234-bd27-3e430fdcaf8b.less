@@ -1,0 +1,599 @@
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Roboto"),
+        /* Если не получилось, загрузит woff2 */
+        url("../../build/fonts/roboto-v20-latin-regular.woff2") format("woff2"),
+        /* Если браузер не поддерживает woff2, загрузит woff */
+        url("../../build/fonts/roboto-v20-latin-regular.woff") format("woff");
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: "Roboto", "Arial", sans-serif;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.main-content {
+    width: 100%;
+    height: 500px;
+    margin-top: 6%;
+    background-image: url(/wheelOfFortune/src/img/wheelNew.png);
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.arrow-wrapper {
+    width: 100%;
+    height: 500px;
+    z-index: 20;
+}
+
+.wheel-arrow {
+    position: relative;
+    left: 48.5%;
+    top: 3%;
+}
+
+.category-list {
+    width: 100%;
+    position: absolute;
+    //     transform: perspective(1px) translateZ(0);
+    // backface-visibility: hidden;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    max-width: 1360px;
+}
+
+.category-name {
+    font-size: 1rem;
+    z-index: 10;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.n-1 {
+    position: absolute;
+    left: 52.5%;
+    top: -45px;
+    transform: rotate(-73deg);
+}
+
+.n-2 {
+    position: absolute;
+    left: 60.5%;
+    top: 7px;
+    transform: rotate(-54deg);
+}
+
+.n-3 {
+    position: absolute;
+    left: 66%;
+    top: 98px;
+    transform: rotate(-34deg);
+}
+
+.n-4 {
+    position: absolute;
+    left: 68%;
+    top: 242px;
+    transform: rotate(1deg);
+}
+
+.n-5 {
+    position: absolute;
+    left: 65.9%;
+    top: 358px;
+    transform: rotate(17deg);
+}
+
+.n-6 {
+    position: absolute;
+    left: 60%;
+    top: 453px;
+    transform: rotate(48deg);
+}
+
+.n-7 {
+    position: absolute;
+    left: 52%;
+    top: 501px;
+    transform: rotate(72deg);
+}
+
+.n-8 {
+    position: absolute;
+    left: 40.5%;
+    top: 500px;
+    transform: rotate(112deg);
+}
+
+.n-9 {
+    position: absolute;
+    left: 34.2%;
+    top: 413px;
+    transform: rotate(-43deg);
+}
+
+.n-10 {
+    position: absolute;
+    left: 28.8%;
+    top: 318px;
+    transform: rotate(-18deg);
+}
+
+.n-11 {
+    position: absolute;
+    left: 24.2%;
+    top: 175px;
+    transform: rotate(12deg);
+}
+
+.n-12 {
+    position: absolute;
+    left: 32%;
+    top: 62px;
+    transform: rotate(36deg);
+}
+
+.n-13 {
+    position: absolute;
+    left: 37%;
+    top: -37px;
+    transform: rotate(63deg);
+}
+
+.n-14 {
+    position: absolute;
+    left: 45.9%;
+    top: -43px;
+    transform: rotate(81deg);
+}
+.pop-up {
+    position: absolute;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: none;
+    background-color: #FFFFFF;
+    width: 30%;
+    height: 30%;
+    z-index: 2;
+    left: 35%;
+    top: 32%;
+    transition: opacity 1.5s ease-in-out;
+    opacity: 0;
+    box-shadow: 0 0 5px 2px #ccc;
+}
+.pop-up-text {
+    color: #272727;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 19%;
+}
+
+.pop-up-cross-icon {
+    float: right;
+    margin-top: 1.5%;
+    margin-right: 1.5%;
+    cursor: pointer;
+}
+// .arrow-wrapper {
+//     animation: clock-hand-rotate 5s linear infinite;
+// }
+.button-wrapper {
+    text-align: left;
+    position: absolute;
+    left: 4%;
+}
+
+.animated-button {
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 15px 30px;
+    overflow: hidden;
+    border: 2px solid;
+    border-bottom-width: 4px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgba(30, 255, 188, 1);
+    background: rgba(255, 255, 255, 1);
+    transition: color .3s, background .5s;
+    cursor: pointer;
+}
+
+.animated-button:hover {
+    animation: stripes .75s infinite linear;
+    background: linear-gradient(45deg, rgba(30, 255, 188, 1) 25%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 50%, rgba(30, 255, 188, 1) 50%, rgba(30, 255, 188, 1) 75%, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 1));
+    background-size: 10px 10px;
+    color: #FF50E5;
+}
+
+@keyframes stripes {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 50px 0;
+    }
+}
+
+// @keyframes clock-hand-rotate {
+//     from {
+//         transform: rotate(0deg)
+//     }
+//     to {
+//         transform: rotate(360deg)
+//     }
+// }
+
+.clock {
+    box-shadow: inset 0 0 0 0.02em #000;
+    display: inline-block;
+    border-radius: 0.5em;
+    position: relative;
+    font-size: 250px;
+    overflow: hidden;
+    height: 1em;
+    width: 1em;
+}
+
+.clock::after {
+    content: '';
+    background-color: #fff;
+    border-radius: 0.5em;
+    margin-left: -0.5em;
+    margin-top: -0.5em;
+    position: absolute;
+    font-size: 0.01em;
+    display: block;
+    height: 1em;
+    width: 1em;
+    left: 50%;
+    top: 50%;
+}
+
+.clock__hand-container,
+.clock__hand,
+.clock__stroke {
+    margin-left: -0.5em;
+    margin-top: -0.5em;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 1em;
+    width: 1em;
+    left: 50%;
+    top: 50%;
+}
+
+.clock__stroke::after {
+    content: "";
+    border-radius: 0 0 0.02em 0.02em;
+    background-color: #000;
+    margin-left: -0.01em;
+    position: absolute;
+    display: block;
+    height: 0.05em;
+    width: 0.02em;
+    top: 0.02em;
+    left: 50%;
+}
+
+.clock__stroke--small::after {
+    content: "";
+    border-radius: 0 0 0.0125em 0.0125em;
+    height: 0.025em;
+    width: 0.015em;
+}
+
+.clock__stroke--1 {
+    transform: rotate(6deg);
+}
+
+.clock__stroke--2 {
+    transform: rotate(12deg);
+}
+
+.clock__stroke--3 {
+    transform: rotate(18deg);
+}
+
+.clock__stroke--4 {
+    transform: rotate(24deg);
+}
+
+.clock__stroke--5 {
+    transform: rotate(30deg);
+}
+
+.clock__stroke--6 {
+    transform: rotate(36deg);
+}
+
+.clock__stroke--7 {
+    transform: rotate(42deg);
+}
+
+.clock__stroke--8 {
+    transform: rotate(48deg);
+}
+
+.clock__stroke--9 {
+    transform: rotate(54deg);
+}
+
+.clock__stroke--10 {
+    transform: rotate(60deg);
+}
+
+.clock__stroke--11 {
+    transform: rotate(66deg);
+}
+
+.clock__stroke--12 {
+    transform: rotate(72deg);
+}
+
+.clock__stroke--13 {
+    transform: rotate(78deg);
+}
+
+.clock__stroke--14 {
+    transform: rotate(84deg);
+}
+
+.clock__stroke--15 {
+    transform: rotate(90deg);
+}
+
+.clock__stroke--16 {
+    transform: rotate(96deg);
+}
+
+.clock__stroke--17 {
+    transform: rotate(102deg);
+}
+
+.clock__stroke--18 {
+    transform: rotate(108deg);
+}
+
+.clock__stroke--19 {
+    transform: rotate(114deg);
+}
+
+.clock__stroke--20 {
+    transform: rotate(120deg);
+}
+
+.clock__stroke--21 {
+    transform: rotate(126deg);
+}
+
+.clock__stroke--22 {
+    transform: rotate(132deg);
+}
+
+.clock__stroke--23 {
+    transform: rotate(138deg);
+}
+
+.clock__stroke--24 {
+    transform: rotate(144deg);
+}
+
+.clock__stroke--25 {
+    transform: rotate(150deg);
+}
+
+.clock__stroke--26 {
+    transform: rotate(156deg);
+}
+
+.clock__stroke--27 {
+    transform: rotate(162deg);
+}
+
+.clock__stroke--28 {
+    transform: rotate(168deg);
+}
+
+.clock__stroke--29 {
+    transform: rotate(174deg);
+}
+
+.clock__stroke--30 {
+    transform: rotate(180deg);
+}
+
+.clock__stroke--31 {
+    transform: rotate(186deg);
+}
+
+.clock__stroke--32 {
+    transform: rotate(192deg);
+}
+
+.clock__stroke--33 {
+    transform: rotate(198deg);
+}
+
+.clock__stroke--34 {
+    transform: rotate(204deg);
+}
+
+.clock__stroke--35 {
+    transform: rotate(210deg);
+}
+
+.clock__stroke--36 {
+    transform: rotate(216deg);
+}
+
+.clock__stroke--37 {
+    transform: rotate(222deg);
+}
+
+.clock__stroke--38 {
+    transform: rotate(228deg);
+}
+
+.clock__stroke--39 {
+    transform: rotate(234deg);
+}
+
+.clock__stroke--40 {
+    transform: rotate(240deg);
+}
+
+.clock__stroke--41 {
+    transform: rotate(246deg);
+}
+
+.clock__stroke--42 {
+    transform: rotate(252deg);
+}
+
+.clock__stroke--43 {
+    transform: rotate(258deg);
+}
+
+.clock__stroke--44 {
+    transform: rotate(264deg);
+}
+
+.clock__stroke--45 {
+    transform: rotate(270deg);
+}
+
+.clock__stroke--46 {
+    transform: rotate(276deg);
+}
+
+.clock__stroke--47 {
+    transform: rotate(282deg);
+}
+
+.clock__stroke--48 {
+    transform: rotate(288deg);
+}
+
+.clock__stroke--49 {
+    transform: rotate(294deg);
+}
+
+.clock__stroke--50 {
+    transform: rotate(300deg);
+}
+
+.clock__stroke--51 {
+    transform: rotate(306deg);
+}
+
+.clock__stroke--52 {
+    transform: rotate(312deg);
+}
+
+.clock__stroke--53 {
+    transform: rotate(318deg);
+}
+
+.clock__stroke--54 {
+    transform: rotate(324deg);
+}
+
+.clock__stroke--55 {
+    transform: rotate(330deg);
+}
+
+.clock__stroke--56 {
+    transform: rotate(336deg);
+}
+
+.clock__stroke--57 {
+    transform: rotate(342deg);
+}
+
+.clock__stroke--58 {
+    transform: rotate(348deg);
+}
+
+.clock__stroke--59 {
+    transform: rotate(354deg);
+}
+
+.clock__hand--hour::after {
+    content: "";
+    border-radius: 0.015em 0.015em 0.01em 0.01em;
+    background-color: #000;
+    margin-bottom: -0.02em;
+    margin-left: -0.025em;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 0.25em;
+    width: 0.05em;
+    bottom: 50%;
+    left: 50%;
+}
+
+.clock__hand--minute::after {
+    content: "";
+    border-radius: 0.012em 0.012em 0.01em 0.01em;
+    background-color: #000;
+    margin-bottom: -0.02em;
+    margin-left: -0.015em;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 0.4em;
+    width: 0.03em;
+    bottom: 50%;
+    left: 50%;
+}
+
+.clock__hand--second::after {
+    content: "";
+    border-radius: 0.01em 0.01em 0.005em 0.005em;
+    background-color: #f00;
+    margin-bottom: -0.02em;
+    margin-left: -0.005em;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 0.46em;
+    width: 0.01em;
+    bottom: 50%;
+    left: 50%;
+}
+
+.clock__hand--hour {
+    animation: clock-hand-rotate 43200s linear infinite;
+}
+
+.clock__hand--minute {
+    animation: clock-hand-rotate 3600s linear infinite;
+}
+
+.clock__hand--second {
+    animation: clock-hand-rotate 60s linear infinite;
+}
+
+@keyframes clock-hand-rotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}

@@ -1,0 +1,206 @@
+$font-color: #899cb1;
+$balance-button-color: #005ff8;
+$selected-option-color: #002CFB;
+
+
+//Container
+.main {
+	background-color: #f1f4f9;
+	padding: 1em 5%;
+}
+
+// div with date and balance blocks
+
+.dateWithBalance {
+	display: flex;
+	justify-content: flex-end;
+	margin: 10px 0 20px;
+
+	div {
+		margin-left: 5em;
+	}
+
+	.balance {
+		padding: 7px;
+		border-radius: 30px;
+		background: #fff;
+		display: flex;
+
+		/* -- TopUp Button -- */
+		button {
+			border: none;
+			background-color: $balance-button-color;
+			border-radius: 50%;
+			position: relative;
+			width: 24px;
+			height: 24px;
+		}
+
+		button:after,
+		button:before {
+			border-radius: 2px;
+			content: "";
+			display: block;
+			width: 14px;
+			height: 2px;
+			background-color: #fff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateY(-50%) translateX(-50%);
+		}
+
+		button:after {
+			width: 2px;
+			height: 14px;
+		}
+	}
+}
+
+/* -- Filters + Search -- */
+
+.filtersWithSearch {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+
+	/* -- Search -- */
+	.search {
+		display: flex;
+	}
+
+	/* -- Filters -- */
+	.reset_btn {
+		color: $font-color;
+		font-size: 14px;
+		font-weight: 500;
+		display: flex;
+		align-items: flex-end;
+	}
+
+	.filters {
+		border: none;
+		width: 800px;
+		display: flex;
+		justify-content: space-between;
+
+		select {
+			color: $font-color;
+			font-size: 14px;
+			border: none;
+			background: none;
+
+			&:focus-visible {
+				outline: none;
+			}
+		}
+
+		/* -- if non-default option selected -- */
+		.selected {
+			color: $selected-option-color;
+
+			option {
+				color: $font-color;
+			}
+
+			.selectedOption {
+				color: $selected-option-color;
+			}
+		}
+	}
+}
+
+/* Styles for TABLE-tag */
+
+$tr-hover-color: #f8fafd;
+
+.table {
+	box-shadow: 0 4px 5px #e9edf3;
+	border-radius: 8px;
+	background-color: #fff;
+	width: 100%;
+	text-align: center;
+	padding: 10px 20px;
+
+	th {
+		// title
+		padding: 10px;
+	}
+
+	th,
+	td {
+		// border under a cell
+		border-bottom: 1px solid #f2f6fb;
+
+		&:last-child {
+			text-align: right;
+		}
+	}
+
+	.call {
+		.audio {
+			height: 39px;
+			width: 250px;
+		}
+		.audioBlock {
+			text-align: center;
+			max-width: 100px;
+		}
+
+		&:last-child {
+			td {
+				// disable border for last cell
+				border-bottom: none;
+			}
+		}
+
+		&:hover {
+			background-color: $tr-hover-color;
+		}
+	}
+
+	.callNumber {
+		text-align: left;
+	}
+}
+
+/* -- Template for grid --  NOT ACTIVE -- */
+.grid {
+	display: grid;
+	grid-template-rows: 1fr;
+	box-shadow: 0 4px 5px #e9edf3;
+	border-radius: 10px;
+
+	.gridRow,
+	.gridRowHeader {
+		background-color: $font-color;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 0fr 0fr 0.5fr 0.5fr 1.75fr 0.75fr 1fr 1.75fr;
+		grid-column-gap: 10px;
+		align-items: center;
+		text-align: center;
+		border-bottom: 1px solid #eaf0fa;
+
+		.gridRowCell {
+			padding: 5px 10px;
+			background-color: #fff;
+
+			&:nth-child(4) {
+				text-align: left;
+			}
+
+			&:last-child {
+				text-align: right;
+			}
+		}
+
+		&:hover {
+			background-color: #123;
+		}
+	}
+
+	.gridRowHeader:hover {
+	}
+}

@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+
+
+
+// ブレイクポイント ---------------------------------------
+
+$phone: "only screen and (max-width: 786px)";
+
+
+
+// 外枠 ---------------------------------------
+
+@mixin wrapper {
+	width: 100%;
+	height: 100%;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	@media #{$phone} {
+		width: 100%;
+
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+// 黄金比【小】 ---------------------------------------
+@mixin gld_s {
+	width: 38.2716%;
+	float: left;
+	@media #{$phone} {
+		float: none;
+		width: 100%;
+	}
+}
+// 黄金比【大】 ---------------------------------------
+@mixin gld_l {
+	width: 61.7283%;
+	float: left;
+	@media #{$phone} {
+		float: none;
+		width: 100%;
+	}
+}
+
+
+ // 色指定 ---------------------------------------
+
+$black: #2b2b2b;
+$white: #f2f2f2;
+
+$red: #a3002c; //プラウダスレッド
+$red02: #6d0323; //濃い赤
+$red03: #af2c54; //薄い赤
+$red04: #d6a1af; //さらに薄い赤
+$yellow: #fbea99;
+
+
+$bg01: #fcfdee;//背景黄
+
+
+
+
+
+$bg02: #f7e981;//背景黄
+$bg01_inner: #eaf7ff;//背景青インナ
+$bg02_inner: #fefff0;//背景青インナー
+
+$nav: #fffae6;//ナビゲーション・footer
+
+
+
+// グラデーション ---------------------------------------
+
+@mixin grd_ptn01 {//青
+ 	background: #4b6cb7;
+	background: -webkit-linear-gradient(to bottom, #4b6cb7, #182848);
+	background: linear-gradient(to bottom, #4b6cb7, #182848);
+ }
+// フォントサイズ ---------------------------------------
+
+$fzSSS: 0.4em;
+$fzSS: 0.6em;
+$fzS: 0.8em;
+$fzM: 1em;
+$fzL: 1.6em;
+$fzLL: 2.2em;
+$fzLLL: 2.6em;
+$fzXL: 3em;
+
+ // 角丸 -----------------------------------------------
+
+@mixin kadomaru0 {
+	border-radius:0;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+}
+
+@mixin kadomaru4 {
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+}
+
+@mixin kadomaru6 {
+	border-radius:6px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+}
+@mixin kadomaru15 {
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+}
+
+@mixin kadomaru20 {
+	border-radius:20px;
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+}
+@mixin kadomaru50 {
+	border-radius:50px;
+	-webkit-border-radius:50px;
+	-moz-border-radius:50px;
+}
+@mixin kadomaru100 {
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+}
+@mixin kadomaru-btm15 {
+	border-bottom-left-radius:15px;
+	-webkit-border-bottom-left-radius:15px;
+    -moz-border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+	-webkit-border-bottom-right-radius:15px;
+    -moz-border-bottom-right-radius:15px;
+
+}
+
+
+// ボタン ---------------------------------------
+
+@mixin btn_ptn {
+	display: block;
+	margin: 20px auto;
+	padding: 0.5em 0;
+	text-align: center;
+	@include kadomaru6;
+	color: $white;
+	background-color: $red;
+	text-decoration: none;
+	border-bottom: solid 4px $red02;
+	&:hover {
+		-ms-transform: translateY(4px);
+		-webkit-transform: translateY(4px);
+		transform: translateY(4px);
+		border-bottom: none;
+		margin: 24px auto 20px;
+	}
+}
+
+
+// セクション ---------------------------------------
+@mixin sec01 {
+	background-color: $bg01;
+	width: 100%;
+	padding: 2em 0 5em;
+	@media #{$phone} {
+		padding: 1em 0 3em;
+	}
+}
+@mixin sec02 {
+	background-color: $bg02;
+	width: 100%;
+	padding: 2em 0 5em;
+	@media #{$phone} {
+		padding: 1em 0 3em;
+	}
+}
+
+// インナーブロック ---------------------------------------
+@mixin inner01 {
+	@include kadomaru15;
+	background-color: $bg01_inner;
+	width: 980px;
+	margin: 3em auto 0;
+	padding: 4em 0;
+	@media #{$phone} {
+		width: 90%;
+		padding: 2em 0;
+	}
+}
+@mixin inner02 {
+	@include kadomaru15;
+	background-color: $bg02_inner;
+	width: 980px;
+	margin: 3em auto 0;
+	padding: 4em 0;
+	@media #{$phone} {
+		width: 90%;
+		padding: 2em 0;
+	}
+}
+
+
+// フォント指定 ---------------------------------------
+
+// ゴシック体
+@mixin fontGothic {
+	font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+
+@mixin fontMincho {
+	font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+
+
+// 画像：可変サイズ ---------------------------------------
+
+@mixin fluid {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+}
+// flex---------------------------------------
+@mixin flex {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+}
+
+ // clearfix ---------------------------------------
+
+@mixin clearfix {
+	&:after {
+	  content: ".";
+	  display: block;
+	  clear: both;
+	  height: 0;
+	  visibility: hidden;
+	}
+
+	min-height: 1px;
+
+	* html & {
+	  height: 1px;
+	  /*\*//*/
+	  height: auto;
+	  overflow: hidden;
+	  /**/
+	}
+}
+
+
+ // ベンダープレフィックス ---------------------------------------
+
+@mixin css3($property, $value) {
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+		#{$prefix}#{$property}: $value;
+	}
+}

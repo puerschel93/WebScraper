@@ -1,0 +1,121 @@
+/*who we are*/
+.common-features {
+  width: 100%;
+  max-width: 790px;
+  margin: 115px auto 130px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 34px;
+  letter-spacing: .01em;
+  font-weight: 500;
+
+  @media (max-width: 992px) {
+    margin-top: 70px;
+    margin-bottom: 90px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 315px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 44px;
+    line-height: 54px;
+    font-weight: bold;
+
+    @media (max-width: 767px) {
+      font-size: 22px;
+      line-height: 20px;
+    }
+  }
+
+  &__text {
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 80px;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 500;  
+  color: #73879c;
+
+  @media (max-width: 1200px) {
+    flex-wrap: nowrap;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 26px;
+    line-height: 34px;
+
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 5px;
+      margin-top: 15px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+    max-width: 270px;
+    margin-left: 60px;
+
+    @media (max-width: 767px) {
+      max-width: 200px;
+    }
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -80px;
+      min-width: 60px;
+      min-height: 53px;
+      background-repeat: no-repeat;
+      background-position: right top;
+
+      @media (max-width: 767px) {
+        left: -40px;
+        top: 18px;
+        min-width: 30px;
+        min-height: 30px;
+      }
+    }
+
+    &--heart::before {
+      background-image: url(../img/icon-heart.svg);
+    }
+
+    &--lamp::before {
+      background-image: url(../img/icon-lamp.svg);
+    }
+
+    &--star::before {
+      background-image: url(../img/icon-star.svg);
+    }
+  }
+}

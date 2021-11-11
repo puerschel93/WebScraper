@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./base/base";
+
+.loader {
+background-color: "#f3f3f3"
+}
+
+header {
+    @include flex-center;
+    position: relative;
+
+    a {
+        position: absolute;
+        left: 15px;
+        font-size: 1.2em
+        }
+ }
+
+ footer {
+    @include padding-layout;
+    background-color: $grey3;
+    color: $color-white;
+
+    span {
+        height: 15px;
+        width: 15px;
+        margin-right: 15px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 120px
+
+    }
+}
+
+.city {
+    @include flex-center;
+    background-color: $grey2;
+    height: 50px;
+    
+    &__container {
+        @include flex-center;
+
+        span {
+            margin-right: 15px;
+        }  
+    }
+}
+
+.explore {
+    @include padding-layout;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 290px;
+    background-color: $grey1;
+}
+
+.functioning {
+    @include padding-layout; 
+}
+
+.restaurants {
+    @include padding-layout;
+    background-color: $grey1;
+}
+
+button {
+    @include box-shadow;
+    @include button;
+}
+
+.card {
+    position: relative;
+    display: grid;
+    grid-template-rows: 174px 77px;
+    height: 251px;
+    border-radius: 15px 15px;
+    margin-block: 20px;
+    background: $color-white;
+
+    &__img {
+        @include img-card;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    &__sticker {
+        position: absolute;
+        right: 14px;
+        top: 15px;
+        background-color: $color-tertiary;
+        color: rgb(1, 1, 31);
+        font-weight: bold;
+        height: 30px;
+        width:80px;
+        padding: 8px;
+    }
+
+    &__heading {
+    @include padding-layout;
+    @include grid-heart;
+    }
+}
+
+.step {
+    @include padding-layout;
+    display: flex;
+    height: 68px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $grey1;
+    border-radius: 15px 15px;
+    margin-block: 20px;
+
+    &>span {
+        margin-right: 15px;
+        color: $grey3;
+      }
+
+    &__number {
+        position: relative;
+        right: 30px;
+        height: 25px;
+        width: 25px;
+        text-align: center;
+        font-size: large;
+        background-color: $color-primary;
+        color: $color-white;
+        border-radius: 50%;
+    }
+    &:hover {
+        background: $alpha-primary;
+    }
+}
+
+.heart {
+    @include flex-end;
+    
+    &__one {
+       position: absolute;
+       transition: ease-in-out 600ms;
+
+       &:hover {
+        opacity: 0;
+        transition: ease-in-out 600ms;
+        }
+    }
+
+    &__two {
+        position: absolute;
+        opacity: 0;
+        transition: ease-in-out 600ms;
+  
+        &:hover {
+            opacity: 1;
+            transition: ease-in-out 600ms;
+        }
+    }
+}
+
+/**********************************PAGE************************/
+
+.background {
+
+    height: 260px;
+
+    
+    &__img {
+        @include img-card;
+    }
+}
+
+/******************************************************/
+.menu {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(13);
+    row-gap: 14px;
+    margin-block-end: 40px;
+    padding: 14px;
+    border-radius: 40px 40px 0px 0px;
+    position: relative;
+    bottom: 40px;
+    background-color: $grey1;
+    
+
+    &__title {
+        display: grid;
+        grid-template-columns: 80% 20%;
+       
+    }
+
+}
+.meal {
+    display: flex;
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    height: 68px;
+
+   
+    &__heading {
+        display: grid;
+        grid-template-columns: 4fr 1fr 0px;
+        overflow: hidden;
+        cursor: pointer;
+        width: 100%;
+        transition: all 600ms ease-in-out;
+
+        span.fas {
+            transform: rotate(0deg);
+            transition: transform 600ms ease-in-out;
+        }
+        
+
+        &:hover {
+            grid-template-columns: 4fr 1fr 68px;
+            transition: all 600ms ease-in-out;
+
+            span.fas {
+                transform: rotate(-360deg);
+                transition: transform 600ms ease-in-out;
+            }
+        }
+
+        &__checked {
+            @include flex-center;
+            background-color: $color-tertiary;
+            color: white;
+            border-radius: 0px 15px 15px 0px;
+        }
+
+        &__details {
+            padding: 14px;
+            overflow: hidden;
+            
+            p, h3 {
+            text-overflow: ellipsis "...";
+            overflow: hidden;
+            white-space: nowrap;
+            }
+   
+        }
+
+        &__price {
+            @include flex-end;
+        }
+    }
+}
+
+.order {
+    text-align: center;
+    height: 150px;
+    
+}

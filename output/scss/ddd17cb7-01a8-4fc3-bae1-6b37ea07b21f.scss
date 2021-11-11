@@ -1,0 +1,227 @@
+$black: #000000;
+$grey: #2f3b54;
+$background: #0a192f;;
+$light-background: #2f3b54;
+$green: #bae67e;
+$blue: #6679a4;
+$white: #d7dce2;
+$light-green: #64ffda;
+
+/*
+font-family: 'Noto Serif', serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Source Code Pro', monospace;
+font-family: 'Staatliches', cursive;
+*/
+@font-face {
+    font-family: primary;
+    src: url(./fonts/SFMonoMedium.otf);
+  }
+  @font-face {
+    font-family: primary light;
+    src: url(./fonts/SFMonoLight.otf);
+  }
+  
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: primary, cursive;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+b{
+    color: $light-green;
+    font-weight: 400;
+}
+
+#wrapper{
+    display:flex;
+    background-color: $background;
+}
+
+nav{
+    background-color: $background;
+    color: $white;
+    display:flex;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    box-shadow: 0px 1px 12px 1px $black;
+
+    animation-name: box-shadow-fade-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;  
+
+    #logo-div{
+        font-size: 40px;
+        margin: auto;
+        p{
+            position: absolute;
+            left: 75px;
+            top: 25px;
+        }
+    }
+    #navigation-div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        div{
+            p{
+                letter-spacing: 1px;
+                word-spacing: -5px;
+                font-size: 14px;
+                font-weight: 400;
+                cursor: pointer;
+                margin: 15px;
+                font-family: primary light;
+            }:hover{
+                animation-name: to-light-green;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;  
+            }
+        }
+    }
+    
+}
+
+@keyframes box-shadow-fade-in {
+    from {box-shadow: 0px 0px 0px 0px $black;}
+    to {box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.37);}
+  }
+@keyframes to-light-green {
+    from{color: $black;}
+    to{color: $light-green;}
+}
+
+#left-column{
+    z-index: 5;
+    width: 200px;
+    min-width: 200px;
+    height:100vh;
+        #links-wrapper{
+            height: 20%;
+            margin-top: 73vh;
+            width: 100%;
+            display:flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: space-around;
+            justify-content: center;
+            animation-name: to-light-green;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;  
+            :hover{
+                animation-name: to-light-green;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;  
+            }
+                #line{
+                    background-color: $light-green;
+                    height: 100px;
+                    width:1px;
+                    position: absolute;
+                    bottom: 0px;
+                    left:100px;
+                }
+
+
+        }
+}
+.feather{
+    height: 30px;
+    margin: 10px;
+}
+#center-column{
+    position: absolute;
+    height:100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    #intro-text-div{
+        height: 500px;
+        animation-name: move-right-100;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;  
+    }
+}
+@keyframes move-right-100 {
+    from{
+        margin-left: -100px;
+    }
+    to{
+        margin-left: 0px;
+    }
+}
+@keyframes move-right-200 {
+    from{
+        margin-left: -200px;
+    }
+    to{
+        margin-left: 0px;
+    }
+}
+
+.green-title{
+    color: $light-green;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.xl{
+    color: $white;
+    font-size: 60px;
+    margin: 30px;
+}
+
+.large{
+    color: $white;
+    font-size: 30px;
+    animation-name: move-right-200;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;  
+}
+
+.grey{
+    color: $grey;
+}
+
+#left-column{
+    width: 10%;
+    height:100vh;
+}
+
+button{
+    background-color: $background;
+    border: solid $light-green 1px;
+    height: 50px;
+    padding: 10px;
+    color: $white;
+    border-radius: 7px;
+    cursor: pointer;
+    &:hover{
+        animation-name: background-to-light-green;
+        animation-duration: 3s;
+        animation-fill-mode: forwards; 
+    }
+}
+
+@keyframes background-to-light-green {
+    from{
+        background-color: $background;
+        color: $white;
+    }
+    to{
+        background-color: $light-green;
+        color: $black;
+    }
+}

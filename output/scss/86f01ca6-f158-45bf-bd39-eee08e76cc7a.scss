@@ -1,0 +1,78 @@
+#main_game {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .row {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #backGroundContainer {
+        position: relative;
+        width: 345px;
+        height: 198px;
+        justify-content: space-between;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 5px solid black;
+        border-radius: 6%;
+        box-shadow: 5.5px 5.5px darkslategrey;
+        .player_one_container {
+            //Player 1
+            position: absolute;
+            top: 15px;
+            left: 5px;
+            width: fit-content;
+            img {
+                width: 240px;
+                align-self: baseline;
+            }
+        }
+        .player_two_container {
+            //Player 2
+            position: absolute;
+            top: 15px;
+            right: -5%;
+            border: 1px solid red;
+            width: fit-content;
+            img {
+                width: 240px;
+                transform: rotateY(180deg);
+            }
+        }
+    }
+    .log_container {
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        #actionBox {
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border: 2px solid black;
+            box-shadow: 5.5px 5.5px darkslategrey;
+        }
+        #console,
+        #turn_container {
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 50%;
+            height: fit-content;
+            max-height: 100%;
+            border: 2px solid black;
+            box-shadow: 5.5px 5.5px darkslategrey;
+            li {
+                list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
+                margin: 15px;
+            }
+        }
+    }
+}

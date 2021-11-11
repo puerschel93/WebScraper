@@ -1,0 +1,332 @@
+section#home
+	width 100%
+	float left
+	background-color $blue1
+	height 100vh
+	@media (max-width: 992px)
+		height auto
+	.overlay 
+		width 100%
+		float left
+		height 100%
+		background-image url("http://oneclickpixels.com/investable/assets/images/utility/bg-chart.png")
+		background-position center center
+		background-size cover
+	.wrapper-blocks
+		width 100%
+		margin-top 25vh
+		#block-info-result-mobile
+			padding-top 20px
+		button.btn-simulate
+			color $blue2
+			font-family 'Roboto Condensed', sans-serif
+			border 0
+			padding 10px 40px
+			cursor pointer
+			border-radius 4px
+			font-size 20px
+			background-color: white
+			transition all 250ms ease-in-out
+			transform scale(1)
+			i
+				margin-left 7px
+				position relative
+				top 2px
+			&.featured
+				transform scale(1.5)
+			&:hover, &:focus
+				box-shadow 0px 0px 10px white
+				color $blue1
+		button.btn-contact
+			color alpha(#FFF, 0.8)
+			font-family 'Roboto Condensed', sans-serif
+			border 0
+			position absolute
+			cursor pointer
+			right 0
+			top 0
+			padding 10px 12px
+			background-color transparent
+			font-size 20px
+			border-bottom 1px solid alpha(#FFF, 0.6)
+			transition all 250ms
+			@media (max-width 992px)
+				position initial
+				padding 10px 0
+				text-align center
+				display block
+				size 100
+				margin 10px 0
+				border-bottom 0
+			i
+				margin-left 7px
+			&:hover, &:focus
+				color #FFF
+				border-bottom 1px solid #FFF
+				@media (max-width 992px)
+					border-bottom 0
+		@media (max-width: 992px)
+			width 100%
+			margin-top 60px
+		.block-simulator, 
+		.block-info
+			size 50
+			@media (max-width: 992px)
+				size 100
+		.block-simulator
+			padding-right 20px
+			float left !important
+			@media (max-width 992px)
+				padding-right 0
+				padding-top 20px
+			h2
+				width 100%
+				float left
+				padding 0
+				margin 0
+				color #FFF
+				font-family 'Roboto Condensed', sans-serif
+				font-size 32px
+				font-weight normal
+				strong
+					color: white
+				@media (max-width 992px)
+					text-align center
+					font-size 28px
+					&.result
+						font-size 22px
+						padding-bottom 20px
+						> span
+							display block
+			form
+				width 90%
+				float left 
+				margin-top 30px
+				@media (max-width 992px)
+					width 100%
+				.form-group
+					width 100%
+					float left
+					margin-bottom 20px
+					&-simulate
+						text-align center
+					> span.form-error
+						float left 
+						color #FFEC9B
+						text-shadow 0px 0px 5px #FFEC9B
+						font-family 'Roboto Condensed', sans-serif
+						font-size 21px
+						font-weight 300
+						opacity 0
+						transition all 250ms
+						&.active
+							opacity 1
+					> span.form-identifier
+						float left 
+						background-color white
+						height 45px
+						line-height @height
+						padding 0 15px
+						color $blue2
+						font-family 'Roboto Condensed', sans-serif
+						border-radius 5px 0 0 5px
+						font-size 18px
+						text-align center
+						@media (max-width 992px)
+							width 33%
+					.form-control
+						border-radius 0 5px 5px 0
+						height 45px
+						line-height @height
+						font-size 18px
+						font-family 'Roboto Condensed', sans-serif
+						font-weight 100
+						transition all 300ms ease
+						background-color alpha(#000, 0.3)
+						padding 0 15px
+						border 0
+						float left
+						color #FFF
+						&:hover
+							background-color alpha(#000, 0.4)
+						&:focus, &.active
+							background-color alpha(#000, 0.7)
+							outline 0
+							color #FFF
+						@media(max-width 992px)
+							width 67%
+					input.form-control
+						width 70%
+						@media (max-width 992px)
+							width 67%
+					.control-hidden
+						display none
+					.form-control.control-select
+						width 60%
+						color alpha(#FFF, 0.7)
+						cursor pointer
+						position relative
+						@media(max-width 992px)
+							width 67%
+						.title
+							width 100%
+							float left
+							position relative
+							&:before
+								font-family FontAwesome
+								text-rendering auto
+								-webkit-font-smoothing antialiased
+								-moz-osx-font-smoothing grayscale
+								content "\f107"
+								position absolute
+								right 0
+								font-size 25px
+						ul.options
+							list-style none
+							width 100%
+							float left
+							position absolute
+							top 80%
+							left 0
+							background-color alpha(#000, 0.7)
+							margin 0
+							padding 0
+							line-height initial
+							border-radius 0 0 5px 5px
+							z-index -1
+							visibility hidden
+							opacity 0
+							transition opacity 450ms, top 350ms, visibility 300ms, z-index 300ms
+							li 
+								padding 10px 15px
+								font-size 17px
+								transition all 100ms ease
+								&:hover
+									background-color alpha(#000, .2)
+						&.active
+							border-radius 0 5px 0 0
+							ul.options
+								z-index 3
+								visibility visible
+								opacity 1
+								top 100%
+		.block-info
+			padding-left 20px
+			float right !important
+			@media (max-width 992px)
+				padding-left 0
+			h1
+				width 100%
+				float left
+				padding 0
+				margin 0
+				color #FFF
+				font-family 'Roboto Condensed', sans-serif
+				font-weight bold
+				font-size 48px
+				position relative
+				text-shadow 0px 0px 10px white
+				&:after
+					content ' '
+					display block
+					position absolute
+					bottom -5px
+					left 0
+					height 8px
+					width 10%
+					background-color white
+				@media (max-width 992px)
+					font-size 28px
+					text-align center
+					&:after
+						width 40%
+						left 30%
+						bottom -10px
+			h2
+				size 100
+				padding 0
+				mrgin 0
+				color #FFF
+				font-family 'Roboto Condensed', sans-serif
+				font-weight bold
+				font-size 32px
+				> span
+					color: white
+					display block
+			.block-apresentation
+				width 100%
+				float left
+				padding-top 20px
+				margin 0
+				color #FFF
+				font-family 'Roboto Condensed', sans-serif
+				font-weight 100
+				font-size 28px
+				@media (max-width 992px)
+					font-size 18px
+					text-align center
+				small
+					font-size 28px
+					transform scale(1.1)
+					color: white
+					font-weight bold
+					@media (max-width 992px)
+						font-size 20px
+				strong
+					transform scale(1.4)
+					color: white
+					font-weight bold
+					@media (max-width 992px)
+						font-size 20px
+			.block-button
+				width 100%
+				margin-top 100px
+				float left
+				position relative
+				@media (max-width 992px)
+					margin 20px 0
+					text-align center
+					size 100
+	.shadow
+		width 100%
+		float left
+		height 100%
+		background-color alpha(#000, 0.7)
+		.hm-divider
+			width 50%
+			float left
+			margin-top 300px
+		.simulator-square
+			text-align center
+			span
+				color white
+				font-family $font2
+				font-size 2em
+			form.simulator
+				width 100%
+				float left
+				padding 2%
+				.form-item
+					width 100%
+					float left
+					padding 10px 5px
+		.presentation-square
+			text-align center
+			h1
+				color white
+				font-family $font1
+				margin 0.5%
+				font-size 2em
+			h2
+				color white
+				font-family $font1
+				margin 0.5%
+			h3
+				color white
+				font-family $font1
+				margin 0.5% 0% 3% 0%
+			span
+				color white
+				font-family $font2
+				margin 5% 0%
+				font-size 1.5em

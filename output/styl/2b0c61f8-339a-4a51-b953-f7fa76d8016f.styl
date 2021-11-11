@@ -1,0 +1,191 @@
+.myaccount
+    .header &
+        display: flex
+        justify-content: center
+        align-items: center
+        min-height: 100%
+
+        @media media-max-lg
+            &.on
+                z-index: 200
+
+        &__header
+            display: flex
+            align-items: center
+            color: var(--color-text)
+            font-size: 13px
+            font-weight: semibold
+            line-height: 1.1
+
+            @media media-max-lg
+                justify-content: center
+                align-items: center
+                width: 50px
+                height: 50px
+
+            &:hover
+                background: none
+
+            > div
+                padding-left: 10px
+
+                @media media-max-lg
+                    display: none
+
+            .ico
+                width: 22px
+                height: 22px
+
+            &-actions
+                display: flex
+                color: var(--color-link)
+                font-weight: regular
+                gap: 5px
+
+                a
+                    color: currentColor
+
+                    &:hover
+                        @media media-min-lg
+                            color: var(--primary)
+
+        &__content
+            top: 100%
+
+            @media media-max-lg
+                top: 0
+                z-index: 100
+
+            @media media-min-lg
+                left: -(gap)
+                visibility: hidden
+                width: 290px
+                border-top: solid 2px var(--primary)
+                box-shadow: 0 0 10px rgba(0, 0, 0, .2)
+                opacity: 0
+                transition: all .2s ease-in-out
+                transition-delay: .3s
+                transform: translateY(-10px)
+
+                &:before
+                    position: absolute
+                    bottom: 100%
+                    left: 38px
+                    border-right: solid 5px transparent
+                    border-bottom: solid 5px var(--primary)
+                    border-left: solid 5px transparent
+                    content: ''
+
+            .title
+                position: relative
+                padding: 10px 0
+                border-bottom: solid 1px var(--color-input)
+                font-size: 16px
+
+                &:after
+                    position: absolute
+                    bottom: -1px
+                    left: 0
+                    width: 115px
+                    height: 2px
+                    background: var(--primary)
+                    content: ''
+
+        &__login
+            &-btn
+                width: 100%
+                height: 47px
+                border-radius: 0
+                background: var(--primary)
+                box-shadow: none
+                text-transform: uppercase
+                font-weight: bold
+                font-size: 14px
+
+                &:hover
+                    background: var(--primary)
+
+                    @media media-min-lg
+                        background: var(--primary-hover)
+
+            .pass
+                padding-bottom: 32px
+
+            input
+                border: solid 1px var(--color-input)
+                border-radius: 0
+                box-shadow: none
+                font-weight: regular
+                font-size: 14px
+
+                &::placeholder
+                    color: var(--color-placeholder)
+
+                &:focus::placeholder
+                    color: transparent
+
+            .fields
+                display: block
+
+        &__forgot
+            top: 50px
+            left: 0
+            width: 100%
+            text-align: center
+            font-size: 12px
+
+        &__register
+            margin: 0 auto
+            padding: 0
+            border: 0
+
+            h4
+                position: relative
+                padding: 10px 0
+                border-bottom: solid 1px var(--color-input)
+                color: var(--color-text)
+                font-weight: regular
+                font-size: 16px
+
+                &:after
+                    position: absolute
+                    bottom: -1px
+                    left: 0
+                    width: 115px
+                    height: 2px
+                    background: var(--primary)
+                    content: ''
+
+            p
+                color: var(--color-text)
+                font-weight: regular
+                font-size: 11px
+                line-height: 1.2
+
+            &-btn
+                display: flex
+                justify-content: center
+                align-items: center
+                padding: 0
+                width: 100%
+                height: 47px
+                border-radius: 0
+                background: var(--button-hover)
+                box-shadow: none
+                color: var(--white)
+                text-transform: uppercase
+                font-weight: bold
+                font-size: 14px
+
+                &:hover
+                    background: var(--button-hover)
+
+                    @media media-min-lg
+                        background: var(--button)
+
+    &:hover
+        @media media-min-lg
+            .myaccount__content
+                visibility: visible
+                opacity: 1
+                transform: translateY(0)

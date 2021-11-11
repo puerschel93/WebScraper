@@ -1,0 +1,342 @@
+.tender-container
+
+	.comments-section
+		margin-left 60px
+		margin-top 15px
+
+		@media(max-width: 768px)
+			margin-left 30px
+
+		@media(max-width: 568px)
+			margin-left 0px
+
+	.timeline-column
+		margin-top 15px
+		.timeline-section
+			margin-left 30px
+			padding 15px 0 15px 30px
+			position relative
+			&:before
+				background main-color
+				border-radius 50%
+				content ''
+				height 14px
+				width 14px
+				position absolute
+				left -5px
+				top 50%
+				margin-top -10px
+				z-index 2
+			&:after
+				background main-color
+				content ''
+				position absolute
+				top 0
+				bottom 0
+				left 0
+				width 5px
+				z-index 1
+			&:first-child
+				&:after
+					top 90px
+				&:before
+					top 90px
+			&:last-child
+				&:after
+					bottom calc(50% + 0px)
+
+			@media(max-width: 768px)
+				margin-left 0px
+
+			@media(max-width: 568px)
+				padding 15px 0
+				&:before, &:after
+					display none
+
+			.tender-author, .tender-preview
+				background-color white
+				border border-color 1px solid
+				list-style none
+				margin 0 auto
+				overflow hidden
+				padding 15px 15px 15px 120px
+				position relative
+				text-align left
+				&.tender-author
+					min-height 120px
+					.tender-avatar
+						height 80px
+						left 20px
+						position absolute
+						top 20px
+						width 80px
+						.avatar-wrapper
+							position relative
+							text-align center
+							.avatar
+								background-size contain
+								background-position center
+								background-repeat no-repeat
+								height 80px
+								margin 0 auto
+								width 80px
+								@media(min-width: $screen-sm-min)
+									height 80px
+									width 80px
+					h3
+						margin 10px 0
+
+				&.tender-preview
+					min-height 150px
+					a.pdf-preview
+						background-color light-grey
+						border-radius 6px
+						height 110px
+						left 20px
+						padding 20px
+						position absolute
+						top 20px
+						width 80px
+						text-align center
+						animate()
+						i
+							color #999
+							font-size 32px
+						h5
+							color #999
+						&:hover
+							background-color darken(light-grey, 5%)
+							cursor pointer
+							text-decoration none
+
+			.tender-team
+				background-color white
+				border border-color 1px solid
+				border-top none
+				position relative
+				.team-label
+					background-color border-color
+					border-radius 6px
+					color #AAA
+					display inline-block
+					line-height 24px
+					padding 0 10px
+					position absolute
+					top -12px
+					left 50%
+					margin-left -40px
+				ul.team-members
+					cleanlist()
+					padding 10px
+					li.team-member
+						cleanlist()
+						float left
+						margin 10px
+						&.add-team-member
+							border border-color 1px solid
+							border-radius 50%
+							color border-color
+							line-height 70px
+							overflow hidden
+							height 70px
+							width 70px
+							text-align center
+							animate()
+							i.fa.fa-plus
+								font-size 24px
+								line-height 70px
+							&:hover
+								background-color main-color
+								border-color main-color
+								color white
+								cursor pointer
+
+						.tender-avatar
+							border-radius 50%
+							overflow hidden
+							position relative
+							height 70px
+							width 70px
+							.avatar-wrapper
+								position relative
+								text-align center
+								.avatar
+									background-size contain
+									background-position center
+									background-repeat no-repeat
+									height 70px
+									margin 0 auto
+									width 70px
+							.tender-avatar-overlay
+								background-color rgba(0, 0, 0, 0.4)
+								border-radius 50%
+								line-height 70px
+								opacity 0
+								position absolute
+								text-align center
+								top 0
+								bottom 0
+								left 0
+								right 0
+								animate()
+								i.fa.fa-trash
+									color white
+						&:hover
+							cursor pointer
+							.tender-avatar .tender-avatar-overlay
+								opacity 1
+				.add-team-member-form-container
+					padding 0 20px 20px 20px
+					.form-group
+						position relative
+						&:last-child
+							margin-bottom 0
+						.form-control
+							margin 0
+							max-width 100%
+						input
+							margin 0
+							text-align left
+							width 100%
+						.searching-users
+							height 57px
+							line-height 57px
+							position absolute
+							bottom 0px
+							right 0px
+							width 57px
+							text-align center
+							i
+								color #999
+					ul.user-results
+						cleanlist()
+						background-color #f9f9f9
+						border border-color 1px solid
+						border-bottom-left-radius 4px
+						border-bottom-right-radius 4px
+						li
+							cleanlist()
+							border-bottom border-color 1px solid
+							height 50px
+							padding-left 15px
+							position relative
+							animate()
+							&:last-child
+								border-bottom none
+							&.user-search-result
+								padding-left 55px
+							p
+								color #444
+								font-size 15px
+								line-height 50px
+								margin 0
+								padding 0
+							.tender-avatar
+								border transparent 2px solid
+								border-radius 50%
+								position absolute
+								top 5px
+								left 5px
+								overflow hidden
+								height 40px
+								width 40px
+								animate()
+								.avatar-wrapper
+									position relative
+									text-align center
+									.avatar
+										background-size contain
+										background-position center
+										background-repeat no-repeat
+										height 40px
+										margin 0 auto
+										width 40px
+									.add-overlay
+										background-color white
+										border-radius 50%
+										line-height 40px
+										display none
+										position absolute
+										text-align center
+										top 0
+										bottom 0
+										left 0
+										right 0
+										animate()
+										i.fa.fa-plus
+											color main-color
+											font-size 18px
+							&.user-search-result:hover
+								background-color main-color
+								cursor pointer
+								.tender-avatar
+									border-color white
+									overflow hidden
+									.avatar-wrapper
+										.avatar
+											display none
+										.add-overlay
+											display block
+								p
+									color white
+					&.has-results
+						.add-team-member-search
+							border-bottom none
+							border-bottom-left-radius 0px
+							border-bottom-right-radius 0px
+
+
+			.tender-questions
+				background-color white
+				border border-color 1px solid
+				list-style none
+				min-height 50px
+				overflow hidden
+				padding 20px
+				position relative
+				text-align left
+				ul
+					cleanlist()
+					li.tender-question
+						cleanlist()
+						margin-bottom 20px
+						&:last-child
+							margin-bottom 0
+						h5
+							font-weight bold
+							margin 0 0 5px 0
+							padding 0
+						p
+							margin 0
+							padding 0
+
+			.updates-section
+				.post-update-container
+					border border-color 1px solid
+
+			.tender-update
+				background-color white
+				border border-color 1px solid
+				list-style none
+				min-height 50px
+				overflow hidden
+				padding 55px 20px 20px 20px
+				position relative
+				text-align left
+				.update-label
+					background-color main-color
+					border-top-right-radius 4px
+					border-bottom-right-radius 4px
+					color white
+					line-height 30px
+					padding 0 10px
+					position absolute
+					top 10px
+					left 0px
+				h5
+					font-weight bold
+					margin 0 0 5px 0
+					padding 0
+				p
+					margin 0
+					padding 0

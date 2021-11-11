@@ -1,0 +1,446 @@
+/**
+* Product page
+* Figma link: https://www.figma.com/file/eJlra1CHXnzitkmUnpDQdH/BluRayHunt?node-id=196%3A15147
+* Used in: product.html
+*/
+
+.product-header {
+  height: 200px;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    background: #2b94d2;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    mix-blend-mode: multiply;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  img {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.br-product-block {
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 44px;
+  margin-top: -160px;
+  padding-bottom: 10px;
+  position: relative;
+  width: 100%;
+
+  @media (min-width: 992px) {
+    padding-bottom: 36px;
+  }
+}
+
+.br-prod-ranking {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  svg {
+    height: 20px;
+    width: 20px;
+  }
+
+  svg + svg {
+    margin-left: 3px;
+  }
+}
+
+// Image slider
+.br-prod-slider__list-wrap {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.br-prod-slider__img-list {
+  align-items: center;
+  display: flex;
+  overflow: auto;
+  -ms-overflow-style: none;
+  padding-bottom: 10px;
+  position: relative;
+
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.br-prod-slider__img-item {
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 70px;
+  margin: 0 5px;
+  scroll-snap-align: start;
+
+  img {
+    max-height: 100%;
+  }
+}
+
+.br-prod-slider__btn {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  height: 24px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 24px;
+}
+
+.br-prod-slider__main {
+  cursor: zoom-in;
+
+  img {
+    margin: 0 auto;
+  }
+}
+
+.br-prod__title {
+  font-size: rem(28px);
+  font-weight: bold;
+  text-align: center;
+
+  @media (min-width: 992px) {
+    font-size: rem(36px);
+    text-align: start;
+  }
+}
+
+.br-prod__ranking-val {
+  font-size: rem(18px);
+  font-weight: bold;
+}
+
+.br-prod__toolbar-btn {
+  margin: 0 3px;
+}
+
+.br-prod__toolbar-btn {
+  align-items: center;
+  background-color: #d5eaf6;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  width: 30px;
+
+  &.active {
+    background-color: #2b94d2;
+  }
+
+  &:hover {
+    .br-tooltip {
+      display: block;
+    }
+  }
+}
+
+.br-tooltip {
+  background-color: #efefef;
+  border-radius: 3px;
+  color: #0c2a3c;
+  display: none;
+  font-size: rem(12px);
+  left: 0;
+  min-width: 100px;
+  padding: 5px 9px;
+  position: absolute;
+  text-align: left;
+  top: calc(100% + 9px);
+  z-index: 5;
+
+  &::before {
+    background-color: #efefef;
+    border-radius: 5px;
+    content: "";
+    display: block;
+    height: 13px;
+    left: 9px;
+    position: absolute;
+    top: -4px;
+    transform: rotate(45deg);
+    width: 13px;
+    z-index: -1;
+  }
+}
+
+.br-prod__ratings-block {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: 992px) {
+    justify-content: flex-start;
+  }
+}
+
+.br-prod__rating {
+  font-size: rem(14px);
+  font-weight: 900;
+}
+
+.br-prod__separator {
+  border: none;
+  border-bottom: 3px solid #f5f5f5;
+}
+
+.br-prod__pricing-title {
+  font-size: rem(20px);
+  font-weight: bold;
+  text-align: center;
+
+  @media (min-width: 992px) {
+    font-size: rem(24px);
+    text-align: left;
+  }
+}
+
+.br-prod__pricing-main {
+  font-size: rem(28px);
+  font-weight: bold;
+  line-height: 1;
+  margin-right: 10px;
+
+  @media (min-width: 992px) {
+    font-size: rem(36px);
+  }
+}
+
+.br-prod__pricing-secondary {
+  color: #c4c4c4;
+  font-size: rem(18px);
+  font-variant-numeric: tabular-nums;
+}
+
+.br-prod__pricing-nums {
+  align-items: baseline;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: 992px) {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: left;
+  }
+}
+
+.br-prod__pricing-block {
+  .br-btn {
+    margin-left: auto;
+    padding: 6px 15px;
+  }
+}
+
+.br-product-detail {
+  --flow-space: 1rem;
+
+  font-size: rem(14px);
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+}
+
+.br-flow > .br-product-detail__body-title + * {
+  margin-top: 5px;
+}
+
+.br-product-detail__body {
+  padding: 20px 10px 0;
+}
+
+.br-product-detail__title {
+  font-weight: bold;
+  background-color: #0c2a3c;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: rem(18px);
+  font-weight: normal;
+  line-height: 1.2;
+  padding: 10px;
+  user-select: none;
+
+  &::after {
+    right: 10px;
+  }
+}
+
+.br-product-detail + .br-product-detail {
+  margin-top: 10px;
+
+  @media (min-width: 992px) {
+    margin-top: 40px;
+  }
+}
+
+.br-product-detail--specs .br-product-detail__body {
+  @media (min-width: 992px) {
+    column-count: 2;
+    column-gap: 25px;
+
+    ul {
+      list-style: none;
+    }
+
+    .br-product-detail__spec-group {
+      break-inside: avoid;
+    }
+  }
+}
+
+// Movie stills
+.br-prod-item__gallery {
+  @include scrollbars(11px, #83c3e2, #f5f5f5);
+  display: flex;
+  overflow: auto;
+
+  padding-bottom: 10px;
+
+  img {
+    cursor: pointer;
+    flex-shrink: 0;
+    max-height: 100px;
+    width: 100%;
+    width: auto;
+
+    @media (min-width: 992px) {
+      max-height: 189px;
+    }
+  }
+
+  img + img {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-top: 0;
+    @media (min-width: 992px) {
+      margin-left: 20px;
+    }
+  }
+}
+
+.br-product-detail--stills {
+  .br-product-detail__body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.br-prod__description-block {
+  font-size: rem(14px);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.br-prod__options-title {
+  font-size: rem(20px);
+  font-weight: bold;
+
+  @media (min-width: 992px) {
+    font-size: rem(24px);
+  }
+}
+
+.br-prod__option-buttons {
+  .br-btn {
+    background-color: #0c2a3c;
+    color: white;
+    font-size: rem(14px);
+  }
+}
+
+.br-prod-item {
+  border: 1px solid #d5eaf6;
+  border-radius: 5px;
+  padding: 10px;
+
+  .br-btn {
+    padding: 6px 15px;
+  }
+
+  &.active {
+    background: rgba(213, 234, 246, 0.3);
+    border-color: #2b94d2;
+  }
+}
+
+.br-prod-item + .br-prod-item {
+  margin-top: 10px;
+}
+
+.br-prod-item__col-thumbnail {
+  margin-right: 10px;
+  max-width: 49px;
+}
+
+.br-prod-item__title {
+  font-size: rem(16px);
+  font-weight: bold;
+  line-height: 1.2;
+
+  @media (min-width: 992px) {
+    font-size: rem(18px);
+  }
+}
+
+.br-prod-item__subtitle {
+  font-size: rem(10px);
+
+  @media (min-width: 992px) {
+    font-size: rem(12px);
+  }
+}
+
+.br-prod-item__toggle-more {
+  background-color: transparent;
+  border: none;
+  color: #2b94d2;
+  cursor: pointer;
+  font-size: rem(14px);
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+.br-prod-item__col-data {
+  @media (min-width: 992px) {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.br-prod-item__tab-specs {
+  font-size: rem(12px);
+}

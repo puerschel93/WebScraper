@@ -1,0 +1,160 @@
+/* 举例 */
+.eg
+  color: black
+  border: solid 1px
+  display: block
+  padding: 10px 20px
+  border-radius: 4px
+  border-color: #6ab0de
+  background-color: #6ab0de
+  &:before
+    content: 'e.g.'
+    font-weight: bold
+    padding-right: 10px
+    font-size: 20px
+    color: white
+
+.note
+  color: black
+  border: solid 1px
+  display: block
+  padding: 10px 20px
+  border-radius: 4px
+  border-color: #53cc7c
+  background-color: #53cc7c
+  &:before
+    content: 'NOTE'
+    font-weight: bold
+    padding-right: 10px
+    font-size: 16px
+    color: white
+
+/* 提问 */
+.quest
+  color: darkcyan;
+  border: solid 1px;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 4px 4px 4px 4px;
+  margin-bottom: 0px;
+  background-color: #dff0d8;
+  font-weight: bold;
+  &:before
+    content: 'Q: ';
+    font-size: 20px;
+    padding-right: 10px
+    color: black;
+
+/* 回答 */
+.answer 
+  color: darkcyan;
+  border: solid 1px;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 4px 4px 4px 4px;
+  border-color: darkcyan;
+  color: black;
+  &:before
+    content: 'A: ';
+    font-weight: bold;
+    font-size: 20px;
+    padding-right: 10px
+    color: black;
+
+strong 
+  color: rgb(192, 106,18);
+
+/* 原斜体加强 */
+em 
+  font-style: normal;
+  border-radius: 5px;
+  background-color: #2285A2;
+  color: white;
+  padding: 1px 4px;
+
+/* 公式 */
+svg 
+  padding-right: 3px;
+  padding-left: 3px;
+
+#post
+  .pjax
+    article
+      :not(pre) > code 
+        background-color: #eeeeee;
+        color: #000000;
+        font-size: 1em;
+      table
+        &.green_title
+          tr th
+            border-right: 1px solid #a3c6bd;
+      blockquote
+        background-color: rgba(20, 5, 16, 0.1);
+        border-left: 10px solid rgba(224, 15, 23, 0.1);
+
+/* codeBlock */
+// .marked
+//   background-color: rgba(20, 5, 16, 0.1);
+
+
+#post
+  .pjax
+    article
+      .codeBlockContainer
+        background-color: #b6c6d024;
+        border-radius: 10px;
+      .codeBlockTitle
+        border-bottom: 2px solid #dadde1;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        font-weight: 500;
+        padding: 10px 15px;
+        margin-bottom: -15px;
+        font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+      .codeBlockLines
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        background-color: #b6c6d024;
+        overflow-x: auto;
+        .marked
+          background-color: #dddfe1;
+          margin: 0px -15px;
+          padding: 0px 15px;
+
+// 自动添加序号
+@counter-style hex_number {
+  // system: numeric;
+  // range: 0 infinite;
+  system: numeric;
+  symbols: '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 'A' 'B' 'C' 'D' 'E' 'F';
+  pad: 2 '0';
+}
+
+@counter-style filled-circled-decimal {
+system: fixed;
+symbols: '①' '②' '③' '④' '⑤' '⑥' '⑦' '⑧' '⑨' '⑩' '⑪' '⑫' '⑬' '⑭' '⑮' '⑯' '⑰' '⑱' '⑲' '⑳'; 
+/* symbols: '❶' '❷' '❸' '❹' '❺' '❻' '❼' '❽' '❾' '❿' '⓫' '⓬' '⓭' '⓮' '⓯' '⓰' '⓱' '⓲' '⓳' '⓴'; */
+}
+
+h1 { counter-reset: h2counter; }
+h2 { counter-reset: h3counter; }
+h3 { counter-reset: h4counter; }
+h4 { counter-reset: h5counter; }
+h5 { counter-reset: h6counter; }
+h6 { }
+h2:before {
+  counter-increment: h2counter;
+  // content: counter(h2counter, hex) ".\0000a0\0000a0";
+  content: "0x" counter(h2counter, hex_number) "\0000a0\0000a0";
+}
+h3:before {
+  counter-increment: h3counter;
+  content: counter(h3counter) ".\0000a0\0000a0";
+}
+h4:before {
+  counter-increment: h4counter;
+  content: counter(h4counter, filled-circled-decimal) "\0000a0\0000a0";
+}
+
+h4 { margin-left: 25px;}

@@ -1,0 +1,376 @@
+html
+    position relative
+    //padding-left 160px
+    width 100%
+    //height 100%
+    min-height: 100%;
+    overflow-x hidden
+    min-width 1012px
+    padding-bottom 50px
+    max-width 1920px
+    a
+        text-decoration none
+        color #8e99ba
+body
+    font-family: "Graphik LC"
+    font-weight: 300;
+    font-size 15px
+    //position: relative;
+    padding-bottom: 30px;
+    height: 100%;
+    color: #67708a;
+    background #f5f6fa!important
+
+.preloader
+    position fixed
+    left 0
+    top 0
+    width 100%
+    height 100%
+    background #fff
+    z-index 999
+    .loader
+        display: block;
+        width: 800px;
+        height: 600px;
+        background: url(../img/02_all/loader_cms.gif) center no-repeat;
+        background-size: 50%;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+
+
+.homepage
+    padding-left 160px
+
+
+span.bold
+    font-weight: 500;
+.floatRight
+    float right
+.floatLeft
+    float left
+
+input
+    font-family: "Graphik LC";
+    font-weight: 300;
+
+// Сборник классов с разными статусами
+
+.confirmed_manager //подтверждено менеджером
+    border-radius: 50%;
+    background-color: rgb(133, 186, 86);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.proof_payment //подтвержден платеж
+    border-radius: 50%;
+    background-color: rgb(133, 186, 86);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.ready_shipment //готов к отгрузке
+    border-radius: 50%;
+    background-color: rgb(125, 109, 173);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.annulment //отменён
+    border-width: 1px;
+    border-color: rgb(103, 112, 138);
+    border-style: solid;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    display inline-block
+.system_documents //получение системой документа
+    border-width: 1px;
+    border-color: rgb(103, 112, 138);
+    border-style: solid;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    display inline-block
+.order_cancelled //Заказ отменен
+    border-width: 1px;
+    border-color: rgb(103, 112, 138);
+    border-style: solid;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    display inline-block
+.change_registration_data //изменение регистрационных данных
+    border-radius: 50%;
+    background-color: rgb(42, 139, 242);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.change_сompany requisites //Реквизиты компании изменены
+    border-radius: 50%;
+    background-color: rgb(42, 139, 242);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.awaits_confirmation //ожидает подтверждения
+    border-radius: 50%;
+    background-color: rgb(226, 91, 35);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.waiting_cancellation //ожидает отмены
+    border-radius: 50%;
+    background-color: rgb(226, 91, 35);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.fulfilled //выполнено
+    border-radius: 50%;
+    background-color: rgb(133, 186, 86);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.order_fulfilled //заказ выполнен
+    border-radius: 50%;
+    background-color: rgb(133, 186, 86);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.ready_shipment//Готов к отгрузке
+    border-radius: 50%;
+    background-color: rgb(125, 109, 173);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.on_my_way //В пути
+    border-radius: 50%;
+    background-color: rgb(42, 139, 242);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.waiting_payment //Выполнено. Ожидает оплаты
+    border-radius: 50%;
+    background -moz-linear-gradient( 90deg,#85ba56 50%,#e25b23 0%);
+    background -webkit-linear-gradient( 90deg,#85ba56 50%,#e25b23 0%);
+    background -ms-linear-gradient( 90deg,#85ba56 50%,#e25b23 0%);
+    background -o-linear-gradient( 90deg,#85ba56 50%,#e25b23 0%);
+    background linear-gradient( 90deg,#85ba56 50%,#e25b23 0%);
+    width: 10px;
+    height: 10px;
+    display inline-block
+.draft // черновик
+    border-radius: 50%;
+    background-color: #8e99ba;
+    width: 10px;
+    height: 10px;
+    display inline-block
+.completed // Комплектуется
+    border-radius: 50%;
+    background-color: #edce00
+    width: 10px;
+    height: 10px;
+    display inline-block
+
+//-----------------------------
+
+.show_more_btn
+    position relative
+    padding-left 30px
+    transition .3s ease
+    &:before
+        content ''
+        position absolute
+        width 22px
+        height 22px
+        display block
+        background url("../img/02_all/show_more_btn.png") no-repeat
+        top -4px
+        left 0
+        transition .4s ease
+    &:after
+        content ''
+        position absolute
+        width 22px
+        height 22px
+        display block
+        background url("../img/02_all/show_more_btn_hover.png") no-repeat
+        top -4px
+        left 0
+        opacity 0
+        visibility hidden
+        transition .4s ease
+    &:hover
+        color #2a8bf2
+        &:before
+            opacity 0
+            visibility hidden
+        &:after
+            opacity 1
+            visibility visible
+
+.print_btn
+    background url('../img/02_all/print_btn.png') no-repeat
+    width 20px
+    height 20px
+    display block
+    position relative
+    transition .4s ease
+    &:before
+        content ''
+        position absolute
+        background url('../img/02_all/print_btn_hover.png') no-repeat
+        opacity 0
+        width 20px
+        height 20px
+        top 0
+        left 0
+        &:hover
+            opacity 1
+    &:hover
+        &:before
+            opacity 1
+
+
+.download_btn
+    background url('../img/02_all/img_download.png') no-repeat
+    width 20px
+    height 20px
+    display block
+    position relative
+    transition .4s ease
+    &:before
+        content ''
+        position absolute
+        background url('../img/02_all/img_download_hover.png') no-repeat
+        opacity 0
+        width 20px
+        height 20px
+        top 0
+        left 0
+    &:hover
+        &:before
+            opacity 1
+
+
+
+
+.all_result
+    border: 1px solid #8e99ba;
+    height: 28px;
+    display: inline-block;
+    /* width: 200px; */
+    margin: 10px 20px 0 0;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 28px;
+    transition: .4s ease;
+    background -moz-linear-gradient( 0deg, rgb(226,92,35) 0%, rgb(223,3,38) 100%);
+    background -webkit-linear-gradient( 0deg, rgb(226,92,35) 0%, rgb(223,3,38) 100%);
+    background -ms-linear-gradient( 0deg, rgb(226,92,35) 0%, rgb(223,3,38) 100%);
+    background -o-linear-gradient( 0deg, rgb(226,92,35) 0%, rgb(223,3,38) 100%);
+    background linear-gradient( 0deg, rgb(226,92,35) 0%, rgb(223,3,38) 100%);
+    &:hover
+        border 1px solid transparent
+    >span
+        padding: 1px 20px 0
+        background #fff
+        border-radius 11px
+        display block
+        width 100%
+        height 100%
+        transition .4s ease
+        &:hover
+            color #df0326
+
+.hidden
+    display none !important
+.disabled
+    opacity .5
+
+.confirm_submit
+    border-radius: 20px;
+    height: 40px;
+    color: #fff;
+    background: #8ac722;
+    transition: .4s ease;
+    padding: 10px 18px;
+    font-weight: 500;
+    font-family: "Graphik LC";
+
+hr
+    border: none; /* Убираем границу для браузера Firefox */
+    color: #dde0ea; /* Цвет линии для остальных браузеров */
+    background-color: #dde0ea; /* Цвет линии для браузера Firefox и Opera */
+    height: 1px; /* Толщина линии */
+
+/*------------- checked*/
+.checkbox {
+    vertical-align: top;
+    width: 17px;
+    height: 17px;
+    margin: 0 3px 0 0;
+}
+.checkbox + label {
+    cursor: pointer;
+}
+.checkbox:not(checked) {
+    position: absolute;
+    opacity: 0;
+}
+.checkbox:not(checked) + label {
+    position: relative;
+    padding: 0 0 0 35px;
+}
+.checkbox:not(checked):disabled + label {
+    opacity .4
+}
+.checkbox:not(checked) + label:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgb(179, 186, 208);
+    background: #FFF;
+    border-radius 2px
+}
+.checkbox:not(checked) + label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    background: rgb(125, 182, 33);
+    opacity: 0;
+    transition: all .2s;
+}
+.checkbox:checked + label:after {
+    opacity: 1;
+}
+
+/*------------- checked*/
+
+button
+    border 0
+.confirm
+    border-radius: 20px;
+    height: 40px;
+    color #fff
+    background #8ac722;
+    transition: .4s ease;
+    padding: 10px 18px;
+    font-weight: 500;
+    font-family: "Graphik LC";
+.cancel
+    border-radius: 20px;
+    height: 40px;
+    color #fff
+    background #b3bad0;
+    transition: .4s ease;
+    padding: 10px 18px;
+    font-weight: 500;
+    font-family: "Graphik LC";

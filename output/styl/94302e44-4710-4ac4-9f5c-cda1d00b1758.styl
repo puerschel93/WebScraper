@@ -1,0 +1,278 @@
+@css {
+/*
+Stack Editor Credentials stylesheet
+stackeditorcredentials.styl
+*/
+}
+
+$accentColor                = #F2778A
+$titleColor                 = #424242
+$subtleColor                = #A59999
+$borderColor                = #E3E3E3
+$buttonGray                 = #858585
+
+
+.StackEditorTabs .step-creds
+  height                    100%
+  padding                   0 20px
+  borderBox()
+
+  .kdformview
+    height                  100%
+    border-bottom           none
+    overflow                auto
+
+    .advanced-field
+      display               none
+
+    &.in-advanced-mode
+      .advanced-field
+        display             block
+
+    button.kdbutton.solid.compact
+      margin-left           12px
+      outlineButton         $buttonGray
+
+      &.primary
+        colorizeOutlineButton $accentColor
+
+      &.cancel
+        fl()
+
+
+  .listview-wrapper
+    .kdscrollview
+      height                calc(100% \- 30px)
+
+
+  .credential-creation-intro
+    margin                  0
+    hidden()
+
+    > main
+      margin-top            20px
+      display               flex
+      padding               30px
+      border                1px solid rgba(242,119,138,.5)
+      rounded               4px
+      bg                    color, rgba(242,119,138,.05)
+
+    main > div
+      flex                  0 0 auto
+      borderBox()
+      &:first-child
+        width               45%
+        padding-right       30px
+      &:last-child
+        width               55%
+        padding-left        30px
+        border-left         1px solid #eee
+    // h3
+    //   font-size         13px
+    //   color             #F47689
+    //   line-height       20px
+
+    ol
+      margin-bottom         20px
+      padding-left          14px
+      li
+        list-style-position outside
+        font-size           13px
+        color               #989898
+        line-height         20px
+        margin-bottom       8px
+        cite
+          font-family       monospace
+          bg                color, rgba(255,255,255,.5)
+          padding           0 3px
+          border            1px solid rgba(0,0,0,.1)
+          border-radius     2px
+
+    p
+      color                 #666
+      font-size             14px
+      color                 #989898
+      line-height           20px
+      margin-top            0
+      margin-bottom         8px
+
+    h2
+      font-size             16px
+      font-weight           bold
+      margin                10px 0
+      color                 #000
+
+    a
+      color                 #64A0F1
+      noTextDeco()
+
+    + .kdformview
+      border-bottom         none !important
+
+  .credentials-form-view
+    label
+      text-align            right
+      margin-right          10px !important
+      min-width             180px !important
+
+.step-creds.form-open
+
+  .listview-wrapper
+    display                 none
+
+  .credential-creation-intro
+    visible()
+
+  .credentials-form-view
+    height                  auto !important
+
+    .kite-query-path
+      margin-left           131px
+      font-size             14px
+      font-weight           300
+      margin-bottom         20px
+      a
+        color                 #769ecc
+        text-decoration       none
+
+  .add-credential-scroll
+    styleScrollBars         rgba(0,0,0,.15)
+
+    .kdscrolltrack.vertical
+      right                 -15px
+
+
+.StackEditorTabs
+
+  button.kdbutton.add-big-btn
+    abs                     0 20px 36px 0
+    z-index                 10
+    outlineButton           $accentColor
+    .icon
+      hidden()
+
+  .stacks
+    .kdcustomscrollview
+      styleScrollBars       rgba(0,0,0,.15)
+
+      .kdscrolltrack
+        right               -15px
+
+.StackEditor-CredentialItem
+  borderizeListItems        30px, 1px solid $borderColor
+
+  &:before
+    content                 ''
+    abs                     30px 0 0 0px
+
+  &:first-of-type:before
+    abs                     0px 0 0 0px
+
+  &:last-of-type
+    min-height              90px
+
+  &.aws:before
+    r-sprite                'stack-editor' 'icon_aws'
+
+  &.azure:before
+    r-sprite                'stack-editor' 'icon_azure'
+
+  &.vagrant:before
+    r-sprite                'stack-editor' 'icon_vagrant'
+
+  &.digitalocean:before
+    r-sprite                'stack-editor' 'icon_digitalocean'
+
+  &.marathon:before
+    r-sprite                'stack-editor' 'icon_marathon'
+
+  &.google:before
+    r-sprite                'stack-editor' 'icon_google'
+
+  &.softlayer:before
+    r-sprite                'stack-editor' 'icon_softlayer'
+
+  .warning-message
+    display                 block
+    font-size               12px
+    font-family             monospace
+    font-weight             300
+    line-height             1.5em
+    margin-top              15px
+    padding                 12px
+    word-break              break-word
+    white-space             pre-line
+    color                   #555
+    bg                      color lightgoldenrodyellow
+
+
+.StackEditor-CredentialItem--flex
+  dFlex()
+  flex-flow                 row nowrap
+  justify-content           space-around
+
+.StackEditor-CredentialItem--info
+  margin-left               60px
+  line-height               30px
+  flex                      0 0 auto
+
+  .title
+    fl()
+
+  .custom-tag
+    font-size               10px
+    padding                 0 4px
+    line-height             14px
+    margin-top              8px
+    margin-left             5px
+    background-color        #02A74D
+    color                   #FFFFFF
+    cursor                  default
+    fl()
+
+
+.StackEditor-CredentialItem--buttons
+  flex                      1 0 auto
+  text-align                right
+
+  .custom-link-view
+    display                 inline-block
+    float                   none
+    margin-left             40px
+    text-decoration         none
+    font-weight             300
+    margin-top              8px
+
+    &.secondary
+      vendor                transition, opacity .177s ease
+      opacity               0
+
+    &.show
+      color #9F9F9F
+
+    &.delete
+      color #F2778A
+
+
+  button.kdbutton
+    display                 inline-block
+    float                   none
+    margin-left             40px
+    border-width            1px !important
+    colorizeOutlineButton   #4a4e52
+
+    .button-title
+      font-weight           300
+      letter-spacing        .3px
+
+    &:hover
+      background-color #4a4e52 !important
+
+
+.StackEditor-CredentialItem:hover
+  .custom-link-view.secondary
+    opacity                 1
+    border none
+    background none
+
+

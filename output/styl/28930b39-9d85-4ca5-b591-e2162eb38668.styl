@@ -1,0 +1,214 @@
+.changeDialog
+    .ant-modal-body
+        padding: 0
+
+    .ant-modal-content
+        background: var(--var-dialog-bg)
+        border-radius: 15px
+        color: var(--var-text-color)
+
+        .symbol
+            text-align: center
+
+            .symbolIcon
+                position: relative
+                margin: -48px 0 16px
+
+                img
+                    position: relative
+                    z-index: 1
+
+                &:after
+                    position: absolute
+                    display: block
+                    content: ' '
+                    width: 85px
+                    height: 61px
+                    background: rgba(#000, 0.1)
+                    filter: blur(8px)
+                    bottom: -6px
+                    left: 5px
+                    border-radius: 96px
+
+            .text
+                font-size: 24px
+
+        .tab
+            display: flex
+            font-size: 18px
+
+            .tabItem
+                flex: 1
+                text-align: center
+                position: relative
+                padding: 24px 0 11px
+                cursor: pointer
+                color: var(--var-nav-text)
+
+                &.cur
+                    color: var(--var-nav-cur-text)
+
+                    &:after
+                        content: ' '
+                        width: 60px
+                        height: 2px
+                        background: #FFD84E
+                        display: block
+                        position: absolute
+                        bottom: 0
+                        left: 50%
+                        transform: translate(-50%, 0)
+
+        .tabMain
+            background: var(--var-dialog-main-bg)
+            padding: 16px 32px 0
+            border-bottom-left-radius: 15px
+            border-bottom-right-radius: 15px
+
+            .typeTab
+                display: flex
+                border-radius: 20px
+                overflow: hidden
+                font-size: 16px
+                text-align: center
+                margin: 0 80px 16px
+
+                .typeTabItem
+                    background: var(--var-dialog-bg)
+                    flex: 1
+                    height: 40px
+                    line-height: @height
+                    text-align: center
+                    color: var(--var-tab-button-color)
+                    cursor: pointer
+
+                    &.cur
+                        background: #FFD84E
+                        color: #333
+
+            .blockTitle
+                margin: 0 0 8px
+                font-size: 16px
+                
+                &.blockTitle2
+                    padding: 32px 0 0
+
+            .block
+                background: var(--var-dialog-block-bg)
+                padding: 25px 40px
+                border-radius: 8px
+                border: 1px solid var(--var-border)
+                justifyContentSpaceBetween()
+
+                .balance
+                    width: 150px
+                    padding: 0 10px 0 0
+
+                    .balanceLabel
+                        display: block
+                        font-size: 16px
+                        margin: 28px 0 3px
+                        color: var(--var-placeholder)
+
+                    .balanceNumber
+                        font-size: 20px
+
+                    .swapNumber
+                        display: flex
+                        margin: 17px 0 0
+                        font-size: 16px
+
+                .input
+                    text-align: right
+
+                    .max
+                        font-size: 24px
+                        margin: 0 0 3px
+                        color: var(--var-dialog-max-color)
+                        cursor: pointer
+
+                    input
+                        text-align: right
+                        padding: 0
+                        font-size: 32px
+                        color: var(--var-text-color)
+
+                    placeholder(32px)
+
+                    .number
+                        font-size: 16px
+                        text-align: right
+                        color: var(--var-placeholder)
+
+            .info
+                .item
+                    clear: both
+                    margin: 24px 0 0
+
+                    .key
+                        font-size: 16px
+                        font-weight: 500
+                        color: var(--var-text-color)
+                        float: left
+
+                    .value
+                        color: var(--var-nav-text)
+                        float: right
+                        font-size: 16px
+
+                    .subItem
+                        clear: both
+                        width: 100%
+                        float: left
+                        padding: 0 0 0 16px
+                        box-sizing: border-box
+                        font-size: 14px
+
+                        .key
+                            font-weight: 400
+                            color: var(--var-nav-text)
+                            margin: 16px 0 0
+
+                        .value
+                            font-size: 14px
+
+        .dialogFooter
+            text-align: center
+            padding: 30px 0 
+
+            .submit
+                display: inline-block
+                height: 40px
+                line-height: @height
+                background: #FFD84E
+                border-radius: 20px
+                font-size: 16px
+                font-family: PingFangSC-Regular, PingFang SC
+                font-weight: 400
+                text-align: center
+                color: #0C0E11
+                box-shadow: 0px 2px 5px 0px rgba(#FFD84E, 0.5)
+                padding: 0 40px
+                cursor: pointer
+
+        .swapHeader
+            text-align: center
+            position relative
+
+            .text
+                font-size: 24px
+                padding: 32px 0 56px
+
+            .setting
+                position absolute
+                top: 34px
+                right: 34px
+
+                .icon
+                    size: 28px
+
+
+        .blockTip
+            text-align: right
+            padding: 16px 0 0
+            color: var(--var-placeholder)

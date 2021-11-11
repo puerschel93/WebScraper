@@ -1,0 +1,329 @@
+@import '../variables/variables';
+
+//calendarHeader
+.header-calendar {
+    display: flex;
+    position: relative;
+    top: 1rem;
+    left: 0;
+    align-items: center;
+    flex-flow: row wrap;
+    // padding-left: 1rem;
+    // padding-right: 1rem;
+    justify-content: center;
+    padding: 0 1rem;
+    width: 50rem;
+
+    .header__h1 {
+        margin-right: 2.5rem;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+    }
+    .header__button--today {
+        display: none;
+        padding: 0.5rem;
+        margin-right: 1.25rem;
+        border: 0.1rem solid rgb(255, 255, 255);
+        border-radius: 0.5rem;
+        box-shadow: rgba(36, 34, 34, 0.24) 0rem 0.5rem 0.8rem;
+    }
+
+    .header__button--previous,
+    .header__button--next {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        font-size: larger;
+        border-radius: 0.5rem;
+    }
+    .header__h2 {
+        margin-left: 1rem;
+        color: rgb(255, 255, 255);
+        font-size: 5rem;
+        margin-left: 1rem;
+    }
+
+    // height: 16rem;
+    background-color: rgba(2, 0, 10, 0.3);
+    // margin-top: 1rem;
+    // margin-bottom: 5rem;
+    // margin-left: -5rem;
+    // position: fixed;
+}
+
+//Day
+
+.day__container {
+    display: flex;
+    flex-direction: column;
+    border: 0.01rem solid rgb(255, 255, 255, 0.5);
+    border-top: 0px;
+
+    .day__container--header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0.2rem;
+
+        .day__text {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+                sans-serif;
+            font-size: 2rem;
+            line-height: 1rem;
+            margin-top: 0.25rem;
+            color: rgb(201, 182, 182);
+        }
+        .day__num {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+                sans-serif;
+            font-size: 2rem;
+            line-height: 1rem;
+            text-align: center;
+            margin-top: 5rem;
+            margin-bottom: 1rem;
+            padding: 0.25rem;
+            color: rgb(240, 234, 234);
+        }
+    }
+    .day__container--body {
+        flex-grow: 1;
+        flex-shrink: 1;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.562);
+    }
+    .day__container--event {
+        padding: 0.5rem;
+        margin: 0.5rem;
+        color: rgb(255, 255, 255);
+        font-weight: lighter;
+    }
+}
+
+//EventModal
+
+.event__modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(153, 55, 175);
+
+    margin-left: 56%;
+    margin-top: 8rem;
+
+    .current-date-note {
+        color: white;
+        font-size: 2.5rem;
+        background-color: none;
+        margin-left: 2rem;
+    }
+    .event__modal--form {
+        border-radius: 1rem;
+        box-shadow: rgba(36, 34, 34, 0.24) 0rem 0.5rem 0.8rem;
+        width: 71rem;
+        height: 80.8rem;
+
+        .form__header {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            padding-top: 50rem;
+            height: 5rem;
+            margin: 0rem;
+            background-color: white;
+
+            // background-color: rgba(48, 192, 142, 0.5);
+        }
+        .dragIcon {
+            font-size: 3rem;
+        }
+
+        .deleteIcon {
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 0.5rem;
+            color: black;
+            display: none;
+        }
+
+        .closs {
+            align-items: center;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            color: black;
+            background-color: rgb(0, 0, 0);
+            margin-left: 64.5rem;
+        }
+        .closeIcon {
+            width: 0.2rem;
+            cursor: progress;
+            margin-top: 1rem;
+        }
+    }
+    .form__body {
+        padding: 2rem;
+        .form__body--one {
+            color: rgb(250, 250, 250);
+            font-size: 2.5rem;
+        }
+        input {
+            font-size: 2rem;
+            padding: 0.5rem;
+            background-color: rgb(226, 220, 220, 0.9);
+            outline: none;
+            height: 4rem;
+        }
+        .form__input--description {
+            margin-top: 1rem;
+        }
+    }
+
+    .form__body--partTwo {
+        display: flex;
+        gap: 0.5rem;
+
+        .form__lbl {
+            border-radius: 10%;
+            width: 4rem;
+            height: 4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1rem;
+            margin-left: 4rem;
+            margin-bottom: 0.5rem;
+
+            .checkedIcon {
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
+    .footer {
+        display: flex;
+        justify-content: space-around;
+        // background-color: rgb(0, 1, 34, 0.8);
+    }
+    .save {
+        background-color: rgb(0, 0, 255, 0.8);
+        width: 100%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        border: none;
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: bolder;
+    }
+}
+
+//label
+
+.label {
+    border: 10px solid red;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+//month
+.month {
+    background-color: none;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 170rem;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+
+    div:nth-child(23),
+    div:nth-child(24),
+    div:nth-child(25),
+    div:nth-child(26),
+    div:nth-child(27),
+    div:nth-child(30),
+    div:nth-child(31),
+    div:nth-child(32),
+    div:nth-child(33),
+    div:nth-child(34) {
+        .day__container--body {
+            // background-color: black;
+            .day__container--event {
+                color: black !important;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+//View\calender
+.calendar {
+    padding: 0.5rem;
+    width: 100%;
+    background: $background-gradient;
+    // background-size: 900% 600%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+
+    .calendar__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        // margin-bottom: 1rem;
+        background-color: none;
+        margin: 4rem 2rem 1rem 2rem; // margin-left: 2rem;
+        // margin-right: 2rem;
+        .calendar__form--item {
+            margin-top: 4rem;
+            width: 100%;
+            // display: flex;
+            align-items: center;
+
+            //     background-color: rgba(255, 255, 255);
+            //     margin: 2rem;
+            //     border-radius: 15px;
+        }
+
+        .form--date--container {
+            width: 90%;
+            display: flex;
+            position: fixed;
+            top: 5rem;
+            // margin: 4rem;
+            form {
+                display: flex;
+                width: 60%;
+                margin: 1.1rem 0 0 10rem;
+                input {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+.container-calendar {
+    position: relative;
+    display: flex;
+    // flex-direction: row;
+    justify-content: left;
+    width: 99%;
+}
+
+.fix-cal {
+    display: none;
+    background-color: none;
+}
+
+.day__container--event {
+    color: white !important;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.day__container .event__modal--form {
+    background-color: white;
+}

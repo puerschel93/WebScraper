@@ -1,0 +1,236 @@
+// ============================ Buttons ============================
+.btn
+	br(32px)
+	tr(all)
+	display inline-block
+	background none
+	border 0
+	text-align: center
+	position relative
+	&:before
+		content ''
+		position absolute
+		width calc(100% + 10px)
+		height calc(100% + 10px)
+		left -5px
+		top -5px
+		br(34px)
+		z-index -1
+	&:hover
+		cursor pointer
+
+.btn--sm
+	@extend .btn
+	@extend .type--main
+	padding 10px 29px
+	font-weight: 500
+	.btn-icon-row--right
+		.icon
+			margin-left: 10px
+			margin-right: -5px
+	.btn-icon-row--left
+		.icon
+			margin-right: 10px
+			margin-left: -5px
+
+.btn--sm-fix
+	padding: 10px 20px
+
+.btn--sm-round
+	size 44px
+	flex(mid)
+	padding 0
+	min-width 44px
+.btn--md
+	@extend .btn
+	@extend .type--md
+	padding 17px 48px
+	font-weight: 700
+	.btn-icon-row--right
+		.icon
+			margin-left: 20px
+			margin-right: -10px
+	.btn-icon-row--left
+		.icon
+			margin-right: 20px
+			margin-left: -10px
+	&.btn--full
+		+below(640px)
+			padding: 17px
+
+.btn--md-figure
+	size 64px
+	padding: 0
+	flex(mid)
+	.icon
+		fill white
+		size 24px
+
+.btn--sm-figure
+	size 44px
+	padding: 0
+	flex(mid)
+	.icon
+		fill white
+		size 24px
+
+.btn--mobile
+	@extend .btn
+	+below(640px)
+		width 100%
+		text-align center
+
+.btn--mark
+	@extend .btn
+	color white
+	background $mark
+	.icon
+		fill white
+	&:hover
+		background-color $greenDark
+		color white!important
+	&:active
+		&:before
+			content ''
+			border 2px solid $green
+	input[type="submit"]
+		border 0
+	.icon
+		fill white
+
+	&.disable
+		background: $grayLight
+		color $typeDisable
+		pointer-events none
+		color white
+
+.btn--disable
+	@extend .disabled
+	border 1px solid $border-color
+	background-color $grayLight
+
+.btn--light
+	@extend .btn
+	border 1px solid $border-color
+	background-color #ffffff
+	color $mark
+	.icon
+		fill $mark
+	&:hover,&.active
+		background: $greenLight
+		border 1px solid $mark
+		color $mark
+	&.active
+		background: $greenLight
+		border 1px solid $mark
+		color $mark
+	&:active
+		&:before
+			content ''
+			border 2px solid $greenLight
+
+	&.disable
+		pointer-events none
+		color $typeDisable!important
+
+.btn--text
+	@extend .btn
+	border 0
+	background-color none
+	color white
+	.icon
+		tr()
+		fill white
+	&:hover
+		background: $greenLight
+		color $mark
+		.icon
+			fill $mark
+	&:active
+		&:before
+			content ''
+			border 2px solid $greenLight
+
+.btn--text-red
+	@extend .btn
+	border 0
+	background-color none
+	color $stateError
+	.icon
+		fill $stateError
+	&:hover
+		color $stateError
+		background: $stateErrorBG
+	&:active
+		&:before
+			content ''
+			border 2px solid $stateErrorBG
+.btn--text.disable
+	pointer-events none
+	color $typeDisable
+
+.btn--white
+	@extend .btn
+	color black
+	background: white
+	font-weight: 700
+	&:hover
+		background: rgba(255, 255, 255, 0.8);
+	.icon
+		fill black
+
+.btn--dotted
+	border 1px dashed $border-color
+	br(8px)
+	font-size: 16px
+	&:hover
+		color $mark
+		border 1px dashed $mark
+
+.btn-icon-row
+	flex(mid)
+
+.btn--full
+	width: 100%
+	display block
+
+.btn-row
+	display: grid
+	grid-gap 20px
+	//grid-template-columns: repeat(auto-fill, minmax(12rem,1fr))
+.btn-row--line
+	display: flex
+	fw()
+
+.btn--grow
+	flex-grow 1
+
+.btn-menu-wrap
+	position relative
+	.btn-menu
+		+below(1024px)
+			left initial
+			right 0
+		display none
+		position absolute
+		left calc(-50% + 10px)
+		top 110%
+		z-index 10
+	.btn-menu-cont
+		background: white
+		br(8px)
+		border 1px solid $border-color
+		f()
+		fl()
+		width: 248px
+		padding: 20px
+		grid-gap 10px
+		text-align: left
+	.btn-menu__el
+		color black
+		tr()
+		cp()
+		&.type--stateError
+			color $stateError
+		&:hover
+			color $mark

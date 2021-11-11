@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+
+$fa-font-path: '../../node_modules/@fortawesome/fontawesome-free/webfonts';
+
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+
+@import '../../node_modules/bootswatch/dist/slate/_variables.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/bootswatch/dist/slate/_bootswatch.scss';
+
+@import './header.scss';
+
+@media only print {
+  body,
+  html {
+    background: none !important;
+    color: #000000 !important;
+  }
+  h1,
+  h2,
+  h3,
+  a {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
+}
+
+// prevent iphone expanding page on input focus
+.input-group,
+.input-group-prepend,
+.input-group-text,
+.form-control {
+  font-size: 1.1em;
+}
+
+// remove border events
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.info {
+  color: inherit;
+}
+
+.error {
+  color: red;
+}
+
+.warning {
+  color: orange;
+}
+
+.success {
+  color: #93c54b;
+}
+
+div#app {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+
+  header {
+    z-index: 90;
+  }
+
+  main {
+    z-index: 1;
+  }
+
+  footer {
+    z-index: 90;
+  }
+}
+
+dl.debug {
+  display: inline-block;
+  margin-bottom: 5px;
+
+  dt, dd {
+    float: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    min-height: 30px;
+  }
+  dt {
+    width: 100px;
+    clear: left;
+    justify-content: flex-end;
+  }
+  dt::after {
+    content: ':';
+    margin-right: 5px;
+  }
+  dd {
+    width: 500px;
+    clear: right;
+    justify-content: flex-start;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #444444;
+    border-radius: 3px;
+    padding-left: 5px;
+    background: #333333;
+    overflow: hidden;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        white-space: nowrap;
+        float: left;
+        clear: both;
+      }
+    }
+  }
+}
+
+.time {
+  color: #cccccc;
+
+  .hours .minutes .seconds .milliseconds {
+    color: inherit;
+  }
+
+  .milliseconds {
+    font-size: 0.8em;
+    opacity: 0.8;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

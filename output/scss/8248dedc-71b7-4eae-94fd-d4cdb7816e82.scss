@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+// Reset 
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+// Style Color 
+$pink : #E84393;
+$black : #333;
+$white : #FFF;
+$light-color : #666;
+$light-bg : #EEE;
+$border : .2 solid $black;
+
+// Display
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap:1.5rem
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+// Header
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $white;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+
+    // Logo
+    .logo {
+        font-size: 2.5rem;
+        color: $black;
+        font-weight: bolder;
+        margin-right: auto;
+    }
+
+    // Menu Navbar
+    .navbar {
+
+        ul {
+            list-style: none;
+
+            li {
+                position: relative;
+                float: left;
+
+                &:hover ul{
+                    display: block;
+                }
+
+                a {
+                    font-size: 1.7rem;
+                    color: $light-color;
+                    padding: 2rem;
+                    display: block;
+
+                    &:hover {
+                        background: $light-bg;
+                    }
+                }
+
+                ul {
+                    position: absolute;
+                    left: 0;
+                    width: 20rem;
+                    background: $white;
+                    display: none;
+
+                    li {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Menu Icons
+.icons div,
+.icons a {
+    font-size: 2.5rem;
+    color: $black;
+    cursor: pointer;
+    margin-left: 2rem;
+
+    &:hover {
+        color: $pink;
+    }
+}
+
+// Buttons
+#menu-btn {
+    display: none;
+}

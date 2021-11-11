@@ -1,0 +1,181 @@
+@import "color";
+// BG SOLO
+$bg-uni:no;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/bg-body.jpg';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container:300;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:0;
+
+$margin-top-under-nav-fixe:110;
+
+// SIZE NAVIGATION
+$height-navigation:75;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",arial,verdana,sans-serif;
+$font-title:"Oswald",arial,verdana,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.4em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib6";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE ROME
+@import "../../../slagence_X_V5/sources/scss/templates/rome";
+
+// IMPORT MODULE ANNONCES
+@import "../../../slagence_X_V5/sources/scss/modules/annonces7";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra4";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib3";
+
+.bg-content {
+    width: 1280px;
+    @media only screen and (max-width : 1280px) {
+        width: 960px
+    }
+}
+
+
+// CAROUSEL EQUIPE HOME
+.owl-carousel.width-700 {
+    width: 700px;
+}
+.nav-carousel > div {
+    display: inline-block;
+    padding: 5px;
+}
+
+
+// GENERAL
+body {
+    background-color: $color-body;
+    background-image: url("../images/bg-body.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+}
+.mainwrap {
+    padding-right: 10px;
+}
+.btn-important,
+.bg-secondary,
+.texte-info-agences,
+.bouton-raz {
+	color: $color-action;
+
+}
+
+// MODULE EXTRA
+.titre-extra {
+    display: none;
+}
+.module-annonces-homepage-extra {
+    background: $color-block;
+	.h1-like {
+	    font-size: 1.8em;
+	}
+	a:hover {
+	    text-decoration: none;
+	}
+}
+
+// NAV
+.menu-principal {
+	> li {
+	    line-height: 25px;
+		border-top-color: lighten($color-primary,15);
+		> a {
+    		font-size: 20px;
+			&:hover {
+				color: $color-important;
+			}
+		}
+	}
+}
+
+// FOOTER
+footer {
+	color: $color-body;
+	a {
+		color: $color-body;
+		&:hover {
+			color: $color-important;
+		}
+	}
+}
+
+
+.cookie-banner {
+ background-color: $color-primary; 
+ color: $color-important; 
+}
+
+.agence-info-bien .ellipsis {
+	overflow: visible;
+}
+
+@media only screen and (max-width: 767px) {
+.logo img {
+   width: 25% !important;
+}
+.bigger {
+    font-size: 1.2em;
+}
+}
+

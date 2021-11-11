@@ -1,0 +1,146 @@
+*
+    margin 0
+    padding 0
+    line-height 1
+    font-family  "Microsoft Yahei", Arial
+a
+    text-decoration none
+    color inherit
+ul
+ol
+    list-style none
+em
+i
+    font-style normal
+icon20()
+    display inline-block
+    width unit(22/16,'rem')
+    height @width
+    background-image url(../image/icon20.png)
+    background-size 100% auto
+fot()
+    width unit(40/16,'rem')
+    height @width
+    background-size auto 100%
+    display inline-block
+    background-image url(../image/icon40.png)
+iconH=unit(23/16,'rem')
+fotW=unit(41/16,'rem')
+header
+    position fixed
+    width 100%
+    top 0
+    z-index 1
+    height unit(40/16,'rem')
+    background-color rgb(57,58,63)
+    /*padding 0 unit(20/16,'rem') 0 unit(12/16,'rem')*/
+    span
+        color white
+        line-height @height
+        margin-left unit(12/16,'rem')
+    .icon20
+        icon20()
+        margin-top unit(9/16,'rem')
+        &.search
+            float right
+            background-position 0 0
+            margin-right unit(34/16,'rem')
+        &.add
+            float right
+            background-position 0 (- iconH)
+            margin-right unit(20/16,'rem')
+.main
+    position relative
+    top unit(40/16,'rem')
+    height unit(700/16,'rem')
+    background-color rgb(235,235,235)
+    overflow hidden
+    .friend
+        height unit(40/16,'rem')
+        background white
+        line-height @height
+        padding-left unit(20/16,'rem')
+        margin-top unit(16/16,'rem')
+        margin-bottom unit(16/16,'rem')
+        &:before
+            content ''
+            display inline-block
+            width unit(22/16,'rem')
+            height @width
+            background-image url(../image/icon.png)
+            background-size 100% 100%
+            vertical-align middle
+            margin-right unit(20/16,'rem')
+    .row
+        height unit(40/16,'rem')
+        background white
+        line-height @height
+        padding-left unit(20/16,'rem')
+        &:before
+            content ''
+            icon20()
+            vertical-align middle
+            margin-right unit(20/16,'rem')
+        &.sweep
+            &:before
+                background-position 0 (- iconH*2)
+        &.swag
+            &:before
+                background-position 0 (- iconH*3)
+        &.nearby
+            &:before
+                background-position 0 (- iconH*4)
+        &.bottle
+            &:before
+                background-position 0 (- iconH*5)
+        &.shop
+            &:before
+                background-position 0 (- iconH*6)
+        &.game
+            &:before
+                background-position 0 (- iconH*7)
+        &:nth-of-type(even)
+            margin-top unit(16/16,'rem')
+            position relative
+            &:after
+                content ''
+                position absolute
+                background-color rgb(235,235,235)
+                height unit(1/16,'rem')
+                width unit(290/16,'rem')
+                bottom unit(-5/16,'rem')
+                left unit(15/16,'rem')
+footer
+    position fixed
+    z-index 1
+    bottom 0
+    height unit(48/16,'rem')
+    padding 0 0 0 unit(29/16,'rem')
+    width 100%
+    overflow hidden
+    background white
+    .fot
+        fot()
+        margin-top unit(5/16,'rem')
+        &.chat
+            background-position 0 0
+        &.address
+            background-position (- fotW) 0
+        &.find
+            background-position (- fotW*2) 0
+        &.mine
+            background-position (- fotW*3) 0
+        &:not(:last-child)
+            margin-right unit(30/16,'rem')
+
+
+
+
+
+
+
+
+
+
+
+

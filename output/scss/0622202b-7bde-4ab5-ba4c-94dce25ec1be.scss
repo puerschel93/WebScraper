@@ -1,0 +1,125 @@
+// CSS Reset, comment out if not required or using a different module
+// @import '~minireset.css/minireset';
+@import '~igniteui-angular/lib/core/styles/themes/index';
+@include igx-core();
+@include igx-theme($default-palette);
+
+@import '~@angular/material/theming';
+//@import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'fonts.css';
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@include mat-core();
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("//fonts.googleapis.com/earlyaccess/notosanstc.css");
+@import "bootstrap/dist/css/bootstrap.min.css";
+//Note on Bootstrap, can just import the bootstrap.min.css here instead of the whole package
+//import './bootstrap.min.css'
+
+/* autoprefixer grid: on */
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+@-webkit-keyframes color-change-2x {
+    0% {
+        background: #fdf8f0;
+    }
+    100% {
+        background: #f6e7ec;
+    }
+}
+
+@keyframes color-change-2x {
+    0% {
+        background: #fdf8f0;
+    }
+    100% {
+        background: #f6e7ec;
+    }
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.headerAlignSyle {
+    text-align: right !important;
+}
+
+$mat-app-primary: mat-palette($mat-purple);
+$mat-app-accent:  mat-palette($mat-purple);
+
+// The warn palette is optional (defaults to red).
+$mat-app-warn: mat-palette($mat-red);
+$mat-app-theme: mat-dark-theme($mat-app-primary, $mat-app-accent, $mat-app-warn);
+
+$green-palette: igx-palette($primary: #09f,$secondary: #72da67, $surface: #333);
+
+@mixin custom-class-styles-dark-theme($theme){
+  .theme-background{
+    background-color: #333;
+    color: white;
+  }
+}
+
+.fin-dark-theme {
+    @include igx-dark-theme($green-palette);
+     background: #333;
+
+     ::-moz-placeholder {
+         opacity: 1;
+     }
+ }
+
+.dark-theme {
+    background: #333;
+    color: #fff;
+    @include igx-dark-theme($green-palette);
+    @include angular-material-theme($mat-app-theme);
+    @include custom-class-styles-dark-theme($mat-app-theme);
+}
+
+.cdk-overlay-container{
+  background: none !important;
+}
+
+.green-snackbar{
+  text-align: center;
+  background-color: green;
+  color: white;
+}
+
+.blue-snackbar{
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
+
+.orange-snackbar{
+  background-color: orange;
+  color: white;
+  text-align: center;
+}
+
+.red-snackbar{
+  background-color: red;
+  color: white;
+  text-align: center;
+}

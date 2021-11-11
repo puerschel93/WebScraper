@@ -1,0 +1,342 @@
+$newsletterBaseColor: #404040;
+
+.newsletter{
+  margin-bottom:72px;
+  padding-top:36px;
+  padding-bottom:36px;
+  background:url('../images/bg-newsletter.png') no-repeat 50% 50%;
+  background-size:cover;
+  overflow:hidden;
+  transition:max-height 300ms ease-in;
+
+  .sidebar &{
+    background-position:80% 50%;
+  }
+
+  @include media-breakpoint-up(lg){
+    min-height:438px;
+  }
+
+  @include media-breakpoint-up(lg){
+    min-height:294px;
+  }
+
+  &__step{
+    padding:0 ($grid-gutter-width / 2);
+    transform:translate3d(0,0,0);
+    transition:transform 300ms ease-in;
+
+    @include media-breakpoint-up(lg){
+      padding:0 $grid-gutter-width;
+    }
+
+    .sidebar &{
+      padding:0 5px;
+
+      @include media-breakpoint-up(lg){
+        padding:0 5px;
+      }
+    }
+
+    &--next,
+    &--prev{
+      position:absolute;
+        top:36px; bottom:auto;
+        left:0; right:0;
+    }
+
+    &--next{
+      transform:translate3d(100%,0,0);
+    }
+
+    &--prev{
+      transform:translate3d(-100%,0,0);
+    }
+
+  }
+
+  &__form-row{
+    margin-bottom:0;
+
+    &:last-child{
+      margin-top:30px;
+
+      .sidebar &{
+        margin-top:40px;
+      }
+    }
+  }
+
+  .header{
+    color:#000;
+    text-transform:uppercase;
+
+    &--size2{
+      margin-bottom:16px;
+      font-size:20px;
+      line-height:1.5;
+      text-align:center;
+
+      @include media-breakpoint-up(lg){
+        font-size:26px;
+        line-height:1.25;
+      }
+
+      @include media-breakpoint-up(xl){
+        font-size:32px;
+        line-height:1.1;
+      }
+
+      .sidebar &{
+        @include media-breakpoint-up(md){
+          font-size:18px;
+        }
+
+        @include media-breakpoint-up(lg){
+          font-size:22px;
+        }
+
+        @include media-breakpoint-up(xl){
+          font-size:24px;
+        }
+      }
+    }
+
+    &--light{
+      color:theme-color(primary);
+    }
+  }
+
+  &__text{
+    margin-bottom:26px;
+    color:theme-color(primary);
+    font-size:1rem;
+    text-align:center;
+
+    @include media-breakpoint-up(lg){
+      font-size:1.125rem;
+    }
+
+    &--tyinfo{
+      margin-top:16px;
+      color:#000;
+
+      @include media-breakpoint-up(lg){
+        margin-top:24px;
+        font-size:.75rem;
+        font-weight:300;
+      }
+    }
+
+    .sidebar &{
+      margin-bottom:26px;
+      font-size:1rem;
+    }
+  }
+
+  &__label{
+    cursor:pointer;
+
+    &--checkbox{
+      margin-top:16px;
+      margin-bottom:0;
+      font-size:.625rem;
+
+      @include media-breakpoint-up(lg){
+        margin-top:0;
+        font-size:.5625rem;
+
+        .sidebar &{
+          margin-top:16px;
+        }
+      }
+
+      .sidebar &{
+        font-size:.5625rem;
+      }
+
+      a{
+        text-decoration:underline;
+
+        @include hover-focus{
+          text-decoration:none;
+        }
+      }
+    }
+  }
+
+  .form-check-input{
+    margin-top:1px;
+    margin-right:6px;
+  }
+
+  &__input{
+
+    &--text{
+      margin-bottom:10px;
+      border-color:rgba(0,0,0,0);
+      border-width:1px;
+      font-size:1.125rem;
+
+      .sidebar &{
+        @include media-breakpoint-up(md){
+          font-size:.75rem;
+        }
+      }
+
+      @include media-breakpoint-up(lg){
+        margin-bottom:0;
+
+        .sidebar &{
+          margin-bottom:10px;
+        }
+      }
+
+      &::placeholder{
+        color:rgba($newsletterBaseColor, .6);
+        font-weight:300;
+
+        .sidebar &{
+          font-size:.75rem;
+        }
+      }
+
+      @include hover-focus{
+        border-color:rgba(theme-color(primary), .2);
+      }
+    }
+
+    &--has-error{
+      border-color:theme-color(primary);
+    }
+  }
+
+  &__tick{
+    width:100%;
+    height:100%;
+    min-height:142px;
+    display:block;
+    background:url("../images/newsletter-tick.png") no-repeat 50% 50%;
+  }
+
+  &__btn{
+    width:100%;
+    height:auto;
+    border:0;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:1rem;
+    white-space:normal;
+
+    .sidebar &{
+      font-size:1.25rem;
+    }
+
+    @include media-breakpoint-up(lg){
+      padding-top:15px;
+      padding-bottom:16px;
+    }
+  }
+
+  /*
+  // custom checkbox
+  [type="checkbox"]{
+    &:not(:checked),
+    &:checked{
+      position:absolute;
+      left:-9999px;
+
+      + .newsletter__label--checkbox{
+        position:relative;
+        cursor:pointer;
+
+        &:before{
+          width:30px;
+          height:38px;
+          border:2px solid rgba(0,0,0,1);
+          border-radius:4px;
+          box-shadow:0px 4px 4px 0px rgba(0,0,0,0.7);
+          background:#fff;
+          position:absolute;
+            top:6px;
+            left:0;
+          content:"";
+        }
+
+        &:after{
+          position:absolute;
+            top:14px;
+            left:8px;
+          transition:all .2s;
+          color:theme-color(primary);
+          font-family:Helvetica, Arial, sans-serif;
+          font-size:1.4em;
+          line-height:0.8;
+          content:"✔";
+        }
+      }
+    }
+
+    &:not(:checked){
+      + .newsletter__label--checkbox{
+        &:after{
+          opacity:0;
+          transform:scale(0);
+        }
+      }
+    }
+
+    &:checked{
+      + .newsletter__label--checkbox{
+        &:after{
+          opacity:1;
+          transform:scale(1);
+        }
+      }
+    }
+
+    &:disabled:not(:checked),
+    &:disabled:checked{
+      + .newsletter__label--checkbox{
+        &:before{
+          box-shadow:none;
+          border-color:#bbb;
+          background-color:#ddd;
+        }
+      }
+    }
+
+    &:disabled:checked{
+      + .newsletter__label--checkbox{
+        &:after{
+          color:#999;
+        }
+      }
+    }
+
+    &:disabled{
+      + .newsletter__label--checkbox{
+        color:#aaa;
+      }
+    }
+
+    &:checked:focus,
+    &:not(:checked):focus{
+      + .newsletter__label--checkbox{
+        &:before{
+          border:2px solid rgba(theme-color(secondary), .6);
+        }
+      }
+    }
+  }
+
+  .newsletter__label--checkbox{
+    padding-left:46px;
+
+    &:hover:before{
+      border:2px solid theme-color(secondary) !important;
+    }
+  }
+  */
+
+}

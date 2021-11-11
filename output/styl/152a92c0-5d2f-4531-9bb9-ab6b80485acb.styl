@@ -1,0 +1,458 @@
+.head
+    position fixed
+    top 0
+    left 0
+    z-index 2
+    width 0
+    height 100%
+    transition width 0s 1s linear
+    @media tablet-landscape-medium
+        position relative
+        width 100%
+        height auto
+        transition none
+
+    &::before
+        content ""
+        position absolute
+        top 0
+        left 150px
+        z-index 1
+        display block
+        width 0
+        height 100vh
+        background-color brown
+        transition width .5s .5s ease
+        @media laptop
+            left 140px
+        @media tablet-landscape-medium
+            left 0
+
+    &__bar
+        position fixed
+        top 0
+        left 0
+        z-index 2
+        display flex
+        flex-direction column
+        align-items center
+        width 150px
+        height 100%
+        padding 50px 10px
+        background-color white
+        text-align center
+        transition width .5s .5s ease
+        @media laptop
+            width 140px
+        @media tablet-landscape-medium
+            position relative
+            z-index auto
+            flex-direction row
+            flex-wrap nowrap
+            width 100%
+            height 140px
+            padding 0 40px
+            transition none
+        @media tablet-portrait-large
+            padding 0 30px
+        @media phone
+            padding 0 15px
+
+    &__burger
+        position relative
+        z-index 3
+        width 30px
+        height 15px
+        cursor pointer
+
+        &-default,
+        &-crossed
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+
+        &-default
+            &::before,
+            &::after
+                content ""
+                position absolute
+                left 0px
+                display block
+                width 100%
+                height 1px
+                background-color orange
+                transition left .3s 0s ease, width .3s .3s ease
+
+            &::before
+                top 0px
+
+            &::after
+                top 14px
+
+            &-line
+                position absolute
+                left 0px
+                top 7px
+                width 100%
+                height 1px
+                background-color orange
+                transition width .3s .3s ease
+
+        &-crossed
+            transform rotate(0deg)
+            transition transform .3s 0s ease
+
+            &::before,
+            &::after
+                content ""
+                position absolute
+                left 50%
+                top 50%
+                display block
+                width 0
+                height 1px
+                background-color orange
+                transition width .3s 0s ease
+
+            &::before
+                transform translate(-50%, -50%) rotate(45deg)
+
+            &::after
+                transform translate(-50%, -50%) rotate(-45deg)
+
+    &__langs
+        margin 42px 0 0 0
+        @media tablet-landscape-medium
+            position relative
+            z-index 1
+            margin 4px 0 0 40px
+        @media phone
+            margin 4px 0 0 auto
+
+        &-list
+            display flex
+            flex-wrap wrap
+            justify-content center
+            margin 0 0 -20px 0
+            padding 0
+            list-style none
+            @media tablet-portrait-small
+                flex-direction column
+                align-items center
+                margin 0 0 -8px 0
+
+        &-item
+            margin 0 12px 20px 12px
+            @media tablet-portrait-small
+                margin 0 0 8px 0
+
+        &-link
+            font-family "ArnoPro"
+            font-size 18px
+            line-height 24px
+            font-weight 300
+            color black
+            text-decoration none
+            outline none
+    
+    &__logo
+        position absolute
+        top 48%
+        transform translateY(-50%)
+        width 100%
+        @media tablet-landscape-medium
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+
+    &__contacts
+        display flex
+        flex-direction column
+        margin auto 0 -9px 0
+        opacity 0
+        visibility hidden
+        transition opacity .5s 0s ease, visibility 0s .5s linear
+        @media tablet-landscape-medium
+            position relative
+            z-index 1
+            margin 4px 0 -9px auto
+            opacity 1
+            visibility visible
+            transition none
+        @media phone
+            display none
+
+    &__phone,
+    &__link
+        margin 0 0 9px 0
+        font-family "ArnoPro"
+        font-size 18px
+        line-height 24px
+        font-weight 300
+        color black
+        text-decoration none
+
+    &__menu
+        position fixed
+        top 0
+        left 150px
+        z-index 2
+        width 0
+        height 100%
+        opacity 0
+        visibility hidden
+        overflow hidden
+        transition opacity .5s 0s ease, visibility 0s .5s linear, width 0s .5s linear
+        @media laptop
+            left 140px
+        @media tablet-landscape-medium
+            left 0
+
+.logo
+    position relative
+    @media tablet-landscape-medium
+        display flex
+        flex-direction column
+        align-items center
+
+    &__sign-image
+        display block
+        width 76px
+        margin 0 auto
+        @media tablet-landscape-medium
+            width 56px
+
+    &__description-image
+        position absolute
+        top calc(100% + 10px)
+        left 50%
+        transform translateX(-50%)
+        display block
+        width 166px
+        margin 10px 0 0 0
+        opacity 0
+        visibility hidden
+        transition opacity .5s 0s ease, visibility 0s .5s linear
+        @media tablet-landscape-medium
+            position static
+            transform none
+            width 125px
+            opacity 1
+            visibility visible
+            transition none
+
+.menu
+    width calc(100% + 17px)
+    height 100%
+    background-color brown
+    overflow-y auto
+    @media tablet-portrait-large
+        width 100%
+        text-align center
+
+    &__cols
+        display flex
+        flex-wrap nowrap
+        width calc(100% + 38px)
+        margin 0 0 0 -38px
+        padding 95px 0
+        @media tablet-portrait-large
+            flex-direction column-reverse
+            width 100%
+            margin 0
+
+    &__col
+        width calc(100% / 3 - 38px)
+        margin 0 0 0 38px
+        @media tablet-portrait-large
+            width 100%
+            margin 0
+        
+        &:not(:first-child)
+            @media tablet-portrait-large
+                margin 0 0 55px 0
+
+    &__list
+        width 100%
+        max-width 360px
+        margin 0
+        padding 0
+        list-style none
+        @media tablet-portrait-large
+            margin 0 auto
+
+    &__item
+        font-family "ArnoPro"
+        font-size 42px
+        line-height 46px
+        font-weight 300
+        color lightest-brown
+        @media laptop
+            font-size 32px
+            line-height 36px
+
+        &:not(:last-child)
+            margin 0 0 55px 0
+
+    &__link
+        color white
+        text-decoration none
+        outline none
+        /*border-bottom 1px solid rgba(255 255 255, 0)
+        transition border-bottom .3s 0s ease*/
+        transition color .3s 0s ease
+
+        &:hover
+            /*border-bottom 1px solid rgba(255, 255, 255, .15)*/
+            color bright-orange
+    
+    &__submenu
+        &-list
+            margin 16px 0 0 0
+            padding 0
+            list-style none
+
+        &-item
+            font-family "ArnoPro"
+            font-size 21px
+            line-height 27px
+            font-weight 300
+            color white
+            @media laptop
+                font-size 18px
+                line-height 24px
+
+            &:not(:last-child)
+                margin 0 0 9px 0
+                @media laptop
+                    margin 0 0 11px 0
+
+        &-link
+            color lightest-brown
+            text-decoration none
+            outline none
+            transition color .3s 0s ease
+
+            &:hover
+                color white
+
+    &__contacts
+        display flex
+        flex-direction column
+        margin 0 0 57px 0
+
+    &__phone
+        font-family "ArnoPro"
+        font-size 42px
+        line-height 46px
+        font-weight 300
+        color white
+        text-decoration none
+        outline none
+        @media laptop
+            font-size 32px
+            line-height 36px
+
+    &__address
+        margin 14px 0 0 0
+        font-family "HelveticaNeue"
+        font-size 16px
+        line-height 26px
+        font-weight 300
+        color white
+        @media laptop
+            font-size 14px
+            line-height 24px
+
+.head--wide
+    &::before,
+    & .head__menu
+        left 300px
+        @media laptop
+            left 280px
+        @media tablet-landscape-medium
+            left 0
+
+    & .head__bar
+        width 300px
+        transition width .5s 0s ease
+        @media laptop
+            width 280px
+        @media tablet-landscape-medium
+            width 100%
+            transition none
+
+    & .logo__description-image,
+    & .head__contacts
+        opacity 1
+        visibility visible
+        transition opacity .5s .5s ease, visibility 0s .5s linear
+
+.head__burger:hover
+    & .head__burger
+        &-default
+            &::before
+                left 7px
+
+            &::after
+                left -7px
+
+        &-crossed
+            transform rotate(90deg)
+
+.js-burger-menu-is-open
+    overflow-y hidden
+
+    & .head
+        width 100%
+        transition width 0s 0s linear
+        @media tablet-landscape-medium
+            transition none
+
+        &::before
+            width calc(100% - 150px)
+            transition width .5s 0s ease
+            @media laptop
+                width calc(100% - 140px)
+            @media tablet-landscape-medium
+                width 100%
+
+        &__menu
+            width calc(100% - 150px)
+            opacity 1
+            visibility visible
+            transition width 0s .5s linear, visibility 0s .5s linear, opacity .5s .5s ease
+            @media laptop
+                width calc(100% - 140px)
+            @media tablet-landscape-medium
+                width 100%
+
+        &--wide
+            &::before,
+            & .head__menu
+                width calc(100% - 300px)
+                @media laptop
+                    width calc(100% - 280px)
+                @media tablet-landscape-medium
+                    width 100%
+
+        &__burger
+            &-default
+                &::before,
+                &::after,
+                &-line
+                    width 0
+                    transition left .3s 0s ease, width .3s 0s ease
+
+                &-line
+                    left 100%
+
+            &-crossed
+                &::before,
+                &::after
+                    width 100%
+                    transition width .3s .3s ease
+
+        

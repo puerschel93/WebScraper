@@ -1,0 +1,411 @@
+borderColor = #dadddd
+borderWidth = 4px
+blockBackgroundColor = #f4f4f4
+
+.flowMakerComp
+  font-size 18px
+  font-weight normal
+  font-family sans-serif
+  overflow scroll
+  max-width 100%
+  max-height 100%
+  min-width 100%
+  min-height 100%
+  *
+    border 0px
+    margin 0px
+    padding 0px
+
+  .flowMakerContainer
+    display flex
+    flex-wrap nowrap
+
+  .flow-input
+    padding-bottom 10px
+    &.flow-input-type-switch
+      display flex
+      justify-content flex-start
+      align-items flex-start
+    .flow-label
+      max-height 17px
+      font-size 15px
+      position relative
+      top 3px
+      padding 0px 4px
+      color rgba(70,70,70,1)
+      font-weight bold
+      z-index 21
+      display flex
+      justify-content space-between
+      span
+        pointer-events none
+      .flow-tooltip
+        .flow-icon
+          position relative
+          top 2px
+    .flow-actualInput
+      .flow-text
+        margin-bottom -20px
+        input
+          border-top-left-radius 6px
+          border-top-right-radius 6px
+          background-color white
+          font-size 16px
+          position relative
+          top -15px
+          padding 20px 5px 2px 5px
+          border-bottom 2px solid black
+          width 100%
+          box-sizing border-box
+      .flow-switch
+        *
+          cursor pointer
+        .flow-actualSwitch
+          width 20px
+          height 20px
+          background-color rgba(255,255,255,1)
+          margin-top 7px
+          border-radius 6px
+          border 2px solid black
+          transition background-color 0.2s
+          .flow-inside
+            display flex
+            justify-content center
+            align-items center
+            position relative
+            top 2px
+            opacity 1
+            transition opacity 0.2s
+            svg
+              height 18px
+              width 18px
+              transform rotate(0turn)
+              transition transform 0.3s
+          &.flow-false
+            background-color rgba(255,255,255,0.3)
+            .flow-inside
+              opacity 0
+              svg
+                transform rotate(0.1turn)
+      .flow-dropdown
+        max-height 40px
+        .flow-select
+          display flex
+          justify-content space-between
+          align-items center
+          flex-wrap nowrap
+          border-bottom 2px solid black
+          cursor pointer
+          background-color white
+          padding 18px 5px 0px 5px
+          margin-top -17px
+          border-top-left-radius 5px
+          border-top-right-radius 5px
+          font-size 16px
+        .flow-options
+          display block
+          position relative
+          z-index 24
+          background-color white
+          border-radius 8px
+          top -7px
+          box-shadow 0px 2px 20px -5px rgba(0,0,0,0.4)
+          transform translate(0px, 5px)
+          opacity 0
+          pointer-events none
+          transition transform 0.2s, opacity 0.2s
+          &.flow-openTrue
+            transform translate(0px, 0px)
+            opacity 1
+            pointer-events auto
+          .flow-option
+            padding 6px 10px
+            display flex
+            justify-content space-between
+            align-items center
+            flex-wrap nowrap
+            background-color white
+            border-radius 8px
+            cursor pointer
+            transition background-color 0.1s
+            &:hover
+              background-color #eee
+            .flow-optTitle
+              font-size 17px
+    .flow-error
+      padding 5px 0px
+      font-size 14px
+      color darkred
+      font-weight bold
+    &.flow-hasErrTrue
+      .flow-actualInput
+        .flow-text
+          input
+            background-color rgba(245, 131, 131, 0.3)
+            border-bottom 2px solid darkred
+
+  .flow-fullBlock
+    background-color blockBackgroundColor
+    border borderWidth solid borderColor
+    box-shadow 0px 5px 30px -10px rgba(0,0,0,0.3)
+    border-radius 10px
+    display flex
+    flex-wrap nowrap
+    width 320px
+    .flow-middle
+      min-width 100%
+      .flow-inputs
+        display block
+        .flow-showAdvanced
+          display flex
+          justify-content center
+          align-items center
+          margin-bottom 5px
+          .flow-button
+            font-size 15px
+            font-weight bold
+            display flex
+            justify-content center
+            align-items center
+            flex-direction row
+            flex-wrap nowrap
+            background-color white
+            transition background-color 0.2s
+            border 2px solid black
+            border-radius 5px
+            cursor pointer
+            padding 0px 3px 2px 7px
+            user-select none
+            -webkit-user-select none
+            -webkit-touch-callout none
+            svg
+              position relative
+              top 1px
+              &.flow-alertIcon
+                height 20px
+                width 20px
+                margin-right 5px
+            &:hover
+              background-color #eee
+            &.errorTrue
+              background-color #fcc0c0
+              &:hover
+                background-color #cd8585
+      .flow-showFalse
+        display none
+    .flow-side
+      max-width 0px
+      .flow-innerSide
+        height 100%
+        min-width 60px
+        position relative
+        right 30px
+        display flex
+        justify-content center
+        align-items center
+        z-index 21
+        .flow-round
+          height 35px
+          width 35px
+          background-color white
+          border-radius 100%
+          box-shadow 0px 5px 30px -10px rgba(0,0,0,1)
+          cursor pointer
+          display flex
+          justify-content center
+          align-items center
+          transform scale(1, 1) translate(0px, 0px)
+          opacity 1
+          transition transform 0.2s, opacity 0.2s
+          &:hover
+            transform scale(1.15, 1.15)
+          &:active
+            transform scale(1.05, 1.05)
+    .flow-middle
+      box-sizing border-box
+      padding 2px 25px 4px 25px
+      .flow-title
+        font-weight bold
+        font-size 17px
+        display flex
+        justify-content space-between
+    .flow-nextOptions
+      max-width 0px
+      transform translate(0px, 0px)
+      opacity 1
+      transition transform 0.2s, opacity 0.2s
+      .flow-closePopup
+        height 40px
+        width 40px
+        background-color white
+        box-shadow 0px 5px 30px -10px rgba(0,0,0,0.6)
+        display flex
+        justify-content center
+        align-items center
+        border-radius 100%
+        position relative
+        left -180px
+        top -15px
+        cursor pointer
+        background-color white
+        transition background-color 0.2s
+        &:hover
+          background-color #eee
+        svg
+          transform rotate(0.125turn)
+      .flow-pos
+        position relative
+        top -5px
+        left -305px
+        background-color white
+        width 290px
+        border-radius 10px
+        box-shadow 0px 5px 30px -10px rgba(0,0,0,0.6)
+        overflow hidden
+        .flow-optionsTitle
+          font-weight bold
+          padding 10px
+        .flow-option
+          border-top 1px solid #eee
+          padding 10px
+          cursor pointer
+          background-color white
+          transition background-color 0.2s
+          &:hover
+            background-color #eee
+      &.flow-showFalse
+        transform translate(0px, 5px)
+        opacity 0
+        pointer-events none
+    &.flow-hoverFalse .flow-side .flow-round
+      transform scale(1, 1) translate(0px, 5px)
+      opacity 0
+  
+  .flow-row
+    box-sizing border-box
+
+  .flow-tooltip
+    width 20px
+    height 20px
+    .flow-noWidth
+      max-width 0px
+      .flow-fullwidth
+        z-index 24
+        transform translate(0px, 5px)
+        opacity 0
+        pointer-events none
+        transition transform 0.2s, opacity 0.2s
+        width 300px
+        position relative
+        right 315px
+        top -30px
+        background-color #302118
+        border-radius 6px
+        padding 5px
+        color white
+    &.flow-transparrentTrue
+     .flow-icon
+       opacity 0.5
+       transition opacity 0.2s
+    &:hover
+      .flow-icon
+        opacity 1
+      .flow-noWidth .flow-fullwidth
+        transform translate(0px, 0px)
+        opacity 1
+     
+
+  .flow-actualGraph
+    .flow-graphPart
+      display flex
+      flex-wrap nowrap
+      align-items center
+      .flow-lineToParrent
+        max-width 0px
+        max-height 0px
+        position relative
+        right 40px
+        svg
+          min-width 80px
+          
+      .flow-graph
+        display flex
+        justify-content center
+        align-items center
+        padding 5px 10px
+      
+  .flow-startPoint
+    user-select none
+    -webkit-user-select none
+    -webkit-touch-callout none
+    h3
+      text-align center
+      padding 10px
+      position relative
+      right 7px
+
+  .flow-addIcon
+    display inline-block
+    min-height 50px
+    max-height 50px
+    min-width 50px
+    max-width 50px
+    .flow-round
+      position relative
+      left 90px
+      height 50px
+      width 50px
+      display flex
+      justify-content center
+      align-items center
+      background-color blockBackgroundColor
+      border borderWidth solid borderColor
+      box-sizing border-box
+      border-radius 100%
+      box-shadow 0px 5px 30px -10px rgba(0,0,0,0.6)
+      cursor pointer
+      transform scale(1, 1)
+      transition transform .2s
+      &:hover
+        transform scale(1.15, 1.15)
+      &:active
+        transform scale(1.05, 1.05)
+      svg
+        height 40px
+        width 40px
+        transform rotate(0turn)
+        transition transform .2s
+      &.flow-open
+        svg
+          transform rotate(0.125turn)
+    .flow-options
+      min-width 200px
+      pointer-events none
+      opacity 0
+      transform translate(0px, 5px)
+      transition opacity .2s, transform .2s
+      &.flow-open
+        pointer-events auto
+        opacity 1
+        transform translate(0px, 0px)
+      .flow-option
+        box-shadow 0px 3px 30px -10px rgba(0,0,0,0.4)
+        height 30px
+        font-size 20px
+        width 200px
+        margin 10px 5px
+        padding 5px 10px
+        border-radius 5px
+        background-color blockBackgroundColor
+        border borderWidth solid borderColor
+        cursor pointer
+        transform scale(1, 1)
+        transition transform .2s
+        -webkit-user-select none
+        user-select none
+        -webkit-touch-callout none
+        &:hover
+          transform scale(1.05, 1.05)
+        &:active
+          transform scale(1.01, 1.01)
+

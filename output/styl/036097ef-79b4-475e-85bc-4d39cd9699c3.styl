@@ -1,0 +1,286 @@
+:root
+	font-size calc(0.5em + 1vw)
+
+html
+	height 100%
+
+body
+	overflow hidden
+	background-size cover
+	background-attachment fixed
+	background linear-gradient(315deg, rgba(34,34,34,1) 0%, rgba(0,0,0,1) 100%)
+
+hr
+	background rgba(0, 0, 0, 0)
+	border rgba(0, 0, 0, 0)
+	margin 50px 0
+
+.logo
+	padding 10px
+	max-width 450px
+
+.create, .join, .party, .leaderboard, .game, .start_game_preparation
+	display none
+
+.enabled 
+	display block
+
+.disabled
+	display none
+
+.pointer_disabled
+	pointer-events none
+
+.jumbotron
+	position relative
+	background none
+	text-align center
+
+.form-control
+	margin 0 auto
+	padding 1.5em 1em
+	width 60%
+	transform rotate(-1deg)
+	color black
+	font-size 1em
+	border none
+	color white
+	background #141E30
+	background linear-gradient(to right, rgba(36, 59, 85, 0.5), rgba(20, 30, 48, 0.2))
+
+.form-control:focus, .form-control:disabled
+	background #141E30
+	background linear-gradient(to right, rgba(36, 59, 85, 0.5), rgba(20, 30, 48, 0.2))
+	color white
+
+.form-control::placeholder
+	color white
+
+.alert-success.alert
+	position relative
+	margin 0 auto
+	padding 0.8em 0.5em
+	width 60%
+	transform rotate(-2deg)
+	color black
+	font-size 1.5em
+	text-align center
+	box-shadow none
+
+.form-control[type="text"]
+	color white
+	font-size 1.5em
+
+.controls
+	margin 0 auto
+	width fit-content
+	text-align center
+
+.btn > i
+	margin 0 5px 0 0
+
+.btn.btn-primary
+	margin 0 0.5em
+	background-color #1E6091
+	border-color transparent
+	font-size 1.5em
+
+.btn.btn-primary:hover
+	background-color #18a3c9
+
+.jumbotron > .container
+	position relative
+	width fit-content
+
+.details
+	position fixed
+	z-index 3
+	bottom 0
+	left 0
+	padding 15px 20px
+	letter-spacing 0.1em
+
+.details > ul
+	margin 0
+	padding 0
+
+.details > ul > li
+	margin 0.3em 0
+	list-style none
+
+.details > ul > li > a
+	padding 2px 0
+	color rgba(255, 255, 255, 0.1)
+	text-decoration none
+
+.details > ul > li > a:hover
+	border-bottom 2px solid rgba(255, 255, 255, 0.1)
+
+.alert
+	z-index 1
+	position fixed
+	margin 1em auto
+	left 0
+	right 0
+	width 50%
+
+.player_eyes
+	position absolute
+	letter-spacing 0.1em
+	font-size 2em
+	color rgba(255, 255, 255, 1)
+	pointer-events none
+	white-space nowrap
+
+.identifier
+	margin 0 5px
+	color #757575
+
+.timer
+	position absolute
+	left 0
+	right 0
+	bottom 0
+	margin 0 auto
+	width fit-content
+	font-size 2em
+
+.blinked, .return_to_party_menu
+	position absolute
+	left 0
+	right 0
+	top 107%
+	margin 20px auto !important
+	padding 0.5em 1em
+	width fit-content
+	font-size 2em
+	transform rotate(-2deg)
+
+.return_to_party_menu
+	top 100%
+	margin 0px auto !important
+	padding 0.5em 0.5em
+
+.eliminated
+	position absolute
+	top 0
+	left 0
+	right 0
+	width fit-content
+	font-size 1em
+	margin 0 auto
+
+.eye-container
+	margin 0 auto
+	height fit-content
+	font-size 1.5em
+	text-align: center
+
+.place_1 > .nickname > .nickname_label,
+.place_1 > .nickname > .nickname_trophy
+	color silver
+
+.place_2 > .nickname > .nickname_label,
+.place_2 > .nickname > .nickname_trophy
+	color gold
+.place_2 > .nickname > .nickname_trophy
+	font-size 3em
+
+.place_3 > .nickname > .nickname_label,
+.place_3 > .nickname > .nickname_trophy
+	color brown
+
+.nickname_trophy
+	display block
+	font-size 2em
+	color black
+	z-index -1
+
+.nickname
+	width fit-content
+	margin 0 auto
+
+.disabled
+	pointer-events none
+
+.start_game_preparation
+	z-index 2
+	position fixed
+	width 100%
+	height 100vh
+	background black
+
+.start_game_preparation > .container
+	z-index 3
+	position absolute
+	margin 0 auto
+	left 0
+	right 0
+	top 50%
+	transform translateY(-50%)
+
+.start_game_preparation > .container > h2
+	text-align center
+	font-size 6em
+
+.start_game_preparation > .container > h4
+	text-align center
+	font-size 1.5em
+	color rgba(255, 255, 255, 0.8)
+
+.start_game_preparation > .background
+	z-index 2
+	position absolute
+	margin 0 auto
+	left 0
+	right 0
+	top 50%
+	transform translateY(-50%)
+	text-align center
+	font-size 15em
+	color rgba(255, 255, 255, 0.1)
+
+#nickname, #join_invite, #invite
+	font-size 23px
+
+@media only screen and (max-width: 600px)
+	.eye-container
+		margin 15px auto
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px)
+	.jumbotron
+		padding 2rem 2rem
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px)
+	.logo
+		margin 20px 0 0 0
+		width 100%
+
+	#nickname, #join_invite, #invite
+		font-size 1.5em
+
+	hr
+		margin 3em
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px)
+	#nickname, #join_invite, #invite
+		width: 70%
+
+@media (min-width: 992px)
+	#nickname, #join_invite, #invite
+		width: 60%
+	
+	.btn.btn-primary
+		font-size 24px
+		padding 12px 18px
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px)
+	#nickname, #join_invite, #invite
+		width: 50%
+
+	.player_eyes
+		font-size 42px

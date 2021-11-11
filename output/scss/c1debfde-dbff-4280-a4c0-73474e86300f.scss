@@ -1,0 +1,152 @@
+// b_02_scss_list_dic.scss
+/* b_02_scss_list_dic.scss */
+
+// ===========================
+// color 
+$yellow: #fa0;
+$blue : (
+  #00f,
+  #0af,
+  #4bf,
+  #7af,
+  #adf
+  );
+$psuedoCode:(
+  "hover":#87f,
+  "focus":#4f3,
+  "active":#fda,
+  "selected":#dfd
+  );
+// ===========================
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  background-color: lighten($yellow, 30%);
+}
+.list_area {
+  width: 100%;
+  height: auto;
+  & > li {
+    width: 100%;
+    background-color: nth($blue,4);
+  }
+  & > li:hover {
+    background-color: map-get($psuedoCode,"hover");
+  }
+  & > li:focus {
+    background-color: map-get($psuedoCode,"focus");
+  }
+}
+
+$coffee: ("esspresso","latte","choco","vanila","other");
+// #{변수명/숫자} 인터폴레이션 기법으로 내용을 담을 수 있게 처리하는
+.coffee_#{nth($coffee,1)} {
+  width: 100%;
+}
+// scss 반복문
+// @for $i from 숫자 through/to 숫자 {}
+// 숫자 1부터 5까지 5번 반복수행하면서 해당 숫자는 매개변수 $key에 임의 할당
+@for $key from 1 through length($coffee) {
+  // .coffee_esspreaaso{} .coffee_latte{} ...... 의 형태로 .coffe_의 글자에
+  // $coffee 변수 내부에 있는 이름을 각각 할당하기 위해 보간법인 #{} 를 사용.
+  
+  // list 형식을 사용하기 위해서는 nth(변수명, 순번)
+
+
+
+  .coffee_#{nth($coffee,$key)} {
+    width: $key * 10%;
+    height: 100%;
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: nth($blue,$key);
+  }
+} 
+
+$device:768;
+#viewBox {
+  width: 100%;
+  height: 500 / $device * 100vw;
+}
+
+// 변수 - $변수명 : 값
+// 중첩 = #box { >li{} }
+// @mixin / @include
+
+@mixin blind() {
+  width: 0;
+  height: 0;
+  display: block;
+  z-index: -1;
+  position: absolute;
+  clip:rect(0 0 0 0);
+  overflow: hidden;
+}
+@mixin bar() {
+  &:after,
+  &::after {
+    content:"";
+    display: block;
+    clear: both;
+  }
+}
+@mixin full() {
+  display: block;
+  width: 100%;
+  height: 100%;
+  @content;
+  & > span {
+    @include blind();
+  }
+}
+@mixin MakeCard() {
+  @content;
+  li {
+    float: left;
+    width: 100%;
+    height: 200px;
+    margin: 10px;
+    background-color: $yellow;
+    > a {
+      @include full();
+    }
+  }
+}// @mixin MakeCard
+.nav_area {
+  float: right;
+  width: 960px;
+  height: auto;
+  & > li {
+    float: left;
+    width: auto;
+    height: 30px;
+  }
+  & a {
+    @include full() {
+      background-color: #fa0;
+    }
+  }
+  // & span {@include full();}
+  @include bar();
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  @include MakeCard() {
+    background-image: url("../../img/bar.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  @include bar();
+}
+
+// list - $var : v1, v2, v3 ; nth($var, 숫자);
+// map - $map : (a:v2 , b:v2, c:v3); map-get($map, key);
+// @for - @for $i form startN through/to lastN {}
+// #{} - 숫자나, 이름을 있는대로 그대로 사용할때 ( 주로 선택자)
+// @mixin - 기능을 만들때 @include - 기능을 사용할때
+// @content - @mixin 내부에서 기능을 추가할때

@@ -1,0 +1,517 @@
+main{margin: 10% auto 0px auto; overflow: hidden;}
+
+.maindiv {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-evenly;
+	@include tablet {
+		flex-flow: row;
+		align-items: center;
+		height: 500px;
+	}
+	@include wide_pc {
+
+	} 
+}
+
+.section {
+	font-family: $normal;
+	padding: 1rem;
+	text-align: center;
+	margin: 1rem;
+	background-color: $light;
+    box-shadow: 0px 0px 8px #091353;
+    border-radius: 7px;
+    margin: 5rem 1rem;
+    @include tablet {
+    	display: flex;
+    	flex-flow: row;
+    	align-items: center;
+    	justify-content: space-between;
+    	min-height: 330px;
+    }
+	&__title {
+		color:  $mainbg;
+		font-family: $title2;
+		@include tablet {
+			font-size: 3rem;
+			margin-top: 1rem;
+		}
+		@include wide_pc {
+			font-size: 4.5rem;
+		}
+	}
+	&__text {
+		@include tablet {
+			margin-top: 1rem;
+		}
+		@include wide_pc {
+			font-size: 1.3rem;
+		}
+	}
+	&__link {
+		$color: $secbg;
+
+	}
+	&__box {
+		@include tablet {
+			margin-top: 1rem;
+		}
+		@include wide_pc {
+			font-size: 1.3rem;
+		}
+	}
+	&__down {
+		margin: 0px auto;
+	}
+}
+section .section-left {
+	width: auto;
+	min-width: 45%;
+	max-width: 85%;
+	margin: auto;
+	@include tablet {
+		min-width: 45%;
+		max-width: 50%;
+	}
+	&__img {
+		display: none;
+		@include tablet {
+			display: block;
+			width: 100%;
+			border: 7px solid #8073a4;
+    		border-radius: 7px;
+    		z-index: 1;
+		}
+	}
+	&__link {
+		display: none;
+		@include tablet {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+section .section-right {
+	@extend .section-left;
+	&__img {
+		display: none;
+		@include tablet {
+			display: block;
+			width: 100%;
+			border: 7px solid $mainbg;
+    		border-radius: 7px;
+    		z-index: 1;
+		}
+	}
+}
+.text__max__width {
+	max-width: 430px;
+	@include wide_pc {
+		max-width: 500px;
+	}
+}
+.miniball {
+	width: 26px;
+	margin: auto;
+}
+.first {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	&__title {
+		font-family: $title2;
+		font-size: 2rem;
+	}
+	&__img_right {
+		width: 200px;
+		opacity: .7;
+		position: relative;
+		bottom: 0px;
+		left: 10px;
+	}
+	&__img_left {
+		@extend .first__img_right;
+		bottom: 0px;
+		right: 10px;
+	}
+}
+.welcome {
+	@extend .section;
+	margin: 2rem 1rem;
+	@include tablet {
+		flex-flow: column;
+		justify-content: center;
+		width: 60%;
+		height: 350px;
+	}
+	@include wide_pc {
+		height: 468px;
+	}
+	&__first {
+		@extend .first;
+		& h2 {
+			@extend .first__title;
+		}
+		&__img {
+			@extend .first__img_right;
+			& img {
+				width:100%;
+			}
+		}
+	}
+	&__second {
+		&__up {
+			&__title {
+				@extend .section__title;
+			}
+		}
+		&__down {
+			@extend .section__down;
+			@extend .text__max__width;
+			&__text {
+				@extend .section__text;
+				text-align: center;
+			}
+			&__box {
+				@extend .section__box;
+				&__text {
+					font-weight: bold;
+					margin-bottom:  5px;
+				}
+				&__imgdiv {
+					@extend .miniball;
+					&__img {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+.pokedex {
+	@extend .section;
+	&__up {
+
+		&__title {
+			@extend .section__title;
+		}
+	}
+	&__down {
+		@extend .section__down;
+		@extend .text__max__width;
+		&__text {
+			@extend .welcome__second__down__text;
+			@text-align: left;
+		}
+		&__box {
+			&__text {
+			}
+			&__imgdiv {
+				@extend .miniball;
+				&__img {
+					width: 100%;
+				}
+			}
+		}
+
+	}
+}
+.homequiz {
+	@extend .section;
+	&__up {
+
+		&__title {
+			@extend .section__title;
+			color: $black-color;
+		}
+	}
+	&__down {
+		@extend .section__down;
+		@extend .text__max__width;
+		&__text {
+			@extend .welcome__second__down__text;
+		}
+		&__box {
+			&__text {
+
+			}
+			&__imgdiv {
+				@extend .miniball;
+				&__img {
+					width: 100%;
+				}
+			}
+		}
+
+	}
+}
+.about {
+	@extend .section;
+	background-color: $light;
+	&__up {
+
+		&__title {
+			@extend .section__title;
+			
+		}
+	}
+	&__down {
+		@extend .section__down;
+		@extend .text__max__width;
+		&__text {
+			@extend .welcome__second__down__text;
+			@text-align: left;
+
+		}
+		&__box {
+			&__text {
+			}
+			&__imgdiv {
+				@extend .miniball;
+				&__img {
+					width: 100%;
+				}
+			}
+		}
+
+	}
+}
+.contact {
+	@extend .section;
+	background-color: $light;
+	&__up {
+
+		&__title {
+			@extend .section__title;
+		}
+	}
+	&__down {
+		@extend .section__down;
+		@extend .text__max__width;
+		&__text {
+			@extend .welcome__second__down__text;
+			@text-align: left;
+		}
+		&__box {
+			&__text {
+			}
+			&__imgdiv {
+				@extend .miniball;
+				&__img {
+					width: 100%;
+				}
+			}
+		}
+
+	}
+}
+
+.sect {
+	overflow: hidden;
+	width: 95%;
+	max-width: 680px;
+    margin: auto;
+    margin-bottom: 3rem;
+    background-color: #d1e8fdf5;
+    padding: 1rem;
+    border: 1px solid black;
+    box-shadow: 3px 3px 3px #00000063;
+    border-radius: 8px;
+    text-align: center;	
+    @include wide_pc {
+    	height: 460px;
+    	width: 680px;
+    }
+    &__title {
+    	position: relative;
+    	z-index: 2;
+    	font-family: $title2;
+    	font-size: 1.4rem;
+    	padding-bottom: 1rem;
+    }
+    &__text {
+    	font-family: $normal;
+    	position: relative;
+    	padding: 1rem;
+		text-align: center;
+    	line-height: 24px;
+    	z-index: 2;
+    }
+    &__card {
+    	position: relative;
+    	display: flex;
+    	flex-flow: column;
+    	align-items: center;
+    	justify-content: space-around;
+    	z-index: 2;
+    	@include tablet {
+    		flex-flow: row;
+    	}
+    	&__text {
+    		@extend .sect__text;
+    		&__p {
+    			font-family: $normal;
+    			padding: 1rem 0rem;
+			    max-width: 330px;
+			    background-color: #51ab8033;
+			    border: 3px solid #2038548f;
+			    margin: 1rem auto;
+			    padding: 1rem;
+			    box-shadow: 2px -3px 7px black;
+			    border-bottom: none;
+			    border-left: none;
+			    border-radius: 8px;
+    		}
+    	}
+    	&__img {
+    		width: 210px;
+    		& img {
+    			width: 100%;
+    		}
+    	}
+    	&__pokedex {
+    		width: 180px;
+		   	margin: auto;
+		    padding: 0.3rem;
+		    border: 3px solid #22517a;
+		    border-left: none;
+		    border-bottom: none;
+		    background-color: #3693f0;
+		    border-radius: 8px;
+		    box-shadow: 2px -3px 7px black;
+    		&__img {
+    			width: 100%;
+    		}
+    	}
+    }
+    &__jigglyL {
+    	position: relative;
+		bottom: 196px;
+		left: -50px;
+		z-index: 1;
+		opacity: .3;
+		width: 228px;
+		height: 0px;
+    	&__img {
+    		width: 100%;
+    		z-indez: 1;
+    	}
+    }
+    &__jigglyR {
+    	@extend .sect__jigglyL;
+    	float: right;
+    	left: 50px;
+    	&__img {
+    		@extend .sect__jigglyL__img;
+    	}
+    }
+}
+/* correcciones sect */
+
+.form_container {
+	@include tablet {
+		height: auto;
+		width: 500px;
+	}
+}
+
+.wrapdiv404 {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	background: url("../img/poster3wide.jpg");
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+.p404 {
+	max-width: 1280px;
+	max-height: 720px;
+}
+
+/* Hoover MAIN SECTION */
+
+.about_hoover {
+	display: flex;
+	flex-flow:column;
+	@include tablet {
+		flex-flow: row;
+	}
+}
+.wide_pc_flex {
+	@include wide_pc {
+		display:flex;
+		flex-flow:row;
+
+	}
+}
+
+@mixin contact_text {
+	color: white;
+	font-family: $normal;
+	padding: 2rem;
+}
+@mixin contact_header {
+	color: white; 
+	font-family: $title2;
+	font-size: 2rem;
+	padding-bottom:1rem;
+}
+.contact_extra {
+	$contact_width: 500px;
+	display: none;
+	@include wide_pc {
+		display: block;
+		width: $contact_width;
+		margin-right: 50px;
+		border-top: 1px solid white;
+		border-bottom: 1px solid white;
+		height: fit-content;
+		background-color:19193c75;
+		padding: 2rem;
+		&__top {
+			display:flex;
+			flex-flow:row-reverse;
+			border-bottom: 1px solid white;
+			&__img {
+				width: 240px;
+				& img {width:100%;}
+			}
+			&__info {
+				width:260px;
+				padding-top:1rem;
+				& h3 {@include contact_header;}
+				& p {@include contact_text;}
+			}
+		}
+		&__bottom {
+			& h3 {
+				@include contact_header;
+				border-top:1px solid white;
+				padding-top:1rem;
+			}
+			& p {@include contact_text; padding: 1rem 2rem 2rem 2rem;}
+			&__icon_list {
+				max-width: $contact_width;
+				display: flex;
+				flex-flow: row;
+				justify-content: space-evenly;
+				& img {width:50px;}
+			}
+		}
+	}
+}
+
+
+/* CLASE SECTION */
+
+.section {
+
+}
+

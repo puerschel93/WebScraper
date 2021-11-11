@@ -1,0 +1,402 @@
+/*------------------------------------------------------------------
+[Table of contents]
+/*
+# overwrite some style of stylus
+
+/*------------------------------------------------------------------
+[FontAwesome]
+*/
+
+/*------------------------------------------------------------------
+[Global]
+*/
+@import '~vuetify/src/stylus/main.styl'
+
+body
+  font-family: "Poppins" !important
+  font-size: $font-size-root
+  font-weight: $font-weights.regular
+  line-height: $line-height-root
+h1
+  font-size: 48px
+  font-weight: $font-weights.thin
+  letter-spacing: -1.5
+
+h2
+  font-size: 36px
+  font-weight: $font-weights.light
+  letter-spacing: -0.5
+
+h3
+  font-size: 24px
+  font-weight: $font-weights.light
+  letter-spacing: normal
+
+h4
+  font-size: 20px
+  font-weight: $font-weights.light
+  letter-spacing: normal
+h5
+  font-size: 16px
+  font-weight: $font-weights.regular
+  letter-spacing: normal
+
+
+/*------------------------------------------------------------------
+[Components List]
+*/
+.v-list
+  .v-list__tile--link:hover,
+  .v-list__tile--highlighted,
+  .v-list__group__header:hover
+  .v-list__group--active:before,
+  .v-list__group--active:after
+    background: #f5f5f5!important
+
+/*------------------------------------------------------------------
+[Components / Card]
+*/
+.v-card
+  // box-shadow: 0 1px 3px 1px rgba(0,0,0,0.03)
+  box-shadow: 0 1px 1px 0 rgba(60,64,67,.08), 0 1px 3px 1px rgba(60,64,67,.16);
+  &__actions
+    .v-btn
+      margin: 0 8px;
+      min-width: 56px
+      &:first-child
+        margin-left: 0
+
+/*------------------------------------------------------------------
+[Components / Timeline]
+*/
+
+.timeline
+  position: relative;
+  list-style: none;
+  padding-left: 0;
+  z-index: 1
+
+  &-block
+    display: -webkit-box;
+    display: flex
+
+  &-detail
+    -webkit-box-flex: 1;
+    flex: 1 1 0%;
+    padding-bottom: 30px
+    @media $display-breakpoints.sm-and-down
+      display: none;
+
+  &-point
+    position: relative;
+    flex-shrink: 0;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    -webkit-box-ordinal-group: 3;
+    order: 2;
+    width: 96px;
+    padding-bottom: 30px;
+    text-align: center
+
+  &-point::before
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    bottom: -9px;
+    width: 1px;
+    margin-left: -1px;
+    z-index: -1;
+    background-color: #ebebeb;
+   & &-block:last-child &-point::before
+    bottom: 0 !important;
+
+  & &-block:first-child &-point::after
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin-left: -2px;
+    border-radius: 50%
+
+  & &-block:last-child &-point::after
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    border-radius: 50%
+
+  &-content
+    -webkit-box-flex: 1;
+    flex: 1 1 0%;
+    margin-bottom: 60px
+
+  &-period
+    position: relative;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+
+  &-period::after
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: #ebebeb;
+    border-radius: 50%
+
+  & &-period:first-child::after
+    display: none;
+
+  &-point-xs &-point
+    width: 32px
+  &-point-sm &-point
+    width: 64px
+  &-point-lg &-point
+    width: 128px
+  &-point-xl &-point
+    width: 256px
+
+  @media $display-breakpoints.md-and-down
+    & &-block &-detail
+      -webkit-box-ordinal-group:2;
+      order: 1;
+    & &-block &-content
+      -webkit-box-ordinal-group: 4;
+      order: 3
+
+  @media $display-breakpoints.md-and-up
+      & &-block:nth-child(even) &-detail
+        -webkit-box-ordinal-group:2;
+        order: 1;
+        text-align: right
+
+      & &-block:nth-child(even) &-content
+        -webkit-box-ordinal-group: 4;
+        order: 3
+
+      & &-block:nth-child(odd) &-detail
+        -webkit-box-ordinal-group: 4;
+        order: 3;
+        text-align: left
+
+      & &-block:nth-child(odd) &-content
+        -webkit-box-ordinal-group: 2;
+        order: 1
+    &&-content-left &-block &-detail
+    -webkit-box-ordinal-group: 4;
+    order: 3;
+    text-align: left
+
+  &&-content-left &-block &-content
+    -webkit-box-ordinal-group: 2;
+    order: 1;
+
+  &&-content-right &-block &-detail
+    -webkit-box-ordinal-group: 2;
+    order: 1;
+
+  &&-content-right &-block &-content
+    -webkit-box-ordinal-group: 4;
+    order: 3 ;
+  &&-activity &-content
+    margin-bottom: 10px
+/*------------------------------------------------------------------
+[Components / Chat]
+*/
+.chat
+  &-history
+    &--toolbar
+      box-shadow: 0 1px 3px 1px rgba(0,0,0,0.03)
+    &--list
+      a.list__tile--active
+        background: #eee
+    &--scrollbar
+      height:calc(100vh - 48px)
+      @media $display-breakpoints.sm-and-down
+        height:calc(100vh - 48px - 56px)
+  &-room
+    &--toolbar
+      box-shadow: 0 1px 3px 1px rgba(0,0,0,0.03)
+    &--scrollbar
+      height: calc(100vh - 48px - 80px)
+/*------------------------------------------------------------------
+[Components / mail]
+*/
+.mail
+  &-toolbar
+    border-bottom: 1px solid rgba(0,0,0,0.12)
+  &-list
+    &--layout
+      padding-top: 64px!important
+      @media $display-breakpoints.sm-and-down
+        padding-top: 56px!important
+    &--toolbar
+      margin-top: 64px!important
+      @media $display-breakpoints.sm-and-down
+        margin-top: 56px!important
+      .check-all
+        flex: 0 0
+        margin-top: 0
+    &--wrap
+      height: calc(100vh - 64px - 64px)
+  &-reply
+    &--layout
+      padding-top: 64px!important
+      @media $display-breakpoints.sm-and-down
+        padding-top: 56px!important
+    &--toolbar
+      margin-top: 64px !important
+      @media $display-breakpoints.sm-and-down
+        margin-top: 56px!important
+    &--scrollbar
+      height: calc(100vh - 64px - 64px)
+      @media $display-breakpoints.sm-and-down
+        height : calc(100vh - 56px - 56px)
+
+/*Setting color header datatable*/
+thead{
+    background-color: #d5d5d5;
+}
+/*Setting border input text default*/
+.theme--light.v-text-field--outline > .v-input__control > .v-input__slot {
+    border: 1px solid #e0e0e0;
+}
+/*Setting border input text pada saat mengisi*/
+.v-text-field--outline.v-input--is-focused > .v-input__control > .v-input__slot, .v-text-field--outline.v-input--has-state > .v-input__control > .v-input__slot {
+    border: 1px solid currentColor;
+    transition: border 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+/*Setting remove border hover default */
+.theme--light.v-text-field--outline:not(.v-input--is-focused):not(.v-input--has-state)>.v-input__control>.v-input__slot:hover{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e0e0e0;
+}
+/*setting size input text*/
+.v-text-field .v-input__control .v-input__slot {
+  min-height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+#bgField .v-text-field .v-input__control .v-input__slot {
+  min-height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  background-color : #fafbfd !important;
+}
+/*setting size font*/
+.application {
+  font-family: "Poppins";
+}
+.headline,
+.display-2,
+.title,
+.subheading{
+     font-family: "Poppins" !important;
+}
+/*setting button no uppercase (based on text)*/
+.v-btn--depressed {
+  text-transform:none !important;
+  box-shadow: 0 0 0 1px #e0e0e0;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+/*setting button close in v-dialog*/
+.v-btn.v-btn--absolute {
+  height: 25px;
+  width: 25px;
+}
+
+.v-dialog{
+  box-shadow: 0 0 0 1px #e0e0e0;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+/*setting style vue2editor*/
+.tarea-editor{
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #e0e0e0;
+  border: 1px solid #e0e0e0;
+}
+
+/*prefix input form*/
+.v-text-field--outline.v-input--is-dirty .v-text-field__prefix, .v-text-field--outline.v-input--is-focused .v-text-field__prefix, .v-text-field--outline.v-text-field--placeholder .v-text-field__prefix {
+    margin-top: 12px;
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+/*seeting background field login*/
+.theme--light.v-text-field--solo > .v-input__control > .v-input__slot{
+  background: #d8d8d8;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #979797;
+  border: 1px solid #979797;
+}
+
+.v-tabs{
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #ebebeb;
+    border: 1px solid #ebebeb;
+}
+
+/*setting background Tab Selected*/
+.colorBackgroudTabSelected{
+  background-color:#515257;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #515257;
+  border: 1px solid #515257;
+  color:#ffffff;
+}
+
+/*setting input text / field*/
+.v-text-field--box.v-text-field--single-line input, .v-text-field--full-width.v-text-field--single-line input, .v-text-field--outline.v-text-field--single-line input {
+    margin-top: 2px;
+}
+
+/*setting append icon in field*/
+.v-text-field.v-text-field--enclosed .v-input__prepend-outer, .v-text-field.v-text-field--enclosed .v-input__prepend-inner, .v-text-field.v-text-field--enclosed .v-input__append-inner, .v-text-field.v-text-field--enclosed .v-input__append-outer {
+    margin-top: 5px;
+}
+
+/*setting prefix icon in field*/
+.v-text-field--outline.v-input--is-dirty .v-text-field__prefix, .v-text-field--outline.v-input--is-focused .v-text-field__prefix, .v-text-field--outline.v-text-field--placeholder .v-text-field__prefix {
+    margin-top: 0px;
+}
+/*setting margin header and datatable*/
+.container.grid-list-xl *:not(:only-child) .layout:last-child {
+    margin-bottom: -30px;
+}
+
+/*setting padding bottom & top rows*/
+.container.grid-list-xl .layout .flex {
+    padding: 8px 12px 8px 12px;
+}
+
+/*setting Color breadcrumbs*/
+.theme--light.v-breadcrumbs .v-breadcrumbs__item--disabled {
+    color: #FFD300;
+}
+.v-breadcrumbs__item {
+    color: grey;
+}
+
+/* Setting Position Label */
+.theme--light.v-subheader {
+    color: rgba(0,0,0,0.54);
+    margin-top: -8px;
+}

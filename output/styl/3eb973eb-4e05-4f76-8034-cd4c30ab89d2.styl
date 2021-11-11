@@ -1,0 +1,453 @@
+@import '_settings'
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,300,700);
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
+@import 'bootstrap-grid.css'
+@import 'modal.css'
+
+normalize-css()
+base()
+
+body
+    padding: 0px
+    margin: 0px
+    background: $tan
+    font-family: 'Quicksand', sans-serif;
+
+p 
+    color: $navy
+    font-family: 'Quicksand', sans-serif;
+
+ul
+    margin: 0
+    padding: 0
+
+pre 
+    font-family: 'Quicksand', sans-serif;
+
+h1
+h2
+h3
+h4
+h5
+h6
+    color: $red
+    font-family: 'Quicksand', sans-serif;
+
+li
+    font-family: 'Quicksand', sans-serif;
+
+a
+    color: $navy
+    -webkit-transition: all 0.5s ease-in-out
+    transition: all 0.5s ease-in-out
+    font-family: 'Quicksand', sans-serif;
+
+.btn
+    display: inline-block
+    background: $red
+    color: $white
+    font-weight: 700
+    padding: 10px 35px
+    margin: 0 10px
+    text-decoration: none
+    text-align: center
+    min-width: 200px
+    -webkit-transition: all 0.5s ease-in-out
+    transition: all 0.5s ease-in-out
+.btn:hover
+    background: $darkred
+.btn-tight
+    margin: 0
+
+.flex 
+    display: flex
+.no-pad 
+    padding-left: 0
+    padding-right: 0
+
+@media (max-width: 500px)
+    .flex 
+        display: inherit
+    .no-pad 
+        padding-left: 15px
+        padding-right: 15px
+
+input:focus
+    outline: none
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $white
+    text-transform: uppercase;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    $white
+    opacity:  1
+    text-transform: uppercase;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    $white
+    opacity:  1
+    text-transform: uppercase;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    $white
+    text-transform: uppercase;
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color:    $white
+    text-transform: uppercase;
+}
+
+header
+    padding: 20px
+    background: $white
+#blog header
+    background: $red
+header ul
+    list-style: none;
+    text-align: right;
+header ul li
+    display: inline-block
+header .links
+header .social
+    padding: 25px 0;
+    color: $navy
+#blog header .links
+#blog header .social
+    color: $white
+header .links a
+header .social a
+    color: $navy
+#blog header .links a
+#blog header .social a
+    color: $white
+header .links a:hover
+header .social a:hover
+    color: $darkred
+#blog header .links a:hover
+#blog header .social a:hover
+    color: $navy
+header .links a
+    font-size: 14px
+    font-weight: 700
+    text-decoration: none
+header .social a i 
+    font-size: 25px
+header .links li:before
+    content: '/'
+    padding: 5px
+header .links li:first-child:before
+    content: none;
+header .links li a
+    text-transform: uppercase
+
+#blog header .links li a.blog-link
+#event header .links li a.event-link
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+
+@media (max-width: 500px)
+    header .social
+        display: none
+    header .links a
+        font-size: 12px
+    header .links
+    header .social
+        padding: 15px 0;
+    
+
+footer
+    padding: 20px
+    background: $tan
+footer a
+    text-decoration: none
+    text-transform: uppercase
+    color: $navy
+    font-size: 14px
+    font-weight: 700
+footer a:hover
+    color: $darkred
+footer p
+    margin: 0
+    text-transform: uppercase
+    color: $navy
+    font-size: 12px
+footer .colophone
+    text-align: right
+footer ul
+    text-align:right
+    list-style: none
+footer .links ul
+    text-align: left
+footer ul li
+    display: inline-block
+footer .links li:before
+    content: '/'
+    padding: 5px
+footer .links li:first-child:before
+    content: none;
+
+.logo h1 
+    margin: 0
+.logo a img
+    max-width: 75px
+.logo
+    margin-left: -15px
+    margin-right: 15px
+body:not(#blog) .logo a
+    display: inline-block
+body:not(#blog) .logo a.alt
+    display: none    
+body#blog .logo a
+    display: none    
+body#blog .logo a.alt
+    display: inline-block
+
+@media (max-width: 500px)
+    .logo a img
+        max-width: 50px
+    footer .colophone
+        position: absolute
+        right: 0
+        top: 3px
+
+.modal-backdrop
+    background: $navy
+.modal-content
+    background: $tan
+    padding: 50px
+.modal-content h4
+    font-size: 35px
+    margin-top: 0
+.modal .close 
+    cursor: pointer
+    position: absolute
+    right: 15px
+    font-size: 50px
+    top: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+.modal-content textarea
+.modal-content input:not(.submit)
+    width: 100%;
+    border: none;
+    background: $darktan
+    font-weight: 700;
+    letter-spacing: inherit;
+    padding: 20px;
+.modal-content input.submit
+    background: $red
+    border: 0
+    font-weight: 700
+    text-transform: uppercase
+.modal-content input.submit:hover
+    background: $darkred
+
+.modal input:focus
+    outline: none
+
+.modal ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $navy
+    text-transform: uppercase;
+}
+.modal :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    $navy
+    opacity:  1
+    text-transform: uppercase;
+}
+.modal ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    $navy
+    opacity:  1
+    text-transform: uppercase;
+}
+.modal :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    $navy
+    text-transform: uppercase;
+}
+.modal :placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color:    $navy
+    text-transform: uppercase;
+}
+
+
+/* H O M E */
+.intro
+    padding-top: 50px
+.intro h2
+    font-weight: 400
+    font-size: 30px
+.intro h2 span
+    font-size: 35px
+.sub-intro
+    padding-bottom: 50px 
+.sub-intro hr
+    width: 100px
+    background: $red
+    height: 2px;
+    display: block;
+    margin: 0;
+.sub-intro p
+    font-weight: 400
+    font-size: 20px
+    color: $red
+
+@media (max-width: 500px)
+    .intro
+        padding-top: 25px
+    .intro h2 span
+    .intro h2
+        font-size: 20px;
+    .sub-intro
+        font-size: 16
+
+    .modal-content
+        padding: 25px
+        margin: 0
+    .modal .close
+        right: -15px
+        font-size: 50px
+        top: 0px
+        margin: 0
+        padding: 0
+        line-height: 0px
+    .modal-content h4
+        font-size: 20px
+        margin-top: 0
+
+.next-event
+    background-repeat: no-repeat
+    background-size: cover
+    height: 400px
+    text-align: center
+    padding: 75px 0
+    color: $red
+.next-event pre
+    text-transform: uppercase
+    font-size: 20px
+    margin: 0 0 20px
+.next-event .when
+    font-size: 55px
+    font-weight: 700
+    line-height: 55px
+.next-event .where
+    font-size: 25px
+    font-weight: 700
+    margin-bottom: 30px
+
+@media (max-width: 500px)
+    .next-event .when
+        font-size: 35px;
+        line-height: 35px;
+
+.newsletter
+    background: $red
+    color: $white
+    padding: 75px 0
+.newsletter h3
+    color: $white
+    font-size: 25px
+    margin-top: 0
+    max-width: 90%
+.newsletter input 
+    color: $white
+    background: $red
+    border-top: none
+    border-left: none
+    border-right: none
+    border-bottom: 2px solid $white
+    padding: 10px 0
+    width: 80%
+.newsletter input[type="submit"]
+    border: 2px solid white;
+    text-transform: uppercase;
+    letter-spacing: initial;
+    width: auto;
+
+.recent
+    padding: 75px 0px
+    color: $red
+.recent .sponsor
+.recent .news
+    padding-top: 25px
+    border-top: 2px solid rgba(0,0,0,0.1);
+.recent .sponsor
+    padding-right: 35px
+.recent .sponsor h4
+    margin-top: 0
+    font-size: 20px
+.recent .sponsor p
+    font-weight: 400
+    font-size: 25px
+    line-height: 30px
+.recent .news
+.recent .news ul
+    list-style: none
+.recent .news ul li
+    text-align: center
+.recent .news li a
+    color: $navy
+    text-decoration: none
+    font-weight: 600
+    font-size: 25px
+.recent .news li a:hover
+    color: $red
+
+@media (max-width: 500px)
+    .newsletter h3
+        font-size: 20px
+    .newsletter input
+        width: 100%;
+        margin: 10px 0px;
+    .recent .news
+        min-height: 200px
+        margin-top: 25px
+
+/* E V E N T */
+.event
+    padding: 50px 0
+.event p
+    font-size: 18px
+.event ul li
+    margin-left: 50px
+    color: $navy
+
+.past-events
+    padding: 50px 0
+    background: $darktan
+.past-events img 
+    max-width: 100%
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.1);
+    -webkit-transition: all 0.5s ease-in-out
+    transition: all 0.5s ease-in-out
+.past-events a:hover img 
+    box-shadow: 0px 0px 10px 2px rgba(39,69,81,0.5);
+.past-events h4
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: rgba(0,0,0,0.4);
+    padding-bottom: 40px;
+
+@media (max-width: 500px)
+    .past-events img
+        margin: 15px 0;
+
+.blog-content
+    padding: 50px 0
+
+.blog-content article ul li
+    margin-left: 20px
+
+.blog-content .published
+    font-size: 14px
+    font-weight: 700
+
+.blog-content article h2
+    margin-bottom: 0
+
+.event-photo
+    widows: 100%
+    height: 300px
+    background-position: center center
+    background-size:cover

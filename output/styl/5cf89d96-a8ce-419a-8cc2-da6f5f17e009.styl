@@ -1,0 +1,143 @@
+.popup
+  display none
+  position fixed
+  z-index 99999
+  background rgba(0,0,0,.6)
+  left 0
+  top 0
+  width calc(100vw - var(--scrollbar-width))
+  height 100vh
+  &__close
+    position absolute
+    top 20px
+    right 20px
+    width 25px
+    height 25px
+    cursor pointer
+    &::before
+    &::after
+      content ''
+      display block
+      width 25px
+      height 2px
+      background var(--black)
+      position absolute
+      top 12px
+      left 0
+      transform rotate(45deg)
+    &::after
+      transform rotate(-45deg)
+  .popup__inner
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%,-50%)
+
+.auth-form
+  background var(--white)
+  padding 60px 140px
+  display none
+  @media (max-width: 1267px)
+    padding 40px 90px
+  @media (max-width: 1023px)
+    padding 40px
+  &.active
+    display block
+  &--auth
+  &--forgot
+    width 800px
+    @media (max-width: 1267px)
+      width 650px
+    @media (max-width: 1023px)
+      width 500px
+    @media (max-width: 767px)
+      width calc(100vw - var(--scrollbar-width))
+    .reg-form__input
+      width 100%
+      margin-right 0 !important
+  &--reg
+    width 1140px
+    @media (max-width: 1680px)
+      width 1000px
+    @media (max-width: 1267px)
+      width 900px
+    @media (max-width: 1023px)
+      width 650px
+    @media (max-width: 767px)
+      width calc(100vw - var(--scrollbar-width))
+  .title2
+    margin-bottom 50px
+    @media (max-width: 1267px)
+      margin-bottom 30px
+    @media (max-width: 1023px)
+      margin-bottom 20px
+  .reg-form
+    .link.auth-switch
+      color var(--gray3)
+      @media (max-width: 767px)
+        display block
+        margin 0 auto 20px
+    &__social
+      width 100%
+      display flex
+      margin 10px 0 30px
+      @media (max-width: 1267px)
+        margin 0 0 20px
+      @media (max-width: 767px)
+        align-items center
+      a
+        margin-right 30px
+        color var(--gray3)
+        transition .5s
+        @media (max-width: 767px)
+          margin 0 10px
+        &:hover
+          @media (hover)
+            color var(--gold)
+    .btn
+      width auto
+      min-width 190px
+      @media (max-width: 1267px)
+        height 50px
+      @media (max-width: 1023px)
+        min-width 160px
+        margin-right 20px
+      @media (max-width: 767px)
+        margin-right 0
+        margin-bottom 20px
+        width 100%
+      &.auth-switch
+        border 3px solid var(--gray3)
+        color var(--gray3)
+        &:hover
+          @media (hover)
+            background var(--gray3)
+            color var(--white)
+    &__bottom
+      display flex
+      align-items center
+      margin-top 10px
+      color var(--gray3)
+      @media (max-width: 767px)
+        margin-top 0
+        flex-direction column
+        align-items center
+        justify-content center
+        width 100%
+      .link
+        margin-left 75px
+        @media (max-width: 767px)
+          margin-left 0
+          margin-top 20px
+    &__rememberme
+      input:checked + label .check
+        background-image: url(../img/icons/check.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 20px;
+      label
+        position relative
+        padding-left 30px
+        user-select none
+        .check
+          top 1px

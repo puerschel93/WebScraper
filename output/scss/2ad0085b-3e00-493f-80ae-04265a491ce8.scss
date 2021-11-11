@@ -1,0 +1,214 @@
+@charset "utf-8";
+
+@import 'reset', 'color_scheme';
+
+// BACKGROUND
+$bg_color-white                  : rgb(255, 255, 255);
+$bg_color-whitesmoke             : rgb(245, 245, 245);
+$bg_color-lavender               : rgb(230, 230, 250);
+$bg_color-darkslategray          : rgb(47,  79,  79);
+$bg_color-steelblue              : rgb(70,  130, 180);
+$bg_color-skyblue                : rgb(135, 206, 235);
+$bg_color-mediumseagreen         : rgb(60,  179, 113);
+$bg_color-forestgreen            : rgb(34,  139, 34);
+
+// TEXT
+$text_color-white                : rgb(255, 255, 255);
+$text_color-dimgrey              : rgb(105, 105, 105);
+$text_color-red                  : rgb(255, 0,   0);
+$text_color-steelblue            : rgb(70,  130, 180);
+
+// SHADOWS
+$shadow_color-steelblue          : rgba(70,  130, 180, 0.15);
+$shadow_color-slateblue          : rgba(106, 90,  205, 0.3);
+
+
+// ------------- UNCOMMENT BEFORE COMPILING -------------
+
+// :root {
+    
+// /* --------------------- COLOR SCHEME ---------------------- */
+//     /* BACKGROUND */
+//     --bg_color-white                  : $bg_color-white;
+//     --bg_color-whitesmoke             : $bg_color-whitesmoke;
+//     --bg_color-lavender               : $bg_color-lavender;
+//     --bg_color-darkslategray          : $bg_color-darkslategray;
+//     --bg_color-steelblue              : $bg_color-steelblue;
+//     --bg_color-skyblue                : $bg_color-skyblue;
+//     --bg_color-mediumseagreen         : $bg_color-mediumseagreen;
+//     --bg_color-forestgreen            : $bg_color-forestgreen;
+
+//     /* TEXT */
+//     --text_color-white                : $text_color-white;
+//     --text_color-dimgrey              : $text_color-dimgrey;
+//     --text_color-red                  : $text_color-red;
+//     --text_color-steelblue            : $text_color-steelblue;
+
+//     /* SHADOW */
+//     --shadow_color-steelblue          : $shadow_color-steelblue;
+//     --shadow_color-slateblue          : $shadow_color-slateblue;
+// }
+// $bg_color-white                  : var(--bg_color-white, white);
+// $bg_color-whitesmoke             : var(--bg_color-whitesmoke, whitesmoke);
+// $bg_color-lavender               : var(--bg_color-lavender, lavender);
+// $bg_color-darkslategray          : var(--bg_color-darkslategray, darkslategray);
+// $bg_color-steelblue              : var(--bg_color-steelblue, steelblue);
+// $bg_color-skyblue                : var(--bg_color-skyblue, skyblue);
+// $bg_color-mediumseagreen         : var(--bg_color-mediumseagreen, mediumseagreen);
+// $bg_color-forestgreen            : var(--bg_color-forestgreen, forestgreen);
+// $text_color-white                : var(--text_color-white, white);
+// $text_color-dimgrey              : var(--text_color-dimgray, dimgrey);
+// $text_color-red                  : var(--text_color-red, red);
+// $text_color-steelblue            : var(--text_color-steelblue, steelblue);
+// $shadow_color-steelblue          : var(--shadow_color-steelblue);
+// $shadow_color-slateblue          : var(--shadow_color-steelblue);
+
+
+body {
+    background-color    : $bg_color-whitesmoke;
+    max-height          : 80%;
+    #wrapper {
+        /* BEGIN > WRAPPER STYLES (BASIC) */
+        position            : relative;
+        header {
+            /* BEGIN > HEADER STYLES */
+            background-color    : $bg_color-darkslategray;
+            display             : block;
+            font-weight         : 700;
+            opacity             : .5;
+            padding             : .01em 16px;
+            text-align          : center;
+            h1 {
+                color               : $text_color-white;
+                font-family         : sans-serif;
+                font-size           : 4vmax;
+                font-style          : oblique;
+                padding             : 20px 0;
+            }
+        }/* END > HEADER STYLES */
+
+        .content {
+            /* BEGIN > CONTENT STYLES */
+            background-color    : $bg_color-white;
+            padding             : .01em 16px;
+            margin-top          : 1%;
+            padding-bottom      : 1%;
+            p {
+                /* Text paragraphs */
+                display             : block;
+                font-weight         : 700;
+                font-size           : 50px;
+                padding-top         : 30%;
+                text-align          : center;
+            }
+            /* Form */
+            form {
+                fieldset {
+                    box-shadow          : 0 4px 10px 0 rgba(0, 0, 0, 0.2),
+                                          0 4px 20px 0 rgba(0, 0, 0, 0.19);
+                    background-color    : $bg_color-lavender;
+                    font-family         : Geneva, Tahoma, sans-serif;
+                    overflow            : hidden;
+                    padding             : 3% 0;
+                    width               : 100%;
+                    /* Legend */
+                    legend {
+                        background-color    : $bg_color-mediumseagreen;
+                        border              : none;
+                        color               : $text_color-white;
+                        display             : block;
+                        font-size           : 1.4vmax;
+                        width               : 100%;
+                        p {
+                            font-family         : Geneva, Tahoma, sans-serif;
+                            font-size           : 3vmax;
+                            overflow            : hidden;
+                            padding             : .8em;
+                            text-align          : left;
+                            white-space         : normal;
+                        }
+                    }
+                    /* Labels */
+                    label {                                                             
+                        color       : $text_color-steelblue;
+                        font-size   : 1.5vmax;
+                        font-weight : bold;
+                        margin      : 4.5em;
+                        text-align  : left;
+                        .required {
+                            &:after {
+                                color   : $text_color-red;
+                                content : "*";
+                                opacity : .5;
+                            }
+                        }
+                    }
+                    /* Text inputs */
+                    input {
+                        border                  : 3px
+                                                  $bg_color-steelblue
+                                                  solid;
+                        border-radius           : 7px;
+                        -webkit-border-radius   : 7px;
+                        -moz-border-radius      : 7px;
+                        -ms-border-radius       : 7px;
+                        -o-border-radius        : 7px;
+                        display                 : block;
+                        font-size               : 30px;
+                        margin                  : .8rem auto    !important;
+                        margin                  : 0 auto        !important;
+                        opacity                 : .6;
+                        overflow                : hidden;
+                        padding                 : .2em;
+                        width                   : 83%;
+                    }
+                    /* Buttons */
+                    button {
+                        background-color        : $bg_color-mediumseagreen;
+                        border                  : none;
+                        border-radius           : 7px;
+                        -webkit-border-radius   : 7px;
+                        -moz-border-radius      : 7px;
+                        -ms-border-radius       : 7px;
+                        -o-border-radius        : 7px;
+                        color                   : $text_color-white;
+                        cursor                  : pointer;
+                        font-size               : 1.4vmax;
+                        margin-left             : 5.2em;
+                        min-width               : 35%;
+                        overflow                : hidden;
+                        padding                 : .8em;
+                        white-space             : normal;
+                        &:hover {
+                            background-color        : $bg_color-forestgreen !important;
+                            box-shadow              : 0 7px 5px 0 $shadow_color-steelblue,
+                                                      0 3px 4px 0 $shadow_color-steelblue;
+                        }
+                    }
+                }
+            }
+        }/* END > CONTENT STYLES */
+
+        /* BEGIN > FOOTER STYLES */
+        footer {
+            background-color    : $bg_color-skyblue;
+            padding             : 1%;
+            /* Text paragraphs */
+            p {
+                font-family         : Geneva, Tahoma, sans-serif;
+                font-size           : 1.3vmax;
+                text-align          : center;
+                /* Links */
+                a {
+                    color               : $text_color-steelblue;
+                    font-weight         : 500;
+                    text-decoration     : none;
+                }
+                b {
+                    color               : $text_color-dimgrey;
+                    font-weight         : 600;
+                }
+            }
+        }/* END > FOOTER STYLES */
+    }/* END > WRAPPER STYLES (BASIC) */
+}

@@ -1,0 +1,387 @@
+.status
+  padding:57px 0 87px 36px
+  .inner-status
+    white-space nowrap
+    > *
+      dibt()
+.why-we
+  padding:80px 0 120px 0
+  background-color:#d9d6bf
+  .title-default
+    padding-left:37px
+  ul
+    font-size:0
+    icons = $ww1 $ww2 $ww3 $ww4 $ww5 $ww6
+    for value, key in icons
+      &:nth-of-type({key+1})
+        h2
+          &:after
+            content:''
+            position:absolute
+            z-index:1
+            sprite(value)
+            left:0
+            tt(0, -50%)
+            top:50%
+    > li
+      position:relative
+      z-index:0
+      transition:background .5s ease-out;
+      &:hover
+        z-index:1
+        background-color:#e8e5d2
+        p:nth-of-type(2)
+          opacity:1
+      > *
+        padding-left:37px
+        padding-right:37px
+      width:427px
+      dibt()
+      margin-top:10px
+      &:nth-child(-n+3)
+        margin-top:23px
+      h2
+        color:#fff
+        bb(36px)
+        margin-left:37px
+        padding:60px 0
+        position:relative
+        z-index:0
+        padding-left:115px
+      p
+        padding-right:30px
+        position:relative
+        z-index:0
+        &:first-of-type
+          color:#51565a
+          rm(18px)
+        &:nth-of-type(2)
+          tn(.5s)
+          width:100%
+          position:absolute
+          z-index:1
+          padding-top:23px
+          padding-bottom:42px
+          rl(16px)
+          color:#51565a
+          background-color:#e8e5d2
+          opacity:0
+.catalog
+  .title-default
+    padding:88px 0 21px 37px
+  .list-products
+    background:rgb(71, 74, 75)
+    background:-moz-linear-gradient(left, rgba(71, 74, 75, 1) 0%, rgba(71, 74, 75, 1) 483px, rgba(54, 58, 62, 1) 483px)
+    background:-webkit-gradient(linear, left top, right top, color-stop(0%, rgba(71, 74, 75, 1)), color-stop(483px, rgba(71, 74, 75, 1)), color-stop(483px, rgba(54, 58, 62, 1)))
+    background:-webkit-linear-gradient(left, rgba(71, 74, 75, 1) 0%, rgba(71, 74, 75, 1) 483px, rgba(54, 58, 62, 1) 483px)
+    background:-o-linear-gradient(left, rgba(71, 74, 75, 1) 0%, rgba(71, 74, 75, 1) 483px, rgba(54, 58, 62, 1) 483px)
+    background:-ms-linear-gradient(left, rgba(71, 74, 75, 1) 0%, rgba(71, 74, 75, 1) 483px, rgba(54, 58, 62, 1) 483px)
+    background:linear-gradient(to right, rgba(71, 74, 75, 1) 0%, rgba(71, 74, 75, 1) 483px, rgba(54, 58, 62, 1) 483px)
+    .description
+      ul
+        li
+          &:first-child
+            margin-bottom:23px
+            a
+              &:after
+                sprite($pdf)
+          &:last-child
+            a
+              &:after
+                sprite($rub)
+          span
+            color:#fff
+            rm(24px)
+            position:relative
+            z-index:0
+            &:after
+              position:relative
+              z-index:0
+              top:2px
+              content:''
+              dibt()
+              margin-left:4px
+              sprite($rub2)
+          a
+            margin-left:22px
+            color:#e5696b
+            text-decoration:none
+            position:relative
+            z-index:0
+            &:after
+              content:''
+              position:absolute
+              z-index:1
+              left:-22px
+              top:50%
+              tt(0, -50%)
+    > li
+      display:table
+      max-width:1284px
+      position:relative
+      z-index:0
+      &:hover
+        &:after
+          background-color:#454a4f !important
+      &:nth-child(2n)
+        &:after
+          background-color:rgba(#fff, .3)
+      &:after
+        tn(.5s)
+        content:''
+        position:absolute
+        z-index:-1
+        left:0
+        top:0
+        width:1920px
+        height:100%
+      .row
+        display:table-row
+        > *
+          display:table-cell
+          vertical-align:middle
+          height:185px
+          padding:15px 0
+        .info
+          width:483px
+          padding-left:95px
+          ul
+            position:relative
+            z-index:0
+            dibt()
+            &:after
+              content:''
+              position:absolute
+              z-index:1
+              sprite($fuel)
+              top:0
+              left:-52px
+            > li
+              color:#d9d6bf
+              margin-top:8px
+              rl(18px)
+              &:first-child
+                margin-top:0
+              h2
+                color:#d9d6bf
+              span
+                color:#d9d6bf
+                dibt()
+                margin-right:7px
+        .description
+          padding-left:22px
+          padding-right:60px
+          p
+            color:#fff
+            rl(16px, 1.5)
+        .order
+          padding-right:20px
+          width:208px
+          a
+            overflow hidden
+            border-radius:6px
+            after()
+            background-color:#e5696b
+            text-decoration:none
+            width:100%
+            display:block
+            height:32px
+            position:relative
+            z-index:0
+            &:hover
+              span
+                color:#363a3e
+                &:after
+                  left:0
+            &:before
+              content:''
+              position:absolute
+              z-index:1
+              sprite($check)
+              left:15px
+              top:11px
+            span
+              tn(.5s)
+              position:relative
+              z-index:1
+              top:1px
+              border-radius:6px
+              margin-right:3px
+              float:right
+              padding-top:2px
+              bb(24px)
+              text-align:center
+              display:block
+              color:#e5696b
+              width:142px
+              height:28px
+              margin-top:1px
+              background-color:#363a3e
+              &:after
+                tn(.5s)
+                content:''
+                position:absolute
+                z-index:-1
+                left:100%
+                top:0
+                width:100%
+                height:100%
+                background-color:#e5696b
+  &.navigation-list
+    .list-products
+      > li
+        &:nth-child(2n)
+          &:after
+            background-color:rgba(#fff, 0)
+        &:nth-child(2n+1)
+          &:after
+            background-color:rgba(#fff, .3)
+        .row
+          .info
+            position:relative
+            z-index:0
+            padding-left:33px
+            .wrapper-img
+              position:relative
+              z-index:0
+              width:100px
+              height:100px
+              overflow hidden
+              dibt()
+              border-radius:50%
+              background-color:#fff
+              img
+                max-width 100px
+                max-height 100px
+                aa(1)
+                display:block
+            ul
+              padding-right:27px
+              left:150px
+              position:absolute
+              top:50%
+              z-index:0
+              tt(0, -50%)
+              width:calc(100% - 158px)
+              dibt()
+              li
+                color:#d9d6bf
+                rl(16px)
+                h2
+                  color:#d9d6bf
+                  rb(16px)
+      ul
+        &:after
+          display:none
+    .description
+      ul
+        li
+          &:first-child
+            margin-bottom:23px
+            a
+              &:after
+                sprite($pdf)
+          &:last-child
+            a
+              &:after
+                sprite($rub)
+          a
+            margin-left:22px
+            color:#e5696b
+            text-decoration:none
+            position:relative
+            z-index:0
+            &:after
+              content:''
+              position:absolute
+              z-index:1
+              left:-22px
+              top:50%
+              tt(0, -50%)
+.collaborate
+  padding:74px 0 54px 37px
+  ul
+    > li
+      padding-right:20px
+      position:relative
+      z-index:0
+      width:200px
+      dibt()
+      margin:188px 0 0 0
+      rb(18px)
+      icons = $c1 $c2 $c3 $c4 $c5 $c6
+      for value, key in icons
+        &:nth-of-type({key+1})
+          &:after
+            sprite(value)
+      &:after
+        content:''
+        position:absolute
+        z-index:1
+        left:-23px
+        top:-124px
+      &:first-child
+        margin-left:0
+  .wrapper-link
+    padding-right:30px
+    text-align:right
+    max-width:1175px
+    margin-top:50px
+    a
+      width:287px
+      dibt()
+      overflow hidden
+      border-radius:6px
+      after()
+      background-color:#e5696b
+      text-decoration:none
+      height:32px
+      position:relative
+      z-index:0
+      &:hover
+        span
+          color:#fff
+          &:after
+            left:0
+      &:before
+        content:''
+        position:absolute
+        z-index:1
+        sprite($partner)
+        left:15px
+        top:9px
+      span
+        tn(.5s)
+        position:relative
+        z-index:1
+        top:1px
+        border-radius:6px
+        margin-right:3px
+        float:right
+        padding-top:3px
+        padding-left:20px
+        padding-right:20px
+        bb(24px)
+        text-align:center
+        display:block
+        color:#e5696b
+        height:28px
+        margin-top:1px
+        background-color:#fff
+        &:after
+          tn(.5s)
+          content:''
+          position:absolute
+          z-index:-1
+          left:100%
+          top:0
+          width:100%
+          height:100%
+          background-color:#e5696b
+.petroleum-products
+  background-color:#f9f8ef
+  padding:74px 37px
+  .title-default
+    margin-bottom:26px
+  p
+    line-height:1.3

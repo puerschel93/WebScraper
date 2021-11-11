@@ -1,0 +1,293 @@
+.logBg{
+    @include d_f(flex, center, center);
+    flex-direction: column;
+    background: map-get($bg_color, login_bg);
+    color: map-get($txt_color, primary);
+
+    @include mw_xs{
+        display: block;
+        background: map-get($bg_color, darkbrown_gradual);
+    }
+}
+
+// 登入資訊
+.logArea{
+    @include d_f(flex, flex-start, center);
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1024px;
+    min-height: 520px;
+    padding-top: 5%;
+    background: url(../images/img_login.png) no-repeat left bottom / 600px;
+
+    @include mw_sm{
+        // min-height: auto;
+        padding-top: 0;
+        background-position: 10% 60%;
+        background-size: 450px;
+    }
+
+    @include mw_xs{
+        height: calc(100% - 60px);
+        background-position: center 100%;
+        background-size: 350px;
+    }
+
+    // 宣傳文.logArea__txt
+    &__txt{
+        width: calc(100% - 400px);
+        padding-right: 50px;
+        position: relative;
+        color: map-get($txt_color, white);
+        font-size: 60px;
+        font-style: italic;
+        text-align: right;
+        opacity: 0.9;
+
+        @include mw_sm{
+            font-size: 40px;
+        }        
+
+        @include mw_xs{
+            display: none;
+        }
+
+        &:after{
+            @include pos_a(tr, calc(100% - 10px), 50px);
+            content: attr(data-txt);
+            color: map-get($txt_color, white);
+            font-style: normal;
+            font-size: 20px;
+        }
+    }
+
+    // 輸入資訊.logArea__from
+    &__from{
+        width: 100%;
+        max-width: 300px;
+        text-align: right;
+        
+        @include mw_xs{
+            max-width: none;
+            height: 100%;
+            padding: 5% 30px 0;
+        }
+
+        // 語系.logArea__from__Language
+        &__Language{
+            @include d_f(inline-flex, center, space-between);
+            min-width: 80px;
+            margin-bottom: 30px;
+
+            select{
+                width: calc(100% - 10px);
+                background-color: transparent;
+                color: map-get($txt_color, primary);
+                font-size: 14px;
+            }
+
+            option{
+                background: map-get($bg_color, brown);
+                color: map-get($txt_color, white);
+            }
+
+            i{
+                width: 10px;
+                height: 10px;
+                pointer-events: none;
+            }
+        }
+
+        // 輸入input.logArea__from__import
+        &__import{
+            padding: 10px 20px;
+            border-bottom: 1px solid map-get($bg_color, secondary);
+            margin-bottom: 20px;
+
+            &.--ver{
+                position: relative;
+
+                &::before{
+                    @include pos_a(tbl, 0, 0, 10px);
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    background: url(../images/icon_verification.svg) no-repeat;
+                    margin: auto;
+                }
+
+                &::after{
+                    @include pos_a(rb, 10px);
+                    content: attr(data-txt);
+                    font-size: 18px;
+                }
+            }
+
+            input{
+                width: 100%;
+                color: map-get($txt_color, white);
+                font-weight: bold;
+                font-size: 18px;
+                text-align: center;
+
+                &::placeholder{
+                    color: map-get($txt_color, white);
+                }
+            }
+        }
+
+        // 記住帳號.logArea__from__remeber
+        &__remeber{
+            @include d_f(flex, center, flex-start);
+            @include checktick(20px, 2px, 3px, transparent);
+            margin-bottom: 30px;
+
+            &::after{
+                content: attr(data-txt);
+                margin-left: 10px;
+            }
+            
+            span{
+                border:1px solid map-get($bg_color, secondary);
+            }
+        }
+
+        // 登入按鈕.logArea__from_btn
+        &_btn{
+            @include btn_set(100%, 40px, map-get($bg_color, gold));
+            border:1px solid map-get($bg_color, secondary);
+            border-radius: 40px;
+            margin-bottom: 30px;
+
+            &::after{
+                @include btn_txt(center,map-get($txt_color, secondary), transparent);
+                
+                font-weight: bold;
+            }
+
+            .hover_item{
+                @include btn_hoveritem(map-get($bg_color, lightbrown));
+                border-radius: 40px;
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px, map-get($txt_color, primary));
+        }
+
+    }
+
+    // QR扣
+    .logQR{
+        width: 100px;
+        text-align: center;
+        margin: auto;
+
+        @include fine{
+            display: none;
+        }
+
+        a{
+            display: block;
+            padding: 3px 10px;
+            background: map-get($bg_color, gold);
+            color: map-get($txt_color, secondary);
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    }
+}
+
+// foot
+.logFoot{
+    @include d_f(flex, center, center);
+    padding: 50px 0 20px;
+    
+    @include mw_md{
+        display: none;
+    }
+
+    @include coarse{
+        display: none;
+    }
+    
+
+    // 清除緩存說明.logFoot__clear
+    &__clear{
+        @include d_f(flex, center, flex-start);
+        font-size: 14px;
+
+        li + li{
+            position: relative;
+            margin-left: 15px;
+
+            &::before{
+                @include pos_a(trb, 0, calc(100% + 5px), 0);
+                content: '';
+                width: 1px;
+                height: 80%;
+                background: map-get($bg_color, gold);
+                margin: auto;
+            }
+
+            // 手指效果
+            @include hoverHandler{
+                color: map-get($txt_color, white);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // 瀏覽器下載.logFoot__downdload
+    &__downdload{
+        @include d_f(flex, center, center);
+        padding: 5px 10px;
+        border: 1px solid map-get($bg_color, secondary);
+        border-radius: 5px;
+        color: map-get($txt_color, primary);
+        font-size: 12px;
+        margin-left: 20px;
+
+        >i{
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        a{
+            display: block;
+            text-align: left;
+
+            i{
+                width: 10px;
+                height: 10px;
+                margin-left: 5px;
+            }
+
+            // 手指效果
+            @include hoverHandler{
+                color: map-get($txt_color, white);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+
+// copyright
+.logCopyright {
+    @include d_f(flex, flex-end, center);
+    padding:5px 5px 10px;
+    font-size: 12px;
+    margin: 0 auto;
+
+    &::before {
+        content: '';
+        display: block;
+        flex: none;
+        width: 100px;
+        height: 32px;
+        background: url(../images/copyright_icash.png) no-repeat center / contain;
+        margin-right: 5px;
+    }
+}

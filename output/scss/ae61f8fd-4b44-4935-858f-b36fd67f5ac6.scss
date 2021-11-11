@@ -1,0 +1,493 @@
+// Main Styles
+
+// See the other SASS partials for typography, variables etc.
+// CSS Grid is used for the layout with fallbacks for less capable browsers
+// declared beforehand, and a @supports feature query to reset fallbacks when
+// necessary. https://rachelandrew.co.uk/css/cheatsheets/grid-fallbacks
+html{
+	//scroll-behavior: smooth;
+}
+// the body element is our primary layout grid
+body {
+  //background: $dark-grey;
+  background: radial-gradient(ellipse at bottom, lighten($dark-grey, 5%) 0%, darken($dark-grey, 10%) 100%);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  //height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns:
+    [full-start] minmax(1rem, 1fr)
+    [main-start] minmax(0, 100%) [main-end]
+    minmax(1rem, 1fr) [full-end];
+}
+
+// by default, make any new children of body to span the full track
+body > * {
+  grid-column: full;
+  //padding: 2rem 1rem;
+}
+
+// header, the first grid row
+// it is also a grid for the logo and nav
+header {
+  position: fixed;
+  width: 100%;
+  grid-column: full;
+  display: grid;
+  background-color: #fff;
+  padding: 20px;
+  height: 100px;
+  z-index: 999;
+  //position: relative;
+  //overflow-x: hidden;
+  @media screen and (min-width: $sm) {
+	//height: 120px;
+	//padding: 20px;
+	padding: 10px 2rem;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: 1rem;
+    align-items: center;
+    -webkit-font-smoothing: auto;
+  }
+    @media screen and (min-width: $sm) {
+	    //height: 140px;
+    }
+}
+.loaded:not(.nav-open) header{
+  transition: all .33s ease;
+}
+.loaded.scroll-up:not(.nav-open) header{
+	//background: #fff;
+	//transform: translateY(0);
+}
+.loaded.scroll-down:not(.nav-open) header{
+	//background: #fff;
+	transform: translateY(-100%);
+}
+// logo, is a grid item
+header > h1 {
+  display: inline-block;
+  padding-bottom: 1rem;
+  z-index: 999;
+/*
+  align-self: center;
+  justify-self: center;
+*/
+  @media screen and (min-width: $sm) {
+    padding-bottom: 0;
+  }
+  a,
+  a:visited {
+    text-decoration: none;
+    border: 0;
+   // color: white;
+    @media screen and (min-width: $sm) {
+    //  padding: 1rem;
+    }
+    img{
+	    width: 150px;
+    }
+  }
+  a:hover,a:focus {
+    color: white;
+    border: 0;
+    text-decoration: none;
+  }
+}
+/*
+.loaded{
+	header{
+		height: 100px;
+	}
+	header > h1{
+		justify-self: left;
+	}
+}
+*/
+@media screen and (max-width: $sm) {
+	#nav {
+		transform: translateX(100%);
+	    position: fixed;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    display: flex;
+	    height: 100%;
+	    width: 100%;
+	    background: $purple;
+	    z-index: 999;
+	    >ul{
+		    margin-top: 82px;
+		    >li{
+			    border-bottom: 1px solid #fff;
+			    &:first-child{
+				    border-top: 1px solid #fff;
+			    }
+		    }
+	    }
+	    ul{
+			display: flex;
+		    flex-direction: column;
+		    /* position: absolute; */
+		    align-items: flex-end;
+		    justify-content: flex-start;
+		    flex-basis: 100%;
+		    text-align: right;
+		    list-style: none;
+		    li{
+			   // padding: 2rem;
+			    width: 100%;
+			  a,
+		      a:visited {
+			    display: flex;
+			    padding: 3rem 2rem;
+				color: #fff;
+			    text-decoration: none;
+			    border: 0;
+			    font-weight: 500;
+			    font-size: 2rem;
+			    line-height: 1;
+	      }
+	    }
+	    li.has-subitems{
+/*
+		    >a{
+				span{
+					font-size: 2rem;
+				}
+		    }
+*/
+		    ul{
+			    transform: scaleY(0);
+			    //transform-origin: top;
+			    transition: opacity 1s ease;
+			    opacity: 0;
+			    height: 0;
+			    li{
+				   // padding: 2rem 0 1rem 0;
+				    a, a:visited{
+					  font-size: 1.5rem; 
+				    }
+				    &:last-child{
+					    margin-bottom: 2rem;
+				    }
+			    }
+		    }
+	    }
+	    li.has-subitems.is-open{
+		    ul{
+			    transform: scaleY(1);
+			    //transform-origin: top;
+			    opacity: 1;
+			    height: auto;
+		    }
+	    }
+	    }
+    }
+    .nav-open #nav{
+		transform: translateX(0);
+	}
+	#nav-svg{
+		width: 40px;
+		height: 40px;
+	}
+	  .nav-line {
+        fill: none;
+        stroke: #222;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+        transition: all .5s linear;
+        transform: none;
+      }
+      #nav-toggle{
+		display: block;
+		position: absolute;
+		top: 30px;
+		right: 2rem;
+		width: 40px;
+		height: 40px;
+		border: none;
+		z-index: 999;
+}
+#nav-toggle.open{
+	.nav-line{
+		stroke: #fff;
+	}
+	.nav-line--3{
+		transform: rotate(45deg) translate(20px, -30px);
+	}
+	.nav-line--2{
+		transform: rotate(-45deg) translate(-40px, -15px);
+	}
+	.nav-line--1{
+		transform: translateX(50px);
+		opacity: 0;
+	}
+}
+}
+
+// main menu, is a grid item
+@media screen and (min-width: $sm) {
+   #nav-toggle{
+	   display: none;
+   }
+header > nav {
+	 z-index: 999;
+    float: right;
+  ul {
+    // flexbox is better than grid for distributing an unknown qty of children
+    display: flex;
+    li {
+      margin: 0 2rem 0 0;
+      display: inline-flex;
+      justify-content: center;
+        margin-right: 0;
+      a,
+      a:visited {
+	    position: relative;
+        color: $text-color;
+        text-decoration: none;
+        border-bottom: none;
+        font-weight: $bold-font-weight;
+        font-size: 1.5rem;
+        padding: 2rem 2rem 2rem 2rem;
+          &:after{
+	        content: '';
+		    width: 0;
+		    height: 2px;
+		    background: $brand-color;
+		    position: absolute;
+		    bottom: 1rem;
+		    left: 0;
+		   
+          }
+      }
+      a[data-current="current page"]{
+	    &:after{
+	       width: 100%;
+       }
+      }
+      a:hover {
+        color: $text-color;
+        border-bottom: none;
+       &:after{
+	       transition: width .5s ease;
+	       width: 100%;
+       }
+      }
+      //subnav
+      >ul{
+	      opacity: 0;
+	      transform: scaleY(0);
+	      transform-origin: top;
+	      flex-direction: column;
+	      position: absolute;
+	      background: $light-grey;
+	     // background: linear-gradient(180deg, rgba(255,255,255,.9) 0%,rgba(255,255,255,1) 50%);
+	      transition: opacity .5s ease;
+	      padding: 2rem;
+	      margin-top: 90px;
+		  	&:after{
+				content: '';
+				width: 2rem;
+				height: 2rem;
+				background: #fff;
+				position: absolute;
+				right: 50%;
+				top: -1rem;
+				margin-right: -1rem;
+				transform: rotate(45deg);
+			}
+	      li{
+		      display: flex;
+		      a, a:visited{
+			      font-weight: $base-font-weight; 
+			      flex-basis: 100%;
+			      margin: 0;
+			      padding: 1rem 0;
+			      margin: 0;
+		      }
+		       a {
+			     &:after{
+				     bottom: 0;
+			     }
+		       }
+	      }
+      }
+      //li hover to display subnav
+      &:hover{
+	      >ul{
+		  opacity: 1;
+	       transform: scaleY(1);
+	      }
+      }
+    }
+	li.has-subitems{
+		>a{
+			//span{
+			//	font-size: 2rem;
+			//	line-height: 1;
+			//}
+			 &:after{
+			    display: none;
+			}
+		}
+
+
+/*
+	    >a:hover {
+	       border-bottom: none;
+		}
+*/
+	}
+  }
+}
+}
+// our main content wrapper, the width scales with font size
+main {
+  width: 100%;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  grid-column: full;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  overflow: hidden;
+ // padding-top: 8rem;
+ // padding-bottom: 8rem;
+  @media screen and (min-width: $md) {
+    align-content: start;
+  }
+}
+
+// reset breaking fallbacks (e.g. widths) if CSS Grid is supported
+// float, inline-block, table properties are already ignored by CSS Grid
+@supports (display: grid) {
+  main {
+   // width: auto;
+    //max-width: none;
+  }
+}
+
+// blog posts list
+html[data-current="blog"] main > section {
+  ul li {
+    padding: 2rem 0;
+    border-bottom: 0.05em solid $hairline-color;
+    p {
+      padding-bottom: 0;
+    }
+  }
+}
+
+// adjacent blog posts links
+nav[aria-label="Adjacent Posts"] {
+  padding: 4rem 0;
+  ul {
+    display: flex;
+    li {
+      flex: 0 0 50%;
+      width: auto;
+      &:nth-child(2) {
+        text-align: right;
+      }
+    }
+  }
+}
+
+// contact form
+html[data-current="contact"] main > form {
+  display: grid;
+  label {
+    display: none;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  button {
+    width: 100%;
+  }
+}
+
+// reset CSS Grid fallbacks when they aren't required
+@supports (display: grid) {
+  html[data-current="contact"] main > form {
+    input,
+    textarea,
+    button {
+      width: auto;
+      max-width: none;
+    }
+  }
+}
+
+footer {
+  grid-column: full;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+ // background-color: $grey-bg-color;
+  
+  a:not(.button),a:visited:not(.button){
+	  text-decoration: none;
+	  color: $black;
+  }
+  ul>li{
+	  list-style: none;
+	 margin: 0 0 1rem 0;
+  }
+}
+
+  .footer-col{
+	    padding: 6rem 0;
+	    h3{
+		    padding-bottom: 1rem;
+		    margin-bottom: 2rem;
+		    border-bottom: 2px solid $brand-color;
+	    }
+	    a, a:visited{
+	  	//text-decoration: none;
+	  	//border-bottom: none;
+	  	font-weight: 700;
+	  }
+  }
+  .footer-col--contact{
+	  grid-column: 2/12;
+	  @media screen and (min-width: $md) {
+		  grid-column: 2/5;
+	  }
+	  
+  }
+  .footer-col--explore{
+	  grid-column: 2/12;
+	  @media screen and (min-width: $md) {
+		  grid-column: 6/9;
+	  }
+  }
+  .footer-col--newsletter{
+	  grid-column: 2/12;
+	  @media screen and (min-width: $md) {
+		  grid-column: 10/12;
+	  }
+	  input[type="email"]{
+		padding: 6px;
+	    margin-bottom: 2rem;
+	    width: 200px;
+	    max-width: 100%;
+	    display: block;
+	    //background: $light-grey;
+	   // border: 1px solid $black;
+	  }
+  }
+  .copyright{
+	  text-align: right;
+	  grid-column: 2/12;
+	  font-size: 1rem;
+	  margin: 1rem 0;
+  }

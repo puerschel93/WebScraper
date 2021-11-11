@@ -1,0 +1,178 @@
+.header
+	position fixed
+	top 0
+	left 0
+	z-index 999
+	width 100%
+	min-width $min-width
+	order 1
+	padding 40px 0
+	transition all .5s ease
+	background-color transparent
+	will-change transform, background-color, padding 
+	&.fixed
+		padding 20px 0
+		background-color rgba($black, .9)
+		.logo-abs
+			width 82px
+			height 82px
+		.logo-pic
+			max-width 47px
+	&.out
+		transform translateY(-100%)
+	&-wrap
+		display flex
+		align-items center
+		&-mobile
+			display none
+	&-bg
+		position fixed
+		z-index 1
+		top 0
+		left 0
+		height 100vh
+		width 100vw
+		background-color rgba($black, .3)
+		backdrop-filter blur(1px)
+		opacity 0
+		overflow hidden
+		pointer-events none
+		transition $transition
+.logo
+	position relative
+	display flex
+	justify-content center
+	align-items center
+	margin-right 58px
+	width 102px
+	flex-shrink 0
+	img 
+		flex-shrink 0
+	&-abs
+		position absolute
+		top 50%
+		left 50%
+		width 102px
+		height 102px
+		animation rotateElem 10s linear infinite
+		will-change transform
+	&-pic
+		max-width 67px
+	&-text-mobile
+		display none
+
+
+.hamburger
+	display none
+	position relative
+	width 22px
+	height 14px
+	&-span
+		position absolute
+		display block
+		height 2px
+		background-color $white
+		border-radius 10px
+		&_1
+			width 65%
+			top 0
+		&_2
+			width 100%
+			top 50%
+			margin-top -1px
+		&_3
+			width 65%
+			bottom 0
+			right 0
+	&-close
+		display none
+		width 22px
+		height 14px
+		position absolute
+		top 40px
+		right 20px
+		&-span
+			position absolute
+			display block
+			height 2px
+			width 100%
+			background-color $black
+			border-radius 10px
+			top 50%
+			left 50%
+			&_1
+				transform translate(-50%, -50%) rotate(45deg)
+			&_2
+				transform translate(-50%, -50%) rotate(-45deg)
+.nav
+	width 100%
+	max-width 521px
+	&__list
+		padding 0
+		margin 0
+		display flex
+		justify-content space-between
+		align-items center
+	&__link
+		font-size 15px
+		line-height 40px
+		font-weight 450
+		color $white
+		font-family 'Avenir Next Cyr Medium'
+		&:hover
+			color $accent
+
+		
+/*==========  Desktop First  ==========*/
+@media (max-width : 767px)
+	.header-wrap
+		&-mobile
+			display flex
+			justify-content space-between
+		&-desktop
+			display flex
+			flex-direction column
+			align-items center
+			justify-content center
+			background-color $white
+			position fixed
+			z-index 1
+			height 100vh
+			right 0
+			top 0
+			bottom 0
+			overflow auto
+			padding 60px 
+			max-width 320px
+			width 100%
+			transform translateX(320px)
+			transition $transition
+			.logo
+				margin-bottom 50px
+				&-abs
+					animation-play-state running !important
+					img 
+						&:first-child
+							display none
+	.logo-text-mobile
+		display block
+	.hamburger
+		display block
+		&-close
+			display block
+	.nav__list
+		flex-direction column
+	.nav__link
+		color $black
+	.header
+		padding 20px 0
+	.logo
+		width 50px
+	.logo-abs
+		width 80px
+		height 80px
+		
+
+@media (max-height : 500px) and (max-width: 1024px)
+	.header-wrap-desktop
+		justify-content flex-start

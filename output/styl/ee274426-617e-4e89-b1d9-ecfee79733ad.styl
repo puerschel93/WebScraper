@@ -1,0 +1,316 @@
+//Mockapi Styles
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+
+logo-size = 34px
+header-size = 60px
+header-color = rgba(255,255,255,.8)
+
+.flex
+	height: 100%
+	display: flex !important
+
+	&.flex-column
+		flex-direction: column
+	&.flex-row
+		flex-direction: row
+	&.flex-center
+		align-items: center
+
+//Header
+header
+	height: header-size
+	width: 100%
+	position: fixed
+	top: 0
+	z-index: 9
+
+	.navbar
+		border-radius: 0
+		margin-bottom: 0
+
+	.header-main
+	.header-sidebar
+		height: header-size
+
+	.header-main
+		& > ul.navbar-nav
+			& > li
+				margin-left: 15px
+				line-height: header-size
+				height: header-size
+
+				& > a
+					display: inline-block
+					height: logo-size
+					line-height: logo-size
+					padding: 0 10px
+					background-color: rgba(0,0,0,.3)
+					border-radius: 4px
+					color: header-color
+					-webkit-transition: 0.1s linear
+					-o-transition: 0.1s linear
+					transition: 0.1s linear
+					&:hover
+						background-color: rgba(0,0,0,.4)
+						color: rgb(255,255,255)
+				&.open
+					& > a
+						line-height: header-size
+						height: header-size
+						background-color: rgba(0,0,0,.3)
+						color: header-color
+	.logo
+		//border: 1px solid header-color
+		text-align: center
+		height: logo-size
+		width: logo-size
+		line-height: logo-size
+		font-size: 24px
+		margin: auto ((logo-size - 24px) / 4 * -1 )
+		background-color: rgba(0,0,0,.3)
+		color: header-color
+		font-family: 'Ewert', cursive
+		border-radius: 4px
+		&:after
+			content: "M"
+
+body > .container-fluid
+	margin-top: header-size
+
+//Navigation Side Bar
+.sidebar
+	position: fixed
+	height: "calc(100% - %s)" % header-size
+	overflow-y: scroll
+	border-right: 2px solid #dce4ec
+
+	&-header
+		height: header-size
+		margin: 0 -15px
+		padding: 0 15px
+		background-color: #ecf0f1
+		h3
+		h4
+		h5
+			margin: 0
+			line-height: header-size
+
+	.nav-sidebar
+		& > li
+			& > div[data-role=project]
+				position: relative
+				padding: 0 15px
+				margin: 0 -15px
+
+				h3
+				h4
+				h5
+				h6
+					color: #18bc9c
+					padding: 0 5px 0 15px
+					margin: 0
+					line-height: header-size
+					text-overflow: ellipsis
+					white-space: nowrap
+					overflow: hidden
+					width: calc(100% - 24px)
+
+				i
+					margin-top: 17px
+					animation-duration: 0.2s
+					-webkit-animation-duration: 0.2s
+					-moz-animation-duration: 0.2s
+
+				& > [data-action]
+					display: none
+					cursor: pointer
+					padding: 0
+				& > .dropdown-menu
+					left: initial
+					right: 0
+					z-index: 999
+					display: nome !important
+
+				&:hover
+					background-color: #ecf0f1
+					& > h5
+						width: calc(100% - 24px * 2)
+					& > [data-action]
+						display: inline-block
+						&:hover
+							color: #18bc9c
+
+				&[aria-expanded=true]
+					background-color: #f3f6f6
+					box-shadow: 0 3px 4px rgba(0,0,0,.2)
+
+			& > .endpoints
+				margin-top: 5px
+
+				& > li 
+					& > a
+						display: block
+						padding: 0 15px
+						margin: 0 -15px
+						height: 40px
+						text-decoration: none
+						color: #2c3e50
+
+						&:hover
+							background-color: #f3f6f6
+
+						.label
+							display: block
+							margin-top: 21px
+							width: 42px
+							text-align: center
+							font-weight: 400
+							float: left
+
+						small
+							vertical-align: top
+							display: inline-block
+							line-height: 40px
+							font-size: 60%
+							font-weight: 700
+							width: 24px
+							text-align: right
+
+						h5
+						h6
+							display: inline-block
+							margin: 0
+							padding-left: 15px
+							line-height: 40px
+							text-overflow: ellipsis
+							white-space: nowrap
+							overflow: hidden
+							width: calc(100% - 24px)
+
+					&:last-child > a
+						border-bottom: 1px solid #dce4ec
+//API container
+#api-container
+	padding 0 10px
+
+.api-form
+	position: relative
+	padding-bottom: 50px;
+
+	.api-header
+		position: fixed
+		width: 100%
+		height: header-size
+		margin: 0 -25px 25px -25px
+		padding: 7px 25px
+		background-color: #ecf0f1
+		top: header-size
+		z-index: 5
+
+		input
+			font-size: 19px
+
+			&.form-control-before-edit
+				padding-left: 0
+				padding-right: 0
+				text-transform: uppercase
+
+	.api-body
+		margin-top: "calc(%s + 25px)" % header-size
+
+	.input-group
+		position: relative
+
+		.input-group-addon-slash:before
+			z-index: 99
+			content: "/"
+			position: absolute
+			line-height: 45px
+			padding: 0px 12px
+			font-weight: bold
+
+		select
+		button
+			min-width: 120px
+			text-transform: uppercase
+
+		select
+			-webkit-appearance: none
+			-moz-appearance: none
+			background-position: right 50%
+			background-repeat: no-repeat
+			background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDZFNDEwNjlGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDZFNDEwNkFGNzFEMTFFMkJEQ0VDRTM1N0RCMzMyMkIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NkU0MTA2N0Y3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0NkU0MTA2OEY3MUQxMUUyQkRDRUNFMzU3REIzMzIyQiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuGsgwQAAAA5SURBVHjaYvz//z8DOYCJgUxAf42MQIzTk0D/M+KzkRGPoQSdykiKJrBGpOhgJFYTWNEIiEeAAAMAzNENEOH+do8AAAAASUVORK5CYII=")
+
+	.form-control-before-edit
+		background-color: #ecf0f1
+		border: none
+
+	.CodeMirror
+		border: 2px solid #ecf0f1
+		border-radius: 4px
+		margin-top: 15px
+		height: 240px
+		font-size: 13px
+
+		.CodeMirror-gutters
+			border-width: 2px
+			border-color: #dce4ec
+			background-color: #f3f6f6
+
+	.nav.nav-tabs
+		//margin: 0 -25px 15px -25px
+		//padding: 0 25px
+		margin-bottom: 15px
+
+		& > li > a
+			padding: 5px 15px
+
+		li.active
+			a
+				border-bottom: 3px solid #2c3e50
+				border-left: none
+				border-right: none
+				border-top: none
+				backgroud-color: transparent
+
+// Spinner
+.spinner
+	position: fixed
+	top: 50%
+	z-index: 999999999999999
+	left: calc(50% - 72px / 2)
+	width: 72px
+	text-align: center
+
+	& > div
+		width: 24px
+		height: 24px
+		background-color: #18bc9c
+
+		border-radius: 100%
+		display: inline-block
+		-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both
+		animation: sk-bouncedelay 1.4s infinite ease-in-out both
+
+	& .bounce1
+		-webkit-animation-delay: -0.32s
+		animation-delay: -0.32s
+
+
+	& .bounce2
+		-webkit-animation-delay: -0.16s
+		animation-delay: -0.16s
+
+@-webkit-keyframes sk-bouncedelay
+	0%, 80%, 100% 
+		-webkit-transform: scale(0)
+	40%
+		-webkit-transform: scale(1.0)
+
+@keyframes sk-bouncedelay
+	0%, 80%, 100% 
+		-webkit-transform: scale(0)
+		transform: scale(0)
+	40%
+		-webkit-transform: scale(1.0)
+		transform: scale(1.0)

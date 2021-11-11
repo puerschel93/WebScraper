@@ -1,0 +1,93 @@
+.firstScreen
+  padding-top 17px
+  position relative
+
+.firstScreenTitleWrapper
+  wrapper()
+  display flex
+  align-items flex-end
+  justify-content space-between
+  md(display, block)
+  span
+    fz(46)
+    line-height (63/46)
+    color: #23164B;
+    font-family: 'Yellowtail', cursive;
+    padding-right cw(90)
+    // md(padding-right, 0)
+    md(display, block)
+    md(margin-left, auto)
+    md(margin-right, 0)
+    md(width, fit-content)
+
+.firstScreen__title
+  font-family: 'Oswald', sans-serif;
+  font-weight 300
+  fz(140)
+  line-height 1.11
+  letter-spacing 0.01em
+  text-transform uppercase
+  color #393939
+  md(text-align, center)
+  @media(max-width 960px)
+    fz(90)
+  strong
+    position absolute
+    top 200px
+    left 50%
+    letter-spacing 0.04em
+    text-transform uppercase
+    color #fff
+    z-index 1
+    md(position, static)
+    md(color, #393939)
+    
+
+
+
+.firstScreenBlock
+  background-image url('../images/firstBlockBg.jpg')
+  background-repeat no-repeat
+  background-size cover
+  background-position center center
+  display flex
+  position relative
+
+.firstScreenBlock__inner
+  wrapper()
+  width 100%
+  z-index 2
+
+.firstScreenBlockLeft
+  background: rgba(12, 16, 51, 0.31);
+  backdrop-filter: blur(12px);
+  width 37%
+  position absolute
+  left 0
+  top 0
+  bottom 0
+  z-index -1
+  md(width, 100%)
+
+.firstScreenBlockLeftList
+  padding-top 66px
+  li
+    margin-bottom 62px
+    padding-left 58px
+    &.active
+      position relative
+      &::before
+        content ''
+        position absolute
+        left 0
+        top 50%
+        height 2px
+        width 42px
+        background-color #E42829
+    a
+      fz(20)
+      line-height 1.027
+      color #fff
+      text-decoration none
+      &:hover
+        text-decoration underline

@@ -1,0 +1,429 @@
+$translate-top-arrows: 25px;
+$translate-bottom-arrows: -25px;
+// anim arrow
+$anim-arrow-width: 160px;
+$anim-arrow-height: 48px;
+
+// slider
+$slider-width: 1679px;
+$slider-height: 404px;
+$pagination-height: 21px;
+$pagination-width: 20px;
+$arrows-width: 160px;
+$arrows-height: 48px;
+$arrows-block-height: 60px;
+$main-btn-width: 339px;
+$main-btn-height: 94px;
+$banner-ref-height: 269px;
+$slider-wrapper-width: 1019px;
+$pagination-wrapper-width: 990px;
+
+.slider-wrapper {
+  position: relative;
+  width: $slider-wrapper-width;
+  margin: 0 auto;
+  height: $slider-height;
+}
+
+.slider {
+  display: block;
+  width: $slider-width;
+  height: $slider-height;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  .item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $slider-width;
+    height: $slider-height;
+    text-align: center;
+    .slider-img-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: $slider-height;
+    }
+    .slider-img {
+      display: block;
+      margin: 0 auto;
+      width: $slider-width;
+      height: $slider-height;
+    }
+  }
+}
+.pagination-wrapper-container {
+  display: block;
+  position: absolute;
+  bottom: 24px;
+  width: 100%;
+  .pagination-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: $pagination-wrapper-width;
+    height: $pagination-height;
+  }
+}
+
+.pagination {
+  position: absolute;
+  left: 0;
+  a {
+    position: relative;
+    z-index: 11;
+    text-indent: -9999px;
+    display: inline-block;
+    margin-right: 5px;
+    &:last-child {
+      margin-right: 0;
+    }
+    width: $pagination-width;
+    height: $pagination-height;
+    background: url(../pic/sprite/sprite.png) no-repeat -50px -269px;
+    &:hover {
+      background-position: -25px -269px;
+    }
+    &.selected {
+      background-position: 0px -269px;
+    }
+  }
+}
+
+%arrows {
+  display: inline-block;
+  width: $arrows-width;
+  height: $arrows-block-height;
+  right: 90px;
+  position: absolute;
+}
+
+@-webkit-keyframes desc-arrows {
+  100% {
+    @include transform(translateY($translate-top-arrows));
+  }
+}
+
+@-moz-keyframes desc-arrows {
+  100% {
+    @include transform(translateY($translate-top-arrows));
+  }
+}
+
+@-o-keyframes desc-arrows {
+  100% {
+    @include transform(translateY($translate-top-arrows));
+  }
+}
+
+@keyframes desc-arrows {
+  100% {
+    @include transform(translateY($translate-top-arrows));
+  }
+}
+
+@-webkit-keyframes asc-arrows {
+  100% {
+    @include transform(translateY($translate-bottom-arrows));
+  }
+}
+
+@-moz-keyframes asc-arrows {
+  100% {
+    @include transform(translateY($translate-bottom-arrows));
+  }
+}
+
+@-o-keyframes asc-arrows {
+  100% {
+    @include transform(translateY($translate-bottom-arrows));
+  }
+}
+
+@keyframes asc-arrows {
+  100% {
+    @include transform(translateY($translate-bottom-arrows));
+  }
+}
+
+@-webkit-keyframes desc-top-bg {
+  0% {
+    background: url("../pic/normal-desc-arrow.png") no-repeat 0 0;
+  }
+  25%,50% {
+    background: url("../pic/light-desc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes desc-top-bg {
+  0% {
+    background: url("../pic/normal-desc-arrow.png") no-repeat 0 0;
+  }
+  25%,50% {
+    background: url("../pic/light-desc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes desc-top-bg {
+  0% {
+    background: url("../pic/normal-desc-arrow.png") no-repeat 0 0;
+  }
+  25%,50% {
+    background: url("../pic/light-desc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes desc-top-bg {
+  0% {
+    background: url("../pic/normal-desc-arrow.png") no-repeat 0 0;
+  }
+  25%,50% {
+    background: url("../pic/light-desc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes asc-bottom-bg {
+  0% {
+    background: url("../pic/normal-asc-arrow.png") no-repeat 0 0;
+  }
+  25%,50% {
+    background: url("../pic/light-asc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes asc-bottom-bg {
+  0% {
+    background: url("../pic/normal-asc-arrow.png") no-repeat 0 0;
+  }
+  25%,50% {
+    background: url("../pic/light-asc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes asc-bottom-bg {
+  0% {
+    background: url("../pic/normal-asc-arrow.png") no-repeat 0 0;
+  }
+  25%,50% {
+    background: url("../pic/light-asc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes asc-bottom-bg {
+  0% {
+    background: url("../pic/normal-asc-arrow.png") no-repeat 0 0;
+  }
+  25%,50% {
+    background: url("../pic/light-asc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes desc-bottom-bg {
+  0% {
+    background: url("../pic/normal-desc-arrow.png") no-repeat 0 0;
+  }
+  50%, 75% {
+    background: url("../pic/light-desc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes desc-bottom-bg {
+  0% {
+    background: url("../pic/normal-desc-arrow.png") no-repeat 0 0;
+  }
+  50%, 75% {
+    background: url("../pic/light-desc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes desc-bottom-bg {
+  0% {
+    background: url("../pic/normal-desc-arrow.png") no-repeat 0 0;
+  }
+  50%, 75% {
+    background: url("../pic/light-desc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes desc-bottom-bg {
+  0% {
+    background: url("../pic/normal-desc-arrow.png") no-repeat 0 0;
+  }
+  50%, 75% {
+    background: url("../pic/light-desc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes asc-top-bg {
+  0% {
+    background: url("../pic/normal-asc-arrow.png") no-repeat 0 0;
+  }
+  50%, 75% {
+    background: url("../pic/light-asc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes asc-top-bg {
+  0% {
+    background: url("../pic/normal-asc-arrow.png") no-repeat 0 0;
+  }
+  50%, 75% {
+    background: url("../pic/light-asc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes asc-top-bg {
+  0% {
+    background: url("../pic/normal-asc-arrow.png") no-repeat 0 0;
+  }
+  50%, 75% {
+    background: url("../pic/light-asc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes asc-top-bg {
+  0% {
+    background: url("../pic/normal-asc-arrow.png") no-repeat 0 0;
+  }
+  50%, 75% {
+    background: url("../pic/light-asc-arrow.png") no-repeat 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.desc-arrows {
+  @extend %arrows;
+  @include animation(desc-arrows,2s,infinite,ease-out,none);
+  top: 135px;
+  .desc-arrow-top {
+    @include animation(desc-top-bg,2s,infinite,linear,none);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $arrows-width;
+    height: $arrows-height;
+    background: url("../pic/normal-desc-arrow.png") no-repeat 0 0;
+  }
+  .desc-arrow-bottom {
+    @include animation(desc-bottom-bg,2s,infinite,linear,none);
+    position: absolute;
+    top: 23px;
+    left: 0;
+    width: $arrows-width;
+    height: $arrows-height;
+    background: url("../pic/normal-desc-arrow.png") no-repeat 0 0;
+  }
+}
+
+.asc-arrows {
+  @include animation(asc-arrows,2s,infinite,ease-out,none);
+  @extend %arrows;
+  bottom: 15px;
+  .asc-arrow-top {
+    @include animation(asc-top-bg,2s,infinite,linear,none);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $arrows-width;
+    height: $arrows-height;
+    background: url("../pic/normal-asc-arrow.png") no-repeat 0 0;
+  }
+  .asc-arrow-bottom {
+    @include animation(asc-bottom-bg,2s,infinite,linear,none);
+    position: absolute;
+    top: 23px;
+    left: 0;
+    width: $arrows-width;
+    height: $arrows-height;
+    background: url("../pic/normal-asc-arrow.png") no-repeat 0 0;
+  }
+}
+
+.main-btn {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 220px;
+  width: $main-btn-width;
+  height: $main-btn-height;
+  line-height: $main-btn-height;
+  @include border-box;
+  text-align: center;
+  text-transform: uppercase;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 30px;
+    weight: bold;
+  }
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  color: #fff;
+  text-decoration: none;
+  background: url("../pic/icon-main-btn.png") no-repeat 0 -94px;
+  display: inline-block;
+  &:hover {
+    background: url("../pic/icon-main-btn.png") no-repeat 0 0;
+  }
+}
+
+a.banner-ref {
+  display: block;
+  position: absolute;
+  top: 135px;
+  left: 0;
+  width: $slider-width;
+  height: $banner-ref-height;
+  z-index: 10;
+}
+
+
+
+
+

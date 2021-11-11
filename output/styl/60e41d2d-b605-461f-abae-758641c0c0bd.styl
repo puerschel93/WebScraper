@@ -1,0 +1,185 @@
+@font-face
+    src url('http://fonts.googleapis.com/css?family=Fira\+Sans\:300italic')
+    src url('http://fonts.googleapis.com/css?family=Poiret+One')
+    src url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:200')
+    src url('http://fonts.googleapis.com/css?family=Roboto:100');
+
+navheight = 35px
+
+html 
+	margin 0
+
+body 
+	font-family 'Roboto', sans-serif
+	margin 0
+
+
+
+//nav******************************************	
+
+nav
+	background-color black
+	height navheight
+	padding 10px 0
+	position fixed
+	top 0
+	width 100vw
+	z-index 50
+	transition transform 0.4s
+	ul 
+		margin auto
+		li 	
+			display inline-block
+			line-height navheight
+			list-style none
+			margin-right 50px
+			a
+				color #AAB1C6
+				text-decoration none
+				font-weight bold
+			a:hover
+				color white
+				cursor pointer
+
+/* nav animation
+-------------------------------------------- */
+.hidden
+	transform translateY(-60px)
+	&::after
+		content 'scroll up to reveal'
+		font-size 150%
+		font-family 'Fira Sans', sans-serif
+		color #E56508
+		font-weight bold
+		display block
+		float right
+		margin 20px 30px 0px 0px
+
+
+
+
+//parallax logic****************************************
+
+.wrapper
+	height 100vh
+	overflow-x hidden
+	overflow-y auto
+	perspective 1px
+	// text-align center
+	font-size 200%
+
+section
+	position relative
+	transform-style preserve-3d
+	height 100vh
+	
+.layer
+	position absolute
+	top 0
+	right 0
+	bottom 0 
+	left 0
+
+.base
+	transform translateZ(0)
+
+.back 
+	transform translateZ(-1px) scale(2)
+	
+.deepback
+	transform translateZ(-2px) scale(3)
+
+.front 
+	transform translateZ(0.5px) scale(0.5)
+
+
+//section styling******************************************
+
+svg
+	height 0
+	width 0
+
+section:not(:last-of-type)
+	border-bottom 10px solid #25262C
+
+.title h1
+	float left
+	color aliceblue
+	margin-top 600px
+	margin-left 30px	
+
+.there 
+	z-index 6
+	.base
+		filter url(#wherearemyglasses)
+		background-image url("../img/hartel-bw-street-photography-14.jpg")
+		background-size cover
+		background-color tomato
+
+.orthere 
+	z-index 5
+	.back
+		background-image url('../img/Cities__038905_.jpg')
+
+.somewhere 
+	z-index 5
+	.base
+		background-image url(../img/texture6.jpg)
+		background-size cover
+	h1 
+		position absolute
+	.box
+		height 500px
+	img
+		position: absolute;
+		top: 300px;
+		left 300px
+		width: 480px;
+		height: 340px;
+		transform: translateZ(.30px)
+		border-radius: 2px
+		box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+
+.about
+	z-index 4
+	height 30vh
+	.base
+		background-image url(../img/texture3.jpg)
+		background-size cover
+		filter url(#wherearemyglasses)
+	.title
+		position relative
+		top -100px
+		margin-left 30px
+		p
+			color aliceblue
+			margin 0
+			font-weight bold
+			&:nth-child(2)
+				font-size 60%
+	
+
+
+
+
+/* Debugger styles
+-------------------------------------------- */
+
+.debug 
+	position fixed
+	float right
+	top 0
+	z-index 999
+	color white
+	padding .5em
+	border-radius 0 0 5px 5px
+
+.debug-on .group 
+	transform translate3d(400px, 0, -2px) rotateY(0.08deg)
+
+.debug-on .layer
+	box-shadow 0 0 0 2px green
+	opacity 0.5
+
+.group
+	transition transform 0.5s

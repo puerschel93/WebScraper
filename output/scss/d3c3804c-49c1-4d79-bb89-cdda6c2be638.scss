@@ -1,0 +1,103 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+
+  height: calc(100vh - 7.5vh); // - header
+  &__dialogs {
+    overflow-y: auto;
+
+    max-width: 365px;
+    padding-top: 20px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 12px;
+      background-color: #c5daff;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 12px;
+      background-color: #e1ecfe;
+    }
+  }
+
+  &__chat {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    justify-content: space-between;
+
+    border-left: 1px solid #d7e6ff;
+    background: url('../../../assets/svg/chat-background.svg') no-repeat;
+    background-size: cover;
+  }
+
+  &__chat-messages {
+    display: flex;
+    overflow: auto;
+    flex-direction: column-reverse;
+    flex-shrink: 1;
+
+    height: 100%;
+
+    border-top: 1px solid #d7e6ff;
+    border-bottom: 1px solid #d7e6ff;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 12px;
+      background-color: #c5daff;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 12px;
+      background-color: #e1ecfe;
+    }
+  }
+
+  &__select-btn {
+    max-width: 354px;
+    margin: auto;
+    padding: 19px 46px;
+
+    cursor: default;
+
+    border: 1px solid #5e93e7;
+    border-radius: 32px;
+    background-color: white;
+  }
+}
+
+@media (max-width: 800px) {
+  .header-wrapper--hidden {
+    display: none;
+  }
+
+  .main {
+    height: 100%;
+
+    &__chat--hidden {
+      display: none;
+    }
+
+    &__chat {
+      height: 100vh;
+    }
+
+    &__dialogs {
+      max-width: 100%;
+      height: calc(100vh - 7.5vh);
+      margin: 0 auto;
+    }
+
+    &__dialogs--hidden {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,319 @@
+.s-cases
+    padding-bottom 90px
+
+    &__main
+        background url(img/s-cases-bg-1.jpg) no-repeat center top
+        background-size cover
+        transition all 1s ease
+
+    &__main-in
+        container(1240px)
+        padding 70px 20px 40px
+
+    &__title
+        color #00060c
+        font(Extra)
+        font-size 37px
+        line-height 1
+        letter-spacing: -0.055em
+        text-transform uppercase
+        text-align center
+        margin 0 0 50px
+        +below(480px)
+            font-size 30px
+            line-height 1.2
+
+.cases
+    &__case
+        background-color rgba(255,255,255,0.9)
+        padding 50px 100px
+        margin 0
+        position relative
+        cf()
+        // &::before
+        //     content ""
+        //     retinaSprite($icon_cases_min_group)
+        //     position absolute
+        //     top 57px
+        //     left 0
+        +below(1000px)
+            padding 50px 20px 50px 70px
+        +below(480px)
+            padding 70px 10px 40px 20px
+            &::before
+                top 0
+
+    &__left
+        span(2/3)
+        padding-right 60px
+        margin-bottom 45px
+        +below(1000px)
+            padding-right 20px
+        +below(920px)
+            span(55/100)
+        +below(768px)
+            padding-right 0
+            span(1)
+
+    &__right
+        padding-top 145px
+        position relative
+        span(1/3)
+        margin-bottom 45px
+        +below(920px)
+            span(45/100)
+        +below(768px)
+            padding-top 110px
+            span(1)
+    &__bottom
+        span(1)
+        text-align center
+
+    &__title
+        color #00060c
+        font(Bold)
+        font-size 26px
+        line-height 1.2
+        margin 0 0 40px
+        +below(480px)
+            font-size 22px
+
+    &__shift
+        padding-left 55px
+        +below(1000px)
+            padding-left 0
+
+    &__subtitle
+        color #00060c
+        font(Bold)
+        font-size 26px
+        line-height 1
+        margin 40px 0 10px
+        &--green
+            color #156500
+        &--blue
+            color #004c9d
+        +below(480px)
+            font-size 22px
+    &__text
+        color #00060c
+        font()
+        font-size 18px
+        line-height 30px
+        margin 0
+        +below(480px)
+            line-height 1.5
+            font-size 16px
+
+    &__logo
+        position absolute
+        top 0
+        left 0
+        .cases__case--1 &
+            retinaSprite($icon_cases_1_group)
+        .cases__case--4 &
+            display block
+            height 45px
+            width 279px
+            background url(img/s-cases-logo-4.png) no-repeat center center
+            +below(480px)
+                transform scale(.8)
+                transform-origin top left
+
+    &__profit-title
+    &__payback-title
+        color #00060c
+        font()
+        font-size 18px
+        line-height 1
+        margin 0 0 13px
+        +below(480px)
+            font-size 16px
+
+    &__profit-value
+        width 156px
+        height 40px
+        background-color #4cc82c
+        padding 11px 17px
+        color white
+        font(Bold)
+        font-size 20px
+        line-height 1
+        text-align right
+        margin 0 0 30px
+        .cases__case--2 &
+            width 150px
+
+    &__payback-value
+        width 123px
+        height 40px
+        background-color #00a9d9
+        padding 11px 12px
+        color white
+        font(Bold)
+        font-size 20px
+        line-height 1
+        text-align right
+        .cases__case--2 &
+            width 160px
+
+    &__tasks
+        display block
+        position relative
+        margin 170px 0 0 0
+        +below(768px)
+            margin-top 40px
+
+    &__tasks-title
+        display inline-block
+        color #156500
+        font(Bold)
+        font-size 20px
+        line-height 1
+        padding-bottom 1px
+        border-bottom 1px dashed #156500
+        text-decoration none
+        cursor pointer
+        position relative
+        margin 0
+        &:hover
+            border-bottom none
+            text-decoration none
+
+
+    &__popup
+        display none
+        width 548px
+        background-color white
+        box-shadow 0 0 29px rgba(0, 0, 0, 0.35)
+        padding 40px
+        position absolute
+        bottom 40px
+        right 0
+        +below(768px)
+            right auto
+            left -10px
+            width auto
+            right 0px
+        +below(480px)
+            padding 20px
+
+    &__tasks:hover
+        & .cases__popup
+            animation fadeIn .5s ease-in-out
+            display block
+
+    &__report
+        display inline-block
+        padding-left 60px
+        min-height 35px
+        color #00a9d9
+        font(Bold)
+        font-size 26px
+        line-height 30px
+        text-decoration underline
+        margin 0
+        position relative
+        &:hover
+            text-decoration none
+        &::before
+            content ""
+            retinaSprite($icon_file_group)
+            position absolute
+            top 0
+            left 0
+        +below(480px)
+            font-size 20px
+            padding-left 40px
+            line-height 36px
+
+    &__arrow
+        width 29px
+        height 50px
+        cursor pointer
+        position absolute
+        top 470px
+        +below(1000px)
+            display none
+
+        &--prev
+            retinaSprite($icon_slider_cases_prev_group)
+            left -50px
+            &:hover
+                transform: translateX(-1px)
+            +below(1400px)
+                left -20px
+            +below(1320px)
+                left 40px
+                retinaSprite($icon_slider_thanks_prev_group)
+                opacity 0.1
+                transition opacity .5s ease
+                &:hover
+                    opacity 1
+                    transform none
+
+        &--next
+            retinaSprite($icon_slider_cases_next_group)
+            right -50px
+            &:hover
+                transform: translateX(1px)
+            +below(1400px)
+                right -20px
+            +below(1320px)
+                right 40px
+                retinaSprite($icon_slider_thanks_next_group)
+                opacity 0.1
+                transition opacity .5s ease
+                &:hover
+                    opacity 1
+                    transform none
+
+
+.s-cases__main
+    position relative
+
+    .slick-dots
+        display block
+        width 100%
+        padding 0
+        margin 0
+        position absolute
+        bottom -110px
+        list-style: none;
+        text-align center
+        font-size 0
+
+        li
+            display inline-block
+            width 15px
+            height 15px
+            margin 0 5px 10px
+
+
+            button
+                display block
+                width 15px
+                height 15px
+                background-color #003874
+                font-size 0
+                border none
+                &:hover
+                    background-color #00a9d9
+
+            &.slick-active
+                button
+                    background-color #00a9d9
+
+
+
+@keyframes fadeIn
+    from
+        opacity 0
+    to
+        opacity 1
+
+@keyframes fadeOut
+    from
+        opacity 1
+    to
+        opacity 0

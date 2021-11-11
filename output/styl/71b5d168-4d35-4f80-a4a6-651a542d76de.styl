@@ -1,0 +1,232 @@
+.gallerySection{
+    margin-top: 120px;
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 9999999;
+}
+
+.gallery-image{
+    height: auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.openGallery,.openGallery:focus,.openGallery:active{
+    background: none;
+    border: 2px solid black;
+    text-align: center;
+    padding: 10px;
+    color: black;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    outline: none;
+}
+.showGallery{
+    display: none;
+}
+.gallery-image img{
+    width: 100%;
+    padding: 10px;
+    height: auto;
+}
+#modalWindow{
+    display:none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.9);
+}
+.modal__img{
+    width: 70%;
+    height: 70%;
+    position: relative;
+    z-index: 200;
+    top: 15%;
+    left: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal__img img{
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.modal__img img:hover {
+
+}
+.modal__close{
+    border-radius: 50%;
+    border: none;
+    background: none;
+    top: 5%;
+    right: 30px;
+    width:50px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size:20px;
+}
+.modal__close:hover,.modal__prev:hover,.modal__next:hover{
+    color:black;
+    background: white;
+    transition:  0.5s;
+    border:none;
+    cursor:pointer;
+}
+.modal__prev{
+    position: absolute;
+    left: 20px;
+    top:50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size:20px;
+}
+.modal__next{
+    position: absolute;
+    right: 20px;
+    top:50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size:20px;
+}
+
+.gallery__col
+  width 24%
+  margin-right 14px
+  margin-bottom 14px
+  cursor pointer
+  transition all 500ms ease
+
+.gallerycol__container
+  width 100%
+  height 300px
+  cursor pointer
+  transition all 500ms ease
+  background-size cover
+  background-repeat no-repeat
+  background-position center
+
+.gallerycol__row
+  display flex
+  width 100%
+  flex-wrap: wrap;
+  margin-top: 30px;
+
+.gallerycol__link__img
+  width 32.4%
+  height 300px
+  z-index 999
+  margin-right: 14px;
+  margin-bottom: 14px;
+
+.gallerycol__link__img:nth-child(3n+3)
+  margin-right 0
+
+.gallery__col:hover
+  box-shadow 0 0 10px #03a9f480
+
+.gallery__col:hover .gallery__col__title__h4
+  color #febf14
+
+.gallery__col__title__h4
+  margin 0
+  color #000
+  font-size 16px
+  font-weight 600
+  transition all 500ms ease
+
+.gallery__col__title
+  background: #fff;
+  width: 100%;
+  padding: 20px 15px;
+  height 90px
+  display: flex;
+  align-items: center;
+
+.gallery__col:nth-child(4n+4)
+  margin-right 0
+
+.gallery__col__backFoto
+  width 100%
+  height 200px
+
+.gallery__col__img
+  width 100%
+
+.gallery__row
+  display flex
+  justify-content flex-start
+  flex-wrap: wrap;
+  margin-top: 40px;
+  z-index 999
+
+.gallery__col__backFoto
+  background-size cover
+  background-repeat no-repeat
+  background-position center
+
+@media only screen and (max-width: 1025px){
+  .gallery__col {
+    width: 47%;
+  }
+  .gallery__col__backFoto {
+    height 300px
+  }
+  .gallerycol__link__img{
+    width 47%
+    margin-right 14px
+  }
+  .gallerycol__link__img:nth-child(3n+3){
+    margin-right 14px
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .gallery__col {
+    width: 100%;
+    margin-right 0
+  }
+  .gallerycol__link__img{
+    width 100%
+    margin-right 0
+  }
+  .gallerycol__link__img:nth-child(3n+3){
+    margin-right 0
+  }
+  .footer-right-name {
+    text-align: left;
+  }
+  .articleName__row{
+    padding-right 0
+  }
+}

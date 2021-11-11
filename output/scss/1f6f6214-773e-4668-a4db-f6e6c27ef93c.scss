@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap%27%27');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+@mixin font_os($font,$font-size) {
+  font-family:$font;
+  font-size:$font-size
+}
+
+@mixin font($line-height,$letter-spacing,$font-weight, $colour) {
+  line-height:$line-height;
+  letter-spacing:$letter-spacing;
+  colour:$colour;
+  font-weight:$font-weight
+}
+
+@mixin pic($width,$height, $left, $top) {
+  width:$width;
+  height:$height;
+  left:$left;
+  top:$top;
+}
+
+@mixin hlt($height, $left, $top) {
+  height:$height;
+  left:$left;
+  top:$top;
+}
+
+@mixin hw($height,$width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin mlr($margin-left,$margin-right, $display, $width) {
+  margin-left: $margin-left;
+  margin-right: $margin-right;
+  display: $display;
+  width: $width;
+}
+
+@mixin stit($font-style, $align-item){
+  font-style: $font-style;
+  align-items: $align-item;
+}
+
+@mixin mix_op($mix-blend-mode, $opacity){
+  mix-blend-mode: $mix-blend-mode;
+  opacity: $opacity;
+}
+
+main, html {width: 100%;}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+#carousel {width:100%;}
+
+.nav-text {
+  @include font(21px, 1.94px, normal, #FFFFFF);
+  @include font_os(oswald, 14px);
+  text-decoration: none;
+  font-style: normal;
+}
+
+
+.head {
+  @include font_os(oswald, 72px);
+  @include font(107px, 4.608px, 300, #FFFFFF);
+  align-items: flex-end;
+}
+
+.center {
+  @include mlr(auto, auto, block, 2%);
+}
+
+.photo {
+  @include mlr(auto, auto, block, 95%);
+}
+
+.text {
+  letter-spacing: 1.28px;
+  colour: #FFFFFF;
+}
+
+.header {
+  @include font_os(oswald, 27px);
+  @include hlt(53px, 0px, -4px);
+  @include font(80px, 2.304px, bold, #333333);
+  font-style: normal;
+  align-items: flex-end;
+}
+
+.navbar {
+  background: none;
+  margin-top: -45%;
+  margin-left: 55%;
+}
+
+.carousel-indicators [data-bs-target] {
+  @include font_os(oswald, 15px);
+  height: 0px;
+  colour:#FFFFFF;
+  text-indent: -100%;
+}
+.pic1 {
+  @include pic(400px, 411px, -212px, -19px)
+}
+
+.pic1_title {
+  @include pic(150px, 53px, 0px, -4px);
+  @include font(80px,2.304px, bold, #333333);
+  @include font_os(oswald,27px);
+  @include stit(normal, flex-end);
+}
+
+
+.pic1_title2 {
+  @include font_os(oswald, 48px);
+  @include font(71px,3.072px,300, #252525);
+  @include stit(normal, flex-end);
+  display: flex;
+
+}
+.pic1_text {
+  @include pic(281px, 75px, 30px, 0px);
+  @include font(25px, 1.26px, 300, #5B5858);
+  @include font_os("Open Sans", 15px);
+  @include stit(normal, center);
+}
+
+
+.pic1_text1 {
+  @include font_os("oswald", 17px);
+  @include font(25px,1.26px,600, #000000);
+}
+
+.Question_text_top {
+  @include font_os(oswald, 24px);
+  @include font(36px,2.66667px, normal, #000000);
+  @include stit(normal, center);
+}
+
+.Question_text_bottom_left {
+  @include hlt(19px, 312px, 181px);
+  @include font(19px, 1.55556px, 300, #373737);
+  @include font_os("Open Sans", 14px);
+  @include stit(normal, center);
+  @include mix_op(normal, 0.8);
+}
+
+.Question_text_bottom_right {
+  @include hlt(19px, 404.5px, 181px);
+  @include font(19px, 1.55556px, 300, #FFFFFF);
+  @include font_os("Open Sans", 14px);
+  @include stit(normal, center);
+  @include mix_op(normal, 0.8);
+}
+
+.bottom_block_text {
+  @include hlt(17px, 0px, 59px);
+  @include font(19px, 0.832px, 300, #FFFFFF);
+  @include font_os(oswald, 13px);
+  @include stit(normal, center);
+  @include mix_op(normal, 0.8);
+}
+
+.end_text {
+  @include hlt(17px, 758px, 21px);
+  @include font(19px, 0.832px, 300, #FFFFFF);
+  @include font_os(oswald, 13px);
+  @include stit(normal, center);
+  @include mix_op(normal, 0.8);
+  margin-bottom: 20px;
+}
+
+.carousel-indicators .active {
+  font-size: 30px;
+  text-indent: -100%;
+  margin-top: -15px;
+
+}
+
+#mail {
+  @include hw(35px, 55px)
+}
+#briefcase {
+  @include hw(35px, 55px)
+}
+
+.sqr {
+  @include pic(309px, 418px, 403px, 62px);
+  @include mix_op(normal, 0.8);
+  background: #4CAF50;
+}
+
+.navbar1 {
+  background: none;
+}
+.nav-text1 {
+  @include font(21px, 1.94px, normal, #000000);
+  text-decoration: none;
+  font-style: normal;
+  font-size: 14px;
+}
+
+#Service {
+  background-color: #f6f6f6;
+}
+
+#Team {
+  background-color: #f6f6f6;
+  margin-top: 10%;
+}
+
+.man {
+  @include font_os("oswald", 24px);
+  text-align: center;
+}
+
+#man_text {
+  @include font_os("Open Sans", 14px)
+}
+
+.relative_box {
+  position: relative;
+  width: 400px;
+  float: left;
+}
+
+.text-cen {
+  @include font(40px, 1.26px, 300, #252525);
+  @include stit(normal, center);
+  @include font_os("Open Sans", 17px);
+  margin-left: 20%;
+  max-width: 60%;
+  left: 30px;
+  top: 0px;
+}
+
+#line {
+  width: 40%;
+  opacity: 50%;
+  margin-left: 30%;
+}
+
+.font_oswald{font-family: "oswald";}
+
+.font_sans{font-family: "Open Sans";}

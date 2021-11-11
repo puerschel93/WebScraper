@@ -1,0 +1,558 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+/**
+ * Main content containers
+ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body,
+html {
+    height: 100%;
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    font-family: $font-base;
+}
+
+#wrapper {
+    width: 100%;
+    flex: 1 0 auto;
+    padding-top: 0 !important;
+    transition: 0.5s ease all;
+}
+
+.wrapper {
+    max-width: 100%;
+    width: $wrapper-width;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 15px;
+	&-fluid {
+		@extend .cell-12 ;
+	}
+}
+/** slick slider pagination */
+
+.slick-dots {
+    margin: 0;
+    padding: 0;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+
+    li {
+        width: 16px;
+        height: 16px;
+        background: color('brand-primary');
+        border-radius: 100%;
+        margin: 0 5px;
+        list-style: none;
+        cursor: pointer;
+        opacity: 0.48;
+
+        &.slick-active {
+            opacity: 1;
+        }
+
+        button {
+            display: none;
+        }
+    }
+}
+
+.slick-dots {
+    &--primary {
+        .slick-dots {
+            li {
+                background: color('brand-primary');
+            }
+        }
+    }
+
+    &--secondary {
+        .slick-dots {
+            li {
+                background: color('brand-secondary');
+            }
+        }
+    }
+
+    &--white {
+        .slick-dots {
+            li {
+                background: color('white');
+            }
+        }
+    }
+}
+
+.entry .slick-dots li {
+    margin: 0 5px;
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: 0.5s ease all;
+    -o-transition: 0.5s ease all;
+    -webkit-transition: 0.5s ease all;
+    width: 48px;
+    height: 48px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    cursor: pointer;
+    border: 0;
+    font-size: 24px;
+    border-radius: 100%;
+    background: color('black');
+    color: color('white');
+    z-index: 1;
+
+    &:hover {
+        background: lighten(color('black'), 20%);
+    }
+    @include breakpoint(992px) {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+    @include breakpoint(767px) {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+    @include breakpoint(767px) {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.slick-next {
+    right: 0;
+}
+
+.slick-initialized .slick-slide {
+    outline: 0;
+}
+/** slick arrow primary */
+
+.slick-arrow--primary {
+    .slick-next,
+    .slick-prev {
+        background: color('brand-primary');
+        color: color('white');
+
+        &:hover {
+            background: lighten(color('brand-primary'), 10%);
+            color: color('white');
+        }
+    }
+}
+
+.slick-arrow--secondary {
+    .slick-next,
+    .slick-prev {
+        background: color('brand-secondary');
+        color: color('white');
+
+        &:hover {
+            background: lighten(color('brand-secondary-light'), 10%);
+            color: color('white');
+        }
+    }
+}
+
+@include breakpoint(359px) {
+    .g-recaptcha {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > div {
+            -webkit-transform: scale(0.82);
+            -ms-transform: scale(0.82);
+            -o-transform: scale(0.82);
+            transform: scale(0.82);
+        }
+    }
+}
+
+
+// Our Services
+.our-more-services {
+  padding: 50px 0;
+
+	ul.more-services {
+    padding-left: 0;
+    padding-bottom: 45px;
+
+		li {
+      margin: 0 0 0 30px;
+      position: relative;
+      list-style: none;
+      padding-top: 0;
+			padding-bottom: 3px;
+
+      p {
+        font-size: 22px;
+        @include breakpoint(767px) {
+          font-size: 18px;
+        }
+      }
+			&:before {
+        position: absolute;
+        content: '';
+        left: -38px;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+				top: 18px;
+				background-size: 20px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+			}
+		}
+	}
+
+  &.four-column {
+    ul.more-services {
+      column-count: 4;
+      @include breakpoint(1200px) {
+        column-count: 3;
+      }
+      @include breakpoint(767px) {
+        column-count: 2;
+      }
+      @include breakpoint(480px) {
+        column-count: 1;
+      }
+
+      li {
+        p {
+          color: color('white');
+        }
+
+        &:before {
+          background-image: url('../../images/service-arrow.png');
+        }
+      }
+    }
+  }
+
+  &.three-column {
+    border-bottom: 2px solid color('brand-primary-light');
+
+    ul.more-services {
+      column-count: 3;
+      @include breakpoint(767px) {
+        column-count: 2;
+      }
+      @include breakpoint(640px) {
+        column-count: 1;
+      }
+
+      li {
+        display: inline-flex;
+        p {
+          color: color('black');
+        }
+
+        &:before {
+          background-image: url('../../images/service-blue-arrow.png');
+        }
+      }
+    }
+  }
+
+  &.specialty-section {
+    ul.more-services {
+      column-count: 4;
+      @include breakpoint(1200px) {
+        column-count: 3;
+      }
+      @include breakpoint(767px) {
+        column-count: 2;
+      }
+      @include breakpoint(640px) {
+        column-count: 1;
+      }
+
+      li {
+        p {
+          color: color('black');
+        }
+
+        &:before {
+          background-image: url('../../images/service-blue-arrow.png');
+        }
+      }
+    }
+  }
+
+  .appt-btn {
+    text-align: center;
+
+    .read-more:hover {
+      background: color('black');
+      border-color: color('black');
+    }
+  }
+}
+
+// footer and header css
+.contact-links > li {
+  z-index: 99;
+  padding-top: 0;
+  font-weight: 600;
+  color: color('black');
+  &:hover {
+    pointer-events: all;
+  }
+  &.address, &.hours, &.phone {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 21px;
+      height: 17px;
+      top: 5px;
+      left: -30px;
+    }
+  }
+  &.address:before {
+    background-image: url(../../images/address.png);
+  }
+  &.hours:before {
+    background-image: url(../../images/hours.png);
+  }
+  &.phone:before {
+    background-image: url(../../images/phone.png);
+  }
+  p, a {
+    font-weight: 600;
+    color: color('black');
+  }
+  > a {
+    display: block;
+  }
+
+  &:hover > a {
+    color: color('brand-secondary-light');
+  }
+}
+
+// default appt button
+.appt-btn {
+  svg {
+    width: 15px;
+    height: 15px;
+    margin-right: 7px;
+  }
+  .read-more:hover svg {
+    fill: color('white');
+  }
+  span {
+    display: flex;
+  }
+}
+
+/** Inner Banner */
+.inner-banner-section {
+  min-height: 680px;
+
+  &.left {
+    flex-direction: row-reverse;
+    .inner-banner-content {
+      left:60%;
+
+      @include breakpoint(767px) {
+        left: 0;
+      }
+    }
+  }
+  .inner-banner {
+    &-block {
+      background-image: linear-gradient(to bottom, color('brand-primary-dark'), color('brand-primary'));
+    }
+    &-img {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-content {
+      width: 700px;
+      padding: 70px 50px;
+      z-index: 1;
+      background: color('white');
+      display: flex;
+      flex-wrap: wrap;
+      transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%,-50%);
+      top: 50%;
+      left: 38%;
+
+      &.aos-animate {
+        transform: translate(-50%, -50%) translateZ(0) !important;
+      }
+
+      @media screen and (max-width: 1440px) {
+        width: 660px;
+        padding: 40px;
+        left: 35%;
+      }
+      @include breakpoint(1024px) {
+        width: 650px;
+        padding: 30px;
+        left: 35%;
+      }
+      @include breakpoint(992px) {
+        width: 500px;
+        padding: 30px;
+      }
+      @include breakpoint(767px) {
+        position: relative;
+        width: 95%;
+        order: 2;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: none !important;
+        margin: -68px auto 0;
+        padding: 18px;
+        -webkit-box-shadow: 1px 0px 20px -16px rgba(0,0,0,0.75);
+        -moz-box-shadow: 1px 0px 20px -16px rgba(0,0,0,0.75);
+        box-shadow: 1px 0px 20px -16px rgba(0,0,0,0.75);
+        text-align: center;
+
+        &.aos-animate {
+          transform: none !important;
+        }
+      }
+
+      a:not(.call) {
+        color: color('brand-primary-light');
+
+        &:hover {
+          color: color('black');
+        }
+      }
+      a.call {
+        color: color('black');
+
+        @include breakpoint(568px) {
+          display: block;
+        }
+
+        &:hover {
+          color: color('brand-primary-light');
+        }
+      }
+    }
+  }
+}
+
+
+// Work Section
+.work-section {
+  padding: 60px 0 80px;
+  @include breakpoint(1024px) {
+    padding: 50px 0;
+  }
+  @include breakpoint(767px) {
+    padding: 40px 0;
+  }
+
+  ul {
+    li {
+      padding-top: 0;
+      @include breakpoint(1024px) {
+        padding-bottom: 20px;
+      }
+      &:not(:first-child) {
+        padding-left: 20px;
+
+        @include breakpoint(1024px) {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .tagline p {
+    font-size: 22px;
+    color: color('brand-primary');
+
+    @include breakpoint(767px) {
+      font-size: 18px;
+    }
+
+    a.underline {
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: color('brand-primary-light');
+    }
+  }
+
+  .icon-block {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    border: 3px solid color('brand-primary-light');
+  }
+
+  .content-block {
+    width: 68%;
+    @include breakpoint(767px) {
+      width: 76%;
+    }
+    @include breakpoint(568px) {
+      width: 100%;
+      padding-top: 15px;
+    }
+    h3 {
+      font-size: 22px;
+    }
+  }
+}
+
+// about page heading
+.page-id-6179 {
+  .inner-banner-section {
+    h1 {
+      font-size: 56px;
+      color: color('brand-primary-light');
+      text-transform: uppercase;
+      margin-bottom: 0;
+      line-height: 1;
+
+      @include breakpoint(1024px) {
+        font-size: 40px;
+      }
+      @include breakpoint(767px) {
+        font-size: 32px;
+      }
+    }
+  }
+}

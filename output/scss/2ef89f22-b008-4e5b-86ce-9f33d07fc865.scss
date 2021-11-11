@@ -1,0 +1,124 @@
+.figure {
+  // ==========================================================================
+  //    Variables
+  // ==========================================================================
+
+  // Allow the block's base class to be used at all scopes within the block.
+  // (bn = block name), use as: #{$bn}. 
+  $bn            : &;
+  // Use the block's base class as a variable prefix (remove class selector . )
+  $prefix        : "--" + str-replace(#{$bn}, ".");
+
+  // Variables specific to this block, based on varibles set at higher scope
+  // (e.g. .section), such that blocks can be themed from a higher level.
+  // The value may change in modified blocks or elements (i.e. block--modifier).
+  // Always use css variables along with a default value to maintain the block's
+  // independence & modularity (a la BEM).
+
+  // #{$prefix}- : var( , );
+
+  // ==========================================================================
+  //    Styles
+  // ==========================================================================
+
+  @include f-common;
+  margin         : 0;
+  width          : 100%;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  position       : relative;
+  flex-direction : column;
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__caption {
+    font-weight: var(--fw-normal, 400);
+    color      : var(--section-fc-body, gray);
+    font-size  : var(--fs-medium, 1.1rem);
+    line-height: 1.45;
+    margin     : 1.5rem 0;
+  }
+}
+
+.figure--cover {
+  width : 100%;
+  height: 100%;
+
+  .figure__image {
+    width     : 100%;
+    height    : 100%;
+    object-fit: cover;
+  }
+}
+
+.figure--tilt-left {
+  .figure__image {
+    border-radius    : var(--br-default, 0.25rem);
+    margin           : auto;
+    box-shadow       : 35px 65px 125px -23px rgba(0,44,56,.2), 22.3px 35px 70px -40px rgba(0,44,56,.3);
+    -webkit-transform: perspective($breakpoint) rotateY(-12deg) rotateX(1deg) rotate(1deg) translateZ(-100px);
+    transform        : perspective($breakpoint) rotateY(-12deg) rotateX(1deg) rotate(1deg) translateZ(-100px); // translatez to fix safari bug
+    @include desktop {
+      margin-left: -0.5rem;
+      margin-top : -0.5rem;
+    }
+  }
+
+  .figure__caption {
+    margin-top  : 4rem;
+    margin-right: 2rem;
+  }
+}
+
+.figure--tilt-right {
+  .figure__image {
+    border-radius    : var(--br-default, 0.25rem);
+    margin           : auto;
+    -webkit-transform: perspective($breakpoint) rotateY(12deg) rotateX(1deg) rotate(1deg) translateZ(-100px); // translatez to fix safari bug;
+    transform        : perspective($breakpoint) rotateY(12deg) rotateX(-1deg) rotate(-1deg) translateZ(-100px); // translatez to fix safari bug;
+    box-shadow       : -10px 25px 125px -23px rgba(0,44,56,.2), -22px 35px 75px -40px rgba(0,44,56,.3);
+    @include desktop {
+      margin-right: -0.5rem;
+      margin-top  : -0.5rem;
+    }
+  }
+
+  .figure__caption {
+    margin-top : 4rem;
+    margin-left: 2rem;
+  }
+}
+
+.figure--float {
+  .figure__image {
+    border-radius    : var(--br-default, 0.25rem);
+    margin           : auto;
+    -webkit-transform: none;
+    transform        : none;
+    box-shadow       : 0 40px 100px -15px rgba(0,44,56,.2), 0 25px 85px -25px rgba(0,44,56,.3), 0 0 4px -2px rgba(0,44,56,.2);
+    height           : auto;
+    // width            : 100%;
+    max-width        : 100%;
+    @include desktop {
+      // max-width: 107%;
+      // width    : 107%;
+    }
+  }
+
+  .figure__caption {
+    margin-top: 4rem;
+  }
+}
+
+.figure--card {
+  @include card;
+}
+
+.figure--video{
+  .figure__image{
+    width: 100%;
+  }
+}

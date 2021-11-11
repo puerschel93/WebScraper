@@ -1,0 +1,129 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:450;
+
+// VARIABLE SITE TYPO
+$font-body:"proxima-nova",verdana,sans-serif;
+$font-title:"futura-pt-condensed",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:400;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:yes;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:110;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// MISE EN PAGE HEADER LOGO
+@media only screen and (min-width: 769px) {
+header .logo img {
+    @include box-shadow ($color-ombre 1px 1px 2px);
+    margin-top:-40px;
+    margin-left:10px;
+}
+}
+
+// MISE EN PAGE MENU PRINCIPAL
+.menu-principal {
+    float:right;
+    font-size:1.6em;
+    > li {
+    display:table-cell;
+            > a {
+                    background:$color-secondary;
+                    color:$color-primary;
+                    padding:7px;
+                    line-height:20px;
+                    margin-left:1px;
+                &:hover {
+                    background:$color-action;
+                    color:$color-primary;
+                }
+            }
+        }
+}
+
+// MISE EN PAGE PHOTO PAGE HP
+.size-picture-container {
+    @include box-shadow ($color-nav-footer 0px 1px 2px);
+}
+
+// CORRECTION MARGIN SOUS LA NAV SUR PAGE HP
+aside.margin-top-under-nav-fixe {
+margin-top:67px;
+}
+
+// MODULE ANNONCE HP
+.module-villes-annonces.ville {
+font-size:1.5em;
+}
+
+// BORDURE SUR TXT ACCUEIL
+.border-pres {
+border:1px solid $color-action;
+}
+
+// PAGE ESTIMATION BLOC BIEN VENDU MASQUE
+.nav-tabs>.titre-divers, .small.margin-top-5.margin-bottom-1.recherche-annonces.padding-10, .span5>hr.margin-top-5.margin-bottom-5 {
+display:none;
+}
+.padding-5{padding: 3px;}

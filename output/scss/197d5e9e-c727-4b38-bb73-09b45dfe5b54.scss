@@ -1,0 +1,370 @@
+.forecast-table {
+    background: #EFEFEF;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+        padding: 10px 0;
+        margin: 0 -15px 20px;
+    }
+
+    .item {
+        padding: 15px;
+        background: white;
+        margin-bottom: 8px;
+        border-radius: 8px;
+
+        @media (max-width: 768px) {
+            padding: 14px 10px;
+            margin-bottom: 13px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+
+    .item.has-score-input {
+
+        @media (max-width: 768px) {
+            .team {
+                margin-bottom: 28px;
+
+                &:last-child {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .teams {
+                padding: 8px 0 17px;
+            }
+
+            .score-input-container {
+                margin-top: 6px;
+            }
+
+            .row.second {
+
+            }
+        }
+    }
+
+
+    .row {
+        display: flex;
+        position: relative;
+
+        &.first {
+            margin-bottom: 11px;
+
+            @media (max-width: 768px) {
+                margin-bottom: -10px;
+            }
+
+        }
+
+        &.second {
+
+            @media (max-width: 768px) {
+                flex-wrap: wrap;
+            }
+
+            .button {
+                flex: 1;
+                margin-bottom: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                margin-right: 10px;
+                padding: 7px 5px;
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                    margin-right: 5px;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &.disabled {
+                    background: #E8E8E8;
+                    color: #999999;
+                    border: transparent;
+                    font-weight: bold;
+
+                    @media (max-width: 768px) {
+                        order: -1;
+                        margin-bottom: 14px;
+                    }
+                }
+
+                img {
+                    margin-right: 9px;
+                }
+
+                &.button-mobile {
+                    @media (max-width: 768px) {
+
+                    }
+                }
+
+                &.submit-btn {
+                    background: rgba(96, 29, 192, 0.08);
+                    border: 2px solid rgba(96, 29, 192, 0.1);
+                    font-weight: 700;
+                    box-sizing: border-box;
+                }
+            }
+
+            &.full-width-buttons {
+                @media (max-width: 768px) {
+                    .button {
+                        min-width: 100%;
+                    }
+                }
+            }
+        }
+
+        &.third {
+            margin-bottom: 0;
+            padding-top: 15px;
+
+            @media (max-width: 768px) {
+                display: block;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: #E8E8E8;
+                top: 7px;
+
+                @media (max-width: 768px) {
+                    top: 5px;
+                }
+            }
+        }
+    }
+
+    .teams {
+        margin-right: auto;
+        margin-bottom: 7px;
+        padding: 5px 5px 0 0;
+
+        @media (max-width: 768px) {
+            padding: 5px 5px 16px 0;
+        }
+
+        .team {
+            display: flex;
+            align-items: center;
+            margin-bottom: 7px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 9px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .team-logo {
+            margin-right: 11px;
+
+            @media (max-width: 768px) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .team-name {
+            font-size: 16px;
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .match-status {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 20px;
+        align-items: center;
+        font-weight: 700;
+        font-size: 12px;
+        color: #999;
+
+        @media (max-width: 768px) {
+            margin-right: 7px;
+            margin-top: -18px;
+        }
+
+        &.special {;
+            margin: 0 31px 0 12px;
+
+            @media (max-width: 768px) {
+                margin: 0 19px 17px 12px;
+            }
+        }
+
+        .status {
+            color: #D0021B;
+        }
+
+        .duration {
+            color: #20A94A;
+        }
+
+        .date {
+            font-weight: 500;
+            margin-bottom: -3px;
+        }
+    }
+
+    .score-container {
+        background: #E8E8E8;
+        border-radius: 4px;
+        min-width: 32px;
+        height: 77px;
+        text-align: center;
+
+        @media (max-width: 768px) {
+            min-width: 26px;
+            height: 55px;
+        }
+
+        .score {
+            position: relative;
+            padding: 10px 8px;
+            font-size: 16px;
+            color: #999;
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+                padding: 4px 8px;
+            }
+
+            &.selected {
+                font-weight: bold;
+                color: #000;
+            }
+
+            &.first::after {
+                content: '';
+                position: absolute;
+                left: 8px;
+                bottom: 0;
+                height: 1px;
+                width: 16px;
+                background-color: #fff;
+
+                @media (max-width: 768px) {
+                    left: 5px;
+                    bottom: -2px;
+                }
+            }
+        }
+    }
+
+    .items {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex: 1;
+
+        .coef {
+            position: relative;
+
+            &:not(:last-child)::after {
+                content: '';
+                border: 1px solid #E8E8E8;
+                position: absolute;
+                height: 26px;
+                right: -37px;
+                bottom: -3px;
+            }
+        }
+
+        span {
+            color: #D5D5D5;
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+
+        @media (max-width: 768px) {
+            margin-bottom: 15px;
+        }
+
+        .icon {
+            margin-right: 5px;
+        }
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    .score-input-container {
+        .row {
+            margin-bottom: 10px;
+        }
+
+        input {
+            text-align: center;
+            width: 48px;
+            height: 38px;
+            box-sizing: border-box;
+            margin: 0 10px;
+            border-radius: 6px;
+            border: 2px solid #E9E9E9;
+            font-size: 16px;
+            color: #999;
+
+            /* Firefox */
+            -moz-appearance: textfield;
+
+            /* Chrome, Safari, Edge, Opera */
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &::placeholder {
+                color: #999;
+            }
+        }
+
+        .plus,
+        .minus {
+            width: 34px;
+            height: 38px;
+            background: #E8E8E8;
+            border-radius: 6px;
+            border: 1px solid #D5D5D5;
+            font-weight: 700;
+            cursor: pointer;
+
+            &:active {
+                opacity: 0.8;
+            }
+        }
+    }
+}

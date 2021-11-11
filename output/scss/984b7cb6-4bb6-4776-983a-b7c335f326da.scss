@@ -1,0 +1,417 @@
+@import 'var';
+
+/* 下拉框 */
+.ax_dropdown {
+  display: inline-block;
+  position: relative;
+
+  /* 按钮模式 */
+  &.button_mode {
+    min-width: auto;
+  }
+
+  /* 输入下拉框菜单 */
+  &_options {
+    .el-select-dropdown {
+      border: $menu_border;
+      border-radius: $menu_radius;
+      margin: $line_high_normal * 0.3 0 0 0 !important;
+      padding: $menu_radius 0 $menu_radius 0;
+      background: $menu_color_normal;
+      color: $menu_text_normal;
+      box-shadow: $menu_shadow;
+      overflow: visible;
+
+      /* 下拉菜单容器 */
+      &__list {
+        padding: 0.2rem;
+
+        /* 菜单项 */
+
+        > li[class*='hover'] {
+          background: $menu_color_focus;
+
+          > span {
+            color: $menu_text_focus;
+          }
+        }
+
+        > li[class*='selected'] {
+          background: #ffffff;
+
+          > span {
+            font-weight: bold;
+            color: $menu_text_active;
+          }
+        }
+
+        > li[disabled] {
+          background: $menu_color_disabled;
+
+          > span {
+            color: $menu_text_disabled;
+          }
+        }
+
+        > li {
+          padding: 0 $line_high_normal * 0.6 0 $line_high_normal * 0.6;
+          height: $line_high_normal;
+          line-height: $line_high_normal;
+          font-size: $font_size_normal;
+
+          > span {
+            line-height: $line_high_large;
+            font-size: $font_size_normal;
+            color: $menu_text_normal;
+          }
+
+          &:hover {
+            background: #d9ecfd;
+
+            > span {
+              color: $menu_text_hover;
+            }
+          }
+
+          &:focus {
+            color: $menu_text_focus;
+            background: $menu_color_focus;
+
+            > span {
+              color: $menu_text_focus;
+            }
+          }
+
+          &:active {
+            background: $menu_color_active;
+
+            > span {
+              color: $menu_text_active;
+            }
+          }
+        }
+      }
+
+      > p.el-select-dropdown__empty {
+        padding: 0 $line_high_normal * 0.6 0 $line_high_normal * 1.2;
+        line-height: $line_high_small;
+        font-size: $font_size_normal;
+        color: $menu_text_normal;
+        background: $menu_color_normal;
+        cursor: default;
+      }
+
+      > div[x-arrow] {
+        display: none !important;
+      }
+
+      &::after {
+        display: block;
+        border: $line_high_normal * 0.2 solid transparent;
+        border-bottom-color: $menu_color_normal;
+        content: '';
+        position: absolute;
+        top: -$line_high_normal * 0.19;
+        left: 15%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  /* 选择下拉框 */
+  .dropdown_box {
+    font-size: $font_size_normal;
+    background: $color_body_normal;
+    border: $border_normal;
+    border-radius: $border_radius;
+    line-height: $line_high_normal;
+    color: $font_color_normal;
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+
+    &:hover {
+      color: $font_color_hover;
+      background: $color_body_hover;
+      border: $border_hover;
+    }
+
+    &:focus {
+      color: $font_color_focus;
+      background: $color_body_focus;
+      border: $border_focus;
+    }
+
+    &:active {
+      color: $font_color_active;
+      background: $color_body_active;
+      border: $border_active;
+    }
+
+    .dropdown_body {
+      display: block;
+      white-space: nowrap;
+      height: $line_high_normal;
+      padding: 0 $line_high_normal * 0.3 0 $line_high_normal * 0.3;
+
+      > * {
+        float: left;
+      }
+
+      .dropdown_text {
+        padding: 0 $line_high_normal * 0.3 0 0;
+      }
+    }
+  }
+
+  .dropdown_box[disabled] {
+    color: $font_color_disabled;
+    background: $color_body_disabled;
+    border: $border_disabled;
+
+    .dropdown_body {
+      pointer-events: none;
+    }
+  }
+
+  /* 输入下拉框 */
+  .select_box {
+    width: 100%;
+    height: 100%;
+
+    .el-input {
+      width: 100%;
+      height: 100%;
+
+      &.is-disabled {
+      }
+
+      > input {
+        font-size: $font_size_normal;
+        background: $color_body_normal;
+        border: $border_normal;
+        border-radius: $border_radius;
+        line-height: $line_high_normal;
+        color: $font_color_normal;
+        padding: 0 $line_high_normal * 0.8 0 $line_high_normal * 0.3;
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+          color: $font_color_hover;
+          background: $color_body_hover;
+          border: $border_hover;
+        }
+
+        &:focus {
+          color: $font_color_focus;
+          background: $color_body_focus;
+          border: $border_focus;
+        }
+
+        &:active {
+          color: $font_color_active;
+          background: $color_body_active;
+          border: $border_active;
+        }
+      }
+
+      > span {
+        right: $border_width;
+        overflow: hidden;
+
+        i {
+          width: $line_high_normal * 0.8;
+          height: 100%;
+          line-height: $line_high_normal;
+          font-size: $font_size_normal;
+          color: #b3b3b3;
+        }
+      }
+    }
+  }
+
+  /* 文本输入下拉框样式 */
+  .dropdown_input {
+    width: 100%;
+    height: 100%;
+
+    .el-input {
+      height: 100%;
+    }
+
+    input {
+      font-size: $font_size_normal;
+      background: $color_body_normal;
+      border: $border_normal;
+      border-radius: $border_radius;
+      line-height: $line_high_normal;
+      color: $font_color_normal;
+      padding: 0 $line_high_normal * 0.8 0 $line_high_normal * 0.3;
+      width: 100%;
+      height: 100%;
+
+      &:hover {
+        color: $font_color_hover;
+        background: $color_body_hover;
+        border: $border_hover;
+      }
+
+      &:focus {
+        color: $font_color_focus;
+        background: $color_body_focus;
+        border: $border_focus;
+      }
+
+      &:active {
+        color: $font_color_active;
+        background: $color_body_active;
+        border: $border_active;
+      }
+    }
+  }
+
+  /* 选择下拉框菜单 */
+  .dropdown_menu {
+    border: $menu_border;
+    border-radius: $menu_radius;
+    margin: $line_high_normal * 0.3 0 0 0 !important;
+    padding: $menu_radius 0 $menu_radius 0;
+    background: $menu_color_normal;
+    color: $menu_text_normal;
+    box-shadow: $menu_shadow;
+    overflow: visible;
+
+    .dropdown_item {
+      padding: 0 $line_high_normal * 0.8 0 $line_high_normal * 0.8;
+      line-height: $line_high_large;
+      min-width: $line_high_large * 3;
+      font-size: $font_size_normal;
+      color: $menu_text_normal;
+      background: $menu_color_normal;
+
+      &:hover {
+        color: $menu_text_hover;
+        background: $menu_color_hover;
+      }
+
+      &:focus {
+        color: $menu_text_focus;
+        background: $menu_color_focus;
+      }
+
+      &:active {
+        color: $menu_text_active;
+        background: $menu_color_active;
+      }
+    }
+
+    .selected {
+      font-weight: bold;
+      color: $menu_text_active;
+      background: $menu_color_active;
+    }
+
+    .dropdown_item[disabled] {
+      color: $menu_text_disabled;
+      background: $menu_color_disabled;
+    }
+
+    > div[x-arrow] {
+      display: none !important;
+    }
+
+    &::after {
+      display: block;
+      border: $line_high_normal * 0.2 solid transparent;
+      border-bottom-color: $menu_color_normal;
+      content: '';
+      position: absolute;
+      top: -$line_high_normal * 0.19;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  /* 文本输入下拉菜单 */
+  .dropdown_input_menu {
+    border: $menu_border;
+    border-radius: $menu_radius;
+    margin: $line_high_normal * 0.3 0 0 0 !important;
+    padding: $menu_radius 0 $menu_radius 0;
+    background: $menu_color_normal;
+    color: $menu_text_normal;
+    box-shadow: $menu_shadow;
+    overflow: visible;
+
+    .el-scrollbar__wrap {
+      padding: 0;
+
+      li {
+        height: $line_high_large;
+        padding: 0;
+
+        > * {
+          padding: 0 $line_high_normal * 0.6 0 $line_high_normal * 0.6;
+          line-height: $line_high_large;
+          font-size: $font_size_normal;
+          color: $menu_text_normal;
+        }
+
+        > *[class*='selected'] {
+          font-weight: bold;
+          background: $menu_color_active;
+          color: $menu_text_active;
+        }
+
+        &:hover {
+          background: $menu_color_hover;
+
+          > * {
+            color: $menu_text_hover;
+          }
+        }
+
+        &:focus {
+          color: $menu_text_focus;
+          background: $menu_color_focus;
+
+          > * {
+            color: $menu_text_focus;
+          }
+        }
+
+        &:active {
+          background: $menu_color_active;
+
+          > * {
+            color: $menu_text_active;
+          }
+        }
+      }
+
+      li[class*='highlighted'] {
+        background: $menu_color_active;
+
+        > * {
+          color: $menu_text_active;
+        }
+      }
+    }
+
+    > div[x-arrow] {
+      display: none !important;
+    }
+
+    &::after {
+      display: block;
+      border: $line_high_normal * 0.2 solid transparent;
+      border-bottom-color: $menu_color_normal;
+      content: '';
+      position: absolute;
+      top: -$line_high_normal * 0.19;
+      left: 15%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

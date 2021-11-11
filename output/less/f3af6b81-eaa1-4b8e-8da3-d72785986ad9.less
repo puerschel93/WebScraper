@@ -1,0 +1,560 @@
+@background-color: #f8f8f8;
+@regular-text-color: #333333;
+@slide-color: #abeafa;
+@slide-title-color: #fff51f;
+@menu-level1-color: #26d2fc;
+@menu-level2-color: #75e3fe;
+@menu-level3-color: #81e6ff;
+@menu-active-color: @regular-text-color;
+@section-header-color: #707070;
+@corner-new-color: #e24602;
+@corner-hot-color: #faef03;
+@social-bg-color: #eaeaea;
+@facebook-color: #3b5997;
+@twitter-color: #3fccfd;
+@pinterest-color: #cb2027; 
+@footer-color: #373737;
+@email-color:  #faef03; 
+@footer-copyright-color: @regular-text-color;
+@footer-copyright-bg-color: #dad9d9;
+
+@max-width-left: 270px;
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.button {
+    display: block;
+    width: 125px;
+    height: 50px;
+    line-height: 50px;
+    background-color: @slide-title-color;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    outline: 2px solid transparent;
+    
+    &:hover {
+        color: #ffffff;
+    }
+
+    &:active {
+        outline: 2px solid #ffffff;
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.slide {
+    min-height: 700px;
+    background-color: @slide-color;
+    padding: 25px 0;
+    font-family: "Raleway", sans-serif;
+    background: url(../images/canine-dog-german-shepherd-38284.jpg) center center no-repeat;
+    
+    &-header {
+        height: 115px;
+        background: url("../images/Logo-My-Friend.png") center center no-repeat;
+        background-size: contain;
+    }
+    
+    &-title {
+        margin-top: 110px; 
+        max-width: 315px;
+        min-height: 230px;
+        color: @slide-title-color;
+    }
+    
+    &-title-header {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 34px;
+        margin: 0 0 5px 0;
+    }
+
+    &-title-text {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        margin: 0;
+    }
+
+    &-welcome {
+        margin-top: 175px;
+        max-width: @max-width-left;
+        min-height: 300px;
+        color: @regular-text-color;
+        background-color: @slide-title-color;
+        padding: 22px;
+    }
+
+    &-welcome-header {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 30px;
+        margin: 60px 0 24px 0;
+    }
+
+    &-welcome-text {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 14px;
+        font-style: italic;
+        margin: 0;
+    }
+}
+
+.social-logo-small {
+    float: right;
+    color: #ffffff;
+    
+    .slide & {
+        margin-top: 25px;    
+    }
+    
+    & a {
+        display: inline-block;
+        padding: 0 5px;
+        text-shadow: 1px 1px 1px grey;
+    }
+}
+
+.content {
+    background-color: @background-color;
+}
+
+.menu {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    max-width: @max-width-left;
+}
+
+.menu, .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.level1 {
+    background-color: @menu-level1-color;
+}
+
+.level2 {
+    background-color: @menu-level2-color;
+}
+
+.level3 {
+    background-color: @menu-level3-color;
+}
+
+li {
+    position: relative;
+    min-height: 37px;
+        
+    &.caption {
+        height: 66px;
+        padding: 22px 40px;
+    }
+
+    & > a {
+        display: block;
+        padding: 10px 40px;
+        color: #000000;
+    }
+    
+    & .submenu {
+        display: none;
+    }
+
+    &:hover .submenu {  
+        display: block;
+    }
+}
+
+@media all and (min-width: 992px) {
+    
+    li:hover .submenu {  
+        display: none;
+    }
+        
+    li:hover > .submenu {
+        display: block;
+        position: absolute;
+        width: 250px;
+        top: 0;
+        left: 100%;
+        z-index: 100;
+    }
+    
+    .submenu {
+        list-style: square;
+        padding-left: 40px;
+    }
+    
+    .submenu > li > a {
+        padding-left: 0;
+    }
+}
+        
+.menu > li:hover > a, li.caption {
+    color: #ffffff;
+    background-color: @menu-active-color;
+}
+
+.submenu > li > a > .select-arrow {
+    color: transparent;
+}
+
+.submenu > li:hover > a > .select-arrow {
+    color: #000000;
+}
+
+.select-arrow {
+    float: right;
+    margin-right: -35px;
+}
+
+.banner {
+    max-width: @max-width-left;
+    height: 300px;
+    margin-top: 30px;
+    background: url(../images/image-2018-04-10.jpg) center center no-repeat;
+    background-size: cover;
+    
+    &-text {
+        float: right;
+        margin-top: 130px;
+        max-width: 110px;
+        font-family: "Raleway", sans-serif;
+        color: @menu-level1-color;
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 36px;
+        font-style: italic;
+    }
+}
+
+.catalogue {
+    font-family: "Roboto", sans-serif;
+    background-color: @background-color;
+}
+
+.section-header {
+    min-height: 80px;
+    padding: 25px;
+    color: @section-header-color;
+    font-size: 22px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.product {
+    position: relative;
+    width: 260px;
+    padding: 10px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    
+    &-img {
+        height: 230px;
+    }
+
+    &-descr {
+        min-height: 70px;
+        padding-top: 24px;
+        font-weight: 900;
+        font-style: italic;
+        line-height: 18px;
+    }
+
+    &-name {
+        float: left;
+        max-width: 160px;
+        color: @regular-text-color;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    &-price {
+        float: right;
+        min-width: 80px;
+        text-align: right;
+        padding-right: 2px;
+    }
+}
+
+.corner {
+    width: 46px;
+    height: 46px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    &-new {
+       width: 0;
+	   height: 0;
+	   border-top: 46px solid @corner-new-color;
+	   border-left: 46px solid transparent;
+    }
+
+    &-hot {
+        width: 0;
+	   height: 0;
+	   border-top: 46px solid @corner-hot-color;
+	   border-left: 46px solid transparent;
+    }
+}
+
+.corner-text {
+    width: 23px;
+    height: 23px;
+    line-height: 23px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 9px;
+    font-weight: 400;
+    
+    &-hot {
+        color: #000000;
+    }
+
+    &-new {
+        color: #ffffff;
+    }
+}
+
+.product-img img, .banner-img img, .brand-img img, .instagram-img img {
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.price {
+    &:not(:empty)::before {
+        content: "\20AC.";
+    }
+}
+
+.actual-price {
+    color: @regular-text-color;
+    font-size: 18px;
+}
+
+.former-price {
+    color: rgba(255, 0, 0, 0.6);
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.brands {
+    min-height: 160px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.brand-img {
+    width: 100px;
+    padding: 10px 0;
+}
+
+.instagram {
+    background-color: @social-bg-color;
+
+    &-header {
+        min-height: 100px;
+        padding: 35px 0;
+        font-family: "Roboto", sans-serif;
+        color: @regular-text-color;
+        font-size: 22px;
+        font-weight: 900;
+        font-style: italic;
+        text-align: center;
+    }
+    
+    &-items {
+        min-height: 250px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &-id {
+        font-size: 18px;
+    }
+
+    &-item {
+        width: 180px;
+        height: 180px;
+        padding: 10px;
+        background-color: #ffffff;
+    }
+}
+
+.instagram-img, .banner-img {
+    height: 100%;
+}
+
+.social-logo-large {
+    width: 100%;
+    height: 150px;
+    color: #ffffff;
+    
+    & a {
+        display: block;
+        height: 100%;
+        text-align: center;
+        padding: 40px 0;
+    }
+}
+
+.logo-facebook a {
+    background-color: @facebook-color;
+}
+
+.logo-twitter a {
+    background-color: @twitter-color;
+}
+
+.logo-pinterest a {
+    background-color: @pinterest-color; 
+}
+
+.footer {
+    background-color: @footer-color;
+    min-height: 300px;
+    color: #ffffff; 
+    padding-top: 50px;
+}
+
+.footer-block {
+    padding: 25px 0;
+}
+
+.footer-block-title {
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.footer-block-content {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-top: 28px;
+}
+
+.footer-block-content-wide {
+    line-height: 12px;
+}
+
+.footer-block-content a {
+    display: block;
+}
+
+input {
+    line-height: 1.25em;
+    padding: 5px;
+    font-weight: 700;
+    border: 0;
+    max-width: 100%;
+    
+    &[type="email"] {
+        color: @regular-text-color;
+        background-color: @slide-title-color;
+    }
+
+    &[type="email"]:focus {
+        color: #000000;
+        background-color: #ffffff;
+    }
+
+    &[type="submit"] {
+        color: #ffffff;
+        background-color: #000000;
+        outline: 2px solid transparent;
+    }
+
+    &[type="submit"]:active {
+        outline: 2px solid @slide-title-color;
+    }
+}
+
+form {
+    margin-top: 20px;
+    width: inherit;
+}
+
+.payment {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+p.contact {
+    font-size: 14px;
+    font-weight: 400;
+    
+    & a {
+        display: inline;
+        color: @email-color; 
+    }
+}
+
+span.fixed-width {
+    display: inline-block;
+    min-width: 25%;
+}
+
+.footer-copyright {
+    background-color: @footer-copyright-color;
+    min-height: 50px;
+    font-family: "Roboto", sans-serif;
+    color: @footer-copyright-bg-color;
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 15px;
+}
+
+.top-overlap {
+    position: relative;
+    top: -15px;
+    margin-bottom: -15px;
+}

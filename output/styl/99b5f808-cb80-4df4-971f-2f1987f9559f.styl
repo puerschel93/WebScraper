@@ -1,0 +1,419 @@
+#post-title
+  font-size: 1.5rem
+  line-height: 1.5
+
+  &.plain
+    margin-bottom: 0.3rem
+    border-bottom: 1px solid $light-grey
+    cursor: pointer
+    transition: all 0.2s ease-in-out
+
+    &:hover
+      border-bottom: 1px solid $light-blue
+      color: $light-blue
+
+.post-featuredImage
+  margin: 20px 0 0 0
+  text-align: center
+  img 
+    box-shadow: 7px 5px black
+    padding: 2px 0
+    &:hover
+      box-shadow: 7px 5px black
+      padding: 2px 0
+
+#post
+  overflow: hidden
+
+  #post-meta
+    color: $grey
+
+    a
+      text-decoration: none
+
+    i.fa.fa-comment-o
+      margin-right: 0.2rem
+
+#top-container
+  position: relative
+  margin-bottom: 1rem
+  background-color: $dark-black
+  background-attachment: fixed
+  background-position: center
+  background-size: cover
+  opacity: 1
+
+  &.no-bg
+    $bg-svg += ""
+    background-color: $light-blue
+    background-image: url($bg-svg) !important
+    background-size: auto
+
+  &.plain
+    margin-bottom: 1rem
+    height: 56px
+
+  a
+    color: $light-grey
+    text-decoration: none
+    transition: all 0.3s ease-out
+
+    &:hover
+      color: $white
+
+  #top-img
+    padding: 0
+    border: none
+
+  #site-name
+    font-weight: bold
+    cursor: pointer
+
+  #post-info
+    padding: 4rem 1rem
+    width: 100%
+    color: $light-grey
+    text-align: center
+
+  #post-title
+    font-size: 1.5rem
+    line-height: 1.5
+
+  i.fa.fa-angle-right
+    margin: 0 0.3rem 0 0.2rem
+
+.post-meta
+  &__separator
+    margin: 0 0.3rem
+
+  &__icon
+    margin-right: 0.2rem
+
+  &__tag-list
+    margin-bottom: 0.5rem
+    margin-top: 0.5rem
+
+
+  &__tags
+    margin-right: 0.4rem
+    margin-bottom: 0.4rem
+    padding: 0.1rem 0.3rem
+    border: 1px solid darkslateblue
+    border-radius: 0.7rem
+    background: $white
+    color: darkslateblue
+    text-decoration: none
+    font-size: 12px
+    cursor: pointer
+    transition: all 0.2s ease-in-out
+    display: inline-block;
+
+    &:hover
+      background: darkslateblue
+      color: $white
+
+.layout
+  margin: 0 auto
+  width: $content-width
+  opacity: 1
+
+#content-inner
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    cursor: pointer
+
+    &:before
+      margin-right: 0.3rem
+      color: $light-red
+      content: "\f02e"
+      font: normal normal normal 14px / 1 FontAwesome
+      font-size: 0.8rem
+      transition: all 0.2s ease-out
+
+    &:hover
+      &:before
+        margin-right: 0.4rem
+        color: $light-blue
+
+  ol,
+  ul
+    margin-top: 0.4rem
+    padding: 0 0 0 0.8rem
+    list-style: none
+    counter-reset: li
+
+    p
+      margin: 0
+
+    ol,
+    ul
+      padding-left: 0.5rem
+
+    li
+      position: relative
+      margin: 0.2rem 0
+      padding: 0.1rem 0.5rem 0.1rem 1.5rem
+
+      &:hover
+        &:before
+          transform: rotate(360deg)
+
+      &:before
+        position: absolute
+        top: 0
+        left: 0
+        background: $light-blue
+        color: $white
+        cursor: pointer
+        transition: all 0.3s ease-out
+
+  ol
+    li
+      &:before
+        margin-top: 0.2rem
+        width: w = 1.2rem
+        height: h = w
+        border-radius: 0.5 * w
+        content: counter(li)
+        counter-increment: li
+        text-align: center
+        font-size: 0.6rem
+        line-height: h
+
+  ul
+    li
+      &:hover
+        &:before
+          border-color: $ruby
+
+      &:before
+        $w = 0.3rem
+        top: 10px
+        margin-left: 0.45rem
+        width: w = $w
+        height: h = w
+        border: 0.5 * w solid $light-blue
+        border-radius: w
+        background: $white
+        content: ""
+        line-height: h
+
+#post-content
+  margin-bottom: 1rem
+  font-size: 0.8rem
+
+a
+  color: $a-link-color
+  transition: all 0.2s
+
+  &:hover
+    color: $light-blue
+    text-decoration: none
+
+  &#site-name
+    text-decoration: none
+
+a.fancybox
+  outline: none
+
+  &:focus
+    outline: none
+
+  display: inline-block
+  width: 100%
+  text-align: left
+
+img
+  padding: $img-border-padding
+  max-width: 100%
+  border: 1px solid $img-border-color
+  transition: all 0.2s
+
+  &:hover
+    box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5)
+
+.fa-clipboard
+  position: fixed
+  margin-top: 10px
+  right: 10px
+  color: $highlight-aqua
+  cursor: pointer
+  transition: color 0.2s
+
+  &:hover
+    color: darken($highlight-aqua, 20%)
+
+.copy-notice
+  position: absolute
+  top: 6px
+  right: 0
+  background: $highlight-background
+  color: $highlight-aqua
+  opacity: 0
+
+.post-copyright
+  position: relative
+  margin-bottom: 1rem
+  padding: 0.5rem 0.8rem
+  border: 1px solid $light-grey
+  transition: box-shadow 0.3s ease-in-out
+
+  &:before
+    position: absolute
+    top: t = 0.5rem
+    right: t
+    width: w = 0.8rem
+    height: w
+    border-radius: w
+    background: $light-blue
+    content: ""
+
+  &:after
+    position: absolute
+    top: t = 0.7rem
+    right: t
+    width: w = 0.4rem
+    height: w
+    border-radius: w
+    background: $white
+    content: ""
+
+  &:hover
+    box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5)
+
+  &-meta
+    color: $light-blue
+    font-weight: bold
+
+.post-qr-code
+  text-align: center
+
+  &-item
+    display: inline-block
+    margin-bottom: 0.8rem
+
+  img
+    margin: 0 1rem 0.1rem 1rem
+    width: w = 10rem
+    height: w
+
+  &__desc
+    color: $grey
+
+
+
+#content-outer .articlePostContainer
+  // display: flex
+  // flex-wrap: nowrap
+
+  .sidebar-toc
+    background: #f7f7f7;
+    float: left;
+    margin-right: 40px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 16px 12px 16px 16px;
+    width: 256px;
+
+    ol,
+    li
+      list-style: none
+      padding: 0;
+      
+      &:before
+        display: none
+
+    ol
+      margin-top: 0.2rem
+      padding-left: 0.4rem
+
+    &__title
+      padding-right: 0.5rem
+      text-align: center
+      font-size: unit(0.9 * $rem, 'px')
+
+    .toc-link
+      display: block
+      padding-left: 0.2rem
+      border-right: 3px solid transparent
+      text-decoration: none
+      transition: all 0.2s ease-in-out
+
+      &.active
+        border-right-color: darken($cyan, 20%)
+        background: $cyan
+        color: $white
+
+    &__progress
+      position: relative
+      margin-top: -0.3rem
+      padding-left: 0.6rem
+      color: $cyan
+      margin: 5px 0 15px 0
+
+      .progress-notice
+        margin-right: 0.4rem
+
+      .progress-num
+        display: inline-block
+        min-width: 0.9rem
+
+      &-bar
+        width: 0
+        height: 1px
+        background: $cyan
+
+
+  .fixed 
+    position: fixed
+    top: 80px
+
+  .postArticle
+    margin-left: 296px;
+    position: relative;
+    width: calc(100% - 296px);
+
+
+@media screen and (max-width: $sm)
+  .layout
+    margin: 0 30px
+    width: auto
+
+  .post-qr-code
+    img
+      width: w = 6rem
+      height: w
+
+  #top-container
+    #post-title
+      font-size: 1.3rem
+      line-height: 1.5
+
+  #post-title
+    font-size: 1.3rem
+    line-height: 1.5
+  
+  #post-content
+    font-size: 0.9rem
+
+  .sidebar-toc {
+    display: none
+  }
+
+  #content-outer .articlePostContainer .postArticle {
+    margin-left: 0;
+    width: 100%;
+  }
+
+@media screen and (min-width: $sm)
+  #top-container
+    #post-title
+      font-size: 2rem
+
+@media screen and (min-width: $md)
+  .layout
+    width: $content-large-width

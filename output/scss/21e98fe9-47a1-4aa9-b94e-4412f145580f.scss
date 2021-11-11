@@ -1,0 +1,272 @@
+:root {
+    --black: #232931;
+    --light-black: #393E46;
+    --light-blue: #4ECCA3;
+    --white: #EEEEEE;
+    --bg-gradient {
+        background: rgb(35,41,49);
+        background: -moz-linear-gradient(180deg, rgba(35,41,49,1) 0%, rgba(57,62,70,1) 15%, rgba(78,204,163,1) 85%, rgba(238,238,238,1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(35,41,49,1) 0%, rgba(57,62,70,1) 15%, rgba(78,204,163,1) 85%, rgba(238,238,238,1) 100%);
+        background: linear-gradient(180deg, rgba(35,41,49,1) 0%, rgba(57,62,70,1) 15%, rgba(78,204,163,1) 85%, rgba(238,238,238,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#232931",endColorstr="#eeeeee",GradientType=1);
+    }
+    --font-non-reader {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    --font-reader {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+}
+
+html, body, ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.sosmed-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+header {
+    @extend --font-non-reader;
+
+    ul {
+        display: flex;
+    }
+
+    a, img {
+        text-decoration: none;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 1080px;
+        margin: auto;
+        padding: 1em 0;
+    }
+
+    .contact-nav {
+        display: flex;
+        background-color: var(--black);
+
+        .container {
+            padding: .35em 0;
+        }
+
+        a, img {
+            color: var(--white);
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            li {
+                margin-right: 2em;
+            }
+        }
+
+        .sosmed {
+            li {
+                margin-left: .5em;
+            }
+        }
+    }
+
+    .nav {
+        // background-color: var(--white);
+        position: absolute;
+        width: 100%;
+        z-index: 9999;
+
+        a, img {
+            color: var(--black);
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bolder;
+            color: var(--white);
+            letter-spacing: .15em;
+
+            span {
+                color: var(--light-blue);
+            }
+        }
+
+        nav {
+            ul > li {
+                margin-left: 1.5em;
+                
+                a {
+                    color: var(--white);
+                }
+
+                .active {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+main {
+    @extend --font-reader;
+
+    .welcome {
+        position: relative;
+        height: calc(100vh - 38px);
+        min-height: 700px;
+
+        &:before {
+            content: '';
+            left: 0;
+            top: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: table;
+            background: url('images/bg-welcome.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0,0,0,.5);
+            background-blend-mode: multiply;
+            z-index: -1;
+        }
+
+        .container {
+            width: 1080px;
+            height: 100%;
+            margin: auto;
+            padding: 5.75em 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            @extend --font-non-reader;
+
+            .col-left {
+                text-align: center;
+                img {
+                    width: 275px;
+                    height: 275px;
+                    border-radius: 25px;
+                    margin-bottom: 1.75em;
+                }
+
+                h1 {
+                    font-size: 3em;
+                    margin: 0;
+                    color: var(--white);
+                    letter-spacing: .075em;
+
+                    span {
+                        color: var(--light-blue);
+                    }
+                }
+
+                margin-right: 75px;
+            }
+            
+            .col-right {
+                display: flex;
+                flex-direction: column;
+
+                h1 {
+                    font-size: 5em;
+                    margin: 0;
+                    color: lightblue;
+                    letter-spacing: .075em;
+                }
+    
+                h2 {
+                    font-size: 2em;
+                    color: var(--white);
+                    letter-spacing: .45em;
+                    font-weight: lighter;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .container-btn-about-me {
+            position: absolute;
+            top: calc(80% + 50px);
+            left: 0;
+            width: 100%;
+            text-align: center;
+
+            button {
+                @extend --font-non-reader;
+                cursor: pointer;
+                max-width: 320px;
+                width: 100%;
+                padding: .45em;
+                border-radius: 10px;
+                border: 2px solid var(--light-blue);
+                color: var(--white);
+                font-size: 1.5em;
+                font-weight: bold;
+                background: transparent;
+                transition: all 0.25s;
+
+                @keyframes arrdanimate {
+                    0% {
+                        top: 0;
+                    }
+
+                    50% {
+                        top: -5px;
+                    }
+
+                    100% {
+                        top: 0;
+                    }
+                }
+
+                &:hover {
+                    background-color: var(--light-blue);
+                    transition: all 0.25s;
+
+                    span {
+                        animation: linear arrdanimate .75s infinite;
+                    }
+                }
+
+                span {
+                    position: relative;
+                    top: -2.5px;
+                    font-size: .75em;
+                    // animation: linear arrdanimate 5s infinite;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    .container {
+        width: 1080px;
+        margin: auto;
+
+        ul {
+            display: flex;
+        }
+    }
+}

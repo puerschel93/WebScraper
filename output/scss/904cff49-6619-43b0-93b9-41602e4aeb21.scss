@@ -1,0 +1,307 @@
+@import "core";
+
+.widget-links {
+	ul {
+		> li {
+			border-bottom-width: 0px;
+
+			> a {
+				padding: 0.7rem 0 0.7rem 1.8rem;
+
+				@include stbMediaMin("xxl") {
+					padding: 0.9rem 0 0.7rem 2.3rem;
+
+					@include context("li", "li:first-child") {
+						@include variant(".widget-links-megamenu") {
+							.menu-close & {
+								padding-top: 1rem;
+
+								@include stbMediaMin("xxl") {
+									padding-top: 1rem;
+								}
+		
+								@include stbMediaMin("xxxl") {
+									padding-top: 1.4rem;
+								}
+							}
+						}
+					}
+				}
+
+				@include context("li", "li:last-child") {
+					@include context("li:last-child", "li.with-sub:last-child") {
+						padding-bottom: 0.7rem;
+					}
+
+					@include variant(".widget-links-megamenu") {
+						.menu-close & {
+							padding-bottom: 0.9rem;
+
+							@include stbMediaMin("xxl") {
+								padding-bottom: 0.9rem;
+							}
+
+							@include stbMediaMin("xxxl") {
+								padding-bottom: 1.2rem;
+							}
+						}
+					}
+				}
+
+				@include variant(".widget-links-megamenu") {
+					.menu-close & {
+						border-top-width: 0px;
+						@include text(1.4rem, 1.5, 500);
+						padding: 1rem 1.5rem 0.9rem 6.7rem;
+						border-radius: 0 4px 4px 0;
+
+						@include stbMediaMin("xxl") {
+							padding: 1rem 2.4rem 0.9rem 8.8rem;
+						}
+
+						@include stbMediaMin("xxxl") {
+							@include text(1.6rem);
+							padding: 1.4rem 3rem 1.2rem 11rem;
+							border-radius: 0 0.5rem 0.5rem 0;
+						}
+					}
+				}
+
+				> .icon {
+					@include text(1.4rem);
+
+					@include stbMediaMin("xxl") {
+						@include text(1.6rem);
+					}
+
+					@include variant(".widget-links-megamenu") {
+						.menu-close & {
+							left: 4.1rem;
+							@include text(1.6rem);
+
+							@include stbMediaMin("xxl") {
+								left: 5.6rem;
+							}
+
+							@include stbMediaMin("xxxl") {
+								left: 7rem;
+								@include text(2rem);
+							}
+						}
+					}
+
+					&:not([data-size]) {
+						top: 1rem;
+
+						@include stbMediaMin("xxl") {
+							top: 1.2rem;
+						}
+
+						@include context("li", "li:first-child") {
+							top: 3px;
+
+							@include variant(".widget-links-megamenu") {
+								.menu-close & {
+									top: 1.2rem;
+	
+									@include stbMediaMin("xxxl") {
+										top: 1.5rem;
+									}
+								}
+							}
+						}
+
+						@include variant(".widget-links-megamenu") {
+							.menu-close & {
+								top: 1.2rem;
+
+								@include stbMediaMin("xxxl") {
+									top: 1.5rem;
+								}
+							}
+						}
+
+						&.svgicon {
+							top: 1rem;
+
+							@include stbMediaMin("xxl") {
+								top: 1.2rem;
+							}
+
+							@include context("li", "li:first-child") {
+								top: 3px;
+
+								@include variant(".widget-links-megamenu") {
+									.menu-close & {
+										top: 1.2rem;
+		
+										@include stbMediaMin("xxxl") {
+											top: 1.5rem;
+										}
+									}
+								}
+							}
+
+							@include variant(".widget-links-megamenu") {
+								.menu-close & {
+									top: 1.2rem;
+	
+									@include stbMediaMin("xxxl") {
+										top: 1.5rem;
+									}
+								}
+							}
+						}
+					}
+
+					&[class*="default-"] {
+						width: 1.4rem;
+						height: 1.4rem;
+
+						@include stbMediaMin("xxl") {
+							width: 1.6rem;
+							height: 1.6rem;
+						}
+
+						&::before {
+							top: 4px;
+							width: 0.6rem;
+							height: 0.6rem;
+
+							@include stbMediaMin("xxl") {
+								top: 4px;
+								width: 0.8rem;
+								height: 0.8rem;
+							}
+						}
+					}
+				}
+			}
+
+			&.with-sub {
+				> ul {
+					padding-left: 1.8rem;
+
+					@include stbMediaMin("xxl") {
+						padding-left: 2.3rem;
+					}
+
+					> li {
+						&:first-child {
+							> a {
+								padding-top: 0.7rem;
+								border-top-width: 0px;
+
+								@include stbMediaMin("xxl") {
+									padding-top: 0.9rem;
+								}
+
+								> .icon {
+									&:not([data-size]) {
+										top: 1rem;
+
+										@include stbMediaMin("xxl") {
+											top: 1.2rem;
+										}
+
+										&.svgicon {
+											top: 1rem;
+
+											@include stbMediaMin("xxl") {
+												top: 1.2rem;
+											}
+										}
+									}
+								}
+							}
+						}
+
+						&:last-child {
+							padding-bottom: 0.7rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include skin() using ($class, $skin) {
+	.widget-links {
+		ul.#{$class} {
+			> li {
+				> a {
+					> .icon {
+						&:not([data-size]) {
+							color: $skin_color;
+
+							&.svgicon {
+								svg {
+									* {
+										fill: $skin_color;
+									}
+								}
+							}
+
+							@include variant(".widget-links-megamenu") {
+								.menu-close & {
+									color: skinGet($skin, nav_link);
+
+									@include context("a", "a:hover") {
+										@media (hover: hover) {
+											color: $skin_color;
+										}
+									}
+
+									@include context("li", "li.active") {
+										color: $skin_color;
+									}
+
+									&.svgicon {
+										svg {
+											* {
+												fill: skinGet($skin, nav_link);
+
+												@include context("a", "a:hover") {
+													@media (hover: hover) {
+														fill: $skin_color;
+													}
+												}
+			
+												@include context("li", "li.active") {
+													fill: $skin_color;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+
+						&[class*="default-"] {
+							&::before {
+								background-color: $skin_color;
+							}
+						}
+					}
+
+					@include variant(".widget-links-megamenu") {
+						.menu-close & {
+							background-color: rgba($skin_color, 0);
+
+							&:hover {
+								@media (hover: hover) {
+									background-color: rgba($skin_color, 0.1);
+								}
+							}
+
+							@include context("li", "li.active") {
+								background-color: rgba($skin_color, 0.1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

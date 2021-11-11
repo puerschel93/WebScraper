@@ -1,0 +1,122 @@
+page {
+  background-color: #eee;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+.payorder {
+  .restaurant {
+    font-size: 28rpx;
+    color: #333;
+  }
+  .ocunt {
+    line-height: 75rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #999;
+    font-size: 24rpx;
+  }
+  .orderList {
+    background-color: #fff;
+    margin: 0 50rpx;
+    position: relative;
+    .time {
+      position: relative;
+      margin: 0 20rpx;
+      text-align: center;
+      line-height: 70rpx;
+      font-size: 24rpx;
+      color: #999;
+      border-bottom: 1rpx dashed #eee;
+    }
+    .time::after ,.time::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 30rpx;
+      height: 30rpx;
+      background-color: #eee;
+      border-radius: 50%;
+      top: 60rpx;
+    }
+    .time::before {
+      left: -37rpx;
+    }
+    .time::after {
+      right: -37rpx;
+    }
+    .orderList-item-top, .orderList-item-one {
+      display: flex;
+      justify-content: space-around;
+      > text {
+        width: 33.33%;
+        text-align: center;
+        font-size: 24rpx;
+        color: #999;
+        line-height: 60rpx;
+      }
+    }
+    .concessional-rate {
+      margin: 0 0 10rpx 0;
+      .picker {
+        //border: 1rpx solid #eee;
+        font-size: 24rpx;
+        display: flex;
+        padding-left: 46rpx;
+        padding-right: 60rpx;
+        justify-content: space-between;
+        align-items: center;
+        color: #999;
+        //border-radius: 10rpx;
+      }
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1rpx dashed #eee;
+      line-height: 70rpx;
+      font-size: 24rpx;
+      padding: 0 50rpx;
+      padding-right: 70rpx;
+    }
+  }
+  .orderList::after, .orderList::before {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
+  .orderList::after {
+    width: 110%;
+    height: 10rpx;
+    left: -30rpx;
+    border-radius: 5rpx;
+    background-color: #d4d6d8;
+    z-index: 99;
+  }
+  .orderList::before {
+    top: 7rpx;
+    width: 105%;
+    height: 5rpx;
+    left: -15rpx;
+    border-radius: 5rpx;
+    background-color: #adb3b9;
+    z-index: 100;
+  }
+}
+.tip {
+  padding: 0 50rpx;
+  text-align: right;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 80rpx;
+}
+.start-pay {
+  position: fixed;
+  bottom: 0;
+  width: 93%;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 10rpx;
+  background-color: #f00;
+}

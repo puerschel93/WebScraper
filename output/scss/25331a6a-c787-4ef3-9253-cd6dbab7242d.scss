@@ -1,0 +1,446 @@
+*{
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);  
+}
+
+header{
+padding: 60px;
+
+    .foto__perfil{
+        position: absolute;
+        width: 150px;
+        left: 30%;
+        top: -15px;
+    }
+    .title{
+       position: absolute;
+       font-weight: bold;
+       top: 4.50vh;
+       left: 14vh;
+       font-size: 70px 
+    }
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    background-color: #333;
+    .barra__nav{
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    .barra__nav:hover{
+        background-color: cornflowerblue;
+        color: coral;
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+
+    aside{
+        flex: 50%;
+        padding: 20px;
+    }
+
+    .sandwiches{
+        width: 325px;
+        border-radius: 50%;
+        opacity: .5;
+        transition: all 2s;
+    }
+        .sandwiches:hover{
+        opacity: 1;
+        transform: scale(1.03); 
+    }
+}
+    .nosotros{
+        flex: 50%;
+        padding: 20px;
+        position: absolute;
+        top: 120vh;
+
+        .canape{
+        width: 325px;
+        border-radius: 50%;
+        opacity: .5;
+        transition: all 2s;
+    }
+        .canape:hover{
+        opacity: 1;
+        transform: scale(1.03); 
+    }
+}
+    .mesa__dulce{
+        flex: 50%;
+        padding: 20px;
+        position: absolute;
+        top: 85vh;
+        left: 1px;
+
+        .tortas{
+            width: 325px;
+            border-radius: 45%;
+            opacity: .5;
+            transition: all 2s;
+        }
+        .tortas:hover{
+            opacity: 1;
+            transform: scale(1.03);
+        }
+    }
+    .carrousel__entero{
+        flex: 50%;
+        padding: 40px;
+    }   
+        .carousel{
+            position: absolute;
+            top: 179.6vh;
+            left: 9.6%;
+            border: #333 solid;
+            
+            .san1{
+                width: 330px;
+                height: 300px;
+            }
+            .san2{
+                width: 330px;
+                height: 300px;
+            }
+            .san3{
+                width: 330px;
+                height: 300px;
+            }
+        }
+    
+    
+    .ubicacion{
+        position: relative;
+        font-size: 25px;
+        text-align: center;
+        top: 90vh;
+        height: 59vh;
+        flex: 50%;
+
+        .foto__mapa{
+            width: 350px;
+            border-radius: 40%;
+            transition: all 2s;
+            position: relative;
+            top: 4vh;
+        
+        .foto__mapa:hover{
+            transform: scale(1.15);
+            border-radius: 0ch;
+        
+        }
+    }
+}
+
+footer{
+    position: relative;
+    top: 95vh;
+    padding: 20px;
+    text-align: center;
+}
+
+/* AQUI COMIENZA EL CATALOGO*/
+
+.catalogo{
+        position: absolute;
+        top: 45vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .fotos{
+            width: 500px;
+            height: 350px;
+            margin: 2px;
+            opacity: .5;
+            border: 2px double rgba(255, 124, 2, 0.87);    
+    }
+        .fotos:hover{
+            opacity: 1;
+            border: black solid 2px;
+        }
+}
+
+.pie__pagina{
+    position: absolute;
+    top: 130vh;
+    flex: 100%;
+
+}
+
+
+/* AQUI COMIENZA EL RESPONSIVE*/
+
+@media screen and (max-width: 360px){
+    nav, .row{
+        flex-direction: column;
+    }
+    .title{
+        display: none;
+    }
+
+    .carousel{
+        display: none;
+    }
+    .nosotros{
+        position: relative;
+        top: 9vh;
+    }
+    .ubicacion{
+        position: relative;
+        top: 54vh;
+    }
+    footer{
+        position: relative;
+        top: 85vh;
+        .logo__instagram{
+            width: 75px;
+        }
+    }
+
+    }
+@media screen and (max-width: 760px) {
+    .title{
+        display: none;
+    }
+    .carousel{
+        display: none;
+    }
+    .ubicacion, footer{
+        position: relative;
+        top: 0vh;
+        padding-bottom: 70vh;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    header{
+        position: relative;
+        left: 25%;
+    
+    .foto__perfil{
+        position: absolute;
+        left: 0;
+        }
+    .title{
+        position: absolute;
+        left: 18%;
+    }    
+    }
+
+    .row{
+        font-size: 20px;
+        .nosotros{
+            flex: 50%;
+            position: relative;
+            top: 0vh;
+        
+        .texto{
+            text-align: center;
+        }
+        }
+        aside{
+            flex: 50%;
+        }
+    }
+    .mesa__dulce{
+        font-size: 20px;
+        flex: 50%;
+        position: relative;
+        top: 0vh;    
+    }
+    .carrousel__entero{
+        flex: 50%;
+        padding: 40px;
+    }   
+        .carousel{
+            position: absolute;
+            top: 169vh;
+            left: 9.6%;
+            border: #333 solid;
+            
+            .san1{
+                width: 550px;
+                height: 450px;
+            }
+            .san2{
+                width: 550px;
+                height: 450px;
+            }
+            .san3{
+                width: 550px;
+                height: 450px;
+            }
+        }
+        footer{
+            .logo__instagram{
+                width: 75px;
+            }
+        }
+}
+
+@media screen and (max-width: 1024px) {
+   
+    header{
+        position: relative;
+    
+    .foto__perfil{
+        position: absolute;
+        left: 0;
+        }
+    .title{
+        position: absolute;
+        left: 13%;
+        top: 34%;
+    }    
+    }
+
+    .row{
+        font-size: 20px;
+        text-align: center;
+        .nosotros{
+            flex: 50%;
+            position: relative;
+            top: 0vh;
+        
+        .texto{
+            text-align: center;
+        }
+        }
+        aside{
+            flex: 50%;
+        }
+    }
+    .mesa__dulce{
+        text-align: center;
+        font-size: 20px;
+        flex: 50%;
+        padding: 20px;
+        position: relative;
+        top: 20vh;
+        left: 58%;  
+    .tortas{
+        width: 400px;
+        height: 300px;
+    }
+    }
+    .carrousel__entero{
+        flex: 50%;
+        padding: 40px;
+    }   
+        .carousel{
+            position: absolute;
+            top: 210vh;
+            left: 24%;
+            border: #333 solid;
+            
+            .san1{
+                width: 550px;
+                height: 450px;
+            }
+            .san2{
+                width: 550px;
+                height: 450px;
+            }
+            .san3{
+                width: 550px;
+                height: 450px;
+            }
+        } 
+    footer{
+        .logo__instagram{
+            width: 75px;
+        }
+    }
+}
+    
+@media screen and (min-width: 1024px) {
+   
+    header{
+        position: relative;
+    
+    .foto__perfil{
+        position: absolute;
+        left: 0;
+        }
+    .title{
+        position: absolute;
+        top: 38%;
+    }    
+    }
+
+    .row{
+        font-size: 20px;
+        text-align: center;
+        .nosotros{
+            flex: 50%;
+            position: relative;
+            top: 0vh;
+        
+        .texto{
+            text-align: center;
+        }
+        }
+        aside{
+            flex: 50%;
+        }
+    }
+    .mesa__dulce{
+        text-align: center;
+        font-size: 20px;
+        flex: 50%;
+        padding: 20px;
+        position: relative;
+        top: 20vh;
+        left: 58%;  
+    .tortas{
+        width: 400px;
+        height: 300px;
+    }
+    }
+    .carrousel__entero{
+        flex: 50%;
+        padding: 40px;
+    }   
+        .carousel{
+            position: absolute;
+            top: 150vh;
+            left: 39%;
+            border: #333 solid;
+            
+            .san1{
+                width: 550px;
+                height: 450px;
+            }
+            .san2{
+                width: 550px;
+                height: 450px;
+            }
+            .san3{
+                width: 550px;
+                height: 450px;
+            }
+        } 
+    footer{
+        .logo__instagram{
+            width: 75px;
+        }
+    }
+}
+

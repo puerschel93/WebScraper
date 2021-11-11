@@ -1,0 +1,556 @@
+i{
+  font-style normal;
+}
+.cart-thead{display: block;border: 1px solid #EDEDED; height: 40px;  line-height: 40px; background: #FAFAFB; box-sizing: border-box;color :#333;}
+.cart-thead .column{float: left; display:table-cell; box-sizing:border-box; text-align:center;}
+.cart-thead .t-checkbox{padding-left: 16px; width: 20%; text-align:left;}
+.cart-thead .t-goods{width: 40%; text-align:center;}
+.cart-thead .t-props{padding: 0 20px;  width: 15%; text-align:left;}
+.cart-thead .t-price{padding-right: 40px; width:30%;}
+.cart-thead .t-quantity{width:30%; text-align: center;}
+.cart-thead .t-sum{ padding-right: 40px; width:20%;}
+.cart-thead .t-action{width:15%;}
+.cart-thead .t-goods-cart{width: 20%; text-align:left;}
+.cart-thead .t-price-cart{padding-right: 40px; width:20%;}
+.cart-thead .t-quantity-cart{width:20%; text-align: center;}
+.cart-thead .t-sum-cart{width:20%;}
+.cart-thead .t-action-cart{width:20%;}
+
+.shop-cart-box{
+  mb(60)
+  min-height 600px
+}
+.cart-checkbox{
+  display flex;
+  align-items center;
+  justify-content flex-start;
+}
+.checker{
+  display inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background-image url(../../assets/images/weigouxuanyouhuo_ic@3x.png)
+  background-size contain
+  background-repeat no-repeat
+  background-position center
+  cp()
+}
+.checked{
+  background-image url(../../assets/images/yigouxuan.png)
+}
+.cart-group{
+  width 100%;
+}
+.cart-title-wrap{
+  padding-left 16px;
+  margin 20px 0 12px;
+  display flex;
+  align-items center;
+  justify-content space-between;
+}
+.cart-title-wrap-left{
+  display flex;
+  align-items center;
+  justify-content flex-start;
+  color #333;
+  position relative
+  .dealer-coupon{
+    position absolute
+    right 0
+    .receive-btn{
+      w(66)
+      h(20)
+      background-image url(../../assets/images/lingquan.png)
+      background-size contain
+      background-repeat no-repeat
+      background-position center
+      flex()
+      align-items center
+      cursor pointer
+      i{
+        ml(40)
+        w(14)
+        h(14)
+        background-image url(../../assets/images/ic_xiajiantou_hong.png)
+        background-size contain
+        background-repeat no-repeat
+        background-position center
+        transform rotate(0deg)
+        -webkit-transition all .3s
+        transition all .3s
+      }
+      .flip{
+        transform rotate(180deg)
+      }
+    }
+  }
+}
+.cart-title-wrap-right{
+  color #666;
+  min-width 200px
+  text-align right
+  .gather-btn{
+    ml(12)
+    cp()
+    &:hover{
+      c(#E53935)
+    }
+  }
+}
+.cart-goods-box{
+  border-top 2px solid #BDBDBD;
+  border-bottom 1px solid #EDEDED;
+  border-left 1px solid #EDEDED;
+  border-right 1px solid #EDEDED;
+}
+.notice-tag-column{
+  height 50px;
+  display flex;
+  align-items center;
+  font-size 12px;
+  padding 0 24px 0 16px;
+  .label{
+    font-size 10px;
+    color #E53935;
+    border 1px solid #E53935;
+    border-radius 2px;
+    width 28px;
+    height 18px;
+    line-height 18px;
+    text-align center;
+    box-sizing border-box;
+  }
+  .content{
+    color #666;
+    margin 0 16px 0 8px;
+  }
+  .btn{
+    color #333;
+    cp()
+    &:hover{
+      c(#E53935)
+    }
+  }
+}
+.cart-goods-list{
+  border-top 1px solid #ededed;
+}
+.settlement-group{
+  bg(#FAFAFB)
+  border 1px solid #ededed;
+  height 56px;
+  c(#666)
+  font-size 12px;
+/*  flex()
+  align-items center;
+  justify-content space-between;*/
+  box-sizing border-box
+  .settlement-left{
+/*    flex()
+    flex-center()*/
+    float left
+    ml(16)
+    mt(12)
+    .all-select{
+      mt(8)
+      flex()
+      flex-center()
+      float left
+      cp()
+    }
+    .delete{
+      mauto(16)
+      cp()
+      float left
+      mt(9)
+    }
+    .batch-fav{
+      border 1px solid #E5E5E5
+      bg(#fff)
+      padding 0 6px
+      line-height 28px;
+      height 28px;
+      cp()
+      float left
+    }
+    .batch-fav:hover{
+      bg(#E53935)
+      c(#fff)
+      border:none;
+    }
+  }
+  .settlement-right{
+/*    flex()
+    flex-center()*/
+    float right
+    c(#666)
+    text-align right;
+    .selected{
+      float right
+      mt(22)
+      i{
+        c(#E53935)
+      }
+    }
+    .total{
+/*      flex()
+      flex-direction column;*/
+      float right
+      margin 12px 15px 0 30px;
+      text-align left;
+      span{
+        display block
+      }
+      span:first-child{
+        i{
+          font-size 14px;
+          c(#E53935)
+          fb()
+        }
+        mb(6)
+      }
+    }
+    .gobuy{
+      float right
+      bg(#E53935)
+      width 120px;
+      height 56px;
+      line-height 56px;
+      text-align center;
+      c(#fff)
+      font-size 18px;
+      cp()
+    }
+  }
+}
+.fixed-notice-wrap{
+  position fixed;
+  left 50%;
+  top 160px;
+  transform translateX(-50%);
+  height:45px;
+  box-shadow:0px 4px 5px 1px rgba(0,0,0,0.1);
+  bg(#fff)
+  c(#666)
+  font-size 12px;
+  padding 0 12px;
+  flex()
+  flex-center()
+  .title{
+    c(#E53935)
+  }
+  .content{
+    flex-1()
+    ml(16)
+    mr(32)
+    .see{
+      c(#333)
+      ml(12)
+      fb()
+      cp()
+    }
+  }
+  .icon{
+    display inline-block;
+    width: 20px;
+    height: 20px;
+    background-image url(../../assets/images/cha@2x.png)
+    background-size contain
+    background-repeat no-repeat
+    background-position center
+    cp()
+  }
+}
+
+.settlement-group{
+  width: 990px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1230px){
+  .settlement-group{
+    width: 1210px;
+  }
+}
+
+.fixed-bottom{
+  position fixed
+  left 0
+  bottom 0
+  width 100%
+  bg(#fff)
+  box-shadow:0px -4px 8px 0px rgba(0,0,0,0.1)
+  z-index 10
+}
+
+.failure-group{
+  .cart-goods-box{
+    background rgba(250,250,251,0.7)
+  }
+}
+
+//分开结算弹窗
+.split-pay-box{
+  bg(#fff)
+  padding 16px
+  .spb-group{
+    border 1px solid #EDEDED
+    padding 16px
+    mb(16)
+    .column{
+      flex()
+      align-items center
+      >span{
+        display inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        background-image url(../../assets/images/weigouxuanyouhuo_ic@3x.png)
+        background-size contain
+        background-repeat no-repeat
+        background-position center
+        cp()
+      }
+      .checked{
+        background-image url(../../assets/images/yigouxuan.png)
+      }
+      .not-choose{
+        background-image url(../../assets/images/bukegouxuan_youhuiquan.png) !important
+      }
+      .content{
+        flex-1()
+        flex()
+        flex-direction column
+        h5{
+          ft(14)
+          c(#333)
+        }
+        p{
+          mt(5)
+          ft(12)
+          c(#999)
+          .total{
+            c(#E53935)
+          }
+          .gather{
+            c(#4A90E2)
+            ml(8)
+            cp()
+          }
+        }
+      }
+    }
+    .area-group{
+      mt(16)
+      pt(16)
+      position relative
+      .column{
+        mb(16)
+        &:last-child{
+          margin-bottom 0
+        }
+      }
+      &:before{
+        content ""
+        position absolute
+        left -16px
+        top 0
+        bg(#EDEDED)
+        width 70%
+        h(1)
+      }
+      &:after{
+        content ""
+        position absolute
+        right -16px
+        top 0
+        bg(#EDEDED)
+        width 50%
+        h(1)
+      }
+    }
+  }
+  .spb-bottom{
+    flex()
+    flex-center()
+    pt(16)
+    span{
+      inline()
+      w(120)
+      text-c()
+      h(36)
+      lh(36)
+      ft(14)
+      border-radius 2px
+      box-sizing border-box
+      cp()
+    }
+    .confirm{
+      bg(#E53935)
+      c(#fff)
+      mr(6)
+    }
+    .cancel{
+      bg(#EDEDED)
+      c(#333)
+      ml(6)
+      border 1px solid #E5E5E5
+    }
+  }
+}
+
+.cart-empty{
+  position relative
+  margin 150px 0
+  flex()
+  align-items center
+  justify-content center
+  width 100%
+  height 100%
+  .icon{
+    w(150)
+    h(150)
+    background-image url(../../assets/images/cart-empty.png)
+    background-size contain
+    background-repeat no-repeat
+    background-position center
+  }
+  .context{
+    ml(20)
+    c(#666)
+    h5{
+      ft(18)
+    }
+    p{
+      mt(8)
+      ft(14)
+      cp()
+      text-c()
+    }
+  }
+}
+.settlement-group,.settlement-left{
+  zoom:1
+}
+.settlement-group:after,.settlement-left:after{
+  clear: both;
+  display: block;
+  content: "";
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+}
+.mt8{
+  mt(8)
+}
+//购买限制弹窗
+.limit-pay-box{
+  .lpb-tips{
+    bg(#FFFAF3)
+    flex()
+    align-items center
+    padding 16px 12px
+    i{
+      inline()
+      w(16)
+      h(16)
+      mr(6)
+      background-image: url(../../assets/images/wenxintishi.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    p{
+      ft(12)
+      c(#FF703B)
+      line-height 1.3
+    }
+  }
+  .lpb-content{
+    padding 0 24px
+    .group-list{
+      li{
+        mt(24)
+        h5{
+          ft(14)
+          c(#333)
+          font-weight 600
+          mb(4)
+        }
+        p{
+          ft(12)
+          c(#999)
+        }
+      }
+    }
+    .limit-box{
+      h5{
+        mt(24)
+        mb(24)
+      }
+      .product-list{
+        flex()
+        flex-wrap wrap
+        li{
+          w(80)
+          h(80)
+          border 1px solid #EDEDED
+          box-sizing border-box
+          bg(#fff)
+          position relative
+          img{
+            margin auto
+          }
+          .no-can-buy-tag{
+            position absolute
+            left 0
+            bottom 0
+            h(20)
+            lh(20)
+            text-c()
+            bg(#000)
+            c(#fff)
+            ft(12)
+            opacity 0.5
+            width 100%
+          }
+        }
+      }
+    }
+  }
+  .lpb-bottom{
+    flex()
+    flex-center()
+    pt(16)
+    span{
+      inline()
+      w(120)
+      text-c()
+      h(36)
+      lh(36)
+      ft(14)
+      border-radius 2px
+      box-sizing border-box
+      cp()
+    }
+    .confirm{
+      bg(#E53935)
+      c(#fff)
+    }
+    .cancel{
+      bg(#EDEDED)
+      c(#333)
+      mr(20)
+      border 1px solid #E5E5E5
+    }
+  }
+}
+.coupon-panel{
+  position absolute
+  right 0
+  top 46px
+  w(710)
+}
+.w100{
+  width 100%
+}

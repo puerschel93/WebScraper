@@ -1,0 +1,508 @@
+@import "fonts"
+@import "libs"
+@import "table"
+@import "buttons"
+@import "tags"
+@import "admin"
+@import "constants"
+@import "queries"
+@import "colors"
+@import "highlightjs/solarized-dark.styl"
+
+html
+  height: 100%;
+  margin 0
+  padding 0
+  overflow-x hidden
+
+body
+  margin 0
+  padding 0
+  font-family 'Roboto', sans-serif
+  font-display swap
+  width 100%
+  overflow-x hidden
+
+.wrapper
+  height 100%
+
+  +tablet()
+    padding separator
+  +mobile()
+    padding separator
+
+a
+  &:visited
+    color color-black
+
+h1
+  padding-top 0
+  margin-top 0
+
+  +mobile()
+    font-size 16px
+
+ul,li
+  padding 0
+  margin 0
+
+  list-style-type none
+
+.header
+  width content-width
+  height 80px
+  margin 0 auto
+  display flex
+  justify-content space-between
+  align-items center
+
+  +tablet()
+    width 100%
+  +mobile()
+    width 100%
+
+  .title
+    font-size 24px
+    font-weight lighter
+    text-decoration none
+
+  .profile-image
+    width 160px
+    height 160px
+    border-radius 80px
+    border 1px solid color-black
+    margin 0 auto
+    overflow hidden
+
+    video
+      width 100%
+      height 100%
+      border-radius 80px
+
+  .menu
+    display flex
+    .dark-mode-toggle
+      display block
+      padding-left 16px
+      padding-right 16px
+      font-size 26px
+
+
+    .socials
+      margin 0
+      padding 0
+      display flex
+      justify-content center
+
+      .social-item
+        display block
+        padding-left 16px
+        padding-right 16px
+        font-size 26px
+
+        a
+          color color-black
+          text-decoration none
+          &:visited 
+            color color-black
+
+.line
+  width 50%
+  margin 0 auto
+  height 1px
+  background-color color-black
+
+.posts-container
+  width 100%
+
+  .post
+    box-sizing border-box
+    margin-bottom separator
+    
+    .post-content
+      line-height 25px
+
+    .title
+      max-width 300px
+      margin-bottom separator
+
+      +tablet()
+        width 100%
+      +mobile()
+        width 100%
+
+      .title-line
+        width 100%
+        height 1px
+        margin-bottom 12px
+      
+      h1
+        padding-bottom 0
+        margin-bottom 0
+
+      .post-date
+        font-weight bold
+
+        +mobile()
+          font-size 12px
+
+    .post-content
+      margin 0 auto
+      margin-top separator
+      margin-bottom separator
+      width content-width
+      color color-black
+
+      +tablet()
+        width 100%
+      +mobile()
+        width 100%
+
+    &.cover-true
+      width 100%
+
+      .post-content
+        box-sizing border-box
+
+      .cover-image
+        position relative
+        height 100vh
+        background-repeat no-repeat
+        background-size cover 
+        background-position center center
+        //background-attachment fixed
+
+        +tablet()
+          height 460px
+
+        +mobile()
+          height 300px
+
+        .title
+          background-color color-black
+          color #fff
+          position absolute
+          bottom 0
+          padding separator
+
+          .title-line
+            background-color #fff
+
+    &.cover-false
+      width content-width
+      margin 0 auto
+
+      +tablet()
+        width 100%
+      +mobile()
+        width 100%
+
+      .title
+        color color-black
+          
+        .title-line
+          background-color color-black
+
+.post-single
+  .post
+    margin-top 0 !important
+    margin-bottom 0 !important
+
+.post-url
+  padding-top separator
+  padding-bottom separator
+
+.image-container
+  position relative
+  display flex
+  flex-direction row
+  flex-wrap wrap
+
+  .image-preview-overlay
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    opacity 0
+    display flex
+    justify-content center
+    align-items center
+
+    &:hover
+      opacity 1
+      background-color rgba(0,0,0, 0.7)
+
+    .image-preview-remove-icon
+      padding separator
+      border 1px solid #fff
+      color #fff
+      display flex
+      justify-content center
+      align-items center
+
+      &:hover
+        background-color #fff
+        color color-black
+
+.image-preview
+  position relative
+  display flex
+  justify-content center
+  align-items center
+  max-width 200px
+  margin-top separator
+  margin-bottom separator
+  margin-right separator
+
+  img
+    width 100%
+
+.field-images
+  margin-bottom separator
+
+.lightgallery
+  width content-width
+  margin 0 auto
+  display flex
+  margin-top separator
+  display flex
+  flex-wrap wrap
+
+  +mobile()
+    width 100%
+
+  a
+    display flex
+    flex: 1 0 21%;
+    justify-content center
+    align-items center
+    border 1px solid color-black
+    margin-right separator
+    margin-bottom separator
+
+    +mobile()
+      flex 1 0 100%
+
+    img
+      max-width 100%
+      height auto
+
+.login-form
+  display flex
+  justify-content center
+  align-items center
+  flex-direction column
+  height 100vh
+
+.text-center
+  text-align center
+
+.space-top
+  padding-top separator
+
+
+// Overloading quill style
+.ql-video
+  //margin-top separator
+  width 100%
+  height 640px
+
+  +tablet()
+    height 450px
+
+  +mobile()
+    height 300px
+
+.navigation-back
+  margin 0 auto
+  margin-bottom separator
+
+.hljs
+  font-size 18px
+  padding separator
+  font-family: 'Source Code Pro', monospace;
+
+
+// Dark mode
+.dark-mode-false
+  background-color #fff
+  color color-black
+
+  transition: background-color .5s;
+  -webkit-transition: background-color .5s;
+  -o-transition: background-color .5s;
+  -moz-transition: background-color .5s;
+
+.dark-mode-true
+  background-color color-black
+  color #fff
+
+  a
+    color #fff
+
+  transition: background-color .5s;
+  -webkit-transition: background-color .5s;
+  -o-transition: background-color .5s;
+  -moz-transition: background-color .5s;
+
+
+  .ql-syntax
+    box-shadow 0px 0px 9px 0px rgba(192,192,192,0.1) !important
+  
+  .posts-container 
+    .navigation-back
+      background-color color-black
+      border 0.5px solid #fff
+      &:hover
+        background-color #fff
+        color color-black
+        border 0.5px solid color-black
+
+    .post
+      .title
+        color #fff
+        .title-line
+          background-color #fff
+      .post-content
+        color #fff
+      .lightgallery
+        a
+          border 1px solid #fff
+
+      .post-tags
+        .tags
+          .tag
+            color color-black
+            background #fff
+            &:hover
+              background-color #dc143c
+              color #fff
+              &::after
+                border-left-color #dc143c
+
+            &::before
+              background color-black
+            &::after
+              background color-black
+              border-left 10px solid #fff
+
+  .header > .title
+    color #fff !important
+
+  .header .menu .socials .social-item 
+    a 
+      color #fff
+      &:visited
+        color #fff
+
+  .tags-wrapper
+    .post-preview
+      border 0.5px solid #fff
+
+      +mobile()
+        border 0
+        border-bottom 0.5px solid #fff
+
+#tags
+  display none
+
+.post-tags
+  max-width content-width
+  margin 0 auto
+  margin-top separator
+  margin-bottom separator
+
+  span
+    font-size 20px
+    font-family 'Rajdhani', sans-serif
+    display block
+    margin-bottom 12.5px
+
+.post-preview
+  border 0.5px solid color-black
+  padding 12.5px
+  margin-bottom separator
+  display flex
+  justify-content space-between
+  .featured-image
+    display flex
+    justify-content center
+    align-items center
+    img
+      width 150px
+      height auto
+
+  .post-info
+    display flex
+    flex-direction column
+    justify-content space-between
+    text-align right
+
+    h3
+      padding-top 0
+      padding-bottom 0
+      margin-top 0
+      margin-bottom 0
+
+    .post-preview-date
+      margin-bottom separator
+
+.tags-wrapper
+  width content-width
+  margin 0 auto
+  min-height 100vh
+
+  +desktop()
+    width calc(100% - 50px)
+    padding-left separator
+    padding-right separator
+
+  +tablet()
+    width calc(100% - 50px)
+    padding-left separator
+    padding-right separator
+
+  +mobile()
+    display flex
+    width 100%
+    flex-direction column
+    .post-preview
+      border 0
+      border-bottom 0.5px solid color-black
+      padding-top separator
+      padding-bottom separator
+      margin-bottom 0
+      flex-direction column
+      .featured-image
+        width 100%
+        margin-bottom separator
+      .post-info
+        text-align center
+
+        .button
+          margin 0 auto
+
+.hljs-comment
+  color rgb(179, 36, 79)
+
+.ql-syntax
+  box-shadow 0px 0px 9px 0px rgba(0, 0, 0, 0.2)
+
+/*
+.hljs-string
+  color rgb(179, 36, 79)
+
+
+.hljs-title
+  color rgb(141, 218, 240)
+
+.hljs-type
+  color #6BA5DF //#71A0CE //rgb(110, 146, 182)
+
+.hljs-class
+  color #fff
+
+
+.hljs-keyword
+  color #BABAC6*/

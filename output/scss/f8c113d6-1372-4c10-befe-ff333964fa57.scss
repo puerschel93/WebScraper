@@ -1,0 +1,292 @@
+.modal{
+	display: none;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(#000, .6);
+	overflow-y: auto;
+	overflow-x: hidden;
+	overscroll-behavior-y: contain;
+	z-index: 999;
+	// transform: scale(0);
+	visibility: hidden;
+	transition: visibility .4s, opacity .4s;
+	cursor: pointer;
+	opacity: 0;
+
+	.modal-dialog{
+		width: calc(100% - 15px * 2);
+		max-width: 536px;
+		margin: 60px auto;
+		height: calc(100vh - 60px * 2);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		cursor: default;
+		flex: none;
+		position: relative;
+		transform: translateY(-100%);
+		opacity: 0;
+		visibility: hidden;
+		transition: all var(--t);
+		transition-delay: .2s;
+
+		@media screen and (max-width: 991px){
+			height: auto;
+			display: block;
+			margin: 30px auto 120px;
+		}
+	}
+
+	&.visible{
+		visibility: visible;
+		opacity: 1;
+
+		.modal-dialog{
+			transform: translateY(0);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&.video-modal{
+		.modal-dialog{
+			width: auto;
+			max-width: 70vw;
+
+			@media screen and (max-width: 1023px){
+				max-width: 90vw;
+			}
+		}
+
+		.modal-content{
+			background: transparent;
+			padding: 0;
+		}
+
+		.modal-video{
+			width: 100%;
+			position: relative;
+
+			&:before{
+				content: '';
+				display: block;
+				padding-top: 56.25%;
+			}
+
+			iframe,
+			video{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: block;
+				border: 0;
+			}
+
+			&.vimeo{
+				&:before{
+					padding-top: 52%;
+				}
+			}
+		}
+	}
+
+	.modal-content{
+		background: #fff;
+		border-radius: var(--r);
+		position: relative;
+		padding: 30px;
+
+		@media screen and (max-width: 479px){
+			padding: 20px;
+		}
+	}
+
+	--modal-gap: 30px;
+
+	@media screen and (max-width: 1599px){
+		--modal-gap: 20px;
+	}
+
+	.modal-caption{
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: var(--modal-gap);
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+
+		.mc-icon{
+			width: 80px;
+			height: 80px;
+			background: var(--blue-100);
+			border-radius: 50%;
+			margin-bottom: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img{
+				width: 24px;
+				height: 24px;
+				display: block;
+				object-fit: contain;
+				object-position: center center;
+			}
+		}
+
+		.mc-title{
+			@include h1;
+			color: var(--text-dark);
+		}
+
+		.mc-subtitle{
+			font-size: 16px;
+			line-height: 1.25;
+			margin-top: 10px;
+
+			@media screen and (max-width: 1599px){
+				font-size: 14px;
+			}
+		}
+	}
+
+	.big-modal-icon{
+		margin: 60px auto;
+		width: 240px;
+		height: 240px;
+		background: var(--blue-100);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img{
+			width: 84px;
+			height: 84px;
+			display: block;
+			object-fit: contain;
+			object-position: center center;
+		}
+
+		@media screen and (max-width: 1599px){
+			width: 140px;
+			height: 140px;
+			margin: 30px auto;
+
+			img{
+				width: 54px;
+				height: 54px;
+			}
+		}
+	}
+
+	.modal-form{
+		margin-bottom: var(--modal-gap);
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	.modal-footer{
+		display: flex;
+
+		.btn{
+			flex: auto;
+			flex-basis: 100%;
+
+			&:not(:last-child){
+				margin-right: 15px;
+			}
+		}
+
+		@media screen and (max-width: 479px){
+			flex-direction: column-reverse;
+
+			.btn{
+				&:not(:last-child){
+					margin-right: 0;
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+
+.modal-close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 44px;
+	height: 44px;
+	// border-radius: 50%;
+	opacity: 1;
+	transition: all var(--t);
+	appearance: none;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	display: none !important;
+
+	&:before,
+	&:after{
+		content: '';
+		display: block;
+		width: 20px;
+		height: 2px;
+		background: #000;
+		position: absolute;
+		left: calc(50% - 20px / 2);
+		top: calc(50% - 2px / 2);
+		transition: all var(--t);
+		border-radius: 1px;
+	}
+
+	&:before{
+		transform: rotate(-45deg);
+	}
+
+	&:after{
+		transform: rotate(45deg);
+	}
+
+	&:hover{
+		&:before,
+		&:after{
+			background: var(--primary);
+		}
+	}
+
+	.video-modal &{
+		left: 100%;
+		top: -14px;
+		right: auto;
+
+		&:before,
+		&:after{
+			background: #fff;
+		}
+
+		&:hover{
+			&:before,
+			&:after{
+				background: var(--primary);
+			}
+		}
+
+		@media screen and (max-width: 767px){
+			top: auto;
+			bottom: 100%;
+			right: -17px;
+			left: auto;
+		}
+	}
+}

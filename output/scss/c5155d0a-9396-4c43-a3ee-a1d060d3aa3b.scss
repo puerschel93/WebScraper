@@ -1,0 +1,172 @@
+@mixin flexCenter ($a, $j){
+    display: flex;
+    align-items: $a;
+    justify-content: $j;
+}
+
+* {
+    box-sizing: border-box;
+    border: solid 1px #646464;
+    font-family: Noto Sans TC;
+}
+
+html,body {
+    width: 100%;
+    font-family: Noto Sans TC;
+}
+
+
+.navbar {
+    @include flexCenter(center, space-between);
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 0 12%;
+    background-color: #00457C;
+    .logo {
+        width: 80%;
+    }
+    ul {
+        @include flexCenter(center, center);
+
+        li {
+            @include flexCenter(center, center);
+            padding: 0 12px;
+            a {
+                text-decoration:none;
+                font-size: 2.3vmin;
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+.search-container {
+    @include flexCenter(center, center);
+    width: 100%;
+    height: 450px;
+    background-image: url('../images/top_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    input {
+        position: relative;
+        width: 40%;
+        height: 56px;
+        border: none;
+        border-radius: 24px;
+        padding-left: 52px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 24px;
+        color: #BDBDBD;
+    }
+    input:before {
+        content: '　';
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background-image: url('../images/Vector.png');
+    }
+}
+
+.main-content {
+    @include flexCenter(center, center);
+    flex-direction: column;
+    width: 100%;
+    background-color: #E5E5E5;;
+
+    .event {
+        @include flexCenter(center, space-between);
+
+        flex-wrap: wrap;
+        width: 76%;
+        padding: 4% 0;
+        
+        h2 {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+        h2::before {
+            content: '　';
+            background-image: url('../images/event_icon.png');
+            padding: 12px 12px 24px 12px;
+            margin-right: 12px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .event-item {
+            @include flexCenter(space-between, center);
+            position: relative;
+            width: 48%;
+            height: 300px;
+            background-color: #fff;
+            margin: 28px 0;
+            img {
+                object-fit: cover;
+                object-position: center;
+                flex: 5.5;
+                width: 50%;
+
+            }
+            .detail {
+                @include flexCenter(flex-start, space-between);
+                flex-direction: column;
+                flex: 4.5;
+                padding: 20px 16px 60px 16px;
+                line-height: 140%;
+            }
+            h3 {
+                font-weight: 700;
+                font-size: 20px;
+            }
+            span {
+                font-weight: 700;
+                padding-right: 8px;
+            }
+            button {
+                position: absolute;
+                background-color: #5B9BD5;
+                color: #FFF;
+                font-size: 16px;
+                font-weight: 700;
+                border: none;
+                padding: 8px 32px;
+                border-radius: 16px;
+                right: 4%;
+                bottom: 4%;
+            }
+        }
+        .more {
+            position: relative;
+            text-align: right;
+            font-weight: 700;
+            font-size: 24px;
+            cursor: pointer;
+            left: 86%;
+        }
+        .more::after {
+            content: '';
+            background-image: url('/images/arrow.png');
+            position: relative;
+            padding: 20px 100px;
+            background-position: center;
+            background-repeat: no-repeat;
+            right: 28%;
+            top: 8px;
+        }
+    }
+
+}
+
+.footer {
+    @include flexCenter(center, center);
+    width: 100%;
+    background-color: #000000;
+    padding: 2% 0;
+    color: #FFF;
+    letter-spacing: 2px;
+}

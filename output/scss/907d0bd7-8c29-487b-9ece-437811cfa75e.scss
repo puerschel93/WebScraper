@@ -1,0 +1,203 @@
+﻿body#login {
+	& > main {
+		& > div.wrapper {
+
+			div.stage {
+				position: absolute;
+				width: calc((100% - 7rem)/3 * 2);
+				top: 2rem;
+				right: 1.5rem;
+				bottom: 2rem;
+				margin-left: 4rem;
+
+				i {
+					overflow: visible;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					right: calc((100% - 15rem)/3);
+					width: 15rem;
+					height: 15rem;
+					border: 1.5rem solid $clrGrey400;
+					box-sizing: border-box;
+					background: url(../images/overlays/05.png);
+
+					&::after {
+						content: '';
+						position: absolute;
+						bottom: -3.5rem;
+						left: -8rem;
+						width: 4rem;
+						height: 1rem;
+						background: url(../images/overlays/01.png);
+						animation: blink 2s ease-in-out infinite;
+					}
+				}
+			}
+
+			div.login-form {
+				width: calc((100% - 7rem)/3);
+				position: absolute;
+				top: 50%;
+				left: 1.5rem;
+				transform: translateY(-50%);
+				min-width: 17rem;
+				box-sizing: border-box;
+
+				h1 {
+					font-weight: 800;
+					font-size: 1.5rem;
+					line-height: 1em;
+					margin-bottom: 3rem;
+				}
+
+				form {
+					min-width: 17rem;
+					width: 100%;
+
+					& > div {
+						overflow: hidden;
+						margin-bottom: 1rem;
+						position: relative;
+
+						input {
+							display: block;
+							height: 2rem;
+							line-height: 2rem;
+							font-family: 'Iosevka Term Web' !important;
+							font-stretch: expanded;
+							font-size: 1rem;
+							font-weight: 500;
+							box-sizing: border-box;
+							width: 100%;
+							border: none;
+							border-bottom: .0625rem solid $clrGrey300;
+							outline: none;
+
+							&::placeholder {
+								color: $clrGrey200;
+								font-style: italic;
+								font-weight: 300;
+								transition: color .3s ease-in-out;
+							}
+
+							&:focus + label {
+								clip-path: inset(0 0 0 0);
+							}
+
+							&:hover {
+
+								&::placeholder {
+									color: $clrGrey100;
+								}
+							}
+
+							&.input-validation-error ~ span {
+								clip-path: inset(0 0 0 0);
+							}
+						}
+
+						label {
+							display: block;
+							text-align: right;
+							font-style: italic;
+							font-size: .875rem;
+							color: $clrText;
+							font-weight: 500;
+							box-sizing: border-box;
+							line-height: 1.5rem;
+							height: 1.5rem;
+							position: relative;
+							clip-path: inset(0 100% 0 0);
+							transition: clip-path .3s linear;
+
+							&::before {
+								content: '';
+								position: absolute;
+								top: -.0625rem;
+								left: 0;
+								right: 0;
+								height: .0625rem;
+								background-color: $clrText;
+							}
+						}
+
+						& > span {
+							display: block;
+							font-size: .75rem;
+							font-weight: 500;
+							color: $clrRed200;
+							line-height: 1.5rem;
+							height: 1.5rem;
+							position: absolute;
+							top: 2rem;
+							left: 0;
+							z-index: 2;
+							font-style: italic;
+							clip-path: inset(0 100% 0 0);
+							transition: clip-path .3s ease-in-out;
+						}
+					}
+
+					& > span.final {
+						display: block;
+						color: $clrRed100;
+						font-weight: 500;
+					}
+
+					button {
+						margin-top: 3rem;
+						display: block;
+						height: 2.5rem;
+						padding: 0 2rem 0 4.5rem;
+						line-height: 2.5rem;
+						font-family: 'Iosevka Term Web' !important;
+						font-stretch: expanded;
+						font-weight: 800;
+						background-color: white;
+						color: $clrText;
+						border: .0625rem solid $clrGrey300;
+						cursor: pointer;
+						position: relative;
+						transition: border-color .3s ease-in-out;
+						outline: none;
+
+						&::before, &::after {
+							height: calc(2.5rem - .125rem);
+							width: 2.5rem;
+							line-height: 2.25rem;
+							position: absolute;
+							top: 0;
+							left: 0;
+							font-size: 1.25rem;
+							z-index: 2;
+							color: white;
+							transition: color .3s ease-in-out, background-color .3s ease-in-out;
+						}
+
+						&::after {
+							z-index: 1;
+							content: '';
+							background: url(../images/overlays/05.png);
+							opacity: .75;
+							transition: opacity .3s ease-in-out;
+							background-color: $clrGrey200;
+						}
+
+						&:hover, &:focus {
+							border-color: $clrGrey200;
+
+							&::after {
+								opacity: 0.25;
+							}
+
+							&::before {
+								color: $clrBlack;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

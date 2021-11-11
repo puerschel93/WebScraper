@@ -1,0 +1,392 @@
+@import "../../../../../design/color.less";
+.container :global(.ant-input-borderless) {
+    color: #b1b1b1;
+    text-align: center;
+    caret-color: @back-color;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .closeBox {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        height: 24px;
+        width: 24px;
+        overflow: hidden;
+        -webkit-app-region: no-drag;
+        z-index: 100;
+
+        &:hover {
+            cursor: pointer;
+
+            img {
+                filter: drop-shadow(0 0 2px rgba(50, 150, 250, 1));
+            }
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .mask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .bigVideoBox {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+
+        .localListVideoContainer {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .mainBox {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        -webkit-app-region: no-drag;
+        z-index: 5;
+
+        .allBox {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .inputBox {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            -webkit-app-region: no-drag;
+        }
+
+        .modelOptions {
+            position: absolute;
+            bottom: 180px;
+            width: 300px;
+            height: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .modelOption1 {
+                width: 100%;
+                border-radius: 5px;
+                background-color: rgba(25, 31, 37, 1);
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                box-shadow: 0px 0px 1px #525252;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .imgBox {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                .description {
+                    width: 230px;
+                    height: 80px;
+
+                    & > div {
+                        width: 100%;
+                        height: 40px;
+                        line-height: 40px;
+                        letter-spacing: 1px;
+                    }
+
+                    .description1 {
+                        font-size: 14px;
+                        color: @back-color;
+                    }
+
+                    .description2 {
+                        font-size: 12px;
+                        color: rgba(143, 146, 148, 1);
+                    }
+                }
+            }
+        }
+
+        .additionPeopleBox {
+            position: absolute;
+            bottom: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            -webkit-app-region: no-drag;
+            z-index: 1;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .additionPeople {
+                width: 40px;
+                height: 40px;
+                background-color: rgba(31, 35, 39, 1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            .additionPeopleTitle {
+                font-size: 13px;
+                color: @form-time-color;
+            }
+        }
+
+        .meetingInfo {
+            position: absolute;
+            width: 200px;
+            height: 40px;
+            top: 80px;
+            left: 50px;
+            display: flex;
+            justify-content: flex-start;
+            z-index: 1;
+
+            .meetingInfoCreateImg {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                overflow: hidden;
+                background-color: @button-normal-color;
+                color: @back-color;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 13px;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            .meetingInfoContent {
+                width: 160px;
+                height: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                & > div {
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    padding-left: 10px;
+                }
+
+                .meetingInfoContentName {
+                    height: 25px;
+                    line-height: 25px;
+                    font-size: 15px;
+                    color: @back-color;
+                }
+
+                .meetingInfoContentTitle {
+                    height: 15px;
+                    line-height: 15px;
+                    font-size: 14px;
+                    color: @form-time-color;
+                }
+            }
+        }
+
+        .enterMeeting {
+            width: 180px;
+            height: 40px;
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 20px;
+            background-color: @button-normal-color;
+            color: @back-color;
+            line-height: 40px;
+            text-align: center;
+            -webkit-app-region: no-drag;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .meeetingOperation {
+            width: 180px;
+            height: 60px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            -webkit-app-region: no-drag;
+
+            & > div {
+                width: 70px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: @back-color;
+
+                img {
+                    width: 18px;
+                    height: 18px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                span {
+                    font-size: 13px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .mainBox1 {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        left: 50%;
+        top: 50px;
+        transform: translateX(-50%);
+        -webkit-app-region: no-drag;
+        z-index: 5;
+
+        .userInfo {
+            width: 250px;
+            height: 40px;
+            position: absolute;
+            top: 5px;
+            left: 20px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+
+            .imgBoxss {
+                width: 40px;
+                height: 40px;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                & > div {
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    background-color: @button-normal-color;
+                    border-radius: 5px;
+                    color: @back-color;
+                    font-size: 11px;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .userName1 {
+                width: 150px;
+                text-align: center;
+                color: @back-color;
+                font-size: 13px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        .handUp1 {
+            width: 200px;
+            height: 30px;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & > div {
+                width: 80px;
+                height: 30px;
+                color: @back-color;
+                font-size: 14px;
+                text-align: center;
+                line-height: 30px;
+                border-radius: 1px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .handUp1Btn1 {
+                background-color: rgba(26, 172, 25, 1);
+            }
+
+            .handUp1Btn2 {
+                background-color: rgba(243, 84, 84, 1);
+            }
+        }
+    }
+}

@@ -1,0 +1,366 @@
+/**
+
+  @helpers
+---------------------------------------------------------
+  base/_helpers.scss
+--------------------------------------------------------
+
+  This partial is for global utility helper classes only! Don't
+  tamper with units or add items that can't be used as
+  utilized helper classes. Notice the 'u' namespace. This
+  is used to help find utility classes in markup
+
+--------------------------------------------------------- */
+
+
+/* @float-helpers
+--------------------------------------------------------
+*/
+
+.u-float-left {
+  float: left !important;
+}
+
+.u-float-right {
+  float: right !important;
+}
+
+.u-float-none {
+  float: none !important;
+}
+
+
+/* @flex-helpers
+--------------------------------------------------------
+*/
+
+.u-flex {
+  @include flexbox;
+}
+
+/* @text-align
+--------------------------------------------------------
+*/
+
+.u-text-center {
+  text-align: center;
+}
+
+
+/*
+  @hide
+---------------------------------------------------------
+ */
+
+// The classic, display: none
+.u-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+// Use this if you still need js access to this element
+// it's visually hidden but still in the DOM
+.u-visually-hidden {
+  position: absolute;
+  left: -9999%;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+// Responsive hiders below max width media query 
+// http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
+// Max Width @ $small-mobile
+@include bp-until($small-mobile) {
+  .u-hide\<xs {
+    display: none;
+  }
+}
+
+// Max Width @ $mobile
+@include bp-until($mobile) {
+  .u-hide\<sm {
+    display: none;
+  }
+}
+
+// Max Width @ $tablet
+@include bp-until($tablet) {
+  .u-hide\<md {
+    display: none;
+  }
+}
+
+// Max Width @ $small-desktop
+@include bp-until($small-desktop) {
+  .u-hide\<lg {
+    display: none;
+  }
+}
+
+// Max Width @ $desktop
+@include bp-until($desktop) {
+  .u-hide\<xl {
+    display: none;
+  }
+}
+
+
+/* @border-helpers
+--------------------------------------------------------
+*/
+
+.u-border {
+  // Positions
+  &.t         { border-top-style: solid; }
+  &.r         { border-right-style: solid; }
+  &.b         { border-bottom-style: solid; }
+  &.l         { border-left-style: solid; }
+  &.all       { border-style: solid; }
+
+  // thicknesses
+  &.none      { border-width: u(rem(0)); }
+  &.xs        { border-width: u(rem(1)); }
+  // &.sm        { border-width: u(rem(2)); }
+  // &.md        { border-width: u(rem(3)); }
+  // &.lg        { border-width: u(rem(4)); }
+  // &.xl        { border-width: u(rem(5)); }
+
+  // Palettes
+  &.dark      { border-color: $color__black; }
+  &.medium    { border-color: $color__grey; }
+  &.light     { border-color: $color__grey--light; }
+  &.xlight    { border-color: $color__white; }
+}
+
+
+/* @bg-color
+--------------------------------------------------------
+*/
+
+.u-bg-color {
+  // Palettes
+  &--dark   { background-color: $color__black; }
+  &--medium { background-color: $color__black--light; }
+  &--light  { background-color: $color__grey; }
+  &--xlight { background-color: $color__grey--light; }
+  &--none   { background-color: transparent; }
+  &--white  { background-color: $color__white; }
+}
+
+
+/* @padding-helpers
+--------------------------------------------------------
+*/
+
+.u-shim {
+  &-t {
+    &--none    { padding-top: 0; }
+    // &--xs      { padding-top: u(rem($base-unit / 8)); }
+    // &--sm      { padding-top: u(rem($base-unit / 6)); }
+    // &--md      { padding-top: u(rem($base-unit / 4)); }
+    // &--lg      { padding-top: u(rem($base-unit / 3)); }
+    // &--xl      { padding-top: u(rem($base-unit / 2)); }
+    // &--xxl     { padding-top: u(rem($base-unit / 1)); }
+  }
+
+  &-r {
+    &--none    { padding-right: 0; }
+    // &--xs      { padding-right: u(rem($base-unit / 8)); }
+    // &--sm      { padding-right: u(rem($base-unit / 6)); }
+    // &--md      { padding-right: u(rem($base-unit / 4)); }
+    // &--lg      { padding-right: u(rem($base-unit / 3)); }
+    // &--xl      { padding-right: u(rem($base-unit / 2)); }
+    // &--xxl     { padding-right: u(rem($base-unit / 1)); }
+  }
+
+  &-b {
+    &--none    { padding-bottom: 0; }
+    // &--xs      { padding-bottom: u(rem($base-unit / 8)); }
+    // &--sm      { padding-bottom: u(rem($base-unit / 6)); }
+    // &--md      { padding-bottom: u(rem($base-unit / 4)); }
+    // &--lg      { padding-bottom: u(rem($base-unit / 3)); }
+    // &--xl      { padding-bottom: u(rem($base-unit / 2)); }
+    // &--xxl     { padding-bottom: u(rem($base-unit / 1)); }
+  }
+
+  &-l {
+    &--none    { padding-left: 0; }
+    // &--xs      { padding-left: u(rem($base-unit / 8)); }
+    // &--sm      { padding-left: u(rem($base-unit / 6)); }
+    // &--md      { padding-left: u(rem($base-unit / 4)); }
+    // &--lg      { padding-left: u(rem($base-unit / 3)); }
+    // &--xl      { padding-left: u(rem($base-unit / 2)); }
+    // &--xxl     { padding-left: u(rem($base-unit / 1)); }
+  }
+
+  &-all {
+    &--none    { padding: 0; }
+    // &--xs      { padding: u(rem($base-unit / 8)); }
+    // &--sm      { padding: u(rem($base-unit / 6)); }
+    // &--md      { padding: u(rem($base-unit / 4)); }
+    // &--lg      { padding: u(rem($base-unit / 3)); }
+    // &--xl      { padding: u(rem($base-unit / 2)); }
+    // &--xxl     { padding: u(rem($base-unit / 1)); }
+  }
+}
+
+
+/* @margin-helpers
+--------------------------------------------------------
+*/
+
+.u-margin {
+  &-t {
+    &--none   { margin-top: 0; }
+    // &--xs     { margin-top: u(rem($base-unit / 8)); }
+    // &--sm     { margin-top: u(rem($base-unit / 6)); }
+    // &--md     { margin-top: u(rem($base-unit / 4)); }
+    // &--lg     { margin-top: u(rem($base-unit / 3)); }
+    // &--xl     { margin-top: u(rem($base-unit / 2)); }
+    // &--xxl    { margin-top: u(rem($base-unit / 1)); }
+  }
+
+  &-r {
+    &--none   { margin-right: 0; }
+    // &--xs     { margin-right: u(rem($base-unit / 8)); }
+    // &--sm     { margin-right: u(rem($base-unit / 6)); }
+    // &--md     { margin-right: u(rem($base-unit / 4)); }
+    // &--lg     { margin-right: u(rem($base-unit / 3)); }
+    // &--xl     { margin-right: u(rem($base-unit / 2)); }
+    // &--xxl    { margin-right: u(rem($base-unit / 1)); }
+  }
+
+  &-b {
+    &--none   { margin-bottom: 0; }
+    // &--xs     { margin-bottom: u(rem($base-unit / 8)); }
+    // &--sm     { margin-bottom: u(rem($base-unit / 6)); }
+    // &--md     { margin-bottom: u(rem($base-unit / 4)); }
+    // &--lg     { margin-bottom: u(rem($base-unit / 3)); }
+    // &--xl     { margin-bottom: u(rem($base-unit / 2)); }
+    // &--xxl    { margin-bottom: u(rem($base-unit / 1)); }
+  }
+
+  &-l {
+    &--none   { margin-left: 0; }
+    // &--xs     { margin-left: u(rem($base-unit / 8)); }
+    // &--sm     { margin-left: u(rem($base-unit / 6)); }
+    // &--md     { margin-left: u(rem($base-unit / 4)); }
+    // &--lg     { margin-left: u(rem($base-unit / 3)); }
+    // &--xl     { margin-left: u(rem($base-unit / 2)); }
+    // &--xxl    { margin-left: u(rem($base-unit / 1)); }
+  }
+
+  &-all {
+    &--none   { margin: 0; }
+    // &--xs     { margin: u(rem($base-unit / 8)); }
+    // &--sm     { margin: u(rem($base-unit / 6)); }
+    // &--md     { margin: u(rem($base-unit / 4)); }
+    // &--lg     { margin: u(rem($base-unit / 3)); }
+    // &--xl     { margin: u(rem($base-unit / 2)); }
+    // &--xxl    { margin: u(rem($base-unit / 1)); }
+  }
+}
+
+
+/* @push-pull-helpers
+--------------------------------------------------------
+*/
+
+.u-full-bleed {
+  margin-right: u(rem(-$base-unit)) !important;
+  margin-left: u(rem(-$base-unit)) !important;
+
+  // full bleed at $tablet media query
+  &\@md {
+    // -- Min Width @ $tablet
+    @include bp-at-least($tablet) {
+      margin-right: u(rem(-$base-unit)) !important;
+      margin-left: u(rem(-$base-unit)) !important;
+    }
+  }
+
+  // full bleed with parent island
+  .island & {
+    margin-right: u(rem(-$base-unit)) !important;
+    margin-left: u(rem(-$base-unit)) !important;
+  }
+
+  // full bleed with parent islet
+  .islet & {
+    margin-right: u(rem(-$base-unit / 2)) !important;
+    margin-left: u(rem(-$base-unit / 2)) !important;
+  }
+}
+
+
+/* @bg-color-helpers
+--------------------------------------------------------
+*/
+
+// Mute an object by reducing its opacity.
+
+.u-muted {
+  opacity: 0.5 !important;
+  filter: alpha(opacity = 50) !important;
+}
+
+
+/* @clearix
+--------------------------------------------------------
+*/
+
+.u-clearfix,
+%clearfix {
+  @include clearfix();
+}
+
+
+/* @wp
+--------------------------------------------------------
+*/
+
+// WordPress Generated Classes
+// http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+
+// Media alignment
+// .alignnone {
+//   margin-left: 0;
+//   margin-right: 0;
+//   max-width: 100%;
+// }
+// .aligncenter {
+//   display: block;
+//   margin: ($line-height-computed / 2) auto;
+// }
+// .alignleft,
+// .alignright {
+//   margin-bottom: ($line-height-computed / 2);
+// }
+// @media (min-width: $screen-sm-min) {
+//   // Only float if not on an extra small device
+//   .alignleft {
+//     float: left;
+//     margin-right: ($line-height-computed / 2);
+//   }
+//   .alignright {
+//     float: right;
+//     margin-left: ($line-height-computed / 2);
+//   }
+// }
+     
+// // Captions
+// .wp-caption {
+//   @extend .thumbnail;
+// }
+// .wp-caption-text {
+//   padding: $thumbnail-caption-padding;
+// }
+
+// // Text meant only for screen readers
+// .screen-reader-text {
+//   @extend .sr-only;
+//   @extend .sr-only-focusable;
+// }
+

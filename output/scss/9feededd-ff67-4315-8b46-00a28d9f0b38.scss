@@ -1,0 +1,596 @@
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-family: 'Open Sans', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ltr-spacing-7{
+    letter-spacing: 7pt;
+}
+
+.block-greeting{
+    height: 600px;
+    width: 100%;
+    background-image: url('../images/dogface.jpeg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        padding: 30px 50px;
+
+        #btn-nav{
+            span{
+                color: grey;
+                font-size: 26pt;
+            }
+        }
+    
+        .nav-mobile{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+    
+            display: none;
+    
+            width: 50vw;
+            height: 100vh;
+    
+            background-color: #000;
+            opacity: .95;
+    
+            #btn-close{
+                padding: 10px;
+                
+                span{
+                    float: right;
+                    font-size: 24pt;
+                    color: white;
+                }
+            }
+    
+            nav{
+                display: flex;
+                flex-direction: column;
+    
+                text-align: center;
+    
+                a{
+                    padding: 5px;
+                    font-size: 15pt;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    
+        .nav-desktop{
+            display: none;
+        }
+    }
+
+    h1{
+        margin: 0;
+        font-size: 48pt;
+        font-family: 'Playfair Display', serif;
+    }
+}
+
+@media (min-width: 1400px){
+    .block-greeting{
+        height: 900px;
+    }
+}
+
+.block-tips{
+    max-width: 920px;
+
+    .subblock:first-child{
+        margin: 70px 50px 0 50px;
+    }
+    .subblock{
+        margin: 0 50px 0 50px;
+        padding: 30px 10px;
+
+        height: 190px;
+    }
+
+    .subblock-black{
+        color: #fff;
+        background-color: #000;
+
+        h2{
+            margin: 0;
+            font-size: 28pt;
+            font-family: 'Playfair Display', serif;
+        }
+
+        span{
+            margin: 30px 0 0 0;
+            font-size: 54pt;
+        }
+    }
+
+    .subblock-white{
+        text-align: center;
+        .svg-icon{
+            svg{
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+
+    .subblock-img-guy-w-dog{
+        height: 300px;
+        
+        background-image: url('../images/guy_w_dog.jpeg');
+        background-size: cover;
+        background-position: center;
+        
+    }
+
+    .subblock-img-golden{
+        height: 270px;
+
+        background-image: url('../images/golden.jpeg');
+        background-size: cover;
+        background-position: top;
+    }
+}
+
+@media(min-width: 770px){
+    .block-tips{
+        padding: 50px;
+        .row{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .subblock{
+                width: 33%;
+                height: 300px;
+                margin: 0;
+            }
+
+            .subblock-white{
+                p{
+                    margin: 0 40px;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1400px){
+    .block-tips{
+        .row{
+            .subblock{
+                height: 220px;
+            }
+        }
+    }
+}
+
+.block-cat-stories{
+    padding: 50px;
+    width: 100%;
+    height: 350px;
+
+    background-image: url('../images/cat_stories.jpeg');
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    h1{
+        font-family: 'Playfair Display', serif;
+        padding-left: 10%;
+    }
+    
+    h3{
+        max-width: 300px;
+        padding-left: 10%;
+    }
+
+    @media (min-width: 770px){
+        h3{
+            max-width: none;
+        }
+    }
+}
+
+@media (min-width: 1400px){
+    .block-cat-stories{
+        height: 600px;
+
+        h1{
+            padding-left: 22%;
+        }
+
+        h3{
+            padding-left: 22%;
+        }
+    }
+}
+
+.block-vet-clinic{
+    padding: 70px 50px;
+    background-color: #e5e5e5;
+
+    .img-clinic{
+        width: 100%;
+        height: 500px;
+
+        background-image: url('../images/clinic.jpeg');
+        background-size: cover;
+    }
+
+    .img-container-line-art{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        overflow: hidden;
+
+        width: 100%;
+        height: 320px;
+
+        background-color: #000;
+
+        img{
+            max-height: 300px;
+        }
+    }
+}
+
+@media (min-width: 770px){
+    .block-vet-clinic{
+        display: flex;
+        align-items: center;
+
+        div{
+            flex: 1;
+            height: 500px !important;
+        }
+
+        .msg{
+            padding: 10px;
+
+            h1{
+                font-size: 28pt;
+            }
+        }
+
+        .img-clinic{
+            flex: 1.4;
+            background-position: center;
+        }
+
+        .img-container-line-art{
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px){
+    .block-vet-clinic{
+        padding: 50px 20%;
+    }
+}
+
+.block-positive-dog-training{
+    text-align: right;
+    
+    .title{
+        padding: 20px;
+        background-color: #e5e5e5;
+    }
+
+    .img-white-shepherd{
+        height: 460px;
+
+        background-image: url('../images/white_shepherd.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .clmn-right{
+        padding: 20px;
+        background-color: #fff;
+
+        p{
+            text-align: left;
+        }
+    
+        .container-socials{
+            padding: 20px 0;
+            text-align: left;
+    
+            a{
+                margin-right: 20px;
+                text-decoration: none;
+                
+                .svg-icon-social{
+                    svg{
+                        width: 26px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 770px){
+    .block-positive-dog-training{
+        .row{
+            display: flex;
+            
+            div{
+                flex: 1;
+            }
+
+            .title{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+        }
+
+    }
+}
+
+@media (min-width: 1400px){
+    .block-positive-dog-training{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 650px;
+
+        .row{
+            flex-grow: 1;
+
+            .img-white-shepherd{
+                height: 100%;
+            }
+        }
+    
+        .clmn-right{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            margin-bottom: 70px;
+            width: 450px;
+        }
+    }
+    
+}
+
+.block-basic-dog-training{
+    background-color: #e5e5e5;
+
+    .info{
+        padding: 60px 20px;
+
+        h1{
+            margin-bottom: 0;
+        }
+        h3{
+            margin-top: 0;
+        }
+    
+        p{
+            margin: 40px 0;
+        }
+    
+        a{
+            padding: 10px 60px;
+    
+            color: white;
+            background-color: black;
+            text-decoration: none;
+    
+            font-weight: bolder;
+            letter-spacing: 3px;
+        }
+    
+        a:hover{
+            background-color: grey;
+        }
+    }
+
+    .img-labrador{
+        height: 400px;
+        background-image: url('../images/labrador.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (min-width: 770px){
+    .block-basic-dog-training{
+        display: flex;
+        
+        div{
+            flex: 1;
+            align-self: auto;
+        }
+
+        .info{
+            padding: 70px;
+        }
+
+        .img-labrador{
+            height: auto;
+        }
+    }
+}
+
+@media (min-width: 1400px){
+    .block-basic-dog-training{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 650px;
+
+        .info{
+            align-self: center;
+            width: 400px;
+            padding-left: 20%;
+            padding-right: 5%;
+
+            p{
+                padding-right: 20%;
+            }
+        }
+    }
+}
+
+.block-message{
+    width: 100%;
+    padding: 50px;
+
+    text-align: center;
+
+    color: white;
+    background-color: #000;
+
+    h1{
+        padding: 0 20%;
+        line-height: 50px;
+        font-size: 26pt;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .container-socials{
+        a{
+            margin-right: 10px;
+            text-decoration: none;
+
+            .svg-icon-social{
+                svg{
+                    width: 34px;
+                    fill: white;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px){
+    .block-message{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        height: 250px;
+
+        h1{
+            padding: 0 26%;
+        }
+    }
+}
+
+.block-form{
+    width: 100%;
+    padding: 50px;
+    
+    background-color: #e5e5e5;
+    text-align: right;
+
+    .form-container{
+        padding: 0 10%;
+
+        h1{
+            font-family: 'Playfair Display', serif;
+            font-size: 26pt;
+        }
+    
+        p{
+            margin-bottom: 40px;
+        }
+    
+        .form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            input{
+                margin-bottom: 20px;
+                padding: 0 10px;
+                width: 100%;
+                height: 44px;
+        
+                font-size: 12pt;
+            }
+        
+            #submit-btn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                width: 100%;
+                height: 44px;
+        
+                color: #fff;
+                background-color: #000;
+        
+            }
+        }
+    }
+}
+
+@media (min-width: 770px){
+    .block-form{
+        display: flex;
+        justify-content: flex-end;
+
+        background-image: url('../images/puppy.jpg');
+        background-size: cover;
+        background-position: center;
+
+        .form-container{
+            width: 50%;
+
+            .form{
+                flex-direction: row;
+
+                input{
+                    margin: 0;
+                    flex-grow: 1;
+                }
+                
+                #submit-btn{
+                    width: 150px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px){
+    .block-form{
+        display: flex;
+        align-items: center;
+        height: 450px;
+
+        .form-container{
+            width: 30%;
+            padding-right: 20%;
+        }
+    }
+}

@@ -1,0 +1,154 @@
+.reviews {
+  min-height: 402px;
+  position: relative;
+  background: rgba(31, 122, 90, 0.3);
+  @media @tablet-widths {
+    min-height: 302px;
+  }
+}
+
+.reviews__items {
+  .items-base();
+}
+
+.reviews__item {
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  @media @tablet-widths {
+    width: 100%;
+    background: rgba(150, 38, 77, 0.3);
+  }
+  @media @desktop-widths {
+    width: 800px;
+  }
+}
+
+.reviews__items {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 350px;
+  @media @tablet-widths {
+    height: 350px;
+  }
+  @media @desktop-widths {
+    align-items: flex-end;
+    height: 350px;
+  }
+}
+
+.reviews__author {
+  order: -1;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: @bold;
+  padding-top: 2%;
+  font-weight: bold;
+  text-align: center;
+  @media @tablet-widths {
+    padding: 0;
+    order: 2;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: @bold;
+    background: rgba(150, 38, 77, 0.3);
+  }
+  @media @desktop-widths {
+    font-size: 24px;
+  }
+}
+
+.reviews__input {
+  display: none;
+}
+
+.reviews__label {
+  .slider-label-controls ();
+}
+
+.reviews__controls {
+  .slider-controls-styles ();
+  bottom: 117px;
+  @media @tablet-widths {
+    bottom: 67px;
+  }
+  @media @desktop-widths {
+    display: none;
+  }
+}
+
+.reviews__comment {
+  @media @tablet-widths {
+    min-height: 120px;
+    background: rgba(150, 38, 77, 0.3);
+  }
+}
+
+.reviews__descr {
+  padding-top: 6%;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: @regular;
+  text-align: center;
+  @media @tablet-widths {
+    font-size: 18px;
+    line-height: 30px;
+    padding-top: 6%;
+    margin-bottom: 5%;
+    width: 630px;
+    padding-left: 4%;
+  }
+  @media @desktop-widths {
+    padding-left: 3%;
+    padding-top: 1%;
+    margin-bottom: 5%;
+    text-align: center;
+    width: 720px;
+  }
+}
+
+.reviews__author--biography {
+  display: none;
+  @media @tablet-widths {
+    display: block;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: @regular;
+  }
+  @media @desktop-widths {
+    font-size: 18px;
+  }
+}
+
+//временна выключил остальные слайды
+.reviews__item:nth-child(2),
+.reviews__item:nth-child(3) {
+  display: none;
+}
+
+.reviews__pic {
+  @media @desktop-widths {
+    display: flex;
+    position: relative;
+    height: 100px;
+    width: 70px;
+    outline: 1px solid green;
+    align-self: center;
+  }
+}
+
+//Слайдер отзывы пользователей (не работает).
+
+/*.reviews__item {
+  display: none;
+}
+#reviews-input-1:checked ~ .reviews__items .reviews__item:nth-child(1) {
+  display: flex;
+}
+#reviews-input-2:checked ~ .reviews__items .reviews__item:nth-child(2) {
+  display: flex;
+}
+#reviews-input-3:checked ~ .reviews__items .reviews__item:nth-child(3) {
+  display: flex;
+}*/

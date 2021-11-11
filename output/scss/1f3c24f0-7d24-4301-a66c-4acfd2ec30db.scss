@@ -1,0 +1,456 @@
+@import "partials/variables";
+@import "partials/reset";
+@import "partials/functions";
+@import "partials/mixins";
+@import "partials/utilities";
+@import "partials/generals";
+
+// Import Font Face
+@font-face {
+  font-family: Myriad;
+  src: url("../fonts/MYRIADPRO-REGULAR.OTF");
+}
+
+// Header Section
+// ...........................................
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+  .welcome {
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    background: $main-color;
+    color: #fff;
+    .welcome-content {
+      display: flex;
+      justify-content: space-between;
+      a {
+        padding: 0 0 0 2.4rem;
+        color: #fff;
+        transition: color 150ms ease-in-out;
+      }
+      a:hover {
+        color: $dark-color;
+      }
+    }
+  }
+  .navbar {
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem 0;
+      align-items: center;
+      line-height: normal;
+
+      .logo {
+        width: 80px;
+      }
+      .menu {
+        a {
+          color: $dark-color;
+          font-size: 1.4rem;
+          padding: 0 0 0 1.6rem;
+          font-family: "Myriad";
+          transition: color 150ms ease-in-out;
+        }
+        a:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+// Section: Slider
+// ...........................................
+#slider {
+  background: url(../img/slider.jpg) no-repeat center center/cover;
+  padding: 8.5rem 0;
+  position: relative;
+  .wrapper {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    .slider-text {
+      width: 50%;
+      color: #fff;
+      text-align: right;
+      position: relative;
+      .large {
+        font-family: "Oswald", sans-serif;
+        font-size: 3rem;
+        font-weight: lighter;
+        text-transform: uppercase;
+        line-height: 100%;
+      }
+      h1 {
+        font-size: 4rem;
+        line-height: 100%;
+        margin: 1.5rem 0 0 0;
+      }
+      .small {
+        margin: 3rem 0;
+      }
+      .btn-main {
+        margin: 0 0 0 2rem;
+      }
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.6;
+  }
+}
+
+// Section: About Us
+// ...........................................
+#about {
+  .about-content {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    grid-gap: 2rem;
+    align-items: center;
+    margin: 1rem 0 0 0;
+    p {
+      margin: 1.5rem 0;
+    }
+  }
+}
+
+// Section: Our Services
+// ...........................................
+#services {
+  .services-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    div {
+      background: $light-color;
+      padding: 2rem;
+      position: relative;
+      margin: 3.5rem 0 1rem 0;
+      transition: box-shadow 150ms ease-in-out;
+      &:hover {
+        box-shadow: 0 0 10px 0 $box-shadow-color;
+        .middle {
+          border: $main-color-light 1px solid;
+        }
+        .inner {
+          background: $main-color-light;
+        }
+      }
+      h3 {
+        font-size: 1.6rem;
+        margin: 3rem 0 1.5rem 0;
+      }
+
+      .circle {
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        &:hover {
+          box-shadow: none;
+        }
+      }
+      .outer {
+        background: #fff;
+
+        top: -4rem;
+
+        width: 8rem;
+        height: 8rem;
+      }
+      .middle {
+        width: 7.5rem;
+        height: 7.5rem;
+
+        background: #fff;
+
+        top: -3.75rem;
+
+        border: darken($color: $light-color, $amount: 20%) 1px solid;
+        transition: border 150ms ease-in-out;
+      }
+      .inner {
+        width: 7rem;
+        height: 7rem;
+
+        background: $light-color;
+
+        top: -3.5rem;
+        transition: background 150ms ease-in-out;
+      }
+    }
+  }
+}
+
+// Section: Our Portfolio
+// ...........................................
+#gallery {
+  margin: -1rem 0 0 0;
+  .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+  }
+  .column {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
+  .img-wrap {
+    background: $img-bg-color;
+    position: relative;
+    &::after {
+      content: "";
+      background: #000;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity 150ms ease-in-out;
+    }
+    &:hover::after {
+      opacity: 0.6;
+    }
+    &:hover {
+      .hover-icon {
+        visibility: visible;
+      }
+    }
+  }
+  img {
+    vertical-align: middle;
+  }
+  .hover-icon {
+    margin: auto;
+    padding: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background: $main-color-light;
+    border-radius: 50%;
+    z-index: 1;
+    visibility: hidden;
+  }
+}
+
+// Section: Our Team
+// ...........................................
+#team {
+  .employees {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    .employee {
+      h3 {
+        font-size: 1.6rem;
+        margin: 0.5rem 0 0 0;
+        transition: color 150ms ease-in-out;
+      }
+      p {
+        font-size: 1.4rem;
+        font-family: "Oswald", sans-serif;
+        color: $medium-color;
+      }
+      .img-wrap {
+        position: relative;
+        line-height: 0;
+        transition: box-shadow 150ms ease-in-out;
+        .socials {
+          visibility: hidden;
+          background: rgba(0, 0, 0, 0);
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 36.36%;
+          display: flex;
+          flex-direction: column;
+          align-content: center;
+          padding: 14% 0;
+          transition: all 100ms ease-in-out;
+
+          a {
+            display: inline-block;
+            margin: auto;
+            height: 4rem;
+            width: 4rem;
+            border-radius: 50%;
+            border: #fff 1px solid;
+            padding: 1rem;
+            transition: background, border 150ms ease-in-out;
+            &:hover {
+              background: $main-color-light;
+              border: $main-color-light 1px solid;
+            }
+          }
+          .fab {
+            color: #fff;
+          }
+        }
+      }
+      &:hover {
+        .img-wrap {
+          box-shadow: 0 0 10px 0 $box-shadow-color;
+        }
+        .socials {
+          visibility: visible;
+          background: rgba(0, 0, 0, 0.6);
+        }
+        h3 {
+          color: $main-color-light;
+        }
+      }
+    }
+  }
+}
+
+// Section: Testimonial
+// ...........................................
+#testimonial {
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    padding: 0 0 6rem 0;
+    .testimonial {
+      img {
+        height: 8rem;
+        width: 8rem;
+      }
+      .feedback {
+        background: $light-color;
+        padding: 2rem;
+        margin: 3.5rem 0 0 0;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          top: -3rem;
+          left: 0;
+          right: 0;
+          width: 0;
+          border-right: 2rem transparent solid;
+          border-left: 2rem transparent solid;
+          border-top: 1.5rem transparent solid;
+          border-bottom: 1.5rem $light-color solid;
+          margin: auto;
+        }
+        h3 {
+          font-size: 1.6rem;
+        }
+
+        .fas {
+          color: $main-color-light;
+        }
+
+        p {
+          font-family: "Oswald", sans-serif;
+        }
+        .designation {
+          margin: 0 0 0.5rem 0;
+        }
+      }
+    }
+  }
+}
+
+// Footer Section
+// ...........................................
+#footer {
+  .main-footer {
+    .footer-content {
+      display: grid;
+      grid-template-columns: 3fr 3fr 2fr 4fr;
+      grid-gap: 2rem;
+      .grid-title {
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin: 1rem 0 3rem 0;
+      }
+      .about {
+        .logo {
+          width: 8rem;
+        }
+        p {
+          margin: 3rem 0 0 0;
+        }
+      }
+      .contact {
+        .contact-info {
+          display: flex;
+          align-items: center;
+          padding: 1rem 0 0 0;
+          .fas {
+            background: $main-color-light;
+            height: 3.5rem;
+            width: 3.5rem;
+            padding: 1rem;
+            margin: 0 1rem 0 0;
+            border-radius: 50%;
+            font-size: 1.5rem;
+          }
+        }
+      }
+      .links {
+        .links-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 2rem;
+          margin: -1rem 0 0 0;
+          a {
+            display: inline-block;
+            color: #fff;
+            font-size: 1.3rem;
+            line-height: 3.6rem;
+            margin: 0 0 0.2rem 0;
+            transition: color 150ms ease-in-out;
+            &:hover {
+              color: $main-color-light;
+            }
+          }
+        }
+      }
+      .photos {
+        .photo-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 1rem;
+        }
+      }
+    }
+  }
+  .copyright {
+    background: $medium-color;
+    padding: 1.5rem 0;
+    color: set-text-color($medium-color);
+    span {
+      color: $main-color-light;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// Mobile devices
+// ...........................................
+@import "partials/mobile";

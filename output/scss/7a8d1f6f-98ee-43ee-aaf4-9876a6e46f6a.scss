@@ -1,0 +1,207 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// HEIGHT PUB - EXTRA
+$height-extra:450;
+$height-pub:851;
+
+// PICTURE SUR BG-MINIMOTEUR = YES / NO = BACKGROUND COLOR
+$bg-minimot:yes;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:0;
+
+// MARGIN CONTENT SI NAV FIXE 
+$margin-top-under-nav-fixe:110;
+
+// MARGIN LOGO ABSOLUTE
+$margin-logo-absolute:-30;
+
+// SIZE NAVIGATION
+$height-navigation:75;
+
+// VAR SITE TYPO
+$font-body:"proxima-nova",arial,verdana,sans-serif;
+$font-title:"alternate-gothic-no-3-d",arial,verdana,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB6
+@import "../../../slagence_X_V5/sources/scss/boutons/lib6";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib7";
+
+// IMPORT TEMPLATE ROME
+@import "../../../slagence_X_V5/sources/scss/templates/tokyo";
+
+// IMPORT MODULE ANNONCES
+@import "../../../slagence_X_V5/sources/scss/modules/annonces15";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra18";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+@media only screen and (max-width: 767px) {
+.logo img {
+float: left;
+width: 30% !important;
+margin: 0;
+}
+}
+
+// PERSO VERNOU
+
+// GENERAL
+
+h1, .h1-like, h2, .h2-like, h3, .h3-like, h4, .h4-like, h5, h6, .h5-like, .h6-like {
+	color:$color-important;
+}
+
+.btn-important {
+	color:$color-action;
+	background:$color-important-bis;
+}
+
+.typo-vernou {
+	color:$color-vernou;
+}
+
+// MENU & NAV
+.navigation {
+	border-bottom:solid 1px $color-primary-dark-10;
+	background: url(../images/bg-motif.gif) 0 0 repeat;
+}
+
+
+// EXTRA
+.module-annonces-homepage-extra {
+	@include background-image(linear-gradient($color-primary, $color-block));
+}
+
+.module-annonces-homepage-extra .typo-body {
+	color:$color-nav-footer;
+}
+
+.module-annonces-homepage-extra .typo-action, .module-annonces-homepage-extra .typo-transaction {
+	color:$color-important-bis;
+}
+
+.module-annonces-homepage-extra .opacity-4 {
+	opacity:1;
+}
+
+.icon-v5-heart {
+	color:$color-important;
+}
+
+// MODULE PA
+.bg-module-annonces {
+	display:none;
+}
+
+.module-infos-annonces .module-typebien-annonces {
+	color:$color-important-bis;
+}
+
+// MODULE PUB
+.encart-pub .h4-like {
+	color:$color-important-bis;
+}
+
+// LISTING
+.ville-annonce, .bouton-selection-annonces, .choix-neutre-refine {
+	color:$color-font-body;
+}
+
+.recherche-annonces .typo-action {
+	color:$color-important-bis;
+}
+
+// DETAIL PA
+
+a.btn.btn-action.btn-small.bouton-ajouter-selection-detail.btn-tooltip.not-log {
+	color:$color-nav-footer;
+}
+
+.bloc-descriptif a, .detail-bloc-annonce-similaire .ellipsis {
+	color:$color-font-body;
+}
+
+#form-contact-agence .h2-like, .titre-detail-poi {
+	color:$color-important-bis;
+}
+
+#detail-agence-nom {
+	color:$color-action;
+}
+
+// DETAIL AGENCE
+span.h2-like.nom-agence {
+	color:$color-action;
+}
+.nav-stacked .typo-action, .accordion-inner a{
+	color:$color-font-body;
+}
+
+.bg-pub-bottom h2 {
+	color:$color-important-bis;
+}
+
+// FOOTER
+.bg-secondary-footer {
+	background:$color-secondary-dark-10;
+}
+
+.texte-info-agences span {
+	color:$color-action;
+}
+
+.nav-footer-titre {
+	color:$color-important-bis;
+}

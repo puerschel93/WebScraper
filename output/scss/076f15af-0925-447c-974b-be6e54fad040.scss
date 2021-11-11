@@ -1,0 +1,529 @@
+// boje
+
+$bijela: #F1F1F1; 
+$svijetlije_plava: #3FA8F4;
+$svijetlo_plava: #007CFF;
+$tamno_plava: #004BA8;
+$tamna: #08142F;
+
+//Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@font-face {
+    font-family: 'ObviaExpanded';
+    src: url('../fonts/ObviaExpanded.ttf');
+    font-weight: bold;
+} 
+@font-face {
+    font-family: 'ObviaExpanded-Black';
+    src: url('../fonts/ObviaExpanded-Black.ttf');
+    font-weight: bold;
+} 
+@font-face {
+    font-family: 'ObviaExpanded-ObviaExpSemBd';
+    src: url('../fonts/ObviaExpanded-ObviaExpSemBd.ttf');
+    font-weight: bold;
+} 
+
+// -------------------- What_Home_page ------------------------
+// ------------------------------------------------------------
+// ------------------------------------------------------------
+
+.what{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.what_sadrzaj {
+    max-width: 80%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1.6fr 0.3fr 1.7fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "what_sadrzaj_uvod what_sadrzaj_uvod what_sadrzaj_uvod what_sadrzaj_uvod what_sadrzaj_uvod"
+      "what_sadrzaj_button what_sadrzaj_button what_sadrzaj_button what_sadrzaj_button what_sadrzaj_button"
+      "illustrations illustrations illustrations illustrations illustrations"; 
+    place-items: center;
+    }
+  .what_sadrzaj_button { grid-area: what_sadrzaj_button; }
+  .what_sadrzaj_uvod { grid-area: what_sadrzaj_uvod; }
+  .illustrations { grid-area: illustrations; }
+
+  .what_sadrzaj_uvod{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 60%;
+  }
+  .what_sadrzaj_uvod p, h1{
+    text-align: center;
+    color: $bijela;
+}
+.what_sadrzaj_uvod h1{
+    white-space: nowrap;
+}
+.illustrations{
+    display: flex;
+    flex: row;
+    justify-content: space-evenly;
+    color: $bijela;
+    margin-top: 10vh;
+    white-space: normal;
+    min-width: 100%;
+}
+.illustrations_one, .illustrations_two, .illustrations_three, .illustrations_four, .illustrations_five{
+    display: flex;  
+    width: 8vw;
+    justify-content: center;
+    position: relative;
+}
+.illustrations h2{
+    font-size: 0.8rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.illustration{
+    width: clamp(10vw, 12vw, 12vw);
+    height: clamp(10vw, 12vw, 12vw);
+    position: absolute;
+    bottom: 100%;
+    z-index: 1;
+}
+lottie-interactive{
+    min-width: 100%;
+}
+#illustration_three{
+    transform: translateY(10%);   
+}
+.what_title{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.what_title::after{
+    content: 'WHAT WE DO';
+    font-size: 4.2rem;
+    color: $svijetlo_plava;
+    opacity: 0.5;
+    position: absolute;
+    white-space: nowrap;
+    z-index: -1;
+}
+.what_sadrzaj_button_mob{
+    display: none;
+}
+.what_title.mob{
+    display: none;
+}
+
+@media screen and (max-width: 1400px){
+    .what_sadrzaj_uvod{
+        max-width: 70%;
+    }
+}
+// @media screen and (min-width: 1400px){
+
+// }
+@media screen and (max-width: 800px){
+    .what_sadrzaj{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+    .what_sadrzaj_uvod{
+        min-width: 40%;
+        align-items: center;
+    }
+    .illustrations{
+        flex-direction: column;
+        gap: 10vh;
+        min-width: 10%;
+    }
+    .what_sadrzaj_button{
+        display: none;
+    }
+    .what_sadrzaj_button_mob{
+        display: block;
+        margin-top: 10vh;
+    }
+    .what_title{
+        margin-bottom: 10vh;
+    }
+    .illustration{
+        width: clamp(10vw, 20vw, 20vw);
+        height: clamp(10vw, 20vw, 20vw);
+    }
+}
+@media screen and (max-width: 700px){
+    .what_title{
+        font-size: 3rem;
+    }
+    .what_title::after{
+        font-size: 3.2rem;
+    }
+}
+@media screen and (max-width: 600px){
+    .what_title{
+        display: none;
+    }
+    .what_title::after{
+        font-size: 2.7rem;
+        left: -2%;
+        letter-spacing: 1px;
+    }
+    .what_title.mob{
+        position: absolute;
+        font-size: 2.5rem;
+        display: block;
+        top: 10%;
+    }
+    .illustrations{
+        min-width: 20%;
+        align-items: center;
+    }
+    .what_sadrzaj_uvod{
+        max-width: 50%;
+    }
+    .what_sadrzaj_uvod p{
+        font-size: 0.8rem;
+    }
+    .what{
+        position: relative;
+    }
+    .illustration{
+        width: clamp(10vw, 16vw, 16vw);
+        height: clamp(10vw, 16vw, 16vw);
+    }
+}
+@media screen and (max-width: 400px){
+    .what{
+        min-height: 120vh;
+    }
+}
+// @media screen and (max-width: 600px){
+
+// }
+
+
+
+
+
+// PRILAGODBA ZA SVE UREĐAJE--------------------------
+
+
+
+
+// @media screen and (max-width: 600px){
+
+// }
+
+// -----------tablet---------------
+
+// @media screen and (max-width: 900px) and (min-width: 800px) and (min-height: 700px)and (max-height: 900px){
+
+// }
+// @media screen and (max-width: 900px) and (min-width: 800px) and (min-height: 900px)and (max-height: 1200px){
+
+// }
+@media screen and (max-width: 900px) and (min-width: 800px) and (max-height: 1200px) and (min-height: 850px){
+    .what_sadrzaj_uvod{
+        max-width: 90%;
+    }
+    .what_sadrzaj{
+        min-width: 90%;
+    }
+    .illustrations{
+        margin-top: 0vh;
+    }
+}
+
+
+
+// ----------------telka--------------
+
+// @media screen and (min-width: 991px) and (max-height: 800px){
+
+// }
+@media screen and (min-width: 2500px){
+    .what_sadrzaj_uvod p{
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+    .illustrations h2, .what_button{
+        font-size: 1.5rem;
+    }
+    .what_title{
+        font-size: 6rem;
+    }
+    .what_title::after{
+        font-size: 6.2rem;
+    }
+}
+ 
+
+// ------------------mali mobiteli----------
+
+
+// @media screen and (max-width: 400px) and (max-height: 600px){
+
+// }
+// @media screen and (max-width: 400px) and (max-height: 800px) and (min-height: 600px){
+
+// }
+
+
+
+// ------------------------- What stranica --------------------
+// ------------------------------------------------------------
+// ------------------------------------------------------------
+
+.naslov{
+    min-height: 60vh;
+    width: 80%;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+.naslov h1{
+    font-size: clamp(2rem, 10vw, 8rem);
+    color: $bijela;
+    transform: translateX(-10%);
+    position: relative;
+}
+.naslov h1::after{
+    content: 'WHAT WE DO';
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    z-index: -1;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #007CFF;
+    opacity: 0;
+    animation: after 1s ease 1.8s forwards;
+}
+.naslov h1::before{
+    content: 'WHAT WE DO';
+    z-index: -2;
+    bottom: -20%;
+    left: 0;
+    position: absolute;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #004BA8;
+    opacity: 0;
+    animation: before 1s ease 2.8s forwards;
+}
+@keyframes after {
+    from{
+        bottom: 0;
+        opacity: 0;
+    }
+    to{
+        bottom: -20%;
+        opacity: 1;
+    }
+}
+@keyframes before {
+    from{
+        bottom: -20%;
+        opacity: 0;
+    }
+    to{
+        bottom: -40%;
+        opacity: 1;
+    }
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+    .naslov h1{
+        transform: translateX(0%);
+    }
+}
+@media screen and (max-width: 500px) {
+    .naslov h1{
+        transform: translateY(50%);
+    }
+}
+
+
+
+.what_ilust{
+    width: 50%;
+    display: grid;
+    place-items: center;
+}
+lottie-interactive{
+    width: 100%;
+    float: right;
+}
+.container{
+    position: relative;
+    display: flex;
+    width: 60%;
+    gap: 5vw;
+    justify-content: space-between;
+    margin-bottom: 15rem;
+}
+
+
+
+@media screen and (max-width: 1180px) {
+    .container{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .container{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 850px) {
+    .container{
+        width: 60%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .what_ilust{
+        width: 80%;
+        position: absolute;
+        z-index: -1;
+        opacity: 0.2;
+    }
+    .what_tekst{
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .container.neuro p, .container.neuro h2, .container.machine p, .container.machine h2{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 650px) {
+    .container{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .container{
+        width: 90%;
+    }
+}
+
+
+
+
+.container.neuro, .container.machine{
+    text-align: right;
+}
+.what_tekst{
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.what_tekst p{
+    color: $bijela;
+    letter-spacing: 0px;
+    line-height: 1.6rem;
+    font-size: clamp(0.8rem, 1vw, 1.25rem);
+}
+.what_tekst h2{
+    color: $bijela;
+    margin-bottom: 2rem;  
+    font-size: 2rem;
+    font-family: 'ObviaExpanded-ObviaExpSemBd';
+    position: relative;
+}
+
+
+
+
+@media screen and (max-width: 330px) {
+    .container{
+        width: 95%;
+    }
+    .what_tekst h2{
+        margin-bottom: 2rem;  
+        font-size: clamp(1.5rem, 1vw, 1.25rem);
+    }
+}
+
+
+
+
+
+.what_tekst h2::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 15%;
+    height: 3px;
+    background-color: $bijela;
+    transition: all 1s ease;
+}
+.what_tekst.machine h2::after, .what_tekst.neuro h2::after{
+    display: none;
+}
+.what_tekst.machine h2::before, .what_tekst.neuro h2::before{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 15%;
+    height: 3px;
+    background-color: $bijela;
+    transition: all 1s ease;
+}
+.what_tekst.active h2::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background-color: $bijela;
+}
+.what_tekst.machine.active h2::before, .what_tekst.neuro.active h2::before{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 60%;
+    height: 3px;
+    background-color: $bijela;
+}
+
+
+@media screen and (max-width: 850px) {
+    .what_tekst.active h2::after{
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 10%;
+        width: 80%;
+        height: 3px;
+        background-color: $bijela;
+        transition: all 1s ease;
+    }
+    .what_tekst.machine.active h2::before, .what_tekst.neuro.active h2::before{
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        right: 10%;
+        width: 80%;
+        height: 3px;
+        background-color: $bijela;
+    }
+}

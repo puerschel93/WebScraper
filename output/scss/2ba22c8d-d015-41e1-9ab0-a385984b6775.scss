@@ -1,0 +1,162 @@
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: $white;
+  color: $cod-gray;
+  line-height: $lh-body;
+  font-size: $font-body;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.logo {
+  max-width: 150px;
+  width: 100%;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container,
+.wrapper {
+  max-width: 1130px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  max-width: 1290px;
+}
+
+.section {
+  margin-bottom: 150px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: $font-h1;
+  line-height: $lh-h1;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: $font-h1;
+  line-height: $lh-h1;
+  font-weight: 600;
+  color: $cod-gray;
+}
+
+h2 {
+  font-size: $font-h2;
+  line-height: $lh-h2;
+  font-weight: 600;
+  color: $cod-gray;
+}
+
+h3 {
+  font-size: $font-h3;
+  line-height: $lh-h3;
+  font-weight: 600;
+  color: $cod-gray;
+}
+
+.btn {
+  display: block;
+  padding: 15px 30px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  background-color: $cod-gray;
+  color: $white;
+  border-radius: $btn-border-radius;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+
+  &:hover {
+    background-color: $yellow-300;
+  }
+
+  &:disabled {
+    border: transparent;
+    background-color: transparent;
+  }
+
+  &--orange {
+    background-color: $yellow-300;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $yellow-300;
+      color: $yellow-300;
+    }
+  }
+}
+
+.btn-tags {
+  padding: 8px 10px;
+  background-color: $gray-100;
+  color: $gray-500;
+  font-size: $font-text;
+  line-height: $lh-text;
+  border-radius: $btn-border-radius;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: $yellow-200;
+    color: $yellow-300;
+  }
+
+  &:active {
+    background-color: $yellow-300;
+    color: $white;
+  }
+}
+
+.input,
+.textarea {
+  max-width: 460px;
+  width: 100%;
+  padding: 15px;
+  font-weight: 500;
+  font-size: $font-body;
+  line-height: $lh-body;
+  color: $cod-gray;
+  border-radius: $border-form-radius;
+  outline: transparent;
+  border: 1px solid $gray-300;
+  transition: border 0.2s;
+
+  &::placeholder {
+    color: $gray-500;
+  }
+}
+
+p,
+span {
+  font-size: $font-text;
+  line-height: $lh-text;
+  color: $cod-gray;
+}
+
+span {
+  font-size: $font-text;
+}

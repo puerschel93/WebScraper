@@ -1,0 +1,401 @@
+@import '../bootstrap'
+@import '../theme'
+
+.v-sheet
+    background: $colors.light.base
+    border-radius 6px 6px 6px 6px
+    position relative
+    margin-top 16px
+    display flex
+    right 0
+    transition .3s
+    z-index 1
+    
+    .full-link
+        position absolute
+        top 0
+        left 0
+        right 0
+        bottom 0
+        z-index 1
+        display block
+
+    &-label
+        margin 0 0 4px !important
+    
+    &-select
+        z-index 1
+    
+    &-tab
+        position: absolute
+        width: 152px
+        max-width 95%
+        top: -16px
+        transition .3s
+        
+        &-color
+            fill: $colors.light.base
+            
+    &-icon
+        display flex
+        align-items center
+        
+        .v-icon
+            margin-right .5rem
+            
+    &-status
+        background: $colors.dark.base
+        position: absolute
+        height: 8px
+        width: 32px
+        top: -6px
+        left: 0
+        border-radius: 0 10px 10px 0
+        
+    &-phase
+        background: rgba(black, .5)
+        margin-right: (- $grid-gutters.lg)
+        margin-left auto
+        padding: 0 $grid-gutters.lg
+        border-radius 20px 0 0 20px
+        height: 18px
+        display: flex
+        align-items: center
+        
+        span 
+            text-transform uppercase
+            font-size 10px
+            color white
+            line-height .9
+            display block
+
+    &-content
+        padding: $grid-gutters.lg
+        line-height 1.4
+        display flex
+        flex-direction column
+        flex 1 1 100%
+        
+        .set
+            > label
+                display none
+                font-size 10px
+                font-weight 400
+                margin 0 0 4px
+                color: $colors.dark.lighten-2
+        
+        h2
+            font-size 14px
+            font-weight 600
+            margin 0
+            text-transform uppercase
+            line-height 1.2
+            
+        h3 
+            font-size 12px
+            font-weight 400
+            margin 0
+            
+        h4
+            font-size 10px
+            font-weight 400
+            margin 0
+            
+        h5
+            font-size 8px
+            font-weight 400
+            margin 0
+            
+        b
+            font-weight 600
+            
+        &-progress
+            display: flex
+            justify-content: flex-end
+            align-items: flex-end
+            text-align: right
+            
+    &-back-options
+        background: $colors.light.darken-2
+        position absolute
+        top: 8px
+        left: 8px
+        bottom: 8px
+        overflow: auto
+        border-radius: 7px 0 0 7px
+        width: 100px
+        display flex
+        flex-wrap wrap
+        justify-content center
+        align-items center
+        
+    &-options
+        position absolute
+        top 0
+        right 0
+        z-index 2
+        
+        @media(max-width 600px)
+            display none
+        
+        &-items
+            padding 0
+                    
+            .v-list__tile
+                height 40px
+                font-size 12px
+                padding-right 20px
+                
+                &__action
+                    min-width 30px
+                
+                .v-icon
+                    font-size 18px
+
+    &-calendar
+        height: calc(100vh - 56px)
+        margin: (- $grid-gutters.xl)
+        overflow: hidden
+        display: flex
+        flex-direction: column
+
+        &-title
+            background: $colors.primary.base
+            color white
+            padding: $grid-gutters.md $grid-gutters.xl
+            display: flex
+            align-items center
+
+            &-content
+                display: flex
+                flex-wrap wrap
+                align-items center
+                flex 1
+                margin -.4rem
+
+                h1
+                    font-size 18px
+                    font-weight 500
+                    margin .4rem
+
+                h2
+                    font-size 16px
+                    font-weight 400
+                    margin .4rem
+                
+                .v-autocomplete
+                    flex: 0 1 150px
+                    margin: .4rem !important
+            
+            &-action
+                margin-left 1rem
+
+        &-content
+            overflow: auto
+            height: 100%
+
+        .my-event
+            overflow: hidden
+            text-overflow: ellipsis
+            white-space: nowrap
+            border-radius: 4px
+            background-color: $colors.success.base
+            color: #ffffff
+            border: 1px solid $colors.success.base
+            width: 100%
+            font-size: 12px
+            padding: 3px
+            cursor: pointer
+            margin-bottom: 1px
+
+            &.with-time 
+                position: absolute
+                right: 0px
+                margin-right: 0px
+            
+    &-drag
+        position: absolute
+        top: 8px
+        height calc(100% - 16px)
+        display flex
+        left 8px
+        width 32px
+        justify-content center
+        align-items center
+        background: $colors.light.base
+        border-radius 6px 0 0 6px
+        
+        &:hover 
+            cursor: move
+            cursor: -webkit-grab
+            cursor: grab
+        
+        &:active 
+            cursor: -webkit-grabbing
+            cursor: grabbing
+            
+        .v-icon
+            opacity .5
+            transition 0s
+                
+        + .overflow-hidden
+            padding-left 32px
+            
+            .v-sheet
+                border-bottom-left-radius 0
+                
+                &-tab
+                    left -6px
+                
+                &-back-options
+                    left: 8px + 32px
+                    border-radius 0
+                    
+                &.move-right
+                    .v-sheet-tab
+                        @media(max-width 600px)
+                            left 0
+                        
+        &-content
+            display none
+            flex-wrap wrap
+            background: $colors.light.base
+            padding: $grid-gutters.lg
+            height 60px
+            position relative
+            width 100%
+            border-radius 0 6px 6px 0
+            
+            &:before
+                content ''
+                display block
+                width 90%
+                height 8px
+                border-radius 40px
+                background rgba(black, .2)
+                margin-bottom 4px
+                
+            &:after
+                content ''
+                display block
+                width 60%
+                height 8px
+                border-radius 40px
+                background rgba(black, .2)
+                    
+        &.is-dragging
+            z-index 99999
+            border-radius 6px
+            width 200px
+            background none !important
+            
+            .v-icon
+                background: $colors.light.base
+                border-radius 0 0 0 6px
+                height: 60px
+                width 32px
+                min-width 32px
+                top: 0
+                position: relative
+                opacity 1
+            
+            .v-sheet-drag-content
+                display flex
+            
+            + .overflow-hidden
+                opacity 0
+        
+    &.move-left
+        @media(max-width 600px)
+            left -100px
+            border-top-right-radius 0
+            border-bottom-right-radius 0
+            
+    &.move-right
+        @media(max-width 600px)
+            right -100px
+            border-top-left-radius 0
+            border-bottom-left-radius 0
+    
+    &:not(.v-sheet-row)
+        .v-sheet-content
+            .set
+                flex none !important
+                    
+    &-row
+        margin-top 0
+        
+        .v-sheet-tab
+        .v-divider
+            display none
+            
+        .v-sheet-select
+            margin auto 0 !important
+            
+            .v-input--selection-controls
+                margin 0
+                padding 0
+        
+        .v-sheet-status
+            width 4px
+            height 100%
+            top 0
+            border-radius 0
+            
+        .v-sheet-phase
+            margin: .5rem !important
+            border-radius: 20px
+            height: auto
+            flex: 0 1 120px
+            padding: 4px 16px
+            align-self: center
+            
+        .v-sheet-content
+            flex-direction row
+            flex-wrap wrap
+            align-items flex-start
+            margin -.5rem
+            
+            h2 
+                font-size 12px
+            
+            .set
+                flex 1 1 200px
+                margin 0 !important
+                padding .5rem
+                
+                > label
+                    display block
+                    
+                .v-sheet-label
+                    display none
+        
+        .v-sheet-options
+            top 50%
+            transform translateY(-50%)
+            
+            + .v-sheet-content
+                padding-right 3.5rem
+                
+                @media(max-width 600px)
+                    padding-right: $grid-gutters.lg
+
+.theme--dark
+    .v-sheet
+        background: $colors.dark.base
+        
+        &-tab
+            &-color
+                fill: $colors.dark.base
+                
+        &-drag
+            background: $colors.dark.base
+            
+            &-content
+                background: $colors.dark.base
+                
+            .v-icon
+                background: $colors.dark.base
+
+        &-back-options
+            background: $colors.dark.darken-1

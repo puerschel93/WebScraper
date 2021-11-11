@@ -1,0 +1,136 @@
+.page-footer
+  padding 34px 0
+  background-color #FFF3B8
+  position: relative
+
+  &::after
+    content: '';
+    position: absolute;
+    bottom: 0
+    left: 50%
+    height: 104px
+    transform translateX(-50%)
+    background url(../images/red_car.svg) right center no-repeat
+    background-size: auto 100%;
+    max-width: 387px;
+    margin-left: -26px
+    width: 100%
+    opacity: .1
+
+  +above(768px)
+    padding-top 48px
+    padding-bottom 52px
+
+    &::after
+      opacity: 1
+      margin-left: 0
+      height: 110px
+      max-width: calc(100% - 40px)
+
+  +above(1170px)
+    padding 64px 0
+
+    &::after
+      max-width: $wide
+      height: 157px
+
+  .inner
+    position: relative
+    z-index: 1
+
+  &__name
+    font-family $fontTitle
+    margin-bottom 12px
+    font-weight bold
+    font-size 20px
+    line-height 24px
+    color #C4372E
+
+    +above(768px)
+      font-size 28px
+      line-height 36px
+
+    +above(1170px)
+      margin-bottom: 12px
+
+  &__text
+    font-size 16px
+    font-weight 500
+    line-height 24px
+    margin-bottom 20px
+
+    a
+      color #191919
+      border-bottom: 1px solid currentcolor
+
+      &:hover
+        color #c03
+
+    b
+      font-weight bold
+    +above(768px)
+      font-size 18px
+      margin-bottom: 26px
+
+    +above(1170px)
+      font-size 20px
+      margin-bottom: 24px
+
+  &__input
+    height 44px
+    border 1px solid #D5D5D5
+    font-size 16px
+    padding-left: 20px
+    padding-right: 20px
+
+  &__control
+    position: relative
+    flex: 1 0 auto
+    margin-bottom 8px
+
+    +above(768px)
+      margin-bottom 0
+      margin-right 8px
+
+  &__form
+    max-width 100%
+    position: relative
+
+    .form__warning
+      position: absolute
+      top: 100%
+      left: 0
+      max-width 100%
+
+    +above(768px)
+      max-width 465px
+      display flex
+      .btn
+        max-width 185px
+        height 41px
+    +above(1170px)
+      max-width 585px
+
+  &__col
+    +above(768px)
+      max-width 70%
+    +above(1170px)
+      max-width 51%
+
+  &__snippet
+    font-size 14px
+    line-height 24px
+    color #787878
+    margin-top 24px
+    text-align center
+    +above(768px)
+      margin-top: 14px
+      text-align left
+
+    a
+      color #787878
+      border-bottom: 1px solid #787878
+
+      &:hover
+        color #c03
+        border-bottom-color: currentcolor;

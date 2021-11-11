@@ -1,0 +1,190 @@
+body {
+	background-color:$color-body;
+}
+.box-shadow {
+	@include box-shadow(0px 1px 5px 0px rgba(0, 0, 0, 0.3));
+}
+// CONTENU
+.contenu-laforet {
+	background:$color-content;
+	@include box-shadow(0px 4px 20px 0px rgba(0, 0, 0, 0.3));
+	min-height: 550px;
+}
+// TOP BAR
+.top-bar {
+	background-color:$color-primary;
+	border-top:5px solid $color-secondary;
+}
+.top-bar li {
+	float:left;
+	display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.ie7 .top-bar li, .ie8 .top-bar li {
+	margin:0;
+}
+.ie8 .top-bar li img {
+	max-width:none;
+}
+.top-bar li img {
+	margin:-1px 0 0 3px;
+}
+.top-bar a {
+	color:#fff;
+	padding:4px 12px;
+	border-left:1px solid lighten($color-primary,3);
+	border-right:1px solid darken($color-primary,10);
+	&:hover {
+		background-color:$color-primary-dark-5;
+	}
+}
+.top-bar a.select {
+	border-left:0px;
+	background-color:$color-action;
+}
+// HEADER
+.contenu-header h1 {
+	color:$color-primary;
+}
+.contenu-header a:hover {
+	text-decoration:none;
+}
+// MENU PRINCIPAL
+.menu-principal {
+	text-align:center;
+	border-left:1px solid $color-block-dark-5;
+}
+.menu-principal > li > a {
+	color:$color-nav-footer;
+	text-transform:$type-title;
+	@extend .font-title;
+	@include background-image(linear-gradient(top, $color-block-dark-5 20%, $color-block 50%, $color-block-dark-5 90%));
+	@include filter-gradient($color-block-dark-5,$color-block,vertical);
+	padding:18px;
+	border-top:1px solid $color-block-dark-10;
+	border-left:1px solid $color-block-dark-10;
+	border-right:1px solid $color-block;
+	border-bottom:3px solid $color-block-dark-10;
+	&:hover {
+	@include background-image(linear-gradient(top, $color-action-light-5 20%, $color-action 80%));
+	@include filter-gradient($color-action-light-5,$color-action,vertical);
+	@include lightnessColor($color-action,no);
+	border-bottom:3px solid $color-action-dark-10;
+	border-top:1px solid $color-action;
+	border-right:1px solid $color-action;
+	border-left:1px solid $color-action;
+	}
+}
+.nav-tabs>li, .nav-pills>li {
+	margin:0;
+}
+.nav-tabs>li>a, .nav-pills>li>a {
+	margin:0;
+}
+// NAV RESPONSIVE
+.menu-responsive > ul > li {
+	@include border-radius(0px);
+	background-color:$color-block;
+	background-repeat: repeat-x;
+	@include background-image(linear-gradient(top, $color-block-dark-5 20%, $color-block 50%, $color-block-dark-5 90%));
+	@include filter-gradient($color-block-dark-5,$color-block,vertical);
+	@include box-shadow(inset -1px 3px 3px -3px $color-block-dark-10);
+	// PADDING
+	padding-top:15px;
+	padding-bottom:15px;
+}
+.menu-responsive > ul > li {
+	a {
+	color:$color-nav-footer;
+	font-weight:bold;
+		&:hover {
+		text-decoration:none;
+		}
+	}
+}
+// MOTEUR
+.moteur-laforet {
+	@include background-image(linear-gradient(top, #38b2e3 10%, #0376ac 90%));
+	@include filter-gradient(darken($color-action,5),darken($color-action,10),vertical);
+	@include lightnessColor($color-action,no);
+}
+.moteur-laforet .bloc {
+	// SHADOW
+	@include box-shadow(0px 1px -1px 1px lighten($color-action,4));
+	// BORDER
+	border-bottom:1px solid darken($color-action,9);
+}
+.moteur-laforet .zone1 {
+	// SHADOW
+	@include box-shadow(inset -2px 1px -1px -1px darken($color-action,9));
+}
+.moteur-laforet .titre-budget, .moteur-laforet .titre-surface {
+	margin-top:8px;
+	text-align: left;
+}
+.moteur-laforet label {
+	font-weight:bold;
+}
+.moteur-laforet  .checkbox {
+	padding-left: 15px;
+}
+.control-group .legend {
+	margin:0px
+}
+// FOOTER
+.nav-footer > li {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.nav-footer > li:first-child {
+	padding-left: 0;
+}
+.nav-footer > li:last-child {
+	border-right:none;
+}
+.nav-pills.nav-footer>li>a {
+	padding-left:0;
+	padding-top:2px;
+	padding-bottom:2px;
+	line-height:12px;
+}
+.btn-exclusif{padding-top:1px;padding-bottom:2px;}
+// MEDIA QUERY
+@media only screen and (max-width : 767px) {
+	header {
+	@include box-shadow(0px 0px 0px 0px);
+	}
+	.contenu-header .logo img {
+	width: 30%;
+	}
+	.slogan-mobile {
+	color:#000;
+	text-shadow:none;
+	color:$color-primary;
+	}
+	.contenu-header {
+	margin-top:10px;
+	}
+	.module-homepage {
+	margin-top: 10px;
+	height: auto;
+	}
+	.h2-title-moteur {
+	padding:15px;
+	}
+	.nav-footer>li{
+		float:none;
+		border-right:none;
+	}
+	.nav-pills.nav-footer>li>a {
+		margin:5px;
+	}
+}
+@media only screen and (min-width : 768px) and (max-width: 979px) {
+	.btn-navbar {
+		position:absolute;
+		top:15px;
+		right:0;
+	}
+}

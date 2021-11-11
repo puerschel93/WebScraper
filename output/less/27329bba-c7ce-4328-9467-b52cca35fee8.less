@@ -1,0 +1,262 @@
+// General
+
+body,
+button,
+input,
+select,
+textarea {
+	.ff(@font-family);
+	.fw(@font-weight);
+	.c(@text);
+	.f(@font-size, @line-height);
+}
+
+ul, 
+ol, 
+table, 
+dl,
+code,
+.block {
+	.space-last;
+}
+
+p {
+	margin-top: @margin-v;
+	margin-bottom: @margin-v;
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+h1, 
+h2, 
+h3,
+h4,
+.title {
+	.fw(@heading-font-weight);
+	.c(@heading-text);
+	.ff(@heading-font-family);
+}
+
+a {
+	.cp;
+}
+
+a:hover {
+	h1, 
+	h2, 
+	h3, 
+	h4,
+	p {
+		.c(inherit);
+	}
+}
+
+.title,
+h1, 
+h2, 
+h3, 
+h4 {
+	margin-top: @margin-v-large;
+	margin-bottom: @margin-v;
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&.first {
+		margin-top: 0;
+	}
+	&.last {
+		margin-bottom: 0;
+	}
+	.smaller {
+		font-size: 80%;
+	}
+	.larger {
+		font-size: 120%;
+	}
+}
+
+h1,
+.h1 {
+	.f(34px, 40px);
+	@media @screen-normal {
+		.f(45px, 56px);
+	}
+}
+
+.title,
+h2,
+.h2 {
+	.f(24px, 32px);
+}
+
+h3,
+.h3 {
+	.f(20px, 24px);
+}
+
+h4,
+.h4 {
+	.ttu;
+}
+
+img {
+	.vm;
+	.img-responsive;
+	.ib;
+}
+
+hr {
+	border-top: 1px solid @border;
+	margin: @margin-v 0;
+}
+
+a {
+	.tdu;
+}
+
+b,
+strong {
+	.fw(@highlight-font-weight);
+}
+
+ul,
+ol {
+	li {
+		list-style-position: inside;
+		margin-left: @margin-h-large;
+	}
+}
+
+ul {
+	li {
+		.dot-sign(@primary, @margin-h-large);
+	}
+}
+
+ol {
+	counter-reset: item;
+	li {
+		.counter-sign(@primary, @margin-h-large);
+	}	
+}
+
+table {
+	td, th {
+		.vm;
+		.p(@padding-v @padding-h);
+		border-bottom: 1px solid @border;
+	}
+	tr.selected {
+		td, th {
+			.bgc(@highlight-bg);
+		}
+	}
+}
+
+dl {
+	dt {
+		.p(@padding-v @padding-h);
+		padding-bottom: 0;
+	}
+	dd {
+		.p(@padding-v @padding-h);
+		border-bottom: 1px solid @border;
+	}
+
+	@media @screen-medium {
+		dt {
+			.pa;
+			.w(@column-width);
+			.bs;
+		}
+		dd {
+			padding-left: @column-width;
+			min-height: @line-height;
+		}
+	}
+}
+
+.content {
+	dl {
+		.outsetable;
+	}
+}
+
+dt, 
+th {
+	.c(@highlight-text);
+	.fw(@highlight-font-weight);
+}
+
+audio,
+video {
+	.w(100%);
+	.bl;
+	.space-last;
+}
+
+.primary {
+	.c(@primary);
+}
+
+.primary-bg {
+	.bgc(@primary);
+}
+
+.secondary {
+	.c(@text-secondary);
+}
+
+.secondary-bg {
+	.bgc(@secondary);
+}
+
+code {
+	.bgc(@highlight-bg);
+	.p(@inset);
+	.bl;
+	font-family: 'Source Code Pro', Monaco, Menlo, Consolas, 'Courier New', monospace;
+}
+
+.thin {
+    .fw(100);
+}
+
+.extra-light {
+    .fw(200);
+}
+
+.light {
+    .fw(300);
+}
+
+.regular {
+    .fw(400);
+}
+
+.medium {
+    .fw(500);
+}
+
+.semibold {
+    .fw(600);
+}
+
+.bold {
+    .fw(700);
+}
+
+.extra-bold {
+    .fw(800);
+}
+
+.black {
+    .fw(900);
+}

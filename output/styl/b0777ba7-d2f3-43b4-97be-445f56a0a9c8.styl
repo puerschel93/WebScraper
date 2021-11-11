@@ -1,0 +1,180 @@
+*
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+  user-select: text;
+  list-style: none;
+
+html,body
+  height: 100%;
+  width: 100%;
+  margin 0 
+  padding 0
+  font-family: "Microsoft YaHei"
+  -webkit-font-smoothing: antialiased
+
+ul, ol, li 
+  list-style: none;
+a 
+  text-decoration: none;
+  color: #FFFFFF;
+  -webkit-backface-visibility: hidden
+a:hover 
+    text-decoration: none;
+    color #FFFFFF
+input 
+  border none 
+  outline: none
+header, footer, nav, section, article 
+    display: block
+.clear:after 
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+.hide 
+    display: none;
+.show 
+    display: block;
+.clearfix:after
+  display:table
+  content:''
+  height:0
+  overflow:hidden
+  clear:both
+.clearfix:before
+  display:table
+  content:''
+*{
+    box-sizing: border-box
+    scrollbar-arrow-color rgba(3, 5, 57, 1)
+    scrollbar-base-color hsla(0, 0%, 53%, 0.4)
+    scrollbar-track-color rgba(3, 5, 57, 1)
+    scrollbar-shadow-color hsla(0, 0%, 53%, 0.1)
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 4px;
+    }
+    &:hover::-webkit-scrollbar-thumb {
+        background: hsla(0, 0%, 53%, 0.4);
+    }
+    &:hover::-webkit-scrollbar-track {
+        background: hsla(0, 0%, 53%, 0.1);
+    }
+}
+.swiper-pagination-bullet
+    background-color #FFF!important
+.swiper-pagination-bullet-active
+    background-color #FFF!important
+// 分别是修改分页组件的中部颜色 右边颜色 左边颜色
+.el-pager li
+    background-color #EAEAEA !important
+    color #999999 !important
+    font-weight Regular !important
+    font-size 0.7rem !important
+    margin 0 1.5px !important
+.el-pager li:hover
+    background-color #2993E8 !important
+    color #FFFFFF !important
+.el-pagination .btn-next
+    color #999999
+    background-color #EAEAEA !important
+.el-pager li.active
+    color #FFFFFF !important
+    background-color #1A649F !important
+//主页动画
+@keyframes myfirst
+{
+    0% {
+        background rgba(255,0,0,0)
+        opacity 0
+    }
+    25%{
+        background rgba(41,50,57,.2)
+    }
+    50%{
+        background rgba(41,50,57,.3)
+    }
+    75%{
+        background rgba(41,50,57,.5)
+    }
+    100% {
+        visibility visible
+        background rgba(41,50,57,.6)
+        opacity 1
+    }
+}
+//修改手机端子菜单下拉导航菜单样式
+@media screen and (max-width:768px)
+    .el-menu--inline
+        background-color #315BA1 !important
+        .el-menu-item 
+          color red
+          background-color #315BA1 !important
+          border-bottom 1px solid rgba(250,250,250,0.2)
+    .el-menu-item //修改子菜单的背景颜色
+        padding-left 20px!important
+        font-size 1.5rem !important
+        border-bottom 1px solid rgba(250,250,250,0.2)
+    .el-aside //修改子菜单的字体颜色
+        color #FFFFFF
+        font-size 3rem !important
+    // .el-menu-item:hover //鼠标悬浮时候，子菜单的样式
+    //     outline 0 !important
+    //     color #409EFF !important
+    .el-menu-item.is-active //鼠标点击时候，子菜单的样式
+        color #409EFF !important
+        border transpent !important
+        background-color #315BA1 !important
+    .el-submenu__title:focus .el-submenu__title:hover//鼠标悬浮时，主菜单的样式：
+        outline 0 !important
+        background-color #315BA1 !important
+   .el-submenu__title //二级菜单标题
+        font-size 1rem !important
+        border-bottom 1px solid rgba(250,250,250,0.2)
+        color #FFFFFF !important
+        background-color transparent !important
+        @media screen and (max-width:768px)
+            font-size 1.5rem !important
+            font-family MicrosoftYaHei !important
+            font-weight Regular !important
+    .el-submenu__icon-arrow,.el-icon-arrow-down//修改二级菜单 下拉按钮颜色
+        color #FFFFFF !important
+        font-weight 1000 !important
+        @media screen and (max-width:768px)
+            font-size 1.8rem !important
+    .el-submenu
+        .el-menu-item
+            margin-left 20px !important
+            padding-left 0 !important
+    .is-opened
+        .el-submenu__title
+            background-color #315BA1 !important
+    .el-submenu.is-active .el-submenu__title
+            border-bottom 1px solid rgba(250,250,250,0.2) !important
+    .child_nav//手机端各级子页面菜单
+        .el-submenu__title
+            color #1A649F !important
+            font-size 1.8rem !important
+            background #F2F2F2 !important
+            font-weight Regular
+            font-family MicrosoftYaHei
+        .el-submenu__icon-arrow,.el-icon-arrow-down
+            color #223D6B !important
+        .el-menu-item 
+            font-size 1.4rem !important
+            padding-left 20px !important
+            margin-left 0px !important
+        .el-menu-item.is-active //鼠标点击时候，子菜单的样式
+            color #FFFFFF !important
+            border transpent !important
+        .el-submenu__icon-arrow
+            margin-top -10px !important
+
+    

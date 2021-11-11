@@ -1,0 +1,153 @@
+.catalog
+	display block
+	
+	&__list
+		position relative
+		margin 0
+		clearfix()
+	
+		+above(768px)
+			margin 0 -4px
+			
+		+above(980px)
+			margin 0 -15px
+		
+	&__list-item
+		position relative
+		padding 0 0 36%
+		float left
+		width 50%
+		overflow hidden
+		
+		+above(768px)
+			margin-bottom 8px
+			padding 0 4px
+			height 163px
+			width 33.33%
+			
+		+above(980px)
+			margin-bottom 24px
+			padding 0 15px 16.754%
+			width 25%
+			float left
+		
+		&_x2
+			padding-bottom 74.5%
+			width 100%
+			
+			+above(768px)
+				padding-bottom 0
+				height 334px
+				width 66.66%
+			
+			+above(980px)
+				padding-bottom 35.591%
+				width 50%
+				
+		&_align-tablet_right
+			+above(768px)
+				float right
+			
+			+above(980px)
+				float left
+			
+		&_align_right
+			float right
+		
+	&__link-wrap
+		position absolute
+		top 0
+		right 0
+		left 0
+		bottom 0
+		height 100%
+		overflow hidden
+		
+		+above(768px)
+			left 4px
+			right 4px
+			
+		+above(980px)
+			left 15px
+			right 15px
+			
+	&__list-fig
+		width 100%
+		height 100%
+		font-size 0
+		will-change transform
+		transform scale(1)
+		transition transform .4s ease
+		
+		^[0]__link-wrap:hover &
+			transform scale(1.07)
+		
+	&__list-img
+		display block
+		width 100%
+		height 100%
+		object-fit cover
+		
+	&__list-about
+		position absolute
+		left 8px
+		bottom 8px
+		font-size 12px
+		font-weight bold
+		text-shadow 0 2px 6px rgba(#000, 1)
+		color #fff
+		
+		+above(768px)
+			left 12px
+			bottom 12px
+			
+		+above(980px)
+			left 30px
+			bottom 16px
+		
+		^[0]__list-item_x2 &
+			left 10px
+			bottom 12px
+			font-size 16px
+			
+			+above(768px)
+				left 24px
+				bottom 24px
+				
+			+above(980px)
+				left 36px
+				bottom 28px
+		
+	&__list-name
+		margin-bottom 3px
+		font-size 11px
+		
+		+above(768px)
+			font-size 16px
+		
+		^[0]__list-item_x2 &
+			margin-bottom 5px
+			font-size 16px
+			
+			+above(768px)
+				margin-bottom 10px
+				font-size 28px
+				
+	&__count
+		color inherit
+		text-decoration inherit
+		font-size 11px
+		white-space nowrap
+		
+		+above(768px)
+			font-size 14px
+		
+		&:hover
+			color inherit
+			text-decoration inherit
+			
+		&::after 
+			content ','
+			
+		&:last-child::after
+			display none

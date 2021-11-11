@@ -1,0 +1,311 @@
+
+/*=============================================
+=            newsletter            =
+=============================================*/
+
+.newsletter-title {
+  font-weight: 700;
+}
+
+.newsletter_small {
+  padding: 70px 0;
+}
+.newsletter-form form,
+.newsletter-form2 form {
+  position: relative;
+}
+.rounded-input {
+  border-radius: 50px;
+}
+.newsletter-form input,
+.newsletter-form input:focus,
+.newsletter-form2 input,
+.newsletter-form2 input:focus {
+  border: 0;
+}
+.newsletter-form-wrapper {
+  a {
+    color: $white;
+    &:hover {
+      color: $black--two;
+    }
+  }
+}
+.newsletter-form {
+  input {
+    &.form-control {
+      height: 50px;
+      padding: 10px 140px 10px 20px;
+
+@include respond(extra-small-mobile) {
+        padding-right: 130px;
+      }
+    }
+  }
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+@include respond(extra-large-mobile) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+@include respond(extra-small-mobile) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+
+  &--rounded-input {
+    input {
+      border-radius: 50px;
+    }
+
+    button {
+      top: 50%;
+
+      transform: translateY(-50%);
+    }
+
+    .btn-send {
+      font-size: 20px;
+      line-height: 40px;
+
+      right: 5px;
+
+      width: 40px;
+      height: 40px;
+      padding: 0;
+
+      text-align: center;
+
+      color: $white;
+      border: 0;
+      border-radius: 100%;
+      background-color: $theme-color--default;
+
+      i {
+        font-size: 20px;
+
+        margin-right: 0;
+
+        vertical-align: baseline;
+      }
+    }
+  }
+}
+
+.newsletter-form2 {
+  input {
+    height: 59px;
+    padding: 10px 140px 10px 20px;
+  }
+}
+.newsletter-form2 {
+  button {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+  }
+}
+.newsletter-box {
+  position: relative;
+
+  padding: 70px 50px;
+
+  background-color: $white;
+  &:before {
+    position: absolute;
+    z-index: 0;
+    top: 10px;
+    right: 0;
+    bottom: 0;
+    left: 10px;
+
+    content: "";
+
+    box-shadow: 10px 10px 0 rgba($black,0.1);
+  }
+}
+
+.newsletter-wrap {
+  position: relative;
+
+  margin: 30px 0;
+  &:before {
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: 15px;
+    bottom: -15px;
+    left: 15px;
+
+    content: "";
+
+    background-color: $white;
+    box-shadow: 0 0 10px rgba($black, 0.1);
+  }
+
+  &:after {
+    position: absolute;
+    z-index: -2;
+    top: -30px;
+    right: 30px;
+    bottom: -30px;
+    left: 30px;
+
+    content: "";
+
+    background-color: $white;
+    box-shadow: 0 0 10px rgba($black, 0.1);
+  }
+}
+
+.newsletter-form {
+  .btn-send {
+    font-size: 20px;
+    line-height: 40px;
+
+    right: 5px;
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    color: $white;
+    border: 0;
+    border-radius: 100%;
+    background-color: $theme-color--default;
+  }
+
+  .btn-send2 {
+    font-size: 20px;
+    line-height: 40px;
+
+    top: 50%;
+    right: 5px;
+
+    width: 50px;
+    height: 40px;
+    padding: 0 0 0 5px;
+
+    transform: translateY(-50%);
+
+    color: $theme-color--default;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 1px solid $grey--two;
+    background-color: transparent;
+  }
+
+  &.rounded-input {
+    input {
+      height: 60px;
+
+      border-radius: 30px;
+    }
+    button {
+      top: 4px;
+      right: 5px;
+
+      border-radius: 40px;
+    }
+
+    &--style-two {
+      input {
+        border-radius: 0;
+      }
+      button {
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.input-tran-white {
+  input,
+  input:focus {
+    color: $white;
+    background-color: rgba($black, 0.1);
+    box-shadow: none;
+  }
+}
+.input-tran-white input::-webkit-input-placeholder {
+  opacity: 1;
+  color: $white;
+  ;
+}
+.input-tran-white input::-moz-placeholder {
+  opacity: 1;
+  color: $white;
+  ;
+}
+.input-tran-white input:-ms-input-placeholder {
+  opacity: 1;
+  color: $white;
+  ;
+}
+.input-tran-white input::-ms-input-placeholder {
+  opacity: 1;
+  color: $white;
+  ;
+}
+.input-tran-white input::placeholder {
+  opacity: 1;
+  color: $white;
+  ;
+}
+.newsletter-text {
+  position: relative;
+
+  padding-left: 80px;
+
+  p {
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &:before {
+    font-size: 65px;
+    line-height: normal;
+
+    position: absolute;
+    left: 0;
+
+    opacity: 0.4;
+    color: $white;
+  }
+}
+.newsletter-content {
+  .icon {
+    svg {
+      font-size: 65px;
+      line-height: normal;
+
+      opacity: 0.4;
+      color: $white;
+
+@include respond (extra-small-mobile) {
+        font-size: 40px;
+      }
+    }
+  }
+}
+.newsletter-text-wrapper {
+  position: relative;
+  h3 {
+    @include respond (extra-small-mobile) {
+      font-size: 20px;
+    }
+  }
+  p {
+    color: $white;
+  }
+}
+
+/*=====  End of newsletter  ======*/
+

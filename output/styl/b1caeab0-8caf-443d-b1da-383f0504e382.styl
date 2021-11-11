@@ -1,0 +1,434 @@
+// definitions
+pblue = #1d3355
+pdarkblue = #162844
+pgrey = #eee
+sansSerifFont = Futuraregular, 'Roboto', sans-serif
+serifFont = 'Lora', serif
+
+@font-face
+   font-family Futuraregular
+   font-style normal
+   src url(../fonts/futurateereg.ttf)
+
+body
+    font-family: Futuraregular
+    font-size: 16px
+    background-color: #fff
+    color: #111
+    padding-top: 72px
+
+div
+    box-sizing: border-box
+
+a
+    text-decoration: none
+    color: #262526
+
+.float-r
+    float: right
+
+.float-l
+    float: left
+
+.clearfix:after
+    visibility: hidden
+    display: block
+    font-size: 0
+    content: " "
+    clear: both
+    height: 0
+
+.clearfix 
+    display: inline-block
+
+border-radius()
+    -webkit-border-radius: arguments
+    -moz-border-radius: arguments
+    border-radius: arguments
+
+.title-m
+    font-weight: bold
+    font-size: 1.14em
+    text-align: center
+    color: #1d1c1d
+    margin: 0.8em 0 0.3em 0
+
+.title-s
+    font-weight: bold
+    font-size: 0.86em
+    text-align: center
+    margin: 0.2em 0 
+
+.subtitle
+    font-size: 0.8em
+    margin: 0.2em 0 0.3em 0
+    color:#6c6c6c
+    text-align: center
+    font-family: serifFont
+    span.fit,
+    span.price
+        text-transform: uppercase
+
+// simple 6 column grid
+.l-wrap 
+    width: 100%
+    max-width: 1200px
+    margin-right: auto
+    margin-left: auto
+
+.l-wrap *
+    box-sizing: border-box
+
+.row:before, 
+.row:after
+    content:""
+    display: table 
+    clear:both
+
+[class*='col-']
+    float: left
+    min-height: 1px
+    width: 16.66%
+    padding: 12px 10px
+
+.col-1
+    width: 16.66%
+
+.col-2
+    width: 33.33%
+
+.col-3
+    width: 50%
+
+.col-4
+    width: 66.664%
+
+.col-5
+    width: 83.33%
+
+.col-6
+    width: 100%
+    
+// /simple grid
+
+// buttons
+
+a.button-blue
+    display:inline-block
+    padding: 7px 10px
+    background-color: pblue
+    color: #ffffff
+    text-transform: uppercase
+    text-align: center
+    font-weight: bold
+    font-size: 0.86em
+    letter-spacing: 1px
+
+// /buttons
+
+#header
+    position: fixed
+    padding 8px 0
+    padding-bottom: 0
+    color: #111
+    width: 100%
+    z-index: 9999
+    top: 0
+    background-color: #fff
+    #header-inner
+        padding 0 10px
+        display: table
+        width: 100%
+    #header-separator
+        border-top: 1px solid pgrey
+        clear: both
+    #logo-wrap,
+    #cart-wrap
+        display:inline-block
+        max-width: 50%
+        text-transform: uppercase
+        font-size: 0.85em
+        margin-bottom: 5px
+        img 
+            vertical-align: middle
+        #shopping-bag
+            height: 20px;
+            display: inline-block
+            vertical-align: middle
+            position: relative
+            cursor: pointer
+            font-size: 1.2em
+        #shopping-amount
+            display: inline-block
+            color: #000
+            margin-top: 2px
+            margin-left: 3px
+            font-weight: 500
+            position: relative
+            vertical-align: middle
+            cursor: pointer
+
+    #dropdown-menu
+        display:none
+        overflow: hidden
+        background-color: pblue
+        position: absolute
+        top: 44px
+        width: 100%
+        padding: 10px
+        a
+            color: #fff
+        .tab
+            display: none
+        #quick-menu-wrap
+            background-color: inherit
+            a
+                font-size: 0.9em
+                color: #394e6d
+            a.active
+                color: #fff
+        .sub-header
+            display: block
+            text-transform: uppercase
+            font-weight: bold
+            font-size: 0.85em
+            margin-bottom: 0.7em
+            color: #fff
+            letter-spacing: 1px
+        ul.submenu-list
+            margin-top:0
+            margin-bottom: 1em
+            padding-left: 0
+            list-style-type: none
+            li
+                a
+                    text-transform: capitalize
+                    font-size:0.85em
+
+#header.header-inverse
+    background-color: pblue !important
+    a
+        color: #ffffff
+    #cart-wrap #shopping-amount 
+        color: #ffffff
+    #shopping-bag 
+        i.fa.fa-shopping-bag
+            color: #fff
+    // Horizontal Orientation Fix
+    @media screen and (max-height: 415px)
+        overflow-y: scroll
+        min-height: 100vh
+    
+
+#search-container
+    position: relative
+    margin-bottom:1em
+#search-container 
+    input
+        text-indent: 30px
+        width: 100%
+        background-color: pdarkblue
+        border: 0
+        height: 2em
+        color: #fff
+#search-container 
+    .fa-search
+        position: absolute
+        top: 7px
+        left: 7px
+        font-size: 1.1em
+        color: #fff
+
+
+#quick-menu-wrap
+    background-color: #fff
+
+a.qmenu-item
+    display: inline-block
+    padding: 5px 10px
+    text-transform: uppercase
+    font-weight: bold
+    max-width:33.33%
+    font-size: 0.85em
+    color: #111
+    letter-spacing: 1px
+
+.hero
+    text-align: center
+    .hero-img
+        img 
+            width:100%
+            height: auto
+
+    .hero-body
+        padding: 5px 15px
+
+    .subtitle
+        margin-bottom: 20px
+
+.featured-collection
+    text-align: center
+    .featured-inner
+        padding: 10px 0
+        width:100%
+    img 
+        width: 100%
+        max-width: 100%
+
+.featured-product
+    text-align: center
+    .featured-inner
+        padding: 2px
+        width:100%
+    img 
+        width: 100%
+        max-width: 100%
+    .title-s
+        font-size:0.95em
+        text-transform: capitalize
+        text-align: left
+        margin-bottom: 0
+    .subtitle
+        font-family: sansSerifFont
+        text-align: left
+        margin-top: 3px
+.featured-product.col-3:first-of-type
+    padding-right: 5px
+.featured-product.col-3:last-of-type
+    padding-left: 5px
+
+#bottom-menu
+    border-top: 1px solid pgrey
+    border-bottom: 1px solid pgrey
+    text-align: center
+    .bt-menu-item
+        display: inline-block
+        position: relative
+        a
+            display: block
+            height:100%
+            padding:15px 10px
+            text-transform: capitalize
+            font-weight: bold
+            font-size: 0.95em
+            color: #1d1c1d
+            line-height: 1.65em
+            box-sizing: border-box
+            letter-spacing: 1px
+            img 
+                width:20px
+                margin-bottom: 3px
+        a.has-submenu
+            border-left: 1px solid transparent
+            border-right: 1px solid transparent
+        a.bordered
+            border-left: 1px solid pgrey
+            border-right: 1px solid pgrey
+    ul.submenu-list
+        display: none
+        padding: 0
+        margin: 0
+        list-style-type: none
+        text-align: left
+        position: absolute
+        background-color: #fff
+        z-index: 9999
+        border: 1px solid pgrey
+        width: 100%
+        box-sizing: border-box;
+        li
+            border-top: 1px solid pgrey 
+            a
+                padding: 5px 10px
+
+
+.form-container
+    padding: 20px 10px
+
+.form-input-inline
+    background-color: pblue
+    border:2px solid pblue
+    input[type="text"].form-element
+        font-family: serifFont
+        font-style: italic
+        display: inline-block
+        box-sizing: border-box
+        background-image: none;
+        background-clip: padding-box;
+        max-width: 200px
+        padding: 4px 10px
+        margin: 0
+        border:1px solid pblue
+        outline: none
+        height: 30px
+        border-radius(0)
+    button.form-element
+        font-family: sansSerifFont
+        padding: 6px 10px
+        background-color: pblue
+        color: #ffffff
+        text-transform: uppercase
+        text-align: center
+        font-weight: bold
+        font-size: 0.86em
+        display: inline-block
+        max-width: calc(100% - 210px)
+        outline: none
+        border: 0
+        margin: 0
+
+#newsletter-wrapper
+    text-align: center
+    .form-input-inline
+        text-align: initial
+            
+#footer 
+    .form-input-inline
+        display: inline-block
+        margin-left: auto
+        margin-right: auto
+
+#social-wrapper
+    text-align: center
+
+.social
+    display:inline-block
+    box-sizing: content-box
+    height: 30px
+    width:30px
+    padding: 2px
+    font-size: 24px
+    margin-left: 5px
+    margin-right: 5px
+    color: #999
+    border: 2px solid #999
+    border-radius(20px)
+
+#link-list
+    border-top: 1px solid pgrey
+    padding: 15px 0
+    margin-top: 20px
+    a
+        display: block
+        padding: 3px 15px
+        text-align: center
+        text-transform: uppercase
+        font-size:0.8em
+        font-weight: bold
+        letter-spacing: 1px
+
+#card-list
+    border-top: 1px solid pgrey
+    text-align: center
+    margin-bottom:20px
+    img 
+        padding-top:20px
+        height:20px
+        margin-left:5px
+        margin-right:5px
+
+#copyright
+    text-align: center
+    color: #999
+    font-size:0.8em
+    padding-bottom: 20px

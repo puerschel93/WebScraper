@@ -1,0 +1,173 @@
+.main
+   &-inner
+      background $black
+      border-radius 0 0 200px 0
+      display flex
+      justify-content space-between
+      @media $afterDesktop
+         flex-direction column
+   &__left
+      background $alice
+      flex 0 0 62%
+      max-width 62%
+      padding 80px 0
+      @media $phone
+         padding 60px 0
+      @media $bigPhone
+         padding 40px 0
+      @media $desktop
+         flex 0 0 64%
+         max-width 64%
+      @media $afterDesktop
+         flex 0 0 100%
+         max-width 100%
+
+   &-left
+      &__video
+         transition 0.3s
+         img
+            width 100%
+         a
+            display block
+         &:hover
+            filter: drop-shadow(0 0 5px rgba(black, 0.8))
+      &__body-top
+         display flex
+         justify-content space-between
+         align-items center
+         margin 40px 0 43px
+      &__title
+         font-size 32px
+         color $black
+         font-weight: 700
+         line-height 39px
+         @media $desktop
+            font-size 28px
+            line-height 34px
+         @media $bigPhone
+            font-size 21px
+            line-height 25px
+      &__link
+         background $red
+         border-radius: 8px 0 8px 0
+         transition 0.2s
+         white-space nowrap
+         @media $phoneS
+            border-radius 6px 0
+         &:hover
+            box-shadow 0 0 10px rgba($black, 0.7) inset
+         a
+            color $white
+            text-transform uppercase
+            font-size 18px
+            font-weight: 700
+            padding 5px 10px
+            display block
+            @media $phoneS
+               font-size 10px
+      &__footer
+         border-left solid 2px $black
+         padding-left: 10px
+         &-title
+            font-size 18px
+            font-weight: 700
+            line-height 22px
+            margin-bottom: 8px
+         &-text
+            font-size 14px
+            color rgba($black, 0.5)
+            line-height 17px
+      &__list
+         display flex
+         justify-content space-between
+         align-items flex-start
+         margin 45px -10px
+         @media $desktop
+            margin 45px 0
+         @media $beforePhone
+            flex-wrap wrap
+         &-item
+            flex 0 0 33.333%
+            max-width 33.333%
+            padding 0 10px
+            @media $beforePhone
+               flex 0 0 100%
+               max-width 100%
+               padding 0
+               display flex
+               align-items center
+               justify-content flex-start
+               margin 12px 0
+         &-info
+            display flex
+            @media $afterDesktop
+               align-items center
+         &-numb
+            color $red
+            border-radius 8px 0
+            border solid 1px $red
+            font-family: $Prosto
+            font-size 32px
+            margin-right: 20px
+            height 60px
+            line-height 60px
+            @media $desktop
+               height 48px
+               line-height 48px
+               font-size 24px
+            @media $phoneS
+               height 32px
+               line-height 32px
+               font-size 18px
+            &--size
+               width 76px
+               text-align center
+               @media $desktop
+                  width 60px
+               @media $phoneS
+                  width 40px
+         &-text
+            font-size 18px
+            line-height 22px
+            color $black
+            padding-right: 25px
+            @media $desktop
+               font-size 16px
+               padding-right: 0
+            @media $phone
+               font-size 14px
+               line-height normal
+            @media $phoneS
+               font-size 12px
+         &-img
+            margin-bottom: 15px
+            height 48px
+            @media $beforePhone
+               min-width 76px
+               margin-right: 19px
+               height auto
+               margin-bottom: 0
+            @media $beforeBigPhone
+               min-width 50px
+               margin-right: 16px
+   &__right
+      background $black
+      flex 0 0 38%
+      max-width 38%
+      @media $afterDesktop
+         flex 0 0 100%
+         max-width 100%
+      &-bg
+         padding 40px 0
+         @media $desktop
+            padding 80px 0
+         @media $afterDesktop
+            padding 0
+         &--mobile
+            display none
+            @media $afterDesktop
+               display block
+               margin 0 auto
+         &--desktop
+            @media $afterDesktop
+               display none

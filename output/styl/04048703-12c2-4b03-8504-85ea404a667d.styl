@@ -1,0 +1,459 @@
+$ns = ".work-single"
+
+{$ns}
+  +a($t)
+    padding-top 184px
+  +btw($m, $t)
+    padding-top 155px
+  +b($m)
+    padding-top 126px
+  h1
+    font-weight 600
+    color $black
+    padding 0
+    margin 0
+    +a($d)
+      font-size 60px
+      line-height 1.09em
+      letter-spacing 0.47px
+    +btw($t, $d)
+      font-size 45px
+      line-height 51px
+      letter-spacing 0.35px
+    +btw($m, $t)
+      font-size 38px
+      line-height 51px
+      letter-spacing 0.3px
+    +b($m)
+      font-size 30px
+      line-height 40px
+      letter-spacing 0.27px
+  h2
+    font-family $Ogg
+    font-weight normal
+    color $black
+    padding 0
+    margin 0
+    +a($t)
+      font-size 40px
+      line-height 1.3em
+    +btw($m, $t)
+      font-size 34px
+      line-height 52px
+    +b($m)
+      font-size 28px
+      line-height 31px
+    + h4
+      +a($m)
+        padding-top 6px
+      +b($m)
+        padding-top 2px
+  h3
+    font-weight 500
+    color $black
+    padding 0
+    margin 0
+    +a($d)
+      font-size 40px
+      line-height 1.3em
+    +btw($t, $d)
+      font-size 32px
+      line-height 42px
+    +btw($m, $t)
+      font-size 28px
+      line-height 38px
+    +b($m)
+      font-size 24px
+      line-height 31px
+  h4
+    font-weight 300
+    color $lightgray
+    padding 0
+    margin 0
+    +a($t)
+      font-size 40px
+      line-height 1.3em
+    +btw($m, $t)
+      font-size 34px
+      line-height 41px
+    +b($m)
+      font-size 28px
+      line-height 32px
+    img
+      display inline-block
+      vertical-align middle
+  h5
+    font-weight 600
+    color $black
+    padding 0
+    +a($m)
+      font-size 22px
+      line-height 1.636364em
+      margin 1.7em 0 
+    +b($m)
+      font-size 18px
+      line-height 27px
+      margin 27px 0
+  &__header
+    +a($sd)
+      margin-bottom 28px
+      min-height 410px
+    +btw($t, $sd)
+      margin-bottom 161px
+    +btw($m, $t)
+      margin-bottom 94px
+    +b($t)
+      margin-bottom 74px
+    .container
+      +a($t)
+        display flex
+    &-main
+      +a($sd)
+        padding-right 25px
+      +btw($t, $sd)
+        padding-right 50px
+      +a($t)
+        flex 1 1 auto
+    &-aside
+      flex 0 0 auto
+      padding-left 11px
+      +a($sd)
+        width 202px
+      +b($sd)
+        width 158px 
+      +b($t)
+        display none
+      &:last-child
+        +b($sd)
+          display none
+      &-block
+        & + &
+          margin-top 47px
+        .subhead
+          margin-bottom 13px
+        img
+          display block
+          margin-top 19px 
+        p
+          font-size 15px
+          line-height 21px
+          color $gray 
+          margin-bottom 28px
+          a
+            color currentColor
+            &:not(:last-child)
+              &:after
+                display none
+              &:hover ~ a:last-child:after
+                fluxText()
+                transform translateX(2px)
+            &:after
+              color $black
+  &__text
+    +a($sd)
+      padding 0 7.8% 
+    +a($t)
+      display flex
+    &-column
+      position relative
+      +a($sd)
+        box-sizing border-box
+        padding 0 7px 
+      +a($t)
+        width 50%
+      &:nth-child(1)
+        +btw($t, $sd)
+          padding-right 5px
+        +btw($m, $t)
+          margin-bottom 37px
+        +b($m)
+          margin-bottom 45px
+        {$ns}__text-triangle
+          +a($sd)
+            margin-top 114px
+          +btw($t, $sd)
+            margin 79px 0 0 -15px
+          +a($t)
+            top 100% 
+          +btw($m, $t)
+            bottom 100%
+            margin 0 0 8px 7px
+          +a($m)
+            left 50%
+            transform translateX(-50%)
+          +b($m)
+            right 60px
+            bottom -2px
+      &:nth-child(2)
+        +btw($t, $sd)
+          padding-left 5px
+        +a($t)
+          padding-top 13px
+        {$ns}__text-triangle
+          left 0
+          +a($sd)
+            margin 0 0 18px 6px
+          +btw($t, $sd)
+            margin 0 0 18px -3px
+          +a($t)
+            bottom 100% 
+          +b($t)
+            top 100% 
+            margin 96px 0 0 1px
+          +b($m)
+            display none
+      h2
+        +a($t)
+          display inline-block
+          vertical-align top 
+          position relative
+      h4
+        &:last-child
+          +b($m)
+            margin-bottom -15px
+      h5
+        &:first-child
+          margin-top 0 !important
+      p
+        letter-spacing 0.1px
+        +a($m)
+          margin 1.8em 0
+        +b($m)
+          margin 27px 0 
+        b
+          color $black
+          font-weight 600 
+        &:first-of-type
+          margin-top 0 !important
+        &:last-of-type
+          margin-bottom 0 !important 
+    &-decorator
+      position absolute
+      img
+        display block
+      &.-top-left
+        bottom 100% 
+        left 0
+        +a($sd)
+          margin 0 0 112px 16px
+        +btw($t, $sd)
+          margin 0 0 112px 2px
+        +b($t)
+          margin 0 0 78px 5px 
+        +b($m)
+          display none
+        + h2
+          height 100% 
+        img
+          +b($t)
+            width 244px
+      &.-top-right
+        bottom 100% 
+        +a($sd)
+          left 50%
+          transform translateX(-50%)
+          margin 0 0 37px 14px 
+        +btw($t, $sd)
+          right -4px
+          margin-bottom 37px
+        +btw($m, $t)
+          right -3px
+          margin-bottom 111px
+        +b($m)
+          right 60%
+          margin-bottom 121px
+        img
+          +btw($m, $t)
+            width 206px
+          +b($m)
+            width 190px
+      &.-bottom
+        +a($d)
+          right 7.8%
+          top 100% 
+          margin 92px 18px 0 0 
+        +btw($t, $d)
+          left 42.3%
+          bottom 150px
+        +btw($m, $t)
+          left 36.3%
+          bottom 125px 
+        +b($m)
+          left 24px
+          bottom 48px
+        img
+          +btw($m, $t)
+            width 654px
+          +b($m)
+            width 540px
+    &-triangle
+      display block
+      position absolute
+      width 0
+      height 0
+      border-style solid
+      border-color transparent
+      +a($t)
+        border-width 9px 9px 0 9px
+      +b($t)
+        border-width 7px 7px 0 7px
+  &__quote
+    &-text
+      font-family $Ogg
+      +a($d)
+        font-size 49px
+        line-height 67px 
+      +btw($m, $d)
+        font-size 44px
+        line-height 60px
+      +b($m)
+        font-size 28px
+        line-height 38px
+    &-cite
+      +a($m)
+        font-size 17px
+        line-height 26px
+      +b($m)
+        font-size 10px
+        line-height 15px
+      b
+        font-weight 600
+        position relative
+        &:before
+          content "" 
+          display block
+          position absolute
+          bottom 0
+          right 100% 
+          height 1px
+          background-color currentColor
+          +a($m)
+            width 31px
+            margin 0 20px 2px 0
+          +b($m)
+            width 18px
+            margin 0 8px 1px 0
+  &__outcomes
+    +a($sd)
+      margin 266px 0 225px
+    +btw($t, $sd)
+      margin 266px 0 228px
+    +btw($m, $t)
+      margin 104px 0 97px
+    +b($m)
+      margin 101px 0 83px
+    .container
+      +a($d)
+        padding-left 105px
+      +btw($sd, $d)
+        padding-left 7.3%
+      +a($t)
+        display flex
+        justify-content space-between
+    &-content
+      +a($sd)
+        width 72.4%
+      +btw($t, $sd)
+        width 49.4% 
+      +a($t)
+        display flex
+        flex-wrap wrap
+        padding-top 22px
+      +btw($m, $t)
+        padding-top 56px
+      +b($m)
+        padding-top 49px
+    &-block
+      font-size 17px
+      line-height 21px
+      box-sizing border-box
+      +a($sd)
+        width 38%
+        &:nth-child(3n)
+          width 24%
+          padding-right 0
+      +btw($t, $sd)
+        &:nth-child(2n-1)
+          width 61.8% 
+        &:nth-child(2n)
+          width 38.2%
+          padding-right 0
+      +a($t)
+        padding 0 25px 52px 0
+      +b($t)
+        padding-bottom 33px
+      &-title
+        color $black 
+        padding-bottom 3px
+        .ico
+          display inline-block
+          vertical-align baseline
+          &.-star
+            width 11px
+            height 11px
+            margin-right -1px
+            &:first-child
+              margin-left 2px
+      &-value
+        color $gray 
+        a
+          color currentColor
+          &:not(:last-child)
+            &:after
+              display none
+            &:hover ~ a:last-child:after
+              fluxText()
+              transform translateX(2px)
+          &[data-with-arrow]:after
+            color #000
+  &__afterwords
+    border-top 1px solid rgba(#bfbfbf, 0.25)
+    .container
+      +a($t)
+        display flex
+      +b($t)
+        width 100% 
+    &-block
+      display flex
+      align-items center
+      box-sizing border-box
+      +a($sd)
+        height 500px
+      +btw($m, $sd)
+        height 349px
+      +a($t)
+        width 50%
+      +a($m)
+        padding-bottom 34px
+      +b($m)
+        height 280px
+        padding-bottom 10px
+      &:first-child
+        .afterword
+          +btw($sd, $d)
+            padding-left 17.6%
+      & + &
+        border-style solid
+        border-color rgba(#bfbfbf, 0.25)
+        +a($t)
+          border-width 0 0 0 1px
+        +b($t)
+          border-width 1px 0 0
+        .afterword
+          +btw($t, $d)
+            padding-left 23.4% 
+    .afterword
+      +a($d)
+        padding-left 26%
+      +btw($m, $t)
+        padding 0 30.2%
+      +b($m)
+        padding 0 5.6% 
+      &__heading,
+      &__subheading
+        +a($m)
+          font-size 40px
+          line-height 52px
+        +b($m)
+          font-size 30px
+          line-height 40px

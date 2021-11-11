@@ -1,0 +1,423 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,500&subset=latin,cyrillic);
+
+@require 'nib'
+global-reset()
+
+@require 'varible'
+@require 'clearfix'
+@require 'mixins'
+@require 'grid'
+
+@require 'shadowbox'
+@require 'popups'
+@require '1200'
+@require '768'
+@require '320'
+
+*,
+*:before,
+*:after
+    -webkit-box-sizing border-box
+    -moz-box-sizing border-box
+    box-sizing border-box
+    outline none
+
+body
+    font-family: font;
+    font-size: 16px;
+    line-height: 25px;
+    // background: #fff;
+    // background: #333;
+
+a
+    color: color_blue;
+    text-decoration: none;
+    border-bottom: 1px solid color_blue_border;
+    transition: border .2s, color .2s;
+    position: relative;
+    &:hover
+        border-bottom: 1px solid transparent;
+        color: color_orange;
+    &.btn
+        display: inline-block;
+    &.dshd
+        border-style: dashed;
+    &.nobr
+        border-color: transparent;
+        &:hover
+            border-color: transparent;
+    &.fs14
+        font-size: 14px;
+    &.tmean
+        border: none;
+        color: #8baabe;
+        font-size: 12px;
+        font-family: font;
+        letter-spacing: 0;
+        img
+            position: relative;
+            top: 3px;
+            margin-right: 12px;
+    &.blue.rounded
+        background: none;
+        height: 30px;
+        display: block;
+        font-size: 16px;
+        line-height: 28px;
+        color: #2076cf;
+        font-family: 'Roboto Condensed Light', font;
+        letter-spacing: 0.5px;
+        text-align: center;
+        border: none;
+        border: 1px solid #2076cf;
+        border-radius: 20px;
+        transition: color .2s, border .2s;
+        position: relative;
+        .ic_nohover
+            display: inline-block;
+            overflow: hidden;
+            transition: visibility 0s, opacity .0;
+            visibility: visible;
+            opacity: 1;
+            position: relative;
+        .ic_hover
+            display: inline-block;
+            overflow: hidden;
+            transition: visibility 0s, opacity .0;
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+        &.back
+            font-family: font;
+            font-weight: 300;
+            font-size: 14px;
+        &.disabled
+            color: #777;
+            border-color: #777;
+            cursor: default;
+        &:hover
+            color: color_orange;
+            border-color: color_orange;
+            .ic_hover
+                display: inline-block;
+                overflow: hidden;
+                visibility: visible;
+                opacity: 1;
+                position: relative;
+                transition: visibility 0s, opacity .5s;
+            .ic_nohover
+                display: inline-block;
+                overflow: hidden;
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                transition: visibility 0s, opacity .5s;
+
+    &.download
+        font-family: font;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        line-height: 18px;
+        font-size: 13px;
+        padding: 0 8px 0 15px;
+        color: #fff;
+        transition: background .2s;
+        background: #2076cf url(../img/ic/ic_download_arrow.png) 7px 4px no-repeat;
+        border-radius: 10px;
+        &:hover
+            background-color: color_orange;
+
+    &.blue.rounded.more
+        height: 35px;
+        display: block;
+        background: url(../img/btn/btn.more.png) left center no-repeat,
+                    url(../img/btn/btn.more.png) right center no-repeat;
+        font-size: 17px;
+        line-height: 32px;
+        color: #2076cf;
+        font-family: 'Roboto Condensed', font;
+        letter-spacing: 0.5px;
+        text-align: center;
+        border: none;
+        border: 1px solid #2076cf;
+        border-radius: 20px;
+.blue.v
+    height: 35px;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    border: none;
+    color: #fff;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    font-family: 'Roboto Condensed', font;
+    font-size: 17px;
+    line-height: 35px;
+    transition: background .1s, box-shadow .1s, top .2s;
+    display: block;
+    box-shadow: 0px 1px 1px 0px rgba(0, 70, 141, 0.35);
+    // margin: 0 20px;
+    padding: 0 20px;
+    border-radius: 35px;
+    background: url(../img/btn/blue.v.png);
+    &:hover
+        background: url(../img/btn/blue.v-h.png);
+    &.active,
+    &:active
+        box-shadow: none;
+        background: url(../img/btn/blue.v-a.png);
+
+    // &:before
+    //     content: "";
+    //     display: inline-block;
+    //     position: absolute;
+    //     width: 20px;
+    //     height: 100%;
+    //     top: 0;
+    //     left: -20px;
+    //     background: url(../img/btn/blue.v.before.png);
+    //     transition: background .1s, box-shadow .1s;
+    //     box-shadow: -1px 0px 1px rgba(0, 70, 141, 0.35);
+    //     border-bottom-left-radius: 35px;
+    //     border-top-left-radius: 35px;
+    // &:after
+    //     content: "";
+    //     display: inline-block;
+    //     position: absolute;
+    //     width: 20px;
+    //     height: 100%;
+    //     top: 0;
+    //     right: -20px;
+    //     background: url(../img/btn/blue.v.after.png);
+    //     transition: background .1s, box-shadow .1s;
+    //     box-shadow: 1px 0px 1px rgba(0, 70, 141, 0.35);
+    //     border-bottom-right-radius: 35px;
+    //     border-top-right-radius: 35px;
+    // &:hover
+    //     background: url(../img/btn/blue.v-h.png);
+    //     &:before
+    //         background: url(../img/btn/blue.v.before-h.png);
+    //     &:after
+    //         background: url(../img/btn/blue.v.after-h.png);
+    // &.active,
+    // &:active
+    //     box-shadow: none;
+    //     background: url(../img/btn/blue.v-a.png);
+    //     &:before
+    //         box-shadow: none;
+    //         background: url(../img/btn/blue.v.before-a.png);
+    //     &:after
+    //         box-shadow: none;
+    //         background: url(../img/btn/blue.v.after-a.png);
+
+img
+    max-width: 100%;
+    height: auto;
+
+b
+    font-weight: 500;
+    text-shadow: none;
+
+.norel.width
+    z-index: 0;
+    position: static;
+
+.form_field
+    margin: 20px 0;
+    &.submit
+        margin: 20px 0 10px;
+
+    input
+        background: #fff;
+        border: 1px solid #b5cbda;
+        border-radius: 5px;
+        color: #333333;
+        font-family: 'Roboto', font;
+        font-weight: 300;
+        padding: 1px 4px 2px;
+        display: block;
+        width: 100%;
+        font-size: 15px;
+        line-height: 25px;
+        box-shadow: inset 0px 0px 3px 0px rgba(1, 67, 165, 0.3);
+        &.centered
+            text-align: center;
+        &.error
+            background: url(../img/ic/ic_warning_input.png) right no-repeat;
+            border-color: #d64245;
+    label
+        font-family: 'Roboto', font;
+        font-weight: 300;
+        color: #d31616;
+        line-height: 20px;
+        font-size: 12px;
+        display: block;
+        text-align: left;
+        margin-bottom: -5px;
+        &.errored
+            color: #ff4a00;
+        &.error
+            color: #ff4a00;
+            font-size: 12px;
+            position: relative;
+            &:before
+                top: 2px;
+                position: relative;
+                content: "";
+                display: inline-block;
+                width: 8px;
+                height: 15px;
+                margin-right: 5px;
+                background: url(../img/ic/ic_warning.png) center center no-repeat;
+            &.valid
+                display: none !important;
+select
+    background: none;
+    color: #333333;
+    font-family: 'Roboto', font;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+    border: none;
+    border: 1px solid #adc7d7;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    appearance: none;
+    line-height: 28px;
+    transition: background .2s, border .2s;
+    background: url(../img/ic/ic_select.png) right no-repeat,
+                linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(243,249,255,1) 100%);
+    &:focus
+        // border: 1px solid #4d91d9;
+        background: url(../img/ic/ic_select.png) right no-repeat,
+                    linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(243,249,255,1) 100%);
+
+
+h1
+    font-family: 'ff-good-headline-web-pro-con', font;
+    font-size: 46px;
+    line-height: 45px;
+    letter-spacing: 1px;
+    margin: 20px;
+    color: #2076cf;
+    margin: 25px 0;
+
+h2
+    font-family: 'ff-good-headline-web-pro-con', font;
+    font-size: 34px;
+    line-height: 45px;
+    letter-spacing: 1px;
+    margin: 20px;
+    color: #2076cf;
+    margin: 25px 0;
+
+h3
+    font-family: 'ff-good-headline-web-pro-con', font;
+    font-size: 26px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    color: #2076cf;
+    margin: 25px 0;
+
+h4
+    font-family: 'ff-good-headline-web-pro-con', font;
+    font-size: 24px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    color: #2076cf;
+    margin: 10px 0; 
+
+table
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+    td, th
+        text-align: center;
+        border: 1px solid #e0e0e0;
+        padding: 7px;
+    td
+        color: #333333;
+        font: 300 16px/25px font;
+    tr
+        th
+            font-weight: 400;
+        td
+            font-weight: 300;
+small
+    font-size: 0.8em;
+
+
+.text
+    font: 300 19px/30px font;
+    letter-spacing: 0.4px;
+.centered
+    text-align: center;
+.tleft
+    text-align: left;
+.tright
+    text-align: right;
+.black
+    color: #000;
+.mb0
+    margin-bottom: 0;
+.woh
+    overflow: hidden;
+h1
+    .realtime
+        margin: 15px 30px 0 0;
+        right: 0;
+        top: 25px;
+        position: absolute;
+        padding: 0 10px;
+        background: color_orange;
+        color: #ffffff;
+        font: 300 14px/25px font;
+        letter-spacing: 0;
+
+// 
+// FORM
+// 
+
+label
+    display: block;
+    width: 100%;
+    font: 300 13px/25px font;
+    color: #999999;
+    letter-spacing: 0px;
+    &.manyline
+        font: 300 13px/20px font;
+        color: #333333;
+    &.label__checkbox
+        font: 300 15px/30px font;
+        color: #333333;
+        margin: 4px 0;
+    &.label__agree
+        font: 300 13px/20px font;
+        margin: 10px 0 12px;
+        padding-left: 20px;
+        color: #333333;
+input,
+textarea
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    font: 300 15px/25px font;
+    color: #333333;
+    border-radius: 5px;
+    padding: 1px 10px 2px;
+    letter-spacing: 0px;
+    border: 1px solid #b5cbda;
+    box-shadow: inset -1px 1px 2px 0px rgba(138, 199, 244, 0.3);
+textarea
+    margin: 10px 0 8px;
+    height: 65px;
+input[type=checkbox]
+    box-shadow: none;
+    width: 20px;
+    display: inline-block;
+    text-align: left;
+    margin: 10px 0 0 0;
+    position: relative;
+    top: 4px;
+    float: left;

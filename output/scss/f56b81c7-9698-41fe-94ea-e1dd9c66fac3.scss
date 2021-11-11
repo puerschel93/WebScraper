@@ -1,0 +1,148 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'';
+$picture-bg-repeat-horizontal:no;
+
+// HEIGHT PUB - EXTRA
+$height-extra:390;
+$height-pub:647;
+
+// PICTURE SUR BG-MINIMOTEUR = YES / NO = BACKGROUND COLOR
+$bg-minimot:yes;
+
+// MARGIN CONTENT SI NAV FIXE 
+$margin-top-under-nav-fixe:250;
+
+// MARGIN LOGO ABSOLUTE
+$margin-logo-absolute:0;
+
+// SIZE NAVIGATION
+$height-navigation:300;
+
+// VAR SITE TYPO
+$font-body:"proxima-nova",arial,verdana,sans-serif;
+$font-title:"clavo",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.5em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:400;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB6
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT TEMPLATE ROME
+@import "../../../slagence_X_V5/sources/scss/templates/tokyo";
+
+// IMPORT MODULE ANNONCES
+@import "../../../slagence_X_V5/sources/scss/modules/annonces14";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra17";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+/* Shadow inversé sur le bloc pub */
+.bg-pub {@include box-shadow(rgba(darken($color-body,100),0.3) 0px -2px 5px);}
+
+/* Mise en page menu principal */
+.menu-principal {
+font-size:1.0em;
+text-align:center;
+margin-top:74px;
+	>li {
+	display:table-cell;
+		>a {
+		color:$color-primary;
+		background-color:transparent;
+		padding:13px 19px;
+		margin:0px;
+		border-left: 1px solid $color-primary;
+		}
+	}	
+}
+.navigation {
+	border-bottom:5px solid $color-important;
+	height:216px;
+}
+
+// PERSO DVI69
+
+// ACCUEIL
+
+// MENU & NAV
+.margin-logo-absolute {
+	margin-top: -2px;
+}
+
+.menu-principal>li>a {
+	@include gradient-secondary;
+}
+.menu-principal>li.menu-vente>a {
+	@include border-bottom-left-radius(4px);
+	margin-left: 7px;
+}
+.menu-principal>li.menu-partenaire>a {
+	@include border-bottom-right-radius(4px);
+}
+
+// MODULE EXTRA
+.bg-module-extra {
+	  margin-top: 216px;
+}
+
+// MINI MOTEUR
+.bg-minimot {
+	background-color: $color-secondary;  
+	padding: 10px 0;
+	border-top:none;
+}
+
+// RESPONSIVE
+@media only screen and (max-width : 767px) {
+	.navigation {
+		height:auto;
+	}
+}

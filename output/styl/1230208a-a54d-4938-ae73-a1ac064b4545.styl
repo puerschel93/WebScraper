@@ -1,0 +1,254 @@
+
+
+$space-base   ?= 16px
+$space-x-base ?= $space-base
+$space-y-base ?= $space-base
+$space-none ?= { x: 0, y: 0 }
+$space-xs   ?= { x: ($space-x-base * .25), y: ($space-y-base * .25) }
+$space-sm   ?= { x: ($space-x-base * .5),  y: ($space-y-base * .5)  }
+$space-md   ?= { x: $space-x-base,         y: $space-y-base         }
+$space-lg   ?= { x: ($space-x-base * 1.5), y: ($space-y-base * 1.5) }
+$space-xl   ?= { x: ($space-x-base * 3),   y: ($space-y-base * 3)   }
+$spaces ?= {
+  none: $space-none,
+  xs: $space-xs,
+  sm: $space-sm,
+  md: $space-md,
+  lg: $space-lg,
+  xl: $space-xl
+}
+
+$breakpoint-xs ?= 599px
+$breakpoint-sm ?= 1023px
+$breakpoint-md ?= 1439px
+$breakpoint-lg ?= 1919px
+$sizes ?= {
+  xs: 0,
+  sm: $breakpoint-xs + 1,
+  md: $breakpoint-sm + 1,
+  lg: $breakpoint-md + 1,
+  xl: $breakpoint-lg + 1
+}
+
+body
+  font-size $space-base
+  font-family Graphik, sans-serif
+  font-weight 500
+  background black
+  margin 0
+
+for $space, $value in $spaces
+  .pa-{$space}
+    padding: $value.y $value.x
+  .pl-{$space}
+    padding-left: $value.x
+  .pr-{$space}
+    padding-right: $value.x
+  .pt-{$space}
+    padding-top: $value.y
+  .pb-{$space}
+    padding-bottom: $value.y
+  .px-{$space}
+    @extends .pl-{$space}, .pr-{$space}
+  .py-{$space}
+    @extends .pt-{$space}, .pb-{$space}
+  .ma-{$space}
+    margin: $value.y $value.x
+  .ml-{$space}
+    margin-left: $value.x
+  .mr-{$space}
+    margin-right: $value.x
+  .mt-{$space}
+    margin-top: $value.y
+  .mb-{$space}
+    margin-bottom: $value.y
+  .mx-{$space}
+    @extends .ml-{$space}, .mr-{$space}
+  .my-{$space}
+    @extends .mt-{$space}, .mb-{$space}
+.mt-auto, .my-auto
+  margin-top: auto
+.ml-auto, .mx-auto
+  margin-left: auto
+.mb-auto, .my-auto
+  margin-bottom: auto
+.mr-auto, .mx-auto
+  margin-right: auto
+
+$weights ?= {
+  '100': 100,
+  '200': 200,
+  '300': 300,
+  '400': 400,
+  '500': 500,
+  '600': 600,
+  '700': 700,
+  '800': 800,
+  '900': 900
+}
+
+for $weight, $value in $weights
+  .fw-{$weight}
+    font-weight $value
+
+$widths-heights ?= {
+  '25': 25,
+  '50': 50,
+  '60': 60,
+  '75': 75,
+  '100': 100,
+  '125': 125,
+  '150': 150,
+  '175': 175,
+  '200': 200,
+  '225': 225,
+  '250': 250,
+  '275': 275,
+  '300': 300,
+  '325': 325,
+  '350': 350,
+  '375': 375,
+  '400': 400
+}
+
+for $format, $value in $widths-heights
+  .w-{$format}px
+    width $value px
+  .min-w-{$format}px
+    min-width $value px
+  .max-w-{$format}px
+    max-width $value px
+  .h-{$format}px
+    height $value px
+  .min-h-{$format}px
+    min-height $value px
+  .max-h-{$format}px
+    max-height $value px
+
+.fit
+  width: 100% !important
+  height: 100% !important
+.full-height
+  height: 100% !important
+.full-width
+  width: 100% !important
+  margin-left: 0 !important
+  margin-right: 0 !important
+
+.text-white
+  color: #fff
+.bg-white
+  background: #fff
+.text-black
+  color: #000
+.bg-black
+  background: #000
+
+.row, .column, .flex
+  display: flex
+  flex-wrap: wrap
+  &.inline
+    display: inline-flex
+.row.reverse
+  flex-direction: row-reverse
+.column
+  flex-direction: column
+  &.reverse
+    flex-direction: column-reverse
+.wrap
+  flex-wrap: wrap
+.no-wrap
+  flex-wrap: nowrap
+.reverse-wrap
+  flex-wrap: wrap-reverse
+.order-
+  &first
+    order: -10000
+  &last
+    order: 10000
+  &none
+    order: 0
+.justify-
+  &start
+    justify-content: flex-start
+  &end
+    justify-content: flex-end
+  &center
+    justify-content: center
+  &between
+    justify-content: space-between
+  &around
+    justify-content: space-around
+  &evenly
+    justify-content: space-evenly
+.items-
+  &start
+    align-items: flex-start
+  &end
+    align-items: flex-end
+  &center
+    align-items: center
+  &baseline
+    align-items: baseline
+  &stretch
+    align-items: stretch
+.content-
+  &start
+    align-content: flex-start
+  &end
+    align-content: flex-end
+  &center
+    align-content: center
+  &stretch
+    align-content: stretch
+  &between
+    align-content: space-between
+  &around
+    align-content: space-around
+.self-
+  &start
+    align-self: flex-start
+  &end
+    align-self: flex-end
+  &center
+    align-self: center
+  &baseline
+    align-self: baseline
+  &stretch
+    align-self: stretch
+.flex-center
+  @extends .items-center
+  @extends .justify-center
+
+
+
+str-fr(selector, name, i = '')
+  unquote(replace(unquote('<i>'), unquote(i), replace(unquote('<name>'), unquote(name), unquote(selector))))
+str-fe(selector, name, noProc, i = '')
+  if noProc
+    return str-fr(selector, name, i)
+  return unquote(join(',', str-fr(selector, '', i) str-fr(selector, name, i)))
+for $name, $size in $sizes
+  $noProcNotZero = ($size > 0)
+  @media (min-width $size)
+    {str-fe('.col<name>', s('-%s', unquote($name)), $noProcNotZero)}
+      &, &-auto, &-grow, &-shrink
+        .row > &, .flex > &
+          width: auto
+          min-width: 0
+          max-width: 100%
+        .column > &, .flex > &
+          height: auto
+          min-height: 0
+          max-height: 100%
+      &
+        flex: 10000 1 0
+      &-auto
+        flex: 0 0 auto
+      &-grow
+        flex: 1 0 auto
+      &-shrink
+        flex: 0 1 auto
+
+.cursor-pointer
+  cursor pointer

@@ -1,0 +1,586 @@
+@import "variable";
+@import "button";
+@import "menu";
+
+
+// ヘッダーCSS
+
+body {
+    color: #333333;
+}
+
+header {
+    width: 100%;
+    height: 94px;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+}
+
+.header_bg-color_box-shadow {
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+
+.header-inner_pd {
+    height: 100%;
+    max-width: 1022px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 21px;
+        padding-left: 20px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+
+    &__img_size {
+        width: 47px;
+        height: 47px;
+    }
+
+    &__txt_size_pd {
+        font-size: 24px;
+        padding-left: 15px;
+        padding-bottom: 3px;
+        font-weight: 700;
+    }
+}
+
+.nav1 {
+    &__items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333333;
+    }
+
+    &__item_pd {
+        padding-right: 46px;
+        padding-bottom: 3px;
+    }
+
+    &__item-link_size_color {
+        font-size: 16px;
+        font-weight: 700;
+        color: #333333;
+    }
+}
+
+.nav_toggle {
+    display: none;
+}
+
+
+// メインビジュアルCSS
+
+.mv {
+
+    &_bg-image {
+        background-image: url(../image/mv-bg-image.svg);
+        background-repeat: no-repeat;
+        background-position: top -30px right -85px;
+    }
+
+
+    &__txt {
+        &_pd {
+            padding-top: 24px;
+            padding-bottom: 113px;
+            padding-left: 20px;
+        }
+
+        &_big {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.69;
+        }
+
+        &_small_pd {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.69;
+            padding-top: 23px;
+            padding-bottom: 34px;
+        }
+    }
+
+    &__img {
+        width: 518px;
+        height: 430px;
+    }
+}
+
+.mv-inner_pd {
+    max-width: 1022px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 225px;
+}
+
+
+// ユアコーディング３つの特徴CSS
+
+.features-inner {
+    max-width: 1095px;
+    margin: 0 auto;
+
+    &_pd {
+        padding-top: 113px;
+        padding-bottom: 151px;
+    }
+}
+
+.features__ttl {
+    @include section__ttl(#333333,$sub-title_color);
+}
+
+.feature {
+    &__ttl_size {
+        font-size: 28px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &-1st_pd {
+        padding-top: 57px;
+    }
+
+    &-2nd_pd {
+        padding-top: 86px;
+    }
+
+    &-3rd_pd {
+        padding-top: 136px;
+    }
+
+    &__contents {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &-1st_pd {
+            padding-top: 49px;
+        }
+
+        &-2nd_pd {
+            padding-top: 55px;
+        }
+
+        &-3rd_pd {
+            padding-top: 63px;
+        }
+    }
+
+    &__img1_mg {
+        width: 380px;
+        margin-left: 56px;
+    }
+
+    &__img2_mg {
+        width: 479px;
+        padding-top: 4px;
+    }
+
+    &__img3_mg {
+        width: 400px;
+        margin-left: 85px;
+    }
+
+    &__txt {
+
+        &-1st_pd {
+            padding-top: 41px;
+        }
+
+        &-2nd_pd {
+            padding-left: 85px;
+        }
+
+        &-3rd_pd {
+            padding-top: 13px;
+            padding-right: 86px;
+        }
+
+        &_big {
+            font-size: 24px;
+            line-height: 2;
+            font-weight: 700;
+        }
+
+        &_small {
+            font-size: 16px;
+            font-weight: 700;
+
+            &-1st_pd {
+                padding-top: 37px;
+                line-height: 1.625;
+            }
+
+            &-2nd_pd {
+                padding-top: 31px;
+                line-height: 1.625;
+            }
+
+            &-3rd_pd {
+                padding-top: 25px;
+                padding-left: 6px;
+                line-height: 1.75;
+            }
+        }
+    }
+}
+
+
+// 料金表CSS
+
+.price {
+    width: 100%;
+
+    &_bg-color {
+        background-color: $section_bg-color;
+    }
+
+    &_attention_size {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
+
+.price-inner_pd {
+    max-width: 926px;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-bottom: 68px;
+}
+
+.price__ttl {
+    @include section__ttl(#333333,$sub-title_color);
+}
+
+.price-board {
+    width: 100%;
+    height: 410px;
+    border-collapse: collapse;;
+
+    &_bg-color_shadow_margin {
+        background-color: #fff;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+        margin-top: 71px;
+        margin-bottom: 36px;
+    }
+
+    &__child {
+        height: 25%;
+    }
+
+    &__menu_w_size_border {
+        width: 290px;
+        font-size: 16px;
+        font-weight: 700;
+        border-right: 1px solid #e5e5e5;
+    }
+
+    &__price_size_pd {
+        font-size: 16px;
+        font-weight: 700;
+        padding-left: 32px;
+    }
+
+    &-1st_border ,&-2nd_border ,&-3rd_border{
+        border-bottom: 1px solid #e5e5e5;
+    }
+}
+
+// FAQ CSS
+
+.faq {
+    width: 100%;
+}
+
+.faq-inner_pd {
+    max-width: 927px;
+    margin: 0 auto;
+    padding-top: 55px;
+    padding-bottom: 86px;
+}
+
+.faq__ttl {
+    @include section__ttl(#333333,$sub-title_color);
+}
+
+.faq-contents {
+    width: 100%;
+
+    &_pd {
+        padding-top: 33px;
+        padding-left: 20px;
+    }
+
+    &__question_size_border {
+        text-align: center;
+        height: 58px;
+        padding-top: 19px;
+        font-size: 14px;
+        font-weight: 700;
+        border: 1px solid #E5E5E5;
+    }
+
+    &__answer_pd_bg-color_size_border {
+        background-color: #F2F2F2;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 25px 57px 26px 37px;
+        border: 1px solid #E5E5E5;
+    }
+}
+
+.answer2, .answer3 {
+    display: none;
+}
+
+
+
+// BLOG CSS
+
+.blog_bg-color{
+    width: 100%;
+    background-color: $section_bg-color;
+}
+
+.blog-inner_pd {
+    max-width: 1226px;
+    margin: 0 auto;
+    padding-top: 54px;
+    padding-bottom: 91px;
+}
+
+.blog__ttl {
+    @include section__ttl(#333333,$sub-title_color);
+}
+
+.blog-cards_pd {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 55px;
+}
+
+.blog-card {
+    width: 31.7%;
+    position: relative;
+
+    &__img {
+        width: 100%;
+        display: block;
+    }
+
+    &__txt_bg-color_pd_shadow {
+        height: 127px;
+        background-color: #fff;
+        padding: 15px 29px 38px 18px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    }
+
+    &__ttl_size {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    &__day_size {
+        font-size: 16px;
+        font-weight: 700;
+        position: absolute;
+        bottom: 10px;
+        right: 18px;
+    }
+}
+
+// WORKS CSS
+
+.works {
+    width: 100%;
+}
+
+.works-inner_pd {
+    width: 100%;
+    padding-top: 55px;
+    padding-bottom: 91px;
+    overflow-x: hidden;
+}
+
+.works__ttl {
+    @include section__ttl(#333333,$sub-title_color);
+}
+
+.works-cards_pd {
+    padding-top: 69px;
+}
+
+.works-card {
+    width: 100%;
+    
+    &__img {
+        width: 100%;
+        display: block;
+    }
+
+    &__txt_pd_border {
+        width: 100%;
+        padding: 18px 10px 34px 16px;
+        border-left: 1px solid #E5E5E5;
+        border-right: 1px solid #E5E5E5;
+        border-bottom: 1px solid #E5E5E5;
+        border-radius: 0 0 8px 8px;
+        position: relative;
+    }
+
+    &__txt-1st_height {
+        height: 199px;
+    }
+
+    &__txt-2nd_height {
+        height: 198px;
+    }
+
+    &__txt-3rd_height {
+        height: 205px;
+    }
+
+    &__ttl_size {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.69;
+    }
+
+    &__list_size {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.71;
+        position: absolute;
+        bottom: 29px;
+        left: 17px;
+    }
+}
+
+
+// CONTACT CSS
+
+.contact_bg-color {
+    width: 100%;
+    background: linear-gradient(90deg,#05A5FA,#63FBD7);
+}
+
+.contact-inner_pd {
+    max-width: 908px;
+    margin: 0 auto;
+    padding-top: 62px;
+    padding-bottom: 73px;
+}
+
+.contact__ttl {
+    @include section__ttl(white,white);
+}
+
+.contact__txt_size_color_pd {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.69;
+    padding-top: 34px;
+    padding-bottom: 35px;
+}
+
+.forms_bg-color_pd_shadow {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    padding: 33px 73px 49px 52px;
+}
+
+.form {
+
+    &__item_size {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    &__essential_color_radius_margin {
+        display: inline-block;
+        text-align: center;
+        margin-left: 23px;
+        font-size: 14px;
+        font-weight: 700;
+        width: 60px;
+        height: 30px;
+        line-height: 30px;
+        color: white;
+        border-radius: 10px;
+        background-color: #0C449B;
+    }
+
+    &__input_margin_bg-color {
+        width: 100%;
+        height: 43px;
+        background-color:#EEFBFB;
+        border-radius: 3px;
+        border: 1px solid #E5E5E5;
+        margin-top: 36px;
+        margin-bottom: 25px;
+    }
+
+    &__textarea_margin_bg-color {
+        width: 100%;
+        height: 179px;
+        background-color:#EEFBFB;
+        border-radius: 3px;
+        border: 1px solid #E5E5E5;
+        margin-top: 35px;
+        margin-bottom: 53px;
+        resize: none;
+    }
+
+    &-1st {
+        margin-right: 284px;
+    }
+}
+
+.input-btn-wrapper {
+    text-align: center;
+}
+
+.input-btn {
+    background: $button_bg-color;
+    border: none;
+    color: white;
+    width: 155px;
+    height: 37px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+
+footer {
+    width: 100%;
+    height: 104px;
+    text-align: center;
+}
+
+.copyright_pd_size {
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 54px;
+}
+
+.copy-right-mark {
+    font-size: 10px;
+}
+

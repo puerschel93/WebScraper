@@ -1,0 +1,461 @@
+body
+	font-family "OpenSansRegular"
+	background-color: #f4f4f4;
+	color: #2e2e2e;
+
+// div.table
+// 	display table
+	
+// 	div.table-row
+// 		display table-row
+		
+// 		div.table-cell
+// 			display table-cell
+			
+// .table.33 > .table-row > .table-cell:not(:first-child)
+// 	width 33%
+// 	text-align right
+
+// .table > .table-row > .table-cell.price
+// 	font-family "OpenSansBold"
+	
+.grey
+	color: #b8b8b8;
+
+.light-grey
+	color: #b0b0b0;
+
+.col-with-border
+	border-bottom 1px solid #f4f4f4
+
+.without-bottom-margin
+	margin 0px
+// Используется в бейджах, активном пункте меню, фон для строки поиска
+light-blue-color = #22b5cd
+// Фон для шапки
+dark-black-color = #2e2e2e
+light-grey-color = #b0b0b0
+yellow-color = #eeec51;
+
+/*! ----- Шрифты ----- */
+normal-font = "OpenSansRegular"
+bold-font = "OpenSansBold"
+light-font = "OpenSansLightRegular"
+	
+.light-blue
+	background-color: light-blue-color
+
+.text-uppercase
+	text-transform uppercase
+
+.badge 
+	font-size 11px
+	vertical-align middle
+	
+.navbar-collapse
+	padding 0px
+	
+.white-container
+	background white
+	padding 45px 0px
+
+// .container.main
+	// padding-bottom 112px
+
+// .navbar-right .login a:before
+// 	display block
+// 	position absolute
+// 	content " "
+// 	border 1px solid light-blue-color
+// 	padding 5px
+// 	line-height 30px
+// 	width: 100px;
+// 	margin-left: -19px;
+// 	height: 29px;
+// 	margin-top: -3px;
+
+
+
+		
+// Основная таблица продуктов	
+.row.novinki
+	
+	h2	
+		color: dark-black-color
+		font-size: 26px;
+		line-height: 24px;
+	
+	.one-product .additional_block
+		display none
+		
+		> .line
+			margin 0px 10px
+			border-top 1px solid light-grey-color
+			height 1px
+			padding-bottom 10px
+			background #f8f8f8
+			
+		> .rate
+			padding 0px 10px
+			font-size: 12px;
+			line-height: 27px;
+			margin-bottom: 11px;
+			color dark-black-color
+			background #f8f8f8
+			padding-bottom 10px
+			
+			> .num 
+				// background url("../images/rating-background.svg")
+				position relative
+				line-height 27px
+				display block
+				width 44px
+				// padding-left 8px 
+				float left
+				margin-right 5px
+				text-align: center;
+				padding-right: 2px;
+				
+				> svg
+					position absolute
+					left 0px
+					top 1px
+					
+				&.svg-grey > svg > polyline
+					stroke light-grey-color
+					
+				&.svg-green > svg > polyline
+					stroke #93cd22
+					
+				&.svg-red > svg > polyline
+					stroke red
+					
+				&.svg-skewed > svg > polyline.normal
+					display none
+
+				&.svg-normal > svg > polyline.skewed
+					display none
+				
+			> .est
+				float right
+				font-size: 12px;
+			
+			> a
+				color dark-black-color
+				text-decoration underline
+
+		> .icons
+			padding: 10px 5px;
+			margin-bottom 10px
+			background #e7e7e7
+			
+			> * 
+				margin-right 5px
+
+		>.icons img
+			padding 10px 
+			border 1px solid #cbcbcb
+			vertical-align top
+			
+		> .icons > .tocart
+			background url("../images/tocart.png") light-blue-color no-repeat 20px center
+			height 40px 
+			line-height 40px
+			color white
+			padding 10px 20px 10px 50px
+			width 130px
+			margin-right 0px
+			font-size: 13px;
+			margin-left 7px
+	
+	.one-product
+		position relative
+		border 0px
+		outline none
+		// border 3px solid #f4f4f4
+		// margin-bottom 20px
+		height 550px
+		// height 544px
+		overflow hidden
+		margin-bottom 3px
+		
+		&:hover
+			// border 3px solid #00b8d2
+			outline 3px solid light-blue-color
+			
+		&:hover .additional_block, &:hover a.left, &:hover a.right
+			display block
+			
+		&:hover .additional_block
+			position relative
+					
+		a.left, a.right
+			display none
+			background url('../images/arrow-slider-grey.svg')  no-repeat 50% 50%
+			
+		a.left:hover, a.right:hover
+			// display none
+			background url('../images/arrow-slider-blue.svg')  no-repeat 50% 50%
+			
+		a.left:hover
+			transform rotateY(180deg)
+
+		a.right
+			transform rotateY(180deg)
+			
+		a.right:hover
+			transform rotateY(0deg)
+
+		> .feature-label
+			position absolute
+			top 10px
+			right 10px
+			width 50px
+			height 50px
+			border-radius 50%
+			font-size: 14px;
+			text-align center
+			line-height 50px
+			color white
+			z-index 1000
+			
+		> .feature-label.hit
+			background-color: #f54d19;
+			
+		> .feature-label.new
+			background-color: #93cd22;
+					
+		.image
+			height 300px
+			line-height 300px
+			background white
+			text-align center
+			
+			img
+				display inline
+				vertical-align middle
+							
+		.description 
+			padding 23px 20px 0px 20px
+			text-align center
+			background-color: #f8f8f8;
+			// min-height 160px
+			min-height 130px
+			
+			a 
+				display block
+				margin 0px auto 20px auto
+				text-align center
+				text-decoration underline
+				color light-blue-color
+				font-family light-font				 
+				font-size: 15px;
+				
+			> .price 
+				color: dark-black-color
+				font-size: 18px;
+				font-family bold-font
+				margin-right 10px
+				
+			> .wasprice
+				color: #e4003a;
+				font-size: 12px;
+				text-decoration: line-through;
+				vertical-align top
+				font-family light-font
+				
+.row.novinki.list
+
+		.one-product.bought
+			
+			&:hover
+				border 3px solid #93cd22
+				
+			> .add-to-cart > .tocart
+				background url("../images/tocart.png") #93cd22 no-repeat 20px center
+			
+		.one-product
+			font-size 0px
+			height 136px
+			border 3px solid white
+			margin-bottom 0px
+				
+			&:hover
+				border 3px solid light-blue-color
+			
+			> .feature-label
+				width 45px
+				height 22px
+				top 10px
+				left 10px
+				border-radius 10px
+				font-size: 14px;
+				text-align center
+				line-height 22px
+				
+			> .image
+				width 165px
+				height 130px
+				line-height 130px
+				display inline-block
+				
+			> .description
+				display: inline-block;
+				vertical-align: top;
+				background white
+				height 130px
+				font-size 12px
+				width 397px
+				padding-top 14px
+				min-height initial
+				
+				> a
+					line-height: 26px;
+					font-size: 15px;
+					text-align left
+				
+				> .icons
+					text-align left
+					
+					> a
+						font-size 12px
+						text-decoration none
+						color dark-black-color
+						display inline-block
+				
+					> .icon-rateback
+						background url("../images/rate-bakcground.svg")
+						height 23px
+						width 38px
+						line-height 23px
+						display: inline-block;
+						text-align: left;
+						padding-left: 7px;
+						margin-right 10px
+						
+					> img
+						margin-left 25px;
+						
+			> .price
+				display inline-block
+				background white
+				height 130px
+				vertical-align top
+				padding-top 35px
+				width 109px
+				
+				> .price 
+					color: dark-black-color
+					font-size: 18px;
+					font-family bold-font
+					margin-right 10px
+					
+				> .wasprice
+					color: #e4003a;
+					font-size: 12px;
+					text-decoration: line-through;
+					vertical-align top
+					font-family light-font
+					display block
+					text-align center
+				
+			> .add-to-cart
+				display inline-block
+				vertical-align top
+				background white
+				width 170px
+				height 130px
+				font-size: 13px;
+				text-align center
+				padding-top 30px
+				
+				> .tocart
+					background url("../images/tocart.png") light-blue-color no-repeat 20px center
+					height 40px 
+					line-height 40px
+					color white
+					padding 10px 20px 10px 50px
+					width 130px
+					margin-right 0px
+					font-size: 13px;
+					
+				> .est
+					display block
+					margin 0px auto
+					text-align center
+					margin-top 10px
+
+			> .additional_block
+				display inline-block
+				vertical-align top
+				background white
+				height 130px
+
+.row.section 
+	background white
+	padding 15px
+	margin 0px 0px 20px 0px
+	
+	> div.section-header-dark
+		color white
+		background black
+		margin-right -15px
+		margin-left -15px
+
+	> div.section-header > h2
+		font-size 18px
+		font-family bold-font
+		border-bottom: 2px solid #d2d2d2;
+		padding-bottom 10px
+		
+		> a
+			font-size 12px
+			font-family normal-font
+			text-decoration underline
+			color light-grey-color
+			
+.container.content
+	padding-bottom 112px
+	
+	.page-header
+		border-bottom 0px
+		margin 10px 0px 20px
+		font-family light-font
+		font-size: 26px;
+
+	.page-sub-header
+		border-bottom 0px
+		margin -20px 0px 20px
+		font-family normal-font
+		font-size: 18px;
+		
+	// .row.section
+		
+	// 	.table-cell.title
+	// 		font-size 18px
+	// 		line-height 48px
+
+	.row.section.cart-list .row.one-line
+		
+		> div:first-child
+			text-align left
+			font-size 18px
+			line-height 48px
+			
+		> div
+			line-height 48px
+			
+		> div:last-child
+			text-align right
+			
+// @require './css-parts/inner-pages'
+// @require './css-parts/catalog-list'
+@require './css-parts/catalog'
+@require './css-parts/kartochka-tovara'
+@require './css-parts/korzina'
+@require './css-parts/oformlenie-zakaza'
+@require './css-parts/oformlenie-zakaza-spasibo'
+@require './css-parts/cross-pages-blocks'
+
+@require "./css-parts/maxwidth1000"			
+@require "./css-parts/maxwidth480"

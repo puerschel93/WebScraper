@@ -1,0 +1,205 @@
+.owl{
+    &-next,
+    &-prev,
+    &-dot{
+        &:focus{
+            outline: none;
+        }
+    }
+    &-nav{
+        button{
+            font-size: 50px;
+            line-height: 0;
+            position: absolute;
+            top: 35%;
+            width: 80px;
+            height: 80px;
+            background: transparent;
+            color: #000;
+        }
+    }
+    &-prev{
+        left: 30px;
+    }
+    &-next{
+        right: 30px;
+    }
+    &-dots{
+        margin: 40px auto 0;
+        button{
+            span{
+                width: 10px;
+                height: 10px;
+                background: #7e7e7e;
+                transition: .3s ease all;
+            }
+            &.active{
+                span{
+                    background: #000;
+                }
+            }
+        }
+    }
+    @include MQ(L){
+        &-nav{
+            button{
+                font-size: 40px;
+            }
+        }
+        &-prev{
+            left: 0;
+        }
+        &-next{
+            right: 0;
+        }
+        &-dots{
+            button{
+                span{
+                    width: 10px;
+                    height: 10px;
+                    margin: 5px;
+                }
+            }
+        }
+    }
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.owl-{
+    &item{
+        a{
+            text-decoration: none;
+        }
+    }
+    &stagePadding{
+        .owl{
+            &-item{
+                opacity: .4;
+                transition: .3s ease all;
+                a{
+                    text-decoration: none;
+                    img{
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                    .opciones-titulo{
+                        margin: 10px auto;
+                        text-align: center;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        color: #000;
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+                }
+                &.active{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &productos{
+        .owl-stage{
+            display: flex;
+            .owl-item{
+                display: flex;
+                justify-content: center;
+            }
+        }
+        .producto{
+            color: #000;
+            text-align: center;
+            font-size: 14px;
+            line-height: 16px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            &-imagen{
+                margin: 40px 0;
+            }
+            &-nombre{
+                text-transform: uppercase;
+                font-weight: 600;
+                width: 80%;
+            }
+            &-boton{
+                margin: auto auto 0 auto;
+            }
+        }
+    }
+    &cat{
+        .owl-{
+            &nav{
+                button{
+                    top: 30%;
+                }
+            }
+        }
+        .cat{
+            color: #000;
+            text-align: center;
+            font-size: 32px;
+            text-transform: uppercase;
+            font-weight: 500;
+            &-nombre{
+                margin: 30px 0 0;
+            }
+        }
+    }
+    @include MQ(L){
+        &stagePadding,
+        &productos,
+        &cat{ 
+            max-width: 80%;
+            margin: auto;
+            .owl{
+                &-nav{
+                    button{
+                        top: 25%;
+                    }
+                }
+                &-prev{
+                    left: -2%;
+                }
+                &-next{
+                    right: -2%;
+                }
+            }
+        }
+        &stagePadding{
+            .owl{
+                &-item{
+                    img{
+                        height: 260px;
+                    }
+                    .opciones-titulo{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        &productos{
+            .producto{
+                font-size: 20px;
+                &-nombre{
+                    width: 90%;
+                }
+                &-boton{
+                    width: 90%;
+                }
+            }
+        }
+        &cat{
+            .cat{
+                font-size: 20px;
+                &-nombre{
+                    margin: 10px 0 0;
+                }
+            }
+        }
+    }
+}

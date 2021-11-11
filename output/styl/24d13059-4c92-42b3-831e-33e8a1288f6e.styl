@@ -1,0 +1,399 @@
+.live-play-box {
+  height: 100%
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  .player-box {
+    background: #000;
+  }
+  .tab-box {
+    display: flex;
+    justify-content: space-between;
+    background: $theme-bg-color;
+    height: 95px;
+    padding-left: 21px;
+    .live-tabs {
+      .van-tabs__line {
+        width: 19px;
+        height: 8px;
+        background: linear-gradient(82deg, #FF7835, #F09246);
+        border-radius: 4px;
+      }
+      .van-tab {
+        margin-right: 41px;  
+        font-size: 31px;
+        color: $theme-txt-color;
+      }
+      .van-tabs__wrap {
+        height: 82px;
+      }
+      .van-tab--active {
+        font-weight: 700;
+        color: $theme-txt-color1;
+      }
+    }
+    .tab-attention-btn {
+      width: 167px;
+      height: 96px;
+      background: linear-gradient(90deg, #FF7835, #F09246);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;      
+      .btn-text{
+        font-size: 29px;
+        line-height: 29px;
+        color: $theme-txt-white;
+      }
+      .btn-count {
+        font-size: 20px;
+        line-height: 20px;
+        color: $theme-txt-white;
+        margin-top: 9px;
+      }
+    }
+    .attention {
+      color: $c-theme-txt-color10;
+      background: $c-theme-bg-color2;
+    }
+  }
+  .host-info{
+    .host-info-top {
+      background-color: $theme-bg-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 21px 20px 24px;
+      height: 115px
+      padding: 0 26px;
+      .left {
+        flex: 1;
+        display: flex;
+        .logo{
+          width: 84px;
+          height: 84px;
+          margin-right: 25px;
+        }
+        .text {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          justify-content: space-between;
+          .name {
+            display: flex;
+            align-items: center;
+            .nick {
+              font-size: 27px;
+              line-height: 26px;
+              color: $theme-txt-color1;
+              margin-right: 15px;
+            }
+            .icon {
+              width: 55px;
+              height: 28px;
+            }
+          }
+          .count {
+            font-size: 27px;
+            line-height: 26px;
+            color: $theme-txt-color;
+          }
+        }
+      }
+      .right {
+        width: 106px;
+        height: 74px;
+        background-color: $theme-bg-color3;
+        font-size: 25px;
+        line-height: 74px;
+        color: $theme-txt-white;
+        text-align: center; 
+        border-radius: 6px;
+      }
+      .attentionRight {
+        color: $theme-txt-white;
+        background: $c-theme-bg-color3;
+      }
+    }
+    .host-info-bottom {
+      min-height: 321px;
+      background-color: $theme-bg-color;
+      margin: 0 20px;
+      padding: 30px 20px;
+      .title {  
+        line-height: 30px;
+        font-size: 32px;
+        color: $theme-txt-color1;
+        text-align: center;
+      }
+      .text {       
+        margin-top: 22px;
+        line-height: 28px;
+        font-size: 26px;
+        color: $theme-txt-color;
+      }
+    }
+  }
+  .chat-box {
+    background: $theme-bg-color;
+    padding-top: 14px;
+    overflow-y: auto;
+    flex: 1;
+    padding-bottom: 175px;
+    .system-chat {
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-bottom: 20px;
+      .logo {
+        width: 42px;
+        height: 33px;
+        vertical-align: middle;
+      }
+      .title {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 28px;
+        color:$c-theme-txt-color5;
+        line-height: 38px;
+      }
+      .text {
+        vertical-align: middle;
+        font-size: 28px;
+        line-height: 38px;
+        color: $c-theme-txt-color6;
+      }
+    }
+    .user-chat {
+      padding-left: 24px;
+      padding-right: 24px;
+      margin-top: 10px;
+      .logo {
+        width: 64px;
+        height: 32px;
+        vertical-align: middle;
+      }
+      .username {
+        font-size: 24px;
+        margin-left: 11px;
+        color: $c-theme-txt-color7;
+        vertical-align: middle;
+        display: inline-block;
+      }
+      .usertext {
+        font-size:24px;
+        color: $theme-txt-color;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+    }
+    .bottom-btn-box {
+      height: 165px;
+      background: $theme-bg-color;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.04);
+      z-index: 99;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-top: 15px;
+      padding-left: 20px;
+      padding-right: 35px;
+      .inp-box {
+        padding: 0;
+        height: 75px;
+        margin-right: 16px;
+        flex: 1;
+        .van-field__body{
+          height: 75px;
+          background: $c-theme-bg-color1;   
+          border: 1px solid $theme-bd-color;
+          border-radius: 6px;
+          padding-left: 39px;
+          padding-right: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .van-field__control {
+            height: 100%;
+            background: $c-theme-bg-color1;
+            flex: 1;
+            width: auto;
+          }
+          .van-field__button{
+            width: 106px;
+            height: 64px;
+            padding: 0;
+            margin-bottom: 5px;
+            .van-button--small {
+              height:100%;
+              width: 100%;
+              font-size:26px;  
+            }
+            .van-button--primary {
+              background-color: $theme-bg-color3;  
+              border: 0.026667rem solid $theme-bd-color3;
+            }
+          }
+        }
+        
+      }
+      .icon-btn {
+          img {
+            width: 71px;
+            height: 71px;
+            vertical-align: middle;
+          }
+      }
+    }
+    .reward-box {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 999;
+      .top {
+        height: 79px;
+        line-height: 79px;
+        font-size: 26px;
+        font-family: Noto Sans S Chinese;
+        color: $c-theme-txt-color8;
+        padding: 0 28px;
+      }
+      .gift-box {
+        //padding: 14px 0;
+        // display: flex;
+        // height: 368px;
+        // flex-wrap: wrap;
+        // align-content: space-between;
+        overflow: hidden;
+        .gift-position {
+          transform: translateY(-12px);
+        }
+        .gift-item {
+          padding: 0 41px;
+          margin-top: 29px;
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .giftIcon-box{         
+            border: 3px solid $theme-bd-color3;
+            border-radius: 4px;
+            width: 103px;
+            height: 103px;
+            overflow: hidden;
+          }
+          .giftInfo {
+            border-color: transparent;
+          }
+          .propName{
+            margin-top: 10px;
+            font-size: 22px;  
+            font-family: Noto Sans S Chinese;
+            color: $c-theme-txt-color9;
+            line-height: 21px;
+          }
+          .price {           
+            font-size: 19px;
+            font-family: Noto Sans S Chinese;
+            color: $c-theme-txt-color8;
+            line-height: 18px;
+            margin-top: 8px;
+          }
+        }
+      }
+      .bottom-box {
+        height: 143px;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 31px 54px;
+        align-items: center;
+        .balance {
+          display: flex;
+          align-items: center;
+          .count{
+            display: flex;
+            align-items: center;
+            .icon {
+              width: 31px;
+              height: 31px;
+              margin-right: 15px;
+            }
+            .text {               
+              font-size: 26px;
+              font-family: Noto Sans S Chinese;
+              color: $theme-txt-color1;
+            }
+          }
+          .recharge {
+            font-size: 24px;
+            font-family: Noto Sans S Chinese;
+            color: $c-theme-txt-color4;
+            margin-left: 58px;
+          }
+        }
+        .btn-box {
+          display: flex;
+          align-items: center;
+          position: relative;
+          .sele-box{
+            width: 149px;
+            height: 74px;
+            border: 3px solid $theme-bd-color3;
+            border-right: none;
+            border-radius: 35px 0px 0px 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .giftNum {           
+              font-size: 28px;
+              font-family: Noto Sans S Chinese;
+              color:$theme-txt-color1;
+              vertical-align: bottom;
+            }
+            .arrow-icon {
+              width: 26px;
+              height: 26px;
+              margin-left: 10px;
+              vertical-align: bottom;
+            }
+          }
+          .send-btn{
+            width: 149px;
+            height: 74px;
+            background: $theme-bg-color3;
+            border: 1px solid $theme-bd-color3;
+            border-radius: 0px 36px 36px 0px;
+            font-size: 28px;
+            font-family: Noto Sans S Chinese;
+            color: $theme-txt-white;
+            line-height: 74px;
+            text-align: center;
+          }
+          .arrow-sele {
+            position: absolute;
+            z-index: 999;
+            bottom: 96px; 
+            width: 119px;
+            height: 247px;
+            background: $theme-bg-color;
+            box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.39);
+            border-radius: 13px;
+            .arrow-sele-item {
+              height: 58px;
+              color: $c-theme-txt-color4;
+              line-height: 58px;
+              text-align: center;
+            }
+            .arrow-sele-active {
+              background: rgba(0,0,0,.2);
+              color: $theme-txt-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.chat-box::-webkit-scrollbar { width: 0 !important }

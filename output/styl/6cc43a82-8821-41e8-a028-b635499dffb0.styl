@@ -1,0 +1,275 @@
+// 默认样式
+.zyhSingleLineListMainDetailPage {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  li {
+    list-style-position: inside;
+    list-style-type: none;
+  }
+
+  .clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+
+  header {
+    // border: 1px solid black;
+    .infoArea {
+      height: calc(102px + 55px);
+      display: flex;
+      flex-direction: column;
+
+      .selfProfile {
+        padding-top: 40px;
+        padding-right: 37px;
+        // border: 1px solid red;
+      }
+
+      .merchantAccoutScan {
+        // border: 1px solid blue;
+        border-bottom: 1px solid #ccc;
+        height: 77px;
+        font-family: PingFangSC-Regular;
+        display: flex;
+        align-items: center;
+
+        .picture {
+          margin-left: 60px;
+
+          img {
+            height: 53px;
+          }
+        }
+
+        p:nth-of-type(1) {
+          // border: 1px solid red;
+          font-size: 20px;
+          font-family: PingFang SC;
+          color: #000000;
+          font-weight: 400;
+          margin: 0 12px;
+        }
+
+        .validAccount {
+          font-size: 14px;
+          font-family: PingFang SC;
+          font-weight: 400;
+          color: #4EA805;
+        }
+
+        .invalidAccount {
+          font-size: 14px;
+          font-family: PingFang SC;
+          font-weight: 400;
+          color: #999;
+        }
+
+        // .el-button:nth-of-type(1) {
+        // margin-left: 30px;
+        // background: #1e69fe;
+        // border-radius: 10px;
+        // border: none;
+        // padding: 11px 15px;
+        // }
+        .blank {
+          flex-grow: 1;
+        }
+
+        .el-button:nth-of-type(1), .el-button:nth-of-type(2) {
+          margin-right: 15px;
+          border-radius: 10px;
+          padding: 11px 15px;
+        }
+      }
+    }
+
+    .searchArea {
+      flex-grow: 1;
+      border-top: 1px solid #ccc;
+      padding-top: 25px;
+      height: calc(36px + 55px);
+      display: flex;
+      flex-direction: row;
+      margin-left: 38px;
+
+      .inputFrame {
+        width: 442px;
+        height: 36px;
+        border-radius: 10px;
+        border: solid 1px #1e69fe;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        img {
+          margin-left: 20px;
+          margin-right: 0px;
+        }
+
+        .inputBlank {
+          width: 390px;
+          height: 30px;
+
+          .el-input__inner {
+            height: 30px;
+            text-indent: 10px;
+            border: none;
+          }
+        }
+      }
+
+      .searchButton {
+        .el-button {
+          display: flex;
+          align-items: center;
+          border-radius: 10px;
+          padding: 0 15px;
+          height: 36px;
+          margin-left: 8px;
+          font-size: 16px;
+          background: #1e69fe;
+          color: #fff;
+
+          span {
+            margin-left: 5px;
+          }
+        }
+      }
+
+      .addButton {
+        .el-button {
+          border-radius: 10px;
+          padding: 0 15px;
+          height: 36px;
+          margin-left: 8px;
+          font-size: 16px;
+          background: #fff;
+          color: #1e69fe;
+          display: flex;
+          align-items: center;
+
+          span {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    flex-grow: 1;
+
+    .el-table {
+      .el-table__header {
+        tr {
+          height: 60px;
+
+          .cell {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            color: black;
+          }
+        }
+      }
+
+      .el-table__body {
+        tr {
+          height: calc(((100vh - 288px - 55px - 55px) / 10));
+
+          .cell {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+            color: #908e8e;
+
+            .operation {
+              height: 100%;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .refundIcon {
+                background-color: #3571f5;
+              }
+
+              img {
+                margin: 0 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 100%;
+    max-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 30px;
+
+    .total {
+      font-family: PingFangSC-Regular;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333333;
+      /* border: 1px solid red; */
+    }
+  }
+}
+
+// 弹出框样式
+.zyhSingleLineListMainPage {
+  // 弹出框样式
+  .el-dialog {
+    margin: 0 auto;
+    padding: 50px;
+
+    .el-dialog__header {
+    }
+
+    .el-dialog__body {
+      padding: 10px;
+
+      .el-form {
+        &-item {
+          margin: 10px;
+
+          &__label {
+            text-align: center;
+          }
+
+          &__content {
+            input {
+              text-indent: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    .el-dialog__footer {
+      button {
+        padding: 5px;
+      }
+    }
+  }
+}

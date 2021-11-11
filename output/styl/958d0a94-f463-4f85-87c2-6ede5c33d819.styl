@@ -1,0 +1,112 @@
+.sui-slider {
+
+  base-size = 6
+  slider-handle-size = 20
+  slider-offset = - (base-size / 2) - (slider-handle-size / 2) px
+
+  & &__track {
+    width 100%
+    height base-size px
+    margin 16px 0
+    background-color: color--surface-dark
+    border-radius (base-size / 2)px
+    position relative
+    cursor pointer
+    vertical-align middle
+  }
+
+  & &__bar {
+    background-color color--primary
+    height base-size px
+    border-top-left-radius (base-size / 2)px
+    border-bottom-left-radius (base-size / 2)px
+    position absolute
+  }
+
+  & &__handle-wrapper {
+    height 32px
+    width @height
+    position absolute
+    z-index 1
+    user-select none
+    top slider-offset
+    transform translateX(-50%)
+    display flex
+    align-items center
+    justify-content center
+
+    ^[0]__handle {
+      display inline-block
+      width slider-handle-size px
+      height @width
+      border-radius 50%
+      vertical-align middle
+      background-color #ffffff
+      border 2px solid color--primary
+      box-sizing border-box
+      user-select none
+      transition all .3s
+
+      &.is-dragging, &.is-hovering {
+        box-shadow box-shadow--primary
+      }
+    }
+  }
+
+  // disabled
+  &.is-disabled {
+    & ^[0]__track {
+      cursor default
+    }
+    & ^[0]__bar {
+      background-color color--disabled
+    }
+
+    & ^[0]__handle {
+      border-color color--disabled
+      box-shadow none !important
+      cursor not-allowed
+    }
+  }
+
+  // vertical
+  &.is-vertical {
+    display inline-block
+    & ^[0]__track {
+      width base-size px
+      margin 0 16px
+      height 100%
+    }
+
+    & ^[0]__handle-wrapper {
+      top auto
+      left slider-offset
+      transform translateY(50%)
+    }
+
+    & ^[0]__bar {
+      width base-size px
+      border-radius 0 0 4px 4px
+    }
+  }
+
+  & &__stop {
+    height base-size px
+    width @height
+    background-color #ffffff
+    border-radius 50%
+    position absolute
+  }
+
+  & &__marker-text {
+    position absolute
+    transform translateX(-50%)
+    font-size font-size--text.small
+    color color--text-secondary
+    margin-top 14px
+  }
+
+  & .sui-tooltip {
+    line-height 0
+  }
+}

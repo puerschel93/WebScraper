@@ -1,0 +1,106 @@
+// restaurant-wait-info
+.d-wait {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 11rpx solid #eee;
+  > view {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1rpx solid #eee;
+    line-height: 56rpx;
+    .kind, .desk, .time {
+      width: 33.33%;
+      text-align: center;
+      font-size: 24rpx;
+      color: #666;
+    }
+    .desk > text {
+      color: #ed4d30;
+    }
+  }
+  > view:nth-child(1) {
+    background-color: #eee;
+    .kind, .desk, .time {
+      color: #333;
+    }
+  }
+  > text {
+    color: #999;
+    font-size: 22rpx;
+    line-height: 55rpx;
+    padding-left: 46rpx;
+  }
+  > text::before {
+    display: inline-block;
+    content: '';
+    width: 8rpx;
+    height: 8rpx;
+    background-color: #a0a0a0;
+    border-radius: 50%;
+    transform: translate(-11rpx, -2rpx);
+  }
+}
+// restaurant-info
+.restaurant-info {
+  .top {
+    display: flex;
+    padding: 20rpx;
+    border-bottom: 1rpx solid #eee;
+    align-items: center;
+    image {
+      width: 70rpx;
+      height: 70rpx;
+      border-radius: 50%;
+    }
+    .top-center {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30rpx;
+      .top-center-name {
+        font-size: 26rpx;
+        color: #333;
+        line-height: 50rpx;
+      }
+      .restaurant-grade {
+        position: relative;
+        overflow: hidden;
+        font-size: 26rpx;
+        color: #ccc;
+        //height: 26rpx;
+      }
+    }
+    .distance {
+      flex: 1;
+      text-align: right;
+      color: #999;
+      font-size: 26rpx;
+    }
+  }
+  .r-i-address, .r-i-tel, .r-i-time {
+    line-height: 60rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    padding-left: 65rpx;
+    font-size: 24rpx;
+  }
+  .triangle::after {
+    right: 30rpx;
+  }
+  .r-i-address::before, .r-i-tel::before, .r-i-time::before {
+    display: inline-block;
+    color: #333;
+    font-size: 30rpx;
+    transform: translateX(-20rpx);
+  }
+}
+.take-number {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ed4d30;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 700;
+  line-height: 72rpx;
+  text-align: center;
+}

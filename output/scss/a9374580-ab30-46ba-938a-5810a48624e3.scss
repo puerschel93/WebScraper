@@ -1,0 +1,131 @@
+.page-summary--service {
+  // ==========================================================================
+  //    Variables
+  // ==========================================================================
+
+  // Allow the block's base class to be used at all scopes within the block.
+  // (bn = block name), use as: #{$bn}. 
+  $bn                      : ".page-summary";
+
+  // Use the block's base class as a variable prefix (remove class selector . )
+  $prefix                  : "--" + str-replace(#{$bn}, ".");
+
+  // Variables specific to this block, based on varibles set at higher scope
+  // (e.g. .section), such that blocks can be themed from a higher level.
+  // The value may change in modified blocks or elements (i.e. block--modifier).
+  // Always use css variables along with a default value to maintain the block's
+  // independence & modularity (a la BEM).
+
+  // Important tags are so that these variables take precedence over the regular  
+  #{$prefix}-c-accent      : var(--theme-c, var(--section-c-accent, black));
+  #{$prefix}-c-accent-light: var(--theme-c-light, var(--section-c-accent-very-subtle, grey));
+
+  #{$prefix}-fc-emphasis   : var(--section-fc-title, var(--c-foreground-emphasis-on-default, black));
+  #{$prefix}-fw-title      : var(--fw-x-bold, 800);
+  #{$prefix}-ff-title      : var(--ff-title2, serif);
+  #{$prefix}-fs-title      : var(--fs-x-large, 1.5rem);
+
+  #{$prefix}-fs-annotation : var(--fs-small, 0.9rem);
+  #{$prefix}-c-annotation  : var(--c-foreground-subtle-on-default, black);
+
+  #{$prefix}-br            : var(--br-default, 0.25rem);
+
+  // ==========================================================================
+  //    Styles
+  // ==========================================================================
+
+  @include f-common;
+  @include card;
+
+  padding                  : 1.5rem;
+  display                  : flex;
+  flex-direction           : column;
+  justify-content          : space-between;
+
+  #{$bn} {
+    &__icon {
+      margin  : 0 .8rem 0 0;
+      position: relative;
+    }
+
+    &__title-text {
+      position: relative;
+    }
+
+    &__title {
+      font-weight: var(#{$prefix}-fw-title);
+      font-size  : var(#{$prefix}-fs-title);
+      color      : var(#{$prefix}-fc-emphasis);
+      font-family: var(#{$prefix}-ff-title);
+      display    : inline-flex;
+      margin     : .2rem 0;
+      position   : relative;
+
+      // brush stroke
+      svg {
+        margin-left: -7%;
+        height     : 90%;
+        top        : 35%;
+        width      : 120%;
+        position   : absolute;
+      }
+
+    }
+
+    &__header {
+      display    : flex;
+      align-items: center;
+      position   : relative;
+
+    }
+
+    &__description {
+      margin-top : 1.5rem;
+      line-height: 1.35;
+      font-size  : var(--fs-small);
+    }
+
+    &__includes-phrase {
+      font-weight: var(--fw-bold, 500);
+      color      : var(#{$prefix}-c-accent);
+      margin     : .2rem 0;
+    }
+
+    &__feature-list {
+      margin-top : 0;
+      margin-left: 1.5rem;
+      @include desktop {
+        margin-left: 0;
+      }
+    }
+
+    &__annotation {
+      font-size: var(#{$prefix}-fs-annotation);
+      color    : var(#{$prefix}-c-annotation);
+    }
+
+    &__price {
+      text-align      : center;
+      // background-color: var(#{$prefix}-c-accent-light);
+      color           : var(#{$prefix}-fc-emphasis);
+      font-weight     : var(--fw-bold);
+      font-size       : var(--fs-x-large);
+      padding         : .5rem 1rem;
+      width           : fit-content;
+      margin          : 0.5rem auto 0.5rem;
+      border-top: 1px solid var(#{$prefix}-c-accent-light);
+      border-bottom: 1px solid var(#{$prefix}-c-accent-light);
+    }
+
+    &__buttons {
+      margin-top    : 1.3rem;
+      display       : grid;
+      grid-auto-flow: row;
+      justify-items : center;
+      grid-gap      : .8rem .8rem;
+      // height        : 100%;
+      align-content : end;
+    }
+  }
+
+}

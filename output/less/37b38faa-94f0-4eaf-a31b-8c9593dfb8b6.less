@@ -1,0 +1,175 @@
+.about {
+    .full-page();
+    .section-padding();
+    padding-top: 0px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 50px;
+    background-position-y: 150px;
+    background-color: @primary-color-light;
+
+    .about--nav {
+        margin-top: @bl*3;
+
+        ul {
+            .flex-row(space-between);
+            max-width: 60vw;
+            margin-left: auto;
+            margin-right: auto;
+
+            li {
+                font-family: @font-script;
+                .font-size(34);
+                overflow: hidden;
+                position: relative;
+            }
+
+            button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                position: relative;
+                z-index: 1;
+                text-transform: uppercase;
+                font-weight: bold;
+                overflow: hidden;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    bottom: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: @primary-color-light;
+                    border: 1px solid @primary-color;
+                    transform: translate3d(0, 100%, 0);
+                    transition: transform 200ms;
+                    box-sizing: border-box;
+                }
+
+                &:hover {
+
+                    &:before {
+                        display: inline-block;
+                        background-color: @primary-color-light;
+                        transform: translate3d(0, 0, 0);
+
+                    }
+
+                }
+
+                &.active {
+                    &:before {
+                        display: inline-block;
+                        background-color: @accent-color;
+                        transform: translate3d(0, 0, 0);
+
+                    }
+                }
+            }
+        }
+    }
+
+    .about-tabs {
+        display: none;
+        animation: fadeEffect 750ms;
+        margin-top: @bl*8;
+        max-width: 75vw;
+        margin-left: auto;
+        margin-right: auto;
+
+        &.active {
+            display: block;
+        }
+
+        .about__content {
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+            p {
+                font-family: @font-normal;
+                .font-size(24);
+                text-align: center;
+            }
+
+            p:last-of-type {
+                margin-bottom: @bl*4;
+            }
+
+            a {
+                font-family: @font-script;
+                .font-size(24);
+                text-align: center;
+                font-weight: bold;
+            }
+
+        }
+
+        .about__list {
+            width: 100%;
+            height: 600px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+
+            ul {
+                text-transform: uppercase;
+                font-weight: bold;
+
+                li:not(:last-of-type) {
+                    margin-bottom: @bl;
+                }
+
+                li {
+                    .font-size(28);
+                }
+            }
+
+            .progress-bar {
+                height: 50px;
+                border: 1px solid @primary-color;
+                background-color: @primary-color-light;
+                margin-bottom: @bl;
+                border-radius: 10px;
+                overflow: hidden;
+
+                .progress-bar__progress {
+                    background-color: @accent-color;
+                    height: 100%;
+                }
+            }
+        }
+
+        .about__icon-list {
+            .flex-row();
+            flex-wrap: wrap;
+            margin-left: auto;
+            margin-right: auto;
+
+            .about__icon-list--icon {
+                .flex-column();
+                margin: @bl*2;
+                text-transform: uppercase;
+                font-weight: bold;
+                .font-size(24);
+
+                img {
+                    margin-top: @bl;
+                }
+            }
+
+        }
+
+    }
+
+    @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+}

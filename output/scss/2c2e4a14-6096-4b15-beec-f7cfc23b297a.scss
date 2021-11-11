@@ -1,0 +1,314 @@
+@mixin displayFlex { 
+    display: flex;
+}
+
+@mixin height ($height) { 
+    height: $height;
+}
+
+@mixin width ($width) { 
+    width: $width;
+}
+
+@mixin maxWidth ($maxWidth) { 
+    max-width: $maxWidth;
+}
+
+@mixin minWidth ($minWidth) { 
+    min-width: $minWidth;
+}
+
+@mixin maxHeight ($maxHeight) { 
+    max-height: $maxHeight;
+
+}
+
+@mixin minHeight ($minHeight) { 
+    min-height: $minHeight;
+}
+
+@mixin fontWeight ($fontWeight) { 
+    font-weight: $fontWeight;
+}
+
+@mixin alingItems ($alingItems) { 
+    align-items: $alingItems;
+}
+
+@mixin background-color ($backgroundcolor) { 
+    background-color: $backgroundcolor;
+}
+
+@mixin padding ($padding) { 
+    padding: $padding;
+}
+
+@mixin fontSize ($fontSize) { 
+    font-size: $fontSize;
+}
+
+@mixin flexDirection ($flexDirection) { 
+    flex-direction: $flexDirection;
+}
+
+@mixin margin ($margin) { 
+    margin: $margin;
+}
+
+@mixin justifyContent ($justifyContent) { 
+    justify-content: $justifyContent;
+}
+
+@mixin borderRadius ($borderRadius) { 
+    border-radius: $borderRadius;
+}
+
+.main{
+    @include width(100%);
+    display: block;
+}
+
+.general{    
+    @include displayFlex;
+    @include justifyContent(center);
+    @include alingItems(center);
+    @include flexDirection(row);
+    @include width(100%);
+    @include padding(0 3rem);
+    @include minWidth(320px);
+    @include maxHeight(551px);
+}
+
+
+.data-section{
+    flex-basis: 50%;
+    @include padding(3rem);
+    box-shadow: 0px 3px 11px -2px rgba(85, 147, 209, 0.74);
+    @include borderRadius(10px);
+    @include maxWidth(677px); 
+}
+
+.input-group-text {
+ @include background-color(#94bce55c); 
+ border: 1px solid #8db0d3;
+}
+
+.form-control{
+    border: 1px solid #6592bf8c;    
+}
+
+ .input-group{
+    @include justifyContent(center);
+} 
+
+#name-containerId{
+    padding-bottom: 2rem;
+}
+.mb-3 {
+ margin-bottom: 0;
+}
+
+.creditTitle{
+    @include padding(1rem); 
+    @include fontSize(15px);
+    @include fontWeight(bold); 
+    color: #6c757d94;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.creditTitle > mark {
+    @include fontWeight(bold); 
+    color: #6c757dd1;
+    text-decoration: underline;
+}
+
+.range-container{
+    @include width(100%);
+    @include padding(2rem 0);
+}
+
+.rate{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.results{
+    @include padding(0 2rem);
+    @include displayFlex;
+    @include flexDirection(column);
+    @include height(519px);    
+    padding-top: 2rem;
+}
+
+.results-section{
+    display: block;
+    flex-basis: 50%;
+    @include padding(0 1rem);
+    box-shadow: 0px 3px 11px -2px rgba(147, 188, 228, 0.74);   
+    background: rgb(225,243,255);
+    background: linear-gradient(0deg, rgba(225,243,255,0.908000700280112) 0%, rgba(255,255,255,1) 12%, rgba(255,255,255,0.8323704481792717) 98%, rgba(225,243,255,1) 100%);
+    @include borderRadius(10px);
+}
+
+#InteresRateId, #rateId-Answer, #span-monthlyFeeId, #monthlyFeeId{
+    border: 0;
+    outline: 0;
+    @include background-color(transparent);
+    @include maxWidth(40%);
+    @include fontSize(x-large);
+    border-bottom: 4px double rgba(28,110,164,0.32);
+    text-align: center;
+}
+
+.userName{
+    text-align: center;
+    @include padding(2rem);
+    @include fontSize(1.4rem);
+}
+
+.moreInfo-Container{
+    @include displayFlex;
+    @include justifyContent(center);
+    @include alingItems(center);
+    @include flexDirection(column);
+    @include width(100%);
+    margin-top: 2rem;
+}
+
+ .arrow-img {
+    transition: all 0.5s 0s ease;     
+    cursor: pointer;  
+} 
+
+.arrow-img:hover{
+    transform: scale(1.5);;
+}
+
+.table>:not(caption)>*>*{
+    @include background-color(#ffffff);
+}
+
+thead tr th {
+    position: sticky;
+    background-color: #94bce5;
+    top: 0;
+    z-index: 10;
+}
+
+.tableResults{
+    display: none;
+    overflow:scroll;
+    overflow-x: hidden; 
+    margin-top: 1.5rem;
+    @include height(100%);
+    @include maxHeight(200px);
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.btn{
+    margin-top: 2rem;
+}
+
+@media screen and (max-width:850px) {
+
+    .general {
+        display: block;
+        @include padding(0);
+        margin-top: 1rem;
+        height: 100%;
+        max-height: none;
+    }
+
+    .data-section{
+        @include padding(1rem);
+        box-shadow: none;
+    }
+
+    .input-group{
+        @include flexDirection(column);
+        @include alingItems(center);
+        padding-top: 1rem;
+    }
+
+    .input-group>.form-control{
+        @include width(100%);
+    }
+
+    #inputName-title, #inputCredit-title{
+        border-radius: 5px;
+        margin-bottom: 6.5px;
+    }
+
+    #nameId, #creditId{
+        border-radius: 5px;
+        @include width(75%);
+    }
+    
+    #nameId:focus , #creditId:focus {
+        border: '1px solid #8db0d3';
+    }
+
+    .form-control{
+        text-align: center;
+    }
+
+
+    #credit-containerId{
+        @include padding(0);
+        padding-top: 1rem;
+    }
+
+    .creditTitle{
+        @include fontSize(14px);
+        letter-spacing: 0;
+        line-height: 26px;
+        text-align: center;
+    }
+
+    p{
+        margin-bottom: 0;
+    }
+
+    .range-container{
+        padding-bottom: 0;
+    }
+
+    .results{
+        @include padding(2rem);
+        @include height(100%);
+    }
+
+    .results-section{
+        @include padding(1rem);
+    }
+
+    #userNameId{
+        @include padding(0);
+        padding-top: 1rem;
+    }
+
+    #InteresRateId, #rateId-Answer, #span-monthlyFeeId, #monthlyFeeId{
+        border: 0;
+        outline: 0;
+        @include background-color(transparent);
+        @include maxWidth(100%);
+        @include fontSize(large);
+        border-bottom: 2px solid rgba(28,110,164,0.32);
+        text-align: none;
+    }
+
+    .tableResults{
+        @include maxHeight(300px);
+        @include fontSize(12px);
+    }    
+
+    .btn{
+        margin-top: 1rem;
+    }
+}

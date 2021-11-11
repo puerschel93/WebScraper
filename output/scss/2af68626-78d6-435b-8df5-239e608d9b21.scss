@@ -1,0 +1,229 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'';
+$picture-bg-repeat-horizontal:no;
+
+// HEIGHT PUB - EXTRA
+$height-extra:520;
+$height-pub:525;
+
+// PICTURE SUR BG-MINIMOTEUR = YES / NO = BACKGROUND COLOR
+$bg-minimot:no;
+
+// MARGIN CONTENT SI NAV FIXE
+$margin-top-under-nav-fixe:20;
+@media (min-width:768px) {
+   body .margin-top-under-nav-fixe { margin-top: 270px; }
+}
+
+// MARGIN LOGO ABSOLUTE
+$margin-logo-absolute:12;
+
+// SIZE NAVIGATION
+$height-navigation:55;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",arial,verdana,sans-serif;
+$font-title:"Ubuntu",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.8em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:400;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB6
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib7";
+
+// IMPORT TEMPLATE ROME
+@import "../../../slagence_X_V5/sources/scss/templates/tokyo";
+
+// IMPORT MODULE ANNONCES
+@import "../../../slagence_X_V5/sources/scss/modules/annonces7";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra17";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-noir";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+/* Shadow inversé sur le bloc pub */
+// .bg-pub {@include box-shadow(rgba(darken($color-body,100),0.3) 0px -2px 5px);}
+
+/* Mise en page du module extra 9*/
+.module-annonces-homepage-extra {
+   .border-solid-bottom-primary-1 {border-bottom:none;}
+   .big {font-size:1.6em;}
+}
+
+@media (min-width:768px) {
+   .bg-extra { margin-top: 250px; }
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//		PERSO SAMCOGER
+//----------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//----------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------
+//		TTL
+//----------------------------------------------------------------------------------------------------------------
+
+h1, .h1-like {
+   color:$color-action;
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//		CONTAINER
+//----------------------------------------------------------------------------------------------------------------
+
+.container {
+   width:1280px;
+   padding: 0 20px;
+   @media only screen and (max-width : 1280px) {
+      width:100%;
+   }
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//		MENU & NAV
+//----------------------------------------------------------------------------------------------------------------
+
+.menu-principal {
+   text-align:center;
+   margin-top:0px;
+   @include gradient-secondary;
+   font-size:1.1em;
+   >li {
+      display:inline-block;
+      >a {
+         color:$color-action;
+         background-color:transparent;
+         padding:13px 40px;
+         margin:0px;
+         border-left: 1px solid $color-primary;
+      }      
+   }
+   >li:first-child>a  {
+      	border-left: none;
+      }
+}
+
+.menu-principal>li>a.menu-sub-on, .menu-sub .menu-sub-bg {
+   background-color:rgba($color-secondary,0.9);
+   color:$color-action;
+}
+
+
+.menu-sub ul li a {
+   margin-left: 20px;
+   font-size:0.8em;
+   border-bottom:none;
+   color:$color-action;
+}
+
+.navigation {
+   border-bottom:5px solid $color-secondary;
+}
+
+.btn-action {
+	background: $color-action;
+}
+//----------------------------------------------------------------------------------------------------------------
+//		INDEX
+//----------------------------------------------------------------------------------------------------------------
+
+.rounded-200 {
+   border-radius:0px;
+   height:300px;
+   width:300px;
+}
+
+.bg-extra {
+   background-size:cover;
+   background: none;
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//		ENCART SERVICE
+//----------------------------------------------------------------------------------------------------------------
+.bg-module-annonces {
+   background:$color-primary;
+}
+
+.bg-pub-bottom {
+   background-color:$color-body;
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//		LISTING AGENCE
+//----------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------
+//		SUPPRESSION
+//----------------------------------------------------------------------------------------------------------------
+
+.detail-agence-liste div.span4.padding-10.pagination-centered.hidden-phone, #triAgences, .listing-agences-responsable {
+   display:none;
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//		ESTIMATION
+//----------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------
+//		SUPPRESSION
+//----------------------------------------------------------------------------------------------------------------
+
+.adresse-estimation {
+   display:none;
+}
+.logo-header{
+margin-left: 20em !important;
+}

@@ -1,0 +1,52 @@
+$primary: #896ae2;
+
+.c-fun {
+    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 800% 800%;
+    animation: rainbow 8s ease infinite;
+}
+
+.c-fun-text {
+    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 8s ease infinite;
+}
+
+@keyframes rainbow { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 25%}
+    100%{background-position:0% 50%}
+}
+
+
+.c-min-vh-75 {
+    min-height: 75vh;
+}
+
+.c-header-color {
+    color: $primary;
+
+    &:hover {
+        color: white;
+    }
+}
+
+.c-background {
+    background-color: black;
+}
+
+.page-item {
+    cursor: pointer;
+
+    .page-link {
+        color: $primary;
+    }
+
+    &.active .page-link{
+        background-color: $primary;
+        border-color: $primary;
+        color: white;
+    }
+}

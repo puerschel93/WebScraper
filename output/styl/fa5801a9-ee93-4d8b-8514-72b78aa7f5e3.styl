@@ -1,0 +1,162 @@
+.prod
+    &__img
+        @media media-min-lg
+            flex: 0 1 50%
+
+    &__name
+        h1
+            color: var(--color-text-black)
+            font-weight: bold
+            font-size: 22px
+            line-height: 32px
+
+        .sku
+            text-transform: uppercase
+            font-size: 12px
+            line-height: 32px
+
+    &__shop
+        .col
+            flex: 1
+            min-width: 0
+
+        .old-price
+            .price span
+                font-size: 16px
+
+        .regular-price, .special-price
+            .price span
+                font-size: 30px
+
+        .parcelamento
+            position: absolute
+            visibility: hidden
+            opacity: 0
+            transition: all .2s ease-in-out
+
+            @media media-max-lg
+                display: none
+
+        .price-box-parcelado
+            .preco-parcelado-sem-juros
+                font-size: 14px
+
+                &:after
+                    display: inline-block
+                    margin-top: -5px
+                    margin-left: 5px
+                    content: url(down)
+                    vertical-align: middle
+
+                    @media media-max-lg
+                        display: none
+
+            &:hover + .parcelamento
+                visibility: visible
+                opacity: 1
+
+        .price-box
+            margin-bottom: 5px
+
+        .qty-wrapper
+            position: relative
+            top: auto
+            left: auto
+            margin-bottom: 0
+            transform: none
+
+        .add-to-cart-btn
+            display: flex
+            flex: 1
+            justify-content: center
+            align-items: center
+            padding: 0
+            height: 50px
+            border-radius: 4px
+            background: linear-gradient(180deg, #7DE26C 0, #35A333 100%)
+            box-shadow: none
+            font-weight: bold
+            font-size: 16px
+            line-height: 1
+            transition: none
+            min-wdith: 0
+
+            &:hover
+                background: #35A333
+
+        .add-to-cart-buttons
+            display: flex
+            gap: 16px
+
+        .add-to-links
+            width: 50px
+
+    &__call-to-actions
+        display: flex
+
+        .add-to-cart
+            flex: 1
+            min-width: 0
+
+.product-collateral
+    @media media-max-lg
+        .tabs
+            &__tab.on
+                font-weight: regular
+                font-size: 14px
+
+    @media media-min-lg
+        .tabs
+            &__tab.on
+                padding: 0
+                border: 0
+                box-shadow: none
+                color: var(--primary)
+                font-weight: bold
+                font-size: 20px
+                line-height: 32px
+
+            &__content
+                padding: 0
+                border: 0
+
+                &, .std
+                    color: #888888
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 32px
+
+@media media-min-lg
+    .product-image-gallery
+        box-shadow: none
+
+    .product-image-container
+        border-radius: 4px
+        box-shadow: 0 0 0 1px #EFEFEF
+
+    .product-image-thumbs
+        justify-content: center
+        padding: 30px 0
+        gap: 16px
+
+        li
+            flex: 0 0 auto
+            padding: 0
+            min-width: 0
+            min-height: 0
+
+        .thumb-link
+            flex: 0 0 auto
+            padding: 0
+            width: 4px
+            height: 4px
+            border-radius: 4px
+            background: #D2D2D2
+
+            &.on, &:hover
+                width: 32px
+                background: var(--primary)
+                box-shadow: none
+
+            img
+                display: none

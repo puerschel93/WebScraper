@@ -1,0 +1,268 @@
+inline-block()
+  display: inline-block
+  *display: inline
+  zoom: 1
+
+$fontsize = 16px
+$lineheight = 1.5em
+
+html
+  background: #eee
+  height: 100%
+  width: 100%
+
+body
+  max-width: 800px
+  min-height: 100%
+  margin: 0 auto
+  padding: 0 1em
+  font: normal 400 $fontsize/$lineheight Georgia, serif
+  color: #444
+  background: #fefefe
+  box-shadow: 0 0 3px #aaa
+  position: relative
+
+p
+  margin-top: 0
+  margin-bottom: 1.5em
+
+ul, ol
+  margin: 0
+  padding: 0
+  list-style: none
+
+h1, h2
+  color: #222
+  margin: 0
+  text-shadow: 1px 1px 1px #bbb
+
+h2
+  font-weight: normal
+  text-shadow: none
+
+section h1
+  font-size: 1.5em
+  font-weight: normal
+
+b, abbr
+  inline-block()
+  background: #efefef
+  border-bottom: solid 1px #ccc
+  padding: 0 .25em
+  margin-bottom: -1px
+  font-weight: bold
+  text-shadow 1px 1px 1px #fff
+
+  &.weak
+    font-weight: normal
+
+header
+  padding-top: $lineheight
+  text-align: center
+
+  h1, h2
+    font-family: "Times New Roman", serif
+
+  h1
+    font-size: 2em
+    line-height: 1.5
+
+    a, a:visited
+      color: #222
+      text-decoration: none
+  h2
+    font-size: 1.5em
+    line-height: 1.5
+    margin-bottom: .5em
+
+footer[role="contentinfo"]
+  border-top: solid 1px #888
+  padding: 2em 0 
+  margin-top: 2em
+  font-size: .75em
+  p
+    margin-bottom: 2em
+
+.download
+  position: absolute
+  top: $lineheight*7
+  right: $lineheight
+  h1
+    display: none
+
+section
+  margin: $lineheight 0
+  clear: both
+
+  h1
+    border-bottom: dotted 1px #aaa
+    margin-bottom: .5em
+    margin-top: -0.083333em
+
+  h2
+    font-size: 1.24em
+    line-height: 1
+    margin-bottom: .25em
+
+  & > ol, & > ul, & > div
+    overflow: hidden
+
+  ul li
+    display: inline
+    width: 100%
+    float: left
+
+
+.grid li
+  width: 50%
+  margin-bottom: .6875em
+  padding-bottom: .75em
+  margin-right: 0
+  border-bottom: solid 1px #eee
+
+  b, abbr
+    background: none
+    border: none
+    padding: 0
+
+article 
+  h2, footer
+    display: inline
+
+  footer
+    float: right
+    color: #888
+    margin-left: .25em
+
+footer p
+  text-align: right
+
+.visuallyhidden
+  visibility: hidden
+
+.vcard span
+  display: none
+
+.social li
+  float:left
+  margin-right: .5em
+
+.sprite
+  background: url('../../assets/sprite.png') no-repeat top left
+  width: 16px
+  height: 16px
+  text-decoration: none
+  inline-block()
+  
+  &.email
+    background-position: 0 0
+  &.facebook
+    background-position: 0 -18px
+  &.flickr
+    background-position: 0 -36px
+  &.github
+    background-position: 0 -54px
+  &.google
+    background-position: 0 -72px
+  &.linkedin
+    background-position: 0 -90px
+  &.twitter
+    background-position: 0 -108px
+  &.pdf
+    width: 38px
+    height: 46px
+    background-position: -18px -2px
+
+::-moz-selection
+  background: #fa2
+  color: #fff
+  text-shadow: none
+
+::selection
+  background: #fa2
+  color: #fff
+  text-shadow: none
+
+@media screen and (min-width: 1100px)
+  .download
+    right: -55px
+
+@media screen and (min-width: 800px)
+  header hgroup h1
+    font-size: 3.5em
+    line-height: 1.286
+
+  section h1
+    float: left
+    width: 7em
+    border-bottom: 0
+    margin-bottom: 0
+
+@media screen and (min-width: 600px)
+  body
+    padding: 0 ($lineheight * 3)
+
+@media screen and (min-width: 480px)
+  section ul li
+    width: 48%
+    margin-right: 4%
+
+    &:nth-child(2n)
+      margin-right: 0
+
+  section ul.grid li
+    width: 33%
+
+@media print
+  body
+    padding: 0
+  header
+    padding-top: 0
+
+  header hgroup h1
+    font-size: 3em
+
+  section
+    vertical-align: top
+    ul li
+      width: 45%
+      margin-right: 4%
+      &:nth-child(2n)
+        margin-right: 0
+    ul.grid li
+      margin-right:0
+      width: 33%
+
+  b, abbr
+    border-bottom: none
+    display: inline
+    padding: 0
+    margin: 0
+
+  footer[role="contentinfo"], .download
+    display: none
+
+  *
+    background: transparent !important
+    color: black !important
+    text-shadow: none !important
+    filter:none !important
+    -ms-filter: none !important
+  a, a:visited
+    text-decoration: none
+  a[href]:not(.sprite):not(.email):not(.fn):after
+    content: " (" attr(href) ")"
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after
+    content: ""
+  tr, img, article
+    page-break-inside: avoid
+  img
+    max-width: 100% !important
+  @page
+    margin: 2cm
+  p, h2, h3
+    orphans: 3
+    widows: 3
+  h1, h2, h3
+    page-break-after: avoid
+

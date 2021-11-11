@@ -1,0 +1,444 @@
+@import 'reset';
+@import 'animations';
+
+body {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 20px;
+
+    h1 {
+        font-size: 50px;
+    }
+    
+    .btn {
+        background-color: salmon;
+        padding: 12px 40px;
+        display: inline-block;
+        cursor: pointer;
+        color: white;
+        border-radius: 10px;
+    }
+
+}
+
+#splash-screen,
+#game-over,
+#game-board {
+    &.show {
+        display: block;
+    }
+    &.hide {
+        display: none;
+    }
+}
+
+#game-over,
+#game-board {
+    display: none;          // initial state
+}
+
+
+.screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+
+    &-elements {
+    }
+}
+
+/* ================ Splash Screen ================ */
+#splash-screen { 
+
+    h1 {
+        margin: 10px 0 50px 0;
+        font-size: 40px;
+    }
+
+    .description {
+        width: 400px;
+        margin: 30px auto;
+        font-size: 16px;
+        line-height: 1.6em;
+    }
+}
+
+/* ================ Game over Screen ================ */
+
+#game-over {
+    h1 {
+        margin: 40px auto;
+        width: 350px;
+        line-height: 60px;
+    }
+}
+
+
+/* ================ Game board ================ */
+
+#game-board {
+
+    .top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 10px;
+
+        h1 {
+            font-size: 40px;
+            text-align: left;
+        }
+        
+        .top-left {
+            display: flex; 
+            flex-direction: column;
+            align-items: flex-start;
+            width: 180px;
+        }
+
+        .fruits-collected {
+            
+            span {
+                color: salmon;
+                text-shadow: 2px 2px #ff0000;
+                font-size: 30px;
+            }
+        }
+
+        .lives {
+            text-align: left;
+
+            &-left {
+                display: flex;
+
+                span.live {
+                    border: solid 1px salmon;
+                    background-color: pink;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    margin: 10px 5px 0 0;
+
+                    &.lost {
+                        border: solid 1px grey;
+                        background-color:#ccc;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
+
+    .frame-game {
+        border: solid 1px black;
+        width: 90vw;
+        height: 78vh;
+        position: relative;
+        background-color: #B7EEFF;
+        overflow: hidden;
+    }
+
+    #pig {
+        width: 152px;
+        height: 140px;
+        position: absolute;
+        bottom: 20px;
+        left: 40%;
+        z-index: 3;
+        transition: transform 0.5s;
+
+        .pig {
+            width: 100%;
+            height: 100%;
+            background-image: url('/img/pig-walk.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-top: -10px;
+        }
+
+        img.leg1, img.leg2 {
+            opacity: 1;
+            position: absolute;
+            width: 35px;
+        }
+
+        img.leg1 {
+            right: 9px;
+            bottom: 0;
+            transform: rotate(-10deg);
+        }
+
+        img.leg2 {
+            left: 30px;
+            bottom: 0px;
+            transform: rotate(10deg);
+            z-index: -1;
+        }
+
+        &.walk {
+            img.leg1 {
+                @include walking-right;
+            }
+    
+            img.leg2 {
+                @include walking-left;
+            }
+        }
+
+        &.jump {
+            @include jump;
+            .pig {
+                background-image: url('/img/pig-jump.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-top: -50px;
+                width: 160px;
+                height: 184px;
+            }
+
+            img.leg1, img.leg2 {
+                opacity: 0;
+            }
+
+        }
+
+        &.touched {
+            -webkit-filter: drop-shadow(2px 4px 6px salmon);
+            filter: drop-shadow(2px 4px 6px salmon);
+        }
+
+        .ouch, .yummy {
+            opacity: 0;
+            font-family: 'Source Code Pro', monospace;
+            position: absolute;
+            transition: all 0.3s;
+            filter: drop-shadow(2px 4px 6px salmon);
+
+            &.visible {
+                opacity: 1;
+            }
+        }
+
+        .ouch {
+            top: -30px;
+            right: -30px;
+            transform: rotate(10deg);
+        }
+
+        .yummy {
+            top: -100px;
+            left: -30px;
+            transform: rotate(-20deg);
+        }
+
+    }
+
+    .butcher {
+        width: 100px;
+        height: 100px;
+        background-color: chocolate;
+        border-radius: 10px;
+        position: absolute;
+        top: 30px;
+        left: 20%;  // starts after the title 
+        
+        .hand { 
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            right: -10px;
+        }
+
+        &.moving {
+            // butcher "follows" pig!
+            @include moving;
+        }
+    }
+
+    .knife {
+        width: 70px;
+        height: auto;
+        position: absolute;
+        z-index: 3;
+        transition: transform 0.3s 0s;
+
+        img {
+            width: 100%;
+        }
+
+        &.falling {
+            @include falling;
+        }
+
+    }
+
+    .landscape {
+
+        // first layer contains the fruits, and challenges. 
+        // second layer contains the bg that moves slower.
+
+        .first-layer-bg, 
+        .second-layer-bg {
+            transition: transform 0.3s;
+        }
+
+        .first-layer-bg {
+            background-image: url('/img/first-layer-bg.png');
+            background-repeat: repeat-x;
+            background-size: contain;
+            background-position: bottom;
+            height: 35vh;
+            width: 4000px;
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .second-layer-bg-wrapper {
+            width: 2000px;     // doble size, because it will move half speed
+            position: absolute;
+            top: 150px;
+            display: flex;
+
+            .second-layer-bg {
+                background-image: url('/img/second-layer-bg.png');
+                background-repeat: repeat-x;
+                background-size: contain;
+                background-position: bottom;
+                height: 50vh;
+                width: 100%;
+                position: relative;
+
+                .the-end {
+                    background-color: brown;
+                    border: solid 1px black;
+                    width: 30px;
+                    height: 100%;
+                    position: absolute;
+                    right: 100px;   //to give a bit of margin for the delay
+                    top: 0px;
+                    z-index: 9999;
+                }
+            }
+        }
+    }
+
+    // Fruits
+    .fruits {
+        z-index: 1;
+        bottom: 50vh;
+        position: absolute;
+        transition: transform 0.3s;
+
+        span.fruit {
+            @include floating;
+            position: absolute;
+            height: 40px;
+            top: 0px;
+            transition: all 0.5s;
+
+            &.eaten {
+                filter: drop-shadow(2px 4px 4px salmon);
+                transform: translateY(15%) !important;         // to reset the constant bouncing
+                @include eaten;
+            }
+            
+            img {
+                height: 100%;
+                filter: drop-shadow(3px 8px 10px #fff);
+            }
+
+            &:nth-child(1) {
+                left: 0px;
+            }
+            &:nth-child(2) {
+                left: 80px;
+            }
+            &:nth-child(3) {
+                left: 160px;
+            }
+            &:nth-child(4) {
+                left: 240px;
+            }
+        }
+    }
+
+    .peaches {
+        left: 600px;
+    }
+
+    .strawberries {
+        left: 1200px;
+        width: 250px;
+    } 
+
+    .avocados {
+        left: 1700px;
+    }
+
+    .carrots {
+        left: 2200px;
+        span.fruit{
+            // carrots are bigger
+            height: 60px;       
+        }      
+    }
+
+    .peaches2 {
+        left: 2600px;
+    }
+
+    .avocados2 {
+        left: 3200px;
+    }
+
+    .carrots2 {
+        left: 3700px;
+        span.fruit{
+            // carrots are bigger
+            height: 60px;       
+        }      
+    }
+
+    .dialog-lives, 
+    .dialog-the-end {
+        font-family: 'Source Code Pro', monospace;
+        position: absolute;
+        right: 10px;
+        z-index: 3;
+        border-radius: 10px;
+        padding: 12px 20px;
+        width: 230px;
+        line-height: 30px;
+        font-size: 15px;
+    }
+
+    .dialog-lives {
+        opacity: 0;
+        border: solid 1px salmon;
+        background-color: rgba(salmon, $alpha: 0.5);
+        top: 10px;
+        transition: all 0.2s;
+
+        &.visible {
+            opacity: 1;
+        }
+    }
+
+    .dialog-the-end {
+        border: solid 1px rgb(35, 136, 43);
+        background-color: rgba(rgb(183, 248, 210), $alpha: 0.6);
+        top: 100px;
+    }
+}
+
+

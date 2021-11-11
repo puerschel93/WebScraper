@@ -1,0 +1,158 @@
+.rolldate-container {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: #ccc;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+
+    & .fadeIn {
+        animation-name: fadeIn;
+    }
+
+    & .fadeOut {
+        animation-name: fadeOut;
+    }
+
+    @media screen and (max-width: 414px) {
+        & {
+            font-size: 18px;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        & {
+            font-size: 15px;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    header {
+        position: relative;
+        line-height: 45px;
+        line-height: 45px;
+        font-size: 18px;
+        font-weight: 600;
+        background: #064ba6;
+        color: #fff;
+    }
+    
+
+    .rolldate-mask {
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.6;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .rolldate-panel {
+        width: 100%;
+        height: 273px;
+        background: #1b1b1b;
+        animation-duration: 0.3s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .rolldate-btn {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        padding: 0 15px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .rolldate-confirm {
+        left: auto;
+        right: 0;
+    }
+
+    .rolldate-content {
+        position: relative;
+        top: 5px;
+    }
+
+    .rolldate-wrapper {
+        display: flex;
+        & > div {
+            width: 1%;
+            height: 173px;
+            line-height: 36px;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        ul {
+            margin-top: 68px;
+        }
+        li {
+            height: 36px;
+        }
+    }
+
+    .rolldate-dim {
+        width: 100%;
+        height: 68px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        transform: translateZ(0);
+        z-index: 10;
+    }
+
+    .mask-top {
+        border-bottom: 1px solid #ebebeb;
+    }
+
+    .mask-bottom {
+        top: auto;
+        bottom: 1px;
+        border-top: 1px solid #ebebeb;
+    }
+
+    .selfTitle{
+        background-color: #000;
+        padding: 5px 0;
+        ul{
+            display: flex;
+        }
+        li{
+            flex: 1;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        bottom: -273px;
+    }
+    to {
+        bottom: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        bottom: 0;
+    }
+    to {
+        bottom: -273px;
+        display: none;
+    }
+}
+

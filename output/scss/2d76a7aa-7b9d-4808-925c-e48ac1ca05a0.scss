@@ -1,0 +1,312 @@
+@import "color";
+// BG SOLO
+$bg-uni:no;
+
+// CHOIX UNIQUE // PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI 
+$picture-bg:no;
+$picture-bg-url:'../images/bg-body.png';
+$picture-bg-repeat-horizontal:yes;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+body {
+	background-image:url('../images/bg-body.png');
+	background-color:$color-body;
+	background-position: center top;
+	background-repeat: repeat;
+}
+
+
+// SIZE SCROLLING
+$height-scrolling:590;
+
+// SIZE NAVIGATION
+$height-navigation:40;
+
+$margin-top-under-nav-fixe:260;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.7em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+// IMPORT ANIM
+@import "../../../A_ID3X/lanta31_46504/css/animate.min.css";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+.titre-pub, .titre-extra {
+color:$color-primary;
+}
+
+
+//---------------------------------------------------------------------------------------------------
+//		PERSO CSD60150
+//---------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------------------
+
+
+	//---------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//---------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:100%;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------------
+
+.navigation {		
+	border-bottom:solid 1px $color-important;	
+}
+
+.ligne-social-langue {
+    height: 36px;
+}
+
+
+.bg-navigation {	
+	background-image:url('../images/bg-nav.jpg');
+	background-color:$color-primary;	
+}
+
+.menu-principal>li {
+	border:none;
+	background-color:rgba($color-important,1);
+	padding: 0px 25px;	
+	&:hover {
+		background-color:rgba($color-primary-dark-10,0.9);
+	}
+}
+
+.menu-principal > li.menu-accueil {
+	@include border-top-left-radius(25px);
+}
+.menu-principal > li.menu-outils {
+	@include border-top-right-radius(25px);
+}
+
+.logo img {
+	padding: 0px 2px;
+}
+
+.logo {height:140px;}
+
+@media only screen and (max-width : 767px) {
+header .logo {
+height:10px;
+}
+}
+
+
+@media only screen and (max-width : 767px) {
+header .logo img {
+width: 80%;
+}
+}
+
+.logo-fnaim {
+	position:absolute;
+	top: 49px;
+    left: 255px;
+}
+
+.ligne-social-langue {background-color: #000;}
+
+
+
+	//---------------------------------------------------------------------------------------------------
+	//		FOOTER
+	//---------------------------------------------------------------------------------------------------
+.bg-secondary-footer {
+	background-color:$color-important;
+}
+
+.texte-info-agences {color:$color-secondary;}
+
+footer.bg-primary {
+	background-image:url('../images/bg-nav.jpg');
+	background-color:$color-primary;	
+}
+
+
+
+//---------------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------------
+
+.bloc-nav-left-fix {opacity:0.3; margin-top: 280px;}
+
+.aside-home-1 {border-bottom: 4px solid $color-important;}
+
+	//---------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//---------------------------------------------------------------------------------------------------
+
+.size-picture-container {
+	height:600px;
+}
+
+	//---------------------------------------------------------------------------------------------------
+	//		MINI MOTEUR
+	//---------------------------------------------------------------------------------------------------
+
+.mini-suggestions {
+	text-align:left;
+	 a {
+		color:$color-important;
+	}
+}
+
+.bg-moteur {
+	@include border-bottom-radius(15px);
+}
+
+	//---------------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//---------------------------------------------------------------------------------------------------
+
+.ligne-titre {color:$color-font-body;}
+
+.module-homepage {
+	margin-bottom:40px;
+}
+.module-homepage .height-180 {
+	height:240px;
+}
+
+.module-annonces-homepage {
+	background:$color-block;
+	border-bottom:none;
+	background-color:$color-block;
+	background-repeat:no-repeat;
+	background-position:center bottom;
+	&:hover {
+		border-bottom:none;
+	}
+}
+
+
+.icon-v5-heart:before{ color:$color-icone-cdc;}
+.icon-v5-heart.opacity-4{ opacity:1;}
+
+
+.aside-extra {height:500px;}
+
+	//---------------------------------------------------------------------------------------------------
+	//		MISE EN PAGE TXT
+	//---------------------------------------------------------------------------------------------------
+
+.bg-txt-index {
+	background:$color-block;
+	padding:10px;
+	border-bottom: 10px solid $color-important;
+}
+
+.rs-index {
+	font-size:3.5em;
+	&:hover {
+		text-decoration:none;
+	}
+}
+
+
+.zone-pub a:hover {
+	text-decoration:none;
+}
+
+	//---------------------------------------------------------------------------------------------------
+	//		PUB FULL
+	//---------------------------------------------------------------------------------------------------
+
+.titre-pub {
+	font-size:1.5em;
+}
+
+//---------------------------------------------------------------------------------------------------
+//		CONTENU
+//---------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------
+	//		GESTION
+	//---------------------------------------------------------------------------------------------------
+
+.txt-gestion {
+	text-align:justify;
+}
+
+.bloc-txt-gestion {
+	background-color:$color-block; padding:10px;
+}
+
+.bloc-txt-gestion h2 {
+	color:$color-action;
+}
+
+.contraintes ul li {
+	list-style-type:disc; list-style-position:inside;
+} 
+
+.maison { 
+	padding-bottom:10px;
+}
+
+.gestion-italic {
+	color:$color-action; font-weight:bold; font-style:italic;
+}
+.bloc-nb-annonces.hidden-phone{
+display: none;
+}

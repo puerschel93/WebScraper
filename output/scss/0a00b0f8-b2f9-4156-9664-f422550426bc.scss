@@ -1,0 +1,364 @@
+@import"./variables";
+
+@mixin fotos ($width, $height, $padding, $margin)
+{
+    width: $width;
+    height: $height;
+    padding: $padding;          /*Uso una mixin que la utilizo en las otras secciones de scss para darle formato a las imagenes*/
+    margin: $margin;
+}
+
+@media screen and (max-width: 1024px) 
+{
+    .contenedor
+    {
+        background-color: $color-fondo; /*Utilizo el mismo fondo en todos las medias quaries*/
+        align-items: center;
+        main
+        {
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            .foto_main
+            {
+                @include fotos (23rem,19rem,1rem,0px);  /*Asignando formato a la imagenes de index.html con mixin*/     
+            }
+            .main-texto
+            {
+                margin: 1rem;
+                font-size: 1rem;    /*Le asigno formato a las palabras que se encuentran dentro del main
+                                    como los subtitulos u oraciones*/
+            }
+            .card
+            {   
+                margin-bottom: 5rem;    /*Le asigno un margen inferior a la card de ventas.html para que no queden juntas unas con otras*/
+            }
+            ul li
+            {
+                list-style: none;
+                font-size: 1rem;
+            }
+            form
+            {
+                padding: 1.3rem;        /*Le doy margin y padding al formulario de la seccion asesoramiento.html*/
+                margin: 1rem;
+            }
+        }
+    }
+}
+
+/*-----------------------------FIN MEDIA QUARIE 1024PX--------------------------------------------*/
+
+
+/*-----------------------------INICIA MEDIA QUARIE 768PX--------------------------------------------*/
+
+
+@media screen and (max-width: 768px)
+{
+    .contenedor
+    {
+        background-color: $color-fondo;
+        align-items: center;
+        main
+        {
+
+            .foto_main
+            {
+                @include fotos (20rem,16rem,0rem,0px);  /*Asignando formato a la imagenes de index.html con mixin*/
+            }
+            
+            .main-texto
+            {
+                margin: 1rem;       /*Le asigno formato a las palabras que se encuentran dentro del main
+                                    como los subtitulos u oraciones*/
+                font-size: 25px;
+            }
+            ul li
+            {
+                list-style: none;
+                font-size: 1rem;
+            } 
+            .card
+            {
+                margin-bottom: 5rem;
+                height: 25rem;
+                &:hover         /*Le asigno un margen inferior a la card de ventas.html para que no queden juntas unas con otras*/
+                {
+                    background-color: $color-fondo-encabezado;
+                    color: $color-navs-encabezado;
+                }
+                &-img-top
+                {
+                    height: 16rem;
+                }     
+            }
+            form
+            {
+                padding: 1.3rem;    /*Le doy margin y padding al formulario de la seccion asesoramiento.html*/
+                margin: 1rem;
+            }
+            iframe
+            {
+                @include fotos (30rem,25rem,1rem,0px);   
+            }
+        }
+    }
+}
+
+/*-----------------------------FIN MEDIA QUARIE 768PX--------------------------------------------*/
+
+
+
+
+/*-----------------------------INICIA MEDIA QUARIE 425PX--------------------------------------------*/
+
+@media screen and (max-width: 425px) 
+{
+    .contenedor
+    {
+        width: 100%;
+        justify-items: center;
+        .encabezado
+        {
+            width: 100%;
+            &-titulo
+            {
+                font-size: 1.8rem;
+            }
+        }
+        main
+        {
+            .foto_main
+            {
+                @include fotos (24rem,19rem,1rem,0px);  /*Asignando formato a la imagenes de index.html con mixin*/
+            }
+            .main-texto
+            {
+                margin: 1rem;           /*Le asigno formato a las palabras que se encuentran dentro del main
+                                        como los subtitulos u oraciones*/
+                font-size: 25px;
+            }
+            ul li
+            {
+                list-style: none;
+                font-size: 1rem;
+            }
+            .card
+            {
+                margin-bottom: 5rem;
+                height: 25rem;
+                &:hover                     /*Le asigno un margen inferior a la card de ventas.html para que no queden juntas unas con otras*/
+                {           
+                    background-color: $color-fondo-encabezado;
+                    color: $color-navs-encabezado;
+                }
+                &-img-top
+                {
+                    height: 16rem;
+                }     
+            }
+            form
+            {
+                padding: 1.3rem;    
+                margin: 1rem;
+            }
+            iframe
+            {
+                @include fotos(24rem,20rem ,1rem ,0rem );
+            }
+        }
+        footer
+        {
+            width: 100%;
+            align-items: center;
+            ul
+            {
+                margin: 0.5rem;
+                padding: 0rem;
+                li
+                {
+                    font-size: 1.5rem;
+                    transition: all 0.5s;
+                    &:hover
+                    {
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*-----------------------------FIN MEDIA QUARIE 425PX--------------------------------------------*/
+
+
+
+
+
+/*-----------------------------INICIO MEDIA QUARIE 375PX--------------------------------------------*/
+
+
+
+@media screen and (max-width: 375px) 
+{
+    .contenedor
+    {
+        width: 100%;
+        justify-items: center;
+        
+        .encabezado
+        {
+            width: 100%;
+            &-titulo
+            {
+                font-size: 1.6rem;
+            }
+        }
+        main
+        {
+            .foto_main
+            {
+                @include fotos (22rem,16rem,1rem,0px);  /*Asignando formato a la imagenes de index.html con mixin*/
+            }
+            .main-texto
+            {
+                margin: 0.7rem;           /*Le asigno formato a las palabras que se encuentran dentro del main
+                                        como los subtitulos u oraciones*/
+                font-size: 20px;
+            }
+            ul li
+            {
+                list-style: none;
+                font-size: 1rem;
+            }
+            .card
+            {
+                margin-bottom: 5rem;
+                                         /*Le asigno un margen inferior a la card de ventas.html para que no queden juntas unas con otras*/
+            }
+            form
+            {
+                padding: 1.3rem;    
+                margin: 1rem;
+            }
+            iframe
+            {
+                @include fotos (21rem,17rem,1rem,0px);
+            }
+        }
+        footer
+        {
+            width: 100%;
+            align-items: center;
+            ul
+            {
+                margin: 0.5rem;
+                padding: 0rem;
+                li
+                {
+                    font-size: 1.3rem;
+                    transition: all 0.5s;
+                    &:hover
+                    {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/*-----------------------------FIN MEDIA QUARIE 375PX--------------------------------------------*/
+
+
+
+
+
+/*-----------------------------INICIO MEDIA QUARIE 320PX--------------------------------------------*/
+
+
+
+
+@media screen and (max-width: 320px) 
+{
+    .contenedor
+    {
+        width: 100%;
+        justify-items: center;
+        .encabezado
+        {
+            width: 100%;
+            &-titulo
+            {
+                font-size: 1.25rem;
+            }
+
+        }
+        main
+        {
+            .foto_main
+            {
+                @include fotos (18rem,14rem,1rem,0px);  /*Asignando formato a la imagenes de index.html con mixin*/
+            }
+            .main-texto
+            {
+                margin: 1rem;           /*Le asigno formato a las palabras que se encuentran dentro del main
+                                        como los subtitulos u oraciones*/
+                font-size: 20px;
+            }
+            ul li
+            {
+                list-style: none;
+                font-size: 1rem;
+            }
+            .card
+            {
+                margin-bottom: 5rem; 
+                height: 24rem;
+                &:hover                  /*Le asigno un margen inferior a la card de ventas.html para que no queden juntas unas con otras*/
+                {
+                    background-color: $color-fondo-encabezado;
+                    color: $color-navs-encabezado;
+                }
+                &-img-top
+                {
+                    height: 14rem;
+                }    
+            }
+            form
+            {
+                padding: 1.3rem;    
+                margin: 1rem;
+            }
+            iframe
+            {
+                @include fotos (18rem,16rem,1rem,0px);
+            }
+        }
+        footer
+        {
+            width: 100%;
+            align-items: center;
+            ul
+            {
+                margin: 0.5rem;
+                padding: 0rem;
+                li
+                {
+                    font-size: 1rem;
+                    transition: all 0.5s;
+                    &:hover
+                    {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*-----------------------------FIN MEDIA QUARIE 320PX--------------------------------------------*/

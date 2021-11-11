@@ -1,0 +1,291 @@
+/* .fade {
+	transition: opacity 0.1s ease-in-out;
+
+	&:not(.show) {
+		opacity: 0;
+	}
+}
+
+.collapse {
+	&:not(.show) {
+		display: none;
+	}
+}
+
+.collapsing {
+	height: 0;
+	overflow: hidden;
+	transition: height 0.2s ease-in-out;
+} */
+
+.accordion {
+	&-light {
+		.accordion {
+			&-item {
+				border-radius: $button-border-radius;
+				border: 2px solid $border-color;
+				transition: all 0.2s ease-in-out;
+
+				&.active {
+					border-color: $primary-color;
+				}
+
+				&:hover {
+					border-color: $primary-color;
+				}
+			}
+
+			&-button {
+				border-radius: unset;
+				border: medium none;
+
+				&:hover {
+					background-color: $white;
+					color: $primary-text-color;
+				}
+			}
+		}
+	}
+
+	&-flush {
+		.accordion {
+			&-body {
+				background-color: $primary-color;
+				border-radius: 0 0 $border-radius $border-radius;
+				color: $white;
+			}
+
+			&-button {
+				border-color: $border-color;
+
+				&:not(.collapsed) {
+					background-color: $primary-color;
+					border-bottom-left-radius: unset;
+					border-bottom-right-radius: unset;
+					border-color: $primary-color;
+					color: $white;
+
+					&:after {
+						content: "\e908";
+					}
+
+					&:hover {
+						background-color: $primary-color;
+						color: $white;
+					}
+				}
+
+				&:hover {
+					background-color: $primary-color;
+					color: $white;
+					z-index: 2;
+				}
+			}
+
+			&-collapse {
+				transform: translateY(-0.8rem);
+			}
+		}
+	}
+
+	&-media {
+		// background-image: url("../images/asfalt-light.png");
+		background-image: url("https://www.transparenttextures.com/patterns/buried.png");
+		align-items: center;
+		border-radius: $border-radius;
+		display: flex;
+		justify-content: center;
+		padding: 0 1.4rem;
+	}
+
+	&-card {
+		border: 1px solid $border-color;
+		border-radius: $border-radius;
+		box-shadow: 0 4px 12px rgba($black, 0.2);
+
+		.accordion {
+			&-header {
+				&:not(.collapsed) {
+					.icon-chevron-down {
+						&:before {
+							content: "\e937";
+						}
+					}
+				}
+			}
+
+			&-body {
+				background-color: $white;
+				color: initial;
+				// padding: 1rem;
+
+				// hr {
+				// 	background-color: $border-color;
+				// }
+			}
+
+			&-collapse {
+				transform: none;
+			}
+		}
+	}
+
+	&-body {
+		padding: 1rem 1.5rem 1.5rem 1.5rem;
+
+		hr {
+			// background-color: rgba($white, 0.5);
+			margin: 0 0 1rem 0;
+		}
+	}
+
+	&-button {
+		align-items: center;
+		background-color: $white;
+		// border-color: $border-color;
+		color: $primary-text-color;
+		display: flex;
+		padding: 0.8rem 1.2rem;
+		position: relative;
+		text-align: left;
+		transition: background-color 0.2s ease-in-out;
+		width: 100%;
+		z-index: 5;
+
+		// &:not(.collapsed) {
+		// 	background-color: $primary-color;
+		// 	border-bottom-left-radius: unset;
+		// 	border-bottom-right-radius: unset;
+		// 	border-color: $primary-color;
+		// 	color: $white;
+
+		// 	&:after {
+		// 		content: "\e908";
+		// 	}
+
+		// 	&:hover {
+		// 		background-color: $primary-color;
+		// 		color: $white;
+		// 	}
+		// }
+
+		&:after {
+			content: "\e905";
+			font-family: "icons";
+			font-size: 22px;
+			margin-left: auto;
+		}
+
+		&:hover {
+			z-index: 2;
+		}
+
+		&:focus {
+			outline: 0;
+		}
+	}
+
+	&-header {
+		margin-bottom: 0;
+		font-size: 1.125em;
+	}
+
+	&-toggle {
+		cursor: pointer;
+	}
+
+	&-item {
+		margin-bottom: 1rem;
+		overflow: hidden;
+
+		/* &:first-of-type {
+			position: relative;
+
+			.accordion-button {
+				position: relative;
+			}
+		}
+
+		&:last-of-type {
+			border-top-left-radius: 30px;
+
+			.accordion-button {
+				&.collapsed {
+					position: relative;
+				}
+			}
+
+			.accordion-collapse {
+				position: relative;
+			}
+		}
+
+		&:not(:first-of-type) {
+			border-top: 0;
+		} */
+	}
+
+	/* &-flush {
+		.accordion-collapse {
+			border-width: 0;
+		}
+
+		.accordion-item {
+			border-right: 0;
+			border-left: 0;
+
+			&:first-child {
+				border-top: 0;
+			}
+			&:last-child {
+				border-bottom: 0;
+			}
+
+			.accordion-button {
+				opacity: 0.9;
+			}
+		}
+	} */
+}
+
+@media (min-width: 991px) {
+	.accordion {
+		&-header {
+			font-size: 1.225em;
+		}
+	}
+}
+
+// Mobiles/Tablets
+@media (max-width: 767px) {
+	.accordion {
+		&-media {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+
+		&-button {
+			&:after {
+				font-size: 16px;
+			}
+		}
+
+		&-card {
+			padding-bottom: 50px;
+			position: relative;
+		}
+
+		&-body {
+			padding: 1rem;
+		}
+
+		&-toggle {
+			bottom: 0;
+			left: 0;
+			padding: 1rem !important;
+			position: absolute;
+			right: 0;
+		}
+	}
+}

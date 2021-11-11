@@ -1,0 +1,423 @@
+#content-wrap
+  clearfix()
+  background-color #fff
+
+#content-main
+  max-width content-width
+  margin 60px auto
+  display flex
+  flex-flow column nowrap
+
+.article
+  width 100%
+  padding 40px 0
+  display flex
+  flex-flow column nowrap
+  position relative
+
+.post-header
+  position relative
+  border-bottom 1px solid color-border
+
+.post-title
+  font-size 24px
+  margin-bottom 0
+  font-weight 600
+  padding-right 30px
+  @media mq-large
+    padding-right 0
+  a
+    color color-default
+    text-decoration none
+    border-bottom none
+    @extend title-link
+
+.post-link-title .icon
+  fill color-gray
+  width 12px
+  height 12px
+  margin-right 10px
+
+.post-meta
+  color color-gray
+  line-height 1
+  font-size font-small
+  text-transform uppercase
+  position relative
+  padding-left 10px
+  a
+    color color-gray
+    text-decoration none
+    border-bottom none
+    @extend title-link
+    &:hover
+      border none
+    &:before
+      background color-gray
+  &:before
+    position absolute
+    content ''
+    background color-border
+    height 10px
+    width 3px
+    top 1px
+    left 0
+
+.post-category
+  color color-gray
+  line-height 1
+  font-size font-small
+  text-transform uppercase
+
+.post-category-link
+  position relative
+  text-decoration none
+  border none
+  color color-gray
+  @extend title-link
+  &:hover
+    border none
+  &:before
+    background color-gray
+
+.post-content
+  flex auto
+  max-width content-width
+  padding-top width-normal
+  .more-link
+    text-transform uppercase
+    font-weight 600
+    text-decoration none
+    border none
+    @extend title-link
+    &:hover
+      border none
+  @media mq-normal
+    h1::before, h2::before, h3::before, h4::before, h5::before, h6::before
+      position absolute
+      right calc(100% + 10px)
+      bottom 0
+      color color-gray
+      font-size 0.85rem
+      font-weight normal
+      font-variant 'small-caps'
+      font-family font-serif
+      border 0
+      border-radius 0
+      left auto
+      font none
+      padding 0
+      vertical-align baseline
+      line-height 20px
+      opacity 0.6
+    h1::before
+      content 'H1'
+      bottom 0.45em
+    h2::before
+      content 'H2'
+      bottom 0.35em
+    h3::before
+      content 'H3'
+      bottom 0.25em
+    h4::before
+      content 'H4'
+      bottom 0.15em
+    h5::before
+      content 'H5'
+      bottom 0.1em
+    h6::before
+      content 'H6'
+      bottom 0.1em
+  .video-container
+    position relative
+    padding-top (9 / 16 * 100)% // 16:9 ratio
+    margin-bottom 16px
+    height 0
+    overflow hidden
+    iframe, object, embed
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      margin-top 0
+
+#post-separator
+  clearfix()
+  width 15%
+  height 5px
+  background color-default
+  margin 50px 0
+
+.post-footer
+  flex none
+  display flex
+  width 100%
+  flex-flow column nowrap
+  padding-top width-normal
+  line-height 1.6em
+  a
+    font-weight 600
+
+#post-tag-wrap
+  width 100%
+  overflow hidden
+
+.post-tag-list
+  display inline-flex
+  flex-flow row nowrap
+  padding-bottom 0
+  padding-left 0
+  .post-tag-list-item
+    font-size font-small
+    list-style none
+    white-space nowrap
+    flex-wrap nowrap
+    margin-right 15px
+    .post-tag-list-link
+      color color-gray
+      padding-bottom 3px
+      text-transform uppercase
+      text-decoration none
+      border none
+      position relative
+      &:hover
+        color color-default
+        border none
+      &:before
+        content '#'
+        margin-right 3px
+      &:after
+        background color-default
+        bottom -3px
+        content ''
+        height 2px
+        left 0
+        position absolute
+        transform scaleX(0)
+        visibility hidden
+        width 100%
+        transition 0.2s 0s ease-in-out
+      &:hover:after
+        transform scaleX(1)
+        visibility visible
+
+#post-social-icons
+  display flex
+  border-top 1px solid color-border
+  border-bottom 1px solid color-border
+  margin-top width-small
+  padding width-normal 0
+  align-items center
+  flex-flow row nowrap
+
+.post-share-links
+  flex 1 1 0%
+  .post-share-links-inner
+    flex 1 auto
+    display flex
+    align-items center
+    .post-share-wechat, .post-share-weibo, .post-share-twitter
+      width icon-large
+      height icon-large
+      display flex
+      margin-right 16px
+      .icon
+        width icon-large
+        height icon-large
+        fill color-border
+        vertical-align middle
+    .post-share-wechat
+      @media mq-mobile
+        display none
+    a
+      border none
+
+.wechat-links
+  position relative
+  text-align center
+  @media mq-mobile
+    display none
+  &:hover .wechat-qrcode-wrap
+    visibility visible
+    opacity 1
+  .icon
+    cursor pointer
+  .wechat-qrcode-wrap
+    position absolute
+    top -195px
+    left -62px
+    visibility hidden
+    transition 0.2s opacity ease, visibility 0.2s
+    background-color #fff
+    border 1px solid color-border
+    border-radius 4px
+    box-shadow 0 5px 10px rgba(0, 0, 0, 0.15)
+    height 170px
+    width 150px
+    z-index 99999
+    &:before
+      border solid 7px transparent
+      border-top-color color-border
+      content ''
+      position absolute
+      bottom -14px
+      left 68px
+    &:after
+      border solid 6px transparent
+      border-top-color #fff
+      content ''
+      position absolute
+      bottom -12px
+      left 68px
+    .wechat-qrcode-title, .wechat-qrcode-hint
+      color color-gray
+      font-size font-small
+    .wechat-qrcode-title
+      background-color color-body
+      border-radius 4px
+      height 32px
+      line-height 32px
+    .wechat-qrcode-img
+      height 80px
+      margin 10px auto
+      width 80px
+    .wechat-qrcode-hint
+      line-height 15px
+      margin 0 auto
+      width 110px
+
+.post-share-links .post-share-weibo:hover .icon, .weibo-links:hover .icon
+  fill #d52b2a
+
+.post-share-links .post-share-twitter:hover .icon, .twitter-links:hover .icon
+  fill #1da1f2
+
+.post-share-links .post-share-wechat:hover .icon, .wechat-links:hover .icon
+  fill #02df6d
+
+#post-reactions-inner
+  display flex
+  margin-top 0
+  padding-top 0
+  align-items center
+  flex-flow row nowrap
+  justify-content flex-end
+
+.post-reactions-title
+  flex 1 1 0%
+  display block
+  padding-right width-small
+  color color-gray
+  font-size font-small
+  font-weight 600
+  line-height 1.2
+  letter-spacing 1.2px
+  text-transform uppercase
+
+.post-reactions-button
+  display flex
+  button
+    width icon-large
+    height icon-large
+    cursor pointer
+    margin-top 0
+    margin-right 8px
+    display inline-flex
+    padding-top 0
+    align-items center
+    border none
+    border-radius 50%
+    justify-content center
+    background-color color-border
+    transition-duration 250ms, 250ms, 250ms
+    transition-timing-function ease, ease, ease
+    transition-delay initial, initial, initial
+    transition-property background-color, color, tranform
+    .icon
+      width icon-large
+      height icon-large
+      vertical-align middle
+      fill color-gray
+  #reaction-good
+    margin-right 0
+
+#reaction-bad.active
+  background-color rgb(255, 70, 66)
+  transform scale(1.15)
+  .icon
+    fill #fff
+    transform scale(1.15)
+
+#reaction-notbad.active
+  background-color rgb(255, 209, 57)
+  transform scale(1.15)
+  .icon
+    fill #fff
+    transform scale(1.15)
+
+#reaction-good.active
+  background-color rgb(38, 203, 124)
+  transform scale(1.15)
+  .icon
+    fill #fff
+    transform scale(1.15)
+
+#reaction-bad:hover
+  background-color rgb(255, 70, 66)
+  .icon
+    fill #fff
+
+#reaction-notbad:hover
+  background-color rgb(255, 209, 57)
+  .icon
+    fill #fff
+
+#reaction-good:hover
+  background-color rgb(38, 203, 124)
+  .icon
+    fill #fff
+
+.post-updated
+  display flex
+  flex-flow row nowrap
+  justify-content flex-start
+  align-items center
+
+.post-updated-date
+  flex auto
+  display block
+  color color-gray
+  opacity 0.5
+  font-size font-small
+  font-weight 500
+  line-height 2
+  text-transform uppercase
+
+#post-nav
+  clearfix()
+  width 100%
+  margin width-normal 0
+  position relative
+
+.post-nav-link-wrap
+  font-weight 600
+  color color-gray
+  text-decoration none
+  box-sizing border-box
+  border none
+  @extend title-link
+  &:hover
+    border none
+  &:before
+    background color-gray
+
+#post-nav-newer
+  float left
+
+#post-nav-older
+  float right
+
+.post-nav-caption
+  text-transform uppercase
+  line-height 1em

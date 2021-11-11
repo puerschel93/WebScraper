@@ -1,0 +1,291 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+body
+	font-family 'Raleway' sans-serif
+
+.bg
+	width 100%
+	height 100%
+	position fixed
+	background-image url('images/01.jpg')
+	background-size cover
+	background-repeat no-repeat
+	font-family 'Raleway' sans-serif
+
+h3
+	margin 0
+	padding 5px
+
+.create
+	color darken(skyblue, 30%)
+	position relative
+	height 100%
+	width 550px
+	padding 20px
+	background rgba(255,255,255,0.8)
+	z-index 100000
+	display none
+	z-index 900000 
+	text-align left
+
+	h3
+		margin 10px 5px
+		font-weight 400
+		letter-spacing 1px
+		font-size 20px
+
+
+	input
+		z-index 999999999999
+		display block
+		padding 10px
+		margin 18px auto
+		width 100%
+		outline none
+		border none
+
+
+	input.submit
+		font-weight 400
+		letter-spacing 2px
+		background lighten(skyblue, -15%)
+		padding 15px
+		color white
+		transition all 0.3s
+		&:hover
+			background lighten(skyblue, -35%)
+		
+	input.playlistName
+		background none
+		color #e0848d
+		font-size 20px
+		margin-top 0
+		border-bottom 3px solid white
+
+	p.pre
+		display none
+		text-align center
+		font-weight 300
+		letter-spacing 1px
+		padding 10px
+		width 68%
+		margin 0 auto
+		cursor pointer
+		transition all 0.3s
+		&:hover
+			color #e0848d
+
+.wrapper
+	width 550px
+	height 460px
+	position absolute
+	// border-radius 3px
+	left 0
+	right 0
+	top 10%
+	margin 0 auto
+	text-align center
+	// margin-top 100px
+	
+
+	.login
+		position relative
+		height 100%
+		width 550px
+		padding 10px
+		z-index 100000
+		color white
+		font-family 'Raleway' sans-serif
+		h1
+			font-weight 200
+			width 100%
+
+		.twitter
+			width 100px
+			height 100px
+			cursor pointer
+			transition all 0.5s
+			&:hover
+				transform scale(1.1);
+
+		.logo
+			width 500px
+			margin 0 auto
+		
+
+	.rel
+		display none
+		position relative
+		height 100%
+		width 550px
+		padding 10px
+		background: lighten(rgb(255, 246, 150), 25%)
+		// background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9ec75), color-stop(100%,#fff696))
+		// background: -webkit-linear-gradient(top, #f9ec75 0%,#fff696 100%)
+		h3
+			font-weight 200
+
+		h3.artist
+			color lighten(skyblue, -15%)
+			font-size 20px
+			margin-bottom 5px
+
+		h3.track
+			color #0070A6
+			font-size 25px
+			letter-spacing 1px
+			height 35px
+			overflow auto
+			font-weight 300
+
+		iframe
+			width 100%
+			height 300px
+		.button
+			// border-radius 2px
+			outline none
+			padding 12px
+			cursor pointer
+			border 1px solid transparent
+			background lighten(skyblue, -15%)
+			color white
+			position absolute
+			font-weight 300
+			letter-spacing 1px
+			transition all 0.3s
+			&:hover
+				background lighten(skyblue, -35%)
+			&:disabled
+				background grey
+				cursor auto
+
+		.like
+			left 10px
+			bottom 10px
+
+		.dislike
+			right 10px
+			bottom 10px
+
+		.next
+			display none
+			left 220px
+			bottom 10px
+
+svg
+	position absolute
+	display none
+	top 13%
+	right 2%
+	height 40px
+	width 40px
+	z-index 10000000
+	cursor pointer
+	fill lighten(skyblue, -30%)
+
+nav.top
+	display none
+	width 100%
+	height 10%
+	background white
+	position relative
+	left 0
+	top 0
+	z-index 90000
+
+	img.navLogo
+		height 160%
+		position absolute
+		top 0
+		left 0
+		right 0
+		margin 0 auto
+
+	ul
+		list-style none
+		height 100%
+		margin 0
+		padding 0
+		li
+			display inline-block
+			vertical-align middle
+			height 100%
+			padding-left 2.5%
+
+			p.name
+
+				color lighten(skyblue, -30%)
+
+			img.pic
+				top 0
+				bottom 0
+				left 0
+				position absolute
+				padding 3px
+				height 100%
+
+			p.logout
+				color #95A5A6
+				cursor pointer
+
+
+
+.rel
+	nav.right
+		width 200px
+		height 460px
+		position absolute
+		top 0
+		display none
+		right -200px
+		z-index 900000000
+		//background rgba(0,0,0,0.7)
+		//background lighten(skyblue, -20%)
+		//background #BE90D4
+		background rgba(190,124,212,0.8)
+		text-align center
+		color white
+		overflow-y scroll
+		overflow-x hidden
+		transition background 0.3s
+		&:hover
+			background rgba(190,124,212,0.9)
+		h3
+			padding 20px
+			letter-spacing 3px
+			font-weight 400
+			display inline-block
+			border-bottom 1px solid white
+			margin 10px 0
+		ul
+			list-style none
+			font-weight 300
+			margin 0
+			padding 0
+			color white
+			width 100%
+			li
+				font-size 16px
+				letter-spacing 0.04em
+				margin 0
+				//border-left 1px solid rgb(255, 246, 150)
+				padding 10px
+				cursor pointer
+				transition all 0.3s
+				width 100%
+				&:hover
+					background lighten(#BE90D4, -20%)
+				span
+					padding 0 1px
+					text-align right
+					position absolute
+					left 15px
+					font-weight 400
+					color rgba(255, 255, 255 , 0.5)
+					&:hover
+						color firebrick

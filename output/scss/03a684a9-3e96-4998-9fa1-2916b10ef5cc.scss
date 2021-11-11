@@ -1,0 +1,158 @@
+@import "color";
+// BG SOLO
+$bg-uni: yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg: yes;
+$picture-bg-url: "../images/dark_wall.png";
+$picture-bg-repeat-horizontal: no;
+
+// SIZE SCROLLING
+$height-scrolling: 460;
+
+
+// SIZE NAVIGATION
+$height-navigation: 75;
+$margin-top-under-nav-fixe: 193;
+
+// VAR SITE TYPO
+$font-body: "Source Sans Pro",verdana,sans-serif;
+$font-title: "Source Sans Pro",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text: 1.4em;
+$font-size-title: 2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title: uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title: normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi: no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB 6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra13";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+
+
+.menu-principal {
+     > li {
+        border: 0;
+         > a {
+            &:before {
+                display: inline-block;
+                width: 6px;
+                height: 8px;
+                content: "";
+                margin-right: 4px;
+                margin-bottom: 1px;
+                background-color: $color-action;
+            }
+            &:focus,
+            &:hover,
+            &:active {
+                color: $color-action;
+            }
+        }
+        &:hover {
+            background: none;
+        }
+        &.dropdown {
+            display: none;
+        }
+    }
+}
+
+.menu-principal {
+    font-size: $font-size-title * .52;
+}
+
+.titre-milieu-menu-under {
+    margin-top: 700px;
+}
+.aside-extra,
+.aside-pub {
+    display: none;
+}
+
+.bg-navigation {
+    margin-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+    background-color: $color-primary;
+    background-image: url(../images/bg-nav.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.module-homepage hr {
+    display: none;
+}
+
+
+.size-picture-container {
+    height: 459px;
+}
+
+.titre-milieu {
+    zoom: 1;
+    margin-top: 258px;
+    padding-top: -5px;
+    background-color: rgba(0, 0, 0, .5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000,endColorstr=#000000);
+}
+
+@media only screen and (max-width : 767px) {
+    header .logo img {
+        width: 70%;
+    }
+    .bg-navigation {
+        border-bottom: 5px solid $color-action;
+        background-color: $color-primary-light-20;
+        background-image: none;
+    }
+    .titre-milieu {
+        margin-top: 0;
+    }
+}
+
+#collapseLegal {
+    height: auto;
+}
+
+
+.aside-txt-home {
+    height: auto;
+}

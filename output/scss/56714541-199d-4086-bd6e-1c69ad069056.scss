@@ -1,0 +1,321 @@
+{{ $p := .Params.prefix }}
+// Markdown block styles do not follow BEM principles since the HTML elements
+// are automatically generated from markdown by hugo, and those generated
+// elements don't have classes.
+
+// IMPORTANT:
+// The markdown class without the standalone modifier is used for content
+// in other blocks that have been run through "markdownify".
+.markdown {
+
+  // ==========================================================================
+  //    Variables
+  // ==========================================================================
+
+  // Allow the block's base class to be used at all scopes within the block.
+  // (bn = block name), use as: #{$bn}. 
+  $bn    : &;
+  // Use the block's base class as a variable prefix (remove class selector . )
+  $prefix: "--" + str-replace(#{$bn}, ".");
+
+  // Variables specific to this block, based on varibles set at higher scope
+  // (e.g. .section), such that blocks can be themed from a higher level.
+  // The value may change in modified blocks or elements (i.e. block--modifier).
+  // Always use css variables along with a default value to maintain the block's
+  // independence & modularity (a la BEM).
+
+  // #{$prefix}- : var( , );
+
+  // ==========================================================================
+  //    Styles
+  // ==========================================================================
+
+  @include style-links('a:not(.{{ $p }}button)');
+  
+  h1 {
+    font-size: var(--fs-xx-large, 2.5rem);
+  }
+  
+  p {
+    margin-block-end: 1.05rem;
+    margin-block-start: 1.05rem;
+  }
+
+  ul {
+    font-size  : var(--fs-medium, 1rem);
+    margin-left  : 0.5rem;
+
+    li {
+      margin    : 0.5rem 0;
+      list-style: none;
+      position  : relative;
+    }
+
+    li:before {
+      content      : "";
+      position     : absolute;
+      width        : 0.4rem;
+      height       : 0.4rem;
+      background-color   : var(--section-fc-body);
+      border-radius: 50%;
+      left         : -1.5rem;
+      top          : 0.6rem;
+    }
+  }
+
+  ol {
+    counter-reset: listitem;
+    margin-left  : 0.5rem;
+    font-size  : var(--fs-medium, 1rem);
+
+    li {
+      margin    : 0.45rem 0;
+      list-style: none;
+      position  : relative;
+    }
+
+    li:before {
+      counter-increment: listitem;
+      content          : counter(listitem);
+      background       : var(--section-fc-body, grey);
+      color            : white;
+      font-weight      : var(--fw-bold, 500);
+      font-size        : 0.8rem;
+      line-height      : 1.12rem;
+      height           : 1.12rem;
+      width            : 1.12rem;
+      text-align       : center;
+      padding          : 0;
+      border-radius    : 0.68rem;
+      position         : absolute;
+      left             : -2.1rem;
+      top              : 0.5rem;
+    }
+  }
+
+  pre {
+    padding      : 1.5rem;
+    border-radius: var(--br-default, 0.25rem);
+  }
+
+  //  TABLES 
+  table {
+    width          : 100%;
+    border-collapse: separate;
+    border-spacing : 0;
+
+    &:not(:first-child) {
+      margin-top: 1.25rem;
+    }
+
+    table {
+      margin: 1rem 0 .5rem;
+    }
+
+    th {
+      font-weight   : var(--fw-bold, 500);
+      font-size     : var(--fs-x-small, .85rem);
+      color         : var(--section--c-background-darker-2, gray);
+      text-transform: uppercase;
+      text-align    : left;
+      padding       : 0 0 .5rem 1rem;
+    }
+
+    tbody {
+      font-size     : var(--fs-x-small, .85rem);
+      line-height   : 1.45rem;
+      vertical-align: top;
+      padding-top   : 0;
+    }
+
+    td {
+      font-size     : var(--fs-x-small, .85rem);
+      line-height   : 1.45rem;
+      vertical-align: top;
+      padding-top   : 0;
+      border-color  : var(--section--c-background-darker-2, gray);
+      border-style  : solid;
+      padding       : 1rem;
+      border-width  : 0;
+    }
+
+    tr td:first-child {
+      border-left-width: 1px;
+    }
+
+    tr td:last-child {
+      border-right-width: 1px;
+    }
+
+    tr:first-child > td {
+      border-top-width: 1px;
+    }
+
+    tr td {
+      border-bottom-width: 1px;
+    }
+
+    tr:first-child > td:first-child {
+      border-top-left-radius: 4px;
+    }
+
+    tr:first-child > td:last-child {
+      border-top-right-radius: 4px;
+    }
+
+    tr:last-child > td:first-child {
+      border-bottom-left-radius: 4px;
+    }
+
+    tr:last-child > td:last-child {
+      border-bottom-right-radius: 4px;
+    }
+
+    // Adds subtle stripes
+    tr:nth-child(odd) {
+      background: var(--section-c-background-lighter, white);
+    }
+  }
+
+  //
+  // Standalone: Styles specific for markdown blocks and markdown pages.
+  // The markdown class without the standalone modifier is used for content
+  // in other blocks that have been run through "markdownify".
+  // ==========================================================================
+
+  &--standalone {
+    
+    @include f-common;
+    max-width  : 100%;
+    min-width  : 0;
+    overflow   : hidden;
+    line-height: 1.625;
+    font-size  : var(--fs-medium, 1rem);
+    
+    figure {
+      margin: 4rem auto 6rem;
+      max-width: $content-width - 100px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color      : var(--section-fc-title, black);
+      line-height: 1.2;
+      margin: 1.3rem 0 0.7rem;
+    }
+    
+    h1 {
+      font-size: var(--fs-xxx-large);
+      margin-top: 4.56rem;
+      margin-bottom: 1.8rem;
+      font-weight: var(--fw-xx-bold);
+      font-family: var(--ff-title);
+    }
+    
+    h2 {
+      font-size: var(--fs-xx-large);
+      margin-top: 4rem;
+      margin-bottom: 1.5rem;
+      font-weight: var(--fw-x-bold);
+      font-family: var(--ff-title2);
+    }
+    
+    h3 {
+      margin-top: 2rem;
+      margin-bottom: 1.3rem;
+      letter-spacing: .02em;
+      font-weight: var(--fw-bolder, 600);
+      font-size: var(--fs-x-large);
+      font-family: var(--ff-title3);
+    }
+    
+    h4,h5,h6 {
+      font-family: var(--ff-title3);
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      font-weight: var(--fw-bold, 500);
+    }
+    
+    h4 {
+      font-size: var(--fs-large);
+      margin-top: 1.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    h5 {
+      font-size: var(--fs-medium);
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    h6 {
+      color: var(--section-fc, black);
+      font-size: var(--fs-medium);
+      margin-top: 1rem;
+      margin-bottom: 0.6rem;
+    }
+    
+  }
+
+  //
+  // General styles for infoboxes
+  // ==========================================================================
+  &--infobox {
+    --infobox-c-background: var(--section-c-background-darker, var(--c-default-darker, white));
+    --infobox-c-foreground: var(--section-fc-body, var(--c-foreground-on-default, black));
+    background-color      : var(--infobox-c-background);
+    color                 : var(--infobox-c-foreground);
+    padding               : .7rem;
+    border-radius         : var(--br-default, 0.25rem);
+    text-align            : center;
+  }
+  
+  //
+  // Center: simply center the text
+  // ==========================================================================
+  
+  &--center {
+    text-align            : center;
+  }
+
+  //
+  // Success: Makes the markdown block an info block indicating success
+  // ==========================================================================
+
+  &--success {
+    --infobox-c-background: var(--section-c-success-subtle, var(--c-success-subtle-on-default, lightgreen));
+    --infobox-c-foreground: var(--section-c-success, var(--c-success-on-default, green));
+  }
+
+  //
+  // Info: Makes the markdown block an info block indicating extra information
+  // ==========================================================================
+
+  &--info {
+    --infobox-c-background: var(--section-c-info-subtle, var(--c-info-subtle-on-default, skyblue));
+    --infobox-c-foreground: var(--section-c-info, var(--c-info-on-default, navy));
+  }
+
+  //
+  // Warning: Makes the markdown block an info block indicating a warning
+  // ==========================================================================
+
+  &--warning {
+    --infobox-c-background: var(--section-c-warning-subtle, var(--c-warning-subtle-on-default, olive));
+    --infobox-c-foreground: var(--section-c-warning, var(--c-warning-on-default, yellow));
+  }
+
+  //
+  // Error: Makes the markdown block an info block indicating an error
+  // ==========================================================================
+
+  &--error {
+    --infobox-c-background: var(--section-c-error-subtle, var(--c-error-subtle-on-default, white));
+    --infobox-c-foreground: var(--section-c-error, var(--c-error-on-default, red));
+  }
+
+}

@@ -1,0 +1,189 @@
+.primaryBtn{
+    font-size: 13px;
+    font-family: $fontFuturaMedium; 
+    letter-spacing: 3px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #827358;
+    width: 200px;
+    height: 46px;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #615A4D;
+    background: transparent;
+    position: relative;
+}
+  .primaryBtn::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #906c4d;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 200ms ease-out;
+  }
+  .primaryBtn:hover{
+    color: #fff;
+    transition: all 200ms ease-out;
+  }
+  .primaryBtn:hover::after{
+    transform: scaleX(1);
+  }
+
+.age-restriction{
+    display: none;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    z-index: 5;
+    .age-outer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        background: #011b3e;
+        background: linear-gradient(310deg, #011b3e 0%, #000f24 100%);
+        color: #979797;
+        padding: 50px;
+        width: 80vw;
+        height: 90vh;
+        text-align: center;
+        -webkit-transition: 400ms;
+        transition: 400ms;
+        margin: 0 auto;
+        text-align: center;
+    }
+    h1{
+        font-family: "Futura-Medium", Futura-pt, Arial, sans-serif;
+        font-size: 26px;
+        font-weight: 500;
+        color: #D8D8D8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 40px;
+    }
+    .art-deco-wrap {
+        position: relative;
+        padding-top: 20px;
+    }
+    .age-deco{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 13px;
+        width: 394px;
+    }
+    p{
+        padding: 40px 0 20px 0;
+    }
+    button {
+        max-width: 298px;
+        font-weight: 500;
+    }
+    .age-button {
+        width: 100%;
+        height: 46px;
+    }
+    .secondaryBtn {
+        box-shadow: 1px 1000px 1px #b0935b inset;
+    }
+    .primaryBtn {
+        margin-top: 15px;
+    }
+    .ageWarning {
+        display: none;
+        font-size: 15px;
+        color: #D23838;
+        padding-top: 10px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .ageWarning.active {
+        display: block;
+    }
+    .lang-switch{
+        width: 200px;
+        padding: 20px;
+        font-size: 14px;
+        justify-content: center;
+        margin: 0 auto;
+        cursor: pointer;
+        .age-lang-icon {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+        }
+        .age-lang-icon:hover {
+            filter: grayscale(1);
+        }
+        .menu-lang {
+            margin-top: -3px;
+        }
+    }
+    .lang-switch:hover {
+        color: #fff;
+        transition: all 500ms;
+        .age-lang-icon {
+            filter: contrast(400%);
+            transition: all 400ms;
+        }
+    }
+    .icon-lang {
+        position: relative;
+    }
+    .lang-dropdown{
+        position: absolute;
+        
+        top: -7vh;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 140px;
+    }
+    .translate:hover {
+        text-decoration: none;
+    }
+}
+
+.age-restriction.active{
+    display: block;
+}
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .age-restriction  .age-outer{
+        width: 595px;
+        height: 514px;
+        padding: 60px 100px;
+    }
+    .age-restriction.error .age-outer{
+        height: 530px;
+    }
+    .age-restriction.error .lang-dropdown{
+        top: 0;
+    }
+    .age-button{
+        width: 200px;
+    }
+}
+
+@media (max-width: 400px) {
+    .age-restriction .lang-dropdown {
+        top: -18vh;
+    }
+}
+

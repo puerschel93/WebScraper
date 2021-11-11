@@ -1,0 +1,89 @@
+@import '@styles/variables';
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.group {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  @media(max-width: 767px) {
+    flex-wrap: wrap;
+  }
+}
+
+.icon {
+  position: absolute;
+  left: 16px;
+  top: 9px;
+}
+
+.field {
+  height: 42px;
+  padding: 14px 50px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  flex: 1 0;
+  background-color: $colorPrimaryGray;
+  caret-color: $colorPrimaryGold;
+  &:focus {
+    outline: none;
+  }
+  @media(max-width: 767px) {
+    flex: 1 0 100%;
+    max-width: 100%;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+}
+
+.submit {
+  padding: 10px 24px;
+  @include BodySmall-REGULAR;
+  background-color: $colorPrimaryGold;
+  color: $colorPrimaryWhite;
+  border: none;
+  box-shadow: none;
+  border-radius: 0px 6px 6px 0px;
+  cursor: pointer;
+  @media(max-width: 767px) {
+    flex: 1 0 100%;
+    max-width: 100%;
+    border-radius: 6px;
+  }
+}
+
+.result {
+  &Title {
+    @include BodyLarge-MEDIUM;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  &Item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $colorPrimaryGray;
+  }
+  &Content {
+    flex: 1 0;
+    @include BodyLarge-REGULAR;
+    span {
+      color: $colorPrimaryBlue;
+    }
+  }
+  &Actions {
+    flex: 1 0 145px;
+    max-width: 145px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

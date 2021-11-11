@@ -1,0 +1,221 @@
+.briefing {
+    @include center(column);
+
+}
+
+.location-selector {
+    @include center(row);
+    background-color: $secondary-background-color;
+    width: 100vw;
+    height: 60px;
+    box-shadow: inset 0px 4px 3px lightgrey;
+    ;
+    i {
+        padding: 0rem 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    &__place {
+        padding: 0rem 0.5rem;
+        font-size: 1.2rem;
+    }
+
+}
+
+.description {
+    @include center(column);
+    width: 100vw;
+    background-color: $primary-background-color;
+
+ 
+    &__heading {
+        font-family: map-get($fonts, text);
+        margin: 1.8rem 1rem 0rem 1rem;
+        font-size: $title-font-size;
+        text-align: center;
+    }
+
+    &__text {
+        font-size: 1.3rem;
+        margin: 2rem 1.8rem 0rem 1.8rem;
+        color:black;
+        text-align: center;
+        font-weight: 300;
+    }
+
+    &__button {
+        margin: 2rem 1rem 3rem 1rem;
+        background: rgb(147,86,220);
+        background: linear-gradient(353deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+        width: 250px;
+        height: 60px;
+        color: #fff;
+        line-height: 3.8rem;
+        border-radius: 35px;
+        border: none;
+        font-size: 19px;
+        font-family: map-get($fonts, text);
+        @include box-shaddow;
+        @include center(row);
+        cursor: grab;
+        
+    }
+}
+
+.tutorial {
+    width: 100vw;
+    background-color: white;
+
+    &__container {
+        margin: $main-vertical-margin 1.2rem $main-vertical-margin $main-horizontal-margin;
+    } 
+   
+    &__heading {
+        @include title-style;
+    }
+
+    &__step {
+        display: flex;
+        flex-direction: row;
+        background-color: $primary-background-color;
+        padding: 1.6rem 0rem;
+        margin-bottom: 35px;
+        margin-left: 10px;
+        border-radius: 25px;
+        cursor: grab;
+        
+        @include box-shaddow;
+
+        &:hover {
+            background-color: lighten($primary-color, 35);
+        }
+
+        &:hover &__icon {
+            color: $primary-color;
+        }
+
+
+        &__counters {
+            color: white;
+            background-color: $primary-color;
+            border-radius: 50px;
+            padding: 5px 11px;
+            position: relative;
+            right: 15px;
+            font-size: 1.2rem;
+        } 
+        
+        &__icon {
+            @include center(row);
+            color: gray;
+            padding: 0rem 1.1rem;
+            font-size: 1.2rem;
+            width: 0.8rem;
+
+            
+        }
+        
+        &__text {
+            @include center(row);
+            font-size: 1.1rem;
+            padding-left: 0.6rem;
+        }
+    }
+}
+
+.restaurants {
+    width: 100vw;
+    background-color: $primary-background-color;
+
+    &__heading {
+        @include title-style;
+        padding: $main-vertical-margin $main-horizontal-margin 0 $main-horizontal-margin;
+    }
+
+    &__cards-container {
+        padding: 0 $main-horizontal-margin $main-vertical-margin $main-horizontal-margin;
+        
+    }
+
+    
+}
+
+.cards {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    
+    text-decoration: none;
+    font-family: map-get($fonts, "text");    
+    margin-bottom: 40px;   
+
+    &__image {
+        object-fit: cover;
+        width: 100%;
+        height: 200px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        object-position: 0 60%;
+    }
+
+    &__description-container {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: white;
+       
+        @include box-shaddow;
+    }
+
+    &__description-text {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0 20px 20px;
+        h3 {
+            font-size: 1.3rem;
+            color: black;
+            margin-bottom: 6px;
+        }
+        p {
+            font-weight: 100;
+            font-size: 1.2rem;
+            color: black;
+            margin-bottom: 7px;
+        }
+    }
+
+    &__heart-icon {
+        @include center(row);
+        margin: 0px 30px;
+        font-size: 1.8rem;
+        color: black;
+        
+    }
+
+    &__badge {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        z-index: 2;
+        width: 110px;
+        height: 40px;
+        border-radius: 3px;
+        @include center(row);
+        background-color: lighten($tertiary-color, 5);
+        color: darken($tertiary-color, 40);
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+}
+
+.fa-utensils {
+    padding-right: 9.1px;
+}
+
+
+

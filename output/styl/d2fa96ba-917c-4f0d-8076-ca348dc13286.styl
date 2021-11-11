@@ -1,0 +1,436 @@
+.tela.menu
+  position relative
+  min-height 100%
+  width 100%
+  height 100% /* cross-browser */
+  overflow hidden
+
+  .menu-title
+    position absolute
+    width 100%
+
+    p
+      margin-top 2rem
+
+  .menu-logo
+    img
+      height 15vh
+      position absolute
+      bottom 0
+      left 10%
+
+  .postit
+    position absolute
+    width 15rem
+    height auto
+    padding 1.5rem 2rem
+    box-shadow 5px 5px 10px 1px rgba(0,0,0,0.3)
+
+    .postit-pin
+      position absolute
+      width 1.5rem
+      height 1.5rem
+      border-radius 50%
+      background #d2222a
+      left calc(50% - 0.8rem)
+      top -0.8rem
+
+    &.bg-1
+      background linear-gradient(90deg, #9ad3ff, #75c2ff)
+    &.bg-2
+      background linear-gradient(90deg, #ffdd03, #ffe855)
+
+    &.postit-1
+      left 18%
+      top 20%
+    &.postit-2
+      left 63%
+      top 24%
+    &.postit-3
+      left 21%
+      top 62%
+    &.postit-4
+      left 58%
+      top 68%
+
+  .menu-item
+    position absolute
+    opacity 0.6
+    pointer-events none
+
+    &.next
+      opacity 1
+      pointer-events all
+
+    &.menu-item-1
+      left 15%
+      top 20%
+    &.menu-item-2
+      left 60%
+      top 24%
+    &.menu-item-3
+      left 18%
+      top 62%
+    &.menu-item-4
+      left 55%
+      top 68%
+
+    .img-with-text
+      img
+        width auto !important
+
+    .btn
+      position relative
+      background transparent
+      border-radius none
+      box-shadow none
+      padding 0
+
+      .btn-number
+        position relative
+        width 3rem
+        display inline-block
+        vertical-align middle
+        //text-align right
+        font-size 3rem
+        font-weight 500
+        text-align right
+        padding-right 5px
+
+      .btn-image
+        position absolute
+        width 5rem
+        height 5rem
+        left 0
+        top 50%
+        transform translateX(-60%) translateY(-50%)
+        border-radius 50%
+        box-shadow 10px 10px 15px 1px rgba(0,0,0,0.1)
+
+        img
+          width 100%
+          height auto
+
+      .btn-text
+        position relative
+        width 20rem
+        display inline-block
+        vertical-align middle
+        text-align left
+        height 7rem
+        padding-left 4rem
+        padding-right 3rem
+        background white
+        display table
+
+        p
+          display table-cell
+          vertical-align middle
+
+      &.btn-inverse
+        .btn-image
+          left auto
+          right 0
+          transform translateX(60%) translateY(-50%)
+          box-shadow -10px 10px 15px 1px rgba(0,0,0,0.1)
+
+        .btn-text
+          padding-right 4rem
+          padding-left 3rem
+
+      &.type1
+        .btn-text
+          border-radius 2rem 2rem 0 2rem
+      &.type2
+        .btn-text
+          border-radius 2rem 2rem 2rem 0
+      &.type3
+        .btn-text
+          border-radius 2rem  0 2rem 2rem
+      &.type4
+        .btn-text
+          border-radius 0 2rem 2rem 2rem
+
+    .over, .completed
+
+      .btn
+        .btn-text
+          background #ffcb03
+
+  .welcome-screen
+    position absolute
+    left 0
+    top 0
+    width 100%
+    height 100%
+    background rgba(0,0,0,0.7)
+    display table
+
+    .welcome-container
+      display table-cell
+      vertical-align middle
+
+      .welcome-content
+        padding 2em 2em
+        background white
+        border-radius 20px
+        width 60%
+        text-align left
+        margin 0 auto
+
+  .pre-final-screen
+    position absolute
+    left 0
+    top 0
+    width 100%
+    height 100%
+    //background url('../assets/images/px/imagens/Novos_Menus06.png')
+    background-size cover
+    background-position center
+    background-repeat no-repeat
+    display table
+
+
+  .final-screen
+    position absolute
+    left 0
+    top 0
+    width 100%
+    height 100%
+    //background url('../assets/images/px/imagens/mobile/03_grafismos.png')
+    background-size auto 100%
+    background-position center
+    background-repeat no-repeat
+    display table
+    background-color rgba(0,0,0,0.6)
+
+    .final-container
+      display table-cell
+      vertical-align middle
+
+      .final-content
+        padding 2em 2em
+        background white
+        border-radius 20px
+        width 60%
+        text-align left
+        margin 0 auto
+
+   p
+    text-decoration none
+
+  .menu-bg
+    position absolute
+    left 0
+    top 0
+    width 100vw
+    height calc(100 * var(--vh)) /* cross-browser */
+    background url('../assets/images/px/bgs/bg_02.png')
+    background-size cover
+    background-position top center
+    background-attachment fixed
+    overflow hidden
+
+    #bg-video
+      display block
+      height auto
+      left auto
+      max-width none
+      min-height 100%
+      min-width 100%
+      right auto
+      position absolute
+      top 0
+      width auto
+      left 50%
+      top 50%
+      transform translateX(-50%) translateY(-50%)
+
+  .container-fluid
+    height 100%
+
+
+  /* Small devices (tablets, 768px and up) */
+  @media screen and (max-width: 768px)
+
+    .menu-title
+      position absolute
+      width 100%
+
+      p
+        text-align center
+        font-size 4rem
+        font-weight bold
+        margin-top 2rem
+
+    .menu-logo
+      img
+        height 10vh
+        position absolute
+        bottom 0
+        left 10%
+
+    .postits
+      position absolute
+      left 0
+      top 0
+      width 100%
+
+    .postit
+      position relative
+      display block
+      margin 0 auto
+      width 20rem
+      height calc(7rem + 10px)
+      margin-bottom 15px
+
+      &.postit-1
+        left auto
+        top auto
+        margin-top 100px
+      &.postit-2
+        left auto
+        top auto
+      &.postit-3
+        left auto
+        top auto
+      &.postit-4
+        left auto
+        top auto
+
+    .menu-item
+      position relative
+      display block
+      margin 0 auto
+      text-align center
+      margin-bottom 25px
+
+      &.menu-item-1
+        left auto
+        top auto
+        margin-top 100px
+      &.menu-item-2
+        left auto
+        top auto
+      &.menu-item-3
+        left auto
+        top auto
+      &.menu-item-4
+        left auto
+        top auto
+      &.menu-item-5
+        left auto
+        top auto
+      &.menu-item-6
+        left auto
+        top auto
+
+    .welcome-screen
+      background rgba(0,0,0,0.7)
+
+      .welcome-container
+
+        .welcome-content
+          padding 2em 2em
+          background white
+          border-radius 20px
+          width 90%
+          text-align left
+          margin 0 auto
+
+    .final-screen
+      background rgba(0,0,0,0.7)
+
+      .final-container
+
+        .final-content
+          padding 2em 2em
+          background white
+          border-radius 20px
+          width 90%
+          text-align left
+          margin 0 auto
+
+    .container-fluid
+      height 100%
+
+
+  @media screen and (orientation:landscape) and (max-device-width: 850px)
+  /* Your CSS Here*/
+    .menu-title
+
+      p
+        text-align center
+        font-size 3rem
+        font-weight bold
+        margin-top 0rem
+
+    .welcome-screen
+      background rgba(0,0,0,0.7)
+
+      .welcome-container
+
+        .welcome-content
+          padding 2em 2em
+          background white
+          border-radius 20px
+          width 70%
+          text-align left
+          margin 0 auto
+
+    .final-screen
+      background rgba(0,0,0,0.7)
+
+      .final-container
+
+        .final-content
+          padding 2em 2em
+          background white
+          border-radius 20px
+          width 70%
+          text-align left
+          margin 0 auto
+
+    .container-fluid
+      height 100%
+
+    .postits
+      height 100%
+
+    .postit
+      position absolute
+      width 15rem
+      height auto
+      padding 1.5rem 2rem
+      box-shadow 5px 5px 10px 1px rgba(0,0,0,0.3)
+
+      &.postit-1
+        left 15%
+        top 20%
+        margin-top 0
+      &.postit-2
+        left 63%
+        top 24%
+      &.postit-3
+        left 17%
+        top 62%
+      &.postit-4
+        left 61%
+        top 68%
+
+    .menu-item
+      position absolute
+
+      &.menu-item-1
+        left 10%
+        top 20%
+        margin-top 0
+      &.menu-item-2
+        left 60%
+        top 24%
+      &.menu-item-3
+        left 12%
+        top 62%
+      &.menu-item-4
+        left 58%
+        top 68%

@@ -1,0 +1,111 @@
+.section {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  h1 {
+    text-align: center;
+    margin-top: 0.5em;
+    font-size: 2.4em;
+    small {
+      display: block;
+      font-size: 0.6em;
+      color: #666;
+    }
+  }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.section--hero {
+  color: #666;
+  font-size: 1.2em;
+  h1 {
+    font-size: 2.4em;
+    text-align: left;
+    margin-top:0;
+    color: #333;
+    small {
+      color: #333;
+      font-size: 0.75em;
+    }
+  }
+}
+.img--hero {
+}
+.section--intro {
+  &:extend(.section all);
+  &:extend(.section--full all);
+  &:extend(.section--hero all);
+  padding-top: 169px;
+  background-color: #edf1f6;
+}
+.section--about {
+  &:extend(.section all);
+  &:extend(.section--full all);
+  &:extend(.section--hero all);
+}
+.section--portfolio {
+  &:extend(.section all);
+}
+
+.section--resume {
+  &:extend(.section all);
+}
+.section--skunkworks {
+  &:extend(.section all);
+}
+.section--contact {
+  &:extend(.section all);
+  &:extend(.section--full all);
+}
+
+@media @breakpoint-size-sm {
+  .section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    box-shadow: inset 0 -30px 30px -30px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+  }
+  .section--hero {
+    padding-top: 0;
+    padding-bottom: 0;
+    .row > *{
+      padding-top: 30vh;
+      height: 100vh;
+    }
+  }
+  .section--full {
+    height: 100vh;
+  }
+
+  .section--intro {
+    .container {
+      background: url("../images/sparx-mobile.gif") no-repeat 50vw 30vh;
+      background-size: 350px auto;
+      background-attachment: fixed;
+    }
+  }
+  .section--about {
+    .container {
+      background: url("../images/dpi-mobile.gif") no-repeat 50vw 30vh;
+      background-size: 350px auto;
+      background-attachment: fixed;
+    }
+  }
+
+}
+
+@media @breakpoint-size-md {
+
+  .section--intro {
+    .container {
+      background-size: 450px auto;
+    }
+  }
+  .section--about {
+    .container {
+      background-size: 450px auto;
+    }
+  }
+
+}
+
+@media @breakpoint-size-lg {
+}

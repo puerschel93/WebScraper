@@ -1,0 +1,69 @@
+:root
+    --color-bright: colors.bright
+    --color-dark: colors.dark
+    --color-tint: colors.tint
+    --color-neutral: colors.neutral
+    --color-shade: colors.shade
+
+    --color-primary: colors.primary
+    --color-primary-tint: colors.primaryTint
+    --color-primary-hilite: colors.primaryHilite
+    --color-primary-shade: colors.primaryShade
+    --color-secondary: colors.secondary
+    --color-secondary-tint: colors.secondaryTint
+    --color-secondary-hilite: colors.secondaryHilite
+    --color-secondary-shade: colors.secondaryShade
+    --color-accent-1: colors.primaryAccent
+    --color-accent-1-tint: colors.primaryAccentTint
+    --color-accent-1-hilite: colors.primaryAccentHilite
+    --color-accent-1-shade: colors.primaryAccentShade
+    // --color-accent-2: brand.secondaryAccent
+    // --color-accent-2-tint: brand.secondaryAccentTint
+    // --color-accent-2-hilite: brand.secondaryAccentHilite
+    // --color-accent-2-shade: brand.secondaryAccentShade
+
+    // // --color-minor: colors.minor
+
+    --color-affirm: colors.affirm
+    --color-warn: colors.warn
+    --color-dissent: colors.dissent
+
+    --active-bg: transparent
+    --active-fg: var(--color-dark)
+    --active-edge: currentColor
+
+    --edge-width: 1px
+    --edge-style: solid
+    --edge-primary: currentColor
+    --edge-tint: var(--color-tint)
+    --edge-neutral: var(--color-neutral)
+    --edge-shade: var(--color-shade)
+    --edge-warn: var(--color-dissent)
+
+    --fx-delay: 0s
+    --fx-time: fx.quick.time
+    --fx-func: fx.quick.func
+    // --fx-bright: 0
+
+html
+    font-display: block
+    scroll-behavior: smooth
+
+    +at-standard()
+        scroll-snap-type: y proximity
+
+body
+    min-height: 100%    // used to ensure 100% vertical coverage on mobile, as 100vh doesn't work correctly
+    display: flex
+    font-family: defaultTypeStack unless typeStacks is defined
+    stack: copy if typeStacks
+    caret-color: var(--color-primary)
+    color: var(--active-fg)
+
+
+@require "typography"
+@require "colors"
+@require "motifs"
+@require "controls"
+@require "icons"
+@require "fx"

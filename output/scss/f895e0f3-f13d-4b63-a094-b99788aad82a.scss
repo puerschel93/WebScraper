@@ -1,0 +1,333 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:600;
+
+// SIZE NAVIGATION
+$height-navigation:120;
+
+$margin-top-under-nav-fixe:190;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------
+//		PERSO HEMON44
+//------------------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//------------------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//------------------------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:100%;
+	}
+}
+
+.logo img {
+	height:200px;
+	margin-top: 10px;
+}
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//------------------------------------------------------------------------------------------------------------------------------
+.menu-principal {
+	font-size:1.15em;
+	>li {
+		border-left:none;
+		border-right:none;
+		padding: 0px 6px;
+		&:hover {
+			background:$color-primary;
+		}
+	}	
+}
+
+.menu-principal>li>a:hover {
+	color:$color-action;
+}
+
+//------------------------------------------------------------------------------------------------------------------------------
+//		INDEX
+//------------------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//------------------------------------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage .height-180 {
+	height:240px;
+}
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	//		EXTRA -- PLACEMENT TEXTE ET PUB
+	//------------------------------------------------------------------------------------------------------------------------------
+.aside-extra {
+	height: auto;	
+}
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	//		PUB FULL
+	//------------------------------------------------------------------------------------------------------------------------------
+
+.pub-full .zone-pub {
+	margin-top:-20px;
+	margin-bottom: -20px;
+}
+.zone-pub .h1-like {
+	display:none;
+}
+
+//------------------------------------------------------------------------------------------------------------------------------
+//		LISTING PA
+//------------------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//------------------------------------------------------------------------------------------------------------------------------
+.recherche-annonces .height-370 {
+	height:490px;
+}
+
+//------------------------------------------------------------------------------------------------------------------------------
+//		DETAIL PA
+//------------------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//------------------------------------------------------------------------------------------------------------------------------
+
+.vertical-pano {
+	background:$color-block;
+}
+
+//------------------------------------------------------------------------------------------------------------------------------
+//		LISTING AGENCES
+//------------------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------------
+	//		COORDONN2ES
+	//------------------------------------------------------------------------------------------------------------------------------
+
+.listing-agences-fax {
+	display:none;
+}
+
+// FORMULES GESTION
+.formule {
+    margin-bottom: 30px;
+    padding: 15px;
+    color: $color-content;
+    border-radius: 20px 0 20px 0;
+    background-color: $color-font-body;
+    font-size: .95em;
+    li {
+        margin: 10px 0;
+        line-height: 1.2;
+    }
+}
+
+.formule-ttl {
+    padding: 5px 10px 5px 20px;
+    color: $color-font-body;
+    border-radius: 20px 0 20px 0;
+    font-size: 2em;
+}
+
+.formule-px {
+    display: block;
+    margin: 5px -10px -5px -20px;
+    padding: 5px 20px;
+    color: $color-font-body;
+    border-radius: 0 0 20px 0;
+    background-color: $color-content;
+    font-family: $font-title;
+    sup {
+        font-size: .5em;
+    }
+}
+
+.formule-plus {
+    margin-top: 20px;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 20px 0 20px 0;
+    li {
+        margin: 3px 0;
+    }
+}
+
+.formule-plus-icon {
+    padding: 0 20px;
+    text-align: center;
+    [class*="icon-v5-"] {
+        display: inline-block;
+        margin: 10px 0;
+        color: $color-font-body;
+        border-radius: 50%;
+        font-size: 4rem;
+    }
+}
+
+.formule-frais {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 15px 0 15px 0;
+    background-color: darken($color-font-body,15);
+}
+
+.formule-frais-ttl {
+    margin: -10px -10px 0 -10px;
+    padding: 10px;
+    color: $color-font-body;
+    border-radius: 15px 0 15px 0;
+    background-color: $color-content;
+    font-size: 1.2em;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.formule-exemple {
+    padding: 20px;
+    color: $color-font-body;
+    border-radius: 20px 0 20px 0;
+    background-color: $color-action;
+    text-align: center;
+    li {
+        margin: 0;
+        line-height: 1;
+    }
+}
+
+
+.formule-location {
+    background-color: darken($color-font-body,35);
+    color: $color-font-body;
+    li {
+        margin: 5px 0;
+    }
+    .formule-exemple {
+        background-color: $color-content;
+    }
+}
+.formule-reference {
+    .formule-ttl {
+        background-color: $color-reference;
+    }
+    .formule-plus {
+        border-color: $color-reference;
+        [class*="icon-v5-"] {
+            background-color: $color-reference;
+        }
+    }
+}
+.formule-privilege {
+    .formule-ttl {
+        background-color: $color-privilege;
+    }
+    .formule-plus {
+        border-color: $color-privilege;
+        [class*="icon-v5-"] {
+            background-color: $color-privilege;
+        }
+    }
+}
+.formule-serenite {
+    .formule-ttl {
+        background-color: $color-serenite;
+    }
+    .formule-plus {
+        border-color: $color-serenite;
+        [class*="icon-v5-"] {
+            background-color: $color-serenite;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .formule-ttl {
+        overflow: hidden;
+    }
+    .formule-px {
+        float: right;
+        margin: -5px -10px;
+    }
+    .formule-plus {
+        display: table;
+        width: 100%;
+    }
+    .formule-plus-icon,
+    .formule-plus-txt {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+}

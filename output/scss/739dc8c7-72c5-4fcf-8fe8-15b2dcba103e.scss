@@ -1,0 +1,340 @@
+.tabSet {
+    max-width: 100%;
+    margin: 1em auto;
+    overflow: hidden;
+    @extend %clearfix;
+    @include screen('mobile') {
+        width: auto;
+        height: auto !important;
+    }
+}
+.tabs {
+    position: relative;
+    // 改button
+    &>.tabItem {
+        &.active {
+            background-color: $primaryColor;
+            color: #fff;
+        }
+        float: left;
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+        line-height: 1;
+        display: block;
+        padding: 16px 0 14px;
+        text-align: center;
+        background-color: #aaa;
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        border:none;
+        @include text-overflow;
+        box-sizing: border-box;
+        border-radius: 0;
+        &:hover,
+        &:focus {
+            background: $primaryColor;
+            box-shadow: none;
+        }
+        @include screen('mobile') {
+            float: none;
+            width: 100% !important;
+            border-bottom: 1px solid #888;
+            &.active {
+                border-color: #bbb;
+            }
+        }
+    }
+    // 新聞與活動
+    &.newstab {
+        text-align: center;
+        &>.tabItem {
+            &.active {
+                border-bottom: 3px solid $secondaryColor;
+                color: $h2Color;
+                position: relative;
+            }
+            float:none;
+            margin: 0 10px;
+            padding: 0;
+            font-size: 1.375em;
+            line-height: 1;
+            display: inline-block;
+            padding: 16px 5px 14px;
+            text-align: center;
+            background-color: #fff;
+            color: $h2Color;
+            font-weight: bold;
+            text-decoration: none;
+            @include text-overflow;
+            box-sizing: border-box;
+            border-radius: 0;
+            border:none;
+            border-bottom: 3px solid #fff;
+            &:hover,
+            &:focus {
+                // background: $primaryColor;
+                box-shadow: none;
+            }
+            @include screen('mobile') {
+                float: none;
+                width: 100% !important;
+                border-bottom: 3px solid #ccc;
+                overflow: visible;
+                &.active {
+                    border-color: $secondaryColor;
+                    &:before {
+                        content: '';
+                        border: 12px solid #65c0b8;
+                        border-right-color: transparent;
+                        border-bottom-color: transparent;
+                        border-left-color: transparent;
+                        position: absolute;
+                        bottom: -25px;
+                        left: 47%;
+                    }
+                }
+            }
+        }
+    }
+    // 相關計畫
+    &.projectstab {
+        text-align: center;
+        &>.tabItem {
+            &.active {
+                border-bottom: 3px solid $secondaryColor;
+                color: $h2Color;
+                position: relative;
+            }
+            float:none;
+            margin: 0 10px;
+            padding: 0;
+            font-size: 1.375em;
+            line-height: 1;
+            display: inline-block;
+            padding: 16px 5px 14px;
+            text-align: center;
+            background-color: #fff;
+            color: $h2Color;
+            font-weight: bold;
+            text-decoration: none;
+            @include text-overflow;
+            box-sizing: border-box;
+            border-radius: 0;
+            border:none;
+            border-bottom: 3px solid #fff;
+            &:hover,
+            &:focus {
+                // background: $primaryColor;
+                box-shadow: none;
+            }
+            @include screen('mobile') {
+                float: none;
+                width: 100% !important;
+                border-bottom: 3px solid #ccc;
+                overflow: visible;
+                &.active {
+                    border-color: $secondaryColor;
+                    &:before {
+                        content: '';
+                        border: 12px solid #65c0b8;
+                        border-right-color: transparent;
+                        border-bottom-color: transparent;
+                        border-left-color: transparent;
+                        position: absolute;
+                        bottom: -25px;
+                        left: 47%;
+                    }
+                }
+            }
+        }
+    }
+    // 待遇與發展
+    &.compensationtab {
+        &>.tabItem {
+            text-align: center;
+            &.active {
+                background-color: $primaryColor;
+                color: #fff;
+                position: relative;
+                &:before {
+                    content: '';
+                    border-style: solid;
+                    border-width: 16px 35px 0 35px;
+                    border-color: $primaryColor transparent transparent transparent;
+                    position: absolute;
+                    z-index: 5;
+                    bottom: -15px;
+                    left: 50%;
+                    margin-left: -35px;
+                }
+            }
+            float: left;
+            margin: 0;
+            padding: 0;
+            font-size: 1.375em;
+            line-height: 1;
+            display: block;
+            padding: 22px 0 18px;
+            text-align: center;
+            background-color: #434343;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            border:none;
+            letter-spacing: 0.05em;
+            @include text-overflow;
+            overflow: visible !important;
+            box-sizing: border-box;
+            border-radius: 0;
+            &:hover,
+            &:focus {
+                background: $primaryColor;
+                box-shadow: none;
+            }
+            @include screen('mobile') {
+                float: none;
+                width: 100% !important;
+                border-bottom: 1px solid #888;
+                &.active {
+                    border-color: #434343;
+                }
+            }
+        }
+    }
+}
+//多組 可設定差異
+// .example-2 {
+//     .tabItem:hover {
+//         background: $secondaryColor;
+//     }
+//     .tabItem.active {
+//         background: $secondaryColor;
+//     }
+// }
+// 顯示content
+.active+.tabContent {
+    display: block;
+}
+.tabContent {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    clear: both;
+    padding: 30px 0px;
+    display: none;
+    @include screen('mobile') {
+        position: static;
+    }
+    ul {
+        @include li-reset;
+    }
+    li {
+        margin: 0 0 1.3em 0;
+        padding: 0;
+        line-height: 1.6;
+        border-bottom: 1px #ccc dashed;
+        @include screen('mobile') {
+            @include text-overflow();
+        }
+        a {
+            @include aSetting_nocolor;
+        }
+        time {
+            display: inline-block;
+            margin: 0 0 0 1em;
+            font-size: 0.813em;
+            color: #666;
+        }
+    }
+}
+// 相關計畫
+.projectstab {
+    .tabContent {
+        position: absolute;
+        top: auto;
+        left: 0;
+        right: 0;
+        clear: both;
+        padding: 30px 0px 100px;
+        display: none;
+        @include screen('mobile') {
+            position: static;
+            padding: 30px 0 30px;
+        }
+        ul {
+            @include li-reset;
+        }
+        li {
+            margin: 0 0 1.3em 0;
+            padding: 0;
+            line-height: 1.6;
+            border-bottom: 1px #ccc dashed;
+            @include screen('mobile') {
+                @include text-overflow();
+            }
+            a {
+                @include aSetting_nocolor;
+            }
+            time {
+                display: inline-block;
+                margin: 0 0 0 1em;
+                font-size: 0.813em;
+                color: #666;
+            }
+        }
+        .more {
+            margin: 45px 5% 0 0;
+            @include screen('tablet') {
+                margin: 120px 3% 0 0;
+            }
+        }
+    }
+}
+// 待遇與發展
+.compensationtab {
+    .tabContent {
+        position: absolute;
+        top: auto;
+        left: 0;
+        right: 0;
+        clear: both;
+        padding: 30px 40px;
+        display: none;
+        box-sizing: border-box;
+        background-color: #eeeeee;
+        @include screen('mobile') {
+            position: static;
+            padding: 30px 20px;
+        }
+        ul {
+            @include li-reset;
+        }
+        li {
+            margin: 0 0 1.3em 0;
+            padding: 0;
+            line-height: 1.6;
+            border-bottom: 1px #ccc dashed;
+            @include screen('mobile') {
+                @include text-overflow();
+            }
+            a {
+                @include aSetting_nocolor;
+            }
+            time {
+                display: inline-block;
+                margin: 0 0 0 1em;
+                font-size: 0.813em;
+                color: #666;
+            }
+        }
+        p {
+            line-height: 1.8em;
+            span {
+                font-weight: bolder;
+            }
+        }
+    }
+}

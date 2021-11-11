@@ -1,0 +1,170 @@
+// app global css
+$font-primary   = 'Montserrat', sans-serif
+$font-secondary = 'Montserrat Alternates', sans-serif
+.font-primary
+  font-family $font-primary
+.font-secondary
+  font-family $font-secondary
+
+/* Font Weights */
+$normal = 400
+$bold   = 700
+
+.text-regular
+  font-weight $normal
+.text-bold
+  font-weight $bold
+.no-transform
+  text-transform none
+/* COLORS */
+
+/*colors main*/
+$tk-blue        = #2F66E9
+$tk-blue-dark   = #2156C1
+$tk-yellow      = #FCBD43
+$tk-yellow-dark = #E3AC3C
+$tk-black       = #1A1A1A
+$tk-white       = #FFFFFF
+
+/*light-ui color*/
+$tk-grey-full   = #4D4D4D
+$tk-grey-1      = #CCCCCC
+$tk-grey-2      = #DDDDDD
+$tk-grey-3      = #F2F2F2
+$tk-grey-4      = #F8F8F8
+
+/*dark-ui color*/
+$tk-dark-grey-full      = #2B2B2B
+$tk-dark-grey-full-dark = #232323
+$tk-dark-grey-1         = #333434
+$tk-dark-grey-2         = #363636
+$tk-dark-grey-3         = #4D4D4D
+$tk-dark-grey-4         = #666666
+$tk-dark-grey-5         = #808080
+$tk-dark-white          = #F3EFD4
+
+.q-if-dark:not(.q-if-inverted-light) .q-input-target:not(.q-input-target-placeholder) {
+  color: $tk-dark-white !important;
+}
+/*shadow*/
+$tk-shadow = 0px 0px 5px 2px rgba(0,0,0,0.1)
+
+/*corner-radius*/
+$tk-corner-radius       = 10px
+$tk-corner-radius-full  = 100px
+.radius
+  border-radius $tk-corner-radius
+.radius-full
+  border-radius $tk-corner-radius-full
+
+/* Animation */
+$tk-transition  = all .3s ease
+
+/*general styles*/
+*:focus{outline:none;}
+body{font:100% $font-primary; background:$tk-grey-4; color:$tk-grey-full}
+.animated,a,button,input{transition:$tk-transition}
+h1,h2,h3,h4,h5,h6{font-family:$font-secondary; text-transform:uppercase; padding:0; margin:0;font-weight:700}
+h1,.h1{font-size:22px}
+h2,.h2{font-size:20px}
+h3,.h3{font-size:18px}
+h4,.h4{font-size:16px;line-height: 22px}
+h5,.h5{font-size:14px}
+h6,.h6{font-size:12px}
+a{text-decoration:none;}
+hr{border: none;border-bottom: 1px solid $tk-grey-2 !important}
+
+/*containers*/
+#tk-container,.tk-container,.tk-container-sub{border-radius:$tk-corner-radius; overflow:hidden;}
+#tk-container,.tk-container{background:$tk-white; -webkit-box-shadow:$tk-shadow; -moz-box-shadow: $tk-shadow; box-shadow: $tk-shadow; overflow:hidden;display:block; margin:0 auto; margin-top:20px}
+.main{background:$tk-white; -webkit-box-shadow:$tk-shadow; -moz-box-shadow: $tk-shadow; box-shadow:$tk-shadow; margin:0 auto;}
+.tk-container-sub{background:$tk-grey-4; margin:15px;margin-top:20px;}
+.tk-container-sub-inner{background:$tk-grey-4; padding:20px !important;}
+.collapse{padding:0}
+.tk-container-fill{max-height:240px;background:$tk-blue; height:40%; width:100%; position:absolute; top:0; left:0; z-index:-1}
+
+
+/*title-bar*/
+.title-bar{background:$tk-grey-3; color:$tk-blue; padding:10px 15px}
+.title-bar-blue{background:$tk-blue; color:$tk-white; padding:10px 15px}
+.title-bar-yellow{background:$tk-yellow; color:$tk-black; padding:10px 15px}
+.title-bar-grey{background:$tk-grey-2; color:$tk-black; padding:10px 15px}
+.transparent{background:transparent !important}
+.tk-cards-grey{background:$tk-grey-4;}
+
+/*SECTION 1 - SVG logo styles*/
+.tk-icon{padding:10px}
+
+/*SECTION 2 - color reference styles*/
+.bg-blue{background:$tk-blue !important}
+.bg-blue-dark{background:$tk-blue-dark !important}
+.bg-yellow{background:$tk-yellow !important}
+.bg-yellow-dark{background:$tk-yellow-dark !important}
+.bg-black{background:$tk-black !important}
+.bg-grey-full{background:$tk-grey-full !important}
+.bg-grey-1{background:$tk-grey-1 !important}
+.bg-grey-2{background:$tk-grey-2 !important}
+.bg-grey-3{background:$tk-grey-3 !important}
+.bg-grey-4{background:$tk-grey-4 !important}
+.bg-white{background:$tk-white !important}
+.bg-box{width:100%;height:60px}
+.bg-code{background:$tk-white;font-weight:$bold;padding:10px}
+
+/*SECTION 3 - Typography Styles*/
+.sub-title-blue{color:$tk-blue !important}
+.sub-title-yellow{color:$tk-yellow !important}
+.primary-font{font-family:$font-primary !important}
+.secondary-font{font-family:$font-secondary !important}
+.text-blue{color:$tk-blue !important}
+.text-blue-dark{color:$tk-blue-dark !important}
+.text-yellow{color:$tk-yellow !important}
+.text-yellow-dark{color:$tk-yellow-dark !important}
+.text-black{color:$tk-black !important}
+.text-grey-full{color:$tk-grey-full !important}
+.text-grey-1{color:$tk-grey-1 !important}
+.text-grey-2{color:$tk-grey-2 !important}
+.text-grey-3{color:$tk-grey-3 !important}
+.text-grey-4{color:$tk-grey-4 !important}
+.text-white{color:$tk-white !important}
+.lowercase {text-transform: lowercase}
+code{ padding:10px 20px; border:none; font-family:Consolas, "Liberation Mono", Courier, monospace; background-color:$tk-grey-2; font-weight:$bold; color:$tk-grey-full; border-radius:$tk-corner-radius}
+pre > code {white-space: pre; margin-top: 1.00em; display: block;}
+.border-right
+  border-right 1px solid $tk-grey-2
+/*SECTION 4 - Button Styles*/
+.button{font-family:$font-secondary; color:$tk-white; border-radius:$tk-corner-radius-full; font-weight:$bold;text-transform:uppercase;display:inline-block; padding:10px 40px; text-align:center;cursor:pointer;}
+/*.button span{display:inline-block;position:relative;left:0}*/
+.button-blue{background:$tk-blue}
+.button-blue:hover{background:$tk-blue-dark}
+.button-blue:hover span{left:-10px}
+.button-yellow{background:$tk-yellow}
+.button-yellow:hover{background:$tk-yellow-dark}
+.button-yellow:hover span{left:10px}
+.button-disabled{cursor:default;background:$tk-grey-3;color:$tk-grey-2;}
+.button-disabled:hover{cursor:default;background:$tk-grey-3;color:$tk-grey-2;}
+.link{color:$tk-grey-2; padding-bottom:4px; font-weight:$bold; position:relative; display:inline-block; margin-top:5px}
+.link:hover{color:$tk-yellow;}
+.link::after{background:$tk-blue;transition:$tk-transition; content:''; display:block; width:100%; height:2px;}
+.link:hover::after{width:140%;}
+.switch{ transition: $tk-transition; background: $tk-grey-2; display:inline-block; position:relative; width:60px; height:30px; border-radius:30px; vertical-align:middle; cursor:pointer;}
+.switch::before{ background:$tk-grey-full; transition:$tk-transition; content:''; position:absolute; top:2px; left:2px; width:26px; height:26px; border-radius:50%;
+}
+input:checked + .switch{background: #FCBD43;}
+input:checked + .switch::before{ background:#ffffff; transform:translateX(30px);}
+
+.label[required]::after {content:' *'; color:$tk-yellow;}
+
+
+.toki-bot{max-width:60px}
+/*tk-main - Speech Bubble*/
+.toki-speech{background:$tk-white; border-radius:$tk-corner-radius; border-bottom-left-radius:0; padding:20px; position:relative;}
+.toki-speech:after{ content:''; position:absolute; left:0; bottom:0; width:0; height:0; border:20px solid transparent; border-right-color:$tk-white; border-left:0; border-bottom:0; margin-top:-10px; margin-left:-20px;}
+.toki-speech h5{color:$tk-blue}
+.toki-speech h6{color:$tk-grey-1}
+
+.dash_links{padding:10px 0; border-bottom:1px solid #dddddd;}
+.dash_links > div {padding:10px 0;}
+.dash_links a, .dash_links > div > span{color:$tk-grey-full; position:relative}
+.dash_links:hover > div > span{color:$tk-blue}
+.dash_links a:active{color:$tk-blue !important}
+.dash_links .active::before {display: inline-block; position:relative; content:''; -webkit-border-radius:$tk-corner-radius-full; border-radius:$tk-corner-radius; height:6px; width:6px; left:-15px; top: 0; background-color:$tk-blue;}

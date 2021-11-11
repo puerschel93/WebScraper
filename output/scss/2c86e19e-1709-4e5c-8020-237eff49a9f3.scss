@@ -1,0 +1,78 @@
+/* ------------------------------------------------------------ *\
+	COuntdown
+\* ------------------------------------------------------------ */
+
+.countdown {
+	font-family: $ff-digital;
+	list-style: none;
+
+	li {
+		display: inline-block;
+		font-size: 0.8rem;
+		text-align: center;
+		position: relative;
+	}
+
+	li + li {
+		margin-left: 0.5rem;
+
+		&:before {
+			content: ":";
+			font-size: 2.4rem;
+			color: $c-yellow;
+			position: absolute;
+			left: -2rem;
+		}
+	}
+
+	.countdown__digit {
+		display: block;
+		font-size: 2.4rem;
+		color: $c-yellow;
+		letter-spacing: 0.2em;
+		margin-bottom: 0.6rem;
+	}
+}
+
+/* Countdown Alt */
+
+.countdown--alt {
+	.countdown__digit {
+		margin-bottom: 0;
+
+		@include breakpoint-down(tablet) {
+			font-size: 2rem;
+		}
+	}
+}
+
+/* Countdown no digits text */
+.countdown--no-digits-text {
+	.countdown__text {
+		display: none; 
+	}
+
+	.countdown__digit {
+		margin-bottom: 0; 
+	}
+}
+
+/* Countdown orange */
+.countdown--orange {
+	.countdown__digit,
+	li + li:before {
+		color: $c-orange;
+	}
+}
+
+/* Countdown background red */
+.countdown--background-red {
+	background-color: $c-red; 
+	padding: 12px; 
+
+	.countdown__text {
+		color: $c-white; 
+		display: block; 
+		margin-top: 4px; 
+	}
+}

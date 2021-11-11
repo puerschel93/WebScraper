@@ -1,0 +1,287 @@
+$main-beige: #f1d3a2;
+$sub-beige: #f4f1de;
+$main-text: #3d405b;
+$sub-text: #5b5f7d;
+$button: #4b8568;
+$red: #af4b31;
+$darken: rgba(0, 8, 37, 0.54);
+
+.new-book-window {
+	background-color: $darken;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__form {
+	}
+
+	&__container {
+		// width: 31rem;
+		// height: 43rem;
+		background-color: $sub-beige;
+		border-radius: 7px;
+		padding: 1.5rem 2.5rem 2rem 2.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	h3 {
+		color: $main-text;
+		font-family: 'Amatic SC', cursive;
+		font-size: 2.81em;
+		font-weight: 700;
+	}
+
+	label {
+		display: block;
+		font-size: 1.3em;
+		margin-top: 1rem;
+		margin-bottom: 0.2rem;
+	}
+
+	&__author {
+		input {
+			width: 25rem;
+			height: 2.2em;
+			border-radius: 7px;
+			border: none;
+			background-color: $main-beige;
+			font-size: 1.13em;
+			font-family: 'Nova Slim', cursive;
+			padding: 0 1rem;
+			color: $main-text;
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+
+	&__title {
+		input {
+			width: 25rem;
+			height: 2.2em;
+			border-radius: 7px;
+			border: none;
+			background-color: $main-beige;
+			font-size: 1.13em;
+			font-family: 'Nova Slim', cursive;
+			padding: 0 1rem;
+			color: $main-text;
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+
+	&__double-line {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__status {
+		.status-wrapper {
+			position: relative;
+			display: flex;
+			justify-content: flex-end;
+
+			&::after {
+				content: "▾";
+				font-size: 1rem;
+				top: 0.6rem;
+				right: 1rem;
+				position: absolute;
+			}
+		}
+
+		select {
+			cursor: pointer;
+			width: 11.88rem;
+			height: 2.2em;
+			border-radius: 7px;
+			border: none;
+			background-color: $main-beige;
+			font-size: 1.13em;
+			font-family: 'Nova Slim', cursive;
+			padding: 0 1rem;
+			color: $main-text;
+			-webkit-appearance: none;
+			appearance: none;
+		}
+	}
+
+	&__rating {
+		input {
+			width: 11.88rem;
+			height: 2.2em;
+			border-radius: 7px;
+			border: none;
+			background-color: $main-beige;
+			font-size: 1.13em;
+			font-family: 'Nova Slim', cursive;
+			padding: 0 1rem;
+			color: $main-text;
+
+			&::placeholder {
+				color: $sub-text;
+				opacity: 0.4;
+			}
+		}
+	}
+
+	&__page {
+		input {
+			width: 11.88rem;
+			height: 2.2em;
+			border-radius: 7px;
+			border: none;
+			background-color: $main-beige;
+			font-size: 1.13em;
+			font-family: 'Nova Slim', cursive;
+			padding: 0 1rem;
+			color: $main-text;
+		}
+	}
+
+	&__year {
+		input {
+			width: 11.88rem;
+			height: 2.2em;
+			border-radius: 7px;
+			border: none;
+			background-color: $main-beige;
+			font-size: 1.13em;
+			font-family: 'Nova Slim', cursive;
+			padding: 0 1rem;
+			color: $main-text;
+		}
+	}
+
+	&__genre {
+		.genre-wrapper {
+			position: relative;
+			display: flex;
+			justify-content: flex-end;
+
+			&::after {
+				content: "▾";
+				font-size: 1rem;
+				top: 0.6rem;
+				right: 1rem;
+				position: absolute;
+			}
+		}
+		input {
+			width: 25rem;
+			height: 2.2em;
+			border-radius: 7px;
+			border: none;
+			background-color: $main-beige;
+			font-size: 1.13em;
+			font-family: 'Nova Slim', cursive;
+			padding: 0 1rem;
+			color: $main-text;
+		}
+	}
+
+	&__note {
+		input {
+			width: 25rem;
+			height: 2.2em;
+			border-radius: 7px;
+			border: none;
+			background-color: $main-beige;
+			font-size: 1.13em;
+			font-family: 'Nova Slim', cursive;
+			padding: 0 1rem;
+			color: $main-text;
+		}
+	}
+
+	&__error-message {
+		color: $red;
+		margin-top: 0.5rem;
+		margin-bottom: -1rem;
+	}
+
+	&__btn-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		margin-top: 2rem;
+
+		&__cancel-btn {
+			cursor: pointer;
+			width: 11.88rem;
+			height: 3.13rem;
+			border-radius: 7px;
+			border: 0.13rem solid $sub-text;
+			background-color: transparent;
+			color: $sub-text;
+			font-family: 'Amatic SC', cursive;
+			font-size: 1.9em;
+			font-weight: 700;
+
+			&:hover {
+				color: $red;
+				border: 0.13rem solid $red;
+			}
+		}
+
+		&__add-new-book-btn {
+			cursor: pointer;
+			width: 11.88rem;
+			height: 3.13rem;
+			border-radius: 7px;
+			border: none;
+			background-color: $button;
+			color: $sub-beige;
+			font-family: 'Amatic SC', cursive;
+			font-size: 1.9em;
+			font-weight: 700;
+			border: 0.13rem solid transparent;
+
+			&:hover {
+				background-color: transparent;
+				color: $button;
+				border: 0.13rem solid $button;
+			}
+		}
+	}
+}
+
+input::-webkit-calendar-picker-indicator {
+	opacity: 0;
+}
+.animation-error {
+	animation: myAnimError 0.5s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnimError {
+	0% {
+		opacity: 0.5;
+	}
+
+	50% {
+		opacity: 1;
+		transform: scale(1.1);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}

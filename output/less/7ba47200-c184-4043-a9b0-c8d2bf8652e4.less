@@ -1,0 +1,119 @@
+@import '../../style/common.less';
+@import '//at.alicdn.com/t/font_2921882_chtev9wf9u.css';
+
+@btn-prefix-cls: ~'@{lumu-prefix}-btn';
+
+.theme(@color: @theme) {
+  border: 1px solid @color;
+  color: @color;
+}
+
+.@{btn-prefix-cls} {
+  background-color: #fff;
+  border: none;
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  font-weight: normal;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  outline: 0;
+  position: relative;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    background-color: #000;
+    border: inherit;
+    border-color: #000;
+    border-radius: inherit;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 300ms linear;
+  }
+  &:active::after {
+    opacity: .1;
+  }
+  &-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &-loading {
+    margin-right: 6px;
+    animation: rotate linear 1s infinite;
+    font-size: inherit;
+    flex-shrink: 0;
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  &-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  &-size {
+    &__sm {
+      height: 28px;
+      padding: 0 12px;
+      font-size: 12px;
+    }
+    &__md {
+      height: 38px;
+      padding: 0 18px;
+      font-size: 14px;
+    }
+    &__lg {
+      height: 48px;
+      padding: 0 24px;
+      font-size: 14px;
+    }
+  }
+  &-block {
+    display: block;
+    width: 100%;
+  }
+  &-theme {
+    &__default {
+      border: 1px solid @theme-gray;
+      color: @theme-gray;
+    }
+    &__primary {
+      border: 1px solid @theme;
+      color: #fff;
+      background-color: @theme;
+    }
+  }
+  &-shape {
+    &__rect {
+      border-radius: 0;
+    }
+    &__radius {
+      border-radius: 5px;
+    }
+    &__round {
+      border-radius: 18px;
+    }
+  }
+  &-disabled {
+    background-color: @theme-gray;
+    color: #fff;
+    cursor: not-allowed;
+    border: none;
+  }
+}

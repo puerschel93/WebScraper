@@ -1,0 +1,108 @@
+@import "../style.styl"
+
+//
+// Carousel
+// --------------------------------------------------
+
+.owl-carousel
+	position relative
+	margin-top 40px
+	.owl-item 
+		img
+			width 100%
+			@media (min-width: width-tabletportrait)
+				width 90%
+				margin 0 auto
+			
+	.owl-nav
+		margin 0
+		
+		@media (min-width: width-tabletportrait)
+			z-index 999
+			position absolute
+			top 0
+			right 2%
+			display flex
+			align-items center
+			height 100%
+			transform rotate(90deg)
+			transform-origin center
+		
+		.owl-prev, .owl-next
+			background transparent
+			text-transform capitalize
+			font-size 13px
+			color site-dark-grey
+			transition color 0.5s ease
+			overflow-x hidden
+			display inline-block
+			margin 0
+			padding 10px
+			
+			@media (min-width: width-tabletportrait)
+				font-size 16px
+
+			@media (min-width: width-tabletlandscape)	
+				font-size 18px
+			
+			&:hover, &:focus
+				color site-green
+				transition color 0.5s ease
+				background transparent
+
+				&:after
+					width 50%
+					background site-dark-grey
+					transition width 0.4s ease, color 0.5s ease
+
+			&:after
+				content ''
+				position absolute
+				display inline-block
+				height 1px
+				width 0
+				background site-dark-grey
+				transition width 0.4s ease
+				
+		.owl-prev
+			&:after
+				bottom 50%
+				left 0
+				
+		.owl-next
+			&:after
+				top 50%
+				right 0
+		
+	.owl-dots
+		position relative
+		z-index 1
+		
+		.owl-dot
+			&.active, :hover
+				span
+					background site-green
+					
+			span
+				background site-grey
+			
+	h1
+		text-align center
+		margin -10px 0 20px
+		position relative
+		z-index 2
+		@media (min-width: width-tabletportrait)
+			position absolute
+			display flex
+			align-items center
+			left 2%
+			top 0
+			height 100%
+			text-align left
+			margin 0
+			width 30%
+		
+.owl-theme .owl-nav.disabled+.owl-dots	
+	margin -10px 0 10px
+		
+		

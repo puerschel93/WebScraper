@@ -1,0 +1,310 @@
+.product__details
+    width: 100%
+    max-width: 460px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+    @media(max-width: 992px)
+        max-width 100%
+
+    .product__details-topo
+        flex: 0 0 100%
+
+        @media(max-width: 992px)
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            max-width 100%
+
+            .product__name
+                order 0
+                flex: 0 0 100%
+            .product__price
+                order 1
+                margin-top 0
+                flex: 0 0 100%
+
+            .atrib__description
+                order: 2
+                flex: 0 0 100%
+
+            .product__details-variation
+                order: 3
+                max-width 100%
+                flex: 0 0 100%
+                margin: 0
+
+            .fbits-comprar
+                order 4
+                flex: 0 0 100%
+
+            .alerta__frete
+                order: 5
+                flex: 0 0 100%
+                flex-wrap: wrap
+                margin: 0
+                padding: 15px
+                
+    .left__prod, .right__product
+        max-width 265px
+        width 100%
+        @media(max-width: 1199px)
+            max-width: 48%
+        @media(max-width: 520px)
+            max-width 100%
+    
+    .right__product--sticky
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+
+    .left__prod
+        padding-top 15px
+
+    @media(max-width: 768px)
+        padding: 0
+        width: 100%
+        margin: 0 auto
+
+    .produtoInfo-title
+        display: inline-block
+
+    .fbits-produto-nome
+        font-size: 15px
+        line-height: 25px
+        color: #3D161D
+        font-weight: 600
+        text-transform: none
+        width: 100% 
+        letter-spacing: 1.4px
+
+    .avalie-top
+        text-decoration: none
+        color: #ccc
+        font-weight: 500
+        text-transform: capitalize
+
+    .fbits-sku
+        font-weight: 400
+        color: #3e3e3e
+        text-align: right
+        line-height: 10px
+        display: flex
+        align-items: center
+        font-size: 13px
+        text-transform: none
+
+    .product__details-code
+        display: flex
+        width: 100%
+        align-items: center
+        max-height: 16px
+
+    .product__marca 
+        font-size: 13px
+        color: #3e3e3e
+        margin-right 20px
+
+
+    .fbits-etiquetas-sequencial
+        display: flex
+        width: 100%
+        margin: 0 -2.5px
+        align-items: flex-start
+        @media(max-width: 768px)
+            margin-bottom: 15px
+        >*
+            margin: 5px 2.5px !important
+
+
+
+
+
+    @media(min-width: 769px)
+        .short02
+            display: none !important
+    @media(max-width: 768px)
+        .short01
+            display: none !important
+
+
+    .short-description
+        font-size: 13px
+        line-height: 16px
+        font-weight: 400
+        color: #ababab
+        overflow: hidden
+        height: 50px
+        width: 100%
+        margin: 10px 0
+        @media(max-width: 768px)
+            margin:0 0 10px 0
+
+    .btn-short-description
+        display: flex
+        align-items: center
+        color: $cor01
+        font-size: 13px
+        line-height: 16px
+        font-weight: 600
+        width: 100%
+        position: relative
+        @media(max-width: 768px)
+            padding: 15px 0
+            margin-bottom: 10px
+
+            &:after
+                content: ''
+                height: 1px
+                position: absolute
+                bottom: 0
+                left: 50%
+                width: 100%
+                max-width: 1170px
+                -webkit-transform: translateX(-50%)
+                transform: translateX(-50%)
+                background-color: #e9e9e9
+                opacity: 0.6
+                box-shadow: 0.656px 0.755px 3px 0px rgba(29,28,28,0.16)
+
+        &:before
+            @extend $ico-before
+            // background-image svg-inline(closeMenu)
+            background-size: 11px 13px
+            width: 11px
+            margin-right: 5px
+
+
+.product__shipping
+    display: inline-block
+    margin-top: 25px
+    width: 100%
+
+    @media(max-width: 768px)
+        margin-top: 30px
+        // &.shipping01
+        //     display: none
+
+
+    .details-content
+        display: flex !important
+        flex-wrap: wrap
+
+    #txtCalculaFreteProduto
+        border: 1px solid rgb(240, 238, 238)
+        height: 35px
+        width: 140px
+        @media(max-width: 768px)
+            height: 45px
+            width: 50%
+        @media(max-width: 575px)
+            width: 100%
+
+    .carrinhoInputBlock
+        display: flex
+        flex-wrap: wrap
+
+    #btnCalculaFreteProduto
+        background: #1c1d1d
+        color:#fff
+        font-size: 13px
+        font-weight: 600
+        text-transform: none
+        box-shadow: 0.629px 0.777px 3px 0px rgba(23, 23, 23, 0.15)
+        border: 1px solid #38d2c2
+        height: 35px
+        width: 60px
+        margin-left: 5px
+        @media(max-width: 768px)
+            margin: 0
+            height: 45px
+            width: 25%
+            margin: 0 2.5%
+
+        @media(max-width: 575px)
+            width: 100%
+            margin: 15px 0
+
+    #naoSeiCep
+        display: block
+        width: 100%
+        font-size: 11px
+        line-height: 11px
+        color: $cor01
+        text-transform: none
+        padding: 5px 0
+        @media(max-width: 768px)
+            width: 20%
+
+        @media(max-width: 575px)
+            width: 100%
+
+    .summary
+        display: none
+    .simule
+        font-size: 0
+        line-height: 0
+        display: flex
+        align-items: center
+        margin-bottom: 10px
+        width: 100%
+        &:before
+            content: ''
+            @extend $ico-before
+            background-image svg-inline(shipping)
+            margin: -4px 5px 0 0
+            background-size: 20px 20px
+
+        &:after
+            content: 'consulte frete e prazo de entrega'
+            text-transform: uppercase
+            color: $cor01
+            font-size: 12px
+            line-height: 12px
+            font-weight: 600
+
+
+.resultado-frete
+    margin-top 10px
+//     padding:20px 10px
+//     border: 1px solid #eee
+//     width: 100%
+//     margin: 15px 0
+//     position: fixed;
+//     left: 50%;
+//     background: #fff;
+//     top: 50%;
+//     max-width: 400px
+//     transform: translateX(-50%) translateY(-50%);
+//     z-index: 1000
+//     box-shadow: 0 0 24px 1000px rgba(0,0,0,0.3);
+//     &:before
+//         content: '+'
+//         transform: rotate(-45deg)
+//         font-size: 30px
+//         position: absolute
+//         right: 0
+//         top: -6px
+//         width: 45px
+//         height: 45px
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//     // &:after 
+//     //     background: #222222
+//     //     opacity: 0.4
+//     //     content: ''
+//     //     position: fixed
+//     //     left: 0
+//     //     right: 0
+//     //     top: 0
+//     //     bottom: 0
+//     td
+//         padding: 5px !important
+//         background: none
+//         border-bottom: 1px solid #eee
+//     tr
+//         &:last-child
+//             td
+//                 border: none

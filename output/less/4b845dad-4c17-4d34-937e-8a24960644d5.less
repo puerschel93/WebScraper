@@ -1,0 +1,199 @@
+// compress: false, javascriptEnabled: true
+/* --------------------------------------------------------------
+/* MAIN LESS MIXINS AND FUNCTIONS - LESSHAT
+-------------------------------------------------------------- */
+@import 'less/_lesshat.less';
+/* --------------------------------------------------------------
+VARIABLES
+-------------------------------------------------------------- */
+
+@mainfont: 'Open Sans', sans-serif;
+@black: #000000;
+@white: #ffffff;
+@yellow: #FF9B00;
+@lblue: #009DF1;
+@dblue: #004CB4;
+
+/* --------------------------------------------------------------
+FORM BODY
+-------------------------------------------------------------- */
+main.almedis-main-form-container {
+    .display(flex);
+    .align-items(flex-start);
+    .justify-content(space-between);
+    flex-wrap: wrap;
+
+    & form.almedis-form-container {
+        .flex(0 0 49%);
+        max-width: 49%;
+        padding: 1rem;
+        scroll-margin-top: 20px;
+
+        &:nth-child(1) {
+            padding-left: 0;
+        }
+
+        &:nth-child(2) {
+            padding-right: 0;
+        }
+
+        & h2 {
+            background: @lblue;
+            color: @white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 1rem 0;
+            padding: 0.5rem;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        & .form-group {
+            margin-bottom: 0.5rem;
+
+            & label {
+                display: block;
+                font-size: .9rem;
+                font-weight: 400;
+                letter-spacing: -0.4px;
+                padding: 0.5rem;
+                text-transform: uppercase;
+                width: 100%;
+            }
+
+            & label.form-check-label {
+                vertical-align: middle;
+            }
+
+            & .file-helper {
+                font-size: 0.75rem;
+                line-height: 1rem;
+                color: @black;
+
+                & .almedis-file-icon {
+                    background: url(../img/file.png);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    height: 30px;
+                    width: 30px;
+                    margin-top: 10px;
+                    margin-right: 10px;
+                    vertical-align: bottom;
+                }
+            }
+
+            & .form-helper {
+                display: block;
+            }
+
+            & .hidden {
+                display: none;
+            }
+
+            & .danger {
+                color: #f00;
+                font-weight: 600;
+            }
+
+            & .form-control {
+                background: #f1f1f1;
+                border: 0;
+                border-radius: 0;
+                box-shadow: none;
+                color: @black;
+                margin: 0;
+                padding: 0.5rem 0.8rem;
+                width: 100%;
+            }
+
+            & .password-wrapper {
+                position: relative;
+
+                & .almedis-show-password {
+                    background: url(../img/icon-pass.png);
+                    cursor: pointer;
+                    height: 100%;
+                    top: 0;
+                    opacity: 0;
+                    position: absolute;
+                    right: 0;
+                    width: 50px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    .transition(all .1s ease-in-out);
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                .form-control {
+                    &:focus~.almedis-show-password {
+                        opacity: 1;
+                    }
+
+                    &:hover~.almedis-show-password {
+                        opacity: 1;
+                    }
+
+
+                }
+            }
+        }
+
+        & .almedis-radio-wrapper {
+            .display(flex);
+            .align-items(center);
+            .justify-content(space-between);
+            flex-wrap: wrap;
+        }
+
+        & .form-group-empty {
+            min-height: 78px;
+        }
+
+        & .almedis-form-button {
+            background: #a9a9a9;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 0.3rem 1.5rem;
+            .transition(all .3s ease-in-out);
+
+            &:hover {
+                background: @yellow;
+                color: @white;
+            }
+        }
+
+        & .form-group-button {
+            & button {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                display: block;
+                margin: 0 0 0 auto;
+            }
+        }
+
+        & .submit-group {
+            .btn-cotizar {
+                background: @lblue;
+                color: @white;
+                font-size: 1.1rem;
+                font-weight: 600;
+                padding: 0.5rem 0;
+                text-transform: uppercase;
+                width: 100%;
+
+                .transition(all .3s ease-in-out);
+
+                &:hover {
+                    background: @yellow;
+                    color: @white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,287 @@
+$gap ?= 16px
+$button-height ?= 40px
+$container-width ?= 1200px
+
+$modal-title-font-size = 24px
+
+$modal-width ?= 600px
+$modal-aside-width ?= 320px
+$modal-aside-width-medium ?= 50vw
+$modal-aside-width-large ?= 75vw
+
+$modal-z-index ?= 100
+$modal-padding ?= $gap $gap 0
+$modal-dialog-padding ?= $gap
+
+$overlay-bg ?= rgba(0,0,0,.5)
+$bgcolor ?= white
+
+$aside-box-shadow ?= -5px 0 20px rgba(0,0,0,.1)
+
+button-reset()
+    color inherit
+    appearance none
+    cursor pointer
+    padding 0
+    background none
+    border none
+    outline none
+
+
+$breakpoint-tablet = 670px
+
+small()
+    @media (max-width ($breakpoint-tablet - 1px))
+        {block}
+
+large()
+    @media (min-width $breakpoint-tablet)
+        {block}
+
+// prevent content blink
+modal-window
+    display none
+
+body.has-modal-default,
+body.has-modal-fullscreen
+    overflow: hidden
+
+.modal
+    z-index $modal-z-index
+    position fixed
+    top 0
+    left 0
+    right 0
+    bottom 0
+    overflow auto
+    background-color var(--ui-overlay-bg, $overlay-bg)
+
+
+    &__dialog
+        box-sizing border-box
+        max-width 100%
+        margin auto
+        background-color var(--ui-bgcolor, $bgcolor)
+
+
+    &__header
+        display flex
+        align-items center
+        padding var(--ui-gap, $gap)
+
+
+    &__content
+        margin 0 auto
+        padding var(--ui-container-padding, $gap)
+        max-width var(--ui-container-width, $container-width)
+
+
+    &__back,
+    &__close
+        button-reset()
+        box-sizing border-box
+        padding $gap / 2
+        flex-shrink 0
+        height $button-height
+        width $button-height
+        line-height $button-height - $gap
+        opacity .5
+        transition 200ms opacity
+        
+        > svg
+            vertical-align middle
+        
+        &:hover
+            opacity 1
+
+
+    &__title
+        margin 0
+        line-height $button-height
+        font-size var(--h2-font-size, $modal-title-font-size)
+        white-space nowrap
+        overflow hidden
+        text-overflow ellipsis
+        flex-grow 1
+        
+        +large()
+            text-align center
+
+
+    &.is-default
+        
+        +large()
+            display flex
+            padding 'calc( var(--ui-gap, %s) * 2 )' % $gap
+            padding-bottom 0
+        
+        & ^[0]__dialog
+            padding 'calc( var(--ui-gap, %s) * .5 )' % $gap
+            
+            +small()
+                height 100%
+            
+            +large()
+                width $modal-width
+        
+        & ^[0]__back
+            // for title alignment
+            height 0
+            visibility hidden
+            overflow hidden
+            
+            +small()
+                display none
+
+        & ^[0]__header
+            padding-bottom 0
+
+
+    &.is-fullscreen,
+    &[class*="is-aside"]
+        padding 0
+        overflow hidden
+        
+        & ^[0]__dialog
+            display flex
+            flex-direction column
+            width 100%
+            max-width 100%
+            padding 0
+            height 100%
+            overflow hidden
+        
+        & ^[0]__header
+            background-color $modal-dialog-bg
+            border-bottom 1px solid rgba(0, 0, 0, .1)
+            
+        & ^[0]__body
+            overflow auto
+
+
+    &.is-fullscreen
+        
+        & ^[0]__title
+            
+            +small()
+                text-align center
+
+
+    &[class*="is-aside"]
+        left auto
+        min-width $modal-aside-width
+        width $modal-aside-width
+        max-width 100vw
+        z-index $modal-z-index - 1
+        box-shadow $aside-box-shadow 
+
+        & ^[0]__back
+            height 0
+            visibility hidden
+            overflow hidden
+            
+            +small()
+                display none
+        
+        &.is-aside-medium
+            width $modal-aside-width-medium
+        
+        &.is-aside-large
+            width $modal-aside-width-large
+            
+/**
+ * Transitions
+ */
+
+$modal-t-dur = 250ms
+$ease-out-quart = cubic-bezier(.165, .84, .44, 1)
+
+// default
+.modal-transition-default
+    
+    &-enter,
+    &-leave-to
+        opacity 0
+        
+        +large()
+            .modal__dialog
+                opacity 0
+                transform translateY(-2 * $gap)
+    
+    &-enter-active,
+    &-leave-active
+        pointer-events none
+        backface-visibility hidden
+        transform translate3d(0,0,0)
+        
+    
+    &-enter-active
+        transition $modal-t-dur opacity $ease-out-quart
+
+        +large()
+            transition $modal-t-dur * 1.5 opacity
+            
+            .modal__dialog
+                transition $modal-t-dur transform ($modal-t-dur * .5) $ease-out-quart, ($modal-t-dur * .5) opacity ($modal-t-dur * .5)
+
+    &-leave-active
+        transition $modal-t-dur opacity
+        
+        +large()
+            transition $modal-t-dur opacity ($modal-t-dur * .5)
+
+            .modal__dialog
+                transition $modal-t-dur transform, $modal-t-dur opacity
+
+
+// fullscreen      
+.modal-transition-fullscreen
+    
+    &-enter,
+    &-leave-to
+        transform scale(1.1)
+        opacity 0
+        
+    &-enter-active
+        transition $modal-t-dur transform $ease-out-quart, $modal-t-dur opacity $ease-out-quart
+
+    &-leave-active
+        transition $modal-t-dur transform, ($modal-t-dur * .67) opacity ($modal-t-dur * .33)
+
+
+// aside
+.modal-transition-aside
+    
+    &-enter,
+    &-leave-to
+        transform translateX(100%)
+        
+    &-enter-active
+        transition $modal-t-dur transform $ease-out-quart
+
+    &-leave-active
+        transition $modal-t-dur transform
+
+
+.modal-transition-aside-medium,
+.modal-transition-aside-large
+    
+    &-enter
+        transform translateX($modal-aside-width)
+        opacity 0
+        
+        +large()
+            transition-duration $modal-t-dur * 2
+        
+    &-leave-to
+        transform translateX(100%)
+        opacity 0
+        
+        +large()
+            transition-duration $modal-t-dur * 1.5
+        
+    &-enter-active
+        transition $modal-t-dur transform $ease-out-quart, ($modal-t-dur *.67) opacity $ease-out-quart
+
+    &-leave-active
+        transition $modal-t-dur transform, ($modal-t-dur *.67) opacity ($modal-t-dur *.33)

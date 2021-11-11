@@ -1,0 +1,321 @@
+.card-list
+  position relative
+  margin-bottom 12px
+  display block
+
+  &__list
+    margin-bottom 10px
+
+  &__item
+    width 100%
+    background-color #fff
+    border-top 1px solid #f5f5f5
+    transition background-color .3s
+
+    &:hover
+      position relative
+      z-index 1
+      background-color lighten($colorDecorative, 10)
+      border-top-color transparent
+      box-shadow 0 0 20px $colorDecorative
+
+    &_mark
+      background-color #fffcea
+      box-shadow inset 0 0 0 3px #fff3b5 // 0 0 20px $colorDecorative
+
+      &:hover
+        background-color #fffcea
+        box-shadow inset 0 0 0 3px #fff3b5, 0 0 20px $colorDecorative
+
+    &_mark + &
+      border-top-color transparent
+
+  &__item-body
+    padding 16px 10px
+
+    +above(768px)
+      position relative
+      padding 16px
+      // display table
+      display flex
+      flex-wrap wrap
+      min-height 222px
+
+    +above(980px)
+      flex-wrap nowrap
+      padding-right 70px
+
+  &__thumb
+    position relative
+    margin-bottom 16px
+    font-size 0
+
+    +above(768px)
+      position absolute
+      top 16px
+      left 16px
+      margin-bottom 0
+      width 255px
+      height 190px
+      flex-basis 255px
+      flex-shrink 0
+      overflow hidden
+      vertical-align top
+
+  &__gallery
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    width 100%
+
+  &__about
+    +above(768px)
+      padding 0 0 0 285px
+      flex-grow 1
+      flex-basis 50%
+      min-height 190px
+
+    +above(980px)
+      padding-right 30px
+
+  &__about-item
+    margin-bottom 16px
+
+  &__contact
+    margin-bottom 10px
+
+    +above(768px)
+      margin-top 20px
+      margin-bottom 0
+      display flex
+      width 100%
+      align-items flex-start
+
+    +above(980px)
+      margin-top 0
+      display block
+      width 200px
+      flex-shrink 0
+
+  &__action
+    +above(768px)
+      margin-left 30px
+
+    +above(980px)
+      position absolute
+      top 16px
+      right 16px
+      bottom 16px
+      margin-left 0
+      display block
+      width 54px
+
+  &__head
+    display flex
+    justify-content space-between
+
+  &__favorite
+    position relative
+    margin-top -6px
+    width 28px
+    height 28px
+    margin-left 10px
+
+    +above(768px)
+      display none
+
+  &__favorite-icon
+    position absolute
+    top 4px
+    left 4px
+    width 20px
+    height 20px
+    fill $colorText
+    transition fill .3s
+
+    ^[0]__favorite_active &
+      fill $colorMain
+
+  &__favorite-icon_fill
+    opacity 0
+
+    ^[0]__favorite_active &
+      opacity 1
+      fill $colorMain
+
+  &__name
+    position relative
+    top -1px
+    margin-bottom 15px
+    font-size 16px
+    font-weight bold
+
+
+  &__name-icon
+    position relative
+    top 1px
+    margin-right 8px
+    display inline-block
+    size 16px
+    fill $colorMain
+
+  &__name-link
+    display inline-block
+    text-decoration none
+    color $colorSecondary
+    transition color .3s
+    word-break break-all
+
+    &:hover
+      text-decoration underline
+      color $colorMain
+
+  &__price
+    margin-right 42px
+    display inline-block
+    font-size 16px
+    font-weight bold
+
+  &__feature
+    line-height 1.73
+    word-break break-word
+
+  &__remark
+    color darken($colorDecorative, 40)
+
+  &__comment
+    margin -10px 0 10px
+    font-size 12px
+    line-height 1.5
+
+    +above(768px)
+      display none
+
+  &__place,
+  &__pubdate
+    font-size 12px
+    color darken($colorDecorative, 40)
+
+  &__author
+    margin-bottom 15px
+    line-height 1.3
+
+    +above(768px)
+      width 25%
+
+    +above(980px)
+      width auto
+
+  &__author-name
+    display inline
+
+  &__author-status
+    display inline
+    color #888
+
+  &__author-count
+    margin 5px 0 0
+    font-size 12px
+    color darken($colorDecorative, 40)
+
+    +above(980px)
+      // margin-top -5px
+
+  &__phone
+    display none
+    margin-bottom 10px
+    color inherit
+    border 1px dashed $colorDecorative
+
+    &:hover
+      border-style solid
+      border-color $colorMain
+
+    &_showed
+      border-color $colorSecondary
+
+    +above(768px)
+      display block
+      margin-bottom 0
+      margin-left 30px
+      display inline-block
+
+    +above(980px)
+      margin-bottom 10px
+      margin-left 0
+
+  &__phone-button
+    position relative
+    padding 9px 12px 9px 44px
+    display block
+    width 100%
+    text-align left
+    color inherit
+    background-color #fff
+    border none
+
+    +above(768px)
+      padding-left 32px
+
+    ^[0]__phone_showed &
+      display none
+
+  &__phone-inner
+    visibility hidden
+    overflow hidden
+    height 0
+    max-height 0
+    transition ease max-height .3s, visibility .3s
+
+    ^[0]__phone_showed &
+      visibility visible
+      height auto
+      max-height 200px
+
+  &__phone-link
+    position relative
+    padding 9px 12px 9px 32px
+    display block
+    text-decoration none
+    color inherit
+    background-color #fff
+
+
+  &__phone-icon
+    position absolute
+    top 7px
+    left 15px
+    size 18px
+    transition fill .3s
+
+    ^[0]__phone:hover &
+      fill $colorMain
+
+    +above(768px)
+      top 11px
+      size 12px
+
+
+  &__phone-number
+    display inline-block
+    font-size 16px
+    font-weight bold
+    color $colorSecondary
+
+    & + ^[0]__phone-remark
+      margin-top 12px
+
+  &__phone-remark
+    margin-top 9px
+    display block
+    font-size 11px
+
+  &__claim
+    padding 10px
+    width 100%
+    background-color lighten($colorDecorative, 5)
+
+    +above(768px)
+      position relative
+      padding 16px

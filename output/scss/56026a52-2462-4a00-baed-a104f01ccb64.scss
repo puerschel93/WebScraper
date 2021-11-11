@@ -1,0 +1,362 @@
+@media only screen and (max-width: 599px) {
+	// TYPO UPPER 600 AND UNDER 768 PX WIDTH
+	h1 {
+		font-size:$font-size-title * 0.7;
+	}
+	h2 {
+		font-size:$font-size-title * 0.6;
+	}
+	h3 {
+		font-size:$font-size-title * 0.5;
+	}
+	h4 {
+		font-size:$font-size-title * 0.4;
+	}
+	h5 {
+		font-size:$font-size-title * 0.3;
+	}
+	h6 {
+		font-size:$font-size-title * 0.2;
+	}
+}
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+	// TYPO UPPER 600 AND UNDER 768 PX WIDTH
+	h1 {
+		font-size:$font-size-title * 0.8;
+	}
+	h2 {
+		font-size:$font-size-title * 0.7;
+	}
+	h3 {
+		font-size:$font-size-title * 0.6;
+	}
+	h4 {
+		font-size:$font-size-title * 0.5;
+	}
+	h5 {
+		font-size:$font-size-title * 0.4;
+	}
+	h6 {
+		font-size:$font-size-title * 0.3;
+	}
+	// SELECT - INPUT - FORM
+	select, input[type="text"], input[type="email"], input[type="tel"] {
+		height: 45px;
+		font-size:$font-size-title * 0.7;
+	}
+	.radio input[type="radio"], .checkbox input[type="checkbox"] {
+		float:none;
+	}
+	// LISTING AGENCES - PAGE AGENCE
+	.listing-agences-tel, .listing-agences-fax, .listing-agences-email, .listing-agences-url, .listing-agences-responsable {
+		font-size:$font-size-title * 0.8;
+	}
+	// MINI MOTEUR
+	.titre-surface, .titre-budget, label {
+		font-size:$font-size-title * 0.80;
+	}
+}
+/* PORTRAIT TO LANDSCAPE MOBILE */
+@media only screen and (max-width : 767px) {
+	
+	.size-picture-container {
+		height:auto;
+	}
+	header {
+		@include box-shadow(0px 2px 5px 0px rgba(0, 0, 0, 0.3));
+	}
+	hr {
+		margin:10px 0 10px;
+	}
+	// NO FIXED
+	.fixe {
+	position:relative;
+	}
+	.container {
+		padding: 0 10px;
+	}
+	.mentions, .detail-annonce, .zone-galerie, .logo-poliris-realisation .contenu-realisation, .bloc-agence, .bloc-descriptif, .recherche-ligne-tri-pages, .recherche-annonces-prix {
+		margin:0;
+		margin-top:10px;
+	}
+	.bouton-estimation, .bouton-moteur-recherche, .bouton-realisation, .bouton-info-agence, .recherche-ligne-tri-pages  {
+		margin-bottom:10px;
+	}
+	.form-horizontal .controls .input-mobile-outils {
+		width:100%;
+	}
+	.bloc-fiche-signaletique {
+		text-align:center;
+	}
+	.recherche-annonces-photo {
+		height:auto;
+		width:auto;
+	}
+	.zone-agence-ajax {
+		margin:0;
+	}
+	.zone-agence-ajax > div {
+		margin-bottom:5px;
+	}
+	.dpe-show {
+		line-height:auto;
+		height:auto;
+	}
+	// LISTING PAGINATION
+	.pagination {
+		float:none;
+		margin-top:10px;
+		text-align:center;
+	}
+	.pagination ul {
+		margin-top:0px;
+		margin-bottom:10px;
+	}
+	.pagination ul > li > a {
+		padding:2px 6px;
+		font-size:$font-size-title * 0.5;
+		border-radius:0px;
+		margin:0;
+	}
+	.pagination .last-pagination, .pagination .first-pagination {
+		border-radius: 0px;
+	}
+	// BLOC DETAIL
+	.bloc-detail-telephone, .recherche-annonces, .prix-annonce, .prix-honoraires-charges  {
+		text-align:center;
+	}
+	.bouton-telephonez-nous a {
+	@include lightnessColor($color-important);
+		&:hover {
+		@include lightnessColor($color-important);
+		}
+	}
+
+	.descriptif-annonce, .descriptif-prestige {
+		height:auto;
+	}
+	.descriptif-prestige {
+		padding:5px;
+	}
+	// MINI MOTEUR
+	.titre-surface, .titre-budget, label {
+		margin-bottom:10px;
+		float:none;
+		text-align:center;
+	}
+	.h2-title-moteur {	
+		padding:5px;
+		@include lightnessColor($color-action,no);
+	}
+	// LISTING AGENCES
+	.detail-agence-liste {
+		text-align:center;
+	}
+	.listing-agences-tel, .listing-agences-fax, .listing-agences-email, .listing-agences-url, .listing-agences-responsable {
+		line-height: 1.3em;
+		@if lightness($color-block) > 50% {
+			border-top: 1px solid $color-block-dark-20;
+		} @else {
+			border-top: 1px solid $color-block-light-20;
+		}
+		padding:10px 0;
+	}
+	// STYLE TITLE MOTEUR SUR MOBILE
+	#recherche-moteur .h2-like {
+		position: relative;
+		text-align:left;
+	}	
+	.h2-title-moteur span, #recherche-moteur .h2-like span {
+		background:none;
+		@include box-shadow(0px 0px 0px 0px);
+		font-family:$font-body;
+		font-weight:normal;
+		text-transform:none;
+	}
+	.h2-title-moteur {
+	background:$color-important;
+	@include lightnessColor($color-important,no);
+	position: relative;
+	text-align:left;
+	padding:15px 20px;
+	@include border-radius(2px);
+	}
+	.h2-title-moteur:after {
+		content: "\e066";
+		font-family: 'icov5';
+		display:block;
+	    position: absolute;
+	    top:25px;
+	    right:20px;
+	}
+	#Mini_Moteur {
+		display:none;
+		margin:0px;
+	}
+	#Mini_Moteur .control-group {
+		margin-bottom:10px;
+	}
+	 .moteur-refine #Mini_Moteur .control-group {
+		margin-bottom:0px;
+	}
+	.moteur-refine .row-fluid .span11, .moteur-refine .row-fluid .span10, .moteur-refine .row-fluid .span1, .moteur-refine .row-fluid .span2 {
+		float: left;
+	}
+	.moteur-refine .row-fluid .span11 {
+		width:90%;
+	}
+	.moteur-refine .row-fluid .span2 {
+		width:15%;
+		float:right;
+	}
+	.moteur-refine .row-fluid .span1, #content-moteur .row-fluid.titre-section-refine .span1 {
+		width:10%;
+		float:right;
+	}
+	#content-moteur .row-fluid .span8 {
+		float:left;
+		width:70%;
+	}
+	#content-moteur .row-fluid  .span1 {
+		float:left;
+		width:10%;
+	}
+	#content-moteur .row-fluid .span3 {
+		float:left;
+		width:20%;
+	}
+	[class*="general typoicon-"] {
+		font-size:1.1em;
+	}
+	.layer.absolute {
+		position:absolute;
+	}
+	.layer.absolute > .absolute {
+		position:absolute;
+	}
+	// GESTION PICTURE SIMILAIRES
+	.detail-bloc-annonce-similaire {
+		text-align:center;
+		height:auto;
+	}
+	.detail-bloc-annonce-similaire-photo {
+		margin:0 auto;
+		width:75%;
+	}
+	// SLOGAN MOBILE	
+	.slogan-mobile, .slogan-mobile * {
+		margin:0;
+		padding:0;
+		font-size:1em;
+		line-height:normal;
+		@include lightnessColor($color-primary);
+	}
+	.slogan-mobile {
+		margin:5px 0 5px 0;
+		@include lightnessColor($color-primary);
+		text-align:left;
+		font-size:1em;
+		line-height:normal;
+	}
+	// BLOC PUB
+	.zone-pub {
+		margin-top:20px;
+		height:auto;
+	}
+	.row-fluid [class*="span"] .social-pub {
+		float:left;
+		width:32%;
+		text-align:center;
+		margin:0;
+	}
+	// FORMULAIRE
+	.bouton-formulaire-agence {
+		margin:5px auto 5px auto;
+		width:80%;
+	}
+	#container-form-contact-agence {
+		height:auto;
+	}
+	// SUGGEST VILLE
+	.message-suggest-liste {
+		margin:0;
+	}
+	.line-suggest.row-fluid [class*="span"] {
+		float:left;
+	}
+	// ACCORDION TOOGLE
+	.accordion-toggle .absolute {
+		position:absolute;
+	}
+	// AGENCE
+	.agence-idpublication {
+		margin-top:10px;
+	}
+	// DETAIL NAV FICHE
+	.nav-fiche li {
+		width:49%;
+		float:left;
+	}
+	.nav-fiche li:nth-child(even) {
+      background:$color-block-dark-2;
+	  @include lightnessColor($color-block-dark-5,no);
+    }
+    .nav-fiche li:nth-child(odd) {
+      background-color:$color-block-dark-4;
+	  @include lightnessColor($color-block,no);
+    }
+    .nav-fiche-new li {
+		width:49%;
+		float:left;
+	}
+	.nav-fiche-new li:nth-child(even) {
+      background:$color-block-dark-2;
+	  @include lightnessColor($color-block-dark-5,no);
+    }
+    .nav-fiche-new li:nth-child(odd) {
+      background-color:$color-block-dark-4;
+	  @include lightnessColor($color-block,no);
+    }
+	// ESPACEMENTS
+	.module-homepage-extra, .module-homepage, .h2-title-moteur, .pubs-homepage {
+		margin-top:10px;
+		margin-bottom:10px;
+	}
+	// FOOTER
+	.logo-membres img {
+		margin-right:0px;
+	}
+}
+@media only screen and (min-width:600px) and (max-width : 767px) {
+	// SLOGAN
+	.slogan-mobile, .slogan-mobile * {
+		font-size:1.5em;
+		line-height:normal;
+	}
+	// PAGINATION
+	.pagination ul > li > a {
+		font-size:$font-size-title * 0.8;
+	}
+	// H2
+	.h2-title-moteur:after {
+		top: 25px;
+	}
+}
+@media only screen and (min-width: 767px) and (max-width:979px) {
+
+	.row-fluid [class*="span"].logo > .btn-navbar {
+		margin-top:10px;
+	}
+
+}
+@media only screen and (min-width:768px) and (max-width: 979px) and (orientation:portrait) {
+	.logo {
+		text-align:center;
+	}
+}
+
+@media only screen and (max-width: 979px) and (min-width: 768px) and (orientation: portrait){
+	.logo {
+	  position:relative;
+	}
+}

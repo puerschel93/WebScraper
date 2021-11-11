@@ -1,0 +1,353 @@
+/*************** N A V B A R ***************/
+
+@font-face {
+  font-family: 'Holla';
+  src: url('/assets/fonts/Holla.otf') format("otf");
+}
+
+.container_title {
+  --couleur:0, 0, 0;
+  margin: 1rem;
+  display: flex;
+  justify-content: left;
+  font-family: 'Holla';
+  color: white;
+  text-shadow:
+          0 1px 0 #ccc,
+          0 2px 0 #acacac,
+          0 3px 0 #a0a0a0,
+          0 4px 0 #9b9a9a,
+          0 5px 0 #888787,
+          0 6px 1px rgba(var(--couleur),.1),
+          0 0 5px rgba(var(--couleur),.1),
+          0 1px 3px rgba(var(--couleur),.3),
+          0 3px 5px rgba(var(--couleur),.3),
+          0 5px 10px rgba(var(--couleur),.25),
+          0 10px 10px rgba(var(--couleur),.2),
+          0 20px 20px rgba(var(--couleur),.15);
+  font-size: calc(3em)
+
+}
+
+
+/********** Début du Bouton *************/
+
+.button-accueil {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  font-family: 'Exo', serif;
+  color: white;
+  font-size: calc(1.5em)
+
+}
+
+.fa, .fas {
+
+  font-weight: 900;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
+}
+
+.fas fa-user {
+
+  font-weight: 900;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
+
+}
+
+.fas fa-clock {
+
+  font-weight: 900;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
+
+}
+
+.button-menu {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  font-family: 'Exo', serif;
+  color: white;
+  font-size: calc(1.5em)
+
+}
+
+.button-contact {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  font-family: 'Exo', serif;
+  color: white;
+  font-size: calc(1.5em)
+
+}
+
+.menu-btn {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+
+}
+
+.menu-btn_burger {
+  width: 50px;
+  height: 6px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn_burger::before,
+.menu-btn_burger::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+
+}
+
+.menu-btn_burger::before {
+  transform: translateY(-16px);
+}
+.menu-btn_burger::after {
+  transform: translateY(16px);
+}
+
+
+/************* Début Animation ************/
+.menu-btn.open .menu-btn_burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu-btn.open .menu-btn_burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn_burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/*********** Fin Animation **************/
+  /*********** Fin du Bouton ************/
+
+
+.nav-navbar {
+  font-family: 'Secular One', sans-serif;
+  background-color: transparent;
+  transition: 1s;
+  position: fixed;
+  padding: 0 0 1em 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.nav-navbar-active {
+  opacity: 0.9;
+  font-family: 'Secular One', sans-serif;
+  background-color: rgb(58, 58, 58);
+  transition: 0.5s;
+}
+
+.container-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.block2{
+  width: 49%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 110%;
+}
+
+/************ Début logo Bus ***********/
+.logo_bus {
+  width: 8%;
+  margin-top: 1%;
+}
+
+/************** fin logo bus ****************/
+
+
+/******** Début Div Bus *********/
+.bus {
+  font-family: 'Secular One', sans-serif;
+  display: none;
+}
+/*********** Fin Div Bus ************/
+
+
+/*********** Début Panier ***********/
+.nav_panier {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.nav_panierResponsive {
+  display: none;
+}
+
+/******************* Fin Panier *******************/
+
+
+/****************** Début du Résponsive ********************/
+
+@media screen and (max-width: 768px)  {
+
+
+  .nav-navbar {
+    display: none;
+  }
+
+  .logo_bus {
+    height: 100px;
+  }
+
+  .bus {
+    justify-content: space-between;
+    display: flex;
+    background: $mainColor;
+    padding-top: 1em;
+  }
+
+
+
+  /************* Début du Bouton Burger *****************/
+
+  .menu-btn {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border: 3px solid white;*/
+    z-index: 2;
+  }
+
+  .menu-btn_burger {
+    width: 50px;
+    height: 6px;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+    background: #C44749;;
+  }
+
+  .menu-btn::before,
+  .menu-btn::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255,101,47,.2);
+    transition: all .5s ease-in-out;
+    background-color: #C44749;
+  }
+
+  #burger_menu_responsive{
+    display: none;
+  }
+
+  .menu-btn::before {
+    transform: translateY(-16px);
+  }
+
+  .menu-btn::after {
+    transform: translateY(16px);
+  }
+
+  /******************** Début Animation Bouton Burger *******************/
+
+  .menu-btn.open .menu-btn_burger {
+    transform: translateY(79px);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .menu-btn.open::before {
+    transform: rotate(45deg) ;
+  }
+
+  .menu-btn.open::after {
+    transform: rotate(-45deg) ;
+  }
+
+  .menu_btn_burger_text {
+    color: black;
+    font-size: 170%;
+    line-height: 65px;
+    text-align: center;
+  }
+
+  .menu_btn_burger_block {
+    width: 145px;
+    height: 357px;
+    border: 3px solid darkslateblue;
+    background-color: white;
+    border-radius: 3%;
+    opacity: 70%;
+  }
+
+  .burger_line {
+    border-bottom: 2px solid darkslateblue;
+    width: 100%;
+    padding-bottom: 5px;
+    display: block;
+    font-weight: bold;
+}
+  .menu-btn_burger::before, .menu-btn_burger::after {
+    position: relative;
+  }
+
+  /******************* Fin de l'Animation Bouton Burger *****************/
+/****************** Fin Bouton Burger *******************/
+
+  /********** Début bouton panier ****************/
+
+  .nav_panierResponsive {
+    background-color: red;
+    border: 3px solid darkslateblue;
+    width: 45px;
+    height: 45px;
+    margin-top: 12px;
+    margin-right: 15px;
+    display: flex;
+  }
+}
+  /*************** Fin bouton panier *******************/
+
+
+
+

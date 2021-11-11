@@ -1,0 +1,220 @@
+.main-services {
+  background: #f8f8f8;
+
+  .services {
+    .service__group {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: "";
+        width: 4px;
+        height: 40px;
+        background-color: #41f6d7;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
+      @media (min-width: 1440px) {
+        align-items: center;
+      }
+
+      .service-title {
+        letter-spacing: -0.6px;
+        line-height: 40px;
+        padding-left: 12px;
+
+        @media (min-width: 768px) {
+          padding-left: 20px;
+        }
+
+        @media (min-width: 1440px) {
+          margin: 0px;
+          padding-left: 28px;
+        }
+      }
+    }
+
+    @media (min-width: 1440px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 42px;
+    }
+
+    .service {
+      @media (min-width: 320px) {
+        display: none;
+      }
+
+      @media (min-width: 1440px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 380px;
+      }
+
+      &__repair,
+      &__chekstatus {
+        display: flex;
+        align-items: center;
+        background: #f8f8f8;
+        border: 0;
+        padding: 0;
+      }
+
+      &__text-repair,
+      &__text-chekstatus {
+        font-family: "TT Lakes", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: -0.2px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    overflow-x: auto;
+    padding-left: 16px;
+    height: 40px;
+    list-style: none;
+
+    @media (min-width: 1440px) {
+      overflow-x: visible;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      font-family: "TT Lakes", sans-serif;
+      white-space: pre;
+      text-align: center;
+      background: #f8f8f8;
+      border: 0;
+      padding: 6px 14px;
+      margin-right: 6px;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: #7e7e82;
+
+      &:focus {
+        background: #ffffff;
+        border: 2px solid #b8ffec;
+        border-radius: 6px;
+      }
+    }
+  }
+  .content {
+    @media (min-width: 768px) {
+      display: flex;
+    }
+
+    @media (min-width: 1440px) {
+      align-items: unset;
+    }
+
+    .read-more-checker {
+      opacity: 0;
+      position: absolute;
+    }
+
+    .read-more-button {
+      cursor: pointer;
+      display: flex;
+      align-items: stretch;
+      width: fit-content;
+      height: 11px;
+      background-repeat: no-repeat;
+      margin-left: 24px;
+      margin-bottom: 15px;
+
+      @media (min-width: 1440px) {
+        margin-left: 40px;
+      }
+    }
+
+    .read-more-checker ~ .read-more-button:after {
+      content: "Читать далее";
+      display: flex;
+      align-items: center;
+      background-image: url(../../src/img/icondown.svg);
+      background-repeat: no-repeat;
+      padding-left: 16px;
+      font-family: "TT Lakes", sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.2px;
+      color: #1b1c21;
+      font-weight: 600;
+    }
+
+    .read-more-checker:checked ~ .read-more-button:after {
+      content: "Скрыть";
+      background-image: url(../../src/img/icon.svg);
+      background-repeat: no-repeat;
+    }
+
+    &__picture {
+      @media (min-width: 768px) {
+        margin-top: 14px;
+        margin-right: 16px;
+        border-radius: 6px;
+
+        .content-picture {
+          border-radius: 6px;
+
+          @media (min-width: 1440px) {
+            min-width: 526px;
+            max-height: 289px;
+          }
+        }
+      }
+
+      @media (min-width: 1440px) {
+        display: flex;
+        flex-grow: 1;
+      }
+    }
+
+    .text-content {
+      overflow: hidden;
+      transition: max-height 0.6s ease;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+      color: #1b1c21;
+      margin: 24px 16px 16px;
+      font-weight: normal;
+
+      @media (min-width: 320px) and (max-width: 767px) {
+        max-height: 110px;
+      }
+
+      @media (min-width: 768px) and (max-width: 1440px) {
+        max-height: 135px;
+      }
+
+      @media (min-width: 1440px) {
+        max-height: 160px;
+      }
+
+      @media (min-width: 768px) {
+        margin-right: 48px;
+        margin-left: 24px;
+      }
+
+      @media (min-width: 1440px) {
+        width: 490px;
+        margin-right: 36px;
+        margin-left: 34px;
+      }
+    }
+
+    .read-more-checker:checked ~ .text-content {
+      max-height: 100vh;
+    }
+  }
+}

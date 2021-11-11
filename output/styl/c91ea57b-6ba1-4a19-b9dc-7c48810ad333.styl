@@ -1,0 +1,293 @@
+@import '../../css/helpers.styl'
+
+.webentities-list-of-lists
+    list-style: none
+    padding: 0
+    margin: 0
+    display: flex
+    flex-direction: column
+    .list-name-container
+        stretch(row)
+        align-items: center
+        transition: all .5s ease, opacity 1ms
+        max-height: 30vh
+        overflow: hidden
+
+        .list-btn-container
+            text-align: left
+            padding-bottom: 0
+        .list-btn
+            button('active')
+            margin: 5px
+            margin-right: 2px
+            display: inline-block
+            padding: 10px
+            background: var(--color-grey-dark);
+            transition: all .5s ease
+            z-index: 3
+            cursor: pointer
+            width: 250px
+            .list-btn-text
+                text-transform: uppercase;
+                font-family: var(--font-mont);
+                // font-size: 13px;
+                font-weight: bold;
+            .list-btn-help
+                float:right
+        .list-btn.in
+                background: var(--color-corpus-in)
+        .list-btn.out
+                background: var(--color-corpus-out)
+        .list-btn.undecided
+                background: var(--color-corpus-undecided)
+        .list-btn.suggestions
+            background: var(--color-corpus-discovered)
+            color: var(--color-grey-light)
+        .count
+            transition: all .5s ease
+            // text-align: right
+            font-size: 8px
+            background: var(--color-grey);
+            display: flex
+            flex-flow: row nowrap
+            align-items: center
+            justify-content: flex-end
+            border-radius: 0 var(--radius) var(--radius) 0
+            height: 25px
+            position: relative
+            left: -2px
+            padding-left: 5px
+            padding-right: 10px
+        @media (max-width: $tablet-break-point)
+            text-align: left
+            .list-btn-container
+                stretch(row)
+                flex: 1
+            //     width: 100%
+            .list-btn
+                font-size: 11px
+                text-align: left
+                flex: 1
+                // width: 100%
+            .count
+                padding-left: 10px
+                display: none
+
+    .list-name-container.is-active
+        opacity: 1
+    .list-name-container:not(.is-active)
+        opacity: .5
+        &:hover
+            opacity: 1
+        .list-btn
+            font-size: 10px
+            padding: 10px
+            margin: 5px
+        .count
+            font-size: 8px
+            background: none
+
+.list-layout
+    stretch(column)
+    overflow: hidden
+    max-height: 100%
+    .list-of-lists-title
+        margin: 0
+        padding: 0
+        padding-left: 10px
+        margin-top: 10px
+        font-weight: bold
+        font-size: 14px
+    .status-list-container
+        background: var(--color-grey-light)
+        padding-left: 10px
+        padding-right: 10px
+        list-style: none
+        margin: 0
+    .status-list
+        border-radius: var(--radius)
+        padding: 10px
+        padding-bottom: 0
+
+        position: relative
+        .status-list-toggle
+            position: absolute
+            right: 10px
+            top: 15px
+            font-size: 14px
+            border: none
+            color: white
+            background: var(--color-grey-darker)
+            border-radius: 50%
+            width: 30px
+            height: 30px
+            flexCenter()
+            cursor: pointer
+            &:hover
+                background: var(--color-grey-dark)
+        @media (max-width: $tablet-break-point)
+            .status-list-toggle
+                display: none
+    .status-list:not(.is-open)
+        li:not(.is-active)
+            max-height: 0
+    .webentities-list-wrapper
+        flex: 1
+        stretch(column)
+        overflow: hidden
+        .webentities-list-header
+            padding: 10px
+            padding-top: 5px
+            padding-bottom: 5px
+            padding-right: 0
+            stretch(row)
+            align-items: center
+            &.is-disabled
+                opacity: .5
+                pointer-events: none
+            input
+                flex: 1
+                input()
+            input:focus
+                border: 1px solid var(--color-grey-dark)
+
+            .filter-container
+                position: relative
+                stretch(row)
+            .filter
+                buttonIcon()
+                display: flex
+                flex-flow: row nowrap
+                align-items: center
+                font-size: 10px
+                span
+                    padding-left: 5px
+                .ti-filter
+                    margin-right: 3px
+
+            .filter-container.is-active .filter
+                background: var(--color-black)
+                color: var(--color-white)
+            .filter-container.has-filters .filter
+                background: var(--color-blue)
+                color: var(--color-white)
+
+            .filter-options
+               dropdownOptions()
+
+        .actualize-container
+            padding: 0 0 10px 10px
+            .actualize
+                width: 100%
+                color: var(--color-black)
+                padding: 5px
+                background: var(--color-grey-light)
+                font-size: 12px
+                font-family: var(--font-mono)
+        .locate-container
+            padding: 0 0 5px 10px
+            .locate
+                padding: 5px
+                margin: 0
+                width: 100%
+                border-radius: var(--radius)
+                background: var(--color-grey-light)
+                cursor: pointer
+                font-size: 12px
+                font-family: var(--font-mono)
+                border: none
+                transition: background .2s ease
+                color: var(--color-white)
+                &.IN
+                    background: var(--color-corpus-in)
+                &.OUT
+                    background: var(--color-corpus-out)
+                &.UNDECIDED
+                    background: var(--color-corpus-undecided)
+                &.DISCOVERED
+                    background: var(--color-corpus-discovered)
+                &:hover
+                    background: var(--color-black)
+        .webentities-list-container
+            background: var(--color-grey)
+            margin: 10px
+            margin-top: 0
+            margin-left: 20px
+            margin-right: 15px
+            border-radius: var(--radius)
+            padding: 10px
+            overflow: hidden
+            stretch(column)
+            flex: 1
+            max-height: calc(100% - 50px)
+
+        .webentities-list
+            overflow: hidden
+            overflow-y: auto
+            flex: 1
+            padding: 0
+            margin: 0
+            position: relative
+            &.is-empty
+                height: 100%
+            .entity-card
+                margin: 10px
+                &:first-of-type
+                    margin-top: 0
+            .entity-card.pagination
+                justify-content: center
+                font-size: 12px
+                margin-bottom: 0
+            .placeholder-empty
+                font-size: 12px
+                color: var(--color-grey-dark)
+                font-style: italic
+                display: flex
+                align-items: center
+                justify-content: center
+                abs()
+                position: relative
+        .webentities-list.is-loading
+            opacity: 0.5
+            .entity-card
+                pointer-events: none
+
+        .webentities-list-footer
+            padding: 10px
+            padding-right: 0
+            // min-height: 50px
+    .actions-container
+        list-style: none
+        padding: 10px 0 0 10px
+        stretch(row)
+        margin: 0
+        li
+            flex: 1
+        .btn
+            width: 100%
+            font-family: var(--font-pt)
+            border: none
+            padding: 5px
+            color: var(--color-white)
+            height: 40px
+            flexCenter()
+        .confirm-btn
+            background: var(--color-blue)
+            &:hover
+                color: var(--color-white)!important
+                background: var(--color-black)!important
+        .cancel-btn
+            background: var(--color-red)
+            &:hover
+                color: var(--color-white)!important
+                background: var(--color-black)!important
+        li:first-of-type
+            padding-right: 5px
+        @media (max-width: $tablet-break-point)
+            .btn
+                height: 60px
+    .loader-container
+        abs()
+        stretch(column)
+        align-items: center
+        justify-content: center

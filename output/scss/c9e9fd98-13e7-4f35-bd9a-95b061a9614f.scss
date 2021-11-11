@@ -1,0 +1,119 @@
+@import "src/assets/styles/sharedstyles.scss";
+
+.container {
+  height: auto;
+  padding-bottom: 10px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  position: relative;
+
+  margin-right: auto;
+  margin-left: auto;
+  @include center();
+  .container2 {
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    opacity: 0.8;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    .lds-ring {
+      display: inline-block;
+      position: relative;
+      width: 100px;
+      height: 100px;
+      z-index: 10;
+    }
+    .lds-ring div {
+      box-sizing: border-box;
+      display: block;
+      z-index: 10;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      margin: 8px;
+      border: 8px solid #fff;
+      border-radius: 50%;
+      animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      border-color: #fff transparent transparent transparent;
+    }
+    .lds-ring div:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+    .lds-ring div:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+    .lds-ring div:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+    @keyframes lds-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  overflow-x: visible;
+  flex-direction: column;
+  justify-content: flex-start;
+  @include form-controller(
+    (
+      Properties: (
+        height: 30px,
+      ),
+    )
+  );
+
+  @include subtitle();
+  .image-container {
+    display: flex;
+    @include center();
+    button {
+      margin-left: 10px;
+    }
+    label {
+      margin-left: 10px;
+      display: flex;
+    }
+    mat-icon {
+      color: red;
+      cursor: pointer;
+    }
+    img {
+      width: 300px;
+      object-fit: cover;
+      height: 300px;
+      border-radius: 10px;
+    }
+  }
+
+  @include button();
+  #submit {
+    margin-top: 30px;
+    width: 50%;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .container {
+    .image-container {
+      flex-direction: column;
+      img {
+        width: 80%;
+      }
+      label {
+        margin-top: 10px;
+      }
+      input {
+        margin-top: 10px;
+      }
+    }
+  }
+}

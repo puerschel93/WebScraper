@@ -1,0 +1,337 @@
+$background: #fefefe;
+$additional: #fafafa;
+$primary: #252525;
+$secondary: #858585;
+$placeholder: #c5c5c5;
+$stroke: #e6e6e6;
+$hover: #eaeaea;
+$selected: #5e89e3;
+$accent: #245ac8;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+a,
+button,
+input,
+p,
+table,
+span,
+label {
+  font-family: "Geometria", sans-serif;
+  color: $primary;
+  font-weight: 500;
+  line-height: 100%;
+  text-decoration: none;
+  display: block;
+}
+
+.page-content {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: $additional;
+  overflow: hidden;
+}
+
+.menu {
+  width: 264px;
+  height: 100vh;
+  background-color: $background;
+  margin-right: 32px;
+  filter: drop-shadow(5px 0px 20px rgba(37, 37, 37, 0.05));
+  border-radius: 0px 30px 30px 0px;
+  &-content {
+    display: flex;
+    flex-direction: column;
+    width: 209px;
+    height: 100%;
+    margin: {
+      top: 16px;
+      left: 24px;
+    }
+    &__label {
+      width: 209px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+    }
+    &__accenter {
+      font-weight: bold;
+      color: $accent;
+    }
+    &__greetings {
+      font-size: 16px;
+      margin-top: 30px;
+    } 
+    .user-data {
+      display: flex;
+      align-items: center;
+      margin-top: 22px;
+      &__img {
+        width: 55px;
+        height: 55px;
+        margin-right: 15px;
+        border-radius: 100px;
+        filter: drop-shadow(0px 3px 12px rgba(37, 37, 37, 0.1));
+      }
+      &__name {
+        font-size: 16px;
+      }
+      &__position {
+        font-size: 14px;
+        color: $secondary;
+        padding-top: 8px;
+      }
+      &:visited {
+        text-decoration: none;
+      }
+    }
+  }
+  &-links__container {
+    height: 100%;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  } 
+  .links-list {
+    display: flex;
+    flex-direction: column;
+    .active-link {
+      background: linear-gradient(84.39deg, #245ac8 -2.78%, #4ca3dd 109.11%);
+      box-shadow: 0px 0px 15px rgba(36, 90, 200, 0.25);
+      justify-content: center;
+      padding: 0;
+      .links-list__text {
+        color: $background;
+        font-weight: bold;
+      }
+    }
+    &__item {
+      width: 180px;
+      height: 60px;
+      margin-bottom: 12px;
+    }
+    &__link {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      padding-left: 24px;
+      &:hover {
+        background-color: $hover;
+      }
+    }
+    &__icon {
+      width: 20px;
+      height: 20px;
+    }
+    &__text {
+      margin-left: 8px;
+      font-size: 14px;
+    }
+  }
+  &-logout-link {
+    padding: 16px;
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    &:hover {
+      background-color: $hover;
+    }
+  }
+}
+
+
+.changer-data {
+  &__header {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 24px;
+  }
+  &__forms-conainer {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+  }
+}
+
+.changer {
+  width: 305px;
+  height: 508px;
+  background-color: $background;
+  border-radius: 25px;
+  filter: drop-shadow(0px 5px 30px rgba(37, 37, 37, 0.1));
+  margin-right: 32px;
+  &__content {
+    padding: 20px 24px 24px;
+    width: 100%;
+  }
+  &__form-label {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 8px;
+  }
+  &__description {
+    line-height: 18px;
+    font-size: 14px;
+    color: $secondary;
+  }
+  &__input {
+    width: 100%;
+    padding: 16px;
+    font-size: 14px;
+    margin-top: 12px;
+    border-radius: 15px;
+    color: $primary;
+    border: 1px solid $stroke;
+    background-color: $additional;
+    filter: drop-shadow(0px 0.76vh 1.11vw rgba(21, 21, 21, 0.05));
+    outline: none;
+    &:focus {
+      outline: none;
+      color: $primary;
+      outline: 2px solid $accent;
+    }
+  }
+  &__sender {
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    margin-top: 36px;
+    padding: 19px 16px;
+    border-radius: 15px;
+    color: $background;
+    background: linear-gradient(84.39deg, #245AC8 -2.78%, #4CA3DD 109.11%);
+    &:hover {
+      box-shadow: 0px 5px 15px rgba(36, 90, 200, 0.5);
+    }
+  }
+  
+}
+
+.selector {
+  // list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    width: 100%;
+  }
+  &__arrow {
+    margin-top: 1px;
+  }
+  // item
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    filter: drop-shadow(0px 0.76vh 1.11vw rgba(21, 21, 21, 0.05));
+    width: 100%;
+    padding-bottom: 24px;
+    &-active {
+      z-index: 10;
+    }
+  }
+  // name
+  &__name {
+    font-weight: 500;
+    font-size: 16px;
+    margin-right: 16px;
+    color: $primary;
+    margin-bottom: 12px;
+  }
+  // select
+  &__select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 17px;
+    background: $additional;
+    border: 1px solid $stroke;
+    box-sizing: border-box;
+    border-radius: 18px;
+    &-wrap {
+      position: relative;  
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+  // value
+  &__value {
+    margin-right: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $primary;
+  }
+  // options
+  &__options {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 16px auto 0;
+    background: $background;
+    border: 1px solid $stroke;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 10px 30px rgba(37, 37, 37, 0.1));
+    border-radius: 15px;
+    padding: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    color: $primary;
+    opacity: 0;
+    display: none;
+    transition: all 0.3s ease;
+    height: 230px;
+    overflow: auto;
+    &-active {
+      display: block;
+      opacity: 1;
+      z-index: 10;
+    }
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: $background;
+      border-radius: 20px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 20px;
+      background-color: $selected;
+    }
+    // options item
+    &_item {
+      width: 100%;
+      cursor: pointer;
+      border-radius: 15px;
+      margin-bottom: 8px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:hover {
+        background-color: $hover;
+      }
+    }
+    &_value {
+      padding: 17px 17px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}

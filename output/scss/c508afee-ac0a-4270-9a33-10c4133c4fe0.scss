@@ -1,0 +1,233 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:700;
+
+// VARIABLE SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Open Sans Condensed",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.7em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:253;
+
+// HAUTEUR PHOTOS LISTING (235px par défaut)
+$listing-img-height:400px;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT DETAIL MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/recherche/mobilefirst";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+//------------------------------------------------------------------------------------
+//    PESRO MONTFORT78
+//------------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------------
+//    GENERAL
+//------------------------------------------------------------------------------------
+
+  //------------------------------------------------------------------------------------
+  //    CONTAINER
+  //------------------------------------------------------------------------------------
+.container {
+    width: 1280px;
+    @media only screen and (max-width : 1280px) {
+        width: 960px
+    }
+}
+
+//------------------------------------------------------------------------------------
+//    MENU & NAV
+//------------------------------------------------------------------------------------
+
+@media (min-width:768px) {
+
+   .logo { top: -40px; }
+
+   .menu-principal {
+      > li {
+         > a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size : 1.2em;
+            &:hover {
+                border-color: $color-nav-footer;
+            }
+         }
+      }
+   }
+}
+
+
+@media (max-width:767px) {
+   .navigation .logo img { width: auto; }
+}
+
+@media (min-width:1281px) {
+  #menuNavigation {
+    text-align: center;
+  }
+}
+
+.menu-principal {
+  font-size:$font-size-title * 0.5;
+}
+
+//------------------------------------------------------------------------------------
+//    INDEX
+//------------------------------------------------------------------------------------
+
+#Mini_Biens, #Mini_Villes, #Mini_Bouton {
+  margin:0px; 
+}
+
+#Mini_Bouton {
+  margin-top:-1px;
+}
+
+.form-inline{ 
+  margin-left: 35px;
+  select {
+    height:50px;
+    border:none;
+    border-right: solid 1px $color-secondary;    
+    border-radius: 0;   
+  }
+}
+
+.ms-choice {
+  height:50px !important;
+  border:none;
+  border-right: solid 1px $color-secondary;    
+  border-radius: 0 !important;   
+  line-height: 50px !important;
+}
+
+.bouton-rechercher-moteur {
+  height: 50px;
+  line-height: 40px;
+}
+
+.bg-mini-moteur {
+  height: 70px;
+  background-color: $color-primary;
+}
+
+
+  //------------------------------------------------------------------------------------
+  //    PUB
+  //------------------------------------------------------------------------------------
+
+.bg-index + .bg-pub-bottom > .container {
+	width: auto;
+	.pub-full-estimation {
+		&.pagination-right {	text-align: center; }
+	}
+}
+
+  //------------------------------------------------------------------------------------
+  //    MODULE PA
+  //------------------------------------------------------------------------------------
+
+.agence-info-bien .ellipsis {
+	overflow: visible;
+}
+
+.module-annonces-homepage.height-220 {
+    height: 312px;
+}
+
+//------------------------------------------------------------------------------------
+//    LISTING PA
+//------------------------------------------------------------------------------------
+
+  //------------------------------------------------------------------------------------
+  //    INFO
+  //------------------------------------------------------------------------------------
+
+.annonce-soustypebien {
+  display: none;
+}
+
+//------------------------------------------------------------------------------------
+//    DETAIL
+//------------------------------------------------------------------------------------
+
+  //------------------------------------------------------------------------------------
+  //    VISUEL
+  //------------------------------------------------------------------------------------
+
+.vertical-pano {
+    height: auto!important;
+    width: 100%!important;
+    background: $color-block;
+}
+
+
+@media (max-width: 767px){
+.navigation .logo img {
+    width: auto;
+    width: 20%;
+}
+}

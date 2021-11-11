@@ -1,0 +1,124 @@
+$white = #ffffff;
+
+$neon-blue-light = #14ffff //
+$neon-blue-dark = #00b3ff //
+$neon-green-blue = #00fc9e //
+$neon-green-light = #75e858 //
+$neon-purple-light = #ff14ff//
+$neon-pink = #FFC9B1// #fdc7d7 //
+$neon-purple-dark = #c074ff //
+$neon-fushia = #ff148f//
+$neon-orange = #ff7214 //
+$neon-yellow = #edff14 //
+$neon-brown = #c27b00 //
+$neon-purple-darker = #5c00de //
+
+//theme colors
+$dark-color = #323232;
+$primary =  #1E51A4;
+$primary-light = ligten($primary, 20%)
+$primary-dark = darken($primary, 20%) 
+$primary-darkest = darken($primary, 60%) 
+
+$secondary = #FFD140; 
+$secondary-light = lighten($secondary, 20%)
+$secondary-lighter = lighten($secondary, 50%)
+$secondary-dark = darken($secondary, 30%);  
+
+$tertiary = rgb(232, 247, 250) 
+$quartiery = $neon-pink
+$quartiery-light = #F3FAE2;
+$quartiery-dark = darken($quartiery,20%);
+// $hero-background = white;
+// $hero-text = $primary
+
+$text-primary = #fff;
+
+$navigation-background = $dark-color;
+$background-color = $dark-color;
+$list-background = $dark-color;
+//primary and secondary color locked for now - others tbd
+$accent = #AFB42B
+$accent-text = #799168;
+$error = #E64A19
+$warning = #FFD600
+$info = $tertiary
+$success = #4caf50
+
+$gray-light = #cdcdcd
+$gray-lighter = #efefef
+$gray-lightest = #f8f8f8;
+
+//light mode
+$primary--light-mode = #edf4ff //d2d2fc;//darken($accent-text,30%);
+
+$quartiery--light-mode = $accent-text;//darken($accent-text,30%);
+$quartiery--light-mode-light = lighten($accent-text,30%);
+$quartiery--light-mode-dark = darken($accent-text,20%);
+:root {
+    --primary: $primary;
+    --primary-light: $primary-light;
+    --primary-dark: $primary-dark;
+    --primary-darkest: $primary-darkest;
+    --secondary: $secondary;
+    --secondary-light: $secondary-light;
+    --secondary-lighter: $secondary-lighter;
+    --secondary-dark: $secondary-dark;
+    
+    --tertiery: $tertiery;
+    --quartiery: $quartiery;
+    --quartiery-light: $quartiery-light;
+    --quartiery-dark: $quartiery-dark;
+    --navigation-background: $navigation-background;
+    --background-color: $background-color;
+    --progress-background: black;
+    --dark-color: $dark-color;
+    --dark-color-darker: darken($dark-color, 20%);
+    --dark-color-darkest: darken($dark-color, 40%);
+    --button-color: $text-primary;
+    --text-color: $text-primary;
+    --text-color-highlight: $neon-green-light// white;//$neon-blue-light;
+    --link-color: white;
+    --link-color-highlight: $neon-green-light;
+}
+
+.light-mode {
+    --primary: $primary;
+    --primary-light: $primary-light;
+    --primary-dark: $primary-dark;
+    --primary-darkest: $primary-darkest;
+    --secondary: $secondary;
+    --secondary-light: $secondary-light;
+    --secondary-lighter: $secondary-lighter;
+    --secondary-dark: $secondary-dark;
+    
+    --tertiery: $tertiery;
+    --quartiery: $quartiery--light-mode;
+    --quartiery-light: $quartiery--light-mode-light;
+    --quartiery-dark: $quartiery--light-mode-dark;
+    --navigation-background: $primary--light-mode;
+    --background-color: $primary--light-mode;
+    --progress-background: white;
+    --dark-color: $primary--light-mode;
+    --dark-color-darker: darken($primary--light-mode, 5%);
+    --dark-color-darkest: darken($primary--light-mode, 20%);
+    --button-color: white;
+    --text-color: $primary-darkest;
+    --text-color-highlight: $quartiery--light-mode;
+    --link-color: $secondary
+    --link-color-highlight: $primary-darkest;
+}
+
+.text-primary
+    color var(--primary)
+.text-secondary
+    color var(--secondary)
+.text-tertiery
+    color var(--tertiery)
+
+.primary
+    background-color var(--primary)
+.secondary
+    background-color var(--secondary)
+.tertiery
+    background-color var(--tertiery)

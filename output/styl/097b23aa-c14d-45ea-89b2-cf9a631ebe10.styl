@@ -1,0 +1,212 @@
+@import "post"
+
+$color-bg-header = rgba(139, 112, 223, 0.9)
+
+body
+    &.page-index
+        background-image: url($bgimg-body)
+
+.head
+  &-index
+    background-color: $color-bg-header
+  a
+    color #fff
+    &:hover
+      opacity 0.8
+
+.index-banner
+    background: url("../../img/banner.png") no-repeat
+    background-size: contain
+    max-width: 728px
+    width: 95%
+    margin: 4% auto
+    color: #fff
+    line-height: 2.16rem;
+    font-style: italic
+    font-size: 1.08rem
+    position: relative
+
+    +tablet-down()
+        font-size: 0.844rem
+        line-height: 1.69rem
+
+    .banner-title
+        display: inline-block
+        position: relative
+        left: 50%
+        transform: translateX(-50%)
+        margin-top: 70%
+
+.index-main
+    max-width: 900px
+    margin: 0 auto
+
+    +tablet-down()
+        margin-top: 80px
+
+    ul
+        overflow: hidden
+
+    .topic
+        list-style: none
+        width: 50%
+        max-width: 450px
+        min-height: 406px
+        padding-right: 10px
+        box-sizing: border-box
+        float: left
+        background-position: center 36px
+        background-repeat: no-repeat
+
+        .content
+            position: relative
+            z-index: 10
+
+        &:nth-child(3)
+            .topic_bg
+                img
+                    top: -18px
+
+        &:nth-child(4)
+            .topic_bg
+                img
+                    left: -30px
+                    top: -74px
+
+        +tablet-down()
+            width: 95%
+            margin: 0 auto 20px
+            float: none
+            min-height: auto
+            display: -webkit-box
+            .content
+                margin: 0 !important
+                -webkit-box-flex: 4
+
+            &:nth-child(1)
+                .topic_bg
+                    img
+                        width: 160%
+
+            &:nth-child(3)
+                .topic_bg
+                    img
+                        width: 120%
+                        top: 0
+                        right: 0
+
+            &:nth-child(4)
+                .topic_bg
+                    img
+                        width: 170%
+                        left: -16px
+                        top: -25px
+
+            &:nth-child(5)
+                .topic_bg
+                    img
+                        width: 150%
+
+        div
+            margin-left: 134px
+
+        &:nth-child(even)
+            div
+                margin-left: 72px
+
+        h1
+            font-size: 1.32rem
+            margin-bottom: 12px
+            +tablet-down()
+                font-size: 1.1rem
+
+        h3, p
+            font-size: .75rem
+            margin-bottom: 8px
+            +tablet-down()
+                font-size: .675rem
+
+        h3
+            color: #333
+
+        p
+            color: #666
+            display: -webkit-box
+            -webkit-box-orient: vertical
+            -webkit-line-clamp: 3
+            overflow: hidden
+            +tablet-down()
+                -webkit-line-clamp: 5
+
+
+      .topic_bg
+          width: 240px
+          height: 240px
+          // border: 1px solid red;
+          position: relative
+          +tablet-down()
+              width: 150px
+              height: 150px
+              float: left
+              margin: 0 10px !important
+              -webkit-box-flex: 1
+          img
+              position: absolute
+              right: 0
+              z-index: 1
+              +tablet-down()
+                  width: 100%
+                  top: 8px
+
+
+.index-footer
+    box-sizing: border-box
+    max-width: 900px
+    width: 100%
+    margin: 30px auto
+    position: relative
+    padding-bottom: 50px
+    +tablet-down()
+        padding-bottom: 0
+        div
+            margin-left: 30px !important
+
+    .hold
+        color: #fff
+        margin-bottom: 8%
+        margin-left: 134px
+        +tablet-down()
+            margin-bottom: 5%
+
+        dt
+            font-size: 1.182rem
+            line-height: 2.7rem
+            +tablet-down()
+                font-size: 1.0125rem
+                line-height: 1.6875rem
+
+        dd
+            font-size: 0.92rem
+            line-height: 2.16rem
+            a
+                color: #fff
+
+            +tablet-down()
+                font-size: 0.7425rem;
+                line-height: 1.5188rem;
+
+        &.assist
+            dd
+                float: left
+                margin-right: 4.5%
+
+    .qrCode
+        position: absolute
+        right: 5%
+        top: 25%
+        +tablet-down()
+            width: 35%
+            padding-top: 8%
+            position: static
+            img
+                width: 100%

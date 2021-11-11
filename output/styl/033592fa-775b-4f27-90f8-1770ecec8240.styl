@@ -1,0 +1,157 @@
+.instabox
+    margin 0 0 35px 0
+
+    &__inner
+        background-color background-grey
+        padding 100px 0 45px 0
+        border-radius $border-radius
+
+        &-title
+            flexs(center-vertical)
+            justify-content center
+            margin 0px auto 0px auto
+            width 100%
+            max-width 700px
+
+            img
+                margin 0 25px 0 0
+                position relative
+                top 8px
+
+            span
+                font-weight 800
+                font-size 80px
+                line-height @font-size
+                display block
+
+            small
+                color #000
+                opacity .5
+                font-size 14px
+                line-height 16px
+                font-weight 500
+                display block
+                padding 18px 0 0 40px
+
+
+
+    &-swiper
+        padding 60px 0 0 0
+
+        .swiper-slide
+            width 300px
+
+        .swiper-controls
+            padding 0px 0 30px 50px
+
+            > *
+                position static
+                width 35px
+                background none
+                vendor(border-radius, 0px)
+                border none
+                margin 0 25px
+                opacity .75
+                vendor(transition, transform .3s ease)
+                will-change transform
+
+            .swiper-button-prev
+
+                &:hover
+                    vendor(transform, translateX(-5px))
+
+            .swiper-button-next
+
+                &:hover
+                    vendor(transform, translateX(5px))
+
+
+        &-link
+            position relative
+            display block
+            background-color #ebebeb
+            overflow hidden
+            border-radius $border-radius-element
+
+            &:focus, &:active
+                outline none !important
+
+            &::after
+                before-or-after-absolute('\f047')
+                font-family FontAwesome
+                width 40px
+                height @width
+                line-height @width
+                vendor(border-radius, 50%)
+                background-color background-brown
+                color #fff
+                text-align center
+                font-size 14px
+                right 20px
+                bottom 20px
+                z-index 4
+                vendor(transform, rotate(45deg))
+
+            img
+                position relative
+                z-index 1
+                opacity .75
+                vendor(transition, all 1.75s ease-in-out)
+
+                ^[-1]:hover img
+                    vendor(transform, scale(1.25))
+                    opacity 1
+
+
+
+    @media screen and (max-width: media-sm)
+
+        &__inner
+            padding 30px 0
+
+            &-title
+                flex-flow column nowrap
+                justify-content center
+                text-align center
+                padding 0 20px
+
+                img
+                    margin 0 0 15px 0
+
+                span
+                    font-size 50px
+                    line-height @font-size
+
+                small
+                    padding 20px 0 0 0
+
+        .swiper-pagination
+            padding 30px 0 0 0
+
+            &-bullet
+                margin 0 5px
+
+    @media screen and (max-width: media-xs)
+
+        &__inner
+
+            &-title
+
+                span
+                    font-size 38px
+                    line-height @font-size
+
+    @media screen and (max-width: media-ls)
+
+        &-swiper
+
+                .swiper-slide
+                    width 270px
+
+        &__inner
+
+            &-title
+
+                span
+                    font-size 30px
+                    line-height @font-size

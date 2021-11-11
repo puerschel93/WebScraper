@@ -1,0 +1,100 @@
+.nav {
+  background: $light-gray;
+  // nav bar top part
+  &__top-part {
+    @include flex (flex-end, center, row);
+    height: 50px;
+
+    .login {
+      font-size: 24px;
+      color: $dark-gray;
+      padding-right: 100px;
+      cursor: pointer;
+      transition: 300ms;
+
+      &:hover {
+        color: $gray;
+      }
+    }
+  }
+
+  // navbar bottom part (logo | searchbar | hamburger)
+  &__bottom-part {
+    @include flex (space-between, center, row);
+    height: 120px;
+    background: white;
+
+    .nav-logo {
+      padding-left: 145px;
+      .logo{
+      width: 167px;
+      height: 60px;
+      }
+    }
+    .searchbar{
+      position: relative;
+      right: -300px;
+    .nav-search {
+      height: 45px;
+      width: 435px;
+      background-color: $light-gray;
+      border-radius: 50px;
+      border: none;
+      filter: drop-shadow(5px 5px 10px rgba(0, 0 ,0 ,.05));
+      transition: 300ms;
+      padding-left: 20px;
+      &:hover, &:focus {
+        filter: drop-shadow(5px 5px 10px rgba(0, 0 ,0 ,.0));
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $gray;
+        font-size: 1.2em;
+        text-align: left;
+      }
+    }
+  }
+
+    .nav-burger {
+      padding-right: 110px;
+      position: relative;
+      top: 5px;
+      font-weight: bold;
+      &:hover {
+        .nav-burger__link-group {
+          opacity: .8;
+          visibility: visible;
+          transform: translateY(0px);
+          transition: opacity 300ms, visibility 0.2s, transform 0.2s;
+          background-color: white;
+          border-radius: 10px;
+        }
+      }
+
+      &__link {
+        position: relative;
+        display: block;
+        padding: 10px;
+        cursor: pointer;
+        color: $gray;
+        transition: 200ms;
+        &:hover:hover {
+          color: $orange;
+        }
+      }
+      
+      &__link-group {
+        line-height: 20px;
+        margin-right: 50px;
+        min-width: 200px;
+        position: absolute;
+        left:-80px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: 300ms;
+      }
+    }
+  }
+}

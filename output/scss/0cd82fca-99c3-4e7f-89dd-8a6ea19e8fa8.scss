@@ -1,0 +1,296 @@
+@charset "UTF-8";
+
+/*
+Name: Common Mixins
+URL: http://github.com/Darklg/CSSCommon
+Version: 2.0.0
+License: MIT
+*/
+
+$desktop-padding: 45px !default;
+$desktop-padding-neg: -45px !default;
+$tablet-padding: 30px !default;
+$tablet-padding-neg: -30px !default;
+$mobile-padding: 15px !default;
+$mobile-padding-neg: -15px !default;
+$font-size: 13px !default;
+$column_width: 90 !default;
+$gutter_width: 30 !default;
+$directions_rotate: top right bottom left;
+
+/* ----------------------------------------------------------
+  Components
+---------------------------------------------------------- */
+
+@import "components/absolute-pos";
+@import "components/cssc-font-face";
+@import "components/cssc-gradient";
+@import "components/cssc-hide-scrollbars";
+@import "components/cssc-modal";
+@import "components/cssc-keyframes";
+@import "components/desktop-grid-table";
+@import "components/grid-dimensions";
+@import "components/property-delay";
+@import "components/resp";
+@import "components/responsive-padding";
+@import "components/visibility-switch";
+
+/* ----------------------------------------------------------
+  Black & White
+---------------------------------------------------------- */
+
+@function black($opacity) {
+    @return rgba(0,0,0,$opacity);
+}
+
+@function white($opacity) {
+    @return rgba(255,255,255,$opacity);
+}
+
+/* ----------------------------------------------------------
+  Vertical center
+---------------------------------------------------------- */
+
+%vertical-center-content {
+    & {
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        -ms-flex-align: center;
+    }
+
+    &:after,
+    &:before {
+        content: '';
+    }
+
+    &:before {
+        align-self: flex-start;
+    }
+
+    &:after {
+        align-self: flex-end;
+    }
+
+    & > * {
+        width: 100%;
+        min-height: 0;
+    }
+}
+
+/* ----------------------------------------------------------
+  Justify items
+---------------------------------------------------------- */
+
+%justify-items {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -ms-box-orient: horizontal;
+}
+
+/* ----------------------------------------------------------
+  Responsive display
+---------------------------------------------------------- */
+
+/* Hide on mobile devices */
+
+@media($mobile_only) {
+    .hide-on-mobile {
+        display: none!important;
+    }
+}
+
+/* Hide on desktop devices */
+
+@media($mobile_excluded) {
+    .hide-on-desktop {
+        display: none!important;
+    }
+}
+
+/* Hide on devices larger than tablets */
+
+@media($desktop_only) {
+    .hide-above-tablet {
+        display: none!important;
+    }
+}
+
+/* Hide on tablets and smaller devices */
+
+@media($desktop_excluded) {
+    .hide-tablet-below {
+        display: none!important;
+    }
+}
+
+/* ----------------------------------------------------------
+  Same height children
+---------------------------------------------------------- */
+
+%same-height-children {
+    & {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+    }
+
+    &,
+    & > * {
+        box-sizing: border-box;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+/* ----------------------------------------------------------
+  Full width container : https://css-tricks.com/?p=243825
+---------------------------------------------------------- */
+
+@mixin full_width_container() {
+    z-index: 1;
+    position: relative;
+    right: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    width: 100vw;
+    margin-right: -50vw;
+    margin-left: -50vw;
+}
+
+%full-width-container {
+    @include full_width_container();
+}
+
+/* ----------------------------------------------------------
+  Columns
+---------------------------------------------------------- */
+
+%cssc-responsive-columns {
+    & {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        -webkit-column-gap: $mobile-padding;
+        -moz-column-gap: $mobile-padding;
+        column-gap: $mobile-padding;
+    }
+
+    & > * {
+        page-break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+@media($desktop_excluded) {
+    %cssc-responsive-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media($mobile_only) {
+    %cssc-responsive-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+
+/* ----------------------------------------------------------
+  Counter
+---------------------------------------------------------- */
+
+%counter-child {
+    & {
+        counter-reset: section;
+    }
+
+    & > * {
+        counter-increment: section;
+    }
+
+    & > *:before {
+        content: counter(section);
+        margin: auto;
+    }
+}
+
+/* ----------------------------------------------------------
+  Reset table
+---------------------------------------------------------- */
+
+%reset-table-div {
+    &,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td {
+        display: block;
+    }
+}
+
+/* ----------------------------------------------------------
+  Page full cover content
+---------------------------------------------------------- */
+
+%page-full-cover-content {
+    & {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        margin: auto;
+    }
+
+    & > * {
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        max-height: 100%;
+        overflow: auto;
+        -webkit-transform: translate3d(0,-50%,0);
+        transform: translate3d(0,-50%,0);
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ----------------------------------------------------------
+  Link with hidden text and icon
+---------------------------------------------------------- */
+
+%link-icon-notext {
+    & {
+        font-size: 0;
+    }
+
+    &:before {
+        @extend .icon!optional;
+        font-size: $font-size*1.6;
+    }
+}

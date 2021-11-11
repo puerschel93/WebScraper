@@ -1,0 +1,244 @@
+@import '../utils/variables';
+@import '../components/Form.module.scss';
+@import '../pages/ThankYou.module.scss';
+
+.paymentConfirmation
+{
+  &_container
+  {
+    max-width: 519px;
+    margin: auto;
+
+    & > div
+    {
+      @include typographyBuilder(400, 16, 24);
+      color: $color_black_text;
+      text-align: left;
+      margin: 24px 0;
+    }
+  }
+
+  &_title
+  {
+    @include typographyBuilder(600, 20, 24);
+    color: $color_black_text;
+  }
+
+  &_detailContent
+  {
+    padding: 12px 16px;
+    background: $color_light_low;
+  }
+
+  &_detailHeader
+  {
+    @include flex(row, center, flex-start);
+    padding: 12px 16px;
+    background: $color_light;
+  }
+
+  &_detailTitle,
+  &_detailTotalAmount
+  {
+    @include typographyBuilder(400, 12, 16);
+    text-align: left;
+    color: $color_grey;
+
+    & > span
+    {
+      display: block;
+      color: $color_black_text;
+    }
+  }
+
+  &_detailTotalAmount
+  {
+    & > span
+    {
+      @include typographyBuilder(400, 16, 24);
+      color: $color_black_text;
+    }
+  }
+
+  &_detailStatus
+  {
+    @include typographyBuilder(400, 10, 16);
+    margin-left: auto;
+    padding: 6px 10px;
+    border-radius: 23px;
+    color: $color_white;
+  }
+
+  &_detailDropdown
+  {
+    @include typographyBuilder(400, 12, 16);
+    color: $color_blue;
+    margin-left: auto;
+  }
+  
+  &_detailHeaderDropdown
+  {
+    @include flex(row, center, flex-start);
+    padding: 12px 0 16px 0;
+    border-bottom: 1px solid $color_light;
+    margin-bottom: 16px;
+  }
+
+  &_detailItemImg
+  {
+    margin-right: 8px;
+
+    img
+    {
+      @include fixedSize(40px);
+      object-fit: cover;
+    }
+  }
+
+  &_detailItemLabel
+  {
+    @include typographyBuilder(400, 12, 16);
+    color: $color_black_text;
+
+    & > span
+    {
+      display: block;
+      color: $color_grey;
+    }
+  }
+
+  &_detailItemPrice
+  {
+    @include typographyBuilder(400, 12, 16);
+    margin: auto 0 auto auto;
+    color: $color_black_text;
+  }
+
+  &_detailItem
+  {
+    @include flex(row, flex-start, center);
+    margin-bottom: 12px;
+  }
+
+  &_detailPriceBreakdown
+  {
+    border-top: 1px dashed $color_grey_light_border;
+    padding-top: 10px;
+  }
+
+  &_detailField
+  {
+    @include flex(row, center, flex-start);
+    margin-top: 8px;
+
+    span
+    {
+      @include typographyBuilder(400, 12, 16);
+      color: $color_black_text;
+    }
+
+    span:nth-child(2)
+    {
+      margin-left: auto;
+    }
+  }
+
+  &_detailTotalField
+  {
+    @include flex(row, center, flex-start);
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed $color_grey_light_border;
+
+    span
+    {
+      @include typographyBuilder(600, 12, 16);
+      color: $color_black_text;
+    }
+
+    span:nth-child(2)
+    {
+      margin-left: auto;
+    }
+  }
+
+  &_checkOrderDescription
+  {
+    @include typographyBuilder(400, 12, 16);
+    color: $color_grey;
+    margin: 10px 0 24px 0;
+  }
+
+  &_checkOrderInput
+  {
+    margin: 8px 0 24px 0;
+
+    input
+    {
+      @extend .form_inputLong
+    }
+  }
+
+  &_checkOrderTitle
+  {
+    @include typographyBuilder(600, 12, 16);
+    color: $color_grey;
+  }
+
+  &_checkPaymentOrderClose
+  {
+    display: none;
+  }
+
+  &_containerButton
+  {
+    margin: 32px 0 12px 0;
+  }
+
+  &_inputUpload
+  {
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    background-color: $color_white;
+    padding: 12px 0;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0;
+    color: rgba($color_black, 0);
+    opacity: 0;
+  }
+
+  &_inputContainer
+  {
+    position: relative;
+
+    &:nth-child(2)
+    {
+      border: dashed 1px $color_light;
+      margin-top: 40px;
+    }
+
+    &:nth-child(2) > label
+    {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate3d(-50%, -50%, 0);
+      z-index: 3;
+      pointer-events: none;
+      border: none;
+      background-color: transparent;
+      background-position: calc(50% - 70px) center;
+      background-repeat: no-repeat;
+      background-size: 21px auto;
+      background-image:  url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.75 11.25V13.5H18V15H15.75V17.25H14.25V15H12V13.5H14.25V11.25H15.75ZM15.756 2.25C16.167 2.25 16.5 2.58375 16.5 2.99475V9.75H15V3.75H3V14.2493L10.5 6.75L12.75 9V11.1217L10.5 8.87175L5.12025 14.25H10.5V15.75H2.244C2.04661 15.7498 1.85737 15.6712 1.71787 15.5316C1.57836 15.392 1.5 15.2026 1.5 15.0052V2.99475C1.50137 2.79778 1.58018 2.60926 1.71938 2.46991C1.85859 2.33056 2.04704 2.25157 2.244 2.25H15.756ZM6 5.25C6.39782 5.25 6.77936 5.40804 7.06066 5.68934C7.34196 5.97064 7.5 6.35218 7.5 6.75C7.5 7.14782 7.34196 7.52936 7.06066 7.81066C6.77936 8.09196 6.39782 8.25 6 8.25C5.60218 8.25 5.22064 8.09196 4.93934 7.81066C4.65804 7.52936 4.5 7.14782 4.5 6.75C4.5 6.35218 4.65804 5.97064 4.93934 5.68934C5.22064 5.40804 5.60218 5.25 6 5.25Z' fill='%23A2A2A2'/%3E%3C/svg%3E");
+    }
+  }
+
+  
+}

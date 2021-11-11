@@ -1,0 +1,136 @@
+@use '../common/helpers';
+
+@use '../scss/typography';
+
+@include helpers.lpds-prefix {
+  &-typography {
+    @include helpers.generate-css-variables(typography.$fonts, 'lpds-typography-font');
+    @include helpers.generate-css-variables(typography.$sizes, 'lpds-typography-size');
+    @include helpers.generate-css-variables(typography.$line-heights, 'lpds-typography-line-height');
+    @include helpers.generate-css-variables(typography.$weights, 'lpds-typography-weight');
+    @include helpers.generate-css-variables(typography.$letter-spacings, 'lpds-typography-letter-spacing');
+    @include helpers.generate-css-variables(typography.$font-size-heading, 'lpds-typography-heading');
+
+    &-font {
+      @include helpers.generate-helpers-classes(typography.$fonts, font-family);
+    }
+
+    &-size {
+      @include helpers.generate-helpers-classes(typography.$sizes, font-size);
+    }
+
+    &-line-height {
+      @include helpers.generate-helpers-classes(typography.$line-heights, line-height);
+    }
+
+    &-weight {
+      @include helpers.generate-helpers-classes(typography.$weights, font-weight);
+    }
+
+    &-letter-spacing {
+      @include helpers.generate-helpers-classes(typography.$letter-spacings, letter-spacing);
+    }
+
+    &-heading {
+      @include helpers.generate-helpers-classes(typography.$font-size-heading, font-size);
+    }
+
+    &-head {
+      @each $head in map-keys(typography.$font-size-heading) {
+        &-#{$head} {
+          @include typography.header($head);
+        }
+      }
+    }
+
+    &-body {
+      @include typography.body;
+
+      &-small {
+        @include typography.body(true);
+      }
+
+      &-bold {
+        @include typography.body-bold;
+
+        &-small {
+          @include typography.body-bold(true);
+        }
+      }
+
+      &-italic {
+        @include typography.body-italic;
+
+        &-small {
+          @include typography.body-italic(true);
+        }
+      }
+    }
+
+    &-button {
+      @include typography.button;
+
+      @each $key in (small, medium, large) {
+        &-#{$key} {
+          @include typography.button($key);
+        }
+      }
+    }
+
+    &-tag {
+      @include typography.tag;
+    }
+
+    &-table {
+      &-header {
+        @include typography.table-header;
+      }
+
+      &-cell {
+        @include typography.table-cell;
+      }
+    }
+
+    &-input {
+      &-label {
+        @include typography.input-label;
+      }
+
+      &-value {
+        @include typography.input-value;
+      }
+    }
+
+    &-code {
+      @include typography.code;
+    }
+
+    &-chart {
+      &-title {
+        @include typography.chart-title;
+      }
+
+      &-axis {
+        &-title {
+          @include typography.chart-axis-title;
+        }
+
+        &-label {
+          @include typography.chart-axis-label;
+        }
+      }
+
+      &-number {
+        @include typography.chart-number;
+
+        &-big {
+          @include typography.chart-number(true);
+        }
+
+        &-title {
+          @include typography.chart-number-title;
+        }
+      }
+    }
+  }
+}

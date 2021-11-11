@@ -1,0 +1,245 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:540;
+
+// VARIABLE SITE TYPO
+$font-body:"proxima-nova",verdana,sans-serif;
+$font-title:"futura-pt-condensed",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:270;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+
+
+//--------------------------------------------------------------------------------------
+//    PERSO STORENS
+//--------------------------------------------------------------------------------------
+
+
+/* AUTRES TEMPLATE */
+
+.container {
+
+    width: 1280px;
+
+    @media only screen and (max-width : 1280px) {
+
+        width: 960px
+
+    }
+
+}
+
+.color-rose {color:$color-rose;}
+
+//--------------------------------------------------------------------------------------
+//    MENU & NAV
+//--------------------------------------------------------------------------------------
+
+
+.menu-principal>li {
+  margin-left: -5px;
+  border:none;
+  background-color:rgba($color-rose,1.0);
+  padding: 5px 0px;
+  &:hover {
+    background-color:rgba($color-action-dark-10,0.9);
+  }
+}
+
+.menu-principal>li>a:hover {
+border-bottom: 0px solid #343f3d;
+}
+
+
+.menu-principal > li.menu-accueil {
+  @include border-top-left-radius(25px);
+  margin-right: 1px;
+}
+.menu-principal > li.menu-recrutement {
+  @include border-top-right-radius(25px);
+    margin-right: 1px;
+}
+
+.menu-principal > li.menu-vente {
+  margin-right: 1px;
+}
+
+.menu-principal > li.menu-alerte {
+  margin-right: 1px;
+}
+
+
+
+@media only screen and (max-width : 767px) {
+header .logo img {
+width: 80%;
+}
+}
+
+.logo img {
+  padding: 1px 2px;
+  margin-right: 550px;
+}
+
+@media only screen and (max-width : 767px) {
+.h1-index {
+font-size:0.90em;
+}
+}
+
+.navigation {
+  background-image:url("../images/homepage/header.jpg");
+  background-color:$color-primary;
+  background-position:bottom center;
+  background-repeat:no-repeat;
+  border-bottom:8px solid $color-action;
+}
+
+//--------------------------------------------------------------------------------------
+//    INDEX
+//--------------------------------------------------------------------------------------
+
+.titre-budget { color:#FFF;}
+
+.moteur-avantage {margin-bottom:250px;}
+.bg-mini-moteur {margin-bottom:250px;}
+
+
+//--------------------------------------------------------------------------------------
+//    CARTE ACCUEIL
+//--------------------------------------------------------------------------------------
+
+ul#Plan *{text-decoration: none; font-size: 1em; font-weight: bold;}
+ul#Plan{padding: 2em 8em; list-style: none;}
+ul#Plan li.plan { color: #d7159a; font-size: 16px; font-weight: bold; text-transform: uppercase; }
+ul#Plan li.planAnnonces{border-bottom: 1px solid #c4c4c4; font-size: 1.6em;}
+ul#Plan li.planAnnonces{margin: 2em 0 0 0;}
+ul#Plan li{padding: 0.3em 0; border-bottom: 1px solid #c4c4c4;}
+ul#Plan li a{display: block; color:#343434;}
+ul#Plan li a:hover{color: #d7159a; text-decoration:none;}
+ul#Plan span.nbAnn{font-size: 0.9em;}
+ul#Plan li ul{ margin: 0 0 0 25px; list-style-type: square;}
+ul#Plan li ul li.subListTitle{border: none;}
+ul#Plan li ul li.subList{border-top: 1px dashed #c4c4c4; border-bottom: none;}
+ul#Plan li ul li.subListVilles{width: 31%; float: left; position : relative; padding: 1em 0 0.5em 0; margin: 0 1em 0 0; }
+.resultCtn p { border-bottom: none; }
+
+/*carte*/
+.bgcarte {
+  position: relative;
+  left: 3px;
+  top: 3px;
+  width:433px;
+}
+.secteur-ville {
+  position: absolute;
+  display: none;
+  background-color: white;
+  -moz-opacity: 0.90;
+  filter: alpha(opacity=90);
+  opacity: 0.90;
+  border: 1px solid #bc0798;
+  padding: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.secteur-ville div { color: #d60093; text-align: left; }
+#ville1 {
+  top: 60px;
+  right: 150px;
+}
+#ville2 {
+  bottom: 0px;
+  right: 140px;
+}
+#ville3 {
+  top: 100px;
+  left: 30px;
+}
+#ville4 {
+  top: 75px;
+  left: 0px;
+}
+
+
+#cartos {  height: 419px; margin-bottom: 15px; }
+
+
+//--------------------------------------------------------------------------------------
+//    PAGE RECRUTEMENT
+//--------------------------------------------------------------------------------------
+.txt-big { font-size: 1.2em; }
+
+
+#Mini_Moteur > div:nth-child(6) > div.row-fluid.titre-section-refine {display:none;}
+
+//--------------------------------------------------------------------------------------
+//    PAGE AGENCE
+//--------------------------------------------------------------------------------------
+
+#accordion-mentions > div > div.accordion-heading {display:none;}
+
+.quartier-annonce {display:none;}

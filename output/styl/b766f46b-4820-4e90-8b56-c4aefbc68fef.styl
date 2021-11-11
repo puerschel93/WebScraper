@@ -1,0 +1,371 @@
+@font-face
+  font-family           Poiretone
+  src                   url("../fonts/poiretone.woff") format("woff"), url("../fonts/poiretone.woff2") format("woff2")
+
+html, body
+  background            #EEE
+  color                 #111
+  margin                0px
+  padding               0px
+  border                0px
+  font-family           Lato
+  max-width             100%
+  overflow-x            hidden
+
+p, h1, h2, h3, h4, h5, h6
+  color                 #111
+
+h1
+  font-size             2.0rem
+
+h2
+  font-size             1.8rem
+
+h3
+  font-size             1.5rem
+
+p, li
+  font-size             1.3rem
+
+p
+  line-height           1.5rem
+
+li
+  line-height           1.5rem
+
+a
+  color                 #619CF4
+  text-decoration       none
+
+a:link
+  text-decoration       none
+
+a:visited
+  text-decoration       none
+
+a:hover
+  text-decoration       underline
+
+#header
+  width                 100%
+  max-width             1000px
+  position              relative
+  margin-top            35px
+  margin-left           auto
+  margin-right          auto
+  padding-bottom        5px
+  border-bottom         5px solid #111
+  font-weight           700
+
+#header a:active
+  outline               0px
+  border                0px
+
+#header a:focus
+  outline               0px
+  border                0px
+
+#header-left
+  width                 50%
+
+#header-left-menu
+  margin-bottom         10px
+
+#header-title
+  display               inline
+  height                64px
+  font-size             3.5rem
+  padding-left          10px
+  user-select           none
+  -webkit-user-select   none
+  -moz-user-select      none
+  -ms-user-select       none
+  font-family           Poiretone
+
+#header-title a:hover
+  text-decoration       none
+
+#header-title-first-part
+  color: #111
+
+#header-title-second-part
+  color: #619CF4
+
+#header-title:hover #header-title-first-part
+  color: #619CF4
+
+#header-title:hover #header-title-second-part
+  color: #111
+
+#header-right
+  text-align: right
+  width: 45%
+  position: absolute
+  bottom: 10px
+  right: 10px
+
+.menu, .menu *
+  margin: 0
+  padding: 0
+  list-style: none
+
+.menu
+  color: #111
+  font-size: 1.0rem
+  line-height: 1.0
+  text-align: right
+
+#header-left .menu
+  display: inline
+  position: absolute
+  bottom: 0
+
+#header-right .menu
+  position: absolute
+  right: 0
+  bottom: 0
+
+.menu ul li
+  width: 100%
+
+.menu li:hover
+  visibility: inherit
+
+.menu li
+  float: left
+  position: relative
+  margin-left: 15px
+
+.menu a
+  display: block
+  position: relative
+  text-decoration: none
+  text-transform: uppercase
+  color: #111
+
+.menu a:hover
+  color: #619CF4
+
+#content
+  width                 calc(100% - 20px)
+  max-width             980px
+  margin                15px auto 0
+  font-weight           400
+  line-height           1.5rem
+
+#content h2
+  color: #EEE
+  background: #111
+  width: 100%
+  padding-left: 8px
+  padding-right: 8px
+  padding-top: 15px
+  padding-bottom: 15px
+  width: calc(100% - 16px)
+  text-transform uppercase
+
+#content h3
+  text-decoration: underline
+
+#footer
+  width                 100%
+  max-width             1000px
+  margin-left: auto
+  margin-right: auto
+  margin-top: 15px
+  position: relative
+  border-top: 5px solid #111
+  padding: 0
+  text-align: right
+  color: #EEE
+
+#footer p
+  font-weight: 300
+  margin-top: 10px
+  padding-right: 10px
+
+#welcome-container
+  display               flex
+  align-items           center
+  flex-wrap             nowrap
+
+#welcome-image
+  background-position   center
+  background-repeat     no-repeat
+  background-size       contain;
+  flex 1 1 0px
+  width 100%
+  min-width 250px
+  height 300px
+
+#welcome-greeting
+  height                100%
+  flex                  1 1 0px
+  min-width             200px
+  font-size             30px
+  line-height           35px
+  text-align            center
+  display               table-cell
+  vertical-align        middle
+  font-weight           300
+  margin-top            10px
+  margin-bottom         10px
+
+#article-index li
+  font-size 2.0rem
+  line-height 1.0rem
+
+#article-index
+  list-style: none
+  counter-reset: li -1
+
+#article-index li:before
+  counter-increment: li
+  font-family: helvetica
+  content: "000" counter(li)". "
+
+#article-index li:nth-child(n+11):before
+  content: "00" counter(li)". "
+
+#article-index li:nth-child(n+101):before
+  content: "0" counter(li)". "
+
+#article-index li:nth-child(n+1001):before
+  content: counter(li)". "
+
+.article-image-wrapper
+  display: block
+  margin-left: auto
+  margin-right: auto
+
+.article-image
+  border: 8px solid #FFF
+  background: #FFF
+
+.article-image img
+  width: 100%
+  display: block
+
+.article-image iframe
+  width: 100%
+  display: block
+
+.article-image p
+  text-align: center
+  padding: 0px
+  font-size: 0.8em
+  font-weight: bold
+  margin: 5px 0px 0px 0px
+
+#article-work-in-progress
+  background: #F00
+
+#index-article-list
+  width 100%
+
+#index-article-list a:hover,active,visited
+  text-decoration       none
+  output                none
+  box-shadow            none !important;
+
+#index-article-list-item
+  background            #F5F5F5
+  width                 calc(100%)
+  height                150px
+  display               flex
+  justify-content       center
+  align-items           center
+
+#index-article-list-item:hover
+  background           #E7F0FD
+  cursor               pointer
+
+#index-article-list-item-heading
+  user-select           none
+  -webkit-user-select   none
+  -moz-user-select      none
+  -ms-user-select       none
+
+#index-article-list-item:hover #index-article-list-item-heading
+  color: #619CF4
+
+#index-article-list-item-left
+  flex 1 0 auto
+  padding-left  30px
+
+#index-article-list-item-left h1, #index-article-list-item-left p
+  margin 0px
+  padding 8px
+
+#index-article-list-item-left p
+  font-size 15px
+
+#index-article-list-item-right
+  height               150px
+  width                500px
+  display              inline
+  position             relative
+
+#index-article-list-item-image
+  width                100%
+  height               100%
+
+#index-article-list-item-image-overlay
+  width                100%
+  height               100%
+  --box-shadow-color   #F5F5F5
+  box-shadow           50px 0 25px -2px var(--box-shadow-color) inset;
+  background           rgba(245, 245, 245, 0.0)
+  position             absolute
+  right                0px
+  top                  0px
+
+#index-article-list-item:hover #index-article-list-item-image-overlay
+  --box-shadow-color   #E7F0FD
+  background           rgba(245, 245, 245, 0.1)
+
+///////////////////////////////////////////////////////////////////////////////
+// Small screen configuration
+
+@media screen and (max-width: 800px)
+  #header-title
+    font-size           2.8rem
+
+  .menu
+    font-size           0.9rem
+
+  .menu li
+    margin-left         8px
+
+  h1
+    font-size           1.5rem
+
+  h2
+    font-size           1.3rem
+
+  h3
+    font-size           1.1rem
+
+  p, li
+    font-size           1.0rem
+    line-height         1.2rem
+
+  #content h2
+    padding             10px
+
+  #article-index li
+    font-size           1.5rem
+    line-height         1.0rem
+
+@media screen and (max-width: 580px)
+  .hide-on-small-displays
+    display             none
+
+  #header-left
+    width               100%
+
+  #welcome-greeting
+    font-size           20px
+
+  #welcome-container
+    flex-wrap           wrap

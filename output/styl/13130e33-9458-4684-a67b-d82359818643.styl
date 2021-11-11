@@ -1,0 +1,215 @@
+.c-kv-box
+  background-color: #efefef
+  width: 100%
+  // height: 100vmin
+  height: 30vh
+  box-sizing: border-box
+  border: 1px solid red
+.c-slide-contents
+  .slick-list
+    width 100%
+    .slick-slide
+      height: auto
+    img
+      width auto
+      max-width: 100%
+
+.c-youtube-outter
+  width: 100%
+  max-width: 700px
+  .c-youtube-wrapper
+    width: 100%
+    box-sizing: border-box
+    padding-top: 56.25%
+    position: relative
+    margin-bottom: 10px
+    .c-youtube-contents
+      position: absolute
+      left 0
+      top: 0
+      width 100%
+      height 100%
+      .c-youtube-thumb
+        position: absolute
+        left 0
+        top: 0
+        width 100%
+        height 100%
+        background-color blue
+        opacity 0.3
+.c-scroll-zone
+  box-sizing: border-box
+  .c-scroll-child
+    min-height: 100px
+    box-sizing: border-box
+    border: 1px solid #000000
+    margin-bottom: 10px
+    opacity 0
+    transform: translate(0, 20px) scale(0.95)
+    transition all 0.4s ease-in-out
+    &.show
+      opacity 1
+      border-color red
+      color blue
+      transform: translate(0, 0px) scale(1)
+
+.c-model-zone
+  .c-model-btn
+    box-sizing border-box
+    border 1px solid gray
+    padding 10px 10px
+    margin 0 auto 10px
+
+.c-menu
+  right -80vw
+  position fixed
+  z-index 99
+  transition 0.1s all ease-in-out
+  top 0
+  &:before
+    position fixed
+    right 0
+    top 0
+    content ""
+    width 100vw
+    background-color rgba(0,0,0,0.3)
+    height 100%
+    display none
+    z-index -1
+  &.active
+    right 0
+    &:before
+      display block
+  +pc()
+    display none
+  +sp()
+    display block
+    .c-menu-btn
+      width 60px
+      height 60px
+      position absolute
+      left -60px
+      top 0
+      background-color red
+      z-index 100
+    .c-menu-contents
+      width 80vw
+      height 100vh
+      background-color #efefef
+      overflow scroll
+  .c-menu-contents-item
+    display flex
+    font-size 5vw
+    height 30vw
+    border-bottom 1px solid #000
+    align-items center
+    box-sizing border-box
+    padding 0 5vw
+
+.c-page-top-scroll
+  position fixed
+  z-index 10
+  +pc()
+    right 20px
+    bottom 20px
+  +sp()
+    right 20px
+    bottom 20px
+  a
+    display block
+    background-color blue
+    opacity 0.3
+    +pc()
+      width 60px
+      height 60px
+    +sp()
+      width 60px
+      height 60px
+
+.c-artcolor-list
+  width 100%
+  max-width 600px
+  margin 0 auto 20px
+  display flex
+  justify-content center
+  align-items center
+  .list
+    width 120px
+    height 120px
+    margin 0 10px
+    box-sizing border-box
+    border 1px solid pink
+    display flex
+    justify-content center
+    align-items center
+    border-radius 0
+    transition 0.3s all ease-in-out
+    a
+      color black
+    span.color
+      opacity 0
+      animation rolling 2s infinite
+      transition opacity 0.2s ease-in-out
+      // animation-timing-function linear
+    &.is-active
+      font-size 1.2em
+    &.is-colorful
+      border-radius 50%
+      overflow hidden
+      transition 1s all ease-in-out
+      position relative
+      span.color
+        opacity 1
+        position absolute
+        z-index 1
+        content ''
+        transform translate(-50% , -50%)
+        left 50%
+        top 50%
+        width 130%
+        padding-top 130%
+        box-sizing border-box
+        background linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%), linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%), linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+
+
+@keyframes rolling{
+  from {
+    transform: translate(-50% , -50%) rotate(0)
+  }
+  to {
+    transform: translate(-50% , -50%) rotate(360deg)
+  }
+}
+
+
+.c-location-zone
+  display block
+  background-color #efefef
+  margin 0 auto 30px
+  .c-location-contents
+    background-color blue
+    cursor pointer
+    user-select none
+    color #fff
+    box-sizing border-box
+    padding 10px
+  .c-location-result
+    padding 10px
+    box-sizing border-box
+    table
+      width 100%
+      box-sizing border-box
+    th
+      width 100px
+    th,td
+      border-bottom 1px solid blue
+      padding 10px
+      text-align left
+
+
+
+
+
+
+
+

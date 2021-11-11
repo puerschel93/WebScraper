@@ -1,0 +1,154 @@
+@import "variables.scss";
+
+$contentStyles: space-between, space-around, center, flex-start, flex-end;
+
+.focus {
+  border: 1px solid rgb(61, 137, 207);
+  box-shadow: 0px 0px 6px 1px rgb(89, 175, 255);
+}
+
+.blur {
+  border: 1px solid rgb(226, 221, 221);
+  box-shadow: none;
+}
+
+.danger {
+  border: 1px solid rgb(233, 34, 34);
+}
+
+.focus-danger {
+  box-shadow: 0px 0px 6px 1px rgb(235, 65, 65);
+}
+
+.form-bx {
+  margin-top: 40px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  border-radius: 14px;
+  @include flex-center(column);
+
+  .form-title {
+    @include flex-center(column);
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 10px;
+
+    img {
+      padding: 20px;
+      height: 200px;
+      width: 200px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: $primaryColor;
+      height: fit-content;
+      text-transform: uppercase;
+    }
+  }
+
+  .divider {
+    width: 100%;
+    margin: 5px 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    flex-direction: row;
+  }
+
+  @each $style in $contentStyles {
+    .#{$style} {
+      justify-content: $style;
+    }
+  }
+}
+
+.input-group {
+  height: $Bxheight + 5px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-radius: $borderRadius;
+  background-color: white;
+  margin: $itemMargin;
+  transition: all 0.2s ease-in-out;
+
+  span {
+    color: rgb(189, 189, 189);
+    flex: 1;
+    font-size: 1.2rem;
+    @include flex-center(column);
+  }
+
+  .suffix {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input {
+    font-size: $Bxheight * 0.4;
+    height: 100%;
+    width: 100%;
+    flex: 8;
+    border: none;
+    border-radius: $borderRadius;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: rgb(189, 189, 189);
+    }
+  }
+
+  .message {
+    color: rgb(233, 34, 34);
+    font-size: 0.9rem;
+    position: absolute;
+    top: $Bxheight + 5px;
+  }
+}
+
+.check-bx {
+  @include flex-center(row);
+  margin: $itemMargin;
+
+  input {
+    height: 15px;
+    width: 15px;
+    margin: 0px 5px;
+  }
+
+  label {
+    height: 100%;
+    font-size: 1rem;
+  }
+}
+
+.submit-btn {
+  padding: 1%;
+  font-size: 1.3rem;
+  margin: $itemMargin;
+  height: $Bxheight;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: $primaryColor;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.25s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(101, 164, 223);
+  }
+}
+
+.shake-animation {
+  animation: shake 0.8s ease-in;
+}

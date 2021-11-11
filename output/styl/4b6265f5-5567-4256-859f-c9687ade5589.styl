@@ -1,0 +1,97 @@
+// @domain      ELEMENT PADDINGS
+// @namespace   pad:
+// +++++++++++++++++++++++++++++++++++++++++
+padLimit = limits.paddings
+
+pad
+    if !!((padLimit)px)
+        &:xyEq
+            +at-breaks()
+                --pad-xyEq: 1px
+                padding: var(--pad-xyEq)
+
+        &:xEq
+            +at-breaks()
+                --pad-xEq: 1px
+                padding-left: var(--pad-xEq)
+                padding-right: var(--pad-xEq)
+
+        &:xStart
+            +at-breaks()
+                --pad-xStart: 1px
+                padding-left: var(--pad-xStart)
+
+        &:xEnd
+            +at-breaks()
+                --pad-xEnd: 1px
+                padding-right: var(--pad-xEnd, 1px)
+
+        &:yEq
+            +at-breaks()
+                --pad-yEq: 1px
+                padding-bottom: var(--pad-yEq)
+                padding-top: var(--pad-yEq)
+
+        &:yStart
+            +at-breaks()
+                --pad-yStart: 1px
+                padding-top: var(--pad-yStart)
+
+        &:yEnd
+            +at-breaks()
+                --pad-yEnd: 1px
+                padding-bottom: var(--pad-yEnd)
+
+
+        for i in (padLimit)
+            num = i/100
+            num = (i is 0) ? 0 : num
+            num = (i is 10) ? .125 : num
+            setPadding = flow(num)
+
+            &:xyEq{i}
+                +at-breaks()
+                    --pad-xyEq: setPadding
+
+            &:xEq{i}
+                +at-breaks()
+                    --pad-xEq: setPadding
+
+            &:xStart{i}
+                +at-breaks()
+                    --pad-xStart: setPadding
+
+            &:xEnd{i}
+                +at-breaks()
+                    --pad-xEnd: setPadding
+
+            &:yEq{i}
+                +at-breaks()
+                    --pad-yEq: setPadding
+
+            &:yStart{i}
+                +at-breaks()
+                    --pad-yStart: setPadding
+
+            &:yEnd{i}
+                +at-breaks()
+                    --pad-yEnd: setPadding
+
+//  these should be something else
+--set
+    if (limits.padxFlush)
+        &:xFlush
+            +at-breaks()
+                &:first-child
+                    padding-left: 0
+
+                &:last-child
+                    padding-right: 0
+    if (limits.padyFlush)
+        &:yFlush
+            +at-breaks()
+                &:first-child
+                    padding-top: 0
+
+                &:last-child
+                    padding-bottom: 0

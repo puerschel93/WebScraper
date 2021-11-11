@@ -1,0 +1,592 @@
+@import "variables";
+
+// RESET
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+// INDEX
+
+#index__main {
+  width: 100%;
+  height: 100vh;
+  background-color: $color001;
+  font-family: $font001;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .index__section001 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      width: 30%;
+      border: 1px solid black;
+      margin-bottom: 1.6rem;
+      padding: 0.4rem 1rem;
+    }
+    p {
+      width: 60%;
+      margin: 0 auto;
+      font-family: $font002;
+      font-size: 1.6rem;
+      margin-bottom: 1.4rem;
+    }
+    a {
+      color: black;
+    }
+    .index__button {
+      font-size: 1.4rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid black;
+      color: black;
+      background-color: $color003;
+    }
+    .index__button:hover {
+      background-color: black;
+      color: $color003;
+    }
+  }
+}
+
+// SING UP
+
+#singup {
+  width: 100%;
+  height: 100vh;
+  background-color: $color002;
+  font-family: $font001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  h1 {
+    font-family: $font001;
+    margin: 2rem;
+  }
+  form {
+    width: 22%;
+    margin: 0 auto;
+    .singup__div {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .singup__li {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      label {
+        font-size: 1.4rem;
+        font-family: $font002;
+      }
+      ::placeholder {
+        color: rgb(0, 0, 0);
+      }
+      input {
+        background-color: $color002;
+        border: none;
+        border-bottom: 2px solid black;
+        color: $color001;
+        padding: 0.2rem;
+        font-family: $font002;
+      }
+    }
+    .singup__button {
+      font-size: 1.4rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid black;
+      color: black;
+      background-color: $color003;
+    }
+    .singup__button:hover {
+      background-color: black;
+      color: $color003;
+    }
+  }
+}
+
+// Modal
+
+.modal-bg {
+  width: 100%;
+  .modal {
+    width: 60%;
+  }
+}
+// HOME
+
+#home_header {
+  width: 100%;
+  font-family: $font001;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    margin: 0 4rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+  }
+  .home_nav001 {
+    margin: 0 4rem;
+    width: 40%;
+    color: black;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      a {
+        color: black;
+        font-weight: 500;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  i {
+    display: none;
+  }
+}
+.home_nav002 {
+  display: none;
+}
+
+.active {
+  display: block;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-family: $font001;
+  a {
+    color: black;
+  }
+}
+
+#aboutMain,
+#contactMain,
+#logout {
+  text-align: center;
+}
+
+// Media Querys
+
+// maxWidth768px
+@media screen and (max-width: 768px) {
+  // Sing Up!
+  #singup {
+    width: 100%;
+    form {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+  // Modal
+  .modal-bg {
+    width: 100%;
+    .modal {
+      width: 60%;
+    }
+  }
+
+  // Home
+  #home_header {
+    width: 100%;
+    margin: 1rem 0;
+    position: relative;
+    .home_nav001 {
+      display: none;
+    }
+    i {
+      display: block;
+      font-size: 2rem;
+      padding-right: 3rem;
+    }
+  }
+  .home_nav002 {
+    display: none;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    ul {
+      position: relative;
+    }
+  }
+  #homeMain {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  //@extend
+
+  #homeMain {
+    width: 100%;
+    height: auto;
+    font-family: $font001;
+    .home_title {
+      color: black;
+      width: 70%;
+      margin: 0 auto;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .home_section_one {
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 0.6rem;
+      border: 1px solid black;
+      padding: 0.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      textarea {
+        width: 100%;
+        resize: none;
+      }
+      .home_escribir_tweet {
+        max-width: 100%;
+        height: auto;
+        padding: 0.6rem;
+        flex-wrap: no-wrap;
+      }
+      .send {
+        width: 18%;
+        margin-top: 0.5rem;
+        text-align: center;
+        padding: 0.1rem 0.4rem;
+      }
+    }
+    .home_section_two {
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .user {
+      font-weight: 700;
+    }
+    .mrBoton {
+      margin-bottom: 1rem;
+    }
+    .tweet {
+      border: 1px solid black;
+      background-color: pink;
+      text-align: start;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .tuitHome {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .tuitContainer {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+  }
+
+  .btn {
+    background-color: pink;
+    font-weight: 700;
+    width: 20%;
+    margin: 0.2rem;
+  }
+
+  .user {
+    padding: 0 0.2rem;
+  }
+
+  .tweet {
+    width: 100%;
+    background-color: pink;
+    padding: 0.2rem 0.6rem;
+  }
+
+  // About
+  #aboutMain {
+    width: 80%;
+    margin: 0 auto;
+    font-family: $font002;
+    .aboutSectionOne {
+      width: 100%;
+      .profileImg {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+// maxWidth992px
+@media screen and (max-width: 992px) {
+  #home_header {
+    width: 100%;
+    margin: 1rem 0;
+    position: relative;
+    .home_nav001 {
+      display: none;
+    }
+    i {
+      display: block;
+      font-size: 2rem;
+      padding-right: 3rem;
+    }
+  }
+  .home_nav002 {
+    display: none;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    ul {
+      position: relative;
+    }
+  }
+  #homeMain {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  //@extend
+
+  #homeMain {
+    width: 100%;
+    height: auto;
+    font-family: $font001;
+    .home_title {
+      color: black;
+      width: 70%;
+      margin: 0 auto;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .home_section_one {
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 0.6rem;
+      border: 1px solid black;
+      padding: 0.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      textarea {
+        width: 100%;
+        resize: none;
+      }
+      .home_escribir_tweet {
+        max-width: 100%;
+        height: auto;
+        padding: 0.6rem;
+        flex-wrap: no-wrap;
+      }
+      .send {
+        width: 18%;
+        margin-top: 0.5rem;
+        text-align: center;
+        padding: 0.1rem 0.4rem;
+      }
+    }
+    .home_section_two {
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .user {
+      font-weight: 700;
+    }
+    .mrBoton {
+      margin-bottom: 1rem;
+    }
+    .tweet {
+      border: 1px solid black;
+      background-color: pink;
+      text-align: start;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .tuitHome {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .tuitContainer {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+  }
+
+  .btn {
+    background-color: pink;
+    font-weight: 700;
+    width: 20%;
+    margin: 0.2rem;
+  }
+
+  .user {
+    padding: 0 0.2rem;
+  }
+
+  .tweet {
+    width: 100%;
+    background-color: pink;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+// minWidth992px
+@media screen and (min-width: 992px) {
+  #home_header {
+    .fas {
+      display: none;
+    }
+    width: 100%;
+    margin: 1rem 0;
+    position: relative;
+    .home_nav001 {
+      display: block;
+    }
+    i {
+      display: block;
+      font-size: 2rem;
+      padding-right: 3rem;
+    }
+  }
+  .home_nav002 {
+    display: none;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    ul {
+      position: relative;
+    }
+  }
+  #homeMain {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  //@extend
+
+  #homeMain {
+    width: 100%;
+    height: auto;
+    font-family: $font001;
+    .home_title {
+      color: black;
+      width: 70%;
+      margin: 0 auto;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+    .home_section_one {
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 0.6rem;
+      border: 1px solid black;
+      padding: 0.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      textarea {
+        width: 100%;
+        resize: none;
+      }
+      .home_escribir_tweet {
+        max-width: 100%;
+        height: auto;
+        padding: 0.6rem;
+        flex-wrap: no-wrap;
+      }
+      .send {
+        width: 18%;
+        margin-top: 0.5rem;
+        text-align: center;
+        padding: 0.1rem 0.4rem;
+      }
+    }
+    .home_section_two {
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .user {
+      font-weight: 700;
+    }
+    .mrBoton {
+      margin-bottom: 1rem;
+    }
+    .tweet {
+      border: 1px solid black;
+      background-color: pink;
+      text-align: start;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .tuitHome {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .tuitContainer {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+  }
+
+  .btn {
+    background-color: pink;
+    font-weight: 700;
+    width: 20%;
+    margin: 0.2rem;
+  }
+
+  .user {
+    padding: 0 0.2rem;
+  }
+
+  .tweet {
+    width: 100%;
+    background-color: pink;
+    padding: 0.2rem 0.6rem;
+  }
+}

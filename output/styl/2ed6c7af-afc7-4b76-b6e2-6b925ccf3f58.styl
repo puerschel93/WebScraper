@@ -1,0 +1,506 @@
+.header
+	&__body
+		position relative
+		@extend .in
+		padding-top 28px
+		padding-right 80px
+		padding-left 116px
+		padding-bottom 30px
+		background #fff url('../images/general/header-bg.png') 100% 92px no-repeat
+		font-size 0
+	&__phone,
+	&__logo,
+	&__social,
+	&__meta
+		display inline-block
+		vertical-align top
+	&__phone
+		width 338px
+	&__logo
+		width 288px
+	&__social
+		width 172px
+	&__meta
+		margin-top 27px
+		width 202px
+	&__bottom
+		position relative
+		background-color $color-gray-light
+		clearfix()
+	&__in
+		position relative
+		@extend .in
+	&_second
+		.header__social_big
+			padding-top 26px
+			padding-left 16px
+		.header__meta
+			padding-top 26px
+.phone
+	padding-top 15px
+	padding-right 70px
+	&__number
+		margin-bottom 10px
+		display block
+		font-family $roboto-lght
+		font-size 28px
+		font-weight normal
+		line-height 1
+		text-transform uppercase
+		text-align right
+		text-decoration none
+		color #171717
+		a
+			display block
+			color #171717
+			text-decoration none
+	&__link
+		display block
+		font-family $roboto-lght
+		font-size 14px
+		font-weight normal
+		line-height 1
+		text-decoration underline
+		text-align right
+		color #666
+
+		&:hover
+			text-decoration none
+	&_style-second
+		// width 230px
+		display inline-block
+		vertical-align top
+		padding-top 0
+		padding-right 0
+		padding-left 26px
+		.phone__number
+			margin-bottom 3px
+			font-size 24px
+			color #fff
+		.phone__link
+			margin-top 22px
+			font-size 12px
+			color #FFF
+			text-align center
+.logo
+	text-indent -9999px
+	display block
+	sprite($logo)
+	&_second
+		sprite($logo_small)
+
+.social
+	padding-top 18px
+	padding-right 38px
+	padding-left 42px
+	font-size 0
+	&_big
+		padding-top 0
+		padding-right 0
+		padding-left 22px
+	&__item
+		margin-right 7px
+		margin-bottom 7px
+		display inline-block
+		vertical-align top
+		border-radius 50%
+		hide-text()
+		&:nth-child(3n)
+			margin-right 0
+	&__item_instagram
+		sprite($inst)
+		&:hover
+			sprite($inst_hover)
+		&.social__item_big
+			sprite($inst_big)
+			background-color #fff
+			&:hover
+				sprite($inst_big_hover)
+	&__item_facebook
+		sprite($fb)
+		&:hover
+			sprite($fb_hover)
+		&.social__item_big
+			sprite($fb_big)
+			background-color #fff
+			&:hover
+				sprite($fb_big_hover)
+	&__item_vk
+		sprite($vk)
+		&:hover
+			sprite($vk_hover)
+		&.social__item_big
+			sprite($vk_big)
+			background-color #fff
+			&:hover
+				sprite($vk_big_hover)
+	&__item_ok
+		sprite($ok)
+		&:hover
+			sprite($ok_hover)
+		&.social__item_big
+			sprite($ok_big)
+			background-color #fff
+			&:hover
+				sprite($ok_big_hover)
+	&__item_gplus
+		sprite($gplus)
+		&:hover
+			sprite($gplus_hover)
+		&.social__item_big
+			sprite($gplus_big)
+			background-color #fff
+			&:hover
+				sprite($gplus_big_hover)
+	&__item_youtube
+		sprite($youtube)
+		&:hover
+			sprite($youtube_hover)
+		&.social__item_big
+			sprite($youtube_big)
+			background-color #fff
+			&:hover
+				sprite($youtube_big_hover)
+.controls
+	position absolute
+	top 18px
+	right 84px
+	// margin-top -10px
+	// margin-bottom 24px
+	font-size 12px
+	line-height 12px
+	color #666
+	text-align right
+	&__link
+		font-family $roboto-lght
+		font-size 12px
+		font-weight normal
+		line-height 1
+		text-decoration underline
+		color #666
+		&:hover
+			text-decoration none
+		&:first-child
+			padding-right 8px
+		&:last-child
+			padding-left 8px
+		&:hover
+			text-decoration none
+
+
+
+.basket-link
+	position relative
+	border-left 1px solid #C0C0C0
+	padding-left 54px
+	display block
+	color #000
+	vertical-align middle
+	clearfix()
+	&__icon
+		position absolute
+		top 0
+		left 23px
+		display block
+		sprite($basket_empty)
+	&__text
+		float right
+		font-family $roboto-lght
+		font-size 14px
+		font-weight normal
+		line-height 30px
+		span
+			font-family $roboto-bld
+			font-weight normal
+			color #000
+	&:hover
+		.basket-link__icon
+			sprite($basket_full)
+
+.search
+	position absolute
+	top -2px
+	left 78px
+	z-index 1
+	&__icon
+		border none
+		margin-right 22px
+		display inline-block
+		vertical-align middle
+		sprite($search)
+		cursor pointer
+		background-color transparent
+		hide-text()
+		&:hover
+			sprite($search_hover)
+	&__form
+		padding 13px 20px 13px
+		height 80px
+		display inline-block
+		vertical-align middle
+		line-height 50px
+		overflow hidden
+		clearfix()
+		&_active
+			width 520px
+			padding 13px 20px 13px
+			background-color #fff
+			box-shadow 0 0 29px rgba(0, 0, 0, 0.25)
+			clearfix()
+	&__input
+		border 1px dashed #000000
+		border-width 0 0 0 1px
+		padding-top 10px
+		padding-right 33px
+		padding-bottom 12px
+		padding-left 33px
+		display none
+		width 424px
+		font-family $roboto-regular
+		font-size 18px
+		font-style italic
+		line-height 24px
+		color #7d7d7d
+		+placeholder()
+			color #7d7d7d
+	&__form_active
+		.search__input
+			display inline-block
+.menu
+	padding-left 146px
+	&__list
+		font-size 0
+	&__item
+		position relative
+		display inline-block
+		vertical-align top
+		font-family $roboto-lght
+		font-size 14px
+		font-weight normal
+		line-height 14px
+		color #000
+		&:after
+			position absolute
+			top 50%
+			right 0
+			margin-top -4px
+			content ''
+			width 1px
+			height 12px
+			background #000
+		&:last-child
+			&:after
+				width 0
+	&__link
+		border-bottom 8px solid transparent
+		padding-top 32px
+		padding-right 25px
+		padding-bottom 20px
+		padding-left 26px
+		display block
+		font-family $roboto-lght
+		font-size 14px
+		font-weight normal
+		line-height 1
+		color #000
+		text-decoration none
+		transition all .1s ease
+		span
+			color #909090
+		&:hover
+			border-bottom 8px solid #00a2ff
+			text-decoration none
+	&__item_active
+		.menu__link
+			border-bottom 8px solid #00a2ff
+	&__link
+		.menu__link
+			border-bottom 8px solid #00a2ff
+.menu_second
+	padding-top 14px
+	padding-bottom 7px
+	padding-left 0
+	&__list
+		font-size 0
+	.menu__item
+		border-right 1px solid #fff
+		&:last-child
+			border-right none
+	.menu__link
+		border none
+		padding-top 0
+		padding-bottom 0
+		padding-right 32px
+		padding-left 30px
+		font-size 12px
+		line-height 1
+		color #fff
+		&:hover
+			text-decoration underline
+			border none
+
+
+
+.enter
+	position absolute
+	top 30px
+	right 0
+	padding 30px 24px 27px 30px
+	display none
+	width 518px
+	min-height 301px
+	background #FFF
+	letter-spacing tracking(75)
+	box-shadow 0.5px 0.9px 29px rgba(0, 0, 0, 0.13)
+	z-index 11
+	clearfix()
+	&_active
+		display block
+	&__row
+		font-size 0
+		clearfix()
+	&__col
+		margin-right 34px
+		float left
+		width 214px
+		color #202020
+		&:last-child
+			margin-right 0
+	&__title
+		margin-bottom 20px
+		font-family $roboto-bld
+		font-size 13px
+		font-weight normal
+		line-height 1
+		text-transform uppercase
+		text-align left
+
+	// &__form
+
+	&__input
+		border none
+		margin-bottom 10px
+		padding 10px 12px 10px
+		size 214px 32px
+		background-color $color-gray-light
+		font-family $roboto-bld
+		font-size 11px
+		font-weight normal
+		line-height 1
+		color #676767
+		letter-spacing tracking(75)
+		text-transform uppercase
+		+placeholder()
+			color #676767
+		&.error
+			border 1px solid red
+	&__input-w
+		margin-bottom 12px
+		clearfix()
+
+	&__submit
+		float left
+	&__forget-pass
+		padding-top 6px
+		padding-left 12px
+		display inline-block
+		font-family $roboto-regular
+		font-size 12px
+		font-weight normal
+		line-height 1
+		text-decoration underline
+		color #676767
+		&:hover
+			text-decoration none
+	&__remember
+		position relative
+		height 20px
+		line-height 20px
+		clearfix()
+	&__checkbox
+		display none
+	&__checkbox-label
+		position absolute
+		top 0
+		left 0
+		padding-left 40px
+		font-family $roboto-regular
+		font-size 12px
+		font-weight normal
+		line-height 17px
+		color #676767
+		cursor pointer
+		&:after
+			position absolute
+			top 0
+			left 0
+			content ''
+			size 17px
+			border 1px solid #878787
+		&:before
+			position absolute
+			top 0
+			left 0
+			content ''
+			display none
+			sprite($checkbox)
+
+	&__checkbox:checked + label
+		&:before
+			display block
+
+	&__reg-button
+		float left
+		color #2a2a2a
+	&__social-login
+		padding-top 22px
+		width 100%
+		text-align left
+		clearfix()
+	&__social-text
+		padding-right 28px
+		display inline-block
+		vertical-align top
+		color #202020
+		font-family $roboto-bld
+		font-size 13px
+		line-height 30px
+		text-transform uppercase
+	&__social-links
+		padding-top 3px
+		display inline-block
+		vertical-align top
+		font-size 0
+	&__social-link
+		margin-left 6px
+		display inline-block
+		vertical-align top
+		&:first-child
+			margin-left 0
+		&_fb
+			sprite($enter_fb)
+		&_vk
+			sprite($enter_vk)
+		&_inst
+			sprite($enter_inst)
+		&_ok
+			sprite($enter_ok)
+		&_gplus
+			sprite($enter_gplus)
+		&_youtube
+			sprite($enter_youtube)
+
+	&__close
+		position absolute
+		top 10px
+		right 10px
+		content ''
+		hide-text()
+		sprite($order_popup_close)
+
+
+
+
+
+
+

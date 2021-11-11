@@ -1,0 +1,599 @@
+/*
+Theme Name: jpcoach
+Theme URI: http://avotz.com
+Author: Alonso
+Author URI: http://avotz.com
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: jpcoach
+Tags:
+
+
+*/
+@import "nib"
+@import "normalize.styl"
+@import "icons.styl"
+
+
+naranja = #e8941c//#ffb730//#ffe600
+gris = #4D4D4D
+cafe = #4e382c
+celeste = #084461 //#009cb3
+verde = #5ea19d
+
+
+*
+	box-sizing border-box
+
+body
+	font-family 'Arial', sans-serif
+	font-size 80%
+	line-height 30px
+	color #888
+	position relative
+	
+
+
+ul
+	margin 0
+	padding 0
+	
+	
+
+a
+	text-decoration none
+	transition all .5s ease
+
+h1
+h2
+h3
+h4
+h5
+	margin-top 0
+	font-weight 400
+h1
+	line-height 45px
+
+img
+	max-width 100%
+	height auto
+.ul__arrow
+	list-style none
+	
+	li 
+		&:before
+			font-family: 'coaching';
+			content '\f138'
+			margin-right 1rem
+			color naranja
+.right
+	right 0
+.left
+	left 0
+.txt-center
+	text-align center
+	
+.no-padding
+	padding-left 0 !important
+	padding-right 0 !important
+	
+.overflow
+	overflow hidden
+		
+.transparent
+	background-color transparent
+
+.btn
+.wpcf7-submit	
+	padding .5rem .8rem
+	border-radius 6px
+	display inline-block
+	color #000
+	transition all .5s ease
+	border 1px solid amarillo
+	box-shadow 0 1px 1px rgba(0, 0, 0, .75)
+	font-weight 700
+	text-transform uppercase
+	&:hover
+		background-color white
+		border-color #d6d6d6
+		box-shadow 0 1px 1px gris
+		color gris
+.btn-yellow
+	background-color amarillo
+	border-color amarillo
+	color #000
+.btn-red
+	background-color red
+	border-color red
+	color #FFF
+.btn-orange
+.wpcf7-submit	
+	background-color naranja
+	border-color naranja
+	color #FFF
+	&:hover
+		background-color celeste
+		border-color celeste
+		color white	
+
+.flex-container-sb
+	display flex
+	flex-wrap wrap
+	justify-content space-between
+	
+.flex-container-sa
+	display flex
+	flex-wrap wrap
+	justify-content space-around
+
+.inner
+	max-width 1170px
+	margin 0 auto
+	position relative
+	padding-left 1rem
+	padding-right 1rem
+	
+@media screen and (min-width:900px)
+	body
+		font-size 100%
+.site-main
+	padding-top 6rem
+.top 
+	border-bottom 1px solid #c3c3c3
+	//overflow hidden
+	text-align center
+	padding .3rem 0
+	
+	&__email
+		a 
+			display block 
+			color naranja
+			&:hover
+				color celeste
+	&__social
+		&__link
+			display inline-block
+			color celeste
+			font-size 1.3rem
+			padding 0 .5rem
+			&:hover
+				color naranja
+	&__languages
+		
+		position relative
+		&__link
+			color celeste 
+		&__container
+			display none
+			background-color white
+			padding .5rem
+			position absolute
+			z-index 9999
+			width 208px
+			top 36px
+			border 1px solid #c3c3c3
+			left 50%
+			transform translate(-50%, 0)			
+				
+@media screen and (min-width:900px)
+	.top 
+		//overflow hidden
+		height 45px
+		&__email
+			float left
+		&__social
+			float right
+		&__languages
+			position absolute
+			right 11rem
+			&__container
+				top 40px				
+	
+.header
+	box-shadow 1px 1px 2px rgba(0, 0, 0, .75)
+	&__logo
+		display block
+		margin 0 auto
+		width 200px
+	&__menu
+		display none
+		position absolute
+		z-index 999
+		background-color white
+		left 0
+		right 0
+		top 172px
+		
+		&__item
+		.menu-item	
+			display block
+			border-bottom 1px solid #c3c3c3	
+		&__link
+		a	
+			display block
+			color gris
+			padding .5rem 1rem
+			&:hover
+				color naranja
+			
+	
+	&__btn-menu
+		background-color naranja
+		border none
+		outline none
+		left 0
+		right 0
+		position absolute
+		z-index: 999
+		width 100%
+		color white
+		padding .8rem 0
+		
+@media screen and (min-width:900px)
+	.header
+		position fixed
+		left 0
+		right 0
+		z-index 999
+		height 92px
+		background-color white
+		&--fixed
+			top 0
+		&__logo
+			margin 0
+			float left
+			width 140px
+			
+		&__menu 
+			display block
+			position static
+			float right
+			background-color transparent
+			margin-top 2rem
+			&__item
+			.menu-item	
+				display inline-block
+				border none
+			&__link
+			a	
+				padding 0 1rem
+				border-bottom 2px solid transparent
+				text-transform uppercase
+				&:hover
+					border-color celeste
+			
+		&__btn-menu
+			display none
+			
+.banner
+	width 100%
+	position relative
+	&__slide
+		width 100%
+		max-height 500px
+		overflow hidden
+		img 
+			width 100%	
+	&__pager
+		position absolute
+		right 1rem
+		bottom 1rem
+		z-index 998
+		
+		span
+			color white
+			font-size 2rem
+			cursor pointer
+			padding .2rem
+			s
+		.cycle-pager-active
+			color verde
+@media screen and (min-width:900px)
+	.banner
+		margin-top 92px
+@media screen and (min-width:1400px)
+	.banner
+		&__slide
+			max-height 600px	
+.about
+	p
+		text-align justify
+	.has-huge-font-size
+		text-align center
+	&__header
+		padding 2rem 0
+	&__title
+		text-transform uppercase
+		color #000
+		margin-bottom 0
+		font-size 2rem
+	&__subtitle
+		text-transform uppercase
+		color #000
+	&__content
+		padding-bottom 2rem
+		&__title
+			color #000
+			font-size 1.5rem
+@media screen and (min-width:900px)
+	.about
+		&__content
+			display flex
+			flex-wrap wrap 
+			justify-content space-between
+			&__left
+			&__right 
+				width 45%				
+.team
+	color: white;
+	background-color: verde;
+	p
+		text-align justify
+		
+	.has-huge-font-size
+		text-align center
+	&__header
+		background-color verde
+		padding 2rem 0
+	&__title			
+		text-transform uppercase
+		color #FFF
+		margin-bottom 0
+		font-size 2rem
+	&__subtitle
+		color #FFF
+		text-transform uppercase
+	&__content
+		padding-bottom 2rem
+		/*&__img
+			display block
+			/*width 143px
+			height 143px
+			border-radius 50%
+			margin 2rem auto
+			img 
+				border-radius 50%
+				width 143px
+				height 143px*/
+		&__info
+			h3
+				color #000
+				font-size 1.5rem
+				margin-bottom 0
+			h4
+				
+				color #000
+			small
+				font-size 1rem
+				
+			ul 
+				margin-left 15px
+@media screen and (min-width:900px)
+	.team 
+		&__content
+			padding-top 3rem
+			padding-bottom 3rem
+			&__img
+				display inline-block
+				margin-right 2rem
+				margin-top 1rem
+				vertical-align top
+			&__info
+				display inline-block
+				width 70%
+				margin-top 1rem
+				vertical-align top			
+.services
+	h2
+		box-shadow: 1px 2px 8px rgba(0,0,0,.35);
+		padding: .5rem;
+	figure 
+		border: 6px solid #1BA29E;
+		overflow: hidden;
+		position: relative;
+		padding-bottom: 90%;
+		border-radius: 50%;
+		img
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+	&__header
+		background-color celeste
+		padding 2rem 0
+		
+	&__title			
+		text-transform uppercase
+		color #FFF
+		margin-bottom 0
+		font-size 2rem
+	&__subtitle
+		color #FFF
+		text-transform uppercase
+	
+	&__content
+		padding-top 1rem
+		/*display flex
+		flex-wrapp wrapp 
+		justify-content wrapp*/
+			
+		
+		&__item
+			width 100%
+			text-align center
+			padding 1rem 0
+			
+			&__icon
+				display block
+				margin 0 auto 1rem
+				
+				background-color verde
+				width 70px
+				height 70px
+				border-radius 50%
+				line-height 70px
+				color white
+				font-size 40px
+				i 
+					
+					color white
+					padding 16px 9px
+					font-size 40px
+					
+					display inline-block
+			&__title
+				color #000
+				font-size 1.5rem
+				position relative
+				&:after
+					content ''
+					height 2px 
+					width 60px
+					background-color verde
+					position absolute
+					bottom -15px
+					left 50%
+					transform translate(-50%, 0)
+			&__info
+				text-align left
+@media screen and (min-width:900px)
+	.services
+		&__content
+			display flex
+			flex-wrap wrap 
+			justify-content space-between
+			&__item
+				width 40.33%
+.clients
+	&__header
+		background-color verde
+		padding 2rem 0
+		
+	&__title			
+		text-transform uppercase
+		color #FFF
+		margin-bottom 0
+		font-size 2rem
+	&__subtitle
+		color #FFF
+		text-transform uppercase
+		
+	&__content
+		display flex
+		flex-wrap wrap 
+		justify-content space-around
+		padding-top 2rem
+		padding-bottom 2rem
+		
+		
+		&__item
+			//width 105px
+			
+			&__img
+				width 100%
+
+.contact
+	&__header
+		background-color celeste
+		padding 2rem 0
+		
+	&__title			
+		text-transform uppercase
+		color #FFF
+		margin-bottom 0
+		font-size 2rem
+	&__subtitle
+		color #FFF
+		text-transform uppercase
+	
+	&__content
+		padding-top 2rem
+		padding-bottom 2rem
+		h3
+			color #000
+			font-size 1.5rem
+		&__form
+		form	
+			input[type="text"]
+			input[type="email"]	
+				width 100%
+				border-radius 5px
+				border 1px solid #c2c2c2
+				height 35px
+				background-color #fbfcfc
+			textarea
+				width 100%
+				height 150px
+				border 1px solid #c2c2c2
+				background-color #fbfcfc
+				border-radius 5px
+		&__social
+			position relative
+			top -30px
+			&__link
+				display inline-block
+				background-color naranja
+				width 40px
+				height 40px
+				border-radius 50%
+				line-height 40px
+				text-align center
+				i 
+					color white
+					padding 11px
+					font-size 20px
+					display inline-block
+				&:hover
+					background-color celeste
+				
+				
+	.bold 
+		font-weight bold
+		color #000
+@media screen and (min-width:900px)
+	.contact
+		&__content
+			display flex
+			flex-wrap wrap
+			justify-content space-between
+			&__left
+				width 60%
+			&__right
+				width 30%
+			&__social
+				position absolute
+				top -340px
+				right 185px
+.footer
+	background-color #001b31
+	text-align center
+	padding 1rem 0
+	
+	&__copyright
+		color #FFF
+		a 
+			display inline-block
+			vertical-align middle
+			color white
+			font-size 2rem
+			&:hover
+				color naranja
+.scroll-top
+	background-color rgba(0, 0, 0, .45)
+	border-radius 5px
+	display block
+	padding .2rem 1rem
+	color white
+	position fixed
+	right 1rem
+	bottom 1rem
+	z-index 999
+	display none
+	&.on 
+		display block
+
+
+@import "blog.styl"

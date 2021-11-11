@@ -1,0 +1,391 @@
+/* --------------------------------------------
+
+14: Lists: ol, ul, link-list, hours, icon-list & price list styling
+
+----------------------------------------------- */
+
+/* 14.1: Basic list styling */
+ul, ol{
+
+	text-align: left;
+	padding-left: 25px;
+	margin: 20px 0;
+	color: @color-secondary;
+
+	li{
+		line-height: 2.3;
+		letter-spacing: 1px;
+
+		h4 > {
+			color: @color-secondary;
+			text-transform: none;
+			letter-spacing: 1px;
+		}
+	}
+
+	@media @mq-tablet, @mq-desktop {
+		padding-left: 45px;
+		margin: 20px 0;
+	}
+}
+
+
+ul{
+	&.link-list{
+		/* 14.2: The links shown at the bottom of the blog and recipe page */
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		background-color: @color-linklist-background;
+
+		li{
+			.font-smoothing();
+			text-align: left;
+			position: relative;
+			border-bottom: 1px solid @color-list-border;
+
+			a{
+				.bb();
+				padding: 30px;
+				display: block;
+				text-decoration: none;
+
+				.content{
+					padding: 0;
+				}
+
+				h3{
+					letter-spacing: 1px;
+					text-transform: uppercase;
+					font-weight: 700;
+					color: @color-primary;
+				}
+
+				ul{
+					list-style: none;
+					margin: 0;
+					padding: 0;
+
+					li{
+						background-color: transparent;
+						display: inline-block;
+						border: none;
+						margin-right: 10px;
+
+						i{
+							display: inline-block;
+							vertical-align: middle;
+							line-height: 1em;
+
+							&:before{
+								.font-size(18);
+								color: @color-primary;
+							}
+						}
+
+						p{
+							.font-size(14);
+							margin: 0;
+							display: inline-block;
+							font-family: @font-serif;
+						}
+					}
+				}
+			}
+
+            .next{
+                .transform(translateY(-50%));
+                position: absolute;
+                right: 0;
+                top: 50%;
+                width: 2.5em;
+                height: 2.5em;
+
+                &:before{
+                    color: @color-primary;
+                }
+            }
+            
+            @media @mq-phone {
+                .next{
+                    display: none;
+                }
+            }
+
+			@media @mq-phone-landscape{
+
+                display: block;
+
+                .next{
+                    display: block;
+                }
+
+				a{
+					padding: 30px 50px;
+
+					.content{
+						min-height: 0;
+					}
+
+					.next{
+						right: 30px;
+					}
+				}
+
+				h6{
+					&:before{
+						color: @color-primary;
+						margin-right: 5px;
+						content: attr(data-label);
+					}
+				}
+
+			}
+
+			@media @mq-tablet{
+
+				h6{
+					&:before{
+						color: @color-primary;
+						margin-right: 5px;
+						content: attr(data-label);
+					}
+				}
+
+				a{
+					padding: 35px 75px;
+				}
+
+				.next{
+					right: 50px;
+				}
+			}
+
+			@media @mq-tablet-landscape, @mq-desktop{
+
+				h6{
+					&:before{
+						color: @color-primary;
+						margin-right: 5px;
+						content: attr(data-label);
+					}
+				}
+
+				a{
+					padding: 40px 180px;
+				}
+
+				h4{
+					.font-size(21);
+				}
+
+				small{
+					.font-size(16);
+				}
+
+			    h6{
+				    .font-size(14);
+			    }
+
+			    .next{
+				    right: 150px;
+			    }
+			}
+			
+			@media @mq-desktop {
+
+				.content{
+					padding: 0;
+				}
+
+				.next{
+					.transition(all .8s @animation-bezier);
+				}
+
+				a{
+					.transition(background-color .6s @animation-bezier);
+					padding: 30px 0;
+					margin: auto;
+				}
+
+                .next{
+                    opacity: .2;
+                }
+
+				a:hover{
+
+					background-color: @color-secondary-transparant;
+
+					.next{
+                        right: 100px;
+						opacity: 1;
+					}
+
+				}
+
+			}
+		}
+	}
+
+	&.icon-list{
+		/* 14.3: The icons list shown on the contact page */
+		display: inline-block;
+		list-style: none;
+		padding: 0;
+		margin: 10px 0;
+		text-align: left;
+
+		li{
+			margin-bottom: 10px;
+			display: block;
+
+			a{
+				.font-size(15);
+				line-height: 2;
+				display: block;
+				text-decoration: none;
+
+				i{
+					min-width: 2em;
+					text-align: center;
+
+					&:before{
+						.font-size(26);
+						vertical-align: middle;
+                        color: @color-primary;
+                        margin-right: 5px;
+					}
+
+					&.icon-social:before{
+						.font-size(14);
+					}
+				}
+			}
+		}
+
+		@media @mq-tablet-landscape, @mq-desktop{
+
+			li a{
+				.font-size(18);
+			}
+		}
+	}
+
+	&.price-list{
+		/* 14.4: The price menu shown on the menu page */
+		.font-smoothing();
+		list-style: none;
+		padding: 0;
+		margin: 20px auto;
+		max-width: 650px;
+		
+		@media @mq-phone-landscape {
+			margin: 0 auto 30px;
+		}
+
+		@media @mq-tablet{
+			margin: 20px auto 50px;
+		}
+		
+		@media @mq-tablet, @mq-desktop {
+			margin: 20px auto 70px;
+		}
+
+		li{
+			margin-bottom: 35px;
+
+			.top{
+				.title{
+					.font-size(20);
+                    line-height: 35px;
+					color: @color-primary;
+                    margin: 0;
+                    display: inline-block;
+
+                    /* Truncate string if to long (mobile only */
+                    width: 240px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    @media @mq-phone-landscape{
+                        width: 480px;
+                    }
+
+					@media @mq-tablet{
+						width: 540px;
+					}
+
+					@media @mq-tablet-landscape, @mq-desktop{
+						width: 550px;
+					}
+				}
+
+				.price{
+					.font-size(14);
+					color: @color-primary;
+                    float: right;
+					margin: 0;
+				}
+
+                border-bottom: 1px dashed @color-secondary;
+			}
+
+			.description{
+				.font-size(13);
+				font-family: @font-serif;
+				text-align: left;
+				color: @color-primary;
+				font-weight: 700;
+				margin: 15px 0;
+			}
+			
+			@media @mq-tablet-landscape, @mq-desktop{
+
+				.description{
+					.font-size(13);
+				}
+			}
+		}
+	}
+}
+
+/* 14.5: Styling for the hours / time list. */
+section.hours {
+	text-align: center;
+}
+
+.hours{
+	padding: 20px 0;
+	display: inline-block;
+	text-align: center;
+}
+
+time{
+	.font-size(14);
+	.font-smoothing();
+	display: block;
+	text-align: left;
+	line-height: 2.5;
+
+	* > {
+		display: inline-block;
+	}
+
+	strong{
+		.font-size(14);
+		font-family: @font-serif;
+		color: @color-secondary;
+		min-width: 110px;
+		margin-right: 10px;
+	}
+
+	h3{
+		letter-spacing: 0;
+	}
+
+	@media @mq-tablet-landscape, @mq-desktop{
+
+		.font-size(18);
+	}
+}

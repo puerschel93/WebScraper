@@ -1,0 +1,181 @@
+// VARIABLE DEFAULT
+$margin-top-navigation:false !default;
+//
+body {
+	@if $bg-uni == yes {
+		background-color:$color-body;
+	} @else {
+		background-color:$color-primary;
+	}
+}
+// PICTURE CONTAINER
+.size-picture-container {
+	height:$height-container+px;
+}
+.margin-top-under-nav-fixe {
+	@if $margin-top-under-nav-fixe != false {
+		margin-top:$margin-top-under-nav-fixe+px;
+	}
+}
+.ie7 .margin-top-under-nav-fixe {
+	@if $margin-top-under-nav-fixe != false {
+		padding-top:$margin-top-under-nav-fixe+px;
+	}
+}
+.titre-milieu {
+	margin-top:$height-container / 2 - 60px;
+}
+//NAV PILLS
+.nav-pills>li>a{
+	@if $type-menu == no-flat{
+		@if $border-nav == no {
+			@if $arrondi == yes{
+				@include border-radius(5px);
+			}
+		}
+	} @else {
+		margin:0;
+	}
+}
+//NAV TAB
+.nav-tabs>li{
+	@if $arrondi == yes{
+		@include border-top-left-radius(5px);
+		@include border-top-right-radius(5px);
+	}
+}
+.menu-principal {
+	// REDEFINE SIZE
+	font-size:$font-size-title * 0.6;
+	font-weight:$weight-title;
+	@if $margin-top-navigation != false {
+		margin-top:$margin-top-navigation+px;
+	}
+}
+.menu-principal > li {
+	float:none;
+	display:inline-block;
+	margin-left:0;
+	*display:inline;
+	*zoom:1;
+}
+.menu-principal > li > a {
+	color:$color-nav-footer;
+	text-transform:$type-title;
+	@extend .font-title;
+	@if $border-nav == yes {
+		border-bottom:1px solid transparent;
+	} @else {
+		@if $type-menu == flat {
+			@if $arrondi == yes {
+				@include border-top-left-radius(5px);
+				@include border-top-right-radius(5px);
+			}
+			background-color:$color-primary;
+			// EFFECT GRADIENT ONGLET
+			@include background-image(linear-gradient(top, lighten($color-primary,10) 0%, lighten($color-primary,8) 100%));
+			//@include filter-gradient(lighten($color-primary,10),lighten($color-primary,8),vertical);
+			background-repeat: repeat-x;
+			// PADDING
+			padding-top:13px;
+			padding-bottom:13px;
+			// SHADOW
+			@include box-shadow(inset -1px 3px 3px -3px $color-primary-dark-100);
+			// TRANSITION
+			@include transition-color($temps:0.1s);
+		} @else {
+			@if $shape == yes {
+				background-color:$color-primary-dark-5;
+			}
+			@include transition-color($temps:0.1s);
+			@include transition-bg($temps:0.2s);
+		}
+	}
+}
+.menu-principal > li > a:hover {
+	@if $shape == no {
+		@if $border-nav == yes {
+			@if lightness($color-primary) > 50% {
+				border-bottom:1px solid $color-primary-light-100;	
+			} @else {
+				border-bottom:1px solid $color-primary-dark-5;
+			}
+		} @else {
+			@if $type-menu == flat {
+				@if lightness($color-primary) > 50% {
+					background-color:$color-primary-dark-5;
+				} @else {
+					background-color:$color-primary-light-5;
+				}
+				background-image:none !important;
+				-ms-filter:none;
+				filter:none;
+			} @else {
+				background-color:$color-action;
+				color:$color-primary-light-100;
+			}
+		}
+	} @else {
+		@if lightness($color-primary) > 50% {
+			background-color:$color-block-light-25;
+		} @else {
+			background-color:$color-block-dark-20;
+		}
+		color:$color-nav-footer;
+	}
+}
+// END NAV
+
+// FOOTER
+footer {
+ color:$color-nav-footer;
+}
+.nav-footer, .nav-footer-titre {
+ color:$color-nav-footer;
+}
+.nav-footer >li  > a {
+ padding:8px 0 8px 8px;
+}
+.texte-footer {
+ @include opacity(0.7);
+}
+.nav-footer >li  > a, .social-ico-footer > a, a.btn-responsive{
+ color:$color-nav-footer;
+ @include opacity(0.7);
+ &:hover {
+  @include opacity(1);
+  text-decoration:none;
+ }
+}
+// END NAV FOOTER
+
+.dropdown-menu a {
+	font-size:$font-size-text * 0.65;
+}
+// IE7
+.ie7 .menu-principal > li {
+	margin-left:2px;
+}
+// MEDIA
+@media only screen and (min-width:768px) and (max-width: 979px) and (orientation:portrait) {
+	.container-tablet.container  {
+	padding:0px;
+	}
+}
+@media only screen and (max-width : 767px) {
+	.margin-top-under-nav-fixe {
+		margin-top:0px;
+	}
+	.emplacement-header {
+		margin-bottom:0px;
+	}
+	.h1-index {
+		margin-top:15px;
+	}
+	.titre-milieu {
+		margin-top:0px;
+	}
+	.size-picture-container {
+	background:$color-secondary;
+	}
+}

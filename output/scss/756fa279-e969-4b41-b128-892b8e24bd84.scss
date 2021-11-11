@@ -1,0 +1,323 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.4rem;
+  color: rgb(32, 34, 148);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+}
+.selectedNavBraccCl {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: none;
+    color: #9900ff;
+  }
+  
+  .selectedNavBraccCl:hover {
+    color: #f39c12;
+  }
+ 
+  .navSelectionPopupBraccCl {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(85, 85, 85, 0.50);
+    color: #d9adf6;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  .selectedNavBraccCl .navSelectionPopupBraccCl::after { // Popup arrow
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(85, 85, 85, 0.50) transparent transparent transparent;
+  }
+  .selectedNavBraccCl .show {  // Toggle this class - hide and show the popup. Note, this is not the popup. Strange, but works.
+    visibility: visible;
+    -webkit-animation: fadeInBracc 1s;
+    animation: fadeInBracc 1s;
+  }
+  @keyframes fadeInBracc { // Add animation (fade in the popup)
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+  @-webkit-keyframes fadeInBracc {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  .brAccSnapTbl table{
+    border-collapse: collapse;
+    color: black;
+  }
+  .mktBarPositivePerf {
+    color: green;
+    font-weight: bold;
+  }
+  .mktbarNegativePerf {
+    color: red;
+    font-weight: bold;
+  }
+ 
+*{
+  box-sizing: border-box;
+}
+.AccSumm {
+  float: left;
+  width: 30%;
+  font-size: 1.4rem;
+  padding: 0.1rem 0.05rem 0.1rem;
+  border: 0.01rem solid red;
+}
+#liqVal{
+  font-weight: bold;
+  text-shadow: .2rem .2rem .5rem #FFA500;
+}
+#plSum {
+  font-weight: bold;
+  font-size: 1.6rem
+}
+#notImpInfo {
+  font-size: 1.0rem
+}
+.AccSumm #refresh{
+  width:15;
+  height:15;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+/* Change background color of buttons on hover */
+.tab :hover {
+  border: .1rem solid green;
+  backdrop-filter: blur(1rem);
+  transform: skewX(-10deg);
+  height: 2.5rem;
+  width: 14rem;
+  border-radius: 2rem .5rem 2rem 0;
+  position: relative;
+  justify-content: center;
+  transition: all .2s ease;
+  font: 1.4rem;
+  font-weight: 300;
+  text-shadow: 0 0 2rem #fff;
+  text-transform: uppercase;
+  animation: breath2 2s .5s infinite alternate;
+  cursor: pointer;
+}
+.moreDetailsPartitions {
+  float: left;
+  width: 33.3%;
+  padding: 0.004rem;
+  font-size: 1.4rem;
+  height: 125px;
+  border-right: 0.005rem solid blue;
+  padding-left: 4rem ;
+  
+}
+// remove border of section 3
+#borderRemove{
+  border-right: none;
+}
+// tooltip maxRisked ngClass
+.red {
+  color: red;
+  font-size: 1.5rem;
+}
+.orange {
+  color: orange;
+}
+.green {
+  color: green;
+}
+
+.ChartSumm{
+  float: left;
+  width: 70%;
+  padding: 0.1rem 0.05rem 0.1rem;
+  border: 0.01rem solid red;
+  
+}
+#moreDetailsSum {
+  font-weight: bold;
+  font-size: 1.4rem
+}
+.chrtTimeFrameSelection {
+  float: left;
+  width: 25%;
+}
+#histBchMrkDetails {
+  font-weight: bold;
+  font-size: 1.2rem
+}
+
+// Table stylings
+.brAccSnapTbl {
+width: 100%;
+display: flex;
+align-items: stretch;
+justify-content: space-between;
+}
+
+.brAccSnapTbl table td, th{
+padding: 0rem;
+font-size: 1.4rem;
+border-style: ridge;
+border-width: 0.2rem;
+border-color: #4e95f4 ;
+width: 7rem;
+text-align: center;
+box-shadow: 0 0 7rem rgb(48 138 255 / 60%), 
+              0 0.5rem 2rem rgb(48 138 255 / 60%), 
+              0 0.2rem 2rem rgb(48 138 255  /60%),
+              inset 0 0.1rem #fff,
+              inset 0 -0.1rem #fff;
+}
+thead {
+  font-weight: bold;
+  cursor: pointer;
+  background-image: linear-gradient(
+  90deg,#8dc7fa 3%,#9dcef8 7%,#d5f5f6 25%,#d5f5f6 55%,#ace16b 85%,#91d73a 90%);
+  opacity: 0.8;
+}
+thead tr :hover {
+  backdrop-filter: blur(1rem);
+    transform: skewX(-10deg);
+  animation: breath2 2s .5s infinite alternate;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: breath2;
+}
+.ActiveSortTableHeader
+{
+  background-color: #FFAE42;
+  font-size: 1.5rem;
+}
+
+/* Graph -  Style the lines by removing the fill and applying a stroke */
+::ng-deep .line {
+  fill: none;
+  stroke: #0000ff;
+  stroke-width: 1.5;
+}
+::ng-deep .line2 {
+  fill: none;
+  stroke: #0000ff;
+  stroke-width: 0.5;
+}
+
+// Common for all the tooltips 
+.tooltipCell {
+  position: relative;
+  cursor: help;
+}
+.tooltipCell .tooltipSnap {
+  padding:0.3rem;
+  font-size: 0.8rem;
+  font-weight: normal;
+  display: none;
+  background:rgb(210, 252, 176);
+  border: 0.1rem solid rgb(19, 7, 177);
+  color: rgb(6, 8, 153);
+  text-align: left;
+  border-radius: 1rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -90px;
+  white-space: pre;
+  opacity: 0.87;
+}
+.tooltipCell .tooltipSnap .snapshot{
+  font-weight: bold;
+}
+.tooltipCell .tooltipSnap .smallTT{
+  font-size: 0.2rem;
+}
+.tooltipCell:hover .tooltipSnap {
+  display: inline-block;
+}
+// Tooltip posotioning for the stock postions 
+.tooltipStck {
+  position: relative;
+  cursor: help;
+}
+.tooltipStck .tooltipSnap {
+  padding:0.3rem;
+  font-size: 0.8rem;
+  font-weight: normal;
+  display: none;
+  background:rgb(210, 252, 176);
+  border: 0.1rem solid rgb(19, 7, 177);
+  color: rgb(6, 8, 153);
+  text-align: left;
+  border-radius: 1rem;
+  position: absolute;
+  z-index: 100;
+  white-space: pre;
+  opacity: 0.87;
+}
+.tooltipStck .tooltipSnap .snapshot{
+  font-weight: bold;
+}
+.tooltipStck .tooltipSnap .smallTT{
+  font-size: 0.2rem;
+}
+.tooltipStck:hover .tooltipSnap {
+  display: inline-block;
+  top: -15%;
+  left: 150%;
+  transform: translateX(-15%);
+  margin-top: -10px;
+}
+// Tooltip posotioning for the Tempdebug 
+.tooltipTempDebug {
+  position: relative;
+  cursor: help;
+}
+.tooltipTempDebug .tooltipSnap {
+  padding:0.3rem;
+  font-size: 0.8rem;
+  font-weight: normal;
+  display: none;
+  background:rgb(210, 252, 176);
+  border: 0.1rem solid rgb(19, 7, 177);
+  color: rgb(6, 8, 153);
+  text-align: left;
+  border-radius: 1rem;
+  position: absolute;
+  z-index: 100;
+  white-space: pre;
+  opacity: 0.87;
+}
+.tooltipTempDebug .tooltipSnap .snapshot{
+  font-weight: bold;
+}
+.tooltipTempDebug .tooltipSnap .smallTT{
+  font-size: 0.2rem;
+}
+.tooltipTempDebug:hover .tooltipSnap {
+  display: inline-block;
+  top: -50%;
+  left: 10%;
+}

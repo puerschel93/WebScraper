@@ -1,0 +1,163 @@
+.stream
+  margin-top: 60px
+  margin-bottom: 200px
+  cf()
+  @media (max-width: $breakpoint-sm)
+    margin-top: 50px
+
+  &__main
+    @media (max-width: $breakpoint-sm)
+      display: flex;
+      flex-direction column-reverse
+
+  &__info, &__comments
+    margin-right: 310px
+    max-width 775px
+    @media (max-width: $breakpoint-sm)
+      margin-right: 0
+
+  &__comments
+    margin-top: 160px
+    @media (max-width: $breakpoint-sm)
+      margin-top: 100px
+
+  &__recommends
+    float: right
+    width: 290px
+    @media (max-width: $breakpoint-sm)
+      float: none;
+      width: 100%
+      margin-top: 85px
+
+  &__title
+    font-size: 18px
+    font-weight: 600
+    margin-bottom: 20px
+    @media (max-width: $breakpoint-sm)
+      font-size: 16px
+
+  &__text
+    font-size: 14px
+    color: #7A7A7A
+
+  &__authors
+    display: flex;
+    flex-wrap wrap
+    margin: 0 -10px
+
+
+  &__author
+    width: 50%
+    min-width 360px
+    padding: 0 10px
+    display: flex;
+    align-items center
+    margin-top: 25px
+    @media (max-width: $breakpoint-sm)
+      margin-top: 20px
+      width: 100%
+      min-width auto
+
+  &__authorAvatar
+    flex-shrink 0
+    width: 69px
+    height: 69px
+    border-radius: 50%
+    background: #eee;
+    overflow: hidden;
+    margin-right: 30px
+    @media (max-width: $breakpoint-sm)
+      width: 65px
+      height: 65px
+      margin-right: 20px
+
+    img
+      display: flex;
+      width: 100%
+      height: 100%
+
+  &__authorName
+    font-size: 16px
+    font-weight: 600
+    @media (max-width: $breakpoint-sm)
+      font-size: 14px
+
+  &__authorPosition
+    color: #7A7A7A;
+    @media (max-width: $breakpoint-sm)
+      font-size: 12px
+
+  &__action
+    margin-top: 65px
+    @media (max-width: $breakpoint-sm)
+      margin-top: 50px
+
+    .btn
+      font-size: 18px
+      @media (max-width: $breakpoint-sm)
+        font-size: 14px
+
+  &__card
+    display: block;
+    background: none;
+    padding: 0
+    margin-top: 25px
+
+    &:hover
+      & ^[0]__cardImage:after
+        opacity: 1
+
+      & ^[0]__cardLink
+        opacity: 1
+
+  &__cardImage
+    position: relative;
+    height: 190px
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-bottom: 15px
+    display: flex;
+    align-items center
+    justify-content center
+
+    &:after
+      content ''
+      position: absolute;
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: rgba(#000, .5);
+      opacity: 0
+      anim()
+
+  &__cardText
+    font-size: 16px
+
+  &__cardLink
+    text-align: center;
+    color: $white
+    display: flex;
+    flex-direction column
+    align-items center
+    position: relative
+    z-index: 1
+    opacity: 0
+    anim()
+    pointer-events none
+
+  &__cardArrow
+    width: 33px
+    height: 33px
+    background: $blue;
+    margin-bottom: 5px
+    border-radius: 50%
+    display: flex;
+    align-items center
+    justify-content center
+
+    svg
+      width: 13px
+      height: 13px
+      fill $white
+      transform rotate(180deg)

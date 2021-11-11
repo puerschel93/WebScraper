@@ -1,0 +1,179 @@
+.dragdrop
+  position absolute
+  top 0px
+  left 0px
+  width 1170px
+  height 800px
+  background-color white
+  //padding 40px
+  background url(../../assets/images/default/moldura.png)
+  background-size contain
+  background-repeat no-repeat
+
+  .dragging-obj
+    z-index 50
+
+  .dragdrop-question
+    margin-bottom 20px
+    font-size 1.2em
+    font-weight bold
+
+  .dragdrop-dropables
+    width 100%
+    margin-bottom 50px
+    text-align center
+
+    .dropable
+      display inline-block
+      position absolute
+      width 145px
+      height 55px
+      //margin 15px
+      //border 1px solid black
+      //background-color rgba(0,0,0,0.2)
+
+  .dragdrop-dragables
+    width 100%
+    margin-bottom 50px
+    text-align center
+
+    .dragable
+      display inline-block
+      position absolute
+      margin 0px
+      //border 1px solid red
+      color white
+      text-transform uppercase
+      //background-color #58585b
+      cursor pointer
+      background-image url(../assets/images/06_exercicios/infi-prateleira_01_06_03/drag_bkg.png)
+      background-position center
+      background-repeat no-repeat
+
+      &.correct
+        color green
+        background-image url(../assets/images/06_exercicios/infi-prateleira_01_06_03/drag_bkg_C.png)
+
+        .dragable-inner
+          color green
+
+      &.incorrect
+        color red
+        background-image url(../assets/images/06_exercicios/infi-prateleira_01_06_03/drag_bkg_E.png)
+
+        .dragable-inner
+          color red
+
+      .dragable-inner
+        display table-cell
+        vertical-align middle
+        width 100%
+        height 100%
+        line-height 12px
+        color #F15D22
+
+        .small
+          font-size 12px
+
+  .btn-dragdrop
+    position absolute
+    left 500px
+    bottom 10px
+    width 155px
+    line-height 41px
+    text-align center
+
+    img
+      display inline-block
+      margin-left 5px
+
+  .btn-dragdrop-continue
+    position absolute
+    left 500px
+    bottom 10px
+    width 155px
+    line-height 41px
+    text-align center
+
+    img
+      display inline-block
+      margin-left 5px
+
+  .dragdrop-pe
+    position absolute
+    width 119px
+    height 85px
+    bottom -55px
+    background url(../../assets/images/default/pe_do_telao.png)
+
+    &.esquerdo
+      left 50px
+
+    &.direito
+      right 50px
+
+  .dragdrop-sombra
+    position absolute
+    width 806px
+    height 132px
+    bottom -90px
+    left -60px
+    background url(../../assets/images/default/sombra_grande.png)
+    background-size contain
+
+  .dragdrop-feedback
+    position absolute
+    left 0px
+    top 0px
+    //background rgba(0,0,0,0.7)
+    width 100%
+    height 100%
+    display table-cell
+    vertical-align middle
+    text-align center
+    z-index 10
+
+    .dragdrop-feedback-container
+      position absolute
+      left 13px
+      top 13px
+      width calc(100% - 28px)
+      height calc(100% - 26px)
+      display table
+      background white
+      //border 2px solid grey
+      -webkit-box-shadow 2px 2px 5px 0px rgba(0,0,0,0.75)
+      -moz-box-shadow 2px 2px 5px 0px rgba(0,0,0,0.75)
+      box-shadow 2px 2px 5px 0px rgba(0,0,0,0.75)
+      color black
+
+      &.correct
+        background-color #6CA671
+        color white
+
+      &.incorrect
+        background-color #9C3636
+        color white
+
+      .dragdrop-feedback-text
+        display table-cell
+        vertical-align middle
+        color inherit
+        font-size 1.2em
+        line-height 1.2em
+        padding 40px
+        padding-bottom 80px
+        text-align center
+
+        h2
+          font-family 'Roboto Slab', serif
+          font-size 1.2em
+          font-weight bold
+          margin-bottom 15px
+          text-transform uppercase
+
+    .btn-dragdrop-close-feedback
+      position absolute
+      width 180px
+      left calc(50% - 90px)
+      bottom 40px;

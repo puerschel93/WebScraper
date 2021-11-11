@@ -1,0 +1,141 @@
+@import "../../../styles/index.scss";
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  h4 {
+    margin: 0;
+    text-align: left;
+  }
+  h1 {
+    text-align: left;
+    margin: 0;
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      padding: 0;
+      li {
+        span {
+          position: relative;
+        }
+      }
+    }
+  }
+
+  //__________ vertical
+
+  //iphone8
+  @include media(">=iphone8-vertical", "<iphone11-vertical") {
+    h4 {
+      font-size: $body;
+    }
+    h1 {
+      font-size: $h3;
+      letter-spacing: 3.3px;
+    }
+  }
+  //iphone11
+  @include media(">=iphone11-vertical", "<ipad-mini-vertical") {
+    h4 {
+      font-size: $body;
+    }
+    h1 {
+      font-size: $h3;
+      letter-spacing: 3.3px;
+    }
+  }
+  //ipad-mini
+  @include media(">=ipad-mini-vertical", "<ipad-pro-vertical") {
+    h4 {
+      font-size: $body;
+    }
+    h1 {
+      font-size: $h2;
+      width: 58%;
+      letter-spacing: 3.3px;
+    }
+  }
+  //ipad-pro
+  @include media(">=ipad-pro-vertical", "<16-9-vertical") {
+    h4 {
+      font-size: $subtitle2;
+    }
+    h1 {
+      font-size: $h1;
+      width: 55%;
+      letter-spacing: 3.3px;
+    }
+  }
+
+  //desktop-small
+  @include media(">=16-9-vertical", "<desktop-horizontal") {
+    h4 {
+      font-size: $body-big;
+    }
+    h1 {
+      font-size: $h1;
+      letter-spacing: 3.3px;
+
+      width: 54%;
+    }
+  }
+
+  //desktop big
+  @include media(">=desktop-horizontal", "<16-9-horizontal") {
+    h4 {
+      font-size: $body-big;
+    }
+    h1 {
+      font-size: $h1;
+      letter-spacing: 3.3px;
+      width: 54%;
+    }
+  }
+
+  //desktop-more than 1366 and less than 1920
+  @include media(">=ipad-pro-horizontal", "<16-9-horizontal") {
+    h4 {
+      font-size: $body-big;
+    }
+    h1 {
+      font-size: $h1;
+      letter-spacing: 3.3px;
+      margin: 0 0;
+      width: 54%;
+    }
+  }
+
+  //desktop more than 1920 and less then 2560
+  @include media(">=16-9-horizontal", "<4k") {
+    h4 {
+      font-size: $subtitle1;
+    }
+    h1 {
+      font-size: $display3;
+      letter-spacing: 3.3px;
+      width: 39%;
+    }
+  }
+
+  // desktop huge
+  @include media(">=4k", "<4k-huge") {
+    h4 {
+      font-size: $subtitle1;
+    }
+    h1 {
+      font-size: $display2;
+      letter-spacing: 3.3px;
+      width: 24%;
+    }
+  }
+}
+
+.letters-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}

@@ -1,0 +1,282 @@
+@import '../mixins/chip.mixin';
+
+.p-chip {
+  @include chip-level($font-size-caption, 6px 12px, $color-ui-info-default, $color-ui-info-lighter);
+
+  &--secondary {
+    @extend .p-chip;
+
+    background-color: $color-ui-info-lighter;
+    color: $color-ui-info-default;
+    border-color: $color-ui-info-lighter;
+  }
+
+  &--small {
+    @include chip-level(
+      $font-size-tagline,
+      4px 8px,
+      $color-ui-info-default,
+      $color-ui-info-lighter
+    );
+
+    &-secondary {
+      @extend .p-chip--small;
+
+      background-color: $color-ui-info-lighter;
+      color: $color-ui-info-default;
+      border-color: $color-ui-info-lighter;
+    }
+  }
+
+  &--large {
+    @include chip-level($font-size-xxs, 8px 16px, $color-ui-info-default, $color-ui-info-lighter);
+
+    &-secondary {
+      @extend .p-chip--large;
+
+      background-color: $color-ui-info-lighter;
+      color: $color-ui-info-default;
+      border-color: $color-ui-info-lighter;
+    }
+  }
+
+  &__success {
+    @include chip-level(
+      $font-size-caption,
+      6px 12px,
+      $color-brand-primary-default,
+      $color-brand-primary-lighter
+    );
+
+    &--secondary {
+      @extend .p-chip__success;
+
+      color: $color-brand-primary-default;
+      background-color: $color-brand-primary-lighter;
+      border-color: $color-brand-primary-lighter;
+    }
+
+    &--small {
+      @include chip-level(
+        $font-size-tagline,
+        4px 8px,
+        $color-brand-primary-default,
+        $color-brand-primary-lighter
+      );
+
+      &-secondary {
+        @extend .p-chip__success--small;
+
+        color: $color-brand-primary-default;
+        background-color: $color-brand-primary-lighter;
+        border-color: $color-brand-primary-lighter;
+      }
+    }
+
+    &--large {
+      @include chip-level(
+        $font-size-xxs,
+        8px 16px,
+        $color-brand-primary-default,
+        $color-brand-primary-lighter
+      );
+
+      &-secondary {
+        @extend .p-chip__success--large;
+
+        color: $color-brand-primary-default;
+        background-color: $color-brand-primary-lighter;
+        border-color: $color-brand-primary-lighter;
+      }
+    }
+  }
+
+  &__warning {
+    @include chip-level(
+      $font-size-caption,
+      6px 12px,
+      $color-ui-warning-default,
+      $color-ui-warning-lighter
+    );
+
+    &--secondary {
+      @extend .p-chip__warning;
+
+      background-color: $color-ui-warning-lighter;
+      border-color: $color-ui-warning-lighter;
+      color: $color-ui-warning-default;
+    }
+
+    &--small {
+      @include chip-level(
+        $font-size-tagline,
+        4px 8px,
+        $color-ui-warning-default,
+        $color-ui-warning-lighter
+      );
+
+      &-secondary {
+        @extend .p-chip__warning--small;
+
+        color: $color-ui-warning-default;
+        background-color: $color-ui-warning-lighter;
+        border-color: $color-ui-warning-lighter;
+      }
+    }
+
+    &--large {
+      @include chip-level(
+        $font-size-xxs,
+        8px 16px,
+        $color-ui-warning-default,
+        $color-ui-warning-lighter
+      );
+
+      &-secondary {
+        @extend .p-chip__warning--large;
+
+        color: $color-ui-warning-default;
+        background-color: $color-ui-warning-lighter;
+        border-color: $color-ui-warning-lighter;
+      }
+    }
+  }
+
+  &__danger {
+    @include chip-level(
+      $font-size-caption,
+      6px 12px,
+      $color-ui-danger-default,
+      $color-ui-danger-lighter
+    );
+
+    &--secondary {
+      @extend .p-chip__danger;
+
+      background-color: $color-ui-danger-lighter;
+      border-color: $color-ui-danger-lighter;
+      color: $color-ui-danger-default;
+    }
+
+    &--small {
+      @include chip-level(
+        $font-size-tagline,
+        4px 8px,
+        $color-ui-danger-default,
+        $color-ui-danger-lighter
+      );
+
+      &-secondary {
+        @extend .p-chip__danger--small;
+
+        color: $color-ui-danger-default;
+        background-color: $color-ui-danger-lighter;
+        border-color: $color-ui-danger-lighter;
+      }
+    }
+
+    &--large {
+      @include chip-level(
+        $font-size-xxs,
+        8px 16px,
+        $color-ui-danger-default,
+        $color-ui-danger-lighter
+      );
+
+      &-secondary {
+        @extend .p-chip__danger--large;
+
+        color: $color-ui-danger-default;
+        background-color: $color-ui-danger-lighter;
+        border-color: $color-ui-danger-lighter;
+      }
+    }
+  }
+
+  &__variant {
+    @include chip-level($font-size-caption, 6px 12px, $color-gray-text-darker, #fff);
+
+    &--secondary {
+      @extend .p-chip__variant;
+
+      background-color: transparent;
+      border-color: $color-gray-background-light;
+      color: $color-gray-text-default;
+    }
+
+    &--small {
+      @include chip-level($font-size-tagline, 4px 8px, $color-gray-text-darker, #fff);
+
+      &-secondary {
+        @extend .p-chip__variant--small;
+
+        color: $color-gray-text-default;
+        background-color: transparent;
+        border-color: $color-gray-background-light;
+      }
+    }
+
+    &--large {
+      @include chip-level($font-size-xxs, 8px 16px, $color-gray-text-darker, #fff);
+
+      &-secondary {
+        @extend .p-chip__variant--large;
+
+        color: $color-gray-text-default;
+        background-color: transparent;
+        border-color: $color-gray-background-light;
+      }
+    }
+  }
+
+  &__variant2 {
+    @include chip-level(
+      $font-size-caption,
+      6px 12px,
+      $color-brand-secondary-default,
+      $color-brand-secondary-lighter
+    );
+
+    &--secondary {
+      @extend .p-chip__variant2;
+
+      background-color: $color-brand-secondary-lighter;
+      border-color: $color-brand-secondary-lighter;
+      color: $color-brand-secondary-default;
+    }
+
+    &--small {
+      @include chip-level(
+        $font-size-tagline,
+        4px 8px,
+        $color-brand-secondary-default,
+        $color-brand-secondary-lighter
+      );
+
+      &-secondary {
+        @extend .p-chip__variant2--small;
+
+        color: $color-brand-secondary-default;
+        background-color: $color-brand-secondary-lighter;
+        border-color: $color-brand-secondary-lighter;
+      }
+    }
+
+    &--large {
+      @include chip-level(
+        $font-size-xxs,
+        8px 16px,
+        $color-brand-secondary-default,
+        $color-brand-secondary-lighter
+      );
+
+      &-secondary {
+        @extend .p-chip__variant2--large;
+
+        color: $color-brand-secondary-default;
+        background-color: $color-brand-secondary-lighter;
+        border-color: $color-brand-secondary-lighter;
+      }
+    }
+  }
+}

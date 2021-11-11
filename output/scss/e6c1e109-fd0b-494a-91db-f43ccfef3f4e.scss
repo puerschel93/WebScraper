@@ -1,0 +1,83 @@
+@use '../abstracts/mixins' as *;
+.card {
+    background-color: var(--color__default--100);
+    @include min-max(width, 325px, 60vw, 450px);
+    @include min-max(height, 570px, 79vh, 700px);
+    
+    margin: auto;
+    border-radius: var(--border__default);
+    
+    &__imgHero {
+        width: 100%;
+        @include min-max(height, 150px, 22vh, 215px);
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--border__default) var(--border__default) 0 0;
+        @include min-max(margin-bottom, 35px, 5.28vh, 50px);
+    }
+    &__content {
+        @include constant-min-max(padding, 25px, 5vw, 50px);
+    }
+    &__title {
+        @include min-max(margin-bottom, 20px, 2.9vh, 25px);
+        @include min-max(font-size, 1.5em, calc(1.6vh + 1.6vw), 2em);
+        text-align: center;
+        color: var(--color__dark--100);
+    }
+    &__desc {
+        @include min-max(margin-bottom, 20px, 2.9vh, 25px);
+        color: var(--color__neutral--200);
+        text-align: center;
+    }
+    &__planWrapper {
+        background: var(--color__neutral--100);
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr;
+        padding: 1rem;
+        @include min-max(margin-bottom, 25px, 3.9vh, 35px);
+    }
+
+    &__planInfo {
+        margin-left: .5rem;
+        p + p {
+            color: var(--color__neutral--200);
+        }
+    }
+    &__linkChange {
+        justify-self: end;
+        align-self: center;
+        color: #4F48A7;
+        text-decoration: underline;
+        
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__button {
+        width: 100%;
+        background: var(--color__primary--200);
+        color: var(--color__default--100);
+        font-size: .85rem;
+        font-weight: var(--fWeight__bold);
+        @include min-max(padding, 1em, 1.3vh, 1.5em);
+        border-radius: var(--border__button--default);
+
+        box-shadow: var(--color__primary--200) 0px 12px 24px, rgba(0, 0, 0, 0.22) 0px 10px 8px;
+        @include min-max(margin-bottom, 15px, 3.3vh, 20px);
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__linkCancel {
+        display: grid;
+        justify-content: center;
+        font-size: 0.9rem;
+        color: var(--color__neutral--200);
+        @include min-max(margin-bottom, 25px, 3.3vh, 30px);
+
+        &:hover {
+            filter: brightness(10%);
+        }
+    }
+}

@@ -1,0 +1,274 @@
+@Process: Process;
+@ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+@primary-color: rgba(0, 0, 0, 0.897);
+@text-color: #000;
+.@{Process} {
+  &-wrapper {
+    min-height: 450px;
+    margin: 0 auto;
+    &.home-page-wrapper {
+      .home-page {
+        position: relative;
+        width: 1200px;
+        margin: 0 auto;
+      }
+    }
+  }
+  &-content-wrapper {
+    background-color: #fff;
+    height: 400px;
+  }
+
+  &-show {
+    width: 1250px;
+    height: 377px;
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url(https://files.wondercv.com/homepage-pc/tab-shadow.png) no-repeat 0 0/100%;
+    z-index: -1;
+  }
+  &-title {
+    display: inline-block;
+    position: relative;
+    margin: 0 22px;
+    text-align: center;
+
+    &-wrapper {
+      min-width: 1000px;
+      width: 1200px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 48px;
+      position: absolute;
+      height: 150px;
+      background-color: #fff;
+      top: -110px;
+      border-radius: 10px 10px 0 0;
+      padding-top: 28px;
+    }
+    &-image {
+      position: absolute;
+      justify-content: center;
+    }
+    &-text {
+      display: inline-block;
+      margin: 0 56px;
+      font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei,
+        Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+      transition: color 0.45s @ease-in-out;
+      cursor: pointer;
+      margin-bottom: 10px;
+      color: #262a30;
+      font-size: 20px;
+      font-weight: 500;
+
+      &.active {
+        color: #ff6600;
+      }
+    }
+    &-desc {
+      color: #959ba3;
+      font-size: 14px;
+      font-weight: 400;
+      padding-left: 38px;
+      &.active {
+        color: #f5a671;
+      }
+    }
+
+    &-bar {
+      height: 3px;
+      background: linear-gradient(90deg, #ff813a, #ff3d3d);
+      width: 40%;
+      margin: auto;
+      display: block;
+
+      &-wrapper {
+        position: relative;
+        margin-top: 8px;
+        transition: left 0.45s @ease-in-out;
+      }
+    }
+  }
+
+  &-number,
+  &-text {
+    text-align: center;
+  }
+
+  &-number {
+    font-size: 48px;
+    color: #ff3d3d; //linear-gradient(90deg, #ff813a, #ff3d3d);
+    font-weight: 600;
+
+    &-wrapper {
+      text-align: center;
+    }
+  }
+  &-left {
+    &-wrapper {
+      text-align: center;
+
+      padding-left: 20px;
+    }
+    //     .imghvr-fold-right > img {
+    //                -webkit-transform-origin: 100% 50%;
+    //                        transform-origin: 100% 50%;
+    //            }
+
+    //            .imghvr-fold-right figcaption {
+    //                -webkit-transform: rotateY(-90deg) translate3d(50%, 0%, 0) scale(0.6);
+    //                        transform: rotateY(-90deg) translate3d(50%, 0%, 0) scale(0.6);
+    //                -webkit-transform-origin: 0 50%;
+    //                        transform-origin: 0 50%;
+    //            }
+
+    //            .imghvr-fold-right:hover > img {
+    //                -webkit-transform: rotateY(90deg) scale(0.6) translateX(-50%);
+    //                        transform: rotateY(90deg) scale(0.6) translateX(-50%);
+    //            }
+  }
+  &-right {
+    padding-left: 1px;
+    &-wrapper {
+      text-align: center;
+      letter-spacing: 0.5px;
+
+      &-item {
+        margin: 50px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        &-tag {
+          display: inline-block;
+          font-size: 14px;
+          font-weight: 400;
+          color: #ff4f4c;
+          width: 68px;
+          height: 24px;
+          line-height: 24px;
+          background: #ffe6e6;
+          border-radius: 12px;
+          text-align: center;
+          margin-bottom: 15px;
+        }
+        &-title {
+          //           background-color: aqua;
+          font-size: 28px;
+          font-weight: 400;
+          color: #404040;
+          line-height: 40px;
+          text-align: left;
+          margin-bottom: 15px;
+          font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC,
+            Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
+        }
+        &-content {
+          height: auto;
+
+          > p {
+            position: relative;
+            width: 440px;
+            color: #959ba3;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 23px;
+            padding-left: 20px;
+            line-height: 23px;
+            margin-bottom: 14px;
+          }
+          > p::before {
+            //             background-color: brown;
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #959ba3;
+          }
+        }
+        &-Button {
+          font-size: 18px;
+          font-weight: 500;
+          color: #fff;
+          width: 220px;
+          height: 49px;
+          line-height: 49px;
+          background: linear-gradient(90deg, #ff813a, #ff3d3d);
+          border-radius: 24px;
+          text-align: center;
+          cursor: pointer;
+          box-shadow: 0 10px 18px -1px rgb(255 94 59 / 35%);
+          transition: all 0.5s;
+        }
+        &-Button:hover {
+          box-shadow: 0 10px 18px -1px #959ba3;
+
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &-text {
+    font-size: 20px;
+  }
+
+  &-unit {
+    font-size: 16px;
+    color: #ff813a; //linear-gradient(90deg, #ff813a, #ff3d3d);
+  }
+  //   .Process-content-wrapper{}
+
+  .ant-carousel {
+    ƒ .slick-dots-bottom {
+      bottom: -24px;
+    }
+
+    .slick-dots li {
+      button {
+        background: fade(@primary-color, 30);
+      }
+
+      &.slick-active button {
+        background: linear-gradient(90deg, #ff813a, #ff3d3d);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .@{Process}-wrapper {
+    padding-bottom: 0;
+    min-height: 580px;
+
+    &.home-page-wrapper {
+      .home-page {
+        padding: 56px 24px 64px;
+      }
+    }
+  }
+
+  .@{Process}-title {
+    &-text {
+      margin: 0 14px;
+    }
+
+    &-bar {
+      width: 40%;
+    }
+  }
+
+  .@{Process}-number-wrapper {
+    margin-bottom: 16px;
+  }
+}
+.title-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

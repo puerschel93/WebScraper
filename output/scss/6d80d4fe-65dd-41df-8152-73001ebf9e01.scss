@@ -1,0 +1,368 @@
+
+// 6.ブログ
+.blog,
+.page-blog {
+	&-header {
+		position: relative;
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid $brown;
+
+		border-radius: 30px;
+		background: hsla(30, 1%, 30%, 0.102);
+		&__title {//h2
+			position: relative;
+			padding-left: 1.2em;
+			font-size: $font-title__sp;
+			@include min-screen($break_point_max) {
+				font-size: $font-title__tb;
+				padding-left: 1.5em;
+			}
+			@include min-screen($break_point_pc) {
+				font-size: $font-title__pc;
+			}
+			&::before {
+				position: absolute;
+				content: "";
+				top: 50%;
+				left: 10px;
+				transform: translateY(-37%);
+
+				width: .5em;
+				height: .5em;
+				margin: auto;
+				border: 0.15em solid;
+
+				border-radius: 30%;
+				box-sizing: border-box;
+				@include min-screen($break_point_max) {
+
+					left: 15px;
+					transform: translateY(-37%);
+				}
+
+			}
+		}
+		.archive-btn {
+			position: absolute;
+			top: 50%;
+			right: 20px;
+			transform: translateY(-50%);
+			
+			@include min-screen($break_point_max) {
+				// width: 70px;
+				// margin-right: 15px;
+			}
+			a {
+				display: block;
+				margin: 0;
+				padding: 2px 10px;
+				color: $white;
+				text-shadow: 1px 1px 1px $black;
+				box-shadow: 1px 1px $black inset;
+				font-size: 16px;
+				font-weight: bold;
+				line-height: 20px;
+				text-align: center;
+				background-color: $gray;
+				border-radius: 5px;
+				transition: all 0.1s ease-in-out;
+				line-height: 1.5;
+			}
+		}
+	}
+	// 【お知らせ】ブロック
+	&-fristbox { //ul
+		max-width: 1000px;
+		padding-top: 30px;
+		margin: 0 auto;
+		&-list { //li
+			padding: 10px 10px 10px 0;
+			border-bottom: 1px solid #d0d2d4;
+			transition: all .5s;
+			&:hover {
+				// .page-blog-fristbox-list {
+					color: black;
+					background: $white;
+					transition: all .5s;
+				// }
+				.page-blog-fristbox-list--text { //テキスト部分（右）
+					transition: all .5s;
+					animation: FadeRight 1.5s ease infinite;
+				}
+			}
+			a {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				padding: 0 5px;
+
+			}
+			&__pic { //画像部分（左）
+				// width: calc(30% - 10px);
+				// // padding-top: 10px 0;
+				// filter: grayscale(20%);
+				// @include min-screen($break_point_max) {
+				// 	width: calc(15% - 20px);
+				// }
+				// img {
+				// 	display: inline-block;
+				// 	height: auto;
+				// 	max-width: 100%;
+				// 	vertical-align: middle;
+				// }
+			}
+			&--text { //テキスト部分（右）
+				// width: 70%;
+				width: 100%;
+				@include min-screen($break_point_max) {
+					// width: 85%;
+					display: flex;
+					flex-wrap: wrap;
+				}
+	
+				&__date,
+				&__title,
+				&__desc {
+					font-size: 16px;
+					// padding-bottom: 10px;
+					@include min-screen($break_point_max) {
+						
+					}
+				}
+				&__date {
+					line-height: 1.3;
+					@include min-screen($break_point_max) {
+						width: 20%;
+					}
+				}
+				&__title {
+					position: relative;
+					font-weight: bold;
+					line-height: 1.2;
+					@include min-screen($break_point_max) {
+						width: 80%;
+					}
+				}
+				&__desc {
+					display: none;
+					@include min-screen($break_point_max) {
+						display: block;
+						font-size: 18px;
+						padding-top: 10px;
+						line-height: 1.5;
+					}
+				}
+			}
+		}
+	}
+	// 【ブログ】ブロック
+	&-secbox { //ul
+		margin-top: 50px;
+		@include min-screen($break_point_max) {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			// margin-top: 20px;
+		}
+		&-list { //li
+			padding: 10px 15px 20px;
+			margin-bottom: 30px;
+			background: rgba(255, 255, 255, 0.600);
+
+			@include min-screen($break_point_max) {
+				width: calc(50% - 10px);
+			}
+			@include min-screen($break_point_1440) {
+				// width: 33.333%;
+				// padding: 10px;
+			}
+			a {
+				&:hover {
+					.page-blog-secbox-list__pic {
+						background: $gray;
+						transition-duration: 0.3s; 
+						img {
+							opacity: 0.6;
+							transition-duration: 0.3s;
+						}
+					}
+				}
+			}
+			&__pic { //画像部分
+				width: 100%;
+				height: 180px;
+				overflow: hidden;
+				filter: grayscale(20%);
+				@include min-screen($break_point_max) {
+				}
+				img {
+					display: inline-block;
+					height: auto;
+					max-width: 100%;
+					vertical-align: middle;
+
+					// 画像 > トリミング位置
+					object-fit: none;
+					object-position: 50% 50%;
+				}
+			}
+			&--text { //テキスト部分
+				padding-top: 15px;
+				line-height: 1.5;
+				text-align: left;
+				&__date { //p
+					position: relative;
+					font-size: 16px;
+				}
+				&__title { //h2
+
+				}
+			}
+		}
+	}
+	// 【交通事故、訪問マッサージ】ブロック
+	&-threebox {
+		margin-top: 50px;
+		@include min-screen($break_point_max) {
+			// margin-top: 20px;
+		}
+		&-list { //li
+			padding: 10px 15px 20px;
+			margin-bottom: 30px;
+			background: rgba(255, 255, 255, 0.600);
+
+			@include min-screen($break_point_max) {
+				// width: calc(50% - 10px);
+				width: 100%;
+				// padding: 10px 5px;
+			}
+			@include min-screen($break_point_1440) {
+				
+			}
+			a {
+				&:hover {
+					.page-blog-secbox-list__pic {
+						background: $gray;
+						transition-duration: 0.3s; 
+						img {
+							opacity: 0.6;
+							transition-duration: 0.3s;
+						}
+					}
+				}
+			}
+			&__pic { //画像部分
+				width: 100%;
+				height: 180px;
+				padding-top: 10px 0;
+				overflow: hidden;
+				filter: grayscale(20%);
+				@include min-screen($break_point_max) {
+				}
+				img {
+					display: inline-block;
+					height: auto;
+					max-width: 100%;
+					vertical-align: middle;
+					overflow: hidden;
+
+					// 画像 > トリミング位置
+					object-fit: none;
+					object-position: 50% 50%;
+				}
+			}
+			&--text { //テキスト部分
+				padding-top: 15px;
+				line-height: 1.5;
+				text-align: left;
+				&__date { //p
+					position: relative;
+					font-size: 16px;
+				}
+				&__title { //h2
+
+				}
+			}
+		}
+	}
+}
+
+.page-blog-flex {
+	padding: 0 5px;
+	@include min-screen($break_point_max) {
+		width: calc(50% - 10px);
+	}
+}
+
+// TOPページ > ブログ部分
+.blog {
+		// 【ブログ】ブロック
+		&-secbox { //ul
+			margin-top: 0px;
+			@include min-screen($break_point_max) {
+				display: flex;
+				// justify-content: space-around;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				margin-top: -10px;
+			}
+			&-list { //li
+				padding-bottom: 30px;
+				@include min-screen($break_point_max) {
+					width: calc(50% - 10px);
+					padding: 10px 5px;
+				}
+				@include min-screen($break_point_1440) {
+					// width: 33.333%;
+					// padding: 10px;
+				}
+
+				a {
+					&:hover {
+						.page-blog-secbox-list__pic {
+							background: $gray;
+							transition-duration: 0.3s; 
+							img {
+								opacity: 0.6;
+								transition-duration: 0.3s;
+							}
+						}
+					}
+				}
+				&__pic { //画像部分
+					width: 100%;
+					height: 180px;
+					padding-top: 10px 0;
+					border-radius: 10px;
+					overflow: hidden;
+					filter: grayscale(20%);
+					@include min-screen($break_point_max) {
+					}
+					img {
+						display: inline-block;
+						height: auto;
+						max-width: 100%;
+						vertical-align: middle;
+						border-radius: 10px;
+						overflow: hidden;
+	
+						// 画像 > トリミング位置
+						object-fit: none;
+						object-position: 50% 50%;
+					}
+				}
+				&--text { //テキスト部分
+					line-height: 1.5;
+					text-align: left;
+					&__date { //p
+						position: relative;
+						font-size: 16px;
+					}
+					&__title { //h2
+	
+					}
+				}
+			}
+		}
+}

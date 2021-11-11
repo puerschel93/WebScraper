@@ -1,0 +1,290 @@
+.slider-main {
+    width: 100%;
+    min-height: 387px;
+    overflow: hidden;
+    position: relative;
+
+    &__item {
+        position: relative;
+        padding: 0;
+        width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+        min-height: 270px;
+        height: 270px;
+    }
+
+    @media screen and (min-width: 900px) {
+        height: 290px;
+    }
+
+    @media screen and (min-width: 992px) {
+        height: 350px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        height: 400px;
+    }
+
+    @media screen and (min-width: 1300px) {
+        height: 450px;
+    }
+
+    @media screen and (min-width: 1460px) {
+        height: 500px;
+    }
+
+    &__pic {
+        width: 100%;
+        min-height: 180px;
+
+        @media screen and (min-width: 768px) {
+            height: 270px;
+        }
+
+        @media screen and (min-width: 900px) {
+            height: 290px;
+        }
+
+        @media screen and (min-width: 992px) {
+            height: 350px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            height: 400px;
+        }
+
+        @media screen and (min-width: 1300px) {
+            height: 450px;
+        }
+
+        @media screen and (min-width: 1460px) {
+            height: 500px;
+        }
+
+        > picture {
+            display: block;
+            height: 100%;
+            > img {
+                display: block;
+                width: 100%;
+                height: auto;
+
+                @media screen and (min-width: 768px) {
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+    }
+
+    &__content-wrapper {
+        @media screen and (min-width: 768px) {
+            margin: 0 auto;
+            // border: 2px solid blue;
+            max-width: 1440px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+        }
+    }
+
+    &__content {
+        // border: 1px solid blue;
+        height: 200px;
+        left: 0;
+        background-color: $text;
+        z-index: 1;
+        position: relative;
+
+        @media screen and (min-width: 768px) {
+            height: 200px;
+            min-width: 320px;
+            width: 35%;
+            position: absolute;
+            left: 45px;
+            top: 30px;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        @media screen and (min-width: 900px) {
+            height: 220px;
+            top: 35px;
+        }
+
+        @media screen and (min-width: 992px) {
+            height: 270px;
+            top: 40px;
+            width: 37%;
+        }
+
+        @media screen and (min-width: 1200px) {
+            height: 290px;
+            top: 50px;
+            width: 38%;
+        }
+
+        @media screen and (min-width: 1300px) {
+            top: 60px;
+            height: 330px;
+        }
+
+        @media screen and (min-width: 1460px) {
+            top: 80px;
+            height: 340px;
+        }
+
+        @media screen and (min-width: 1600px) {
+            left: -10px;
+        }
+    }
+
+    &__text {
+        // border: 1px solid orange;
+        height: 210px;
+        width: calc(100% - 20px);
+        right: 20px;
+        background: url(../img/slider-main-bg.svg) no-repeat left -35px top;
+        background-size: 110% 100%;
+        position: absolute;
+        top: -20px;
+        // padding: 20px 32% 50px 15px;
+        padding: 20px 10% 50px 15px;
+
+        @media screen and (min-width: 375px) {
+            padding-right: 22%;
+            background-size: 105% 100%;
+        }
+
+        @media screen and (min-width: 768px) {
+            top: 10px;
+            width: 105%;
+            height: 87%;
+            right: auto;
+            padding-left: 40px;
+            padding-right: 20%;
+            left: -30px;
+            background: url(../img/slider-main-bg.svg) no-repeat left top;
+            background-size: 100% 100%;
+        }
+
+        @media screen and (min-width: 992px) {
+            width: 102%;
+            padding-top: 30px;
+            top: 20px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding-left: 50px;
+        }
+
+        @media screen and (min-width: 1460px) {
+            padding-left: 70px;
+            padding-top: 40px;
+            left: -50px;
+            top: 25px;
+        }
+    }
+
+    &__title {
+        color: #fff;
+        padding-bottom: 15px;
+        font-size: 18px;
+
+        @media screen and (min-width: 375px) {
+            font-size: 22px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            font-size: 26px;
+        }
+
+        @media screen and (min-width: 1300px) {
+            font-size: 36px;
+        }
+    }
+
+    &__description {
+        color: #fff;
+        font-size: 14px;
+        line-height: 1.4;
+
+        @media screen and (min-width: 1300px) {
+            font-size: 16px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 10px;
+        letter-spacing: 0.07em;
+        font-weight: 600;
+        opacity: 0.6;
+
+        bottom: 10px;
+        right: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+        transition: $tr;
+
+        &::after {
+            content: "";
+            width: 1em;
+            height: 1em;
+            display: block;
+            background: url(../img/icons/arrow-right.svg) no-repeat center;
+            background-size: 50%;
+            filter: brightness(5);
+            transition: $tr;
+        }
+
+        &:hover {
+            opacity: 1;
+            &::after {
+                transform: translateX(3px);
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            position: absolute;
+            bottom: 0;
+            right: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        @media screen and (min-width: 1300px) {
+            bottom: 10px;
+            right: 0;
+        }
+    }
+
+    // навигация для фансибокс слайдера
+    &.has-dots {
+        margin-bottom: 0;
+    }
+    .carousel__dots {
+        top: auto;
+        bottom: 10px;
+        right: 20px;
+
+        .carousel__dot {
+            &::after {
+                background-color: $line-l;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,156 @@
+.footer
+    &__main
+        padding: 50px 0;
+        background-color: $footerMainBg
+        &-social
+            display: flex
+            justify-content: center
+            margin-bottom: 32px;
+            &_link
+                margin: 0 22px;
+                transition: ease-in-out .3s
+                &:hover
+                    transform: scale(1.2);
+        &-pages
+            display: flex
+            justify-content: center
+            margin-bottom: 32px;
+            &_link
+                position relative
+                height 30px
+                width: 52px
+                line-height: 30px
+                // border-right: 1px solid $white
+                vertical-align: middle
+                text-align: center
+                margin: 0 22px
+                text-transform: uppercase
+                font-size: 16px
+                color: $white
+                transition: ease-in-out .3s
+                &:hover
+                    color: $siteColorMentol
+                &:after
+                    content: ''
+                    display block
+                    position absolute
+                    top 0
+                    right -22px
+                    width: 1px
+                    height 30px
+                    background: $white
+                &:last-child
+                    &:after
+                        display none
+        &-powered
+            text-align: center
+            &_link
+                font-size: 16px
+                color: $white
+                transition: ease-in-out .3s
+                &:hover
+                    color: $siteColorMentol
+    &__bootom
+        padding: 20px 0;
+        background-color: $black
+        &-block
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap
+            &_contacts
+                display flex
+                align-items: center
+                flex-wrap: wrap
+                +below($max-xs)
+                    width 100%
+                    justify-content: space-around
+                    margin-bottom: 20px
+                &-item
+                    margin-right: 33px
+                    +below($max-xs)
+                        width 100%
+                        margin 0 0 20px 0
+                    .item-link
+                        display: flex
+                        +below($max-xs)
+                            margin: 0 auto
+                            width 250px
+                    .item-img
+                        margin-right: 15px
+                    .item-text
+                        color: $white
+                        transition: ease-in-out .3s
+                        span
+                            display block
+                            font-size: 16px
+                    &:hover
+                        .item-text
+                            color: $siteColorMentol
+            &_lang
+                width 195px
+                +below($max-xs)
+                    width 100%
+                    display flex
+                    justify-content: center
+                .vodiapicker
+                    display none
+                #list
+                    padding 0px
+                    margin: 0o
+                    overflow hidden
+                    li
+                        list-style none
+                        padding-top 5px
+                        padding-bottom 5px
+                        cursor pointer
+                        border-radius 6px
+                        display: flex;
+                        align-items: center;
+                        &:hover
+                            background: rgb(255 255 255 / 0.05);
+                        img
+                            margin 5px
+                #list img, .btn-select img
+                    width 20px
+                #list li span, .btn-select li span
+                    margin-left 30px
+                .lang-select-item
+                    display none
+                    width 100%
+                    max-width 195px
+                    box-shadow 0 6px 12px rgba(0,0,0,.175)
+                    border none
+                    border-radius 6px
+                    position: absolute;
+                    bottom: 45px;
+                    background: rgba(255,255,255, 0.75);
+                    transition: ease-in-out .4s
+                .open
+                    display show !important
+                .btn-select
+                    width 100%
+                    max-width 195px
+                    height 40px
+                    border-radius 6px
+                    background: rgba(255,255,255, 0.05);
+                    transition: ease-in-out .4s
+                    border none
+                    color: $white
+                    li
+                        list-style none
+                        float left
+                        padding-bottom 0px
+                        display: flex;
+                        align-items: center;
+                    &:hover
+                        background-color rgba(255,255,255, 0.5);
+                        color: $black
+                        box-shadow inset 0 0px 0px 1px #ccc
+                        li
+                            margin-left 0px
+                    &:focus
+                        outline none
+                .lang-select
+                    position relative
+                    width 195px
+                

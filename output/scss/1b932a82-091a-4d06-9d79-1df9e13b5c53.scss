@@ -1,0 +1,66 @@
+@import "src/variables";
+
+.input {
+  display: flex;
+  align-items: center;
+
+  &__field {
+    font-family: Karla, 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $dark-grey25;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $dark-grey25;
+    }
+
+    &--bordered {
+      border: 1px solid $dark-grey25;
+      border-radius: 5px;
+      background-color: white;
+    }
+
+    &--bad {
+      border-color: $error;
+    }
+  }
+
+  &__static-placeholder {
+    padding: 6px;
+    color: white;
+    background-color: $dark-grey;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    & + .input__field {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      flex: 1;
+    }
+  }
+
+  &__validation {
+    color: $error;
+  }
+}
+
+.search-input {
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 5px;
+    left: 0;
+  }
+
+  .input {
+    &__field {
+      width: 280px;
+      padding-left: 25px;
+    }
+  }
+}

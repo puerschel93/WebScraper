@@ -1,0 +1,108 @@
+@mixin size($width, $height:$width) {
+    width: $width;
+    height: $height;
+}
+
+.header {
+    width: 100%;
+    background-color: $body-color;
+    top: 0;
+    left: 0;
+    z-index: $z-fixed;
+    position: fixed;
+}
+
+// nav
+.nav {
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_logo,
+    &_toggle,
+    &_close {
+        color: $title-color;
+    }
+    &_logo {
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: -1px;
+        //cho các thẻ inline dản ra 
+        display: inline-flex;
+        column-gap: .5rem;
+        //cho các thẻ inline dản ra 
+        transition: .3s;
+        &-icon {
+            font-size: 1.15rem;
+            color: $first-color;
+            // color: transparent;
+            // background-clip: text;
+            // -webkit-background-clip: text;
+            // background-image: linear-gradient( to right, rgb(35, 90, 241), rgb(15, 248, 93));
+            // display: inline-block;
+        }
+        &:hover {
+            color: $first-color;
+        }
+    }
+    &_toggle {
+        display: inline-flex;
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+    &_close {
+        position: absolute;
+        font-size: 1.5rem;
+        top: 1rem;
+        right: 1.7rem;
+    }
+    &_list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+    &_link {
+        color: $title-color;
+        font-weight: $font-medium;
+        transition: all 0.3s linear;
+        &:hover {
+            color: $first-color;
+        }
+    }
+}
+
+//responsive
+@media screen and (max-width: 767px) {
+    .nav_menu {
+        position: fixed;
+        background-color: $container-color;
+        @include size(80%, 100%);
+        top: 0;
+        right: -100%;
+        box-shadow: -2px 0 4px hsl($hue, 24%, 15%, .1);
+        padding: 4rem 0 0 3rem;
+        border-radius: 1rem 0 0 1rem;
+        transition: .3s;
+        //ẩn i con menu
+        z-index: $z-fixed;
+    }
+}
+
+.show_menu {
+    right: 0;
+}
+
+.active-link {
+    position: relative;
+    color: $first-color;
+}
+
+.active-link:after {
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background-color: $first-color;
+}

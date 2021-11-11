@@ -1,0 +1,506 @@
+animation_children_2(limit)
+	for num in (1..limit)
+		&:nth-child({num})
+			if(num%2==1)
+				transform translate(-100%,0) scale(0)
+			if(num%2==0)
+				transform translate(100%,0) scale(0)
+				
+
+
+animation_children_3(limit)
+	for num in (1..limit)
+		&:nth-child({num})
+			if(num%3==1)
+				transform translate(-100%,0) scale(0)
+			if(num%3==2)
+				transform translate(0,100%) scale(0)
+			if(num%3==0)
+				transform translate(100%,0) scale(0)
+
+					
+
+animation_children_all_from_down(limit)
+	for num in (1..limit)
+		&:nth-child({num})
+			transform translate(0,100%) scale(0)
+
+
+
+animation_children_all_from_top(limit)
+	for num in (1..limit)
+		&:nth-child({num})
+			transform translate(0,-100%) scale(0)
+
+
+				
+animation_children_delays(limit,time)
+	for num in (1..limit)
+		&:nth-child({num})
+			transition-delay (time*num - time)
+
+
+
+animation_2(limit,delay=.4s)
+	&.torelease
+		.release-item
+			transition all .6s
+			animation_children_2(limit)
+			animation_children_delays(limit,delay)
+		&.release 
+			.release-item
+				transform translate(0,0) scale(1)
+				
+
+animation_3(limit,delay=.4s)
+	&.torelease
+		.release-item
+			transition all .6s
+			animation_children_3(limit)
+			animation_children_delays(limit,delay)
+		&.release 
+			.release-item
+				transform translate(0,0) scale(1)
+
+
+animation_from_top(limit,delay=.4s)
+	&.torelease
+		.release-item
+			transition all .6s
+			animation_children_all_from_top(limit)
+			animation_children_delays(limit,delay)
+		&.release 
+			.release-item
+				transform translate(0,0) scale(1)
+
+
+animation_from_down(limit,delay=.4s)
+	&.torelease
+		.release-item
+			transition all .6s
+			animation_children_all_from_down(limit)
+			animation_children_delays(limit,delay)
+		&.release 
+			.release-item
+				transform translate(0,0) scale(1)
+				
+
+
+
+background_opacity(file,opacity)
+	background initial
+	position relative
+	&:after
+		content ""
+		display block
+		position absolute
+		top 0
+		left 0
+		background url(imgs+file) repeat center center
+		width 100%
+		height 100%
+		opacity opacity
+		z-index -1
+
+
+image_centered(height)
+	text-align center
+	height height
+	width 100%
+	.photo
+		height inherit
+		display inline-flex
+		align-items center
+		justify-content center
+		text-align center
+		overflow hidden
+		margin 0 auto
+		width auto
+		img
+			flex 1 1 auto
+			max-height 100%
+			width auto
+
+
+fit_image(height)
+	@media $small
+		.photo 
+			display block
+			text-align center
+			img
+				width auto
+				margin 0 auto
+	@media $large-medium
+		image_centered(height)
+
+
+container_center()
+	margin-left auto
+	margin-right auto
+	width container
+	@media $small-medium
+		width 100%
+
+
+icoleft(num)
+	position relative
+	margin-left num+5px
+	&:before
+		position absolute
+		left (-1*num) + 0px
+
+
+icoright(num)
+	position relative
+	margin-right num+5px
+	&:before
+		position absolute
+		right (-1*num) + 0px
+		
+icomoon(icon)
+	&:before
+		content "\"+icon
+		font-family icomoon
+
+icomoonafter(icon)
+	&:after
+		content "\"+icon
+		font-family icomoon
+
+
+box-shadows()
+	box-shadow 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12) !important
+box-shadow_1()
+	box-shadow 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2) !important
+box-shadow_2()
+	box-shadow 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3) !important
+box-shadow_3()
+	box-shadow 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.3) !important
+box-shadow_4()
+	box-shadow 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3) !important
+box-shadow_5()
+	box-shadow 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3) !important
+
+
+over_shadow()
+	box-shadow_3()
+	&:hover
+		box-shadow_5()
+
+over_shadow_1()
+	box-shadow_1()
+	&:hover
+		box-shadow_5()
+		
+over_shadow_2()
+	box-shadow_2()
+	&:hover
+		box-shadow_5()
+		
+over_shadow_3()
+	over_shadow()
+
+over_shadow_4()
+	box-shadow_4()
+	&:hover
+		box-shadow_5()
+
+
+over_zoom()
+	.photo
+		img
+			transition opacity .25s,transform .25s
+	&:hover
+		.card-image
+			img
+				transform scale(1.1)
+				opacity .8
+
+
+zoom(zoom)
+	transition all .45s ease
+	&:hover
+		transform scale(zoom)
+
+
+text_border(color)
+	text-shadow -1px -1px 0 color, 1px -1px 0 color, -1px 1px 0 color, 1px 1px 0 color
+
+
+
+header_basic_long()
+	// header
+	header
+		h1
+			display none
+		transition all .6s
+		overflow visible
+		@media $large
+			height auto !important
+		nav
+			transition inherit
+			overflow visible
+			height auto
+			line-height initial
+			background menu_bg
+			opacity .9
+			.button-collapse
+				color color1
+				position absolute
+			@media $medium-small
+				background white
+			@media $large
+				position relative !important	
+			> .container
+				transition inherit
+				line-height initial
+				align-items center
+				@media $large
+					display flex
+					justify-content space-between
+				> .menu_top
+					transition inherit
+					// border-top 1px solid blue
+					// border-bottom 1px solid blue
+					width 100%
+					display flex
+					justify-content space-around
+					position relative
+					transform scale(1)
+					// flex-wrap wrap
+					align-items strech
+					@media $small-medium
+						padding 4px 0
+						width initial
+					> li
+						transition inherit
+						margin 0
+						flex-grow 0
+						display flex
+						align-items center
+						@media $large
+							height auto
+						@media $small-medium
+							display none
+						> a
+							transition inherit
+							height menu_height
+							line-height @height
+							// display flex
+							// align-items center
+							// justify-content center
+							// color menu_top_textcolor
+							// font-weight bold
+							font-size menu_font_size
+							text-transform uppercase
+							display inline-block
+							color menu_color
+							padding 0 5px
+						&.active,&:hover
+							@media $large
+								background menu_bg_over
+								> a
+									text-decoration none
+									color menu_color_over !important
+						@media $small-medium
+							&.logo
+								display block
+								flex 1
+								border-bottom 0
+								background-color initial
+								height 48px
+								// display flex
+								// justify-content center
+								// align-items stretch
+								// height 100%
+								a
+									border-bottom 0
+									display inline-block
+									width 100%
+									height 100%
+									color transparent !important
+									background url(imgs+menu_logo) no-repeat center center
+									background-size contain
+									line-height 100%
+
+
+
+
+
+
+
+	body.headfixed
+		@media $medium-small
+			padding-top 0 !important
+		@media $large
+			header
+				> div,> section
+					display none
+				// box-shadow_1()
+				nav
+					background white
+					position fixed !important
+					top 0px
+					margin 0
+					opacity .9
+					box-shadow_1()
+					> .container
+						> .menu_top
+							> li 
+								> a
+									color black
+								&.logo
+									background-color initial
+									height auto
+									> a
+										width auto
+										background url(imgs+menu_logo) no-repeat center center
+										background-size contain
+										color transparent !important
+
+
+
+
+
+header_basic_logo()
+	// header
+	header
+		h1
+			display none
+		transition all .6s
+		overflow visible
+		@media $large
+			height auto !important
+			// box-shadow_1()
+		nav
+			opacity .9
+			overflow visible
+			background-color white
+			height auto
+			line-height initial
+			transition inherit
+			.container
+				transition inherit
+				overflow visible	
+				line-height initial
+				align-items center
+				@media $large
+					display flex
+					justify-content space-between
+				.button-collapse
+					color color1
+					position absolute
+			@media $large
+				position relative !important
+				
+
+			> .container
+				> .menu_top
+					width 100%
+					display flex
+					justify-content space-between
+					padding-top 10px
+					padding-bottom @padding-top
+					height auto
+					align-items center
+
+					// display block
+					// float right
+					// margin-top -42px
+					position relative
+					// overflow visible
+					transition inherit
+					transform scale(1)
+					@media $small-medium
+						padding 4px 0
+					> li
+						// border 1px solid #000
+						transition inherit
+						background-color menu_bg
+						margin 0 .25em
+						height auto
+						border-radius 10px
+						// overflow hidden
+						flex-grow 0
+						@media $small-medium
+							display none
+							// transform scale(.1)
+						> a
+							transition inherit
+							color menu_color
+							font-size menu_font_size
+							font-weight 300
+							height menu_height
+							// line-height @height
+							text-transform uppercase
+							// padding-top .8em
+							// padding-bottom .8em
+							padding-left 1em
+							padding-right 1em
+							text-align center
+							display flex
+							align-items center
+							justify-content center
+						&.active,&:hover
+							background-color menu_bg_over
+							text-decoration none
+							> a
+								color menu_color_over
+							
+					> li.brand-logo
+						position relative
+						width auto
+						height auto
+						transition inherit
+						background transparent
+						flex-grow 1
+						margin 0
+						// left initial
+						@media $small-medium
+							display block
+							text-align center
+						> a
+							padding 0
+							text-align left
+							height auto
+							line-height initial
+							display block
+							@media $small-medium
+								text-align center
+							&:hover
+								background-color initial
+							img
+								transition inherit
+						@media $large
+							img
+								width auto
+								height auto
+						logo_customize()
+
+
+
+
+	body.headfixed
+		@media $medium-small
+			padding-top 0 !important
+		@media $large
+			header
+				> div,> section
+					display none
+				box-shadow_4()
+				nav
+					position fixed !important
+					top 0px
+					opacity .95
+					> .container
+						> .menu_top
+							padding-top 0%
+							padding-bottom 0%
+							transform scale(.99)
+							justify-content space-around
+							> li 
+								flex-grow 2
+							> li.brand-logo 
+								transform scale(.7)
+								flex-grow 4
+							

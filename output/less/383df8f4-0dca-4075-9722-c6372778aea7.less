@@ -1,0 +1,356 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+& when (@media-common = true) {
+    .top-bar {
+        padding: 10px;
+        background: @theme-color__secondary;
+
+        ul {
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 5px;
+
+                a {
+                    color: @theme-color__gray;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .header-custom-links {
+        > * {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: @theme-color__gray;
+        }
+    }
+
+    .header-middle {
+        .minicart-wrapper {
+            margin-left: 10px;
+            float: none;
+            vertical-align: middle;
+
+            .action {
+                &.showcart {
+                    &.active:before,
+                    &:before {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+
+    .social-links {
+        font-size: 0;
+
+        li {
+            a {
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 24px;
+                    height: 24px;
+                    background-image: url(../images/social-icons.png);
+                    background-position: 0 0;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+
+                &.twitter {
+                    &:before {
+                        background-position: -28px 0;
+                    }
+                }
+
+                &.linkedin {
+                    &:before {
+                        background-position: -62px 0;
+                    }
+                }
+
+                &.dribbble {
+                    &:before {
+                        background-position: -98px 0;
+                    }
+                }
+
+                &.google-plus {
+                    &:before {
+                        background-position: -134px 1px;
+                    }
+                }
+            }
+        }
+    }
+
+    .header-custom-links {
+        li {
+            a {
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 24px;
+                    height: 24px;
+                    background-image: url(../images/header-icons.png);
+                    background-position: 0 0;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    margin-right: 5px;
+                }
+            }
+
+            &:nth-child(2) {
+                a {
+                    &:before {
+                        background-position: -38px -1px;
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                a {
+                    &:before {
+                        background-position: -70px -1px;
+                    }
+                }
+            }
+
+            &:last-child {
+                a {
+                    &:before {
+                        background-position: -136px -1px;
+                    }
+                }
+            }
+        }
+
+        .minicart-wrapper {
+            .action {
+                &.showcart {
+                    &:before {
+                        background-image: url(../images/header-icons.png);
+                        background-position: -132px -2px;
+                        content: '';
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .header-middle {
+        display: flex;
+        align-items: center;
+
+        &__left {
+            .switcher {
+                display: none;
+            }
+        }
+
+        &__right {
+            margin-left: auto;
+        }
+
+        .logo {
+            margin-top: 10px;
+        }
+    }
+
+    .header-bottom {
+        padding: 0 15px;
+        position: relative;
+
+        .block-search {
+            .label {
+                position: absolute;
+                top: -48px;
+                right: 70px;
+            }
+
+            .control {
+                border: none;
+                margin: 0;
+            }
+        }
+    }
+
+    .header-custom-links {
+        > li {
+            display: none;
+        }
+    }
+
+    .top-bar {
+        &__right {
+            margin-top: 10px;
+        }
+    }
+}
+
+//
+//  Tablet
+//  _____________________________________________
+
+& when (@media-target = 'desktop'), (@media-target = 'all') {
+    @media only screen and (min-width: @screen__m) and (max-width: (@screen__l - 1)) {
+        .header-custom-links {
+            font-size: 0;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page-header {
+        .panel {
+            &.wrapper {
+                display: none;
+            }
+        }
+    }
+
+    .header-bottom {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        border-top: 1px solid #eee;
+        margin-top: 30px;
+        padding: 20px 0;
+
+        .nav-sections {
+            margin-bottom: 0;
+        }
+
+        .block-search {
+            margin-left: auto;
+            max-width: 170px;
+            width: 100%;
+
+            input {
+                background: @theme-color__secondary;
+                border-color: @theme-color__secondary;
+            }
+        }
+    }
+
+    .top-bar {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__right {
+            margin-left: auto;
+        }
+    }
+
+    .header-middle {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 15px 0;
+
+        .logo {
+            margin: 0;
+        }
+
+        .logo,
+        .switcher {
+            float: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &__right {
+            margin-left: auto;
+        }
+
+        .minicart-wrapper {
+            .action {
+                &.showcart {
+                    .text {
+                        position: relative;
+                        vertical-align: middle;
+                        color: @theme-color__gray;
+                    }
+                }
+            }
+        }
+    }
+
+    .switcher-dropdown {
+        display: none;
+        position: absolute;
+        z-index: 9;
+        background: @color-white;
+        box-shadow: 0 0 4px 1px #ddd;
+        padding: 10px;
+        margin: 0;
+        list-style: none;
+
+        li {
+            a {
+                color: @theme-color__gray;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .switcher {
+        .switcher-label {
+            display: none;
+        }
+
+        .options {
+            .switcher-trigger {
+                padding: 5px 10px;
+                border: 1px solid @theme-color__gray--light;
+                color: @theme-color__gray--light;
+
+                &:after {
+                    content: '';
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 16px;
+                    height: 16px;
+                    background: url(../images/icon-dropdown.png) center center no-repeat;
+                    margin-left: 5px;
+                }
+            }
+
+            &.active {
+                .switcher-dropdown {
+                    display: block;
+                }
+            }
+        }
+    }
+}

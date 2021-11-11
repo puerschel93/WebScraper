@@ -1,0 +1,470 @@
+$colorAvailabilityGreen: #7fca26;
+$colorAvailabilityRed: #f05f1b;
+
+.widg_accordeon,
+.widg_application_accordeon {
+	.text__lead {
+		font-size: $textSize;
+		line-height: $contentLineHeight;
+		font-weight: 500;
+	}
+
+	fieldset {
+		border: none;
+		border-bottom: 1px solid $colorBlack;
+
+		&:last-of-type {
+			border-bottom: none;
+		}
+
+		button {
+			@media print {
+				border-bottom: 2pt solid $colorMouseoverGrau;
+			}
+		}
+	}
+
+	@media print {
+		display: block;
+		width: 100%;
+		height: auto !important;
+	}
+}
+
+.widg_accordeon__entry {
+	margin-bottom: 2px;
+	overflow: hidden;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+	> button,
+	> div > button[data-accordeon="button"] {
+		@include noStyledButton;
+
+		width: 100%;
+		max-width: none;
+		min-height: buttonHeight(desktop);
+		display: block;
+		font-size: 1.333rem;
+		padding: ($gutterWidth - 4) $basicPush * 4  ($gutterWidth - 4) $gutterWidth + 2;
+		position: relative;
+		opacity: 1;
+		text-decoration: none;
+		font-weight: 600;
+		outline: none;
+
+		margin: 0;
+		color: $colorTextDarkGrey;
+
+		background-color: $colorLightGray;
+		transition: all $transitionLength / 6 $transitionEase;
+
+		&:focus {
+			background-color: $colorLightGray;
+		}
+
+		&:hover {
+			background-color: $colorGreyHover;
+			color: $colorBlack;
+		}
+
+		@include mq($to: medium) {
+			min-height: buttonHeight(mobile);
+			padding-top: $gutterWidth/2;
+			padding-bottom: $gutterWidth/2;
+		}
+
+		@media print {
+			display: block;
+			left: 0;
+			width: 100%;
+			padding: 0 !important;
+			margin: 0;
+			color: $colorBlack;
+			background: transparent !important;
+			font-weight: 700;
+		}
+	}
+
+	> button {
+		@include iconDataurl('accordeon_close', $after: true);
+
+		line-height: 2;
+
+		&:after {
+			position: absolute;
+			content: " ";
+			display: block;
+			transition: transform $transitionLength / 2 $transitionEase;
+			top: 50%;
+			opacity: 0.7;
+			transform: translateY(-50%) rotate(45deg);
+			width: 12px;
+			height: 12px;
+			right: $gutterWidth + 4;
+		}
+	}
+
+	> div > button[data-accordeon="button"] {
+
+		background-color: $colorLightGray;
+
+		font-size: 1.333rem;
+		line-height: 1.8;
+		font-weight: 400;
+		padding-top: 19px;
+		padding-bottom: 17px;
+
+		@include mq($to: medium) {
+			padding-top: 11px;
+			padding-bottom: 9px;
+		}
+
+		.button__date,
+		.button__availability,
+		.button__location {
+			width: 10%;
+			display: block;
+			float: left;
+			@include mq($to: large) {
+				width: 18%;
+
+				@media print {
+					padding-left: 0 !important;
+				}
+			}
+
+			@include mq($to: small) {
+				font-size: 1.333rem;
+				width: 5%;
+			}
+
+			@media print {
+				padding-left: 0 !important;
+			}
+		}
+
+		.button__location {
+			padding-left: 35px;
+			padding-right: 25px;
+			position: relative;
+			font-weight: 700;
+			line-height: 1.4;
+
+			@media print {
+				width: 100% !important;
+				padding-left: 0 !important;
+			}
+		}
+
+		.button__date {
+			width: 125px;
+			line-height: 1.4;
+
+			& span + span {
+				width: 220px;
+				display: inline-block;
+
+				@media print {
+					width: 100%;
+					padding: 0;
+					margin: 0;
+				}
+			}
+
+			@media print {
+				position: relative;
+				float: left;
+				left: 0 !important;
+				width: 100%;
+				font-size: 10pt;
+			}
+		}
+
+		.button__availability {
+			text-align: right;
+			position: absolute;
+			top: 30px;
+			transform: translateY(-50%);
+			left: 15px;
+			width: 18px;
+			height: 18px;
+
+			&:after {
+				display: block;
+				content: " ";
+				float: right;
+				width: 18px;
+				height: 18px;
+				border-radius: 50%;
+				background-color: $colorBlack;
+				margin-left: 8px;
+
+				@media print {
+					display: none;
+				}
+			}
+
+			&.state-red:after {
+				background-color: $colorAvailabilityRed;
+			}
+
+			&.state-green:after {
+				background-color: $colorAvailabilityGreen;
+			}
+
+			@media print {
+				display: none !important;
+			}
+		}
+
+		.button__location {
+			width: calc(100% - 125px - 290px)
+		}
+
+		&:before,
+		&:after {
+			margin-left: $gutterWidth + 6;
+		}
+
+		.button__date {
+			font-weight: 100;
+			text-align: left;
+			left: 30px;
+		}
+
+		a.button {
+			margin-top: -11.5px;
+			transform: translateY(-3px);
+
+			margin-left: $basicPush * 4;
+
+			@include mq($to: large) {
+				min-width: 0;
+			}
+		}
+
+		@include mq($to: 'medium') {
+			padding-left: 5px;
+			padding-right: 5px;
+
+			span.button__location,
+			span.button__availability,
+			span.button__date {
+				display: inline-block;
+			}
+
+			@media print {
+				padding-left: 0 !important;
+			}
+		}
+
+		@include mq($to: 'small') {
+			span.button__location,
+			span.button__date {
+				padding-left: 10px;
+
+				@media print {
+					padding-left: 0 !important;
+				}
+			}
+
+			span.button__location {
+				width: 100%;
+				display: block;
+			}
+
+			span.button__availability {
+				position: relative;
+				transform: none;
+				left: 4px;
+				top: 6px;
+				margin-right: 5px;
+
+				&:after {
+					width: 12px;
+					height: 12px;
+				}
+			}
+
+			.button__date {
+				float: none;
+				width: calc(100% - 50px);
+				color: $colorTextGrey;
+				& span + span {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&.is_open > button,
+	&.is_open > div > button[data-accordeon="button"],
+	&.is_open > div > button[data-application-accordeon="button"] {
+		background-color: $colorYellowAccordeonActive;
+		color: $colorBlack;
+
+		&:hover {
+			background-color: $colorYellowAccordeonActive;
+		}
+	}
+
+	&.is_open > button,
+	&.is_open > div > button[data-application-accordeon="button"]{
+		&:after {
+			transform: translateY(-50%) rotate(90deg);
+		}
+	}
+
+	@media print {
+		display: block;
+		position: relative;
+		left: 0;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.button__apply:not(.not-default) {
+	position: absolute;
+	top: 50%;
+	right: 55px;
+	transform: translateY(-50%);
+
+	&.button__apply___inside {
+		display: none;
+	}
+
+	@include mq($to: medium) {
+		display: none !important;
+
+		&.button__apply___inside {
+			display: inline-block !important;
+			position: static;
+			top: 0;
+			right: 0;
+			transform: none;
+		}
+	}
+}
+
+div.widg_accordeon__button {
+	min-height: buttonHeight(desktop);
+
+	line-height: 0;
+	position: relative;
+	hyphens: manual;
+
+	> input[type="radio"] {
+		display: block;
+	}
+
+	@include mq($to: medium) {
+		min-height: buttonHeight(mobile);
+	}
+
+	& a.button.button__apply {
+		@media print {
+			display: none;
+		}
+	}
+
+	@media print {
+		border-bottom: 2pt solid $colorGreyHover;
+	}
+}
+
+.widg_accordeon__content {
+	display: none;
+	padding: 0 $gutterWidth + 2 $gutterWidth $gutterWidth + 2;
+
+	.is_open & {
+		display: none;
+	}
+
+	dl {
+		@include clearfix();
+	}
+
+	dt,
+	dd {
+		font-size: 1.333rem;
+		margin-left: 0;
+		width: 50%;
+
+		float: left;
+
+		border-bottom: 1px solid $colorGreyHover;
+		padding: 14px 0;
+
+		&:last-of-type {
+			border-bottom: none;
+		}
+
+		@include mq($to: subnav) {
+			width: 100%;
+			padding: 0;
+
+			&dt {
+				border-bottom: none;
+			}
+
+		}
+	}
+
+	dt {
+		font-weight: 700;
+
+		@include mq($to: subnav) {
+			border-bottom: none;
+		}
+
+		@include mq($to: medium) {
+			padding-top: 7px;
+		}
+	}
+
+	dd {
+		text-align: right;
+
+		@include mq($to: subnav) {
+			text-align: left;
+
+			border-bottom: 1px solid $colorGreyHover;
+
+			&:last-of-type {
+				border-bottom: 1px solid $colorGreyHover;
+			}
+		}
+
+		@include mq($to: medium) {
+			padding-bottom: 7px;
+		}
+	}
+
+	> h3,
+	> p,
+	> div,
+	> dl {
+		padding-top: 10px;
+
+		@media print {
+			padding-top: 0;
+		}
+	}
+
+	a.button.button__apply {
+		@media print {
+			display: none !important;
+		}
+	}
+
+	@media print {
+		display: contents;
+		display: block;
+		padding: 0;
+		margin-bottom: 0;
+	}
+}

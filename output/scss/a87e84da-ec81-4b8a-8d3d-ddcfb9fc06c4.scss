@@ -1,0 +1,218 @@
+@mixin form-control {
+  display: block;
+  width: 100%;
+  padding: 13px 11px 15px 20px;
+  @include font-family-light();
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  color: $brand-gray-12;
+  background-color: $input-bg;
+  background-clip: padding-box;
+  border: 1px solid $input-border-color;
+  border-radius: $border-radius-base;
+  box-shadow: none;
+  appearance: none;
+  transition: all .25s ease;
+
+  .lk & {
+    @include font-family-regular();
+  }
+
+  &:valid {
+
+  }
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+
+  &:focus {
+    background-color: $input-bg;
+    border-color: $input-focus-border-color;
+    outline: 0;
+  }
+
+  // Unstyle the caret on `<select>`s in IE10+.
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  // Placeholder
+  &::placeholder {
+    color: $brand-gray-11;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &:disabled,
+  &[readonly] {
+    background-color: #fff;
+    cursor: not-allowed;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
+  }
+
+  &.input-with-icon {
+    padding-left: 50px;
+    background-repeat: no-repeat;
+    background-position: 20px center;
+    
+    @media (max-width: $screen-sm-max) {
+      padding-left: 41px;
+      background-position: 15px center;
+    }
+
+    &--address {
+      background-image: url(../img/tmp/input-address.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-address-black.svg);
+      }
+    }
+
+    &--auto {
+      background-image: url(../img/tmp/input-auto.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-auto-black.svg);
+      }
+    }
+
+    &--bag {
+      background-image: url(../img/tmp/input-bag.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-bag-black.svg);
+      }
+    }
+
+    &--book {
+      background-image: url(../img/tmp/input-book.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-book-black.svg);
+      }
+    }
+
+    &--comment {
+      background-image: url(../img/tmp/input-comment.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-comment-black.svg);
+      }
+    }
+
+    &--email {
+      background-image: url(../img/tmp/input-email.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-email-black.svg);
+      }
+    }
+
+    &--human {
+      background-image: url(../img/tmp/input-human.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-human-black.svg);
+      }
+    }
+
+    &--location {
+      background-image: url(../img/tmp/input-location.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-location-black.svg);
+      }
+    }
+
+    &--pass {
+      background-image: url(../img/tmp/input-pass.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-pass-black.svg);
+      }
+    }
+
+    &--pay {
+      background-image: url(../img/tmp/input-pay.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-pay-black.svg);
+      }
+    }
+
+    &--post {
+      background-image: url(../img/tmp/input-post.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-post-black.svg);
+      }
+    }
+
+    &--star {
+      background-image: url(../img/tmp/input-star.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-star-black.svg);
+      }
+    }
+
+    &--tel {
+      background-image: url(../img/tmp/input-tel.svg);
+
+      &:valid {
+        background-image: url(../img/tmp/input-tel-black.svg);
+      }
+    }
+  }
+}
+
+@mixin form-control-focus() {
+  &:focus {
+    background-color: #fff;
+    border-color: $brand-1;
+    outline: 0;
+  }
+}
+
+@mixin form-control-validation($text-color: #555, $border-color: #ccc, $background-color: #f5f5f5) {
+  // Color the label and help text
+  .help-block,
+  .control-label,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label {
+    color: $text-color;
+  }
+  // Set the border and box shadow on specific inputs to match
+  .form-control {
+    border-color: $border-color;
+    //@include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075)); // Redeclare so transitions work
+
+    &:focus {
+      border-color: darken($border-color, 10%);
+      $shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px lighten($border-color, 20%);
+      //@include box-shadow($shadow);
+    }
+  }
+  // Set validation states also for addons
+  .input-group-addon,
+  .datepickerbutton {
+    color: $text-color;
+    border-color: $border-color;
+  }
+  // Optional feedback icon
+  .form-control-feedback {
+    color: $text-color;
+  }
+}
+
+.form-control {
+  @include form-control;
+}

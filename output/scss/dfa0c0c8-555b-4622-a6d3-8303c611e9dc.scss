@@ -1,0 +1,122 @@
+#notification_items {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  .item {
+    @include clearfix();
+    display: block;
+    font-size: 12px;
+    padding: 8px 16px;
+    i.fa-chevron-right {
+      font-size: 20px;
+      padding: 12px 0;
+    }
+    .unopened {
+      height: 20px;
+      padding-bottom: 4px;
+      vertical-align: middle;
+    }
+    .left  {
+      float: left;
+      width: 90%;
+      font-family: 'HelveticaNeue';
+      .homepage_link {
+        margin-top: 5px;
+        text-align: center;
+        text-decoration: underline;
+        a {
+          color: $blue;
+        }
+      }
+    }
+    .right_staff {
+      float: right;
+      .fa-chevron-right:before {
+        color: $green;
+      }
+    }
+    .right {
+      float: right;
+      .fa-chevron-right:before {
+        color: $blue;
+      }
+    }
+  }
+}
+
+.headline_notify_staff {
+  $height: 32px;
+  text-align: center;
+  color: $white;
+  background-color: $green;
+  margin-bottom: $height * 0.16;
+  @include text-block($height * 0.6);
+  &.headline--wide {
+    height: $height;
+    line-height: $height * 0.72;
+    margin: 0;
+    margin-bottom: 0.5vh;
+  }
+  &--tab {
+    width: 30%;
+    margin-top: $height * 0.11;
+    font-size: $height * 0.3;
+    display: inline-block;
+    border: 1px solid $white;
+    padding: 0 4vw;
+    position: relative;
+    &.active {
+      background-color: $white;
+      color: $green;
+    }
+  }
+  a {
+    font-family: 'HelveticaNeue';
+    color: $white;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.headline_notify_guest {
+  $height: 32px;
+  text-align: center;
+  color: $white;
+  background-color: $blue;
+  margin-bottom: $height * 0.16;
+  @include text-block($height * 0.6);
+  &.headline--wide {
+    height: $height;
+    line-height: $height * 0.72;
+    margin: 0;
+    margin-bottom: 0.5vh;
+  }
+  &--tab {
+    width: 30%;
+    margin-top: $height * 0.11;
+    font-size: $height * 0.3;
+    display: inline-block;
+    border: 1px solid $white;
+    padding: 0 4vw;
+    position: relative;
+    &.active {
+      background-color: $white;
+      color: $blue;
+    }
+  }
+  a {
+    font-family: 'HelveticaNeue';
+    color: $white;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.thank_notification_index_bell {
+  position: absolute;
+  font-family: 'KozGoPr6N';
+  color: $red;
+  font-size: 8px;
+  //margin-left: 3%;
+}

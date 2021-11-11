@@ -1,0 +1,174 @@
+@import "assets/styles/utilities/variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mohave', sans-serif;
+
+}
+
+body {
+    height: 100vh;
+    background: $gradient-main;
+    .calc {
+        margin: 5% 5%;
+        border-radius: 3rem;
+        background-color: $light;
+        .calc__screen {
+            height: 20vh;
+            background: $gradient-screen;
+            border-radius: 2rem 2rem 0 0;
+            font-size: 26px;
+            color: $light;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 2rem;
+            font-size: 32px;
+        }
+        .calc__controls {
+            padding: 0.5rem;
+            display: grid;
+            grid-template-columns: repeat(4,auto);
+            grid-auto-rows: 13vh;
+            grid-template-areas:"plus minus times clear"
+                                "seven eight nine divide"
+                                "four five six percent"
+                                "one two three brackets"
+                                "decimal zero equals equals";
+            background: none;
+            button {
+                background: none;
+                border: none;
+                font-size: 24px;
+                color: $dark;
+                border-radius: 2rem;
+            }
+            // button:focus,
+            // button:hover {
+            //     -moz-transition: all .2s ease-in;
+            //     -o-transition: all .2s ease-in;
+            //     -webkit-transition: all .2s ease-in;
+            //     transition: all .2s ease-in;
+            //     background: $light-select; 
+                
+            // }
+            .zero {
+                grid-area: zero;
+            }
+            .one {
+                grid-area: one;
+            }
+            .two {
+                grid-area: two;
+            }
+            .three {
+                grid-area: three;
+            }
+            .four {
+                grid-area: four;
+            }
+            .five {
+                grid-area: five;
+            }
+            .six {
+                grid-area: six;
+            }
+            .seven {
+                grid-area: seven;
+            }
+            .eight {
+                grid-area: eight;
+            }
+            .nine {
+                grid-area: nine;
+            }
+            .clear {
+                grid-area: clear;
+            }
+            .brackets {
+                grid-area: brackets;
+            }
+            .percent{
+                grid-area: percent;
+            }
+            .decimal {
+                grid-area: decimal;
+            }
+            .equals {
+                grid-area: equals;
+                background: $gradient-screen;
+                margin: 1rem;
+                border-radius: 2rem;
+                color: $light;
+            }
+            .equals:hover,
+            .equals:focus {
+                background: $gradient-screen-focus;
+            }
+            .brackets,
+            .percent,
+            .divide,
+            .times,
+            .minus,
+            .plus {
+                color: $primary;
+                font-size: 26px;
+                font-weight: bold;
+            }
+            .clear {
+                margin: 1rem;
+                border-radius: 2rem;
+                color: $light;
+                background: $gradient-secondary;
+            }
+            .clear:focus,
+            .clear:hover {
+                background: $gradient-secondary-focus;
+            }
+            .sin {
+                grid-area: sin;
+            }
+            .cos {
+                grid-area: cos;
+            }
+            .tan {
+                grid-area: tan-btn;
+            }
+            .sqrt{
+                grid-area: sqrt;
+            }
+            
+            .sin,
+            .cos,
+            .tan,
+            .sqrt {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        .calc { 
+            margin: 2%;
+            .calc__controls {
+                .sin,
+                .cos,
+                .tan,
+                .sqrt {
+                    display: block;
+                }
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-areas:"sin plus minus times clear"
+                "cos seven eight nine divide"
+                "tan-btn four five six percent"
+                "sqrt one two three brackets"
+                "s decimal zero equals equals";
+            }
+        }
+    }
+}

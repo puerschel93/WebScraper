@@ -1,0 +1,228 @@
+@import "color";
+// BG SOLO
+$bg-uni: yes;
+
+// PICTURE BG
+$picture-bg: no;
+$picture-bg-url: "../images/degrade_bg.png";
+$picture-bg-repeat-horizontal: no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container: 650;
+
+// VAR SITE TYPO
+$font-body: "Source Sans Pro",verdana,sans-serif;
+$font-title: "Source Sans Pro",sans-serif;
+$font-deco: "Tangerine",cursive;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text: 1.6em;
+$font-size-title: 1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title: none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title: normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi: no;
+
+$height-nav: 110;
+
+// BORDER EFFECT ON NAV
+$border-nav: no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+
+$type-menu: no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape: no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe: 0;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib4";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/mobilefirst";
+
+// IMPORT MODULE SOUS MENU LIB1
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MODULE ANNONCES1
+@import "../../../slagence_X_V5/sources/scss/modules/annonces9";
+
+// IMPORT MODULE EXTRA2
+@import "../../../slagence_X_V5/sources/scss/extra/extra22";
+
+// IMPORT MODULE PUB LIB1
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6mf";
+
+
+@import "../../../slagence_X_V5/sources/scss/multiple-select.scss";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT CHOSEN
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//---------------------------------------------------------------------------------------------
+//		MENU V3
+//---------------------------------------------------------------------------------------------
+
+/*ul[class^='menu-principal'] {
+	text-align: center;
+}*/
+
+
+//---------------------------------------------------------------------------------------------
+//		PERSO BLI64200
+//---------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------
+	//		HEADER
+	//---------------------------------------------------------------------------------------------
+
+.bg-tel-header {
+	background: $color-primary;
+	color: $color-nav-footer;
+}
+
+.typo-deco {
+	font-family: $font-deco;
+}
+
+@media only screen and (max-width : 768px) {
+	.menu-principal>li>a {
+		font-size: 0.7em;
+	}
+}
+
+.navigation {
+	border-bottom: solid 2px $color-tertiary;
+	background-image: url('../images/bg-nav.jpg');
+	background-position-x: -35px;
+	// @include background-image (linear-gradient(120deg, #191919 0%, #191919 4.4%, #c2d410 5%, #191919 5.6%, #191919 13%, #c2d410 13.6%, #191919 14.3%));
+	@media only screen and (max-width : 1024px) {
+		// @include background-image (linear-gradient(120deg, #191919 0%,#191919 2.9%,#c2d410 3.5%,#191919 4.1%,#191919 19%,#c2d410 19.6%,#191919 20.3%));
+	}
+	> div.container {
+		width: 1280px;
+		@media only screen and (max-width : 1024px) {
+			width: auto;
+		}
+	}
+}
+
+	//---------------------------------------------------------------------------------------------
+	//		MENU
+	//---------------------------------------------------------------------------------------------
+
+.menu-principal > li {
+	padding: 0 20px;
+	@media only screen and (max-width : 1024px) {
+	    padding: 0 4px;
+	}
+	> a {
+		// font-family: $font-deco;
+		// font-size: 2em;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------
+	//		FOOTER
+	//---------------------------------------------------------------------------------------------
+
+.bg-primary-footer {
+	background: $color-block;
+}
+
+footer.bg-secondary {
+	background: $color-body;
+}
+
+body > footer > div > div.row-fluid.hidden-phone.hidden-tablet > div:nth-child(4) > div > div > div > a {
+	display: none;
+}
+
+//---------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------
+	//		TITRE
+	//---------------------------------------------------------------------------------------------
+
+.titre-milieu {
+    text-align: center;
+    font-size: 2.0em;
+}
+
+@media only screen and (max-width : 1025px) {
+	.titre-milieu .h1-index {
+		margin-top: -60px;
+	}
+}
+
+@media only screen and (max-width : 768px) {
+	.titre-milieu .h1-index {
+		margin-top: -120px;
+    	font-size: 0.7em;
+	}
+}
+
+.bg-index {
+	background-image: url('../images/bg-body.jpg');
+	background-color: $color-body;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+	//---------------------------------------------------------------------------------------------
+	//		MINI MOTEUR
+	//---------------------------------------------------------------------------------------------
+
+@media only screen and (max-width : 1024px) {
+	.bouton-rechercher-moteur {
+	    font-size: 1.3em;
+	}
+}
+
+
+	//---------------------------------------------------------------------------------------------
+	//		MODULE PA
+	//---------------------------------------------------------------------------------------------
+
+.module-annonces-homepage {
+	margin-left: 14px !important;
+}
+
+/* .img-homepage {
+	background-image: url('../images/modules/watermark.jpg');
+	.picture-responsive {
+		opacity: 0.7;
+	}
+}*/
+
+	//---------------------------------------------------------------------------------------------
+	//		SEO
+	//---------------------------------------------------------------------------------------------
+

@@ -1,0 +1,340 @@
+@charset "utf-8"
+
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,500,700)
+
+@font-face
+    font-family 'icon'
+    src url("../font/icon.eot")
+    src url("../font/icon.eot?#iefix") format('embedded-opentype'), url("../font/icon.woff") format('woff'), url("../font/icon.ttf") format('truetype'), url("../font/icon.svg#icon") format('svg')
+    font-weight normal
+    font-style normal
+[class^="icon-"]:before,
+[class*=" icon-"]:before,
+[class^="icon-"]:after,
+[class*=" icon-"]:after
+    font-family 'icon'
+    font-style normal
+    font-weight normal
+    speak none
+    display inline-block
+    text-decoration inherit
+    width 1em
+    height 49px
+    color #999
+    text-align center
+    vertical-align middle
+    position absolute
+    text-shadow 1px 1px 1px rgba(127, 127, 127, 0.3)
+    line-height 49px
+    font-size 120%
+[class^="icon-"]:before,
+[class*=" icon-"]:before
+    left 8px
+[class^="icon-"]:after,
+[class*=" icon-"]:after
+    right 10px
+.icon-shop:before
+    content '\2302'
+.icon-basket:before
+    content '\e73d'
+.icon-down-open:after
+    content '\e75c'
+.icon-right-open:after
+    content '\e75e'
+.icon-left-open:before
+    content '\e75d'
+.icon-tshirts:before
+    content '📅'
+.icon-new:before
+    content '🔖'
+    
+/*------------------------------------------------------------
+     リセット
+------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,figure
+    margin 0
+    padding 0
+    background transparent
+    border 0
+    outline 0
+    font-size 1em
+
+body, table, input, textarea, select, option
+    font-family HiraKakuProN-W3
+    font-size 1em
+
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, figure
+    display block
+
+ol, ul
+    list-style none
+
+blockquote, q
+    quotes none
+
+:focus
+    outline 0
+
+ins
+    text-decoration none
+
+del
+    text-decoration line-through
+
+table
+    border-collapse collapse
+    border-spacing 0
+
+
+/*------------------------------------------------------------
+     クリアフィクス
+------------------------------------------------------------*/
+.cf
+    zoom 1
+    &:after
+        content ""
+        display block
+        clear both
+
+
+/*------------------------------------------------------------
+     リンク
+------------------------------------------------------------*/
+a
+    &:link
+        color #fff
+        text-decoration none
+        -webkit-tap-highlight-color rgba(255,0,0,.2)
+    &:visited
+        color #fff
+        text-decoration none
+    &:hover
+        color #fff
+        text-decoration none
+    &:active
+        color #fff
+        text-decoration none
+
+
+/*------------------------------------------------------------
+     レイアウト
+------------------------------------------------------------*/
+body
+    line-height 1.5
+    font-size 16px
+    color #fff
+    -webkit-text-size-adjust none
+    font-family 'Dosis', sans-serif
+    background -webkit-radial-gradient(black 15%, transparent 16%) 0 0,
+          -webkit-radial-gradient(black 15%, transparent 16%) 8px 8px,
+          -webkit-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+          -webkit-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px
+    background radial-gradient(black 15%, transparent 16%) 0 0,
+          radial-gradient(black 15%, transparent 16%) 8px 8px,
+          radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+          radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px
+    background-size 16px 16px
+    background-color #282828
+
+
+/*------------------------------------------------------------
+     ヘッダー
+------------------------------------------------------------*/
+#home
+    #header
+        background url(../images/header_bg.png) no-repeat center bottom
+        -webkit-background-size 100%
+        background-size 100%
+        height 320px
+
+#header
+    .inner
+        width 320px
+        margin 0 auto
+        position relative
+    li
+        position absolute
+    .new
+        position absolute
+        background -webkit-gradient(linear, left top, left bottom, from(#FF7503), to(#2e1605))
+        background -webkit-linear-gradient(top, #FFA140 0%, #FF7503 100%)
+        background linear-gradient(top, #FFA140 0%, #FF7503 100%)
+        width 40px
+        height 40px
+        line-height 40px
+        vertical-align middle
+        text-align center
+        -webkit-border-radius 20px
+        text-shadow -1px -1px 1px rgba(0,0,0,.4)
+        font-weight 700
+        -webkit-transform rotate(-15deg)
+        transform rotate(-15deg)
+        -webkit-transform-style preserve-3d
+
+.title_area
+    position absolute
+    width 116px
+    height 115px
+    position absolute
+    right 15px
+    top 0
+    background url(../images/header_title_bg.png)  no-repeat right top
+    -webkit-background-size 116px 115px
+    background-size 116px 115px
+    -webkit-box-sizing border-box
+    box-sizing border-box
+    padding 15px 12px
+    font-size 8px
+    text-align center
+    span
+        display block
+        margin-top 6px
+        line-height 1.1
+        font-size 26px
+
+.t01
+    left 5px
+    top 5px
+    .new
+        left 10px
+        top 130px
+        -webkit-animation scaleChange 3s ease-in-out infinite
+        animation scaleChange 3s ease-in-out infinite
+    .text
+        font-size 67.5%
+        position absolute
+        left 58px
+        top 135px
+    .t_shirt
+        -webkit-transform rotate(-7deg)
+        transform rotate(-7deg)
+
+.t02
+    left 213px
+    top 97px
+    .new
+        left -10px
+        top 42px
+        -webkit-animation scaleChange 3s ease-in-out infinite 0.5s
+        animation scaleChange 3s ease-in-out infinite 0.5s
+    .t_shirt
+        -webkit-transform rotate(-2deg)
+        transform rotate(-2deg)
+
+.t03
+    left 10px
+    top 200px
+    .t_shirt
+        -webkit-transform rotate(3deg)
+        transform rotate(3deg)
+
+.t04
+    left 117px
+    top 200px
+    .t_shirt
+        -webkit-transform rotate(-5deg)
+        transform rotate(5deg)
+
+.t05
+    left 213px
+    top 200px
+    .t_shirt
+        -webkit-transform rotate(5deg)
+        transform rotate(5deg)
+
+@-webkit-keyframes scaleChange
+    0%
+        -webkit-transform scale(1,1) rotate(-15deg)
+    10%
+        -webkit-transform scale(1,1) rotate(-15deg)
+    15%
+        -webkit-transform scale(1.5,1.5) rotate(-15deg)
+    20%
+        -webkit-transform scale(1,1) rotate(-15deg)
+    100%
+        -webkit-transform scale(1,1) rotate(-15deg)
+/*
+今のところこれを変換するとバグります
+@keyframes scaleChange
+    0%
+        transform scale(1,1) rotate(-15deg)
+    10%
+        transform scale(1,1) rotate(-15deg)
+    15%
+        transform scale(1.5,1.5) rotate(-15deg)
+    20%
+        transform scale(1,1) rotate(-15deg)
+    100%
+        transform scale(1,1) rotate(-15deg)
+*/
+
+
+/*------------------------------------------------------------
+     コンテナー
+------------------------------------------------------------*/
+.nav
+    ul
+        display table
+        width 100%
+        border-top 1px solid #606060
+        &:last-of-type
+            border-bottom 1px solid #606060
+    li
+        display table-cell
+        width 50%
+        border-right 1px solid #000
+        border-left 1px solid #606060
+        &:first-child
+            border-left none
+        &:last-child
+            border-right none
+    a
+        display block
+        height 49px
+        line-height 49px
+        vertical-align middle
+        position relative
+        -webkit-box-sizing border-box
+        box-sizing border-box
+        padding 0 30px
+        font-weight 700
+        background -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,.3)), to(rgba(0,0,0,.7)))
+        background -webkit-linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(0,0,0,.7) 100%)
+        background linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(0,0,0,.7) 100%)
+        font-size 87.5%
+    .small
+        font-size 81.25%
+
+.main_nav
+    ul
+        &:first-child
+            li
+                width 33%
+.banners
+    padding-top 10px
+    text-align center
+    line-height 0
+    & > div
+        padding-bottom 10px
+.section
+    border-bottom 1px solid #000
+
+.heading_style01
+    border-top 1px solid #525252
+    height 56px
+    -webkit-box-sizing border-box
+    box-sizing border-box
+    font-size 93.75%
+    background url(../images/heading_icon.png) no-repeat left 19px
+    -webkit-background-size 11px 22px
+    padding 20px 20px 0
+
+
+/*------------------------------------------------------------
+     フッター
+------------------------------------------------------------*/
+#footer
+    border-top 1px solid #525252
+    padding 20px 0
+    text-align center
+    font-size 75%

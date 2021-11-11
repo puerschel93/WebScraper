@@ -1,0 +1,265 @@
+/*
+For some annoying reason this appears to be the only way
+we can get Parcel to do global styles
+*/
+
+light-mode()
+  --background: white
+  --background-1: #aaa
+  --background-2: #ccc
+  --background-3: #eee
+  --foreground-dim: #444
+  --foreground-color: black
+  --accent: dodgerblue
+  --accent-light: lighten(dodgerblue, 80%)
+
+dark-mode()
+  $dark-base=#1c1e1f
+  $dark-fg=#eaeaea
+  --background-color: $dark-base
+  --background-1: lighten($dark-base, 10%)
+  --background-2: lighten($dark-base, 20%)
+  --background-3: #333435 //lighten($dark-base, 30%)
+  --foreground-dim: darken($dark-fg, 40%)
+  --foreground-color: $dark-fg
+  --accent: darken(dodgerblue, 40%)
+  --accent-light: darken(dodgerblue, 40%)
+
+:root
+  light-mode()
+
+:global
+  body.bp3-dark
+    dark-mode()
+    .figure-container-outer
+      dark-mode()
+      &.is-printing
+        light-mode()
+
+*
+  color var(--foreground-color)
+
+body, .figure-container-outer
+  margin: 0px
+  background-color: var(--background-color)
+  position relative
+  width max-content
+  height max-content
+  -webkit-print-color-adjust: exact;
+
+
+.figure-container-outer
+  padding 0px 0px
+  height 100vh
+  width 100vw
+  &.is-printing
+    margin: 0px
+    margin-top 0px
+    padding-top 0px
+    height: max-content
+    width: max-content
+  &.multi-page
+    height: max-content
+
+.app-main
+  display flex
+  flex-direction column
+  height 100vh
+  width 100vw
+  &.is-printing
+    height max-content
+    width max-content
+
+.figure-container-inner
+  display: block
+  margin 0
+  width: max-content
+  height: max-content
+  transform-origin 0px 0px
+
+.figure-container
+  position absolute
+  bottom 0
+  left 0
+  right 0
+  top 38px
+  &.is-printing
+    top 0
+    padding 0
+    position relative
+    min-width inherit
+    overflow auto
+    height max-content
+    .element-container
+      padding 0
+
+  margin 0px
+  overflow: scroll
+  scroll-behavior: smooth
+  .error-overlay
+    margin-top 0
+    padding 0
+
+.element-container
+  width max-content
+  height max-content
+  overflow auto
+  box-sizing: border-box;
+  padding 20px
+
+*
+  box-sizing border-box
+
+button_margin = 6px
+
+.toolbar-disabled
+  .figure-container
+    top 0
+
+
+.ui-controls, .ui-controls-hidden
+  position: fixed
+  width: 100vw
+  top 0
+  right 0
+  left 0
+  z-index 1000
+  &.is-printing
+    display none
+
+.error-overlay
+  margin-top 38px
+  padding 20px
+  &.no-task
+    padding 0px
+    padding-top 38px
+    height: 100vh
+    margin: 0 auto
+    text-align center
+    width 20em
+
+.ui-controls-hidden
+  height: 50px
+  .toolbar-toggle-button
+    display: none
+    position absolute
+    top 4px
+    right 4px
+  &:hover .toolbar-toggle-button
+    display: flex
+
+.ui-controls, .progress, .ui-controls-hidden, .error-overlay, .app-toaster
+  :global
+    // These are actually symlinked CSS files
+    @require "../vendor/blueprint.styl"
+  *
+    font-family: "San Francisco", Helvetica, sans-serif !important
+  pre
+    font-family: monospace !important
+
+.progress
+  margin 2em auto
+  padding-top 2em
+  text-align center
+  max-width 6em
+  color var(--background-1)
+  p
+    margin-top 2em
+
+.usage
+  display flex
+  flex-direction row
+  h3
+    margin-right 1em
+    color: #5C255C
+
+
+.ui-controls
+  // Allows dragging the Electron app
+  -webkit-app-region: drag
+  display: flex
+  padding-right: 12px
+  height:38px
+  width 100vw
+  align-items: center
+  flex-direction row
+  justify-content space-between
+  user-select none
+  &.fullscreen
+    .left-buttons
+      margin-left button_margin
+  a
+    text-decoration: none
+    cursor: pointer
+  *
+    font-weight: 400
+  h1
+    font-weight: 500
+    color var(--background-1)
+    font-size: 14px
+    flex 1
+    margin-bottom 0
+    margin-top 0
+    a
+      color: var(--foreground-dim)
+      &:hover
+        color: var(--foreground-color)
+  background-color: var(--background-3)
+  border-bottom: 1px solid var(--background-2)
+
+  button:focus
+    outline: none
+
+  .right-buttons
+    button
+      margin-right: button_margin
+    margin-right: button_margin*-1
+
+  .left-buttons
+    display flex
+    margin-left: 80px
+    align-items: baseline
+    &>*
+      display block
+      margin-right: button_margin
+    margin-right: button_margin*-1
+
+.error
+  .origin
+    text-align right
+  pre
+    color: #A82A2A
+    overflow-x scroll
+  details
+    summary
+      color #A82A2A
+      font-weight 600
+      cursor pointer
+      padding 0.2em 0.4em
+      border-radius 0.2em
+      user-select false
+      &:hover
+        background-color lighten(#FF7373, 20%)
+      &:focus
+        outline: none
+
+.app-toaster
+  margin-top 38px
+  position fixed
+  right 0px
+  top 0px
+  width 20em
+  padding 12px
+  z-index: 8000
+  &>:first-child
+    margin-top 0
+  &>*
+    margin-top 5px
+
+@media print
+  .ui-controls, .app-toaster
+    display none
+  .figure-container-outer
+    padding 0 !important
+  @page
+    margin 0px

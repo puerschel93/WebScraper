@@ -1,0 +1,510 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+
+ *= require skippr.css
+ *= require public/homes.scss
+ *= require public/listeners.scss
+ *= require public/chats.scss
+ *= require public/posts.scss
+ *= require_directory .
+ *= require_self
+ */
+@import 'lightbox';
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+// 変数定義
+
+$main_color: rgb(063,163,203);
+$sub_color: #ffffff;
+$sub2_color: rgb(255,243,063);
+$sub3_color: rgb(156,209,237);
+$font_size-vsm: 10px;
+$font_size-sm: 12px;
+$font_size-md: 16px;
+$font_size-vmd: 20px;
+$font_size-lg: 24px;
+$font_size-vlg: 30px;
+
+
+// 全体のフォント
+body{
+  font-family: Didot;
+  header{
+
+  }
+}
+
+
+.main-font{
+  font-family: Didot;
+}
+.main-color{
+  color:$main_color;
+}
+.sub2_color{
+  color:$sub2_color;
+}
+
+
+.link-none{
+  text-decoration: none;
+  color:#000;
+}
+.link-none:hover{
+  text-decoration: none;
+  color:$main_color;
+}
+
+.link-none2{
+  text-decoration: none;
+  color:$main_color;
+}
+
+.link-none2:hover{
+  text-decoration: none;
+  color:$sub2_color;
+}
+
+.link-none3{
+  text-decoration: none;
+  color:#fff;
+}
+
+.link-none3:hover{
+  text-decoration: none;
+  color:$sub2_color;
+}
+
+.link-none4{
+  text-decoration: none;
+  color:#000;
+}
+
+.link-none4:hover{
+  color:$sub2_color;
+}
+
+
+.link-none5{
+  text-decoration: none;
+  color:$main_color;
+}
+
+.link-none5:hover{
+  text-decoration: none;
+  color:$main_color;
+}
+
+.link{
+  text-decoration: none;
+  color:$main_color;
+}
+.link:hover{
+  color:$sub2_color;
+}
+
+.link-repost{
+  text-decoration: none;
+  color:rgb(153, 255, 102);
+}
+
+.link-repost:hover{
+  text-decoration: none;
+  color:$main_color;
+}
+
+.hover:hover{
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+
+.btn-main{
+  background-color:$main_color;
+  color:#fff;
+}
+
+.btn-main:hover{
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+  color:$sub2_color;
+}
+
+.btn-outline-main{
+  border:1px solid $main_color;
+  color:$main_color;
+  background-color:#fff;
+}
+
+.btn-outline-main:hover{
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+  color:$sub2_color;
+}
+
+.form-row{
+  background:rgb(156,209,237);
+}
+
+.form-label{
+  border-bottom:1px solid $sub_color;
+
+}
+
+
+// ナビゲーションのデザイン
+
+.navbar{
+  background-color: rgb(063,163,203);
+  height:80px;
+  .navbar-brand{
+    i{
+      font-size: $font_size-vlg;
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+  .navbar-nav{
+    .nav-item{
+      .nav-link{
+       color: $sub_color;
+       text-decoration: none;
+       font-size:17px;
+       position:relative;
+       top:0px;
+       font-family: Didot;
+      }
+      .nav-link:hover{
+        color:$sub2_color;
+        border-bottom:2px solid $sub2_color;
+      }
+    }
+  }
+}
+
+// ハンバーガーメニューのアレンジ
+  #sp-menu{
+    .menu-item{
+      .menu-link{
+       color: $sub_color;
+       text-decoration: none;
+       font-size:17px;
+       position:relative;
+       font-family: Didot;
+      }
+      .menu-link:hover{
+        color:$sub2_color;
+        border-bottom:2px solid $sub2_color;
+      }
+      .menu-link i:hover {
+        color:$sub2_color;
+      }
+    }
+  }
+
+.menu-link:hover{
+  color:$sub2_color;
+  border-bottom:2px solid $sub2_color;
+}
+.menu-link{
+  position:relative;
+  text-decoration: none;
+  font-family: Didot;
+  color: $sub_color;
+}
+.menu-link:before{
+  content:"";
+  position:absolute;
+  top: -15px;
+  width:100px;
+}
+
+
+
+// ハンバーガーボタンのアレンジ
+#hm-icon{
+  position: fixed;
+  right: 20px;
+  top: 12px;
+  z-index: 10;
+}
+
+
+#sp-menu {
+   display: none;
+}
+
+.menu-trigger,
+.menu-trigger span{
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+
+.menu-trigger{
+  position: relative;
+  width: 36px;
+  height: 60px;
+}
+
+.menu-trigger span{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: $sub2_color;
+  border-radius: 3px;
+}
+
+.menu-trigger span:nth-child(1){
+  top: 10px;
+}
+.menu-trigger span:nth-child(2){
+  top: 25px;
+}
+.menu-trigger span:nth-child(3){
+  bottom: 15px;
+}
+
+.menu-trigger.active span:nth-child(1){
+  -webkit-transform: translateY(13px)skew(-30deg,-45deg);
+  transform: translateY(13px)skew(-30deg,-45deg);
+  background-color: $sub2_color;
+}
+
+.menu-trigger.active span:nth-child(2){
+  opacity: 0;
+}
+
+.menu-trigger.active span:nth-child(3){
+  -webkit-transform: translateY(-20px)skew(30deg,45deg);
+  transform: translateY(-20px)skew(30deg,45deg);
+  background-color: $sub2_color;
+}
+
+#sp-menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $main_color;
+  color: #fff;
+  width: 100%;
+  min-height: 100%;
+  display: none;
+  z-index: 9;
+}
+
+#sp-menu li{
+  margin-top: 60px;
+  text-align: center;
+  margin-bottom: 30px;
+
+}
+
+#sp-menu i{
+  color: $sub_color;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+
+
+.sns_icon{
+  position:relative;
+  top:10px;
+  right:0;
+  ul{
+    list-style: none;
+    li{
+      i{
+
+      }
+    }
+  }
+}
+
+
+#logo{
+  position:absolute;
+  top:0;
+  left:0;
+  width:130px;
+  height:80px;
+  border-radius: 0% 0% 15% 15%;
+  z-index:20;
+}
+
+
+  .new_post{
+    display:inline-block;
+    position:fixed;
+    right:410px;
+    bottom:80px;
+    text-decoration: none;
+    color:$main_color;
+  }
+
+.new_post:hover{
+  color:$sub2_color;
+}
+
+// メニュースライドのアレンジ
+#page-top {
+    position: fixed;
+    right: 5px;
+    bottom: 20px;
+    height: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transform: rotate(90deg);
+    font-size: 90%;
+    line-height: 1.5rem;
+    color: #737373;
+    padding: 0 0 0 35px;
+    border-top: solid 1px;
+}
+#page-top::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    width: 15px;
+    border-top: solid 1px;
+    transform: rotate(35deg);
+    transform-origin: left top;
+}
+
+
+
+// スライド定義
+// 上へ
+#header.UpMove{
+  animation: UpAnime 0.3s forwards;
+}
+
+@keyframes UpAnime{
+  from {
+    opacity: 1;
+  transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+  transform: translateY(-65px);
+  }
+}
+
+// 下への動き
+
+#header.DownMove{
+  animation: DownAnime 0.3s forwards;
+}
+@keyframes DownAnime{
+  from {
+    opacity: 0;
+  transform: translateY(-650px);
+  }
+  to {
+    opacity: 1;
+  transform: translateY(0);
+  }
+}
+
+
+
+#form-control{
+margin: 10px;
+height: 28px;
+width: 24em;
+padding-right: 40px;
+transition: all .6s ease;
+border-bottom:3px solid #fff;
+border-right:none;
+border-left:none;
+border-top:none;
+border-radius:0px;
+background-color: $main_color;
+color:#fff;
+}
+
+
+// 検索バーのアレンジ
+#search-form{
+  background-color: $main_color;
+  display: none;
+}
+.search-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 無限スクロールのアレンジ
+.infinite-search-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .infinite-search-form{
+  	form{
+  		#form-control{
+  			width:90%;
+  			border:1px solid $sub3_color;
+  			background-color: #fff;
+  			color:#000;
+  		}
+  	}
+  }
+}
+
+
+.posts{
+  display:flex;
+  justify-content:center;
+}
+
+
+// TOPの画像スライド
+#theTarget{
+  z-index:8;
+}
+
+
+// レスポンシブ対応
+// 768px以下の場合変化。
+
+@media screen and (max-width: 768px) {
+
+.navbar-nav{
+    .nav-item{
+      .nav-link{
+        .nav-text{
+          display:none;
+        }
+      }
+    }
+  }
+
+
+.column-left{
+
+}
+.column-center{
+  width:80%;
+  margin:0 auto;
+}
+.column-right{
+  display:none;
+}
+}
+

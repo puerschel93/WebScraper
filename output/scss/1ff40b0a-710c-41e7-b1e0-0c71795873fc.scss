@@ -1,0 +1,98 @@
+.home {
+    padding: 3.5rem 0 2rem;
+    &_container {
+        position: relative;
+        row-gap: 2rem;
+    }
+    &_img {
+        width: 200px;
+        justify-self: center;
+    }
+    &_title {
+        font-size: $big-font-size;
+        line-height: 140%;
+        margin-bottom: $mb-1;
+        background-image: linear-gradient(to left, #3af588, #328ff8);
+        // display: inline-block;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    &_desc {
+        margin-bottom: $mb-2-5;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+    }
+    &_social {
+        position: absolute;
+        top: 2rem;
+        right: -1rem;
+        display: grid;
+        justify-content: center;
+        row-gap: 3.5rem;
+        &-folow {
+            font-weight: $font-medium;
+            font-size: 17px;
+            background-image: linear-gradient(to right, rgb(114, 83, 252), rgb(129, 248, 74));
+            display: inline-block;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            position: relative;
+            transform: rotate(90deg);
+            &:after {
+                content: "";
+                position: absolute;
+                @include size(1rem, 2px);
+                background-color: $first-color;
+                right: -45%;
+                top: 50%;
+            }
+        }
+        &-links {
+            display: inline-flex;
+            row-gap: 10px;
+            // justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+        &-link {
+            font-size: 1rem;
+        }
+    }
+    &_facebook {
+        color: rgb(65, 107, 247);
+    }
+    &_insta {
+        color: rgb(255, 64, 129);
+    }
+}
+
+.button {
+    display: inline-block;
+    background-color: $first-color;
+    color: #fff;
+    padding: 1rem 1.75rem;
+    border-radius: .5rem;
+    font-weight: $font-medium;
+    transition: .3s;
+    &:hover {
+        background-color: $first-color-alt;
+    }
+    &_icon {
+        transition: .3s;
+    }
+    &:hover>&_icon {
+        transform: translateX(.25rem);
+    }
+    &--flex {
+        display: inline-block;
+        align-items: center;
+        column-gap: .5rem;
+    }
+}

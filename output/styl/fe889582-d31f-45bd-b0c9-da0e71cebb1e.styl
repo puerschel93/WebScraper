@@ -1,0 +1,578 @@
+@import '../bower_components/font-awesome-stylus/stylus/index.styl';
+$fa-font-path = '../bower_components/font-awesome-stylus/fonts';
+$fa-version = '4.0.3';
+@import '../bower_components/font-awesome-stylus/stylus/path.styl';
+
+$green = #86bf40;
+$gray = #f2f2f2;
+$lightgreen = #e2eec5;
+
+body {
+  font: 12px sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+ box-sizing: border-box;
+}
+
+.container {
+
+}
+
+.ace-highlight {
+  background-color: rgba($green, .1);
+  position: absolute;
+  width: 100% !important;
+  left: 0 !important;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  padding: 6px 0;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav {
+  background-color: $green;
+  padding: 8px 25px;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+
+  .logo {
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 38px;
+    vertical-align: middle;
+  }
+
+  .project-dropdown {
+    display: inline-block;
+    position: relative;
+
+    .dropdown {
+      display: inline-block;
+      margin-right: 20px;
+      position: relative;
+      vertical-align: middle;
+
+      .url {
+        background-color: white;
+        border: 2px solid $green;
+        color: gray;
+        display: inline-block;
+        position: relative;
+        width: 420px;
+      }
+
+      ul.history {
+        background-color: white;
+        border: 2px solid $green;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 420px;
+
+        li {
+          padding: 10px;
+          position: relative;
+
+          &:hover {
+            background-color: lighten($green, 80%);
+            cursor: pointer;
+          }
+
+          .name {
+
+          }
+
+          .timestamp {
+            float: right;
+          }
+        }
+      }
+    }
+      
+    ul.actions {
+      display: inline-block;
+      vertical-align: middle;
+
+      li {
+        color: lighten($green, 90%);
+        display: inline-block;
+        font-size: 13px;
+        padding: 1px;
+
+        a:hover {
+          color: white;
+        }
+
+        .icon.new {
+          color: white;
+        }
+
+        .icon.open {
+          color: yellow;
+        }
+
+        .icon.save {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.error {
+  color: red;
+
+  &:hover {
+    color: lighten(red, 10%) !important;
+  }
+}
+
+.container {
+  padding: 70px 30px 20px;
+
+  .panel {
+    vertical-align: top;
+    width: 49%;
+    min-width: 611px;
+
+    &.editor {
+      height: 100%;
+      left: 50%;
+      position: fixed;
+      top: 50px;
+    }
+
+    .section {
+      background-color: $gray;
+      border: 2px solid white;
+      padding: 6px 9px;
+      position: relative;
+
+      &.headings {
+        background-color: lighten($green, 90%);
+        padding-bottom: 15px;
+      }
+
+      &.settings.section {
+        border: 0;
+        background-color: lighten($green, 80%);
+
+        input, select {
+          border-color: lighten($green, 30%);
+        }
+
+        .delete {
+          color: lighten($green, 50%);
+          font-size: 16px;
+          margin-left: 11px;
+          margin-top: -8px;
+          position: absolute;
+          right: 10px;
+
+          &:hover {
+            color: red;
+          }
+
+        }
+
+        input[type="text"] {
+          border-color: white;
+        }
+
+        .parameters .description {
+          width: 190px;
+        }
+
+        .properties .description {
+          width: 185px;
+        }
+
+        .name {
+          width: 60px;
+        }
+
+        thead tr {
+          margin-bottom: 5px;
+        }
+
+        td.enum {
+          min-width: 20px;
+          text-align: center;
+
+          a {
+            color: lighten($green, 5%);
+            font-size: 17px;
+            font-weight: 700;
+
+            &:hover {
+              color: darken($green, 10%);
+            }
+          }
+        }
+
+        .actions {
+          margin: 10px 0 5px;
+          text-align: right;
+
+          a {
+            background-color: lighten($green, 50%);
+            margin-left: 4px;
+            padding: 7px 8px;
+            text-decoration: none;
+          }
+        }
+      }
+
+      span.title {
+        color: $green;
+        font-size: 20px;
+        font-weight: 700;
+
+        .fa {
+          font-size: 23px;
+        }
+
+        a.new {
+          float: right;
+        }
+      }
+
+    }
+
+    .resources {
+    }
+  }
+}
+
+.box {
+  border: 1px solid black;
+  margin: 4px 0;
+  padding: 4px 8px;
+}
+
+.ace_editor {
+  height: 88%;
+  margin: 20px 0 0 15px;
+  position: absolute;
+}
+
+select, input, textarea {
+  background-color: white;
+  border: 2px solid $green;
+  padding: 2px;
+}
+
+.heading {
+  background-color: lighten($green, 98%);
+  border: 2px solid $green;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px 0 0;// 8px;
+  padding: 3px 5px;
+  user-select: none;
+
+  &.error {
+    background-color: lightpink;
+  }
+
+  &:hover {
+    .right-menu {
+      opacity: 1;
+    }
+  }
+
+  &.open {
+    background-color: white;
+    border: 5px solid $green;
+    margin-top: 15px;
+    min-height: 41px;
+
+    .right-menu {
+      opacity: 1;
+    }
+      
+    .summary {
+      float: right;
+    }
+
+    .path {
+      &:hover {
+        color: darken($green, 20%);
+      }
+    }
+
+    .name {
+      padding-top: 4px;
+    }
+
+    .description {
+      float: right;
+    }
+  }
+
+  .row {
+    margin-bottom: 2px;
+    width: 100%;
+
+    //first row
+    .method {
+      display: inline-block;
+      font-size: 11px;
+      min-width: 55px;
+    }
+
+    .path {
+      display: inline-block;
+      max-width: 200px;
+      margin: 0 5px;
+      vertical-align: middle;
+      width: 35%;
+    }
+
+    .summary {
+      display: inline-block;
+      /*white-space: nowrap;*/
+      /*overflow: hidden;*/
+      /*text-overflow: ellipsis;*/
+      vertical-align: middle;
+      width: 40%;
+    }
+
+    //second row
+    .nickname {
+      display: inline-block;
+      width: 30%;
+    }
+
+    .return-type {
+      display: inline-block;
+      width: 68%;
+      position: relative;
+      right: 0;
+      text-align: right;
+    }
+
+    //third row
+    .notes {
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+    }
+
+    //model
+    .name {
+      display: inline-block;
+      margin: 0 5px 0 2px;
+      vertical-align: middle;
+      width: 262px;
+    }
+
+    .description {
+      display: inline-block;
+      visibility: middle;
+      width: 50%;
+    }
+  }
+}
+
+ul.items {
+  li {
+    position: relative;
+
+    .right-menu {
+      height: 100%;
+      opacity: 0.1;
+      padding-left: 10px;
+      position: absolute;
+      right: -30px;
+      top: 0;
+      width: 30px;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      a {
+        cursor: pointer;
+        font-family: 'Verdana';
+        padding: 2px 5px 2px;
+        margin: 5px 0 0;
+        text-decoration: none;
+
+        .fa {
+          color: lighten($green, 70%);
+          font-size: 18px;
+
+          &:hover {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tabs.section {
+  padding-left: 0 !important;
+
+  ul {
+    display: inline-block;
+    /*margin: 6px 0;*/
+
+    li.section {
+      color: darken($green, 50%);
+      cursor: pointer;
+      display: inline;
+      font-size: 12px;
+      letter-spacing: .02em;
+      user-select: none;
+
+      &:first-child {
+        border-left: none;
+      }
+
+      &:last-child {
+        border-right-width: 4px;
+      }
+
+      &.active {
+        background-color: $green;
+        color: lighten($green, 95%);
+        cursor: default;
+        font-weight: 700;
+
+        &:hover {
+          color: lighten($green, 95%);
+        }
+      }
+
+      &:hover {
+        color: darken($green, 30%);
+      }
+    }
+  }
+
+  .actions {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 0;
+
+    a:last-child {
+      margin-left: 10px;
+    }
+  }
+}
+
+.url {
+  border: 1px solid #ddd;
+  font-size: 15px;
+  padding: 6px;
+  width: 48%;
+
+  &:hover {
+    color: blue;
+  }
+}
+
+a {
+  cursor: pointer;
+  display: inline-block;
+
+  &:hover {
+    color: darken($green, 20%);
+  }
+}
+
+/* xeditable */
+
+.editable-wrap {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0
+}
+
+.editable-wrap .editable-controls, .editable-wrap .editable-error {
+  margin-bottom: 0
+}
+
+.editable-wrap .editable-controls > input, .editable-wrap .editable-controls > select, .editable-wrap .editable-controls > textarea {
+  margin-bottom: 0
+}
+
+.editable-wrap .editable-input {
+  display: inline-block
+}
+
+.editable-buttons {
+  display: inline-block;
+  vertical-align: top
+}
+
+.editable-buttons button {
+  margin-left: 5px
+}
+
+.editable-input.editable-has-buttons {
+  width: auto
+}
+
+.editable-bstime .editable-input input[type=text] {
+  width: 46px
+}
+
+.editable-bstime .well-small {
+  margin-bottom: 0;
+  padding: 10px
+}
+
+.editable-range output {
+  display: inline-block;
+  min-width: 30px;
+  vertical-align: top;
+  text-align: center
+}
+
+.editable-color input[type=color] {
+  width: 50px
+}
+
+.editable-checkbox label span, .editable-checklist label span, .editable-radiolist label span {
+  margin-left: 7px;
+  margin-right: 10px
+}
+
+.editable-hide {
+  display: none !important
+}
+
+.editable-click:hover, a.editable-click:hover {
+  text-decoration: none;
+  color: #2a6496;
+  /*border-bottom-color: #2a6496*/
+}
+
+.editable-empty, .editable-empty:hover, .editable-empty:focus, a.editable-empty, a.editable-empty:hover, a.editable-empty:focus {
+  font-style: italic;
+  color: #D14;
+  text-decoration: none
+}

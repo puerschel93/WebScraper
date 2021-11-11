@@ -1,0 +1,316 @@
+@font-face
+    font-family: 'gt-walsheim-light-web'
+    src: url('../fonts/gt-walsheim-light-web.eot')
+    src: url('../fonts/gt-walsheim-light-web.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gt-walsheim-light-web.woff') format('woff'),
+       url('../fonts/gt-walsheim-light-web.ttf')  format('truetype'),
+       url('../fonts/gt-walsheim-light-web.svg#svgFontName') format('svg')
+
+header#styleguide-header
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 101
+    width: 100%
+    margin: 0
+    background: #f9f9f9
+    font-size: 12px
+    font-family: 'gt-walsheim-light-web'
+    color: #000
+    height: 70px
+    display: flex
+    justify-content: space-between
+
+header#styleguide-header
+    >div
+        background: transparent
+        padding: 1.2em 2.2rem
+
+        img
+            height: 100%
+            width: auto
+
+    div.styleguide-header-left
+        height: inherit
+        width: 20%
+        min-width: 260px
+        background-color:#d6e3e0
+        padding: 1.2em 0.8rem 1.2em 2.2rem
+        display: flex
+        justify-content: space-between
+
+        button#hamburger
+            background: none
+            border: none
+            display: none
+            cursor: pointer
+            outline: none
+            box-shadow: none
+            -webkit-box-shadow: none
+            height: auto
+            padding: 0
+            border-radius: 0
+            transition: unset
+
+            img
+                width: 30%
+                height: auto
+
+    div.styleguide-header-right
+        height: inherit
+        flex-grow: 1
+        display: flex
+        justify-content: space-between
+        padding: 2em 2.2rem
+        background-color: #f9f9f9
+
+        div
+            display: inline-block
+            width: 50%
+            flex-basis: 50%
+            background: none
+
+            img
+                height: calc(70px - 4em)
+
+        .app-search
+            text-align: right
+            flex-grow: 1
+
+
+chevron(size, color, pos, t, r)
+    container = size*3
+    thickness = size/5
+    display: block
+    height: container
+    width: container
+    position: pos
+    top: t
+    right: r
+    &::after
+        content: ''
+        position: absolute
+        top: 50% - container
+        left: 50% - container
+        width: size
+        height: size
+        border-right: thickness solid color
+        border-top: thickness solid color
+        transform: rotate(45deg)
+        transition: transform 0.3s
+    &.open::after
+        transform: rotate(135deg)
+
+
+// These need to be moved to variables and renamed,
+//  once we can all agree on how to do that.
+$aside-base = #d6e3e0
+$aside-dark = darken($aside-base, 6%)
+$aside-light = lighten($aside-base, 38%)
+$aside-very-light = lighten($aside-base, 62%)
+$aside-accent = saturation($palette.accent.light, 10%)
+
+nav#styleguide-menu
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 100
+    height: 100vh
+    width: 20%
+    min-width: 260px
+    background-color: $aside-light
+    padding: 100px 2.2rem
+
+    span
+        border: 1px solid $aside-dark
+        border-top: 0
+        margin:0
+        position: relative
+        display: inline-block
+        width: 100%
+
+        a
+            font-family: 'gt-walsheim-light-web'
+            font-weight: lighter
+            color: $palette.accent.base
+            text-decoration: none
+            display: block
+            width: 100%
+            height: 50px
+            padding: 1em
+
+        a:hover
+            background-color: $aside-base
+
+        span.toggle-menu
+            chevron(8px, $aside-accent, absolute, 18px, 20px)
+            pointer-events: none
+
+    .sub-menu
+        height: 0px
+        overflow: hidden
+        border-left: 4px solid $aside-accent
+
+        li
+            border: none
+            a
+                padding-left: 2em
+            a:hover
+                background-color: $aside-base
+
+        &.open
+            height: auto
+
+    .selected
+        >a
+            background-color: $aside-base
+
+        span.toggle-menu.open + ul.sub-menu
+            height: auto
+            border-top: 1px solid $aside-dark
+
+    .selected.children
+        >a
+            background-color: transparent
+
+        >a:hover
+            background-color: $aside-base
+
+    > span:first-child
+            border-top: 1px solid $aside-dark
+
+
+label-base()
+    color: #e4e4e4
+    letter-spacing: 0.5em
+    font-size: 0.7em
+    line-height: 3em
+    display: block
+    width: 100%
+
+main
+    display: flex
+    width: 100%
+    padding-top:70px
+
+    div#styleguide-content-spacer
+        width: 20%
+        flex-basis: 20%
+        min-width: 260px
+
+    div#styleguide-content
+        width: 80%
+        flex-basis: 80%
+        min-width: calc(80% - 260px)
+        padding: 2em
+        background:#fff
+        min-height: calc(100vh - 70px)
+
+        code
+            font-family: Courier New, Courier, monospace
+            color: darkgreen
+
+        .styleguide-example
+            background-color: #fdfdfd
+            border: 2px solid #f9f9f9
+            border-radius: 4px
+            padding: 2em
+
+            .styleguide-docs
+                width: 100%
+
+
+
+            .styleguide-docs::before
+                content: 'DOCUMENTATION:'
+                label-base()
+
+            .styleguide-code::before
+                content: 'CODE:'
+                label-base()
+
+            .styleguide-demo::before
+                content: 'DEMO:'
+                label-base()
+
+            .styleguide-sep
+                height: 0px
+                visibility: hidden
+
+            // prevents headers and footers in styleguide demos
+            // from being position: fixed
+            header
+                position: static
+
+            footer
+                position: static
+
+
+
+@media only screen and (max-width: 768px)
+
+    header#styleguide-header
+        display: block
+
+        div.styleguide-header-left
+            width: 100%
+
+            button#hamburger
+                display: block
+                outline: none
+
+        div.styleguide-header-right
+            width: 100%
+
+    nav#styleguide-menu
+        transform: translate(-260px)
+        transition: transform 0.3s
+        z-index: 101
+        padding: 2.2rem 2.2rem
+
+    nav#styleguide-menu.open
+        transform: translate(0px)
+
+    main
+        padding-top: 140px
+
+        div#styleguide-content-spacer
+            width: 0%
+            flex-basis: 0%
+            min-width: 0px
+
+        div#styleguide-content
+            width: 100%
+            padding: 1em
+            flex-basis: 100%
+            min-height: calc(100vh - 140px)
+
+            .styleguide-example
+                padding: 0
+                border-left: none
+                border-right: none
+
+                pre
+                    margin: 0
+                    border: none
+                h4
+                    margin: 0
+
+                code
+                    margin: 0
+                    word-break: break-all
+
+                .styleguide-docs::before
+                    color: #333
+                    border-top: 1px solid #e4e4e4
+
+                .styleguide-code::before
+                    color: #333
+                    border-top: 1px solid #e4e4e4
+
+                .styleguide-demo
+                    padding: 10px 0
+
+                .styleguide-demo::before
+                    color: #333
+                    border-top: 1px solid #e4e4e4

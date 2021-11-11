@@ -1,0 +1,149 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:540;
+
+// VARIABLE SITE TYPO
+$font-body:"oswald",verdana,sans-serif;
+$font-title:"oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:180;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib8";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+.texte-info-agences {
+    text-transform:uppercase;
+    font-size: 0.9em;
+}
+
+.slogan-index {
+    background-color: rgba(15,63,124,.5);
+    padding: 5px;
+}
+
+
+// MENU & NAV
+// MISE EN FORME
+.menu-principal {
+    line-height:48px;
+    font-size: 0.9em;
+    >li>a {
+        background-image: none;
+        filter: none;
+        box-shadow: none;
+        background-color: $color-nav;
+        padding: 11px 5px;
+    }
+    > li.menu-suivi > a {
+        background-color: $color-nav2;
+        &:hover {
+            background-color: darken($color-nav2, 5);
+        }
+    }
+}
+
+.btn-perso {
+    background-color: $color-nav2;
+    color: $color-block;
+    &:hover {
+        background-color: darken($color-nav2, 5);
+         color: $color-block;
+    }
+}
+
+// MINI MOTEUR
+// BG BOUTON
+.bouton-rechercher-moteur {
+    background:$color-other;
+    color:$color-body;
+    border-color:darken($color-other,10);
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+    .logo img {
+        width: 25% !important;
+    }
+    .size-picture-container h1{
+        font-size: 0.9em;
+    }
+
+}
+
+@media only screen and (max-width : 767px) {
+    .logo img {
+        opacity:0;
+   
+        
+    }
+    .logo {
+        margin-right:0;
+        height: 73px;
+        background-image:url('../images/logo1.png');
+        background-position:top center;      
+        background-repeat:no-repeat;
+    }
+}

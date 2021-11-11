@@ -1,0 +1,137 @@
+.products
+    background: $siteColorGrey 
+    padding: 100px 0
+    &__tabs
+        display flex
+        justify-content: center
+        flex-wrap: wrap
+        .nav-tabs
+            border-bottom: none
+            max-width 680px
+            width 100%
+            display: flex
+            justify-content: space-between
+            margin-bottom: 50px
+        .nav-tabs>li
+            width 33.3%
+            text-align: center
+        .nav-tabs>li>a
+            font-size: 24px
+            font-family: "Bebas Neue Regular"
+            color $black
+            position relative
+            padding: 0
+            border: none
+            +below($mobile)
+                font-size: 18px
+            &:after
+                content: ''
+                display: block
+                position absolute
+                bottom: -8px
+                left 50%
+                transform: translateX(-50%)
+                width 71px
+                height: 4px
+                background: $black
+        .nav>li>a:focus, 
+        .nav>li>a:hover
+            color: $siteColorMentol
+            background: none
+            border: none
+            &:after
+                background: $siteColorMentol
+        .nav-tabs>li.active>a, 
+        .nav-tabs>li.active>a:focus, 
+        .nav-tabs>li.active>a:hover
+            color: $siteColorMentol
+            background: none
+            border: none
+            &:after
+                background: $siteColorMentol
+            &:before
+                position absolute
+                display block
+                content ''
+                width 10px
+                height 10px
+                bottom -58px
+                left calc(50% - 5px)
+                border-bottom 1px solid $white
+                border-right 1px solid $white
+                transform rotate(-135deg) translateY(-50%)
+                transition all .4s ease-in-out
+                transform-origin 50% 0
+                background: $white
+        .tab-content
+            width: 100%
+            margin-bottom: 38px
+            .tab-pane
+                width: 100%
+                height: auto;
+                padding: 41px 49px 47px 49px;
+                background: $white;
+                border-radius: 10px;
+                +below($mobile)
+                    padding: 41px 15px 47px 15px
+                .tab__info
+                    display: flex
+                    +below($max-xs)
+                        flex-wrap: wrap
+                    &-image
+                        width 40%
+                        display: flex
+                        justify-content: center
+                        position relative
+                        +below($max-xs)
+                            width 100%
+                        &_text
+                            position absolute
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 30px
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 100%;
+                            text-align: center;
+                    &-info
+                        width 60%
+                        +below($max-xs)
+                            width 100%
+                        &_list
+                            margin: 0;
+                            padding: 0;
+                            list-style: none;
+                            &-item
+                                height: 33px;
+                                display: flex;
+                                align-items: center;
+                                border-bottom: 1px solid #e7e8e8;
+                                &:last-child
+                                    border: none
+                                span
+                                    font-family: 'Montserrat', sans-serif;
+                                    font-size: 16px
+                                .item-left
+                                    width 50%
+                                    font-weight: bold
+                                    color: $siteColorMentol
+                                    +below($max-xs)
+                                        width: 70%
+                                .item-right
+                                    width 50%
+                                    color: $black
+                                    +below($max-xs)
+                                        width: 30%
+                                        text-align: right 
+                                .item-right.title
+                                    font-weight: bold
+    &__btn
+        text-align: center
+        .btn
+            width: 200px;
+            height: 60px;
+            font-size: 18px;
+            font-weight: bold
+            font-family: 'Montserrat', sans-serif;
+

@@ -1,0 +1,345 @@
+// Styles global section
+.js-hide
+  display none
+
+.js-bg-M
+  background url('../images/diagnostic-M.jpg') no-repeat center center
+  background-size cover
+
+.js-bg-H
+  background url('../images/diagnostic-H.jpg') no-repeat center center
+  background-size cover
+
+// Content wrapper Control
+.ia-Content
+  &--diagnostic
+    &.js-init-active
+      .ia-Diagnostic
+        &__progress
+          opacity 0
+    .ia-ContentHeader
+      padding 32px 0 0
+      background url('../images/diagnostic-banner.jpg') no-repeat center center
+      background-size cover
+
+.ia-Diagnostic
+
+  // Header Style
+  &__header
+    margin-top 16px
+    padding 16px 0 0
+    text-align center
+    background-color rgba(black,.5)
+    &.js-result-hidratante
+      .ia-Diagnostic
+        &__count
+          color c__hidratante
+        &__padding
+          background-color c__hidratante
+    &.js-result-original
+      .ia-Diagnostic
+        &__count
+          color c__original--beta
+        &__padding
+          background-color c__original
+    &.js-result-extra
+      .ia-Diagnostic
+        &__count
+          color c__extra
+        &__padding
+          background-color c__extra
+    &.js-result-control
+      .ia-Diagnostic
+        &__count
+          color c__control
+        &__padding
+          background-color c__control
+  &__qst
+    margin 0
+    font-size 16px
+    text-transform uppercase
+    color white
+  &__progress
+    position relative
+    transition all 0.33s easing( 'in-out-cubic' )
+  &__count
+    position absolute
+    left 0
+    top 0
+    font-size 12px
+    font-weight 700
+    color c__red
+    transform translateX(-120%)
+    transition all 0.33s easing( 'in-out-cubic' )
+    &.js-finish
+      left 50% !important
+      transform translateX(-50%);
+  &__bar
+    position relative
+    padding-top 20px
+  &__padding
+    height 5px
+    background-color c__red
+    transition all 0.33s easing( 'in-out-cubic' )
+
+  // Body style
+  &__body
+    padding 32px 16px
+    text-align center
+    background-color c__gray--beta
+    transition background-image 0.33s easing( 'in-out-cubic' )
+    +above(768px)
+      height 1080px 
+
+
+  &__option
+    clearfix()
+    position relative
+    margin-bottom 32px
+    color black
+    cursor pointer
+    +above(768px)
+      col(1/2, gutter: 4, cycle: 2)
+
+  // Options options style
+  &__options
+    clearfix()
+    max-width 700px
+    margin 0 auto
+
+  // Controls style
+  &__start,
+  &__reset
+    display inline-block
+    margin-top 32px
+    padding 8px 32px
+    font-weight 700
+    text-transform uppercase
+    background-color c__red
+    color white
+    transition all 0.33s easing( 'in-out-cubic' )
+    &:hover
+      background-color darken(c__red, 10%)
+  &__reset
+    width 100%
+    +above(768px)
+      width auto
+  &__start
+    &.js-disabled
+      background-color c__gray--gama
+      cursor default
+      pointer-events none
+  &__ctrl
+    display inline-block
+    background-color c__red
+    color white
+    transition all 0.33s easing( 'in-out-cubic' )
+    &:hover
+          background-color darken(c__red, 20%)
+  &__ctrls
+    margin-top 32px
+    &__nav
+      .ia-Diagnostic__ctrl
+        width 50px
+        height 50px
+        line-height 50px
+        border-radius 50%
+        &--prev
+          margin-right 32px
+        &.js-disabled
+          background-color c__gray--beta
+          cursor default
+          pointer-events none
+          &:hover
+            background-color c__gray--beta
+    &__last
+      .ia-Diagnostic__ctrl
+        width 100%
+        padding 8px 16px
+        font-weight 700
+        text-transform uppercase
+        &:nth-child(1)
+          margin-bottom 32px
+        +above(768px)
+          width 222px
+          &:nth-child(1)
+            margin-bottom 0
+            margin-right 32px
+
+
+  &__view
+    // Init option style
+    &--init,
+    &--general,
+    &--result
+      display none
+      &.js-state-active
+        display block
+    &--init
+      .ia-Diagnostic__option
+        background-color black
+        col(1/2, gutter: 4, cycle: 2)
+        &:after
+          content '\f00c'
+          absolute false 16px 16px false
+          z-index 100
+          display block
+          padding 4px
+          font normal normal normal 14px/1 FontAwesome
+          color white
+          border 1px solid white
+          opacity 0
+          transition all 0.33s easing( 'in-out-cubic' )
+        &__img
+          display block
+          max-width 100%
+          border 2px solid transparent
+          transition all 0.33s easing( 'in-out-cubic' )
+        &.js-active-option
+          &:after
+            opacity 1
+        &:hover img,
+        &.js-active-option img
+          opacity 0.8
+          border 2px solid c__red
+
+    // General Styles
+    &--general
+      .ia-Diagnostic__option
+        min-height 156px
+        padding 16px
+        border 2px solid transparent
+        background-color rgba(c__blue, 0.2);
+        transition border-color 0.33s easing( 'in-out-cubic' ), background-color 0.33s easing( 'in-out-cubic' )
+        &.js-active-option
+          background-color c__blue
+          color white
+        &:hover
+          border-color c__blue;
+        &__inner
+          clearfix()
+          absolute 50% 16px false 16px
+          transform translateY(-50%)
+        &__letter,
+        &__copy
+          position relative
+          width 100%
+          text-align center
+          +above(768px)
+            absolute 50% false false
+            transform translateY(-50%)
+        &__letter
+          font-family NexaBold
+          font-size 24px
+          +above(768px)
+            col(1/4)
+            left 0
+        &__copy
+          font-weight 300
+          margin 0
+          +above(768px)
+            col(3/4)
+            right 0
+            text-align left
+
+    // Result Styles
+    &--result
+      clearfix()
+      margin 0 auto
+      +above(991px)
+        max-width 1280px
+        text-align left
+      .ps-scrollbar-y-rail
+        opacity 1 !important
+      &.js-result-hidratante
+        .ia-Diagnostic
+          &__result
+            &__link
+              background-color c__hidratante
+        .ia-Product__category,
+        .ps-scrollbar-y
+          background-color c__hidratante
+      &.js-result-original
+        .ia-Diagnostic
+          &__result
+            &__link
+              background-color c__original
+        .ia-Product__category,
+        .ps-scrollbar-y
+          background-color c__original
+      &.js-result-extra
+        .ia-Diagnostic
+          &__result
+            &__link
+              background-color c__extra
+        .ia-Product__category,
+        .ps-scrollbar-y
+          background-color c__extra
+      &.js-result-control
+        .ia-Diagnostic
+          &__result
+            &__link
+              background-color c__control
+        .ia-Product__category,
+        .ps-scrollbar-y
+          background-color c__control
+
+      .ia-Product__category
+        margin-bottom 16px
+        font-size 18px
+        text-align center
+      p
+        margin-top 0
+        margin-bottom 16px
+        font-size 16px
+        text-align justify
+      .ia-Diagnostic__result
+        &__bottle
+          +above(768px)
+            span(5/12)
+        &__info
+          +above(768px)
+            span(6/12)
+        &__bottle,
+        &__info
+          +above(1280px)
+            span(1/2)
+            &:nth-child(1)
+              padding-right 16px
+            &:nth-child(2)
+              padding-left 16px
+
+        &__column
+          clearfix()
+          &:nth-child(1)
+            margin-bottom 32px
+            +above(768px)
+              margin-bottom 0
+          +above(1280px)
+            span(1/2)
+            &:nth-child(1)
+              padding-right 16px
+              padding-left 32px
+            &:nth-child(2)
+              padding-left 16px
+              padding-right 32px
+        &__bottle
+          img
+            width 1000px
+        &__link,
+        &__reset
+          display block
+          padding 8px
+          font-size 14px
+          text-transform uppercase
+          text-align center
+          color white
+          border-radius 30px
+        &__reset
+          margin-top 16px
+          background-color c__blue
+        &__summary
+          position relative
+          padding 16px
+          +above(1280px)
+            padding-right 32px

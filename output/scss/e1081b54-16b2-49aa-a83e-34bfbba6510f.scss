@@ -1,0 +1,201 @@
+@import "global";
+@import "mixin";
+
+.line-container {
+  @extend %display-flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding: 1rem 0;
+  margin: 3rem 0;
+  position: relative;
+
+  .line {
+    @extend %display-flex;
+    width: 80%;
+    min-height: 5px;
+    border-radius: 45px;
+    border: none;
+    background: rgb(43, 218, 169);
+    background: linear-gradient(
+      121deg,
+      rgba(43, 218, 169, 1) 0%,
+      rgba(22, 207, 255, 1) 45%,
+      rgba(255, 113, 92, 1) 97%
+    );
+    @include mobile{
+      width: 90%;
+    }
+  }
+  .line-text {
+    @extend %display-flex;
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    @include mobile {
+      width: 60%;
+    }
+    @include tablet {
+      width: 45%;
+    }
+    h3 {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      background-color: $zard;
+      text-align: center;
+      padding: 3px 0;
+      box-shadow: 0 7px 20px -5px rgba(0, 0, 0, 1);
+      @include mobile {
+        font-size: 16px;
+        padding: 5px 0;
+      }
+    }
+  }
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 23rem;
+  margin: 5rem 0;
+  padding: 10px 0;
+  background: $sormei;
+  box-shadow: 3px 3px 15px 4px rgba(0, 0, 0, 0.5);
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+  .card1 {
+    @extend %card;
+    position: relative;
+    @include card-link;
+    .svg1 {
+      @include cards(#48cae4, #ef476f);
+    }
+  }
+  .card2 {
+    @extend %card;
+    position: relative;
+    @include card-link;
+    .svg2 {
+      @include cards(#f28482, #fca311);
+    }
+  }
+  .card3 {
+    @extend %card;
+    position: relative;
+    @include card-link;
+    .svg3 {
+      @include cards(#2a9d8f, #f72585);
+    }
+  }
+  .link {
+    @include link($sormei);
+
+    &:hover {
+      h2 {
+        font-size: 40px;
+        transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+      }
+    }
+  }
+}
+
+.footer-container,
+.brand-container {
+  @extend %display-flex;
+  flex-direction: column;
+  width: 100%;
+  background: rgb(17, 94, 138);
+ 
+  padding: 5rem 0;
+}
+.social {
+  @extend %display-flex;
+
+  width: 15%;
+  margin: 3rem 0;
+
+  .b-social {
+    width: 90%;
+    height: 70%;
+    margin: 0 5px;
+    padding-left: 12px;
+    .link {
+      @include link($sormei);
+      font-size: 24px;
+      width: 100%;
+      height: 100%;
+      .social-cover {
+        background-image: url(../assets/imgs/cover-social-icon.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        font-size: 25px;
+      }
+    }
+  }
+}
+.footer {
+  @extend %display-flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+  @include mobile{
+      flex-direction: column;
+  }
+  .left,
+  .center,
+  .right {
+    width: 20%;
+    @include mobile{
+        width: 100%;
+       
+        margin-top: 10px;
+    }
+  }
+}
+.footer-item,
+.footer-ul {
+  @extend %display-flex;
+  width: 100%;
+  height: 100%;
+}
+.footer-ul {
+  flex-direction: column;
+  .footer-link {
+    @extend %display-flex;
+    width: 50%;
+    height: 100%;
+    text-decoration: none;
+    color: $blue;
+    &:hover {
+      transition: all 0.3s ease-in;
+      color: $zard;
+    }
+    @include mobile{
+        width: 100%;
+    }
+  }
+}
+.footer-li {
+  @extend %display-flex;
+  width: 100%;
+  height: 100%;
+  padding: 1px 0;
+
+  span {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 2px;
+    
+  }
+}

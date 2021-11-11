@@ -1,0 +1,269 @@
+
+
+@css {
+/*
+MAIN SIDEBAR stylesheet
+resurrection.styl
+*/
+}
+
+sidebarGray               = #A0A0A0
+sidebarGrayPale           = #777
+sidebarActive             = #fff
+sidebarSubtitle           = #979087
+sidebarSelectedBg         = #262626
+sidebarCountBg            = #e94835
+sidebarSectionHeaderColor = #666666
+
+
+sidebarTextShadow()
+  text-shadow     1px 1px 1px rgba(0, 0, 0, .75)
+
+#main-sidebar
+
+  // + 1 is required for devices which has decimal point
+  // devicePixelRatio (e.g 1.25 on samsung chromebook).
+  size            (sidebarWidth + 1) 100%
+  z-index         100
+  bg              color #333339
+  top             0
+  left            0
+  fix()
+
+  &.team
+    > .kdcustomscrollview
+      kalc                  height, 100% \- 40px
+
+    .avatar-area
+      .avatarview
+        left                initial
+
+  &.static > .kdcustomscrollview
+    kalc                    height, 100% \- 28px
+
+  > main > div:last-child
+    margin-bottom           60px
+
+  > .kdcustomscrollview
+    width                   100%
+    kalc                    height, 100% \- 88px
+    styleScrollBars()
+
+  .logo-wrapper
+    bg                      color #262626
+    borderBox()
+    size                    100% 40px
+    rel()
+    > a
+      margin                0
+      display               block
+      r-sprite              app logo_full
+      cursor                default
+      rel()
+      left                  5px
+      top                   -1px
+
+
+#kdmaincontainer
+
+  &.collapsed
+    &.with-sidebar
+      #main-sidebar
+        width               41px
+
+    .activity-sidebar
+
+      cite.count
+        size            auto 16px
+        line-height     16px
+        padding         0 5px
+        abs             0px 208px 0 0
+        font-size       9px
+        font-weight     400
+        rounded         3px
+        shadow          none
+        z-index         1000
+
+.activity-sidebar
+  padding             1px 18px
+  borderBox()
+
+  cite.count
+    size                    24px 19px
+    line-height             16px
+    color                   #fff
+    abs                     0px 0px 0 0
+    font-size               10px
+    font-weight             700
+    background              sidebarCountBg
+    rounded                 3px
+    text-align              center
+    vendor                  transition, all .354s .177s ease
+    padding-top             1px
+    fr()
+
+  .workspace.has-sub-items
+    cite
+      display         none !important
+
+  section
+    size              auto auto
+    overflow          visible
+    margin            0 0 22px 0
+
+    .lazy-loader
+      margin          0
+      top             -28px
+      right           36px
+      abs()
+
+    .kdlistview
+      margin-top      6px
+      overflow        visible
+
+      .nothing
+        background    #3B3B3B
+        width         auto
+        font-size     14px
+        margin        0 6px
+        padding       16px 18px
+        rounded       3px
+        line-height   19px
+        text-align    center
+        font-weight   400
+        color         #787878
+        margin-bottom 16px
+        borderBox()
+
+        a
+          color             #929292
+          text-decoration   underline
+
+// refactored, moved to outer scope
+
+.activity-sidebar
+
+  a.vm
+    antialiased()
+    color                   sidebarGray
+    borderBox()
+    display                 block
+    font-size               $fs-regular
+    line-height             20px
+    noTextDeco()
+    margin-bottom           8px
+    padding                 0px 8px 0px 19px
+    opacity                 1
+    size                    218px 20px
+    rel()
+
+    > figure
+      abs                   50% 0 0 0px
+      display               block
+      width                 16px
+      height                16px
+      bg                    color #222
+      vendor                transform, translateY(-50%)
+
+    &.running:hover > div
+      width         180px
+
+    > div
+      ellipsis()
+      font-size             16px
+      line-height           20px
+      size                  200px 20px
+      vendor                transition, width .1s ease .05s
+      width                 200px
+      abs()
+      top                   0
+
+    &.terminal > figure
+      r-sprite      app new_nav_terminal
+    &.ide > figure
+      r-sprite      app new_nav_ide
+    &.vm
+      > figure
+        display             block
+        width               13px
+        height              13px
+        bg                  color, transparent
+        rounded             3px
+        border              3px solid sidebarGray
+        borderBox()
+      > span
+        abs                 4px 1px 0 0
+        opacity             0
+        r-sprite            app vm_settings_icon
+        vendor              transition, opacity .1s .1s ease
+      &:hover > span
+        opacity     1
+      &.running > figure
+        border-color   #24B463
+        // bg          color, #8CEE71
+        // border      2px solid #8CEE71
+      &.reconnecting > figure
+        border-color   #FFC884
+      > .progressbar-container
+        abs                 24px 0 0 0
+        background          none
+        border              none
+        rounded             1px
+        size                95% 3px
+        .bar
+          background        #4BA148
+          border            none
+          shadow            none
+
+.sidebar-info-modal
+
+  text-align                center
+  bg                        color, #FFF !important
+
+  .modal-arrow
+    border-right-color      #FFF !important
+    &:before
+      border-right-color    #FFF !important
+
+  .kdmodal-inner
+  .kdmodal-content
+    margin                  0 !important
+    overflow                hidden !important
+
+  .close-icon
+    hidden()
+
+  .artboard
+    r-sprite                'app', 'vm_added_bg'
+    margin                  23px auto 0
+
+    img
+      margin                16px 0 0 -10px
+
+  h2
+    font-size               24px
+    line-height             36px
+    color                   #48BA7D
+    margin                  21px 0 12px 0
+
+  p
+    font-size               14px
+    line-height             22px
+    color                   #434343
+    margin                  0 auto 25px
+    width                   492px
+
+  .kdbutton.close
+    width                   165px
+    bg                      color, #48BA7D
+
+    .button-title
+      padding               0 11px
+      margin-left           -10px
+
+    .check
+      r-sprite              'app', 'check'
+      display               inline-block
+      left                  120px
+      top                   4px
+      abs()

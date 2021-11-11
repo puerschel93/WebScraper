@@ -1,0 +1,101 @@
+@import '../../styl/component-include.styl'
+
+.b-float-label
+  position relative
+
+  .password-invisible
+    position absolute
+    top 19px
+    right 14px
+    cursor pointer
+    z-index 1
+    
+
+    div
+      background-bg()
+      width 16px
+      height 10px
+    
+      &:first-child
+        display none
+
+    &.inverse
+
+      div:first-child
+        display block
+
+      div:last-child
+        display none
+  
+  input:not([type=checkbox]),
+  input:not([type=radio]),
+  textarea
+    background-color: $form-control-color;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: $14px;
+    margin: 0;
+    padding: 0 15px;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #3b3b3b;
+    
+    &:focus:not([readonly]),
+    &.active
+      border-bottom 0
+      box-shadow none
+    
+      &~label
+        transform( translateY(-22px))
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0
+        
+  textarea
+    height 130px
+    padding 15px
+    display block
+    
+  label
+    color: #2b2b2b;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    font-size: $11px;
+    cursor: text;
+    -webkit-transition: color .2s ease-out, -webkit-transform .2s ease-out;
+    transition: color .2s ease-out, -webkit-transform .2s ease-out;
+    transition: transform .2s ease-out, color .2s ease-out;
+    transition: transform .2s ease-out, color .2s ease-out, -webkit-transform .2s ease-out;
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    text-align: initial;
+    transform( translateY(1rem))
+
+    &:not(.label-icon).active
+      transform( translateY(-22px))
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0
+
+  &.invalid
+  
+    input:not([type=checkbox]),
+    input:not([type=radio]),
+    textarea
+      background-color #ffe5e5
+
+    input[type=text]:focus:not([readonly])+label,
+    input[type=tel]:focus:not([readonly])+label,
+    label
+      color $danger-color
+
+  .btn-delete
+    position absolute
+    top 8px
+    right -52px
+    z-index 1
+
+  select 
+    width 100px

@@ -1,0 +1,184 @@
+@import "./variables";
+
+$crypto: #13c783;
+$popcorn: #edc66d;
+
+//$test-border: none;
+
+.projects {
+  border: $test-border;
+  color: $dark-text-color;
+  background: black;
+  margin-bottom: 15rem;
+  h2 {
+    position: relative;
+    right: 300px;
+    opacity: 0;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    color: $dark-text-color;
+    font-size: 3.5rem;
+    text-align: center;
+  }
+}
+
+.description {
+  position: absolute;
+  top: 10vh;
+  font-size: 1rem;
+  a {
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.1s ease;
+  }
+}
+
+#codeBirthday:hover {
+  color: $secondary;
+}
+#codeCrypto:hover {
+  color: $crypto;
+}
+#codePortofolio:hover {
+  color: $popcorn;
+}
+
+#myProjects {
+  border: $test-border;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 8vw 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "image1 image1 p1"
+    "p2 image2 image2"
+    "image3 image3 p3";
+  margin: 0 10vw;
+  div {
+    position: relative;
+    border: $test-border;
+    margin: 3rem 2rem;
+    height: 50vh;
+  }
+}
+
+#p1 {
+  grid-area: p1;
+}
+
+#p2 {
+  grid-area: p2;
+}
+
+#p3 {
+  grid-area: p3;
+}
+
+.image {
+  cursor: pointer;
+  p {
+    text-align: center;
+    margin-top: 8vh;
+    // position: absolute;
+    color: white;
+    font-size: 1.8rem;
+    opacity: 0;
+  }
+}
+
+#portofolio {
+  margin-top: 30px;
+}
+
+.image:hover p {
+  opacity: 1;
+  transition: all 1s ease;
+}
+
+#image1 {
+  position: absolute;
+  background: url("../photos/birthday.png") no-repeat center;
+  background-size: 100% 100%;
+  left: -400px;
+  opacity: 0;
+  grid-area: image1;
+}
+#image1P {
+  position: relative;
+  left: 100vw;
+}
+#image1Layer {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #1779ff;
+}
+
+#image1:hover {
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.85);
+  //transition: box-shadow 3s ease;
+  border: 10px solid #1779ff;
+  transition: border 0.8s cubic-bezier(0.42, 0, 0, 1);
+}
+#image2 {
+  position: relative;
+  background: url("../photos/crypto.png") no-repeat center;
+  background-size: 100% 100%;
+  position: relative;
+  right: -400px;
+  opacity: 0;
+  grid-area: image2;
+}
+#image2P {
+  position: relative;
+  left: -100vw;
+}
+#image2Layer {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #13c783;
+}
+#image2:hover {
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
+  //transition: box-shadow 3s ease;
+  border: 10px solid #13c783;
+  transition: border 0.4s cubic-bezier(0.42, 0, 0, 1);
+}
+#image3 {
+  position: relative;
+  background: url("../photos/popcorn.jpg") no-repeat center;
+  background-size: 100% 100%;
+  position: relative;
+  left: -400px;
+  opacity: 0;
+  grid-area: image3;
+}
+#image3P {
+  position: relative;
+  left: 100vw;
+}
+#image3Layer {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: $popcorn;
+}
+#image3:hover {
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
+  //transition: box-shadow 3s ease;
+  border: 10px solid $popcorn;
+  transition: border 0.4s cubic-bezier(0.42, 0, 0, 1);
+}

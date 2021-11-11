@@ -1,0 +1,97 @@
+.register {
+    background-color: #fff;
+    padding: 22px 27px;
+    border-radius: 2px;
+    margin: 3rem auto;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.16);
+
+    @include medium-breakpoint {
+        width: 536px;
+    }
+
+    &__fields-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        @include medium-breakpoint {
+            flex-direction: row;
+        }
+    }
+
+    &__field-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        
+        &--grow {
+            flex-grow: 1
+        }
+
+        &--password {
+            position: relative;
+        }
+    }
+
+    &__heading {
+        @include form-heading-font;
+    }
+
+    &__label {
+        @include form-label-font;
+    }
+
+    &__input {
+        @include form-input;
+        @include form-input-font;
+        height: 37px;
+        border-radius: 2px;
+
+        &--password {
+            width: 100%;
+        }
+
+        &::placeholder {
+            color: $placeholder-grey;
+        }
+    }
+
+    &__caption {
+        @include form-caption-font;
+    }
+
+    &__span {
+        position: relative;
+    }
+
+    &__password-icon {
+        position: absolute;
+        width: 1.25rem;
+        top: 10px;
+        right: 10px;
+    }
+
+    &__sectors {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__sector{
+        background-color: $slate;
+        color: $white;
+        padding: 7px 20px;
+        border: 1.5px solid $slate;
+        border-radius: 2px;
+        margin: 0 0.5rem 0.5rem 0;
+        font: 1rem $extra-light-font;
+
+        &--none {
+            @include body-font;
+        }
+    }
+
+    &__button {
+        @include button;
+    }
+}

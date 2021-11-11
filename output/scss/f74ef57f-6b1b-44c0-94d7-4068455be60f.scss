@@ -1,0 +1,227 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:750;
+
+// VARIABLE SITE TYPO
+$font-body:"Open Sans",verdana,sans-serif;
+$font-title:"Muli",arial,sans-serif;
+$font-deco:"Great Vibes",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:180;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces9";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+//------------------------------------------------------------------------------------------------------------------------------------
+//		PERSO OUESTTRANS
+//------------------------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//------------------------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//------------------------------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:100%;
+	}
+}
+
+footer.bg-primary {
+	background:$color-body;
+}
+
+.texte-info-agences {
+	color:$color-primary;
+}
+
+.typo-deco {
+	font-family:$font-deco;
+}
+
+.btn-action-no-gradient {
+	color:$color-primary;
+	&:hover {
+		color:$color-primary;
+	}
+}
+
+	//------------------------------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//------------------------------------------------------------------------------------------------------------------------------------
+header .logo img {
+	margin-top:-40px;
+}
+
+@media only screen and (max-width : 767px) {
+    header .logo img {
+ 	   width: 30%;
+ 	   margin-top:0px;
+    }
+}
+
+.navigation {
+	background-color:rgba($color-primary,0.8);
+	border-bottom:1px solid $color-secondary;
+	height:95px;
+}
+
+.menu-principal {
+	line-height:95px;
+	font-size: 1.0em;
+	@media only screen and (max-width : 1280px) {
+		font-size: 1.0em;
+	}
+	>li {
+		padding: 10px 10px;
+		@include border-radius (4px);
+		@media only screen and (max-width : 1280px) {
+			padding: 10px 5px;
+		}
+		&:hover {
+			background:$color-secondary;			
+		}
+		>a {
+		padding: 10px 0px;
+			border:none;
+			&:hover {
+				border:none;
+				color:$color-primary;
+			}
+		}
+	}
+}
+
+#menuNavigation > li.menu-estimation {
+	background:$color-action-light-5;
+	color:$color-primary;
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------
+//		INDEX
+//------------------------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------------------
+	//		VISUEL - TTL - MOTEUR
+	//------------------------------------------------------------------------------------------------------------------------------------
+
+.h1-index {
+	background-color:rgba($color-primary,0.6);	
+	@include border-radius (4px);
+	font-weight:normal;
+	width: 75%;
+    margin-left: 23%;
+    margin-top: -215px;
+    @media only screen and (max-width : 767px) {
+    	display:none;
+    }
+}
+
+.bg-mini-moteur {
+	background:$color-primary;
+}
+
+body > aside.box-shadow.relative.size-picture-container.margin-top-under-nav-fixe {
+	box-shadow:none;
+	border-bottom:1px solid $color-secondary-light-10;
+}
+
+	//------------------------------------------------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//------------------------------------------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage {
+	background:$color-primary;
+	@include border-radius (4px);
+	padding:10px;
+	.height-190 {
+		height:240px;
+	}
+}
+
+	//------------------------------------------------------------------------------------------------------------------------------------
+	//		ZONE PUB
+	//------------------------------------------------------------------------------------------------------------------------------------
+
+.zone-pub {
+	background:$color-primary;
+	@include border-radius (4px);
+	padding:10px;
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------
+//		LISTING PA
+//------------------------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//------------------------------------------------------------------------------------------------------------------------------------
+
+.recherche-annonces .height-370 {
+	height:490px;
+}

@@ -1,0 +1,188 @@
+/*!
+*
+*
+*
+*
+* start custom stylesheets
+*
+*
+*
+
+
+*
+*
+*/
+
+
+// vars
+brand0 = rgba(26,26,26,1.0) //#
+brand1 = rgba(26,26,26,1.0) //#
+brand2 = rgba(0,0,0,1.0) //#
+brand3 = rgba(100,100,100,1.0) //#
+brand4 = rgba(180,180,180,1.0) //#
+brand5 = rgba(255,255,255,1.0) //# 
+brand6 = rgba(255,0,0,1.0) //# 
+
+good = rgba(0,220,110,1.0)
+alert = red
+
+white = rgba(255,255,255,1.0)
+whiteAlp90 = rgba(255,255,255,0.9)
+whiteAlp75 = rgba(255,255,255,0.75)
+whiteAlp50 = rgba(255,255,255,0.5)
+whiteAlp25 = rgba(255,255,255,0.25)
+whiteAlp10 = rgba(255,255,255,0.1)
+whiteAlp05 = rgba(255,255,255,0.05)
+
+black = rgba(0,0,0,1.0)
+blackAlp75 = rgba(0,0,0,0.75)
+blackAlp55 = rgba(0,0,0,0.55)
+blackAlp50 = rgba(0,0,0,0.5)
+blackAlp25 = rgba(0,0,0,0.25)
+blackAlp10 = rgba(0,0,0,0.1)
+blackAlp5 = rgba(0,0,0,0.05)
+
+halfDark = rgba(0,0,0,0.45)
+
+
+lightGrey = rgba(235,235,235,1.0)
+mainBG = rgba(245,245,245,1.0)
+
+padXL = 7vw
+padL = 5vw
+padM = 3vw
+padStd = 2vw
+padXS = 1.5vw
+padXXS = 1vw
+
+marXL = 10vw
+marL = 5vw
+marM = 3vw
+marStd = 2vw
+marXS = 1.5vw
+marXXS = 1vw
+
+
+
+fontStack = -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+//responsive breakpoint & media queries
+mBreakPoint = 750px
+tBreakPoint = 1100px
+sdBreakPoint = 1200px
+dBreakPoint = 1500px
+lgBreakPoint = 1900px
+
+phoneRule = "screen and (max-width: mBreakPoint )"
+phoneRule2 = "screen and (max-width: mBreakPoint ), screen and (max-height: mBreakPoint) "
+tabletRule = "screen and (min-width: mBreakPoint) and (max-width: tBreakPoint )"
+desktopRule = "screen and (min-width: tBreakPoint) and (max-width: dBreakPoint )"
+lgdesktopRule = "screen and (min-width: dBreakPoint)"
+
+smallDesktop = "screen and (min-width: mBreakPoint) and (max-width: sdBreakPoint )"
+
+
+mtrigger = "screen and (max-width: tBreakPoint )"
+ttrigger = "screen and (min-width: mBreakPoint )"
+dtrigger = "screen and (min-width: tBreakPoint )"
+
+phLandscape = "screen and (max-width: mBreakPoint) and (orientation: landscape)"
+tbLandscape = "screen and (min-width: mBreakPoint) and (max-width: tBreakPoint) and (orientation: landscape)"
+
+ie = "all and (-ms-high-contrast: none), (-ms-high-contrast: active)"
+
+$hideItAll = none !important
+
+// responsive logos
+logoDimens = 40vw
+
+
+// misc blocks
+marginNo = @block {
+    margin: 0
+}
+marginM = @block {
+    margin-bottom: 2vh
+}
+marginL = @block {
+    margin-left: 2vw
+}
+marginR = @block {
+    margin-right: 2vw
+}
+marginT = @block {
+    margin-bottom: 4vh
+}
+marginBT = @block {
+    margin-bottom: 1.5vh
+}
+marginVT = @block {
+    margin-top: 2vh
+    margin-bottom: 2vh
+}
+marginALL = @block {
+    margin: 2vh
+}
+wh100 = @block {
+    width:100%
+    height:100%
+}
+test = @block {
+    border:1px solid cyan
+}
+borderBtm = @block {
+    border-bottom: 1px solid brand1
+}
+
+// heights
+fullH = 95vh
+largeH = 65vh
+halfH = 50vh
+smallH = 25vh
+
+navHeight = 6vh
+navHeightL = 15vh
+navSpacer = 12vh
+navSpacerL = 15vh
+
+
+
+// basic defaults
+html, body
+    width: 100%
+    height: 100%
+    font-family: 'Inter VF','Inter', fontStack
+body
+    font-size: 16px
+    // background: linear-gradient(top, white, brand1)
+body.lightTheme
+    background-color: brand5
+    color: brand2
+body.lightTheme > header.sticky
+    background-color: brand5    
+body.darkTheme
+    background-color: brand1  
+    color: brand3
+body.darkTheme > header.sticky
+    background-color: brand1 
+main
+    border-bottom: 1px solid blackAlp5    
+body > footer
+    background-color: blackAlp5
+    border-top: 1px solid whiteAlp90
+hr
+    border: none
+    border-bottom: 3px solid brand1
+    margin:marStd 0
+    @media phoneRule
+        margin: marL 0
+hr.minor
+    border-bottom-width: 2px
+hr.tiny
+    border-bottom-width: 1px    
+img 
+    width 100%
+    height auto
+.noPad
+    padding: 0 !important
+// blend modes

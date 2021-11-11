@@ -1,0 +1,106 @@
+///////////////// font variables ///////////////
+$background-color: hsl(50, 33%, 96%);
+$background-selected-color: hsl(58, 100%, 51%);
+
+$font-color: hsl(105, 7%, 11%);
+$font-linked-color: hsl(265, 76%, 44%);
+$font-linked-hover-color: hsl(272, 100%, 50%);
+$font-low-contrast-color: hsl(200, 3%, 82%);
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 62.5%; //Now 10px is equal 1rem
+
+  height: 100%;
+  /*font-family: 'Bungee', cursive; font-family: 'Bungee Hairline', cursive;font-family: 'Bungee Inline', cursive; font-family: 'Bungee Outline', cursive;font-family: 'Bungee Shade', cursive; 
+  font-family: 'Montserrat Alternates', sans-serif; font-family: 'Paytone One', sans-serif; font-family: 'Raleway', sans-serif;*/
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='32' height='38' viewport='0 0 100 100' style='fill:black;font-size:23px;'><text y='57%'>👆</text></svg>")
+      16 0,
+    auto;
+  /* My version with the numbers cahnged, the original=> cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='32' height='38' viewport='0 0 100 100' style='fill:black;font-size:19px;'><text y='50%'>👆</text></svg>") 16 0,auto; */
+  /*The cursors: 👆 👈 🖖 ☝️🤞 ✌️*/
+
+  body {
+    background-color: $background-color;
+    color: $font-color;
+    font-size: 1.2rem; // if font-size is 62.5%(set in html then 3.5rem is exactly 35px
+
+    // When text is selected it will be yellow
+    ::selection {
+      background-color: $background-selected-color;
+      color: #281d48;
+    }
+
+    .main {
+      .navigation {
+        //settings and the far left
+        color: $font-low-contrast-color;
+        font-family: "Montserrat Alternates", sans-serif;
+        font-weight: 700;
+      }
+      .content_wrap {
+        //all the middle right main content
+        left: 0;
+        overflow: auto;
+        height: 100%;
+        padding-bottom: 64px;
+        padding-left: 20vw;
+
+        font-family: "Paytone One", sans-serif; //font-family: "Bungee", cursive;
+        .helloName {
+          color: $font-color;
+        }
+        .content {
+          color: $font-color;
+          text-align: left;
+
+          cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='32' height='38' viewport='0 0 100 100' style='fill:black;font-size:20px;'><text y='54%'>🖖</text></svg>")
+              16 0,
+            auto;
+          .link {
+            color: $font-linked-color;
+            text-decoration: none;
+
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='32' height='38' viewport='0 0 100 100' style='fill:black;font-size:23px;'><text y='57%'>🤞</text></svg>")
+                16 0,
+              auto;
+            //font-family: "Bungee Outline", cursive;
+            &:hover {
+              //text-decoration: underline;
+              color: $font-linked-hover-color;
+              text-decoration: underline;
+            }
+            &:border:after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 0;
+              left: 0;
+              bottom: 10px;
+              /*Change this to increase/decrease distance*/
+              border-bottom: 2px solid $font-linked-color;
+            }
+            &:active {
+              cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='32' height='38' viewport='0 0 100 100' style='fill:black;font-size:23px;'><text y='57%'>✌️</text></svg>")
+                  16 0,
+                auto;
+            }
+            .link--kateg {
+              display: none;
+            }
+          }
+          .link-number {
+            // mini linked number
+            color: $font-linked-color;
+            position: relative;
+            left: -3px;
+            top: -7px;
+            margin-left: 0px;
+            font-size: 0.5rem;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,419 @@
+html, body  
+  width: 100%  
+  height: 100%  
+  padding-left: 0
+  padding-right: 0
+  -webkit-user-select: none
+  -moz-user-select: none  
+  //background-image:url(../img/splash-bg.jpg)
+  //background-repeat: repeat
+  //background-size: contain
+  //z-index: -100
+
+.hidden
+  opacity: 0
+
+.loading-panel
+  position: fixed
+  left: 0px
+  top: 0px  
+  display: none  
+  background: #000000
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"  
+  background: rgba(0, 0, 0, 0.6)
+  padding: 0.3em  
+  text-align: center
+  vertical-align: middle
+  height: 100%
+  width: 100%
+  z-index: 1300
+
+.inner-loading-panel  
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"
+  background: #ffffff
+  background: rgba(255,255,255,0.8)
+  color: #000000
+  color: rgb(0, 0, 0)
+  font-family: 'Cabin Condensed', sans-serif !important
+  text-align: center !important
+  vertical-align: middle !important
+  margin: auto  
+  width: 200px
+  padding: 20px
+  border-radius: 5px
+  z-index: 1500
+  
+
+.chatMessages::-webkit-scrollbar
+  background: rgba(0,0,0,0.2)
+  
+.chatMessages::-webkit-scrollbar-thumb:vertical
+  height: 10px
+  background-color: rgba(0,0,0,0.45)
+  
+.span12
+  padding: 15px
+
+.CodeMirror
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box  
+
+.tabbable:after,.tabbable:before
+  background: #f9f9f9    
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1)
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1)  
+  //border: 1px solid #c4c6ca
+  content: ""
+  display: block
+  height: 100%
+  left: -1px
+  position: absolute
+  width: 100%
+
+.tabbable:after
+  -webkit-transform: rotate(3deg)
+  -moz-transform: rotate(2deg)
+  -ms-transform: rotate(2deg)
+  -o-transform: rotate(2deg)
+  transform: rotate(2deg)
+  top: 0
+  z-index: -1
+
+.dropZone    
+  background: rgba(255, 255, 255, 0.75)
+  border: 5px dashed rgba(0,0,0,0.8)    
+  opacity: 1        
+
+.pin
+  top: 65px
+  width: 59px
+  height: 45px
+  position: absolute  
+  z-index: 20
+
+.pen    
+  position: relative  
+  z-index: 20
+  -webkit-transform: rotate(-1deg)
+
+.tabbable:before
+  -webkit-transform: rotate(-3deg)
+  -moz-transform: rotate(-3deg)
+  -ms-transform: rotate(-3deg)
+  -o-transform: rotate(-3deg)
+  transform: rotate(-3deg)
+  top: 0
+  z-index: -2
+
+.noty_icon
+  display: inline-block
+  margin: 2px  
+  border: 1px solid rgba(20, 20, 20, 0.3)
+  vertical-align: middle
+  width: 16px
+  height: 16px  
+  
+.noty_message>img
+  width: 16px
+  height: 16px
+
+.box
+  height: 100%
+
+.libIcon
+  height: 14px
+  width: 14px
+  display: inline-block
+  
+/*.btn-warning, .btn-warning:hover 
+  color: #000*/
+
+.btn-review
+  position: absolute
+  right:20px
+  top:20px
+  opacity: 0.8
+  z-index: 1000
+
+.userSquare
+  text-align: center
+  display: inline-block
+  margin: 2px
+  width: 1.5em
+  height: 1.5em
+  border: 1px solid rgba(20, 20, 20, 0.3)
+  vertical-align: middle
+  
+.userSquare>img
+  width: 1.5em
+  height: 1.5em  
+  
+.chatMsg
+  width: 200px
+  text-align: left
+  //-webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6)
+  //border: 1px solid rgba(230, 230, 230, 0.7)
+  //border-radius: 2px
+  padding: 3px 5px 3px 5px
+  margin-left: 30px    
+
+.notification
+  position: absolute  
+  top: -5px
+  right: -10px
+
+.notifTab
+  position: absolute
+  top: -10px    
+  margin-left: 5px
+ 
+.chatIcon
+  float: right    
+  bottom: 40px
+  right: 20px  
+  position: relative
+  
+.chatBox
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(69%,rgba(0,0,0,0.41)), color-stop(100%,rgba(0,0,0,0)))  
+  border: 0
+  border-top-left-radius: 10px
+  border-top-right-radius: 10px 
+  height:200px  
+  position: relative
+  z-index:5000
+  display: none
+    
+    
+.chatInput>input
+  height: 100%    
+  border: 1px solid rgba(37,141,200,1)
+  outline: 0
+  color: black
+  font-family: MS Sans Serif, Geneva, sans-serif
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(243,243,243,1)), color-stop(51%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1)))
+  opacity: 0.2
+  font-size: 12px    
+  
+
+.chatInput>input:focus
+  outline: 0 !important
+  opacity: 0.8    
+
+.chatBox>a.close
+  margin-right:5px  
+ 
+.chatSender
+  margin-top: 3px
+  padding: 3px
+  float: left  
+  height: 20px
+  width: 20px
+   
+.chatMessages
+  height: 20px
+  width: 20px  
+
+.chatMessage
+  padding: 3px
+  color: #F7F7F7
+
+.chatSeparator
+  height: 2px
+  
+.chatMessages
+  padding: 10px 10px 0 10px
+  height: 140px
+  overflow-y: auto
+  overflow-x: hidden 
+  font-family: MS Sans Serif, Geneva, sans-serif
+  font-size: 12px  
+
+.timelineSlider
+  margin-bottom: 20px
+
+.inlet_slider
+  width: 200px
+  outline: none !important
+  
+.raphael
+  background-image:url(../img/Raphael.png) no-repeat !important
+  
+a:hover
+  text-decoration: none
+
+.nav.nav-tabs
+  margin-bottom:0px
+
+.navbar
+  border-bottom: none
+  
+.inlet_slider
+  z-index: 200
+
+.CodeMirror-remote-change
+  width: 16px
+
+.gutterIcon
+  background-repeat: no-repeat
+  background-position: center    
+  outline: none      
+  height: 16px
+  width: 16px
+  
+.gutterIconUp
+  position: absolute
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6f0a3), color-stop(50%,#d2e638), color-stop(51%,#c3d825), color-stop(100%,#dbf043))
+  border: 1px solid #248F24
+  border-radius: 20px
+  height: 20px
+  width: 20px
+  top: 20px
+  right: 0px
+  z-index: 2000
+  display: none
+      
+.gutterIconDown
+  position: absolute
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6f0a3), color-stop(50%,#d2e638), color-stop(51%,#c3d825), color-stop(100%,#dbf043))
+  border: 1px solid #248F24
+  border-radius: 20px
+  height: 20px
+  width: 20px
+  bottom: 0px
+  right: 0px
+  z-index: 2000
+  display: none
+    
+iframe
+  width: 100%
+  height: 100%
+  background: transparent
+  border: none 
+  
+.nav>li  
+  text-align:center
+  
+img.icon
+  height:24px
+  width: 24px  
+  
+.box
+  position: relative    
+  background-color: #fff
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1)
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1)
+	
+.box:before, .box:after  
+  background: transparent
+  position: absolute
+  width: 40%
+  height: 10px
+  content: ' '
+  left: 12px
+  bottom: 12px  
+  -webkit-transform: skew(-5deg) rotate(-5deg)
+  -moz-transform: skew(-5deg) rotate(-5deg)
+  -ms-transform: skew(-5deg) rotate(-5deg)
+  -o-transform: skew(-5deg) rotate(-5deg)
+  transform: skew(-5deg) rotate(-5deg)
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3)
+  -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3)
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3)
+  z-index: -1
+
+h3.error
+  color: #b94a48
+  font-weight: 200
+
+.box:after
+  left: auto
+  right: 12px
+  -webkit-transform: skew(5deg) rotate(5deg)
+  -moz-transform: skew(5deg) rotate(5deg)
+  -ms-transform: skew(5deg) rotate(5deg)
+  -o-transform: skew(5deg) rotate(5deg)
+  transform: skew(5deg) rotate(5deg)
+
+li.active>a
+  background: transparent !important
+  //border: none !important
+  color: #FFD119 !important
+
+#mainView
+  margin:100px auto
+  width:100%
+  text-align:center
+
+.main-container
+  margin: 0 auto
+  width: 600px
+  background: #1aba97
+  height: 100%
+
+.login-container
+  position: relative
+  top:50%
+  -webkit-transform: translateY(-50%)
+  -moz-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  -o-transform: translateY(-50%)
+  transform: translateY(-50%)
+
+.arrow-left
+  border-top: 15px solid transparent
+  border-bottom: 15px solid transparent
+  border-right:15px solid #ededed
+  z-index: 5
+  position: absolute
+  left: 145px
+  margin-top: 125px
+
+.logo, .login
+  min-height:300px
+  color: #fcfcfc
+  font-weight:200
+  display: inline-block
+  float: left
+  margin-left: 5px
+
+.logo
+  width: 150px
+
+.login
+  width: 400px
+
+.btn-login
+  color: #fcfcfc
+  padding: 10px
+  background: #1aba97
+  border: none
+  top:50%
+  position: relative
+  -webkit-transform: translateY(-50%)
+  -moz-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  -o-transform: translateY(-50%)
+  transform: translateY(-50%)
+
+.btn-login:hover, .btn-login:active, .btn-login.active, .btn-login:focus
+  background: #18AA8A
+  color: #fcfcfc
+
+.logo img
+  width:128px
+  position: relative
+  margin-top:60px
+
+.logo h3
+  letter-spacing:1px
+  font-weight: 600
+  margin-top: 10px
+
+.login div
+  background: #ededed
+  margin-top: 60px
+  height: 200px
+  border-radius: 10px

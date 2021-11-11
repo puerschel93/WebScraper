@@ -1,0 +1,130 @@
+@import "../_mixin.scss";
+
+.calendar-container {
+	@include basic-card($radius: 100px);
+	position: relative;
+	grid-row: 3 / span 1;
+	width: 90%;
+	height: 90%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.calendar-month {
+	@include flex-center;
+	position: absolute;
+	top: calc(30% - 10px);
+	z-index: 50;
+
+	&.focused {
+		top: calc(30% - 20px);
+		transform: translateX(-10px);
+		z-index: 49;
+	}
+}
+
+.mon1 {
+	top: calc(30% - 13px);
+	&.focused {
+		top: calc(30% - 20px);
+	}
+}
+
+.calendar-month-eventful {
+	@include flex-center;
+	position: absolute;
+	cursor: pointer;
+}
+
+.calendar-year-name {
+	@include calendar-year-text($color: $text-color);
+	width: max-content;
+	height: max-content;
+
+	position: absolute;
+	top: -30px;
+	opacity: 0.8;
+}
+
+.calendar-month-name {
+	@include calendar-month-text($color: $text-color);
+	width: max-content;
+	height: max-content;
+	position: absolute;
+	bottom: -19px;
+	opacity: 0.6;
+}
+
+.calendar-events-container {
+	@include calendar-event-text($color: $text-color);
+	display: none;
+	position: absolute;
+	top: 5px;
+	left: -14px;
+	padding: 45px 1px 1px 0px;
+    height: fit-content;
+	max-height: 180px;
+	width: max-content;
+}
+
+.calendar-events-scrollarea {
+	padding-left: 30px;
+	width: max-content;
+    height: fit-content;
+	max-height: 110px;
+	overflow-y: hidden;
+	overflow-x: visible;
+}
+
+.calendar-month {
+	&.focused {
+		.calendar-events-container {
+			display: block;
+			z-index: 80;
+			* {
+				display: block;
+			}
+		}
+	}
+	&:hover {
+		.calendar-events-container {
+			display: block;
+			z-index: 81;
+			visibility: visible;
+			* {
+				display: block;
+			}
+		}
+	}
+}
+
+.calendar-single-event {
+    @include calendar-event-text;
+	display: flex;
+	width: max-content;
+	height: min-content;
+	position: relative;
+	margin-bottom: 3px;
+    padding-top: 2px;
+
+    &.focused, :hover {
+        border-bottom: 1px solid $text-color;
+    }
+}
+
+.calendar-event-bullet {
+	position: absolute;
+	width: fit-content;
+	height: fit-content;
+	left: -18px;
+    top: 4px;
+}
+
+.calendar-line {
+	position: absolute;
+	top: 30%;
+	left: 0px;
+
+	height: 1px;
+	overflow: visible;
+}

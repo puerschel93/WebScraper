@@ -1,0 +1,162 @@
+.dashboard {
+
+    .grid-wrap {
+
+        padding: 2rem;
+        background-color: white;
+        overflow-y: auto;
+
+
+        @media $small {
+            padding: 0;
+        }
+
+        .grid {
+
+            grid-template-columns: repeat(6,1fr);
+            grid-gap: 2rem;
+
+            @media $desktop-4k {
+                grid-template-columns: repeat(8,1fr);
+            }
+
+            @media $desktop-1080p {
+                grid-template-columns: repeat(6,1fr);
+            }
+
+            @media $medium {
+                grid-template-columns: repeat(4,1fr);
+            }
+
+            @media $small {
+                grid-template-columns: repeat(2,1fr);
+                padding: 0;
+            }
+
+            &-item {
+                background-color: rgba(255,255,255,0.5);
+                border-radius: $border-radius;
+                height: 20rem;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+
+                .grid-thumbnail {
+                    flex: 1;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .details {
+                    flex: 0 0 5rem;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    flex-direction: column;
+                    background-color: white;
+                    padding: 1rem 1.25rem;
+                    text-transform: capitalize;
+
+                    div {
+                        flex: auto;
+                        &.context-link {
+                            flex: none
+                        }
+                    }
+
+                }
+
+            }
+
+            &.compact {
+                grid-template-columns: repeat(9,1fr);
+                grid-gap: 1rem;
+
+                @media $desktop-4k {
+                    grid-template-columns: repeat(12,1fr);
+                }
+
+                @media $desktop-1080p {
+                    grid-template-columns: repeat(9,1fr);
+                }
+
+                @media $medium {
+                    grid-template-columns: repeat(6,1fr);
+                }
+
+                @media $small {
+                    grid-template-columns: repeat(3,1fr);
+                }
+
+                .grid-item {
+                    grid-row-end: 1fr;
+                    background-color: rgba(255,255,255,0.5);
+                    border-radius: 0 !important;
+                    height: 5rem;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+
+                    @media $medium {
+                        height: 8rem;
+                    }
+
+                    @media $small {
+                        height: 6rem;
+                    }
+
+                    .grid-thumbnail {
+                        flex: 1;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    .details {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        opacity: 0;
+                        transition: opacity 0.5s ease;
+                    }
+
+                    &:hover .details {
+                        opacity: 1;
+                    }
+
+                    &.png:after, &.svg:after {
+                        display: block;
+                        height: auto;
+                        width: auto;
+                        position: absolute;
+                        bottom: 0.6rem;
+                        left: 0.6rem;
+                        background-color: $dashboard-color-primary;
+                        color: white;
+                        text-align: center;
+                        padding: 0.3rem 0.3rem 0.2rem 0.3rem;
+                        font-size: 0.6rem;
+                        line-height: 1em;
+                        font-weight: 700;
+                    }
+
+                    &.png:after {
+                        content: 'PNG'
+                    }
+
+                    &.svg:after {
+                        content: 'SVG'
+                    }
+
+                }
+
+            }
+
+
+        }
+
+    }
+
+
+}

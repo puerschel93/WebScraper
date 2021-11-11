@@ -1,0 +1,159 @@
+@import "color";
+// BG SOLO
+$bg-uni:no;
+
+// CHOIX UNIQUE // PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/bg-wrapper.png';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container:0;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:0;
+
+// SIZE NAVIGATION
+$height-navigation:65;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/paris";
+
+// IMPORT MODULE ANNONCES9
+@import "../../../slagence_X_V5/sources/scss/modules/annonces9";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra1";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+.bouton-selection-annonces {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.btn-cdc {
+    font-size: 1.1em;
+}
+.menu-principal {
+    margin-top: 25px;
+}
+.menu-principal li + li {
+    margin-left: -3px;
+}
+.menu-principal > li > a:hover {
+    background-color: $color-primary-dark-5;
+}
+
+@media only screen and (max-width : 767px) {
+    header .logo img {
+        width: 30%;
+    }
+}
+
+.bloc-detail-reference {
+    font-size: $font-size-text;
+}
+
+.control-group .bouton-rechercher-moteur {
+    border: 1px solid $color-action;
+    background-color: $color-action;
+    background-image: linear-gradient(to bottom, $color-action-light-10, $color-action 100%);
+    &:hover {
+        background-color: $color-action;
+        background-image: linear-gradient(to top, $color-action, $color-action 100%);
+    }
+}
+
+.ie8 .control-group .bouton-rechercher-moteur,
+.ie9 .control-group .bouton-rechercher-moteur {
+    border: 1px solid $color-action-dark-5;
+    background: $color-action;
+
+    filter: none;
+    &:hover {
+        background: $color-action-light-5;
+    }
+}
+
+.ie8 .form-inline .moteur-avantage,
+.ie9 .form-inline .moteur-avantage {
+    border: 1px solid $color-action-light-20;
+    background: $color-action-light-30;
+
+    filter: none;
+}
+
+#recherche-resultats-listing {
+	.icon-v5-heart {
+		opacity: 1;
+		color: $color-cdc;
+	}
+	.btn-nouveau {
+		background-color: $color-action;
+		color: $color-block;
+		box-shadow: none;
+	}
+}
+
+.bloc-detail-reference a {
+	display: none;
+}
+
+.bloc-detail-reference a {
+	display: none;
+}

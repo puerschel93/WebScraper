@@ -1,0 +1,294 @@
+
+// material-buttons
+//
+// Renders Material buttons
+// See also: https://material.io/components/buttons
+
+
+
+$button-base-transition-property: transform, box-shadow, color, background, border, opacity;
+
+@mixin _button-base($has-shadow: true) {
+
+    border: var(--button-border-width) solid var(--button-border-color);
+    border-radius: var(--button-border-radius);
+    background: var(--button-background);
+    color: var(--button-text-color);
+    text-indent: 0;
+
+    @if ($has-shadow) {
+        box-shadow: var(--button-resting-shadow);
+    }
+
+    cursor: var(--button-cursor);
+
+    @include flex-row($inline: true, $init-children: false);
+    @include flex-justify-center();
+    @include flex-align-center();
+
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    text-align: center;
+    text-transform: $text-transform-button;
+    text-decoration: $text-decoration-button;
+
+    position: relative;
+    overflow: hidden;
+
+
+    transition-property: $button-base-transition-property;
+
+    &:not([disabled]) {
+        &:focus,
+        &:hover {
+            transform: translateY(-1px);
+            transition-duration: 100ms;
+
+            outline: none;
+            box-shadow: var(--button-hover-shadow);
+        }
+
+        &:active {
+            transform: translateY(0);
+            transition-duration: 10ms;
+
+            box-shadow: var(--button-pressed-shadow);
+        }
+    }
+}
+
+
+
+#{$stationary-button-selector} {
+    @at-root
+    &,
+    .app-bar & {
+        @include _button-base();
+    }
+
+    .app-bar & {
+        height: var(--app-bar-height-auto);
+        min-width: var(--app-bar-height-auto);
+    }
+}
+
+#{$button-selector} {
+
+    min-width: var(--button-min-width);
+
+    margin: var(--button-margin);
+    padding: var(--button-padding-each-vertical) var(--button-padding-each-horizontal);
+
+    user-select: none;
+
+    &:not(.medium-emphasis):not(.low-emphasis) {
+        --button-background: var(--theme-primary-color);
+    }
+
+    &.medium-emphasis {
+        --button-background: none;
+        --button-border-color: var(--theme-primary-color);
+        --button-text-color: var(--theme-primary-color);
+    }
+
+    &.low-emphasis,
+    &.flat {
+        --button-text-color: var(--theme-primary-color);
+
+        min-width: var(--button-flat-min-width);
+
+        margin: var(--button-flat-margin);
+        padding: var(--button-flat-padding);
+
+    }
+
+    &.low-emphasis,
+    &.flat,
+    .app-bar &:not(.raised) {
+        // scss-lint:disable ImportantRule
+        transform: none !important;
+        // scss-lint:enable ImportantRule
+
+        --button-background: none;
+        --button-hover-shadow: none;
+        --button-pressed-shadow: none;
+        --button-resting-shadow: none;
+    }
+
+    .app-bar &:not(.raised) {
+
+        min-width: var(--button-app-bar-min-width);
+
+        margin: var(--button-app-bar-margin);
+        padding: var(--button-app-bar-padding);
+
+        background: none;
+
+        --button-text-color: var(--theme-text-on-primary-color-color);
+    }
+
+
+    &.dense {
+        // height: 32px;
+
+        padding: var(--button-dense-padding);
+        font-size: var(--font-size-dense-button);
+    }
+
+    &.big {
+        padding: var(--button-large-padding-each-vertical) var(--button-large-padding-each-horizontal);
+        font-size: var(--font-size-large-button);
+    }
+
+    &[disabled] {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+
+    @at-root
+    .image-button,
+    &.image-button {
+
+        min-width: var(--button-image-min-width);
+        margin: var(--button-image-margin);
+        padding: var(--button-image-padding);
+
+        .app-bar & {
+            min-width: var(--app-bar-height-auto);
+            margin: var(--button-app-bar-image-margin);
+            padding: var(--button-app-bar-image-padding);
+
+            transition-property: $button-base-transition-property min-width;
+        }
+
+        // @include flex-row();
+        // @include flex-align-stretch();
+        // @include flex-justify-stretch();
+    }
+
+
+    @at-root
+    .icon-button,
+    &.icon-button {
+
+        min-width: var(--button-icon-min-width);
+        margin: var(--button-icon-margin);
+        padding: var(--button-icon-padding);
+    }
+}
+
+#{$floating-action-button-selector} {
+
+    position: absolute;
+
+    right: 1em;
+    bottom: 1em;
+    width: var(--fab-diameter);
+    height: var(--fab-diameter);
+    padding: 0;
+
+    border-radius: 99in;
+
+    box-shadow: shadow(6);
+
+    text-align: center;
+
+    body &,
+    main &,
+    &-global {
+        position: fixed;
+    }
+
+    &:focus,
+    &:hover {
+        box-shadow: shadow(12);
+    }
+
+    &:active {
+        box-shadow: var(--button-resting-shadow);
+    }
+
+    @at-root
+    .mini-floating-action-button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+// MARK: Ripples
+
+#{$button-selector},
+#{$chip-selector},
+.has-effect-when-pressed {
+
+    position: relative;
+    overflow: hidden;
+
+    &:not([disabled]) {
+        &::before {
+            content: "";
+            display: block;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: 0;
+            height: 0;
+
+            transition-property: width, height, top, left, opacity !important; // scss-lint:disable ImportantRule
+            transition-duration: 0ms;
+            transition-timing-function: ease-out;
+
+            border-radius: 99in;
+
+            opacity: 0.5;
+            background-color: currentColor;
+        }
+
+
+        &:active::before {
+            top: calc(50% - var(--ripple-end-radius));
+            left: calc(50% - var(--ripple-end-radius));
+            width: var(--ripple-end-diameter);
+            height: var(--ripple-end-diameter);
+
+            transition-duration: var(--ripple-grow-duration);
+
+            opacity: var(--ripple-midpoint-opacity);
+        }
+
+        &:focus:not(:active)::before {
+            top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
+            left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier)));
+            width: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier));
+            height: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier));
+
+            transition-duration: var(--ripple-fade-duration);
+
+            opacity: 0;
+        }
+
+
+        &.big:active::before,
+        &.big-ripple:active::before {
+            top: calc(50% - (var(--ripple-end-radius) * 2));
+            left: calc(50% - (var(--ripple-end-radius) * 2));
+            width: calc(var(--ripple-end-diameter) * 2);
+            height: calc(var(--ripple-end-diameter) * 2);
+        }
+
+        &.big:focus:not(:active)::before,
+        &.big-ripple:focus:not(:active)::before {
+            top: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
+            left: calc(50% - (var(--ripple-end-radius) * var(--ripple-fade-size-multiplier) * 2));
+            width: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier) * 2);
+            height: calc(var(--ripple-end-diameter) * var(--ripple-fade-size-multiplier) * 2);
+        }
+    }
+}

@@ -1,0 +1,177 @@
+@use '~@liveperson-design-system/tokens/scss/border-radius';
+@use '~@liveperson-design-system/tokens/scss/colors';
+@use '~@liveperson-design-system/tokens/scss/colors-light';
+@use '~@liveperson-design-system/tokens/scss/common';
+@use '~@liveperson-design-system/tokens/scss/helpers';
+@use '~@liveperson-design-system/tokens/scss/spacing';
+@use '~@liveperson-design-system/tokens/scss/transparency';
+@use '~@liveperson-design-system/tokens/scss/typography';
+
+@include common.base-styles;
+
+:host {
+  --color-border: #{transparency.$light-4};
+  --color-border--hover: #{colors.$navy-white};
+  --color-border--active: #{colors.$blue};
+  --color-border--disabled: #{transparency.$light-1};
+
+  --color-outline: #{colors.$focus-outline};
+
+  --color-bg: #{transparency.$light-1};
+
+  --color-text: #{colors.$navy-white};
+
+  --input-height: 38px;
+  --input-text-align: left;
+  --input-padding: #{spacing.$space-s};
+
+  --color-button--hover: #{transparency.$light-2};
+
+  position: relative;
+  display: inline-flex;
+  @include typography.with-font-family;
+  color: var(--color-text);
+}
+:host([theme="light"]) {
+  --color-border: #{colors-light.$navy-light};
+  --color-border--hover: #{colors-light.$navy};
+  --color-border--active: #{colors-light.$blue};
+  --color-border--disabled: #{transparency.$dark-1};
+
+  --color-outline: #{colors-light.$focus-outline};
+
+  --color-bg: #{colors-light.$white};
+
+  --color-text: #{colors-light.$navy-dark};
+
+  --color-button--hover: #{transparency.$dark-1};
+}
+
+@include helpers.host-with-attr(error) {
+  --color-border: #{colors.$red-light};
+}
+@include helpers.host-with-attr(error, '[theme="light"]') {
+  --color-border: #{colors.$red};
+}
+
+:host([size="medium"]) {
+  --input-height: 30px;
+}
+
+:host([textAlign="center"]) {
+  --input-text-align: center;
+}
+:host([textAlign="right"]) {
+  --input-text-align: right;
+}
+
+$font-size: 16px;
+$button-width: helpers.get-em(32px, $font-size);
+$padding-size: helpers.get-em(spacing.$space-s, $font-size);
+
+input {
+  flex-grow: 1;
+  max-width: 100%;
+  font: inherit;
+  text-align: var(--input-text-align);
+  @include typography.input-value;
+  font-size: 16px;
+  height: var(--input-height);
+  color: inherit;
+  border: 1px solid var(--color-border);
+  outline: none;
+  border-radius: border-radius.$border-radius-xxs;
+  background: var(--color-bg);
+  box-shadow: none;
+  -webkit-tap-highlight-color: rgba(#fff, 0);
+  padding: 0 $padding-size + $button-width 0 $padding-size;
+  margin: 0;
+  transition: all .15s ease-out;
+
+  // States
+  &[disabled] {
+    &,
+    + .buttons {
+      opacity: transparency.$disabled;
+    }
+  }
+
+  &:not([disabled]) {
+    &:hover {
+      border-color: var(--color-border--hover);
+    }
+
+    &:active,
+    &:focus {
+      border-color: var(--color-border--active);
+    }
+
+    &:focus {
+      box-shadow: var(--color-outline);
+    }
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+  }
+}
+
+.buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: $button-width;
+  height: 100%;
+
+  button {
+    display: flex;
+    justify-content: center;
+    flex: 1 0 auto;
+    @include helpers.button-transparent;
+    padding: spacing.$space-xxs;
+    transition: all .15s ease-out;
+
+    &[disabled] {
+      cursor: default;
+    }
+
+    &:not([disabled]) {
+      &:hover {
+        background-color: var(--color-button--hover);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &:first-child {
+      align-items: flex-end;
+
+      &::before {
+        border-top: none;
+        border-bottom-color: var(--color-text);
+      }
+    }
+
+    &:last-child {
+      align-items: flex-start;
+
+      &::before {
+        border-top-color: var(--color-text);
+        border-bottom: none;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: relative;
+      display: block;
+      border: helpers.get-em(5px, $font-size) solid transparent;
+    }
+  }
+}

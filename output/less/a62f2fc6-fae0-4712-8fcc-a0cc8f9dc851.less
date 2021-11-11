@@ -1,0 +1,100 @@
+@import '../../style/variables.less';
+
+@prefixCls: ~'@{prefix}-header';
+
+.@{prefixCls} {
+  max-width: 100%;
+  margin: auto;
+  transition: 0.45s @ease-out;
+
+  &-wrapper {
+    height: 64px;
+    line-height: 64px;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(240, 241, 242, 65);
+    transition: 0.45s @ease-out;
+    &.ant-layout-header {
+      padding-right: 0;
+    }
+  }
+
+  nav {
+    white-space: nowrap;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    padding-right: 48px;
+    transition: 0.45s @ease-out;
+    .@{ant-prefix}-menu {
+      background-color: transparent;
+      border-bottom: none;
+    }
+
+    .ant-menu-horizontal {
+      background: transparent;
+      border-bottom-color: transparent;
+      transition: none;
+      height: 64px;
+      > .ant-menu-item {
+        line-height: 60px;
+        height: 62px;
+        box-sizing: content-box;
+        margin: -1px 20px 0;
+        padding: 0;
+        font-size: 16px;
+        &:hover,
+        &.ant-menu-item-active,
+        &.ant-menu-item-selected {
+          a {
+            color: @primary-color;
+          }
+          &::after {
+            border-bottom-color: transparent;
+          }
+        }
+
+        a {
+          color: @text-color;
+          &:hover {
+            color: @primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  &-logo {
+    width: 280px;
+    height: 100%;
+    font-size: 20px;
+    font-weight: 300;
+    white-space: nowrap;
+    align-items: center;
+    display: flex;
+    padding-left: 48px;
+    transition: 0.45s @ease-out;
+
+    a {
+      height: 32px;
+      padding-left: 42px;
+      background: center left no-repeat;
+      background-size: contain;
+      color: @text-color;
+      align-items: center;
+      display: flex;
+      &:hover {
+        color: @text-color;
+      }
+    }
+    sup {
+      color: @text-color-secondary;
+      font-size: @font-size-sm;
+      margin-left: 4px;
+    }
+  }
+
+  &-tools {
+    margin-left: 24px;
+  }
+}

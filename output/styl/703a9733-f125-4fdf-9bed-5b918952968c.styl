@@ -1,0 +1,273 @@
+// GRID
+
+$cols = 12
+$col = 90px
+$gutter = 16px
+
+.container
+  width: ($col * $cols)+($gutter * $cols)
+
+.col
+  margin-left: ($gutter/2)
+  margin-right: ($gutter/2)
+
+for col in 1..$cols
+  .col-{col}
+    width: ( col * $col ) + ( ( col - 1 ) * $gutter )
+
+// ******************************************************
+
+// VARIABLES
+
+$margin-small = ($gutter)
+$margin-tiny = ($gutter / 2)
+$margin-micro = ($gutter / (2 * $golden-ratio))
+$margin-basic = ($gutter * 2)
+$margin-mid = ($gutter * 3.5)
+$margin-large = ($gutter * 5)
+
+$font-size-basic = 13px
+$font-size-larger = 1.3rem
+$font-size-h3 = golden-ratio(1rem , .7)
+$font-size-h2 = golden-ratio(1rem , 1.5)
+$font-size-h1 = golden-ratio(1rem , 2)
+
+$font-leading-basic = 1.35
+$font-leading-tighter = 1.15
+$font-leading-larger = 1.45
+
+$font-tracking-basic = 0.001em
+$font-tracking-wider = 0.05em
+
+// ******************************************************
+
+// TYPOGRAPHY
+
+html
+  font-size: $font-size-basic
+  letter-spacing: $font-tracking-basic
+
+body
+  line-height: $font-leading-basic
+
+  // HTML ELEMENT STYLING
+
+h1
+  font-size: $font-size-h1
+  line-height: $font-leading-tighter
+
+h2
+  font-size: $font-size-h2
+  line-height: $font-leading-tighter
+
+h3
+  font-size: $font-size-h3
+
+  // FONT RULES
+
+.font-copy
+  font-size: $font-size-larger
+  line-height: $font-leading-larger
+
+// ******************************************************
+
+// MARGINS AND PADDING
+
+  // MARGIN TOP
+
+.margin-top-micro
+  margin-top: $margin-micro
+
+.margin-top-tiny
+  margin-top: $margin-tiny
+
+.margin-top-small
+  margin-top: $margin-small
+
+.margin-top-basic
+  margin-top: $margin-basic
+
+.margin-top-mid
+  margin-top: $margin-mid
+
+.margin-top-large
+  margin-top: $margin-large
+
+  // MARGIN BOTTOM
+
+.margin-bottom-micro
+  margin-bottom: $margin-micro
+
+.margin-bottom-tiny
+  margin-bottom: $margin-tiny
+
+.margin-bottom-small
+  margin-bottom: $margin-small
+
+.margin-bottom-basic
+  margin-bottom: $margin-basic
+
+.margin-bottom-mid
+  margin-bottom: $margin-mid
+
+.margin-bottom-large
+  margin-bottom: $margin-large
+
+  // PADDING TOP
+
+.padding-top-micro
+  padding-top: $margin-micro
+
+.padding-top-tiny
+  padding-top: $margin-tiny
+
+.padding-top-small
+  padding-top: $margin-small
+
+.padding-top-basic
+  padding-top: $margin-basic
+
+.padding-top-mid
+  padding-top: $margin-mid
+
+.padding-top-large
+  padding-top: $margin-large
+
+  // PADDING BOTTOM
+
+.padding-bottom-micro
+  padding-bottom: $margin-micro
+
+.padding-bottom-tiny
+  padding-bottom: $margin-tiny
+
+.padding-bottom-small
+  padding-bottom: $margin-small
+
+.padding-bottom-basic
+  padding-bottom: $margin-basic
+
+.padding-bottom-mid
+  padding-bottom: $margin-mid
+
+.padding-bottom-large
+  padding-bottom: $margin-large
+
+// ******************************************************
+
+// MENU
+
+menuBackgrounds()
+  background-color: $color-gray-transparent
+  padding: 6px 8px
+  margin-bottom: 1px
+  margin-right: 1px
+
+.menu-column
+  float: left
+  width: 170px
+  .menu-column-top:after
+    background-size: 10px 10px
+    width: 10px
+    height: 10px
+    right: 8px
+    top: 9px
+
+.menu-column-top
+  menuBackgrounds()
+
+.menu-column-content
+  li
+    menuBackgrounds()
+
+.menu-background
+  menuBackgrounds()
+
+#main-content
+  width: 460px
+
+// ******************************************************
+
+// LOGOS
+
+#desktop-logo-overlay
+  position: fixed
+  bottom: 0
+  right: 0
+  padding: $margin-small
+  z-index: 90
+  svg
+    width: 450px
+    height: 68px
+    path
+      fill: $color-white-soft
+
+// ******************************************************
+
+// NEWS
+
+.news-masonry-item
+  width: 50%
+
+.news-post-content
+  padding: $margin-small
+  .news-post-date
+    margin-bottom: $margin-small
+  .news-post-drawer-close
+    padding: $margin-small
+
+// ******************************************************
+
+// SINGLE
+
+.swiper-pagination-bullet
+  border-radius: 20px
+  height: 8px
+  width: 8px
+  background-color: $color-white-soft
+  margin-left: 5px
+  &.swiper-pagination-bullet-active
+    background-color: $color-yellow
+  &:hover
+    background-color: $color-yellow
+
+// SINGLE PROJECT
+
+.single-project
+  #main-content
+    .menu-column-top:after
+      font-size: 1rem
+      content: 'INFO'
+      padding: 6px 8px
+      color: $color-yellow
+      background-image: none
+      top: 0
+      right: 0
+      width: auto
+      height: auto
+    .menu-column-content
+      display: none
+
+#gallery-pagination
+  position: absolute
+  top: 5px
+  right: 46px
+
+// ******************************************************
+
+// PEOPLE
+
+
+// ARCHIVE
+
+.post-type-archive-people
+  .people-header
+    position: relative
+    &:after
+      background-size: 10px 10px
+      width: 10px
+      height: 10px
+      right: 0px
+      top: 4px
+  .people-copy
+    padding-bottom: $margin-basic

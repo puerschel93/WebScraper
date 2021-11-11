@@ -1,0 +1,142 @@
+@import "color";
+
+// LARGEUR DU SITE
+$sitewrap: 1170px;
+
+// AGRANDISSEMENT HAUTEUR SLIDER (0 par défaut, doit être  > 500px)
+// NE FONCTIONNE PAS SI MF_MOTEUR_TYPE = 2
+$slider-height: 0;
+
+// HAUTEUR PHOTOS LISTING (235px par défaut)
+$listing-img-height:400px;
+
+// REQUIS MAIS NE SERT PAS
+$bg-uni: yes;
+$picture-bg: yes;
+$picture-bg-url:'';
+$picture-bg-repeat-horizontal: no;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.8em;
+
+// TYPE TITLE (NONE, UPPERCASE...)
+$type-title: uppercase;
+
+// WEIGHT (BOLD, NORMAL, 700, 300...)
+$weight-title: normal;
+
+// ARRONDI (YES / NO)
+$arrondi: yes;
+
+// IMPORT ALL
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT TEMPLATE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/templates/mobilefirstv2";
+
+// IMPORT RECHERCHE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/recherche/mobilefirst";
+
+// IMPORT MOTEUR MOBILEFIRST (SUR RECHERCHE)
+// SEULEMENT SI RECHERCHE AUTRE QUE MF
+//@import "../../../slagence_X_V5/sources/scss/moteur/mobilefirst";
+
+// IMPORT DETAIL MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/detail/mobilefirst";
+
+// IMPORT AGENCE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/agence/mobilefirst";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/mobilefirst";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT PUB
+@import "../../../slagence_X_V5/sources/scss/pubs/mobilefirst";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra23";
+
+// IMPORT MODULE ANNONCES
+@import "../../../slagence_X_V5/sources/scss/modules/annonces18";
+
+
+
+//---------------------------------------------------------------------------------------
+//		PERSO BEHARTINVEST
+//---------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------
+
+.header-main {
+	background-color: $color-primary;
+}
+
+.menu a {
+	&:after {
+        display: block;
+        content: "";
+        width: 0%;
+        height: 1px;
+        background-color: $color-primary;
+        margin-top: 0px;
+        -webkit-transition: all .7s ease;
+        		transition: all .7s ease;
+    }
+     &:hover {
+        color: $color-nav-footer;	            
+        &:after { 
+        	background-color: $color-nav-footer; 
+        	width: 100%;
+        }
+    }
+}
+
+.menu-secondaire {
+    background-color: $color-primary;
+}
+
+//---------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------
+	//		EXTRA
+	//---------------------------------------------------------------------------------------
+
+.extracity-ttl {
+	margin-top: 40px;
+}
+
+.extracity-txt {
+	margin-bottom: 40px;	
+}
+
+.extracity-item:before {
+	background-color: rgba($color-action,0.85);
+}

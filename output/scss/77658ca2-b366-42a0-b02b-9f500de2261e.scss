@@ -1,0 +1,252 @@
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: $main_dark;
+    background-image: url('/../../assets/graphics/auth-bg.webp');
+
+    &__box {
+        max-width: 72rem;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        position: relative;
+        background-color: $main_light;
+        color: $black;
+        padding: 3rem 1rem;
+        border-radius: .25rem;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+        & > div {
+            width: 50%;
+
+            &:first-child {
+                padding: 1.5rem 3.5rem 1.5rem 1.5rem;
+
+                @include media-breakpoint-down(md) {
+                    padding: 1.5rem;
+                }
+            }
+
+            &:last-child {
+                padding: 1.5rem 1.5rem 1.5rem 3.5rem;
+
+                @include media-breakpoint-down(md) {
+                    padding: 1.5rem;
+                }
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            margin: 0 15px;
+            flex-direction: column;
+
+            & > div {
+                width: 100%;
+            }
+        }
+    }
+
+    &__panel {
+        border-right: solid 1px $accent_light_gray;
+
+        @include media-breakpoint-down(md) {
+            border: 0;
+        }
+    }
+
+    &__header {
+        padding: 0 0 1rem 0;
+        margin: 0 0 1rem 0;
+        border-bottom: solid 1px $main_light;
+        position: relative;
+
+        h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            font-variant: small-caps;
+            line-height: 1.2;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            letter-spacing: .2rem;
+            
+            @include media-breakpoint-down(md) {
+                font-size: 3rem;
+            }
+
+            @include media-breakpoint-down(sm) {
+                font-size: 2.5rem;
+            }
+
+            .icon {
+                margin: 0 .25rem 0 -.5rem;
+                color: $accent_dark_blue;
+                font-size: 3.5rem;
+            }
+        }
+
+        span {
+            font-size: 1rem;
+        }
+    }
+    
+    &__description {
+        margin: 1rem 0 0 0;
+        
+        span {
+            font-size: 1.2rem;
+
+            @include media-breakpoint-down(sm) {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &__form {
+
+        .form {
+
+            &__row {
+
+                &:not(:first-child) {
+                    margin: 2rem 0 0 0;
+                }
+
+                &:nth-child(4) {
+                    margin: .5rem 0 0 0;
+                }
+
+                &--space-between {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+
+            &__additional-row {
+                
+                &--remember-me {
+                    margin: 0 0 0 3rem;
+
+                    label {
+
+                        &::before {
+                            position: relative;
+                        }
+                    }
+                }
+            }
+
+            &__group {
+                transition: all .2s linear;
+            }
+
+            &__feedback {
+                min-height: 24px;
+                color: $accent_dark_red;
+                margin: 1rem 0 0 -.2rem;
+            }
+
+            &__input-row {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                height: 2.5rem;
+
+                span {
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $accent_dark_blue;
+                    margin: 0 .5rem 0 0;
+
+                    i {
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+
+            &__label {
+
+                &--hidden {
+                    display: none;
+                }
+
+                &--checkbox {
+                    margin: 0 0 0 1.5rem;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &__input {
+                border: 0;
+                border-radius: 0;
+                height: 2.5rem;
+                background-color: transparent;
+                border-bottom: solid .1rem $accent_light_gray;
+
+                &:hover, &:focus {
+                    border-color: $accent_dark_blue;
+                }
+            }
+
+            &__checkbox {
+                margin-left: 0;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            &__link {
+                padding: 0;
+                color: $accent_dark_blue;
+
+                &--forgot {
+                    margin: 0 0 0 3rem;
+                }
+
+                &:hover {
+                    color: $accent_light_blue;
+                }
+            }
+
+            &__button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                &--submit {
+                    background-color: $accent_dark_blue;
+                    max-width: 16rem;
+                    margin: 0 auto;
+                    letter-spacing: .075rem;
+                    border: 0;
+                    padding: .5rem 0;
+
+                    &:hover {
+                        background-color: $accent_light_blue;
+                    }
+                }
+            }
+        }
+    }
+    
+}

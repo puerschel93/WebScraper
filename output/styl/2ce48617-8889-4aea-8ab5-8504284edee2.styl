@@ -1,0 +1,473 @@
+// Reset Code
+// Based on Eric Meyer's CSS Reset - http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+
+@require 'lib'
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, span
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  font-weight: inherit
+  font-style: inherit
+  font-size: 100%
+  font-family: inherit
+  vertical-align: baseline
+
+body
+  font-size: 11pt
+  line-height: 1
+  background: #FFFFFF
+
+h1, h2, h3, h4, h5, h6, p, ol, ul, dl, table, a, div, span
+  font-family: Verdana, sans-serif
+
+body, select, input, textarea
+  color: text-color
+
+a:link, a:visited
+  color: #28A3A4
+  cursor: pointer
+
+ol, ul
+  list-style: none
+  margin-top-bottom: 1.3em
+  li
+    margin-top-bottom: 0.667em
+
+// tables still need 'cellspacing="0"' in the markup
+table
+  border-collapse: separate
+  border-spacing: 0
+
+th, td
+  text-align: left
+  font-weight: normal
+  vertical-align: middle
+
+caption
+  text-align: center
+  font-weight: normal
+
+form > table
+  border-spacing: 0.5em
+  th
+    text-align: right
+  tfoot
+    td
+      text-align: center
+
+fieldset
+  margin-top-bottom: 1.3em
+  & > p
+    margin-top: 0
+
+blockquote:before, blockquote:after
+  content: ""
+
+blockquote
+  quotes: "" ""
+
+q
+  quotes: "“" "”"
+
+// Initialize the page and provide helpers.
+
+h1, h2, h3
+  font-weight: bold
+
+// Font sizes initially taken from http://webtypography.net/Harmony_and_Counterpoint/Size/3.1.1/
+
+h1
+  font-size: 2em
+  text-align: center
+  line-height: 1.156
+  margin-top-bottom: 0.578em
+
+h2
+  font-size: 1.3em
+  line-height: 1.154
+  margin-top-bottom: 1em
+
+h3
+  font-size: 1.125em
+  line-height: 1.156
+
+h4
+  text-align: center
+  font-size: 0.875em
+  line-height: 1.486
+  margin-top-bottom: 1.486em
+
+p
+  line-height: 1.3
+  margin-top-bottom: 1.3em
+
+th, td, li
+  line-height: 1.3
+
+a
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+b, strong
+  font-weight: bold
+
+em
+  font-style: oblique
+
+.even
+  background-color: bar-and-box-background
+tr.odd:hover, tr.even:hover
+  background-color: bar-and-box-border
+
+// Top-Level Page Elements
+
+html, body
+  height: 100%
+
+#page, #head
+  margin: 0
+
+#page
+  min-height: 100%
+  position: relative
+
+#body
+  margin-top: 1.3em
+  padding-bottom: 5em
+  > *:last-child
+    margin-bottom: 1.3em
+
+#head
+  width: 100%
+  overflow: hidden
+  .logo
+    display: block
+    float: left
+    margin-left: 1.3em
+    margin-top: 13px
+  #login-button, #signup-button, #logout-button
+    font-size: 9pt
+  #login-button
+    margin-right: 1em
+  #head-decoration
+    height: 2px
+    background-color: #2D2D2D
+    border-bottom: 3px solid #61C6CF
+  #head-bar, #learn-cloud
+    display: inline-block
+    background-color: #2D2D2D
+    border-left: 3px solid #61C6CF
+    border-right: 3px solid #61C6CF
+    border-bottom: 3px solid #61C6CF
+    border-bottom-left-radius: 5px
+    border-bottom-right-radius: 5px
+  #head-bar
+    float: right
+    padding: 0.5em 1em
+    margin-right: 1.3em
+    margin-top: -3px
+    color: white
+    .auth-box, .search-box, .review-box, .new-link
+      display: inline-block
+      line-height: 1.3
+    .search-box
+      margin-right: 1em
+    .review-box
+      color: #28A3A4
+    .auth-box
+      margin-left: 1em   
+  #learn-cloud
+    position: absolute
+    color: #BABABA
+
+#login, #signup
+  label
+    float: right
+  input[type=submit]
+    margin-top: 0.5em
+
+#login
+  input[type=submit]
+    float: right
+    font-size: 11pt
+    margin-right: 1em
+
+#signup
+  td:last-child
+    width: 16px
+  input[type=checkbox]
+    float: right
+    margin-right: 0.66em
+  input[type=submit]
+    font-size: 12pt
+
+#foot
+  position: absolute
+  bottom: 0
+  width: 100%
+  height: 5em
+  clear: both
+  background-color: #1F1F1F
+  color: #696969
+  a
+    color: #186A6B
+  h2
+    margin-bottom: 0.667em
+  ul
+    margin-top-bottom: 0
+    li
+      margin-top-bottom: 0.125em
+  #handy-links-background
+    background-color: #2D2D2D
+  #handy-links
+    padding-bottom: 1em
+    width: 66em
+    overflow: hidden
+    margin-left-right: auto
+    h2
+      text-align: left
+      font-size: 1em
+      a
+        color: #9D9C9C
+    a
+      color: #81CC58
+    > .column:first-child
+      width: 66%
+    > .column:nth-child(2)
+      width: 33%
+  > .hyperlinks, > p
+    text-align: center
+    margin-top-bottom: 0.667em
+  .hyperlinks
+    li
+      display: inline
+      margin-left-right: 0.5em
+      clear: left
+      a
+        color: #29BBBD
+
+#main-content
+  width: 67%
+  float: left
+  h1
+    margin-top: 0
+
+noscript > p
+  width: 33em
+  margin-left-right: auto
+  background-color: pink
+  text-align: center
+
+form
+  table
+    margin-left-right: auto
+    input[type=text], input[type=password], textarea, input[type=email]
+      width: 15em
+    textarea
+      height: 10em
+  // TODO: Why is this center aligned?
+  > ul
+    text-align: center
+
+#central-column
+  width: 50%
+  margin-left-right: auto
+
+.footnote
+  font-size: 0.875em
+  line-height: 1.486
+  margin-top-bottom: 1.486em
+
+button, input
+  line-height: 1.3em
+  vertical-align: middle
+
+.one-column
+  > .column
+    width: 100%
+    float: left
+
+.two-column
+  > .column
+    width: 50%
+    float: left
+
+.three-column
+  > .column
+    width: 33%
+    float: left
+
+.one-column, .two-column, .three-column
+  overflow: hidden
+
+button, input[type=submit]
+  cursor: pointer
+  display: inline-block
+  text-decoration: none
+  border-radius: 0.5em
+  font-size: 9pt
+  padding: 0.333em 1em 0.333em
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
+  &::-moz-focus-inner
+    border: 0
+  &:hover
+    text-decoration: none
+  &:active, &.pressed
+    position: relative
+    top: 1px
+  &:focus
+    outline: 0
+  &.dark
+    color: #6ACFD8
+    border: 1px solid #C4C4C4
+    vertical-half-gradient: #686868 #000000
+    &:hover
+      vertical-half-gradient: #444444 #000000
+    &:active, &.pressed
+      vertical-half-gradient: #000000 #444444
+      color: darken(#6ACFD8, 30%)
+  &.light
+    color: #666666
+    border: 1px solid #BFBFBF
+    vertical-half-gradient: #FFFFFF #DFDFDF
+    &:hover
+      vertical-half-gradient: #F6F6F6 #DFDFDF
+    &:active, &.pressed
+      vertical-half-gradient: #DFDFDF #F6F6F6
+      color: darken(#666666, 30%)
+  // Cancel buttons are like button except that they're downplayed (drawn without
+  // button decorations)
+  &.cancel
+    border: none
+    background-color: transparent
+    border-radius: 0
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0)
+
+#q
+  font-size: 9pt
+  border-radius: 0.5em
+  padding: 0.33em
+  border: none
+
+.close-button
+  display: inline-block
+  border-radius: 3px
+  margin: 0.33em 0.5em 0 0
+  border: 1px solid #767676
+  color: #767676
+  padding: 0 0.025em
+  line-height: 0.6
+  span
+    vertical-align: 30%
+  &:hover
+    text-decoration: none
+
+// Some blocks are generated by markdown parsing. They are an HTML fragment and
+// in order to keep them contained more cleanly in a box, we need to remove
+// some margins and clean up some indents.
+blockquote
+  ul
+    list-style-type: disc
+    margin-left: 1em
+  ol
+    list-style-type: decimal
+    margin-left: 1.5em
+
+.inline-link
+  border: 1px solid white
+  &.linkword
+    vertical-half-gradient: #E5F5F5 #CBEEED
+  &.soundalike
+    vertical-half-gradient: #EFF8E5 #E4F2D0
+  &.association
+    vertical-half-gradient: #FFFFFF #F1F0F0
+
+#body > h3
+  margin-bottom: 1em
+
+.failed
+  color: red !important
+
+.collapsed
+  overflow: hidden
+
+.placeheld
+  color: #A0A0A0
+  font-style: italic
+
+.disabled, a.disabled
+  color: #A0A0A0
+
+a.disabled:hover
+  text-decoration: none
+
+a.username
+  color: text-color
+
+.group-box
+  margin: 1.3em
+  background-color: #F9F9F9
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3)
+  border-radius: 5px
+
+// Buttons
+
+.faint-gradient-button
+  border-radius: 5px
+  padding: 0.5em 1em
+  font-weight: bold
+  color: #FFFFFF
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3)
+  &:hover
+    text-decoration: none
+  &:active, &.pressed
+    position: relative
+    top: 1px
+  &.green
+    vertical-gradient: #A6DE66 #79BB27
+    border: 1px solid #79BB27
+    &:hover
+      text-decoration: none
+      vertical-gradient: darken(#A6DE66, 5%) #79BB27
+    &:active, &.pressed
+      vertical-gradient: #79BB27 #A6DE66
+  &.blue
+    vertical-gradient: #60D2DB #29A5AA
+    border: 1px solid #29A5AA
+    &:hover
+      text-decoration: none
+      vertical-gradient: darken(#60D2DB, 5%) #29A5AA
+    &:active, &.pressed
+      vertical-gradient: #29A5AA #60D2DB
+// Temporary fix
+a.faint-gradient-button
+  color: #FFFFFF
+
+// Longtables
+
+.paging-controls
+  text-align: center !important
+  a
+    text-decoration: none
+    &:visited
+      color: #28A3A4
+  .prev
+    float: left
+    &:before
+      content: "◀ prev"
+  .next
+    float: right
+    &:after
+      content: "next ▶"
+  .elide:before
+    content: " … "
+
+.sprite
+  display: inline-block
+
+button.pronounce
+  .sprite
+    vertical-align: middle

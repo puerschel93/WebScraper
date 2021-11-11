@@ -1,0 +1,251 @@
+#router-cleaner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 0 0 0 50%;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  background-color: var(--color-dark-a);
+  border-radius: var(--br);
+  position: relative;
+}
+
+.search clr-icon {
+  color: white;
+}
+
+.search-field {
+  margin: auto;
+  width: 90%;
+  display: flex;
+
+  @media screen and (max-width: 560px) {
+    width: 100%;
+  }
+
+  & input[type="search"] {
+    width: 100%;
+    margin-inline-start: 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.95);
+  }
+  & input[type="button"] {
+    width: 100%;
+  }
+
+}
+
+.search-options {
+  margin: auto;
+  width: 90%;
+  display: flex;
+
+  &-type {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--text-gutter);
+    @media screen and (max-width: 560px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  & input[type="checkbox"] {
+    &:disabled + label {
+      color: rgba(255,255,255,0.4) !important;
+    }
+  }
+  label {
+    color: white;
+  }
+  @media screen and (max-width: 560px) {
+    width: 100%;
+  }
+}
+
+.books {
+  font-family: Roboto-Condensed-Regular;
+  position: relative;
+  padding: 2rem 1.2rem 5rem;
+}
+
+.book {
+  position: relative;
+  width: 12.5em;
+  cursor: pointer;
+
+  .front {
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center bottom;
+    color: white;
+
+    .thumbnail {
+      width: 170px;
+      height: 266px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url('../../../assets/book_muscle.jpg');
+      background-color: rgba(var(--color-lighter-plain), var(--alpha));
+      border-radius: var(--br);
+    }
+
+    .book-about {
+      width: 100%;
+
+      .book-title {
+        width: 100%;
+        margin: .75em 0;
+        font-size: small;
+        font-weight: bold;
+        color: var(--clr-light);
+        white-space: nowrap;
+      }
+
+      .book-info {
+        text-align: right;
+        font-size: 0.72rem;
+        line-height: 0.77rem;
+        columns: 2;
+        column-rule: thin solid rgba(white, 0.25);
+
+        .author {
+          text-align: left;
+        }
+      }
+    }
+
+  }
+
+  .bookmark {
+    position: absolute;
+    top: -1px;
+    right: 1em;
+    background-color: rgba(0, 0, 0, .35);
+    font-weight: bold;
+    font-size: 0.48rem;
+    transition: var(--transition);
+    z-index: 2;
+    width: 20px;
+    height: 50px;
+    opacity: 0;
+    border: 0;
+    cursor: pointer;
+    clip-path: polygon(100% 0, 100% 100%, 50% 86%, 0 100%, 0 0);
+  }
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: rgba(var(--color-dark-plain), var(--alpha));
+  border-radius: var(--br);
+  transform-origin: center 0;
+  transform: scale(.2, .9);
+  opacity: 0;
+  z-index: -1;
+
+  .book-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .book-description {
+      height: 70px;
+      overflow: hidden;
+      text-align: center;
+      font-size: 0.55rem;
+      line-height: 0.9rem;
+      margin-bottom: 1em;
+      //   color: #fff;
+      color: var(--color-light);
+    }
+
+    .btn {
+      margin: 0;
+      font-size: 0.75em;
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+.book:hover {
+  color: var(--color-dark);
+  z-index: 1;
+
+  .front {
+    transform: translateY(-27%) scale(0.8);
+
+    .book-about {
+      animation: bookName 200ms linear forwards;
+
+      .book-title {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .bookmark {
+    transform: translateX(150%);
+    opacity: 1;
+  }
+
+  .background {
+    padding: 1.5em;
+    transition: var(--transition),
+      opacity 100ms linear;
+    transform: scale(1.6, 1.24);
+    opacity: 1;
+    height: 350px;
+  }
+}
+
+.clr-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes bookName {
+  0% {
+    text-align: left;
+    opacity: 1;
+  }
+
+  20% {
+    text-align-last: left;
+    opacity: 0;
+  }
+
+  50% {
+    text-align: center;
+    opacity: 0;
+  }
+
+  100% {
+    text-align: center;
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+}

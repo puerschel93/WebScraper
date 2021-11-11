@@ -1,0 +1,217 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:855;
+
+// VARIABLE SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Open Sans Condensed",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.7em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:220;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra13";
+
+
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+
+
+//--------------------------------------------------------------------------
+// PERSO MHIMMO
+//--------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------
+// GENERAL
+//--------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------
+// MENU & NAV
+//--------------------------------------------------------------------------
+.logo {
+    margin-top: -40px;
+    @media only screen and (max-width : 767px) {
+        margin-top: 0;
+    }
+}
+
+.navigation {
+    height: 40px;
+}
+
+.menu-principal {
+    line-height: 40px;
+}
+
+.menu-principal>li>a {
+padding: 8px 6px;
+
+&:hover {
+}
+}
+
+//--------------------------------------------------------------------------
+// INDEX
+//--------------------------------------------------------------------------
+
+.icon-v5-heart:before{ color:$color-icone-cdc;}
+.icon-v5-heart.opacity-4{ opacity:1;}
+
+//--------------------------------------------------------------------------
+// BLOC VISUEL
+//--------------------------------------------------------------------------
+.bg-white-index {
+    margin: 10px;
+    background-color: rgba($color-primary,.7);
+}
+
+.titre-milieu {
+    margin-top: 307px;
+    @media only screen and (max-width : 767px) {
+        margin-top: 127px;
+    }
+}
+
+//--------------------------------------------------------------------------
+// ZONE PUB
+//--------------------------------------------------------------------------
+
+
+.pub-home {
+    background-image: url("/z/webagency/slagence_X_V5/images/pub/lib2/black/picto-carto-ventes.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/z/webagency/slagence_X_V5/images/pub/lib2/black/picto-carto-ventes.png', sizingMethod='image')";
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/z/webagency/slagence_X_V5/images/pub/lib2/black/picto-carto-ventes.png', sizingMethod='image');
+}
+
+.module-extra div.h1-like.typo-action.margin-top-20.margin-bottom-10.pagination-centered {
+    display: none;
+}
+
+.module-annonces-homepage-extra .rounded-200 {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.module-annonces-homepage-extra {
+    padding: 10px;
+    background: $color-block-dark-10;
+}
+
+
+//--------------------------------------------------------------------------
+// PAGE AGENCE
+//--------------------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------------------
+// CONTENU
+//--------------------------------------------------------------------------
+.toggle,
+/* 1 */
+.toggle:not(:checked) ~ .toggled /* 2 */ {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.toggle2,
+/* 1 */
+.toggle2:not(:checked) ~ .toggled2 /* 2 */ {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+@media only screen and (max-width : 767px) {
+    header .logo img {
+        width: 30%;
+    }
+    .margin-top-under-nav-fixe {
+        margin-top: 135px;
+    }
+}
+
+
+.cookie-banner {
+    background-color: $color-body;
+    color: $color-important;
+    top: auto;
+    bottom: 0;
+}

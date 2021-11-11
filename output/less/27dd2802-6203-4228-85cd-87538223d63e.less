@@ -1,0 +1,232 @@
+@import "asset";
+@use-vw: true;
+@vw: 740;
+
+@media screen and (max-width: 740px) {
+  #campaign {.mh-c; font-size: 26px; font-family: notokr, sans-serif; .tc; .ls(-0.05em); overflow: hidden; .pt(50); .-box; .rel;
+    input, select, textarea { outline: none; }
+    table { table-layout: fixed; border-collapse: collapse; }
+    img { .block; backface-visibility: hidden; }
+    .mo { .ib; }
+    .pc { .hide; }
+
+    section { .bgc(#fff); }
+    section.top { .contain("../img/m/top-visual.png"); .h(846); .pt(302); .-box;
+      .tit { .fs(28); .lh(40); text-shadow: 0 0 12px rgba(255,255,255,0.9);
+        s { color:#fff; .ib; .p(0,6); .m(0,3); .-box; .bgc(#e30613); text-shadow: none; }
+      }
+    }
+    // 당첨자 확인버튼 생성시 section.morning { .mb(60); }
+    section.morning { .cover("../img/m/morning1.png"); .h(986); .pt(284); .-box; overflow: hidden; .rel;
+      .date { .tl; .wf; .pl(104); .-box;
+        p { .fs(27); color:#fff; .light; .lh(36); .mb(12); .ti(-102); .ml(102);
+          s { .bold; .wh(82,36); .lh(36); .ti(0); .mr(20); .bgc(#000); .br(18); .ib; .tc; .pt(2); .-box; }
+          &:last-child { .mb(0); }
+        }
+      }
+
+      // .btn { height:0; margin-top:0; }삭제 하면 버튼 보임
+      .btn { .fs(0); .block; .mh-c; .mt(25); .wh(267,55); .contain('../img/m/winner-btn.png'); .pointer; z-index: 1; .h(0); .mt(0); pointer-events: none; }
+      .notice { .mt(30);
+        p { .fs(26); .lh(33); }
+      }
+
+
+      .pic { .wh(671,346); .mt(36); .rel; .ib;
+        &:after { .cnt; .abs; .lb(50%,-10); transform:translateX(-50%); .contain('../img/m/shadow.png'); .wh(726,24); }
+        p { .fs(24); color:#fff; .tl; .bold; .h(50); .lh(50); .bgc(#000); .ib; .abs; .lt; .p(0,15); .-box; z-index: 2;
+          &:after { .cnt; .abs; .rt(-36,0); .ib; .contain('../img/m/edge.png'); .wh(36,50); }
+        }
+        img { .ib; .h(346); .abs; .lt; z-index: 1; }
+      }
+    }
+    section.rule {.contain("../img/m/rule.png"); .h(455); border-bottom: 2px dotted #b6b6b6;
+      .rule-box { .fs(0); .pt(165); .-box;
+        p { .fs(22); .lh(25); .light; .ib; .w(145); .m(0,15,0,14); .vat;
+          &:last-child { .fs(20); }
+          s { .bold; }
+        }
+      }
+      .btn { .fs(0); .wh(366,82); .ib; .pointer; .mt(50); }
+    }
+    section.user-event { .hide; border-bottom: 2px dotted #b6b6b6;
+      .inner { .pb(70); .rel;
+        h2 { .contain('../img/m/evt-tit.png'); .wh(740,257); }
+        .msg-tit { .fs(28); .light; color:#666; .lh(40); .mt(-116); .hide;
+          s { .bold; color:#000; }
+        }
+        .toon { .-a(#eee,2px); .ib; .p(10); .-box; .m(37,0,10); .rel;
+          .img { .contain('../img/m/event-toon.png'); .wh(648,566); }
+          .result { .fs(23); .abs; .lt(50%,300); .wh(200,90); .ml(-210);
+            .click { .fs(0); .f; .block; .contain('../img/m/click.png'); .pointer; z-index: 1; .ml(-20);}
+            span { .fs(23); .lh(28); .ib; .w(200); .abs; .medium; .lt(50%,45%); transform: translate(-50%,-50%); }
+          }
+          .user-msg { .fs(0); .m(15,0); .hide;
+            input { .fs(24); color:#666; .wh(100%,56); .-a(#cfcfcf); .br(28); .ib; .vam; .pl(24); .-box; }
+            //.confirm { .wh(129,58); .contain('../img/m/evt-btn.png'); .ib; .vam; .pointer; }
+          }
+          //.f-msg { .tl; .p(20); .-box; .clear; .hide;
+          //  h3 { .contain('../img/m/f-msg.png'); .wh(387,36); .ib; }
+          //  .user-txt { .fs(26); color:#666; .fr; .mt(10); }
+          //}
+          .user-name { .fs(26); color:#666; .abs; .rb(132,21); .medium; z-index: 1; .tr; .hide; .lh1;
+            &:after { content:'님의 이야기'; .fs(26); color:#666666; .medium; .wh(130,32); .abs; .rt(-130,-3); .bgc(#fff); .ib; .tl; .p(3,0,0,5); .-box; }
+          }
+        }
+        .toon-notice { .fs(24); .lh(32); .mb(30); color:#666; .light; .tl; .pl(35); .-box; .ti(-23); .ml(23); }
+        .user-agree { .p(0,35); .-box; .mb(40); .-box; .hide;
+          table { table-layout: fixed; .tl;
+            tr {
+              th { .pt(24); }
+              th { .fs(26); .bold; .vat; }
+              td { .fs(0); color:#666;
+                input { .fs(24); }
+                input[type=text] { .wf; .lh(52); .pl(30); .-box; .-a(#e6e6e6); .br(26); .bgc(#f7f7f7); .m(12,0);
+                  &.post-input { .w(65%); .ib; .vam; .mr(3%); }
+                }
+                .post-btn { .fs(24); .w(32%); .bgc(#552705); .p(12,0); .tc; color:#fff; .ib; .vam; .br(26); }
+                .txt { .fs(22); .lh(30); color:#000; .-a(#e6e6e6); .br(20); .bgc(#f7f7f7); .p(20); .m(12,0); .h(190); overflow: auto;
+                  b { .fs(24); .lh(32); .mb(10); .block; }
+                }
+                label { .ib; .w(150); .m(12,0,30);
+                  input[type=radio] + i { .wh(38,39); .contain('../img/m/chk.png'); .ib; .vam; }
+                  input[type=radio]:checked + i { .wh(38,39); .contain('../img/m/chked.png'); .ib; .vam; }
+                  s { .fs(24); .ib; .vam; .lh(39); .ml(8); .pt(4); }
+                }
+                label + label { .w(200); }
+              }
+            }
+          }
+        }
+
+        .btns { .fs(0); .mt(20);
+          .btn { .ib; .pointer; .contain; .no-repeat; .hide; .m(0,13);
+            &.save { .bg('../img/m/save.png'); .wh(368,84); }
+            &.edit { .bg('../img/m/edit.png'); .wh(278,83); }
+            &.submit { .bg('../img/m/submit.png'); .wh(278,83); }
+            &.save2 { .bg('../img/m/save2.png'); .wh(321,83); }
+            &.share { .bg('../img/m/bonus_btn.png'); .wh(320,83); }
+          }
+        }
+
+      }
+
+      &.toon2 {
+        .inner {
+          .toon {
+            .img { .contain('../img/m/event-toon2.png'); .wh(648,566); }
+            .result {
+              .click { .hide; }
+            }
+            .user-msg { .block; }
+          }
+        }
+      }
+
+      &[data-step='1'] { .ib;
+        .inner {
+          .msg-tit1 { .block; }
+          .btns .save { .ib; }
+        }
+      }
+      &[data-step='2'] { .ib;
+        .inner {
+          h2 { .contain('../img/m/evt-tit2.png'); .wh(740,257); }
+          .msg-tit2 { .block; }
+          .toon {
+            .result {
+              .click { .hide; }
+            }
+            .img { .bg('../img/m/event-toon2.png'); }
+            .user-msg { .hide; }
+          }
+          .user-agree { .block; }
+          .btns {
+            .edit, .submit { .ib; }
+          }
+        }
+      }
+      &[data-step='3'] { .ib;
+        .inner {
+          h2 { .contain('../img/m/evt-tit2.png'); .wh(740,257); }
+          .msg-tit3 { .block; }
+          .toon { .pb(0);
+            .result {
+              .click { .hide; }
+            }
+            .img { .bg('../img/m/event-toon3.png'); .wh(648,647); }
+            .user-msg { .hide; }
+            .user-name { .block; }
+          }
+          .btns {
+            .save2, .share { .ib; }
+          }
+        }
+      }
+    }
+    section.kit { .contain("../img/m/event.png"); .h(830); .pt(141); .rel; .-box;
+      .tit { .fs(28); .lh(40); .light;
+        s { .bold; color:#e30613; }
+      }
+      .stuff { .w(643); .mt(376); .ib; .p(13,0); .-a(#e6e6e6,2px);
+        p { .fs(28); .light; .lh(40);  s { .bold; .block; }}
+      }
+    }
+
+    section.event-bonus { .contain("../img/m/bonus.png"); .h(982); .p(269,0,0,30); .-box; .tl; .rel;
+      .txt { .fs(35); .lh(45); .light;  s { color:#e30613; .bold; }}
+      span { .fs(22); .light; .lh(30); .mt(10); color:#666; .ib; .ti(-10); .ml(10); }
+      .txt-box { .mt(20);
+        p { .fs(24); .lh(32); .pl(15); .rel; .mb(10); .-box;
+          s { .bold; .ib; .w(140);
+            &:after { .cnt; .wh(2,20); .bgc(#000); .abs; .lt(0,3); }
+          }
+          //&:nth-child(1), &:nth-child(2) { .ib; }
+          //&:nth-child(2) { .ml(15); }
+        }
+      }
+      .gift { .fs(0); .abs; .lt(153,835);
+        p { .fs(18); .ib; .w(185); .tc;
+          &:nth-child(2) { .w(163); }
+          &:nth-child(3) { .w(214); }
+        }
+      }
+      .gift-notice { .fs(24); .mt(130); .pl(128); .-box; }
+    }
+    section.buy { .contain("../img/m/buy.png"); .h(488); .pt(163); .-box;
+      .btns { .fs(0); .pl(412); .-box;
+        a { .wh(283,68); .block; .mb(21); }
+      }
+    }
+    section.reason { .contain("../img/m/reason.png"); .h(622); .rel;
+      .reason-list { .pt(211); .-box;
+        p { .fs(35); .lh(45); .light; .tl; .pl(200); .-box; .mb(34);  s { .bold; }}
+      }
+    }
+    section.gallery { .p(79,0); .-box; .rel;
+      h2 { .ib; .contain("../img/m/gallery.png"); .wh(371,39); }
+      p { .fs(26); .lh(32); .light; .mt(25);   s { color:#e30613; .bold; }}
+      .swiper-container { .m(35,80,0); overflow: hidden;
+        .swiper-slide { .wh(277,243); .rel;
+          img { .f; .ib; }
+          .msg-box { .abs; .lt(95,0); .wh(175,78);
+            .gallery-msg { .fs(18); .lh(22); color:#000; .medium; .ib; .wf; .abs; .lt(50%,50%); transform: translate(-50%,-50%); }
+          }
+        }
+      }
+      .swiper-btn { .wh(27,42); .abs; .lt(50%,312); .mt(0);
+        &:after { .hide; }
+        &.swiper-button-prev { .contain('../img/m/prev.png'); .ml(-336); }
+        &.swiper-button-next { .contain('../img/m/next.png'); .ml(310); }
+        &.swiper-button-disabled { opacity: 1; }
+      }
+    }
+    .floating-btn { .wh(109,106); .contain('../img/m/floating.png'); .no-repeat; .ib; .fix; .rb(0,150); z-index: 10; }
+    #event-bonus { .abs; .lb(0,2800); }
+    #buy { .abs; .lb(0,1400); }
+  }
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  #campaign section.morning .pic p:after { .cnt; .abs; .rt(-49,0); .ib; border-top: 6.76vw solid #000; border-right: 6.76vw solid transparent; background:none; width: unset; height: unset; }
+}

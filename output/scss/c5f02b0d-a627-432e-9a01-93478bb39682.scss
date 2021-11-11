@@ -1,0 +1,150 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:540;
+
+// VARIABLE SITE TYPO
+$font-body:"proxima-nova",verdana,sans-serif;
+$font-title:"ff-good-headline-web-pro-con ",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.0em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:230;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces2";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// PERSO DHOME67
+
+// GENERALE
+.typo-menu-color {
+	color:$color-border-menu;
+}
+
+.margin-top-neg-85 {
+	margin-top:-85px;
+}
+
+
+// MENU & NAV
+.logo {
+	float:left;
+}
+.navigation {
+	height: 190px;
+	border-bottom: 42px solid $color-secondary;
+	box-sizing: border-box;
+}
+
+.menu-principal>li>a {
+	padding: 8px 9px;
+	color:$color-font-body;
+	border-bottom:solid 1px $color-secondary;
+	&:hover {
+		border-bottom:solid 1px $color-border-menu;
+	}
+}
+
+// ENCART PA
+.module-annonces-homepage {
+	@include background-image(linear-gradient(300deg, $color-body, $color-block, $color-body));	
+}
+
+.module-villes-annonces {
+	background:$color-primary;
+	line-height: 24px;
+	margin-top: 0px;
+}
+
+// ENCART PUB
+.pub  {
+	@include background-image(linear-gradient(300deg, $color-body, $color-secondary, $color-body));	
+	box-shadow:none;
+	@include single-box-shadow;
+	&:hover {
+		background:$color-block-dark-10;
+	}
+}
+
+.zone-pub h3, .zone-pub p {
+	color:$color-font-body;
+}
+
+// LISTING PA
+.recherche-annonces {
+	@include background-image(linear-gradient(300deg, $color-body, $color-block, $color-body));	
+}
+
+// RESPONSIVE
+@media only screen and (max-width : 767px) {
+	header .logo img {
+        width: 30%;
+    }
+    .logo {
+		float:none;
+	}
+	.navigation {
+		height: auto;
+		border-bottom: none;
+		box-sizing: border-box;
+	}
+}

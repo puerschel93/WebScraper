@@ -1,0 +1,319 @@
+/**
+ * Copyright (C) 2013 Kaj Magnus Lindberg (born 1979)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+// There's probably some cruft here that can be removed. Previously, the sidebar
+// was *a lot* more complicated and I might not have cleaned up all old styles.
+
+
+// RENAME 'sidebar' to 'contextbar'.
+
+
+#dw-any-sidebar
+  z-index: 1010;
+  position: relative;
+
+.dw-sidebar-z-index
+  z-index: 1015;
+  position: relative;
+
+#dw-comment-counts
+  float: right;
+  clear: right;
+  padding: 6px 5px 6px 12px;
+  background: white;
+  font-style: italic;
+  text-align: right;
+
+html:not(.dw-hz):not(.mouse) #dw-comment-counts
+  clear: none;
+
+#dw-minimap-holder
+  position: fixed;
+  width: 70%;
+  top: 0;
+  left: 0;
+  height: 0;
+  z-index: 1001 // not above dialogs, but above resize-columns handle (1000)
+
+  .dw-upper-right-corner
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    #dw-minimap-placeholder
+      float: right;
+      width: 0px;
+
+    #dw-minimap
+      float: right;
+      background: hsl(0, 0%, 93%)
+      box-shadow: 0px 2px 4px hsl(0, 0%, 33%);
+
+#dw-toggle-sidebar-and-comment-counts
+  float: right;
+  clear: right;
+  right: 0;
+
+.esCtxbar_close.esCloseCross
+  float: right;
+  padding: 8px 13px 8px 8px;
+  margin: 0 0 10px; // prevents the Unread/Recent/Starred buttons from floating-left below
+  @media (max-width: 510px)
+    margin-bottom: 0;
+
+.dw-hz #dw-sidebar
+  background: white;
+  padding: 0 0 0 11px;
+
+  .dw-comments
+    background: white;
+
+
+.esPresence
+  position: relative;
+  margin: 0;
+  padding: 4px 0 9px 8px;
+  &:hover:not(.esPresence-strangers)
+    background: hsl(207, 100%, 94%);
+    cursor: pointer;
+    .esAvtrName_username,
+    .esAvtrName_fullName
+      color: hsl(207, 100%, 14%);
+  .esAvtr
+    vertical-align: middle;
+  .esAvtrName
+    display: inline;
+
+.esPresence_icon
+  display: inline-block;
+  position: absolute;
+  right: 9px;
+  width: 10px;
+  height: 10px;
+  top: 11px;
+  border: 1px solid hsl(0, 0%, 45%);
+  border-radius: 50%;
+
+.esPresence-active
+  .esPresence_icon
+    $activeColor = hsl(120, 60%, 67%);
+    background: $activeColor
+    border: 1px solid $activeColor;
+
+  .esAvtrName_username,
+  .esAvtrName_fullName
+    font-weight: bold;
+
+.esPresence_thatsYou
+  vertical-align: middle;
+
+.esAvtrName_isGuest
+  vertical-align: middle;
+  margin-left: 4px;
+
+.esPresence-strangers
+  margin-top: 13px;
+  font-style: italic;
+
+
+.esCtxbar
+  display: flex;
+  flex-flow: column;
+
+  position: relative;
+  z-index: 1; // so placed above a certain FadingBackdrop [6KEP0W2]
+  $paddingLeft = 11px;
+  padding: 0 0 0 $paddingLeft;
+  width: 100%;
+  height: 100vh;
+  @media (max-width: 510px)
+    padding-left 7px;
+  bgcolor = white;
+  background: bgcolor;
+
+  .btn
+    float: left
+    margin: 10px 5px 0 0;
+    @media (max-width: 510px)
+      margin-top: 5px;
+    border: none;
+    border-radius: 0;
+    background: hsl(0, 0%, 85%);
+    color: #222;
+
+    &.active
+      background: hsl(0, 0%, 74%);
+      color: #000;
+      cursor: default;
+
+    &:hover:not(.active)
+      background-color: hsl(0, 0%, 92%);
+
+  .dw-comments
+    clear: both;
+    background: bgcolor;
+    padding: 10px 8px 6px 0;
+    flex: 1;
+    overflow-y: scroll;
+
+    @media (max-height: 500px)
+      padding-top: 7px;
+
+    h3
+      font-weight: bold;
+      font-family: $uiFont;
+      font-size: $postFontSize;
+      margin: 0 0 10px 4px;
+
+    p
+      margin-top: 8px;
+
+    .dw-p
+
+      cursor: pointer;
+      margin: 0;
+      border-top: 1px solid #eee;
+      padding: 4px 0 1px;
+
+      &:hover
+        .dw-p-hd,
+        .dw-p-bd
+          background-color: hsl($uiHue, 100%, 97%);
+
+      &.dw-current-post
+        .dw-p-hd,
+        .dw-p-bd
+          background-color: hsl($uiHue, 100%, 92%);
+        .dw-p-by
+          color: hsl(0, 0%, 22%);
+        .dw-fullname,
+        .dw-p-hd,
+        .dw-p-bd-blk
+          color: hsl(0, 0%, 15%); // makes it darker, since background darker
+
+      .esH_solution
+        float: none;
+        top: 0;
+        font-size: 20px;
+
+    .dw-p .dw-mark-click
+      margin-left: -3px;
+
+    .dw-p-bd
+      max-height: 130px;
+      overflow: hidden;
+      padding: 2px 1px 3px 3px;
+
+
+    // Fading in a post in the contextbar (right sidebar):
+    // Usually not so interesting. Maybe not worth the CPU? Maybe can add
+    // back later (right now FadeGrowIn shows things instantly). [REACTANIMS]
+    // DO_AFTER 2021-01-01  delete and reimplement w CSS anims.
+    /*
+    .s_FadeGrowIn-enter,
+    .s_FadeGrowIn-exit
+      transition-duration: .7s;
+      transition-timing-function: ease;
+      transition-property: opacity, max-height;
+
+    .s_FadeGrowIn-enter
+      opacity: 0;
+      max-height: 0px;
+
+    .s_FadeGrowIn-enter.s_FadeGrowIn-enter-active
+      opacity: 1;
+      max-height: 100px;
+
+    .s_FadeGrowIn-exit
+      opacity: 1;
+      max-height: 100px;
+
+    .s_FadeGrowIn-exit.s_FadeGrowIn-exit-active
+      opacity: 0.1;
+      max-height: 0;  */
+
+
+.esCtxbar_onlineCol
+  float: right;
+
+.esCtxbar-adminGuide
+  &,
+  .esCtxbar_list
+    background: hsl(0,100%,98%);
+
+  .esCtxbar_list_title
+    font-size: 28px !important;
+    font-weight: normal !important;
+    margin: 5px 0 10px 0 !important;
+
+.esAdminGuide
+  h2, h3, h4
+    margin: 20px 0 10px;
+  h2
+    font-size: 20px;
+    a
+      text-decoration: underline;
+  a
+    font-weight: bold;
+
+.es-editor-help-three,
+.es-editor-help-four
+  position: absolute;
+  z-index: 1;
+  box-shadow: 6px 6px 8px #777;
+  max-width: 380px !important;
+  .dw-help-text
+    padding: 1ex 1ex 0;
+  .icon-comment:before
+    opacity: 0.67;
+    margin-right: 7px;
+  .dw-hide
+    padding: 10px 10px 7px 20px;
+
+.es-editor-help-three
+  top: 65px;
+  left: 10px;
+.es-editor-help-four
+  top: 115px;
+  left: 20px;
+
+.esCB_Help
+  p
+    font-size: 14px;
+
+.esCB_Help_Large
+  font-size: 16px;
+
+.esCB_Help_ArwLeft,
+.esCB_Help_ArwDown
+  display: inline-block;
+  font-size: 30px;
+  vertical-align: top;
+  padding: 0 3px;
+  position: relative;
+  top: -2px;
+
+.esCB_Help_ArwLeft
+  flip()
+  // Don't let any line-wrapped text continue directly below the arrow.
+  float: left;
+  padding-bottom: 10px;
+
+.esCB_Help_ArwDown
+  rotateFn(90deg)
+
+// vim: fdm=marker et ts=2 sw=2 tw=0 fo=r list

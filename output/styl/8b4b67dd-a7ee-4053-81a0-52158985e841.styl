@@ -1,0 +1,161 @@
+body
+    text-rendering optimizeLegibility
+    height 100%
+    margin 0
+    padding @margin
+    font-family font
+    font-weight normal
+    color text-color
+    font-size font-size
+    line-height (font-size * 1.5)
+    background-color background-white
+    -webkit-text-size-adjust  none
+    min-height 100%
+    position relative
+    font-weight 400
+
+    &.menucatalog__active
+    &.menu__active
+    &.sidebar__active
+        overflow hidden
+
+html
+    position relative
+    min-height 100%
+    height @min-height
+
+a
+    color text-color
+    text-decoration none
+    vendor(transition, color 0.35s linear)
+
+    &:hover
+        text-decoration none
+        color color-brown
+        border-bottom-color transparent
+
+    &:active
+    &:focus
+        text-decoration none
+        border-bottom-color transparent
+        color text-color
+
+ol
+ul
+    list-style none
+    margin 0
+    padding 0
+
+    > li
+        position relative
+
+    /ol
+        counter-reset point
+
+        > li
+
+            &::before
+                content counter(point)
+                counter-increment point 1
+
+p
+    padding 0
+    margin 0
+
+
+
+
+
+#container
+    width 100%
+    min-height @width
+    height auto
+    position relative
+    overflow hidden
+
+.container-fluid
+    margin-left auto
+    margin-right @margin-left
+    max-width none
+    width 100%
+    padding-left padd-left
+    padding-right padd-right
+
+    @media screen and (max-width: media-ls)
+        padding-left (padd-left - 15px)
+        padding-right @padding-left
+
+
+.scrollbar
+
+    &::-webkit-scrollbar
+        width 4px
+
+    &::-webkit-resizer
+        background-image url('')
+        background-repeat no-repeat
+        width 7px
+        height 0px
+
+    &::-webkit-scrollbar-thumb
+        vendor(border-radius, 0)
+        background-color background-brown
+        vendor(box-shadow, 0px 0px 0px background-brown inset)
+        background-position center
+        background-repeat no-repeat
+
+    &::-webkit-scrollbar-track
+        background-color background-brown
+        endorize(box-shadow, 0px 0px 0px background-brown inset)
+
+    &::-webkit-scrollbar-button
+        background-image url('')
+        background-repeat no-repeat
+        width 6px
+        height 0px
+
+header,
+footer,
+article,
+section,
+nav,
+main
+    position relative
+
+
+
+.links, .links-grey
+    color text-color
+    text-decoration none
+    outline none !important
+    background-image -webkit-linear-gradient(bottom,transparent 0,color-brown 0,color-brown 1px,transparent 1px)
+    background-image -o-linear-gradient(bottom,transparent 0,color-brown 0,color-brown 1px,transparent 1px)
+    background-image linear-gradient(to top,transparent 0,color-brown 0,color-brown 1px,transparent 1px)
+    -webkit-background-size 100% 100%
+    background-size 100% 100%
+    background-repeat no-repeat
+    background-position left
+    -webkit-transition -webkit-background-size .3s, color .3s
+    transition -webkit-background-size .3s, color .3s
+    -o-transition background-size .3s, color .3s
+    transition background-size .3s, color .3s
+    transition background-size .3s, -webkit-background-size .3s, color .3s
+
+    &-grey
+        background-image -webkit-linear-gradient(bottom,transparent 0,#575757 0,#575757 1px,transparent 1px)
+        background-image -o-linear-gradient(bottom,transparent 0,#575757 0,#575757 1px,transparent 1px)
+        background-image linear-gradient(to top,transparent 0,#575757 0,#575757 1px,transparent 1px)
+
+    &:hover
+        -webkit-background-size 0% 100%
+        background-size 0% 100%
+
+.ymaps-copyrights-pane
+    display none !important
+
+
+main
+    z-index 2
+
+img
+    border-radius $border-radius-element

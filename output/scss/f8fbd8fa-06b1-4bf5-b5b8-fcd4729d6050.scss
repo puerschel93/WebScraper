@@ -1,0 +1,139 @@
+@import "color";
+// BG UNI
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:yes;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:260;
+
+// VARIABLE SITE TYPO
+$font-body:"proxima-nova",arial,verdana,sans-serif;
+$font-title:"proxima-nova",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.1em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:normal;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN TOP NAV
+$margin-top-navigation:8;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:107;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES3
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+// IMPORT MODULE PUB LIB1 = MODELE BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+.navigation {
+   @include gradient-secondary;
+}
+
+
+
+
+
+
+//--------------------------------------------------------------------------------------
+//    PERSO PERNET
+//--------------------------------------------------------------------------------------
+
+.bg-secondary {background-color: $color-content;}
+
+.btn-action-no-gradient {color:$color-secondary;}
+.btn-action  {color:$color-secondary;}
+
+//--------------------------------------------------------------------------------------
+//    MENU & NAV
+//--------------------------------------------------------------------------------------
+
+.menu-principal {margin-top:22px;}
+
+.menu-principal>li>a {
+   color:$color-primary;
+   background:$color-secondary-light-5;
+   font-size:$font-size-title * 0.4;
+   border-bottom: solid 1px $color-secondary;
+   padding-left: 5px;
+   padding-right: 5px;
+   &:hover {
+      background:$color-secondary-light-5;
+      border-bottom: solid 1px $color-action;
+   }
+}
+
+
+.navigation {
+background-image:none;}
+
+.ie8 .navigation, .ie9 .navigation {
+filter:none;
+}
+
+
+//--------------------------------------------------------------------------------------
+//    INDEX
+//--------------------------------------------------------------------------------------
+
+.homepage-bloc-prix-bien .typo-white {color:$color-secondary;}
+.module-annonces-homepage {background:$color-primary;@include box-shadow(0px 8px 12px -10px $color-secondary-light-20);&:hover{background:$color-module-acc;}}
+
+.zone-pub h3.typo-action {color:$color-action-dark;}
+.homepage-bien-bloc {color:$color-action-dark;}
+
+.creer-alerte-email {color:$color-secondary;}
+.nb-annonces {color:$color-action-dark;}
+
+.zone-pub {background-color:$color-block; padding:5px;@include box-shadow(0px 8px 12px -10px $color-secondary-light-20);}

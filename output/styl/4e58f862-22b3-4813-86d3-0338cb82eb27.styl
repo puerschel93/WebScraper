@@ -1,0 +1,403 @@
+@import "nib/vendor";
+@import "home.styl";
+//@import "../mixins"
+
+sansSerifFonts = "Helvetica Neue", Helvetica, Arial, sans-serif;
+serifFonts = Georgia, serif
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+body, html, #container>section, #container { height: 100%; }
+
+body
+  height: 100%;
+  width 100%
+  padding: 0
+  margin: 0
+  margin-left auto
+  margin-right auto
+  
+/* Topbar Styles */
+.topbar
+    max-height 100px
+    overflow auto
+    border-bottom 1px solid #ccc
+    padding 0.5em
+    
+    .auth
+      text-align right
+      padding 0 1em
+    
+    #github-auth-icon
+      height 1.8em
+      width auto
+      display inline-block
+      vertical-align middle
+  
+/* Display styles */  
+
+.display
+  min-width: 180px; /* prevents overflow */
+  
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  
+  -moz-box-ordinal-group: 2;
+  -webkit-box-ordinal-group: 2;
+  box-ordinal-group: 2;
+  
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;    
+  background-image: url(unquote('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEX4+Pj09PQf/c7fAAAAGklEQVR4Xq3MIQEAAADDIPqX/kvMIMEWEm8O7b0/wewc/NcAAAAASUVORK5CYII%3D'))
+  height: 200px
+  padding: 5px
+  
+/* Icon bar styles */  
+
+  
+#icon-bar
+  iconFontSize = 26px
+  iconBarContentWidth = 200px
+  
+  font-size: iconFontSize
+  line-height: 1.8em;
+  text-align: center;
+  max-width: iconFontSize + 12
+  
+  border-right: 1px solid white
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+
+  -moz-box-ordinal-group: 2;
+  -webkit-box-ordinal-group: 2;
+  box-ordinal-group: 2;
+
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+
+  background-color: #ffffff;
+  background-image: -webkit-gradient(linear, left center, right center, from(rgb(255, 255, 255)), to(rgb(246, 246, 246)));
+  background-image: -webkit-linear-gradient(left, rgb(255, 255, 255), rgb(246, 246, 246));
+  background-image: -moz-linear-gradient(left, rgb(255, 255, 255), rgb(246, 246, 246));
+  background-image: -o-linear-gradient(left, rgb(255, 255, 255), rgb(246, 246, 246));
+  background-image: -ms-linear-gradient(left, rgb(255, 255, 255), rgb(246, 246, 246));
+  background-image: linear-gradient(left, rgb(255, 255, 255), rgb(246, 246, 246));
+
+  #icon-list
+    position: relative
+    list-style-type none
+    margin 0
+    padding 0
+    height 100%
+    z-index: 5
+    
+    .active-icon
+      background-color #2D2D2D
+      color #E0E0E0
+    
+    li
+      color: #323232
+      width 100%
+      padding: 0
+      border-bottom: 1px solid rgba(254,254,254, 0.5)
+      background-color: rgba(#EDEDED, 0.65)
+      border-radius: 2px
+      transition: all 0.46s ease-in-out
+      
+      &:last-child
+        border-bottom: 0
+
+      &:hover
+        background-color: rgba(#E0E0E0, 0.75)
+        color: black
+        
+    #icon-bar-content      
+      font-size: 1rem
+      padding: 0.4em 0
+      background-color: rgba(250,250,250,0.75)
+      font-size: 0.7em
+      line-height: 1.2em
+      text-align: left
+      width: iconBarContentWidth
+      max-height: 600px;
+      overflow: auto;
+      //border-bottom-left-radius: 5px
+      text-align center
+
+      position: absolute
+      top: 0
+      left: - iconBarContentWidth
+      z-index: 1
+      opacity: 0.9
+
+      &.active {
+        //left: - iconBarContentWidth - 2
+      }
+      
+      &:hover { 
+        opacity: 1; 
+      
+      }
+
+      .panel-title
+        width 100%
+        background-color black
+        color white
+
+
+      h1,h2,h3,h4,h5,h6 {
+        font-family: sansSerifFonts
+        text-align center
+        line-height 1.2em
+        
+        /*background-color: #ffffff;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 1.00)), to(rgba(237, 237, 237, 0.05)));
+        background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1.00), rgba(237, 237, 237, 0.05));
+        background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1.00), rgba(237, 237, 237, 0.05));
+        background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1.00), rgba(237, 237, 237, 0.05));
+        background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 1.00), rgba(237, 237, 237, 0.05));
+        background-image: linear-gradient(top, rgba(255, 255, 255, 1.00), rgba(237, 237, 237, 0.05));
+        */
+
+      }
+      
+      h2,h4
+        margin 0.1em 0
+      
+      h3
+        padding 0.2em 0.5em
+        margin 0.25em 0
+      ul
+        margin 0
+        padding 0
+        
+      li
+        text-align left
+        border-radius 2px
+        list-style-type none
+        padding 0.2em 0.5em
+        margin 1px 2px
+        cursor default
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.20)), to(rgba(237, 237, 237, 0.05)));
+        background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.20), rgba(237, 237, 237, 0.05));
+        background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.20), rgba(237, 237, 237, 0.05));
+        background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.20), rgba(237, 237, 237, 0.05));
+        background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.20), rgba(237, 237, 237, 0.05));
+        background-image: linear-gradient(top, rgba(255, 255, 255, 0.20), rgba(237, 237, 237, 0.05));
+        opacity 0.85
+        
+        &:hover
+          opacity 1
+        
+      .icon
+        font-size 0.8em
+        opacity 0.5
+        
+      #file-list
+        margin 0
+        padding 0
+
+        
+        bgLighten = 0.25
+        jsColor = #d8ce88
+        cssColor = #d6b384
+        svgColor = #d49881
+        defaultColor = #d27f81
+        
+        [data-file-type="js"]
+          background-color: rgba(jsColor, bgLighten)
+          
+        [data-file-type="css"]
+          background-color: rgba(cssColor, bgLighten)
+          
+        [data-file-type="svg"]
+          background-color: rgba(defaultColor, bgLighten)
+          
+        li
+          text-align right
+          font-weight bold
+          background-color: rgba(defaultColor, bgLighten)
+          
+          
+        .icon-cancel-squared
+          opacity: 0.3
+          transition: opacity 0.1s ease-out
+          
+          &:hover
+            opacity 1
+      
+      #library-list
+        margin 0
+        padding 0
+        
+        li 
+          position relative
+        
+        .library-url
+          margin-left: 0.5em
+          opacity 0.3
+          font-family: sansSerifFonts
+          font-size: 0.9em
+          
+        .icon-cancel-squared
+          position absolute
+          right 0.2em
+          top: 0.3em
+          
+        
+      div div 
+        opacity 0
+        height 0
+        overflow hidden
+        
+        &.selected
+          height auto
+          opacity 1
+          
+      #time-control-settings
+        text-align center
+        
+      #save-and-export
+        opacity 1 !important
+        height auto
+        padding: 0.5em
+        padding-top: 0
+        line-height: 1.7em
+        
+        p
+          margin-top 0
+        
+        #save-inlet-name
+          width 100%
+          padding 0.4em
+          
+      
+/* Code panel styles */  
+.hidden-code
+  min-width: 0px !important
+  width: 0px !important
+  transition: all 0.8s ease-out
+  overflow: hidden
+  
+  #codetoolbar
+    min-width: 10em
+    //display: none
+        
+codeToolbarHeight = 2em      
+    
+@media (min-width: 1024px)    
+  #icon-bar
+    iconFontSize = 20px
+    font-size: iconFontSize
+    max-width: iconFontSize + 12
+
+.panel
+  z-index: 5
+  background: white
+  height: 100%;
+  min-width: 420px;
+  width: 38%;
+  //overflow-y: auto;
+  position: relative
+  padding-top codeToolbarHeight
+  
+  -moz-box-ordinal-group: 3;
+  -webkit-box-ordinal-group: 3;
+  box-ordinal-group: 3;
+  
+  -moz-align-items: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  
+  -moz-flex-flow: column;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  
+  #codetoolbar
+    font-family: sansSerifFonts
+    font-weight 300
+    //display none
+    background-color: white
+    position absolute
+    top 0
+    z-index 5
+    height codeToolbarHeight
+    padding 0.4em 
+    width 100%
+    border-bottom 5px solid #CCC
+    
+    &.code-running
+      border-bottom: 1px solid #bbe0a3       
+    
+    &:focus
+      outline: 0 solid transparent
+      
+    #filename
+      outline: 0 solid transparent
+      min-width: 1em    
+      
+    #inlet-status
+      opacity: 0.25
+      position: absolute
+      right: 0.3em
+
+    
+  #code
+    //margin-top 2em
+    z-index: 0
+    //padding: 0.4em 0.8em
+    overflow-x: auto
+    height 100%
+
+    
+    #codemirror
+      height 100%
+      .CodeMirror
+        height 100%
+  
+
+.flexbox 
+  display:-moz-box;
+  display:-webkit-box;
+  display: box;
+  text-align: left;
+ 
+ 
+ #container
+   height: 100%;
+   min-width: 640px; /* prevents overflow */
+ 
+ h1 
+   width: auto;
+
+
+
+button
+  background-color: #EDEDED
+  opacity: 0.82;
+  border: 1px solid rgba(0,0,0,0.5)
+  border-top: 1px solid rgba(30,30,30,0.3)
+  padding: 0.25em;
+  //font-size: 1em;
+  font-weight: bold;
+  line-height: 1.2em;
+  appearance: none;
+  box-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+  border-radius: 0.35em;
+  outline: none;
+  
+  &:hover
+    border 1px solid rgba(0,0,0,0.5)
+    border-bottom 1px solid rgba(30,30,30,0.2)
+
+   
+.tipsy
+  font-family: sansSerifFonts
+.valid
+  border: 1px solid black
+.invalid
+  border: 1px solid orange

@@ -1,0 +1,163 @@
+.event
+  border-radius 8px
+  background var(--background)
+  color white
+  padding 8px
+  display flex
+  flex-direction column
+  font-size 14px
+  height 100%
+  position relative
+  min-height calc(12px + 1em)
+  gap 6px
+
+  // &::before
+  //   content " "
+  //   position absolute
+  //   display block
+  //   left 0
+  //   top 0
+  //   width 100%
+  //   height 100%
+  //   background var(--background)
+  //   pointer-events none
+  //   opacity .15
+
+  .start
+    font-weight 500
+    color white
+    margin-right 8px
+    opacity .6
+    font-size .8em
+
+  .name
+    color white
+    font-weight 500
+
+  .duration
+    color white
+    opacity 1
+    font-weight 300
+    font-size .8em
+
+.allDayEvent
+  background white
+  padding 3px 6px
+  border-radius 8px
+  overflow hidden
+  margin-bottom 6px
+  position relative
+
+  &::before
+    content " "
+    position absolute
+    display block
+    left 0
+    top 0
+    width 100%
+    height 100%
+    background var(--background)
+    pointer-events none
+    opacity .15
+
+  .start
+    display none
+
+  .name
+    color var(--background)
+    font-weight 500
+
+.eventMenu
+  padding 16px
+  font-family SF Pro Display, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif
+  display flex
+  flex-direction column
+  align-items flex-start
+  min-width 280px
+
+  .menuAction
+    width 36px
+    height 36px
+    display flex
+    justify-content center
+    align-items center
+    cursor pointer
+    background #F6F6F6
+    border-radius 8px
+
+    svg
+      height 1.2em
+      fill #FB2B2B
+
+  textarea
+    padding 16px 8px
+    border 0
+    font-weight 400
+    font-size 16px
+    font-family SF Pro Display, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif
+    background #F7F7F7
+    border-radius 8.5px
+    width 100%  
+
+    &:active,&:focus
+      outline none
+
+  .menuItem
+    margin-top 16px
+    display flex
+    justify-content space-between
+    width 100%
+
+    .times
+      margin-left auto
+      display flex
+      align-items center
+      gap 24px
+
+    &:first-child
+      margin-top 0
+
+    &.disabled
+      opacity .5
+
+    .menuItemName
+      color #9BABC5
+      font-size 0.95em
+      font-weight 300
+      svg
+        height 24px
+        color var(--brand)
+
+    .menuItemValue
+      color var(--brand)
+
+    .colorVariant
+      background var(--color)
+      width 24px
+      height 24px
+      margin 0 3px
+      display inline-flex
+      justify-content center
+      align-items center
+      cursor pointer
+
+      &.selected::before
+        content " "
+        display inline-block
+        width 18px
+        height 18px
+        border 2px solid white
+
+
+
+.eventAndMenuWrapper
+  height 100%
+  width 100%
+
+.compact .event
+  padding 5px
+
+.compact .name
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis

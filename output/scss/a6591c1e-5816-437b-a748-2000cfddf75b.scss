@@ -1,0 +1,260 @@
+@import "src/theme";
+@import "src/assets/hotel/amenitys/travelaps-icon";
+
+.roomList{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .roomItem{
+        display: flex;
+        flex-direction: column;
+        padding: $general-padding;
+        background-color: $bgc-white;
+        box-shadow: $general-shadow;
+        margin-bottom: 15px;
+        .roomContent {
+            display: flex;
+            flex-direction: row;
+            .roomImage {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                .moreImage {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    color: #fff;
+                    width: 35px;
+                    height: 35px;
+                    line-height: 35px;
+                    text-align: center;
+                    background-color: #808080ad;
+                    border-radius: 0 0 0 5px;
+                }
+                img {    
+                    width: 210px;
+                    height: 140px;
+                }
+                .roomInfo {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    background: #00000040;
+                    color: #fff;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    align-items: center;
+                    height: 25px;
+                }
+            }
+            .moreInfoCon{
+                display: flex;
+                flex-direction: column;
+                padding-left: 15px;
+                h3 {
+                    margin: 0;
+                    font-size: 26px;
+                    height: 26px;
+                    display: flex;
+                    align-items: center;
+                }
+                .moreInfo {
+                    display: flex;
+                    height: 100%;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .scroolDescnotBasket{
+                        padding: 5px 0;
+                    }
+                    .features{
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        margin-top: 5px;
+                        i{
+                            border: 1px solid #eee;
+                            font-size: 20px;
+                            margin-right: 3px;
+                            width: 36px;
+                            height: 36px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+        .roomPriceProperty{
+            display: flex;
+            width: 100%;
+            margin-top: 15px;
+            flex-direction: column;
+            .todoxxx{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                .roomProperty{
+                    display: flex;
+                    width: 50%;
+                    align-items: center;
+                    div {
+                        margin-right: 5px;
+                        border: solid 1px #dedede;
+                        padding: 5px;
+                    }
+                    ::ng-deep .mat-icon-button{
+                        .mat-button-wrapper{
+                            i{
+                                font-size: 24px;
+                            }
+                        }
+                    }
+                }
+                .unavailableReason {
+                    display: flex;
+                    color: $warn-color;
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+                .priceContainer {
+                    display: flex;
+                    width: 50%;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    .priceContent{
+                        display: flex;
+                        align-items: baseline;
+                        margin-right: 5px;
+                        flex-wrap: wrap;
+                        .disPriceCon{
+                            display: flex;
+                            margin-right: 5px;
+                            color: #2121219e;
+                            font-weight: bold;
+                            .disPriceLeft{
+                                font-size: 22px;
+                                letter-spacing: -1px;
+                            }
+                            .disPriceRight{
+                                font-size: 10px;
+                                display: flex;
+                                flex-direction: column;
+                                margin-left: 1px;
+                                .cur{
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    
+                        .priceCon{
+                            display: flex;
+                            margin-right: 5px;
+                            color: #212121;
+                            font-weight: bold;
+                            align-items: center;
+                            .priceLeft{
+                                font-size: 35px;
+                                letter-spacing: -1px;
+                            }
+                            .priceRight{
+                                font-size: $normal-font;
+                                display: flex;
+                                flex-direction: column;
+                                margin-left: 1px;
+                                .cur{
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+
+                    .discount {
+                        height: 36px;
+                        min-width: 50px;
+                        font-size: 20px;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -ms-flex-pack: center;
+                        justify-content: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        border-radius: 5px;
+                        margin-right: 5px;
+                        font-weight: 500;
+                        background-color: $primary-color;
+                        color: var(--p-c-5-contrast);
+                    }
+
+                    .roomCount {
+                        width: 90px;
+                        margin-right: 5px;
+                        ::ng-deep .mat-form-field-wrapper {
+                            padding-bottom: 0;
+                            .mat-form-field-flex {
+                                .mat-form-field-infix {
+                                    padding: 6px 0;
+                                }
+                            }
+                        }
+                    }
+
+                    button{
+                        min-width: 100px;
+                        max-width: 165px;
+                        /* todo:mehmet translate sonrası test edilecek.  width: 100px; */
+                    }
+                }
+            }
+
+            .dailyPriceTplContainer {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                padding: 10px;
+                .dailyPriceCon{
+                    display: flex;
+                    flex-wrap: wrap;
+                    .dailyPriceItem {
+                        display: flex;
+                        flex-direction: column;
+                        margin-right: 5px;
+                        min-width: 130px;
+                        box-shadow: $general-shadow;
+                        margin-top: 15px;
+                        * {
+                            height: 25px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        .dailyDate {
+                            background-color: #f0f0f0;
+                            margin: 5px;
+                        }
+                        .dailyDisPrice {
+                            color: $warn-color;
+                        }
+                        .dailtAvailable {
+                            color: $warn-color;
+                        }
+
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+            
+            
+            .priceCon {
+                display: flex;
+                width: 50%;
+            }
+        }
+    }
+}

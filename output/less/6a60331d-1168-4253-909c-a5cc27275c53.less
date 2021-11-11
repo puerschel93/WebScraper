@@ -1,0 +1,152 @@
+.media {
+  width: @desktop-width;
+  color: @color-light;
+  background: url('../img/media_bg.png') center no-repeat @color-dark;
+}
+
+@media (max-width: @tablet-width) {
+  .media {
+    width: @tablet-width;
+    background-position: 0 100%;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .media {
+    width: @mob-width;
+  }
+}
+
+.media__wrapper {
+  .cont-pos(150px, 150px);
+}
+
+@media (max-width: @tablet-width) {
+  .media__wrapper {
+    .cont-pos(70px, 70px);
+  }
+}
+
+@media (max-width: @mob-width) {
+  .media__wrapper {
+    .cont-pos(30px, 30px);
+  }
+}
+
+.media__title {
+  margin: 0;
+  .bebas;
+  font-size: 58px;
+  text-align: right;
+  position: relative;
+
+  &::before {
+    .angle(@color-light, left);
+    bottom: 0;
+    right: 362px;
+  }
+
+  &::after {
+    .angle(@color-light, right);
+    top: 0px;
+    right: -36px;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .media__title {
+
+    &::before {
+      right: 342px;
+    }
+
+    &::after {
+      top: 0px;
+      right: -10px;
+    }
+  }
+}
+
+@media (max-width: @mob-width) {
+  .media__title {
+    font-size: 42px;
+  }
+}
+
+.media__subtitle {
+  margin-top: 25px;
+  margin-bottom: 0;
+  .bebas;
+  font-size: 42px;
+  text-align: right;
+}
+
+@media (max-width: @mob-width) {
+  .media__subtitle {
+    font-size: 33px;
+  }
+}
+
+.media__text {
+  margin-top: 25px;
+  margin-bottom: 0;
+  padding-left: 645px;
+  .raleway;
+  font-size: 21px;
+  font-weight: 700;
+  position: relative;
+
+  &::after {
+    .line(@color-light);
+    bottom: -30px;
+    right: 480px;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .media__text {
+    padding-left: 240px;
+
+    &::after {
+      right: 390px;
+    }
+  }
+}
+
+@media (max-width: @mob-width) {
+  .media__text {
+    padding-left: 0;
+    text-align: right;
+
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+.media__list {
+  margin: 0;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: -140px;
+    left:0;
+    width: 92px;
+    height: 76px;
+    background-image: url('../img/media_pic.png');
+  }
+}
+
+@media (max-width: @mob-width) {
+  .media__list{
+    margin-top: 50px;
+    padding-left: 39px;
+
+    &::after {
+      display: none;
+    }
+  }
+}

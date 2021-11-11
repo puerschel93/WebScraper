@@ -1,0 +1,440 @@
+@require '_mixin'
+@require '_font'
+@require '_svg'
+
+@import '_ease'
+
+white = #fbf9f1
+black = #1b1919
+
+mq_mobile = "screen and (max-width: 720px)"
+mq_tablet = "screen and (min-width: 720px) and (max-width: 1080px)"
+mq_beyond = "screen and (min-width: 1920px)"
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak
+  display none !important
+
+html
+  box-sizing border-box
+  font-size 62.5%
+
+*
+  box-sizing inherit
+  margin 0
+  outline 0
+  padding 0
+
+  &:before,
+  &:after
+    box-sizing inherit
+
+a
+  color inherit
+  cursor pointer
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video
+  vertical-align middle
+
+hr
+  border 0
+  border-bottom .1rem solid black
+  margin 1.0rem auto
+
+  @media mq_mobile
+    margin .6rem auto
+
+  &.p50
+    width 50%
+
+  &.p40
+    width 40%
+
+  &.p30
+    width 30%
+
+  &.p20
+    width 20%
+
+  &.p10
+    width 10%
+
+  &.blank
+    border-bottom 0
+
+h1, h2, h3, h4, h5, h6, p
+  margin 0
+
+q,
+blockquote
+  quotes "“" "”" "‘" "’"
+
+  &:before
+    content open-quote
+
+  &:after
+    content close-quote
+
+.cover
+  background-color black
+  height 200%
+  position absolute
+  top 0
+  width 100%
+
+.map
+  display inline-block // prevent column splitting
+  border .2rem solid black
+  margin 0
+  margin-bottom -.4rem
+  padding-bottom 100% // 1:1 Aspect ratio
+  width 100%
+
+  .box &
+    border-bottom 0
+    border-left 0
+    border-right 0
+
+  // Cleanup map
+  .gm-style
+    .gm-style-cc,
+    .gmnoscreen,
+    .gmnoprint,
+    > *:nth-child(2),
+    > *:last-child
+      display none
+
+.slabtext
+  opacity 1
+
+.page-back,
+.page-next
+  Oswald 1.2rem
+  vendor 'backface-visibility', hidden
+  transform translate3d(0,0,0)
+  display block
+  opacity .8
+  position absolute
+  text-align center
+  top 0
+  white-space nowrap
+  width 100vh
+  @media mq_mobile
+    font-size 1.0rem
+
+.page-back
+  transform rotate(90deg)
+  transition left 250ms $easeInOutCubic 500ms,
+    opacity 250ms linear 500ms,
+    margin 500ms $easeInOutCubic
+  vendor 'transform-origin', 0 0 0
+  left 7.5vw
+  margin 0
+  margin-left -.6rem
+
+.page-next
+  transform rotate(-90deg)
+  transition right 250ms $easeInOutCubic 500ms,
+    opacity 250ms linear 500ms,
+    margin 500ms $easeInOutCubic
+  vendor 'transform-origin', 100% 0 0
+  right 7.5vw
+  margin 0
+  margin-right -.6rem
+
+body
+  &.drag,
+  &.slide,
+  &.resize
+    .page-back
+      transition left 250ms $easeInOutCubic,
+        opacity 250ms linear
+      left 5.5vw
+    .page-next
+      transition right 250ms $easeInOutCubic,
+        opacity 250ms linear
+      right 5.5vw
+    .page-back,
+    .page-next
+      opacity 0
+
+  &.resize
+    .slabtext
+      opacity 0
+
+  &.hover-next
+    .page-next
+      margin-right 0
+  &.hover-back
+    .page-back
+      margin-left 0
+
+  Playfair()
+  background-color white
+  color black
+  font-size 1.0em
+  overflow-y scroll
+  position relative
+
+  > nav
+    // vendor 'background-blend-mode', multiply
+    background-color rgba(255,255,255,0.1)
+    display block
+    height 100%
+    left 0
+    overflow hidden
+    pointer-events none
+    position fixed
+    top 0
+    width 100%
+    z-index 1
+
+  > main
+    transform translate3d(0, 0, 0)
+    font-size 1.4rem
+
+    @media mq_mobile
+      font-size 1.3rem
+
+    .slick-list
+      &.draggable
+        cursor -webkit-grab
+        cursor grab
+        &:active
+          cursor -webkit-grabbing
+          cursor grabbing
+
+    .page
+      min-height 100vh
+      position relative
+
+      .registry
+        display block
+        margin 4.0rem 0
+
+        @media mq_mobile
+          margin 2.0rem 0
+
+        img[class^='svg-']
+          margin 2.0rem 0
+
+          @media mq_mobile
+            margin 1.0rem 0
+
+      .content
+        padding 4.0rem
+
+        @media mq_mobile
+          padding 3.0rem
+
+	      header
+          margin 1.0rem 0
+
+          h1
+            Oswald 6.4rem
+            text-align justify
+
+            .slabtext
+              margin 2.0rem 0
+
+            @media mq_mobile
+              font-size 3.2rem
+
+              .slabtext
+                margin 1.0rem 0
+
+        .divider
+          border-top .1rem solid black
+          border-bottom .1rem solid black
+          padding .1rem 0
+
+          .inner
+            Playfair 1.6rem, 700, true
+            border-top .1rem solid black
+            border-bottom .3rem solid black
+            padding: .5rem 0
+            text-align center
+            text-transform uppercase
+            word-spacing .5rem
+
+            @media mq_mobile
+              font-size .8rem
+
+        main
+          vendor 'column-count', 3
+          vendor 'column-gap', 0
+          vendor 'column-rule', .1rem solid black
+
+          @media mq_mobile
+            vendor 'column-count', 1
+
+          @media mq_tablet
+            vendor 'column-count', 2
+
+          @media mq_beyond
+            vendor 'column-count', 4
+
+          figure
+            display inline-block
+            margin 0
+            img
+              border .2rem solid black
+              width 100%
+
+              &[class^='svg-']
+                border 0
+
+            figcaption
+              font-size .94em
+              line-height 1.38
+              margin .4rem 0
+
+          > article
+            padding .6rem
+
+            @media mq_mobile
+              padding .4rem 0
+
+            > header
+              display inline-block
+              margin 0
+              width 100%
+              h2
+                Dosis 4.2rem
+                line-height 1.0
+
+                @media mq_mobile
+                  font-size 2.2rem
+                  text-align center
+
+              h3
+                Playfair 3.2rem, 700, false
+                line-height 1.0
+
+                @media mq_mobile
+                  font-size 1.8rem
+
+              h5
+                Playfair 2.2rem, 400, false
+                line-height 1.0
+
+                @media mq_mobile
+                  font-size 1.6rem
+
+              .center
+                letter-spacing .4rem
+                text-align center
+
+            > p,
+            > em,
+            figcaption
+              line-height 1.46
+              text-align justify
+              text-indent 1.4rem
+
+            &.box
+              border .2rem solid black
+              display inline-block // Prevent splitting
+              margin .6rem
+              padding 0
+
+              hr
+                margin 2.0rem auto
+                @media mq_mobile
+                  margin 1.2rem auto
+
+              &:first-child
+                margin-left 0
+
+              &:last-child
+                margin-right 0
+
+              @media mq_mobile
+                margin-left 0
+                margin-right 0
+
+              h1
+                PoiretOne 2.8rem
+                @media mq_mobile
+                  font-size 2.0rem
+
+              h2
+                PoiretOne 2.4rem
+                text-align center
+                @media mq_mobile
+                  font-size 1.6rem
+
+              h3
+                text-align center
+
+              .cushion
+                margin 1.0rem auto
+                @media mq_mobile
+                  margin .6rem auto
+
+              .wrap
+                padding 2.0rem
+                @media mq_mobile
+                  padding 1.2rem
+
+              .leaders
+                overflow-x hidden
+                list-style none
+                padding 0
+
+                li
+                  margin .6rem 0
+                  &:before
+                    float left
+                    width 0
+                    white-space nowrap
+                    content ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+
+                  span
+                    background-color white
+                    &:first-child
+                      font-weight 600
+                      padding-right .2rem
+
+                    & + span
+                      float right
+                      padding-left .2rem
+
+              .map-container
+                border 0
+
+                &:last-child
+                  border-top .2rem solid black
+
+
+      > footer
+        padding 4.0rem
+
+      &.slick-slide
+        .cover
+          transition visibility 500ms $easeInOutCubic,
+            background-color 500ms $easeInOutCubic
+          background-color rgba(27, 25, 25, .04)
+          cursor pointer
+          visibility visible
+          &:hover
+            background-color rgba(27, 25, 25, 0)
+
+        img
+          width 100%
+
+      &.slick-center
+        .cover
+          background-color rgba(27, 25, 25, 0)
+          visibility hidden
+
+      // &.slick-current

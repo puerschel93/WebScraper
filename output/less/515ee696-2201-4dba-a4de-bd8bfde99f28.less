@@ -1,0 +1,339 @@
+.consultant {
+    display: flex;
+    margin-top: 39px;
+
+    .content {
+        background-color: #f0eeed;
+        padding: 55px 50px;
+        width: 68%;
+
+        h2 {
+            font-weight: 600;
+            font-size: 25px;
+            color: @darkBlue;
+            margin: 0 0 11px;
+        }
+
+        p {
+            font-size: 17px;
+            color: @darkBlue;
+            margin: 0;
+            line-height: 1.7;
+        }
+    }
+
+    .action {
+        width: 32%;
+        background-color: #f6f6f6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 55px 20px 55px 38px;
+
+        .phone {
+            font-size: 30px;
+            font-weight: 700;
+            color: @lightBlue;
+            margin-bottom: 23px;
+        }
+
+        .btn {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: @white;
+            background-color: @blue;
+            padding: 11px 18px;
+            border-radius: 100px;
+        }
+    }
+}
+
+.consultant-popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    display: none;
+    
+
+    &__wrap {
+        background-color: @white;
+        max-width: 510px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 69px 60px 62px;
+        position: relative;
+
+        .close {
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 43px;
+            right: 32px;
+            cursor: pointer;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                width: 11px;
+                height: 2px;
+                background-color: @blue;
+            }
+
+            &:before {
+                transform: rotate(-45deg);
+            }
+
+            &:after {
+                transform: rotate(45deg);
+            }
+        }
+
+        .title {
+            font-size: 25px;
+            font-weight: 800;
+            margin: 0 0 68px;
+        }
+    }
+}
+
+.consultant-form {
+    &__item {
+        margin-bottom: 30px;
+        display: block;
+    }
+
+    .input {
+        width: 100%;
+        font-size: 15px;
+        font-weight: 600;
+        color: @lightBlue;
+        border: 1px solid #d1e4f1;
+        outline: none;
+        padding: 10px 12px;
+
+        &::placeholder {
+            font-size: 15px;
+            font-weight: 600;
+            color: @lightBlue;
+            font-family: @PFBeau;
+        }
+    }
+
+    &__submit {
+        background-color: @darkBlue;
+        color: @white;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px;
+        border: 1px solid @darkBlue;
+        padding: 6px 12px;
+        margin-top: 41px;
+        border-radius: 100px;
+    }
+
+    &__agree {
+        position: relative;
+        cursor: pointer;
+        display: block;
+        margin-top: 66px;
+
+        .agree {
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+
+            &.error + .consultant-form__agree-text {
+                &:before {
+                    border-color: red;
+                }
+                
+            }
+
+            &:checked + .consultant-form__agree-text {
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-text {
+            font-size: 13px;
+            position: relative;
+            padding-left: 37px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 24px;
+                height: 24px;
+                border: 1px solid #d1e4f1;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 6px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 13px;
+                height: 10px;
+                background-image: url("../img/icons/agree.png");
+                background-size: 13px 10px;
+                opacity: 0;
+                transition: 0.3s;
+            }
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .consultant {
+        .content {
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        .action {
+            .phone {
+                font-size: 20px;
+            }
+
+            .btn {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .consultant {
+        .content {
+            padding: 35px 30px;
+            width: 60%;
+
+            h2 {
+                font-size: 17px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+
+        .action {
+            padding: 35px 30px;
+            width: 40%;
+            
+            .phone {
+                font-size: 17px;
+            }
+
+            .btn {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .consultant-popup {       
+    
+        &__wrap {
+            padding: 40px;
+    
+            .close {                
+                top: 15px;
+                right: 15px;
+            }
+    
+            .title {
+                font-size: 20px;
+                margin: 0 0 20px;
+            }
+        }
+    }
+    
+    .consultant-form {
+        &__item {
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .input {
+            font-size: 12px;
+
+            &::placeholder {
+                font-size: 12px;
+            }
+        }
+    
+        &__submit {
+            margin-top: 20px;
+        }
+    
+        &__agree {
+            margin-top: 20px;
+
+            &-text {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .consultant {
+        display: block;
+        padding: 25px 15px;
+        background-color: #f0eeed;
+
+        .content {
+            width: 100%;
+            padding: 0;
+            background-color: transparent;
+            margin-bottom: 23px;
+        }
+
+        .action {
+            width: 100%;
+            padding: 0;
+            background-color: transparent;
+
+            .phone {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .consultant-popup {       
+    
+        &__wrap {
+            padding: 30px 20px;
+        }
+    }
+}

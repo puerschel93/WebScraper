@@ -1,0 +1,232 @@
+// PRIMARY COLORS
+$color-light-red: hsl(356, 100%, 66%); // CTA TEXT
+$color-very-light-red: hsl(355, 100%, 74%); //CTA HOVER BACKGROUND
+$color-very-dark-blue: hsl(208, 49%, 24%); // HEADINGS
+
+// NEUTRAL COLORS
+$color-white: hsl(0, 0%, 100%); // TEXT
+$color-grayish-blue: hsl(240, 2%, 79%); //FOOTER TEXT
+$color-very-dark-grayish-blue: hsl(207, 13%, 34%); //BODY COPY
+$color-very-dark-black-blue: hsl(240, 10%, 16%); // FOOTER BACKGROUND
+
+// GRADIENT
+// BACKGROUND GRADIENT - INTRO/CTA MOBILE NAV
+$color-very-light-red: hsl(13, 100%, 72%);
+$color-light-red: hsl(353, 100%, 62%);
+
+// BACKGROUND GRADIENT - BODY
+$color-very-dark-gray-blue: hsl(237, 17%, 21%);
+$color-very-dark-saturated-blue: hsl(237, 23%, 32%);
+
+// FONT VARIABLES
+$font-primary: 'Overpass',
+'sans-serif';
+
+$font-secondary: 'Ubuntu',
+'sans-serif';
+
+
+
+//Padding
+$minor-padding: 2rem;
+
+// GENERAL
+@mixin transition-basic {
+    transition: all 0.3s;
+
+}
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+
+    @media only screen and (max-width: $bp-large) {
+        // font-size: 50%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        // font-size: 40%;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        // font-size: 35%;
+    }
+
+}
+
+body {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+
+
+
+
+
+}
+
+
+.page-wrapper {
+    // max-width: 1140px;
+    margin: 0 auto 0 auto;
+    position: relative;
+
+
+
+
+}
+
+
+.mobile-navigation {
+    background-color: #fff;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    width: 85vw;
+    margin: 0 auto;
+    display: none;
+    z-index: 20;
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.8rem;
+    border-radius: 10px;
+    
+    
+
+    box-shadow: 1px 12px 20px 0px rgba(0, 0, 0, 0.29);
+    -webkit-box-shadow: 1px 12px 20px 0px rgba(0, 0, 0, 0.29);
+    -moz-box-shadow: 1px 12px 20px 0px rgba(0, 0, 0, 0.29);
+
+
+
+
+    &__list {
+        list-style: none;
+        border-bottom: 1px solid rgba(178, 178, 178, 0.5);
+
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        margin-bottom: $minor-padding;
+
+
+    }
+
+    
+    &__link {
+        color: $color-very-dark-black-blue;
+        text-decoration: none;
+        margin-left: 1rem;
+    }
+
+    &__arrow {
+        margin-left: 0.5rem;
+    }
+
+
+
+    &__btn-login,
+    &__btn-sign-up {
+        border: 0;
+
+
+    }
+
+    &__btn-login {
+        background-color: transparent;
+        cursor: pointer;
+        padding-bottom: $minor-padding;
+        font-weight: 600;
+        margin-top: $minor-padding;
+
+
+    }
+
+    &__btn-sign-up {
+        border: 0;
+        padding: 1.9rem;
+        cursor: pointer;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1.8rem;
+        width: 55%;
+        color: $color-white;
+        background: rgb(37, 230, 211);
+        background: linear-gradient(90deg, rgba(255, 143, 112, 1) 0%, rgba(255, 61, 84, 1) 100%);
+
+
+
+
+    }
+
+    // CONTAINER FOR INNER
+
+    &__inner {
+        background-color: $color-grayish-blue;
+        background-color: #efeff1;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-bottom: $minor-padding;
+
+        display: none;
+
+
+    }
+
+    &__inner-list {
+        list-style: none;
+
+    }
+    
+    &__inner-item:not(:last-child) {
+        margin-bottom: $minor-padding;
+    }
+
+    &__inner-link {
+        text-decoration: none;
+        color: $color-very-dark-grayish-blue;
+    }
+
+    &__arrow {
+        transition: ease .25s;
+        cursor: pointer;
+
+        &:active {
+            // transform: rotate(180deg);
+        }
+
+    
+        
+    }
+
+
+
+}
+

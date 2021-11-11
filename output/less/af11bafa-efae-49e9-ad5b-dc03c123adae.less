@@ -1,0 +1,588 @@
+/*--Banner slider--*/
+
+.banner__home-with-slider {
+    background-color: #fff;
+
+    @media @OnTabletPro {
+        padding: 6rem 0;
+    }
+
+    &-two {
+        padding: 5rem 0 8.7rem;
+
+        @media @OnTabletPro {
+            padding: 6rem 0;
+        }
+
+        @media @OnTabletMini {
+            padding: 6rem 0 11rem;
+        }
+    }
+}
+
+.banner-slider-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 0;
+    height: 71.7rem;
+
+    @media @OnTabletMini {
+        height: auto;
+    }
+
+    .owl-dots,
+    .slick-dots {
+        list-style: none;
+        margin-left: -.5rem;
+        margin-right: -.5rem;
+        position: absolute;
+        bottom: 5rem;
+
+        button,
+        li {
+            width: 2.7rem;
+            height: .3rem;
+            background: var(--grey-light-one);
+            margin: 0 .5rem;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:focus {
+                outline: 0;
+            }
+
+            &.active,
+            &.slick-active {
+                height: .5rem;
+                background: var(--primary-color);
+            }
+
+            button {
+                display: none;
+            }
+        }
+    }
+
+    .slick-dots {
+        display: flex;
+        align-items: flex-end;
+        padding: 0;
+        height: .5rem;
+    }
+
+    @media @OnTabletPro {
+        padding: 0 0 4rem;
+
+        .owl-dots,
+        .slick-dots {
+            display: none !important;
+        }
+    }
+
+    &-two {
+        padding: 0 0 6rem;
+
+        .owl-dots,
+        .slick-dots {
+            display: none !important;
+        }
+
+        .post-metas li {
+            color: var(--grey-dark-three);
+
+            a {
+                color: var(--grey-dark-three);
+            }
+        }
+
+        .post-metas i.separator-line {
+            background-color: var(--grey-mid);
+        }
+    }
+}
+
+.banner__home-with-slider-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    background: var(--grey-light-three);
+
+    @media @OnTabletPro {
+        width: 100%;
+    }
+}
+
+.banner-slider-container-synced {
+    width: 50vw;
+    position: absolute;
+    left: 50%;
+    top: 0;
+
+    .item {
+        img {
+            width: 100%;
+            height: 60rem;
+            object-fit: cover;
+
+            @media @OnTabletPro {
+                height: auto;
+            }
+        }
+    }
+
+    .owl-dots {
+        display: none;
+    }
+
+    .owl-nav,
+    .slick-arrow {
+        position: absolute;
+        bottom: -7.4rem;
+        left: 0;
+        background: transparent;
+        border: none;
+        padding: 0;
+        z-index: 9;
+        cursor: pointer;
+
+        @media @OnTabletMini {
+            bottom: -10.9rem;
+            left: 0;
+        }
+
+        i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 4.2rem;
+            height: 4.2rem;
+            border: .1rem solid var(--grey-light-one);
+            font-size: 1.4rem;
+            color: var(--grey-mid);
+            border-radius: 100%;
+            transition: all .5s;
+        }
+
+        button {
+            margin-right: 2rem;
+
+            &:focus {
+                outline: 0;
+            }
+
+            &:hover {
+                i {
+                    color: var(--grey-dark-one);
+                }
+            }
+        }
+
+        &.slick-next {
+            left: 5.2rem;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+
+        &:hover {
+            i {
+                color: var(--grey-dark-one);
+            }
+        }
+    }
+
+    @media @OnTabletPro {
+        position: static;
+        width: 100%;
+        margin: 0 auto 4.8rem;
+
+        .item {
+            img {
+                height: auto;
+            }
+        }
+
+        .banner-shares {
+            position: static;
+            margin: 2rem 0 0 !important;
+        }
+
+        .owl-nav {
+            position: absolute;
+            right: 0;
+            bottom: -6.2rem;
+
+            button {
+                margin: 0 0 0 2rem;
+            }
+
+            @media @OnMobile {
+                position: static;
+                margin-top: 2rem;
+
+                button {
+                    margin: 0 2rem 0 0;
+                }
+            }
+        }
+    }
+}
+
+#sync1 {
+    .owl-nav {
+        // display: none;
+    }
+}
+
+.social-share-wrapper {
+    overflow: hidden;
+
+    .social-share {
+        flex-wrap: nowrap;
+
+        li {
+            margin-left: -100%;
+            transition: all 1s;
+        }
+    }
+
+    &.show-shares {
+        li {
+            margin-left: 0;
+        }
+    }
+}
+
+.banner-shares {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 240px;
+    z-index: 99;
+
+    .toggle-shares {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        color: var(--grey-dark-one);
+        font-weight: var(--p-bold);
+        margin-right: 2rem;
+        cursor: pointer;
+        transition: all .3s;
+
+        span {
+            margin-left: 1rem;
+        }
+
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+}
+
+.banner-slider-container-synced__two {
+    width: 42.5vw;
+    left: 59.5%;
+
+    .owl-carousel {
+        overflow: hidden;
+    }
+
+    .owl-stage-outer {
+        margin-left: -39rem;
+        margin-right: 28.5rem;
+    }
+
+    .owl-stage,
+    .slick-track {
+        height: 60rem;
+
+        @media @OnTabletPro {
+            height: auto;
+        }
+    }
+
+    .owl-dots {
+        display: none;
+    }
+
+    .owl-item,
+    .slick-slide {
+
+        img {
+            width: 52.5rem;
+            height: 55rem;
+            padding-right: 3rem;
+            // margin-left: -3rem;
+            padding-bottom: 0;
+            max-width: initial;
+            transition: all .2s;
+        }
+
+        &.center,
+        &.slick-center {
+            img {
+                width: 18rem;
+                height: 20rem;
+                margin-bottom: 7.3rem;
+                padding-right: 0;
+                margin-left: 11.7rem;
+            }
+        }
+
+
+    }
+
+    .owl-stage,
+    .slick-track {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .owl-nav,
+    .slick-arrow {
+        position: absolute;
+        left: auto;
+        right: 25rem;
+        z-index: 99;
+        bottom: .9rem;
+
+        @media @OnTabletPro {
+            right: 36.4rem;
+        }
+
+        &.slick-next {
+            left: auto;
+            right: 18.8rem;
+
+            @media @OnTabletPro {
+                right: 30.1rem;
+            }
+        }
+
+        i {
+            background: rgba(255, 255, 255, .2);
+            color: #fff;
+        }
+
+        button:hover {
+            i {
+                background: rgba(255, 255, 255, 1);
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    @media (max-width: 1499px) {
+        left: 50%;
+
+        .owl-stage-outer {
+            margin-right: 12rem;
+        }
+
+        .owl-nav {
+            right: 17.6rem;
+        }
+    }
+
+    @media @OnTabletPro {
+        position: static;
+        width: 100%;
+
+        .owl-stage-outer {
+            margin: 0;
+        }
+
+        .owl-stage {
+            height: auto;
+        }
+
+        .owl-nav {
+            right: 0;
+            bottom: -6.2rem;
+
+            button {
+                margin: 0 0 0 2rem;
+            }
+        }
+
+        .owl-item.center img {
+            width: 100%;
+            height: auto;
+        }
+
+        .owl-item img {
+            width: 100%;
+            height: auto;
+            padding: 0;
+        }
+
+        .owl-carousel {
+            overflow: visible;
+        }
+
+        .banner-shares {
+            position: static;
+            transform: none;
+
+            li {
+                transform: rotate(0);
+            }
+        }
+    }
+
+    @media @OnMobile {
+        .owl-nav {
+            position: static;
+            margin-top: 2rem;
+
+            button {
+                margin: 0 2rem 0 0;
+            }
+        }
+    }
+}
+
+.banner__home-with-slider-two {
+    .axil-shape-circle {
+        top: -65%;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+
+        @media @OnTabletPro {
+            top: -50vw;
+        }
+
+        &__two {
+            bottom: -30%;
+            left: -15%;
+
+            @media @OnTabletPro {
+                bottom: -20vw;
+                left: -15vw;
+            }
+        }
+
+        &.shape-loaded {
+            transform: translateX(-50%) scale(1);
+        }
+    }
+}
+
+.slick-banner-shares {
+    bottom: -7rem;
+}
+
+.banner-slider-container-synced__two {
+
+    @media @OnTabletPro {
+        margin-bottom: 0;
+    }
+
+    .slick-initialized .slick-slide {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .slick-arrow {}
+}
+
+.banner-share-slider-container {
+    position: absolute;
+    bottom: -7rem;
+    left: 240px;
+    z-index: 99;
+
+    .banner-shares {
+        position: static;
+        margin-top: 0;
+    }
+
+    @media @OnTabletMini {
+        position: static;
+    }
+}
+
+.banner-share-slider-container__two {
+    position: absolute;
+    bottom: 62.5rem;
+    left: 9rem;
+    z-index: 999;
+    transform: rotate(-90deg);
+
+    li {
+        transform: rotate(90deg);
+    }
+
+    @media @OnDesktop {
+        bottom: 67.2rem;
+        left: 12rem;
+    }
+
+    @media @OnTabletPro {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+
+        li {
+            transform: none;
+        }
+    }
+}
+
+.banner-slider-container-synced__two {
+
+    .slick-slide {
+
+        &.slick-center {
+            img {
+                @media @OnTabletMini {
+                    margin-left: 6rem;
+                }
+            }
+        }
+
+        img {
+            @media @OnTabletMini {
+                width: 100%;
+                height: auto;
+                padding: 0;
+            }
+        }
+
+    }
+
+    @media @OnTabletMini {
+        .slick-arrow {
+            bottom: -10.9rem;
+            right: auto;
+            left: 0;
+
+            &.slick-next {
+                right: auto;
+                left: 5.2rem;
+            }
+
+            i {
+                border-color: var(--grey-dark-one);
+                color: var(--grey-dark-one);
+            }
+
+            &:hover {
+                i {
+                    border-color: var(--primary-color);
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+
+}
+
+.banner-slider-container .slick-slider {
+    position: static;
+}

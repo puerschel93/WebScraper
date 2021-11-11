@@ -1,0 +1,125 @@
+$message-border-radius: 5px;
+:host {
+    ion-content{
+        position: relative;
+    }
+       position: relative;
+    display: block;
+    .container {
+        display: flex;
+        align-items: flex-end;
+        padding: 16px 10px 0px;
+        position: relative;
+        width: 100%;
+        &.recurring {
+            padding: 2px 10px 0px;
+            // flex-direction: row-reverse;
+            .message {
+                border-top-left-radius: $message-border-radius;
+                border-bottom-left-radius: $message-border-radius;
+                &:before {
+                    background: transparent;
+                }
+            }
+        }
+        &.current-user {
+            flex-direction: row-reverse;
+            .avatar {
+                flex-direction: row-reverse;
+            }
+            .message:not(.post) {
+                border-bottom-right-radius: $message-border-radius;
+                border-bottom-left-radius: 20px !important;
+                border-top-left-radius: 20px !important;
+                background: var(--ion-color-primary);
+                color: var(--ion-color-light);
+            }
+            &.recurring {
+                .message{
+                    border-top-right-radius: $message-border-radius;
+                }
+            }
+        }
+
+        ::ng-deep app-mentionarea{
+            span{
+                font-size: 0.9rem;
+                line-height: 1.4rem;
+            }
+            .link{
+                color: inherit !important;
+                text-decoration: underline;
+            }
+        }
+        .avatar {
+            min-width: 50px;
+            display: flex;
+            img {
+                border-radius: 100%;
+                height: 40px;
+                width: 40px;
+                object-fit: cover;
+            }
+        }
+        .message {
+            padding: 10px 12px;
+            background: var(--cd-divider-color);
+            position: relative;
+            border-radius: 20px;
+            border-bottom-left-radius: $message-border-radius;
+            &.post {
+                background: transparent;
+                border: 1px solid #eaeaea;
+                width: 0px;
+                flex: 1;
+                &::before {
+                    content: none;
+                }
+            }
+        }
+        .content {
+            position: relative;
+            z-index: 999;
+            word-break: break-word;
+            display: inline-block;
+            &.image {
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                    border-radius: $message-border-radius;
+                    border: 1px solid var(--cd-divider-color);
+                }
+            }
+        }
+        .time {
+            float: right;
+            transform: translateY(10px);
+            color: var(--cd-component-text-color);
+            font-size: 0.7rem;
+            display: none;
+            bottom: 15px;
+            right: 10px;
+        }
+        .scale-image {
+            .message {
+                display: none;
+                .content {
+                    &.image {
+                        img {
+                            transform: scale(1.7);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ::ng-deep{
+        post-card {
+            border-bottom: unset;
+            .message{
+                overflow: hidden;
+            }
+        }
+    }
+    
+}

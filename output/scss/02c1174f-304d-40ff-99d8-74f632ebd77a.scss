@@ -1,0 +1,267 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:600;
+
+// SIZE NAVIGATION
+$height-navigation:71;
+
+// VAR SITE TYPO
+$font-body:"Lato",verdana,sans-serif;
+$font-title:"Open Sans",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-noir";
+
+// IMPORT ANIM
+@import "../../../A_ID3X/fross_48954/css/animate.min.css";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+//------------------------------------------------------------------------------------------------------------------------
+//		PERSO FROSS
+//------------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//------------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//------------------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:100%;
+	}
+}
+
+.bg-txt {
+	background-color:$color-nav-footer;
+}
+
+.bg-txt-index {
+	background-image:url('../images/bg-txt-index.jpg');
+	background-color:$color-nav-footer;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+.bg-txt-ag {
+	background-image:url('../images/bg-txt-ag.jpg');
+	background-color:$color-nav-footer;
+	background-repeat:no-repeat;
+	background-size:cover;	
+}
+
+	//------------------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//------------------------------------------------------------------------------------------------------------------------
+
+.menu-principal>li>a {
+	border-bottom:solid 2px $color-primary;
+	&:hover {
+		background:$color-primary;
+		border-bottom:solid 2px $color-secondary;
+		color:$color-nav-footer;
+	}
+}
+
+.bloc-nav-left-fix {
+	background-color:rgba($color-primary,0.7);
+	.typo-white {
+		color:$color-other;
+	}
+}
+
+@media only screen and (max-width : 1280px) {
+	.menu-principal {
+		font-size:0.7em;
+	}	
+}
+
+	//------------------------------------------------------------------------------------------------------------------------
+	//		FOOTER
+	//------------------------------------------------------------------------------------------------------------------------
+
+footer.bg-primary, .bg-secondary-footer {
+	background:$color-nav-footer;
+	color:$color-primary;
+}
+
+.social-ico-footer>a {
+	color:$color-primary;	
+}
+
+.h3-like.nav-footer-titre, .nav-footer.nav-pills.nav-stacked>li>a {
+	color:$color-primary;	
+}
+
+//------------------------------------------------------------------------------------------------------------------------
+//		INDEX
+//------------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------
+	//		MINI MOTEUR
+	//------------------------------------------------------------------------------------------------------------------------
+
+.titre-milieu {
+	.moteur-avantage {
+		width:90%;
+		margin-left: 60px;
+		@media only screen and (max-width : 767px) {
+			width:100%;
+			margin-left: 0px;
+		}
+	}
+	.opacity-9 {
+		opacity:0.6;
+		width:90%;
+		margin-left: 60px;
+	}
+}
+
+	//------------------------------------------------------------------------------------------------------------------------
+	//		MODULE PA
+	//------------------------------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage .height-180 {
+	height:240px;
+}
+
+@media only screen and (max-width : 767px) {
+	.module-annonces-homepage {
+		background:$color-block !important;		
+		color:$color-nav-footer !important;		
+	}
+	.homepage-bloc-type-bien-transaction .bg-white {
+		background:$color-block !important;		
+	}
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+	background:$color-primary !important;		
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+	background:$color-primary !important;			
+}
+
+.owl-theme .owl-dots .owl-dot span {
+	background:$color-block !important;				
+}
+
+	//------------------------------------------------------------------------------------------------------------------------
+	//		MODULE EXTRA - TEXTE
+	//------------------------------------------------------------------------------------------------------------------------
+.aside-extra {
+	height:auto;
+}
+
+.aside-extra .bg-secondary {
+	background-color:$color-extra;
+}
+
+.pub-estimation {
+	background-image:url('../images/pub/bg-esti.jpg');
+	background-color:$color-extra;
+	background-size:containt;
+	height:265px;
+}
+
+//------------------------------------------------------------------------------------------------------------------------
+//		DETAIL PA
+//------------------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//------------------------------------------------------------------------------------------------------------------------
+
+.vertical-pano, .nivo-caption {
+	background:$color-block;
+}
+
+	//------------------------------------------------------------------------------------------------------------------------
+	//		FORM
+	//------------------------------------------------------------------------------------------------------------------------
+
+/*body > section > div > div > div > div.row-fluid.margin-bottom-30.margin-top-40 > div.span6.pair.padding-10 {
+	background:$color-nav-footer;
+} */
+
+#form-contact-agence {
+	background-image:url('../images/bg-form-detail.jpg');
+	background-color:$color-nav-footer;
+	background-repeat:no-repeat;
+	background-size:cover;
+	border: none;	
+}
+
+div[itemtype="http://schema.org/RealEstateAgent"] {
+	background-image:url('../images/bg-coord-det.jpg');
+	background-color:$color-nav-footer;
+	background-repeat:no-repeat;
+	background-size:cover;
+	border: none;	
+}
+
+.page-agence-detail {
+	background:$color-body !important;
+	color:$color-font-body !important;	
+	a {
+		color:$color-action !important;	
+	}	
+}

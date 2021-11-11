@@ -1,0 +1,519 @@
+@import"./base/config";
+@import "./base/reset";
+@import "./layout/footer";
+@import "./layout/nav";
+@import "./layout/breackpoint";
+@import "./layout/admin";
+@import "./layout/login";
+
+// common settings
+section {
+    width: 95%;
+    margin: 20% auto;
+}
+
+// Sub images {
+.sub_img {
+    max-width: 50rem;
+    filter: drop-shadow(3px 5px 2px $darkColor);
+
+    @include mediaQ(560px) {
+        max-width: 95%;
+    }
+
+}
+
+.sub_title {
+    font-size: $fontSizeH2;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+// main 
+main {
+    max-width: 96rem;
+}
+
+//----------- banner-----------//
+.banner {
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+
+
+    img {
+        width: 50%;
+        display: block;
+
+    }
+
+    // call to action
+    .cta {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        align-items: center;
+        margin: 0 auto;
+        justify-content: left;
+        width: 40%;
+
+        h1 {
+            width: 100%;
+            grid-area: 1/1/2/3;
+            font-size: $fontSizeH3;
+            text-align: left !important;
+        }
+
+        p {
+            width: 100%;
+            text-align: left !important;
+            grid-area: 2/1/3/3;
+            font-size: $fontSizeP;
+            padding-bottom: 3rem;
+        }
+
+        .btn_blue {
+
+            grid-area: 3/1/4/2;
+            @extend %btn;
+            background-color: $blueColor;
+            color: $lightColor;
+            font-size: $fontSizeP;
+
+            &:hover {
+                @include set_bg_color($darkColor);
+            }
+        }
+
+        .cta_links {
+            grid-area: 3/2/4/3;
+            margin-left: 1rem;
+            gap: 1rem;
+
+            i {
+                font-size: 3rem;
+                padding: .6rem;
+                border-radius: 50%;
+                background-color: lighten($darkColor, 40);
+                color: $lightColor;
+            }
+
+            a:hover {
+                opacity: .5;
+                transition: .4s ease-in-out;
+            }
+        }
+    }
+}
+
+
+
+//----------- Card under banner-----------// 
+.under_banner {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 95%;
+    gap: 1rem;
+    align-items: flex-start;
+
+
+    .u_b_card {
+        min-width: 30rem;
+        display: grid;
+        grid-template-rows: 30% 50% 10%;
+        padding: 1rem 2rem;
+        height: 50rem;
+        border-radius: 1rem;
+        box-shadow: 0px 4px 17px -10px rgba(0, 0, 0, 1);
+
+
+
+        .card_logo {
+            width: 100%;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 0;
+
+            i {
+                width: 100%;
+                margin: 1rem auto;
+                text-align: center;
+                font-size: $fontSizeH1;
+                color: $blueColor;
+
+
+            }
+
+            h2 {
+                font-size: $fontSizeH5;
+                font-weight: bold;
+                margin-bottom: 1.5rem;
+
+            }
+
+        }
+
+        p {
+            width: 100%;
+            font-size: $fontSizeP;
+            margin: 0;
+        }
+
+        a {
+            font-size: 1.4rem;
+            text-align: left;
+            width: 100%;
+            padding-top: 2rem;
+            color: lighten($blueColor, 5);
+
+            i {
+                padding-left: .5rem;
+            }
+
+            &:hover {
+
+                opacity: .5;
+                transition: .3s ease-in-out;
+            }
+        }
+
+
+    }
+}
+
+
+
+//----------- Verktyg section-----------//
+.tools_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 10%;
+
+
+    .tool {
+        width: 10rem;
+        height: 10rem;
+        margin-bottom: 5rem;
+
+        .tool_img {
+            text-align: center;
+            width: 100%;
+            background-color: lighten($darkColor, 80);
+            color: $blueColor;
+            border-radius: 50%;
+            font-size: $fontSizeH1;
+            -webkit-box-shadow: inset -1px 3px 8px -5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+            box-shadow: inset -1px 3px 8px -5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+            i {
+                font-size: $fontSizeH1;
+                text-align: center;
+                margin: 0 auto;
+
+            }
+        }
+    }
+
+}
+
+
+
+//----------- Projekt section-----------//
+.projects_item {
+    margin-top: 10%;
+    color: $lightColor;
+    border-radius: 1rem;
+    width: 80%;
+
+
+    .webbsite {
+        width: 100%;
+        display: flex;
+        border-radius: 2rem;
+
+
+        gap: 0;
+        margin-bottom: 10rem;
+        box-shadow: $shadow-box;
+
+        .web_info {
+            background-color: $darkColor;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            border-top-left-radius: 2rem;
+            border-bottom-left-radius: 2rem;
+            padding: 5px;
+
+            &::before {
+                position: absolute;
+                content: "";
+                border-left: .1rem solid $lightColor;
+                right: -1.2rem;
+                top: 2rem;
+                width: 90%;
+                height: 90%;
+            }
+
+            h4 {
+                font-size: $fontSizeH5;
+                padding: 10%;
+
+            }
+
+            p {
+
+                width: 90%;
+
+                border-bottom: .1rem solid $lightColor;
+                border-top: .1rem solid $lightColor;
+                font-size: 1.6rem;
+                padding: 1rem 10%;
+
+                margin-bottom: 2rem;
+            }
+
+            a {
+
+                width: 100%;
+                color: lighten($blueColor, 20);
+                font-size: 1.6rem;
+               
+                padding: 10%;
+                margin-left: 5%;
+                &:hover{
+                    opacity: .7;
+                }
+
+               
+
+            }
+        }
+
+        .web_img {
+            display: flex;
+
+            width: 100%;
+            margin: 0;
+            padding: 1rem;
+
+
+            img {
+                width: 100%;
+
+            }
+        }
+    }
+
+}
+
+
+//----------- Studier section-----------//
+//----------- Arbetet section-----------//
+.table_frame {
+    background-color: $darkColor;
+    width: 100%;
+    padding: 3rem;
+    border-radius: 1rem;
+    margin-top: 10%;
+
+    article {
+        background-color: $lightColor;
+        width: 100%;
+        padding: 3rem;
+        border-radius: 1rem;
+        text-align: left;
+
+        p{
+            background-color:$blueColor;
+            padding: 1rem .1rem;
+            border-radius: 1rem;
+            width: 100%;
+            display: block;
+            font-size: $fontSizeH1;
+
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: .1rem $darkColor solid;
+            padding: .2rem;
+            width: 100%;
+           
+
+
+            h4 {
+                width: 50%;
+                color: $darkColor;
+                padding: 1.5rem .1rem;
+                font-size: $fontSizeH6;
+                font-weight: 900;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+
+            i {
+                width: 50%;
+                padding: 1.5rem .1rem;
+                color: $darkColor;
+                font-size: $fontSizeP;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .cub_btn{
+                width: 40%;
+                border: none;
+                button{
+                    a{
+                        color: $darkColor;
+                       
+                    }
+                    &:hover{
+                        
+                        background-color: $darkColor;
+                        a{
+                            color: $lightColor;
+                        }
+                    }
+                }
+                
+              
+            }
+          
+        }
+        
+    }
+}
+
+
+
+//----------- Om section-----------//
+.om {
+    background-color: $darkColor;
+    border-radius: 1rem;
+    margin-top: 10%;
+
+    h4 {
+        width: 100%;
+        color: $lightColor;
+        font-size: $fontSizeH4;
+        padding: 2rem 3rem;
+        text-align: left !important;
+    }
+
+    p {
+        font-size: $fontSizeP;
+        width: 80%;
+        padding: 4rem;
+        color: $darkColor;
+        background-color: $lightColor;
+        margin: 2rem;
+        border-radius: 1rem;
+    }
+
+    .comp_links {
+
+        margin: 0 auto;
+        width: 50%;
+
+        i {
+            font-size: 3rem;
+            padding: .6rem;
+            border-radius: 50%;
+            background-color: $lightColor;
+            color: $darkColor;
+            margin: 4rem 1rem;
+        }
+
+        a:hover {
+            opacity: .5;
+            transition: .4s ease-in-out;
+        }
+
+    }
+
+    // Section image
+    .kompetenser {
+        width: 100%;
+        margin: 3rem auto;
+        padding-right: 2rem;
+
+    }
+
+}
+
+// Contact form
+.contact_form {
+    width: 100%;
+    border-radius: 2rem;
+    padding: 3rem;
+    background-color: $darkColor;
+    color: $lightColor;
+    font-size: $fontSizeP;
+    display: block;
+    margin-top: 10%;
+
+
+
+    input[type=text],
+    input[type=email] {
+        width: 70%;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 3rem;
+
+
+    }
+
+    .message {
+        padding: 10rem;
+        height: 30rem;
+
+    }
+
+    input[type=submit] {
+        background-color: rgba(91, 188, 245, 0.37);
+        border: none;
+        padding: 1.5rem 3rem;
+        border-radius: 1rem;
+        color: $lightColor;
+        font-size: $fontSizeP;
+        margin-right: 2rem;
+
+    }
+
+    input[type=submit]:hover {
+
+        color: $darkColor;
+        background-color: $lightColor;
+        transition: .3s ease-in-out;
+
+
+    }
+
+    input[type=reset] {
+        background-color: rgb(102, 98, 99);
+        border: none;
+        padding: 1.5rem 3rem;
+        border-radius: 1rem;
+        color: $lightColor;
+        font-size: $fontSizeP;
+
+    }
+
+    input[type=reset]:hover {
+
+        color: $darkColor;
+        background-color: $lightColor;
+        transition: .3s ease-in-out;
+
+    }
+
+}

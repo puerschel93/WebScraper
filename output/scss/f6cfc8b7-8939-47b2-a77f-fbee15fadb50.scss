@@ -1,0 +1,291 @@
+@media all {
+    .page-break {
+        display: none;
+    }
+}
+
+@page {
+    size: A4;
+    /*margin: 10mm;*/
+    margin: 0;
+}
+
+@media print {
+    .page-head,
+    .display-wrapper,
+    .breadcrumb,
+    .form-actions,
+    .push,
+    .box-footer,
+    #hooker {
+        display: none;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box; /* Firefox, other Gecko */
+        box-sizing: border-box; /* Opera/IE 8+ */
+    }
+
+        *:after,
+        *:before {
+            -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box; /* Firefox, other Gecko */
+            box-sizing: border-box; /* Opera/IE 8+ */
+        }
+
+    .print-wrapper {
+        display: inherit;
+        background: #fff;
+        font-size: 6pt;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 278mm;
+        /*font-family: 'Arial';*/
+    }
+
+    .print-table {
+        background: transparent;
+        width: auto;
+        height: 100%;
+    }
+
+        .print-table > .print-tr {
+            display: block;
+            height: 50%;
+        }
+
+            .print-table > .print-tr > .print-td {
+                position: relative;
+                width: 50%;
+                height: 100%;
+                float: left;
+                padding: 10mm;
+                vertical-align: middle;
+                display: table-cell;
+            }
+
+                .print-table > .print-tr > .print-td:nth-child(odd) {
+                    /*background: #ddd !important;*/
+                    /*padding-right: 10mm;*/
+                }
+
+                .print-table > .print-tr > .print-td:nth-child(even) {
+                    /*background: #eee !important;*/
+                    /*padding-left: 10mm;*/
+                }
+
+    .copy {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 1cm;
+    }
+
+    .simulation {
+        position: absolute;
+        top: 33%;
+        left: 0;
+        right: 0;
+        padding: 1cm;
+        z-index: 0;
+    }
+
+        .simulation > img {
+            width: 100%;
+        }
+
+    .horizontal-separator {
+        height: 31px;
+        padding: 5px;
+    }
+
+    .content-container > table {
+        width: 100%;
+        margin: 5pt 0;
+    }
+
+        .content-container > table > thead > tr th {
+            /*font-weight: bold;*/
+        }
+
+        .content-container > table.bordered > thead > tr > th,
+        .content-container > table.bordered > tbody > tr > td {
+            padding: 1pt 3pt;
+            vertical-align: top;
+        }
+
+        .content-container > table > tbody > tr > td {
+            padding: 0.5pt;
+        }
+
+            .content-container > table > tbody > tr > td > img {
+                width: 26mm;
+            }
+
+    .border-top {
+        border-top: solid 1px gray;
+    }
+
+    .print-wrapper #barcode {
+        width: 100%;
+    }
+
+    .print-wrapper #qrcode > img {
+        height: 26.5mm;
+        width: 26.5mm;
+        margin-left: -10px;
+    }
+
+    .qr-desc {
+        width: 79px;
+        font-size: 5.25pt;
+    }
+
+    .page-break {
+        display: block;
+        page-break-before: always;
+    }
+
+    .print-tr {
+        page-break-before: avoid;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .snk {
+        text-wrap: normal;
+        font-size: 4.5pt;
+        line-height: 5.25pt;
+    }
+
+        .snk ol {
+            padding-left: 10px;
+            margin-bottom: 1px !important;
+        }
+
+        .snk > .title {
+            text-align: center;
+            font-size: 5.5pt;
+            font-weight: bolder;
+        }
+
+    /*typography*/
+    .title {
+        font-size: 8.25pt;
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+
+    .italic {
+        font-style: italic;
+    }
+
+    small.subtitle {
+        font-size: 5.25pt;
+    }
+
+    .footer-wrapper {
+        line-height: 6pt;
+    }
+
+    small.footer {
+        font-size: 4.5pt;
+    }
+
+    /*small {
+        font-size: 5pt;
+    }*/
+
+    strong {
+        font-weight: bold;
+    }
+
+    .vertical-top {
+        vertical-align: text-top;
+    }
+
+    .roman {
+        list-style-type: upper-roman;
+    }
+
+    .alphabet {
+        list-style-type: lower-alpha;
+    }
+
+    .number {
+        list-style-type: decimal;
+    }
+
+    .half-width {
+        width: 50% !important;
+    }
+
+    .half-height {
+        height: 50%;
+    }
+
+    .bordered {
+        border: 1pt solid #888;
+    }
+
+    .bordered-transparent {
+        border: 1pt solid transparent;
+    }
+
+    .no-border-left {
+        border-left: 0 !important;
+    }
+
+    .no-margin-left {
+        margin-left: 0 !important;
+    }
+
+    .no-border-right {
+        border-right: 0 !important;
+    }
+
+    .no-margin-right {
+        margin-right: 0 !important;
+    }
+
+    .text-bold {
+        font-weight: bold;
+    }
+
+    .text-bigger {
+        font-size: 7pt;
+    }
+
+    .vertical-bottom {
+        vertical-align: bottom;
+    }
+
+    .vertical-middle {
+        vertical-align: middle !important;
+    }
+
+    .important-number {
+        font-family: 'Helvetica Neue Condensed';
+        line-height: 1em;
+    }
+
+    .font-size-10 {
+        font-size: 10pt;
+    }
+
+    .notice-box {
+        padding: 4px 16px;
+        margin: 1px;
+    }
+
+}

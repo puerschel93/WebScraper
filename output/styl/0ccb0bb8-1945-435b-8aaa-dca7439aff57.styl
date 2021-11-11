@@ -1,0 +1,149 @@
+over( min )
+    // serve from above this width
+    min = unquote(min) if typeof(min) is 'string'
+    min = breakpoints[min] if typeof(min) is 'literal'
+    condition = 'only screen and (min-width: %s)' % min
+
+    @media condition
+        {block}
+
+
+under( max )
+    // serve to 1px below this width
+    min = unquote(max) if typeof(max) is 'string'
+    min = breakpoints[max] if typeof(max) is 'literal'
+    max = max - 1px
+    condition = 'only screen and (max-width: %s)' % max
+    @media condition
+        {block}
+
+
+whenSetDimensions( w, h )
+    @media only screen and (width: w) and (height: h)
+        {block}
+
+
+
+at-iphone5()
+    +whenSetDimensions(320px, 568px)
+        {block}
+
+
+at-iphone8()
+    +whenSetDimensions(375px, 667px)
+        {block}
+
+
+at-iphone11() //  also iphone X
+    +whenSetDimensions(375px, 812px)
+        {block}
+
+
+at-iphone8plus()
+    +whenSetDimensions(414px, 736px)
+        {block}
+
+
+at-iphonePro() // and Pro Max
+    +whenSetDimensions(414px, 896px)
+        {block}
+
+
+at-iphone5-landscape()
+    +whenSetDimensions(568px, 320px)
+        {block}
+
+
+at-iphone8-landscape()
+    +whenSetDimensions(667px, 375px)
+        {block}
+
+
+at-iphone8plus-landscape()
+    +whenSetDimensions(736px, 414px)
+        {block}
+
+
+at-iphone11-landscape() //  also iphone X
+    +whenSetDimensions(812px, 375px)
+        {block}
+
+
+at-iphonePro-landscape() // and Pro Max
+    +whenSetDimensions(896px, 414px)
+        {block}
+
+
+
+at-base()
+    +over("base")
+        {block}
+
+at-compressed()
+    +over("compressed")
+        {block}
+
+at-condensed()
+    +over("condensed")
+        {block}
+
+at-economy()
+    +over("economy")
+        {block}
+
+at-enhanced()
+    +over("enhanced")
+        {block}
+
+at-extended()
+    +over("extended")
+        {block}
+
+at-standard()
+    +over("standard")
+        {block}
+
+at-wide()
+    +over("wide")
+        {block}
+
+at-ultra()
+    +over("ultra")
+        {block}
+
+
+o-base()
+    +over("base")
+        {block}
+
+o-compressed()
+    +over("compressed")
+        {block}
+
+o-condensed()
+    +over("condensed")
+        {block}
+
+o-economy()
+    +over("economy")
+        {block}
+
+o-enhanced()
+    +over("enhanced")
+        {block}
+
+o-extended()
+    +over("extended")
+        {block}
+
+o-standard()
+    +over("standard")
+        {block}
+
+o-wide()
+    +over("wide")
+        {block}
+
+o-ultra()
+    +over("ultra")
+        {block}

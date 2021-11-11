@@ -1,0 +1,203 @@
+.btn {
+  &__project-details {
+    font-family: inherit;
+    height: 11.5rem;
+    width: 11.5rem;
+    line-height: 2.5rem;
+    border-radius: 50%;
+    color: $black;
+    cursor: pointer;
+    
+    border: 1px solid $black;
+    background: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+    z-index: 9999999;
+    outline: none;
+    transition: 0.15s;
+    position: absolute;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+
+    @media (max-width: 950px) {
+      height: 13.5rem;
+      width: 13.5rem;
+      line-height: 2.5rem;
+    }
+
+    @media (max-width: 650px) {
+      height: 8.5rem;
+      width: 8.5rem;
+      line-height: 1.5rem;
+    }
+
+    &:hover {
+      border: 1px solid $blue-1;
+      color: $blue-1;
+      transition: 0.15s;
+    }
+  }
+
+  &__contact-form {
+    align-self: flex-end;
+    margin-right: 0rem;
+    
+    height: 3.5rem;
+    width: 7rem;
+    outline: none;
+    
+    border-radius: 10%;
+    color: $grey-7;
+    border: 1px solid $grey-7;
+    background-color: $grey-12;
+    box-shadow: 0.05rem 0.05rem .1rem $black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: inherit ;
+    transition: all 0.3s;
+    
+    @media (max-width: 950px) {
+      margin-right: 0;
+    }
+  }
+
+  &__modal {
+    &--close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      height: 3.25rem;
+      width: 3.25rem;
+      line-height: 3.5rem;
+      font-size: 2.5rem;
+      border-radius: 50%;
+      border: none;
+      transition: 0.15s;
+      cursor: pointer;
+      background: none;
+      @include flexCenterCenter();
+
+      @media (max-width: 550px) {
+        height: 3.0rem;
+        width: 3.0rem;
+        line-height: 3.25rem;
+        font-size: 2.0rem;
+        top: 1.25rem;
+        right: 1.25rem;
+      }
+
+      &:hover {
+        background-color: $blue-4;
+        color: $grey-11;
+        transition: 0.15s;
+      }
+    }
+  }
+  &__about-screen {
+    &--left, &--right {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    
+    &--left {
+
+    }
+
+    &--right {
+
+    }
+  }
+}
+
+
+%btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: $black;
+  background-image: linear-gradient(to right, rgba(31, 162, 255, 0.6) 0%, rgba(18, 215, 250, 0.6)  51%, rgba(31, 162, 255, 0.6)  100%);
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.modal {
+  &__back {
+    &--btn {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      height: 3rem;
+      border-radius: 0 0 3rem 3rem;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        background-color: $grey-5;
+        border-color: $grey-3;
+      }
+    }
+  }
+
+  &__github {
+    &--btn {
+      width: 22rem;
+      height: 4rem;
+      border: 1px solid transparent;
+      border-radius:  2rem;
+      cursor: pointer;
+      background-color: $blue-3;
+      color: $grey-12;
+
+      @media (max-width: 600px) {
+        width: 15rem;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        color: $grey-11;
+        border: 1px solid $black;
+        background-color: $grey-5;
+        transition: 0.15s;
+      }
+    }
+  }
+
+  &__url {
+    &--btn {
+      width: 22rem;
+      height: 4rem;
+      border-radius:  2rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      background-color: $blue-4;
+      color: $grey-12;
+
+      @media (max-width: 600px) {
+        width: 15rem;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        color: $grey-11;
+        border: 1px solid $black;
+        background-color: $grey-5;
+        transition: 0.15s;
+      }
+    }
+  }
+}

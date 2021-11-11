@@ -1,0 +1,517 @@
+{prefix}-fixedheader
+  position: relative
+  height: 424px
+  width: 1470px
+  margin-left: 38px
+  overflow: hidden
+  background: url(imgPath + 'vpsbanner.png')
+  background-position: top center
+  background-size: cover
+  box-shadow: inset 0 -8px 0 colors.accent
+
+  &:before,
+  &:after
+    position: absolute
+    content: ''
+    top: 0
+    width: 0
+    height: 0
+    border-style: solid
+
+  &:before
+    left: -1px
+    border-color: colors.background transparent transparent transparent
+    border-width: 424px 200px 0 0
+
+  &:after
+    right: -1px
+    border-color: transparent transparent colors.background transparent
+    border-width: 0 0 424px 200px
+
+  .bg-corner
+    height: 429px
+    position: absolute
+    transform: skew(-27deg, 0deg)
+    width: 1000px
+    bottom: -22px
+    animation: 0.5s ease 1s normal forwards 1 running bg-corner
+    background-color: #FFC21D
+    opacity: .6
+    left: 100%
+    -webkit-animation: bg-corner 0.5s forwards
+    -webkit-animation-delay: 0.5s
+    animation: bg-corner 0.5s forwards
+    animation-delay: 1s
+
+
+{prefix}-fixedheader.vps-fixed-header
+  background-size: auto
+
+/* ----------------------------
+ Tabs
+---------------------------- */
+
+{prefix}-tabs
+  position: relative
+  transform: translateX(0)
+  transition: transform duration.tabs ease
+  width: 7400px
+
+  &-header
+    // margin-bottom: 30px
+    h1
+      margin: 0
+
+    &-title
+      width: 600px
+      margin-top: 169px
+
+      h1
+        margin: 0 0 5px 0
+
+      h2
+        margin: 0 0 30px 0
+
+  &-container
+    position: relative
+    width: 1087px
+    height: 200px
+    // padding-top: 28px
+    overflow: hidden
+
+  &-icons
+    clearfix()
+    margin-top: 33px
+
+    &.no-indicator div.active:after
+      border-bottom-color: transparent
+
+    div
+      position: relative
+      float: left
+      cursor: pointer
+      margin-right: 40px
+
+      &.active:after
+        position: absolute
+        bottom: -22px
+        left: 50%
+        margin-left: -11px
+        content: ''
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 11px 11px 11px
+        border-color: transparent transparent colors.accent transparent
+        transition: border-bottom-color .3s ease
+
+  &-controls
+    noUserSelect()
+    position: absolute
+    margin: auto
+    width: 65px
+    height: 90px
+    top: 0
+    bottom: 0
+    right: 0
+
+    &-wrapper
+      position: absolute
+      top: 0
+      right: -2px
+      z-index: depth.pageContent
+      background: colors.backgroundTransparent
+      width: 100px
+      height: 200px
+
+      &:before,
+      &:after
+        content: ''
+        position: absolute
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 0 200px 100px
+
+      &:after
+        border-color: transparent transparent colors.backgroundTransparent transparent
+        left: -99px
+      
+      &:before
+        border-color: transparent transparent (colors.backgroundTransparent - #222) transparent
+        left: -100px
+
+    div
+      position: relative
+      cursor: pointer
+      float: right
+      background: colors.darkText
+      color: colors.background
+      line-height: 40px
+      text-align: center
+
+      &:hover
+        background: colors.darkText + #111
+        &:before
+        &:after
+          border-bottom-color: colors.darkText + #111
+
+    &-next
+      width: 40px
+      margin-bottom: 10px
+
+    &-prev
+      width: 65px
+
+    &-next:before
+    &-prev:before
+    &-next:after
+    &-prev:after
+      content: ''
+      position: absolute
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 0 40px 20px
+      border-color: transparent transparent colors.darkText transparent
+
+    &-next:before
+    &-prev:before
+      left: -20px
+
+    &-next:after
+    &-prev:after
+      left: -19px
+
+{prefix}-tab
+  width: 640px
+  margin-right: 100px
+  float: left
+
+  div
+    float: left
+
+  &-description
+    width: 450px
+    margin-right: 40px
+
+    h4
+      margin-top: 0
+
+{prefix}-tabs-header.dedicated
+  margin-bottom: 36px
+
+
+/* ----------------------------
+ Plans
+---------------------------- */
+
+{prefix}-popular-plans
+  position: relative
+  height: 340px
+  background: colors.accent
+  overflow: hidden
+  box-shadow: inset 0 -8px 0 colors.darkText
+
+  img
+    float: right
+
+  .btn
+    position: absolute
+    right: 36px
+    top: 40px
+
+  .col
+    float: left
+    margin-right: 40px
+
+  .col-lg
+    width: 260px
+
+  .col-sm
+    width: 120px
+
+  &:before
+  &:after
+    position: absolute
+    content: ''
+    top: 0
+    width: 0
+    height: 0
+    border-style: solid
+    border-color: colors.accent transparent transparent transparent
+    border-width: 332px 166px 0 0
+
+  &:before
+    right: 250px
+
+  &:after
+    right: 249px
+
+  &-wrapper
+    margin-top: 28px
+    margin-bottom: 40px
+
+  &-feature
+    margin-bottom: 26px
+
+    .feature-name
+      boldFont()
+      font-size: 18px
+      color: colors.darkText
+
+    .feature-desc
+      meduimFont()
+      font-size: 12px
+      text-transform: uppercase
+      color: colors.background
+
+  &-container
+    padding: 32px 32px
+
+    h3
+      font-size: 24px
+      margin-top: 0
+      margin-bottom: 31px
+
+  &-controls
+    clearfix()
+    mediumFont()
+    font-size: fontSize.menu
+    width: 96%
+    margin: 0 auto
+
+    div
+      noUserSelect()
+      position: relative
+      float: left
+      line-height: 56px
+      margin-right: 50px
+      color: colors.link
+      cursor: pointer
+
+      &:hover
+        color: colors.link + #333
+
+      &.active
+        color: colors.darkText
+
+      &.active:before
+        position: absolute
+        top: 0
+        left: 50%
+        margin-left: -11px
+        content: ''
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 11px 11px 0 11px
+        border-color: colors.darkText transparent transparent transparent
+
+      &:after
+        position: absolute
+        right: -28px
+        content: '/'
+        color: colors.subtleText
+
+      &:last-of-type:after
+        content: ''
+
+/* ----------------------------
+ Titlebar
+---------------------------- */
+
+{prefix}
+  &-titlebar
+    margin: 25px 0
+  &-hour-24
+    width: 208px
+
+    *
+      display: inline-block
+      margin: 0 24px 0 0
+
+/* ----------------------------
+ Reviews
+---------------------------- */
+
+{prefix}-reviews, .solutions-el
+  clearfix()
+  margin: 40px auto 75px
+
+  .col
+    float: left
+    width: 32%
+    margin-right: 2%
+
+  .col:last-of-type
+    margin-right: 0
+
+  .review-item
+    position: relative
+    padding: 28px
+    background: #fff
+    border-bottom: 1px solid #bebebe
+    margin-bottom: 40px
+    color: colors.darkText
+
+    img
+      margin: 5px
+
+    &:before,
+    &:after
+      position: absolute
+      content: ''
+      left: 20px
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 20px 20px 0 0
+
+    &:after
+      border-color: #fff transparent transparent transparent
+      bottom: -20px
+
+    &:before
+      border-color: #bebebe transparent transparent transparent
+      bottom: -21px
+
+  a.review-item
+    display: block
+    
+    &:hover
+      text-decoration: none
+      
+    &:visited
+      color: colors.darkText
+    
+  .review-item-md
+    height: 44px
+
+  .review-item-lg
+    height: 184px
+
+  .review-author,
+  .review-author-premium
+    position: absolute
+    height: 40px
+    color: #fff
+    bottom: -20px
+    right: 15px
+
+  .review-author
+    background: colors.darkText
+
+  .review-author-premium
+    background: #3d95d2
+
+  .review-author-name
+    line-height: 40px
+    font-weight: bold
+    margin: 0 10px 0 4px
+    float: right
+
+/* ----------------------------
+ Help + Contacts
+---------------------------- */
+
+{prefix}-help
+  clearfix()
+  position: relative
+  bottom: 0px
+
+  background-color: colors.background
+  background-image: url(imgPath + 'contacts-map-2.png')
+  background-position: top right
+  background-size: 100% 479px
+  background-repeat: no-repeat
+  padding-bottom: 40px
+  width: 1112px
+
+  .container-content
+    margin: 0
+
+  .col,
+  .col-2
+    float: left
+
+  .col
+    width: 280px
+
+  .col-2
+    width: 600px
+
+{prefix}-questions
+  margin-top: 40px
+  ul
+    list-style: none
+    padding: 0
+
+  hr
+    margin: 10px 0
+
+{prefix}-question
+  position: relative
+  overflow: hidden
+  
+  &-icon
+    @extend .icon-plus-sm
+
+  &.expanded &-icon
+      @extend .icon-minus-sm
+
+  &-header
+    noUserSelect()
+    clearfix()
+    cursor: pointer
+
+    span
+      &:hover
+        color: colors.darkTextHover
+
+    .page-question-icon
+      margin-right: 11px
+
+    *
+      float: left
+
+  &-body
+    width: 60%
+    margin-left: 30px
+    display: none
+    
+    p
+      margin: 15px 0 0
+    a
+      display: block
+      margin-bottom: 14px
+
+.page-tabs-header
+  min-height: 311px
+
+{prefix}-contacts-options
+  margin: 30px 0
+  ul
+    list-style: none
+    padding: 0
+
+  li
+    display: block
+    margin-top: 10px
+    .icon
+      float: left
+      margin-right: 10px
+
+@-webkit-keyframes bg-corner {
+    from { left: 100%; } to { left: 1178px; }
+}
+
+@keyframes bg-corner {
+    from { left: 100%; } to { left: 1160px; }
+}
+
+{prefix}-header-options-basket:visited
+  color: black
+
+{prefix}-header-options-basket:hover
+  text-decoration: none

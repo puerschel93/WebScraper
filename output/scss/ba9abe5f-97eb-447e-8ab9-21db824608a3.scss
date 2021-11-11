@@ -1,0 +1,122 @@
+@use "sass:map";
+
+$default-dark: #413D45;
+$default-medium: #89868B;
+$default-light: #CFCED0;
+$default-backdrop: #F4F2ED;
+$default-active: #FFF8F1;
+$default-negative: #dc3545;
+$default-positive: #28a745;
+$default-primary: #007bff;
+$default-body: whitesmoke;
+
+
+$themes: (
+  'bmi-default': (
+    body: white,
+    primary: #006938,
+    secondary: #E97300,
+    tertiary: #ffb81d,
+    positive: #005bd9,
+    negative: #ac0b30,
+    dark: $default-dark,
+    medium: $default-medium,
+    light: $default-light,
+    backdrop: $default-backdrop
+
+  ), 
+  'bmi-secondary': (
+
+  ),
+  'adult-swim': (
+    body: rgba(127,199,187, 0.5),
+    primary: #E27D60 ,
+    secondary: #41b3a3,
+    tertiary: #C389DE,
+    positive: #85CDCA,
+    negative: #E8A87C,
+    dark: $default-dark,
+    medium: $default-medium,
+    light: $default-light,
+    backdrop: $default-backdrop
+  ),
+  'bert-dark': (
+    body: $default-dark,
+    primary: #66FCF1,
+    secondary: #C5C6C7,
+    tertiary: #C389DE,
+    positive: #45A29E,
+    negative: #1F2833,
+    dark: $default-dark,
+    medium: $default-medium,
+    light: $default-light,
+    backdrop: $default-backdrop
+  ),
+  'loflo-records': (
+    body: #f1f0eb,
+    primary:  #4056a1,
+    secondary: #d79922,
+    tertiary: #efe2ba,
+    positive: #c5cbe3,
+    negative: #f13c20,
+    dark: $default-dark,
+    medium: $default-medium,
+    light: $default-light,
+    backdrop: $default-backdrop
+  ),
+  'cher-ami': (
+    body: #fbe8a6,
+    primary: #4056a1,
+    secondary: #b4dfe5,
+    tertiary: #d2fdff,
+    positive: #4056a1,
+    negative: #f4976c,
+    dark: $default-dark,
+    medium: $default-medium,
+    light: $default-light,
+    backdrop: $default-backdrop
+  ),
+  'gusto-lds': (
+    body: #fbe8a6,
+    primary: #4056a1,
+    secondary: #b4dfe5,
+    tertiary: #d2fdff,
+    positive: #4056a1,
+    negative: #f4976c,
+    dark: $default-dark,
+    medium: $default-medium,
+    light: $default-light,
+    backdrop: $default-backdrop
+  ),
+  'leavingstone': (
+
+  ),
+  'madeo': (
+
+  )
+);
+
+// loop through and generate css for each theme
+@each $theme, $colors in $themes {
+  [data-application-theme="#{$theme}"] {
+    @each $name, $color in $colors {
+      .bg-#{$name} {
+        background: $color !important;
+      }
+
+      .text-#{$name} {
+        color: $color !important;
+      }
+    }
+
+    // body background
+    body {
+      background: map.get($colors, body) !important;
+    }
+
+    // quasar component overrides
+    .q-field__control, .q-item--active {
+      color: map.get($colors, primary) !important;
+    }
+  }
+}

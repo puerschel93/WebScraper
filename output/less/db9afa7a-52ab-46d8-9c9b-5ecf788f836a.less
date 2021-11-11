@@ -1,0 +1,90 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import "@fontsource/inter";
+
+@import '~nprogress/nprogress.css';
+
+@import "spinner";
+
+.btn-default {
+@apply w-full items-center px-6 py-3 text-base font-medium rounded-md text-white text-center bg-gray-800;
+
+    &:hover {
+    @apply bg-gray-700;
+    }
+
+    &:disabled {
+    @apply bg-gray-600 opacity-60;
+    }
+}
+
+.btn-normal {
+@apply w-full items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md shadow-sm text-white text-center bg-blue-600;
+
+    &:hover {
+    @apply bg-blue-700;
+    }
+
+    &:disabled {
+    @apply bg-gray-600 opacity-60;
+    }
+
+    &.btn-sm {
+        @apply text-sm;
+    }
+}
+
+.btn-danger {
+@apply w-full items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md shadow-sm text-white text-center bg-blue-600;
+
+    &:hover {
+    @apply bg-blue-700;
+    }
+
+    &:disabled {
+    @apply bg-red-600 opacity-60;
+    }
+}
+
+.btn-success {
+@apply w-full items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md shadow-sm text-white text-center bg-green-600;
+
+    &:hover {
+    @apply bg-blue-700;
+    }
+
+    &:disabled {
+    @apply bg-green-600 opacity-60;
+    }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.chart-floating-tooltip {
+    height: 80px;
+    position: absolute;
+    display: none;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 12px;
+    text-align: left;
+    z-index: 1000;
+    top: 12px;
+    left: 12px;
+    pointer-events: none;
+    @apply bg-black bg-opacity-40 text-gray-50;
+}

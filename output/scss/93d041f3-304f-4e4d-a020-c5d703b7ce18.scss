@@ -1,0 +1,147 @@
+@import "color";
+// BG SOLO
+$bg-uni:no;
+
+// PICTURE BG
+$picture-bg:yes;
+$picture-bg-url:'../images/crossword.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE NAVIGATION
+$height-navigation:80;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:400;
+
+// VAR SITE TYPO
+$font-body:"proxima-nova",verdana,sans-serif;
+$font-title:"proxima-nova",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:400;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib6";
+
+// IMPORT TEMPLATE BUENOS AIRES
+@import "../../../slagence_X_V5/sources/scss/templates/buenos-aires";
+
+// IMPORT MODULE SOUS MENU LIB1
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT MODULE ANNONCES3
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE PUB LIB7
+@import "../../../slagence_X_V5/sources/scss/pubs/lib7";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-noir";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT CHOSEN
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+.menu-principal {
+    font-size: 1.4em;
+}
+
+///////  ///////
+.ligne-titre {
+    display:none;
+}
+
+.moteur-avantage {
+    height:400px;
+}
+
+.social-index {background-color:$color-action;}
+
+@media only screen and (max-width: 767px) {
+    .logo img {
+        float: left;
+        width: 50% !important;
+        margin: 0;
+    }
+}
+
+.module-annonces-homepage {
+    background: $color-block;
+    color:#000;
+    .typo-body{
+        color:$color-action;
+    }
+}
+
+
+
+@media only screen and (min-width: 1024px) {
+    header .logo img {
+        margin-top:-22px;
+        @include box-shadow (1px 1px 5px $color-primary);
+    }
+}
+
+.menu-principal {
+    >li>a {
+        padding: 0 22px;
+        &:hover{
+            background-color:darken($color-primary,7);
+            color:$color-important;
+        }
+    }
+}
+
+
+// NAV FIXE
+$margin-top-under-nav-fixe:120;
+
+// PERSO LND75015
+
+// AGENCE
+// MASQUER ANNONCES
+.bloc-annonces-agence {
+    display:none;
+}
+
+// DETAIL
+.detail-annonce .bouton-video-imprimer,
+.detail-annonce .bouton-envoyer-ami,
+.detail-annonce .bouton-calculette  {
+    background-color: $color-important;
+}
+
+// Manquant dans le sources scss de buenos aire
+@media only screen and (min-width: 1024px) {
+    .margin-top-under-nav-fixe {
+        @if $margin-top-under-nav-fixe != false {
+            margin-top:$margin-top-under-nav-fixe+px;
+        }
+    }
+}
+

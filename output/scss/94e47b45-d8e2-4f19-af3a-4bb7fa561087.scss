@@ -1,0 +1,559 @@
+@import "vars";
+
+* {
+    cursor: default;
+}
+
+html {
+    font-family     : "Arial", sans-serif;
+    font-size       : 16px;
+    color           : $ac-color;
+    background-color: $bg-color;
+}
+
+body {
+    min-height: 100vh;
+    overflow  : hidden;
+}
+
+.container {
+    max-width: 1170px;
+    margin   : 0 auto;
+    padding  : 0 15px;
+}
+
+.section-title {
+    font-weight   : 900;
+    font-size     : 1.5rem;
+    line-height   : 28px;
+    letter-spacing: 0.5rem;
+    text-shadow   : 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+.menu {
+    &__box {
+        position        : fixed;
+        overflow        : auto;
+        height          : 100vh;
+        width           : 100vw;
+        top             : -150vh;
+        left            : 0;
+        background-color: $bg-color;
+        z-index         : 900;
+        transition      : 0.3s;
+        padding-top     : 87px;
+    }
+}
+
+.menu__box.active {
+    top: 0;
+}
+
+.menu-btn-wrapper {
+    width   : 100%;
+    position: fixed;
+    padding : 15px 15px 0;
+    z-index : 1000;
+}
+
+.menu-btn {
+    width      : 40px;
+    height     : 40px;
+    margin-left: auto;
+
+    &__burger,
+    &__burger::before,
+    &__burger::after {
+        position     : absolute;
+        content      : "";
+        width        : 40px;
+        height       : 6px;
+        background   : #484848;
+        box-shadow   : 4px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 6px;
+        transition   : 0.3s;
+    }
+
+    &__burger {
+        top: calc(50% - 3px);
+    }
+
+    &__burger::before {
+        top: -11px;
+    }
+
+    &__burger::after {
+        top: 11px;
+    }
+
+    &.active {
+        .menu-btn__burger {
+            transform: rotate(135deg);
+
+            &::before,
+            &::after {
+                top      : 0px;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}
+
+.menu-list {
+    list-style: none;
+
+    &__item {
+        margin   : 30px;
+        font-size: 3.125rem;
+        color    : $ac-color_pale;
+    }
+
+    &__link {
+        transition: 0.3s;
+        display   : block;
+
+        &:hover {
+            color      : $ac-color;
+            transform  : scale(1.1);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+        }
+    }
+}
+
+.main {
+    padding-top: 60px;
+
+    &__title {
+        font-weight: 500;
+        font-size  : 1.87rem;
+        line-height: 2rem;
+        text-align : right;
+    }
+
+    &__subtitle {
+        font-weight  : 400;
+        font-size    : 1.25rem;
+        line-height  : 1.4rem;
+        text-align   : right;
+        margin-bottom: 1.2rem;
+    }
+}
+
+.letters-animation {
+    color: $ac-color_dark;
+}
+
+.letters-animation-nomber-1 {
+    animation: letter-anim 3s linear 5s infinite;
+}
+
+.letters-animation-nomber-2 {
+    animation: letter-anim 2s linear 2s infinite;
+}
+
+.letters-animation-nomber-3 {
+    animation: letter-anim 1s linear 8s infinite;
+}
+
+.stack {
+    &__title {
+        display       : block;
+        margin-bottom : 130px;
+        font-weight   : 900;
+        font-size     : 1.4rem;
+        line-height   : 1.6rem;
+        text-transform: uppercase;
+        text-shadow   : 8px 8px 2px rgb(26, 26, 26);
+    }
+}
+
+.stack-box {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
+}
+
+.bugs-line {
+    width           : 100%;
+    height          : 1px;
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    z-index         : 1000;
+    background-color: transparent;
+    position        : absolute;
+    pointer-events  : none;
+}
+
+.bugs-line-animation-number-1 {
+    top      : 15%;
+    animation: bug-anim 5s ease-in 3s infinite;
+}
+
+.bugs-line-animation-number-2 {
+    top      : 48%;
+    animation: bug-anim 3s linear 2s infinite;
+}
+
+.bugs-line-animation-number-3 {
+    top      : 80%;
+    animation: bug-anim 8s ease 5s infinite;
+}
+
+.bugs-line-animation-number-4 {
+    top      : 97%;
+    animation: bug-anim 1s ease-out 4s infinite;
+}
+
+/* @keyframes */
+
+@keyframes letter-anim {
+    0% {
+        color: $ac-color;
+    }
+
+    10% {
+        color: $ac-color_dark;
+    }
+
+    11% {
+        color: $ac-color;
+    }
+
+    12% {
+        color: $ac-color_dark;
+    }
+
+    30% {
+        color: $ac-color;
+    }
+
+    31% {
+        color: $ac-color_dark;
+    }
+
+    32% {
+        color: $ac-color;
+    }
+
+    100% {
+        color: $ac-color;
+    }
+}
+
+@keyframes bug-anim {
+    0% {
+        background-color: transparent;
+    }
+
+    1% {
+        background-color: $bags-color_white;
+    }
+
+    2% {
+        background-color: transparent;
+    }
+
+    30% {
+        background-color: transparent;
+    }
+
+    31% {
+        background-color: $bags-color_green;
+    }
+
+    32% {
+        background-color: transparent;
+    }
+
+    82% {
+        background-color: transparent;
+    }
+
+    83% {
+        background-color: $bags-color_white;
+    }
+
+    84% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+.cube-wrapper {
+    position   : relative;
+    width      : 200px;
+    height     : 200px;
+    perspective: 500px;
+}
+
+.cube {
+    width          : inherit;
+    height         : inherit;
+    transform-style: preserve-3d;
+    transform      : rotateY(22deg) rotateX(12deg);
+}
+
+.side {
+    position        : absolute;
+    width           : inherit;
+    height          : inherit;
+    border          : 2px solid rgb(212, 212, 212);
+    font-size       : 38px;
+    text-align      : center;
+    line-height     : 200px;
+    background-color: rgba(17, 17, 17, 0.98);
+    box-shadow      : 0 0 8px rgb(212, 212, 212);
+    transform       : rotateY(0deg) translateZ(110px);
+    transition      : all 0.3s;
+    transform-style : preserve-3d;
+
+    &::after {
+        content         : "";
+        position        : absolute;
+        width           : inherit;
+        height          : inherit;
+        background-color: rgba(17, 17, 17, 0.98);
+        top             : 0;
+        left            : 0;
+        transform       : translateZ(-1px);
+    }
+}
+
+.front {
+    transform: rotateY(0deg) translateZ(110px);
+
+    &.active {
+        transform: translateZ(130px);
+    }
+
+    &:hover {
+        transform: translateZ(120px);
+    }
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(110px);
+
+    &.active {
+        transform: rotateY(180deg) translateZ(130px);
+    }
+
+    &:hover {
+        transform: rotateY(180deg) translateZ(120px);
+    }
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(110px);
+
+    &.active {
+        transform: rotateY(90deg) translateZ(130px);
+    }
+
+    &:hover {
+        transform: rotateY(90deg) translateZ(120px);
+    }
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(110px);
+
+    &.active {
+        transform: rotateY(-90deg) translateZ(130px);
+    }
+
+    &:hover {
+        transform: rotateY(-90deg) translateZ(120px);
+    }
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(110px);
+
+    &.active {
+        transform: rotateX(90deg) translateZ(130px);
+    }
+
+    &:hover {
+        transform: rotateX(90deg) translateZ(120px);
+    }
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(110px);
+
+    &.active {
+        transform: rotateX(-90deg) translateZ(130px);
+    }
+
+    &:hover {
+        transform: rotateX(-90deg) translateZ(120px);
+    }
+}
+
+.buttons-wrapper {
+    display    : block;
+    position   : relative;
+    width      : 150px;
+    height     : 150px;
+    perspective: 500px;
+    margin-top: 50px;
+}
+
+.cube-buttons {
+    width          : 150px;
+    display        : flex;
+    flex-wrap      : wrap;
+    align-items    : center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform      : rotateX(45deg);
+
+    &__btn {
+        width           : 40px;
+        height          : 40px;
+        border          : 2px solid rgb(212, 212, 212);
+        border-radius   : 8px;
+        background-color: transparent;
+        margin          : 5px;
+        position        : relative;
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        box-shadow      : 0 8px 3px rgb(255, 255, 255);
+        transition      : 0.3s;
+
+        &.active {
+            transform : translateY(5px);
+            box-shadow: 0 3px 3px rgb(255, 255, 255);
+        }
+
+        &::before {
+            content    : "";
+            position   : absolute;
+            width      : 10px;
+            height     : 10px;
+            display    : block;
+            border-top : 2px solid rgb(212, 212, 212);
+            border-left: 2px solid rgb(212, 212, 212);
+        }
+    }
+}
+
+.arrow-up {
+    margin: 5px 50px;
+
+    &::before {
+        transform: rotate(45deg);
+    }
+}
+
+.arrow-left {
+    &::before {
+        transform: rotate(-45deg);
+    }
+}
+
+.arrow-down {
+    &::before {
+        transform: rotate(-135deg);
+    }
+}
+
+.arrow-right {
+    &::before {
+        transform: rotate(135deg);
+    }
+}
+
+.buttons-title {
+    text-align: center;
+}
+
+.circle {
+    display       : none;
+    pointer-events: none;
+    position      : absolute;
+}
+
+.circle_smoll {
+    font-size  : 11px;
+    font-weight: 900;
+    color      : rgba(255, 255, 255, 0.068);
+    transition : all .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.circle-1 {
+    border          : 1px solid rgba(255, 255, 255, 0.068);
+    border-radius   : 50%;
+    z-index         : 1000;
+    width           : 30px;
+    height          : 30px;
+    background-color: rgb(228, 228, 228);
+    box-shadow      : inset 0px 0px 4px 3px rgb(192, 192, 192);
+}
+
+.circle-2 {
+    transform-origin: left top;
+    animation       : circleAnimLeft 6s linear infinite;
+}
+
+.circle-3 {
+    transform-origin: left top;
+    animation       : circleAnimRight 5s linear infinite;
+}
+
+.circle-4 {
+    transform-origin: left top;
+    animation       : circleAnimLeft 6s linear infinite;
+}
+
+.circle-5 {
+    transform-origin: left bottom;
+    animation       : circleAnimLeft 7s linear infinite;
+}
+
+.circle-6 {
+    transform-origin: left top;
+    animation       : circleAnimRight 5s linear infinite;
+}
+
+.circle-7 {
+    transform-origin: right top;
+    animation       : circleAnimLeft 6s linear infinite;
+}
+
+.circle-8 {
+    transform-origin: right bottom;
+    animation       : circleAnimRight 5s linear infinite;
+}
+
+.circle-9 {
+    transform-origin: left top;
+    animation       : circleAnimRight 6s linear infinite;
+}
+
+@keyframes circleAnimLeft {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes circleAnimRight {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}

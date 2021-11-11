@@ -1,0 +1,295 @@
+/**
+ * @file 表格
+ * @author zlc <lichao9182@126.com>
+ */
+
+   // flex
+   flexbox()
+       display -webkit-box
+       display -webkit-flex
+       display -moz-flex
+       display -ms-flexbox
+       display flex
+
+   // inline-flex
+   inline-flex()
+       display -webkit-inline-box
+       display -webkit-inline-flex
+       display -moz-inline-flex
+       display -ms-inline-flexbox
+       display inline-flex
+
+   // flex-direction
+   flex-direction($value)
+       if $value == row-reverse
+           -webkit-box-direction reverse
+           -webkit-box-orient horizontal
+       else if $value == column
+           -webkit-box-direction normal
+           -webkit-box-orient vertical
+       else if $value == column-reverse
+           -webkit-box-direction reverse
+           -webkit-box-orient vertical
+       else if $value == row
+           -webkit-box-direction normal
+           -webkit-box-orient horizontal
+
+       flex-direction $value
+
+   // flex-wrap
+   flex-wrap($value)
+       -webkit-flex-wrap $value
+       -moz-flex-wrap $value
+
+       if $value == nowrap
+           -ms-flex-wrap none
+       else
+           -ms-flex-wrap $value
+       flex-wrap $value
+
+   // flex-flow
+   flex-flow($value=row nowrap)
+       -webkit-flex-flow $value
+       -moz-flex-flow $value
+       -ms-flex-flow $value
+       flex-flow $value
+
+   // order
+   order($num=0)
+       -webkit-box-ordinal-group $num + 1
+       -webkit-order $num
+       -moz-order $num
+       -ms-flex-order $num
+       order $num
+
+   // flex-grow
+   flex-grow($int=0)
+       -webkit-box-flex $int
+       -webkit-flex-grow $int
+       -moz-flex-grow $int
+       -ms-flex-positive $int
+       flex-grow $int
+
+   // flex-shrink
+   flex-shrink($int=1)
+       -webkit-flex-shrink $int
+       -moz-flex-shrink $int
+       -ms-flex-negative $int
+       flex-shrink $int
+
+   // flex-basis
+   flex-basis($value=auto)
+       -webkit-flex-basis $value
+       -moz-flex-basis $value
+       -ms-flex-preferred $value
+       flex-basis $value
+
+   // item flex综合属性
+   flex($fg=1, $fs=0, $fb=auto)
+       $fg-boxflex $fg
+
+       -webkit-box-flex $fg-boxflex
+       -moz-box-flex $fg-boxflex
+       -webkit-flex $fg $fs $fb
+       -moz-flex $fg $fs $fb
+       -ms-flex $fg $fs $fb
+       flex $fg $fs $fb
+
+   // justify-content
+   justify-content($value=flex-start)
+       if $value == flex-start
+           -webkit-box-pack start
+           -ms-flex-pack start
+       else if $value == flex-end
+           -webkit-box-pack end
+           -ms-flex-pack end
+       else if $value == space-between
+           -webkit-box-pack justify
+           -ms-flex-pack justify
+       else if $value == space-around
+           -ms-flex-pack distribute
+       else
+           -webkit-box-pack $value
+           -ms-flex-pack $value
+
+       -webkit-justify-content $value
+       -moz-justify-content $value
+       justify-content $value
+
+   // align-items
+   align-items($value=stretch)
+       if $value == flex-start
+           -webkit-box-align start
+           -ms-flex-align start
+       else if $value == flex-end
+           -webkit-box-align end
+           -ms-flex-align end
+       else
+           -webkit-box-align $value
+           -ms-flex-align $value
+
+       -webkit-align-items $value
+       -moz-align-items $value
+       align-items $value
+
+   // align-self
+   align-self($value=auto)
+       -webkit-align-self $value
+       -moz-align-self $value
+
+       if $value == flex-start
+           -ms-flex-item-align start
+       else if $value == flex-end
+           -ms-flex-item-align end
+       else
+           -ms-flex-item-align $value
+
+       align-self $value
+
+   // align-content
+   align-content($value=stretch)
+       -webkit-align-content $value
+       -moz-align-content $value
+
+       if $value == flex-start
+           -ms-flex-line-pack start
+       else if $value == flex-end
+           -ms-flex-line-pack end
+       else
+           -ms-flex-line-pack $value
+
+       align-content $value
+
+
+
+
+  // clearfix
+  // @see http://h5bp.com/q
+  clearfix()
+      &:after,
+      &:before
+          content: ' '
+          display: table
+      &:after
+          clear: both
+bgColor1=#1d468a        /* gray: #2f2e4b   white： #f9fafc  blue: #1d468a  */
+bgColor2=#20529e        /* gray: #333254   white： #ffffff  blue: #20529e  */
+tableTextColor =#ffffff  /* gray: #405e7c   white： #ffffff  blue: #ffffff  */
+.gw-edittable
+    width 100%
+    overflow-x auto
+    .gw-edittable-body
+        color tableTextColor
+        .gw-tbody
+            white-space  nowrap
+            text-align center
+            line-height 38px
+            height 38px
+            min-width 100%
+            border-bottom 1px solid bgColor1
+
+            div
+                flexbox()
+                align-items(center)
+                height 38px
+                display inline-block
+                line-height 38px
+                font-size 16px
+                position relative
+                overflow-y hidden
+                overflow-x auto
+
+                &.nodisplay
+                  display none
+                &:first-child
+                    width 10%
+                span
+                    margin-left 6px
+                input
+                    text-align center
+                    width 80%
+                    height 80%
+                    background bgColor2
+                    border none
+                    border-bottom 1px solid bgColor1
+                    overflow-x auto
+
+            .gw-tbody-optli
+                flexbox()
+                justify-content(center)
+                align-items(center)
+                display inline-block
+                div
+                    font-size 14px
+                    width 45%
+                    height 25px
+                    margin-right 5px
+                    line-height 30px
+                    text-align center
+                    background $base
+                    color tableTextColor
+                    border-radius 3px
+                    cursor pointer
+                    &:hover
+                        background #7ac6ff
+                    &.gray,
+                    &.gray:hover
+                        background bgColor1
+
+        .gw-tbody-add
+            white-space  nowrap
+            text-align center
+            line-height 38px
+            height 38px
+            min-width 100%
+            border-bottom 1px solid #ebebed
+
+            div
+                width 106px
+                height 30px
+                margin auto
+                line-height 30px
+                text-align center
+                background $base
+                color tableTextColor
+                border-radius 3px
+                cursor pointer
+                &:hover
+                    background #7ac6ff
+                &.gray,
+                &.gray:hover
+                    background bgColor2
+        .gw-thead
+            white-space  nowrap
+            text-align center
+            line-height 38px
+            height 38px
+            min-width 100%
+            border-bottom 1px solid bgColor1
+            div
+                flexbox()
+                align-items(center)
+                cursor pointer
+                height 38px
+                display inline-block
+                line-height 38px
+                font-size 16px
+                position relative
+                &.nodisplay
+                  display none
+                &:first-child
+                    width 10%
+                &:hover
+                    background bgColor2
+                span
+                    color rgba(0, 0, 0,0)
+                    position absolute
+                    right 0px
+                    &.active
+                      color rgba(0, 0, 0,1)
+                    &.dbactive
+                      transform:rotate(-180deg);
+                      -ms-transform: rotate(180deg);		/* IE 9 */
+                      -webkit-transform: rotate(180deg);	/* Safari and Chrome */
+                      -o-transform: rotate(180deg);		/* Opera */
+                      -moz-transform: rotate(180deg);		/* Firefox */

@@ -1,0 +1,58 @@
+@import "base/_variables.scss";
+
+.location {
+    position: relative;
+
+    &__toggler {
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        color: $text-medium;
+        cursor: pointer;
+        display: flex;
+        font-size: 14px;
+        height: 42px;
+        padding: 0;
+        transition: color 0.3s;
+
+        &:focus,
+        &:hover {
+            color: $text-full;
+
+            .location__toggler-pin {
+                stroke: $text-full;
+            }
+
+            .location__toggler-arrow {
+                fill: $text-full;
+            }
+        }
+
+        &.is-active {
+            .location__toggler-arrow {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    &__toggler-pin {
+        stroke: $text-medium;
+        stroke-width: 1.6px;
+    }
+
+    &__toggler-text {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    &__toggler-arrow {
+        fill: $text-medium;
+        transform-origin: 50% 50% 0;
+    }
+
+    &__dropdown {
+        &.dropdown {
+            min-width: 210px;
+        }
+    }
+}

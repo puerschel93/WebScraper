@@ -1,0 +1,183 @@
+---
+---
+
+// Standard colours
+$black-color:       #111 !default;
+$white-color:       #fdfdfd !default;
+$shadow-color:     #222;
+$grey-color:       #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+
+// $text-color:  {{ site.brand_color | default: "#DD0000" }} !default;
+$text-color:       $black-color !default;
+
+{% if site.invert_brand_text %}
+    $brand-text-color: $white-color !default;
+    $brand-text-color-invert: $black-color !default;
+{% else %}
+    $brand-text-color: $black-color !default;
+    $brand-text-color-invert: $white-color !default;
+{% endif %}
+
+{% if site.invert_accent_text %}
+    $accent-text-color: $white-color !default;
+{% else %}
+    $accent-text-color: $black-color !default;
+{% endif %}
+
+$brand-color:       {{ site.brand_color | default: "#DD0000" }} !default;
+$brand-color-dark: darken($brand-color, 15%) !default;
+$accent-color:      {{ site.accent_color | default: "#DD0000" }} !default;
+$accent-color-dark: darken($accent-color, 15%) !default;
+$text-color-light: lighten($text-color, 18%);
+$background-color: {{ site.background_color | default: "$white-color" }} !default;
+
+{% if site.brand_color == site.accent_color %}
+  $desktop-header-background-color: $background-color;
+  $desktop-header-text-color: $text-color;
+  $desktop-header-text-color-invert: $brand-color;
+{% else %}
+  $desktop-header-background-color: $brand-color;
+  $desktop-header-text-color: $brand-text-color;
+  $desktop-header-text-color-invert: $brand-text-color-invert;
+{% endif %}
+
+$on-tiny:          {{ site.theme_tiny | default: 250 }}px !default;
+$on-small:         {{ site.theme_small | default: 425 }}px !default;
+$on-medium:        {{ site.theme_medium | default: 850 }}px !default;
+$on-large:         {{ site.theme_large | default: 1300 }}px !default;
+
+// Define defaults for each variable.
+
+// Fonts
+@font-face {
+  font-family: 'Druk Text';
+  src: url("../fonts/druk/DrukText-Medium.woff") format("woff2");
+  src: url("../fonts/druk/DrukText-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: 'Druk Text Web';
+  src: url("../fonts/druk/DrukText-Super-Web.woff") format("woff");
+  src: url("../fonts/druk/DrukText-Super-Web.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal; }
+@font-face {
+  font-family: 'Druk Condensed';
+  src: url("../fonts/druk/DrukCondensed-Super.woff") format("woff2");
+  src: url("../fonts/druk/DrukCondensed-Super.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+    font-family: 'Aktiv Grotesk Corp';
+    src: url('../fonts/aktiv-grotesk/AktivGroteskCorp-Medium.eot');
+    src: local('../fonts/aktiv-grotesk/AktivGroteskCorp-Medium'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Medium.woff2') format('woff2'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Medium.woff') format('woff'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aktiv Grotesk Corp';
+    src: url('../fonts/aktiv-grotesk/AktivGroteskCorp-Bold.eot');
+    src: local('../fonts/aktiv-grotesk/AktivGroteskCorp-Bold'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Bold.woff2') format('woff2'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Bold.woff') format('woff'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aktiv Grotesk Corp';
+    src: url('../fonts/aktiv-grotesk/AktivGroteskCorp-Italic.eot');
+    src: local('../fonts/aktiv-grotesk/AktivGroteskCorp-Italic'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Italic.woff2') format('woff2'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Italic.woff') format('woff'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Aktiv Grotesk Corp';
+    src: url('../fonts/aktiv-grotesk/AktivGroteskCorp-LightItalic.eot');
+    src: local('../fonts/aktiv-grotesk/AktivGroteskCorp-LightItalic'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-LightItalic.woff2') format('woff2'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-LightItalic.woff') format('woff'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Aktiv Grotesk Corp';
+    src: url('../fonts/aktiv-grotesk/AktivGroteskCorp-MediumItalic.eot');
+    src: local('../fonts/aktiv-grotesk/AktivGroteskCorp-MediumItalic'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-MediumItalic.woff2') format('woff2'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-MediumItalic.woff') format('woff'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Aktiv Grotesk Corp';
+    src: url('../fonts/aktiv-grotesk/AktivGroteskCorp-Light.eot');
+    src: local('../fonts/aktiv-grotesk/AktivGroteskCorp-Light'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Light.woff2') format('woff2'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Light.woff') format('woff'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aktiv Grotesk Corp';
+    src: url('../fonts/aktiv-grotesk/AktivGroteskCorp-Regular.eot');
+    src: local('../fonts/aktiv-grotesk/AktivGroteskCorp-Regular'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Regular.woff2') format('woff2'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Regular.woff') format('woff'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aktiv Grotesk Corp';
+    src: url('../fonts/aktiv-grotesk/AktivGroteskCorp-BoldItalic.eot');
+    src: local('../fonts/aktiv-grotesk/AktivGroteskCorp-BoldItalic'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-BoldItalic.woff2') format('woff2'),
+        url('../fonts/aktiv-grotesk/AktivGroteskCorp-BoldItalic.woff') format('woff'),
+        url('AktivGroteskCorp-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+// Fonts
+$base-font-stack: "Aktiv Grotesk Corp",system-ui, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$base-font-size:   14pt !default;
+$base-font-weight: 400 !default;
+$base-line-height: 1.5 !default;
+$header-font-stack: "{{ site.heading_font | default: 'Druk Text Web' }}", "Helvetica Neue",Helvetica,Arial,sans-serif;
+$small-font-size:  $base-font-size * 0.875 !default;
+$smaller-font-size:  $base-font-size * 0.7 !default;
+
+@import "chaos";

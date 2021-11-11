@@ -1,0 +1,503 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:600;
+
+// SIZE NAVIGATION
+$height-navigation:180;
+
+$margin-top-under-nav-fixe:180;
+
+// VAR SITE TYPO
+$font-body:"proxima-nova",verdana,sans-serif;
+$font-title:Helvetica Neue,Helvetica,arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+.titre-pub, .titre-extra {
+color:$color-primary;
+}
+
+// PERSO GUEPARD008
+
+// GENERAL
+
+	// REPRISE DU GUEPARD EN FILIGRAME
+body {
+	background-image:url('../images/bg-body.jpg');
+	background-color:$color-body;
+	background-repeate:no-repeat;
+	background-position:center center;
+	background-attachment: fixed;
+}
+
+	// LINE HEIGHT
+.line-height-30 {
+	line-height:30px;
+}
+
+	// JUSTIFICATION TOUS TEXTES
+.container {
+	text-align: justify;
+}
+	// MISE EN FORME Hn
+h1, .h1-like{
+	font-size: 1.2em;
+	text-transform:uppercase;
+}
+h2.margin-bottom-5.padding-left-10 {
+	text-transform:uppercase;
+}
+
+	// MISE EN FORME SELECT
+select {
+	color: $color-font-body;
+    background-color: rgba($color-form, 0.7);
+    border: 1px solid $color-body;
+}
+
+
+// MENU & NAV
+	// MISE EN PLACE MENU
+.navigation .container {
+	width:100%;
+	text-align: center;
+}
+.menu-principal {
+	text-align: left;
+	font-size:1.3em;
+	>li {
+		border:none;
+		>a {
+			padding: 0px 17px;
+			letter-spacing: 0.3em;
+			text-transform:uppercase;
+		}
+	}
+}
+.menu-principal>li.menu-vente {
+	margin-left:-75px;
+}
+
+	// DEPLACEMENT NAV FIX
+.bloc-nav-left-fix {
+    margin-top: 518px;
+}
+
+.dropdown-menu .pagination-centered {
+	text-align:right;
+}
+
+// PAGE ACCUEIL
+	// MINI MOTEUR
+.bg-moteur {
+	background:none;
+}
+
+.moteur-avantage select {
+	color: $color-font-body;
+    background-color: rgba($color-form, 0.3);
+    border: 1px solid rgba($color-form, 0.4);
+}
+
+.bouton-rechercher-moteur {
+	background-color:rgba($color-btn-recherche, 0.8);
+	background-image:none;
+	&:hover {
+		background-color:rgba($color-btn-recherche, 0.9);
+		background-image:none;
+	}
+}
+
+
+
+	// ENCART PA
+.module-typebien-annonces, .module-caracteristiques-annonces, .module-prix-annonces {
+	font-size:1.2em;
+}
+.module-villes-annonces {
+	text-transform:none;
+}
+
+	// ENCART PUB
+.aside-home-2 {
+	background-image:url('../images/bg-aside-home-2.jpg');
+	background-color:$color-body;
+	background-repeate:no-repeat;
+	background-position:center top;
+}
+	// MASQUER LES TXTS
+.zone-pub {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+	
+.zone-pub p, .zone-pub .btn{
+	display:none;
+}
+	// MARGIN TITRE
+.zone-pub h3 {
+	margin-bottom: 10px;
+	color:$color-nav-footer;
+}
+
+.zone-pub a:hover {
+	text-decoration:none;
+}
+
+.bouton-maison,  .zone-pub .typoicon-right-arrow, .bouton-appartement, .bouton-alerte, .bouton-outils {
+	display:none;
+}
+	// VISUEL PUB
+.pub-outils {
+	background-image: url('../images/pub/picto-outils.png');
+}
+
+.pub-estimation {
+	background-image: url('../images/pub/picto-estimation.png');
+}
+
+.pub-alerte {
+	background-image: url('../images/pub/picto-alerte.png');
+}
+
+	// MASQUE BG BODY
+.aside-home-3 {	
+	margin-bottom:40px;
+	background:$color-body;
+}
+
+// PAGE AGENCE
+	// ALIGNEMENT LOGO
+.agence-idpublication {
+	margin-top:14px;
+}
+
+.coord-agence .h2-like {
+    margin-top: 31px;
+    display: block;
+}
+	// MASQUER HORAIRES
+.horaires-agence {
+	display:none;
+}
+
+// RECHERCHE
+
+	// TYPO
+.phrase-recherche {
+	letter-spacing:0.2em;
+	text-transform:uppercase;
+	display:none;
+}
+.titre-section-refine .uppercase, .control-group .uppercase, .liste-checkbox .uppercase, .moteur-refine .uppercase {
+	text-transform:none;
+	font-weight: normal;
+}
+
+.pagination ul>.active>a, .pagination ul>.active>span {
+	background:$color-primary;
+}
+
+.recherche-annonces .h2-like {
+	font-size: 1.2em;
+}
+.recherche-annonces p, .recherche-annonces p>span.typo-action {
+	color:$color-action;
+}
+
+.recherche-annonces p>span {
+	color:$color-font-body;
+	font-size: 1.3em;
+}
+
+#recherche-listing .biggest {
+	font-size:1.0em;
+}
+.nb-annonces {
+	font-size: 1.2em;
+	display:none;
+}
+
+.bloc-prase-nb {
+	margin-top:12px;
+}
+
+	// BTN RAZ 
+.bouton-raz {
+	padding:0;
+}
+
+	// COULEUR BOUTON
+div.btn.btn-action.btn-block.bouton-comparer-selection-detail, div.btn.btn-action.btn-block.bouton-supprimer-selection-detail {
+	color:$color-font-body;
+}
+.recherche-annonces .btn-block, .recherche-annonces .btn-tooltip {
+	color:$color-action;
+}
+
+.bouton-selection-annonces {
+	font-size: 1.0em;
+    padding: 2px 8px;
+}
+
+.arrow-down-right {
+	display:none;
+}
+	// TRI
+.tri-cdc {
+	display:none;
+}
+option.tri-exclu {
+	font-weight:bold;
+}
+
+	// MASQUE PHRASE
+.bloc-top-alerte-email p,.bloc-nb-annonces p {
+	display:none;
+}
+
+	// MISE EN AVANT REFINER
+.titre-section-refine {
+	background:$color-primary-dark-40;
+}
+
+	// SUPP TITRE REFINE
+.h2-title-moteur {
+	display:none;
+}
+
+	// SUPPRESSION DU CADRAGE PHOTO
+.recherche-annonces .height-370 {
+	height:100%;
+}
+
+	// ALERTE BAS
+.picto-alerte-recherche {
+	display:none;
+}
+
+.bloc-bottom-alerte-email .bg-block-gradient {
+	background:none;
+	display:none;
+}
+
+// PAGE DETAIL
+	// POUR VIRER LE JUSTIFY
+.zone-ligne h1, .detail-border-titre {
+	text-align:left;
+}
+
+// PAGE ALERTE
+	// BG BTN
+.moteur-avantage-alerte .bouton-rechercher-moteur {
+	background:$color-form;
+}
+
+	// TAILLE TITRE
+.bg-alerte-immo h2 {
+	font-size:1.4em;
+}
+
+// PAGE ESTIMATION
+	// FIX MARGIN
+.ligne-annonces-agence {
+	margin-bottom:20px;
+}
+
+	// TYPO
+span.bold.typo-important {
+	color:$color-font-body;
+}
+
+
+// FOOTER
+	// CHANGMENT BG
+
+footer.bg-primary {
+	background:$color-body;
+}
+	// BTN TEL FOOTER
+#texte-telephonez-nous-txt:hover{
+	color:$color-action;
+}
+
+
+// SCROLL ARROW
+
+.arrow-wrap {
+  position:absolute;
+  z-index:125;
+  left:50%;
+  bottom:-44em;
+  margin-left:-5em;
+  background:$color-important;
+  width:10em;
+  height:10em;
+  padding:4em 2em;
+  border-radius:50%;
+  opacity:0.7;
+  font-size:0.5em;
+  display:block;
+  box-shadow:0px 0px 5px 0px #333;
+}
+
+.arrow {
+  float:left;
+  position:relative;
+  width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 3em 3em 0 3em;
+border-color: #ffffff transparent transparent transparent;
+  -webkit-transform:rotate(360deg)
+}
+
+.arrow:after {
+  content:'';
+  position:absolute;
+  top:-3.2em;
+  left:-3em;
+  width: 0px;
+height: 0px;
+border-style: solid;
+border-width: 3em 3em 0 3em;
+border-color: $color-important transparent transparent transparent;
+  -webkit-transform:rotate(360deg)
+}
+
+
+.hint {
+  position:absolute;
+  top:0.6em;
+  width:100%;
+  left:0;
+  font-size:2em;
+  font-style:italic;
+  text-align:center;
+  color:#fff;
+  opacity:0;
+}
+
+
+.arrow-wrap:hover .hint {
+  opacity:1;
+}
+
+
+@-webkit-keyframes arrows {
+0% { top:0; }
+10% { top:12%; }
+20% { top:0; }
+30% { top:12%; }
+40% { top:-12%; }
+50% { top:12%; }
+60% { top:0; }
+70% { top:12%; }
+80% { top:-12%; }
+90% { top:12%; }
+100% { top:0; }
+}
+
+.arrow-wrap .arrow {
+-webkit-animation: arrows 2.8s 0.4s;
+-webkit-animation-delay: 3s;
+}
+
+.btn-estimation-ligne { text-transform: uppercase; }
+
+// END SCROLL
+
+// --------------------------------------
+// RESPONSIVE //
+// --------------------------------------
+
+/* Tablette portrait */
+	@media only screen and (max-width: 979px) and (min-width: 767px) {
+		.row-fluid [class*="span"].logo>.btn-navbar {
+			position: absolute;
+			top: 10px;
+			right: -490px;
+		}
+		
+	}
+
+	@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+		.module-tablette-portrait {
+			display:block;
+		}
+		
+	}
+
+/* Tablette landscape */	
+	@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+		header .logo img {
+			width: 60%;
+        }
+		.menu-principal {
+			text-align: left;
+			font-size:1.3em;
+			>li {
+				border:none;
+				>a {
+					padding: 0px 5px;
+					letter-spacing: 0.3em;
+					text-transform:uppercase;
+				}
+			}
+		}
+	}

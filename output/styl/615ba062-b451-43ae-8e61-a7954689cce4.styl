@@ -1,0 +1,489 @@
+.task
+  padding 12px
+  border-radius 16px
+  cursor pointer
+  margin 0 3px
+  position relative
+  margin-bottom 8px
+  background white
+
+  &.active
+    background white
+    cursor default
+    //box-shadow 0 1px 3px 1px rgba(0,0,0,.1)
+
+  &.selected
+    background white
+    border 2px solid var(--brand)
+
+  &.colored
+    border 0
+
+  &.colored::before
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--task-color);
+    opacity: 0.08;
+    pointer-events none
+    border-radius 16px
+    box-sizing border-box
+
+  &.colored::after
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.1;
+    pointer-events none
+    border-radius 16px
+    box-sizing border-box
+
+.check
+  margin-right 16px
+
+.checkPlaceholder
+  width 14px
+  margin-top 1.5px
+  margin-right 20px
+
+.task.done .taskText
+  text-decoration line-through
+  color #BDBECC
+
+.hasTimeIcon
+  color #9BABC5
+  height 1em
+  margin-right 6px
+
+.taskText, .taskTextEdit
+  font-size 16px
+  margin-right 18px
+  font-weight 400
+
+.taskTextEdit
+  border 0
+  outline none
+  background transparent
+  padding 0
+  width 100%
+  font-weight 400
+
+  &::-webkit-input-placeholder
+    color #9A9A9A
+
+.subtasksProgressInfo
+  color rgba(155, 171, 197, 1)
+  font-size 12px
+
+.subtasksProgress
+  width 100%
+  height 8px
+  border-radius 4px
+  position relative
+  background #EEF0FF
+  margin-left 16px
+
+  &::before
+    content " "
+    display block
+    position absolute
+    height 100%
+    border-radius 4px
+    background var(--brand)
+    width var(--donePercent)
+    transition width .2s
+
+.noteWrapper
+  background #F7F7F7
+  border-radius 16px
+  width 100%
+
+  .note
+    border-radius 16px 16px 0 0
+
+.subtasks
+  display flex
+  flex-direction column
+  padding 23px
+  padding-top 0
+
+  .subtask
+    display flex
+    width 100%
+    align-items center
+    margin-bottom 10px
+    padding 8px
+    border-radius 8px
+    background #f3f3f3
+    border 1px solid #e3e3e3
+    cursor default
+    transition opacity .4
+
+    &.dead
+      opacity 0
+
+    .trash
+      margin-left 12px
+      display inline-flex
+      align-items center
+      justify-content center
+      cursor pointer
+      width 1em
+      height 1em
+
+      svg
+        height .6em
+        color #9babc5
+
+    .moveHandle
+      margin-left 12px
+      display inline-flex
+      align-items center
+      justify-content center
+      width 1em
+      height 1em
+      cursor grab
+
+      svg
+        height 1em
+        color #9babc5
+
+    //&:hover, &:focus, &:active
+    //  background: rgba(0,0,0,.06);
+
+    textarea
+      border 0
+      font-size 16px
+      background transparent
+      width 100%
+      margin-left 8px
+
+      &:active, &:focus
+        outline none
+
+  .addNew
+    color rgba(155, 171, 197, 1)
+    font-size 15px
+    cursor pointer
+    padding 8px
+
+.line
+  display flex
+  align-items center
+  margin-top 3px
+  //&:not(.fullOnly)
+  //  align-items flex-start
+
+.line.padding
+  padding-left 15px + 20px
+
+.line.fullOnly
+  display none
+  margin-top 16px
+
+.task.active .line.spaceBetween
+  display flex
+  justify-content space-between
+
+.task.active .line.fullOnly
+  display flex
+
+.line:first-child
+  margin-top 0
+
+.hasEvent
+  margin-top 1.5px
+  margin-right 17px
+  svg
+    height 1em
+    fill var(--tag-color, #b7b7b7)
+
+.hasCard
+  margin-top 1.5px
+  margin-right 17px
+  display flex
+  align-items center
+  svg
+    height 1em
+    color var(--brand)
+
+.project
+  font-size 14px
+  color var(--brand)
+  display inline-flex
+  align-items center
+  margin-top 1.5px
+  margin-right 17px
+  position relative
+  cursor pointer
+  &:not(.inline)
+    height 36px
+    border 1px solid #eaeaea
+    padding 8px
+    border-radius 8px
+    margin-right 0
+
+.projectIcon, .dateIcon
+  height 14px
+  margin-right 8px
+
+.separator
+  width 2px
+  height 36px
+  border-radius 1px
+  background #F6F6F6
+  margin 0 16px
+
+.startTimer
+  font-size 14px
+  color white
+  background var(--brand)
+  display inline-flex
+  align-items center
+  margin-top 1.5px
+  margin-right 17px
+  position relative
+  cursor pointer
+  padding 0 8px
+  height 36px
+  border-radius 8px
+  min-width 108px
+  span
+    border-radius 50%
+    display inline-flex
+    justify-content center
+    align-items center
+    background white
+    height 24px
+    width 24px
+    margin-right 6px
+
+    svg
+      color var(--brand)
+      height 12px
+      margin-left 2px
+
+.totalTime
+  font-size 14px
+  color #9BABC5
+  display inline-flex
+  align-items center
+  margin-top 1.5px
+  margin-right 17px
+  position relative
+  height 36px
+  border 1px solid #eaeaea
+  padding 8px
+  border-radius 8px
+
+  svg
+    height 20px
+    color #9BABC5
+    margin-right 6px
+
+.resetTime
+  font-size 14px
+  color #9BABC5
+  display inline-flex
+  align-items center
+  margin-top 1.5px
+  margin-right 17px
+  position relative
+  height 36px
+  border 1px solid #eaeaea
+  padding 8px
+  border-radius 8px
+
+  svg
+    height 20px
+    fill #9BABC5
+    margin-right 3px
+
+
+.date
+  font-size 14px
+  color var(--brand)
+  display inline-flex
+  align-items center
+  margin-top 1.5px
+  margin-right 17px
+  white-space nowrap
+
+  &.expired
+    color var(--accent)
+
+.project > span, .date > span
+  display inline-flex
+  align-items center
+
+.notes
+  width 100%
+  border 0
+  //font-family Gilroy
+  font-family SF Pro Display, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif
+  background transparent
+  font-size 15px
+
+  &::-webkit-input-placeholder
+    color #9A9A9A
+
+  &:focus
+    outline none
+
+.puller
+  margin-left auto
+
+.priorityWrapper
+  margin-left 0
+  cursor pointer
+
+.tag
+  color #9BABC5
+  height 24px
+  font-size 16px
+  margin-right 25px
+  white-space nowrap
+  display inline-flex
+  align-items center
+
+  &.inline
+    color #9BABC5
+    border-radius 8.5px
+    border 1px solid #9BABC5
+    padding 2px 11px
+    opacity .6
+    font-size 14px
+
+  svg
+    height 1.2em
+    margin-left 4px
+    fill #9A9A9A
+    cursor pointer
+
+    &:hover, &.active
+      fill var(--tag-color)
+
+.tag.active svg
+    fill var(--tag-color)
+
+.tags
+  margin-top -3px
+  margin-right 16px
+  display flex
+  flex-wrap wrap
+  justify-content flex-end
+  .tag
+    margin 1.5px 3px
+
+.fullDate
+  display flex
+  align-items center
+  color #161938
+  font-size 16px
+  cursor pointer
+  position relative
+  border 1px solid #eaeaea
+  padding 8px 16px
+  border-radius 8px
+  margin-right 8px
+
+  & > span
+    display inline-flex
+    align-items center
+
+.fullDateIcon
+  margin-right 12px
+
+.delete
+  margin-right 24px
+  margin-left auto
+  cursor pointer
+
+  svg
+    height 1em
+    fill gray
+
+.delete ~ .redo
+  margin-left 0
+
+.tagsTrigger
+  height 36px
+  display inline-flex
+  align-items center
+  justify-content center
+  cursor pointer
+  border 1px solid #eaeaea
+  padding 8px 16px
+  border-radius 8px
+  margin-right 8px
+  color #525861
+  svg
+    margin-right 8px
+    fill #9BABC5
+  &.active svg
+    fill var(--brand)
+
+.promptButtons
+  margin-left auto
+  display flex
+
+.promptButton
+  margin-left 12px
+
+.tagsTriggerIcon
+  height 1em
+  fill #9BABC5
+  transition fill .2s
+
+.repeatCount
+  margin-left 12px
+  margin-right 6px
+  display inline
+  width 25px
+  border 0
+  font-size 1em
+  &:active, &:focus
+    outline none
+  & {
+    -moz-appearance:textfield;
+  }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+.redo
+  display flex
+  align-items center
+  margin-right 12px
+  //margin-left
+  border 1px solid #eaeaea
+  padding 8px 16px
+  border-radius 8px
+
+  svg
+    height 1em
+    fill gray
+    transition fill .2s
+
+  &.active svg
+    fill var(--brand)
+
+.openCard
+  display flex
+  align-items center
+  margin-right 12px
+  color var(--brand)
+  border 1px solid #eaeaea
+  padding 8px 16px
+  border-radius 8px
+
+  svg
+    height 1em
+    margin-right 6px

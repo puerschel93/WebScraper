@@ -1,0 +1,139 @@
+
+.Tab__4items{
+    margin-bottom: var(--widgetgap);
+    .content-wrap{
+        background-color:var(--vidtheme);
+        padding: 20px;
+        box-shadow: 1px 1px 3px #00000026;
+        border: 1px solid var(--widgetbordercolor);
+        border-radius: 5px;
+        .tab_wrap{
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+			gap: 10px;
+			margin-bottom: 15px;
+            .tab{
+                text-transform: uppercase;
+                border: 1px solid var(--widgetbordercolor);
+                border-radius: 30px;
+                padding: 7px 15px 7px 15px;
+                background: #F2FAFC;
+                color: #666666;
+                font-size: 12px;
+                font-weight: 500;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+                flex: 0 0 82px;
+            }
+            .tab:first-child{
+                background-color: var(--brandbgcolor);
+                color: var(--whitetextcolor);
+                border: none;
+            }
+		}
+		
+        h2{
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--theme2primarytextcolor);
+            text-transform: uppercase;
+            padding-left: 17px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='11' viewBox='0 0 12 11'%3E%3Cpath fill='%23e3001b' d='M344.974,430.608a16.732,16.732,0,0,1,10.71-2.439.261.261,0,0,1,.233.26c.115,4.944-2.28,8.018-5,10.481-.094.075-.262.224-.43.035l-6.516-7.4a.213.213,0,0,1,.047-.318c.113-.093.956-.617.956-.616' transform='translate(-343.921 -428.037)'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: 0 center;
+            margin-bottom: 15px;
+            margin-top: -5px;
+        }
+        .inner_wrap{
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 20px;
+            .video_card{
+                position: relative;
+                margin-bottom: 25px;
+                width: 48.5%;
+                .img_section a img{
+                    border-radius: 5px;
+                }
+                p{
+                    text-align: left;
+                    color: var(--whitetextcolor);
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+                .label{
+                    font-size: 14px;
+                    color: var(--theme2secondarytextcolor);
+                    margin: 18px 0px 10px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                }
+                .article-type{
+                    display: flex;
+                    justify-content: space-between;
+                    position: absolute;
+                    width: 100%;
+                    .typedata{
+                        width: 40px;
+                        height: 20px;
+                        background-color: rgba(0, 0, 0, 0.6);
+                        color: var(--whitetextcolor);
+                        font-size: 12px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        margin: -30px 10px;
+                        border-radius: 3px;
+                }
+                .typeicon img{
+                    margin: -50px 10px;
+                }
+            }
+        }
+       
+    }
+    .divider{
+        border: 1px solid #676666;
+        margin-bottom: 20px;
+    }
+    .btn_wrap{
+        text-align: center;
+        button{
+            background-color: transparent;
+            padding:5.68px 30px;
+            border: 1px solid #E2E2E2;
+            color: var(--whitetextcolor);
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 5px;
+        }
+    }
+}
+}
+
+// Mobile View
+@media (max-width: 767px) {
+    .Tab__4items .content-wrap .inner_wrap .video_card{
+        width: 100%;
+    }
+    .Tab__4items .content-wrap .inner_wrap .video_card .img_section a img {
+        height: auto;
+        width: 100%;
+    }
+  }
+
+  @media screen and (orientation:landscape) {
+    .Tab__4items .content-wrap .inner_wrap .video_card {
+        width: 48.3%;
+    }
+}
+
+// iPad View
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    .Tab__4items .content-wrap .inner_wrap .video_card .img_section a img {
+        height: auto;
+        width: 100%;
+    }
+}

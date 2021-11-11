@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import '~bootstrap/scss/bootstrap';
+@import './constants/colors';
+@import './constants/styles';
+body {
+    background: $bg;
+    font-family: 'Lato';
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+//-------------------------------------//
+// ------------Components--------------//
+//-------------------------------------//
+//-!Start----------Header----------//
+.header {
+    @include flex-v-centered;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.header-left {
+    @include flex-v-centered;
+}
+
+.header-right {
+    @include flex-v-centered;
+}
+
+.notification-icon {
+    padding-right: 10px;
+}
+
+//-!End----------Header----------//
+//--!Start-----Search Bar---------//
+.search-bar {
+    @include flex-v-centered;
+    background: $white;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-left: 20px;
+    width: 350px;
+}
+
+.search-bar {
+    input {
+        border: none;
+        padding-left: 13px;
+        @include input-text;
+    }
+    input:focus {
+        outline: none;
+    }
+}
+
+.search-bar input::placeholder {
+    @include placeholder-text;
+    color: $gray;
+}
+
+//--!End-------Search Bar---------//
+//--!Start-----Navigation Bar------//
+.nav-bar {
+    margin-top: 5px;
+}
+
+.nav-bar,
+.links {
+    @include flex-v-centered;
+}
+
+.collapse-icon {
+    display: none;
+}
+
+@media screen and (max-width: 850px) {
+    .nav-bar .links {
+        display: none;
+    }
+    .nav-bar-responsive .links {
+        display: block;
+        padding-left: 5px;
+        flex-wrap: wrap;
+    }
+    .nav-bar-responsive {
+        position: relative;
+        .search-bar {
+            display: block !important;
+        }
+    }
+    .collapse-icon {
+        padding-left: 10px;
+        margin-top: 5px;
+        display: flex;
+        padding-bottom: 10px;
+    }
+    .search-bar {
+        display: flex;
+        width: 280px;
+        margin-top: -5px;
+    }
+    .data-card {
+        .col-sm-8 {
+            margin-top: 10px;
+        }
+    }
+}
+
+//--!End-----Navigation Bar------//
+//--!Start-----Navigation Link------//
+.nav-link {
+    padding: 14px 33px 14px 0px;
+    text-decoration: none;
+    .active {
+        @include subtitle-2-text;
+        color: $blue;
+    }
+    .inactive {
+        @include subtitle-2-text;
+        color: $darkGrey;
+    }
+    .active,
+    .inactive:hover {
+        color: $lightBlue;
+    }
+}
+
+//--!End-----Navigation Link------//
+//--!Start-----Analytics---------//
+.analytics {
+    padding-top: 23px;
+}
+
+//--!End-------Analytics---------//
+//--!Start-------Analytics Card---------//
+.card {
+    padding: 0px 20px;
+}
+
+.analytics-card {
+    @include flex-v-centered;
+    background: $white;
+    padding: 2px 24px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 4px 0px 16px rgba(16, 30, 115, 0.08);
+    .card-image-con,
+    .card-text-con {
+        align-items: center;
+    }
+    .card-text-con {
+        padding-top: 20px;
+        padding-left: 24px;
+    }
+    .card-title {
+        @include subtitle-2-text;
+        color: $black;
+    }
+    .card-stats {
+        @include stats-text;
+        color: $blue;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+        .search-bar {
+            display: none;
+        }
+    }
+}
+
+//--!End-------Analytics Card---------//
+//--!Start-------Activity------------//
+.activity {
+    background: $white;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    margin: 10px 0px 20px 0px;
+    box-shadow: 4px 0px 16px rgba(16, 30, 115, 0.08);
+    .heading-con {
+        padding: 20px 0px 8px 25px;
+    }
+}
+
+//--!End--------Activity------------//
+//--!Start------Heading------------//
+.appointment {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    .heading-con {
+        padding-bottom: 15px;
+    }
+    .list-con {
+        padding-top: 10px;
+        background: $lightGray;
+        border-radius: 5px;
+        box-shadow: 4px 0px 16px rgba(16, 30, 115, 0.08);
+    }
+}
+
+.subHeading {
+    @include sub-heading;
+    color: $black;
+}
+
+.mainHeading {
+    @include main-heading;
+    color: $black;
+}
+
+//--!End-----Heading-------------//
+//--!Start-----Activity Card-------//
+.label-card {
+    background: $lightGray;
+    padding: 15px 25px 12px 25px;
+    flex-direction: column;
+    border-bottom: 1px solid $grayLighter;
+    .col-sm-3 {
+        // @include flex-v-centered;
+        align-items: center;
+        .label {
+            width: 250px;
+        }
+    }
+    .col-sm-8 {
+        @include flex-v-centered;
+    }
+    .col-sm-1 {
+        display: none;
+    }
+    .label,
+    .label1,
+    .label5,
+    .label3 {
+        @include subtitle-2-text;
+        color: $black;
+        margin-right: 15px;
+    }
+}
+
+.label1 {
+    @include flex-v-centered;
+    width: 200px;
+}
+
+.label {
+    @include flex-v-centered;
+    width: 100px;
+}
+
+.label3 {
+    @include flex-v-centered;
+    width: 100px;
+}
+
+.label5 {
+    @include flex-v-centered;
+    width: 128px;
+}
+
+@media screen and (max-width: 850px) {
+    .label-card,
+    .data-card {
+        .col-sm-8 {
+            flex-direction: column;
+        }
+        .label,
+        .label1,
+        .label5,
+        .label3 {
+            width: auto;
+            justify-content: flex-start;
+        }
+    }
+}
+
+.data-card {
+    background: $white;
+    padding: 20px 25px 12px 25px;
+    flex-direction: column;
+    border-bottom: 1px solid $grayLighter;
+    .col-sm-3 {
+        @include flex-v-centered;
+        .label {
+            margin-left: 15px;
+            width: 250px;
+        }
+        img {
+            margin-top: -8px;
+        }
+    }
+    .col-sm-8 {
+        // @include flex-v-centered;
+        display: flex;
+        align-items: center;
+    }
+    .col-sm-1 {
+        @include flex-v-centered;
+        justify-content: space-around;
+        margin-top: -5px;
+    }
+    .label,
+    .label1,
+    .label5,
+    .label3 {
+        @include list-text;
+        color: $darkGrey;
+        margin-right: 15px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .label-card {
+        display: none;
+    }
+    .data-card {
+        .col-sm-8 {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+    .col-sm-1 {
+        @include flex-v-centered;
+        justify-content: space-between;
+        margin-top: -5px;
+        #icon {
+            margin-left: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .col-sm-1 {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: -5px;
+        #icon {
+            float: right;
+            margin-left: 10px;
+        }
+    }
+}
+
+//--!End-----Activity Card-------//
+//--!Start-----Paging-------------//
+.paging {
+    @include flex-v-centered;
+    padding: 12px 25px 12px 25px;
+    background: $white;
+    border-radius: 5px;
+}
+
+.arrow {
+    width: 35px;
+    height: 30px;
+    border: 1px solid $lightGray;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 2px 9px;
+    margin-right: 2px;
+}
+
+.number {
+    width: 35px;
+    height: 30px;
+    @include flex-v-centered;
+    border: 1px solid $lightGray;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin-right: 2px;
+    p {
+        @include placeholder-text;
+        color: $black;
+        line-height: 0px;
+        margin-top: 15px;
+    }
+}
+
+//--!End-----Paging-------------//
+//--!Start-----Graph--------------//
+.graph-con-other {
+    margin-top: 7px;
+    @include flex-v-centered;
+    p {
+        @include graphtext;
+        color: $gray;
+    }
+    .line-other {
+        margin-top: 0px;
+        margin-right: 0px;
+        width: 0px;
+        border-bottom: none;
+    }
+}
+
+.graph-text-con {
+    margin-top: 8px;
+    @include flex-v-centered;
+    .line-blue {
+        margin-top: -16px;
+        margin-right: 6px;
+        width: 20px;
+        border-bottom: 2px solid $blue;
+    }
+    p {
+        @include graphtext;
+        color: $gray;
+    }
+}
+
+.graph-text-con-2 {
+    margin-top: 8px;
+    @include flex-v-centered;
+    margin-right: 30px;
+    .line-yellow {
+        margin-top: -16px;
+        margin-right: 6px;
+        width: 20px;
+        border-bottom: 2px solid $yellow;
+    }
+    p {
+        @include graphtext;
+        color: $gray;
+    }
+}
+
+.patients-graph {
+    background: $white;
+    border-radius: 5px;
+    // padding-bottom: 10px;
+    margin: 10px 0px 30px 0px;
+    box-shadow: 4px 0px 16px rgba(16, 30, 115, 0.08);
+    .graph-header {
+        @include flex-v-centered;
+        justify-content: space-between;
+        padding: 10px 24px 10px 24px;
+        .right {
+            @include flex-v-centered;
+        }
+    }
+}
+
+.earning-graph-1 {
+    background: $white;
+    border-radius: 5px;
+    // padding-bottom: 10px;
+    margin: 10px 0px 30px 0px;
+    box-shadow: 4px 0px 16px rgba(16, 30, 115, 0.08);
+    .graph-header {
+        @include flex-v-centered;
+        justify-content: space-between;
+        padding: 10px 24px 10px 24px;
+    }
+}
+
+.earning-graph-2 {
+    background: $white;
+    border-radius: 5px;
+    // padding-bottom: 10px;
+    margin: 10px 0px 30px 0px;
+    box-shadow: 4px 0px 16px rgba(16, 30, 115, 0.08);
+    .graph-header {
+        @include flex-v-centered;
+        justify-content: space-between;
+        padding: 10px 24px 10px 24px;
+    }
+}
+
+.graph-label {
+    @include graphlabel;
+}
+
+.graph-container {
+    margin-right: 25px;
+}
+
+//--!End-------Graph--------------//
+//--!Start------Login/Register-------------//
+.login,
+.register {
+    @include flex-v-centered;
+    justify-content: center;
+    margin-top: 100px;
+    padding: 20px;
+    .logo-con {
+        @include flex-v-centered;
+        justify-content: center;
+        padding: 20px;
+    }
+    button {
+        width: 350px;
+        padding: 10px 40px;
+        border: none;
+        background: $blue;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        color: $white;
+    }
+    button:hover {
+        background: $lightBlue;
+    }
+}
+
+.register {
+    margin-top: 20px !important;
+}
+
+.input-con {
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid $blue;
+    margin-bottom: 10px;
+    input {
+        @include flex-v-centered;
+        width: 300px;
+        padding: 10px;
+        border: none;
+        @include input-text;
+    }
+    input::placeholder {
+        @include placeholder-text;
+        font-size: 14px;
+    }
+}
+
+//--!End------Login/Register-------------//

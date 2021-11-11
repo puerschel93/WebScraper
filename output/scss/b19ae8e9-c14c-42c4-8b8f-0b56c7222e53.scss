@@ -1,0 +1,410 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+body {
+	/*вся видимая часть страницы*/
+	background: #e5e5e5; /*не забыть убрать*/
+	font-family: "Roboto", serif;
+	font-size: 16px;
+}
+
+.wrapper {
+	max-width: 1445px;
+	background: #ffffff; /*не забыть убрать*/
+	margin: 0 auto;
+}
+.container {
+	width: 100%;
+	width: 944px;
+	margin: 0 auto;
+}
+
+.title {
+	font-size: 34px;
+	line-height: 43px;
+	text-align: center;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++*/
+.header-menu {	
+
+	&__block {		
+	}
+
+	&__menu {		
+		display: flex; /*выстраиваем меню в ряд*/
+		justify-content: space-between;
+		border-bottom: 1px solid #828282;
+		transform: matrix(1, 0, 0, 1, 0, 0);
+
+	}
+}
+
+.menu {
+	&__link {
+		line-height: 88px;
+		color: #828282;
+
+		&_active {
+			color: #070707;
+		}
+	}
+	&__link:hover {
+		text-decoration: underline;
+		font-size: 18px;
+		color: #070707;
+	}
+}
+
+/*====== start header =================================================*/
+
+.header {
+	margin: 0px 0px 0px 0px;
+
+	&__body {
+	}
+
+	&__man {
+		display: flex; /*выстраиваем меню в ряд*/
+		justify-content: space-between;
+	}
+
+	&__image {
+		padding: 0px 0px 105px 0px;
+	}
+}
+
+.man {
+	&__name {
+		width: 123px;
+		font-size: 47.3392px;
+		line-height: 59px;
+		color: #070707;
+		margin: 40px 0px 30px 0px;
+	}
+
+	&__birth {
+		width: 155px;
+		line-height: 22px;
+		color: #070707;
+		margin: 95px 0px 50px 0px;
+	}
+
+	&__language {
+		height: 20px;
+		color: #070707;
+		transform: rotate(-90deg);
+		margin: 69px 0px 0px 0px;
+		padding: 36px 0px 0px 0px;
+		span {
+			color: #828282;
+		}
+	}
+}
+
+/*======== end header ======================================*/
+
+/*======== star about ======================================*/
+
+.about {
+	background: #f6f6f6; /*f6f6f6*/
+
+	&__body {
+		padding: 120.25px 0px 0px 0px;
+	}
+
+	&__title {
+		margin: 0px 0px 17.69px 0px;
+	}
+
+	&__content {
+		/*width: 485.34px;*/
+		margin: 0 auto;
+		text-align: center;
+		line-height: 22px;
+		padding: 0px 0px 107px 0px;
+	}
+
+	&__liad {
+	}
+
+	.about__liad:not(:last-child) {
+		margin: 0px 0px 43px 0px; /*выстраиваем элементы меню в ряд через 43 px, кроме последнего*/
+	}
+}
+/*======== end about ======================================*/
+
+
+/*======== start skills ======================================*/
+.skill {
+	padding: 91px 0px 81px 0px;
+	background-color: #ffffff; /*закрашиваем карточку*/
+
+	&__title {
+		margin: 0px 0px 69px 0px;
+	}
+
+	&__liad {
+		line-height: 22px;
+		text-align: center;
+		margin: 0px 0px 83px 0px;
+	}
+
+	&__row {
+		display: flex; /*выстраиваем карточки в 3 колонки*/
+		margin: 0 -45px;
+		flex-wrap: wrap;
+	}
+
+	&__column {		
+		padding: 0 45px;
+		flex: 0 1 25%; /*запрещаем увеличиваться, разрешем уменьшаться, устанвливаем одинаковую ширину*/
+		display: flex; /*колонки становятся одинаковые по высоте - по самой высокой*/
+		margin: 0px 0px 30px 0px; /*отступ между блоками по вертикали*/		
+	}
+
+	&__item {
+		background-color: #ffffff; /*закрашиваем карточку*/
+		color: #212121; /*буквы белые*/
+		/*padding: 0px 0px 48px 0px; /*чтобы ниже кнопки был промежуток*/
+		/*border-radius: 5px; /*закругляем углы карточки*/
+		/*border: 1px solid #445162; /*закрашиваем границу карточки*/
+		display: flex; /*эти две строки чтобы прибить кнопку к низу и еще позволим блоку с текстом увеличиваться flex: 1 1 auto*/
+		flex-direction: column; /*переварачиваем все элементы*/
+		margin: 0 auto;
+	}
+
+	&__icon {
+		margin: 0px 0px 24px 0px;
+		display: flex; /*определяем положение иконки*/
+		align-items: center; /*центрируем иконку*/
+		justify-content: center; /*центрируем иконку*/
+		text-align: center; /*неправильно, но работает*/
+		img {
+			background: radial-gradient(75.99% 75.64% at 32.94% 22.44%, rgba(52, 54, 78, 0.98) 0%, #0c0824 100%);
+		}
+	}
+
+	&__subtitle {	
+		width: 89px;
+		font-size: 14px;
+		line-height: 17px;
+		text-align: center;		
+		color: #828282;
+		/*margin: 0px 40px 41px 40px;*/
+		flex: 1 1 auto; /*чтобы прибить кнопку к низу позволим блоку с текстом увеличиваться*/
+		margin: 0px 38px 41px 38px;		
+	}
+
+	&__star-block {
+		display: flex; /*выстраиваем меню в ряд*/
+		justify-content: space-between;
+		transform: matrix(1, 0, 0, 1, 0, 0);
+
+	}
+
+	&__star {
+		width: 26px;
+		height: 26px;
+		text-align: center;
+	}
+
+	&__star:not(:last-child) {
+		margin: 0px 9px 0px 0px; /*выстраиваем элементы меню в ряд через 9 px, кроме последнего*/
+	}
+}
+
+.simple-rating {
+	position: relative;
+	font-size: 30px; /*можно изменять размер звездочек*/
+	display: inline-block;
+	margin: 0 auto;
+
+	&:before {
+		content: "★★★★★";
+		display: block;
+	}
+	
+	&__items {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: row-reverse; /*разворрачиваем радио точки в обратном порядке*/
+		overflow: hidden;
+	}
+
+	&__item { /*убираем радио точки*/
+		position: absolute;
+		width: 0%;
+		height: 0%;
+		opacity: 0;
+		visibility: hidden;
+		top: 0;
+		left: 0;		
+	}
+
+	&__label {
+		flex: 0 0 20%;	
+		height: 100%;
+		cursor: pointer; /*превращаем курсор в руку с пальцем*/
+		color: #000; /*цвет звездочки*/
+	}
+
+	&__label::before { /*надо наложить на белые звездочки звездочки с рейтингом*/
+		content: "★";
+		display: block;
+		transition: color 0.3s ease 0s;
+	}
+	
+	&__label::before { /*надо наложить на белые звездочки звездочки с рейтингом*/
+		content: "★";
+		display: block;
+		transition: color 0.3s ease 0s;
+	}	
+}
+
+.simple-rating__item:checked, /*для фиксации выбранного значения количества звездочек*/
+.simple-rating__item:checked ~ .simple-rating__label {
+	color: #ffd300;
+}
+.simple-rating__label:hover, /*при наведении на звездочку все предудущии тоже изменят цвет*/
+.simple-rating__label:hover ~ .simple-rating__label,
+.simple-rating__label:checked ~ .simple-rating__label:hover { /*при наведении на звездочку она меняет цвет*/
+	color: #fceda4;
+}
+
+/*======== end skills ======================================*/
+
+/*======== start portfolio ======================================*/
+.portfolio {
+	background: #f6f6f6; /*#F6F6F6;*/
+	margin: 0 auto;
+
+	&__body {
+		padding: 112.93px 0px 0px 0px;
+	}
+
+	&__title {
+		margin: 0px 0px 45px 0px;
+	}
+
+	&__image {
+		margin: 0px 0px 45px 0px;
+
+		&__image {
+			/*height: 510px;*/
+			text-align: center;
+		}
+	}
+
+	&__online {
+		color: #070707;
+		line-height: 22px;
+		text-align: center;
+		text-decoration-line: underline;
+		padding: 0px 0px 98px 0px;
+	}
+}
+
+/*======== end portfolio ======================================*/
+
+/*======== start contacts ======================================*/
+.contacts {
+	background: #ffffff; /*#ffffff;*/	
+
+	&__body {
+		padding: 114px 0px 123px 0px;
+	}
+
+	&__title {
+		margin: 0px 0px 25px 0px;
+	}
+
+	&__subtitle {
+		padding: 0px 340px 0px 340px;
+		font-size: 18px;
+		line-height: 22px;
+		text-align: center;
+		color: #070707;
+		margin: 0px 0px 50px 0px;
+	}
+
+	&__button {
+		text-align: center;
+		margin: 0px 0px 100px 0px;
+	}
+
+	&__btn {
+		font-size: 18px;
+		line-height: 22px;
+		text-align: center;
+		color: #ffffff;
+		background: #070707;
+		padding: 13px 30px 13px 30px;
+		border: 1px solid #212121;
+		border-radius: 35px;
+	}
+
+	&__btn:hover {
+		border: none;
+		color: #fff;
+		background-color: #020089;
+		border: 2px solid #fff;
+	}
+
+	&__content {
+		margin: 0px 0px 45px 0px;
+	}
+
+	&__block {
+		padding: 0px 300px 0px 300px;
+		align-items: center;
+	}
+
+	&__row {
+		display: flex; /*здесь задаются свойства колонок */
+		margin: 0px -15px; /*добавим отступ между колонками ?*/
+		flex-wrap: wrap;
+	}
+
+	&__column {
+		flex: 0 1 25%;
+		padding: 0px 15px; /*добавим отступ между колонками ?*/
+		/*margin: 0px 0px 0px 0px; /*отступ между блоками по вертикали*/		
+	}
+
+	&__item {
+		border: 1px solid rgb(0, 17, 255);
+		padding: 0px 0px 0px 10px;	
+	}
+
+	&__icon {		
+		width: 41px;
+		height: 41px;
+		border: 1px solid red;
+		margin: 0px 0px 0px 0px;
+		text-align: center; /*неправильно, но работает*/		
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		img {
+			width: 100%;
+			color: #000;
+		}
+	}
+
+	&__footer {
+		font-size: 14px;
+		line-height: 17px;
+		text-align: center;
+		color: #828282;
+		padding: 0px 350px 0px 350px;
+	}
+}
+
+
+/*======== end contacts ======================================*/

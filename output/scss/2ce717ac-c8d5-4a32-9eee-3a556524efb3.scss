@@ -1,0 +1,491 @@
+.dashboard {
+    width: 100%;
+    height: 100%; 
+    padding: 10px;
+
+    .it {
+        background: #242B61;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+
+        .chart {
+            height: calc(100% - 40px);
+            max-width: 30vw;
+        }
+    }
+
+    p {
+        margin: 10px 20px;
+        color: #66B5F8;
+    }
+
+    .tb_lf {
+        width: 100%;
+        height: 100%;
+        padding-top: 40px;
+        display: grid;
+        grid-template-columns: 2fr 3fr 2fr;
+        grid-template-rows: repeat(4, minmax(100px, 1fr));
+        grid-gap: 5px;
+        .item {
+            background: #242B61;
+        }
+
+        .main_db {
+            grid-row-start: 1; 
+            grid-row-end: 4;
+            grid-column-start: 2;
+        }
+
+        .datasheet {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+
+    h3 {
+        position: absolute;
+        width: calc(100% - 20px);
+        padding: 0px 20px;
+        text-align: center;
+        z-index: 2;
+        margin-top: 0px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+    
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: 0.8px;
+        text-indent: 5px;
+    }
+    
+    h2 {
+        position: absolute;
+        width: calc(100% - 20px);
+        text-align: center;
+        z-index: 2;
+        margin-top: 40px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #FF647C;
+    
+        font-size: 1.5rem;
+        letter-spacing: 0.8px;
+        text-indent: 5px;
+    }
+}
+
+
+/* tb_rt */
+
+.tb_rt {
+    grid-row-start: 1; 
+    grid-column-start: 3;
+    grid-row-end: 5;
+    display: grid;
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+    grid-gap: 5px;
+}
+
+
+/* main_db */
+
+.main_db {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: radial-gradient(50% 50% at 50% 50%, #00A6FF 0%, rgba(0, 166, 255, 0.7) 10.56%, rgba(0, 166, 255, 0) 100%);
+    display: flex;
+    justify-content: center;
+
+    .bg_m{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    
+        img{
+            // position: relative;
+            // z-index: 1;
+            width: 100%;
+            height: 90%;
+            object-fit: contain;
+        }
+    }
+
+    h4 {
+        position: absolute;
+        z-index: 2;
+        color: #fff;
+        bottom: 50%;
+    }
+
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .lk_performance {
+        position: absolute;
+        z-index: 2;
+        bottom: 55%;
+        left: 11%;
+    }
+
+    .lk_schedule {
+        position: absolute;
+        z-index: 2;
+        bottom: 345px;
+        right: 65px;
+    }
+
+    .lk_culter {
+        position: absolute;
+        z-index: 2;
+        bottom: 100px;
+        left: 105px;
+    }
+
+    .lk_storage {
+        position: absolute;
+        z-index: 2;
+        bottom: 117px;
+        right: 90px;
+    }
+    
+    .lk_packing {
+        position: absolute;
+        z-index: 2;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .ar_di:hover {
+        transform: scale(1.1);
+        transition: 200ms;
+        font-weight: 500;
+    }
+}
+
+.datasheet {
+    width: 100%;
+    height: 100%;
+    // min-height: 200px;
+    padding: 0px 10px 10px 10px;
+    table {
+        color: #fff;
+        width: 100%;
+        height: calc(100% - 60px);
+        border-spacing: 0 0px;
+        position: relative;
+        tbody {
+            height: 100%;
+            width: 100%;
+            display: block;
+            overflow: auto;
+
+            div {
+                width: 100%;
+                display: table;
+
+                tr {
+                    width: 100%;
+                }
+
+                .id {
+                    width: 15%;
+                    text-align: center;
+                }
+
+                .data_time {
+                    width: 25%;
+                    text-align: left;
+                }
+
+                .data_quantity {
+                    width: 20%;
+                    text-align: left;
+                }
+
+                .data_performance {
+                    width: 20%;
+                    text-align: left;
+                }
+                .data_code {
+                    width: 20%;
+                    text-align: center;
+                }
+
+                th {
+                    background: #1C224F;
+                }
+
+                .tr1 {
+                    background: none;
+                }
+
+                .tr2 {
+                    background: #3F477E;
+                }
+
+            }
+        }
+
+        thead {
+            width: 100%;
+            display: block;
+            position: relative;
+
+            div {
+                width: 100%;
+                display: table;
+
+                tr {
+                    width: 100%;
+                    height: 20px;
+                    position: relative;
+                    background: #1C224F;
+                    .id {
+                        width: 13%;
+                        text-align: center;
+                    }
+            
+                    .data_time {
+                        width: 25%;
+                        text-align: left;
+                    }
+            
+                    .data_quantity {
+                        width: 20%;
+                        text-align: left;
+                    }
+            
+                    .data_performance {
+                        width: 20%;
+                        text-align: left;
+                    }
+                    .data_code {
+                        width: 20%;
+                        text-align: center;
+                    }
+                }
+            }            
+        }
+    }    
+}
+
+.culter {
+    width: 100%;
+    height: 100%;
+    .chart {
+        margin: 0 auto;
+        width: 100%;
+        height: calc(100% - 50px);
+        display: flex;
+        justify-content: space-evenly;
+
+        .wrap_chart {
+            width: 30%;
+            min-width: 100px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            .percent {
+                width: 100%;
+                height: 80%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+
+                p {
+                    position: absolute;
+                    color: #86d5fa;
+                    
+                    // left: 50%;
+                }
+            
+                canvas {
+                    height: 100% !important;
+                    width: 100% !important;
+                    object-fit: contain;
+                }
+            }
+
+            div {
+                padding: 0;
+            }
+        }
+    }
+}
+
+.performance {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .chart {
+        width: 75%; 
+        height: calc(100% - 80px);
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        canvas {
+            // width: 60% !important;
+        }
+    }
+
+    .type {
+        position: relative;
+        top: -20px;
+        margin-bottom: 10px;
+        span {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            div {
+                width: 10px;
+                height: 10px;
+                border-radius: 10px;
+                margin: 0 15px;
+            }
+        }
+    }
+}
+
+.storage {
+    .chart {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.schedule {
+    .chart {
+        width: 100%;
+        height: calc(100% - 50px);
+
+        canvas {
+            width: 100% !important;
+        }
+    }
+}
+
+.energy {
+    .chart {
+        width: 100%;
+        height: calc(100% - 30px);
+        display: flex;
+        justify-content: space-between;
+
+    canvas {
+            height: 90% !important;
+            object-fit: contain;
+            color: rgba(255, 255, 255, 0);
+        }
+    }
+}
+
+.environment {
+    .chart {
+        width: 100%;
+        height: calc(100% - 40px);
+        min-height: 150px;
+        display: flex;
+        justify-content: space-around;
+
+        .bar {
+            box-sizing: content-box;
+            height: 85%; /* Can be anything */
+            min-height: 100px;
+            width: 5%;
+            border: none;
+            max-width: 15px;
+            background: #777DB6;
+            display: flex;
+            align-items: flex-end;
+
+            p{
+                position: relative;
+                left: -11px;
+                width: 0px;
+                margin: 0;
+                padding: 0;
+                font-size: 0.9rem;
+                color: white;
+                -webkit-transform: rotate(-90deg); /* Safari and Chrome */
+                -moz-transform: rotate(-90deg);   /* Firefox */
+                -ms-transform: rotate(-90deg);   /* IE 9 */
+                -o-transform: rotate(-90deg);   /* Opera */
+                transform: rotate(-90deg);  
+            }
+            span {
+                display: block;
+                width: 100%;
+                background-color: #59CBFF;
+                overflow: hidden;
+            }
+
+        }
+    }
+}
+
+
+@media only screen and (max-width: 812px) {
+    .dashboard {
+        width: 100%;
+        padding: 10px;
+
+        h2 {
+            position: relative;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        h3 {
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .tb_lf {
+            display: inline;
+            width: 100%;
+            margin: 0;
+
+            .it {
+                max-height: 300px;
+                margin-top: 10px !important;
+                .chart {
+                    width: 70%;
+                    max-width: 500px;
+                    // max-height: 300px;
+                    margin: 0 auto;
+                }
+            }
+
+            .tb_rt {
+                margin: 0;
+                display: inline;
+            }
+
+            .main_db {
+                display: none;
+            }
+
+            .datasheet {
+                table {
+                    tbody {
+                        overflow: initial;
+                    }
+                }
+            }
+        }
+    }
+    
+}

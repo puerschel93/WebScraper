@@ -1,0 +1,111 @@
+.popup {
+  padding: 32px 40px;
+  padding-bottom: 40px;
+  background-color: $primary;
+  width: 490px;
+  color: $basic-white;
+  position: relative;
+}
+
+.popup-wrapper {
+  position: fixed;
+  top: 136px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: none;
+}
+
+.js-popup--open.popup-wrapper {
+  display: block;
+}
+
+.popup__cross {
+  width: 17px;
+  height: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+
+  &:hover .svg-cross {
+    stroke: $basic-white;
+  }
+}
+
+.popup__title {
+  font-family: "Roboto Condensed", monospace;
+  font-weight: 400;
+  font-size: 28px;
+  margin: 0;
+  line-height: 140.62%;
+  margin-bottom: 10px;
+}
+
+.popup__text {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0;
+  padding-right: 8px;
+  margin-bottom: 33px;
+}
+
+.popup__form {
+  width: 411px;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+}
+
+.popup__input {
+  color: $basic-white;
+  padding: 15px;
+  padding-left: 24px;
+  padding-bottom: 17px;
+  border: none;
+  background-color: rgba($basic-white, 0.1);
+
+  &::placeholder {
+    color: $basic-white;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.popup__button {
+  font-family: "Roboto Condensed", monospace;
+  border: 1px solid $basic-white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: $basic-white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba($basic-white, 0.3);
+  }
+}
+
+.popup .check-label {
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-left: 50px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.popup .check-label__checkmark {
+  top: 5px;
+  left: 0;
+}

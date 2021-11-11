@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Yomogi&display=swap');
+
+
+    $bg:#ffffff;
+    $celeste:#99FEFF;
+    $rosa:#DC7EFF;
+    $texto:#a6a9f8;
+    $amarillo:#FDF276;
+    $negro:#20201f;
+    $reannie-font:'Reenie Beanie', cursive ;
+    $yomogi-font:'Yomogi', monospace;
+
+    .galery__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: $bg ;
+    box-sizing: border-box;
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+::-webkit-scrollbar{
+    opacity: 0;
+}
+.page{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    .home{
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 55% 45%;
+        grid-template-rows: 20% 50% 30%;
+        grid-template-areas: 
+        "nav      aside"
+        "section  aside"
+        "footer   aside";
+        .navbar{
+            position: sticky;
+            width: 100%;
+            grid-area: nav;
+            display: flex;
+            z-index: 4;
+            .navbar__content{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                padding: 0  0 0 80px;
+                animation: navbar 3s ease-in-out;
+                .logo-nav{
+                    width: 200px;
+                }
+                ul{
+                    display: flex;
+                    justify-content: space-evenly;
+                    list-style: none;
+                    padding: 0;
+                    width: 600px;
+                    li{
+                        cursor: pointer;
+                        a{
+                            text-decoration: none;
+                            color: $negro;
+                            transition: .5s ease-in-out;
+                            span{
+                                width: 20px;
+                                height: 20px;
+                                display: inline-block;
+                                background-image: url('/src/img/instagram.svg');
+                                background-position: center;
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+            @keyframes navbar{
+                from{
+                    transform: translateY(-200px);
+                }
+                to{
+                    transform: translateY(0px);
+                }
+            }
+        }
+        .main__content{
+            height: 400px;
+            max-height: 250px;
+            grid-area: section;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: left;
+            letter-spacing: 2px;
+            padding: 0 0 0 80px;
+            animation:main 4s ease-in-out;
+            h3{
+                font-size: 16px;
+                margin: 0;
+                color: $negro;
+                font-family: $yomogi-font;
+            }
+            p{
+                font-size: 16px;
+                margin: 0;
+                width: 80%;
+                font-family: $yomogi-font;
+            }
+        }
+        @keyframes main{
+            from{
+                transform: translateX(-1000px);
+            }
+            to{
+                transform: translateX(0px);
+            }
+        }
+        .side__content{
+            grid-area: aside;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            align-items: center;
+            img{
+                width: 100%;
+                grid-column: 2/6;
+                grid-row: 2/1;
+                animation: 7.2s side-content-img .5s ease-in-out forwards;
+            }
+            @keyframes side-content-img{
+                0%{
+                    transform: translateX(800px);
+                }
+                100%{
+                    transform: translateX(0px);
+                }
+            }
+        }
+        .star-container{
+            width: 170px;
+            height: 170px;
+            position: absolute;
+            top: calc(100vh - 35vh);
+            right: 0;
+            left: 85%;
+            bottom: 0;
+            animation: star 8s ease-in forwards;
+            .star{
+                display: inline-block;
+                width: 170px;
+                height: 170px;
+                background-image: url('/src/img/Star.png');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                animation: starEntrance 20s linear infinite;
+            }
+            @keyframes starEntrance{
+                0%{
+                    transform: rotate(-360deg);
+                }
+            }
+        }
+        @keyframes star{
+        0%{
+            transform: translateX(20rem);
+        }
+        }
+        .footer{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            border-radius: 0 50px 0 0;
+            animation: footer 7s ease-in-out;
+            div{
+                background: transparent;
+                width: 130px;
+                height:50%;
+                border-radius: 20px 20px 0 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img{
+                    width: 160px;
+                    bottom: 30px;
+                    position: absolute;
+                    transform: translateY(0px) scale(1);
+                    transition: transform 0.5s ease-in-out;
+                }
+            }
+            div:hover img{
+                cursor: pointer;
+                transform: translateY(-20px) scale(1.1);
+                transition: transform 0.3s ease-in-out;
+            }
+        }
+        @keyframes footer{
+            0%{
+                transform: translateY(1000px);
+            }
+            100%{
+                transform: translateY(0px);
+            }
+        }
+    }
+    
+}
+
+
+.galeria{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    .navbar{
+        width: 100%;
+        margin-top: 2rem;
+        grid-area: nav;
+        display: flex;
+        .navbar__content{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0  0 0 80px;
+            animation: navbar 3s ease-in-out;
+            .logo-nav{
+                width: 200px;
+            }
+            ul{
+                display: flex;
+                justify-content: space-evenly;
+                list-style: none;
+                padding: 0;
+                width: 600px;
+                li{
+                    cursor: pointer;
+                    a{
+                        text-decoration: none;
+                        color: $negro;
+                        transition: .5s ease-in-out;
+                        span{
+                            width: 20px;
+                            height: 20px;
+                            display: inline-block;
+                            background-image: url('/src/img/instagram.svg');
+                            background-position: center;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+        @keyframes navbar{
+            from{
+                transform: translateY(-200px);
+            }
+            to{
+                transform: translateY(0px);
+            }
+        }
+    }
+    .photo-container{
+        width: 100%;
+        padding: 20px;
+        .foto1{
+            padding: 2.5px;
+            img{
+                width: 200px;
+                height: 300px
+            }
+        }
+    }
+    
+}
+
+
+/*  inicio modal */
+.modal{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position:absolute;
+    z-index: 4;
+    display: grid;
+    place-items: center;
+}
+.visible{
+    display: grid !important;
+}
+.hidden{
+    display: none !important;
+}
+.modal__content{
+    position:relative;
+    background:  var(--amarillo);
+    width: 40%;
+    height: 60%;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+}
+.modal__content--close{
+    place-self: end;
+    align-self: start;
+    margin: 20px 20px;
+    cursor: pointer;
+}
+.modal__content--slider{
+    width: 300px;
+    height: 200px;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 15%;
+}
+.cards{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card{
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 50%;
+    transition: transform .5s ease-in-out;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+.card img{
+    width: 300px;
+    position: absolute;
+}
+#radio1:checked ~ .cards #card1,
+#radio2:checked ~ .cards #card2,
+#radio3:checked ~ .cards #card3{
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+#radio1:checked ~ .cards #card2,
+#radio2:checked ~ .cards #card3,
+#radio3:checked ~ .cards #card1{
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+}
+#radio1:checked ~ .cards #card3,
+#radio2:checked ~ .cards #card1,
+#radio3:checked ~ .cards #card2{
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+}
+#radio1,
+#radio2,
+#radio3 {
+    opacity: 0;
+}
+button{
+    height: 40px;
+    width: 50%;
+    border: none;
+    border-radius: 10px;
+    background: var(--celeste);
+    color: var(--negro);
+    margin-top: 30%;
+    cursor: pointer;
+}
+
+/*  fin modal */

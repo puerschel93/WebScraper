@@ -1,0 +1,349 @@
+.langCheck {
+  // right: 10px;
+  min-width: 62px;
+  top: 0px;
+  // width: 56px;
+
+  @include mq(sm) {
+    min-width: 100px;
+    // top: 0;
+  }
+
+  @include mq(md) {
+    display: block;
+    position: relative;
+    z-index: 10;
+    right: 10px;
+    // width: 87px;
+    // min-width: 100px;
+    // top: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 111;
+
+    &::after {
+      content: '';
+      display: flex;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 20px;
+      background-color: transparent;
+      z-index: 1;
+
+      @include mq(xs) {
+        width: 27px;
+      }
+
+      @include mq(sm) {
+        width: 27px;
+      }
+    }
+
+    &:hover {
+      padding-bottom: 5px;
+      animation-name: bgShow;
+      animation-duration: .5s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+
+      @keyframes bgShow {
+        0% {
+          background-color: transparent;
+        }
+
+        100% {
+          background-color: rgb(180, 180, 180);
+
+        }
+      }
+
+      &::after {
+        animation-name: bgShow2;
+        animation-duration: .5s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+
+        @keyframes bgShow2 {
+          0% {
+            background-color: transparent;
+          }
+
+          100% {
+            background-color: rgb(200, 200, 200);
+          }
+        }
+      }
+
+      .langCheck__item {
+
+        &.selected {
+          order: 3;
+          opacity: 1;
+        }
+
+        &:not(.selected) {
+          position: relative;
+          order: 1;
+          animation-name: showItem;
+          animation-duration: .7s;
+          animation-timing-function: linear;
+          animation-fill-mode: forwards;
+          z-index: 1;
+          // margin: 3px 0;
+          padding: 3px 0;
+
+          @include mq(sm) {
+            animation-name: showItemDesc;
+            animation-duration: .7s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+          }
+
+          &:hover {
+            transform: scale(1.05);
+            background-color: rgb(200, 200, 200);
+
+            .langContext {
+              color: black;
+            }
+          }
+        }
+
+        @keyframes showItem {
+          0% {
+            opacity: 0;
+          }
+
+          25% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 1;
+            font-weight: 700;
+            text-shadow: 1px 1px 1px #000;
+          }
+        }
+
+        @keyframes showItemDesc {
+          0% {
+            opacity: 0;
+          }
+
+          25% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: .5;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    opacity: 0.5;
+    transition: all .4s;
+    cursor: pointer;
+    order: 3;
+
+    &:hover {
+      opacity: 1 !important;
+
+    }
+
+    .icon {
+      // display: none;
+      // width: 17px;
+      // height: 16px;
+
+      // width: 22px;
+      // height: 21px;
+
+      // width: 29px;
+      width: 12px;
+      height: 12px;
+      margin: 3px 6px 3px 4px;
+      // background-size: 75px;
+      background-size: 73px;
+
+      @include mq(xs) {
+        width: 19px;
+        height: 18px;
+        margin: 3px 6px 3px 6px;
+
+      }
+
+      @include mq(sm) {
+        display: flex;
+      }
+    }
+
+    .langContext {
+      color: white;
+      font-style: normal;
+      font-family: 'Arial', serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      // margin: 5px 7px;
+      // margin: 5px 7px;
+      transition: color 0.3s linear;
+      // text-shadow: 1px 1px 1px #000;
+
+      @include mq(sm) {
+        margin: 5px 0;
+      }
+
+      font {
+        font-style: normal;
+        font-family: 'Arial', serif;
+      }
+    }
+
+    input {
+      display: flex;
+      position: absolute;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+
+    &.selected {
+      height: 24px;
+      background-color: #373737;
+      border-radius: 0 0 10px 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      opacity: 1;
+      order: 1;
+
+      @include mq(xs) {
+        height: 27px;
+      }
+
+      .icon {
+        // display: none;
+        width: 12px;
+        height: 12px;
+        background-size: 72px;
+        // background-size: 60px;
+
+        @include mq(xs) {
+          margin-left: 11px;
+          width: 18px;
+          height: 18px;
+        }
+
+        @include mq(sm) {
+          margin-left: 11px;
+        }
+      }
+
+      .langContext {
+        font-size: 11px;
+        margin: 0;
+
+        @include mq(sm) {
+          font-size: 12px;
+          margin: 5px 0;
+        }
+      }
+
+      .arrow {
+        width: 20px;
+        height: 100%;
+        height: 27px;
+        background-color: $accent;
+        margin-left: 6px;
+        position: relative;
+
+        @include mq(xs) {
+          width: 27px;
+          // margin-left: 10px;
+          // margin-left: auto;
+        }
+
+        @include mq(sm) {
+          // width: 27px;
+          // margin-left: 10px;
+          margin-left: auto;
+        }
+
+        &::before,
+        &::after {
+          content: '';
+          display: flex;
+          background-color: #373737;
+          height: 2px;
+          width: 5px;
+          border-radius: 50px;
+          position: absolute;
+          top: 50%;
+
+          @include mq(xs) {
+            width: 7px;
+          }
+
+          @include mq(sm) {
+            width: 9px;
+          }
+        }
+
+        &::before {
+          left: 28%;
+          transform: rotate(45deg);
+
+          @include mq(sm) {
+            left: 24%;
+          }
+        }
+
+        &::after {
+          right: 28%;
+          transform: rotate(135deg);
+
+          @include mq(sm) {
+            right: 24%;
+          }
+        }
+      }
+    }
+
+    &.active {
+      display: none;
+    }
+
+    &:not(.selected) {
+      position: absolute;
+      top: 0;
+      order: 0;
+      opacity: 0;
+    }
+
+    &>a.langContext {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      color: $white;
+
+      .icon {
+        order: -1;
+      }
+    }
+  }
+}

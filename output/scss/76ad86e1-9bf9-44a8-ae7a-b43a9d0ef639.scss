@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Oswald:wght@200;300;500;700&display=swap');
+
+@mixin rectangle($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin base-font-decor($family, $style, $weight, $size) {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+}
+
+@mixin text-space($line-height, $ltt-space) {
+  line-height: $line-height;
+  letter-spacing: $ltt-space;
+}
+
+$dr-white: #FFFFFF;
+$alm-white: #FBFBFB;
+$alm-black: #252525;
+
+html,
+body {
+  height: 100%;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-inner .item,
+.carousel-inner img {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.carousel-indicators [data-bs-target] {
+    height: 0;
+    color: $alm-white;
+    @include base-font-decor(Oswald, normal, 700, 18px);
+    text-indent: -100%;
+    margin-bottom: 25px;
+
+    .active {
+      @include base-font-decor(Oswald, normal, 700, 36px);
+      color: $dr-white;
+      text-indent: -100%;
+    }
+}
+
+.auto-contain {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.nav_options {
+  position: absolute;
+  z-index: 25;
+  background: none;
+  color: $dr-white;
+  top: 30px;
+  height:  30px;
+  right:  150px;
+
+  @include base-font-decor(Oswald, normal, normal, 14px);
+  @include text-space(21px, 1.94px);
+}
+
+#rectangle_1 {
+  position: absolute;
+  @include rectangle(54.91px, 2px);
+  padding-top: 1px;
+  display: flex;
+  align-items: flex-end;
+  background: #4CAF50;
+}
+
+#rectangle_4 {
+  position: absolute;
+  @include rectangle(19.44px, 2px);
+  padding-top: 1px;
+  justify-content: end;
+  background: #4CAF50;
+}
+
+.main_label {
+  position: absolute;
+  z-index: 20;
+  color: white;
+  text-align: center;
+}
+
+.main_label_up_text {
+  margin-top: 330px;
+  @include base-font-decor(Oswald, normal, 500, 72px);
+  @include text-space(107px, 4.608px);
+  color: $dr-white;
+  text-shadow: 10px 10px 10px #252525;
+}
+
+.main_label_down_text {
+  position: absolute;
+  height: 27px;
+  left: 316.04px;
+  top: 450px;
+
+  @include base-font-decor("Open Sans", normal, 700, 20px);
+  @include text-space(27px, 1.28px);
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+
+  color: $dr-white;
+  text-shadow: 10px 10px 10px #252525;
+  mix-blend-mode: normal;
+}
+
+.rectangle_gray {
+@include rectangle(309px, 391px);
+background: #F4F4F4;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#rectangle_gray_left {
+  position: absolute;
+  z-index: 3;
+  top: 150px;
+  left: 100px;
+}
+
+.rectangle_green {
+  @include rectangle(309px, 418px);
+
+  background: #4CAF50;
+  mix-blend-mode: normal;
+  opacity: 0.8;
+  position: absolute;
+  z-index: 2;
+  top:  210px;
+  left: 320px;
+}
+
+#rectangle_gray_right {
+  position: absolute;
+  z-index: 1;
+  top: 300px;
+  left: 560px;
+}
+
+.we_are {
+  position: absolute;
+  height: 53px;
+
+  @include base-font-decor(Oswald, normal, bold, 36px);
+  @include text-space(53px, 2.304px);
+  display: flex;
+  align-items: flex-end;
+
+  top: 260px;
+  left: 70px;
+
+  color: #333333;
+}
+
+.the_sqwd {
+  position: absolute;
+  z-index: 4;
+  height: 57px;
+  top: 310px;
+  left: 70px;
+
+  @include base-font-decor("Open Sans", normal, 300, 42px);
+  @include text-space(57px, 2.688px);
+  display: flex;
+  align-items: flex-end;
+
+  color: #504E4E;
+}
+
+.text_second {
+
+  @include base-font-decor("Open Sans", normal, 300, 15px);
+  @include text-space(25px, 1.26px);
+  width: 300px;
+  color: #5B5858;
+}
+
+.rectangle_black {
+  @include rectangle(20px, 2px);
+  background: #353535;
+}
+
+#text_second_left {
+  position: absolute;
+  top: 405px;
+  left: 95px;
+  z-index: 4;
+}
+
+#rectangle_black_left {
+  position: absolute;
+  top: 420px;
+  left: 70px;
+  z-index: 4;
+}
+
+#text_second_right {
+  position: absolute;
+  bottom: 165px;
+  right: 20px;
+  z-index: 4;
+}
+
+#rectangle_black_right {
+  position: absolute;
+  bottom: 240px;
+  right: 330px;
+  z-index: 4;
+}
+
+.services {
+
+  height: 71px;
+  margin-top: 5%;
+  margin-left: 5%;
+  @include base-font-decor(Oswald, normal, bold, 48px);
+  @include text-space(71px, 3.072px);
+  display: flex;
+  align-items: flex-end;
+
+  color: $alm-black;
+}
+
+.big_black_rectangle {
+  @include rectangle(45px, 2px);
+  margin-left: 6%;
+  background: $alm-black;
+}
+
+.service_card {
+  @include rectangle(373px, 260px);
+  padding:  20px 16px;
+  background:  $dr-white;
+  margin: 200px 11px;
+}
+
+.service_name {
+  position: absolute;
+  @include rectangle(85px, 30px);
+  @include base-font-decor(Oswald, normal, 300, 20px);
+  @include text-space(30px, 1.28px);
+  display: flex;
+  align-items: flex-end;
+  text-transform: uppercase;
+  color: $alm-black;
+}
+
+.service_rectangle {
+  @include rectangle(35px, 2px);
+  background: $alm-black;
+}
+
+.service_icon {
+  @include rectangle(50px, 50px);
+  background: $dr-white;
+  box-shadow: 0px 0px 20px #DBDBDB;
+  display:flex;
+  justify-content: center; /*центрируем элемент по горизонтали */
+  align-items: center; /*по вертикали*/
+}
+
+.read_more {
+  height: 15px;
+  @include base-font-decor(Oswald, normal, 300, 10px);
+  @include text-space(15px, 0.64px);
+  margin-top: 5%;
+  text-transform: uppercase;
+
+  color: $alm-black;
+
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
+#nav_all {
+  @include base-font-decor("Open Sans", normal, 600, 13px);
+  @include text-space(18px, 0.832px);
+  color: $alm-black;
+}
+
+#nav_rest {
+  @extend #nav_all;
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
+.work_desc {
+  @include base-font-decor(Oswald, normal, 300, 48px);
+  @include text-space(71px, 3.072px);
+  display: flex;
+  align-items: flex-end;
+  color: $alm-black;
+}
+
+.work_header {
+  @include base-font-decor("Open Sans", normal, 300, 18px);
+  @include text-space(25px, 1.152px);
+  color: $alm-black;
+}
+
+
+.work_text {
+  @include base-font-decor("Open Sans", normal, 300, 13px);
+  @include text-space(23px, 0.832px);
+  color: #C2C2C2;
+}
+
+.view_more {
+  @include base-font-decor(Oswald, normal, normal, 13px);
+  @include text-space(19px, 2px);
+  text-align: right;
+  color: $alm-black;
+}
+
+.photo_card {
+  @include rectangle(370px, 398px);
+  position: relative;
+}
+
+.photo_rectangle {
+  @include rectangle(370px, 55px);
+  opacity: 0.7;
+  background: $dr-white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.photo_rectangle_center {
+  @include rectangle(370px, 156px);
+  opacity: 0.9;
+  background: $dr-white;
+  position: absolute;
+  text-align: center;
+  padding: 19.34px 0px;
+  bottom: 0;
+  left: 0;
+}
+
+.photo_name {
+  display:flex;
+  justify-content: center; /*центрируем элемент по горизонтали */
+  align-items: center; /*по вертикали*/
+
+  @include base-font-decor(Oswald, normal, 300, 18px);
+  @include text-space(27px, 1.152px);
+  color: $alm-black;
+}
+
+.photo_additional_text {
+  @include base-font-decor("Open Sans", normal, normal, 12px);
+  @include text-space(25px, 1.008px);
+  color: #777777;
+}
+
+.review {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.review_text {
+  @include base-font-decor("Open Sans", normal, 300, 14px);
+  @include text-space(31px, 0.896px);
+  color: #373737;
+}
+
+#star {
+  @include rectangle(15px, 15px);
+}
+
+.review_author {
+  @include base-font-decor(Oswald, normal, normal, 18px);
+  @include text-space(27px, 1.152px);
+  color: #373737;
+  padding: 2% 0%;
+}
+
+.contact {
+  padding: 100px 0px;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  h3 {
+    @include base-font-decor(Oswald, normal, normal, 24px);
+    @include text-space(36px, 2.66667px);
+  }
+
+  p {
+    @include base-font-decor("Open Sans", normal, 300, 14px);
+    @include text-space(19px, 1.55556px);
+    mix-blend-mode: normal;
+    opacity: 0.8;
+  }
+}
+
+
+.footer {
+  margin-top: 1%;
+  color: #F2F2F2;
+  text-align: center;
+  @include base-font-decor(Oswald, normal, 300, 13px);
+  @include text-space(19px, 0.832px);
+
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}

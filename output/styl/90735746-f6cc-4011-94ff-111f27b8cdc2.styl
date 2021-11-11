@@ -1,0 +1,293 @@
+.block-services
+    &-wrapper
+        margin-top 10px
+        &.show-hidden
+            .block-services
+                &__item
+                    &.is-hidden
+                        display: block 
+            .more-toggle
+                &__hide-label
+                    display: inline-block
+                &__show-label
+                    display: none
+    &__item
+        clearfix()
+        &.first-child
+            .block-services
+                &__title-in
+                    border: none
+        &.active
+            .block-services
+                &__icon
+                    transform: rotate(180deg) 
+                    // &:before
+                    //     transform: rotate(90deg)
+                &__drop-icon
+                    sprite($minus)
+        &.is-hidden
+            display: none
+        &:hover .btn-hide
+            display inline-block
+            margin 0px 0 0px 20px
+            padding 2px 22px 4px
+            font-weight: 400 
+            @media screen560
+                margin 0px 0 0px 10px
+        &:first-child
+            .block-services__title 
+                border-top: 1px solid #bbd1d5 
+        &.item-null
+            border-bottom: 1px solid #e6edef
+            &:last-child
+                border-bottom: none
+            .block-services__title 
+                background-color #FFF
+                // border-top-color #e6edef
+                // border-top 1px solid #dde8ea
+                // border-bottom 1px solid #bbd1d5
+                &:hover
+                    background-color #f3f8fb 
+                .block-services__title-in
+                    clearfix()
+                    .block-services__price-discount
+                        @media screen560
+                            // width 100%
+                            // display inline-block
+                            text-align left
+                            // margin -10px 0 10px 0
+                            padding-left 10px
+                            
+    &__title
+        clearfix()
+        // padding: 0 21px 
+        padding 0 19px 0 25px 
+        cursor: pointer
+        user-select: none
+        // background-color: #e5f2f5
+        background-color: #cee7ec
+        // border-top: 1px solid #FFF
+        border-bottom: 1px solid #bbd1d5
+        &.title__mod
+            border-top none
+        &-in
+            font-size: 0
+        strong
+            color: #5e6e71
+            font-size: 15px
+            line-height: 1.2
+            padding: 15px 0 15px 30px
+            display: inline-block
+            overflow: hidden 
+            position: relative
+            @media screen560
+                width 60%
+            span
+                color: #90b1b8
+                font-weight normal 
+    &__icon
+        position: absolute
+        top: 50%
+        margin-top -2px
+        left: 4px
+        border-style: solid 
+        border-color:  #5e6e71 transparent transparent
+        border-width: 5px 4px 0 
+        // position: absolute  
+        // top: 50%
+        // margin-top -7px
+        // left: 0px
+        // width: 14px
+        // height: 14px
+        // border-radius: 2px
+        // background #85AAB1 
+        // &:after, &:before
+        //     content: ''
+        //     display inline-block
+        //     position absolute
+        //     left 50%
+        //     top 50%
+        //     background-color: #cee7ec
+        // &:after
+        //     width 8px
+        //     height 2px
+        //     margin-top: -1px 
+        //     margin-left -4px  
+        // &:before
+        //     width 2px
+        //     height 8px
+        //     margin-top: -4px
+        //     margin-left -1px 
+    
+    &__drop-icon
+        position: absolute
+        top: 50%
+        margin-top -8px
+        left: 4px
+        width: 14px
+        height: 14px
+        sprite($plus) 
+        
+                         
+    &__price-discount
+        float: right
+        font-size: 15px
+        color: #5e6e71
+        text-align: right
+        margin-left: 10px
+        line-height: 2
+        padding-top 8px 
+        span
+            color: #a9bbc2
+            text-decoration: line-through
+            padding: 0 5px
+        a.btn-hide
+            display none
+            @media screen560
+                position absolute
+                top 8px
+                right 0
+        @media only screen and (max-width:640px)
+            margin-left 0
+        @media screen560
+            position relative
+    &__drop
+        position: relative
+        // padding-top: 1px
+        display: none
+        .promotional-offers .offers__item .offers-wrap
+            padding-left: 55px
+    &__left
+        display inline-block
+        vertical-align middle
+        font-size: 15px
+        line-height: 16px
+        color: #5e6e71
+        width: 63%
+        padding: 17px 0
+        @media phone
+            float left
+            width 50% 
+        @media screen560
+            padding 10px 0
+            
+        span
+            color: #90b1b8
+    &__right
+        display inline-block
+        vertical-align middle
+        width: 36%
+        text-align: right
+        font-size: 0
+        @media phone
+            float right
+            width 50%
+            padding: 5px 0 
+        span
+            color: #5e6e71
+            font-size: 16px
+            display: inline-block
+            vertical-align: top
+            line-height: 1
+            padding: 15px 0
+        .old_price
+            color: #a9bbc2
+            text-decoration: line-through
+            padding-right 5px
+            
+    .btn
+        font-size: 16px
+        font-weight: 700
+        padding: 2px 22px 4px
+        display: inline-block
+        vertical-align: top
+    &__row
+        padding 0 20px 0 55px
+        margin-bottom: -1px
+        position: relative
+        border-bottom: 1px solid #e6edef
+        // height 50px
+        @media phone
+            height auto 
+        
+        &:last-child
+            border-bottom transparent
+        &:hover
+            background-color: #f3f8fb
+            z-index: 2
+            .block-services
+                &__row-in
+                    border-color: transparent 
+                    &:before
+                        background-color: green_base
+                    .btn
+                        display: inline-block
+                        @media screen560
+                            margin: 9px 0 4px 15px
+                    .old_price
+                        display none
+        &-in
+            position: relative
+            clearfix()
+            .btn
+                display: none
+                margin: 9px 0 4px 21px
+                &:focus
+                    outline none
+                    border none 
+            .small-card__action
+                padding 0 
+                span
+                    &:after
+                        right -9px
+                        
+    &__bottom
+        padding: 0 21px 0 39px
+        clearfix()
+        .small-card__action
+            float: left
+            padding: 12px 0 
+        .block-services
+            &__price-discount
+                padding: 14px 0 
+.card
+    &.card-services
+        // margin-bottom: 46px        
+        &:hover
+            // box-shadow: 0 10px 15px #e3e4ed
+            border-color: green_base
+            .more-toggle__link
+                // box-shadow: 0 10px 15px #e3e4ed
+                border-color: green_base
+        .more-toggle
+            display: block
+        .card__footer
+            margin-top 0
+.row-item__mod
+    .block-services__left
+        @media screen560
+            width 100%
+    .block-services__right
+        @media screen560
+            float left
+            width 100% 
+            text-align left
+            a
+                float right
+.price-discount__mod
+    @media screen560
+        float none
+        text-align left
+        margin-left 0
+.small-card__action-mod
+    span.orange
+        background-color #ffc02a !important
+        &:after
+            border-color: none
+            border none
+            border-left none
+            sprite($head-tringle)
+            display inline-block
+            right -9px
+            width 19px
+            height 22px  

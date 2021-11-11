@@ -1,0 +1,638 @@
+@import 'normalize.css'
+@import 'jeet'
+@import 'variables.styl'
+@import 'typography.styl'
+
+body
+	body_copy_typography()
+	background-color: dark_grey
+
+a
+	color: link_green
+
+section
+	overflow: hidden
+
+.section_title
+	text-align: center
+	title_3()
+	margin-bottom: half
+	
+.section_title::after
+	content: ""
+	width: 50px
+	border-bottom: 1px solid grey
+	display: block
+	margin: 20px auto 0
+
+green_block()
+	padding-top: half - 5px
+	border-top: 1px solid green
+
+grey_block()
+	padding-top: half - 5px
+	border-top: 1px solid grey
+
+.mega_wrapper
+	margin: 50px
+	padding-bottom: 50px
+	background-color: cream
+	position: relative
+	
+.center_wrapper
+	center(1014px, pad=3%)
+	overflow: auto
+
+.nav_clear
+	height: normal
+	position: absolute
+	margin: 0 auto
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+	left: 0
+	right: 0
+	z-index: 2
+	transition: height .2s ease,
+    					background .4s ease
+
+.nav_reg
+	height: half
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	background-color: white
+	z-index: 2
+	transition: height .2s ease,
+    					background .4s ease
+
+.nav_end, .nav_mobile
+	height: half
+	position: fixed
+	left: 50px
+	right: 50px
+	top: 0
+	background-color: white
+	z-index: 100
+	transition: height .2s ease,
+    					background .4s ease
+    					
+.nav_mobile
+	display: none
+	left: 0px
+	right: 0px
+
+.logo_clear
+	fill: white
+	height: 52px
+	width: 200px /*for iOS7*/
+	align(vertical)
+	left: 26px
+	transition: all .2s ease
+
+.logo_reg
+	fill: grey
+	height: 35px
+	width: 130px /*for iOS7*/
+	align(vertical)
+	left: 26px
+	transition: all .2s ease
+
+.nav_links_clear
+	align(vertical)
+	right: 50px
+	text-transform: uppercase
+	font-family: 'Montserrat', sans-serif
+	font-weight: 400
+	font-size: 12px
+	letter-spacing: .3em
+	a
+		color: rgba(255 255 255 .6)
+		margin-left: 50px
+		transition: all .2s ease
+	a:hover
+		color: white
+
+.nav_links_reg
+	align(vertical)
+	right: 40px
+	text-transform: uppercase
+	font-family: 'Montserrat', sans-serif
+	font-weight: 400
+	font-size: 11px
+	letter-spacing: .2em
+	a
+		color: grey
+		margin-left: 40px
+		transition: all .2s ease
+	a:hover
+		color: green
+
+.mobile_menu_link
+	font-size: 13px
+	#hamburger
+		height: 12px
+		width: 21px /*for iOS7*/
+		position: relative
+		top: 1px
+		fill: grey
+		margin-left: 8px
+
+#mobile_menu_items
+	display: none
+	text-align: center
+	.link
+		title_1()
+		display: block
+		margin-bottom: 45px
+		color: white
+	.link:last-of-type
+		margin-bottom: 0px
+	
+.selected
+	padding-bottom: 4px
+	border-bottom: 1px solid green
+
+.home_hero, .about_hero, .project_hero
+	height: 620px
+	text-align: center
+	position: relative
+	overflow: hidden
+
+.about_hero, .project_hero
+	background-size: cover !important
+	background-position: center !important
+
+.home_hero
+	background-size: 100% !important
+	.vid_bg
+		position: absolute
+		width: 100%
+		top: 0
+		right: 0
+
+.home_hero_button
+	display: inline-block
+	position: relative
+	top: 320px
+	padding: 25px quarter
+	color: white
+	border: 1px solid white
+	text-transform: uppercase
+	//overflow: hidden
+	z-index: 1
+	transition: opacity .2s ease
+	.title
+		title_1()
+		top: 2px
+	.divider1
+		border-right: 1px solid white
+		display: inline
+		margin: 0 33px 0 20px
+		padding: 10px 0
+		position: relative
+		top: -3px
+	.date
+		font-size: 20px
+		letter-spacing: .3em
+		position: relative
+		top: 1px
+	.play_triangle
+		width: 0
+		height: 0
+		border-top: 12px solid transparent
+		border-bottom: 12px solid transparent
+		border-left: 18px solid white
+		display:inline-block
+		position: relative
+		top: 5px
+	.divider2
+		border-right: 1px solid white
+		display: inline
+		margin: 0 35px 0 20px
+		//padding: 42px 0
+		padding: 33px 0
+		position: relative
+		//top: -5px
+		top: -3px
+	a:hover
+		color: white
+
+.home_hero_button:hover
+	opacity: .7
+
+.project_hero_button
+	margin-bottom: 1px
+	background: white
+	padding: 40px 80px
+	position: relative
+	display: inline-block
+	margin-top: quarter //half the width of the nav bar
+	align(both)
+	.play_icon
+		fill: grey
+		width: 75px
+		transition: fill .2s ease
+	.text
+		margin-top: quarter
+		width: 100%
+	.couple
+		font-size: 20px
+		text-transform: uppercase
+		letter-spacing: .2em
+		color: grey
+	.couple::after
+		content: ""
+		width: 50px
+		border-bottom: 1px solid green
+		display: block
+		margin: 15px auto
+	.location
+		font-family: 'Montserrat', sans-serif
+		font-weight: 400
+		font-size: 15px
+		letter-spacing: .3em
+		text-transform: uppercase
+		color: grey
+
+.project_hero_button:hover
+	.play_icon
+		fill: green
+
+.project_hero_button::after
+	border: 1px solid white
+	content: ""
+	position: absolute
+	top: -15px
+	bottom: -15px
+	left: -15px
+	right: -15px
+	transition: all .2s ease
+
+.project_hero_button:hover::after
+	border: 1px solid green
+
+.about_hero
+	overflow: hidden
+	.title
+		display: inline-block
+		top: 380px
+		padding: 25px quarter
+		color: white
+		border-top: 1px solid white
+		border-bottom: 1px solid white
+		title_1()
+	.divider
+		height: 300px
+		width: 1px
+		border-right: 1px solid white
+		margin: 0 auto
+		position: relative;
+		top: 380px;
+		bottom: -152px;
+
+.portfolio
+	center(1014px, pad=3%)
+	margin-top:normal
+	margin-bottom: -half
+
+.project_thumb:nth-child(odd)
+	margin-right: 0
+
+.project_thumb
+	col(1/2)
+	margin-bottom: half
+	display: block
+	position: relative
+	text-align: center
+	img
+		width: 100%
+	.overlay
+		position: absolute
+		top: quarter
+		bottom: quarter
+		left: quarter
+		right: quarter
+		background-color: white
+		opacity: 0
+		transition: opacity .6s ease
+	.text
+		align(both)
+		width: 100%
+		opacity: 0
+		transition: opacity .4s ease
+	.couple
+		font-size: 15px
+		text-transform: uppercase
+		letter-spacing: .2em
+		color: grey
+	.couple::after
+		content: ""
+		width: 0px
+		border-bottom: 1px solid green
+		display: block
+		margin: 10px auto
+		transition: width .8s
+	.location
+		title_4()
+
+.project_thumb:hover
+	.overlay, .text
+		opacity: 1
+	.couple::after
+		width: 50px
+
+.about_info
+	margin-top: half
+	.headline
+		green_block()
+		title_2()
+		col(5/12)
+	.text
+		grey_block()
+		col(7/12)
+		p_line_breaks()
+
+.project_info
+	margin-top: half
+	.description
+		green_block()
+		col(7/12)
+		p_line_breaks()
+	.credits
+		grey_block()
+		col(5/12)
+		p_line_breaks()
+		font-family: 'Montserrat', sans-serif
+		letter-spacing: .03em
+
+.team
+	margin-top: normal
+	.headline
+		green_block()
+		title_3()
+		letter-spacing: .2em
+		col(5/12)
+	.profiles
+		grey_block()
+		col(7/12)
+	.profile
+		col(1/4, cycle: 4)
+		text-align: center
+		img
+			width: 100%
+			margin-bottom: 20px
+		.first_name, .last_name
+			title_5()
+		.last_name
+			margin-bottom: 5px
+	a
+		transition: all .2s ease
+	a:hover
+		color: green
+
+.locations
+	margin-top: normal
+	green_block()
+	.section_title
+		margin-bottom: 20px
+	.description
+		width: 50%
+		margin: 0 auto
+		text-align: center
+	.map_wrapper
+		margin-top: half
+		position: relative
+		max-width: 1014px
+		max-height: 500px
+	.pin
+		border-radius: 100%
+		position: absolute
+		width: .7em
+		height: .7em
+		background: green
+
+.logos
+	margin-top: normal
+	.logo
+		col(1/6)
+	.logo:nth-child(-n+5)
+		col(1/4)
+		//margin-bottom: quarter
+	.logo:nth-child(5)
+		margin-right: 0
+
+.film_stills
+	margin-top: normal
+		
+.footer
+	margin-top: 180px
+	margin-bottom: half
+	border-top: 1px solid grey
+	border-bottom: 1px solid grey
+	.row_1, .row_2
+		position: relative
+		center(1014px, pad=3%)
+		padding-top: quarter
+		padding-bottom: quarter
+	.hor_divider
+		border-top: 1px solid grey		
+
+.newsletter_text
+	col(5/12)
+	.title
+		font-family: 'Montserrat', sans-serif
+		font-weight: 700
+		font-size: 15px
+		letter-spacing: .3em
+		text-transform: uppercase
+		color: grey
+		margin-bottom: 10px
+	.text
+		font-size: 12px
+		letter-spacing: .05em
+		opacity: .55
+
+.newsletter_form
+	col(1/2)
+	shift(1/12)
+	top: 7px
+	.email, .button
+		height: 45px
+		border: 1px solid grey
+	.email
+		span(4/6)
+		padding-left: 15px
+		background: cream
+		letter-spacing: .2em
+		transition: all .2s ease
+	.button
+		span(2/6)
+		background: grey
+		text-align: center
+		text-transform: uppercase
+		color: white
+		font-family: 'Montserrat', sans-serif
+		font-weight: 400
+		font-size: 12px
+		letter-spacing: .3em
+		text-transform: uppercase
+		transition: all .2s ease
+	.email:focus
+		background: white
+	.button:focus
+		opacity: .8
+	.button:hover
+		opacity: .8
+
+.row_2
+	.mini_logo
+		display: inline
+		position: relative
+		width: 26px
+		top: 3px
+		fill: grey
+	.divider_1
+		border-right: 1px solid grey
+		display: inline
+		margin: 0 quarter 0 quarter
+		padding: 10px 0
+		position: relative
+		top: -10px
+	.copyright
+		position: relative
+		text-transform: uppercase
+		font-size: 9px
+		top: -10px
+	#facebook, #pinterest, #twitter
+		width: 20px
+		float: right
+		position: relative
+		margin-left: 15px
+		top: 14px
+		fill: grey
+		transition: fill .2s ease
+	#facebook:hover, #pinterest:hover, #twitter:hover
+		fill: green
+
+#contact_info
+	display: none
+	overflow: auto
+	color: white
+	background: rgba(40, 40, 40, .7)
+	border: 1px solid rgba(255, 255, 255, .3)
+	padding: half
+	margin: 0 auto
+	.text
+		opacity: .6
+	.row>div
+		border-top: 1px solid rgba(255, 255, 255, .3)
+	a
+		color: white	
+		
+#contact_info_mobile
+	margin-top: 180px
+	.row>div
+		border-top: 1px solid grey
+	.email_icon, .phone_icon
+		fill: grey
+	a
+		color: grey
+			
+#contact_info, #contact_info_mobile
+	.intro, .info
+		col(1/2)
+	.title
+		title_1()
+	.text
+		margin-top: quarter
+	.row>div
+		padding-top: 15px
+	.row:nth-child(2)
+		margin-top: quarter
+	.email_icon, .phone_icon
+		col(2/12)
+		img
+			width: 20px
+	.email_address, .phone_number
+		col(10/12)
+		shift(1/12)
+		title_1()
+		font-size: 15px
+		a
+			transition: color .2s ease
+		a:hover
+			color: green
+
+.blog_post
+	margin-top: normal
+	.date
+		col(2/12)
+		green_block()
+		title_6()
+	.content
+		col(10/12)
+		grey_block()
+		.title
+			title_5()
+			font-size: 24px
+			margin-bottom: half - 10
+		.text
+			float: left
+			width: 74.25%
+			p_line_breaks()
+		.fluid-width-video-wrapper
+			margin-bottom: half
+		.fb-like
+			float: right
+		.read_more
+			display: inline-block
+			float: left
+			clear: both
+			font-family: 'Montserrat', sans-serif
+			font-weight: 400
+			font-size: 11px
+			letter-spacing: .2em
+			text-transform: uppercase
+			color: link_green
+			border: 1px solid link_green
+			padding: 3px 7px 3px 9px
+			margin-top: quarter
+			transition: all .3s ease
+		.read_more:hover
+			color: grey
+			border: 1px solid grey
+
+.blog_post:first-of-type
+	margin-top: normal + half
+
+.pagination
+	margin-top: normal
+	padding-top: quarter
+	border-top: 1px solid green
+	font-family: 'Montserrat', sans-serif
+	font-weight: 700
+	font-size: 12px
+	letter-spacing: .2em
+	text-transform: uppercase
+	.newer
+		float: left
+		width: 48%
+	.older
+		float: right
+		width: 48%
+		text-align: right
+	.arrow_newer
+		width: 18px
+		margin-right: 15px
+		transform: rotate(180deg)
+	.arrow_older
+		width:18px
+		margin-left: 15px
+	a
+		color: grey
+		transition: opacity .2s ease
+	a:hover
+		opacity: .6
+
+#disqus_thread
+		margin-top: normal

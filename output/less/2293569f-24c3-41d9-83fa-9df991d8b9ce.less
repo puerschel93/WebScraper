@@ -1,0 +1,184 @@
+// Variables
+
+@touch:						false;
+
+@sprite-version:			false;
+@sprite-width:				800px;
+@sprite-height:				480px;
+
+// Colors
+
+@black:						#000;
+@gray-darker:				#222;
+@gray-dark:					#333;
+@gray:						#666;
+@gray-light:				#999;
+@gray-lighter:				#eee;
+@white:						#fff;
+
+@primary:					#3f51b5;
+@primary-hover:				#5c6bc0;
+@primary-text:				@white;
+@secondary:					#e0e0e0;
+@secondary-hover:			lighten(@secondary, 4%);
+@secondary-text:			@gray-dark;
+
+@main-bg:					#f5f5f5;
+@highlight-bg:				@white;
+@inverse-bg:				@black;
+@active-bg:					@gray-dark;
+
+@border:					#bebebe;
+@input:						@white;
+@focus:						#3f51b5;
+@notify:					#e91e63;
+
+@text:						@gray-dark;
+@text-light:				@gray-light;
+@text-secondary:			@gray;
+@heading-text:				@gray-darker;
+@highlight-text:			@gray-darker;
+@inverse-text:				@white;
+@active-text:				@white;
+
+// Opacities
+
+@opacity:					.75;
+@disabled:					.5;
+@overlay:					fade(@black, 25%);
+@overlay-inverse:			fade(@white, 75%);
+
+// Typography
+
+@font-family:				'Lato', Roboto, Helvetica, Arial, sans-serif;
+@heading-font-family:		'Lato', Roboto, Helvetica, Arial, sans-serif;
+
+@font-size:					16px;
+@line-height:				24px;
+
+@font-weight:				300;
+@heading-font-weight:		300;
+@highlight-font-weight:		400;
+
+// Media queries breakpoints
+
+@screen-size-small:			320px;
+@screen-size-medium:		640px;
+@screen-size-normal:		960px;
+@screen-size-large:			1280px;
+
+@screen-small:				~'(min-width: @{screen-size-small})';
+@screen-medium:				~'(min-width: @{screen-size-medium})';
+@screen-normal:				~'(min-width: @{screen-size-normal})';
+@screen-large:				~'(min-width: @{screen-size-large})';
+
+// Container size
+
+@container-min-width:		@screen-size-small;
+@container-max-width:		@screen-size-large;
+
+// Paddings 
+
+@padding-v-xsmall:			((@block-size-xsmall - @line-height) / 2);
+@padding-v-small:			((@block-size-small - @line-height) / 2);
+@padding-v:					((@block-size - @line-height) / 2);
+@padding-v-large:			((@block-size-large - @line-height) / 2);
+@padding-v-xlarge:			((@block-size-xlarge - @line-height) / 2);
+
+@padding-h-xsmall:			4px;
+@padding-h-small:			8px;
+@padding-h:					16px;
+@padding-h-large:			32px;
+@padding-h-xlarge:			48px;
+
+// Margins
+
+@margin-v-xsmall:			4px;
+@margin-v-small:			8px;
+@margin-v:					16px;
+@margin-v-large:			32px;
+@margin-v-xlarge:			48px;
+
+@margin-h-xsmall:			4px;
+@margin-h-small:			8px;
+@margin-h:					16px;
+@margin-h-large:			32px;
+@margin-h-xlarge:			48px;
+
+// Inset
+
+@inset-xsmall:				4px;
+@inset-small:				8px;
+@inset:						16px;
+@inset-large:				32px;
+@inset-xlarge:				48px;
+
+// Blocks
+
+@block-size-xsmall:			24px;
+@block-size-small:			32px;
+@block-size:				40px;
+@block-size-large:			48px;
+@block-size-xlarge:			56px;
+
+// Z-index
+
+@z-index-aside:				1000;
+@z-index-footer:			2000;
+@z-index-header:			3000;
+@z-index-nav:				4000;
+@z-index-overlay:			5000;
+@z-index-dialog:			6000;
+@z-index-popup:				7000;
+@z-index-shadowbox:			100000;
+
+// Layout
+
+@header-height:				(@block-size-large + @inset-xsmall + @inset-xsmall);
+@header-height-large:		(@header-height + @block-size-large);
+@footer-height:				@block-size;
+@aside-width:				256px;
+@column-width:				256px;
+@box-width:					256px;
+@button-width:				(@block-size * 4);
+@button-width-large:		(@block-size * 6);
+
+@input-max-width:			640px;
+@textarea-max-width:		800px;
+@dialog-max-width:			640px;
+@popup-max-width:			800px;
+@plugin-max-width:			640px;
+
+@form-min-width:			320px;
+@form-max-width:			640px;
+
+@logo-width:				174px;
+@border-width:				2px;
+
+@fullscreen-min-height:		320px;
+
+// Images
+
+@avatar:					48px;
+@title:						256px;
+@thumb-small:				80px;
+@thumb-medium:				160px;
+@thumb-large:				320px;
+@image-half:				(@screen-size-large / 2);
+@image-full:				@screen-size-large;
+
+//Icons
+
+@icon-optical-size-small:	12px;
+@icon-optical-size:			24px;
+@icon-optical-size-large:	40px;
+@icon-size-xsmall:			@block-size-xsmall;
+@icon-size-small:			@block-size-small;
+@icon-size:					@block-size;
+@icon-size-large:			@block-size-large;
+@icon-size-xlarge:			@block-size-xlarge;
+@icon-padding-xsmall:		((@icon-size-xsmall - @icon-optical-size) / 2);
+@icon-padding-small:		((@icon-size-small - @icon-optical-size) / 2);
+@icon-padding:				((@icon-size - @icon-optical-size) / 2);
+@icon-padding-large:		((@icon-size-large - @icon-optical-size) / 2);
+@icon-padding-xlarge:		((@icon-size-xlarge - @icon-optical-size) / 2);

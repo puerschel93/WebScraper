@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+}
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+:root{
+    // colors
+    --clr-black: #222;
+    --clr-white: #fff;
+    --clr-blue: hsl(205, 78%, 60%);
+    // paddings
+    --container-side-paddings: 6rem;
+    // transitions
+    --trans-quick: all 0.2s linear;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+#mainApp{
+    #appHeader{
+        background-color: var(--clr-white);
+        position: fixed;
+        top: 0;
+        left:0;
+        width: 100%;
+        z-index: 20;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .header-inner{
+            margin: 0 auto;
+            padding: 0 var(--container-side-paddings);
+            .logo{
+                color: var(--clr-blue);
+                font-size: 1rem;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+            }
+
+            width: 100%;
+            align-items: center;
+            justify-content: space-between; 
+            nav{
+                ul.color-modes{
+                    list-style: none;
+                    padding:0;
+                    .active-mode{
+                        color: var(--clr-blue);
+                    }
+                    li{
+                        padding: 20px 6px;
+                        margin-left: 10px;
+                        text-transform: capitalize;
+                        transition: var(--trans-quick);
+                        cursor: pointer;
+                        &:last-of-type{
+                            margin-left: 0;
+                        }
+                    }
+                }
+            } 
+        }
+
+    }
+    #appBody{
+        background-color: rgb(14, 138, 101);
+        width: 100%;
+        .upper-section{
+            padding-top: 20px;
+            min-height: 100vh;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            .upper-section-inner{
+                display: inline;
+                // color container
+                .current-color{
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    background-color: var(--clr-black);
+                    border-radius: 6px;
+                    padding: 1rem;
+                    font-size: 2.5rem;
+                    margin-bottom: 2.5rem;
+                    font-weight: 500;
+                    color: var(--clr-white);
+                    box-shadow: 0px 1px 13px rgba(0,0,0,0.2);
+                    overflow-x: hidden;
+                    strong{
+                        font-size: inherit;
+                        font-weight: inherit;
+                        color: var(--clr-blue);
+                        text-transform: capitalize;
+                    }
+                }
+                // change button
+                button#changeBColorBtn{
+                    padding: 0.6rem 1.2rem;
+                    border-radius: 4px;
+                    text-transform: uppercase;
+                    background-color: transparent;
+                    font-family: "Roboto", sans-serif;
+                    color: var(--clr-black);
+                    letter-spacing: 1px;
+                    transition: var(--trans-quick);
+                    display: flex;
+                    margin:0 auto;
+                    cursor: pointer;
+                    border: 2px solid var(--clr-black);
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    &:hover{
+                        background-color: var(--clr-black);
+                        color: var(--clr-white)
+                    }
+                }
+            }
+        }
+    }
+}
+
+// responsive
+// 800 and below
+@media only screen and (max-width: 800px){
+    :root{
+        --container-side-paddings: 2rem;
+    }
+}
+// 670 and below
+@media only screen and (max-width: 670px){
+    :root{
+        --container-side-paddings: 1rem;
+    }
+    #mainApp{
+        #appBody{
+            .upper-section .upper-section-inner{
+                width: 90%;
+                .current-color{
+                    font-size: 1.5rem;
+                }
+                button#changeBColorBtn{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

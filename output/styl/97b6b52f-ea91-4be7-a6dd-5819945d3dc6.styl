@@ -1,0 +1,450 @@
+$logo-size = 5em
+$item-radius = 35vmin
+$item-size = 4em
+$circle-size = 1000px
+
+box-sizing()
+  -webkit-box-sizing: arguments
+  -moz-box-sizing: arguments
+  box-sizing: arguments
+
+transition()
+  -webkit-transition arguments
+  -moz-transition arguments
+  -o-transition arguments
+  transition arguments
+
+transition-property()
+  -webkit-transition-property arguments
+  -moz-transition-property arguments
+  -o-transition-property arguments
+  transition-property arguments
+
+transition-delay()
+  -webkit-transition-delay arguments
+  -moz-transition-delay arguments
+  -o-transition-delay arguments
+  transition-delay arguments
+
+html, body
+  margin 0
+  padding 0
+  width 100%
+  height 100%
+  position relative
+  overflow hidden
+  background-color #222
+  background-image url(imgs/bg-mobile.jpg)
+  background-size cover
+  background-position center
+
+#notice
+  position fixed
+  width 100%
+  height 2em
+  line-height 2em
+  background-color white
+  left 0
+  top -2em
+  transition top .5s
+  text-align center
+  z-index 10
+  a
+    color black
+  &.show
+    top 0
+  &.error
+    top 0
+    background-color #fee
+
+.page
+  width 100%
+  height 100%
+  position absolute
+  top -100%
+  transition all .5s
+  overflow hidden
+  transform translateZ(0);
+
+  &:target
+    top 0
+    .circle
+      .dep-logo
+        bottom 0
+
+  &#intro
+    .positioner
+      width 0
+      height 0
+      top 50%
+      left 50%
+      position absolute
+
+      .logo
+        width $logo-size
+        height $logo-size
+        margin-top - ($logo-size / 2)
+        margin-left - ($logo-size / 2)
+        top 50%
+        left 50%
+        position absolute
+        background-image url(imgs/logo-white.png)
+        background-size contain
+        background-position center
+        background-repeat no-repeat
+
+      .logo-text
+        letter-spacing .3em
+        font-size .8em
+        position absolute
+        display block
+        color white
+        width 8em
+        height 1em
+        margin-left -4em
+        left 50%
+        text-align center
+        top ($logo-size / 2)
+
+      .item
+        width $item-size
+        height $item-size
+        display block
+        border-radius 10em
+        line-height 4em
+        text-align center
+        color black
+        text-decoration none
+        position absolute
+        margin-top - ($item-size / 2)
+        margin-left - ($item-size / 2)
+        border-width 2px
+        border-style solid
+
+        &#link-tech
+          top - $item-radius
+          left 0
+          color #fdccff
+          border-color #fdccff
+
+        &#link-video
+          top 0.707 * $item-radius
+          left 0.707 * $item-radius
+          color #ffccd8
+          border-color #ffccd8
+
+        &#link-photo
+          top - 0.707 * $item-radius
+          left 0.707 * $item-radius
+          color #ffeecc
+          border-color #ffeecc
+
+        &#link-news
+          top 0
+          left $item-radius
+          color #e8ffcc
+          border-color #e8ffcc
+
+        &#link-tide
+          top $item-radius
+          left 0
+          color #ccffd5
+          border-color #ccffd5
+
+        &#link-hr
+          top 0.707 * $item-radius
+          left - 0.707 * $item-radius
+          color #ccfffe
+          border-color #ccfffe
+
+        &#link-outreach
+          top 0
+          left - $item-radius
+          color #ccdeff
+          border-color #ccdeff
+
+        &#link-pm
+          top - 0.707 * $item-radius
+          left - 0.707 * $item-radius
+          color #d7ccff
+          border-color #d7ccff
+
+  .circle
+    width $circle-size
+    height $circle-size
+    margin-left - ($circle-size / 2)
+    background-color white
+    border-radius ($circle-size / 2)
+    position absolute
+    bottom 30%
+    left 50%
+    &:after
+      content " "
+      position absolute
+      height 1em
+      width 100vw
+      margin-left -50vw
+      left 50%
+      bottom 10vh
+      background linear-gradient(-90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
+      background -ms-linear-gradient(-90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
+      background -moz-linear-gradient(-90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
+      background -webkit-linear-gradient(-90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
+    .back
+      display block
+      width 100vw
+      height 2em
+      position absolute
+      bottom 1em
+      left 50%
+      z-index 1
+      margin-left -50vw
+      &:after
+        content " "
+        width 0
+        height 0
+        position absolute
+        left 50%
+        bottom 1em
+        border-width 5px
+        border-style solid
+        border-color transparent transparent black transparent
+    .text-scroller
+      position absolute
+      width 100vw
+      margin-left -50vw
+      height 60vh
+      overflow-y auto
+      overflow-x hidden
+      padding 1em
+      box-sizing border-box
+      left 50%
+      bottom 10vh
+
+      .text-wrapper
+        position relative
+        p
+          text-indent 2em
+        h2
+          margin-top 0
+        .join
+          display block
+          height 2em
+          line-height 2em
+          width 100%
+          border 2px solid black
+          color black
+          border-radius 4em
+          text-align center
+          text-decoration none
+          margin-bottom 1em
+    .dep-logo
+      position fixed
+      width 100%
+      height 20vh
+      bottom -20vh
+      left 0
+      background-size contain
+      background-repeat no-repeat
+      background-position center
+
+  &#hr
+    .dep-logo
+      background-image url(imgs/hr.png)
+
+  &#photo
+    .dep-logo
+      background-image url(imgs/photo.png)
+
+  &#news
+    .dep-logo
+      background-image url(imgs/news.png)
+
+  &#video
+    .dep-logo
+      background-image url(imgs/video.png)
+
+  &#outreach
+    .dep-logo
+      background-image url(imgs/outreach.png)
+
+  &#tide
+    .dep-logo
+      background-image url(imgs/tide.png)
+
+  &#tech
+    .dep-logo
+      background-image url(imgs/tech.png)
+
+  &#pm
+    .dep-logo
+      background-image url(imgs/pm.png)
+
+  &#qsc
+    .dep-logo
+      background-image url(imgs/logo-white.png)
+
+#joinus
+  top auto
+  bottom 0
+  z-index -1
+  transition-property z-index
+  transition-delay .5s
+  &:target
+    z-index 1
+    transition-property z-index
+    transition-delay 0s
+    .circle-big
+      top 20vh
+    #joinus-wrapper
+      bottom 0
+      &:before
+        display block
+
+  .circle-big
+    width $circle-size
+    height $circle-size
+    border-radius ($circle-size / 2)
+    top 100vh
+    left 50%
+    margin-left - ($circle-size / 2)
+    position absolute
+    background-color white
+    transition top .5s
+    .back
+      display block
+      position absolute
+      color black
+      width 100%
+      height 2em
+      top 1em
+      left 0
+      z-index 1
+      &:after
+        content "."
+        position absolute
+        width 0
+        height 0
+        overflow hidden
+        border-width 5px
+        border-style solid
+        border-color black transparent transparent transparent
+        top 1em
+        left 50%
+    &:before
+      content: " "
+      position absolute
+      top 10vh
+      left 50%
+      height 1em
+      width 100vw
+      margin-left -50vw
+      z-index 1
+      background linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
+      background -ms-linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
+      background -moz-linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
+      background -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
+    #joinus-scroller
+      position absolute
+      width 100vw
+      margin-left -50vw
+      height 70vh
+      padding 1em
+      top 10vh
+      left 50%
+      box-sizing border-box
+      overflow-y auto
+      overflow-x hidden
+      #joinus-wrapper
+        .input.note
+          color grey
+          font-size 0.8em
+        .input
+          display block
+          width 100%
+          box-sizing border-box
+          padding .5em
+          margin-bottom 1em
+          position relative
+          &.error
+            border-color red
+        .input-text
+          border-bottom 2px solid black
+          position relative
+          label
+            position absolute
+            color grey
+            bottom .5em
+            left .5em
+            transition all .5s
+          input[type=text]
+            display block
+            margin 0
+            width 100%
+            box-sizing border-box
+            padding 0
+            font-size 1em
+            background-color transparent
+            border 0
+          &.focus
+            label
+              bottom 2.3em
+              font-size .8em
+              color black
+        .input-select
+          border 2px solid black
+          &:after
+            content " "
+            width 0
+            height 0
+            border-width 5px
+            border-style solid
+            border-color black transparent transparent transparent
+            position absolute
+            right 1em
+            top 1em
+          select
+            opacity 0
+            position absolute
+            z-index 2
+            width 100%
+            height 100%
+            top 0
+            left 0
+            border 0
+            padding 0
+            margin 0
+        .input-textarea
+          textarea
+            display block
+            width 100%
+            border-color black
+            border-style solid
+            border-width 2px 0
+            height 5em
+        .input-file
+          input[type=file]
+            display none
+          .prompt
+            position relative
+            .button
+              width 3em
+              height 100%
+              border 2px solid black
+              border-radius 2em
+              text-align center
+              display inline-block
+              float right
+              box-sizing border-box
+          p.note
+            color grey
+            font-size 0.8em
+            text-indent 2em
+        .input-submit
+          .button
+            height 2em
+            width 100%
+            border 2px solid black
+            line-height 2em
+            text-align center
+            border-radius 2em

@@ -1,0 +1,662 @@
+@require 'soci-tokens'
+@require 'pages/admin-first-time-signup'
+
+body
+  margin: 0
+  display: flex
+  background: var(--base-background)
+  scrollbar-width: none
+  font-size: 14px
+  &[dragging]
+    user-select: none
+  &[noauth]
+    soci-sidebar
+      left: -280px
+      transition: none
+    #pages 
+      margin-left: 0
+      width: 100vw
+      transition: none
+      &:before
+        left: 0
+        opacity: 0
+        transition: none
+        animation: none
+input
+body
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"
+  color: var(--base-text)
+
+input:-internal-autofill-selected,
+input:-webkit-autofill {
+  background: var(--base-background) !important
+  color: var(--base-text)
+}
+
+h1:first-child
+  margin-top: 0
+
+h1, h2, h3 
+  margin: 0
+  margin-bottom: 0.5em
+
+h1 
+  font-size: 2em;
+
+h2 
+  font-size: 1.5em
+  font-weight: 400
+
+h3 
+  font-size: 1.17em
+
+p 
+  margin: 0
+
+p + h1,
+p + h2,
+p + h3
+  margin-top: 1em
+
+a
+  color: var(--brand-text)
+  text-decoration: none
+  &:hover
+    color: var(--brand-text-hover)
+
+button
+  border: 0
+  border-radius: 3px
+  background: var(--brand-background)
+  height: 20px
+  color: var(--base-text-inverse)
+  padding: 0 8px
+  font-size: 12px
+  margin-right: 4px
+  cursor: pointer
+  &.cancel
+    background: var(--base-background-subtle)
+    color: var(--base-text-subtle)
+    &:hover
+      background: var(--base-background-subtle-hover)
+      color: var(--base-text-subtle-hover)
+  &:hover
+    background: var(--brand-background-hover)
+  &:active
+    filter: brightness(0.9)
+    outline: 0
+  &:focus
+    outline: var(--brand-background-bold) auto 2px
+
+#pages
+  height: 100vh
+  width: calc(100vw - 280px)
+  position: relative
+  margin-left: 280px
+  &:before
+    content: ''
+    position: fixed
+    top: 0
+    left: 280px
+    height: 100vh
+    width: 30px
+    background: linear-gradient(90deg, var(--shadow) 0px, var(--shadow-light) 1px, transparent 4px)
+    z-index: 11
+    pointer-events: none
+    transition: all 0.2s var(--soci-ease)
+    opacity: 0
+    animation: fade-in 0.2s linear 0.2s forwards
+
+#home
+  transition: all var(--anim-duration-med) var(--soci-ease), height 0s linear
+  display: none
+  &[active]
+    display: contents
+  #home-container
+    width: 100%
+    min-width: 1160px
+    margin: 0 auto
+    .inner-container
+      padding: 32px 54px
+      max-width: 1200px
+      margin: 0 auto
+  .header-container
+    background: radial-gradient(farthest-corner at 10% 50%, #1E72D2 30%, #073F80)
+    position: relative
+    overflow: hidden
+    .page-cut
+      position: relative
+      z-index: 2
+      filter: drop-shadow(0px -4px 8px #070e1740)
+    img
+      position: absolute
+      right: 0
+      z-index: 1
+      top: 80px
+      max-width: calc(max(min(100vw - 1000px, 600px), 440px))
+      box-shadow: 0 0 80px #073F80
+      border-radius: 6px 0 0 6px
+  .account-actions
+    position: absolute
+    top: 28px
+    right: 54px
+    soci-button
+      margin-left: 4px
+      background: transparent
+      font-weight: 700
+      &:hover
+        background: var(--brand-background)
+    .primary
+      background: var(--brand-background)
+      &:hover
+        filter: brightness(1.1) saturate(0.9)
+  .header
+    color: var(--base-text-inverse)
+    .left-block
+      max-width: 600px
+    svg
+      opacity: 0.5
+      width: 100px
+      margin-bottom: 32px
+    h1
+      font-size: 80px
+      line-height: 80px
+      margin-left: -4px
+    p
+      font-size: 24px
+      opacity: 0.8
+  h2
+    font-weight: bold
+  .divider
+    width: 100%
+    height: 4px
+    background: linear-gradient(90deg, #319EF2, #106FB9)
+    margin-bottom: 48px
+  .columns
+    display: flex
+    .divider
+      width: 100px
+      margin-bottom: 8px
+    .column
+      width: 100%
+      margin-left: 20px
+      &:first-child
+        margin-left: 0
+  .type-examples
+    margin: 0 -48px
+    width: calc(100% + 96px)
+#user
+  min-width: 420px
+  overflow: hidden
+  &[active]
+    display: flex
+  .sidebar
+    padding: 30px 46px 30px 50px
+    border-right: 4px solid var(--base-background)
+    box-sizing: border-box
+    overflow-y: auto
+    width: 400px
+    min-width: 400px
+    height: 100vh
+    position: relative
+    z-index: 1
+    box-shadow: 1px 0 5px var(--shadow)
+    soci-link
+      display: block
+      width: 100%
+      &:first-child
+        margin-right: 6px
+    soci-button
+      width: 100%
+      margin-bottom: 16px
+      float: none
+      svg
+        margin-right: 4px
+        position: relative
+        top: 1.5px
+  .stats
+    border: 1px solid var(--base-background-subtle)
+    border-radius: 8px
+    .stat
+      display: flex
+      border-bottom: inherit
+      padding: 8px 12px
+    label
+      flex: 1
+      font-weight: 600
+    .value
+      flex: 1
+      text-align: right
+
+  .self-actions 
+    display: none
+    &[active]
+      display: flex
+  .hero
+    margin-bottom: 16px
+    .description
+      text-align: justify
+  soci-user[avatar-only]
+    --avatar-size: 220px
+    display: block
+    width: 220px
+    height: 220px
+    background: var(--base-background-subtle)
+    border-radius: 50%
+    margin: 0 auto 8px
+  soci-user[username-only]
+    margin-bottom: 8px
+    display: block
+  .content
+    width: 100%
+    background: var(--base-background-bold)
+    height: 100vh
+    overflow: hidden
+    header 
+      background-color: var(--base-background)
+      position: sticky
+      top: 0
+      height: 41px
+      width: 100%
+      z-index: 2
+      display: block
+      padding: 0 12px
+      box-sizing: border-box
+      display: flex
+      align-items: center
+      box-shadow: 0 1px 2px var(--shadow)
+      justify-content: space-between
+      user-select: none
+
+      .types,
+      .sorts
+        display: flex
+      .type,
+      .sort
+        text-transform: capitalize
+        position: relative
+        padding: 6px 12px
+        cursor: pointer
+        font-weight: 500
+        font-size: 12px
+        line-height: 18px
+        position: relative
+        z-index: 2
+        color: var(--base-text-subtle)
+        &:hover
+          color: var(--base-text-subtle-hover)
+
+        &[selected]
+          opacity: 1
+          color: var(--brand-text-bold)
+
+          &::after
+            content:''
+            display: block
+            position: absolute
+            top: 34px
+            left: calc(50% - 8px)
+            width: 16px
+            height: 3px
+            border-radius: 0 0 2px 2px
+            background: var(--base-background)
+            box-shadow: 0 1px 1px var(--shadow)
+    .inner-content
+      height: 100%
+      overflow-y: auto
+
+.admin-page
+  .content
+    padding: 28px 40px
+    max-width: 800px
+    margin: 0 auto
+  .container
+    padding: 24px 50px
+  soci-input
+    border: 1px solid var(--base-background-subtle)
+    border-radius: 3px
+    --min-height: 240px
+  .blocks
+    display: flex
+    flex-wrap: wrap
+    width: calc(100% + 40px)
+    .block
+      min-width: 240px
+      width: 100%
+      flex: 1
+      margin-right: 40px
+      margin-bottom: 20px
+      &.avatar
+        max-width: 420px
+        flex: 1
+      &.description
+        min-width: 380px
+        flex: 2
+      &.profit
+        min-width: calc(100% - 40px)
+        h2
+          margin-bottom: 0
+        h1
+          font-size: 60px
+          margin: 0
+          color: var(--success-text)
+        .actions
+          justify-content: flex-start
+
+  .cc-details 
+    display: flex
+
+  .cc-details input:first-child 
+    min-width: 160px
+    margin-right: 12px
+
+  input 
+    margin: 0 0 8px
+    border: 0
+    border-bottom: 2px solid var(--base-background-subtle)
+    background: var(--base-background)
+    height: 38px
+    font-size: 14px
+    width: 100%
+    &:focus
+      border-bottom: 2px solid var(--brand-background)
+      outline: 0
+    &::placeholder 
+      color: var(--base-text-subtle)
+
+  .actions
+    width: 100%
+    justify-content: flex-end
+    display: flex
+    margin-top: 8px
+    button:last-child
+      margin-right: 0
+  h2
+    margin-top: 0
+
+#admin-change-forgotten-password
+  .success
+    transform: translateY(20px)
+    opacity: 0
+  &[success]
+    .loading-block
+      display: none
+    .success
+      transform: translateY(0px)
+      opacity: 1
+      display: block
+    
+
+@media screen and (max-width: 968px) 
+  #user .stats
+    margin-top: 12px
+
+#tags
+  scroll-snap-type: x proximity;
+  scroll-padding: 16px;
+  overflow-y: hidden
+  soci-column
+    transform: translateY(10px)
+    opacity: 0
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, margin 0.3s ease-out
+    margin-right: 1px
+    &:last-of-type
+      margin-right: 0
+  &[active]
+    display: flex
+    width: 100%
+    height: 100vh
+    overflow: auto
+    soci-column
+      transform: translateY(0)
+      opacity: 1
+      &:nth-child(2)
+        transition-delay: 0.1s
+      &:nth-child(3)
+        transition-delay: 0.2s
+      &:nth-child(4)
+        transition-delay: 0.3s
+      &.inserting
+        opacity: 0
+        margin-left: -416px
+
+#submit-container
+  max-width: 920px
+  padding: 24px 40px
+  margin: 0 auto
+  box-sizing: border-box
+  h1, h2
+    margin: 0
+    padding-left: 2px
+  soci-url-input
+    margin-bottom: 12px
+  soci-button
+    margin-top: 8px
+  soci-tab
+    padding-top: 32px
+  label
+    cursor: inherit
+  input
+    text-decoration: inherit
+    font-weight: bold
+    border: none
+    outline: none
+    padding: 0
+    font-size: 14px
+    width: 100%
+    background: transparent
+    color: inherit
+    &::placeholder 
+      font-weight: normal
+      text-transform: none;
+      opacity: 0.5
+      font-size: 14px
+    &[name="title"]
+      &::placeholder 
+        font-size: 32px
+      font-size: 32px
+      margin-bottom: 24px
+      padding-left: 2px
+  soci-icon
+    pointer-events: none
+    position: absolute
+    right: 2px
+
+  soci-tab
+    soci-input
+      width: 100%
+      --min-height: 240px
+    &[name="Blog"]
+      soci-input
+        --min-height: 550px
+  button
+    border-radius: 14px
+    height: 28px
+    color: var(--base-text-inverse)
+    cursor: pointer
+    background: var(--brand-background)
+    border: none
+    padding: 0 8px
+    outline: none
+    min-width: 100px
+    &:hover
+      background: var(--brand-background-hover)
+    &:active
+      filter: brightness(0.9)
+  
+  soci-input
+    border: 2px solid var(--base-background-subtle)
+    border-radius: 8px
+
+  h2
+    font-weight: 500
+    margin-top: 36px
+    margin-bottom: 12px
+  .tags
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    margin-bottom: 36px
+    grid-column-gap: 10px
+    soci-tag-input
+      flex: 1
+      --tag-height: 30px
+
+
+soci-sidebar
+  left: 0
+  transition: left 0.2s ease
+  &[loading]
+    opacity: 0
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:hover,
+  input
+    margin: 0 0 8px
+    border: 0
+    border-bottom: 2px solid var(--base-background-subtle)
+    background: var(--base-background) !important
+    -webkit-text-fill-color: var(--base-text)
+    -webkit-box-shadow: 0 0 0 30px var(--base-background) inset;
+    height: 38px
+    font-size: 14px
+    width: 100%
+
+  input::placeholder
+    text-transform: none
+    font-size: 14px
+    opacity: 0.5
+
+  input:focus,
+  input:active
+    box-shadow: none
+    outline: none
+    border-bottom: 2px solid var(--brand-background)
+  
+  h2
+    font-size: 14px
+    text-transform: uppercase
+    letter-spacing: 1.4px
+    font-weight: normal
+    color: var(--base-text-subtle)
+
+  button
+    margin-top: 8px
+    border-radius: 16px
+    height: 32px
+    outline: 0
+    border: 0
+    width: 100%
+    text-align: center
+    font-weight: 600
+    border: 1px solid var(--base-background-subtle)
+    background: var(--base-background)
+    cursor: pointer
+    position: relative
+    svg
+      position: absolute
+      width: 24px
+      height: 24px
+      left: 4px
+      top: 3px
+      display: none
+
+    &:hover
+      border: 1px solid var(--base-background-subtle-hover)
+      background: var(--base-background-hover)
+
+    &[waiting] 
+      svg 
+        display: block
+
+  form
+    display: flex
+    flex-direction: column
+
+  h2:not(:first-child)
+    margin-top: 50px
+
+  soci-button
+    margin-top: 16px;
+    align-self: flex-end;
+
+  cc-details
+    display: flex
+
+  cc-details input:first-child
+    min-width: 160px
+    margin-right: 12px
+
+[load-order]
+  transform: translateY(20px)
+  opacity: 0
+  transition: transform 0.3s cubic-bezier(.15,0,0,1), opacity 0.3s var(--soci-ease)
+[load-order="secondary"]
+  transform: translateY(25px)
+  transition: transform 0.35s cubic-bezier(.15,0,.20,1), opacity 0.35s var(--soci-ease)
+[load-order="tertiary"]
+  transform: translateY(30px)
+  transition: transform 0.4s cubic-bezier(.15,0,.35,1), opacity 0.4s var(--soci-ease)
+soci-route[active]
+  [load-order]
+  [load-order="secondary"]
+  [load-order="tertiary"]
+    transform: translateY(0px)
+    opacity: 1
+
+soci-route:not([active]):not([activating])
+  display: none
+
+#new-user
+  #new-user-container
+    padding: 24px 36px
+
+
+#post
+  soci-comment-list
+    width: 100%
+
+@keyframes load-in {
+  from {
+    transform: translateY(4px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+#blog
+  display: block
+  overflow-x: hidden
+
+#admin-create
+  .loading-block:not(:first-child)
+    margin-top: 40px
+  
+
+::-webkit-scrollbar 
+  width: 14px
+
+::-webkit-scrollbar-track 
+  background: var(--base-background-bold)
+
+// this is a hack to get alpha transparency into variables. It's shitty, but scrollbars shouldn't have as much contrast
+::-webkit-scrollbar-thumb 
+  background: linear-gradient(90deg, var(--base-text-subtle) -1500px, transparent 1000px)
+  border-radius: 7px
+  border: 3px solid var(--base-background-bold)
+
+::-webkit-scrollbar-thumb:hover
+  background: linear-gradient(90deg, var(--base-text-subtle-hover) -1500px, transparent 1000px)

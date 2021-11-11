@@ -1,0 +1,204 @@
+.db
+    max-width 1920px
+    // min-height 100%
+    margin-right auto
+    margin-left auto
+    color #000
+    position relative
+    z-index 100
+    // z-index 0
+
+.dbd20-right-panel 
+    position fixed
+    right 0
+    top 0
+    bottom 0
+    width 0
+    z-index 3
+    display flex
+    height 100%
+    justify-content flex-end
+    transition all .2s ease
+    &_opened 
+        width auto
+        width 300px
+
+        +adapt(576px) 
+            width 240px
+    &_active 
+        z-index 1
+    &__btns
+        position relative
+        display flex
+        justify-content center
+        flex-direction column
+        position absolute
+        right 100%
+        top 12%
+        transform translateY(-50%)
+        +adapt(576px)
+            top 80px
+        +adapt(768px)
+            top 96px
+    &__btn 
+        align-self flex-end
+        display block
+        width 56px
+        padding 0 56px 0 0
+        border 0
+        height 56px
+        text-align left
+        font-weight 700
+        font(RR,dark,16px)
+        box-shadow 0 13px 16px rgba(#000, 0.12)
+        background-repeat no-repeat
+        cursor pointer
+        transition all .2s cubic-bezier(0.23, 1, 0.32, 1)
+        outline none !important
+        
+        .dbd20-right-panel_active & 
+            width 310px
+            // +adapt(768px)
+        &_menu 
+            background-color #fff
+            background-image url(../images/menu.svg)
+            background-position right 15px center
+            color #2B2B2B
+            margin-bottom 20px
+
+            .dbd20-right-panel_opened & 
+                background-image url(../images/close-m.svg)
+                background-position 50% 50%
+
+        &_register 
+            display block
+            background-color #EE2852
+            background-image url(../images/registr.svg)
+            background-position right 15px center
+            color #fff
+            +adapt(768px) 
+                display none
+
+    &__btn-text 
+        display none
+        white-space nowrap
+
+        .dbd20-right-panel_active & 
+            display inline-block
+            margin 0 35px 0 25px            
+            // @include s-md 
+            // +adapt(768px) 
+
+    &__menu 
+        position relative
+        z-index 100
+        display flex
+        overflow hidden
+        height 100%
+        background-color #fff
+        align-items center
+        // +adapt(768px) 
+        // @include s-md 
+        //     align-items center
+        .dbd20-right-panel_opened & 
+            box-shadow 0 6px 16px rgba(#000, .1)
+
+    &__menu-in 
+        width 300px
+        padding 30px
+        // +adapt(576px)
+    &__menu-top
+        width 100px
+        +adapt(577px)
+            margin-left 20px
+    &__menu-list 
+        list-style none
+        padding 0
+    &__menu-item 
+        position relative
+        margin-top 13px
+        padding-right 40px
+    &__menu-link 
+        font-weight 700
+        font(RR,dark,24px)
+        +adapt(576px)
+            font-size 18px
+        
+        &:hover 
+            text-decoration underline
+            color inherit
+    &__menu-item-toggle 
+        position absolute
+        top 0
+        right 0
+        width 30px
+        height 30px
+        &::before 
+            content ''
+            position absolute
+            top 10px
+            left 5px
+            width 0
+            height 0
+            border-top 18px solid green
+            border-right 10px solid transparent
+            border-left 10px solid transparent
+            cursor pointer
+            tran()
+            .dbd20-right-panel__menu-item_active & 
+                tran()
+                transform rotate(180deg)
+    &__menu-sub 
+        display none
+        list-style none
+        padding 0
+
+        .dbd20-right-panel__menu-item_active & 
+            display block
+
+    &__menu-sub-item 
+        margin-bottom 7px
+    &__menu-sub-link 
+        font-weight 500
+        font(RR,dark,18px)
+        &:hover 
+            text-decoration underline
+            color inherit
+    &__menu-bot 
+        padding-top 20px
+
+.right-btn
+    width 240px !important
+    height 50px
+    flex()
+    +adapt(577px)
+        width 100% !important
+.left-panel
+    position absolute
+    top 76px
+    right -500px
+    width 360px
+    height auto
+    background-color white
+    box-shadow: 0 3px 6px rgba(#000000, 0.16);
+    opacity 0
+    tran(opacity)
+    
+    z-index -100
+    &_active
+        opacity 1
+        z-index 160
+        right 56px
+.left-panel-wr
+    width 100%
+    padding 30px
+.left-btn
+    margin-bottom 10px
+
+.left-panel__title
+    margin-bottom 20px
+    font(RR,dark,18px)
+.button__dark
+    z-index 1
+.button__white
+    z-index 1

@@ -1,0 +1,73 @@
+@import '../../../style/abstracts/variables';
+@import '../../../style/abstracts/mixins';
+
+
+.contact {
+    @include sections_layout;
+    @media only screen and (min-width: $size-large) {
+        height: 80vh;
+    }
+    @media only screen and (min-height: $size-large) and (min-width: $size-medium) {
+        height: 40vh;
+    }  
+    &__info {
+        background-color: $gray-light;
+        width: 75%;
+        max-width: 20rem;
+        height: 10rem;
+        border-radius: 2.5rem;
+        margin: 3rem auto 5rem auto;
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-evenly;
+        &_element {
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+        }
+        &_icon {
+            height: 2.5rem;
+            margin-right: 1rem;
+        }
+        &_txt {
+            margin-top: -1rem;
+            &:after {
+                content: '';
+                display: block;
+                border: 1px solid $dark-font;
+                background-color: $dark-font;
+                border-radius: 2px;
+                width: 8rem;
+                margin-top: -0.5rem;;
+            }
+        }
+    }
+    &__content {
+        @media only screen and (min-width: $size-large) {
+            @include sections_content;
+            margin-top: 2rem;
+        }
+    }
+    &__square_root {
+        display: none;
+        @media only screen and (min-width: $size-large) {
+            display: block;
+            @include background_image;
+            top: 5rem;
+            right: 15%;
+            width: 7rem;
+        }  
+    }
+    &__a_square {
+        display: none;
+        @media only screen and (min-width: $size-large) {
+            display: block;
+            @include background_image;
+            top: 4rem;
+            left: 15%;
+            width: 5rem;
+        }  
+    }
+}

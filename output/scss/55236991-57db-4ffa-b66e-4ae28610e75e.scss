@@ -1,0 +1,618 @@
+$color-brand: #fff;
+$content-width: 1170px;
+
+*{
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 10px;
+}
+
+body{
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  background: #0A0262;
+  color: $color-brand;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1{
+  font-family: 'Roboto', sans-serif;
+  Font-size: 2.4rem;
+  line-height: 3.6rem;
+  opacity: 50%;
+}
+
+h2{
+  font-family: 'Roboto', sans-serif;
+  font-weight: Bold;
+  Font-size: 3.6rem;
+  line-height: 4.2rem;
+}
+
+.wrapper{
+  max-width: $content-width;
+  margin: auto;
+}
+
+header{
+  padding-bottom: 60px ;
+  background: url("img/bgb.png") no-repeat center top / cover;
+}
+
+.header_logo_nav{
+  display: flex;
+  align-items: center;
+}
+
+.navigation{
+  display: flex;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  margin-left: 4.1rem;
+}
+
+ .header__wrapper{
+display: flex;
+   justify-content: space-between;
+}
+
+.navigation__link {
+  padding: 0 12.5px;
+  list-style: none;
+  a{
+    color: $color-brand;
+    text-decoration: none;
+  }
+}
+.header_logo{
+  cursor: pointer;
+}
+.promo{
+  margin-top: 9rem;
+}
+
+.promo__contents {
+  p {
+    max-width: 560px;
+    Font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+}
+
+.main{
+  display: flex;
+  align-items: center;
+}
+
+.play{
+ margin: auto;
+}
+
+.promo__timers{
+  margin-top: 5.1rem;
+  display: flex;
+}
+
+.promo_block{
+  display: flex;
+  align-items: center;
+  p{
+    margin-left: 14px;
+  }
+}
+
+.promo_imdb{
+  display: flex;
+  margin-left: 34px;
+  align-items: baseline;
+  img{
+    width: 35px;
+    height: 17.5px;
+  }
+  h1{
+opacity: 100%;
+    margin-left: 12px;
+  }
+  p{
+    margin-left: 6px;
+  }
+}
+
+.header_cabinet{
+  display: flex;
+  align-items: center;
+  img{
+    width: 33px;
+    height: 33px;
+    margin-left: 11px;
+  }
+}
+
+.promo_cont{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0 0 60px  0;
+}
+
+.session{
+  margin-top: 4.9rem;
+}
+
+
+.date_block{
+  display: flex;
+  padding-bottom: 6.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  justify-content: space-between;
+  margin-top: 2.0rem;
+  align-items: center;
+}
+.date_item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  width: 9.0rem;
+  height: 9.0rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.5rem;
+  transition: background-color 0.2s;
+}
+.date_item:hover{
+    background-color: #FE8E05;
+    cursor: pointer;
+  color: #0A0262;
+  }
+
+.session_month{
+  line-height: 19px;
+}
+.session_day{
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 35px;
+}
+.session_week{
+  font-size: 19px;
+  line-height: 22px;
+}
+.sheme{
+  overflow-x: auto;
+}
+
+.session_date{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1040px;
+}
+
+.btn{
+  width:  25.4rem;
+  height: 6.9rem;
+  border: none;
+  background: #FE8E05;
+  border-radius: 5px;
+  cursor: pointer;
+p{
+font-size: 18px;
+  color: white;
+}
+}
+
+.main_content{
+  margin-top: 60px;
+  background: rgba(36, 36, 36, 0.18);
+  border-radius: 10px;
+  path:not(.light){
+    fill: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+  path:not(.light):hover{
+    fill: rgba(255, 255, 255, 0.5);
+  }
+  path.booked, path.booked:hover {
+    fill: rgba(255, 255, 255, 0.05);
+    cursor: not-allowed;
+  }
+  path.active, path.active:hover {
+    fill: #FE8E05;
+    cursor: pointer;
+  }
+}
+
+.legend{
+  display: flex;
+  padding: 36px 70px;
+  max-width: 1024px;
+  width: 90%;
+}
+
+.legend-free, .legend-active,.legend-booked {
+display: flex;
+  margin-right: 30px;
+  align-items: center;
+  .legend-label {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.legend-booked-text, .legend-active-text ,.legend-free-text {
+  margin-left: 16px;
+}
+
+.price_container{
+  margin-top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.price-label{
+  font-size: 18px;
+  line-height: 21px;
+  display: block;
+  margin-bottom: 12px;
+}
+.ruble, .price-total{
+  font-size: 52px;
+  line-height: 61px;
+}
+.block_cinema{
+  display: flex;
+  margin-left: 95px;
+}
+
+.dropbtn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 470px;
+}
+
+
+
+.drop {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 108px;
+  margin-left: 30px;
+}
+
+.container{
+  p{
+    color: black;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.down {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-cont {
+  display: none;
+  position: absolute;
+  min-width: 100px;
+  overflow: auto;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 5;
+  margin-left: 30px;
+}
+
+.dropdown-cont a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  width: 110px;
+  background-color: #0A0262;
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  width: 470px;
+  background-color: #0A0262;
+}
+
+.dropdown a:hover {
+  background-color: #0a0248;
+}
+
+
+.show {display: block;}
+
+.sheme_svg{
+  width: 1170px;
+}
+
+
+/* Поля ввода полной ширины */
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Установите стиль для всех кнопок */
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Дополнительные стили для кнопки Отмена */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #FE8E05;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+/* Центрируйте изображение и установите кнопку Закрыть */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Модальный (фон) */
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; /* Оставаться на месте */
+  z-index: 1; /* Сидеть на вершине */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 100%; /* Полная высота */
+  overflow: auto; /* Включите прокрутку, если это необходимо */
+  background-color: rgb(0,0,0); /* Цвет запасной вариант  */
+  background-color: rgba(0,0,0,0.4); /*Черный с непрозрачностью */
+  padding-top: 60px;
+}
+
+/* Модальное содержание/бокс */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% сверху, 15% снизу и по центру */
+  border: 1px solid #888;
+  width: 50%; /* Может быть больше или меньше, в зависимости от размера экрана */
+}
+
+/* Кнопка закрытия (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #FE8E05;
+  cursor: pointer;
+}
+
+.radio{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Добавить анимацию масштабирования */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Измените стили для кнопки span и cancel на очень маленьких экранах */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+.footer_block{
+  background: rgba(36, 36, 36, 0.18);
+  padding: 30px;
+  margin-top: 50px;
+}
+
+
+
+legend {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  max-width: 1024px;
+  margin: auto;
+  padding-top: 22px;
+  padding-bottom: 38px;
+}
+
+.legend-label {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.legend svg {
+  margin-right: 15px;
+}
+
+@media screen and (max-width: 1024px){
+.wrapper{
+  max-width: 960px;
+  margin: auto;
+}
+  .sheme_svg{
+    width: 980px;
+  }
+  .block_cinema{
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 990px){
+  .wrapper{
+    max-width: 800px;
+    margin: auto;
+  }
+  .sheme_svg{
+    width: 800px;
+  }
+.block_cinema{
+  margin-left: 0;
+}
+  .dropbtn, .dropdown-content{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .wrapper {
+    max-width: 600px;
+    margin: auto;
+    width: 90%;
+  }
+ .date_block{
+flex-wrap: wrap;
+   justify-content: space-between;
+}
+  .block_cinema {
+    margin-top: 50px;
+  }
+  .dropbtn, .dropdown-content {
+    width:  450px;
+  }
+  .navigation{
+    display: none;
+  }
+  .main{
+    flex-direction: column;
+  }
+  .play{
+    margin-top: 30px;
+  }
+  .block_cinema{
+flex-wrap: wrap;
+  }
+  .dropbtn, .dropdown-content{
+    width: 280px;
+  }
+  .date_item{
+margin-top: 20px;
+    justify-content: center;
+  }
+  .date_block{
+justify-content: center;
+  }
+  .btn{
+    width: 20rem;
+    height: 5rem;
+    p{
+      font-size: 16px;
+    }
+  }
+
+  .price-total, .ruble{
+    font-size: 40px;
+}
+
+
+.sheme_svg{
+  width: 600px;
+}
+}
+
+@media screen and (max-width: 500px) {
+  .modal-content {
+    width: 80%;
+  }
+  .legend{
+    display: none;
+  }
+  .sheme_svg{
+    width: 380px;
+  }
+  .drop{
+    margin-top: 100px;
+    margin-left: 0;
+  }
+  .dropdown-cont{
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .modal-content {
+    width: 80%;
+  }
+
+  .sheme_svg{
+    width: 280px;
+  }
+}

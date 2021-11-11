@@ -1,0 +1,106 @@
+title-footer()
+    color: var(--primary)
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 14px
+
+.footer
+    &-container
+        margin-top: -(gap / 2)
+        background: #474747
+
+        @media media-max-lg
+            text-align: center
+
+    .mymenu
+        .a--0
+            title-footer()
+
+            display: inline-block
+            padding-bottom: 15px
+
+        .a--1
+            display: inline-block
+            padding: 5px 0
+            color: white
+            font-weight: regular
+            font-size: 12px
+
+        .phone, .whatsapp
+            &:before
+                display: block
+                color: white
+                font-size: 12px
+
+            a
+                color: var(--primary)
+                font-weight: bold
+                font-size: 16px
+
+        .phone
+            &:before
+                content: 'Telefone'
+
+        .whatsapp
+            &:before
+                content: 'Whatsapp'
+
+        .ul--0
+            @media media-min-lg
+                display: flex
+                justify-content: space-between
+
+        .li--0
+            flex: 0 1 440px
+            padding: (gap / 2) 0
+
+            &:not(.atendimento)
+                .ul--1
+                    column-count: 2
+
+                .li--1
+                    display: block
+                    break-inside: avoid
+
+            &.atendimento
+                .ul--1
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: space-between
+
+    .pays
+        display: flex
+        align-items: center
+        margin-top: 30px
+        padding-top: 30px
+        border-top: solid 1px rgba(255, 255, 255, .1)
+
+        @media media-max-lg
+            justify-content: center
+
+        &__title
+            title-footer()
+
+            margin: 0 15px 0 0
+
+        &__list
+            margin: 0
+
+        &__svg
+            height: 14px
+
+        &__item
+            display: flex
+            justify-content: center
+            align-items: center
+            margin: 3px !important
+            padding: 0 10px
+            height: 32px
+            border-radius: var(--radius)
+            background: white
+
+    &__copyright
+        padding: (gap / 2) 0
+        color: white
+        font-weight: regular
+        font-size: 10px

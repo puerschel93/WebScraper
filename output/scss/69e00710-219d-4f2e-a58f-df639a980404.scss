@@ -1,0 +1,276 @@
+@font-face {
+  font-family: "Graphik";
+  src: url("fonts/rebrand/Graphik-Regular-Web.woff2") format("woff2"),
+    url("myfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Graphik-Med";
+  src: url("fonts/rebrand/Graphik-Medium.woff2") format("woff2"),
+    url("myfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Graphik-Semi";
+  src: url("fonts/rebrand/Graphik-Semibold-Web.woff2") format("woff2"),
+    url("myfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "PublicoBanner";
+  src: url("fonts/rebrand/PublicoBanner-Regular-Web.woff2") format("woff2"),
+    url("myfont.woff") format("woff");
+}
+@font-face {
+  font-family: "PublicoBanner-Med";
+  src: url("fonts/rebrand/PublicoBanner-Medium-Web.woff2") format("woff2"),
+    url("myfont.woff") format("woff");
+}
+@font-face {
+  font-family: "PublicoBanner-Bold";
+  src: url("fonts/rebrand/PublicoBanner-Bold-Web.woff2") format("woff2"),
+    url("myfont.woff") format("woff");
+}
+@font-face {
+  font-family: "PublicoHeadline";
+  src: url("fonts/rebrand/PublicoHeadline-Medium-Web.woff2") format("woff2"),
+    url("myfont.woff") format("woff");
+}
+
+// Color Variables
+$error-color: #d83e00;
+$btn-color: #316eef;
+$border-gray: #eee;
+
+// Font Variables
+$body-font: "Graphik", Arial, Helvetica, sans-serif;
+$body-font-Md: "Graphik-Med", Arial, Helvetica, sans-serif;
+$body-font-Bd: "Graphik-Semi", Arial, Helvetica, sans-serif;
+$header-font: "PublicoBanner", Arial, Helvetica, sans-serif;
+$header-font-Md: "PublicoBanner-Med", Arial, Helvetica, sans-serif;
+$header-font-Bd: "PublicoBanner-Bold", Arial, Helvetica, sans-serif;
+$headline-font: "PublicoHeadline", Arial, Helvetica, sans-serif;
+body {
+  font-family: $body-font-Md;
+  padding: 0 10px;
+  font-size: 12px;
+}
+header {
+  box-shadow: 1px 7px 7px 2px $border-gray;
+  -webkit-box-shadow: 1px 7px 7px 2px $border-gray;
+  -moz-box-shadow: 1px 7px 7px 2px $border-gray;
+
+  h1 {
+    padding-bottom: 10px;
+    font-family: $headline-font;
+  }
+}
+h2 {
+  color: #2e2f2f;
+}
+h3,
+h4 {
+  color: #5d5d5d;
+}
+label {
+  display: block;
+  font-family: $body-font-Md;
+  font-size: 12px;
+}
+fieldset {
+  border: none;
+  legend {
+    padding: 5px 0 15px 0;
+    border-bottom: 1px solid $border-gray;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  input[type="range"] {
+    margin: 0px 10px;
+    vertical-align: middle;
+    width: 60%;
+    cursor: grab;
+    &:active {
+      cursor: grabbing;
+    }
+  }
+  input[type="number"] {
+    text-align: center;
+    width: 50px;
+    padding-left: 20px;
+  }
+  span {
+    display: inline-block;
+    min-width: 20px;
+  }
+}
+
+i {
+  font-family: $body-font-Bd;
+  color: black;
+}
+input[type="submit"] {
+  text-align: center;
+  width: 100%;
+  background: $btn-color;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 15px 5px;
+  cursor: pointer;
+}
+input:focus-visible {
+  outline-color: #7ca2f3;
+  box-shadow: 0px 3px 7px 0px #666;
+  -webkit-box-shadow: 0px 3px 7px 0px #666;
+  -moz-box-shadow: 0px 3px 7px 0px #666;
+  border-color: transparent;
+  border: none;
+}
+input:focus {
+  outline-color: #7ca2f3;
+  box-shadow: 0px 3px 7px 0px #666;
+  -webkit-box-shadow: 0px 3px 7px 0px #666;
+  -moz-box-shadow: 0px 3px 7px 0px #666;
+  transition: 0.3s;
+  border-color: transparent;
+  border: none;
+}
+.box {
+  border: 1px solid #bbbcbc;
+  border-radius: 4px;
+  padding: 10px 5px;
+  margin: 10px 0;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 5px;
+}
+.calc-face {
+  box-shadow: 0px 0px 11px 5px rgba(123, 122, 122, 0.75);
+  -webkit-box-shadow: 0px 0px 11px 5px rgba(123, 122, 122, 0.75);
+  -moz-box-shadow: 0px 0px 11px 5px rgba(123, 122, 122, 0.75);
+  padding: 15px;
+  border-radius: 4px;
+  z-index: 2;
+  position: relative;
+  float: left;
+}
+.summary {
+  background: #eeeeee;
+  padding: 20px 10px 40px 30px;
+  float: left;
+  border-radius: 4px;
+  .resultTitle {
+    font-family: $body-font-Md;
+    color: #5d5d5d;
+  }
+  .resultAmount {
+    font-family: $body-font-Bd;
+    color: #5d5d5d;
+    font-size: 1rem;
+  }
+}
+.annual {
+  margin-bottom: 30px;
+  &.full {
+    width: 100%;
+    input {
+      width: 93%;
+    }
+  }
+  &.half {
+    display: inline-block;
+    width: 43%;
+    margin-right: 6%;
+    input {
+      width: 95%;
+    }
+    &.right {
+      float: right;
+    }
+  }
+  .input-icon {
+    position: relative;
+  }
+
+  .input-icon > i {
+    position: absolute;
+    display: block;
+    transform: translate(0, -50%);
+    top: 50%;
+    pointer-events: none;
+    width: 25px;
+    text-align: center;
+    font-style: normal;
+  }
+
+  .input-icon > input {
+    padding-left: 25px;
+    padding-right: 0;
+  }
+}
+
+// Error styling
+span.error {
+  color: $error-color;
+  position: absolute;
+  max-width: 50%;
+}
+
+@media screen and (min-width: 810px) {
+  .calc-face {
+    width: 50%;
+  }
+  .summary {
+    width: 30%;
+    .total {
+      border-top: 1px solid #ddd;
+    }
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .calc-face {
+    float: none;
+  }
+  .summary {
+    float: none;
+    display: none;
+    .results {
+      p {
+        display: inline-block;
+        width: 45%;
+        border-bottom: 1px solid #d4d5d5;
+        padding-bottom: 15px;
+      }
+
+      .resultAmount {
+        text-align: right;
+      }
+    }
+    .total {
+      h4 {
+        display: inline-block;
+        width: 45%;
+        border-bottom: 1px solid #d4d5d5;
+        padding-bottom: 15px;
+      }
+      p {
+        display: inline-block;
+        width: 45%;
+        border-bottom: 1px solid #d4d5d5;
+        padding-bottom: 15px;
+        text-align: right;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  fieldset input[type="number"] {
+    text-align: center;
+    width: 20px;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,279 @@
+.header 
+    position: relative
+    z-index: 10
+
+    // .uk-container
+    //     padding: 0 0 0 0
+
+
+    &__top
+        background: #fff
+        height: 46px
+        display: flex
+        align-items: center
+        justify-content: center
+
+        ul  
+            li  
+                padding: 0 15px
+                border-left: 1px solid rgba(0, 0, 0, 0.33);
+                a
+                    color: #666
+
+                &:first-child 
+                    border: none
+
+  
+    &__bar 
+        position: relative
+        z-index: 2
+        // height: 60px
+        padding: 30px 0 0 0
+        background: cor[0]
+        transition: transition[0]
+        &.uk-sticky-below
+            padding: 10px 0 0 0 
+
+
+    &:after
+        content: ''
+        background: #000000
+        position: fixed
+        left: 0
+        top:0
+        bottom: 0
+        right: 0
+        z-index: -1
+        visibility: hidden
+        opacity: 0
+        transition: transition[0]
+        [menu=true] &  
+            visibility: visible
+            z-index: 0
+            opacity: 0.5
+
+        
+
+.brand 
+    
+    &__link
+        color: #ffffff
+        font-size: 20px 
+        display: flex
+        align-items: center
+        justify-content: flex-start
+
+
+
+.menu
+.search
+.topcart 
+    button
+        background: none
+        border: none
+        padding: 0 15px
+        // height: 100%
+        margin: 0 0 0 0
+        display: flex
+        align-items: center
+        justify-content: center
+        svg  
+            fill: #fff
+
+
+
+
+
+// Acount 
+
+.user__login
+    color: #ffffff
+    font-weight: bold
+    font-size: 16px
+    line-height: 23px
+    padding: 0 15px
+    text-decoration: none
+    &:hover
+        color: #ffffff
+
+.user__menu
+    position: relative
+    &--head
+        position: relative
+        padding: 0 30px 0 15px
+        text-align: left 
+        h3
+            color: #ffffff
+            font-weight: bold
+            font-size: 16px
+            line-height: 23px
+            text-decoration: none 
+            display: flex
+            align-items: center
+            justify-content: space-between
+            font-weight: 600!important
+            text-transform: none!important
+            margin: 0!important
+            svg
+                width: 10px;
+                height: 10px;
+                fill: #fff;
+                margin: 0 0 0 5px
+
+        span
+            color: #ffffff
+            font-size: 14px
+
+    .menu-menu-usuario-header-container
+        position: absolute
+        top: 100%
+        right 0;
+        width: 100%
+        z-index: 100
+        background: #fff
+        padding: 15px 0 0
+        border-radius: 5px
+        box-shadow: 0 0 10px 0 rgba(0,0,0,.1)
+        opacity 0
+        visibility: hidden
+        margin-top: 10px
+        transition: transition[0]
+        li
+            a
+                padding: 15px
+                display: block
+                background: #ffffff
+                transition: transition[0]
+                color: cor[4]
+                img
+                    opacity 0.3
+                &:hover
+                    background: #f1f1f1
+            &.logout
+                a
+                    border-radius: 0 0 5px 5px
+                    background: cor[0]
+                    text-align: center
+                    color: #ffffff
+                    text-transform: uppercase
+    &:hover
+        .menu-menu-usuario-header-container
+            opacity 1
+            visibility: visible
+            margin-top: 0
+
+
+
+// Gift List
+.giftlist 
+    
+    a  
+        display: flex
+        align-items: center
+        padding: 0 15px
+
+    svg  
+        fill: #fff
+
+
+
+
+
+#menu-main-menu
+
+    display: flex
+
+
+    >li
+        width: 100%
+        &.menu-item-has-children
+            >a
+                position: relative
+                &:after
+                    content: ''
+                    display: block
+                    width: 20px
+                    height 20px
+                    background: #fafafa
+                    border-radius: 3px
+                    position: absolute
+                    top: 62px
+                    transform: rotate(45deg)
+                    transition: transition[0]
+                    opacity: 0
+                    visibility: hidden
+                    transition: transition[0]
+
+            &:hover
+                >a
+                    &:after
+                        top: 52px
+                        opacity: 1
+                        visibility: visible
+
+        &.promo
+            >a
+                color: cor[5]
+        >a
+            display: flex
+            text-align: center
+            justify-content: center
+            align-items: center
+            height: 60px
+            color: #fff
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none
+            transition: transition[0]
+
+            img
+                display: none
+            
+            .uk-sticky-below &
+                height: 50px
+
+            &:hover
+                background: darken(cor[0],10)
+        &:hover
+            >a
+                background: darken(cor[0],10)
+            .sub-menu
+                opacity 1
+                visibility: visible
+                margin-top: 0
+        >.sub-menu
+            position: absolute
+            top: 100%
+            left: 0
+            width: 100%
+            padding: 20px 15px!important
+            background: #fafafa
+            display: flex
+            align-items: flex-start
+            justify-content: space-around
+            margin-top: 10px
+            opacity: 0
+            visibility: hidden
+            transition: transition[0]
+
+            >li
+                position: relative
+                padding: 0 15px
+                flex: 1 0 auto
+                a
+                    display: flex
+                    text-align: center
+                    justify-content: center
+                    align-items: center
+                    height: 40px
+                    font-weight: bold;
+                    font-size: 16px;
+                    text-decoration: none
+                    color: cor[4]
+                    transition: transition[0]
+
+            .sub-menu
+                a
+                    color: cor[4]
+                    font-weight: 400
+                    font-size: 14px

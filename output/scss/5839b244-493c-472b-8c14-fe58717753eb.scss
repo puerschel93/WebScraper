@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+// 'Montserrat', sans-serif;
+:root {
+  --font-primary: "Montserrat", sans-serif;
+  --font-secondary: serif;
+
+  /* line-height */
+  --heading-line-height: 1.2;
+  --body-line-height: 1.5;
+
+  /* set base values */
+  --text-base-size: 1em;
+  --text-scale-ratio: 1.2;
+
+  /* type scale */
+  --text-xs: calc(
+    1em / (var(--text-scale-ratio) * var(--text-scale-ratio))
+  ); /*11.11px*/
+  --text-sm: calc(1em / var(--text-scale-ratio)); /*13.33*/
+  --text-md: calc(1em * var(--text-scale-ratio)); /*19.2*/
+  --text-lg: calc(
+    1em * var(--text-scale-ratio) * var(--text-scale-ratio)
+  ); /*23.04*/
+  --text-xl: calc(
+    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio)
+  ); /*27.648*/
+  --text-xxl: calc(
+    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) * var(--text-scale-ratio)
+  ); /* 33.17 */
+  --text-xxxl: calc(
+    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio)
+  ); /*39.81*/
+}
+
+body {
+  font-size: var(--text-base-size);
+  font-family: var(--font-primary);
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+form legend {
+  color: var(--color-text-heading);
+  line-height: var(--heading-line-height);
+}
+
+a {
+  color: var(--color-link);
+
+  &:visited {
+    color: var(--color-link-visited);
+  }
+}
+
+/* text size */
+.text--xxxl {
+  font-size: var(--text-xxxl);
+}
+
+h1,
+.text--xxl {
+  font-size: var(--text-xxl);
+}
+
+h2,
+.text--xl {
+  font-size: var(--text-xl);
+}
+
+h3,
+.text--lg {
+  font-size: var(--text-lg);
+}
+
+h4,
+.text--md {
+  font-size: var(--text-md);
+}
+
+.text--sm,
+small {
+  font-size: var(--text-sm);
+}
+
+.text--xs {
+  font-size: var(--text-xs);
+}
+
+p {
+  line-height: var(--body-line-height);
+}
+
+a {
+  color: var(--color-link);
+
+  &:visited {
+    color: var(--color-link-visited);
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+// spacing will be handled separately
+
+.text-container {
+  //   h2,
+  //   h3,
+  //   h4 {
+  //     margin-top: var(--space-sm);
+  //   }
+
+  //   ul,
+  //   ol,
+  //   p {
+  //     margin-bottom: var(--space-md);
+  //   }
+
+  ul,
+  ol {
+    list-style-position: outside;
+    // padding-left: 24px;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul li,
+  ol li {
+    line-height: var(--body-line-height);
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  u {
+    text-decoration: underline;
+  }
+}
+
+/* utility classes */
+.truncate {
+  // truncate text if it exceeds parent
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*
+
+
+
+Update body fonsize text-sizes ==> the whole typography system
+    ----> change text-base-size at a spefied mediaquery
+    ----> By changing the text-base size: typography and spacing are all effected
+
+Update text-sizes but not affect body text size
+    ----> change text-scale-ratio at specific mediaquery
+    ----> By changing text-scale-ratio only typography is affected which then affect spacing
+
+Update all sizes at a component level
+    ---> componet { font-size: new-value }
+
+Update specific element inside component 
+    ---> component element { font-size: var(--text-xl) }
+    ---> --text-xl: is the value here    
+*/

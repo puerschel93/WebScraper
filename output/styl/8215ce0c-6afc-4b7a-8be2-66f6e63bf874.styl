@@ -1,0 +1,414 @@
+.page-section--directoryLanding main
+  padding 0 0 rem(35px)
+  +above(m)
+    padding 0 0 rem(81px)
+
+#staff-department--intro
+  padding rem(40px) rem(30px)
+  +above(m)
+    lost-flex-container: row
+    padding rem(40px) 0
+
+#staff-department--intro-text
+  +between(m, l)
+    lost-column 15/36
+    lost-offset: 2/36
+  +above(xl)
+    lost-column 15/36
+    lost-offset: 2/36
+
+  h1
+    color $news-events-intro-headline-color
+    font-family $news-events-intro-headline-font
+    font-size $news-events-intro-headline-size-mobile
+    line-height 1
+    margin 0
+    text-transform $news-events-intro-headline-transform
+    +above(m)
+      font-size $news-events-intro-headline-size-desktop
+
+  h2
+    color $news-events-intro-subheadline-color
+    font-family $news-events-intro-subheadline-font
+    font-size $news-events-intro-subheadline-size-mobile
+    margin rem(10px) 0 0
+    text-transform $news-events-intro-subheadline-transform
+    +above(m)
+      font-size $news-events-intro-subheadline-size-desktop
+
+  p
+    color $news-events-intro-text-color
+    font-size $news-events-intro-text-size-mobile
+    line-height 1.5
+    margin-top rem(24px)
+    +above(m)
+      font-size $news-events-intro-text-size-desktop
+
+
+  .choices
+    display none
+    +above(m)
+      display block
+      margin-top 1em
+      z-index 5
+
+
+#staff-department-blocks
+  perspective: 900
+
+  +above(m)
+    lost-flex-container: row
+    > section
+      lost-column 32/36
+      lost-offset: 2/36
+
+
+.directory-transition
+  transition: all 0.25s ease-out
+
+
+.staff-department
+  position: relative
+  border-top: 2px solid $light-gray
+
+  @extend .flipIn
+  +above(m)
+    animation none
+
+    & + section
+      margin-top rem(50px)
+
+  &:nth-of-type(1)
+    animation-delay: 0.5s
+  &:nth-of-type(2)
+    animation-delay: 0.75s
+  &:nth-of-type(3)
+    animation-delay: 1s
+  &:last-of-type
+    padding-bottom: 0
+
+  > i
+    position: absolute
+    transform: translate(-6px, 0)
+    top: rem(27px)
+    right: rem(30px)
+    +above(m)
+      display none
+      visibility hidden
+    &:before , &:after
+      content: ""
+      @extend .directory-transition
+      position: absolute
+      background-color: $directory-department-title-toggle-color
+      width: 4px
+      height: 14px
+    &:before
+      transform: translate(4px, 0) rotate(45deg)
+    &:after
+      transform: translate(-4px, 0) rotate(-45deg)
+
+  input[type=checkbox]
+    position absolute
+    cursor pointer
+    margin 0
+    width 100%
+    height rem(24px) + $directory-department-title-size-mobile + rem(18.5px)
+    z-index 1
+    opacity 0
+  +above(m)
+    & > input[type=checkbox]
+      display none
+      visibility hidden
+      height 0
+  & > input[type=checkbox]:checked
+      &~h2 > span.controls
+      &~ul
+        max-height initial
+        opacity 1
+        transform translate(0, 0)
+        overflow visible
+      &~h2 > span.controls
+        margin-top rem(34px)
+      &~ul
+        margin-top rem(36px)
+      &~i
+        &:before
+          transform: translate(-4px, 0) rotate(45deg)
+        &:after
+          transform: translate(4px, 0) rotate(-45deg)
+
+  h2 > span.controls input[type=checkbox]:checked
+      &~p
+        margin-top 1em
+        max-height initial
+        opacity 1
+        transform translate(0, 0)
+        overflow visible
+
+      &~span i
+        &:before
+          transform: rotate(90deg)
+        &:after
+          transform: rotate(180deg)
+
+
+
+  h2
+    margin 0
+    color $directory-department-title-color
+    font-size $directory-department-title-size-mobile
+    line-height 1
+    padding rem(24px) rem(30px) rem(18.5px)
+    @extend .no-select
+    +above(m)
+      cursor default
+      font-size $directory-department-title-size-desktop
+      padding rem(39.5px) 0
+
+    > span.controls
+      color $directory-department-title-controls-color
+      display block
+      font-size $directory-department-title-controls-size-mobile
+      line-height $directory-department-title-controls-size-mobile + rem(20px)
+      position relative
+      text-transform $directory-department-title-controls-transform
+
+      input
+        height $directory-department-title-controls-size-mobile + rem(20px)
+        width 50%
+
+      +above(m)
+        // display inline-block
+        font-size $directory-department-title-controls-size-desktop
+        margin 0
+        max-height initial
+        opacity 1
+        transform translate(0, 0)
+        overflow visible
+
+      > span
+        display inline-block
+        position relative
+        i
+          display inline-block
+          position: relative
+          width: $directory-department-title-controls-size-mobile
+          height: $directory-department-title-controls-size-mobile
+          margin-top rem(1px)
+          +above(m)
+            width: $directory-department-title-controls-size-desktop
+            height: $directory-department-title-controls-size-desktop
+          &:before , &:after
+            content: ""
+            @extend .directory-transition
+            position: absolute
+            background-color: $directory-department-title-controls-color
+          &:before
+            top: 'calc(%s + %s)' % (25% 1px)
+            left: 'calc(%s - %s)' % (50% 1px)
+            width: rem(2px)
+            height: 60%
+          &:after
+            top: 'calc(%s + %s)' % (50% 1px)
+            left: 'calc(%s - %s)' % (25% 1px)
+            width: 60%
+            height: rem(2px)
+            +above(m)
+              left: 'calc(%s - %s)' % (25% rem(0.5px))
+
+      > a
+        color $directory-department-title-controls-color
+        display inline-block
+        position absolute
+        right 0
+        top 0
+        text-decoration none
+        > span
+          display none
+          visibility hidden
+          +above(m)
+            display inline
+            visibility visible
+            &:before
+              content '\00a0'
+      > p
+        color $directory-department-description-color
+        font-size $directory-department-description-size-mobile = rem(18px)
+        font-weight $directory-department-description-weight
+        line-height $line-height-base
+        margin-bottom 0
+        text-transform $directory-department-description-transform
+        +above(m)
+          font-size $directory-department-description-size-desktop = rem(18px)
+          padding-right 35vw
+
+
+  h2 > span.controls
+  h2 > span.controls > p
+  ul
+    @extend .directory-transition
+    margin-top 0
+    max-height 0
+    opacity 0
+    overflow hidden
+    transform translate(0, 10%)
+    z-index 2
+  +above(m)
+    h2 > span.controls
+    ul
+      max-height initial
+      opacity 1
+      transform translate(0, 0)
+      overflow visible
+
+
+  ul
+    list-style none
+    padding 0 rem(30px)
+    margin 0
+    +above(m)
+      max-height initial
+      opacity: 1
+      transform: translate(0, 0)
+      margin-top: 14px
+      padding 0
+      lost-flex-container: row
+
+    li
+      padding 0
+      margin 0 0 rem(9.5px) 0
+      +above(sm)
+        margin-bottom rem(30px)
+      +between(m, l)
+        lost-column 1/3 3
+      +above(l)
+        lost-column 1/4 4
+
+
+
+
+.contact-department-modal-pop
+  &, .thank-you-message
+    display none
+
+.fancybox-slide--inline
+  .contact-department-modal-pop
+    width: 800px
+    height: 600px
+    max-width: 80%
+    max-height: 80%
+    margin: 0
+
+
+
+
+
+
+#staff-profile
+  color $navy
+  line-height $line-height-base
+  padding rem(38px) rem(30px) rem(40px)
+  text-align center
+  +above(m)
+    padding-left 0
+    padding-right 0
+
+  +between(m, l)
+    max-width (2/3 * 100)%
+    margin 0 auto
+
+  +above(l)
+    max-width 50%
+    margin 0 auto
+
+  a
+    color $navy
+    text-decoration none
+
+  h1
+    color $directory-profile-name-color
+    font-size $directory-profile-name-size-mobile
+    margin 0
+    +above(m)
+      font-size $directory-profile-name-size-desktop
+
+  h2
+    color $directory-profile-title-color
+    font-family $directory-profile-title-font
+    font-size $directory-profile-title-size-mobile
+    font-style $directory-profile-title-style
+    margin 0
+    +above(m)
+      font-size $directory-profile-title-size-desktop
+
+  h4
+    color $directory-profile-department-title-color
+    font-family $directory-profile-department-title-font
+    font-size $directory-profile-department-title-size-mobile
+    margin rem(22px) 0 0
+    text-transform $directory-profile-department-title-transform
+    +above(m)
+      font-size $directory-profile-department-title-size-desktop
+
+  > figure
+    display block
+    margin 0 auto rem(55.5px)
+    width $directory-profile-image-size-mobile
+    +above(m)
+      $directory-profile-image-size-desktop
+
+    box-shadow $directory-profile-image-block-shadow
+    position: relative
+    height: auto
+    line-height: 0
+    border 10px solid $white
+
+    &.desktop
+      display none
+      visibility hidden
+    +above(m)
+      &.mobile
+        display none
+        visibility hidden
+      &.desktop
+        display block
+        visibility visible
+
+    &, img, &:before
+      border-radius 50%
+
+  #staff-profile--address-data
+    margin-top rem(33px)
+    +above(m)
+      lost-flex-container: row
+      > div
+        lost-column 1/2
+
+      #staff-profile--address
+        text-align right
+      #staff-profile--phone-other
+        text-align left
+
+    p
+      margin 0
+  > p
+    padding rem(66px) 0 rem(55px)
+    position relative
+    text-align left
+
+    &:before
+      content: ""
+      position: absolute
+      left: 0
+      top: rem(33px)
+      height: $directory-profile-bio-top-border-width
+      width: 100%
+      border-bottom: $directory-profile-bio-top-border-width solid $directory-profile-bio-top-border-color
+
+    +above(m)
+      margin-right rem(100px)
+      margin-left rem(100px)
+
+      &:before
+        left: 7.5%
+        width: 85%

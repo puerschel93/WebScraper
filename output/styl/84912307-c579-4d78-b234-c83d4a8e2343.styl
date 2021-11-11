@@ -1,0 +1,127 @@
+// @domain      MODULE DECLARATIONS
+// @namespace   module
+// +++++++++++++++++++++++++++++++++
+
+module{":"}
+    +at-breaks()
+        display: block
+        flex: none
+        float: none
+        position: relative
+        visibility: visible
+
+module
+    &:block
+        +at-breaks()
+            display: block
+
+    &:static
+        +at-breaks()
+            flex: none
+
+    &:balance
+        +at-breaks()
+            flex: 1 1 auto
+
+    &:fit
+        +at-breaks()
+            flex: initial //0 1 auto
+
+    &:fill
+        +at-breaks()
+            flex: 1 0 100%
+
+    &:bounds
+        +at-breaks()
+            bottom: 0
+            height: 100%
+            left: 0
+            position: absolute
+            right: 0
+            top: 0
+            object-fit: cover
+            width: 100%
+
+
+// +++++++++++++++++++++++++++++++++
+//  MODULE ORDER
+
+--index
+    &:init
+        +at-breaks()
+            order: -1
+
+    &:flow
+        +at-breaks()
+            order: initial
+
+    &:start
+        +at-breaks()
+            order: 0
+
+    &:next
+        +at-breaks()
+            order: 1
+
+    &:end
+        +at-breaks()
+            order: 100
+
+
+
++++++++++++++++++++++++++++++++++
+ MODULE SELF ALIGNMENT
+
+--self
+    &:xAuto
+        +at-breaks()
+            justify-self: auto
+
+    &:xBase
+        +at-breaks()
+            jusitfy-self: baseline
+
+    &:xEq
+        +at-breaks()
+            justify-self: center
+
+    &:xStart
+        +at-breaks()
+            justify-self: flex-start
+
+    &:xEnd
+        +at-breaks()
+            justify-self: flex-end
+
+    &:xFull
+        +at-breaks()
+            jusitfy-self: stretch
+
+    &:yAuto
+        +at-breaks()
+            align-self: auto
+
+    &:yBase
+        +at-breaks()
+            align-self: baseline
+
+    &:yEq
+        +at-breaks()
+            align-self: center
+
+    &:yStart
+        +at-breaks()
+            align-self: flex-start
+
+    &:yEnd
+        +at-breaks()
+            align-self: flex-end
+
+    &:yFull
+        +at-breaks()
+            align-self: stretch
+
+    &:xyEq
+        +at-breaks()
+            align-self: center
+            justify-self: center

@@ -1,0 +1,341 @@
+// css img, button, heading, title, input, elements, components...
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+a {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+// colors (tuỳ chỉnh)
+.--white-cl {
+    color: $white-cl;
+}
+.--black-cl {
+    color: $black-cl;
+}
+
+.--wooder-cl {
+    color: $wooder-cl;
+}
+
+// css article (nội dung chi tiết bài viết)
+article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        // font-family: ib; // font bold
+        display: block;
+    }
+    h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+        margin: 0 0 0.67rem 0;
+    }
+    h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+        margin: 0 0 0.75rem 0;
+    }
+    h3 {
+        font-size: var(--h3-fs);
+        line-height: var(--h3-lh);
+        margin: 0 0 0.83rem 0;
+    }
+    h4 {
+        font-size: var(--h4-fs);
+        line-height: var(--h4-lh);
+        margin: 0 0 1.12rem 0;
+    }
+    h5 {
+        font-size: var(--h5-fs);
+        line-height: var(--h5-lh);
+        margin: 0 0 1.5rem 0;
+    }
+    h6 {
+        font-size: 0.67rem;
+        margin: 0 0 1.67rem 0;
+    }
+
+    p {
+        margin: 0 0 1.12rem 0;
+    }
+    strong {
+        // font-family: ib; // font bold
+    }
+    ol,
+    ul {
+        list-style: initial;
+        padding-left: 18px;
+    }
+    img {
+        display: inline-block;
+        height: auto;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 25px auto;
+    }
+    .video {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        margin: 25px auto;
+        iframe,
+        video {
+            position: absolute;
+            @include size(100%);
+            top: 0;
+            left: 0;
+        }
+    }
+    @include xs {
+        img {
+            margin: 20px auto;
+        }
+    }
+}
+
+.heading {
+    font-family: ib;
+    &.--h1 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+    }
+    &.--h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+    }
+    &.--wooder-cl {
+        color: $wooder-cl;
+    }
+}
+
+.btn {
+    @include text(1.4rem, "pb", 2.4rem, $white-cl, uppercase);
+    letter-spacing: 0.2em;
+    display: inline-block;
+    margin-top: 22px;
+    &.--linebtn {
+        color: $black-cl;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $wooder-cl;
+            @include size(74%, 2px);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: $t transform ease-in-out;
+        }
+        &:hover {
+            &::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+    }
+
+    &.--br {
+        padding-left: 40px;
+        padding-right: 40px;
+        border: 1px solid $white-cl;
+        height: 48px;
+        @include flex(space-between, center);
+        width: fit-content;
+        margin: auto;
+        position: relative;
+        transition: 0.5s;
+        z-index: 1;
+        img {
+            padding-left: 15px;
+        }
+
+        &.--z-index {
+            z-index: 100;
+            margin: 0;
+            padding-left: 50px;
+            padding-right: 50px;
+            img {
+                padding-left: 0px;
+                padding-right: 12px;
+            }
+        }
+        &:before {
+            content: "";
+            @include size(100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $wooder-cl;
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: 0.5s transform ease-in-out;
+        }
+
+        &:hover:before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+    }
+
+    @include sm {
+        @include text(1.4rem, "pb", 2.4rem, $white-cl, uppercase);
+        &.--br {
+            padding-left: 35px;
+            padding-right: 25px;
+        }
+    }
+
+    @include xs {
+        margin-top: 16px;
+        &.--br {
+            padding-left: 20px;
+            padding-right: 20px;
+            height: 44px;
+            &.--z-index {
+                --pd: 25px;
+                padding-left: var(--pd);
+                padding-right: var(--pd);
+                // img {
+                //     padding-left: 0px;
+                //     padding-right: 12px;
+                // }
+            }
+        }
+        &.--primary {
+            &::after {
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.heading {
+    @include text(var(--h2-fs), "pb", normal, $black-cl, uppercase);
+    letter-spacing: 0.07em;
+    padding-bottom: 12px;
+    position: relative;
+    &::before {
+        content: "";
+        width: 100%;
+        max-width: 80px;
+        height: 2px;
+        position: absolute;
+        top: 40%;
+        left: -30%;
+        transform: translateY(-50%);
+        background-color: $line-cl;
+    }
+
+    @include sm {
+        &::before {
+            width: inherit;
+        }
+    }
+
+    @include xs {
+        @include text(3rem, "pb", normal, $black-cl, uppercase);
+        padding: 15px 0 10px;
+    }
+}
+
+.desc {
+    // @include text(var( --body16-fs), "pr", var(--body16-lh), $text-cl, inherit);
+    @include overtext(3);
+    &.--pt {
+        padding-top: 28px;
+    }
+    @include xs {
+        font-size: 1.8rem;
+        @include overtext(inherit);
+    }
+}
+
+.pd {
+    padding-top: var(--pd-section);
+    padding-bottom: var(--pd-section);
+}
+
+// video
+.videomodal {
+    --maxwidth : 60%;
+    @include size(100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    display: none;
+    transition: $t;
+    .video_wrap {
+        // width: calc(100vw - var(--widthwrap));
+        width: 100%;
+        max-width: var(--maxwidth);
+        margin: auto;
+        .video_item {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            border: 3px solid #ccc;
+            background: $black-cl;
+            position: relative;
+            transition: $t;
+            iframe {
+                @include size(100%);
+                position: absolute;
+            }
+            .close {
+                --pts: -20px;
+                position: absolute;
+                top: var(--pts);
+                right: var(--pts);
+                @include size(40px);
+                background: $white-cl;
+                border-radius: 50%;
+                @include flex(center, center);
+                font-family: pb;
+                cursor: pointer;
+            }
+        }
+    }
+    @include sm {
+        --maxwidth: 80%;
+    }
+    @include xs {
+        --maxwidth: 90%;
+    }
+}
+
+.headtop {
+    @include size(0%, 2px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    background-color: $wooder-cl;
+    transition: all $t linear;
+}

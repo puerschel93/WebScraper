@@ -1,0 +1,81 @@
+html {
+  font-size: 10px;
+  background: @light;
+  @media (min-width: 1600px) {
+    //font-size: 11px;
+  }
+  @media (min-width: 1900px) {
+    //font-size: 12px;
+  }
+  @media (min-width: 2500px) {
+    font-size: 15px;
+  }
+  @media (min-width: 3800px) {
+    font-size: 20px;
+  }
+}
+
+::-moz-selection {
+  background: @brown_30;
+  color: @dark;
+}
+
+::selection {
+  background: @brown_30;
+  color: @dark;
+}
+
+
+body {
+  font: 500 1.6rem/2.4rem 'Manrope', sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: @dark;
+  @media (min-width: @desk) {
+    font-size: 1.7rem;
+    line-height: 2.7rem;
+    &::-webkit-scrollbar {
+      width: 1.2rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: @light;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: @brown_50;
+      border: .2rem solid @light;
+      border-radius: 1rem;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 0;
+    background: @light;
+    z-index: 1;
+    transition: height .3s .8s;
+  }
+
+  &._openHeader {
+    overflow-y: hidden;
+    &:before {
+      height: 6.8rem;
+      transition: height .1s 0s;
+      @media (min-width: @tab) {
+        height: 8rem;
+      }
+      @media (min-width: @desk) {
+        height: 9rem;
+      }
+    }
+  }
+
+}

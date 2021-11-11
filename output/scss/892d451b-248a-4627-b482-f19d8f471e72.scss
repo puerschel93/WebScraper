@@ -1,0 +1,236 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container:0;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:0;
+
+$margin-top-under-nav-fixe:110;
+
+// SIZE NAVIGATION
+$height-navigation:100;
+
+// VAR SITE TYPO
+$font-body:"Open Sans",arial,verdana,sans-serif;
+$font-title:"Open Sans",arial,verdana,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.9em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib8";
+
+
+
+// IMPORT PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib7";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/paris";
+
+// IMPORT MODULE ANNONCES
+@import "../../../slagence_X_V5/sources/scss/modules/annonces14";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+// PRAGUE
+	// GENERAL
+		// PASSAGE EN 100% OU PRESQUE
+	.container {
+		width:1440px;
+		padding: 0 20px;
+		@media only screen and (max-width : 1440px) {
+			width:100%;
+		}
+	}
+
+	// MENU & NAV
+	.navigation {
+		background-image:none;
+		background-color: transparent;
+		box-shadow: none;
+		border: none;
+		padding: 10px 0;
+	}
+	
+	.menu-principal {
+		float:right;
+		>li>a {
+			padding: 12px 20px;
+			background-color: $color-important;
+			color: $color-primary;
+		}
+	}
+	
+	// MOTEUR
+		// SUPPRESSION BG
+	.moteur-avantage {
+		background-image:none;
+		border:none;
+	}
+
+	// MODULE PA
+		// BORDER PHOTO
+	
+
+	// ZONE PUB
+		// FIXING MARGIN
+	.zone-pub {
+		margin-bottom:13px;
+	}
+	
+	// LISTING ANNONCE
+		// FIXING MARGIN
+	.bloc-bottom-alerte-email, .tab-recherche {
+		margin-left:-30px;
+		@media only screen and (max-width : 767px) {
+			margin-left:0px;
+		}
+	}
+	
+	// AGENCE
+		// TAILLE MAP
+	.MicrosoftMap {
+		height:420px;
+	}
+	
+// PRAGUE STARE
+	// BG BODY
+body {
+	background-image:url('../images/bg-body.jpg');
+	background-color:$color-body;
+	background-position:center top;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+}
+
+	// SIZING EXTRA
+.bg-extra {
+	height:374px;
+}
+
+.module-annonces-homepage-extra .border-solid-bottom-primary-1 {
+	border:none;
+}
+
+.module-annonces-homepage-extra .rounded-200 {
+	@include border-radius (0px);
+	box-shadow:none;
+	border:none;
+	width: 300px;
+    height: 300px;
+}
+
+
+
+	// FOOTER SUPP BG
+footer.bg-primary {
+	background-color: transparent;
+}
+
+.bg-secondary-footer .container {
+	width: 100%;
+	padding: 0px;
+}
+
+.texte-info-agences {
+	background: $color-secondary;
+    padding: 20px;
+}
+
+.bg-secondary-footer {
+	background-color: transparent;
+}
+
+
+.btn-action {
+	background: $color-action;
+}
+
+
+//---------------------------------------------------------------------------------------------------------
+//	PERSO CECICMO
+//---------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------
+//	GENERAL
+//---------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------
+	//	BTN
+	//---------------------------------------------------------------------------------------------------------
+
+.icon-v5-heart {
+	color: $color-important;
+}
+
+.btn-cdc .opacity-4 {
+	opacity: 1;
+}
+
+
+
+#map-bing {
+	display: none;
+}
+
+.page-agence-detail {
+	margin-top: 0px;
+}
+
+@media only screen and (max-width : 767px) {
+	#Mini_Moteur {
+		display: block;
+	}
+}

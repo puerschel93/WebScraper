@@ -1,0 +1,83 @@
+@mixin fontBold {
+    font-family: Nunito-Bold;
+    font-size: 14px;
+}
+
+@mixin row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@include breakpoint(mobile) {
+    .header-section {
+        .header-title {
+            display: none;
+        }
+        .header-container {
+            display: none;
+        }
+    }
+}
+@include breakpoint(tablet) {
+}
+
+@include breakpoint(laptops) {
+    .searchbar {
+        width: 100%;
+        .searchbar-section {
+            padding: 0 15%;
+            display: flex;
+            flex-direction: row;
+            color: $base-color;
+
+            &-left {
+                width: 53%;
+                h1 {
+                    font-family: Nunito-Bold;
+                    font-size: 28px;
+                    margin-bottom: 5px;
+                }
+                p {
+                    font-family: Nunito-Regular;
+                    font-size: 16px;
+                    margin-bottom: 35px;
+                }
+                &-form {
+                    @include row();
+                    justify-content: space-between;
+                    &-set {
+                        @include row();
+
+                        #outlined-basic {
+                            background-color: #384170;
+                            border-radius: 3px;
+                            width: 240px;
+                            color: $base-color;
+                        }
+
+                        #select-basic {
+                            background-color: #384170;
+                            border-radius: 3px;
+                            margin: 0;
+                        }
+                    }
+                    &-btn {
+                        z-index: 1;
+                        height: 40px;
+                    }
+                }
+            }
+
+            &-right {
+                &-illustration {
+                    z-index: 0 !important;
+                    position: absolute;
+                    width: 40rem;
+                    top: 7em;
+                    right: 8em;
+                }
+            }
+        }
+    }
+}

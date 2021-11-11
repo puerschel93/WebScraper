@@ -1,0 +1,183 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:750;
+
+// VARIABLE SITE TYPO
+$font-body:"Open Sans",arial,verdana,sans-serif;
+$font-title:georgia,arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:230;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES2
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+
+//---------------------------------------------------------------------------------------------------------
+//		PERSO COMPLISSIMO95
+//---------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//---------------------------------------------------------------------------------------------------------
+
+.container {
+	width: 1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width: 960px;
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------------------
+
+.menu-principal {
+	font-size:1.0em;	
+	line-height: 169px;
+	@media only screen and (max-width : 1280px) {
+		font-size: 0.7em;
+	}
+	>li {
+		background:none;		
+		margin-left: 0px;
+		border-left: none;		
+		border-right: none;		
+		padding: 10px 16px;
+		&:hover {
+			background:none;
+		}
+		>a {			
+			line-height: 20px;
+			color: $color-secondary;
+			@media only screen and (max-width : 1280px) {
+				padding: 0 8px;
+			}
+			&:after {
+	            display: block;
+	            content: "";
+	            width: 0%; height: 2px;
+	            background-color: $color-primary;
+	            margin-top: 2px;
+	            -webkit-transition: all .3s ease;
+	            transition: all .3s ease;
+	         }
+	         &:hover {
+	            color: $color-important;
+	            &:after { 
+	            	background-color: $color-important; 
+	            	width: 75%;
+	            }
+	         }
+	    }
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------------
+	//		FOOTER
+	//---------------------------------------------------------------------------------------------------------
+
+footer.bg-primary {
+	background: $color-body;
+}
+
+//---------------------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------
+	//		MINI MOTEUR
+	//---------------------------------------------------------------------------------------------------------
+
+.bg-mini-moteur, .form-inline {
+	margin-left: -20px;
+	width: 100%;
+}
+
+//---------------------------------------------------------------------------------------------------------
+//		LISTING PA
+//---------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------
+	//		FIX
+	//---------------------------------------------------------------------------------------------------------
+
+.infos-bien {
+	display: none;
+}
+
+//---------------------------------------------------------------------------------------------------------
+//		DETAIL PA
+//---------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//---------------------------------------------------------------------------------------------------------
+
+.vertical-pano {
+	background: $color-body;
+}

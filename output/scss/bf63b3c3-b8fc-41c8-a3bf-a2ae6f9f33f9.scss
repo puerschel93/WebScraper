@@ -1,0 +1,159 @@
+$lbh-global-styles: true;
+
+@import "node_modules/lbh-frontend/lbh/all";
+
+// fix header display on small devices
+.lbh-header__wrapper {
+  display: inherit;
+  @include govuk-media-query($from: tablet) {
+    display: flex;
+  }
+}
+
+// fix spacing of brand lines
+.lbh-header {
+  padding-bottom: 1rem;
+}
+
+// keep back links the normal colour
+.lbh-breadcrumbs .govuk-breadcrumbs__link {
+  &:visited {
+    color: lbh-colour("lbh-link");
+  }
+  &:hover,
+  &:active {
+    color: lbh-colour("lbh-text");
+  }
+}
+
+// elements after a hidden element shouldn't attempt to space themselves from it
+.govuk-visually-hidden + * {
+  margin-top: initial;
+}
+
+// turn off frustrating smooth scroll
+html {
+  scroll-behavior: initial;
+}
+
+// fix uneven padding of checkbox labels{
+.lbh-checkboxes__label,
+.govuk-radios__label {
+  padding-top: 0.25rem;
+}
+
+// dialog styles
+:root {
+  --reach-dialog: 1;
+}
+[data-reach-dialog-overlay] {
+  background: hsla(0, 0%, 0%, 0.33);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  z-index: 2;
+}
+[data-reach-dialog-content] {
+  width: 50vw;
+  margin: 10vh auto;
+  background: white;
+  padding: 2rem;
+  outline: none;
+}
+
+// fix placement of dialog close button
+.lbh-dialog__close {
+  margin-top: 0;
+}
+
+// fix header z-index so it plays nice with dialogs
+.lbh-header {
+  z-index: inherit;
+}
+
+// space out form groups a little more
+.lbh-form-group + .lbh-form-group {
+  @include govuk-media-query($from: tablet) {
+    margin-top: 2rem;
+  }
+}
+.lbh-form-group + .lbh-button {
+  @include govuk-media-query($from: tablet) {
+    margin-top: 2.5rem;
+  }
+}
+
+// fix vertical padding on date input
+input[type="date"],
+input[type="time"] {
+  padding: 0 5px;
+}
+
+// fix appearence of labels where there is a background colour
+.govuk-radios__label:before,
+.govuk-checkboxes__label:before {
+  background: lbh-colour("lbh-white");
+}
+
+// fix spocing between error and radios on review reason form
+.lbh-radios.govuk-form-group--error {
+  .lbh-error-message {
+    margin-bottom: 1rem;
+  }
+}
+
+// fix weird serif on option text
+.govuk-select {
+  font-family: "Open Sans", sans-serif;
+  background-color: white;
+}
+
+// restyle disabled inputs
+.lbh-input:disabled,
+.lbh-textarea:disabled,
+.lbh-select:disabled,
+.govuk-radios__input:disabled {
+  color: lbh-colour("lbh-secondary-text");
+  border-color: lbh-colour("lbh-secondary-text");
+  background: lbh-colour("lbh-grey-4");
+  cursor: not-allowed;
+}
+
+// red!
+.govuk-required {
+  color: lbh-colour("lbh-error");
+}
+
+// fix appearence of secondary buttons on different backgrounds
+.lbh-button--secondary {
+  background: none;
+}
+
+// fix checkboxes and their hints
+.lbh-checkboxes .govuk-checkboxes__label {
+  padding: 0.35rem 15px;
+}
+.lbh-checkboxes .govuk-checkboxes__hint {
+  margin-bottom: 1rem;
+}
+
+// fix small screen header layout
+.lbh-header__links div {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0;
+  margin-left: 1.125rem;
+}
+
+// gracefully show emails in timeline
+.lbh-timeline__event {
+  word-wrap: break-word;
+}
+
+// no useless scrollbar
+.govuk-template {
+  overflow-y: auto;
+}

@@ -1,0 +1,245 @@
+@require globalView
+
+.ad__header
+    &-logo
+        position fixed
+        width calc(34% - 50px)
+        top 0
+        z-index 4
+        padding 80px 0 30px 50px
+        +$responsive(mobile_all)
+            background $color-Blue-Smalt
+            width 100%
+            top 40px
+            padding 5px 10px
+            z-index 4
+            box-shadow 1px 1px 2px rgba(0,0,0,0.3)
+        +$responsive(desktop1280 desktop1600 desktop_extended)
+            width calc(30% - 50px)
+        &-aderogyl,
+        &-infantil 
+            +$responsive(mobile_all)
+                width 30%
+                +$responsive(landscape)
+                    width 18%
+    .menuAbsolute
+        position absolute
+        z-index 3
+    
+    &-left-menu
+        .navbar-toggle
+            background $color-Blue-DarkCerulean
+            border $color-Blue-DarkCerulean
+            position fixed
+            top 0
+            left 0
+            padding 10px 15px
+            color white
+            font-size .8em
+            z-index 6
+            display none
+            +$responsive(mobile_all)
+                display block
+    &-menu
+        position fixed
+        width 20%
+        top 30%
+        z-index 4
+        +$responsive(mobile_all)
+            z-index 5
+            background $color-Blue-RegalBlue
+            width 100%
+            top 40px
+            font-family $font-alternative-condensed
+        +$responsive(desktop_all)
+            display block !important
+        li, ul
+            list-style-type none
+            margin 0
+            padding 0
+        &-principal
+            li
+                position relative
+                a
+                    color transparent
+                    transition .3s
+                    font-size 1.7em
+                    display flex
+                    +$responsive(mobile_all)
+                        color white
+                        font-size 1em
+                        height 50px
+                    +$responsive(mobile_not_tablet iphonex)
+                        +$responsive(landscape)
+                            height 30px
+                            font-size .8em
+                    +$responsive(desktop1280)
+                        font-size 1.8em
+                    +$responsive(desktop1600)
+                        font-size 2em
+                    +$responsive(desktop_extended)
+                        font-size 2.5em
+                    span 
+                        display block
+                        padding 15px 0 0 0
+                        line-height 1.1em
+                        width calc(100% - 80px)
+                        +$responsive(mobile_not_tablet iphonex)
+                            +$responsive(landscape)
+                                padding 0
+                                line-height 30px
+                        +$responsive(desktop1600 desktop_extended)
+                            padding-top 18px
+                    .boton-menu
+                        width 25%
+                        height 60px
+                        background-image url(../img/boton-menu.png)
+                        background-repeat no-repeat
+                        background-size 70% auto
+                        background-position center center
+                        transition .3s
+                        margin 0 0 -10px 0
+                        +$responsive(mobile_all)
+                            width 13%
+                            height 50px
+                        +$responsive(mobile_not_tablet iphonex)
+                            +$responsive(landscape)
+                                height 30px
+                                width 7%
+                        +$responsive(desktop1600 desktop_extended)
+                            width 21%
+                            height 80px
+                    &:hover,
+                    &.active
+                        color white
+                        $text-shadow()
+                        text-decoration none
+                        +$responsive(mobile_all)
+                            color $color-Green-Citrus
+                        +$responsive(desktop_all)
+                            .boton-menu
+                                background-size 120% auto
+                    &.active
+                        cursor default
+                        .boton-menu
+                            background-image url(../img/boton-menu-resplandor.png)
+        &-redes
+            +$responsive(mobile_all)
+                display flex
+                justify-content flex-end
+                background $color-Blue-DarkCerulean
+                padding 0 15px
+            a
+                display block
+                padding 10px 25px
+                transition .3s
+                +$responsive(mobile_all)
+                    padding 10px
+                &:hover
+                    opacity .5
+                img
+                    width 30px
+                    height 30px
+                    display block
+                    +$responsive(mobile_all)
+                        width 20px
+                        height 20px
+    &-top-menu
+        position fixed
+        width 100%
+        top 0
+        z-index 5
+    &-logo-sanofi
+        background white
+        padding 0.22em 2.22em // 4px 40px
+        text-align right
+        width 100%
+        position relative
+        +$responsive(mobile_all)
+            padding 0 7px
+            line-height 1.2em
+        img
+            height 1.05em // 19px
+            +$responsive(mobile_all)
+                height .7em
+    &-residentes
+        background $color-Blue-DarkCerulean 
+        padding 0.33em 2.66em // 5px 40px
+        text-align right 
+        color white
+        $text-shadow()
+        text-transform uppercase
+        width 100%
+        font-size 0.83em // 15px
+        +$responsive(mobile_all)
+            padding 2px 7px
+            font-size .6em
+            font-family $font-alternative-condensed
+    &-modales
+        position fixed
+        top 0
+        left 0
+        z-index 7
+    &-video
+        position absolute
+        top 3.66em // 66px
+        right 1.1em // 20px
+        display flex
+        justify-content flex-end
+        z-index 3
+        +$responsive(mobile_not_tablet iphonex)
+            top 41px
+            font-size .44em
+            right 0
+            +$responsive(landscape)
+                +$responsive(iphonex)
+                    font-size .6em
+                +$responsive(mobile360 mobile375)
+                    font-size .44em
+        +$responsive(tablet768)
+            +$responsive(portrait)
+                top 41px
+                right 0
+                font-size .7em
+        a
+            $backgroundImg('../img/fondo-rojo.png', 13.33em, 5em)
+            // 240px 90px
+            /*+$responsive(tablet1024)
+                width 180px
+                height 60px*/
+            .video-text
+                display flex
+                transform rotate(-4deg)
+                font-size 1.66em // 30px
+                text-transform uppercase
+                color white
+                align-items center
+                $text-shadow()
+                margin 0.166em 0.5em // 5px 15px
+                transition color 1s
+                /*+$responsive(tablet1024)
+                    font-size 20px*/
+                .video-ico
+                    $backgroundImg('../img/ico-play.png', 1.066em, 1.066em)
+                    // 32px 32px
+                    /*+$responsive(tablet1024)
+                        width 25px
+                        height 25px*/
+                span 
+                    margin-left 0.33em // 10px
+            &:hover
+                text-decoration none
+                .video-text
+                    color $color-Yellow-GoldenYellow
+                    .video-ico
+                        background-image url('../img/ico-play-hover.png')
+.ad__video-modal-content
+    width 100%
+    position relative
+    .close
+        position absolute
+        top 0
+        right 0.27em // 10px
+        z-index 4
+        color white
+        font-size 2em // 36px

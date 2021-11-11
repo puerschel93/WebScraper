@@ -1,0 +1,382 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,100&display=swap');
+@import "./mixins";
+
+.book{
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  flex-direction: column;  
+  
+    &-head{
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-height: 85vh;
+      background-image: url('/img/vahida-book.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      
+
+      @include respond(maxNavBar){                                   
+        min-height: 250px;  
+        background-size: contain; 
+        background-repeat: no-repeat;          
+      }
+    }
+
+    &-section{
+      top: 100%;
+      display: flex;
+      width: 100%;
+      height: 200vh;
+      flex-direction: column;
+
+        &-first{
+          display: flex;
+          width: 100%;
+          height: auto;          
+          flex-direction: column;
+
+          &-head{
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+
+            &-main{
+              display: block;
+              width: 100%;
+              font-size: 3rem;
+              margin: 5% auto 0% auto;
+              font-family: 'Lato';
+              font-weight: 300;
+            }
+
+            &-sub{
+              display: block;
+              margin: 2% auto;
+              padding: 0% 10% 0% 10%;
+              font-size: 1.5rem;
+              font-family: 'Lato';
+              
+              @include respond(maxNavBar){                                   
+                padding: 0%;                   
+              }
+            }
+
+          }
+
+          &-content{
+            display: flex;
+            margin: 0% auto 2% auto;
+            width: 85%;
+            height: 100%;            
+            flex-direction: row;
+
+            &-left{
+              display: flex;
+              width: 45%;
+              height: auto;              
+              margin-right: 2%;
+
+              &-img{
+                width: 100%;
+                height: 100%;                               
+              }
+
+              @include respond(maxNavBar){                                   
+                width: 100%;
+                margin: 5% auto;
+              }
+            }
+
+            &-right{
+              display: flex;
+              width: 55%;
+              height: 100%;              
+
+              &-content{
+                display: flex;
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                padding: 5%;
+                background-color: $ligth-gray-color;
+                
+                &-head{
+                  width: 100%;
+                  height: auto;
+                  font-family: 'Lato';
+                  text-transform: uppercase;
+                  font-size: 1.8rem;
+                  text-align: left;
+                  font-weight: 300;
+                }
+
+                &-text{
+                  width: 100%;
+                  height: auto;
+                  font-size: 1.4rem;
+                  
+                  hyphens: auto;
+                  margin: 2% auto;
+                }
+
+                &-btn{
+                  display: flex;
+                  width: 100%;
+                  height: auto;                  
+
+                  &-edit{
+                    display: flex;                    
+                    padding: 3%;                    
+                    width: 35%;
+                    background-color: $main-color;  
+                    text-decoration: none;             
+
+                    &-link{
+                      text-decoration: none;
+                      margin: auto;
+                      font-family: 'Lato';
+                      font-size: 1.5rem;
+                      font-weight: 600;
+                      color: $white-color;
+                    }
+                    
+                  }
+                  @include respond(maxNavBar){                                   
+                    margin: 0% 0% 5% 0%;            
+                  }
+                }
+                @include respond(maxNavBar){                                   
+                  padding: 0% 2% 0% 2%;                   
+                }
+              }
+              @include respond(maxNavBar){                                   
+                width: 100%;
+                margin: 0% auto 5% auto;
+              }
+            }
+
+            @include respond(maxNavBar){                                   
+              flex-direction: column;
+            }
+          }
+        }
+
+        &-second{
+          display: flex;
+          width: 100%;
+          height: auto;          
+
+          &-content{
+            display: flex;
+            margin: 0% auto 2% auto;
+            width: 85%;
+            height: 100%;            
+            flex-direction: row-reverse;
+
+            &-left{
+              display: flex;
+              width: 45%;
+              height: auto;              
+              margin-left: 2%;
+
+              &-img{
+                width: 100%;
+                height: 100%;                               
+              }
+
+              @include respond(maxNavBar){                                   
+                width: 100%;
+                margin: 5% auto;
+              }
+            }
+
+            &-right{
+              display: flex;
+              width: 55%;
+              height: 100%;              
+
+              &-content{
+                display: flex;
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                padding: 5%;
+                background-color: $ligth-gray-color;
+                
+                &-head{
+                  width: 100%;
+                  height: auto;
+                  font-family: 'Lato';
+                  text-transform: uppercase;
+                  font-size: 1.8rem;
+                  text-align: left;
+                  font-weight: 300;
+                }
+
+                &-text{
+                  width: 100%;
+                  height: auto;
+                  font-size: 1.4rem;
+                  
+                  hyphens: auto;
+                  margin: 2% auto;
+                }
+
+                &-btn{
+                  display: flex;
+                  width: 100%;
+                  height: auto;                  
+
+                  &-edit{
+                    display: flex;                    
+                    padding: 3%;                    
+                   width: 35%;
+                    background-color: $main-color;
+                    text-decoration: none;               
+
+                    &-link{
+                      text-decoration: none;
+                      margin: auto;
+                      font-family: 'Lato';
+                      font-size: 1.5rem;
+                      font-weight: 600;
+                      color: $white-color;
+                    }
+                    
+                  }
+                  @include respond(maxNavBar){                                   
+                    margin: 0% 0% 5% 0%;            
+                  }
+                }
+                @include respond(maxNavBar){                                   
+                  padding: 0% 2% 0% 2%;                   
+                }
+              }
+              @include respond(maxNavBar){                                   
+                width: 100%;
+                margin: 0% auto 5% auto;
+              }
+            }
+
+            @include respond(maxNavBar){                                   
+              flex-direction: column;
+            }
+          }
+        }
+
+        &-third{
+          display: flex;
+          width: 100%;
+          height: auto;          
+          flex-direction: column;    
+          margin: 2% auto 0% auto;      
+
+          &-content{
+            display: flex;
+            margin: 0% auto 2% auto;
+            width: 85%;
+            height: 100%;            
+            flex-direction: row;
+
+            &-left{
+              display: flex;
+              width: 45%;
+              height: auto;              
+              margin-right: 2%;
+
+              &-img{
+                width: 100%;
+                height: 100%;                               
+              }
+
+              @include respond(maxNavBar){                                   
+                width: 100%;
+                margin: 5% auto;
+              }
+            }
+
+            &-right{
+              display: flex;
+              width: 55%;
+              height: 100%;              
+
+              &-content{
+                display: flex;
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                padding: 5%;
+                background-color: $ligth-gray-color;
+                
+                &-head{
+                  width: 100%;
+                  height: auto;
+                  font-family: 'Lato';
+                  text-transform: uppercase;
+                  font-size: 1.8rem;
+                  text-align: left;
+                  font-weight: 300;
+                }
+
+                &-text{
+                  width: 100%;
+                  height: auto;
+                  font-size: 1.4rem;
+                  
+                  hyphens: auto;
+                  margin: 2% auto;
+                }
+
+                &-btn{
+                  display: flex;
+                  width: 100%;
+                  height: auto;                  
+
+                  &-edit{
+                    display: flex;                    
+                    padding: 3%;                    
+                   width: 35%;
+                    background-color: $main-color; 
+                    text-decoration: none;              
+
+                    &-link{
+                      text-decoration: none;
+                      margin: auto;
+                      font-family: 'Lato';
+                      font-size: 1.5rem;
+                      font-weight: 600;
+                      color: $white-color;
+                    }
+                    
+                  }
+                  @include respond(maxNavBar){                                   
+                    margin: 0% 0% 5% 0%;            
+                  }
+                }
+                @include respond(maxNavBar){                                   
+                  padding: 0% 2% 0% 2%;                   
+                }
+              }
+              @include respond(maxNavBar){                                   
+                width: 100%;
+                margin: 0% auto 5% auto;
+              }
+            }
+
+            @include respond(maxNavBar){                                   
+              flex-direction: column;
+            }
+          }
+        }
+
+    }
+    
+    @include respond(maxNavBar){                                   
+    height: 100vh;
+    }
+
+}

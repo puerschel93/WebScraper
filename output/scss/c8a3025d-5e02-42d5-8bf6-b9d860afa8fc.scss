@@ -1,0 +1,260 @@
+.authentication {
+  display: flex;
+  min-height: 100vh;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  &__content {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    width: 50%;
+    margin: auto auto auto 120px;
+    @media (max-width: 768px) {
+      padding-top: 0;
+      padding-bottom: 0;
+      order: 2;
+      position: relative;
+      margin: 24px 14px 24px 14px;
+    }
+  }
+
+  &__decoration {
+    overflow: hidden;
+    width: 50%;
+    background-color: #EFF5FF;
+    @media (max-width: 768px) {
+      order: 1;
+      width: 100%;
+      height: 375px;
+    }
+  }
+
+  &__header {
+    margin-bottom: 48px;
+    @media(max-width: 768px) {
+      position: absolute;
+      top: -175px;
+      z-index: 2;
+    }
+
+    & img {
+      margin-bottom: 16px;
+      @media(max-width: 768px) {
+        width: 84px;
+      }
+    }
+  }
+
+  &__title {
+    color: #5E93E7;
+  }
+
+  &__exclamation-mark {
+    color: #B3CDF8;
+  }
+}
+
+.decoration{
+  position: relative;
+  &__bottom{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 69.5%;
+    @media(max-width: 768px) {
+      transform: rotate(-90deg);
+      bottom: 0;
+      right: -49%;
+    }
+  }
+
+  &__circle{
+    border-radius: 50%;
+    position: absolute;
+    }
+
+  &__corner{
+    position: absolute;
+    right: 0;
+    top: 0;
+    @media(max-width: 768px) {
+      transform: rotate(-90deg);
+      right: 0;
+      left: 15%;
+      top: -35%;
+      width: 190px;
+      height: 86%;
+    }
+  }
+
+  &__circle-stick{
+    position: absolute;
+    top: 5%;
+    right: 17%;
+    width: 150px;
+    height: 150px;
+    @media(max-width: 768px) {
+      width: 72px;
+      height: 72px;
+      right: 0;
+      top: 19%;
+      left: 10%;
+      transform: rotate(-90deg);
+    }
+  }
+  &__cross{
+    position: absolute;
+    top: 36%;
+    right: 25%;
+    @media(max-width: 768px) {
+      width: 14px;
+      height: 14px;
+      top: 35%;
+      right: 50%;
+    }
+  }
+}
+
+.circle--yellow{
+  background: #FFCF54;
+}
+
+.circle--top{
+  width: 250px;
+  height: 250px;
+  top: -27%;
+  left: 15%;
+  @media(max-width: 768px) {
+    width: 125px;
+    height: 125px;
+    left: 47%;
+    top: -24%;
+  }
+}
+
+.circle--center{
+  background: #B9E6FF;
+  width: 65px;
+  height: 65px;
+  top: 34%;
+  left: 55%;
+  @media(max-width: 768px) {
+    top: 50%;
+    left: 44%;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.circle--purple{
+  background: #31346B;
+  width: 45px;
+  height: 45px;
+  top: 10%;
+  left: 20%;
+  @media(max-width: 768px) {
+    display: none;
+  }
+}
+
+.circle--left{
+  width: 130px;
+  height: 130px;
+  left: -14%;
+  top: 29%;
+  @media(max-width: 768px) {
+    width: 57px;
+    height: 57px;
+    left: 43%;
+    top: 93%;
+  }
+}
+
+.circle--bottom{
+  width: 35px;
+  height: 35px;
+  @media(max-width: 768px) {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.circle--second{
+  bottom: 35%;
+  right: 30%;
+  @media(max-width: 768px) {
+    top: 35%;
+    left: 85%;
+  }
+}
+
+.circle--first{
+  bottom: 40%;
+  right: 25%;
+  @media(max-width: 768px) {
+    top: 30%;
+    left: 80%;
+  }
+}
+
+.dots {
+  position: absolute;
+  left: 8%;
+  top: 20%;
+  @media(max-width: 768px) {
+    display: none;
+  }
+
+  &__row {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__dot {
+    width: 14px;
+    height: 14px;
+    background: #31346B;
+    border-radius: 50%;
+
+    &:not(:last-child) {
+      margin-right: 21px;
+    }
+  }
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 42px;
+  line-height: calc(51 / 42 * 100%);
+  margin-bottom: 24px;
+  white-space: nowrap;
+
+  @media(max-width: 768px) {
+    margin-bottom: 8px;
+    font-size: 27px;
+    line-height: 33px;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 27px;
+  line-height: calc(33 / 27 * 100%);
+  @media(max-width: 768px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.authentication__form{
+  @media(max-width: 768px) {
+    & button{
+      margin: 0 auto;
+    }
+  }
+}

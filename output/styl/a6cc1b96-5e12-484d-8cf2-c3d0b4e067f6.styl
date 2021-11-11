@@ -1,0 +1,435 @@
+/*!
+ * # Semantic UI - Search
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+
+/*******************************
+            Theme
+*******************************/
+
+$ui_type    = 'module';
+$ui_element = 'search';
+
+@import '../../theme.config';
+
+/*******************************
+             Search
+*******************************/
+
+.ui.search {
+  position: relative;
+}
+
+.ui.search > .prompt {
+  margin: 0em;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+
+  text-shadow: none;
+  font-style: normal;
+  font-weight: $ui_normal;
+
+  line-height: $ui_promptLineHeight;
+  padding: $ui_promptPadding;
+  font-size: $ui_promptFontSize;
+
+  background: $ui_promptBackground;
+  border: $ui_promptBorder;
+  color: $ui_promptColor;
+  box-shadow: $ui_promptBoxShadow;
+  transition: $ui_promptTransition;
+}
+
+.ui.search .prompt {
+  border-radius: $ui_promptBorderRadius;
+}
+
+
+/*--------------
+     Icon
+---------------*/
+
+.ui.search .prompt ~ .search.icon {
+  cursor: pointer;
+}
+
+/*--------------
+    Results
+---------------*/
+
+.ui.search > .results {
+  display: none;
+
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  transform-origin: center top;
+  white-space: normal;
+
+  background: $ui_resultsBackground;
+
+  margin-top: $ui_resultsDistance;
+  width: $ui_resultsWidth;
+
+  border-radius: $ui_resultsBorderRadius;
+  box-shadow: $ui_resultsBoxShadow;
+  border: $ui_resultsBorder;
+  z-index: $ui_resultsZIndex;
+}
+.ui.search > .results > :first-child {
+  border-radius: $ui_resultsBorderRadius $ui_resultsBorderRadius 0em 0em;
+}
+.ui.search > .results > :last-child {
+  border-radius: 0em 0em $ui_resultsBorderRadius $ui_resultsBorderRadius;
+}
+
+/*--------------
+    Result
+---------------*/
+
+.ui.search > .results .result {
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  font-size: $ui_resultFontSize;
+  padding: $ui_resultPadding;
+  color: $ui_resultTextColor;
+  line-height: $ui_resultLineHeight;
+  border-bottom: $ui_resultDivider;
+}
+.ui.search > .results .result:last-child {
+  border-bottom: $ui_resultLastDivider !important;
+}
+
+/* Image */
+.ui.search > .results .result .image {
+  float: $ui_resultImageFloat;
+  overflow: hidden;
+  background: $ui_resultImageBackground;
+  width: $ui_resultImageWidth;
+  height: $ui_resultImageHeight;
+  border-radius: $ui_resultImageBorderRadius;
+}
+.ui.search > .results .result .image img {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+/*--------------
+      Info
+---------------*/
+
+.ui.search > .results .result .image + .content {
+  margin: $ui_resultImageMargin;
+}
+
+.ui.search > .results .result .title {
+  margin: $ui_resultTitleMargin;
+  font-family: $ui_resultTitleFont;
+  font-weight: $ui_resultTitleFontWeight;
+  font-size: $ui_resultTitleFontSize;
+  color: $ui_resultTitleColor;
+}
+.ui.search > .results .result .description {
+  margin-top: $ui_resultDescriptionDistance;
+  font-size: $ui_resultDescriptionFontSize;
+  color: $ui_resultDescriptionColor;
+}
+.ui.search > .results .result .price {
+  float: $ui_resultPriceFloat;
+  color: $ui_resultPriceColor;
+}
+
+/*--------------
+    Message
+---------------*/
+
+.ui.search > .results > .message {
+  padding: $ui_messageVerticalPadding $ui_messageHorizontalPadding;
+}
+.ui.search > .results > .message .header {
+  font-family: $ui_headerFont;
+  font-size: $ui_messageHeaderFontSize;
+  font-weight: $ui_messageHeaderFontWeight;
+  color: $ui_messageHeaderColor;
+}
+.ui.search > .results > .message .description {
+  margin-top: $ui_messageDescriptionDistance;
+  font-size: $ui_messageDescriptionFontSize;
+  color: $ui_messageDescriptionColor;
+}
+
+/* View All Results */
+.ui.search > .results > .action {
+  display: block;
+  border-top: $ui_actionBorder;
+  background: $ui_actionBackground;
+  padding: $ui_actionPadding;
+  color: $ui_actionColor;
+  font-weight: $ui_actionFontWeight;
+  text-align: $ui_actionAlign;
+}
+
+
+/*******************************
+            States
+*******************************/
+
+/*--------------------
+       Focus
+---------------------*/
+
+.ui.search > .prompt:focus {
+  border-color: $ui_promptFocusBorderColor;
+  background: $ui_promptFocusBackground;
+  color: $ui_promptFocusColor;
+}
+
+/*--------------------
+       Loading
+---------------------*/
+
+.ui.loading.search .input > i.icon:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+
+  margin: $ui_loaderMargin;
+  width: $ui_loaderSize;
+  height: $ui_loaderSize;
+
+  border-radius: $ui_circularRadius;
+  border: $ui_loaderLineWidth solid $ui_loaderFillColor;
+}
+.ui.loading.search .input > i.icon:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+
+  margin: $ui_loaderMargin;
+  width: $ui_loaderSize;
+  height: $ui_loaderSize;
+
+  animation: button-spin $ui_loaderSpeed linear;
+  animation-iteration-count: infinite;
+
+  border-radius: $ui_circularRadius;
+
+  border-color: $ui_loaderLineColor transparent transparent;
+  border-style: solid;
+  border-width: $ui_loaderLineWidth;
+
+  box-shadow: 0px 0px 0px 1px transparent;
+}
+
+
+/*--------------
+      Hover
+---------------*/
+
+.ui.search > .results .result:hover,
+.ui.category.search > .results .category .result:hover {
+  background: $ui_resultHoverBackground;
+}
+.ui.search .action:hover {
+  background: $ui_actionHoverBackground;
+}
+
+/*--------------
+      Active
+---------------*/
+
+.ui.category.search > .results .category.active {
+  background: $ui_categoryActiveBackground;
+}
+.ui.category.search > .results .category.active > .name {
+  color: $ui_categoryNameActiveColor;
+}
+
+.ui.search > .results .result.active,
+.ui.category.search > .results .category .result.active {
+  position: relative;
+  border-left-color: $ui_resultActiveBorderLeft;
+  background: $ui_resultActiveBackground;
+  box-shadow: $ui_resultActiveBoxShadow;
+}
+.ui.search > .results .result.active .title {
+  color: $ui_resultActiveTitleColor;
+}
+.ui.search > .results .result.active .description {
+  color: $ui_resultActiveDescriptionColor;
+}
+
+/*******************************
+           Types
+*******************************/
+
+/*--------------
+    Selection
+---------------*/
+
+.ui.search.selection .prompt {
+  border-radius: $ui_selectionPromptBorderRadius;
+}
+
+/* Remove input */
+.ui.search.selection > .icon.input > .remove.icon {
+  pointer-events: none;
+  position: absolute;
+  left: auto;
+  opacity: 0;
+  color: $ui_selectionCloseIconColor;
+  top: $ui_selectionCloseTop;
+  right: $ui_selectionCloseRight;
+  transition: $ui_selectionCloseTransition;
+}
+.ui.search.selection > .icon.input > .active.remove.icon {
+  cursor: pointer;
+  opacity: $ui_selectionCloseIconOpacity;
+  pointer-events: auto;
+}
+.ui.search.selection > .icon.input:not([class*="left icon"]) > .icon ~ .remove.icon {
+  right: $ui_selectionCloseIconInputRight;
+}
+.ui.search.selection > .icon.input > .remove.icon:hover {
+  opacity: $ui_selectionCloseIconHoverOpacity;
+  color: $ui_selectionCloseIconHoverColor;
+}
+
+
+/*--------------
+    Category
+---------------*/
+
+.ui.category.search .results {
+  width: $ui_categoryResultsWidth;
+}
+
+.ui.category.search .results.animating,
+.ui.category.search .results.visible {
+  display: table;
+}
+
+/* Category */
+.ui.category.search > .results .category {
+  display: table-row;
+  background: $ui_categoryBackground;
+  box-shadow: $ui_categoryBoxShadow;
+  transition: $ui_categoryTransition;
+}
+
+/* Last Category */
+.ui.category.search > .results .category:last-child {
+  border-bottom: none;
+}
+
+/* First / Last */
+.ui.category.search > .results .category:first-child .name + .result {
+  border-radius: 0em $ui_resultsBorderRadius 0em 0em;
+}
+.ui.category.search > .results .category:last-child .result:last-child {
+  border-radius: 0em 0em $ui_resultsBorderRadius 0em;
+}
+
+/* Category Result Name */
+.ui.category.search > .results .category > .name {
+  display: table-cell;
+  text-overflow: ellipsis;
+  width: $ui_categoryNameWidth;
+  white-space: $ui_categoryNameWhitespace;
+  background: $ui_categoryNameBackground;
+  font-family: $ui_categoryNameFont;
+  font-size: $ui_categoryNameFontSize;
+  padding: $ui_categoryNamePadding;
+  font-weight: $ui_categoryNameFontWeight;
+  color: $ui_categoryNameColor;
+  border-bottom: $ui_categoryDivider;
+}
+
+/* Category Result */
+.ui.category.search > .results .category .results {
+  display: table-cell;
+  background: $ui_categoryResultBackground;
+  border-left: $ui_categoryResultLeftBorder;
+  border-bottom: $ui_categoryDivider;
+}
+.ui.category.search > .results .category .result {
+  border-bottom: $ui_categoryResultDivider;
+  transition: $ui_categoryResultTransition;
+  padding: $ui_categoryResultPadding;
+}
+
+/*******************************
+           Variations
+*******************************/
+
+/*-------------------
+     Left / Right
+--------------------*/
+
+.ui[class*="left aligned"].search > .results {
+  right: auto;
+  left: 0%;
+}
+.ui[class*="right aligned"].search > .results {
+  right: 0%;
+  left: auto;
+}
+
+/*--------------
+    Fluid
+---------------*/
+
+.ui.fluid.search .results {
+  width: 100%;
+}
+
+
+/*--------------
+      Sizes
+---------------*/
+
+.ui.mini.search {
+  font-size: $ui_relativeMini;
+}
+.ui.small.search {
+  font-size: $ui_relativeSmall;
+}
+.ui.search {
+  font-size: $ui_relativeMedium;
+}
+.ui.large.search {
+  font-size: $ui_relativeLarge;
+}
+.ui.big.search {
+  font-size: $ui_relativeBig;
+}
+.ui.huge.search {
+  font-size: $ui_relativeHuge;
+}
+.ui.massive.search {
+  font-size: $ui_relativeMassive;
+}
+
+/*--------------
+      Mobile
+---------------*/
+
+@media only screen and (max-width: $ui_largestMobileScreen) {
+  .ui.search .results {
+    max-width: $ui_mobileMaxWidth;
+  }
+}
+
+loadUIOverrides();
+

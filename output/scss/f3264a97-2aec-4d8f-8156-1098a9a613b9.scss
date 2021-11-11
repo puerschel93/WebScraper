@@ -1,0 +1,420 @@
+.q-notification{
+    .q-anchor--skip{  // to style notification close button
+        div{
+            color: aliceblue;
+        }
+    }
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+
+//------------------
+
+%flex{
+    display: flex;
+}
+
+.flex{
+    @extend %flex;
+    &-aroud{
+        @extend %flex;
+        justify-content: space-around;
+    }
+    &-evenly{
+        @extend %flex;
+        justify-content: space-evenly;
+    }
+    &-between{
+        @extend %flex;
+        justify-content: space-between;
+    }
+    &-end{
+        @extend %flex;
+        align-items: flex-start;
+         justify-content: flex-end;
+    }
+    &__row{
+        @extend %flex;
+        flex-direction: row;
+    }
+    &__columns{
+        @extend %flex;
+        flex-direction: column;
+    }
+
+}
+
+
+    .q-img__content{
+        @extend %flex;
+        align-items: flex-start;
+         justify-content: flex-end;
+    }
+
+
+.float{
+    &__left{
+        float: left;
+    }
+    &__right{
+        float: right;
+    }
+}
+
+.c{
+    &-error{
+        color: red;
+        text-align: center;
+    }
+}
+
+.c-footer{
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        @media screen and (max-width:$breakpoint-xs) {
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+}
+
+// filter inputs
+/*  .filter-inputs div:nth-of-type(3){
+    background-color: red;
+ }
+ */
+// to remove padding to last field in filters ( page-design-input )
+.filter-inputs .q-field--with-bottom{
+    padding: 0 !important;
+}
+
+
+
+// list view card table
+
+.c-card{
+    &__header{
+                background-color: $positive;
+                color: white;
+                padding: 0px 10px;
+
+                @media screen and (max-width:350px) {
+                    flex-direction: column;
+                    display: flex;
+                }
+
+        &__actions{
+            display: flex;
+            flex: auto;
+        }
+    }
+   
+}
+
+// if the component is a sub tab of other component
+.tab-mode-card{
+    &__header{
+        background-color: white !important;
+        button{
+            color: blue;
+        }
+    }
+}
+
+
+
+
+.c-table{
+    &__top{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__head-row{
+        width: 100%;
+        display:flex;
+    }
+    &__header{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+
+         .icon-actions{
+            margin: .2rem 1% 0 auto;
+          //  display: inline;
+        } 
+    }
+    &__sub-header{
+        display: flex;
+        width: 100%;
+        //justify-content: space-between;
+    }
+    &__footer{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        @media screen and (max-width:830px) {
+            flex-direction: column;
+           
+        }
+
+        .pagination{
+            display: flex;
+            justify-content: flex-end; 
+           
+
+            @media screen and (max-width:590px) {
+                flex-direction: column;    
+                align-items: flex-end;      
+             }
+        }
+
+    }
+}
+
+
+//form inputs
+
+.c-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    &__inputs{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+// overriding quasar styles
+.truncate-chip-labels { 
+    .q-chip{
+        max-width: 140px
+    }
+}
+.c-select{
+    .q-field__control{
+        max-height: 20px !important;
+        min-height: 32px !important;
+    }
+    .q-field__append{
+        margin-top: -0.3rem !important;
+    }
+    .q-field__native{
+        margin-top: -0.3rem !important;
+    }
+}  
+
+.c-input{
+  
+
+    &__outline{
+    border: 1.1px solid #a9a5a5;
+    border-radius: 5px;
+    background-color: white;
+    color: #7d7777;;
+    font-size: 15.3px;
+    padding: 6.5px;
+     display: flex;
+     flex-direction: row;
+
+    }
+
+    &__label{
+        margin: 0 1%;
+        word-wrap:break-word;
+    }
+
+    &__error{
+        color: red;
+        font-size: 11px;
+        font-weight: 450;
+    }
+    
+}
+
+.required{
+    &__label{
+        .q-field__label::after{
+            content: '*';
+            color: red;
+        }
+
+      &__pure::after{
+        content: '*';
+        color: red;
+      }  
+        
+    }
+}
+
+
+.q-pagination {
+    .q-btn__wrapper
+    {
+        font-size: 14px;
+        font-weight: 400;
+    }
+    button.q-btn--rectangle{
+        min-width: 2rem !important;
+    }
+   
+}
+.q-table__bottom {
+     min-height: auto !important; 
+    font-size: 12px;
+}
+.bg-black{
+    background-color: #6d6a6a !important;
+}
+
+span.c-text{
+    &__underline{
+        text-decoration-line: underline;
+         &__double{
+            text-decoration-style: double;
+        }
+        &__solid{
+            text-decoration-style: solid;
+        }
+        &__wavy{
+            text-decoration-style: wavy;
+        } 
+    }
+
+}
+
+.c-global-search{
+    @media screen and (max-width:500px) {
+        width: 30vw;
+        margin-right: -20vw;
+    }
+}
+
+//------------------from quasar
+
+.my-sticky-header-column-table
+{
+    /* height or max-height is important */
+    // height: 489px;
+   
+    /* specifying max-width so the example can
+        highlight the sticky column on any browser window */
+   // max-width: 600px;
+   // width: 100%;
+
+    height: 73vh;
+
+    // mobile normal mode (portrait)
+    @media screen and (max-width:$breakpoint-xs) {
+        height: 70vh;
+    }
+
+    @media screen and (max-height:$breakpoint-xs) {
+        height: 100vh;
+    }
+
+
+
+    tr th{
+        position: sticky;
+        /* higher than z-index for td below */
+        z-index: 3;
+        background: rgb(139, 137, 137);
+        color: white;
+        }
+
+    td:first-child
+        {/* bg color is important for td; just specify one */
+            background-color: #bfe7d7 !important
+        }
+      
+
+        thead tr:first-child th
+        {
+        top: 0;
+        z-index: 1;
+        }
+        tr:first-child th:first-child
+        {
+            /* highest z-index */
+            z-index: 3
+        }
+
+        td:first-child
+        {
+            z-index: 1
+        }
+
+        td:first-child, th:first-child
+        {   
+            position: sticky;
+            left: 0
+        }
+
+
+     // below css for last child
+     
+     
+    td:last-child
+    {/* bg color is important for td; just specify one */
+        background-color: #bfe7d7 !important
+    }
+  
+
+    thead tr:last-child th
+    {
+    top: 0;
+    z-index: 1;
+     
+    }
+    tr:last-child th:last-child
+    {
+        /* highest z-index */
+        z-index: 3;
+        
+
+    }
+
+    td:last-child
+    {
+        z-index: 1
+    }
+
+    td:last-child,th:last-child
+    {   
+       
+        @media screen and (min-width:$breakpoint-sm){
+            position: sticky;
+            right:  0;
+        }
+    }
+
+    td:last-child{
+        max-width: 120px !important;
+       
+       
+        button{
+            max-width: 25px;
+            margin: 0 5px;
+           
+        }
+    }
+   
+
+    }
+
+
+    // overriding option group
+
+    // eg: check box---treatment problems
+    .q-option-group.q-gutter-x-sm.q-option-group--inline{
+        display: flex;
+        flex-direction: column;
+    }

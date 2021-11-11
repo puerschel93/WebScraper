@@ -1,0 +1,325 @@
+// font loading
+
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Poppins:wght@500;600&display=swap');
+// poppins 500,600, 700
+
+@mixin font-exp{
+    font-family: 'Lora', serif;
+}
+@mixin font-libre{
+    font-family: 'Libre Franklin', sans-serif;
+}
+@mixin font-poppins-regular{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+@mixin font-poppins-semibold{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+// font-sizes;
+$font-size-base: 10px;
+$font-size-small:1.2rem;
+$font-size-regular: 1.4rem;
+$font-size-body-copy: 1.6rem;
+
+// line heights
+$line-height-regular: 1.4;
+
+@mixin text-background($color:$color-accent) {
+    display: inline;
+    background: linear-gradient(
+        to bottom,
+        rgba($color, 0) 49%,
+        rgba($color, 0.2) 50%,
+        rgba($color, 0.2) 100%
+    );
+}
+
+// GLOBAL FONTS ---------------------------------------------------------------------------------
+
+// Regular
+@mixin text-regular{
+    @include font-libre;
+    font-size: $font-size-regular;
+}
+
+// Blocky
+@mixin text-blocky{
+    @include font-poppins-semibold;
+    line-height: $line-height-regular;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1.2rem;
+    p {
+        line-height: $line-height-regular;
+        font-size: 1.2rem;
+    }
+}
+
+// Blocky lowercase
+@mixin text-blocky-lower{
+    @include font-poppins-semibold;
+    letter-spacing: 0.02em;
+    font-size: $font-size-regular;
+    p {
+        line-height: $line-height-regular;
+    }
+}
+
+// Blocky lowercase
+@mixin text-blocky-lower-small{
+    @include font-poppins-semibold;
+    letter-spacing: 0.02em;
+    font-size: $font-size-small;
+    p {
+        line-height: $line-height-regular;
+    }
+}
+
+// Small text
+@mixin text-small {
+    @include font-libre;
+    font-size:$font-size-small;
+    line-height: 1.4;
+}
+
+// Tiny text
+@mixin text-tiny {
+    @include font-libre;
+    font-size:$font-size-base;
+    line-height: 1.4;
+}
+
+
+
+// SPECIFIC FONTS -------------------------------------------------------------------------------
+
+// Slightly larger text for comfortable reading
+@mixin text-body{
+    @include font-libre;
+    font-size:$font-size-body-copy;
+    line-height:1.8;
+}
+
+// Large page title
+@mixin text-title-page{
+    @include font-poppins-semibold;
+    font-size: 3rem;
+    line-height: 1.2;
+    @include break(tablet) {
+        font-size: 4.3rem;
+    }
+    @include break-under(phone) {
+        word-break: break-word;
+    }
+}
+
+// Secondary page title
+@mixin text-title-secondary{
+    @include font-poppins-semibold;
+    font-size: 2.2rem;
+    @include break(tablet) {
+        font-size: 2.6rem;
+    }
+    @include break-under(phone) {
+
+        word-break: break-word;
+    }
+}
+
+// Variable title
+@mixin text-title-variable($size:4.3rem){
+    @include font-poppins-semibold;
+    font-size: clamp(2.6rem, 3.2vw, $size);
+    @include break(tablet) {
+        font-size: $size;
+    }
+    @include break-under(phone) {
+
+        word-break: break-word;
+    }
+}
+
+// Card title large
+@mixin text-card-title-large{
+    @include font-poppins-semibold;
+    font-size: 1.8rem;
+    line-height: $line-height-regular;
+}
+
+// Card title
+@mixin text-card-title{
+    @include font-poppins-semibold;
+    font-size: 1.4rem;
+    line-height: $line-height-regular;
+}
+
+// Text for buttons
+@mixin text-button{
+    @include font-poppins-semibold;
+    line-height: $line-height-regular;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1.2rem;
+    p {
+        line-height: $line-height-regular;
+        font-size: 1.2rem;
+    }
+}
+
+@mixin link-styled{
+    @include font-poppins-semibold;
+    font-size: 1.4rem;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 0.2em;
+    text-decoration-color: $color-accent;
+    display: inline-block;
+    &:hover {
+        color: $color-hover;
+        text-decoration-color: $color-hover;
+    }
+}
+
+@mixin link-styled-small{
+    @include font-poppins-semibold;
+    font-size: 1.2rem;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 0.2em;
+    text-decoration-color: $color-accent;
+    display: inline-block;
+    &:hover {
+        color: $color-hover;
+        text-decoration-color: $color-hover;
+    }
+}
+
+
+// HTML/BODY =================================================================================================
+html {
+    font-size: $font-size-base;
+}
+body {
+    @include font-libre;
+    font-size: $font-size-regular;
+    line-height: $line-height-regular;
+}
+
+.text-blocky {
+    @include text-blocky;
+}
+.text-blocky--lower {
+    @include text-blocky-lower;
+}
+
+// TEXT GAPS =================================================================================================
+
+@mixin text-gap {
+    margin-bottom: $gap/2;
+    @include break(tablet) {
+        margin-bottom: $gap;
+    }
+}
+
+@mixin text-gap--tight {
+    margin-bottom: $gap-tight/2;
+    @include break(tablet) {
+        margin-bottom: $gap-tight;
+    }
+}
+
+// TEXT BODY =================================================================================================
+
+// text body
+%text-body-format {
+    line-height: $line-height-regular;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    img,
+    p,
+    ul,
+    ol {
+        @include text-gap;
+    }
+    img {
+        width: 100%;
+        max-width: 763px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        @include text-title-variable;
+        position: relative;
+        bottom: 0.02em;
+    }
+    h1,
+    h2 {
+        font-size: 2.2rem;
+    }
+    h3 {
+        font-size: 1.8rem;
+    }
+    h4,
+    h5 {
+        font-size: 1.8rem;
+        color: inherit;
+    }
+    p,
+    li {
+        @include text-body;
+    }
+    p,
+    ol,
+    ul,
+    .cite,
+    pre {
+        max-width: $sitewidth;
+    }
+    ul {
+        box-sizing: border-box;
+    }
+    li {
+        width: calc(100% - 1em);
+        list-style: none;
+        position: relative;
+        padding-left: 1em;
+        &:before {
+            content: "";
+            background-color: #21c4d3;
+            position: absolute;
+            left: 0;
+            top: 1em;
+            font-size: 12px;
+            width: 5px;
+            height: 5px;
+        }
+    }
+    & > *:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    pre {
+        background-color: $white;
+        padding: 1em;
+    }
+    a{
+        color: $color-link;
+    }
+}
+
+
+
+
+// TYPOGRAPHY UTILITES
+
+p.p_mb{
+    margin-bottom: 1em;
+}

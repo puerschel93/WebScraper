@@ -1,0 +1,253 @@
+.social
+	pos relative
+	df(stretch)
+	cursor pointer
+	width vw(23)
+	z-index 1
+	fill #fff
+	transition all .3s
+	margin-bottom vw(16)
+	z-index 3
+	.ya-share2
+		position absolute
+		top 50%
+		transform translate(0, -50%)
+		width 0
+		@media $mobile
+			top -73%
+	@media $mobile
+		width auto
+		margin-right auto
+		align-items center
+		justify-content flex-end
+	&:hover
+		.ya-share2
+			position absolute
+			w vw(225)
+			opacity 1
+			visibility visible
+			@media $mobile
+				pr 0
+				height vm(148)
+				mr 0
+				width vm(20)
+			&__container
+				@media $mobile
+					/.ios &
+						w 100%
+		& + .social__mobiler
+			@media $mobile
+				size vm(50)
+	&__mobiler
+		size 0
+		transition 0s .1s width, 0s .1s height
+		@media $mobile
+			pos absolute
+			r 0
+			t 0
+			z-index 3
+	&__bg
+		dn()
+		pos fixed
+		bgc alpha(black, .62)
+		t 0
+		l 0
+		size 100%
+		z-index -1
+	&__share
+		size vh(19) vh(17)
+		@media $tovw
+			size vw(19) vw(17)
+		@media $mobile
+			size vm(37) vm(31)
+		&-wrapper
+			pos relative
+			z-index 1
+			df(center, center)
+			size vw(22) vw(34)
+			@media $mobile
+				size vm(21)
+				mb vm(5)
+	.ya-share2
+		df(center, center)
+		w 0px
+		opacity 0
+		visibility hidden
+		overflow hidden
+		transition .35s opacity, .35s visibility, width .35s
+		pl vw(36)
+		pb vw(3)
+		@media $mobile
+			position absolute
+			bottom 140% 
+			pl 0
+			w vm(20)
+			h 0
+		&__list
+			df()
+			@media $mobile
+				flex-direction column
+		.ya-share2__list.ya-share2__list_direction_horizontal
+			@media $mobile
+				mt	vm(-71)
+		&__item
+			margin-right vw(17) !important
+			&:last-child
+				margin-top vw(3) !important
+				@media $mobile
+					margin-top vm(10) !important
+			@media $mobile
+				margin-top vm(10) !important
+			&:last-child
+				margin-right 0 !important
+			&:first-child
+				margin-bottom 0 !important
+				@media $mobile
+					margin-top 0 !important
+			& + .ya-share2__item
+				@media $desktop
+					ml vw(5)
+				@media $mobile
+					ml vm(10)
+					mb vm(10) !important
+		&__container
+			w 100%
+			@media $mobile
+				/.ios &
+					w 0
+		&__link
+			db()
+			flex 0 0 1em
+			font-size vw(30)
+			line-height 1
+			c white
+			transition color 0.2s, .35s opacity
+			size vw(22)
+			@media $mobile
+				size vm(20)
+		&__title
+			display none
+		&__title,
+		&__badge
+			vertical-align middle
+		&__badge
+			background transparent !important
+		&__badge,
+		&__icon,
+		.icon
+			display block
+			box-sizing border-box
+			width 100%!important
+			height 100%!important
+		&__icon
+			padding 0
+			background-repeat no-repeat
+			background-size cover !important
+			@media $desktop
+				transition .35s opacity
+				&:hover
+					opacity 1
+			@media $mobile
+				background-position center
+	.ya-share2__item_service_facebook .ya-share2__icon
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.423 20v-7.298h2.464l.369-2.845h-2.832V8.042c0-.824.23-1.385 1.417-1.385h1.515V4.111A20.255 20.255 0 0014.148 4c-2.183 0-3.678 1.326-3.678 3.76v2.097H8v2.845h2.47V20h2.953z' fill='%23E75300' fill-rule='evenodd'/%3E%3C/svg%3E");
+	.ya-share2__item_service_vkontakte .ya-share2__icon
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.623 7.66c.12-.372 0-.643-.525-.643h-1.745c-.44 0-.644.237-.763.491 0 0-.898 2.17-2.152 3.576-.406.406-.593.542-.813.542-.119 0-.271-.136-.271-.508V7.644c0-.44-.136-.644-.509-.644H10.1c-.27 0-.44.203-.44.407 0 .423.627.525.694 1.711v2.576c0 .559-.101.66-.322.66-.593 0-2.033-2.185-2.897-4.676-.17-.492-.339-.678-.78-.678H4.593C4.085 7 4 7.237 4 7.491c0 .458.593 2.762 2.762 5.813 1.44 2.084 3.49 3.202 5.338 3.202 1.118 0 1.254-.254 1.254-.678v-1.575c0-.509.101-.594.457-.594.254 0 .712.136 1.746 1.136 1.186 1.186 1.39 1.728 2.05 1.728h1.745c.509 0 .746-.254.61-.745-.152-.492-.728-1.203-1.474-2.05-.407-.475-1.017-1-1.203-1.255-.254-.339-.186-.474 0-.78-.017 0 2.118-3.015 2.338-4.032' fill='%23E75300' fill-rule='evenodd'/%3E%3C/svg%3E");
+	.ya-share2__item_service_twitter .ya-share2__icon
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 7.539a6.56 6.56 0 01-1.885.517 3.294 3.294 0 001.443-1.816 6.575 6.575 0 01-2.085.796 3.283 3.283 0 00-5.593 2.994A9.32 9.32 0 015.114 6.6a3.28 3.28 0 001.016 4.382 3.274 3.274 0 01-1.487-.41v.041a3.285 3.285 0 002.633 3.218 3.305 3.305 0 01-1.482.056 3.286 3.286 0 003.066 2.28A6.585 6.585 0 014 17.524 9.291 9.291 0 009.032 19c6.038 0 9.34-5 9.34-9.337 0-.143-.004-.285-.01-.425A6.672 6.672 0 0020 7.538z' fill='%23E75300' fill-rule='evenodd'/%3E%3C/svg%3E");
+
+.result__social
+	display flex
+	align-items center
+	ml vh(93) 
+	@media $tovw
+		ml vw(93) 
+	@media $mobile
+		ml 0
+		pl vm(21)
+		pr vm(21)
+	.social
+		width auto
+		@media $mobile
+			ml 0
+			position static
+			w auto
+			opacity 1
+			visibility visible
+		&__share-wrapper
+			display none
+		&:hover
+			.ya-share2
+				position static
+				w auto
+				opacity 1
+				visibility visible
+				@media $mobile
+					pr 0
+					height auto
+					mr 0
+					width auto
+		.ya-share2__icon
+			opacity 1 !important
+			background-size contain !important
+	.ya-share2
+		&__item
+			&:last-child
+				@media $mobile
+					margin-top vm(0) !important
+	.ya-share2__link
+		width auto
+		height auto
+	.social__share
+		display none
+	.ya-share2
+		pos static
+		transform translate(0)
+		width auto
+		height auto
+		opacity 1
+		visibility visible
+		overflow auto
+		padding 0
+		.ya-share2__list.ya-share2__list_direction_horizontal
+			@media $mobile
+				mt 0
+				display flex
+				flex-direction unset
+		&__item
+			margin-right vh(27) !important
+			@media $tovw
+				margin-right vw(27) !important
+			@media $mobile
+				margin 0 !important
+				margin-right vm(20) !important
+			&:last-child
+				margin-right 0 !important
+	.ya-share2__container_size_m .ya-share2__badge .ya-share2__icon
+		width vh(67) !important
+		height vh(66) !important
+		background-size contain !important
+		background-repeat no-repeat
+		@media $tovw
+			width vw(67) !important
+			height vw(66) !important
+
+		@media $mobile
+			background-size contain !important
+			width vm(50) !important
+			height vm(60) !important
+
+	.ya-share2__item_service_facebook .ya-share2__icon
+		background-image url("data:image/svg+xml,%3Csvg viewBox='0 0 65 66' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='32.1965' cy='33.1576' r='31.6965' stroke='%23FF5F00'/%3E%3Cpath d='M36.6752 31.716H34.0226V41.548H29.5919V31.716H27.8716V28.4099H29.5919V26.3051C29.5919 23.5371 30.7356 21.8937 34.0033 21.8937H37.3095V25.1902H35.3873C34.1187 25.1902 34.0322 25.6611 34.0322 26.5453L34.0226 28.4003H37.0404L36.6752 31.716Z' fill='%23FF5F00'/%3E%3C/svg%3E%0A")
+
+	.ya-share2__item_service_twitter .ya-share2__icon
+		background-image url("data:image/svg+xml,%3Csvg viewBox='0 0 65 66' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M42.5913 25.971C41.8441 26.3038 41.053 26.5227 40.2091 26.619C41.0618 26.1111 41.7211 25.2968 42.0287 24.3337C41.2288 24.8065 40.341 25.148 39.4004 25.3319C38.6444 24.5263 37.572 24.0272 36.3765 24.0272C34.091 24.0272 32.2362 25.8747 32.2362 28.1513C32.2362 28.4752 32.2713 28.7904 32.3417 29.0881C28.8958 28.913 25.8455 27.2757 23.8061 24.7802C23.4457 25.3931 23.2435 26.1024 23.2435 26.8554C23.2435 28.2826 23.9732 29.5522 25.0895 30.2877C24.4127 30.2702 23.771 30.0776 23.2172 29.7711C23.2172 29.7886 23.2172 29.8061 23.2172 29.8236C23.2172 31.82 24.6412 33.4924 26.54 33.8689C26.1971 33.9652 25.8279 34.0177 25.4499 34.0177C25.1862 34.0177 24.9225 33.9914 24.6676 33.9389C25.195 35.5763 26.7246 36.7758 28.5354 36.8021C27.1201 37.9053 25.3357 38.5708 23.393 38.5708C23.0589 38.5708 22.7249 38.5533 22.4084 38.5095C24.2369 39.6828 26.4169 40.3657 28.7552 40.3657C36.3765 40.3657 40.5431 34.079 40.5431 28.6241C40.5431 28.4402 40.5344 28.2651 40.5344 28.09C41.3343 27.5208 42.0287 26.7941 42.5913 25.971Z' fill='%23FF5F00'/%3E%3Ccircle cx='32.5' cy='33.1576' r='31.6965' stroke='%23FF5F00'/%3E%3C/svg%3E%0A")
+	.ya-share2__item_service_vkontakte .ya-share2__icon
+		background-image url("data:image/svg+xml,%3Csvg  viewBox='0 0 65 65' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M41.2524 35.3255C43.1751 37.0946 43.5816 37.9499 43.6409 38.0589C44.4371 39.3669 42.76 39.4675 42.76 39.4675L39.5499 39.5178C39.5499 39.5178 38.8554 39.652 37.9576 39.0315C36.7548 38.2182 35.6199 36.0969 34.739 36.3736C33.8496 36.6503 33.875 38.562 33.875 38.562C33.875 38.562 33.8835 38.8387 33.6802 39.0483C33.46 39.2831 33.028 39.1908 33.028 39.1908H31.5882C31.5882 39.1908 28.4204 39.5178 25.6253 36.6419C22.5846 33.506 19.8911 27.3432 19.8911 27.3432C19.8911 27.3432 19.7387 26.9742 19.9081 26.7646C20.1029 26.5466 20.6111 26.5466 20.6111 26.5466L24.0499 26.5298C24.0499 26.5298 24.3717 26.5885 24.6004 26.7562C24.7952 26.8988 24.8969 27.1587 24.8969 27.1587C24.8969 27.1587 25.4474 28.5506 26.1928 29.7999C27.6242 32.2566 28.2933 32.7933 28.7761 32.5333C29.4876 32.1476 29.2758 29.0704 29.2758 29.0704C29.2758 29.0704 29.2928 27.9469 28.9116 27.4522C28.6321 27.0665 28.0901 26.9491 27.8529 26.9239C27.6581 26.8988 27.9715 26.4544 28.3865 26.2531C29.0048 25.9513 30.0974 25.9429 31.3849 25.9513C32.3843 25.9597 32.6808 26.0267 33.0704 26.1106C34.2562 26.3873 33.8581 27.4857 33.8581 30.1101C33.8581 30.9486 33.7056 32.1309 34.3155 32.5249C34.5781 32.6926 35.2218 32.5501 36.8311 29.8418C37.5933 28.5589 38.1608 27.0581 38.1608 27.0581C38.1608 27.0581 38.2879 26.7898 38.4742 26.6724C38.669 26.555 38.9401 26.5969 38.9401 26.5969L42.5568 26.5718C42.5568 26.5718 43.6409 26.446 43.8188 26.9323C44.0051 27.4438 43.4122 28.626 41.93 30.5713C39.5076 33.7827 39.2365 33.4808 41.2524 35.3255Z' fill='%23FF5F00'/%3E%3Ccircle cx='32.8034' cy='32.1965' r='31.6965' stroke='%23FF5F00'/%3E%3C/svg%3E%0A")
+	.ya-share2__item_service_facebook .ya-share2__badge, .ya-share2__item_service_facebook .ya-share2__mobile-popup-badge,
+	.ya-share2__item_service_twitter .ya-share2__badge, .ya-share2__item_service_twitter .ya-share2__mobile-popup-badge,
+	.ya-share2__item_service_vkontakte .ya-share2__badge, .ya-share2__item_service_vkontakte .ya-share2__mobile-popup-badge
+		background-color transparent
+
+
+

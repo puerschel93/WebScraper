@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to left, rgb(21, 153, 197), rgb(25, 25, 231));
+
+    .login {
+        width: 60%;
+        height: 60%;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+
+
+        .left {
+            position: relative;
+
+            .background {
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.185);
+                border-radius: 20px;
+                position: absolute;
+                transform: rotate(-3deg);
+                background-color: rgb(99, 235, 99);
+            }
+
+            .foreground {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.185);
+                border-radius: 20px;
+                background-color: rgb(67, 67, 196);
+                overflow: hidden;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: .2fr .1fr 1fr .1fr;
+                padding: 10px;
+
+                .img {
+                    width: 80px;
+                }
+
+                .img-hub {
+                    width: 75px;
+                }
+
+                .logo {
+                    display: flex;
+                    align-items: center;
+                    padding: 20px 20px;
+                }
+
+                nav {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    ul {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-evenly;
+                        li {
+                            list-style: none;
+                            font-size: 18px;
+                        }
+                    }
+                }
+
+                .all-services {
+                    width: 100%;
+                    height: 25vh;
+                    padding: 20px 50px;
+                    overflow-y: auto;
+
+                    .services {
+                        padding: 20px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        button {
+                            padding: 5px 20px;
+                            border-radius: 10px;
+                            background-color: green;
+                            border: none;
+                        }
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                        height: 20px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        border-radius: 20px;
+                        background-color: rgba(187, 240, 237, 0.123);
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 20px;
+                        background-color: rgba(0, 126, 143, 0.514);
+                    }
+                }
+                
+                .logo-idcorp {
+                    display: flex;
+                    justify-content: flex-end;
+                    padding: 0 20px;
+                    .img-id {
+                        width: 15%;
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .form {
+                width: 100%;
+                height: 90%;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: .2fr .5fr .5fr .2fr .2fr .5fr;
+                box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.185);
+                border-radius: 0 20px 20px 0;
+                background-color: rgba(230, 230, 230, 0.5);
+                overflow: hidden;
+
+                .text-login {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    padding: 20px;
+                    font-size: 10px;
+                    background-color: lightseagreen; 
+                    
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        position: relative;
+                    }
+
+                    #login:before {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgb(35, 124, 0);                        
+                    }
+                }
+
+                .logo-service {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    a {
+                        width: 25%;
+                        img {
+                            width: 80%;
+                        }
+                    }
+                    
+                }
+
+                form {
+                    width: 100%;
+                    padding: 0px 100px 0 100px;
+
+                    .input {
+                        width: 100%;
+                        margin: 5px 0;
+                        padding: 10px 20px;
+                        border: none;
+                        border-radius: 5px;
+                        outline: none;
+                        background-color: rgba(255, 255, 255, 0.219);
+                        color: rgb(58, 58, 58);
+                    }
+
+                    input:focus {
+                        border: none;
+                        box-shadow: .1px 1px 2px rgba(255, 255, 255, 0.507);
+                        transform: scale(1.001);
+                    }
+
+                    .access {
+                        display: flex;
+                        padding: 20px 0;
+                        justify-content: space-between;
+
+                        .check {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .checkbox {
+                                margin-right: 5px;
+                            }
+
+                            label {
+                                color: rgb(41, 41, 41);
+                            }
+                        }
+
+                        button {
+                            border-radius: 5px;
+                            padding: 10px 40px;
+                            border: none;
+                            background-color: green;
+                            color: white;
+                        }
+                    }
+                }
+
+                .or {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    hr {
+                        width: 15%;
+                    }
+
+                    span {
+                        margin: 0 20px;
+                        font-size: 14px;
+
+                    }
+                }
+
+                .redes {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .sociais {
+                        margin: 0 10px;
+                        padding: 5px 20px;
+                        background-color: rgba(39, 60, 250, 0.527);
+                        border-radius: 20px;
+                        font-size: 13px;
+                        color: rgb(39, 39, 39);
+                        text-decoration: none;
+                    }
+                }
+
+                .forgot {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px;
+
+                    a {
+                        text-decoration: none;
+                        color: rgb(77, 77, 77);
+                    }
+
+                    a:hover {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}

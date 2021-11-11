@@ -1,0 +1,87 @@
+.theme-light {
+  --modal-nav-bg: var(--green-0);
+  --modal-nav-hover: var(--background-secondary);
+  --modal-nav-accent: var(--purple-3);
+  --modal-content-bg: var(--background-primary);
+  --modal-checkbox-bg: var(--purple-0);
+  --modal-checked-bg: var(--green-2);
+}
+.theme-dark {
+  --modal-nav-bg: var(--purple-6);
+  --modal-nav-hover: var(--purple-5);
+  --modal-nav-accent: var(--purple-4);
+  --modal-content-bg: var(--background-primary);
+  --modal-checkbox-bg: var(--green-6);
+  --modal-checked-bg: var(--green-4);
+}
+// -------------------------------------
+// Modal dialog & Prompts
+// -------------------------------------
+// Text Input Field
+input[type='text'],
+input[type='search'],
+input[type='email'],
+input[type='password'],
+input[type='number'] {
+  font-size: 0.8em;
+}
+.search-input-container input {
+  padding: 2px 20px 2px 6px;
+}
+.search-input-clear-button {
+  right: 5px;
+  top: 3px;
+}
+// Don't apply special fonts to modals / community panels
+.modal-container {
+  .prompt,
+  .vertical-tab-header,
+  .vertical-tab-nav-item,
+  .community-plugin-search {
+    background-color: var(--modal-nav-bg);
+  }
+  .vertical-tab-nav-item.is-active {
+    border-left-color: var(--modal-nav-accent);
+  }
+  .community-plugin-item:hover,
+  .horizontal-tab-nav-item:hover,
+  .vertical-tab-nav-item:hover,
+  .vertical-tab-nav-item.is-active {
+    background-color: var(--modal-nav-hover);
+  }
+  .prompt > .prompt-results,
+  .vertical-tab-content {
+    background-color: var(--modal-content-bg);
+  }
+  .checkbox-container {
+    background-color: var(--modal-checkbox-bg);
+  }
+  .checkbox-container.is-enabled {
+    background-color: var(--modal-checked-bg);
+  }
+  .community-plugin {
+    .setting-item-control button,
+    .flair.mod-pop {
+      background-color: var(--background-modifier-cover);
+    }
+  }
+  .mod-settings .setting-item button,
+  .modal .community-plugin-details button:not(.mod-cta):not(.mod-warning) {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+  }
+}
+.graph-controls {
+  .checkbox-container {
+    background-color: var(--modal-checkbox-bg);
+  }
+  .checkbox-container.is-enabled {
+    background-color: var(--modal-checked-bg);
+  }
+}
+.suggestion-container {
+  border: 1px solid var(--modal-nav-accent);
+}
+.suggestion-item.is-selected {
+  background-color: var(--text-selection);
+}

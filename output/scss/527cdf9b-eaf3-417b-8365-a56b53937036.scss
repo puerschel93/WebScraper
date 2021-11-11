@@ -1,0 +1,58 @@
+@import "base/_variables.scss";
+
+.pager {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    line-height: 1.42857;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+        margin: 0;
+    }
+
+    &__link {
+        align-items: center;
+        border-radius: 4px;
+        color: $text-full;
+        display: flex;
+        height: 36px;
+        justify-content: center;
+        transition: background-color 0.3s, color 0.3s;
+        width: 36px;
+
+        &:focus,
+        &:hover {
+            color: #fff;
+            background-color: $primary-low;
+        }
+
+        &.is-active {
+            color: #fff;
+            background-color: $primary-medium;
+        }
+    }
+
+    &__arrow {
+        align-items: center;
+        border-radius: 4px;
+        color: $text-full;
+        display: flex;
+        height: 36px;
+        justify-content: center;
+        width: 36px;
+
+        .icon {
+            stroke: $primary-medium;
+        }
+
+        &:focus,
+        &:hover {
+            .icon {
+                stroke: $primary-full;
+            }
+        }
+    }
+}

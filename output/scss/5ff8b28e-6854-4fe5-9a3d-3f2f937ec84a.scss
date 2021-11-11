@@ -1,0 +1,113 @@
+@import "../../../Scss/Mixins.scss";
+@import "../../../Scss/variables.scss";
+//variables
+$color-form : hsl(25, 12%, 57%);
+$border-form : hsl(317, 92%, 88%);
+$base-color:rgba(0, 0, 0, 0.733);
+$form-color:hsl(25, 9%, 37%);
+
+/* body{
+    background-color: $base-color;
+} */
+
+.Base{
+    height: $AvalaibleSpace;
+    /* background-color: rgb(219, 195, 159); */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.FormCreateProduct{
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 2rem;
+    padding: /* 5px */ 10px 25px;
+    margin: 0 auto 0 auto;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        249deg, #ffbbcc38, #fdd7ff85);
+    /* height: 60vh; */
+    border: none;
+    box-shadow: 0px 0px 20px 1px #ffbbcc;
+    hr{
+        height: 85%;
+        border: 1px solid #ffbbcc;
+    }
+    #Change{
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include buttonStyles(5rem, 2rem, $colorNav, 10px 0);
+        font-weight: 600;
+        color: #ffffff8a;
+        opacity: 0.8;
+        transition: 0.5s;
+        &:hover{
+            color: rgb(255, 255, 255);
+            opacity: 1
+        }
+    }
+    /* #photo{
+        @include dimensions(17rem, 17rem);
+    } */
+
+    .OthersProducts{                                        /* OTHERS PRODUCT */
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: auto;
+        grid-row-gap: .5rem;
+        grid-template-areas:
+        "nameProduct nameProduct nameProduct nameProduct"
+        "description description description description "
+        "stock . . price"
+        "addProduct addProduct addProduct addProduct";
+        padding: 10px;
+        #nameProduct{
+            grid-area: nameProduct;
+            input{
+                @include inputStyles();
+                margin-top: .5rem;
+            }     
+        }
+        #description{
+            grid-area: description;
+            textarea{              
+                @include inputStyles(none,6rem);
+                resize: none;
+                margin-top: .5rem;
+            }  
+        }
+        #stock{
+            grid-area: stock;
+            
+        }
+        #price{
+            grid-area: price;
+            
+        }
+        #price, #stock{   
+            input{
+                @include inputStyles(4rem)
+            }
+        }
+        label{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: $colorNav;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        #addProduct{
+            grid-area: addProduct;
+            @include sendSubmit(none, 2rem, #ffbbcc, 6px);  
+        }
+
+    }
+}

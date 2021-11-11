@@ -1,0 +1,339 @@
+
+.header{
+    width: 100vw;
+    background-color: $white;
+    @include breakpoint-down(medium){
+                position: fixed;
+                margin-top: -73px;
+                box-shadow: 0 0 5px rgba(0,0,0,.1);
+                z-index: 100;
+                &.menu-opened{
+                    background-color: transparent;
+                    nav{
+                        filter:grayscale(1) brightness(.49) contrast(7) invert(1);
+                    }
+                }
+            }
+
+    nav{
+        position: relative;
+        margin: auto;
+        width: 90%;
+        z-index: 30; 
+        padding: 20px 0;
+
+
+        @include breakpoint-up(medium){
+            width: 80%;
+            max-width: 720px;
+            margin: auto;
+        }
+
+        @include breakpoint-up(large){
+            max-width: 1270px;
+        }
+    }
+
+    &__logo{
+        //center logo
+        display: grid;
+        place-items: center;
+    }
+
+    &__hamburger{
+        cursor: pointer;
+
+        //hamburger lines
+        > span{
+            display: block;
+            width: 20px;
+            height: 3px;
+            background-color: $VeryDarkBlue;
+            transition: all .23s linear;
+            transform-origin: 1.3px 1.7px;
+
+            &:not(:last-child){
+                margin-bottom: 3px;
+            }
+        }
+
+        //hamburger opened
+        &.opened{
+            > span:nth-child(1){
+                transform: rotate(45deg);
+            }
+            > span:nth-child(2){
+                opacity: 0;
+            }   
+            > span:nth-child(3){
+                transform: rotate(-45deg);       
+            }   
+        }
+    }
+
+    //links styles (desktop and tablet only)
+    &__links{
+       
+        a{
+            letter-spacing: 1px;
+            transition: color .13s ease-in-out;
+            font-size: $Small;
+            &:not(:last-child){
+                margin-right: 50px;
+            }
+
+            &:hover{
+                color: $SoftRed;
+            }
+        }
+
+        .red-button{
+            margin: 0;
+            width: 105px;
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
+        }
+    }
+
+    //hamburger menu styles
+    &__menu{
+        margin-top: -73px;
+        display: none;
+        align-items: center;
+        opacity: 0;
+        width: 100%;
+        text-align: center;
+        background-color: $VeryDarkBlueTransparent;
+        backdrop-filter: blur(5px);
+        z-index: 20;
+        
+        &-item{
+            width: 90%;
+            max-width: calc(720px - 32px);
+            display: block;
+            font-size: $Medium;
+            border-bottom: .5px solid $Grayishblue;
+            color: $white;
+            padding: 4vh 0;
+
+            &:first-child{
+                margin-top: 73px;
+            }
+        }
+
+        .header__menu-buttonContainer{
+            width: 90%;
+            max-width: calc(720px - 32px);
+        }
+
+        .red-button{
+            display: inline-block;
+            max-width: none;
+            width: 100%;
+            max-height: none;
+            height: 8vh;
+            padding: 0;
+            margin: 4vh 0;
+            line-height: 7.5vh;
+            box-shadow: none;
+            background-color: transparent;
+            color: $white;
+            border: 4px solid $white;
+
+            &:hover{
+                background-color: $white;
+                color: $VeryDarkBlue;
+            }
+        }
+
+        &-logos{
+            margin-top: auto;
+            margin-bottom: 100px;
+            a{
+                padding: 2rem;
+                img{
+                    width: 5vh;
+                }
+            }
+        }
+
+        &.opened{
+            display: flex;
+            flex-direction: column;
+            height: 105vh;
+            opacity: 100;
+            //animation: show-menu .5s ease-in-out both;
+
+            @include breakpoint-up(large){
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+// .header{
+//     width: 100%;
+//     user-select: none;
+//     background-color: $white;
+//     margin-bottom: 40px;
+//     box-shadow: none;
+
+//     @include breakpoint-down(medium){
+//         position: fixed;
+//         margin-top: -73px;
+//         box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+//         &.menu-opened{
+//             background-color: transparent;
+
+//             nav{
+//                 filter:grayscale(1) brightness(.49) contrast(7) invert(1);
+//             }
+//         }
+//     }
+//     nav{
+//         position: relative;
+//         z-index: 200;
+//         width: 100%;
+//         z-index: 30; 
+//         padding: 20px 32px;
+
+//         @include breakpoint-up(large){
+//             padding: 40px 10%;
+//         }
+//     }
+//     //logo styles
+//     &__logo{
+//         display: grid;
+//         place-items: center;
+//     }
+
+//     //hamburger styles
+//     &__hamburger{
+//         cursor: pointer;
+
+//         //hamburger lines
+//         > span{
+//             display: block;
+//             width: 20px;
+//             height: 3px;
+//             background-color: $VeryDarkBlue;
+//             transition: all .23s linear;
+//             transform-origin: 1.3px 1.7px;
+
+//             &:not(:last-child){
+//                 margin-bottom: 3px;
+//             }
+//         }
+
+//         //hamburger opened
+//         &.opened{
+//             > span:nth-child(1){
+//                 transform: rotate(45deg);
+//             }
+//             > span:nth-child(2){
+//                 opacity: 0;
+//             }   
+//             > span:nth-child(3){
+//                 transform: rotate(-45deg);       
+//             }   
+//         }
+//     }
+
+//     //links styles (desktop and tablet only)
+//     &__links{
+
+//         a{
+//             letter-spacing: 1px;
+//             transition: color .13s ease-in-out;
+
+//             &:not(:last-child){
+//                 margin-right: 50px;
+//             }
+
+//             &:hover{
+//                 color: $SoftRed;
+//             }
+//         }
+
+//         .red-button{
+//             width: 105px;
+//             height: 40px;
+//             display: inline-block;
+//             line-height: 40px;
+//         }
+//     }
+
+//     //hamburger menu styles
+//     &__menu{
+//         margin-top: -73px;
+//         display: none;
+//         align-items: center;
+//         opacity: 0;
+//         width: 100%;
+//         text-align: center;
+//         background-color: $VeryDarkBlueTransparent;
+//         z-index: 20;
+//         &-item{
+//             width: 90%;
+//             display: block;
+//             font-size: $Medium;
+//             border-bottom: 1px solid $LigthGrayishBlue;
+//             color: $white;
+//             padding: 4vh 0;
+
+//             &:first-child{
+//                 margin-top: 73px;
+//             }
+//         }
+
+//         .header__menu-buttonContainer{
+//             width: 90%;
+//         }
+
+//         .red-button{
+//             display: inline-block;
+//             max-width: none;
+//             width: 100%;
+//             max-height: none;
+//             height: 8vh;
+//             padding: 0;
+//             margin: 4vh 0;
+//             line-height: 7.5vh;
+//             box-shadow: none;
+//             background-color: transparent;
+//             color: $white;
+//             border: 4px solid $white;
+//         }
+
+//         &-logos{
+//             position: absolute;
+//             bottom: 3vh;
+//             a{
+//                 padding: 1rem;
+//                 img{
+//                     width: 5vh;
+//                 }
+//             }
+//         }
+
+//         &.opened{
+//             display: flex;
+//             flex-direction: column;
+//             height: 103vh;
+//             opacity: 100;
+//             //animation: show-menu .5s ease-in-out both;
+
+//             @include breakpoint-up(large){
+//                 display: none;
+//             }
+//         }
+//     }
+   
+// }

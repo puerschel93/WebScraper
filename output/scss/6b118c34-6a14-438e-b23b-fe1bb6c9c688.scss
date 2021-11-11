@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary */
+    --Pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+
+    /* Neutral */
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+}
+
+body {
+    background: var(--Pale-blue);
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 16px;
+}
+
+.background-curve {
+    background-image: url(../images/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    padding: 150px 0;
+
+    .container {
+        display: flex;
+        justify-content: center;
+
+        .order {
+            background-color: white;
+            border-radius: 1em;
+            width: 325px;
+            height: 550px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 20px -5px,
+                rgba(0, 0, 0, 0.04) 0px 1px 10px -5px;
+
+            img {
+                width: inherit;
+            }
+
+            .order-details {
+                margin: 10px 0;
+                padding: 10px;
+
+                h1 {
+                    color: var(--Dark-blue);
+                    font-size: 25px;
+                    margin: 5px 20px;
+                }
+
+                p {
+                    color: var(--Desaturated-blue);
+                    font-weight: 500;
+                    padding: 5px 0;
+                    line-height: 1.5em;
+                    margin: 0 20px;
+                }
+            }
+
+            .annual-plan-container {
+                display: flex;
+                justify-content: center;
+
+                .annual-plan-box {
+                    background-color: var(--Very-pale-blue);
+                    display: flex;
+                    justify-content: center;
+                    width: 280px;
+                    padding: 15px 13px;
+                    border-radius: .6em;
+
+                    .logo {
+                        margin-right: 5px;
+                        display: grid;
+                        place-items: center;
+                    }
+
+                    .annual-plan {
+                        margin: 0 30px 0 10px;
+                        padding-top: 3px;
+                        color: var(--Desaturated-blue);
+                        font-weight: 500;
+
+                        h1 {
+                            font-size: 16px;
+                            color: var(--Dark-blue);
+                        }
+                    }
+
+                    .change {
+                        margin-left: 20px;
+                        display: grid;
+                        place-items: center;
+                        font-size: 14px;
+                        font-weight: bold;
+
+                        a:hover {
+                            color: hsl(223, 74%, 36%);
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+            .payment-btn {
+                padding: 20px 0;
+
+                button {
+                    background-color: var(--Bright-blue);
+                    box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 20px -5px,
+                            rgba(0, 0, 0, 0.04) 0px 1px 10px -5px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: white;
+                    border: none;
+                    border-radius: .6em;
+                    width: 280px;
+                    padding: 15px 0;
+                    cursor: pointer;
+
+                    &:hover {
+                        box-shadow: rgba(0, 0, 0, 0.4) 0px 15px 20px -5px,
+                            rgba(0, 0, 0, 0.08) 0px 1px 10px -5px;
+                        background-color: hsl(223, 74%, 36%);
+                    }
+                }
+
+                a {
+                    margin: 20px;
+                    display: flow-root;
+                    text-decoration: none;
+                    font-weight: bold;
+                    color: var(--Desaturated-blue);
+
+                    &:hover {
+                        color: rgb(79, 89, 118);
+                    }
+                }
+            }
+        }
+    }
+
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin: 10px;
+    
+        a {
+            color: hsl(228, 45%, 44%);
+
+            &:hover {
+                color: rgb(0, 6, 84);
+            }
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    .background-curve .container .order {
+        width: 380px;
+    }
+
+    .background-curve .container .order .annual-plan-container .annual-plan-box {
+        width: 330px;
+        padding: 10px 10px;
+    }
+
+    .background-curve .container .order .annual-plan-container .annual-plan-box .change {
+        margin-left: 50px;
+    }
+
+    .background-curve .container .order .payment-btn {
+        padding: 15px;
+
+        button {
+            width: 330px;
+            padding: 10px;
+        }
+    }
+}

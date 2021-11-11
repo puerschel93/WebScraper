@@ -1,0 +1,97 @@
+#archive-root
+    margin-right: 1em
+    margin-left: 1em
+    width: 50em
+
+    #archive-title
+        width: 100%
+        text-align: center
+        color: var(--global-font-color)
+        font-size: 2em
+        font-weight: 550
+        margin-bottom: 1em
+        margin-top: 1em
+
+    #archive-row
+        width: 100%
+        height: 10em
+        position relative
+        
+        #archive-card
+            width: 50%
+            text-align: center;
+            #archive-inner
+                color: var(--widget-font-color)
+                font-weight: 600
+                width: 20em
+                height: 5em
+                display: table-cell
+                vertical-align: middle
+                border-radius: .4em
+                padding: 0 0.5em
+                background-color: var(--widget-background-color)
+                box-shadow: 0.2em 0.2em 0.3em var(--global-shadow);
+
+                &:hover
+                    animation:titleScale 0.5s ease-out;
+                    -webkit-animation:titleScale 0.5s ease-out;
+                    transform: scale(1.1)
+                    @keyframes titleScale
+                        from {transform: scale(1)}
+                        to {transform: scale(1.1)}
+
+                    @-webkit-keyframes titleScale
+                        from {transform: scale(1)}
+                        to {transform: scale(1.1)}
+                    
+
+            #archive-line
+                width: .2em
+                height: 10em
+                position absolute
+            .left-archive-line
+                right: 0
+                background-color: var(--link-blue)
+
+                @media screen and (max-width: 680px)
+                    z-index: -1
+                    left: 50%
+                
+            .right-archive-line
+                left: -.2em
+                background-color: var(--link-blue)
+
+                @media screen and (max-width: 680px)
+                    z-index: -1
+                    left: 50%
+
+            @media screen and (min-width: 680px) and (max-width: 1080px)
+                width: 50%
+
+            @media screen and (max-width: 680px)
+                width: 100%
+
+        @media screen and (max-width: 680px)
+            width: 100%
+
+        .left-archive-card
+            position absolute
+            left: 0
+        .right-archive-card
+            position absolute
+            right: 0
+
+            #archive-time
+            .left-archive-time
+                position absolute
+                right: 0
+            .right-archive-time
+                position absolute
+                left: 0
+
+    @media screen and (min-width: 680px) and (max-width: 1080px)
+        width: 100%
+
+
+    @media screen and (max-width: 680px)
+        width: 100%

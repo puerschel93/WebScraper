@@ -1,0 +1,448 @@
+@import 'Utils/variables.scss';
+@import 'Utils/mixins';
+@import 'Layouts/tablet.scss';
+@import 'Utils/keyframes.scss';
+
+body, html {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.loader {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: hsla(0,0%,100%,.9);
+    animation: loader 0.3s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__inner {
+        padding: 3rem;
+        border-top: $primary solid 10px;
+        border-left: $primary solid 9px;
+        border-bottom: $secondary solid 10px;
+        border-right: $secondary solid 9px;
+        border-radius: 30%;
+        animation: bounce 2.5s forwards; 
+        & > img {
+            height: 100px;
+            width: 100px;
+        }
+    }
+  }
+
+h1 {
+    font-family: 'Shrikhand', cursive;
+}
+h2 {
+    text-transform: uppercase;
+}
+h3 {
+    margin: 0rem;
+    font-size: 15px;
+}
+
+p {
+    margin: 0rem;
+    font-size: 14px;
+}
+
+
+//START HOME PAGE
+
+//CONTAINER
+//START Intro
+.intro {
+    margin: 1rem;
+    &__location {
+        @include grey-shades;
+    }
+    &__desc {
+        @include grey-shades ($amount: 98%);
+        &__description {
+            padding: 0rem 2rem 1rem 2rem;
+        }
+    }
+}
+
+//END INTRO
+//START EXPLANATION
+.explanation__list__ol {
+   list-style: none;
+   counter-reset: item;
+    margin-block: 0;
+    padding-inline-start: 0.25rem;
+ 
+    li {
+        counter-increment: item;
+        margin: 0.5rem;
+        height: 75px;
+        width: 90%;
+        background-color: $grey-bg1;
+        font-weight: bold;
+        border-radius: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        &::before {
+            margin-left: -3rem;
+            content: counter(item);
+            color: white;
+            width: 25px;
+            height: 25px;
+            background-color: $primary;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &:hover {
+            @include light-primary;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+    }
+}
+//END EXPLANATION
+
+//START Explanation
+.resto {
+    margin: 0rem;
+    .resto__cards {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+    }
+}
+
+.resto__cards__card {
+    border-radius: 2rem 2rem 2rem 2rem;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.13);
+    background-color: #ffffff;
+    overflow: hidden;
+    margin: 1rem;
+    height: 250px;
+    width: 335px;
+    position: relative;
+    &:hover {
+        transition: 0.5s;
+    }
+    &__figure {
+        margin-block: 0rem;
+        margin-inline: 0rem;
+        height: 175px;
+        width: 100%;
+        border-radius: 2rem 2rem 0rem 0rem;
+    }
+    &__caption {
+        border: #ffffff 5px solid;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 75px;
+        width: 100%;
+        background-color: #ffffff;
+        position: relative;
+        &__text{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            &__name {
+                margin-block: 0rem;
+            }
+        }
+    }
+    .new {
+        position: absolute;
+        top: 0;
+        right: 5%;
+        padding: 7.5px;
+        width: 24%;
+        background-color: $tertiary;
+        color: green;
+        font-size: small;
+        line-height: 10px;
+        text-align: center;
+    }
+}
+
+//END HOMEPAGE
+
+
+//START MENU PAGE
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 1rem;
+}
+
+.First-Course, .Main-Course, .Dessert {
+    margin: auto;
+    text-align: left;
+    margin: 0rem;
+}
+
+.course-title {
+    margin-left: 1rem;
+    text-align: left;
+    border-bottom: $tertiary solid 3px;
+    width: 60px;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@for $i from 1 through 4 {
+    .menu__card {
+      
+      // :nth-child(1-4) 
+      &:nth-child(#{$i}) {
+        
+        // Delay the animation. Delay increases as items loop.
+        animation-delay: $i * (2s / 8);
+      }
+    }
+  }
+.menu__card {
+    //transition
+    animation: ApparitionTransition 2s;
+    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+    animation-fill-mode: both;
+    //box card
+    height: 50px;
+    width: 85%;
+    background-color: #fff;
+    padding: 1rem;
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 12px -1px #000000;
+    //internal organisation
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    cursor: pointer;
+
+    &__caption {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-right: 1rem;
+
+        &__text {
+            height: 95%;
+            margin: 0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &__plate-name {
+                margin: 0.5rem 0rem 0.5rem 0rem;
+                margin-block: 0rem;
+                max-width: max-content;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &__plate-description {
+                margin: 0.5rem 0rem 0.5rem 0rem;
+                margin-block: 0rem;
+                max-width: max-content;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    &__confirmation {
+        position: relative;
+        background-color: $tertiary;
+        margin: -1rem -5rem -1rem 1rem;
+        width: 4rem;
+        transition-duration: 0.5s;
+
+
+        &__check-circle {
+            position: absolute;
+            top: 35%;
+            left: 20%;
+            height: 1.6rem;
+            width: 1.6rem;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100px;
+
+        }
+    }
+    &:hover &__confirmation {
+        margin-right: -1rem;
+
+    }
+    
+    &:hover .check-circle {
+        transition-duration: 0.5s;
+        animation: 0.5s 0.1s RotateRight;
+    }
+}
+.check-circle {
+    color: $tertiary;
+}
+
+.ordering {
+    padding: 0rem 2rem 0.5rem 2rem;
+    &__button {
+        font-size: large;
+    }
+    &__backward {
+        display: none;
+    }
+}
+//END MENU PAGE
+
+
+//ALL PAGES:
+a:link {
+    text-decoration: none;
+    color: #000;
+}
+a:visited {
+    text-decoration: none;
+    color: #000;
+}
+a:hover {
+    cursor: pointer;
+}
+/*a:active*/
+
+
+.button {
+    height: 50px;
+    width: 50%;
+    font-weight: bold;
+    border-radius: 5rem;
+    background: linear-gradient(to top, #{$primary} 0%, #{$secondary});
+    box-shadow: 0px 0px 10px 1px #8b8b8b;
+    color: #ffffff;
+    border: transparent 1px solid;
+    &:hover {
+        cursor: pointer;
+        transition: 0.5s;
+        background: linear-gradient(to top, #985ede 0%, #ff8fdf);
+        box-shadow: 0px 0px 12px 5px #8b8b8b;
+    }
+}
+
+.fave {
+    position: absolute;
+    right: 20px;
+    background-color: transparent;
+    border: transparent 0px solid;
+    padding: 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor: pointer;
+    position: relative;
+    background-color: black;
+
+    &:hover::before {
+        opacity: 1;
+    }
+      
+    &::before {
+        opacity: 0;
+        transition: 0.5s;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background:linear-gradient(45deg, $primary 0%,$secondary 100%);
+    }
+
+    &__filledheart {
+        right: 0;
+        transition-duration: .25s;
+        background-color: #f6f6f6;
+        mix-blend-mode: lighten;
+    }
+    &__filledheart:hover {
+        animation: heart-ani 0.3s forwards;
+        background: linear-gradient(45deg, $primary, $secondary);
+        opacity: 1;
+    }
+    &__heart {
+        position: absolute;
+        right: 0;
+        transition-duration: .25s;
+        background-color: #f6f6f6;
+       
+        mix-blend-mode: lighten;
+        &:hover {
+            opacity: 0;
+
+        }
+    }
+}
+
+.footer {
+    margin-top:auto; 
+    width: 100%;
+    text-align: start;
+    background-color: #353535;
+    color: #ffffff;
+    padding: 1rem;
+    &__logo {
+        filter: invert(100%);
+    } 
+    &__links {
+        width: 80%;
+        &--WIcons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            p {
+                margin: 1rem;
+            }
+            cursor: pointer;
+        }
+        &--WOIcons {
+            a:link {
+                text-decoration: none;
+                color: #ffffff;
+            }
+            a:visited {
+                text-decoration: none;
+                color: #ffffff;
+            }
+            a:hover {
+                cursor: pointer;
+            }
+            /*a:active*/
+        }
+    }
+}

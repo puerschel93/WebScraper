@@ -1,0 +1,431 @@
+//- ---------------------------
+//- Kevin Salinas
+//- ---------------------------
+
+.o-content
+	height: auto
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+	width: auto
+
+	&.-pagination
+		margin-top: 1.5rem;
+		margin-bottom: 3rem;
+
+.o-product__container
+	width: 100%;
+	height: auto
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+	padding: 2%;
+	.m-product__container__title
+		span,& > label
+			font: $title6-slot
+			color: $carbon
+
+.white-container
+	background: $white
+
+.bordered
+	border-radius: 4px
+
+// Order container styles
+.o-content.white-container
+	&.guest
+		.o-order__container
+			.o-order__container__header
+				&.g-3
+					grid-template-columns: 1fr 1fr
+					.o-order__container__header__cell:nth-child(2)
+						display: none
+	.o-order__container
+		width: 100%
+		height auto
+		.o-order__container__header
+			height: 70px
+			border-bottom: 1px solid $whisper
+			display: grid
+			grid-template-rows: auto
+			grid-template-columns: auto auto auto
+			&.g-2
+				grid-template-columns: 1fr 1fr
+			&.g-3
+				grid-template-columns: 1fr 1fr 2fr
+				.o-order__container__header__cell
+					display: flex
+					justify-content: center
+					align-items: flex-start
+					flex-direction: column
+					padding-left: 1rem
+					min-height: 70px
+					position relative
+					.a-order__container__header--title
+						font: $caption;
+						color: $carbon
+						margin: 0
+					.a-order__container__header--subtitle
+						margin: 0
+					.o-order__container__header--subtitle
+						display: flex;
+						&:hover
+							cursor pointer
+						.a-order__container__header--subtitle
+							font: $body2
+							color: $carbon
+							margin: 0
+							font-weight: 700
+						.o-order__container__header__tooltip
+							margin-left: 5px
+							position relative
+							top 3px
+					// FOR Tootip
+					&:nth-child(2)
+						.o-order__container__header__tooltip__container
+							width: 290px;
+							height: auto;
+							position: absolute;
+							background: #fff;
+							top: 150%;
+							margin-left: -15px;
+							display: grid;
+							grid-template-columns: 80% 20%;
+							grid-template-rows: 100%;
+							border-radius: 4px;
+							box-shadow: $b-shadow-popOver
+							right: -150%;
+							visibility: hidden;
+							opacity: 0;
+							transition: visibility 0.3s, opacity 0.3s ease-in;
+							&.show
+								visibility: visible;
+								opacity: 1;
+								transition: visibility 0.3s, opacity 0.3s ease-out;
+								// max-height: 81px
+								// transition: max-height 0.25s ease-in;
+							.m-order__container__header__tooltip__container__close
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								&:hover
+									cursor pointer
+							.m-order__container__header__tooltip__container__text
+								padding: 1rem;
+								overflow: hidden;
+								& > p.a-order__container__header__tooltip__container__text
+									font: $caption
+									color: $carbon
+									margin: 0
+							.a-order__container__header__tooltip__container__indicator
+								position: absolute
+								width: 22px
+								height 22px
+								top: -22px;
+								right: 22px;
+								overflow: hidden;
+								box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.5);
+								&::before
+									content: ""
+									width: 15px
+									height: 15px
+									top: 14px;
+									position: absolute;
+									right: 3px;
+									box-shadow: -1px -1px 4px -2px rgba(0, 0, 0, 0.5);
+									transform: rotate(45deg);
+				.o-order__container__header__cell:last-child
+					//display: flex
+					justify-content: center
+					align-items: flex-end
+					padding-right: 1rem
+					.a-order__container__header--title
+						font: $caption
+						color: $primary-color
+						margin: 0
+						text-decoration: underline
+						&:hover
+							cursor pointer
+						&::after
+							margin-left: 1rem;
+							font-family: 'icomoon'
+							content: "\e904"
+							font-size: .75rem
+							color: $carbon
+							text-decoration: none
+							display: inline-block
+		.o-order__container__products
+			min-height: 200px
+			.o-order__product__header
+				display: grid
+				grid-template-columns: 2fr 1fr
+				grid-template-rows: 100%
+				height: auto
+				border-bottom: 1px solid $whisper
+				min-height: 68px
+				.m-order__header
+					display: flex
+					align-items: center
+					height: 68px;
+					grid-area: 1 /1 / 1 / 3;
+					margin: 0 1rem;
+					flex-wrap: wrap;
+					.normal
+						font: $caption
+						color: $carbon
+						font-weight: 700
+					.light
+						font: $caption
+						color: $carbon
+						font-weight: 300
+					.a-order__edd__label
+						color: $lime-green
+					.a-order__edd__date
+						color: $lime-green
+					& > span
+						margin: 0 .2rem
+					& > label
+						margin: 0 .2rem
+				.o-order__header__details
+					padding: 0.5rem 2rem 0.5rem 1rem;
+					.m-order__header__consolidated
+						.normal
+							color: $lime-green
+					.m-order__header__edd
+						.a-order__edd__date
+							color: $lime-green
+						.a-order__edd__msg
+							color: $tangerine
+					.normal
+						font: $caption
+						color: $carbon
+						margin: 0
+						font-weight: 700
+					.light
+						font: $caption
+						color: $carbon
+						margin: 0
+						font-weight: 300
+					.a-order__order__status
+						color: $lime-green
+					.a-order__title, .a-order__orderNumber
+						font $body2-title
+					.a-order__order
+						font $body3-legend
+
+				& > i.icon-arrow_right.d-flex.d-lg-none
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					justify-content: flex-end;
+					align-items: center;
+					padding-right: 1rem;
+
+				.m-order__header__details
+					padding: .5rem 1rem
+					display: flex
+					align-items: center
+					.a-order__edd__label
+
+					.a-order__orderNumber
+						&.consolidated
+							display: inline-block
+					.normal
+						font: $caption
+						color: $carbon
+						margin: 0
+						font-weight: 700
+					.light
+						font: $caption
+						color: $carbon
+						margin: 0
+						font-weight: 300
+					.a-order__order__status
+						color: $lime-green
+				.m-order__header__delivery
+					padding-right: 1rem
+					display: flex
+					align-items: center
+					justify-content: flex-end
+					button
+						width: 200px
+			.o-order__product__content
+				height: auto
+				border-bottom: 1px solid $whisper
+				min-height: 180px
+				padding: .6rem
+				.o-order__product__item:not(:last-child)
+					border-bottom: 1px solid $whisper
+				.o-order__product__item
+					display: grid
+					grid-template-columns: 1fr 1fr 2fr
+					grid-template-rows: 100%
+					height 100%
+					.o-order__product__image
+						padding: 1rem
+						figure.m-order__product__image__container
+							max-width: 100%
+							margin: 0
+							img
+								max-width: 100%
+								max-height: 235px
+							&.notAvailable
+								display: flex
+								flex-direction: column
+								justify-content: center
+								align-items: center
+								img
+									z-index: 1
+									filter: opacity(40%)
+								p
+									z-index: 2
+									position: absolute
+									background: $lead
+									color: $white
+									font: $body2
+									border-radius: 1rem
+									margin: 0
+									padding: 1px 15px
+					.o-order__product__detail
+						padding: 1rem 0.5rem
+						grid-area: 1 / 2 / 1 / 4;
+						.a-order__product__title
+							font: $body1
+							color: $carbon
+							margin-bottom: 0.2rem
+						.m-order__detail__ratings
+							margin-bottom: 0
+						.o-order__detail__description
+							.m-order__detail__cancelled
+								color: $red
+								margin-top: .5rem
+							div
+								line-height: 1
+								.normal
+									display: inline
+									font: $overline
+									font-weight: 300
+								.light
+									display: inline
+									font: $overline
+									font-weight: 300
+		.o-order__container__footer
+			//width: 100%;
+			display: grid;
+			grid-template-columns: repeat(4,1fr)
+			grid-template-rows: auto
+			.o-order__footer__cell:last-child
+				padding-right: 15px
+				display: flex;
+				align-items: flex-end;
+				.a-order__footer__downloadTicket
+					max-width 200px
+			.o-order__footer__cell
+				height: 70px
+				padding-left: 15px
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				.a-order__footer__statusPayment
+					&.--pending
+						color: $tangerine
+					&.--paid
+						color: $lime-green
+					&.--expired
+						color: $red
+				.normal
+					display: inline
+					font: $body2
+					font-weight: 300
+				.light
+					display: inline
+					font: $overline
+					font-weight: 300
+
+
+.m-orders__detail__mobile
+	height: 48px;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 1rem;
+	align-items: center;
+	& > span
+		font: $caption
+		color: $carbon
+	& > i
+		font-size: 1rem
+		color: $carbon
+
+.no-shadow
+	box-shadow: none;
+
+
+//- Styles for payment pending of footer in product card
+@media only screen and (max-width: 1295px)
+	.o-order__container__footer
+		//width: 100%;
+		display: grid;
+		grid-template-columns: repeat(4,1fr)
+		grid-template-rows: auto auto
+		.o-order__footer__cell
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		.o-order__footer__cell:first-child
+			order: 0
+		.o-order__footer__cell:nth-child(2)
+			order: 1
+		.o-order__footer__cell:last-child
+			order: 2
+			grid-area: 1 / 3 / 1 / 5;
+			padding-right: 15px;
+			padding-left: 30%;
+		.o-order__footer__cell:nth-child(3)
+			order: 3
+			// padding-left: 15px
+
+@media only screen and (max-width: 991px)
+
+	.o-product__container
+		padding: 2% 2% 6% 2%;
+		& > label
+			text-align: center
+			margin-top: .5rem;
+			width: 100%
+
+	.o-content.white-container
+		&.guest
+			.o-order__container
+				.o-order__container__header
+					&.g-3
+						grid-template-columns: 100%
+	.o-content.white-container
+		.o-order__container
+			.o-order__container__header
+				&.g-3
+					grid-template-columns: 2fr 1fr
+
+		.o-order__container
+			.o-order__container__products
+				.o-order__product__header
+					.m-order__header
+						margin: 0.5rem .8rem;
+
+			.o-order__container__footer
+				grid-template-columns: 100%
+				border-bottom: 1px solid $whisper;
+				padding: .5rem 0;
+				.o-order__footer__cell
+					height: auto;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					& > span
+						margin-right: 5px
+				.o-order__footer__cell:last-child
+					display: none
+				&.-expired
+					.o-order__footer__cell:nth-child(2)
+						display: none
+					.o-order__footer__cell:last-child
+						display: flex
+						grid-area: auto
+
+
+

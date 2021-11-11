@@ -1,0 +1,298 @@
+@import "../../../public/libs/css/generalComponentsStyle.styl"
+.createTask-wrapper
+	main-component()
+	min-width 400px
+	.header
+		header-style()
+		@media only screen  and (max-width : 430px), screen and (max-device-width: 430px)
+			text-align right
+		position relative
+		.return-btn
+			cursor pointer
+			display flex
+			align-items center
+			position absolute
+			font-size 20px
+			top 0
+			left 15%
+			i
+				font-size 48px
+				color #337ab7
+			a
+				text-decoration none
+				margin-left 10px
+			@media only screen  and (max-width : 769px), screen and (max-device-width: 769px)
+				left 10%
+				a
+					display none
+			@media only screen  and (max-width : 550px), screen and (max-device-width: 550px)
+				left 0
+	.main-container
+		.wrapper_lable
+			.backbutton
+				display flex 
+				align-items center
+				padding-bottom 20px
+				a
+					color text-input
+					font-size 2.5em
+					text-decoration none
+					padding 40px 0.3em
+					max-width 50px
+		.wrapper_prop
+			font-family "Montserrat"
+			font-size 1em
+			margin-top 25px
+			.prop_lable
+				text-align left
+				font-size 1.7em
+				padding-left 2em
+				margin-bottom 20px
+				color shadow-grey
+			.prop_editor
+				&.tasktitle
+					input
+						outline none
+						border none
+						border-radius 4px
+						background-color disable-input
+						border-bottom 4px solid border-color
+						width 80%
+						font-size 25px
+						padding 5px
+						display block
+						color text-input
+						text-align center
+						margin 50px auto 5px
+						&:focus
+							background-color active-input
+						&:focus::-webkit-input-placeholder
+							color transparent
+						&:focus::-moz-placeholder
+							color transparent
+						&:focus:-ms-input-placeholder
+							color transparent
+						&:focus:-moz-placeholder
+							color transparent
+						@media only screen  and (max-width : 769px), screen and (max-device-width: 769px)
+							width 90%
+						@media only screen  and (max-width : 550px), screen and (max-device-width: 550px)
+							width 100%
+				.taskdescription
+					width 80%
+					@media only screen  and (max-width : 769px), screen and (max-device-width: 769px)
+						width 90%
+					@media only screen  and (max-width : 550px), screen and (max-device-width: 550px)
+						width 100%
+					margin 15px auto 5px
+					position relative
+					text-align left
+					padding 2em
+					font-size 1.3em
+					min-height 150px
+					font-family "Montserrat"
+					background-color disable-input
+					border-radius 12px
+					color text-input
+					border-bottom 4px solid border-color
+					outline none
+					&.placeholder
+						&:after
+							display block
+					&:focus
+						background-color active-input
+						&:after
+							display none
+
+					&:after
+						content 'Task description'
+						position absolute
+						top 50%
+						left 50%
+						font-size 1.3em
+						pointer-events none
+						display none
+						color gray
+						font-family "Montserrat"
+						opacity 0.7
+						transform translateX(-50%) translateY(-50%)
+				.toDo
+					border-bottom 4px solid border-color
+					background-color disable-input
+					width 80%
+					@media only screen  and (max-width : 769px), screen and (max-device-width: 769px)
+						width 90%
+					@media only screen  and (max-width : 550px), screen and (max-device-width: 550px)
+						width 100%
+					border-radius 7px
+					margin 0 auto
+					margin-bottom 20px
+					align-items center
+					.toDo_number
+						width 10%
+						text-align center
+						font-size 1.2em
+					.deletetodo
+						text-align right
+						font-size 1.4em
+						color #ec644b
+						cursor pointer
+						display flex
+						align-items center
+						justify-content flex-end
+						span
+							margin-left -60px
+							opacity 0
+							transition all 0.2s ease-out
+						&:hover
+							span
+								margin-left 5px
+								opacity 1
+					.toDo_title
+						width 80%
+						input
+							text-align left
+							color text-input
+							font-size 1.3em
+							width 100%
+							padding-left 15px
+							background-color disable-input
+							outline none
+							border none
+							border-radius 7px
+							
+			.participants
+				width 80%
+				@media only screen  and (max-width : 769px), screen and (max-device-width: 769px)
+					width 90%
+				@media only screen  and (max-width : 550px), screen and (max-device-width: 550px)
+					width 100%
+				display flex
+				align-items flex-start
+				align-content flex-start
+				flex-wrap wrap
+				font-size 22px
+				min-height 75px
+				margin 15px auto 25px
+				.btn-group.ng-enter,.btn-group.ng-leave
+					-webkit-transition: 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+					-moz-transition: 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+					-ms-transition: 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+					-o-transition: 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+					transition: 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+					position: relative;
+					display: inline-flex;
+				.btn-group.ng-enter,.btn-group.ng-leave.ng-leave-active
+					opacity 1
+					span
+						text-overflow clip
+						max-width 0px
+					.participant
+						border-bottom 0px solid border-color
+						transform translateY(8px)
+				.btn-group.ng-leave,.btn-group.ng-enter.ng-enter-active
+					opacity 1
+					span
+						text-overflow clip
+						max-width 360px
+					.participant
+						border-bottom 4px solid border-color
+						transform translateY(0)
+				.participant 
+					background-color disable-input
+					border none
+					border-bottom 4px solid border-color
+					border-radius 4px
+					color text-input
+					max-width 360px
+					padding 7px 18px
+					padding-right 12px
+					text-align center
+					text-decoration none
+					display inline-flex
+					justify-content center
+					align-items center
+					font-size 0.8em
+					margin 10px 7px
+					cursor pointer
+					-webkit-transition: 0.1s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+					-moz-transition: 0.1s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+					-ms-transition: 0.1s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+					-o-transition: 0.1s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+					transition: 0.1s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+					span
+						display block
+						white-space nowrap
+						overflow hidden
+						text-overflow ellipsis
+						-webkit-transition: 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+						-moz-transition: 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+						-ms-transition: 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+						-o-transition: 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+						transition: 0.2s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+					i
+						margin-left 10px
+						font-size 1.2em
+					&:hover
+						border-bottom 8px solid border-color
+						transform translateY(-2px)
+						margin 8px 7px
+						i
+							color #e57373
+				.add
+					padding-right 18px
+					padding-left 12px
+					height auto
+					i
+						margin-right 10px
+						color #4DB6AC
+					&:hover
+						i
+							color #4DB6AC
+			.addButton
+				width auto
+				cursor pointer
+				color #78909C
+				font-size 1.4em
+				display inline-block
+				padding 0 24px
+				border-bottom 2px dashed #78909C
+				transition color,border-color 0.2s ease-out
+				&:hover
+					color #0097A7
+					border-color #0097A7
+				i
+					display inline
+					font-size 1.2em
+					margin-right 0.5em
+				span
+					display: -moz-inline-stack;
+					display inline
+					font-family "Montserrat"
+					font-family 1em
+					margin-left 0.5em
+		.wrapper_save
+			margin-top 50px
+			button
+				button()
+				--box-shadow-color #004D40
+				background-color #1E824C
+				font-size 1.5em
+				margin 25px auto
+				font-size 1.5em
+				padding 15 50px
+				display flex
+				flex-wrap nowrap
+				justify-content space-between	
+				i
+					display inline
+					font-size 1.2em
+					margin-right 0.5em
+					span
+						display: -moz-inline-stack;
+						display inline
+						font-family "Montserrat"
+						font-family 1em
+						margin-left 0.5em	
+				
+					

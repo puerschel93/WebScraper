@@ -1,0 +1,152 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG
+$picture-bg:no;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:400;
+
+// VARIABLE SITE TYPO
+$font-body:"proxima-nova-alt",verdana,sans-serif;
+$font-title:"proxima-nova",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.7em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+$margin-top-navigation:51;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:124;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE LONDRES
+@import "../../../slagence_X_V5/sources/scss/templates/londres";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE PUB LIB3
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+
+// STYLES PERSO ABSERTI
+
+.navigation{
+background:#fff;
+}
+.menu-principal {
+ font-size:$font-size-title * 0.56;
+ font-weight:normal;
+}
+.menu-principal>li>a{color: #424242;}
+.ligne-social-langue{
+height:2em;
+background:#D3A43C;
+}
+
+.margin-top-5{
+margin-top:4px;
+}
+
+.nav-social-menu>li{
+margin-top:2px;
+}
+
+.pub-rdv {background-image: url("/z/webagency/A_ID3X/abserti_35078/images/pub/rdv.png");}
+.pub-espaceperso {background-image: url("/z/webagency/A_ID3X/abserti_35078/images/pub/clef.png");}
+
+.bg-haut-recherche-perso {background-image: url("/z/webagency/A_ID3X/abserti_35078/images/recherche/bg_haut_recherche_perso.png"); height:64px; width:200px;}
+.bg-haut-recherche-perso .btn:first-child{line-height: 14px;}
+
+
+.phrase-recherche {font-size:1.1em;margin-top:10px;}
+.charges-annuelles {font-size:0.4em; font-weight:normal;}
+
+.module-homepage .btn-action {
+background-color: #444;
+border: 1px solid #444;
+color: #fff;
+@include background-image(linear-gradient(left top, #666, #444)); 
+}
+.module-homepage .btn-action:hover {
+background-color: #444;
+border: 1px solid #444;
+color: #fff;
+@include background-image(linear-gradient(left top, #444, #666)); 
+}
+
+.bg-secondary  .padding-top-15, .bg-secondary  .padding-bottom-15{padding:0;}
+.menu-principal > li > a {font-weight:bold; padding-right:1px; padding-left:1px; font-size:1.08em;}
+#listing-agences .height-400{height: 280px;}
+.prix-annonce {font-size:1.2em;}
+.icon-v5-mail:before {content:"\e009";}
+
+.detail-bloc-agence{
+	border:1px solid $color-action;
+	// COLOR
+	@if $color-btn-action != false {
+		color:$color-btn-action;
+	} @else {
+		@include lightnessColor($color-action,yes);
+	}
+	@include gradient-btn-action(top,yes);
+	text-shadow:none;
+	// HOVER
+	&:hover {
+		@include lightnessColor($color-action,no);
+		background-color:$color-action;
+		@include gradient-btn-action(bottom,yes);
+	}
+}
+
+/* pictos perso pubs */
+.pub-outils {background:url(../images/pub/picto-contact.png) center top no-repeat;}
+.pub-alerte {background:url(../images/pub/picto-alerte.png) center top no-repeat;}
+.pub-blog {background:url(../images/pub/picto-suivi.png) center top no-repeat;}
+
+/* masquer certain élément */
+.listing-agences-fax,  span[itemprop="addressLocality"], #accordion-mentions{display: none;}

@@ -1,0 +1,33 @@
+@mixin base-shadows {
+  box-shadow: 0px 2px 2px 2px lightgray;
+}
+
+@mixin gradient-btn($opacity: 0.9, $origin: 0deg) {
+  background-image: linear-gradient(
+    $origin,
+    rgba(147, 86, 220, $opacity),
+    rgba(255, 121, 218, $opacity)
+  );
+}
+
+@mixin heart($opacity: 1, $font-weight: 400, $color: inherit) {
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: $font-weight;
+  content: "\f004";
+  font-size: 30px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: $color;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: $opacity;
+  transition: all 1500ms ease-in-out;
+}
+

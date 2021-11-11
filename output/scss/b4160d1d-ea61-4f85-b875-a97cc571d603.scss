@@ -1,0 +1,377 @@
+@use './button';
+
+$progress-height: 5px;
+
+.bespoke-marp-note,
+.bespoke-marp-osc,
+.bespoke-progress-parent {
+  display: none;
+  transition: none;
+}
+
+@media screen {
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    background: #000;
+    overflow: hidden;
+  }
+
+  // Common visibility control for slides
+  svg.bespoke-marp-slide {
+    content-visibility: hidden;
+    z-index: -1;
+
+    /* Fallback */
+    pointer-events: none;
+    opacity: 0%;
+
+    &.bespoke-marp-active {
+      content-visibility: visible;
+      z-index: 0;
+
+      /* Fallback */
+      pointer-events: auto;
+      opacity: 100%;
+
+      &.bespoke-marp-active-ready {
+        * {
+          /* Reset animation: "none" keyword does not reset animation in Firefox */
+          animation-name: __bespoke_marp__ !important;
+        }
+      }
+    }
+
+    @supports not (content-visibility: hidden) {
+      &[data-bespoke-marp-load='hideable'] {
+        display: none;
+
+        &.bespoke-marp-active {
+          display: block;
+        }
+      }
+    }
+  }
+
+  [data-bespoke-marp-fragment='inactive'] {
+    visibility: hidden;
+  }
+
+  // Normal view
+  body[data-bespoke-view=''],
+  body[data-bespoke-view='next'] {
+    .bespoke-marp-parent {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      > .bespoke-marp-osc {
+        background: rgba(#000, 0.65);
+        border-radius: 7px;
+        bottom: 50px;
+        color: #fff;
+        contain: paint;
+        display: block;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        left: 50%;
+        line-height: 0;
+        opacity: 100%;
+        padding: 12px;
+        position: absolute;
+        touch-action: manipulation;
+        transform: translateX(-50%);
+        transition: opacity 0.2s linear;
+        user-select: none;
+        white-space: nowrap;
+        z-index: 1;
+
+        /* Hack for Chrome to show OSC overlay onto video correctly */
+        will-change: transform;
+
+        > * {
+          margin-left: 6px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+
+        > span {
+          opacity: 80%;
+
+          &[data-bespoke-marp-osc='page'] {
+            display: inline-block;
+            min-width: 140px;
+            text-align: center;
+          }
+        }
+
+        > button {
+          @extend %button;
+
+          &[data-bespoke-marp-osc='prev'] {
+            @include button.button-icon(prev);
+          }
+
+          &[data-bespoke-marp-osc='next'] {
+            @include button.button-icon(next);
+          }
+
+          &[data-bespoke-marp-osc='fullscreen'] {
+            @include button.button-icon(fullscreen);
+          }
+
+          &[data-bespoke-marp-osc='presenter'] {
+            @include button.button-icon(presenter);
+          }
+        }
+      }
+
+      &.bespoke-marp-inactive {
+        cursor: none;
+
+        > .bespoke-marp-osc {
+          opacity: 0%;
+          pointer-events: none;
+        }
+      }
+    }
+
+    svg.bespoke-marp-slide {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  // Progress bar (Only for normal view)
+  body[data-bespoke-view=''] {
+    .bespoke-progress-parent {
+      background: #222;
+      display: flex;
+      height: $progress-height;
+      width: 100%;
+
+      & + .bespoke-marp-parent {
+        top: $progress-height;
+      }
+
+      .bespoke-progress-bar {
+        flex: 0 0 0;
+        background: #0288d1;
+        transition: flex-basis 0.2s cubic-bezier(0, 1, 1, 1);
+      }
+    }
+  }
+
+  // Next view
+  body[data-bespoke-view='next'] {
+    background: transparent;
+  }
+
+  // Presenter view
+  body[data-bespoke-view='presenter'] {
+    $text-color: #eee;
+
+    background: #161616;
+
+    .bespoke-marp-presenter-container {
+      font-family: Helvetica, Arial, sans-serif;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      // Grid layout for presenter view
+      display: grid;
+      grid-template:
+        'current next' minmax(140px, 1fr)
+        'current note' 2fr
+        'info    note' 3em /
+        2fr 1fr;
+
+      .bespoke-marp-parent {
+        grid-area: current;
+        position: relative;
+        overflow: hidden;
+
+        svg.bespoke-marp-slide {
+          height: calc(100% - 40px);
+          left: 20px;
+          position: absolute;
+          pointer-events: none;
+          top: 20px;
+          user-select: none;
+          width: calc(100% - 40px);
+
+          &.bespoke-marp-active {
+            filter: drop-shadow(0 3px 10px rgba(#000, 0.5));
+          }
+        }
+      }
+
+      // Next slide view
+      .bespoke-marp-presenter-next-container {
+        background: #222;
+        cursor: pointer;
+        display: none;
+        grid-area: next;
+        overflow: hidden;
+        position: relative;
+
+        &.active {
+          display: block;
+        }
+
+        iframe.bespoke-marp-presenter-next {
+          background: transparent;
+          border: 0;
+          display: block;
+          filter: drop-shadow(0 3px 10px rgba(#000, 0.5));
+          height: calc(100% - 40px);
+          left: 20px;
+          position: absolute;
+          pointer-events: none;
+          user-select: none;
+          top: 20px;
+          width: calc(100% - 40px);
+        }
+      }
+
+      // Presenter note
+      .bespoke-marp-presenter-note-container {
+        background: #222;
+        color: $text-color;
+        grid-area: note;
+
+        .bespoke-marp-note {
+          margin: 20px;
+          width: calc(100% - 40px);
+          height: calc(100% - 40px);
+          box-sizing: border-box;
+          font-size: 1.1em;
+          overflow: auto;
+          padding-right: 3px;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+
+          // Scrollbar (Firefox)
+          scrollbar-width: thin;
+          scrollbar-color: rgba($text-color, 0.5) transparent;
+
+          // Scrollbar (Chrome)
+          &::-webkit-scrollbar {
+            width: 6px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: transparent;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: rgba($text-color, 0.5);
+            border-radius: 6px;
+          }
+
+          &:empty {
+            pointer-events: none;
+          }
+
+          &.active {
+            display: block;
+          }
+
+          p {
+            &:first-child {
+              margin-top: 0;
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      // Informations
+      .bespoke-marp-presenter-info-container {
+        align-items: center;
+        box-sizing: border-box;
+        color: $text-color;
+        display: flex;
+        flex-wrap: nowrap;
+        grid-area: info;
+        justify-content: center;
+        padding: 0 10px;
+
+        %info-element {
+          display: block;
+          box-sizing: border-box;
+          padding: 0 10px;
+          white-space: nowrap;
+          width: 100%;
+        }
+
+        button {
+          @extend %button;
+          @include button.button-size(1.5em);
+
+          &.bespoke-marp-presenter-info-page-prev {
+            @extend %button-prev;
+          }
+
+          &.bespoke-marp-presenter-info-page-next {
+            @extend %button-next;
+          }
+        }
+
+        .bespoke-marp-presenter-info-page {
+          @extend %info-element;
+
+          order: 2;
+          text-align: center;
+
+          .bespoke-marp-presenter-info-page-text {
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+          }
+        }
+
+        .bespoke-marp-presenter-info-time {
+          @extend %info-element;
+
+          color: #999;
+          order: 1;
+          text-align: left;
+        }
+
+        .bespoke-marp-presenter-info-timer {
+          @extend %info-element;
+
+          color: #999;
+          order: 3;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  .bespoke-marp-presenter-next-container,
+  .bespoke-marp-presenter-note-container,
+  .bespoke-marp-presenter-info-container {
+    display: none;
+  }
+}

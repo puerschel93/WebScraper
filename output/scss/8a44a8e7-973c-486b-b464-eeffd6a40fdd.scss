@@ -1,0 +1,373 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:899;
+
+// SIZE NAVIGATION
+$height-navigation:79;
+
+// VAR SITE TYPO
+$font-body:"Open Sans",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES11
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra13";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+
+//------------------------------------------------------------------------------------------------------------
+//		PERSO GIRON33210
+//------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//------------------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:100%;
+	}
+}
+
+.margin-top-300 {
+	margin-top: 300px;
+}
+
+.height-500 {
+	height: auto !important;
+}
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+
+.bg-navigation {
+	box-shadow:none;	
+	@include background-image(linear-gradient(-45deg, $color-secondary, $color-secondary 63%, $color-primary 63%, $color-primary));
+}
+
+.navigation {
+	border-bottom: solid 1px $color-action;
+	@media only screen and (max-width : 767px) {
+		@include background-image(linear-gradient(-45deg, $color-secondary, $color-secondary 27%, $color-primary 27%, $color-primary));	
+	}
+}
+
+.menu-responsive>ul>li {
+	background: $color-secondary;
+	a {
+	    font-size: 0.9em;
+	}
+}
+
+.bloc-nav-left-fix {
+	background: $color-block;
+}
+
+.menu-principal {
+	font-size:1.0em;	
+	@media only screen and (max-width : 1280px) {
+		font-size: 0.7em;
+	}
+	>li {
+		background:none;
+		margin-top: 30px;
+		margin-left: 0px;
+		border-left: none;		
+		border-right: none;		
+		&:hover {
+			background:none;
+		}
+		>a {			
+			line-height: 20px;
+			@media only screen and (max-width : 1280px) {
+				padding: 0 8px;
+			}
+			&:after {
+	            display: block;
+	            content: "";
+	            width: 0%; height: 2px;
+	            background-color: $color-primary;
+	            margin-top: 2px;
+	            -webkit-transition: all .3s ease;
+	            transition: all .3s ease;
+	         }
+	         &:hover {
+	            color: $color-important;
+	            &:after { 
+	            	background-color: $color-important; 
+	            	width: 75%;
+	            }
+	         }
+	    }
+	}
+}
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//		FOOTER
+	//---------------------------------------------------------------------------------------------------------------------------------------------	
+
+footer.bg-primary {
+	background: $color-body;
+}
+
+//------------------------------------------------------------------------------------------------------------
+//		INDEX
+//------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------
+	//		MOTEUR
+	//------------------------------------------------------------------------------------------------------------
+
+.titre-milieu {
+	margin-top: 280px;
+}
+
+#Mini_Biens, #Mini_Villes, #Mini_Bouton {
+	margin:0px;	
+}
+
+#Mini_Bouton {
+	margin-top:-1px;
+}
+
+.form-inline{ 
+	margin-left: 35px;
+	select {
+		height:50px;
+		border:none;
+		border-right: solid 1px $color-secondary;
+			    	    
+	    border-radius: 0;
+	}
+
+}
+
+.saisie-suggest {
+    -moz-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    border-radius: 0px !important;
+    height: 50px !important;    
+    border:none !important;    
+}
+
+.bouton-rechercher-moteur {
+	height: 52px;
+	line-height: 42px;
+}
+
+.bg-moteur {
+	background-color: rgba($color-font-body,0.4);
+	-webkit-transition: background-color .3s ease;
+	        transition: background-color .3s ease;
+	&:hover {
+    	background-color: rgba($color-font-body,0.7);
+    }
+}
+
+	//------------------------------------------------------------------------------------------------------------
+	//		BLOCS SUR VISUEL
+	//------------------------------------------------------------------------------------------------------------
+
+.full-bloc {
+	position: absolute;
+	top: 111px;
+}
+
+.bloc-index {
+	// @include background-image(linear-gradient(169deg, rgba($color-primary,0.4),rgba($color-primary,0.4),rgba($color-primary,0.4) 10%,rgba(#fff,0.4),rgba(#fff,0.4)));
+	background-color: rgba($color-font-body,0.6);
+	padding: 10px;
+	width: 20% !important;
+    margin-left: 50px !important;
+    margin-top: 90px;
+    -webkit-transition: background-color .3s ease;
+	            transition: background-color .3s ease;
+    &:hover {
+    	background-color: rgba($color-font-body,0.9);
+    }
+	a {
+		text-decoration: none;
+		color: $color-important;
+	}
+}
+
+	//------------------------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//------------------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage {
+	padding: 10px;
+}
+
+.module-annonces-homepage .typo-body {
+	color: $color-action;
+}
+
+.module-annonces-homepage .height-170 {
+	height: 240px;
+}
+
+.module-annonces-homepage .height-190 {
+	height: 240px;
+}
+
+.homepage-bloc-prix-bien {
+	font-size: 1.2em;
+	color:$color-secondary;
+}
+
+@media only screen and (max-width : 767px) {
+	.module-annonces-homepage {
+		background:$color-block !important;		
+		color:$color-nav-footer !important;	
+		.typo-black {
+			color:#fff;
+		}	
+	}
+	.homepage-bloc-type-bien-transaction .bg-white {
+		background:$color-block !important;		
+	}
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+	background:$color-important !important;		
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+	background:$color-important !important;			
+}
+
+.owl-theme .owl-dots .owl-dot span {
+	background:$color-action !important;				
+}
+
+
+	//------------------------------------------------------------------------------------------------------------
+	//		ENCART SERVICE 
+	//------------------------------------------------------------------------------------------------------------
+
+.aside-pub {
+	display: none;
+}
+
+.bg-pub-index {
+	background: rgba($color-secondary,0.7);
+	padding: 10px;
+}
+
+	//------------------------------------------------------------------------------------------------------------
+	//		PUB FULL
+	//------------------------------------------------------------------------------------------------------------
+
+.pub-estimation-helsinki {
+	height: $height-scrolling+px;	
+}
+
+.pub-qsn-helsinki {
+	height: 440px;
+    margin-top: -10px;
+	.h1-like {
+		display: none;
+	}
+}
+
+.bg-blog {
+	background-color: rgba($color-secondary,0.5);
+}
+
+//------------------------------------------------------------------------------------------------------------
+//		DETAIL PA
+//------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------
+	//		VISUEL
+	//------------------------------------------------------------------------------------------------------------
+
+.vertical-pano {
+	background: $color-block;
+}
+
+//------------------------------------------------------------------------------------------------------------
+//		IMMO
+//------------------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------------------
+	//		ESTIMATION
+	//------------------------------------------------------------------------------------------------------------
+
+.adresse-estimation {
+	display: none;
+}
+
+
+.typo-body {
+	color: $color-body;
+}
+
+
+
+.aside-txt-home {
+	background: $color-body;
+	color: $color-font-body;
+}
+
+.tab-recherche  .typo-body{
+color: white;
+}

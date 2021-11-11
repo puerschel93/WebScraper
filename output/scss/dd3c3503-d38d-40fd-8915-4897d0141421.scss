@@ -1,0 +1,100 @@
+@use "utility/colours";
+@use "Utility/mixins";
+
+// ----------------------------------------------
+// Contact Form
+// ----------------------------------------------
+
+.main-contact input:focus {
+  @include mixins.inputfocus;
+}
+
+.contactform-field {
+  @include mixins.inputformatting;
+  @include mixins.inputfont;
+  position: relative;
+  display: block;
+}
+
+.contactform-textarea {
+  @include mixins.inputfont;
+  @include mixins.ie-scrollbar;
+  resize: none;
+  overflow: auto;
+  @include mixins.inputformatting;
+  padding-top: 15px;
+}
+
+// ----------------------------------------------
+// Input Custom Scrollbar
+// ----------------------------------------------
+
+.contactform-textarea::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: colours.$highlight;
+  box-shadow: inset 2px 2px 1px colours.$panel-border;
+}
+
+.contactform-textarea::-webkit-scrollbar {
+  width: 12px;
+}
+
+.contactform-textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: colours.$darkred;
+  box-shadow: inset 1px 1px 1px white;
+}
+
+.contactform-textarea::-webkit-scrollbar-thumb:active {
+  background-color: red;
+}
+
+.contactform-textarea:focus {
+  @include mixins.inputfocus;
+}
+
+// #project-descr-expand-1:checked + .project-card-content {
+//   height: 100%;
+//   transition: height 0.5s ease;
+// }
+//
+// #project-descr-expand-2:checked + .project-card-content {
+//   height: 100%;
+//   transition: height 0.5s ease;
+// }
+//
+// #project-descr-expand-3:checked + .project-card-content {
+//   height: 100%;
+//   transition: height 0.5s ease;
+// }
+//
+// #project-descr-expand-4:checked + .project-card-content {
+//   height: 100%;
+//   transition: height 0.5s ease;
+// }
+//
+// #project-descr-expand-5:checked + .project-card-content {
+//   height: 100%;
+//   transition: height 0.5s ease;
+// }
+//
+// #project-descr-expand-6:checked + .project-card-content {
+//   height: 100%;
+//   transition: height 0.5s ease;
+// }
+//
+// .project-card label {
+//   float: right;
+//   transition: color 0.5s ease;
+//   cursor: pointer;
+// }
+//
+// .project-card-content span::after {
+//   content: "Read More";
+//   text-decoration: underline;
+// }
+//
+// .project-card input:checked + .project-card-content span:after {
+//   content: "Close";
+//   text-decoration: underline;
+// }

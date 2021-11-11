@@ -1,0 +1,98 @@
+/* Import CSS snippets */
+@import '_snippets'
+
+/* Import color variables */
+@import '_variables'
+
+.food-list-container
+  display none
+  position absolute
+  top 100px
+  bottom 0
+  left 0
+  width 100%
+
+  &.visible
+    display flex
+  .food-list
+    overflow-x hidden
+    overflow-y auto
+    width 100%
+    padding-right 15px
+
+    ul
+      margin 0
+      padding 0
+      width 100%
+      overflow hidden
+      list-style none
+      li
+        font-size 16px
+        margin 0
+        padding 0
+        .fa-circle-o, .fa-spin
+          margin-left 20px
+        i
+          color #999
+        .fa-circle, .fa-circle-o, .fa-spin
+          color success-color
+          margin-right 5px
+          &.problems
+            color danger-color
+          &.editing
+            color warning-color
+          &.problems-unavailable
+            color #ccc
+      li > ul > li
+        padding 0 0 0 15px
+      li > ul
+        display none
+      .node-open > ul
+        display block !important
+
+      &.intake-problems-list
+        li
+          font-size 12px
+
+    .intake-problems-list-name
+      font-weight bold
+
+  &-node
+    border-radius 4px
+    display block
+    padding 8px 12px
+    white-space nowrap
+    &.active
+        background-color #f2f2f2
+
+    a
+      cursor pointer
+      color inherit
+      &:focus, &:hover
+          text-decoration none
+          color inherit
+
+@media (max-width: 1080px)
+  .food-list-container
+    border-right none
+    border-bottom 1px solid #f2f2f2
+    position relative
+    top 0
+
+    .food-list
+      overflow auto
+
+/* RTL Styles */
+
+html[dir="rtl"]
+  .food-list-container
+    .food-list
+      ul
+        li
+          .fa-circle-o, .fa-spin
+            margin-left auto
+            margin-right 20px
+          .fa-circle, .fa-circle-o, .fa-spin
+            margin-left 5px
+        li > ul > li
+          padding 0 15px 0 0

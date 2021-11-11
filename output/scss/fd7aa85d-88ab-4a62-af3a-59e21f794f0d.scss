@@ -1,0 +1,117 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT
+$height-container:600;
+
+// SIZE NAVIGATION
+$height-navigation:113;
+
+// MARGIN SOUS NAV SI FIXE
+$margin-top-under-nav-fixe:0;
+
+// PLACEMENT TOP CONTENT
+$placement-top-content:200;
+
+// VARIABLE SITE TYPO
+$font-body:"proxima-nova",verdana,sans-serif;
+$font-title:"bebas-neue",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.5em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT TEMPLATE AMSTERDAM
+@import "../../../slagence_X_V5/sources/scss/templates/amsterdam";
+
+// IMPORT MODULE ANNONCES6
+@import "../../../slagence_X_V5/sources/scss/modules/annonces6";
+
+// IMPORT MODULE PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+.navigation {background-image:none; filter:none; background-color:$color-body; border-bottom: 4px solid $color-primary;}
+.menu-principal > li > a {background-color:$color-block; color:$color-primary; &:hover{background-color:$color-primary;}}
+
+.h2-title-moteur, .bg-pub-top, .homepage-bloc-type-bien-transaction .type-bien {
+background-image: linear-gradient(to bottom, $color-degrade 0%,$color-primary 100%);
+}
+
+.btn-important, .btn-action {
+background-image: linear-gradient(to bottom, $color-degrade 0%,$color-primary 100%);
+border: 1px solid $color-primary;
+&:hover {
+background-image:none;
+background-color:$color-primary;
+}
+}
+
+.nav-social-menu {
+background-image:none;
+background-color:$color-primary;
+	li a {
+	margin-top:3px;
+	}
+}
+
+.recherche-annonces .refannonce {
+font-family:$font-body;
+text-transform:none;
+font-size:1.2em;
+}
+
+.zone-galerie  {
+.btn-cdc {
+font-size: 1.1em;
+}
+.bloc-detail-telephone .btn-important, .bouton-pdf-detail {
+background:linear-gradient(to bottom, #10b33d 0%,#1f8a03 100%);
+border: 1px solid $color-vert;
+}
+}
+
+.texte-info-agences a.hidden-desktop, 
+.texte-info-agences a.hidden-tablet {
+color:$color-nav-footer;
+}

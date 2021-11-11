@@ -1,0 +1,196 @@
+.c-editor-content-container
+  define-container((850/$rfs)rem)
+  define-font($conqSans, (20/$rfs)rem, black, 1.7, 300, (0.05/$rfs)rem)
+  margin-top: 55px
+  margin-bottom: 55px
+  min-height: 50vh;
+
+  .md-block-unstyled
+    min-height: (34/$rfs)rem
+
+  .md-block-header-one
+    font-size: 2em;
+
+  .md-block-header-two
+    font-size: 1.7em;
+
+  .md-block-header-three
+    define-font($museo, (34/$rfs)rem , black, 1.06, bold)
+    margin-bottom: (30/$rfs)rem
+    margin-top: (55/$rfs)rem
+
+  .md-block-header-four
+    font-size: 1em;
+
+  .md-block-header-five
+    font-size: 0.8em;
+
+  .md-block-header-six
+    font-size: 0.7em;
+
+  .md-block-header-one,
+  .md-block-header-two,
+  .md-block-header-four,
+  .md-block-header-five,
+  .md-block-header-six
+    margin-bottom: 5px;
+
+
+  .md-block-blockquote
+    define-font($museo, (24/$rfs)rem, $lightBlue, 1.5, normal)
+    padding-right: (100/$rfs)rem
+    padding-bottom: (15/$rfs)rem
+    position: relative
+
+  .md-block-image
+    margin: 0 0 10px 0;
+
+    img
+      max-width: 100%;
+
+    figcaption
+      text-align: left;
+      font-size: 0.9em;
+      define-font($mono, (17/$rfs)rem , $black, 1.1, normal)
+
+  .md-block-todo
+    margin: 10px 0 10px 0;
+
+    input[type=checkbox]
+      float: left;
+      position: relative;
+      top: 4px;
+      left: -4px;
+
+    p
+      margin-left: 18px;
+
+  .md-block-ordered-list-item
+    margin-left: 33px
+
+  .md-block-unordered-list-item
+    padding-left: (80/$rfs)rem
+
+    li
+      list-style-type: none;
+      position: relative
+      margin-left: 0
+
+      &:before
+        content: "";
+        width: 6px
+        height: 6px
+        border-radius: 50%
+        display: inline-block
+        position: absolute
+        left: -18px;
+        top: 12px;
+        background-color: $lightBlue;
+
+  .md-inline-bold
+    font-weight: bold
+
+  .md-inline-right_align
+    text-align: right
+
+  .md-inline-dim
+    color: $dimBlack
+
+  .md-inline-italic
+    font-style italic
+
+  .md-inline-font-size-select-156
+    font-size: (156/$rfs)rem
+
+  .md-inline-font-size-select-35
+    font-size: (35/$rfs)rem
+
+  .md-inline-font-size-select-25
+    font-size: (25/$rfs)rem
+
+  .md-inline-font-size-select-12
+    font-size: (12/$rfs)rem
+
+  .md-inline-link
+    color: $lightBlue
+
+    &:visited
+      color: $lightBlue
+
+  .md-inline-highlight
+    background: $lightBlue;
+
+
+  p
+    &.md-block-block-quote-caption
+      &::before
+        content: '\2013';
+        color: #999;
+        float: left;
+        font-weight: bold;
+        display: inline;
+        margin-right: 10px;
+
+
+      margin-top: 0;
+      font-size: 0.8em;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      background: #fafafa;
+
+  .md-green-block
+    background-color: $green
+    position: relative
+    color: white
+
+  .green-block-inner
+    min-height: 75px;
+
+    span
+      vertical-align: middle
+
+    & > div
+      line-height: 1
+      padding-top: 1.3rem
+      position: relative
+      z-index: 5
+
+    &:before
+      content: ''
+      height: 100%
+      width: "calc(%srem + 100vw / 2)" % (716/$rfs)
+      right: 0
+      background-color: $green
+      box-shadow: 0 (20/$rfs)rem (30/$rfs)rem 0 rgba(125, 211, 32, 0.5)
+      position: absolute
+
+  .md-quote-block
+    background-color: $lightBlue
+    position: relative
+    color: white
+    font-family: $mono
+
+    .quote-block-inner
+      min-height: 75px;
+
+      &:before
+        content: ''
+        height: 100%
+        width: 100vw
+        margin-left: calc((850px - 100vw) / 2)
+        top: 0
+        background-color: $lightBlue
+        box-shadow: 0 20px 30px 0 rgba(30, 157, 242, 0.5);
+        position: absolute
+
+      .quote-block-container
+        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjQ0cHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQ0IDMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0MS4yICgzNTM5NykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+4oCcPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkRlc2t0b3BfYXJ0aWNsZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE4Ny4wMDAwMDAsIC0yMDM0LjAwMDAwMCkiIGZpbGw9IiNGRkZGRkYiPgogICAgICAgICAgICA8ZyBpZD0idGV4dCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDQ1Ny4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yMjkuNzY4LDE2MDAuNjg4IEMyMjkuNzY4LDE2MDEuNjU4NjcgMjI5LjU4MTMzNSwxNjAyLjYyOTMzIDIyOS4yMDgsMTYwMy42IEMyMjguODM0NjY1LDE2MDQuNTcwNjcgMjI4LjI3NDY3LDE2MDUuNDQ4IDIyNy41MjgsMTYwNi4yMzIgQzIyNi43ODEzMywxNjA3LjAxNiAyMjUuODY2NjcyLDE2MDcuNjUwNjYgMjI0Ljc4NCwxNjA4LjEzNiBDMjIzLjcwMTMyOCwxNjA4LjYyMTM0IDIyMi40ODgwMDcsMTYwOC44NjQgMjIxLjE0NCwxNjA4Ljg2NCBDMjE5LjY1MDY1OSwxNjA4Ljg2NCAyMTguMjEzMzQsMTYwOC41ODQgMjE2LjgzMiwxNjA4LjAyNCBDMjE1LjQ1MDY2LDE2MDcuNDY0IDIxNC4yNzQ2NzIsMTYwNi42NjEzNCAyMTMuMzA0LDE2MDUuNjE2IEMyMTIuNDgyNjYzLDE2MDQuNjQ1MzMgMjExLjg0ODAwMiwxNjAzLjQ4ODAxIDIxMS40LDE2MDIuMTQ0IEMyMTAuOTUxOTk4LDE2MDAuNzk5OTkgMjEwLjcyOCwxNTk5LjM4MTM0IDIxMC43MjgsMTU5Ny44ODggQzIxMC43MjgsMTU5NS4wNTA2NSAyMTEuMjMxOTk1LDE1OTIuNDM3MzUgMjEyLjI0LDE1OTAuMDQ4IEMyMTMuMjQ4MDA1LDE1ODcuNjU4NjUgMjE0LjY4NTMyNCwxNTg1LjUzMDY4IDIxNi41NTIsMTU4My42NjQgQzIxNy4zNzMzMzcsMTU4Mi44NDI2NiAyMTguMzA2NjYxLDE1ODIuMDc3MzQgMjE5LjM1MiwxNTgxLjM2OCBDMjIwLjM5NzMzOSwxNTgwLjY1ODY2IDIyMS4zODY2NjIsMTU4MC4wNjEzNCAyMjIuMzIsMTU3OS41NzYgQzIyMy4yNTMzMzgsMTU3OS4wOTA2NiAyMjQuMDU1OTk3LDE1NzguNjk4NjcgMjI0LjcyOCwxNTc4LjQgQzIyNS40MDAwMDMsMTU3OC4xMDEzMyAyMjUuODEwNjY2LDE1NzcuOTE0NjcgMjI1Ljk2LDE1NzcuODQgTDIzMC40NCwxNTg0LjQ0OCBDMjI5LjYxODY2MywxNTg0Ljc0NjY3IDIyOC43MDQwMDUsMTU4NS4xMzg2NiAyMjcuNjk2LDE1ODUuNjI0IEMyMjYuNjg3OTk1LDE1ODYuMTA5MzQgMjI1LjczNjAwNCwxNTg2LjcwNjY2IDIyNC44NCwxNTg3LjQxNiBDMjIzLjk0Mzk5NiwxNTg4LjEyNTM0IDIyMy4xOTczMzYsMTU4OC45NjUzMyAyMjIuNiwxNTg5LjkzNiBDMjIyLjAwMjY2NCwxNTkwLjkwNjY3IDIyMS42NjY2NjcsMTU5Mi4wMjY2NiAyMjEuNTkyLDE1OTMuMjk2IEMyMjMuNzU3MzQ0LDE1OTMuMjk2IDIyNS42NjEzMjUsMTU5My45MzA2NiAyMjcuMzA0LDE1OTUuMiBDMjI4Ljk0NjY3NSwxNTk2LjQ2OTM0IDIyOS43NjgsMTU5OC4yOTg2NSAyMjkuNzY4LDE2MDAuNjg4IFogTTIwNi4xMzYsMTYwMC42ODggQzIwNi4xMzYsMTYwMS42NTg2NyAyMDUuOTQ5MzM1LDE2MDIuNjI5MzMgMjA1LjU3NiwxNjAzLjYgQzIwNS4yMDI2NjUsMTYwNC41NzA2NyAyMDQuNjQyNjcsMTYwNS40NDggMjAzLjg5NiwxNjA2LjIzMiBDMjAzLjE0OTMzLDE2MDcuMDE2IDIwMi4yMzQ2NzIsMTYwNy42NTA2NiAyMDEuMTUyLDE2MDguMTM2IEMyMDAuMDY5MzI4LDE2MDguNjIxMzQgMTk4Ljg1NjAwNywxNjA4Ljg2NCAxOTcuNTEyLDE2MDguODY0IEMxOTYuMDE4NjU5LDE2MDguODY0IDE5NC41ODEzNCwxNjA4LjU4NCAxOTMuMiwxNjA4LjAyNCBDMTkxLjgxODY2LDE2MDcuNDY0IDE5MC42NDI2NzIsMTYwNi42NjEzNCAxODkuNjcyLDE2MDUuNjE2IEMxODguODUwNjYzLDE2MDQuNjQ1MzMgMTg4LjIxNjAwMiwxNjAzLjQ4ODAxIDE4Ny43NjgsMTYwMi4xNDQgQzE4Ny4zMTk5OTgsMTYwMC43OTk5OSAxODcuMDk2LDE1OTkuMzgxMzQgMTg3LjA5NiwxNTk3Ljg4OCBDMTg3LjA5NiwxNTk1LjA1MDY1IDE4Ny41OTk5OTUsMTU5Mi40MzczNSAxODguNjA4LDE1OTAuMDQ4IEMxODkuNjE2MDA1LDE1ODcuNjU4NjUgMTkxLjA1MzMyNCwxNTg1LjUzMDY4IDE5Mi45MiwxNTgzLjY2NCBDMTkzLjc0MTMzNywxNTgyLjg0MjY2IDE5NC42NzQ2NjEsMTU4Mi4wNzczNCAxOTUuNzIsMTU4MS4zNjggQzE5Ni43NjUzMzksMTU4MC42NTg2NiAxOTcuNzU0NjYyLDE1ODAuMDYxMzQgMTk4LjY4OCwxNTc5LjU3NiBDMTk5LjYyMTMzOCwxNTc5LjA5MDY2IDIwMC40MjM5OTcsMTU3OC42OTg2NyAyMDEuMDk2LDE1NzguNCBDMjAxLjc2ODAwMywxNTc4LjEwMTMzIDIwMi4xNzg2NjYsMTU3Ny45MTQ2NyAyMDIuMzI4LDE1NzcuODQgTDIwNi44MDgsMTU4NC40NDggQzIwNS45ODY2NjMsMTU4NC43NDY2NyAyMDUuMDcyMDA1LDE1ODUuMTM4NjYgMjA0LjA2NCwxNTg1LjYyNCBDMjAzLjA1NTk5NSwxNTg2LjEwOTM0IDIwMi4xMDQwMDQsMTU4Ni43MDY2NiAyMDEuMjA4LDE1ODcuNDE2IEMyMDAuMzExOTk2LDE1ODguMTI1MzQgMTk5LjU2NTMzNiwxNTg4Ljk2NTMzIDE5OC45NjgsMTU4OS45MzYgQzE5OC4zNzA2NjQsMTU5MC45MDY2NyAxOTguMDM0NjY3LDE1OTIuMDI2NjYgMTk3Ljk2LDE1OTMuMjk2IEMyMDAuMTI1MzQ0LDE1OTMuMjk2IDIwMi4wMjkzMjUsMTU5My45MzA2NiAyMDMuNjcyLDE1OTUuMiBDMjA1LjMxNDY3NSwxNTk2LjQ2OTM0IDIwNi4xMzYsMTU5OC4yOTg2NSAyMDYuMTM2LDE2MDAuNjg4IFoiIGlkPSLigJwiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+')
+        padding-left: 85px
+        padding-top: 31px
+        background-repeat: no-repeat
+        background-position: 15px 43px;
+        position: relative
+        z-index: 5
+        min-height: 100px
+        padding-bottom: 41px

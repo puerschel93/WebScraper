@@ -1,0 +1,171 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// CHOIX UNIQUE // PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/bg_moteur.jpg';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container:0;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:0;
+
+// SIZE NAVIGATION
+$height-navigation:80;
+
+// VARIABLE SITE TYPO
+$font-body:arial,verdana,sans-serif;
+$font-title:"Oswald",arial,verdana,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.2em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/paris";
+
+// IMPORT MODULE ANNONCES9
+@import "../../../slagence_X_V5/sources/scss/modules/annonces9";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra8";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+
+
+//--------------------------------------------------------------------------------------
+//    PERSO VAUTRAG
+//--------------------------------------------------------------------------------------
+
+.cookie-banner {
+  background-color: $color-primary;
+  color: $color-nav-footer;
+}
+
+.text_cookies .button_submit {
+  background-color: $color-action !important;
+}
+
+.icon-v5-heart:before{ color:$color-icone-cdc;}
+.icon-v5-heart.opacity-4{opacity:1;}
+
+.color-gris {color:$color-gris;}
+
+//--------------------------------------------------------------------------------------
+//    MENU & NAV
+//--------------------------------------------------------------------------------------
+
+.navigation {
+    border-bottom: 4px solid $color-action;
+}
+
+.logo img {
+  padding: 10px 2px;
+}
+
+
+
+@media only screen and (max-width : 767px) {
+header .logo img {
+width: 55%;
+}
+}
+
+@media only screen and (max-width: 767px){
+.logo img {
+    width: 40%;
+}
+}
+
+
+.menu-principal>li>a {
+  padding: 10px 12px;
+  color:$color-important;
+  &:hover {
+  color:$color-action;
+}
+}
+
+//--------------------------------------------------------------------------------------
+//    INDEX
+//--------------------------------------------------------------------------------------
+
+
+.slogan-index {font-family:"Oswald",arial,verdana,sans-serif; font-size:2.1em;}
+
+.logopetit {margin-top:-37px;}
+
+//--------------------------------------------------------------------------------------
+//    PUB
+//--------------------------------------------------------------------------------------
+
+
+.bg-txt-cont {
+  @include border-radius(4px);
+  @include background-image(linear-gradient(left top, $color-block, $color-block-light-10));
+  padding:10px;
+}
+
+
+body > section > div > div > div > div > div.span12 > div.row-fluid.header-agence > div > div > div > p  {font-size:1.4em;}
+
+//--------------------------------------------------------------------------------------
+//    FOOTER
+//--------------------------------------------------------------------------------------
+
+.bg-secondary-footer {
+    border-bottom: 4px solid $color-action;
+    border-top: 4px solid $color-action;
+}

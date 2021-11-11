@@ -1,0 +1,233 @@
+.promo
+	background-image url('../img/sys/promo_bg.jpg')
+	background-size cover
+	background-position 50% 50%
+	position relative
+	padding-top: 20px
+	padding-bottom: 44px
+	color #fff
+	overflow: hidden
+	margin-bottom: 0
+	@media screen and (max-width: 767px)
+		padding-top: 15px
+		padding-bottom: 10px
+	&__menu
+		float right
+		width 36px
+		height 36px
+		background-image url('../img/sys/menu.svg')
+		background-repeat: no-repeat
+		background-position: 70% 65%
+		padding: 0
+		@media (min-width: 768px) and (max-width: 1023px)
+			margin-right: 48px
+		@media screen and (min-width: 1024px)
+			display: none
+		a
+			display block
+			height 100%
+			width 100%
+			z-index 10
+			cursor pointer
+		&.active
+			z-index 205
+			background-image url('../img/sys/menu_c.svg')
+	.fixed
+		display none
+		position fixed
+		margin 0 auto
+		left 0
+		right 0
+		z-index 205
+		@media screen and (max-width: 1260px)
+			display block
+	&__logo
+		text-align left
+		@media screen and (max-width: 767px)
+			padding: 0
+		&.active
+			z-index 200
+
+		svg
+			@media screen and (max-width: 1023px)
+				margin-left: 40px
+			@media screen and (max-width: 767px)
+				width: 130px !important
+				height: 36px !important
+				margin-top: 3px
+				margin-left: 0
+	&__navigation
+		height 44px
+		vertical-align middle
+		text-align right
+		font-size 1em
+		padding-top: 4px
+		@media screen and (max-width: 1279px)
+			padding-top: 0
+		@media screen and (max-width: 1023px)
+			display none
+		li
+			display inline-block
+			padding-left 50px
+			line-height 50px
+		a
+			color white
+			font-weight 500
+			display block
+			&:after
+				content ""
+				display block
+				position relative
+				width 0px
+				height 3px
+				background-color #f57f17
+				transition all 0.4s
+				margin: 0 auto
+				margin-top -7px
+			&:hover
+				&:after
+					width 26px
+			&.email
+				padding-left 46px
+				&:before
+					content:""
+					display inline-block
+					position relative
+					margin-right 10px
+					margin-bottom -1px
+					width 16px
+					height 11px
+					background-image url("../img/sys/email_icon.svg")
+	&__center
+		@media screen and (max-width: 767px)
+			position relative
+			left auto
+			right auto
+			transform none
+	&__title
+		padding-top 230px
+		text-transform uppercase
+		font-size 2.813em
+		line-height 1.1
+		font-weight 800
+		letter-spacing 1px
+		text-align: center
+		@media screen and (max-width: 1023px)
+			padding-top: 155px
+			font-size: 2.813em
+			line-height: 45px
+			font-weight: 700
+		@media screen and (max-width: 767px)
+			padding-top 95px
+			line-height 30px
+			font-size 20px
+			letter-spacing 0
+
+	&__text
+		padding-top 52px
+		font-size 1.375em
+		font-weight 500
+		line-height: 1.45
+		text-align: center
+		@media screen and (max-width: 1023px)
+			padding-top: 62px
+		@media screen and (max-width: 767px)
+			font-size: 1em
+			padding-top: 30px
+			line-height 25px
+
+	&__call
+		padding-top 50px
+		margin-bottom 82px
+		text-align: center
+		@media screen and (max-width: 1023px)
+			padding-top: 67px
+		@media screen and (max-width: 767px)
+			padding-top: 35px
+			margin-bottom: 35px
+
+	&__tags
+		padding 35px 0
+		border-top 1px solid #fff
+		border-bottom 1px solid #fff
+		&:before
+			content "We are"
+			position absolute
+			left -110px
+			top 60px
+			text-transform uppercase
+			transform rotate(-90deg)
+			font-size 0.750em
+			letter-spacing 5px
+	&__tag
+		width 32%
+		display inline-block
+		padding-left 8.6%
+		font-weight 500
+		font-size 1.1em
+		line-height 1.5
+		&:after
+			content ""
+			width 40px
+			height 3px
+			background-color white
+			display block
+			margin-top 20px
+			position relative
+		@media screen and (max-width: 767px)
+			width 90%
+			padding-left 0
+			&:after
+				margin 10px auto 20px auto
+
+	&__arrow
+		text-align: center
+
+	&__video
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		width: 100%
+		height: 100%
+		@media screen and (max-width: 1023px)
+			display: none
+
+		video
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%,-50%)
+			min-width: 100%
+			min-height: 100%
+			width: auto
+			height: auto
+
+	&__stick
+		position fixed
+		margin 0 auto
+		left 0
+		right 0
+		z-index 200
+		&--js
+			top -130px
+			position fixed
+			z-index 100
+			transition all 0.6s
+			margin-top 130px
+			padding 20px 0
+			background-color #3e454f
+			box-shadow 0 9px 14.4px 1.6px rgba(1, 0, 0, 0.35)
+			@media screen and (max-width: 767px)
+				padding: 10px 0
+
+			a
+				color white
+				&:after
+					background-color #f57f17
+				&.email
+					&:before
+						background-image url("../img/sys/email_icon_a.svg")
+			.cls-2
+				fill white
+			

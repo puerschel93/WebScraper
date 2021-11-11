@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Component: Menu
+   ---
+   Dropdown menu
+   ========================================================================== */
+
+/* Variables
+  ========================================================================== */
+
+$g-auk-menu-z: 60 !default;
+
+/* Component
+  ========================================================================== */
+
+.auk-menu {
+  background: #FFF;
+  min-width: 23rem;
+  padding: 1rem 0;
+  border-radius: 0.3rem;
+  box-shadow: $auk-shadow-medium;
+  opacity: 0;
+  visibility: hidden;
+  // z-index: $g-auk-menu-z;
+
+  // reset styling (if enclosed within a button for example)
+  font-weight: 400;
+  color: $color-text;
+  white-space: normal;
+  text-align: start;
+}
+
+.auk-menu--picker {
+  .auk-menu__item {
+    color: $auk-gray-800;
+    &:hover {
+      color: $auk-gray-800;
+    }
+  }
+}
+
+.auk-menu__item {
+  color: $auk-blue-600;
+  text-decoration: none;
+  display: flex;
+  padding: 0.8rem 1.6rem;
+
+  &:hover {
+    background-color: $auk-gray-100;
+    color: $auk-blue-600;
+  }
+
+  &:focus {
+    outline: 0;
+    border-color: $auk-yellow-500;
+    box-shadow: inset 0 0 0 0.1rem $auk-yellow-500;
+  }
+}
+
+.auk-menu__item--text-only {
+  padding: 0.2rem 1.6rem 0.8rem 1.6rem;
+}
+
+.auk-menu__item--danger {
+  color: $auk-red-500;
+
+  &:hover,
+  &:focus {
+    color: $auk-red-500;
+  }
+}
+
+.auk-menu__item--disabled {
+  color: $auk-gray-400;
+  pointer-events: none;
+}
+
+.auk-menu__divider {
+  border-top: .1rem solid $auk-gray-300;
+  display: block;
+  margin-top: .4rem;
+  padding-top: .4rem;
+}
+
+.auk-menu--large {
+  min-width: 27rem;
+}
+
+.auk-menu.auk-menu--visible.js-no-action {
+  position: static;
+}
+
+.auk-menu--visible {
+  opacity: 1;
+  visibility: visible;
+}
+

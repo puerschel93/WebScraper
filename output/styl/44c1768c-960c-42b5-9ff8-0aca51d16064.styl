@@ -1,0 +1,587 @@
+.light-house
+  position: relative
+  @media screen and (max-width: 760px) {
+    // padding-top 10px
+  }
+  &__contacts {
+    display flex
+    margin 0 20px
+    padding-top 20px
+    @media screen and (max-width: 760px) {
+      flex-wrap: wrap
+    }
+  }
+  &__img {
+    width 100%
+  }
+  &__button {
+    flex-shrink: 0
+    margin-bottom auto
+    width 250px
+    margin-right 80px
+    box-sizing border-box
+    font-family: $font-1;
+    padding: 10px 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.65);
+    border: 2px solid #f00;
+    border-radius: 3px;
+    transition: .2s;
+    cursor pointer
+    &:hover {
+      background-color: #f00;
+    }
+    @media screen and (max-width: 760px) {
+      margin 0 auto
+      margin-bottom 20px
+    }
+  }
+  &__phones {
+    display flex
+    flex-wrap: wrap
+    width: 400px
+    overflow: hidden
+    &-text {
+      width 100%
+      font-family: Helvetica, Arial, sans-serif;
+      text-decoration underline
+      font-size 18px
+      white-space: nowrap
+      @media screen and (max-width: 760px) {
+        font-size 16px
+        text-align center
+      }
+    }
+    &-link {
+      width 100%
+      margin-top: 5px
+      font-family: Helvetica, Arial, sans-serif;
+      font-size 20px
+      white-space: nowrap
+      @media screen and (max-width: 760px) {
+        font-size 18px
+        text-align center
+      }
+      span {
+        font-size 18px
+        color #000
+        @media screen and (max-width: 760px) {
+          font-size 14px
+        }
+      }
+      b {
+        color #000
+      }
+    }
+  }
+  &__clock
+    margin-top: 25px
+    margin-bottom: 10px
+    box-sizing: border-box
+    min-height: 140px
+    .flip-clock-label {
+      font-size 16px
+    }
+    @media screen and (max-width: 760px) {
+      min-height: 20vw
+      .flip-clock-label {
+        right -16vw !important
+      }
+      .flip {
+        width 10%
+        height 15vw
+        margin 0
+        margin-left 1vw
+        li {
+          line-height 15vw
+        }
+      }
+      .flip-clock-divider {
+        width 10px
+        height 15vw
+        &:first-child {
+          width 5px
+        }
+      }
+      .flip-clock-dot {
+        width 3px
+        height 3px
+        left 50%
+        transform: translateX(-50%)
+      }
+      .inn {
+        font-size 12vw !important
+      }
+      .up {
+        &:after {
+          top unset !important
+          bottom: 0
+          height 2px !important
+        }
+      }
+    }
+  &__sub-title
+    font-size 28px
+    margin-top 30px
+    margin-left 20px
+    margin-bottom 10px
+    color #2196f3
+    &.sub-title--red {
+      font-weight: 700
+      color red
+    }
+    &.price-cost {
+      position relative
+      margin-top 0
+      font-family: Arial, sans-serif;
+      width 230px
+      &:before {
+        position absolute
+        content ''
+        top 15px
+        left -5px
+        width calc(100% + 10px)
+        height 2px;
+        background-color #000
+      }
+      &--red {
+        margin-top 0
+        font-family Arial, sans-serif
+        color red
+        b {
+          font-size 40px
+          white-space: nowrap
+        }
+      }
+    }
+    @media screen and (max-width: 760px) {
+      padding 0 10px
+    }
+  &__text
+    margin-bottom 5px
+    font-family Arial, sans-serif
+    text-indent: 20px
+    font-size 20px
+    @media screen and (max-width: 760px) {
+      padding 0 10px
+    }
+  &__sub-title-attention {
+    margin-top 20px
+    margin-bottom 10px
+    text-align center
+    font-size 30px
+    color:  red;
+  }
+  &__text-attention {
+    text-align center
+    color red
+    font-size 20px
+    margin-bottom 20px
+  }
+  &__video
+    position relative
+    margin: 20px 0
+    padding-bottom 56.25%
+    padding-top 25px
+    height 0
+    iframe {
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+    }
+  &__map
+    content: 'карта'
+    width 100%
+    height 350px
+    margin-top 20px
+    margin-bottom: 30px
+    background-color #eeeeee
+  &__list-box {
+    display flex
+    flex-wrap: wrap
+    margin-bottom 20px
+  }
+  &__list
+    // width 45%
+    padding-left 30px
+    list-style: unset
+    &:first-child {
+      margin-right auto
+    }
+  &__item
+    margin-bottom 5px
+    font-family Arial, sans-serif
+    font-size 20px
+  .item-num {
+    font-family Arial, sans-serif
+    font-size 20px
+    margin-bottom 10px
+  }
+  &__img-wrap
+    width 100%
+    img
+      width 100%
+    &--flex
+      display flex
+      justify-content space-around
+      &.smart
+        img
+          display: block
+          width: 33%
+          height: 66%
+      &.services
+        img
+          width: 45%
+          height: 50%
+  &__link-mail
+    margin: 0 10px
+  &__link-tel
+    span 
+      color: #000
+    @media screen and (max-width: 760px) {
+      display block
+      width 100%
+      padding-top 10px
+      &:last-child {
+        padding-bottom 30px
+      }
+    }
+$light-grey: #e6e6e6
+
+
+.gallery-slider {
+  height 350px
+  position: relative;
+  overflow: hidden;
+  background-color: $light-grey;
+  @media screen and (min-width: 576px) {
+    height: 350px;
+  }
+  @media screen and (min-width: 720px) {
+    height: 676px;
+  }
+
+  // __images
+  &__images {
+    margin: 0;
+    position: relative;
+    .item {
+      padding: 0;
+      .img-fill {
+        text-align: center;
+        padding: 10px 0;
+        height: 250px;
+        @media screen and (min-width: 576px) {
+          height: 350px;
+        }
+        @media screen and (min-width: 720px) {
+          height: 550px;
+        }
+
+        img {
+          display: inline-block;
+          position: relative;
+          max-width: 100%;
+          max-height: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .next-arrow, .prev-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 47px;
+      height: 47px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, .70);
+      border: 0 none;
+      text-align: center;
+      color: #FFF;
+      z-index: 5;
+      opacity: 0;
+      transition: all 0.5s;
+      outline: 0;
+      svg {
+        top: 4px;
+      }
+    }
+    .next-arrow {
+      right: 25px;
+    }
+    .prev-arrow {
+      left: 25px;
+    }
+    &:hover .next-arrow, &:hover .prev-arrow {
+      opacity: 1;
+    }
+    .caption {
+      width: 100%;
+      position: relative;
+      text-align: center;
+      display: block;
+      opacity: 1;
+      transition: opacity 0.15s;
+      &.hide {
+        opacity: 0;
+      }
+    }
+  }
+
+  // __thumbnails
+  &__thumbnails {
+    position: relative;
+    top: auto;
+    left: 0px;
+    width: 100%;
+    z-index: 4;
+    transition: all 0.8s;
+    margin: 0;
+    padding: 13px 0;
+    &:before, &:after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+    &:before {
+      left: 0;
+      // background: linear-gradient(to right, rgba($light-grey,1) 0%,rgba($light-grey,0) 100%);
+    }
+    &:after {
+      right: 0;
+      // background: linear-gradient(to right, rgba($light-grey,0) 0%,rgba($light-grey,1) 100%);
+    }
+    .item {
+      .img-fill {
+        height: 70px;
+        background: white;
+        cursor:pointer;
+        border: 5px solid white;
+        text-align: center;
+        img {
+          opacity: 0.5;
+          transition: all 0.5s;
+
+          display: inline-block;
+          position: relative;
+          max-width: 100%;
+          max-height: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          
+        }
+      }
+      &:hover .img-fill img {
+        opacity: 1;
+      }
+      &.slick-center {
+        img {
+          opacity: 1;
+        }
+      }
+    }
+    .next-arrow, .prev-arrow {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, .60);
+      color: #FFF;
+      border: 0 none;
+      z-index: 15;
+      svg {
+        top: 2px;
+      }
+    }
+    .next-arrow {
+      right: 0px;
+    }
+    .prev-arrow {
+      left: 0px;
+    }
+  }
+
+  // generic arrows
+  .next-arrow, .prev-arrow {
+    cursor: pointer;
+    svg {
+      width: 18px;
+      height: 18px;
+      position: relative;
+    }
+  }
+
+  // image fills
+  .img-fill {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-align: center
+  }
+
+  // slick overrides
+  .slick-slider {
+    margin: 0 -7.5px;
+    padding: 0!important;
+  }
+  .slick-slide {
+    float: left;
+    padding: 0 7.5px;
+    outline: none;
+  }
+
+}
+.modal-call {
+  position: fixed;
+  top 50%
+  left 50%
+  transform: translate(-50%, -50%)
+  width: 400px
+  padding 40px
+  border-radius: 10px
+  background-color #fff
+  box-shadow: 0 4px 18px 0 rgba(52,57,72,.28)
+  z-index: 500
+  text-align: center
+  overflow: hidden
+  display: none
+
+  @media all and (max-width: 720px) {
+    width 100%
+    box-sizing border-box
+    top 0
+    left 0
+    transform: unset
+    border-radius: 0
+    padding 30px 10px
+  }
+
+  &__close-btn {
+    position absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    top 5px
+    right 5px
+    font-size 0
+    box-sizing border-box
+    background-color: transparent
+    border 0
+    width 25px
+    height 25px
+    cursor: pointer
+    color #555
+    z-index: 5
+    transition: 0.2s
+
+    &:hover {
+      color #000
+    }
+
+    &:before {
+      content ''
+      position absolute
+      top 50%
+      left 50%
+      transform: translate(-50%, -50%) rotate(-45deg)
+      width 1px
+      height 100%
+      background-color currentColor
+    }
+    &:after {
+      content ''
+      position absolute
+      top 50%
+      left 50%
+      transform: translate(-50%, -50%) rotate(45deg)
+      width 1px
+      height 100%
+      background-color currentColor
+    }
+  }
+
+  &__title {
+    font-size 30px
+    text-align center
+    margin-bottom 30px
+  }
+
+  &__field {
+    display flex
+    align-items center
+    margin-bottom 15px
+  }
+
+  &__label {
+    font-size 20px
+    margin-right auto
+  }
+
+  &__input {
+    padding 5px 10px
+    width 230px
+    font-size 20px
+    border 1px solid #ccc
+    border-radius: 4px
+    outline: 0
+  }
+
+  &__info {
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    right 0
+    background #fff
+    font-size 26px
+    margin-bottom 0
+    display none
+    svg {
+      position absolute
+      top 0
+      left 50%
+      transform: translateX(-50%)
+    }
+    div {
+      padding-top 130px
+      margin: 0 auto
+      color: red
+      p {
+        color #000
+      }
+    }
+  }
+
+  &__button {
+    display inline-block
+    font-family: $font-1;
+    margin-top 5px
+    padding: 10px 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.65);
+    border: 2px solid #f00;
+    border-radius: 3px;
+    transition: .2s;
+    cursor pointer
+    &:hover {
+      background-color: #f00;
+    }
+  }
+
+}

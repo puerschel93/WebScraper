@@ -1,0 +1,353 @@
+@mixin scrollbar {
+    /* width */
+    &::-webkit-scrollbar {
+        width: 10px;
+        margin: 0.5em;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: rgba($color: #000000, $alpha: 0.5); 
+        border-radius: 0.5em;
+    }
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $ctaColor; 
+        border-radius: 0.5em;
+        border: 3px $cardBackground solid;
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: $primaryColor; 
+    }
+}
+
+@mixin primaryGradientBackground {
+    background-image: linear-gradient(to right bottom,#4E75FF 30%,#0632CC);
+    background-size: cover;
+}
+
+@mixin inputStyle($backColor,$padding:1em,$margin:0,$borderRadius:0.5em) {
+    appearance: none;
+    padding: $padding;
+    margin: $margin;
+    outline: none;
+    border: none;
+    background-color: $backColor;
+    font-family: 'vazir fd';
+    color: #fff;
+    border-radius: $borderRadius;
+}
+
+$backgroundColor:#081626;
+$sidebarBackgroundColor:#0D2540;
+$cardBackground:#0B1E33;
+$primaryColor:#6A62FE;
+$dangerColor:#DB4646;
+$ctaColor:#31CF2E;
+$successColor:#3B9950;
+$infoColor:#3E7A99;
+$warningColor:#52FF00;
+
+
+.btn{
+    appearance: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    transition: background-color 0.3s,box-shadow 0.3s;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'vazir fd';
+    font-weight: bold;
+    &.btn-sm{
+        font-size: 12px;
+        padding: 0.3em;
+    }
+    .btn-link{
+        background-color: transparent;
+        color: $primaryColor !important;
+    }
+    &.btn-primary{
+        background-color: $primaryColor;
+        &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+    &.btn-outline-primary{
+        border: 2px solid $primaryColor;
+        border-radius: 0.5em;
+        &:hover{
+            background-color: $primaryColor ;
+        }
+    }
+    &.btn-success{
+        background-color: $successColor;
+        &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+    &.btn-outline-success{
+        border: 2px solid $successColor;
+        border-radius: 0.5em;
+        &:hover{
+            background-color: $successColor ;
+        }
+    }
+    &.btn-outline-info{
+        border: 2px solid $infoColor;
+        border-radius: 0.5em;
+        &:hover{
+            background-color: $infoColor ;
+        }
+    }
+    &.btn-cta{
+        background-color: $ctaColor;
+        &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+    &.btn-warning{
+        background-color: $warningColor;
+        color: #000 !important;
+        &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+    &.btn-outline-warning{
+        border: 2px solid $warningColor;
+        border-radius: 0.5em;
+        &:hover{
+            background-color: $warningColor ;
+        }
+    }
+    &.btn-danger{
+        background-color: $dangerColor;
+        &:hover{
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+    &.btn-outline-danger{
+        border: 2px solid $dangerColor;
+        border-radius: 0.5em;
+        &:hover{
+            background-color: $dangerColor ;
+        }
+    }
+}
+.btn-icon{
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+
+}
+
+.left{
+    margin-right: auto;
+}
+
+.text-light{
+    color: #fff;
+}
+.text-dark{
+    color: #000;
+}
+.text-warning{
+    color: $warningColor;
+}
+.text-cta{
+    color: $ctaColor;
+}
+.text-primary{
+    color: $primaryColor;
+}
+.text-danger{
+    color: $dangerColor;
+}
+.text-info{
+    color: $infoColor;
+}
+
+.alert{
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    @media screen and (max-width:600px){
+        font-size: 12px;
+    }
+    &.alert-warning{
+        border: 2px solid $warningColor;
+    }
+    &.alert-danger{
+        border: 2px solid $dangerColor;
+    }
+}
+
+input[type=checkbox]:not(input#change-form){
+    position: relative;
+    appearance: none;
+    outline: none;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    margin-left: 0.5em;
+    &::before,&::after{
+        content: "";
+        display: block;
+        background-size: cover;
+        height: 2em;
+        width: 2em;
+        position: absolute;
+        pointer-events: none;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: opacity 0.5s;
+    }
+
+    &::before{
+        background-image: url('../imgs/Unckecked.svg');
+    }
+    &::after{
+        background-image: url('../imgs/Checked.svg');
+        opacity: 0;
+    }
+    
+    &:checked {
+        &::before{
+            opacity: 0;
+        }
+        &::after{
+            opacity: 1;
+        }
+    }
+}
+
+input[type=radio].radio{
+    appearance: none;
+    border: 2px solid $primaryColor;
+    background-color: transparent;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: background-color .3s;
+    &:hover{
+        border-color: #fff;
+    }
+    &:checked{
+        background-color: $primaryColor;
+        &:before{
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            background-color: $backgroundColor;
+            transform: translate(-50%,-50%);
+        }
+    }
+}
+
+.icon-input{
+    svg{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        opacity: 0.5;
+        width: 15px;
+        &.show-password,&.hide-password{
+            display: none;
+            right: 1.5em;
+            pointer-events: all;
+            cursor: pointer;
+            opacity: 1;
+            width: 20px;
+            &.hide-password{
+                display: none;
+            }
+        }
+    }
+    label{
+        margin-right: 1.5em;
+    }
+}
+.float-input{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    input{
+        height: 100%;
+        appearance: none;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid #fff;
+        padding: 0.5em 1em;
+        color: #fff;
+        direction: ltr;
+        font-family: 'montserrat';
+        font-size: 1em;
+        transition: border 0.3s;
+        &::-ms-reveal,
+        &::-ms-clear {
+            display: none;
+        }
+        &:valid{
+            & ~ svg.show-password{
+                display: block;
+            }
+        }
+        &:valid,&:focus{
+            border-bottom: 3px solid $primaryColor;
+            & ~ label{
+                transform: translate(1.5em,-1.5em);
+                font-size: 14px;
+                opacity: 50%;
+            }
+        }
+    }
+    label{
+        position: absolute;
+        transition: transform 0.3s, font-size 0.3s,opacity 0.3s;
+        pointer-events: none;
+    }
+    span.validation-text{
+        position: absolute;
+        top: -2em;
+        left: 0;
+        font-size: 14px;
+        color: $dangerColor;
+        pointer-events: none;
+    }
+    
+}
+
+.badge{
+    display: flex;
+    align-items: center;
+    border-radius: 1em;
+    padding: 0.2em 0.7em;
+    font-size: 12px;
+    margin: 0 0.5em;
+    &.badge-warning{
+        background-color: $warningColor;
+        color: #000;
+    }
+    &.badge-primary{
+        background-color: $primaryColor;
+        color: #fff;
+    }
+}

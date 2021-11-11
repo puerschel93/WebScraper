@@ -1,0 +1,222 @@
+$textColor = #212529
+$white = $white
+$colorFocus = #16181b
+$bgFocus = #f8f9fa
+$colorDisabled = #6c757d
+$bgActive = #009da0
+$dividerColor = #e9ecef
+
+.dropdown
+  position relative
+
+  &__toggle
+    cursor pointer
+
+    &::after
+      content ''
+      display inline-block
+      width 0
+      height 0
+      margin-top rem(1)
+      margin-left rem(6)
+      vertical-align rem(4)
+      border-top rem(4) solid
+      border-right rem(5) solid transparent
+      border-left rem(5) solid transparent
+      border-bottom 0
+      
+      +mobile()
+        margin-top 1px
+        margin-left 6px
+        border-top 4px solid
+        border-right 5px solid transparent
+        border-left 5px solid transparent
+      
+      +landscape()
+        margin-top 1px
+        margin-left 6px
+        border-top 4px solid
+        border-right 5px solid transparent
+        border-left 5px solid transparent
+    
+    &_nocaret
+      &::after
+        display none
+
+    &:empty
+      &::after
+        margin-left 0
+  
+  &_right
+    .dropdown__menu
+      left auto
+      right -1px
+
+  &__menu
+    display none
+    position absolute
+    top 100%
+    left -1px
+    float left
+    min-width 16rem
+    padding 0
+    margin 1px 0 0
+    font-size rem(16)
+    color #fff
+    text-align left
+    list-style none
+    background-color #2f3031
+    border-top 1px solid rgba(#fff,.15)
+    border-radius 0 0 rem(6) rem(6)
+    box-shadow 0 rem(2) rem(4) 0 rgba(#000, .5);
+    z-index 1000
+    user-select none
+    
+    +mobile()
+      font-size 16px
+      min-width 160px
+    
+    +landscape()
+      font-size 16px
+
+  &.is-open
+    .dropdown__menu
+      display block
+
+  &__divider
+    height 0
+    margin .75rem 0
+    overflow hidden
+    border-top 1px solid $dividerColor
+
+  &__item
+    display block
+    width 100%
+    padding rem(6) rem(20)
+    clear both
+    font-weight 400
+    line-height rem(30)
+    color #fff
+    text-align inherit
+    white-space nowrap
+    background-color transparent
+    border 0
+    cursor pointer
+    text-decoration none
+    
+    +mobile()
+      padding 6px 20px
+      line-height 30px
+
+    &:focus
+    &:hover
+      text-decoration none
+      background-color rgba(#fff, .05)
+
+    &.active
+    &:active
+      color $white
+      text-decoration none
+      background-color $bgActive
+
+    &.disabled
+    &:disabled
+      color $colorDisabled
+      background-color transparent
+  
+  &__text
+    vertical-align middle
+    margin-left 0
+    font-size rem(16)
+    line-height rem(20)
+    
+    +mobile()
+      font-size 16px
+      line-height 20px
+
+  &__header
+    pointer-events none
+    cursor default
+    display block
+    padding .1rem 2rem
+    margin-bottom 0
+    font-size rem(12)
+    color $colorDisabled
+    white-space nowrap
+    
+    +mobile()
+      font-size 12px
+      padding 1px 20px
+
+.selector
+  display flex
+  align-items center
+  height rem(56)
+  font-size rem(16)
+  color $white
+  background-color #2f3031
+  border-radius rem(6)
+  cursor pointer
+  margin-bottom rem(36)
+  
+  +mobile()
+    height 56px
+    font-size 16px
+    border-radius 6px
+    margin-bottom 20px
+  
+  +landscape()
+    height 56px
+    font-size 16px
+    border-radius 6px
+    margin-bottom 36px
+  
+  &_with-text
+    margin-bottom 0
+
+  &_square
+    border-radius 0
+  
+  &.is-open
+    border-radius rem(6) rem(6) 0 0
+  
+  &__current
+    height 100%
+    width 100%
+    padding rem(16)
+    display flex
+    align-items center
+    
+    &::after
+      position absolute
+      right rem(15)
+      top 50%
+      margin-top rem(-2)
+
+  &__menu
+    width 100%
+    left 0
+    margin-top rem(-1)
+    
+    &_fullwidth
+      width rem(294)
+  
+  &__item
+    height rem(56)
+    padding-left rem(16)
+    padding-right rem(16)
+    display flex
+    align-items center
+    
+    +mobile()
+      height 56px
+      padding-left 16px
+      padding-right 16px
+    
+    +landscape()
+      height 56px
+      padding-left 16px
+      padding-right 16px
+
+    &:not(:last-child)
+      border-bottom 1px solid rgba(255, 255, 255, 0.15)

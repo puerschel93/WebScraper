@@ -1,0 +1,322 @@
+$colour-primary: #9356DC;
+$colour-secondary: linear-gradient(#FF79DA,#9356DC);
+$colour-tertiary: #99E2D0;
+$colour-hovbutton:#9356DC;
+$colour-hovheart:#FF79DA;
+$back-clr:rgba($color: #c3c7c1, $alpha: 0.2);
+$font_title:'Shrikhand', cursive;
+$font_body:'Roboto', sans-serif;
+$border: 0.5px transparent none;
+$border_rad: 15px 15px 15px 15px;
+$box-shad:8px 8px 12px #aaa;
+$anim_dur:0.7s;/*durée à modifier*/
+
+/*liste des mixins à utiliser*/
+@mixin border{border:1px solid none; border-radius: $border_rad;}
+@mixin fontoption{
+    color:black; 
+    font-weight: bold;
+    font-family: $font_body; 
+    text-decoration: none; 
+    width: 100%;}
+
+@mixin photo_page_menu{width: 100%;height:100%;}
+@mixin menuformat {background-color: $back-clr; width: 100%; display: flex; display: inline; border:$border; border-radius: 15px 0px 0px 0px;}
+
+@mixin button{
+    background: $colour-secondary; 
+    padding: 0.5em; border-radius:$border_rad;
+    text-align: center; font-size: 1em;
+    color: white;
+    font-family: $font_body; 
+    border: none; font-style: bold;}
+  
+    /*keyframes et specificités sur le loading spinner*/
+
+.animation_chargement::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10001;
+    overflow: hidden;
+    background: #0b0b0b;
+    opacity: 0;
+    animation: back $anim_dur forwards;
+      }
+.animation_chargement::after{
+    border: 10px solid black;
+    border-radius: 50%;
+    z-index: 10002;
+    content: "";
+    position: absolute;
+    top:50%; bottom:50%; right: 50%; left:20%;
+    border-top:20px solid #2c3e50;
+    border-bottom:20px solid #e74ce7;
+    border-left:20px solid $colour-primary;
+    border-right:20px solid $colour-tertiary;
+    width:200px; height: 200px;
+    margin:auto;
+    animation:spin $anim_dur linear alternate-reverse forwards;
+}
+@keyframes spin {
+    0% { transform: translateX(0) rotate(0deg);opacity: 0;
+}
+10% { transform: translateX(0) rotate(360deg);opacity: 1;
+}
+40%{transform: translateX(0) rotate(0deg);
+}
+60%{transform: translateX(0) rotate(360deg);
+}
+95% { 
+    transform: translateX(-9999px) rotate(360deg);
+}
+100%{ transform: translateX(-9999px) rotate(0deg); opacity: 0;}
+}
+@keyframes back{
+0% {
+    opacity:0;
+}
+2%{
+ opacity:1
+} 
+95%{
+ opacity:1;
+}
+100%{
+ opacity:0;
+}
+}
+.animation_chargement {display: flex;flex-direction:column; height: 20px;
+span {
+font-family: $font_title; background-color: white; 
+font-weight: 2px;
+border-top:10px solid white;
+border-bottom:10px solid white;
+border-left:10px solid white;
+border-right:10px solid white;
+opacity:0;
+animation: back $anim_dur forwards;
+}
+}
+.bloc_page{width: 95%; margin: auto;position: center; cursor: pointer; font-family: $font_body;}
+
+.header__logo 
+{
+float: center; margin-right:10%;
+display: flex; flex-direction:row; 
+height: 5%;
+ img {
+width: 90%; height: 50px; padding-bottom: 5%; margin-left:10%;}
+}
+/*caracteristiques du header pour les pages de menu*/
+.header__logo i.fas{
+    float: left; font-size: 2em;
+   margin-bottom: 5%;
+    height:100%;}
+    /*fin du header pour les pages*/
+
+.slogan
+{
+    background-color: $back-clr; border: $border; 
+    border-top: solid 3px rgba($color: #c3c7c1, $alpha: 0.8);
+    text-align: center;
+    padding-bottom: 10%;
+
+.zone_recherche
+{  
+ display: flex;
+ flex-direction:row;
+ justify-content: stretch;
+ padding-bottom:1em;
+ padding-right: 1em;
+ padding-top:1em;
+ background-color: rgba($color: #c3c7c1, $alpha: 0.3);
+ .recherche { 
+    @include fontoption; 
+    border:none; background-color: rgba($color: white, $alpha: 0);
+}
+.fas{margin-right:5%; margin-left: 15%;}
+}}
+
+h3
+{ font-weight: lighter;color:grey;
+}
+
+    .bouton {
+        @include button;
+            }
+.fonctionnement
+{ 
+    display: flex;
+    width: 90%; 
+    height: 40%; 
+    flex-direction: column; 
+    margin-left:0%; 
+    margin-right: 20%; 
+    ul 
+    {
+    list-style-type : none;
+    margin-left:0%;
+    width: 100%; 
+    position: relative; 
+    justify-content: space-around; 
+}
+}   
+    .fonctionnement li 
+    {
+     @include border;
+    float: left;width: 100%;
+    border:$border; 
+    border-radius: $border_rad; margin-bottom: 20px; display: flex; flex-direction: row;
+    &:hover {
+        &>a .__hov {
+            opacity:1;
+        transform:$box-shad;}
+        }
+}
+       .fonctionnement a {
+       @include fontoption; width: 100%; padding-left:10%; float: left;background-color: $back-clr;
+       position: relative; text-align: left;
+       padding-top: 20px;  padding-left:1%;
+       padding-bottom: 20px; width:100%;
+       border:$border;
+       border-radius: $border_rad; 
+       z-index:1; 
+       .fas{margin-left: 0%;
+        margin-right:5%;
+            }}
+    .__hov{
+        position: absolute; top: 0; border:$border; width: 100%; 
+        border-radius: $border_rad; 
+        box-shadow:none;
+        overflow:hidden;
+        opacity:0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: lighten($colour-hovbutton, 30); 
+        z-index: -1;
+        transition: transform opacity 250ms;
+    }
+    .fonctionnement .number{
+        background-color: $colour-primary; 
+        border:$border; padding:1px; width: 2%;text-align: center; margin-bottom: 1%; padding-top:10px; margin-top: 10px;
+        border-radius:20px 20px 20px 20px;
+        color:white;
+    }
+    @media all and (max-width: 480px)
+    {
+        .fonctionnement .number{
+            padding-left:10px; padding-right:10px; margin-bottom: 5%;
+        }  
+    }
+
+
+.restaurants { 
+    width: 100%; 
+    display: flex; 
+    display: inline-block; 
+    background-color: $back-clr;
+    ul {
+        list-style-type : none;
+        li{ margin-left: 0;
+         a { 
+            @include border; 
+            float: left; 
+            margin-bottom: 10%;
+            @include fontoption; 
+            flex-direction: row;
+            background-color: white; 
+            width: 100%; margin-right:5%;
+            text-align: bottom;
+                img 
+            {
+            @include border; 
+            border-radius: $border_rad;
+            width: 100%; 
+            float: left; 
+            height: 150px;
+                }
+                .span{display: flex;flex-direction: row;
+                    width: 100%;}
+                    p{font-weight: lighter;}
+                .far 
+                {
+                float: right; color:grey; font-size: 30px;
+                width: 20%;
+            }
+        }
+        }
+        }
+        }
+        .restaurants .far::after {
+            content: "";
+            position: absolute;
+            width: 20%; height: 50px; display: block;
+            background: $colour-hovheart;
+            transform:scaleY(0);
+            transition: transform $anim_dur ease;
+            &:hover{
+                .far::after{transform:scaleY(1);}}}
+
+    /* caracteristiques des elements pour les pages des menus*/
+
+.photo{height: 10%;
+    img{@include photo_page_menu;}}
+.page_menu {background-color: $back-clr;
+        .menu { display: flex;  width: 100%; height: 40%; flex-direction: column; margin-left:0%; 
+            margin-right: 20%; display: flex; flex-direction: column;
+                ul {list-style: none; width: 100%;
+            li {
+                display: flex; flex-direction: row;
+a{background-color: white; width: 80%; @include border; margin-left:0%;margin-right: 10%;
+    width: 80%;box-shadow:grey; padding:20px; 
+border:$border; 
+border-radius: $border_rad; margin-bottom: 10%;
+&:hover 
+{
+    &>.green_fill{ transform: scaleX(0.1);
+        &>.fas{transform:scale(1) rotate(90deg);}
+    }
+}
+}
+}
+}
+}
+    }
+a .green_fill{background-color:$colour-tertiary; padding:20px; width: 100%; height: 100%;
+    transform:scaleX(0);  transform-origin: right 50%;
+    transition: transform 350ms ease-in-out;
+    &.fas { 
+        color:$colour-tertiary; 
+        padding-left:50px; padding-right:50px; display: block;
+        width: 100%; 
+        background-color: white; 
+        border:$border; 
+        border-radius: 30px 30px 30px 30px;
+        height: 10px;  width: 100%;
+        transform: scale(0) rotate(0deg);
+        transition: transform 330ms ease-in-out;
+        float: right;    
+    } }
+
+.page_menu .menu a {@include fontoption;
+img{height: 10%;}}
+
+footer {
+        background-color:#19252F;
+        img{color: white;}
+                ul {
+            list-style-type : none;
+        a {
+            color:white; text-decoration: none; font-family: $font_body; 
+        .fas{
+            padding-right:10%;
+        }
+    }
+}
+} 
+        .footer_important {
+            font-weight: bold;
+        }

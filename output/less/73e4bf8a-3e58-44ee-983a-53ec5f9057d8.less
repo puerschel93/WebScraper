@@ -1,0 +1,345 @@
+.navbar__{ 
+	&block{
+		background-color: @white;
+		position: fixed;
+		width: 100%;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		transition: @trs-site;
+		@media print{display: none;}
+		.media-breakpoint-up(@xl; {
+			position: absolute;	
+			&.is--scrolled{
+				position: fixed;	
+			}		
+		});
+	}
+	//header
+	&header{
+		&{
+			width: 100%; 
+			padding: 20px 0;
+			transition: @trs-site;
+			.is--open-navbar &{
+				//background: @primary-g2;
+			}
+			.media-breakpoint-up(@xl; {
+				display: none;
+			});
+		}	
+		&-row{
+			position: relative;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: nowrap;
+			& > .is--logotip-v{
+				display: none;
+			} 
+			.navbar__block.is--scrolled &{
+				.media-breakpoint-up(@xl; {
+					& > .is--logotip{
+						display: none;
+					}
+					& > .is--logotip-v{
+						display: block;
+					}
+				});
+			}
+		}	
+	}
+	&logotip{
+		position: relative;	
+		display: block;		
+		transition: @trs-site;
+		svg{display: block;}
+		&, &:hover, &:focus{color: @white;}
+		max-width: 100px;
+		.media-breakpoint-up(@xl; {
+			max-width: 180px;
+		});
+	}
+	//collapse
+	&collapse{
+		&{
+			position: fixed;
+			background: @primary-g2;
+			z-index: 100;
+			top: @navbar_device;
+			height: ~"calc(100vh - @{navbar_device})";
+			left: -100%;
+			width: 100%;
+			opacity: 0;
+		    visibility: hidden;
+		    transition: opacity 0.35s, left 0.35s;
+			//right: 0;
+			//opacity: 1;
+	    	//visibility: visible;
+		    .media-breakpoint-up(@sm; {
+		    	width: 300px;
+				left: -300px;
+		    });
+		    &.is--open{
+		    	visibility: visible;
+		    	opacity: 1;
+		    	left: 0;
+		    }
+			.media-breakpoint-up(@xl; {
+				position: initial;
+				height: initial;
+				opacity: initial;
+			    visibility: initial;
+			    background: initial;
+			    width: initial;
+				top: 0;
+			});
+		}	
+		&-inner{
+			display: flex;
+			gap: 20px;
+			flex-direction: column;
+			position: relative;
+			height: 100%;
+			overflow: auto;
+			padding: 20px 0px;
+			& > .navbar__info{
+				order: 1;
+			}	
+			.media-breakpoint-up(@xl; {
+				gap: 0;
+				padding: 0px;
+				overflow: initial;
+				& > .navbar__info{
+					order: initial;
+				}				
+			});
+		}
+		&-row{
+			align-items: center;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			& > .is--logotip{
+				display: none;
+			}
+			& > .is--soc{
+				display: none;
+			}
+			.media-breakpoint-up(@xl; {
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center; 
+				gap: 45px;	
+				& > .is--logotip{
+					display: block;
+					flex: 1 1 0;
+				}			
+				& > .is--contacts{
+					flex: 3 1 0;
+				}			
+				& > .is--soc{
+					display: block;
+					flex: 1 1 0;
+					justify-content: flex-end;
+				}			
+			});
+			.media-breakpoint-up(@xxl; {
+				& > .is--contacts{
+					flex: 2.2 1 0;
+				}
+			});
+		}
+	}
+	&info{
+		.media-breakpoint-up(@xl; {
+			padding-top: 12px;
+			padding-bottom: 14px;
+		});
+	}
+	&soc{
+		&{
+			display: flex;
+			gap: 15px;
+			justify-content: flex-end;
+		}
+		&-item{
+		}
+	}
+	&contacts{
+		&{
+			align-items: center;
+			gap: 15px;
+			.media-breakpoint-up(@xl; {
+				gap: 15px 4.5vw;
+				& > *{
+					&:nth-child(1){
+						flex: 1.2 1 0;
+					}
+					&:nth-child(2){
+						flex: 1 1 0;
+					}
+				}
+			});
+		}
+		&-item{
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			font-weight: 300;
+			//.text14();
+			.font(0.778rem, 200%);
+			color: @white;
+			& + &{
+				margin-top: 15px;
+			}
+			&:hover{
+				color: @white;
+			}
+			&.is--address{
+				align-items: flex-start;
+				span{
+					padding-top: 0px;
+				}
+			}
+			svg{
+				color: @info;
+				display: block;
+				min-width: 22px;
+				width: 22px;
+				height: 22px;
+			}
+			.media-breakpoint-up(@xl; {
+				color: @black;
+				&:hover{
+					color: @black;
+				}
+				& + &{
+					margin-top: 0px;
+				}
+			});
+		}
+	}
+	&nav{
+		.container{
+			max-width: 1300px;
+		}
+		&{
+			.media-breakpoint-up(@xl; {
+				background: @primary-g2;
+			});
+		}
+		&-list{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			gap: 15px;
+			flex-wrap: wrap;
+		    align-items: center;
+			.media-breakpoint-up(@xl; {
+				flex-wrap: nowrap;
+				justify-content: space-between;
+				gap: 35px;
+			});
+		} 
+		&-item{
+			width: 100%; 
+			margin-bottom: 15px;
+			&:last-child{margin-bottom: 0px}
+			.dropdown-backdrop{display: none;}
+			.media-breakpoint-up(@xl; {
+				width: initial;
+				margin-bottom: 0;
+			});
+		}
+		&-link{
+			overflow: hidden;
+			display: inline-block;
+		    font-weight: 500;
+			letter-spacing: 2px;
+		    position: relative;
+			color: @white;
+			transition: @trs-site, font-size 0s;
+			text-transform: uppercase;
+			.media-breakpoint-up(@xl; {
+				padding: 22px 10px 14px;
+		   		display: block;
+			});
+			&::before{
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				right: 0;
+				height: 2px;
+				background-color: @white;
+				z-index: 1;
+				transition: @trs-site;
+			}
+			&:hover{
+				color: @white;
+				&::before{
+					bottom: 1px;
+				}
+			}
+			.navbar__nav-item.open &,
+			&.is--active{			
+				cursor: default;
+				color: @white;
+				&::before{
+					bottom: 1px;
+				}
+				
+			}
+		}
+	}
+	&hamburger{
+		&-card{
+			.btn-clearfix();
+			position: relative;
+			z-index: 10;
+			display: block;
+		}
+		&-card-inner{
+			width: 32px;
+			height: 32px;
+			padding: 8px 5px;
+			display: flex;
+	  		flex-flow: row wrap;
+	 		align-content: space-between;
+		}
+		&-card-line{
+			display: block;
+			width: 100%;
+			height: 2px;
+			transition: @trs-site;
+			background-color: @black;
+			border-radius: 2px;
+	    	position: relative;
+			transition: @trs-site;
+			.navbar__hamburger-card.is--active &{
+				background-color: @black;
+			}				
+			&.is--left{
+				.navbar__hamburger-card.is--active &{				
+					transform: translate(0px, 6px) rotate(-135deg);
+					transition: @trs-site 0.2s;
+				}
+			}	
+			&.is--center{
+				transform-origin: 0 0;
+				transition: @trs-site 0.2s;
+				.navbar__hamburger-card.is--active &{
+					transform: scale(0, 1);
+					transition: @trs-site;
+				}
+			}	
+			&.is--right{
+				.navbar__hamburger-card.is--active &{			
+					transform: translate(0px, -8px) rotate(135deg);
+					transition: @trs-site 0.2s;
+				}
+			}
+		}		
+	}
+}

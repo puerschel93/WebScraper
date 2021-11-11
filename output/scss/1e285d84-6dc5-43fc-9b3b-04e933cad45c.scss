@@ -1,0 +1,257 @@
+@import "variables";
+@import "colors";
+
+.tracker {
+  &_weapon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: calc(100% - 50px);
+    overflow: auto;
+    &_wrapper {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      width: 100%;
+      box-sizing: border-box;
+      &_container {
+        height: fit-content;
+        width: 550px;
+        margin: 15px auto;
+        &_text {
+          height: fit-content;
+          display: flex;
+          justify-content: space-between;
+          &_name {
+            width: auto;
+          }
+          &_percentage {
+            width: auto;
+          }
+          &_check {
+            height: 19px;
+            width: 19px;
+            margin-right: auto;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+            svg {
+              cursor: pointer;
+              margin-left: 5px;
+              width: 19px;
+              fill: $color-text;
+            }
+          }
+        }
+        &_bar {
+          margin-top: 5px;
+          height: 7px;
+          background: $color-noncompleted;
+          border: 1px solid $color-border;
+          box-sizing: border-box;
+          &_yellow {
+            background: $color-completed;
+            height: 100%;
+            width: 0%;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+          }
+        }
+        &_camocontainer {
+          margin-top: 8px;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          height: auto;
+          &_camo {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            background: $color-el;
+            border: 1px solid $color-border;
+            cursor: pointer;
+            &:hover {
+              svg {
+                fill: grey;
+              }
+            }
+            &[data-title]:hover:after {
+              opacity: 1;
+              transition: all 0.1s ease 0.2s;
+              visibility: visible;
+            }
+            &[data-title]:after {
+              content: attr(data-title);
+              width: calc(100% + 40px);
+              height: fit-content;
+              background-color: $color-bg;
+              color: $color-text;
+              font-size: 14px;
+              position: absolute;
+              padding: 5px;
+              bottom: 110%;
+              left: 50%;
+              transform: translateX(-50%);
+              word-wrap: break-word;
+              word-break: keep-all;
+              white-space: pre-wrap !important;
+              box-shadow: 1px 1px 3px $color-bg;
+              opacity: 0;
+              border: 1px solid $color-border;
+              z-index: 99999;
+              visibility: hidden;
+            }
+            &[data-title] {
+              position: relative;
+            }
+            &_lock {
+              height: 100%;
+              width: 100%;
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background: $color-lock;
+              -webkit-transition: all 0.3s ease-in-out;
+              -moz-transition: all 0.3s ease-in-out;
+              -o-transition: all 0.3s ease-in-out;
+              transition: all 0.3s ease-in-out;
+              svg {
+                height: 50%;
+                fill: black;
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+              }
+            }
+            &_img {
+              height: 100%;
+              width: 100%;
+            }
+          }
+          &_master {
+            cursor: unset;
+            &:hover {
+              svg {
+                fill: black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1921px) {
+}
+
+@media (max-width: 1600px) {
+  .tracker_weapon {
+    &_wrapper {
+      &_container {
+        width: 450px;
+        &_camocontainer {
+          &_camo {
+            height: 82px;
+            width: 82px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .tracker_weapon {
+    &_wrapper {
+      &_container {
+        width: 400px;
+        &_camocontainer {
+          &_camo {
+            height: 72px;
+            width: 72px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) and (orientation: portrait) {
+  .tracker_weapon {
+    &_wrapper {
+      height: 100%;
+      grid-template-columns: 1fr;
+      &_container {
+        width: 60%;
+        margin: 0 auto;
+        padding: 15px 0;
+        &:last-child {
+          padding-bottom: 30px;
+        }
+        &_text {
+          &_check {
+            opacity: 1 !important;
+          }
+        }
+        &_camocontainer {
+          &_camo {
+            height: 10vw;
+            width: 10vw;
+          }
+        }
+      }
+    }
+    &
+      > div
+      > div:nth-child(1)
+      > div.tracker_weapon_wrapper_container_camocontainer
+      > div {
+      &[data-title]:after {
+        bottom: auto;
+        top: 110%;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .tracker_weapon {
+    &_wrapper {
+      &_container {
+        &_camocontainer {
+          &_camo {
+            &[data-title]:after {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  .tracker_weapon {
+    &_wrapper {
+      height: 100%;
+      &_container {
+        width: 80%;
+        &_camocontainer {
+          &_camo {
+            height: 14vw;
+            width: 14vw;
+          }
+        }
+      }
+    }
+  }
+}

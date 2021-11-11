@@ -1,0 +1,426 @@
+@css {
+/*
+  &.admin-invite-confirm-modaltyles
+-----------------------------
+contentModal.styl
+*/
+}
+.ContentModal
+  overflow                  hidden
+  rounded                   6px
+  border                    none
+  z-index                   10003
+
+  button.solid-bg
+    background-color        #fff
+    border                  2px solid #CBCBCB
+    span.button-title
+    &:active span.button-title
+      color                 #858585
+      line-height           25px
+    &:hover
+      background-color      #fff
+
+  &.kdmodal
+    .kdmodal-inner
+    .kdmodal-content
+      margin                0px !important
+      span
+        a
+          color             #F2778A
+
+      .kdtabview
+        overflow            hidden
+        padding             2px
+        borderBox()
+
+    .kdmodal-inner .close-icon
+    .kdmodal-inner .close-icon:hover
+      r-sprite              app content_modal_close_icon
+      width                 23px
+      height                24px
+      top                   19px
+      right                 19px
+      background-position   center !important
+      background-repeat     no-repeat
+
+    &.formline.button-field
+      button.kdbutton
+        height              60px
+        border-top          1px solid #DEDBDB
+        bg                  color #fff
+        padding-top         20px
+        text-align          center
+
+
+    &.with-form
+      main
+        margin              0px 0px
+        rel()
+
+      .kdtabpaneview
+        height              auto
+        > form > div
+          margin            20px
+
+      form.form-view.with-fields
+        > div
+          margin            20px
+
+
+      .kdtabpaneview
+      .form-view.with-fields
+        overflow            visible
+
+        .formline.button-field
+          display           flex
+          justify-content   center
+          padding           19px 0 18px
+          background        #FFFFFF !important
+          border-top        1px solid #ECEAEA !important
+
+
+          .kdbutton
+            margin-left     10px
+            text-align      center
+            min-width       127px
+            height          42px
+            font-size       14px
+            text-transform  uppercase
+            bg              color #F2778A
+            padding         0 28px
+
+
+            &.cancel
+            &.no
+              margin-left   0px
+              background    #FFFFFF
+              border        1px solid #BEBEBE
+              border-radius 4px
+              span
+                color       #5E5E5E
+
+            span
+              font-weight   400
+              color         #FFFFFF
+
+
+  &.add-managed-vm
+    .kdmodal-content
+      height                405px
+
+  &.has-markdown
+    h1
+      padding               0
+
+  &.content-modal
+    header
+      height                60px
+      border-bottom         1px solid #ECEAEA
+      bg                    color #fff
+      text-align            center
+
+      > h1
+        color               #727272
+        font-size           22px
+        font-weight         300
+        line-height         65px
+        display             inline-block
+        letter-spacing      0px
+
+        ellipsis()
+        max-width           450px
+
+        &.vagrant:before
+        &.aws:before
+          display           inline-block
+          content           ' '
+          vertical-align    top
+          margin            14px 5px 0 0
+
+        &.vagrant:before
+          r-sprite          stack-editor icon_vagrant
+        &.aws:before
+          r-sprite          stack-editor icon_aws
+
+    main
+      margin                40px
+      color                 #727272
+
+      .kdtabview
+        .kdtabhandlecontainer
+          padding-top       0px
+          border-bottom     0px
+
+          .hide-close-icons
+            padding-top     6px
+
+        .kdtabhandle-tabs
+          top               2px
+
+        .kdtabhandle
+          max-width         150px !important
+          color             black
+          padding-bottom    35px
+
+          &.active
+            color           #727272
+
+      .kdtabpaneview
+        overflow            visible
+        height              400px
+
+      .kdtabpaneview
+        &.stack-template
+        &.error-details
+          height            auto
+
+        main.main-container
+          margin            0px
+
+      h5
+      h2
+        font-size           16px
+        letter-spacing      0.18px
+        line-height         20px
+        font-weight         300
+
+        text-align          center
+        font-weight         400
+
+      pre
+      p
+        width               auto
+        font-size           14px
+        font-weight         300
+        line-height         27px
+        letter-spacing      .2px
+
+        strong
+          color             #F2778A
+
+      p:empty
+        display             none
+
+      pre
+        font-weight         600
+
+      code
+        background          #FFFFFF
+
+      .code
+        .select-all
+          bg                color #F2778A
+
+      section
+        span
+          margin-bottom     5px
+          a
+            color           #F2778A
+
+      label
+        float               none
+        color               #727272
+        font-size           14px
+        margin              0 0 3px 3px
+        font-weight         300
+
+
+
+    footer
+      height                60px
+      border-top            1px solid #ECEAEA
+      bg                    color #fff
+      padding-top           20px
+      text-align            center
+      .fl
+        fl()
+        left                32px
+
+      .fr
+        fr()
+        right                32px
+
+      rel()
+
+      .kdbutton
+        margin-left         10px
+        text-align          center
+        min-width           127px
+        height              42px
+        font-size           14px
+        border-radius       4px
+        text-transform      uppercase
+        background          #F2778A
+
+
+        &.cancel
+        &.no
+          margin-left       0px
+          background        #FFFFFF
+          border            1px solid #BEBEBE
+          span
+            color           #5E5E5E
+        span
+          color             #FFFFFF
+
+        box-shadow          0px 0px #FFFFFF
+
+    section span
+      width                 360px
+      bottom                22px
+
+    .machine-search-loader.kdloader
+      top                   184px
+      left                  144px
+
+
+main.main-container
+
+  .readme-scroll
+    bg color #FFFFFF
+
+  styleScrollBars           rgba(0,0,0,.15)
+
+
+  .kdscrollview
+    borderBox()
+
+    .markdown-content
+      padding                   11px 25px
+
+  .credential-scroll
+    bg color #FFFFFF
+
+    .markdown-content
+      padding                   20px
+
+      pre
+        margin                  0px
+        padding                 0px
+
+        code
+          margin                0px
+          padding               0px
+
+  .stack-script
+    bg                      color #FFFFFF
+
+  input.kdinput.text
+    line-height             20px
+    outline                 none
+    resize                  none
+    border-radius           4px
+    border                  1px solid #d2d2d2
+    background              #fff
+    font-size               14px
+    color                   #a2a2a2
+
+    &:hover
+      border                1px solid #D3E6FF
+    &:focus
+      border                1px solid rgba(125,190,241,1)
+      shadow                inset 0 1px 2px rgba(0,0,0,0.075),0 0 5px 1px rgba(81,167,232,0.5)
+
+
+  main.kdscrollview
+    max-height              350px
+    margin                  0px
+    border                  1px solid #ddd
+    .error-content
+      code
+        display             inline-block
+        white-space         normal
+
+  .kdcustomscrollview.has-vertical
+    padding-right           0px
+
+  .kdcustomscrollview.has-horizontal
+    padding-bottom          0px
+
+&.has-markdown
+  pre
+    padding-top             0px
+
+    code
+      padding-top           12px
+      margin-top            1px
+      border                0px
+
+.ContentModal.content-modal.stack-template-preview
+  width                     900px !important
+  height                    100% !important
+  main
+    > div
+      height                100%
+
+    margin                  20px
+    height                  calc(100% \- 100px)
+    .preview-label
+      color                 #868686
+      font-weight           300
+    .has-markdown
+      font-size             14px
+      color                 #727272
+      font-weight           300
+
+    button.expand-button
+      z-index               10
+      abs                   60px, 20px
+
+    button.minimize-button
+      display               none
+
+    .kdtabpaneview
+      height                100% !important
+
+.ContentModal.content-modal.verify-password
+.ContentModal.content-modal.delete-account-modal
+  z-index                   20001
+
+.ContentModal.content-modal.stack-script
+  height                    700px !important
+  main
+    margin                  0px
+    hr
+      display               none
+    h2
+      font-size             15px
+    p
+      line-height           20px
+
+  main.kdscrollview
+    max-height              640px
+    border                  none
+    code
+      bg                    color, #FBFBFB
+
+
+.ContentModal.expanded-stack-template-preview
+  left                      10px !important
+  top                       10px !important
+  width                     99% !important
+  height                    98% !important
+
+  main:empty
+    display                 none
+
+  main
+    > div
+      height                100%
+
+    height                  calc(100% \- 80px)
+
+    .kdtabpaneview
+      height                calc(100% \- 42px)
+      border-bottom         1px solid #DDD
+
+  .expand-button
+  header
+  .preview-label
+  .has-markdown
+    display                 none
+
+  button.minimize-button
+    abs                     60px, 20px
+    z-index                 10

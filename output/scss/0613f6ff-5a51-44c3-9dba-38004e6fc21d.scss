@@ -1,0 +1,119 @@
+@import "../../shared/styles/variables";
+@import "../../shared/styles/mixin";
+footer {
+    .container {
+        height: 400px;       
+        background-color: $secondary-text-color;
+        .empty-space {
+            width: 100%;
+            height: 70px;
+        }
+        .row {
+            width: 90%;
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            .footer-item {
+                width: calc(100% / 4);
+                height: 260px;
+                padding: 8px 20px 0;
+                .logo {
+                    margin: 5px 0 0 0;
+                }
+                .text {
+                    margin: 40px 0 0 0;
+                    color: rgb(91, 91, 91);
+                    font-size: 13px;
+                    line-height: 20px;
+                    font-family: $monserat-regular;
+                }
+                .social {
+                    margin-top: 40px;
+                    color: rgb(91, 91, 91);
+                    i {
+                        margin: 0 20px 0 0;
+                    }
+                }
+                h2 {
+                    font-size: 22px;
+                    font-family: $primary-font;
+                    color: #c2c2c2;
+                    margin: 0 0 35px 20px;
+                    @media screen and(max-width:$media-xl) {
+                        font-size: 16px;
+                    }
+                }
+                ul {
+                    margin: 0 0 0 15px;
+                    list-style: none;
+                    li {
+                        font-family: $monserat-regular;
+                        color: #5b5b5b;
+                        a {
+                            @include flex(row, flex-start, center);
+                            font-size: 13px;
+                            line-height: 28px;
+                            text-decoration: none;
+                            color: inherit;
+                            .uil-angle-right {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+                .adress {
+                    margin: 0 0 0 20px;
+                    display: flex;
+                    font-family: $monserat-regular;
+                    line-height: 23px;
+                    color: #5b5b5b;
+                    font-size: 13px;
+                    .uil-map-marker {
+                        font-size: 18px;
+                        margin: 0 15px 0 0;
+                    }
+                }
+                .info {
+                    margin: 30px 0 0 20px;
+                    color: #5b5b5b;
+                    font-size: 13px;
+                    font-family: $monserat-regular;
+                    .icon {
+                        font-size: 18px;
+                        margin: 0 15px 0 0;
+                    }
+                }
+                @media screen and(max-width:$media-xl) {
+                    .adress {
+                        .uil-map-marker {
+                            font-size: 13px;
+                            margin: 0 5px 0 0;
+                        }
+                        margin: 0 0 0 10px;
+                    }
+                    .info {
+                        .icon {
+                            font-size: 13px;
+                            margin: 0 5px 0 0;
+                        }
+                        margin: 10px 0 0 5px;
+                    }
+                }
+            }
+            .footer-item-border {
+                border-left: 2px solid rgb(56, 56, 56);
+            }
+            @media screen and(max-width:$media-lg) {
+                flex-wrap: wrap;
+                .footer-item {
+                    width: 50%;
+                    border: none;
+                }
+            }
+        }
+        @media screen and(max-width:$media-lg) {
+            height: 650px;
+        }
+ 
+    }
+}

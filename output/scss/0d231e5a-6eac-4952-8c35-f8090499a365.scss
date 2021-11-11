@@ -1,0 +1,178 @@
+@import "color";
+// BG SOLO
+$bg-uni:no;
+
+// CHOIX UNIQUE // PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI 
+$picture-bg:yes;
+$picture-bg-url:'../images/degrade_bg.png';
+$picture-bg-repeat-horizontal:yes;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container:0;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:0;
+
+// SIZE NAVIGATION
+$height-navigation:160;
+
+// VARIABLE SITE TYPO
+$font-body:"proxima-nova",arial,verdana,sans-serif;
+$font-title:"jaf-bernino-sans-comp",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.4em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:bold;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+// IMPORT PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib2";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/paris";
+
+// IMPORT MODULE ANNONCES3
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra2";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+.navigation {
+ border-bottom:1px solid $color-secondary;
+}
+
+.menu-principal>li>a {
+	padding:11px;
+	&:hover {
+	color:$color-body;
+	background : $color-nav-footer;
+	}
+}
+
+
+.h2-title-moteur {
+	text-align:center;
+	font-size:3.8em;
+}
+.moteur-refine .h2-title-moteur {
+	font-size: 2em;
+}
+@media only screen and  (max-width : 767px) {
+.h2-title-moteur {
+	font-size:1.1em;
+	}
+}
+
+@media only screen and (max-width : 767px) {
+	header .logo img {
+	width: 30%;
+	}
+}
+
+.refannonce {
+font-size:$font-size-title * 0.6;
+}
+
+.btn-cdc {
+font-size : 1.1em;
+}
+
+.bouton-selection-annonces {
+margin-bottom:10px; margin-top:-10px;
+}
+
+.dropdown-menu a {
+	font-size:$font-size-text * 0.7;
+}
+
+/*.orbit-infos {
+display:none;
+}*/
+
+.orbit-infos .typo-action {
+color:$color-secondary;
+}
+
+.ie8 .moteur-avantage,
+.ie9 .moteur-avantage {
+filter:none;
+background:$color-block;
+}
+
+.detail-bloc-contact .phrase-agences {
+text-align:center;
+}
+
+.menu-principal {
+font-size:$font-size-title * 0.73 ;
+margin-left: 30px;
+}
+
+.hr-module {
+margin-bottom:20px;
+}
+
+// RESIZE PHOTO EXTRA
+
+#featured {
+height:600px !important;
+width: 850px !important;
+
+}
+
+div.orbit-wrapper {
+margin-left:45px;
+background-color:$color-body;
+height:600px !important;
+width: 850px !important;
+}
+
+.bg-picture .box-shadow-bottom {
+box-shadow:none;
+}
+
+// Masquer le QSM de la page détail agence 
+.bloc-txt-agence {
+display:none;
+}

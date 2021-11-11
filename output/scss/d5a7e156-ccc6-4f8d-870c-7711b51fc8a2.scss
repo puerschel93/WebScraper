@@ -1,0 +1,267 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:600;
+
+// SIZE NAVIGATION
+$height-navigation:148;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",verdana,sans-serif;
+$font-title:"Oswald",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB5
+@import "../../../slagence_X_V5/sources/scss/pubs/lib5";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+.titre-pub, .titre-extra {
+color:$color-primary;
+}
+
+
+//------------------------------------------------------------------------------------------------
+//		PERSO AGIPORT
+//------------------------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------------------------
+//		GENERAL
+//------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//------------------------------------------------------------------------------------------------
+
+.container {
+	width:1280px;
+	padding: 0 20px;
+	@media only screen and (max-width : 1280px) {
+		width:100%;
+	}
+}
+
+	//------------------------------------------------------------------------------------------------
+	//		MENU 1 NAV
+	//------------------------------------------------------------------------------------------------
+
+.menu-principal {
+	font-size:0.8em;	
+	padding-top: 45px;
+	@media only screen and (max-width : 1280px) {
+		font-size: 0.6em;
+	}
+	>li {
+		background:none;	
+		padding: 0px 8px 27px;
+		@media only screen and (max-width : 1280px) {
+			padding: 0 4px;
+		}
+		&:hover {
+			background:none;
+		}
+		>a {	
+			line-height: 8px;		
+			&:after {
+	            display: block;
+	            content: "";
+	            width: 0%; height: 2px;
+	            background-color: $color-primary;
+	            margin-top: 6px;
+	            -webkit-transition: all .7s ease;
+	            		transition: all .7s ease;
+	         }
+	         &:hover {
+	            color: $color-important;	            
+	            &:after { 
+	            	@include background-image(linear-gradient($color-primary, $color-secondary));
+	            	width: 100%;
+	            }
+	         }
+	    }
+	}
+}
+
+@media only screen and (max-width : 414px) {
+	.maclasseamoi {
+		height: 180px;
+		background-image: url('../images/homepage/homepage_scrolling_1.jpg');
+		background-size: cover;
+	}
+}
+
+
+@media only screen and (max-width: 767px) {
+    // on verrouille le body pour éviter le scroll quand le menu est déployé
+    body {
+        &.modal-active {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    .menu-responsive {
+        // requis
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        top: -100%;
+        z-index: 50;
+        // custom
+        visibility: hidden;
+        opacity: 0;
+        background-color: rgba($color-primary,0.95);
+        -webkit-transition: all .3s ease;
+                transition: all .3s ease;
+         > li {
+            display: block;
+            padding: 15px 0;
+            border-bottom: 1px solid $color-block;
+            text-align: center;
+        }
+
+        &.in {
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+            ul {
+                height: 100%;
+                overflow: auto;
+            }
+        }
+            
+    }
+    .nav-collapse.collapse.in {
+    	margin-left: -20px;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    body {
+        // par sécurité on déverrouille passé une certaine réso
+        &.modal-active {
+            position: static;
+            width: auto;
+            height: auto;
+            overflow: visible;
+        }
+    }
+
+}
+
+
+//------------------------------------------------------------------------------------------------
+//		INDEX
+//------------------------------------------------------------------------------------------------
+
+	//------------------------------------------------------------------------------------------------
+	//		SERVICES
+	//------------------------------------------------------------------------------------------------
+
+.zone-pub {
+	padding: 10px;
+	background-color: $color-block;
+}
+
+.zone-pub-acheter {	
+	padding: 10px;
+	background-image: url('../images/alerte-mail.svg');
+	background-color: $color-block;
+	background-repeat: no-repeat;
+    background-position-x: 10px;
+    background-position-y: 5px;
+}
+
+.zone-pub-vendre {	
+	padding: 10px;
+	background-image: url('../images/estimation.svg');
+	background-color: $color-block;
+	background-repeat: no-repeat;
+    background-position-x: 10px;
+    background-position-y: 3px;
+}
+
+.zone-pub-gerer {	
+	padding: 10px;
+	background-image: url('../images/gestion-locative.svg');
+	background-color: $color-block;
+	background-repeat: no-repeat;
+    background-position-x: 10px;
+    background-position-y: 3px;
+}
+
+	//------------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//------------------------------------------------------------------------------------------------
+
+.module-annonces-homepage .height-180 {
+	height: 240px;
+}
+
+.module-annonces-homepage .bg-black {
+	background: $color-secondary;
+}
+
+	//------------------------------------------------------------------------------------------------
+	//		EXTRA
+	//------------------------------------------------------------------------------------------------
+
+.aside-extra {
+	display: none;
+}
+
+//------------------------------------------------------------------------------------------------
+	//		MASQUE CHAMPS QUARTIER DANS LISTING
+	//------------------------------------------------------------------------------------------------
+.quartier-annonce {display:none;}

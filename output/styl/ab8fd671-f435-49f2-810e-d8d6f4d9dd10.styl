@@ -1,0 +1,573 @@
+@import "nib"
+@import "normalize.styl"
+@import "icons.styl"
+
+
+verde = #3fa52e//#ffb730//#ffe600
+naranja = #f19300
+rojo = #e32721
+gris = #6a6a69
+
+*
+	box-sizing border-box
+
+body
+	font-family 'Oswald', sans-serif
+	font-size 90%
+	line-height 30px
+	background-image url('./img/bg.png')
+	background-repeat repeat-x
+	background-color #4fbc5b
+
+ul
+	margin 0
+	padding 0
+	
+
+a
+	text-decoration none
+	//transition all .5s ease
+	color naranja
+p 
+	margin-top 0
+	margin-bottom 1.25rem
+h1
+h2
+h3
+h4
+h5
+	margin-top 0
+	font-weight 400
+h1
+	line-height 45px
+
+img
+	max-width 100%
+	height auto
+label
+	display block
+input[type="text"]
+input[type="email"]
+input[type="url"]
+input[type="tel"]
+input[type="number"]
+input[type="date"]	
+select		
+textarea
+	width 100%
+	height 32px
+textarea
+	height 120px
+.submit
+	background-color amarillo
+	color #000
+	border none
+	padding .5rem
+	cursor pointer
+	&:hover
+		background-color #272727
+		color amarillo
+.wpcf7-submit
+.btn
+	//border 1px solid black
+	font-size inherit
+	color black
+	background amarillo
+	text-align center
+	cursor pointer
+	padding 10px 52px 10px
+	display inline-block
+	text-transform uppercase
+	outline 0
+	position relative
+	transition all .3s ease
+	transform translateZ(0)
+	border 0
+	
+	&:hover
+		background-color: gris //rgba(0,0,0,.4);
+		color white
+		border-color black
+		span
+			left -20px 
+		i 
+			left 76%
+			opacity 1
+	
+	span
+		position relative
+		left 0
+		transition all .2s ease
+	i
+		font-size 22px
+		position absolute
+		margin-top -11px
+		top 50%
+		left 73%
+		opacity 0
+		transition all .2s ease-out
+.wpcf7-submit
+.btn-reservar
+	background-color naranja
+	color white
+.clear
+	clear both
+.columns
+	display inline-block
+	vertical-align top 
+.columns-2
+	width 45%
+	margin-right 1rem
+	&:last-child
+		margin-right 0
+.columns-3
+	width 30%
+	margin-right 1rem
+
+.columns-4
+	width 22%
+	margin-right 1rem
+		
+@media screen and (min-width: 960px)
+	body
+		font-size 100%
+	
+		
+.wrap
+	max-width 960px
+	margin 0 auto
+	padding-left 1rem
+	padding-right 1rem
+	position relative
+	
+.header
+	&-logo
+		display block
+		width 150px
+		margin-top 1rem
+	&-enjoy
+		display none
+	&-menu
+		display none
+		position absolute
+		left 0
+		right 0
+		top 70px
+		background-color verde
+		z-index 999
+		
+		.menu-item
+		&-item
+			display block
+		a
+		&-link
+			display block
+			color white
+			padding .5rem 1rem
+			transition all .5s ease
+			&:hover
+				background-color naranja
+	&-btn-menu
+		display block
+		color naranja
+		background-color transparent
+		border none
+		font-size 2rem
+		position absolute
+		top 0
+		right 1rem
+		line-height 50px
+		outline none
+	&-phones 
+		color gris
+		margin-top 5px
+		
+.social
+	position absolute
+	right 1rem
+	top 70px
+	&-link
+		display inline-block
+		font-size 1.5rem
+		padding .3rem
+		
+.btn-register
+	background-color naranja
+	color white
+	box-shadow 1px 1px 2px rgba(0,0,0,.75)
+	padding 10px 25px 10px
+@media screen and (min-width: 768px)
+	.header
+		&-logo
+			float left
+			width 200px
+		&-enjoy
+			display inline-block
+			margin-top 10px 
+			margin-left 1rem
+			//float left	
+@media screen and (min-width: 960px)		
+	.header
+		overflow hidden
+		&-logo
+			width 200px
+			float left
+		&-menu 
+			background-color transparent
+			position static
+			display block !important
+			/*&-ul 
+				display flex
+				flex-wrap wrap
+				justify-content space-between*/
+			.menu-item
+			&-item
+				display inline-block
+			&:last-child
+				margin-right -4px
+				
+			a
+			&-link
+				background-color verde
+				padding .5rem 30.2px
+				border-radius 3px 3px 0 0
+				
+				
+		&-phones
+			float right
+			margin-top 1.3rem
+			margin-right 1rem
+			span
+				display block
+				font-size 1.5rem
+		&-btn-menu
+			display none
+	.btn-register
+		float right
+		margin-right 5px
+		margin-top 1.5rem
+	.social
+		right -27px
+		top 160px
+		background-color rojo
+		border 5px solid white
+		box-shadow 1px 1px 2px rgba(0,0,0,.75)
+		border-radius 0 15px 15px 0
+		border-left 0
+		&-link
+			display block
+			padding .5rem
+			color white
+			font-size 1.5rem		
+.banner
+	.owl-buttons
+		display none
+	.owl-dot
+		&.active
+			span
+				background #869791 !important
+		span
+			background naranja !important
+			border 2px solid white
+.main 
+	background-color #e3e88a
+	padding .5rem
+	min-height 200px
+	&-tours
+	&-hotels
+	&-services
+		margin-top: 1rem;
+		&-container
+			display flex
+			flex-wrap wrap 
+			justify-content space-between
+			.mix
+				display none
+		&-item 
+			width 300px
+			height 194px
+			position relative
+			overflow hidden
+			border 3px solid naranja
+			text-align center
+			background-color white
+			margin-bottom 1rem
+			&.item-hotel
+				.main-services-item-description
+				.main-hotels-item-description	
+					background-color naranja
+			&.item-tour
+				.main-services-item-title
+					color verde
+				.main-services-item-description
+				.main-tours-item-description		
+					background-color verde
+			&.item-transport
+				.main-services-item-title
+					color rojo
+					font-size 1.8rem
+				.main-services-item-description
+					background-color rojo
+			&-img 
+			&-info
+				float left
+				width 50%
+			&-img 
+				img 
+					display block
+				
+			&-title
+				color naranja
+				font-size 2.5rem
+				padding .3rem
+				margin-bottom .5rem
+			&-description
+				line-height 20px
+				font-size 13px
+				color white
+				padding .3rem
+				margin-bottom .5rem
+				p 
+					margin 0
+			.btn 
+				background-color rojo
+				color white
+				padding .3rem 1rem
+				border-radius 15px
+				&:hover
+					background-color verde
+/*.main-hotels-container
+	justify-content flex-start*/
+.main-hotels-item-title
+.main-tours-item-title
+	font-size 1rem
+	margin-bottom 0
+	line-height 30px
+	background-color naranja
+	color white
+.main-tours-item-title
+	background-color verde
+.main-hotels-item
+.main-tours-item 	 
+	height 220px
+	&-stars
+		color #FEC819
+
+.type-hotels
+.type-tours
+	text-align center
+	.entry-title
+		small
+			color #FEC819
+.entry-image
+
+	
+	.content-img
+		width 100%
+		height 200px
+		background-repeat no-repeat
+		background-position center center
+		background-size cover
+@media screen and (min-width: 640px)	
+	.type-hotels
+	.type-tours	
+		text-align left
+	.entry-image
+		float right
+		margin-left 1rem
+		margin-bottom 1rem
+		.content-img
+			width 300px 
+			height 200px
+.filters-tours
+	margin-bottom 1rem
+	.filter 
+		background-color naranja
+		color white
+		cursor pointer
+		padding .5rem
+		display inline-block
+		&:hover
+			background-color verde			
+.footer
+	text-align center
+	margin-top 1rem
+	
+	.avotz
+		display inline-block
+		vertical-align middle
+		a
+			color #000
+			font-size 2rem
+			display block		
+.post
+	padding-bottom 1rem
+	margin-bottom 1rem  
+	border-bottom: 3px solid amarillo;
+	.news-item-figure
+		margin-bottom 1rem
+		img 
+			width 100%
+			display block
+.widget 
+	margin-bottom 2rem
+.widget_search
+	.screen-reader-text
+		display none
+	.search-submit
+		background-color #ffe600
+		color #000
+		border none
+		padding 0.5rem
+	label
+		display inline-block
+	input[type="search"]
+		height 32px
+		border none
+/*@media screen and (min-width: 1024px)	
+	.content-area
+	.widget-area
+		float left 
+	
+	.content-area
+		width 65%
+		margin-right 2rem
+	.widget-area
+		width 28%
+		ul 
+			margin-left 45px
+	*/
+.mapa-tours{
+ 	//background-image: url("./img/mapa-tours.png") !important;
+	
+}
+
+#mapa{
+ 	//background-image: url("./img/mapa.png");
+	background-repeat: no-repeat;
+	min-height: 403px;
+	position: relative;
+	background-color #e3e88a
+	padding .5rem
+	
+	
+	
+	//width: 942px;
+
+
+}
+
+#mapa a{
+	background-color naranja
+	background-position: center top;
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	outline: medium none;
+	text-align: center;
+	text-decoration: none;
+	padding .5rem
+	border-bottom 1px solid white
+	}
+#mapa ul 
+{
+	list-style none
+}
+#mapa a:hover {
+	background-color verde
+	background-position: center bottom;
+	color: #FFFFFF;
+}
+@media screen and (min-width: 960px)
+	.mapa-mobile
+		display none	
+	.mapa-tours
+		background-image: url("./img/mapa-tours.png") !important;
+	#mapa
+		padding 0
+		background-image: url("./img/mapa.png");
+		a 
+			background-color transparent
+			background-position: center top;
+			background-repeat: no-repeat;
+			color: #FFFFFF;
+			display: block;
+			font-size: 14px;
+			font-weight: bold;
+			outline: medium none;
+			position: absolute;
+			text-align: center;
+			text-decoration: none;
+			text-indent: -1000000px;
+			border none
+			&:hover
+				background-color transparent
+			
+		#guanacaste
+			background-image: url("./img/guanacaste.png");
+			height:208px;
+			left: 220px;
+			top: 134px;
+			width: 215px;
+			z-index:21;
+			
+		#alajuela
+			background-image: url("./img/alajuela.png");
+			height: 188px;
+			left: 286px;
+			top: 75px;
+			width: 264px;
+			z-index:20;
+
+		#heredia
+			background-image: url("./img/heredia.png");
+			height: 159px;
+			left: 483px;
+			top: 49px;
+			width: 87px;
+			z-index:21;
+
+		#limon
+			background-image: url("./img/limon.png");
+			height:208px;
+			left: 543px;
+			top: 26px;
+			width: 278px;
+
+		#cartago
+			background-image: url("./img/cartago.png");
+			height: 100px;
+			left: 570px;
+			top: 131px;
+			width: 123px;
+			z-index:21;
+			
+		#sanjose
+			background-image: url("./img/sanjose.png");
+			height: 140px;
+			left: 506px;
+			top: 153px;
+			width: 222px;
+			z-index:20;
+
+		#puntarenas
+			background-image: url("./img/puntarenas.png");
+			height: 177px;
+			left: 389px;
+			top: 202px;
+			width: 514px;
+			
+.table
+	background-color white
+	th 
+		background-color verde
+		color white
+.transport-form
+	h1 
+		margin-bottom 5px
+@import "tables.styl"		
+			
+
+			

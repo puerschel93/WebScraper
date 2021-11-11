@@ -1,0 +1,243 @@
+.intro {
+    &__bg {
+        background: linear-gradient(-135deg, rgb(149,210,234) 0%, rgb(113,196,236) 100%);
+        border: 4px solid @dark;
+        height: 471px;          
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            width: calc(100% + 7px);
+            height: calc(100% + 7px);
+            background-color: @dark;
+            z-index: -1;
+        }
+    }
+
+    .man {
+        position: absolute;
+        left: 111px;
+        top: 143px;
+        animation: man 1.5s infinite steps(10);
+        animation-direction: alternate;
+        z-index: 3;
+        
+        svg {
+            width: 198px;
+            height: 162px;
+        }
+    }
+
+    .clouds {
+        pointer-events: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        &__layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            &[data-layer="1"] {
+                z-index: 1;
+                svg {
+                    width: 30px;
+                    height: 18px;
+
+                    &:nth-of-type(1) {
+                        top: 50px;
+                        right: -100px;
+                        animation-duration: 5s;                        
+                    } 
+                    
+                    &:nth-of-type(2) {
+                        bottom: 100px;
+                        right: -100px;
+                        animation-duration: 5s;  
+                        animation-delay: 0.5s;                      
+                    } 
+
+                    &:nth-of-type(3) {
+                        top: 100px;
+                        right: -100px;
+                        animation-duration: 5s;  
+                        animation-delay: 2s;                      
+                    } 
+
+                    &:nth-of-type(4) {
+                        bottom: 50px;
+                        right: -100px;
+                        animation-duration: 5s;  
+                        animation-delay: 2.5s;                      
+                    } 
+                }
+            }
+
+            &[data-layer="2"] {
+                z-index: 2;
+                svg {
+                    width: 60px;
+                    height: 37px;
+
+                    &:nth-of-type(1) {
+                        top: 150px;
+                        right: -100px;
+                        animation-duration: 4s;                        
+                    } 
+                    
+                    &:nth-of-type(2) {
+                        bottom: 150px;
+                        right: -100px;
+                        animation-duration: 4s;  
+                        animation-delay: 1.5s;                      
+                    } 
+                }
+            }
+
+            &[data-layer="3"] {
+                z-index: 3;
+                svg {
+                    width: 90px;
+                    height: 54px;
+
+                    &:nth-of-type(1) {
+                        top: 110px;
+                        right: -100px;
+                        animation-duration: 3s;                        
+                    } 
+                    
+                    &:nth-of-type(2) {
+                        bottom: 110px;
+                        right: -100px;
+                        animation-duration: 3s;  
+                        animation-delay: 1.5s;                      
+                    } 
+                }
+            }
+        }
+
+        &__item {
+            position: absolute;
+            animation: cloud infinite steps(30);
+        }
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: 400;
+        width: 50%;
+        margin-left: auto;
+        line-height: 1.7;
+        padding: 0 85px 0 41px;
+        z-index: 5;
+    }
+
+    @keyframes man {
+        from {
+            top: 143px;
+        }
+        
+        to {
+            top: 163px;
+        }
+    }
+
+    @keyframes cloud {
+        from {
+            right: -100px;
+        }
+
+        to {
+            right: calc(100% + 100px);
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .intro {
+        &__bg {
+            height: 400px;
+        }
+
+        .man {
+            top: 100px;
+        }
+
+        .title {
+            padding: 0 20px 0 0;
+        }
+
+        @keyframes man {
+            from {
+                top: 100px;
+            }
+            
+            to {
+                top: 120px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .intro {
+        &__bg {
+            height: 350px;
+        }
+
+        .man {
+            top: 80px;
+            left: 20px;
+        }
+
+        .title {
+            padding: 0 20px 0 0;
+            font-size: 24px;
+        }
+
+        @keyframes man {
+            from {
+                top: 80px;
+            }
+            
+            to {
+                top: 100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .intro {
+        .title {
+            position: absolute;
+            left: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(51,51,61,0.7);
+            color: @white;
+            padding: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .intro {
+        .title {
+            font-size: 20px;
+            padding: 40px 20px;
+        }
+    }
+}

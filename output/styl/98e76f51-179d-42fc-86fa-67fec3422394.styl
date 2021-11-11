@@ -1,0 +1,239 @@
+@import '../common/css/index'
+@import '../common/config/iconfont'
+@import '../common/css/icon'
+@import '../common/css/button'
+@import '../common/css/tag'
+@import '../common/css/width'
+@import '../common/css/padding'
+@import '../common/css/margin'
+@import '../common/css/pages/margin'
+@import '../common/css/nodata'
+//开关 按钮
+@import '../common/css/switch'
+//下拉控件
+@import '../common/css/dropdown'
+//提示框
+@import '../common/css/tips'
+//form表单
+@import '../common/modules/form/index'
+//modal
+@import '../common/modules/modal/index'
+//加载动画
+@import '../common/modules/load/index'
+//tabs组件
+@import '../common/modules/tabs/index'
+//upload上传组件
+@import '../common/modules/uploader/index'
+//日期控件
+@import '../common/modules/datetimepicker/index'
+//日历控件
+@import '../common/modules/calendarx'
+
+//页面布局选择模板
+@import '../common/cssFunc/pages/routerconfig/routerStyle2'
+@import '../common/cssFunc/pages/adminrouter'
+//input 偏业务
+@import '../common/css/input'
+@import '../common/css/pages/*'
+//路由 布局
+ss-admin()
+.routerGroup
+  >.routerMenus
+    >.hlist
+      padding-bottom: 30px
+.admin-header
+  padding-left: 30px
+.wrap
+  height: 100%
+  ss-display-flex(column)
+  ss-root-header()
+  #root
+    height: calc(100% - 60px)
+    position: relative
+    z-index: 1
+  .root-header
+    z-index: 2
+//路由 end
+
+//徽标数
+ss-func-badge()
+
+//pop层
+ss-pop('.ss-pop-normal', {$item: false, $scrollCfg: false})
+
+
+ss-loading-func()
+
+ss-uploader('.logo-wrap')
+
+//tabs
+tabshead2 = {
+  $bg: #f5f5f5
+  $activeType: 'normal'
+  $activebg: #fff
+  $listWrap: true     //treeFooter treeHeader存在时
+}
+
+tabshead3 = {
+  $activeType: 'border'
+  $activebg: #fff
+  $activeBColor: #f5f5f5
+}
+//目的地
+ss-tabs('.destination-tabs', $menusScroll: true,  $width: 500px)      //$width : 控件1，控件2 是500 控件2是840px    
+ss-func-destination($class: '.ss-destination', $type: 'row', $tier: 2, $rhlConfing: rhlConfig-Mdd)    
+ss-func-destination($class: '.ss-destination-title', $tier: 3, $rhlConfing: rhlConfig-Mdd)    
+// ss-func-destination($class: '.ss-destination-x', $type: 'row', $tier: 2, $rhlConfing: rhlConfig-Mdd, $rlConfig: rowListConfig-Mdd-kj3)    
+// ss-func-destination('.ss-destination-title-two', 'row', 3, rhlConfig-Mdd, rowListConfig-Mdd-title-kj2)    
+
+em 
+  font-style: normal
+
+.ss-hidden
+  visibility: hidden
+
+/********demo 样式 *************/
+// .adminDiv
+//   ss-func-display-div()
+ss-func-grid('.demo-icon-list', {$num: 8, $spacing: 10px})
+.demo-icon-list
+  .ss-col
+    &:before
+      content: var(--icon, '')
+
+.item-title-lg
+  color: $color-primary
+  font-size: $size-title-lg
+  margin-bottom: 40px
+
+.item-list
+  margin-bottom: 30px
+  font-size: 14px
+  &.flex
+    .property-ul
+      ss-display-flex(row wrap)
+  .itemrootCkb~.caption
+    font-size: 16px
+    color: #333
+    margin-bottom: 20px
+  .property-ul
+    >li
+      margin-right: 20px
+      margin-bottom: 10px
+
+.item-list-2
+  margin-bottom: 30px
+  font-size: 14px
+  .itemrootCkb~.caption
+    font-size: 16px
+    color: #333
+    margin-bottom: 20px
+
+.font-list
+  color: #333
+  >li
+    ss-display-flex(row nowrap, flex-start)
+    margin-bottom: 20px
+    >label
+      width: 50%
+    small
+      color: #999
+      display: block
+      font-size: 12px
+
+ss-hr-text('.demo-code-line', {$color: #000, $bg: #fff, $pointer: true})
+
+.demo-display
+  width: 80px
+  height: 80px
+  position: relative
+
+
+/********demo 样式 *************/
+
+
+
+//色块
+.demo-bg-primary span
+  background: $color-primary
+
+.demo-bg-aux-primary span
+  background: $color-aux-primary
+.demo-bg-aux-success span
+  background: $color-aux-success
+.demo-bg-aux-warning span
+  background: $color-aux-warning
+.demo-bg-aux-fail span
+  background: $color-aux-fail
+.demo-bg-aux-info span
+  background: $color-aux-info
+
+
+.demo-bg-text span
+  background: $color-text
+.demo-bg-text-title span
+  background: $color-text-title
+
+
+.demo-bg-color span
+  background: $color-bg
+.demo-bg-color-special span
+  background: $color-bg-special
+  
+.demo-bg-border span
+  background: $color-line
+.demo-bg-border-secondary span
+  background:$color-line-secondary
+.demo-bg-border-input span
+  background:$color-line-input
+
+//grid
+.demo-grid
+  ss-func-grid('.property-ul', {$num: 5, $spacing: 10px})
+  .caption
+    font-size: $size-title-sm
+    color: $color-text-title
+    margin-top: 20px
+  span
+    height: 100px
+    padding: 30px
+    border-radius: $br-lg
+    color: #fff
+    ss-display-flex(column, center, center)
+  i
+    font-style: normal
+    display: block
+    font-size: 12px
+
+
+//login
+ss-login()
+//demo login
+.pages-login
+  height: calc(100% - 100px);
+
+//仿form
+ss-func-like-form()
+
+
+//tag 文字
+.tag-list-wz
+  .property-ul
+    @extends $flex-nowrap
+    padding: 0 10px
+    line-height: 60px
+    .ss-tag
+      margin: 0
+      &:hover
+        {bgActive}
+
+.ml-14
+  margin-left: 14px
+.ml-10
+  margin-left: 10px
+ss-func-steps-list-column-dot()
+
+//自定义表格
+ss-table('.ss-table')
+
+// .dropdown_level

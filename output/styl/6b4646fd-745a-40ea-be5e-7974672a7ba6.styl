@@ -1,0 +1,106 @@
+//////////////////////////////////////
+//
+// TOP
+//
+//////////////////////////////////////
+
+
+.top-head
+    //max-width: (siteWidth-default)
+    siteWidth()
+    background-image: url(../img/top/top-mv1.png)
+    background-repeat: no-repeat
+    margin-right: auto
+    margin-left: auto
+    +breakpoint(mqMin-medium)
+        background-size: 412px auto
+        background-position: left center
+    +breakpoint(mqMax-medium)
+        background-position: center 4vw
+        background-size: 100% auto
+    
+    &__inner
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        +breakpoint(mqMin-medium)
+            height: 500px
+            justify-content: center
+        +breakpoint(mqMax-medium)
+            justify-content: flex-end
+            $mp-tb(padding,,true,530,50)
+        
+    &__logo
+        text-align: center
+        width: 100%
+        +breakpoint(mqMin-medium)
+            max-width: 520px
+        p
+            lineHeight(-0.6)
+        &__en
+            font-weight: 700
+            display: block
+            +breakpoint(mqMin-medium)
+                fontSize(+24,true,false)
+            +breakpoint(mqMax-medium)
+                fontSize(+20,true,,sp)
+        &__main
+            display: block
+            fontSize(-1)
+        
+    &__desc
+        width: 100%
+        $mp-tb(,4,,50,0)
+        display: flex
+        justify-content: center
+        +breakpoint(mqMin-medium)
+            max-width: 520px
+        
+        &__text
+            font-weight: 700
+            +breakpoint(mqMin-medium)
+                fontSize(+2,true,false)
+            +breakpoint(mqMax-medium)
+                fontSize(,true,,sp)
+                
+    &__link
+        width: 100%
+        $mp-tb(,,,20,0)
+        +breakpoint(mqMin-medium)
+            max-width: 520px
+        
+        & > ul
+            display: flex
+            +breakpoint(mqMax-large)
+                flex-direction: column
+            > li
+                flex: 1
+                display: flex
+                $mp-tb(,,,0,10)
+                font-weight: 700
+                padding-right: 40px
+                +breakpoint(mqMax-large)
+                    padding-right: 0
+                    +breakpoint(mqMin-medium)
+                        max-width: 300px
+                        margin-right: auto
+                        margin-left: auto
+                        width: 100%
+                &:last-of-type
+                    +breakpoint(mqMin-large)
+                        padding-right: 0
+                &:nth-of-type(1)
+                    ex_btn-1(siteColor['main'])
+                &:nth-of-type(2)
+                    ex_btn-1(siteColor['sub'])
+                    
+                
+        a[href]
+            display: flex !important
+            align-items: center
+            justify-content: center
+            width: 100%
+            $mp-tb(padding,,,15)
+
+        
+        

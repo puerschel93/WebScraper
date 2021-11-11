@@ -1,0 +1,107 @@
+.report {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.submenu-secondary {
+    margin-top: 4.8rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    .sub-menu {
+        justify-content: center;
+    }
+    .sub-menu__tasks-hidden {
+        display: none;
+    }
+    .sub-menu__pomodoros-hidden {
+        display: none;
+    }
+}
+.report-analyse {
+    margin-top: 21.3rem;
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &__tasks,
+    &__pomodoros {
+        max-width: 100%;
+        width: 80%;
+    }
+    &__btn-arrow {
+        font-size: 7rem;
+        position: absolute;
+        left: -15px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    &__graph {
+        display: block;
+        height: 350px;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+.submenu-primary {
+    margin-top: 19.1rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    .sub-menu {
+        justify-content: center;
+    }
+}
+
+@media all and (min-width: 768px) {
+    .report {
+        &__header {
+            flex-direction: column-reverse;
+        }
+        .menu {
+            align-self: flex-end;
+            margin-bottom: 1.6rem;
+        }
+    }
+    .report-analyse {
+        margin-top: 13.2rem;
+        .report-analyse__tasks,
+        &__pomodoros {
+            width: 65%;
+        }
+        &__btn-arrow {
+            font-size: 5.6rem;
+        }
+        &__graph {
+            height: 232px;
+        }
+    }
+    .submenu-primary {
+        margin-top: 6.4rem;
+        padding-left: 4.4rem;
+        padding-right: 4.4rem;
+    }
+    .submenu-secondary {
+        margin-top: 3.2rem;
+        padding-left: 4.4rem;
+        padding-right: 4.4rem;
+    }
+}
+@media all and (min-width: 1440px) {
+    .report {
+        // padding-left: 10.8rem;
+        // padding-right: 10.8rem;
+        &__menu {
+            margin-bottom: 1rem;
+        }
+    }
+    .submenu-secondary__list {
+        margin-top: 4rem;
+    }
+    .report-analyse__tasks,
+    .report-analyse__pomodoros {
+        width: 55%;
+    }
+}

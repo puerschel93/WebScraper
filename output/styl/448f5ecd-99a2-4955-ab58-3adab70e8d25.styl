@@ -1,0 +1,293 @@
+.header-top
+	flex(row, wrap, flex-start, center)
+	height: 77px
+
+.logo-wrap
+	flex(row, nowrap, center, center)
+	margin-right: 17px
+	img
+		max-width: 100%
+		height: auto
+
+.logo-text, .header-phone, .header-email
+	margin-right: auto
+
+.logo-text
+	color: #84838C
+	fonts(12px, 16px)
+
+.header-phone, .header-email
+	display: block
+	padding-left: 34px
+	background: url('./../img/phone-icon.png') 0% 50%/19px 21px no-repeat
+	fonts(16px, 21px)
+	text-decoration: none
+	&:hover
+		color: $violet
+
+.header-email
+	background: url('./../img/letter-icon.png') 0% 50%/23px 19px no-repeat
+
+.header-user-link
+	flex(row, nowrap, space-between, center)
+	width: 124px
+
+.user-icon
+	background: url('./../img/user-icon.png') 50% 50%/17px 18px no-repeat
+	&:hover
+		background-image: url('./../img/user-icon-hover.png')
+
+.heart-icon
+	background: url('./../img/heart-icon.png') 50% 50%/22px 19px no-repeat
+	&:hover
+		background-image: url('./../img/heart-icon-hover.png')
+	&.active, &.active:hover
+		background-image: url(./../img/heart-icon-fill.png);
+
+
+.cart-icon
+	position: relative
+	display: inline-block
+	background: url('./../img/cart-icon.png') 50% 50%/19px 21px no-repeat
+	&:hover
+		background-image: url('./../img/cart-icon-hover.png')
+	&.active::after
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		display: block
+		width: 8px
+		height: 8px
+		border-radius: 50%
+		background-color: $violet
+
+
+
+.header-bottom
+	position: relative
+	height: 76px
+	background: $dark
+
+.header-menu
+	position: relative
+	flex(row, wrap, space-between, center)
+	height: 100%
+	padding-right: 120px
+
+	a
+		position: relative
+		z-index: 2
+		display: inline-block
+		padding: 8px 0
+		color: $white
+		text-decoration: none
+		text-transform: uppercase
+		&:first-of-type
+			padding-left: 30px
+		&:hover
+			color: $violet
+			& + .burger-menu
+				background-image: url('./../img/burger-hover.svg')
+
+.catalog-menu
+	position: absolute
+	top: 100%
+	left: 0
+	z-index: 5
+	display: none
+	width: 100%
+	padding: 30px 0 48px
+	background-color: $dark
+	.site-size
+		display: grid
+		grid-template: auto \/ repeat(3, 1fr)
+		justify-content: space-between
+		justify-items: start
+		grid-gap: 20px
+	&.active
+		display: block
+
+.catalog-menu-item
+	flex(column, nowrap)
+	a:not(.arrow-link)
+		width: 100%
+		margin-top: 17px
+		color: $white
+		text-decoration: none
+		&:hover
+			color: $violet
+	.arrow-link
+		margin-top: 17px
+	.upper-title
+		color: $white
+		margin: 0
+	.big-category
+		column-count: 2
+		a
+			display: inline-block
+			width: 100%
+			margin-top: 17px
+
+a.catalog-menu-hover
+	align-self: stretch
+	flex(column, nowrap, center, center)
+
+.burger-menu
+	position: absolute
+	top: 51%
+	left: 0
+	z-index: 1
+	transform: translateY(-50%)
+	width: 19px
+	height: 11px
+	padding: 0
+	border: none
+	outline: none
+	border-left: none
+	border-right: none
+	background: url('./../img/burger.svg') 50% 50%/19px 11px no-repeat
+	box-shadow: none
+	opacity: 1
+	font-size: 0
+
+.header-search
+	position: absolute
+	top: 50%
+	right: 0
+	z-index: 3
+	transform: translateY(-50%)
+	display: block
+	width: 25px
+	height: 100%
+	padding-right: 25px
+	overflow: hidden
+	transition: all 0.3s ease
+	&.active
+		width: 225px
+	.site-input
+		position: absolute
+		top: 50%
+		right: 25px
+		z-index: 2
+		transform: translateY(-50%)
+		width: 200px
+	.site-button
+		position: absolute
+		top: 50%
+		right: 0
+		z-index: 2
+		transform: translateY(-50%)
+		width: 19px
+		height: 19px
+		padding: 0
+		background: transparent
+		path
+			transition: all 0.3s ease
+		&:hover
+			background: transparent
+			path
+				fill: $violet
+
+@media (max-width: 1180px)
+	.burger-menu
+		left: 20px
+	.header-menu
+		a:last-of-type
+			margin-right: 40px
+	.header-search
+		right: 20px
+
+@media (max-width: 960px)
+	.header-top
+		height: auto
+		padding: 21px 0
+	.logo-wrap
+		width: 50%
+		text-align: right
+	.logo-text
+		width: 40%
+	.header-phone, .header-email, .header-user-link
+		margin-top: 15px
+
+@media (max-width: 768px)
+	.header-menu a
+		display: none
+	.header-search
+		display: none
+	.burger-menu
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 80px
+		height: 28px
+		padding-left: 20px
+		background-position: 0% 50%
+		color: $white
+		font-size: 14px
+		line-height: 18px
+		text-transform: uppercase
+	.catalog-menu.active
+		display: none
+	.header-menu.active
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 10
+		flex(column, nowrap, center, center)
+		width: 100%
+		height: 100%
+		background: $dark
+		a, a:first-of-type, a.catalog-menu-hover
+			display: inline-block
+			padding-left: 0
+			text-align: center
+		a:last-of-type
+			margin-right: 0
+		.burger-menu
+			top: 20px
+			left: auto
+			right: 20px
+			transform: none
+			width: 20px
+			height: 20px
+			border: none
+			background: none
+			font-size: 0
+			&::before, &::after
+				content: ''
+				position: absolute
+				top: 50%
+				left: 0
+				display: block
+				width: 100%
+				height: 2px
+				background: $white
+			&::before
+				transform: translateY(-50%) rotate(45deg)
+			&::after
+				transform: translateY(-50%) rotate(-45deg)
+		.header-search
+			position: relative
+			top: auto
+			left: auto
+			right: auto
+			transform: none
+			width: 225px
+			height: 50px
+			display: block
+
+
+
+@media (max-width: 550px)
+	.logo-wrap
+		width: 100%
+		text-align: center
+	.logo-text
+		display: none
+	.header-phone, .header-email
+		margin: 15px 15px 0 0
+		font-size: 0
+	.header-phone
+		margin-left: auto
+	.header-user-link
+		margin: 15px auto  0 0

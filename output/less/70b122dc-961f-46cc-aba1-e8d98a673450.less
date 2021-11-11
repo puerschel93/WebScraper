@@ -1,0 +1,467 @@
+/*CSS Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*Custom Styling*/
+
+/*Colors */
+@middleBlue: #75DDDD;
+@steelTeal: #508991;
+@yankeesBlue: #172A3A;
+@warmBlack: #004346;
+@caribbeanGreen: #098C8A;
+@white: #fff;
+@black: #000;
+
+/*Center and justify helpers */
+
+//Margin
+@center: 0 auto;
+//Text alignment
+@centerText: center;
+@leftText: left;
+@rightText: right;
+@justifyText: justify;
+/*Fonts*/
+@Poppins: 'Poppins', sans-serif;
+@Lato: 'Lato', sans-serif;
+
+* {
+	padding: 0;
+	margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+	padding-top: 3.125em;
+	margin-bottom: 3.125em;
+	background: @yankeesBlue;
+	color: @steelTeal;
+}
+
+/*Color Palette*/
+.palette {
+	width: auto;
+	height: 6.250em;
+}
+
+.color1, .color2, .color3, .color4, .color5 {
+	color: @white;
+}
+
+.color1 {
+	background: @middleBlue;
+}
+
+.color2 {
+	background: @steelTeal;
+}
+
+.color3 {
+	background: @yankeesBlue;
+}
+
+.color4 {
+	background: @warmBlack;
+}
+
+.color5 {
+	background: @caribbeanGreen;
+}
+
+//Container
+.container {
+  width: 60em;
+  margin: @center;
+}
+
+//Max Width container
+.container-max {
+  width: 100%;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.navbar {
+  background-color: @warmBlack;
+  height: 3.125em;
+	position: fixed;
+	top: 0;
+	width: 100%;
+  .nav {
+    margin-left: 30%;
+    list-style: none;
+		position: absolute;
+    li {
+      display: inline-block;
+      padding: 0.938em;
+      font-size: 1em;
+
+      a {
+        color: @white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.showMenu {
+	text-decoration: none;
+	color: @white;
+	background: @warmBlack;
+	text-align: @centerText;
+	padding: 0.625em 0;
+	display: none;
+}
+
+input[id="showMenu"] {
+	display: none;
+}
+
+input[id="showMenu"]:checked ~ .nav {
+	display: block;
+}
+
+/*Grid System*/
+[class*="column-"] {
+  float: left;
+  padding: 15px;
+}
+
+.showCol {
+	color: @black;
+	background: linear-gradient(to bottom right, lighten(@middleBlue, 15%), darken(@middleBlue, 20%));
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Mobile  */
+[class*="column-"] {
+  width: 100%;
+}
+
+.nofloat {
+  float: none;
+}
+
+/* Media Query for Tablets */
+@media only screen and(min-width: 37.500em) {
+  .column-med-1 {
+    width: 8.33%;
+  }
+
+  .column-med-2 {
+    width: 16.66%;
+  }
+
+  .column-med-3 {
+    width: 25%;
+  }
+
+  .column-med-4 {
+    width: 33.33%;
+  }
+
+  .column-med-5 {
+    width: 42.66%;
+  }
+
+  .column-med-6 {
+    width: 50%;
+  }
+
+  .column-med-7 {
+    width: 58.33%;
+  }
+
+  .column-med-8 {
+    width: 66.66%;
+  }
+
+  .column-med-9 {
+    width: 75%;
+  }
+
+  .column-med-10 {
+    width: 83.33%;
+  }
+
+  .column-med-11 {
+    width: 91.66%;
+  }
+
+  .column-med-12 {
+    width: 100%;
+  }
+}
+
+/* Media Query for Desktop */
+@media only screen and (min-width: 48.000em) {
+  .column-1 {
+    width: 8.333%;
+  }
+
+  .column-2 {
+    width: 16.66%;
+  }
+
+  .column-3 {
+    width: 25%;
+  }
+
+  .column-4 {
+    width: 33.33%;
+  }
+
+  .column-5 {
+    width: 41.66%;
+  }
+
+  .column-6 {
+    width: 50%;
+  }
+
+  .column-7 {
+    width: 58.33%;
+  }
+
+  .column-8 {
+    width: 66.66%;
+  }
+
+  .column-9 {
+    width: 75%;
+  }
+
+  .column-10 {
+    width: 83.33%;
+  }
+
+  .column-11 {
+    width: 91.66%;
+  }
+
+  .column-12 {
+    width: 100%;
+  }
+}
+
+/*Typography*/
+h1, h2, h3, h4, h5, h6 {
+	padding: 0.313em;
+	font-family: @Poppins;
+}
+
+h1 {
+	font-size: 1.750em;
+}
+
+h2 {
+	font-size: 1.500em;
+}
+
+h3 {
+	font-size: 1.375em;
+}
+
+h4 {
+	font-size: 1.250em;
+}
+
+h5 {
+	font-size: 1.125em;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+.h-shadow {
+	text-shadow: 1px 1px 1px @steelTeal;
+}
+
+.i-heading {
+	font-style: italic;
+}
+
+.b-heading {
+	font-weight: bold;
+}
+
+p {
+	font-family: @Lato;
+	line-height: 1.125em;
+	word-spacing: 0.188em;
+	padding: 0.750em;
+}
+
+/*Elements*/
+.btn {
+	padding: 0.625em;
+	margin-bottom: 0.625em;
+	border: none;
+	font-family: @Lato;
+	outline: none;
+	background: @middleBlue;
+	border: 0.063em solid @black;
+	border-radius: 0.188em;
+}
+
+.btn-shadow {
+	box-shadow: 0.063em 0.063em 0.188em @black;
+}
+
+.btn-full-shadow {
+	box-shadow: 0em 0em 0.313em;
+}
+
+.btn-hover:hover {
+	background: darken(@middleBlue, 15%);
+	transition: 0.3s ease-in-out;
+}
+
+.btn-grad {
+	background: linear-gradient(to bottom, lighten(@middleBlue, 15%), darken(@middleBlue, 20%));
+}
+
+.inp {
+	padding: 0.313em;
+	width: 100%;
+	margin-bottom: 0.313em;
+	outline: none;
+	color: @white;
+	background: none;
+}
+
+.inp-under {
+	background: none;
+	border: 0.063em solid #cdcdcd;
+	border-right: none;
+	border-left: none;
+	border-top: none;
+}
+
+.inp-shadow {
+	border: none;
+	border-bottom: 1px solid @middleBlue;
+	background: none;
+
+	&:focus {
+		box-shadow: 0.063em 0.063em 0.126em @middleBlue;
+		transition: 0.5s ease-in-out;
+	}
+}
+
+.inp-dark {
+	border: 1px solid @white;
+	background: @black;
+	box-shadow: none;
+}
+
+/*Footer*/
+.social {
+	margin-left: 50%;
+	list-style: none;
+	li {
+		display: inline-block;
+	}
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3.125em;
+  background-color: @warmBlack;
+}
+
+/*Media Queries*/
+@media screen and (max-width: 48.000em) {
+	.container-max {
+	  max-width: 100%;
+	}
+
+	.container {
+		max-width: 100%;
+	}
+
+	.nav {
+		position: static;
+		display: none;
+
+		li {
+			margin-bottom: 0.063em;
+		}
+
+		li a {
+			width: 100%;
+		}
+
+		.showMenu {
+			display: block;
+		}
+	}
+
+	[class*="column-"] {
+	  float: none;
+	  padding: 15px;
+	}
+}

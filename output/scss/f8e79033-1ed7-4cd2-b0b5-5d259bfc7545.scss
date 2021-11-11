@@ -1,0 +1,461 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gotham Pro';
+}
+
+body {
+  /* для наглядности */
+  background: #E5E5E5;
+}
+
+.slider {
+  max-width: 1280px;
+  height: 500px;
+  margin: 0 auto;
+  padding: 25px 55px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #FFFFFF;
+
+  &_header {
+    margin-bottom: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  &_heading {
+    line-height: 37px;
+    color: #444444;
+    font: {
+      style: normal;
+      weight: 300;
+      size: 31px;
+    }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+
+  &_navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  #slider_heading_arrow {
+    display: block;
+    margin-left: 10px;
+  }
+
+  #arrow_left {
+    width: 24px;
+    height: 24px;
+    background: {
+      color: #f6f6f6;
+      image: url("../images/icons/slider_navigation-arrow-left.svg");
+      repeat: no-repeat;
+      position: center;
+    }
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  #arrow_right {
+    width: 24px;
+    height: 24px;
+    background: {
+      color: #f6f6f6;
+      image: url("../images/icons/slider_navigation-arrow-right.svg");
+      repeat: no-repeat;
+      position: center;
+    }
+    border-radius: 50%;
+  }
+}
+
+.card_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card {
+  min-width: 270px;
+  padding: 20px;
+  margin-right: 30px;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  .badge {
+    position: absolute;
+
+    &_new {
+      line-height: 15px;
+      color: #3ddc97;
+      font: {
+        style: normal;
+        weight: normal;
+        size: 13px;
+      }
+      background-color: #eefcf6;
+      border-radius: 5px;
+      padding: 5px 10px;
+      z-index: 1;
+      margin-right: 5px;
+
+    }
+
+    &_heat {
+      line-height: 15px;
+      color: #e49f62;
+      font: {
+        style: normal;
+        weight: normal;
+        size: 13px;
+      }
+      background-color: #fcf4ed;
+      border-radius: 5px;
+      padding: 5px 10px;
+      z-index: 1;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &_image {
+    margin-bottom: 15px;
+    z-index: 0;
+  }
+
+  .short_description {
+    line-height: 19px;
+    color: #888888;
+    font: {
+      style: normal;
+      weight: 400;
+      size: 13px;
+    }
+    margin-bottom: 5px;
+  }
+
+  .product_name {
+    line-height: 18px;
+    color: #444444;
+    font: {
+      style: normal;
+      weight: normal;
+      size: 15px;
+    }
+    margin-bottom: 5px;
+  }
+
+  .rating {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 33px;
+
+    &_star {
+      margin-right: 5px;
+    }
+
+    &_value {
+      line-height: 15px;
+      color: #00adef;
+      font: {
+        style: normal;
+        weight: normal;
+        size: 13px;
+      }
+    }
+  }
+
+  .price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 15px;
+
+    &_current {
+      width: 130px;
+      line-height: 23px;
+      color: #444444;
+      font: {
+        style: normal;
+        weight: normal;
+        size: 19px;
+      }
+    }
+
+    &_last {
+      line-height: 15px;
+      color: #888888;
+      font: {
+        style: normal;
+        weight: normal;
+        size: 13px;
+      }
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+      -webkit-text-decoration-line: line-through;
+      text-decoration-line: line-through;
+    }
+  }
+
+  &_navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    &_button {
+      line-height: 18px;
+      color: #ffffff;
+      font: {
+        style: normal;
+        weight: normal;
+        size: 15px;
+      }
+      text-decoration: none;
+      background-color: #00adef;
+      border-radius: 5px;
+      padding: 14px 36px 16px;
+    }
+
+    &_like {
+      width: 24px;
+      height: 24px;
+      background: {
+        image: url("../images/icons/like.svg");
+        position: center;
+        repeat: no-repeat;
+      }
+    }
+
+    &_menu {
+      width: 24px;
+      height: 24px;
+      background: {
+        image: url("../images/icons/menu.svg");
+        position: center;
+        repeat: no-repeat;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    padding: 18px 20px 33px;
+  }
+
+  .card {
+    min-width: 247px;
+
+    .badge {
+
+      &_new {
+        display: none;
+      }
+    }
+
+    &_image {
+      /* Просили как в макете - получите: */
+      padding: 75px 104.5px;
+      background: url("../images/conditioner-1.png") no-repeat center;
+      width: 0;
+      height: 0;
+    }
+
+    .price {
+      &_last {
+        display: none;
+      }
+    }
+
+    &_navigation {
+      &_button {
+        padding: 14px 25.5px 16px;
+      }
+
+      &_like {
+        width: 24px;
+        height: 24px;
+        background: {
+          image: url("../images/icons/like.svg");
+          position: center;
+          repeat: no-repeat;
+        }
+      }
+
+      &_menu {
+        width: 24px;
+        height: 24px;
+        background: {
+          image: url("../images/icons/menu.svg");
+          position: center;
+          repeat: no-repeat;
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .slider {
+    padding: 18px 15px 125px;
+
+    &_header {
+      margin-bottom: 15px;
+    }
+
+    &_heading {
+      width: 100%;
+      line-height: 33px;
+      font-size: 24px;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+
+    &_navigation {
+      display: none;
+    }
+
+  }
+
+  .card {
+    min-width: 290px;
+    padding: 15px;
+    margin-right: 5px;
+
+    .badge {
+
+      &_new {
+        display: inline-block;
+        margin-right: 0;
+        margin-bottom: 5px;
+      }
+
+      &_heat {
+        display: block;
+      }
+    }
+
+    &_image {
+      display: block;
+      height: 98px;
+      width: auto;
+      background: none;
+      padding: 0;
+      margin: 0 49.5px 15px;
+    }
+
+    .product_name {
+      line-height: 15px;
+      font-size: 13px;
+    }
+
+    .rating {
+      margin-bottom: 18px;
+    }
+
+    .price {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-bottom: 15px;
+
+      &_current {
+        width: 96px;
+        line-height: 18px;
+        font-size: 15px;
+        margin-right: 5px;
+      }
+
+      &_last {
+        line-height: 13px;
+        font-size: 11px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-text-decoration-line: line-through;
+        text-decoration-line: line-through;
+      }
+    }
+
+    &_navigation {
+      position: relative;
+
+      &_button {
+        line-height: 100%;
+        font: {
+          style: normal;
+          weight: normal;
+          size: 13px;
+        }
+        padding: 16px 95px 16px;
+      }
+
+      &_like {
+        position: absolute;
+        top: -227px;
+        right: 40px;
+
+      }
+
+      &_menu {
+        position: absolute;
+        top: -227px;
+        right: 0;
+      }
+    }
+  }
+}
+
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('../fonts/GothamPro.eot');
+  src: local('Gotham Pro'), local('GothamPro'),
+  url('../fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/GothamPro.woff') format('woff'),
+  url('../fonts/GothamPro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,274 @@
+@import "color";
+
+// LARGEUR DU SITE
+$sitewrap: 1170px;
+
+// AGRANDISSEMENT HAUTEUR SLIDER (0 par défaut, doit être  > 500px)
+// NE FONCTIONNE PAS SI MF_MOTEUR_TYPE = 2
+$slider-height: 600px;
+
+// REQUIS MAIS NE SERT PAS
+$bg-uni: yes;
+$picture-bg: yes;
+$picture-bg-url:'';
+$picture-bg-repeat-horizontal: no;
+
+// VAR SITE TYPO
+$font-body: "Source Sans Pro",verdana,sans-serif;
+$font-title: "Source Sans Pro",sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.6em;
+$font-size-title:1.8em;
+
+// TYPE TITLE (NONE, UPPERCASE...)
+$type-title: uppercase;
+
+// WEIGHT (BOLD, NORMAL, 700, 300...)
+$weight-title: normal;
+
+// ARRONDI (YES / NO)
+$arrondi: yes;
+
+// IMPORT ALL
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT TEMPLATE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/templates/mobilefirstv2";
+
+// IMPORT RECHERCHE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/recherche/mobilefirst";
+
+// IMPORT MOTEUR MOBILEFIRST (SUR RECHERCHE)
+// SEULEMENT SI RECHERCHE AUTRE QUE MF
+//@import "../../../slagence_X_V5/sources/scss/moteur/mobilefirst";
+
+// IMPORT DETAIL MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/detail/mobilefirst";
+
+// IMPORT AGENCE MOBILEFIRST
+@import "../../../slagence_X_V5/sources/scss/agence/mobilefirst";
+
+// IMPORT BOUTONS
+@import "../../../slagence_X_V5/sources/scss/boutons/mobilefirst";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+// IMPORT PUB
+@import "../../../slagence_X_V5/sources/scss/pubs/mobilefirst";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra13";
+
+// IMPORT MODULE ANNONCES
+@import "../../../slagence_X_V5/sources/scss/modules/annonces18";
+
+//---------------------------------------------------------------------------------------------
+//    MODULE 16 V2
+//---------------------------------------------------------------------------------------------
+
+.container-modules {
+  width: 100%;
+  background: $color-block;
+  margin-top: -10px;
+}
+
+//---------------------------------------------------------------------------------------------
+//    ENCART SERVICES
+//---------------------------------------------------------------------------------------------
+
+.container-pub {
+  width: 100%;
+}
+
+
+//--------------------------------------------------------------------------------------
+//    PERSO WARRICK
+//--------------------------------------------------------------------------------------
+
+.color-bleu {color:$color-bleu;}
+.color-vert {color:$color-vert;}
+
+.container-index {
+    max-width: 100% !important;
+    padding: 0 150px;
+}
+
+
+@media only screen and (max-width : 980px) {
+.slidermf-video {
+    width: 100%;
+    height: auto;
+    bottom:2px;
+}
+}
+
+
+
+
+
+//--------------------------------------------------------------------------------------
+//    MENU & NAV
+//--------------------------------------------------------------------------------------
+
+.logo img {
+    max-width: 300px;
+    max-height: 100px;
+}
+
+.menu-principal>li {
+    padding: 0px 10px;
+    @media only screen and (max-width : 1340px) {
+        padding: 0 8px;
+        font-size: 0.8em;
+    }
+    @media only screen and (max-width : 1100px) {
+        padding: 0 2px;
+        font-size: 0.7em;
+    }
+    >a {
+    color:$color-tertiary;
+    }
+    >a:hover {
+    color: $color-important;
+    }
+}
+
+
+
+.header-main {
+    background-color:$color-primary;
+    border-bottom: 2px solid $color-primary;
+}
+
+.header-top {
+    border-bottom: 1px solid $color-primary;
+    background-color:$color-bleu;
+}
+
+
+@media only screen and (max-width : 767px) {
+body > main > aside > div > div.slidermf-ttl.pagination-centered > div > div {
+font-size:0.7em;
+}
+}
+
+@media only screen and (max-width : 767px) {
+.menu-toggle:before, .menu-classic-toggle:before {
+    color:$color-primary;
+}
+}
+
+
+//--------------------------------------------------------------------------------------
+//    MINI MOTEUR
+//--------------------------------------------------------------------------------------
+
+
+//--------------------------------------------------------------------------------------
+//    INDEX
+//--------------------------------------------------------------------------------------
+
+.height-180 {height: 260px;}
+
+//--------------------------------------------------------------------------------------
+//    MODULE ANNONCE
+//--------------------------------------------------------------------------------------
+
+.module-annonces-img {
+    min-height: 280px;
+    }
+
+//--------------------------------------------------------------------------------------
+//    PAGE RECHERCHE
+//--------------------------------------------------------------------------------------
+
+.recherche-mobilefirst .annonce-img {
+    min-height: 350px;
+    }
+
+
+/* --------------------------------------------------------------------------------------*//**/
+/* -- MEDIA QUERIES
+/* --------------------------------------------------------------------------------------*//**/
+
+
+@media only screen and (max-width : 767px) {
+
+    .margin-top-under-nav-fixe {
+        margin-top: 0;
+    }
+
+    .page-header {
+        position: relative;
+        min-height: 0;
+        padding: 30px 0;
+        background-size: cover;
+        text-align: center;
+        &:before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+            content: "";
+            background-color: rgba($color-primary,.5);
+        }
+    }
+
+    .page-cat,
+    .page-ttl {
+        position: relative;
+        z-index: 1;
+    }
+
+    .page-ttl {
+        font-size: 2.4em;
+    }
+
+    .page-ssttl {
+        margin-bottom: 15px;
+        font-size: 1.8em;
+    }
+
+    .page-intro {
+        font-size: 1.15em;
+    }
+
+    .page-section {
+        padding: 30px 15px;
+    }
+
+    .page-section-ttl {
+        margin-bottom: 15px;
+        font-size: 1.6em;
+        line-height: 1.2;
+    }
+}
+
+.slide-fb {background:$color-block;}
+
+.cookie-banner {
+    background-color: $color-primary;
+    color: $color-nav-footer;
+}
+
+.text_cookies .button_submit {
+    background-color: $color-action !important;
+}
+
+

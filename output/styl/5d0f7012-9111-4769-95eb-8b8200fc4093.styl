@@ -1,0 +1,489 @@
+.btn
+  cursor pointer
+  font-style normal
+  font-weight bold
+  font-size 15px
+  line-height normal
+  text-align center
+  color #fff
+
+.btn
+  &:hover, &:focus
+    outline none
+  
+  &:disabled, &.disabled
+    cursor not-allowed
+
+
+.btn.btn-blocked
+  cursor initial
+
+.btn.btn-loading
+  position relative
+  cursor default
+  text-shadow none !important
+  color transparent !important
+  opacity 1
+  pointer-events auto
+  -webkit-transition all 0s linear, opacity 0.1s ease
+  transition all 0s linear, opacity 0.1s ease
+
+  img, div, span
+    color transparent !important
+    opacity 0
+
+.btn.btn-loading:before
+  position absolute
+  content ''
+  top 50%
+  left 50%
+  margin -0.64285714em 0 0 -0.64285714em
+  width 1.28571429em
+  height 1.28571429em
+  border-radius 500rem
+  border 0.2em solid rgba(0, 0, 0, 0.15)
+
+.btn.btn-loading:after
+  position absolute
+  content ''
+  top 50%
+  left 50%
+  margin -0.64285714em 0 0 -0.64285714em
+  width 1.28571429em
+  height 1.28571429em
+  -webkit-animation button-spin 0.6s linear
+  animation button-spin 0.6s linear
+  -webkit-animation-iteration-count infinite
+  animation-iteration-count infinite
+  border-radius 500rem
+  border-color #fff transparent transparent
+  border-style solid
+  border-width 0.2em
+  -webkit-box-shadow 0 0 0 1px transparent
+  box-shadow 0 0 0 1px transparent
+
+.btn.btn-primary
+  position relative
+  background color-primary
+  border-radius 0
+  padding 10px 15px
+
+  &::before
+    content ""
+    position absolute
+    top 3px
+    left 3px
+    right 0
+    width 100%
+    height 100%
+    background rose-pink
+    border-radius 0
+    z-index -1
+    
+  &:hover, &:focus, &:active
+    &::before
+      display none
+
+  &:disabled
+    opacity 0.5
+    cursor not-allowed
+
+    &::before
+      display none
+
+.btn.btn-primary-gradient
+  font-family 'Oswald'
+  color white
+  background linear-gradient(90deg, #610289 0.01%, #A9148A 52%, #E9006D 100%)
+  transition all .5s
+
+  &:hover, &:focus
+    background: linear-gradient(90deg, #E9006D 0.01%, #A9148A 52%, #610289 100%);
+  
+  &.disabled 
+    background #E8E8E8
+    color #283E50
+    cursor not-allowed
+
+  &.voted 
+    background #E8E8E8
+    color #283E50
+    // pointer-events none !important
+    // cursor default !important
+    cursor not-allowed
+
+.btn.btn-primary-outline-gradient
+  color purple
+  border-image-source linear-gradient(90deg, #610289 0.01%, #a9148a 52%, #e9006d 100%)
+  border-image-slice 1
+  border-width 1px
+  border-color purple
+  
+  &:hover, &:focus
+    opacity 0.7
+
+.btn.btn-primary.btn-success
+  background linear-gradient(90deg, #27AE60 0%, #33CC66 100%)
+  border-color #27AE60 !important
+
+  &:hover, &:focus
+    color #27AE60
+    background transparent
+  
+  &:active
+    color #27AE60 !important
+    background transparent !important
+
+  &:disabled
+    opacity 0.5
+    color #fff
+    background linear-gradient(90deg, #27AE60 0%, #33CC66 100%)
+    border-color #27AE60
+
+.btn.btn-primary.btn-blue
+  background linear-gradient(0deg, #2A8BFF, #44B7FF)
+  border-color transparent
+
+  &:hover, &:focus
+    color color-primary
+    background white
+    // border 1px solid
+    // border-color color-primary !important
+  
+  &:active, &:disabled
+    color color-primary !important
+    background white !important
+    border 1px solid
+    border-color color-primary !important
+
+.btn.btn-primary.btn-grey
+  background #B1B1B1
+  border-color #B1B1B1
+  box-shadow 1px 2px 20px rgba(0, 0, 0, 0.12)
+
+  &:hover, &:focus
+    color #B1B1B1
+    background transparent
+
+  &:active
+    color #B1B1B1 !important
+    border 1px solid #B1B1B1 !important
+    background transparent !important
+
+.btn.btn-primary.btn-yellow
+  background #FFB571
+  border-color #FFB571
+  box-shadow 1px 2px 20px rgba(0, 0, 0, 0.12)
+
+  &:hover, &:focus
+    color #FFB571
+    background transparent
+
+  &:active
+    color #FFB571 !important
+    border 1px solid #FFB571 !important
+    background transparent !important
+
+.btn.btn-primary.btn-white
+  background white
+  border-color white
+  box-shadow 1px 2px 20px rgba(0, 0, 0, 0.12)
+  color red-bittersweet
+
+  &:hover, &:focus
+    color white
+    background transparent
+
+  &:active
+    color white !important
+    border 1px solid white !important
+    background transparent !important
+
+.btn.btn-primary.btn-grey-sliver
+  background #C8C8C8
+  border-color #C8C8C8
+  box-shadow 1px 2px 20px rgba(0, 0, 0, 0.12)
+  color black-emperor
+
+  &:hover, &:focus
+    color black-emperor
+    background transparent
+
+  &:active
+    color black-emperor !important
+    border 1px solid #C8C8C8 !important
+    background transparent !important
+
+.btn.btn-primary.btn-orange
+  background #EF6352
+  border-color #EF6352
+  box-shadow 1px 2px 20px rgba(0, 0, 0, 0.12)
+  color white
+
+  &:hover, &:focus
+    color #EF6352
+    background transparent
+
+  &:active
+    color #EF6352 !important
+    border 1px solid #EF6352 !important
+    background transparent !important
+  
+.btn.btn-secondary.btn-outline-black
+  background-color white
+  border-color black-tundora
+  color black-tundora
+  padding 10px 15px
+
+  &:hover
+    background black-tundora
+    color white
+    border-color black-tundora
+
+  &.disabled, &:disabled
+    opacity 0.5
+
+.btn.btn-secondary.btn-outline-grey
+  background-color white
+  border-color #7890AC
+  color #7890AC
+  padding 10px 15px
+
+  &:hover
+    background #7890AC
+    color white
+    border-color #7890AC
+
+  &.disabled, &:disabled
+    opacity 0.5
+
+.btn.btn-secondary.btn-outline-blue
+  background white
+  border-color blue-dodger
+  color pickled-bluewood
+  font-weight 600
+
+.btn.btn-beowulf
+  font-weight 600
+  padding-top 8.5px
+  padding-bottom @padding-top
+  cursor pointer
+
+.btn.btn-beowulf.btn-danger
+  border 1px solid red-milano
+  background #B52126
+  color white !important
+  padding-right 1rem !important
+
+  &.disabled, &:disabled
+    cursor not-allowed
+    opacity 1
+    // background white
+    // color red-milano
+    // border-color grey-mercury
+
+  &:hover
+    color #B52126 !important
+    background white
+
+.btn.btn-beowulf.btn-outline-danger
+  border 1px solid red-milano
+  color red-milano
+
+  &:hover
+    background linear-gradient(90deg, #CD1415 0%, #E03A0F 100%)
+    color white
+
+  &.disabled, &:disabled
+    cursor not-allowed
+    background white
+    color red-milano
+    opacity 0.5
+    border-color grey-mercury
+
+  &:focus, &:active
+    box-shadow none !important
+
+.btn.btn-beowulf.btn-outline-success
+  border 1px solid #27AE60
+  color #27AE60
+
+  &:hover
+    background linear-gradient(90deg, #27AE60 0%, #33CC66 100%)
+    color white
+
+  &.disabled, &:disabled
+    cursor not-allowed
+    background white
+    color #27AE60
+    opacity 0.5
+    border-color grey-mercury
+
+.btn.btn-beowulf.btn-outline-blue
+  border 1px solid color-primary
+  color color-primary
+
+  &:hover
+    background linear-gradient(0deg, #2A8BFF, #44B7FF)
+    color white
+    border-color white
+
+  &.disabled, &:disabled
+    cursor not-allowed
+    background white
+    color color-primary
+    opacity 0.5
+    border-color grey-mercury
+
+.btn.btn-beowulf.btn-success
+  border 1px solid #48B15C
+  background #48B15C
+  color white
+
+.btn.btn-beowulf.btn-y-small
+  padding-top 2px
+  padding-bottom 3px
+
+.btn.btn-beowulf.btn-x-medium
+  padding-left 57px
+  padding-right @padding-left
+
+.btn.btn-beowulf.btn-y-medium
+  padding-top 5px
+  padding-bottom 5px
+
+.ripple
+  position relative
+  overflow hidden
+  transform translate3d(0, 0, 0)
+
+.ripple:after
+  content ''
+  display block
+  position absolute
+  width 100%
+  height 100%
+  top var(--ripple-top, 0)
+  left var(--ripple-left, 0)
+  pointer-events none
+  background-image radial-gradient(circle at center, #fff 10%, transparent 10.01%)
+  background-repeat no-repeat
+  transform scale(10, 10)
+  opacity 0
+  transition transform 0.5s, opacity 1s
+
+.ripple:active:after
+  transform scale(0, 0)
+  opacity 0.3
+  transition 0s
+
+// .btn.btn-primary:active
+//   border 0px solid #3685fc !important
+
+.btn-primary:focus, .btn-primary.focus
+  box-shadow none
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus
+  box-shadow none
+
+.btn.btn-medium
+  height 56px
+
+.btn.btn-s-semi-medium
+  height 44px
+
+.btn.btn-semi-medium
+  height 32px
+  font-size 13px
+
+.btn.btn-small
+  height 28px
+  font-size 12px
+
+.btn.btn-s-small
+  height 24px
+  font-size 12px
+
+.btn.btn-small-slim
+  border-radius 6px
+
+.btn.btn-medium-slim
+  border-radius 20px
+
+.btn.btn-slim
+  border-radius 25px
+
+.btn.btn-icon
+  .icon > .unfocus
+    display block
+  
+  .icon > .focus
+    display none
+
+.btn.btn-icon:hover
+  .icon > .unfocus
+    display none
+  
+  .icon > .focus
+    display block
+    
+.btn.btn-normal
+  background #E4E6EB
+  border-radius 50px
+  color #595656
+  border-radius 6px
+  &:hover
+    background #FF5C5C
+    color white !important
+    border 1px solid #FF5C5C
+  &.active 
+    background #FF5C5C
+    color white !important
+    border 1px solid #FF5C5C
+
+.btn-link
+  color #2A8BFF
+  cursor pointer
+  &:hover 
+    color #554BB9
+
+.btn-my-wallet 
+  background: linear-gradient(90deg, #610289 0.01%, #A9148A 52%, #E9006D 100%);
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border: none
+  padding: 10px 30px;
+  &:hover, &:active 
+    color #FFFFFF
+
+.btn-my-ticket 
+  background: linear-gradient(90deg, #610289 0.01%, #A9148A 52%, #E9006D 100%);
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  // border none
+  &:hover, &:active 
+    color #FFFFFF
+
+.btn-outline-my-ticket
+  border-radius: 4px;
+  border 1px solid #610289;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #610289;
+  &:hover, &:active 
+    color #610289

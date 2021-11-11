@@ -1,0 +1,475 @@
+$light     = 'MetricLight'
+$regular   = 'MetricRegular'
+$medium    = 'MetricSemiBold'
+$bold      = 'MetricBold'
+$default   = #01a982
+$color     = #425563
+flexCenter()
+	display flex
+	display -webkit-flex
+	align-items center
+flexStart()
+	display flex
+	display -webkit-flex
+	align-items start
+flexEnd()
+	display flex
+	display -webkit-flex
+	align-items flex-end
+transitionOpacity()
+	-webkit-transition opacity .3s linear
+	-moz-transition opacity .3s linear
+	-ms-transition opacity .3s linear
+	-o-transition opacity .3s linear
+	transition opacity .3s linear
+transitionWidth()
+	-webkit-transition width .3s linear
+	-moz-transition width .3s linear
+	-ms-transition width .3s linear
+	-o-transition width .3s linear
+	transition width .3s linear
+transitionMaxWidth()
+	-webkit-transition max-width .3s linear
+	-moz-transition max-width .3s linear
+	-ms-transition max-width .3s linear
+	-o-transition max-width .3s linear
+	transition max-width .3s linear
+transitionBgColor()
+	-webkit-transition background-color .3s linear
+	-moz-transition background-color .3s linear
+	-ms-transition background-color .3s linear
+	-o-transition background-color .3s linear
+	transition background-color .3s linear
+transitionTransform()
+	-webkit-transition transform .3s linear
+	-moz-transition transform .3s linear
+	-ms-transition transform .3s linear
+	-o-transition transform .3s linear
+	transition transform .3s linear
+absolute()
+	position absolute
+	top 0
+	left 0
+	right 0
+	bottom 0
+relative()
+	position relative
+	top 0
+	left 0
+	right 0
+	bottom 0
+flipCard()
+	-moz-backface-visibility hidden
+	-webkit-backface-visibility hidden
+	backface-visibility hidden
+	-webkit-transition -webkit-transform 500ms
+	-moz-transition -moz-transform 500ms
+	-o-transition -o-transform 500ms
+	transition transform 500ms
+	border-radius 5px
+	position absolute
+flipCardFront()
+	-webkit-transform perspective(600) rotateY(0)
+	-moz-transform perspective(600) rotateY(0)
+	-o-transform perspective(600) rotateY(0)
+	transform perspective(600) rotateY(0)
+flipCardBack()
+	-webkit-transform rotateY(-180deg)
+	-moz-transform rotateY(-180deg)
+	-o-transform rotateY(-180deg)
+	transform rotateY(-180deg)
+	z-index 900
+flipCardFrontHover()
+	-webkit-transform rotateY(180deg)
+	-moz-transform rotateY(180deg)
+	-o-transform rotateY(180deg)
+	transform rotateY(180deg)
+	-webkit-transform perspective(600) rotateY(180deg)
+	-moz-transform perspective(600) rotateY(180deg)
+	-o-transform perspective(600) rotateY(180deg)
+	transform perspective(600) rotateY(180deg)
+flipCardBackHover()
+	-webkit-transform rotateY(0)
+	-moz-transform rotateY(0)
+	-o-transform rotateY(0)
+	transform rotateY(0)
+	-webkit-transform perspective(600) rotateY(0)
+	-moz-transform perspective(600) rotateY(0)
+	-o-transform perspective(600) rotateY(0)
+	transform perspective(600) rotateY(0)
+	z-index 950
+body
+	margin 0
+	padding 0
+	font-family $regular
+	color #000000
+	background-color #FFFFFF
+p
+	margin 0
+h2
+	margin 20px 0
+label
+	font-weight 100
+.js-section
+	position relative;
+	padding 40px 20px;
+.js-section--menu
+	absolute()
+	margin-top 10px
+	&.fadeIn
+		z-index 5
+		opacity 1
+	&.fadeOut
+		z-index 0
+.js-title
+	width 100%
+	margin 10px 0
+	font-size 36px
+	line-height 34px;
+	font-family $medium
+.js-flex
+	flexCenter()
+.js-height
+	height 100vh
+.js-header
+	position fixed
+	top 0
+	width 100%
+	background-color transparent
+	z-index 5
+	padding 10px 25px
+	color #FFFFFF
+	flexCenter()
+	img
+		width 100%
+		max-width 130px
+	.js-header--left
+		flexCenter()
+		width 100%
+		justify-content flex-start
+		p
+			font-family $bold
+			margin-left 10px
+			font-size 16px
+			line-height 16px
+		img
+			&.js-partner
+				margin-right 10px
+				padding-right 10px
+				border-right 1px solid #000000
+	.js-header--right
+		flexCenter()
+		width 100%
+		justify-content flex-end
+		flex-wrap wrap
+		text-align right
+		p
+			font-size 20px
+			line-height 18px
+		a
+			width 100%
+			text-decoration none
+			cursor pointer
+			font-size 18px
+			font-family $medium
+			color $default
+	&.js-relative
+		position relative
+		color #000000
+		box-shadow 1px 2px 3px rgba(0,0,0,.2)
+	&.js-fixed
+		background-color #FFFFFF
+		color #000000
+		box-shadow 1px 2px 3px rgba(0,0,0,.2)
+	&.js-header--login
+		color #000000
+		padding 35px
+.js-container
+	transitionMaxWidth()
+	width 100%
+	max-width 1100px
+	height 100%
+	margin auto
+	position relative
+	&.js-flex
+		justify-content flex-end
+.js-fondo--login
+	absolute()
+	background url(../img/fondo/fondo-login.jpg) no-repeat center center
+	background-size cover
+	height 100vh
+.js-opacity-done
+	opacity 0
+	z-index -5
+.js-events-none
+	pointer-events none
+	opacity .6
+.js-login
+	width 100%
+	max-width 450px
+	h2
+		font-size 30px
+		line-height 30px
+		font-family $regular
+.js-input
+	padding 7px 20px
+	height 72px
+	margin 0
+	border 1px solid rgba(0,0,0,0.15)
+	background-color #FFFFFF
+	margin-bottom -1px
+	color #333333
+	margin 5px 0
+	&.js-date
+		height 100%
+		padding 5px 20px
+		.js-icon
+			width 100%
+			max-width 36px
+			text-align center
+	&.js-file
+		height 100%
+	&.js-radio
+		height 100%
+		.mdl-radio
+			width 100%
+			.mdl-radio__inner-circle
+				background $default
+			&.is-checked
+				.mdl-radio__outer-circle
+					border 2px solid $default
+			.mdl-radio__ripple-container 
+				.mdl-ripple
+					background $default
+	&.js-select
+		padding 0
+		height 100%
+		.bootstrap-select
+			.dropdown-toggle
+				padding 14px 24px
+				border-radius 0
+				box-shadow none
+				background-color transparent
+			.dropdown-menu
+				background-color rgba(248, 248, 248, 0.95)
+				border-radius 0
+				margin 0 
+				padding 0
+				&.open
+					margin 0
+					padding 0
+					li
+						a
+							padding 6px 20px
+							&:hover
+								background-color rgba(221,221,221,0.5)
+	label
+		font-family $light
+		color #666666
+		cursor pointer
+	input
+		display block
+		height 36px
+		width 100%
+		border none
+		font-size 16px
+		&:focus
+			outline 0
+	&.input-focused
+		background-color #FFFFFF
+	.bootstrap-select
+		width 100% !important
+		.dropdown-toggle
+			border none !important
+			padding 6px 0
+			selectTransparent()
+			&:focus
+				outline: 0 !important
+.js-button
+	margin 10px 0
+	text-transform initial
+	font-family $medium
+	color #FFFFFF
+	background-color $default !important
+	border-radius 0
+	font-size 18px
+	box-shadow none
+	border 2px solid $default
+	margin 5px
+	&:hover
+		box-shadow 0px 0px 0px 2px $default
+	&.js-button--default
+		background-color transparent !important
+		color #000000
+	&.js-button--login
+		width 100%
+		margin 20px 0
+.js-user
+	flexCenter()
+	padding 20px
+	.js-user--left
+		flexCenter()
+		justify-content flex-start
+		width 100%
+		p
+			font-size 20px
+	.js-user--right
+		flexCenter()
+		justify-content flex-end
+		width 100%
+.js-middle
+	flexCenter()
+	.js-middle--left
+		justify-content flex-start
+		width 100%
+	.js-middle--right
+		justify-content flex-end
+		width 100%
+		font-size 18px
+		text-align right
+		a
+			color #000000
+			text-decoration none
+			cursor pointer
+.js-terminos
+	h3
+		color $default
+		font-family $regular
+		margin 10px 0
+		font-size 24px
+	ul
+		li
+			padding 5px 0
+			font-size 18px
+			font-family $light
+			span
+				font-size 20px
+				font-family $regular
+			p
+				font-size 18px
+				font-family $light
+.js-puntaje
+	.js-puntaje__table
+		width 100%
+		max-width calc(100% - 300px)
+	.js-puntaje__puntos
+		width 100%
+		max-width 300px
+		text-align center
+		padding 20px
+		margin 20px
+		border-left 1px solid #000000
+		p
+			font-size 26px
+			line-height 28px
+		span
+			font-size 50px
+			font-family $medium
+			padding 30px 0
+			display block
+.js-table
+	h2
+		font-size 30px
+		line-height 32px
+		font-family $medium
+.js-excel
+	background-color $default !important
+	color #FFFFFF !important
+/*TABLE*/
+table
+	&>tbody
+		&>tr
+			&>td
+				color #000000
+				padding 7px 10px !important
+				line-height 16px !important
+				vertical-align middle !important
+				button
+					height 28px !important
+					min-width 28px !important
+					width 28px !important
+					i
+						font-size 18px !important
+				&.js-table--input
+					input
+						width 100%
+						cursor pointer
+						outline 0 !important
+						text-align right
+					span
+						border 1px solid #BDBDBD
+						width 100%
+						display block
+						pointer-events none
+						opacity .6
+						padding 2px
+						height 22px
+						max-width 54px
+						float right
+	&>thead
+		&>tr
+			&>th
+				color #000000
+				font-weight 100 !important
+				font-size 16px
+				border-top none !important
+				border-bottom 2px solid $default !important
+/*MATERIAL*/
+.mdl-card
+	width 100%
+	.mdl-card__title
+		display block
+		h2
+			margin 10px 0
+			font-size 26px
+			line-height 28px
+			font-family $medium
+		p
+			font-size 16px
+			line-height 18px
+	.mdl-card__supporting-text
+		width 100%
+		h3
+			margin 10px 0
+			line-height 26px
+			font-size 24px
+			font-family $regular
+		p
+			font-size 16px
+			line-height 18px
+		small
+			margin-top 10px
+			display block
+	.mdl-card__actions
+		padding 16px
+		text-align right
+.mdl-layout__container
+	position fixed
+	.mdl-layout__drawer
+		background-color $color
+		color #FFFFFF
+		.mdl-layout-title
+			text-align center
+			padding 0
+		.mdl-navigation
+			.mdl-navigation__link
+				padding 16px 30px
+				text-decoration none
+				color #FFFFFF
+				cursor pointer
+				&:HOVER
+					background-color #384854
+				&.active
+					background-color #384854
+					pointer-events none
+/*SCROLL*/
+::-webkit-scrollbar
+	width 6px
+	height 5px
+::-webkit-scrollbar-track
+	background-color transparent
+	border-radius 10px
+::-webkit-scrollbar-thumb
+	background-color #AAAAAA
+	border-radius 10px
+			

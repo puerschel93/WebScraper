@@ -1,0 +1,220 @@
+.homePage {
+  margin-left: 16%;
+}
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 0.7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffa351;
+  height: 100vh;
+  width: 16%;
+  padding: 0.5em;
+  z-index: 1;
+  overflow: hidden;
+
+  .brand {
+    margin-top: 0.5em;
+    width: 90%;
+    height: 180px;
+    background-image: url("../img/logo.jpeg");
+    border-radius: 100%;
+    cursor: pointer;
+
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .navs {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2em;
+    font-family: cursive;
+
+    .active {
+      .navlink {
+        color: black;
+        background-color: white;
+        border-radius: 8px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      letter-spacing: 0.05em;
+      position: relative;
+      cursor: pointer;
+      font-weight: 850;
+      font-size: 1.2em;
+      margin: 0.1em;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 1px;
+        left: 10px;
+        bottom: 0;
+        background-color: black;
+        transition: all 0.4s ease-in-out;
+      }
+      &:hover::after {
+        width: 80%;
+      }
+    }
+    .navlink {
+      padding: 0.3em 0.5em;
+      display: flex;
+      align-items: center;
+
+      .MuiSvgIcon-root {
+        color: black;
+        width: 20px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 20vh;
+    .icon-holder {
+      padding: 0.3em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      margin-right: 0.5em;
+      cursor: pointer;
+      img {
+        transition: all 0.5s;
+        border-radius: 100%;
+        width: 40px;
+      }
+      :hover {
+        box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 8px 10px -5px #000000;
+        background-color: #f8de7e;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.search-cont {
+  border-radius: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  background-color: #ffa351;
+  border: 2px solid white;
+  position: absolute;
+  right: 2.5em;
+  top: 1em;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .search-btn {
+    color: white;
+    z-index: 1;
+  }
+
+  &:hover {
+    background-color: white;
+    border: 2px solid #ffa351;
+    .search-btn {
+      color: #ffa351;
+    }
+  }
+}
+
+.section-title {
+  padding: 0.4em 1em;
+  border-bottom: 2px solid #ffa351;
+  font-size: 1.8em;
+  font-weight: 700;
+  display: inline-block;
+  color: #ffa351;
+  margin-bottom: 0.4em;
+  font-family: "Satisfy", cursive;
+}
+
+.section-subtitle {
+  font-size: 1.2em;
+}
+
+.srch-res {
+  background-color: white;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  transition: all 0.2s;
+  margin-bottom: 1em;
+  cursor: pointer;
+
+  .srch-title-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffa351;
+    margin-bottom: 0.5em;
+    .srch-title {
+      font-size: 1.8em;
+      color: #ffa351;
+    }
+  }
+
+  .srch-cat {
+    display: inline;
+    padding: 0 0.5em;
+  }
+
+  .srch-cat-cont {
+    div:not(:first-child) {
+      border-left: 1px solid black;
+    }
+  }
+
+  &:hover {
+    //   box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 6px -3px #000000;
+    transform: scale(1.01);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+  30% {
+    top: -0.1em;
+  }
+  60% {
+    top: -0.2em;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .sidenav {
+    margin-left: -30%;
+  }
+  .homePage {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,148 @@
+
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:yes;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+
+// SIZE SCROLLING
+$height-scrolling:600;
+
+// SIZE NAVIGATION
+$height-navigation:60;
+
+// MARGIN UNDER NAV FIXE
+$margin-top-under-nav-fixe:190;
+
+// VAR SITE TYPO
+$font-body:"Asap",arial,sans-serif;
+$font-title:"Asap",arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.4em;
+$font-size-title:1.6em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB2
+@import "../../../slagence_X_V5/sources/scss/boutons/lib2";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB6
+@import "../../../slagence_X_V5/sources/scss/pubs/lib6";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/helsinki";
+
+// IMPORT MODULE ANNONCES5
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra5";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib1";
+
+.titre-pub, .titre-extra {
+    color:$color-primary;
+}
+
+// MENU PERSO
+.menu-principal {
+    font-size: 0; // fix inline-block
+    > li {
+        margin: 0;
+          font-size: 13px;
+        > a {
+
+            font-weight: bold;
+            padding: 55px 4px;
+            @include background-image(linear-gradient(top, lighten($color-secondary,0) 0%, darken($color-secondary,15) 100%));
+            @include filter-gradient(lighten($color-secondary,0),darken($color-secondary,15),vertical);
+            color: $color-primary;
+            &:hover {
+                color: $color-secondary;
+                background: $color-primary;
+            }
+        }
+    }
+}
+
+
+// PRESENTATION CERCLE
+.txt-circle {
+    background-color: #ededed;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px #b8b9b9;
+    color: #e61d27;
+    display: inline-block;
+    height: 230px;
+    line-height: 20px;
+    padding: 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 230px;
+}
+
+.txt-circle-primary {
+    background-color: #e61d27;
+    color: #fff;
+}
+
+.txt-presentation     {
+    display: inline-block;
+    line-height: 1.2;
+    vertical-align: middle;
+    font-weight:bold;
+}
+
+
+// AGENCE
+.coord-agence .streetadress,
+.coord-agence .streetadress + br,
+.agence-responsable,
+.horaires-agence { display: none; }
+
+// AGENCES
+.detail-agence-liste span[itemprop="streetaddress"],
+.listing-agences-responsable {
+    display: none;
+}
+
+
+.pub-video {
+    background-image: url("../images/pub/picto-video.jpg");
+    background-size: contain;
+}
+
+
+
+
+

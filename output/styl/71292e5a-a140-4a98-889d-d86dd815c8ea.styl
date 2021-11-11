@@ -1,0 +1,153 @@
+avatarSize = 50px
+cornerRadius = 2.2rem
+
+.conversations
+  .chat-icon
+    display: none
+    position: absolute
+    left: -(avatarSize + 10px)
+    bottom: 0
+    @media mq-med
+      display: block
+
+.conversations__container,
+.conversations__form
+  position: relative
+
+.conversations__form
+  &:focus
+    .conversations__input
+      background: red !important
+
+.conversations__input
+  position: relative
+  width: 100%
+  font-family: font-sans !important
+  text-align: right
+  color: color-brand-dark
+  background: rgba(color-bgr-light, 0.6)
+  border: solid 3px color-brand !important
+  padding-right: 3em !important
+  & + .conversations__submit
+    display: block
+
+  +placeholder()
+    font-family: font-sans
+    color: tint(color-brand-dark, 50%)
+    text-align: right
+    font-size: 0.8em
+    text-transform: uppercase
+    letter-spacing: 2px
+    font-weight: bold
+
+.conversations__submit
+  display: none
+  position: absolute
+  right: 0
+  top: 0
+  bottom: 0
+  background: none
+  border: none
+  font-size: 1.5em
+  padding-left: 0.75em
+  padding-right: 0.75em
+  color: color-brand
+  z-index: 10
+  cursor: pointer
+  &:hover
+    color: color-type-light
+    background-color: color-brand
+    appearance: none
+
+.conversations__error
+  @extend .type-sans
+  padding: 0.5em 1em
+  border-radius: 2.2rem
+  margin-bottom: 0.5em
+  text-shadow: 0 1px 1px rgba(0,0,0, 0.25)
+  box-shadow: 0px 1px 1px rgba(0,0,0, 0.25)
+  border-radius: 2.2rem 2.2rem 2.2rem 2.2rem
+  background-color: color-red
+  color: color-type-light
+
+.conversations__msg
+  @extend .type-sans
+  overflow-wrap: break-word
+  word-wrap: break-word
+  -ms-word-break: break-all
+  word-break: break-word
+  -ms-hyphens: auto
+  -moz-hyphens: auto
+  -webkit-hyphens: auto
+  hyphens: auto;
+  position: relative
+  padding: 0.5em 1em
+  background: color-brand-cool
+  border-radius: 2.2rem
+  margin-bottom: 0.5em
+  text-shadow: 0 1px 1px rgba(0,0,0, 0.25)
+  box-shadow: 0px 1px 1px rgba(0,0,0, 0.25)
+  border-radius: 2.2rem 2.2rem 2.2rem 0
+  background-color: color-brand-cool
+  color: color-type-light
+
+  &.conversations__msg--important
+    font-weight: bold
+
+
+  triangleWidth = 3px
+  &:after
+    content: ""
+    display: block
+    position: absolute
+    left: -(triangleWidth*2)
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 5px triangleWidth
+    border-color: transparent color-brand-cool color-brand-cool transparent
+    bottom: 0
+
+  // &:last-child
+  //   border-radius: 0 cornerRadius cornerRadius cornerRadius
+  //   background-color: color-brand-cool
+  //   &:after
+  //     top: 0
+  //     border-color: color-brand-cool color-brand-cool transparent transparent
+
+  &.conversations__msg--outbound
+    background: color-bgr-light
+    color: color-type
+    border-radius: cornerRadius cornerRadius 0 cornerRadius
+    box-shadow: none
+    border: solid 1px darken(color-bgr-light, 5)
+    text-shadow: none
+    &:after
+      left: auto
+      right: -(triangleWidth*2)
+      bottom: 0
+      border-color: transparent transparent color-bgr-light color-bgr-light
+
+  &.conversations__error
+    background-color: color-red !important
+    &:after
+      border-color: transparent color-red color-red transparent
+
+  @keyframes typing {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+  .oli-typing
+    > *:nth-child(1)
+      animation: typing 1s infinite;
+      animation-direction: alternate;
+      animation-delay: 0s;
+    > *:nth-child(2)
+      animation: typing 1s infinite;
+      animation-direction: alternate;
+      animation-delay: 0.5s;
+    > *:nth-child(3)
+      animation: typing 1s infinite;
+      animation-direction: alternate;
+      animation-delay: 1s;

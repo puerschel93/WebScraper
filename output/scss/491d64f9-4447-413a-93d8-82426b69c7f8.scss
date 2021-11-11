@@ -1,0 +1,466 @@
+@import 'config';
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    display: grid;
+    place-items: center;
+    z-index: 3;
+
+    .nav-links{
+        display: flex; 
+        gap: clamp(1em, 2vw, 2.5em);
+        justify-content: center;
+        list-style: none;
+
+        li > a{
+            transition: all .2s ease-in-out;
+
+            &:hover{
+                color: $white;
+                transform: translateY(10%);
+            }
+        }
+    }
+}
+
+.hero{
+    position: relative;
+    height: 100vh;
+    // clip-path: polygon(0 0%, 100% 0, 100% 100%, 0% 97%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $grey;
+
+
+    .content{
+        text-align: center;
+        margin-top: 15vh;
+        z-index: 2;
+        color: $white;
+
+        h1{
+            width: min-content;
+            
+        }
+        p{
+            span{
+                background: $primary;
+                //color: $dark;
+                padding: 0 .2em;
+            }
+        }
+    }
+    .sidebar{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: $dark;
+        width: 100%;
+        height: 20vh;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        .logo{
+            width: 1.5rem;
+
+            svg > path{
+                fill: $primary;
+            }
+        }
+        .social-links{
+            display: flex;
+            list-style: none;
+            gap: clamp(2em, 5vw, 2.5em);
+
+            li{
+                a{
+                    transition: color .2s ease-in-out;
+                    color: $white;
+                    font-size: clamp(1.2rem, 5vw, 1.5rem);
+                    
+                }
+                &:hover > a{
+                    color: $primary;
+                }
+            }
+        }
+    }
+    .my-image{
+        bottom: 0; 
+        position: absolute;
+        width: Max(90vw, 450px);
+        max-height: 90vh;
+        object-fit: contain;
+        margin-bottom: 20vh;
+    }
+}
+
+.about-me{
+    margin: clamp(1em, 10vw, 10em) 0;
+    text-align: center;
+    min-height: 300px;
+    display: grid;
+    place-items: center;
+
+    .title{
+        margin-bottom: 0em;
+    }
+    .resume-btn{
+        transition: all .1s ease-in-out;
+
+            &:hover{
+                background: $primary;
+                color: $white
+            }
+    }
+}
+
+.skills{
+    display: grid;
+    place-items: center;
+    width: 85vw;
+    margin: 0 auto;
+    position: relative;
+    min-height: 300px;
+
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        background: $primary;
+        z-index: 2;
+        border-radius: 20px;
+
+        &>*{
+            padding: 2em 0;
+        }
+        .my-tools{
+            color: $dark;
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+            // display: grid;
+            // align-items: center;
+            // clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+            position: relative;
+    
+            .title{
+                margin-bottom: .2em;
+                color: $white;
+            }
+            .icons{
+                display: block;
+                flex: 1;
+                display: grid;
+                justify-content: center;
+                list-style: none;
+                column-gap: .5em;
+                grid-template-columns: repeat(auto-fit, minmax(0, 50px));
+                grid-auto-rows: min-content;
+                // color: $white;
+    
+                font-size: clamp(2rem, 5vw, 3rem);
+    
+            }
+        }
+        .my-tools:after{
+            content: '';
+            width: 50%;
+            height: 1px;
+            background: $white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translateX(50%);
+        }
+        .additional{
+            flex: 1;
+            text-align: center;
+    
+            .title{
+                margin-bottom: .5em;
+                color: $white;
+            }
+            .skill{
+                color: $dark;
+    
+                .icons{
+                    display: flex;
+                    gap: 1em;
+                    justify-content: center;
+        
+                    li{
+                        font-size: 1.5rem;
+                        width: 1.5rem;
+                        
+                        svg > path{
+                            fill: $dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .overlap{
+        position: absolute;
+        bottom: 0;
+        height: 50%;
+        background: $dark;
+        width: 100vw;
+        z-index: 1;
+    }
+    
+}
+
+.works{
+    background: $dark;
+    color: $white;
+    padding: clamp(3em, 20vw, 12em) 0;
+    // clip-path: polygon(0 0%, 100% 0%, 100% 95%, 0% 100%);
+
+    .title{
+        text-align: center;
+        margin-bottom: clamp(1em, 12vw, 10em);
+    }
+    
+    .project{
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+
+        .details{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            text-align: center;
+
+            .buttons{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                button{
+                    margin-bottom: 0;
+                    background: $primary;
+                    color: $white;
+                    width: max-content;
+                    transition: all .1s ease-in-out;
+
+                    &:hover{
+                        background: $white;
+                        
+                        a{
+                            color: $primary;
+                        }
+                    }
+                    a{  
+                        font-size: clamp(.7rem, 1vw, 1rem);
+                        color: $white;
+
+                    }
+                }
+                .view-repo{
+                    font-size: clamp(.8rem, 5vw, 1rem);
+                    color: $white;
+                    transition: color .1s ease-in-out;
+
+                    &:hover{
+                        color: $primary;
+                    }
+                }
+            }
+            .tools{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(0, auto));
+                grid-auto-rows: min-content;
+                gap: .5em;
+                justify-content: center;
+                font-size: clamp(1.2rem, 5vw, 3rem);
+            }
+        }
+        .prototype{
+            flex: 1;
+
+            img{
+                max-width: 100%;
+            }
+            .mobile{
+                display: block;
+            }
+            .desktop{
+                display: none;
+            }
+        }
+    }
+    .projects{
+        display: grid;
+        gap: clamp(1em, 15vw, 15em);
+
+        &>*:nth-child(even){
+        
+            .details{
+                order: 2;
+            }
+            .prototype{
+                order: 1;
+            }
+        }
+    }
+}
+
+.contact{
+    margin: clamp(3em, 20vw, 12em) 0;
+
+
+    .title{
+        text-align: center;
+        margin-bottom: .5em;
+    }
+    .social-links{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: clamp(2em, 5vw, 2.5em);
+
+
+        li>a{
+            color: $dark;
+            font-size: clamp(1.2rem, 5vw, 1.5rem);
+        }
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        width: Min(70%, 600px);
+        margin: 2em auto;
+        
+        button{
+            transition: all .1s ease-in-out;
+            margin: 0 auto;
+
+            &:hover{
+                background: $primary;
+                color: $white
+            }
+        }
+    }
+}
+
+footer{
+    padding: 10vh 0;
+    background: $grey;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        .logo{
+            width: 1.5rem;
+    
+            svg > path{
+                fill: $primary;
+            }
+        }
+        .nav-links{
+            display: flex; 
+            gap: 3em;
+            gap: clamp(1em, 5vw, 3em);
+            justify-content: center;
+            list-style: none;
+
+            li > a{
+                transition: all .2s ease-in-out;
+    
+                &:hover{
+                    color: $white;
+                    transform: translateY(10%);
+                }
+            }
+        }
+    }
+    
+}
+
+@media (min-width: 600px){
+
+    header{
+        place-items: end;
+    }
+
+    .hero{
+        align-items: flex-end;
+        justify-content: center;
+
+        .content{
+            text-align: right;
+            margin: 0;
+
+        }
+        .sidebar{
+            left: 0;
+            bottom: unset;
+            height: 100%;
+            width: Min(20vw, 150px);
+            flex-direction: column;
+    
+            .social-links{
+                flex-direction: column ;
+            }
+        }
+        .my-image{
+            margin-bottom: 0;
+        }
+    }
+
+    .about-me{
+        text-align: left;
+        width: 60vw;
+    }
+
+    .skills{
+
+        .content > .my-tools:after{
+            content: '';
+            width: 1px;
+            height: 50%;
+            background: $white;
+            position: absolute;
+            right: 0;
+            top: 0;
+            left: unset;
+            bottom: unset;
+
+            transform: translateY(50%);
+        }
+    }
+
+    .works{
+        // margin-top: clamp(2em, 10vw, 10em);
+
+        .projects > .project{
+        
+            .prototype{
+                flex: 2;
+    
+                .mobile{
+                    display: none;
+                }
+                .desktop{
+                    display: block;
+                }
+            }
+        }
+    }
+
+
+}

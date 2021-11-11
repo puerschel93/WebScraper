@@ -1,0 +1,367 @@
+/* Drawer */
+/* TODO: Register local variables necessaries to use in this component */
+.drawer-aside, .drawer-aside a
+  font-family: 'Roboto'
+  font-weight: 500
+
+.drawer-aside .drawer
+  border: none
+  margin: 0
+  overflow: hidden
+  padding: 0
+  position: fixed // absolute todo: test bug left rezise
+  width: var(--drawer-width)
+  display: block
+  top: 0
+  webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  left: 0;
+  bottom: 0
+  z-index: 999999
+
+.drawer-theme-default.drawer-aside .drawer
+  background-color: #fff
+  color: black
+
+/* DRAWER FIXED */
+.drawer-fixed
+  &.drawer-aside .drawer
+    float: left
+    width: $drawer-width-min
+  .u-backdrop
+    display: none !important
+  padding-left: $drawer-width-min
+  .hidden-drawer-fixed {
+    display none
+  }
+  .u-header
+    left: $drawer-width-min
+
+/* DRAWER FOLDED */
+.drawer-folded
+  &.drawer-fixed
+    .u-backdrop
+      display: none
+    padding-left: $drawer-width-folded
+    .u-header
+      left: $drawer-width-folded
+  .hidden-folded
+    display: none
+  .show-folded
+    display: block !important
+  &.drawer-aside .drawer
+    float: left
+    position: fixed
+    width: $drawer-width-folded
+  &.drawer-aside .drawer-header
+    padding-left: 0
+    justify-content: center
+  &.drawer-aside .drawer-header #drawer-app-logo
+    display: block
+  &.drawer-aside .drawer-content
+    width: ($drawer-width-folded + 8px)
+    /*overflow-x: hidden
+    overflow-y: scroll*/
+    overflow auto
+    -webkit-overflow-scrolling: touch
+  &.drawer-aside .drawer-content ul a
+    justify-content: center
+    padding: 24px 0
+    margin: 0
+  &.drawer-aside .drawer-content ul a:hover
+    background-color: #f2f2f2
+  &.drawer-aside .drawer .drawer-content ul a i
+    float: none !important
+    width: auto
+    margin: 0
+    font-size: 20px
+    line-height: 0
+    border: none !important
+  &.drawer-aside .drawer-content ul a i:before
+    font-size: 120%
+  &.drawer-aside .drawer .drawer-content ul a span
+    display: none
+  &.drawer-aside .drawer .drawer-content ul li
+    position: relative
+  &.drawer-aside .drawer-content .drawer-has-subitem
+    margin-top: 0
+    margin-bottom: 0
+  &.drawer-aside .drawer-content .drawer-has-subitem-parent:last-child
+    /*margin-bottom 0*/
+  &.drawer-aside .drawer-subitem
+    position: absolute
+    max-height: none
+    left: $drawer-width-folded
+    background-color: #FFFFFF
+    z-index: 999998
+    > li:last-child
+      margin-bottom 0
+  &.drawer-aside .drawer-subitem i
+    display: none
+  &.drawer-aside .drawer-subitem li > a
+    display: block
+    padding: 14px 16px
+    font-size: 100%
+    min-width: 160px
+    color: inherit
+  &.drawer-aside .drawer-subitem li > a:hover
+    color: dodgerblue
+  &.drawer-aside .hide-icon {
+    display block
+  }
+
+.drawer-aside.open .drawer
+  left: 0
+  visibility: visible
+  -webkit-user-select: none
+
+.drawer-aside .drawer-header
+  padding-left: 24px
+  align-items: center
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06)
+  box-sizing: content-box
+  display: flex
+  font-size: 100%
+  min-height: $header-menu-height
+  outline: none
+
+.drawer-aside .drawer-content
+  padding-top: 20px
+  height: calc(100% - 56px)
+  /*overflow-x: hidden;
+  overflow-y: scroll;*/
+  overflow auto
+  -webkit-overflow-scrolling: touch;
+
+.drawer-aside .drawer-content ul a {
+  margin-right: 2px
+  margin-left: 1px
+  color: #333
+  display: flex
+  align-items: center
+  min-height: 20px
+  padding: 8px 0 8px 23px
+  word-break: break-word
+  font-weight: 500
+  font-size: 100%
+  font-family: 'Roboto'
+  flex-wrap: wrap /*webkit-transition: background-color .2s ease-in-out 0s
+  transition: background-color .2s ease-in-out 0s*/
+  &:active {
+    background-color rgba(255, 255, 255, 0.5) !important
+  }
+}
+
+.drawer-aside .drawer-content ul a span
+  display: flex
+  align-items: center
+
+.drawer-theme-default.drawer-aside .drawer-content ul a:hover
+  color: #333
+
+[focusable]:focus, [focusable] :focus
+  outline: auto 5px #666666
+
+[focusable]:active, [focusable] :active,
+[focusable]:visited, [focusable] :visited,
+[focusable]:hover, [focusable] :hover
+  outline: none !important
+
+.drawer-aside .drawer-content ul a i
+  margin-right: 20px
+  vertical-align: top
+  flex-shrink: 0
+  opacity: 0.8
+  max-height: 18px;
+  font-size: 18px;
+
+.drawer-aside .drawer-content ul a i:before
+  font-size: 18px
+
+.drawer-aside .drawer-content ul a span
+  flex: 1
+  min-height: 20px
+
+.drawer-aside .drawer-content ul a i.has-drop-down
+  margin-right: 8px
+
+.drawer-aside:not(.drawer-folded) .drawer-content ul a i.has-drop-down:before
+  content: "\e5c5"
+  font-family: 'Material Icons'
+  font-weight: 400
+
+.drawer-aside:not(.drawer-folded) .drawer-content ul a.open i.has-drop-down:before
+  content: "\e5c7"
+  font-family: 'Material Icons'
+  font-weight: 400
+
+.drawer-aside .drawer-content > ul > li > a // .drawer-has-subitem
+  margin-top: 5px
+  margin-bottom: 5px
+
+.drawer-aside .drawer-content .drawer-has-subitem-parent:last-child
+  /*margin-bottom 10px*/
+.drawer-aside .drawer-content .drawer-subitem
+  height: 0;
+  margin-left: -20px;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+  a{
+    padding-left 43px
+  }
+  > li:last-child
+    margin-bottom 10px
+
+.drawer-aside .drawer-content .drawer-subitem.drawer-show
+  height: auto !important;
+  margin-left: 0;
+  overflow: auto;
+  opacity: 1;
+
+.drawer-aside .drawer-content .separator
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08)
+  margin-bottom: 8px
+  margin-top: 8px
+
+.drawer-aside .drawer-content .item-header
+  padding-left: 23px
+  font-size: 12px
+  margin-top: 16px
+  margin-bottom: 6px
+  white-space: nowrap
+  text-transform: uppercase
+  font-weight: normal
+  cursor: default
+  opacity: 0.6
+
+.drawer-aside .u-app-name-menu
+  margin-left: 26px
+  color: #000
+  font: 18px "Avenir", Helvetica, sans-serif
+
+.drawer-aside .drawer-header #drawer-app-logo
+  fill: #333
+  animation-name: ckw
+  animation-duration: 12s
+  /* Things added */
+  animation-iteration-count: infinite
+  transform-origin: 50% 50%
+  display: inline-block
+
+.drawer-aside {
+  .hide-icon {
+    display none
+  }
+}
+
+@keyframes ckw
+  0%
+    transform: rotate(0deg)
+  10%
+    transform: rotate(-120deg)
+  20%
+    transform: rotate(360deg)
+  30%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(0deg)
+
+/* THEME BLACK */
+//TODO: Verificar a necessidade de separar os arquivos dos temas, ou criar temas dinâmicos por meio de variáveis css --var
+.drawer-theme-black.drawer-aside .drawer
+  background-color: #3a3f51
+  color: white
+
+.drawer-theme-black.drawer-aside .drawer-content ul a
+  color: #b4b6bd
+
+//background-color: #f2f2f2;
+.drawer-theme-black.drawer-aside .drawer-content ul a:hover
+  color: #FFF
+  background-color: #16232d
+
+.drawer-theme-black.drawer-aside .drawer-content .separator
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5)
+
+.drawer-theme-black.drawer-aside .drawer-content .item-header
+  opacity: 0.3
+  text-transform: none
+
+.drawer-theme-black.drawer-aside .u-app-name-menu
+  color: #FFF
+
+.drawer-theme-black.drawer-aside .drawer-header #drawer-app-logo
+  fill: #FFF
+
+/** THEME TRANSPARENT **/
+.drawer-theme-transparent.drawer-aside .drawer
+  background-color: transparent
+  color: inherit
+
+.drawer-theme-transparent.drawer-aside .drawer-content ul a
+  color: inherit
+
+//background-color: #f2f2f2;
+.drawer-theme-transparent.drawer-aside .drawer-content ul a:hover
+  color: inherit
+  background-color: transparent
+
+.drawer-theme-transparent.drawer-aside .drawer-content .separator
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5)
+
+.drawer-theme-transparent.drawer-aside .drawer-content .item-header
+  opacity: 0.3
+  text-transform: none
+
+.drawer-theme-transparent.drawer-aside .u-app-name-menu
+  color: inherit
+
+.drawer-theme-transparent.drawer-aside .drawer-header #drawer-app-logo
+  fill: inherit
+
+.drawer-theme-transparent.drawer-aside .drawer-subitem
+  background-color: transparent !important
+
+drawer-theme($bg, $color, $colorHover)
+  &.drawer-aside .drawer
+    background-color: $bg
+    color: $color
+
+  &.drawer-aside .drawer-content ul a
+    color: $color
+
+  &.drawer-aside .drawer-content ul a:hover
+    color: $colorHover
+    background-color: darken($bg, 20)
+
+  &.drawer-aside .drawer-content ul a i
+    opacity 1
+
+  &.drawer-aside .drawer-content .separator
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5)
+
+  &.drawer-aside .drawer-content .item-header
+    opacity: 0.3
+    text-transform: none
+
+  &.drawer-aside .u-app-name-menu
+    color: $color
+
+  &.drawer-aside .drawer-header #drawer-app-logo
+    fill: $color
+
+  &.drawer-aside .drawer-subitem
+    background-color: $bg
+  &.drawer-aside .drawer-subitem li > a
+    color: $color
+  &.drawer-aside .drawer-subitem li > a:hover
+    color: $colorHover
+
+.drawer-theme-blue
+  drawer-theme(#0081ff, #FFFFFF, #FFFFFF)
+
+.drawer-theme-dark
+  drawer-theme(#1c2b36, #869fb1, #FFFFFF)
+

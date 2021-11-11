@@ -1,0 +1,348 @@
+/*
+ * Config
+ */
+
+// default unit
+__units ?= 0px
+
+/*
+ * Internal
+ */
+
+--unit(arg)
+  if (arg is a 'unit')
+    if arg == 0
+      0
+    else
+      unit(arg) ? arg : arg + __units
+  else
+    arg
+
+--units(args)
+  out = ''
+  for num in args
+    out = out + ' ' + --unit(num)
+  unquote(out)
+
+/*
+ * Synonym
+ */
+
+// margin
+-m()
+  margin --units(arguments)
+-mt()
+  margin-top --units(arguments)
+-mb()
+  margin-bottom --units(arguments)
+-ml()
+  margin-left --units(arguments)
+-mr()
+  margin-right --units(arguments)
+
+// padding
+-p()
+  padding --units(arguments)
+-pt()
+  padding-top --units(arguments)
+-pb()
+  padding-bottom --units(arguments)
+-pl()
+  padding-left --units(arguments)
+-pr()
+  padding-right --units(arguments)
+  
+// width
+-w()
+  width --units(arguments)
+-wmin()
+  min-width --units(arguments)
+-wmax()
+  max-width --units(arguments)
+
+// height
+-h()
+  height --units(arguments)
+-hmin()
+  min-height --units(arguments)
+-hmax()
+  max-height --units(arguments)
+  
+// position
+-pos()
+  position arguments
+-t()
+  top --units(arguments)
+-l()
+  left --units(arguments)
+-b()
+  bottom --units(arguments)
+-r()
+  right --units(arguments)
+
+// background
+-bg()
+  background --units(arguments)
+-bga()
+  background-attachment arguments
+-bgc()
+  background-color arguments
+-bgi()
+  background-image arguments
+-bgo()
+  background-origin arguments
+-bgp()
+  background-position --units(arguments)
+-bgr()
+  background-repeat arguments
+
+// border
+-br()
+  border --units(arguments)
+-brc()
+  border-color arguments
+-brs()
+  border-style arguments
+-brw()
+  border-width --units(arguments)
+
+// border-top
+-brt()
+  border-top --units(arguments)
+-brtc()
+  border-top-color arguments
+-brts()
+  border-top-style arguments
+-brtw()
+  border-top-width --units(arguments)
+
+// border-bottom
+-brb()
+  border-bottom --units(arguments)
+-brbc()
+  border-bottom-color arguments
+-brbs()
+  border-bottom-style arguments
+-brbw()
+  border-bottom-width --units(arguments)
+
+// border-left
+-brl()
+  border-left --units(arguments)
+-brlc()
+  border-left-color arguments
+-brls()
+  border-left-style arguments
+-brlw()
+  border-left-width --units(arguments)
+
+// border-right
+-brr()
+  border-right --units(arguments)
+-brrc()
+  border-right-color arguments
+-brrs()
+  border-right-style arguments
+-brrw()
+  border-right-width --units(arguments)
+
+-brcol()
+  border-collapse arguments
+  
+
+//color
+-c()
+  color arguments
+
+//display
+-d()
+  display arguments
+
+//float
+-fl()
+  float arguments
+
+//font
+-f()
+  out = ''
+  weight = 100 200 300 400 500 600 700 800 900
+  for num in arguments
+    if num in weight
+      out = out + ' ' + num
+    else
+      out = out + ' ' + --unit(num)
+  font unquote(out)
+-ff()
+  font-family arguments
+-fs()
+  font-size --units(arguments)
+-fst()
+  font-style arguments
+-fv()
+  font-variant arguments
+-fw()
+  font-weight arguments
+
+//text
+-td()
+  text-decoration arguments
+-ts()
+  text-shadow --units(arguments)
+-ta()
+  text-align arguments
+-to()
+  text-overflow arguments
+-tt()
+  text-transform arguments
+
+//list
+-lis()
+  list-style arguments
+-lip()
+  list-style-position arguments
+
+
+-lh()
+  line-height --units(arguments)
+
+//vertical-align
+-va()
+  vertical-align arguments
+
+//z-index
+-z()
+  z-index arguments
+
+
+/*
+ * Hacks
+ */
+
+b-radius()
+  -webkit-border-radius: --units(arguments)
+  -moz-border-radius: --units(arguments)
+  -o-border-radius: --units(arguments)
+  -ms-border-radius: --units(arguments)
+  -khtml-border-radius: --units(arguments)
+  border-radius: --units(arguments)
+
+l-gradient()
+  -bgi -moz-linear-gradient(arguments)
+  -bgi -webkit-linear-gradient(arguments)
+  -bgi -o-linear-gradient(arguments)
+  -bgi -ms-linear-gradient(arguments)
+  -bgi linear-gradient(arguments)
+
+r-l-gradient()
+  -bgi -moz-repeating-linear-gradient(arguments)
+  -bgi -webkit-repeating-linear-gradient(arguments)
+  -bgi -o-repeating-linear-gradient(arguments)
+  -bgi -ms-repeating-linear-gradient(arguments)
+  -bgi repeating-linear-gradient(arguments)
+
+r-gradient()
+  -bgi -moz-radial-gradient(arguments)
+  -bgi -webkit-radial-gradient(arguments)
+  -bgi -o-radial-gradient(arguments)
+  -bgi -ms-radial-gradient(arguments)
+  -bgi radial-gradient(arguments)
+
+bx-shadow()
+  -moz-box-shadow --units(arguments)
+  -webkit-box-shadow --units(arguments)
+  box-shadow --units(arguments)
+
+bg-clip()
+  -webkit-background-clip arguments
+  -moz-background-clip arguments
+  background-clip arguments
+
+bg-size()
+  -moz-background-size --units(arguments)
+  -webkit-background-size --units(arguments)
+  -o-background-size --units(arguments)
+  background-size --units(arguments)
+
+transit()
+  -webkit-transition arguments
+  -moz-transition arguments
+  -o-transition arguments
+  transition arguments
+  
+transit-delay()
+  -webkit-transition-delay arguments
+  -moz-transition-delay arguments
+  -o-transition-delay arguments
+  transition-delay arguments
+
+transfrm()
+  -webkit-transform arguments
+  -moz-transform arguments
+  -o-transform arguments
+  -ms-transform arguments
+  transform arguments
+
+opacit()
+    -ms-filter unquote('"progid:DXImageTransform.Microsoft.Alpha(Opacity='+arguments*100+')"') 
+    filter unquote('alpha(opacity='+arguments*100+')')
+    -moz-opacity arguments 
+    -khtml-opacity arguments 
+    opacity arguments
+
+_h16 = 'h1,h2,h3,h4,h5,h6'
+_h15 = 'h1,h2,h3,h4,h5'
+_h14 = 'h1,h2,h3,h4'
+_h13 = 'h1,h2,h3'
+
+_h26 = 'h2,h3,h4,h5,h6'
+_h25 = 'h2,h3,h4,h5'
+_h24 = 'h2,h3,h4'
+
+_h36 = 'h3,h4,h5,h6'
+_h35 = 'h3,h4,h5'
+
+
+_ffab = "Arial Black", "Helvetica CY", "Nimbus Sans L", sans-serif
+_ffa = Arial, "Helvetica CY", "Nimbus Sans L", sans-serif
+_ffcs = "Comic Sans MS", "Monaco CY", cursive
+_ffcn = "Courier New", "Nimbus Mono L",	monospace
+_ffg = "Georgia", "Century Schoolbook L", serif
+_ffi = Impact,"Charcoal CY", sans-serif
+_fftnr = "Times New Roman", "Times CY", "Nimbus Roman No9 L", serif
+_fftms = "Trebuchet MS", "Helvetica CY", sans-serif
+_ffv = Verdana, "Geneva CY", "DejaVu Sans", sans-serif
+
+imp = !important
+
+//From kizu.ru
+// Define the cache and the aliases
+$media_cache = {}
+$media_aliases = {
+  palm:       '(max-width: 480px)'
+  lap:        '(min-width: 481px) and (max-width: 1023px)'
+  lap-and-up: '(min-width: 481px)'
+  portable:   '(max-width: 1023px)'
+  desk:       '(min-width: 1024px)'
+  desk-wide:  '(min-width: 1200px)'
+}
+
+// Mixin for caching the blocks with the given conditions
+media($condition)
+  helper($condition)
+    unless $media_cache[$condition]
+      $media_cache[$condition] = ()
+    push($media_cache[$condition], block)
+
+  +helper($condition)
+    {selector() + ''}
+      {block}
+
+// Function we would use to call all the cached styles
+apply_media_cache()
+  for $media, $blocks in $media_cache
+    $media = unquote($media_aliases[$media] || $media)
+    $media = '(%s)' % $media unless match('\(', $media)
+    $media = 'only screen and %s' % $media
+    @media $media
+      for $block in $blocks
+        {$block}

@@ -1,0 +1,307 @@
+s-size = 1em
+s-size-big = s-size * 2
+s-size-big-s = s-size * 3
+
+add_style('row', {padding: 1em 0,display: -webkit-box,display: -webkit-flex,display: -ms-flexbox,display: flex,-webkit-flex-wrap: wrap,-ms-flex-wrap: wrap,flex-wrap: wrap}, false)
+add_style('col', {-webkit-flex-basis: 0,-ms-flex-preferred-size: 0,-webkit-flex-basis: 0,-moz-flex-basis: 0,-ms-flex-basis: 0,-o-flex-basis: 0,flex-basis: 0,-webkit-box-flex: 1,-webkit-flex-grow: 1,-ms-flex-positive: 1,-webkit-flex-grow: 1,-moz-flex-grow: 1,-ms-flex-grow: 1,-o-flex-grow: 1,flex-grow: 1,max-width: 100%}, false)
+
+add_style('col=one', {-webkit-box-flex: 0,-webkit-flex: 0 0 8.333333%,-ms-flex: 0 0 8.333333%,flex: 0 0 8.333333%,max-width: 8.333333%}, false)
+add_style('col=two', {-webkit-box-flex: 0,-webkit-flex: 0 0 16.666667%,-ms-flex: 0 0 16.666667%,flex: 0 0 16.666667%,max-width: 16.666667%}, false)
+add_style('col=three', {-webkit-box-flex: 0,-webkit-flex: 0 0 25%,-ms-flex: 0 0 25%,flex: 0 0 25%,max-width: 25%}, false)
+add_style('col=four', {-webkit-box-flex: 0,-webkit-flex: 0 0 33.333333%,-ms-flex: 0 0 33.333333%,flex: 0 0 33.333333%,max-width: 33.333333%}, false)
+add_style('col=five', {-webkit-box-flex: 0,-webkit-flex: 0 0 41.666667%,-ms-flex: 0 0 41.666667%,flex: 0 0 41.666667%,max-width: 41.666667%}, false)
+add_style('col=six', {-webkit-box-flex: 0,-webkit-flex: 0 0 50%,-ms-flex: 0 0 50%,flex: 0 0 50%,max-width: 50%}, false)
+add_style('col=seven', {-webkit-box-flex: 0,-webkit-flex: 0 0 58.333333%,-ms-flex: 0 0 58.333333%,flex: 0 0 58.333333%,max-width: 58.333333%}, false)
+add_style('col=eight', {-webkit-box-flex: 0,-webkit-flex: 0 0 66.666667%,-ms-flex: 0 0 66.666667%,flex: 0 0 66.666667%,max-width: 66.666667%}, false)
+add_style('col=nine', {-webkit-box-flex: 0,-webkit-flex: 0 0 75%,-ms-flex: 0 0 75%,flex: 0 0 75%,max-width: 75%}, false)
+add_style('col=ten', {-webkit-box-flex: 0,-webkit-flex: 0 0 83.333333%,-ms-flex: 0 0 83.333333%,flex: 0 0 83.333333%,max-width: 83.333333%}, false)
+add_style('col=eleven', {-webkit-box-flex: 0,-webkit-flex: 0 0 91.666667%,-ms-flex: 0 0 91.666667%,flex: 0 0 91.666667%,max-width: 91.666667%}, false)
+add_style('col=twelve', {-webkit-box-flex: 0,-webkit-flex: 0 0 100%,-ms-flex: 0 0 100%,flex: 0 0 100%,max-width: 100%}, false)
+
+add_style('row\:h', {display: flex,-webkit-justify-content: space-between,justify-content: space-between}, false)
+add_style('row\:v', {display: flex,-webkit-justify-content: space-between,justify-content: space-between,flex-direction: column,align-items: center}, false)
+add_style('row\:h\:c', {display: flex,-webkit-justify-content: space-around,justify-content: space-around}, false)
+add_style('row\:v\:c', {display: flex,-webkit-justify-content: space-around,justify-content: space-around,flex-direction: column,align-items: center}, false)
+
+// width
+for x in (1..10)
+	s = 'w\:' + (x * 10)
+	w = (x * 10)
+
+	s_vw = s + 'vw'
+	s_p = s + 'p'
+	w_vw = w * 1vw
+	w_p = w * 1%
+
+	add_style(s_vw, {width: w_vw})
+	add_style(s_p, {width: w_p})
+add_style('w\:0', {width:0})
+
+// height
+for x in (1..10)
+	s = 'h\:' + (x * 10)
+	h = (x * 10)
+
+	s_vh = s + 'vh'
+	s_p = s + 'p'
+	h_vh = h * 1vh
+	h_p = h * 1%
+
+	add_style(s_vh, {height: h_vh})
+	add_style(s_p, {height: h_p})
+add_style('h\:0', {height:0})
+
+m_p_spaces(s, prop)
+	
+	hash = {}
+	hash-v = {}
+	hash-h = {}
+
+	hash[prop] = s-size
+	add_style(s, hash)
+	hash[prop] = s-size-big
+	add_style(s + '\:big', hash) 
+
+	hash-v[prop + '-top'] = s-size
+	hash-v[prop + '-bottom'] = s-size
+	add_style(s + '\:v', hash-v)
+	hash-v[prop + '-top'] = s-size-big
+	hash-v[prop + '-bottom'] = s-size-big
+	add_style(s + '\:v\:big', hash-v)
+	if s == 'm'
+		hash-v[prop + '-top'] = auto !important
+		hash-v[prop + '-bottom'] = auto !important
+		add_style(s + '\:v\:a', hash-v)
+	
+	hash-h[prop + '-left'] = s-size
+	hash-h[prop + '-right'] = s-size
+	add_style(s + '\:h', hash-h)
+	hash-h[prop + '-left'] = s-size-big
+	hash-h[prop + '-right'] = s-size-big
+	add_style(s + '\:h\:big', hash-h)
+	if s == 'm'
+		hash-h[prop + '-left'] = auto !important
+		hash-h[prop + '-right'] = auto !important
+		add_style(s + '\:h\:a', hash-h)
+
+	list = {l:left, t:top, r:right, b:bottom}
+	for k, x in list
+		the_s = s + '\:' + k
+		hash-the = {}
+		the_prop = prop + '-' + x
+		hash-the[the_prop] = 0
+		add_style(the_s+ '\:0', hash-the)
+		hash-the[the_prop] = s-size
+		add_style(the_s, hash-the)
+		hash-the[the_prop] = s-size-big
+		add_style(the_s+ '\:big', hash-the)
+		if s == 'm'
+			hash-the[the_prop] = auto
+			add_style(the_s+ '\:a', hash-the)
+
+	hash[prop] = 0
+	add_style(s+ '\:0', hash)
+
+	hash-v[prop + '-top'] = 0
+	hash-v[prop + '-bottom'] = 0
+	add_style(s + '\:v\:0', hash-v) 
+	
+	hash-h[prop + '-left'] = 0
+	hash-h[prop + '-right'] = 0
+	add_style(s + '\:h\:0', hash-h) 
+
+	if s == 'm'
+		hash[prop] = auto
+		add_style(s+ '\:a', hash)
+		hash[prop] = 0 auto
+		add_style(s+ '\:0\:a', hash)
+
+m_p_spaces('m', 'margin') 
+m_p_spaces('p', 'padding') 
+
+
+add_styles('d\:', 'display', {
+	'n': none !important,
+	'b': block !important,
+	'f': flex !important,
+	'if': inline-flex !important,
+	'i': inline !important,
+	'ib': inline-block !important,
+	'li': list-item !important,
+	'ri': run-in !important,
+	'cp': compact !important,
+	'tb': table !important,
+	'ig': inline-grid !important,
+	'itb': inline-table !important,
+	'tbcp': table-caption !important,
+	'tbcl': table-column !important,
+	'tbclg': table-column-group !important,
+	'tbhg': table-header-group !important,
+	'tbfg': table-footer-group !important,
+	'tbr': table-row !important,
+	'tbrg': table-row-group !important,
+	'tbc': table-cell !important
+})
+
+add_style({'0':'fl\:l', '1':'fl'}, {float: left})
+add_styles('f\:', 'float', {'n': none, 'r': right})
+
+add_styles('cl\:', 'clear', {
+	'n': none,
+	'l': left,
+	'r': right,
+	'b': both,
+})
+
+add_styles('v\:', 'visibility', {
+	'v': visible,
+	'h': hidden,
+	'c': collapse,
+})
+add_styles('ov\:', 'overflow', {
+	'v': visible,
+	'h': hidden,
+	's': scroll,
+	'a': auto
+})
+
+add_styles('ovx\:', 'overflow-x', {
+	'v': visible,
+	'h': hidden,
+	's': scroll,
+	'a': auto,
+})
+add_styles('ovy\:', 'overflow-y', {
+	'v': visible,
+	'h': hidden,
+	's': scroll,
+	'a': auto,
+})
+add_styles('ovs\:', 'overflow-style', {
+	'a' : auto,
+	's' : scrollbar,
+	'p' : panner,
+	'm' : move,
+	'mq' : marquee,
+})
+
+add_style('zm',{ zoom: 1})
+add_style('cp\:a', {clip: auto})
+
+add_styles('rsz\:', 'resize', {
+	'n': none,
+	'b': both,
+	'h': horizontal,
+	'v': vertical,
+})
+
+add_style({'0':'cur', '1':'cur\:p'}, {cursor:pointer})
+add_styles('cur\:', 'cursor', {
+	'a':auto,
+	'd': default,
+	'c':crosshair,
+	'ha':hand,
+	'he':help,
+	'm':move,
+	't':text,
+})
+
+add_style('bxz', {box-sizing:border-box})
+add_styles('bxz\:', 'box-sizing', {
+	'cb':content-box,
+	'bb':border-box,
+})
+
+add_style('bxsh\:n', {box-shadow:none})
+
+add_styles('fw\:', 'font-weight', {
+	'n': normal,
+	'lr': lighter,
+	'b': bold,
+	'br': bolder,
+})
+for x in (0..9)
+	add_style('op\#0\.' + x, {opacity: x / 10})
+add_style('op\#1', {opacity: 1})
+
+
+colors = {
+	'0':#000,
+	'1':#111
+	'2': #222,
+	'3': #333,
+	'4': #444,
+	'5': #555,
+	'6': #666,
+	'7': #777,
+	'8': #888,
+	'a': #aaa,
+	'b': #bbb,
+	'c': #ccc,
+	'd': #ddd,
+	'e': #eee,
+	'f': #fff,
+	'biege': #f5f5dc,
+}
+
+add_styles('c\#','color', colors)
+add_styles('bgc\#','background-color', colors)
+
+add_style('td\:n', {text-decoration: none})
+add_style('td\:u', {text-decoration: underline})
+add_style('td\:l', {text-decoration: line-through})
+add_style('td\:o', {text-decoration: overline})
+
+add_style('bgsz\:a', {background-size:auto})
+add_style('bgsz\:ct', {background-size:contain})
+add_style('bgsz\:cv', {background-size:cover})
+
+add_style('ta', {text-align:left})
+add_style('ta\:l', {text-align:left})
+add_style('ta\:c', {text-align:center})
+add_style('ta\:r', {text-align:right})
+add_style('ta\:j', {text-align:justify})
+
+add_style('tal\:a', {text-align-last:auto})
+add_style('tal\:l', {text-align-last:left})
+add_style('tal\:c', {text-align-last:center})
+add_style('tal\:r', {text-align-last:right})
+
+add_style('ol\:n', {outline:none})
+
+add_style('no-click', {pointer-events:none})
+
+add_style('truncate', {white-space: nowrap, overflow: hidden, text-overflow: ellipsis})
+
+add_style('pos\:s', {position: static})
+add_style('pos\:r', {position: relative})
+add_style('pos\:a', {position: absolute})
+add_style('pos\:f', {position: fixed})
+
+pos-props(o_s, prop)
+	hash = {}
+	for x in (1..10)
+		s = o_s + '\:' + (x * 10)
+		h = (x * 10)
+
+		s_p = s + 'p'
+		h_p = h * 1%
+		hash[prop] = h_p
+		add_style(s_p, hash)
+	for x in (1..5)
+		s = o_s + '\:' + (x * 10)
+		h = (x * 10)
+
+		s_em = s + 'em'
+		h_em = h * 1em
+		hash[prop] = h_em
+		add_style(s_em, hash)
+
+pos-props('l', 'left')
+add_style('l\:0', {left:0})
+pos-props('t', 'top')
+add_style('t\:0', {top:0})
+pos-props('r', 'right')
+add_style('r\:0', {right:0})
+pos-props('b', 'bottom')
+add_style('b\:0', {bottom:0})

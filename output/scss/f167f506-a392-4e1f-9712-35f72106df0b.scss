@@ -1,0 +1,296 @@
+@import '../utils/variables';
+
+.form
+{
+  &_label
+  {
+    @include typographyBuilder(600, 12, 16);
+    color: $color_grey;
+    margin-bottom: 8px;
+
+    span
+    {
+      color: $color_red;
+      margin-left: 3px;
+    }
+  }
+
+  &_input
+  {
+    @include typographyBuilder(400, 16, 24);
+    color: $color_black;
+    display: block;
+    background-color: transparent;
+    max-width: 100%;
+    padding: 12px 16px;
+    border: 1px solid $color_light;   
+    border-radius: 2px;
+
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder,
+    &:-moz-placeholder
+    {
+      @include typographyBuilder(400, 16, 24);
+      color: $color_grey_light;
+    }
+
+    &:focus
+    {
+      outline: 0;
+      border: 1px solid $color_black;
+    }
+
+    &:disabled
+    {
+      pointer-events: 0;
+      opacity: .5;
+    }
+
+    &::placeholder
+    {
+      color: $color_grey_light;
+    }
+
+    &Long
+    {
+      @extend .form_input;
+      width: 100%;
+    }
+  }
+
+  &_control
+  {
+    position: relative;
+    margin-bottom: 24px;
+
+    span[data-identity=input-dateOfBirth] {
+      @extend .form_input;
+      width: 100%;
+      display: block;
+      text-align: left;
+      
+      div
+      {
+        &[class*="react-date-picker"]
+        {
+          @include flex(row, center, flex-start);
+        }
+
+        &[class*="react-date-picker__wrapper"]
+        {
+          @include flex(row, center, space-between);
+          width: calc(100% - 15px);
+
+          & + span
+          {
+            @include absolute(0, 0, 0, 0);
+            display: block !important;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+
+            & > *
+            {
+              pointer-events: auto;
+            }
+          }
+
+          button[class*="react-date-picker__calendar-button"]
+          {
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            margin-right: 15px;
+          }
+        }
+
+        &[class*="react-date-picker__inputGroup"]
+        {
+          @include flex(row, center, flex-start);
+          @include fixedWidth(100%);
+          
+          input
+          {
+            @include typographyBuilder(400, 16, 24);
+            color: $color_black;
+            padding: 0;
+            border: 0;
+            -moz-appearance: textfield;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+        }
+
+        &[class*="react-date-picker__calendar"]
+        {
+          width: 350px;
+          max-width: 100%;
+          position: absolute;
+          top: 100%;
+          left: auto !important;
+          right: 0 !important;
+          
+          & > div[class*="react-calendar"]
+          {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            background-color: $color_white;
+            box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+
+            div
+            {
+              &[class*="react-calendar__month-view__weekdays__weekday"]
+              {
+                @include typographyBuilder(400, 12, 24);
+                text-align: center;
+                color: $color_black; 
+              }
+            }
+            
+            button
+            {
+              @include typographyBuilder(400, 12, 24);
+              margin: 0;
+              border: 0;
+              outline: none;
+              cursor: pointer;
+              padding: .75em .5em;
+              background-color: transparent;
+
+              &:disabled
+              {
+                opacity: .5;
+                pointer-events: none;
+              }
+
+              &[class="react-calendar__navigation__label"]
+              {
+                @include typographyBuilder(400, 14, 24);
+              }
+
+              &[class*="react-calendar__navigation__arrow"]
+              {
+                @include typographyBuilder(400, 24, 24);
+                padding: .75em .5em;
+              }
+
+              &[class*="react-calendar__tile--active"]
+              {
+                background: #006edc!important;
+                color: $color_white;
+              }
+ 
+              &[class*="react-calendar__month-view__days__day--weekend"]
+              {
+                color: #d10000;
+              }
+
+              &[class*="react-calendar__month-view__days__day--neighboringMonth"]
+              {
+                color: #757575;
+              }
+
+            }
+          }
+        }
+
+        &[class*="react-date-picker__calendar--closed"]
+        {
+          display: none;
+        }
+      }
+    }
+
+    & > div
+    {
+      position: relative;
+
+      &[class*="css-2b097c-container"]
+      {
+        border: 1px solid $color_light; 
+        border-radius: 2px;
+
+        div
+        {
+          &[class*="css-1pahdxg-control"],
+          &[class*="css-yk16xz-control"]
+          {
+            @include typographyBuilder(400, 16, 24);
+            color: $color_black;
+            padding: 12px 16px;
+            border: 0;
+            box-shadow: none;
+          }
+
+          &[class*="css-1hwfws3"]
+          {
+            padding: 0 !important;
+          }
+
+          &[class*="css-tlfecz-indicatorContainer"],
+          &[class*="css-1gtu0rj-indicatorContainer"]
+          {
+            padding: 0 0 0 8px;
+          }
+
+          &[class*="css-1okebmr-indicatorSeparator"]
+          {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    & > label
+    {
+      @extend .form_label;
+    }
+
+    & div > input,
+    & > select
+    {
+      @extend .form_inputLong;
+
+      &[type="password"]
+      {
+        color: $color_grey_light;
+      }
+
+      &[type="password"] ~ button,
+      &[type="text"] ~ button
+      {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0 17px;
+        height: 100%;
+        background-color: transparent;
+        border: transparent;
+
+        &:focus
+        {
+          outline: 0;
+        }
+      }
+    }
+
+    select
+    {
+      position: relative;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-position: right 20px top 50%;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%0A%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.99999 5.17198L11.95 0.221985L13.364 1.63598L6.99999 7.99998L0.635986 1.63598L2.04999 0.221985L6.99999 5.17198Z' fill='%23333333'/%3E%3C/svg%3E%0A");
+    }
+  }
+}

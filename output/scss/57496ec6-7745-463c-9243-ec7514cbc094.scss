@@ -1,0 +1,161 @@
+@use "utility/colours";
+@use "utility/breakpoints";
+
+// ----------------------------------------------
+// Media Query Mixins
+// ----------------------------------------------
+
+// Short height devices
+@mixin xsh {
+   @media (max-height: breakpoints.$maxh345) {
+       @content;
+   }
+}
+
+// Short height devices
+@mixin sh {
+   @media (max-height: breakpoints.$maxh480) {
+       @content;
+   }
+}
+
+// Medium height devices
+@mixin mh {
+   @media (max-height: breakpoints.$maxh767) {
+       @content;
+   }
+}
+
+// Extra small devices
+@mixin xs {
+   @media (min-width: breakpoints.$min288) {
+       @content;
+   }
+}
+
+// Smaller devices
+@mixin s {
+   @media (min-width: breakpoints.$min425) {
+       @content;
+   }
+}
+
+// Small devices
+@mixin sm {
+   @media (min-width: breakpoints.$min576) {
+       @content;
+   }
+}
+
+// Medium devices
+@mixin md {
+   @media (min-width: breakpoints.$min768) {
+       @content;
+   }
+}
+
+// Large devices
+@mixin lg {
+   @media (min-width: breakpoints.$min992) {
+       @content;
+   }
+}
+
+// Extra large devices
+@mixin xl {
+   @media (min-width: breakpoints.$min1200) {
+       @content;
+   }
+}
+
+// Extra Extra large devices
+@mixin xxl {
+   @media (min-width: breakpoints.$min1440) {
+       @content;
+   }
+}
+
+// ----------------------------------------------
+// Panel Element Mixins
+// ----------------------------------------------
+
+@mixin redborder {
+  border: 2px solid red;
+  border-radius: 15px;
+  box-shadow: 4px 4px 7px #400000;
+  background: white;
+}
+
+// ----------------------------------------------
+// Form Element Mixins
+// ----------------------------------------------
+
+@mixin inputstyle {
+  border: 2px solid red;
+  border-radius: 15px;
+  width: 100%;
+}
+
+@mixin inputformatting {
+  border: none;
+  padding: 10px 0.5rem 15px;
+  width: 99%;
+  margin: 0 -10px 5px -15px;
+  line-height: 1.25rem;
+  background: transparent;
+}
+
+@mixin inputfocus {
+  outline: none;
+}
+
+@mixin inputfont {
+  font-family: inherit;
+  font-size: 1.25rem;
+}
+
+// ----------------------------------------------
+// Header Section Mixins
+// ----------------------------------------------
+
+@mixin header-sectionstyle {
+  padding: 0 15px;
+  border-bottom: 2px solid red;
+}
+
+@mixin burgerstyle {
+  height: 6px;
+  width: 40px;
+  position: absolute;
+  border-radius: 3px;
+}
+
+@mixin burger-headerstyle {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+// ----------------------------------------------
+// Floating Element Mixin
+// ----------------------------------------------
+
+@mixin overlay {
+  background: colours.$background-overlay;
+  box-shadow: 0px 0px 5px colours.$dropshadow-overlay;
+  border-radius: 15px;
+}
+
+// ----------------------------------------------
+// IE Scrollbar Mixin
+// ----------------------------------------------
+
+@mixin ie-scrollbar {
+  scrollbar-base-color: white;
+  scrollbar-face-color: red;
+  scrollbar-3dlight-color: white;
+  scrollbar-highlight-color: white;
+  scrollbar-track-color: colours.$highlight;
+  scrollbar-arrow-color: red;
+  scrollbar-shadow-color: white;
+  scrollbar-dark-shadow-color: white;
+}

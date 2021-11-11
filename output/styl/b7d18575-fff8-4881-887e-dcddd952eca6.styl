@@ -1,0 +1,396 @@
+.detailed
+  padding 32px 0
+  width 100%
+  display flex
+  @media $lg-and-smaller
+    padding-top 0
+  @media $sm-and-smaller
+    flex-direction column-reverse
+  @media $xs-and-smaller
+    flex-direction column
+    padding-bottom 0
+  &__slider
+    position relative
+  &__nav
+    width 72px
+    //max-height: 440px;
+    //overflow: hidden;
+    @media $xl-and-smaller
+      width: 55px
+    @media $lg-and-smaller
+      width: 72px
+    @media $md-and-smaller
+      width: 55px
+    @media $sm-and-smaller
+      width 100%
+    @media $xs-and-smaller
+      display none
+  &__slider
+    width calc(100% - 72px)
+    padding-left 20px
+    @media $xl-and-smaller
+      width calc(100% - 55px)
+    @media $lg-and-smaller
+      width calc(100% - 72px)
+    @media $md-and-smaller
+      width calc(100% - 55px)
+    @media $sm-and-smaller
+      width 100%
+      padding-left 0
+    @media $xs-and-smaller
+      background white
+      .swiper-container
+        padding-bottom 40px
+  &__list
+    width 100%
+    display flex
+    flex-direction column
+    justify-content flex-start
+    align-items center
+    @media $sm-and-smaller
+      padding-top 20px
+      flex-direction row
+      justify-content space-between
+      align-items flex-start
+  &__item
+    margin-bottom 10px
+  &__btn
+    opacity .5
+    overflow hidden
+    padding 0
+    display flex
+    justify-content center
+    align-items center
+    size(100%, 72px)
+    border-radius 8px
+    background none
+    border none
+    transition()
+    position relative
+    @media $xl-and-smaller
+      height 55px
+    @media $lg-and-smaller
+      height 72px
+    @media $md-and-smaller
+      height 55px
+    @media $sm-and-smaller
+      size(65px)
+    @media $xs-and-smaller
+      width calc(100% - 5px)
+      height 40px
+    &::before
+      opacity 0
+      content ""
+      position absolute
+      top 0
+      left 0
+      size(100%)
+      border 4px solid accentColor
+      border-radius 8px
+      transition()
+  &-slide
+    width: 100%
+    &__image
+      width: 100%
+      display block
+    &__img
+      width 100%
+  .detailed-info.mobile
+    background white
+    @media $xs-and-smaller
+      display block
+  &-info
+    width 100%
+    background white
+    box-shadow 0 6px 12px rgba(180, 185, 200, 0.05)
+    border-radius 8px
+    @media $xs-and-smaller
+      display none
+    &--wrap
+      width 100%
+      padding 32px 0
+    &__head
+      width: 100%
+      padding 20px
+      display flex
+      justify-content space-between
+      align-items center
+      @media $xl-and-smaller
+        flex-direction column
+      @media $lg-and-smaller
+        flex-direction row
+      @media $xs-and-smaller
+        flex-direction row
+        flex-wrap wrap
+        padding-top 10px
+        background transparent
+        margin-top: -30px
+    &__main
+      width 100%
+      padding 20px 20px 32px
+      border-top 1px solid rgba(0,0,0,.1)
+      border-bottom 1px solid rgba(0,0,0,.1)
+      @media $xs-and-smaller
+        border-top none
+        border-bottom none
+        padding 0 20px 32px
+        display flex
+        flex-direction column
+    &__foot
+      width 100%
+      display flex
+      padding 37px 20px 40px
+    &__btn
+      display flex
+      justify-content flex-start
+      align-items center
+      @media $xs-and-smaller
+        padding-top 10px
+    &__sale
+      @extend .product__sale
+    &__new
+      @extend .product__new
+    &__last
+      @extend .product__new
+      background-color #E5E5E5
+      color blackText
+    &__see
+      display flex
+      justify-content flex-end
+      align-items center
+      @media $xl-and-smaller
+        width 100%
+        padding-top 10px
+      @media $lg-and-smaller
+        padding-top 0
+        width max-content
+      @media $xs-and-smaller
+        padding-top 10px
+    &__num
+      width 100%
+      display flex
+      justify-content space-between
+      align-items center
+      @media $xs-and-smaller
+        order 4
+      .text_14
+        color blackText
+        opacity .5
+    &__price
+      padding 32px 0
+      width 100%
+      display flex
+      justify-content space-between
+      align-items center
+      @media $xs-and-smaller
+        padding 24px 0
+      @media $xxs-and-smaller
+        flex-direction column
+        order 1
+      &--old
+        color #B7BABD
+        text-transform uppercase
+        text-decoration line-through
+        font-weight 600
+      &--sale
+        color #219653
+        text-transform uppercase
+        font-weight 600
+      .title_32
+        font-weight bold
+        text-transform uppercase
+    &__fix
+      display flex
+      justify-content flex-end
+      align-items flex-start
+    &__item
+      margin-right 20px
+      display flex
+      flex-direction column
+      justify-content flex-start
+      align-items center
+      @media $xl-and-smaller
+        margin-right 5px
+      @media $lg-and-smaller
+        margin-right 20px
+      @media $xs-and-smaller
+        margin-right 5px
+    &__sub
+      color blackText
+    &__col
+      padding-bottom 24px
+      width 100%
+      display flex
+      justify-content flex-start
+      align-items center
+      @media $xs-and-smaller
+        order 2
+      span
+        color rgba(0,0,0,.5)
+        font-weight bold
+        margin-right 15px
+      p
+        font-weight bold
+        b
+          margin-left 5px
+          color accentColor
+    &__order
+      width 100%
+      display flex
+      justify-content flex-start
+      align-items center
+      @media $xs-and-smaller
+        order 3
+        padding-bottom 24px
+      .btn_global
+        margin-right 10px
+        svg
+          margin-right 10px
+          size(20px)
+          fill white
+          @media $xs-and-smaller
+            display none
+    &__user
+      padding-left 20px
+    &__logo
+      size(38px)
+      min-height 38px
+      min-width 38px
+      display block
+      border-radius 50%
+    &__stars
+      padding 10px 0
+      display flex
+      b
+        margin-left 10px
+    &__review
+      a
+        transition()
+        text-decoration underline
+        &:hover
+          color accentColor
+  &__mobile
+    display none
+    width 100%
+    @media $xs-and-smaller
+      display block
+      background white
+
+.detailed-sm
+  &__image
+    size(100%)
+    display block
+  &__img
+    size(100%)
+    object-fit cover
+    object-position center center
+
+.slide--active
+  opacity 1
+  &::before
+    opacity 1
+.swiper-slide-active
+  .detailed__btn
+    opacity 1
+    &::before
+      opacity 1
+
+.description
+  width 100%
+  padding 32px 116px 15px
+  background-color white
+  box-shadow 0 6px 12px rgba(180, 185, 200, 0.05)
+  border-radius 8px
+  @media $md-and-smaller
+    padding 32px 32px 15px
+  @media $xs-and-smaller
+    padding 32px 0 15px
+    border-top 1px solid rgba(0,0,0,.1)
+    box-shadow none
+  &--wrap
+    padding-bottom 40px
+    width 100%
+    @media $xs-and-smaller
+      padding-bottom 0
+  &__title
+    padding-bottom 25px
+    @media $xs-and-smaller
+      padding 0 20px 25px
+  &__list:not(:last-child)
+    border-bottom 1px solid rgba(0,0,0,.1)
+  &__list
+    width 100%
+    margin-bottom 15px
+    line-height 1.8
+  &__item
+    padding-bottom 15px
+    width 100%
+    display flex
+    flex-wrap wrap
+    @media $xs-and-smaller
+      padding 0 20px 15px
+  &__key
+    width 40%
+    font-weight 600
+    @media $xs-and-smaller
+      width 100%
+      padding-bottom 10px
+  &__value
+    width 60%
+    @media $xs-and-smaller
+      width 100%
+
+.detailed-page
+  .swiper-pagination
+    display none
+  .detailed-info__review.text_14
+    margin-top: 8px;
+  @media $xs-and-smaller
+    padding-left 0
+    padding-right 0
+    .swiper-pagination
+      display block
+    .btn_slider
+      display none
+.detailed__slider .swiper-pagination.swiper-pagination-bullets
+  bottom 10px
+  left 0
+  width 100%
+.detailed-page .swiper-pagination-bullet
+  size(10px)
+  opacity 1
+  transition()
+  margin: 0 4px
+  background #BDBDBD
+  &:hover
+    opacity .5
+.detailed-page .swiper-pagination-bullet-active
+  background black
+  &:hover
+    opacity 1
+.detailed--aside
+  position: relative
+  height: 100%
+  @media $lg-and-smaller
+    position static
+.detailed-info--wrap
+  position: absolute
+  @media $lg-and-smaller
+    position static
+.description
+  @media $lg-and-smaller
+    span
+      font-size: 16px
+    p
+      font-size: 16px
+.fix_aside.fixed-nav
+  position: fixed
+  width: 30%
+  max-width: 443px
+  top: 0
+.fix_aside.fixed-nav.fixed-nav-low
+  position: absolute
+  bottom: 0
+  width: 100%
+  top: auto
+  padding-bottom: 0

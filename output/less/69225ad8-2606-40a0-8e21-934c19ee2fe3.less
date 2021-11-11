@@ -1,0 +1,307 @@
+@import (reference) 'reference'; // 'placeholder class' emulation: https://gist.github.com/robinpokorny/8565404
+
+.page-layout:extend(.x-grid) {
+  height: 100vh;
+  grid-template-columns: 240px 1fr auto;
+  grid-template-rows: 57px auto 48px;
+  grid-template-areas:
+        ". . ."
+        "aside main trailing"
+        ". . .";
+  .addTheme(light, @backgroundColorLight, @contentColorLight);
+  //&_theme_light {
+  //  color: @contentColorLight;
+  //  background-color: @backgroundColorLight;
+  //}
+  .addTheme(dark, @backgroundColorDark, @contentColorDark);
+  //&_theme_dark {
+  //  color: @contentColorDark;
+  //  background-color: @backgroundColorDark;
+  //}
+  &__header:extend(.x-flex) {
+    grid-column-end: span 3;
+    .addAllThemesNew(@backgroundColors: @headerColorLight @headerColorDark, @colors: @nameColorLight @nameColorDark);
+    //&_theme_light {
+    //  color: @nameColorLight;
+    //  background-color: @headerColorLight;
+    //}
+    //&_theme_dark {
+    //  color: @nameColorDark;
+    //  background-color: @headerColorDark;
+    //}
+    &:hover~.page-layout__main {
+      .product-tile:not(:hover) {
+        transition-duration: 0s;
+      }
+    }
+  }
+  &__navigation {
+    align-self: flex-end;
+    display: flex;
+  }
+  &__nav-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 3px 0;
+    width: 300px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+  &__nav-item {
+    padding-right: @spacer - 2px;
+  }
+  &__filter-switch {
+    visibility: hidden;
+  }
+  &__main:extend(.x-flex-column) {
+    grid-area: main;
+    flex: none;
+  }
+  &__aside:extend(.x-flex-column) {
+    grid-area: aside;
+    &_closed {
+      display: none;
+    }
+  }
+  &__trailing {
+    grid-area: trailing;
+  }
+  &__footer:extend(.x-flex) {
+    grid-column-end: span 3;
+    .addTheme(light, @paneColorLight);
+    //&_theme_light {
+    //  background-color: @paneColorLight;
+    //}
+    .addTheme(dark, @paneColorDark);
+    //&_theme_dark {
+    //  background-color: @paneColorDark;
+    //}
+  }
+  @media @maxAux {
+    &__nav-items {
+      width: 140px;
+      flex-direction: column;
+      font-size: 14px;
+    }
+    &__trailing {
+      min-width: @halfSpacer;
+    }
+  }
+  @media @maxPhone {
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: 57px auto auto 48px;
+    grid-template-areas:
+      ". . ."
+      "main main trailing"
+      "aside aside trailing"
+      ". . .";
+    &__main,
+    &__aside {
+      margin-left: @halfSpacer;
+    }
+    &__filter-switch {
+      visibility: visible;
+    }
+    &__trailing {
+      min-width: 0;
+    }
+  }
+  @media @minmaxLsPad {
+    &__trailing {
+      min-width: 5vw;
+      max-width: 5vw;
+    }
+  }
+  @media @minDesktop  {
+    &__main {
+      min-width: 712px;
+      max-width: 712px;
+    }
+  }
+}
+
+.categories {
+  &__items:extend(.x-grid) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__item:extend(.x-flex-column) {
+    padding: @spacer 0;
+    margin-top: 32px;
+    font-size: 16px;
+    .addAllThemes(@paneColorLight @paneColorDark);
+    //&_theme_light {
+    //  background-color: @paneColorLight;
+    //}
+    //&_theme_dark {
+    //  background-color: @paneColorDark;
+    //}
+  }
+}
+
+.products {
+  &__tiles:extend(.x-grid) {
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: @spacer;
+    @media @minmaxPrPad {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.product-tile {
+  display: flex;
+  padding: @spacer;
+  transition-property: background-color;
+  &:hover {
+    transition-duration: 400ms;
+    transition-timing-function: ease-in-out;
+  }
+  &:not(:hover) {
+    transition-duration: 1200ms;
+    transition-timing-function: ease-in;
+  }
+  .addAllThemesNew(@backgroundColors: @paneColorLight @paneColorDark, @hovers: @paneHoverColorLight @paneHoverColorDark);
+  //  &_theme_light {
+  //  background-color: @paneColorLight;
+  //  &:hover {
+  //    background-color: @paneHoverColorLight;
+  //  }
+  //}
+  //&_theme_dark {
+  //  background-color: @paneColorDark;
+  //  &:hover {
+  //    background-color: @paneHoverColorDark;
+  //  }
+  //}
+  &__buttons:extend(.x-flex-column) {
+    min-width: 76px;
+    height: 60px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: @shortSpacer;
+  }
+  &__button {
+    margin-left: @spacer;
+    .addAllThemes(@backgroundColors: none, @buttonColorDark; @colors: none, @contentColorDark)
+    //&_theme_light {
+    //}
+    //&_theme_dark {
+    //  color: @contentColorDark;
+    //  background-color: @buttonColorDark;
+    //}
+  }
+  @media @maxAux {
+    padding: @halfSpacer + 1px;
+    &__buttons {
+      margin-left: 0;
+    }
+  }
+}
+
+.product-filter {
+  width: 100%;
+  height: 100%;
+  padding: @spacer 0;
+  .addThemesRuleset(@paneColorLight @paneColorDark);
+  //&_theme_light {
+  //  background-color: @paneColorLight;
+  //}
+  //&_theme_dark {
+  //  background-color: @paneColorDark;
+  //}
+  &__type-block {
+    border: 0;
+  }
+  &__block-title {
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  @media @maxPhone {
+    display: flex;
+    justify-content: space-between;
+    &__type-block {
+      padding: 0 @doubleSpacer;
+    }
+  }
+}
+
+body,
+html {
+  font-family: "Open Sans", "Arial", sans-serif;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+h1:extend(.x-h) {
+  margin: 0;
+  @media @maxAux {
+    font-size: 20px;
+  }
+}
+
+h2:extend(.x-h) {
+  margin: 14px 0 0 0;
+  font-size: 32px;
+}
+
+h3:extend(.x-h) {
+  padding-top: 24px;
+}
+
+p:extend(.x-padded) {
+  margin: 0;
+}
+
+a {
+  &:extend(.x-padded);
+}
+
+.a {
+  .addAllThemes(@colors: @linkColorLight @linkColorDark);
+  //&_theme_light {
+  //  color: @linkColorLight;
+  //}
+  //&_theme_dark {
+  //  color: @linkColorDark;
+  //}
+}
+
+#loader {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 10%;
+  right: 2%;
+  padding: 15.5px;
+  z-index: 99;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 32px;
+  box-shadow: 0 8px 24px rgba(140,149,159,0.2);
+  box-sizing: border-box;
+  display: block;
+}
+
+.anim-rotate {
+  box-sizing: content-box;
+  color: #218bff;
+
+  animation-name: rotate;
+  animation-duration: 1200ms;
+  animation-iteration-count: 10;
+  animation-direction: normal;
+  //animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.85, 0.35, 0.13, 0.66);
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

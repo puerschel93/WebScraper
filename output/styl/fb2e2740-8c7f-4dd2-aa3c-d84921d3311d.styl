@@ -1,0 +1,500 @@
+.rt-button
+  display inline-block
+  height 52px
+  box-sizing border-box
+  font-size 16px
+  text-align center
+  text-transform none
+  border-radius 4px
+  margin 0
+  padding-left 28px
+  padding-right 28px
+  cursor pointer
+  transition-timing-function ease-in-out
+  transition-duration .4s
+  transition-property background-color, border, text-shadow, color, opacity
+
+  .ripple
+    padding-left 28px
+    padding-right 28px
+
+  &[disabled]
+    cursor default
+  .rt-n-banner &
+    @media (max-width tablet-upper-limit)
+      height 36px
+      font-size 14px
+      .ripple
+        padding 0 20px !important
+
+.rt-button + .rt-button
+  margin-left horizontal-space
+
+.rt-button-vertical
+    display table
+    & + &
+      margin-top vertical-space
+      margin-left 0
+
+.rt-button--is-fitched
+  color transparent !important
+
+.rt-button--is-block
+  display block
+  min-width 100%
+
+.rt-button-td--is-block
+  @media (max-width tablet-upper-limit)
+    display block
+    min-width 100%
+
+.rt-button-md--is-block
+  @media (max-width mobile-upper-limit)
+    display block
+    min-width 100%
+
+.ripple-wave
+  background-color default-wive-color
+
+.rt-button-with-ripple
+  overflow hidden
+  padding-left 0
+  padding-right 0
+
+.rt-button-small
+  height 36px
+  font-size 14px
+
+  .ripple
+    padding 0 20px !important
+
+.rt-button-td-small
+  @media (max-width tablet-upper-limit)
+    height 36px
+    font-size 14px
+    .ripple
+      padding 0 20px
+
+.rt-button-md-small
+  @media (max-width mobile-upper-limit)
+    height 36px
+    font-size 14px
+    .ripple
+      padding 0 20px
+
+  &:before
+    display none
+    opacity 0
+
+.rt-button-orange
+  color #fff
+  background-color b2c-orange
+
+  &:hover
+    @media (hover hover)
+      background-color b2c-orange-button-hover
+  &:focus
+    background-color b2c-orange-button-hover
+  &:active
+    background-color b2c-orange-button-active
+
+  &[disabled]
+    color main-color05
+    background-color main-color005
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      color b2c-white05
+      background-color b2c-white005
+
+  .ripple-wave
+    background-color b2c-white
+
+.rt-button-gray
+  background-color transparent
+  border 2px solid main-color003-no-opacity
+  color main-color
+  .rt-dark-theme &,
+  &.rt-button-bright
+    color b2c-white
+  &:hover
+    @media (hover hover)
+      background-color main-color005
+
+      .rt-dark-theme &,
+      &.rt-button-bright
+        background-color hsl(rgba(b2c-white, .05))
+  &:focus
+    background-color main-color005
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color hsl(rgba(b2c-white, .05))
+
+  &:active
+    background-color main-color01
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color hsl(rgba(b2c-white, .1))
+
+  &[disabled]
+    color main-color05
+    border-color hsl(rgba(main-color, .1))
+
+    &:hover
+      @media (hover hover)
+        background-color transparent
+    &:focus
+      background-color transparent
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      color b2c-white05
+      background-color transparent
+      border-color b2c-white01
+
+      &:hover
+        @media (hover hover)
+          background-color transparent
+      &:focus
+        background-color transparent
+
+  .ripple-wave
+    background-color main-color05
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color hsl(rgba(b2c-white, .5))
+
+.rt-button-white
+  background-color transparent
+  border 2px solid main-color003-no-opacity
+  color b2c-white
+  &:hover
+    @media (hover hover)
+      background-color hsl(rgba(b2c-white, .05))
+  &:focus
+    background-color hsl(rgba(b2c-white, .05))
+  &:active
+    background-color hsl(rgba(b2c-white, .1))
+
+  &[disabled]
+    color b2c-white05
+    background-color transparent
+    border-color b2c-white01
+
+    &:hover
+      @media (hover hover)
+        background-color transparent
+    &:focus
+      background-color transparent
+
+  .ripple-wave
+    background-color hsl(rgba(b2c-white, .5))
+
+
+.rt-button-orange-border
+  border 2px solid b2c-orange
+  color main-color
+  .rt-dark-theme &,
+  &.rt-button-bright
+    color b2c-white
+  &:hover
+    @media (hover hover)
+      background-color rgba(b2c-orange, .05)
+
+      .rt-dark-theme &,
+      &.rt-button-bright
+        background-color rgba(b2c-orange, .2)
+  &:focus
+    background-color rgba(b2c-orange, .05)
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color rgba(b2c-orange, .2)
+  &:active
+    background-color rgba(b2c-orange, .1)
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color rgba(b2c-orange, .4)
+
+  &[disabled]
+    color main-color05
+    background-color transparent
+    border-color main-color01
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      color b2c-white05
+      background-color transparent
+      border-color b2c-white01
+
+  .ripple-wave
+    background-color b2c-orange-low
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color main-color
+
+.rt-button-white
+  border 2px solid white
+
+  &:hover
+    @media (hover hover)
+      background-color b2c-cool-grey05
+      opacity .7
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color b2c-white01
+  &:focus
+    background-color b2c-cool-grey05
+    opacity .7
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color b2c-white01
+  &:active
+    background-color transparent
+
+  &[disabled]
+    color main-color05
+    background-color transparent
+    opacity 1
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      color b2c-white05
+      background-color transparent
+      border-color b2c-white01
+
+    &:hover
+      @media (hover hover)
+        background-color transparent
+    &:focus
+      background-color transparent
+    .ripple-wave
+      background-color b2c-cool-grey
+
+
+.rt-button-full-white
+  color main-color
+  background-color white
+
+  .ripple-wave
+    background-color b2c-white
+
+  &:hover
+    @media (hover hover)
+      background-color hsl(rgba(main-color, .05))
+      .rt-dark-theme &,
+      &.rt-button-bright
+        background-color main-color003-no-opacity
+  &:focus
+    background-color hsl(rgba(main-color, .05))
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color main-color003-no-opacity
+
+  &:active
+    background-color hsl(rgba(main-color, .1))
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color main-color03-no-opacity
+
+  &[disabled]
+    color b2c-white05
+    background-color b2c-white005
+
+    &:hover
+      @media (hover hover)
+        background-color b2c-white005
+
+.rt-button-purple
+  color #fff
+  background-color b2c-purple
+
+  &:hover
+    @media (hover hover)
+      background-color b2c-purple-button-hover
+  &:focus
+    background-color b2c-purple-button-hover
+
+  &:active
+    background-color b2c-purple-button-active
+
+  &[disabled]
+    color main-color05
+    background-color main-color005
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      color b2c-white05
+      background-color b2c-white005
+
+  .ripple-wave
+    background-color b2c-white
+
+.rt-button-purple-border
+  color main-color
+  background-color transparent
+  border 2px solid b2c-purple
+  .rt-dark-theme &
+  &.rt-button-bright
+    color b2c-white
+
+
+.rt-button-purple-border,
+.rt-button-transparent-purple
+  &:hover
+    @media (hover hover)
+      background-color hsl(rgba(b2c-purple, .05))
+
+      .rt-dark-theme &,
+      &.rt-button-bright
+        background-color hsl(rgba(b2c-purple, .2))
+  &:focus
+    background-color hsl(rgba(b2c-purple, .05))
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color hsl(rgba(b2c-purple, .2))
+
+  &:active
+    background-color hsl(rgba(b2c-purple, .1))
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color hsl(rgba(b2c-purple, .4))
+
+  .ripple-wave
+    background-color b2c-purple-low
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color main-color
+
+  &[disabled]
+    color main-color05
+    background-color transparent
+    border-color main-color01
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      color b2c-white05
+      border-color b2c-white01
+      @media (hover hover)
+        &:hover
+          background-color transparent
+      &:focus
+        background-color transparent
+
+.rt-button-transparent
+  border 2px solid transparent
+  background-color: transparent
+  color main-color
+  .rt-dark-theme &,
+  &.rt-button-bright
+    color b2c-white
+  &:hover
+    @media (hover hover)
+      background-color hsl(rgba(main-color, .05))
+
+      .rt-dark-theme &,
+      &.rt-button-bright
+        background-color hsl(rgba(b2c-white, .05))
+  &:focus
+    background-color hsl(rgba(main-color, .05))
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color hsl(rgba(b2c-white, .05))
+
+  &:active
+    background-color hsl(rgba(main-color, .1))
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      background-color hsl(rgba(b2c-white, .1))
+  .ripple-wave
+    background-color hsl(rgba(main-color, .8))
+  &[disabled]
+    color hsl(rgba(main-color, .5))
+    background-color transparent
+
+    &:hover
+      @media (hover hover)
+        background-color transparent
+    &:focus
+      background-color transparent
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      color hsl(rgba(b2c-white, .4))
+
+    .ripple-wave
+      background-color b2c-cool-grey
+
+.rt-button--as-tag
+  width auto
+  min-width auto
+  height auto
+  color white
+  font-size 12px
+  background-color b2c-purple-high
+  border-radius 10px
+  padding-top 3px
+  padding-bottom 3px
+  padding-left 10px
+  padding-right 10px
+
+  .ripple
+    width auto
+    padding 0
+
+.rt-button--td-as-text
+  @media (max-width tablet-upper-limit)
+    color b2c-purple-high
+    background-color transparent
+    padding 0
+
+.rt-button-cool-grey-border
+  border 2px solid b2c-cool-grey
+
+  &:hover
+    @media (hover hover)
+      background-color b2c-cool-grey05
+      opacity .7
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      @media (hover hover)
+        background-color b2c-white01
+  &:focus
+    background-color b2c-cool-grey05
+    opacity .7
+
+    .rt-dark-theme &,
+    &.rt-button-bright
+      @media (hover hover)
+        background-color b2c-white01
+
+.rt-button-transparent-purple
+  color b2c-purple
+
+.fake-radiobutton-for-button
+  display none
+
+.original-text
+  display inline
+
+.checked-text
+  display none
+
+.rt-button__icon
+  width 22px
+
+.rt-button-black
+  background-color: #000

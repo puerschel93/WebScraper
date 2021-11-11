@@ -1,0 +1,113 @@
+.header
+  transition: all 0.7s
+  background-image: url('../images/bg320.png')
+  background-repeat: no-repeat
+  background-position: center
+
+  +above($breakpoints.sm)
+    background-image: url('../images/bg768.png')
+    background-repeat: no-repeat
+    background-position: center
+
+  +above($breakpoints.md)
+    background-image: url('../images/bg.png')
+    background-position: center bottom
+    background-size: cover
+
+  &__layout
+    height: 100%
+    width: 100%
+    background-color: rgba(31, 32, 33, 0.79)
+    padding-bottom: 35px
+
+    +above($breakpoints.md)
+      padding: 19px 0px 65px 0px
+
+  &__inner
+    display: flex
+    justify-content: space-between
+    padding-top: 20px
+
+    +above($breakpoints.md)
+      padding-bottom: 39px
+
+  &__conteiner
+    display: flex
+
+  &__logo
+    margin-right: 90px
+    padding-left: 2px
+
+  &__contacts
+    display: none
+
+    +above($breakpoints.md)
+      display: block
+      padding-top: 10px
+
+  &__contacts-number
+    font-size: 18px
+    line-height: 22px
+    color: $color-white
+
+    +above($breakpoints.lg)
+      font-weight: bold
+      font-size: 24px
+      line-height: 29px
+      letter-spacing: 0.4px
+
+  &__contacts-description
+    font-size: 18px
+    line-height: 22px
+    text-align: right 
+    color: $color-white
+    padding-top: 2px
+
+  &__title-description
+    font-weight: bold
+    font-size: 20px
+    line-height: 25px
+    color: $color-white
+    letter-spacing: 1px
+
+    +above($breakpoints.md)
+      font-weight: bold
+      font-size: 38px
+      line-height: 46px
+      color: $color-white
+      letter-spacing: 1px
+
+.menu
+  display: none
+
+  +above($breakpoints.md)
+    display: block
+
+  &__list
+    display: flex
+
+  &__item
+    position: relative
+    font-size: 18px
+    line-height: 22px
+    color: $color-white
+    padding: 13px 20px
+    border-radius: 20px
+    transition: all 0.4s
+    top: 0
+    &:hover
+      box-shadow: 0px 0px 0px 2px rgba(93, 208, 246, 1)
+      -moz-box-shadow: 0px 0px 0px 2px rgba(93, 208, 246, 1)
+      -webkit-box-shadow: 0px 0px 0px 2px rgba(93, 208, 246, 1)
+    &:active
+      top: 2px
+      box-shadow:
+        0 0 1px rgba(0,0,0,.5) inset,
+        0 2px 3px rgba(0,0,0,.5) inset,
+        0 1px 1px rgba(255,255,255,.1)
+
+    +above($breakpoints.lg)
+      font-size: 18px
+      line-height: 22px
+      color: $color-white
+      padding: 13px 31px

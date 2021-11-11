@@ -1,0 +1,79 @@
+@keyframes dishAppear {
+    0% {
+        transform: translateY(10rem);
+        opacity: 0%;
+    }
+    25%{
+        opacity: 5%;
+    }
+    100% {
+        transform: translateY(0rem);
+        opacity: 100%;
+    }
+}
+
+@keyframes checked {
+    0% {
+        transform: rotateZ(100deg) scale(1.6);
+    }
+    50% {
+        transform: rotateZ(-30deg) scale(1.6)
+    }
+    100% {
+        transform: rotateZ(0deg) scale(1.6);
+    }
+}
+
+.menu__dish, .restaurant__card{
+    animation: dishAppear .6s;
+    animation-timing-function: cubic-bezier(0,1.1,.68,1.04);
+    animation-fill-mode: both;
+    transform: scale(0);
+}
+
+@each $delay in $animation-delay {
+    .delay-#{$delay} {
+        animation-delay: $delay;
+    }
+}
+
+
+.menu__dish {
+    &__selected {
+        background-color: $color-tertiary;
+        width: 0;
+        margin-top: -0.5rem;
+        margin-right: -1rem;
+        margin-left: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: width 0.4s ease-in-out;
+        &__icon {
+            transform: scale(1.6);
+            filter: invert(1);
+        }
+    }
+    input:checked ~ &__selected {
+        width: 5rem;
+        i {
+            transform: scale(1.6);
+            animation: checked 1s ease-in-out;
+        }
+    }
+}
+
+.menu__header__logo {
+    &--filled {
+        background: linear-gradient($color-secondary, $color-primary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0;
+        &:hover {
+            opacity: 100%;
+            transform: scale(2.3);
+            transition: all .3s ease-in-out;
+        }
+    }
+}

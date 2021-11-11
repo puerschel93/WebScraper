@@ -1,0 +1,388 @@
+.header
+	position relative
+	height 100vh
+	min-height 667px
+	background-size cover
+	background-repeat no-repeat
+	background-position: center 0
+	@media screen and (max-width: 1023px)
+		background-position: top right
+	@media screen and (max-width: 600px)
+		background-position: center
+.top-line__light
+	background: cBlueLight
+	@media screen and (max-width: 600px)
+		min-height 667px
+		background: cBlueDark
+.top-line
+	position relative
+	height 80px
+	background: rgba(255, 255, 255, 0.7)
+	z-index 10
+	padding-left 20px
+	padding-right 20px
+	@media screen and (max-width: 600px)
+		position absolute
+		width 100%
+		background none
+		height auto
+	@media screen and (max-width: 320px)
+		padding-left 0
+		padding-right 0
+	.flex-wrapper
+		display flex
+		justify-content space-between
+		align-items center
+		height 80px
+		@media screen and (max-width: 600px)
+			flex-direction column
+			flex-direction column-reverse
+			height auto
+			padding-top 80px
+	&.is-active
+		.logo-top__svg
+			@media screen and (max-width: 600px)
+				fill cBlueDark
+		.logo-top__name
+			@media screen and (max-width: 600px)
+				c cBlueDark
+
+.logo-top
+	margin-top 4px
+	@media screen and (max-width: 1023px)
+		position relative
+		z-index 10
+	@media screen and (max-width: 600px)
+		text-align center
+	&__link
+		display inline-block
+		text-decoration none
+		font-family: fPoppinsBold
+		font-size 21px
+		height 37px
+		width 300px
+		img
+			display block
+		@media screen and (max-width: 1200px)
+			width 100%
+		@media screen and (max-width: 600px)
+			display block
+	&__svg
+		width 320px
+		height 40px
+		fill cBlueDark
+		margin-right 14px
+		@media screen and (max-width: 1300px)
+			width 290px
+		@media screen and (max-width: 1200px)
+			width 250px
+		@media screen and (max-width: 600px)
+			display none
+			fill cWhite
+			margin-right 0
+			width 50px
+			height 50px
+		&.logo-small
+			display none
+			@media screen and (max-width: 600px)
+				display block
+	&__name
+		display inline-block
+		font-family: JournalSansNew
+		font-size 20px
+		vertical-align top
+		margin-top 6px
+		color cBlueDark
+		@media screen and (max-width: 600px)
+			display block
+			font-size 32px
+			c cWhite
+
+.soc-wrapper
+	display flex
+	flex-direction row
+	align-items center
+	.button
+		@media screen and (max-width: 600px)
+			display none
+
+.social-top
+	margin-right 30px
+	padding-top 2px
+	@media screen and (max-width: 1165px)
+		margin-right 20px
+	@media screen and (max-width: 600px)
+		display none
+	&__li
+		display inline-block
+	&__li:not(:last-child)
+		margin-right 10px
+		@media screen and (max-width: 1165px)
+			margin-right 5px
+	&__link
+		display inline-block
+		svg
+			width 28px
+			height 28px
+			fill cBlueDark
+
+.menu-header
+	&.is-active
+		visibility visible
+		opacity 1
+		transition all .25s ease-out
+	@media screen and (max-width: 1023px)
+		position fixed
+		top 0
+		left 0
+		display flex
+		align-items center
+		justify-content center
+		width 100%
+		height 100%
+		background cBlueLight
+		visibility hidden
+		opacity 0
+	@media screen and (max-width: 600px)
+		padding-top 260px
+		align-items baseline
+		
+	.nav-top
+		&__list
+			text-align right
+			@media screen and (max-width: 1023px)
+				text-align center
+		&__list-li
+			position relative
+			display inline-block
+			&:not(:last-child)
+				margin-right 14px
+				@media screen and (max-width: 1160px)
+					margin-right 8px
+				@media screen and (max-width: 1023px)
+					margin-right 0
+					display block
+					margin-bottom 20px
+			a
+				color: cBlueDark
+				font-size 15px
+				font-family: JournalSansNew-Display
+				text-transform uppercase
+				text-decoration none
+				ls(2.5px)
+				@media screen and (max-width: 1300px)
+					ls(.5px)
+				@media screen and (max-width: 1140px)
+					font-size 13px
+				@media screen and (max-width: 1023px)
+					font-size 18px
+			.sub-menu
+				position absolute
+				left -10px
+				top calc(100% + 20px)
+				min-width 140px
+				padding-top 34px
+				opacity 0
+				visibility hidden
+				trn(.25s)
+				@media screen and (max-width: 600px)
+					position relative
+					left 0
+					padding-top 12px
+					visibility visible
+					opacity 1
+				&__list
+					width 100%
+					text-align center
+				&__li
+					display block
+					background rgba(255, 255, 255, 0.7)
+					padding 4px 15px
+					margin-bottom 4px
+					trn(.25s)
+					@media screen and (max-width: 600px)
+						background none
+				&__link
+					trn(.25s)
+					@media screen and (max-width: 600px)
+						font-size 14px
+			&:hover
+				.sub-menu
+					top 100%
+					visibility visible
+					opacity 1
+					&__li:hover
+						background: cBlueDark
+						.sub-menu__link
+							color cWhite
+
+.top-line__white
+	display flex
+	flex-direction column
+	flex-basis 850px
+	min-height 850px
+	@media screen and (max-width: 600px)
+		min-height 667px
+	.top-line
+		background none
+		.nav-top
+			&__list
+				a
+					c cWhite
+		&.is-active
+			.nav-top
+				&__list
+					a
+						c cBlueDark
+			.logo-top
+				&__svg
+					fill cBlueDark
+				&__name
+					c cBlueDark
+	.logo-top
+		&__svg
+			fill cWhite
+		&__name
+			c cWhite
+	.social-top
+		&__link
+			svg
+				fill cWhite
+	.burger-menu
+		span
+			background: cWhite
+
+.burger-menu
+	position relative
+	display none
+	cursor pointer
+	width 30px
+	margin-left 30px
+	outline none
+	&.is-active
+		@media screen and (max-width: 600px)
+			margin-bottom 30px
+		span
+			background: cBlueDark
+	@media screen and (max-width: 1023px)
+		display block
+		z-index 10
+	@media screen and (max-width: 600px)
+		margin-left 0
+		margin-bottom 100px
+	span
+		display block
+		height 3px
+		width 30px
+		margin-bottom 5px
+		background: cBlueDark
+		@media screen and (max-width: 600px)
+			background: cWhite
+		&:last-child
+			margin-bottom 0
+
+.header-content
+	height calc(100% - 80px)
+	padding-bottom 100px
+	@media screen and (max-width: 600px)
+		height 100%
+	.flex-wrapper
+		position relative
+		height 100%
+		display flex
+		flex-direction column
+		align-items center
+		justify-content center
+		@media screen and (max-width: 600px)
+			justify-content flex-end
+			padding-left 0
+			padding-right 0
+	.section-choice
+		display none
+		@media screen and (max-width: 600px)
+			display block
+	&__heading
+		font-family: JournalSansNew-Bold
+		font-size 44px
+		line-height 64px
+		letter-spacing 2px
+		c cWhite
+		text-align center
+		@media screen and (max-width: 900px)
+			font-size 36px
+		@media screen and (max-width: 768px)
+			font-size 32px
+			lh(54px)
+		@media screen and (max-width: 720px)
+			font-size 26px
+			lh(44px)
+		@media screen and (max-width: 600px)
+			display none
+	&__link-join
+		position absolute
+		bottom 0
+		left 50%
+		width 100%
+		tt(-50%, 0)
+		font-family: JournalSansNew-Bold
+		font-size 18px
+		letter-spacing 2.5px
+		text-align center
+		c cBlueDark
+		@media screen and (max-width: 768px)
+			font-size 18px
+		@media screen and (max-width: 600px)
+			bottom -45px
+		&:before
+			position absolute
+			top 40px
+			left 50%
+			content ""
+			display block
+			width 20px
+			height 20px
+			border-style solid
+			border-width 0 4px 4px 0
+			border-color cBlueDark
+			transform translate(-50%,0) rotateZ(45deg)
+			@media screen and (max-width: 720px)
+				top 30px
+				width 15px
+				height 15px
+				border-width 0 2px 2px 0
+
+.header-blog
+	background-position: center 0
+	background-attachment fixed
+	border-right none
+	background-size cover
+
+.blog-header__content
+	flex 1
+	display flex
+	justify-content center
+	flex-direction column
+	text-align center
+	@media screen and (max-width: 600px)
+		flex 0
+		padding-top 300px
+	h1
+		c cWhite
+		font-size 36px
+		ffa(JournalSansNew-Bold)
+		ls(3px)
+		lh(48px)
+		margin-bottom 30px
+		@media screen and (max-width: 600px)
+			margin-top 40px
+			br
+				display none
+		@media screen and (max-width: 480px)
+			font-size 28px
+			lh(38px)
+		@media screen and (max-width: 375px)
+			margin-top 30px
+	p
+		ffa(JournalSansNew)
+		font-size 20px
+		c cWhite

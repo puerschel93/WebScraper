@@ -1,0 +1,332 @@
+/*screen size multiplier*/
+$xs : 0.5;
+$sm : 0.542;
+$md : 0.64;
+$lg : 0.8267;
+$xl : 1.0;
+
+/* setting right panel*/
+$rightfield_width : 250px;
+.rightfield {
+  position: relative;
+  background-color: darkgray;
+  //background-image: linear-gradient(#ffff00, #00ff00, #00bfff);
+  height: 100%;
+  width: $rightfield_width;
+  right: 15px;
+  border: 1px solid darkgray;
+  padding: 1px;
+}
+
+/* full screen icon */
+.divFullScreenIcon {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  z-index: 2;
+}
+$fullscreen_icon_size : 40px;
+.fullscreen_icon {
+  height: $fullscreen_icon_size;
+  width: $fullscreen_icon_size;
+  fill : #B22222;
+}
+
+/* first group*/
+$div_group1_padding_top : 2px;
+$div_group1_padding_bottom : 4px;
+.div_group1 {
+  background: #ffffff;
+  background: linear-gradient(to right bottom, #660066 50%, #501048 50%);
+  width: 100%;
+
+  font-family: sans-serif;
+  color: #ffffff;
+  padding-top: $div_group1_padding_top;
+  padding-bottom: $div_group1_padding_bottom;
+}
+.div_group2 {
+  background: #ffffff;
+  background: linear-gradient(to right bottom, #FF8C00 50%, #E67300 50%);
+  width: 100%;
+
+  font-family: sans-serif;
+  color: #ffffff;
+  padding-top: $div_group1_padding_top;
+  padding-bottom: $div_group1_padding_bottom;
+}
+.div_group3 {
+  background: #ffffff;
+  background: linear-gradient(to right bottom, #0000FF 50%, #0000CD 50%);
+  width: 100%;
+
+  font-family: sans-serif;
+  color: #ffffff;
+  padding-top: $div_group1_padding_top;
+  padding-bottom: $div_group1_padding_bottom;
+}
+
+/* first group header*/
+$div_group1_header_font_size : 25px;
+$div_group1_header_padding_left : 10px;
+.div_group1_header {
+  font-size: $div_group1_header_font_size;
+  padding-left: $div_group1_header_padding_left;
+  vertical-align: center;
+  padding-top: 0px;
+  padding-bottom: 2px;
+}
+
+/* time style format */
+$div_time_font_size : 40px;
+.div_time {
+  font-size: $div_time_font_size;
+  padding-left: $div_group1_header_padding_left;
+  text-align: left;
+  vertical-align: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+/* day style format */
+$div_day_font_size : 30px;
+.div_day {
+  font-size: $div_day_font_size;
+  padding-left: $div_group1_header_padding_left;
+}
+
+/* date style format */
+$div_date_font_size : 25px;
+.div_date {
+  font-size: $div_date_font_size;
+  padding-left: $div_group1_header_padding_left;
+}
+
+/* horizontal line style*/
+$hr_style1_width : 3px;
+hr.style1 {
+  display: block;
+  width: 100%;
+  height: $hr_style1_width;
+  margin: 0px;
+  background: linear-gradient(#121314, #333333);
+}
+hr.style2 {
+  display: block;
+  width: 100%;
+  height: $hr_style1_width;
+  margin: 0px;
+  background: linear-gradient(#708090, #E6E6FA);
+}
+
+$div_info_font_size : 20px;
+.div_info {
+  font-size: $div_info_font_size;
+  padding-left: $div_group1_header_padding_left;
+}
+/* ------------------------------- SCREEN SIZE ------------------------------ */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  $mult : $xs;
+  .rightfield{
+    width: $rightfield_width*$mult;
+  }
+  .div_group1 {
+    padding-top: $div_group1_padding_top*$mult;
+    padding-bottom: $div_group1_padding_bottom*$mult;
+  }
+  .div_group1_header {
+    font-size: $div_group1_header_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_time {
+    font-size: $div_time_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_day {
+    font-size: $div_day_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_date {
+    font-size: $div_date_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  hr.style1 {
+    height: $hr_style1_width*$mult;
+  }
+  hr.style2 {
+    height: $hr_style1_width*$mult;
+  }
+  .fullscreen_icon {
+    height: $fullscreen_icon_size*$mult;
+    width: $fullscreen_icon_size*$mult;
+  }
+  .div_info {
+    font-size: $div_info_font_size*$mult;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  $mult : $sm;
+  .rightfield {
+    width: $rightfield_width*$mult;
+  }
+  .div_group1 {
+    padding-top: $div_group1_padding_top*$mult;
+    padding-bottom: $div_group1_padding_bottom*$mult;
+  }
+  .div_group1_header {
+    font-size: $div_group1_header_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_time {
+    font-size: $div_time_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_day {
+    font-size: $div_day_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_date {
+    font-size: $div_date_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  hr.style1 {
+    height: $hr_style1_width*$mult;
+  }
+  hr.style2 {
+    height: $hr_style1_width*$mult;
+  }
+  .fullscreen_icon {
+    height: $fullscreen_icon_size*$mult;
+    width: $fullscreen_icon_size*$mult;
+  }
+  .div_info {
+    font-size: $div_info_font_size*$mult;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  $mult : $md;
+  .rightfield {
+    width: $rightfield_width*$mult;
+  }
+  .div_group1 {
+    padding-top: $div_group1_padding_top*$mult;
+    padding-bottom: $div_group1_padding_bottom*$mult;
+  }
+  .div_group1_header {
+    font-size: $div_group1_header_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_time {
+    font-size: $div_time_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_day {
+    font-size: $div_day_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_date {
+    font-size: $div_date_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  hr.style1 {
+    height: $hr_style1_width*$mult;
+  }
+  hr.style2 {
+    height: $hr_style1_width*$mult;
+  }
+  .fullscreen_icon {
+    height: $fullscreen_icon_size*$mult;
+    width: $fullscreen_icon_size*$mult;
+  }
+  .div_info {
+    font-size: $div_info_font_size*$mult;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  $mult : $lg;
+  .rightfield {
+    width: $rightfield_width*$mult;
+  }
+  .div_group1 {
+    padding-top: $div_group1_padding_top*$mult;
+    padding-bottom: $div_group1_padding_bottom*$mult;
+  }
+  .div_group1_header {
+    font-size: $div_group1_header_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_time {
+    font-size: $div_time_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_day {
+    font-size: $div_day_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_date {
+    font-size: $div_date_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  hr.style1 {
+    height: $hr_style1_width*$mult;
+  }
+  hr.style2 {
+    height: $hr_style1_width*$mult;
+  }
+  .fullscreen_icon {
+    height: $fullscreen_icon_size*$mult;
+    width: $fullscreen_icon_size*$mult;
+  }
+  .div_info {
+    font-size: $div_info_font_size*$mult;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  $mult : $xl;
+  .rightfield {
+    width: $rightfield_width*$mult;
+  }
+  .div_group1 {
+    padding-top: $div_group1_padding_top*$mult;
+    padding-bottom: $div_group1_padding_bottom*$mult;
+  }
+  .div_group1_header {
+    font-size: $div_group1_header_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_time {
+    font-size: $div_time_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_day {
+    font-size: $div_day_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  .div_date {
+    font-size: $div_date_font_size*$mult;
+    padding-left: $div_group1_header_padding_left*$mult;
+  }
+  hr.style1 {
+    height: $hr_style1_width*$mult;
+  }
+  hr.style2 {
+    height: $hr_style1_width*$mult;
+  }
+  .fullscreen_icon {
+    height: $fullscreen_icon_size*$mult;
+    width: $fullscreen_icon_size*$mult;
+  }
+  .div_info {
+    font-size: $div_info_font_size*$mult;
+  }
+}

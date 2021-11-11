@@ -1,0 +1,99 @@
+@mixin redes () {
+  background-color: burlywood;
+  border: black 2px solid;
+  margin: 5px;
+}
+
+@mixin cajas ($ubicacion) {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: $ubicacion;
+}
+
+@mixin h2{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: $letrah2;
+  font-size: 42px;
+}
+
+.mainContacto {
+  margin-top: 50px;
+  display: grid;
+  grid-template-areas: "contacto redes";
+  grid-column: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.redes {
+  grid-area: redes;
+  @include cajas (flex-end);
+
+  h2 {
+    @include h2;
+  }
+
+  .instagram {
+    @include redes;
+  }
+
+  .facebook {
+    @include redes;
+  }
+}
+
+.contacto {
+  grid-area: contacto;
+  @include cajas (flex-start);
+
+  h2{
+    @include h2;
+  }
+
+  ul {
+    list-style: none;
+    text-decoration: solid;
+    text-transform: uppercase;
+    font-family: $letratexto;
+    margin: 20px;
+    padding: 10px;
+
+    li {
+      text-decoration: solid;
+      text-transform: uppercase;
+      font-size: 25px;
+
+      h3 {
+        display: inline-block;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.formulario {
+  margin-top: 50px;
+
+  h2 {
+    @include h2;
+  }
+
+  .cajaFormulario {
+    width: 1000px;
+    
+    .formularioDiseño{
+      background-color: #f8efcf;
+      border: black solid 2px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+
+      label{
+        font-size: 20px;
+        font-family: $letratexto;
+      }
+    }
+  }
+}
+  

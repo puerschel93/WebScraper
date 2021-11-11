@@ -1,0 +1,240 @@
+@import "global";
+@import "mixin";
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  @extend %display-flex;
+  justify-content: flex-start;
+  width: 100%;
+ height: 100%;
+  overflow-y: hidden;
+  position: relative;
+  background: url(../assets/imgs/Layer1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include mobile{
+   
+    background-size: contain;
+  }
+  @include tablet{
+    background-size: contain;
+  }
+
+
+
+ 
+
+  .header-body {
+    @extend %display-flex;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+
+    
+    
+
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      margin: 5rem 1rem;
+      overflow: hidden;
+     @include mobile{
+      margin: 10px 1rem;
+      align-items: center;
+      justify-content: flex-start;
+     }
+      h2 {
+        width: 100%;
+        @include mobile {
+          font-size: 12px;
+          margin-top: 3rem;
+        }
+      }
+      h5 {
+        padding-left: 1.6rem;
+        margin-top: 10px;
+        width: 100%;
+
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+     
+    }
+  }
+}
+
+.header-nav {
+    @extend %display-flex;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    overflow: hidden;
+    @include mobile {
+      position: relative;
+    }
+}
+.header-nav-over{
+    @extend %display-flex;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+   
+    @include mobile {
+      position: relative;
+    }
+}
+.nav {
+  @extend %display-flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0;
+  transition: all 1s ease-in-out;
+  position: relative;
+  z-index: 2;
+  @include mobile {
+    padding: 1rem 0;
+  }
+  .link {
+    
+   @include link($white);
+    color: $white;
+    @include mobile{
+      color:$sormei;
+      padding-left: 20px;
+      margin-left: 15px;
+    }
+    @include tablet{
+      
+      padding-left: 20px;
+      margin-left: 2rem;
+    }
+  }
+  .alert {
+    position: relative;
+    top: -10rem;
+  }
+  .menu {
+    border-radius: 50%;
+    background-color: #00b4d8;
+    cursor: pointer;
+    transition: all 0.35s ease-in-out;
+    transform: rotate(360deg);
+    .fabars {
+      width: 100%;
+      height: 100%;
+      font-size: 20px;
+      padding: 15px;
+      border-radius: 50%;
+      font-weight: 600;
+      color: $white;
+      transition: all 0.3s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    }
+  }
+  .side-menu-sh {
+    @extend %display-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 8rem;
+    top: 90px;
+    min-height: 23rem;
+    width: 17rem;
+    background-color: $sormei;
+    border-radius: 10px;
+    filter: opacity(0.9);
+    z-index: 1;
+    box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s cubic-bezier(0.185, 0.135, 0.15, 0.86);
+    
+    @include mobile {
+      right: 0.1rem;
+      top: 4.5rem;
+      width: 14rem;
+      min-height: 16rem;
+    }
+  }
+  .side-menu-h {
+    @extend %display-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -38rem;
+    top: 90px;
+    min-height: 17rem;
+    width: 20rem;
+    background-color: $sormei;
+    border-radius: 10px;
+    filter: opacity(0.9);
+    box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s cubic-bezier(0.185, 0.135, 0.15, 0.86);
+   
+  }
+  .side-menu {
+    @extend %display-flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+    span {
+      font-size: clamp(12px, 3vw, 18px);
+      font-weight: 600;
+      color: $white;
+      margin: 5px 0;
+      padding: 5px 0;
+      width: 100%;
+      text-align: center;
+      
+    }
+    span:first-child {
+      margin-bottom: 1rem;
+      
+    }
+  }
+}
+
+.over{
+    overflow: hidden;
+}
+.home{
+  
+  &::after{
+    transition:width 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    content: "";
+    position: absolute;
+    bottom:0px;
+    left:0;
+    border-bottom: solid 2px $zard;
+    width: 0%;
+    height: 2px;
+    
+  }
+  &:hover{
+    
+    &::after{
+      
+      content: "";
+      position: absolute;
+      bottom:0px;
+      left:0;
+      border-bottom: solid 2px $zard;
+      width: 100%;
+      height: 2px;
+      
+    }
+  }
+}

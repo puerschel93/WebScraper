@@ -1,0 +1,100 @@
+.portfolio-item {
+  margin: 0 15px;
+  font-size: 17px;
+
+  img {
+    max-width: none;
+    width: 100%;
+    display: block;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin-bottom: 0.5em;
+  }
+  dl {
+    margin-top: 0;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  figcaption {
+    padding: 15px 0;
+  }
+  &:hover {
+    figcaption {
+    }
+  }
+}
+
+@media @breakpoint-size-sm {
+  .portfolio-item {
+    margin: 0;
+    font-size: 14px;
+
+    dt, dd {
+      line-height: 1.5em;
+    }
+    dt {
+      clear: left;
+      float: left;
+      margin-right: 1em;
+    }
+    figcaption {
+      padding: 15px;
+      display: none;
+      position: absolute;
+      top: 0; //100%;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: #eaeaea;
+      background: rgba(230,230,230,0.95);
+
+      //&:after {
+      //  content: "";
+      //  .arrow-even(20px, #eaeaea, top);
+      //  position: absolute;
+      //  top: -19px;
+      //  left: 50%;
+      //  margin-left: -10px;
+      //}
+      //&:before {
+      //  content: "";
+      //  .arrow-even(22px, #ccc, top);
+      //  position: absolute;
+      //  top: -21px;
+      //  left: 50%;
+      //  margin-left: -12px;
+      //}
+    }
+    &:hover {
+      figcaption {
+        display: block;
+        .animation-fade-in;
+        //.animation-delay(0.25s);
+      }
+    }
+  }
+}
+
+@media @breakpoint-size-md {
+  .portfolio-item {
+    font-size: 16px;
+    h3 {
+      font-size: 2em;
+    }
+  }
+}
+
+@media @breakpoint-size-lg {
+  .portfolio-item {
+    font-size: 18px;
+    h3 {
+      font-size: 2em;
+    }
+  }
+}

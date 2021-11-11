@@ -1,0 +1,111 @@
+// //
+// // Framework grid generation
+// // Used only by Bootstrap to generate the correct number of grid classes given
+// // any value of `@grid-columns`.
+// // Based on https://github.com/twbs/bootstrap
+// // Generate semantic grid columns with these mixins.
+// //--------------------------------------------------
+
+
+// /* 
+//  * Clearfix Mixin
+//  * 
+//  * For modern browsers
+//  * 1. The space content is one way to avoid an Opera bug when the
+//  *    contenteditable attribute is included anywhere else in the document.
+//  *    Otherwise it causes space to appear at the top and bottom of elements
+//  *    that are clearfixed.
+//  *  2. The use of `table` rather than `block` is only necessary if using
+//  *    `:before` to contain the top-margins of child elements.
+//  * 
+//  * Source: http://nicolasgallagher.com/micro-clearfix-hack/
+//  *
+//  */
+
+clearfix()
+  &:before,
+  &:after
+    // 1
+    content: " "
+    // 2
+    display: table
+  &:after
+    clear: both
+
+
+// //
+// // Centered container element
+// //--------------------------------------------------
+
+
+// /*
+//  * Container Fixed Mixin
+//  *
+//  */
+
+make-container($gutter = $grid-gutter-width)
+  margin-right: auto
+  margin-left: auto
+  padding-left: ($gutter / 2)
+  padding-right: ($gutter / 2)
+  clearfix()
+
+
+// //
+// // Creates a wrapper for a series of columns
+// //---------------------------------------------------
+
+
+// /*
+//  * Make Row Mixin
+//  *
+//  */
+
+make-row($gutter = $grid-gutter-width)
+  margin-left:  ceil(($gutter / -2))
+  margin-right: floor(($gutter / -2))
+  clearfix()
+
+
+// /*
+//  * Make Grid Columns Mixin
+//  *
+//  */
+
+make-grid-columns()
+  // Common styles for all sizes of grid columns, widths 1-12
+  position: relative
+  // Prevent columns from collapsing when empty
+  min-height: 1px
+
+// /*
+//  * Float Grid Columns Mixin
+//  *
+//  * @param {String} $class
+//  *
+//  */
+
+float-grid-columns()
+  float: left
+
+
+// /*
+//  * Width Grid Columns Mixin
+//  *
+//  * @param {Number} $index
+//  *
+//  */
+
+width-grid-column($index)
+  width: unit(($index / $grid-columns) * 100, '%')
+
+
+// /*
+//  * Offset Grid Columns Mixin
+//  *
+//  * @param {Number} $index
+//  *
+//  */
+
+offset-grid-column($index)
+  margin-left: unit(($index / $grid-columns) * 100, '%')

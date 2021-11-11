@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+$timeline-width: 40px;
+
+*{
+    font-family: 'Work Sans', sans-serif;
+    // border: solid red thin;
+    box-sizing: border-box;
+    --max-document-components-width: 800px;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.document-image-wrapper, p, ul, information-note{
+    max-width: var(--max-document-components-width);
+    text-align: justify;
+}
+
+
+p, .paragraph{
+    font-size: 1.4rem;
+    
+    // width: 90%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+ul{
+    font-size: 1.4rem;
+    padding-left: 80px;
+    margin: 0;
+    margin-bottom: 2rem;
+}
+section{
+    // width: 100vw;
+}
+
+code{
+    
+    background-color:rgba(120, 120, 50, 0.2);
+    font-size: 1.2rem;
+    padding: 2px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1{
+    font-size: 3.5rem;
+    font-weight: normal;
+}
+h2{
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+@mixin flex-center{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.center{
+    @include flex-center;
+}
+.inline-block{
+    display: inline-block;
+}
+
+.perspective{
+    perspective: 100px;
+}
+
+.button{
+    transition: 0.3s;
+    &:hover{
+        transition: 0.3s;
+        transform: scale(1.1) rotateY(10deg);
+        
+    }
+    &:active{
+        transition: 0.3s;
+        transform: scale(0.9), rotateY(-10deg);
+        color: black;
+        background-color: yellow;
+    }
+}
+
+@mixin flex-row-general {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.row, .flex-row{
+    @include flex-row-general;
+}
+.photos-in-row{
+    @include flex-row-general;
+    @include flex-center;
+    width: 100%;
+}
+.row-scalable{
+    //Only for media there should be an affect
+}
+.wrap{
+    flex-wrap: wrap;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.col-1{
+    position: relative;
+    width: 290px;
+    flex-grow: 0;
+    flex-shrink: 0;  
+    margin-right: 100px;
+    text-align: right;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.title{
+    // font-weight: bold;
+    // font-family: Helvetica;
+    font-size: 2rem;
+}
+.content{
+    color: black;
+    // font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+}
+
+.shutter{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.compensateTimeline{
+    position: relative;
+    width: calc( #{$timeline-width} * 1);
+}
+
+.card{
+    position: relative;
+    // border: solid rgb(50, 50, 50) thin;
+    font-size: 1.4rem;
+    max-width: 600px;
+    width: 600px;
+    background-color: rgb(235, 235, 235);
+    margin-left: 50px;
+    .title{
+        font-weight: bold;
+    }
+    .subtitle{
+
+    }
+
+    @mixin pseudo-element-shadow{
+        position: absolute;
+        bottom: 20px;
+        width: 50%;
+        height: 50px;
+        box-shadow: -1px 45px 47px -2px #000000;
+        box-shadow: -1px 45px 47px -8px #000000;
+        content: '';
+        z-index: -1;
+    }
+
+    padding: 20px;
+    margin-bottom: 50px;
+    &:before{
+        @include pseudo-element-shadow();
+        left: 10px;
+        transform: rotate(-7deg); 
+        // box-shadow: -1px 31px 33px 7px #000000;
+    }
+    &:after{
+        @include pseudo-element-shadow();
+        right: 10px;
+        transform: rotate(7deg);
+        // box-shadow: -1px 31px 33px 7px #000000;
+    }
+}
+
+// @media only screen and (max-width: 1350px){
+//     p{
+//         width: 700px;
+//     }
+//}
+
+@media only screen and (max-width: 1250px){
+    p, .paragraph{
+        width: 600px;
+        width: 100%;
+        padding-right: 70px;
+    }
+}
+
+@media only screen and (max-width: 1225px){
+    .col-1{
+        position: relative;
+        width: 200px;
+        flex-grow: 0;
+        flex-shrink: 0;  
+        margin-right: 20px;
+        text-align: right;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    p,.paragraph{
+        max-width: unset;
+        width: 100%;
+        padding-right: 70px;
+    }
+}
+
+// @media only screen and (max-width: 1130px){
+//     section{
+//         h1{font-size: 3rem; width: 220px;}
+//     }
+// }
+
+@media only screen and (max-width: 750px){
+    .row-scalable{
+        flex-direction: column;
+        // align-content: center;
+        align-items: center;
+    };
+    .section-title{
+        align-self: flex-start;
+    }
+}
+@media only screen and (max-width: 1025px){
+    .card{font-size: 1rem;}
+    .card{width: 400px;}
+}
+@media only screen and (max-width: 850px){
+    .timeline{
+        display: none;
+    }
+    .compensateTimeline {
+        display: none;
+    }
+    .card{
+        margin-left: 0px;
+    }
+}
+@media only screen and (max-width: 700px){
+    section{
+        p,.paragraph{
+            width: 550px;
+            width: 100%;
+        }
+    }
+}
+// @media only screen and (max-width: 640px){
+//     section{
+//         p{width: 500px;}
+//     }
+// }
+// @media only screen and (max-width: 590px){
+//     section{
+//         p{width: 450px;}
+//     }
+// }
+
+@media only screen and (max-width: 570px){
+    .content-section{
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}
+// @media only screen and (max-width: 539px){
+//     section{
+//         p{width: 400px;}
+//     }
+// }
+@media only screen and (max-width: 486px){
+    .card{
+        width: 300px
+    }
+}
+// @media only screen and (max-width: 520px){
+//     section{
+//         p{width: 350px;}
+//     }
+// }
+
+// @media only screen and (max-width: 430px){
+//     section{
+//         p{width: 300px;}
+//     }
+// }
+@media only screen and (min-width: 1300px){
+    section{
+        .photos-in-row{
+            justify-content: flex-start;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .card{
+        width: 250px
+    }
+}
+// @media only screen and (max-width: 380px){
+//     section{
+//         p{width: 250px;}
+//     }
+// }
+@media only screen and (max-width: 330px){
+    .card{
+        width: 200px
+    }
+    // section{
+    //     p{width: 200px;}
+    // }
+}
+@media only screen and (max-width: 283px){
+    .card{
+        width: 150px;
+        .title{
+            font-size:1.5rem;
+        }
+    }
+}

@@ -1,0 +1,298 @@
+/** ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+*** │ FILENAME: oue-custom.less                                                                    │
+*** │                                                                                              │
+*** │ SUMMARY: Style rules for presenting content on the website of WSU's Division of Academic     │
+*** │   Engagement and Student Achievement (DAESA), which is built using the builder template of   │
+*** │   the Spine parent theme of WSUWP. Styles are designed to accompany or supersede styling     │
+*** │   associated with the theme.                                                                 │
+*** │                                                                                              │
+*** │ AUTHOR: Daniel Rieck <daniel.rieck@wsu.edu> (https://github.com/invokeImmediately)           │
+*** └──────────────────────────────────────────────────────────────────────────────────────────────┘
+***  TABLE OF CONTENTS:
+***  ────────────────────────────────────────────────────────────────────────────────────────────
+***  §1: Persistent section header comment for unit specific styling...........................27
+***  §2: Overall visual design.................................................................58
+***    >>> §2.1: Background styling............................................................62
+***    >>> §2.2: Main header...................................................................88
+***    >>> §2.3: Page headers.................................................................165
+***    >>> §2.4: General headings.............................................................171
+***  §3: Unique components of TA websites.....................................................187
+***    >>> §3.1: Site introduction............................................................191
+***    >>> §3.2: Membership directory controls................................................281
+***    >>> §3.3: TA Notices...................................................................295
+***  ───────────────────────────────────────────────────────────────────────────────────────────────
+**/
+
+/** ================================================================================================
+*** §1: Persistent section header comment for unit specific styling
+**/
+
+/*! ================================================================================================
+*** CUSTOM STYLE SHEET for the WSU President's Teaching Academy
+*** ================================================================================================
+*** SUMMARY: CSS compiled from Less language extension of CSS written explicitly for use on the
+***   Teaching Academy website.
+***
+*** DESCRIPTION: Fully documented, precompiled source code from which this section of the custom
+***   stylesheet was built is developed and maintained on the following GitHub project:
+***   https://github.com/invokeImmediately/teachingacademy.wsu.edu/
+***
+*** AUTHOR: Daniel Rieck [daniel.rieck@wsu.edu] (https://github.com/invokeImmediately)
+***
+*** LICENSE: ISC - Copyright (c) 2020 Daniel C. Rieck.
+***
+***   Permission to use, copy, modify, and/or distribute this software for any purpose with or
+***   without fee is hereby granted, provided that the above copyright notice and this permission
+***   notice appear in all copies.
+***
+***   THE SOFTWARE IS PROVIDED "AS IS" AND DANIEL RIECK DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+***   SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL
+***   DANIEL RIECK BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
+***   DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+***   CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+***   PERFORMANCE OF THIS SOFTWARE.
+*** ================================================================================================
+**/
+
+/** ================================================================================================
+*** §2: Overall visual design
+**/
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §2.1: Background styling
+**/
+
+@ta-styling__main-backgrounds: {
+	body.home:not(.has-background-image) #jacket, #jacket {
+		background: #e5e5e5 url(https://s3.wp.wsu.edu/uploads/sites/1368/2017/03/bg-jacket-4.jpg) no-repeat right top;
+		background-attachment: fixed;
+	}
+
+	#binder {
+		background-color: #fff;
+		border-right: none;
+		-webkit-box-shadow: 0 0 50px 5px rgba(0,0,0,0.2);
+		-moz-box-shadow: 0 0 50px 5px rgba(0,0,0,0.2);
+		box-shadow: 0 0 50px 5px rgba(0,0,0,0.2);
+	}
+
+	#spine #glue:before {
+		border-right: 1px solid #e5e5e5;
+		background: #fff url(https://s3.wp.wsu.edu/uploads/sites/1368/2017/02/bg-spine.png) no-repeat left bottom;
+		background-attachment: fixed;
+	}
+};
+@ta-styling__main-backgrounds();
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §2.2: Main header
+**/
+
+@ta-styling__main-header: {
+	.main-header {
+		background: rgb(130,12,35,1);
+		background: -moz-linear-gradient(left,rgba(130,12,35,1) 0%,rgba(166,15,45,1) 100%);
+		background: -webkit-linear-gradient(left,rgba(130,12,35,1) 0%,rgba(166,15,45,1) 100%);
+		background: linear-gradient(to right,rgba(130,12,35,1) 0%,rgba(166,15,45,1) 100%);
+		color: @hex-white !important;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#820c23',endColorstr='#a60f2d',GradientType=1);
+		padding: 1rem 0;
+		position: relative;
+
+		.header-group:not(.unset) {
+			font-size: 13px;
+			line-height: 1em;
+			padding: .7em 2rem;
+			position: relative;
+		}
+
+		.sub-header,
+		.sup-header {
+			display: inline-block;
+
+			@media screen and (max-width: @spine-threshold) {
+				display: block;
+			}
+		}
+
+		.sub-header,
+		.sup-header,
+		.sub-header-default,
+		.sup-header-default {
+			font-size: inherit !important;
+		}
+
+		.sub-header-default {
+			border-left: 1px solid #fff;
+			font-weight: 300;
+			margin-left: 1em;
+			padding-left: 1.25em;
+			color: #fff;
+
+			@media screen and (max-width: @spine-threshold) {
+				border-left: 0;
+				margin-left: 0;
+				padding-left: 0;
+			}
+		}
+
+		.sub-header-default,
+		.sup-header-default {
+			text-transform: uppercase;
+			width: auto;
+		}
+
+		.sup-header-default {
+			font-weight: bold;
+		}
+	}
+
+	.main-header {
+		.header-group {
+			padding-top: 1em !important;
+			position: relative;
+		}
+
+		sub:not(.unset),
+		sup:not(.unset) {
+			color: @hex-white !important;
+		}
+	}
+};
+@ta-styling__main-header();
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §2.3: Page headers
+**/
+
+.use-sectional-article-headers();
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §2.4: General headings
+**/
+
+@ta-styling__addl-for-headings: {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		.tt--uppercase;
+	}
+};
+@ta-styling__addl-for-headings();
+
+/** ================================================================================================
+*** §3: Unique components of TA websites
+**/
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §3.1: Site introduction
+**/
+
+@ta-styling__site-intro: {
+	@site-intro__link-color: #fab0be;
+
+	.site-intro {
+		background: #eff0f1 url(https://s3.wp.wsu.edu/uploads/sites/56/2020/02/clif-stratton_during-roots-lecture_04_1188x650.jpg) no-repeat center;
+		background-size: cover;
+		position: relative;
+
+		@media screen {
+			height: 480px;
+
+			@media ( max-width: @column-floating-threshold) {
+				background-position: 67% 50%;
+			}
+		}
+
+		@media print {
+			background-image: none !important;
+			height: auto;
+		}
+
+		.site-intro__content {
+			background-color: rgba( 0, 0, 0, 0.8 );
+			background: linear-gradient(90deg, transparent, #000000 0%, transparent 10%), rgba(0,0,0,0.8) url(https://s3.wp.wsu.edu/uploads/sites/2334/2018/10/bg-dots.png) top left repeat;
+			left: 0;
+			padding-bottom: 0.8rem;
+			padding-top: 0.8rem;
+			position: absolute;
+			top: 60%;
+			.transform(~"translateY(-50%)");
+
+			@media print {
+				background: rgba( 255, 255, 255, 0.8 );
+			}
+
+			@media screen {
+				@media ( max-width: @column-floating-threshold) {
+					top: 100%;
+					.transform(~"translateY(-100%)");
+				}
+			}
+		}
+	}
+
+	.site-intro__summary {
+		font-weight: bold;
+		line-height: 1.75em;
+	    text-shadow: 1px 1px black, 0 0 2px black, 0 0 3px black, 0 0 3px black;
+
+		* + & {
+			margin-top: 0.5em;
+		}
+
+		a {
+			color: @site-intro__link-color;
+			border-bottom: 2px ridge @site-intro__link-color;
+
+			&:hover {
+				.getRgbaStr(@hex-crimson, 0.5);
+				color: @site-intro__link-color;
+				border-bottom: 5px solid @site-intro__link-color;
+				border-top-color: @site-intro__link-color;
+				text-shadow: 1px 1px black, 0 0 3px @rgba;
+			}
+		}
+	}
+
+	.site-intro__title {
+		letter-spacing: 0;
+		max-width: 40ch;
+		text-shadow: 1px 1px 0 black, 0 0 4px black, 0 0 4px black;
+		text-transform: none;
+	}
+
+	.site-intro__summary,
+	.site-intro__title {
+		color: white;
+
+		@media print {
+			color: black;
+			text-shadow: none;
+		}
+	}
+};
+@ta-styling__site-intro();
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §3.2: Membership directory controls
+**/
+
+@ta-styling__gf-page-ctrls: {
+	#gform_1 #gform_submit_button_1,
+	#gform_1 .gform_footer,
+	#gform_2 #gform_submit_button_2,
+	#gform_2 .gform_footer {
+		display: none !important;
+	}
+};
+@ta-styling__gf-page-ctrls();
+
+/**   ----------------------------------------------------------------------------------------------
+***   >>> §3.3: TA Notices
+**/
+
+.use-paragraph-notices(url(/wp-content/uploads/sites/51/2017/05/icon_genericons-neue_notice_v5.png));

@@ -1,0 +1,154 @@
+:root {
+  --system-primary: rgb(60, 215, 170);
+  --system-secondary: rgba(240, 255, 255, 1);
+
+  //Theming Colors
+  --color-primary: rgba(50, 140, 200, 0.92);
+  --color-success: rgba(30, 140, 55, 0.92);
+  --color-warning: rgba(190, 160, 15, 0.92);
+  --color-danger: rgba(195, 50, 35, 0.92);
+  --color-light: rgba(255, 255, 255, 0.92);
+  --color-dark: rgba(40, 50, 70, 0.92);
+  --color-soft-text: #555555;
+
+  --soft-border-color: rgba(0, 0, 0, 0.2);
+  --soft-background-color: rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.page-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page-wrapper > nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid var(--soft-border-color);
+  padding: 0 1%;
+}
+
+.page-wrapper > nav button {
+  margin: 0 2px;
+}
+
+.page-wrapper nav .nav-left {
+  display: inline-flex;
+  justify-self: flex-start;
+  max-width: 35%;
+  padding: 1px 4px;
+}
+
+.page-wrapper nav .nav-right {
+  display: inline-flex;
+  justify-self: flex-end;
+  max-width: 65%;
+  padding: 1px 4px;
+}
+
+.page-wrapper > .page-content {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 130px);
+  padding: 2px 4px;
+}
+
+.page-wrapper > footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  height: 90px;
+  width: 100%;
+  border-top: 1px solid var(--soft-border-color);
+  background-color: var(--soft-background-color);
+}
+
+.page-wrapper > footer > .footer-column {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 33.33%;
+  font-size: 13px;
+}
+
+.page-wrapper > footer > .footer-column p {
+  margin: 2px;
+}
+
+.banner-box {
+  width: 100%;
+  max-height: 320px;
+}
+
+.center-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title{
+  font-size: 24px;
+  color: var(--system-primary);
+  width: 100%;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.page-description{
+  font-size: 18px;
+  color: var(--color-soft-text);
+  width: 100%;
+  text-align: center;
+}
+
+.padded-content{
+  padding: 5px;
+}
+
+.disabled {
+  filter: grayscale(0.75);
+  pointer-events: none;
+  user-select: all;
+}

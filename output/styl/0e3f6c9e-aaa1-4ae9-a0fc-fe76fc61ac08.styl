@@ -1,0 +1,355 @@
+
+// COMMON CARD
+.common-card
+  padding: 16px 16px 10px 16px
+  .actions
+    text-align: center
+    .md-button
+      margin: 0
+
+// Details Box - used in programs/players
+.pre-cards-title
+  color: $cgray2
+  margin-bottom: 10px
+  @media $small-only
+    padding-left: 16px
+  &.with-sort-filter
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: center
+    width: 100%
+
+// Filter Sort Box Fixes
+.md-menu-content.sort-box
+.md-menu-content.filter-box
+  ul.md-list
+    padding: 12px
+    .title
+      color: $cblack
+    .actions
+      margin-top: 10px
+      // border-top: 1px solid #ccc
+      // margin: 10px -12px 0 -12px
+.md-menu-content.filter-box
+  ul.md-list .md-checkbox
+    display: flex
+
+// Details Box
+.details-box
+  @extends .has-elevation-4;
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  align-items: flex-start
+  padding: 10px 12px
+  background: #fff
+  @media $small-only
+    flex-flow: column wrap
+    margin: 0 16px;
+  .details-selects
+    display: flex
+    flex-flow: row wrap
+    justify-content: flex-start
+    align-items: center
+    @media $small-only
+      flex-flow: column wrap
+      justify-content: center
+      width: 100%
+      margin-bottom: 20px
+    .md-field
+      width auto
+      margin-bottom: 10px
+      @media $small-only
+        width: 100%
+      &:not(:last-child)
+        margin-right: 20px
+        @media $small-only
+          margin-right: 0
+  .details-numbers
+    margin-top: 4px
+    display: flex
+    flex-flow: row nowrap
+    justify-content: flex-end
+    align-items: center
+    @media $small-only
+      flex-flow: row wrap
+      justify-content: center
+      width: 100%
+      margin-bottom: 10px
+    .title-big
+      margin-top: 2px
+      margin-bottom: 20px
+    & > div:not(:last-child)
+      margin-right: 20px
+    .concept
+      color: $cgray2
+      font-size: 13px
+    .green
+      color: $cgreen
+    .gray
+      color: $cgray1
+    .red
+      color: $cred
+    .blue
+      color: $cblue
+
+
+// CARDS layout 1
+.cards-layout
+  display: flex
+  flex-flow: row wrap
+  justify-content: flex-start
+  align-items: center
+  @media $small-only
+    justify-content: center
+    width 100%
+  @media $xlarge-up
+    .md-card
+      width: 250px
+  .md-card-add-circle
+  .md-card
+    margin: 0 15px 15px 0
+    width: 220px;
+    height 200px
+    @media $small-only
+      margin: 16px
+      width 100%
+    .click-card-box
+      width: 100%
+      height 100%
+    .md-card-actions
+      justify-content: center
+  
+  // ADD CIRCLE TYPE CARD
+  .md-card-add-circle
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    align-items: center
+
+  // CARD INVOICE TYPE CARD 
+  .card-invoice
+    display: flex
+    flex-flow: column nowrap
+    justify-content: space-between
+    align-items: flex-start
+    width 100%
+    .md-card-header
+    .md-card-content
+    .md-card-actions
+      width 100%
+    .md-card-header
+      .title
+        color: $cblack
+        margin-bottom: 5px
+    .md-card-content.card-content
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-between
+      align-items: center
+      .status
+        text-align: center
+        .md-icon
+          color: $cgreen
+      .amount-details
+        margin-top: 5px
+        color: $cgray1
+        text-align: right
+        .details
+          line-height: 1
+        .total
+          margin-top: 5px
+          font-weight: bold
+
+  // CARD INVOICE 2 WITHOUT RIPPLE
+  .card-invoice2
+    display: flex
+    flex-flow: column nowrap
+    justify-content: space-between
+    align-items: flex-start
+    .md-card-header
+    .md-card-content
+    .md-card-actions
+      width 100%
+    .md-card-header
+      padding: 16px 16px 0 16px
+      .title
+        color: $cblack
+        margin-bottom: 5px
+    .md-card-content
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-between
+      align-items: center
+      padding: 0 16px
+      .status
+        text-align: center
+        .md-icon
+          color: $cgreen
+      .amount-details
+        margin-top: 5px
+        color: $cgray1
+        text-align: right
+        .details
+          line-height: 1
+        .total
+          margin-top: 5px
+          font-weight: bold
+    .md-card-actions
+      .md-avatar
+        margin: 0 10px 0 0 
+        @extends .has-elevation-4;
+
+  
+  // CARD PLAYER ELIGIBILITY
+  .card-player-eligibility
+    display: flex
+    flex-flow: column nowrap
+    justify-content: space-between
+    align-items: flex-start
+    padding: 16px
+    text-align: center 
+    height 100%
+    .top-box
+      width 100%
+      margin: 0 auto
+    .md-avatar
+      @extends .has-elevation-4;
+      margin: 0 auto 10px auto
+    .md-icon
+      margin: 0 auto 10px auto
+      color: $ca1
+    .name
+      color: $cc1
+      font-size: 16px
+      line-height: 1.2
+    .eligibility
+      line-height: 1.2
+      font-size: 14px
+      margin-bottom: 5px
+    .total-label
+      font-size: 12px
+      color: $cc1
+    .total-amount
+      line-height: 1.2
+      font-size: 16px
+      color: $cc1
+  
+  // CARD PAYMENT PLAN
+  .card-payment-plan
+    display: flex
+    flex-flow: column nowrap
+    justify-content: space-between
+    align-items: center
+    text-align: center 
+    .title
+      padding: 16px 16px 0 16px
+    .body
+      padding: 0 16px
+    .actions
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-between
+      align-items: center
+      width 100%
+
+  // CLUBS CARDS
+  .card-clubs
+    display: flex
+    flex-flow: column nowrap
+    justify-content: space-between
+    align-items: center
+    text-align: center 
+    .body
+      padding: 16px 16px 0 16px
+      .club-img
+        width 80px
+      .club-name
+        color: $cc1
+        font-size: 16px
+        line-height: 1.2
+        margin-top: 5px
+    .actions
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-between
+      align-items: center
+      width 100%
+
+  // CARDS SEASONS
+  .card-seasons
+    display: flex
+    flex-flow: column nowrap
+    justify-content: space-between
+    align-items: center
+    text-align: center 
+    height 140px
+    .body
+      height 100px
+      display: flex
+      flex-flow: row nowrap
+      justify-content: center
+      align-items: center
+      .title
+        margin-top: 20px
+    .actions
+      height 40px
+      display: flex
+      flex-flow: row nowrap
+      justify-content: space-between
+      align-items: center
+      width 100%
+  
+  // CARD PERSON
+  .card-person
+  .card-person2
+    display: flex
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: center
+    .md-icon
+      margin: 0 auto 3px auto
+      color: $ca1
+    .md-avatar
+      margin: 0 auto 10px auto
+      @extends .has-elevation-4;
+    .name
+      color: $cc1
+      font-size: 16px
+  .card-person2
+    padding: 16px
+    justify-content: space-around
+    .top
+    .bottom
+      display: flex
+      flex-flow: column nowrap
+      justify-content: center
+      align-items: center
+    .bottom
+      flex-flow: row nowrap
+      .md-avatar
+        margin: 0 10px 0 0
+        @extends .has-elevation-4;
+
+  // CARD ACCOUNT
+  .card-account
+    display: flex
+    flex-flow: column nowrap
+    justify-content: space-between
+    align-items: center
+    padding: 20px 16px 0 16px
+    .card-account-body
+      display: flex
+      flex-flow: column nowrap
+      justify-content: center
+      align-items: center
+      .card-img
+        width: 80px
+        margin-bottom: 20px
+      .md-icon
+        margin: 0 auto 10px auto
+        color: $cblack
+      .name
+        color: $cc1
+        font-size: 16px

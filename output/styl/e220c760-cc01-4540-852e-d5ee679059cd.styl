@@ -1,0 +1,158 @@
+//  ============================ Typography ============================
+// icon size
+for $listIconItem in $listIcon
+	.icon--{$listIconItem[0]},.icon--{$listIconItem[1]}
+		width $listIconItem[1] px
+		height $listIconItem[1] px
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__icon--{$listIconItem[1]}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				width $listIconItem[1] px
+				height $listIconItem[1] px
+// icon size === end
+
+// line height
+.type--lh-1
+	line-height:1
+.type--lh-1_2
+	line-height:1.2
+.type--lh-1_4
+	line-height:1.4
+.type--lh-1_6
+	line-height:1.6
+// line height === end
+
+// calc font size
+for $listTypeItem in $listType
+	.type--{$listTypeItem[0]}
+		+below(768px)
+			font-size $listTypeItem[2] px
+		if $listTypeItem[3]
+			+below(640px)
+				font-size $listTypeItem[3] px
+		font-size $listTypeItem[1] px
+
+for $listTypeItem in $listTypeSimple
+	.type--{$listTypeItem}
+		font-size $listTypeItem px
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__type--{$listTypeItem}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				font-size $listTypeItem px
+
+// calc font size === end
+
+// calc font weight
+for $listFwItem in $listFw
+	.type--w{$listFwItem}
+		font-weight $listFwItem
+// calc font weight === end
+
+// type align
+$typeAlign = ("type--left" left),\
+							("type--mid" center),\
+							("type--right" right)
+
+for $itemType in $typeAlign
+	.{$itemType[0]}
+		text-align $itemType[1]
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__{$itemType[0]}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				text-align $itemType[1]
+// type align === end
+
+.type--ws
+	white-space nowrap
+
+.type--line
+	text-decoration: line-through
+
+h5
+	@extend .type--sm
+h4
+	@extend .type--main
+h3
+	@extend .type--md
+h2
+	@extend .type--lg
+h1
+	@extend .type--xl
+
+// link
+a
+	color $linkColor
+	text-decoration: none
+	tr()
+	&:hover
+		color darken($linkColor,20)
+	&:visited
+		color darken($linkColor,30)
+
+.link--mark
+	color $mark
+	&:hover
+		color darken($mark,20)
+	&:visited
+		color darken($mark,30)
+
+.link--main
+	color $linkColor
+	hover-underline($linkColor)
+	&:hover
+		color darken($linkColor,20)
+	&:visited
+		color darken($linkColor,30)
+
+.link--text
+	color $linkColor
+	text-decoration underline
+	&:hover
+		text-decoration none
+// link === end
+
+p
+	@extend .type--main
+
+.text
+	color $typeMain
+	h1,h2,h3,h4,h5
+		margin 3.5rem 0 2rem
+	h1:first-of-type,
+	h2:first-of-type,
+	h3:first-of-type,
+	h4:first-of-type,
+	h5:first-of-type,
+	h6:first-of-type,
+	p
+		margin-top: 0!important
+	a:not(.btn--md):not(.btn--sm)
+		@extend .link--mark
+	//img
+		//@extend .m-64
+	p
+		line-height: 1.6
+		margin-bottom: 30px
+		&:first-child
+			margin-top: 0
+		&:last-child
+			margin-bottom: 0
+	ul
+		margin-bottom: 30px
+		padding-left 26px
+		list-style none
+		li
+			line-height: 1.6
+			margin-bottom: 16px
+			position relative
+			//font-weight: 700
+			&:before
+				content ''
+				position absolute
+				size 12px
+				round()
+				border 2px solid $mark
+				left -26px
+				top 6px
+			&:last-child
+				margin-bottom: 0

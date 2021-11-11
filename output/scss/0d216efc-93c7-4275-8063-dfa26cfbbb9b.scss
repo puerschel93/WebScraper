@@ -1,0 +1,197 @@
+li.past-webinar-event {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  @include widescreen {
+    //
+  }
+  @include desktop {
+    //
+  }
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+  }
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .video,
+  .info {
+    flex: 1;
+    @include widescreen {
+      padding: 60px;
+      max-width: 400px;
+    }
+    @include desktop {
+      padding: vw(60px);
+      max-width: vw(400px);
+    }
+    @include tablet {
+      padding: 10vw; // TODO
+      max-width: 80vw; // TODO
+    }
+    @include mobile {
+      padding: 10vw; // TODO
+      max-width: 80vw; // TODO
+    }
+  }
+  .video {
+    position: relative;
+    .cta {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    figure {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  h3 {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    @include widescreen {
+      margin: 40px 0 30px;
+    }
+    @include desktop {
+      margin: vw(40px) 0 vw(30px);
+    }
+    @include tablet {
+      margin: 40px 0 30px; // TODO
+    }
+    @include mobile {
+      margin: 40px 0 30px; // TODO
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      border-right: 11px solid $blue-3;
+      left: -11px;
+      top: 4.5px;
+    }
+    span {
+      font-family: $extrabold;
+      font-size: 20px;
+      line-height: 27px;
+      height: 27px;
+    }
+    > span {
+      &:nth-child(odd) {
+        background-color: $blue-3;
+        padding: 0 5px;
+        margin: 0 -5px 4px 0;
+      }
+      &:nth-child(even) {
+        width: 0;
+      }
+    }
+    time {
+      width: 100% !important;
+      display: flex;
+      span {
+        font-family: $semibold;
+        font-size: 16px;
+        line-height: 25px;
+        height: 25px;
+        background-color: $blue-3;
+        padding: 2px 5px 0;
+      }
+    }
+  }
+  h4 {
+    font-family: $bold;
+    color: $grey-7;
+    line-height: 180%;
+    margin-bottom: 5px;
+    &:not(:first-of-type) {
+      margin-top: 25px;
+    }
+    @include widescreen {
+      font-size: 16px;
+    }
+    @include desktop {
+      font-size: vw(16px);
+    }
+    @include tablet {
+      font-size: 16px; // TODO
+    }
+    @include mobile {
+      font-size: 16px; // TODO
+    }
+  }
+  p {
+    span {
+      display: block;
+    }
+  }
+  ul {
+    list-style: disc;
+    padding-left: 18px;
+    li {
+      font-size: 16px;
+      line-height: 180%;
+    }
+  }
+  .host {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    picture {
+      width: 80px;
+      border-radius: 40px;
+      overflow: hidden;
+      margin-left: 20px;
+    }
+  }
+  .buttons {
+    margin-top: 45px;
+    display: flex;
+    gap: 10px;
+  }
+  .vertical-line {
+    background: $grey-2;
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: calc(50% - 1px);
+    top: 0;
+  }
+  .dashed-line {
+    background-image: url('#{$cdn}/images/public/dash-horizontal.svg');
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  .dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 3px solid $grey-2;
+    background: $grey-0;
+    left: calc(50% - 8px);
+    top: 106px;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+}

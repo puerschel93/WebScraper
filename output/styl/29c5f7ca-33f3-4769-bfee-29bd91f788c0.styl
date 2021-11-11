@@ -1,0 +1,235 @@
+.exchanging-forms
+  display flex
+  margin-top 63px
+  margin-bottom 18px
+  justify-content space-between
+  position relative
+  #pay-form
+  #receive-form
+    &:after
+      content ''
+      height 30px
+      position absolute
+      top 0
+      left 0
+      width 30px
+  #receive-form:after
+      background: rgba(0, 0, 0, 0) url("../img/exchanges-give-arrow.webp") no-repeat scroll center center;
+  #pay-form:after
+      background: rgba(0, 0, 0, 0) url("../img/exchanges-receive-arrow.webp") no-repeat scroll center center;
+  &__swap-sys
+    position absolute!important
+    left: 50%
+    top: 180px
+    transform translateX(-50%)
+  &__wrapper
+    width 430 px
+    position relative
+    display flex
+    flex-direction column
+  &__form-title
+    font-family: Whitney;
+    font-size: 20px;
+    font-weight: 400;
+    margin 5px 0 26px 50px
+    text-transform uppercase
+  &__exchanging-form
+    flex-grow 1
+    border-radius 5px
+    background-color: #f5f5f5;
+    padding 30px 30px 0 30px
+.exchanging-form
+  font-size 13px
+  font-family Whitney
+  display flex
+  flex-direction column
+  span
+    font-family Whitney
+    font-weight 700
+  b
+    font-family WhitneySemiBold
+    font-weight 400
+  &__payment-info
+    user-select none
+  &__value{}
+  &__account{}
+  &__field-label
+    color: #999999;
+    font-size 16px
+    position: absolute;
+    left 20px
+    top 50%
+    transform translateY(-50%)
+  &__verification
+    padding-bottom 50px
+  &__tooltip{}
+  &__help-message
+    position absolute
+    display none
+  &__min-max-value, &__final-value
+    color: #0a263e;
+    margin 10px 0 18px 0
+  &__min-max-value
+    font-family WhitneyMedium
+    font-weight: 500;
+  &__verify-account
+    margin 10px 0
+    label
+      color: #4b555f;
+      display: flex;
+      align-items: center;
+    input:checked + label .agree-ok p
+      display: block
+      overflow visible
+      font-size 14px
+  input
+    font-size 18px
+    height 50px
+    border: 1px solid #dee2e7;
+    padding 12px 20px
+    background-color #ffffff
+    border-radius 5px
+    &:focus
+      border-color #00abec
+    &:focus + .tooltip
+      visibility: visible
+      opacity 1
+
+  .test
+    width 30px
+    height 30px
+    margin-right 15px
+  .same-as-selected:after
+    content ""
+    position: absolute;
+    left 0
+    height 100%
+    width 5px
+    background-color #00abec
+    border-bottom-right-radius  50%
+    border-top-right-radius  50%
+.payment-info
+  display flex
+  color: #555555;
+  span
+    font-family WhitneyMedium
+    font-size 16px
+    font-weight 500
+
+  select
+    display none
+  &__system-select
+    flex 0 1 80%
+  &__valute-select
+    margin-left: auto
+    width 75px
+
+.system-select
+  position relative
+  &__item
+    padding 0 20px
+    border-top-left-radius 5px
+    border-bottom-left-radius 5px
+  .select-arrow-active
+    .i-next
+      transform translateY(-50%) rotate(-90deg)
+  .i-next
+    font-size 9px
+    position absolute
+    top 50%
+    right 13px
+    margin-left auto
+    transform translateY(-50%) rotate(90deg)
+.valute-select
+  position relative
+  &__item
+    justify-content: center;
+    border-top-right-radius 5px
+    border-bottom-right-radius 5px
+.valute-select__item
+.system-select__item
+  cursor pointer
+  height 50px
+  display flex
+  position relative
+  align-items: center;
+  border: 1px solid #dee2e7;
+  background-color #ffffff
+  &:hover
+    border-color #00abec
+
+.custom-select
+  select
+    display: none;
+  &__selected{}
+  .custom-select__items
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  .select-hide
+    display none
+
+.swap-sys
+  z-index 100
+  &__btn
+    background-color #00abec
+    border-radius 50%
+    width: 50px!important
+    height 50px!important
+    transform rotate(45deg)
+    font-size 30px
+    color #ffffff
+    transition all 0.2s ease
+    &:hover
+      transform rotate(45deg) scale(1.1)
+      background-color #00ae00
+    &:hover + .swap-sys__tooltip
+      opacity 1!important
+      visibility visible!important
+  &__tooltip
+    top: -75% !important
+    left: -75%!important
+    margin: 0!important
+    width max-content!important
+    &:after,&:before
+      top auto!important
+      bottom 0
+      margin 0 0 -6px 0!important
+      left: 50% !important
+      transform translateX(-50%) rotate(180deg)
+
+
+.ef-verify
+  &__calendar
+    position: relative;
+    label
+      padding-left 30px
+      &:before
+        position: absolute
+        content ''
+        left 0
+        width 16px
+        height 16px
+        background url("../img/ef-verif-calendar.svg") center center no-repeat
+    input
+      padding-left 45px
+    .i-next
+      position absolute
+      right 15px
+      font-size 10px
+      top 50%
+      transform translateY(-50%) rotate(90deg)
+  &__test
+    margin-top 30px
+
+.exchange-personal
+  flex-wrap wrap
+  padding 20px!important
+  &__select-address
+    flex 1
+    margin 10px
+
+.ep-address
+    display: flex
+    justify-content space-between

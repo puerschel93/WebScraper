@@ -1,0 +1,170 @@
+$visible-items-length-xlg: 6;
+$visible-items-length-lg: 5;
+$visible-items-length-md: 4;
+$visible-items-length-sm: 3;
+$visible-items-length: 2;
+
+$arrow-width-lg: 60px;
+$arrow-width-md: 40px;
+$arrow-width: 20px;
+
+$item-gap-lg: 16px;
+$item-gap-md: 8px;
+$item-gap: 4px;
+
+$icon-border-width-lg: 4px;
+$icon-border-width: 2px;
+$icon-size-lg: 28px;
+$icon-size-md: 20px;
+$icon-size: 14px;
+
+$item-width: calc(
+  (
+      100vw - var(--container-gap) * 2 - var(--item-gap) *
+        (var(--visible-items-length) - 1)
+    ) / var(--visible-items-length)
+);
+
+:export {
+  visibleItemsLengthXlg: $visible-items-length-xlg;
+  visibleItemsLengthLg: $visible-items-length-lg;
+  visibleItemsLengthMd: $visible-items-length-md;
+  visibleItemsLengthSm: $visible-items-length-sm;
+  visibleItemsLength: $visible-items-length;
+
+  breakpointXlg: $breakpoint-xlg;
+  breakpointLg: $breakpoint-lg;
+  breakpointMd: $breakpoint-md;
+  breakpointSm: $breakpoint-sm;
+
+  arrowWidthLg: $arrow-width-lg;
+  arrowWidthMd: $arrow-width-md;
+  arrowWidth: $arrow-width;
+
+  itemGapLg: $item-gap-lg;
+  itemGapMd: $item-gap-md;
+  itemGap: $item-gap;
+}
+
+.c-showsList {
+  --visible-items-length: #{$visible-items-length};
+  --item-gap: #{$item-gap};
+  --arrow-width: #{$arrow-width};
+  --container-gap: calc(var(--arrow-width) + var(--item-gap));
+  --icon-border-width: #{$icon-border-width};
+  --icon-size: #{$icon-size};
+
+  margin-bottom: 10px;
+  overflow: hidden;
+
+  &__container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__title {
+    margin: 40px 0 15px;
+    padding: 0 var(--container-gap);
+    font-size: 26px;
+    left: 1.25em;
+  }
+
+  &-list {
+    $width: 100vw;
+
+    position: relative;
+    width: $width;
+    max-width: $width;
+    display: block;
+
+    &__container {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      overflow: hidden;
+      // scroll-behavior: smooth;
+
+      &::before,
+      &::after {
+        min-width: var(--container-gap);
+        display: block;
+        content: "";
+      }
+    }
+
+    &__item {
+      min-width: $item-width;
+
+      & + & {
+        margin-left: var(--item-gap);
+      }
+    }
+  }
+
+  &__arrow {
+    $icon-color: $color-white;
+
+    position: absolute;
+    top: 50%;
+    border: 0;
+    width: var(--arrow-width);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    text-indent: -99999px;
+    overflow: hidden;
+    transition: linear 0.2s opacity;
+    will-change: opacity;
+
+    &::before {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(calc(-25% + var(--icon-border-width) / 2), -50%)
+        rotate(-45deg);
+      border: var(--icon-border-width) solid;
+      border-color: $icon-color transparent transparent $icon-color;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      content: "";
+    }
+
+    &_prev {
+      left: 0;
+      transform: translateY(-50%);
+    }
+    &_next {
+      right: 0;
+      transform: translateY(-50%) scale(-1, 1);
+    }
+  }
+
+  &:hover &__arrow {
+    opacity: 1;
+  }
+
+  @include breakpointSm {
+    --visible-items-length: #{$visible-items-length-sm};
+  }
+  @include breakpointMd {
+    --visible-items-length: #{$visible-items-length-md};
+    --arrow-width: #{$arrow-width-md};
+    --item-gap: #{$item-gap-md};
+    --icon-size: #{$icon-size-md};
+  }
+  @include breakpointLg {
+    --visible-items-length: #{$visible-items-length-lg};
+    --arrow-width: #{$arrow-width-lg};
+    --item-gap: #{$item-gap-lg};
+    --icon-border-width: #{$icon-border-width-lg};
+    --icon-size: #{$icon-size-lg};
+  }
+  @include breakpointXlg {
+    --visible-items-length: #{$visible-items-length-xlg};
+  }
+
+  @include breakpointSmMax {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,218 @@
+li.chat-message{
+  .message-header{
+    color: var(--m20e-midGrey);
+    .message-sender{
+        font-family: var(--m20e-senderFontFam);
+        font-size: var(--m20e-senderFontSize);
+        font-weight: bold;
+        margin: 0px 0px 5px 0px;
+    }
+    .flavor-text{
+        flex: 0 0 100%;
+        position: relative;
+        margin: 0 0 5px;
+        line-height: 24px;
+        font-size: var(--m20e-mainFontSize);
+        color: var(--m20e-darkGrey);
+        text-align: center;
+        background: rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--m20e-lightGrey);
+        border-radius: 3px;
+        box-shadow: 0 0 2px #FFF inset;
+        word-break: break-all;
+    }
+  }
+  .card{
+    .card-header{
+      display: flex;
+      border-bottom: 2px groove var(--m20e-superLightGrey);
+    }
+    .card-tooltip{
+      display: none;
+      .chat-tabs{
+        height: 22px;
+        margin: 2px 0px 10px 0px;
+        border-bottom: 0px;
+        border-top:0px;
+        border-left: 1px var(--m20e-midGrey);
+        font-size: var(--mainFontSize);
+        //font-weight: bold;
+        text-align: center;
+        a {
+          cursor: pointer;
+          color: var(--m20e-darkGrey);
+          background: rgba(0,0,0,0.3);
+          border: 1px solid var(--m20e-lightGrey);
+          border-radius: 6px 6px 0px 0px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 2px;
+          padding-right: 2px;
+          label {
+            flex: 10 10;
+            text-align: center;
+          }
+        }
+        a.disabled {
+          cursor: default;
+        }
+        a.active {
+          font-size: calc(var(--mainFontSize) + 2px);
+          color:  var(--titleColor);
+          background: #bdb9b200; // todo : check that out
+          border-color: var(--m20e-midGrey);
+          border-bottom: 0px;
+          margin-top: 0px;
+          padding-top: 3px;
+        }
+        a:hover {
+          text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.7), 1px 1px 0 rgba(245, 242, 217, 1);
+        }
+      }
+      .tooltip-part{
+        font-size: var(--m20e-descFontSize);
+        color: var(--m20e-midGrey);
+      }
+      .tooltip-part.item-ddesc{
+        margin: 5px 0px 10px;
+        padding: 0px 2px 5px;
+        border-bottom: 1px solid var(--titleColor);
+      }
+      .display-desc-button {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin: 3px 5px;
+        border-radius: 3px;
+        border-style: solid;
+        border-width: 1px 2px 2px 1px;
+        padding: 3px;
+        text-align: center;
+      }
+    }
+    .card-footer{
+      display:flex;
+      justify-content: space-between;
+      border-top: 2px ridge var(--m20e-superLightGrey);
+      .item-type{
+        height: 25px;
+        color: var(--m20e-midGrey);
+        border-radius: 3px;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        padding: 3px;
+        margin-top: 5px;
+      }
+      .item-img{
+        border-radius: 3px;
+        border-bottom: none;
+        border-right: none;
+        height: 25px;
+        width: 25px;
+        margin: 5px 0 0 5px;
+        background-image: radial-gradient(rgba(130,81,20,0.4), rgba(0,0,0,0));
+      }
+    }
+  }
+}
+.m20e.dice-roll{
+  .dice-tooltip{
+    .willpower-success{
+        color: var(--m20e-midGrey);
+        font-size:  var(--mainFontSize);
+        font-weight: bold;
+    }
+    .part-header{
+        color: var(--m20e-midGrey);
+        border-bottom: 1px solid var(--titleColor);
+        .tooltip-infos{
+            display: flex;
+            position: relative;
+            font-size: var(--titleColor);
+            font-weight: bold;
+            .tooltip-info{
+                font-size: var(--titleColor);
+                font-weight: bold;
+                margin-left: 3px;
+            }
+            .tooltip-info[data-value^="-"]{
+                color:var(--m20e-badRed);
+            }
+            .tooltip-info[data-value^="+"]{
+                color:var(--m20e-goodGreen);
+            }
+            .righttooltiptext {
+              visibility: hidden;        
+              background: rgba(0, 0, 0, 0.8) url(../assets/ui/parchment-dark.jpg) repeat;
+              text-align: center;
+              text-decoration: none;
+              text-shadow: none;
+              border: 1px solid var(--m20e-lightGrey);
+              border-radius: 3px;
+              padding: 5px 10px;
+              position: fixed;
+              margin: -5px 0px 0px 5px; 
+              z-index: 1;
+            }
+            .righttooltiptext::after {
+              content: " ";
+              position: absolute;
+              top: 50%;
+              right: 100%;
+              margin-top: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: transparent var(--m20e-darkGrey) transparent transparent;
+            }
+            .bottomtooltiptext {
+              visibility: hidden;
+              background: rgba(0, 0, 0, 0.8) url(../assets/ui/parchment-dark.jpg) repeat;
+              text-align: left;
+              text-decoration: none;
+              text-shadow: none;
+              font-size: 12px;
+              font-weight: normal;
+              border: 1px solid var(--m20e-lightGrey);
+              border-radius: 3px;
+              padding: 5px 10px;
+              position: absolute;
+              width:95%;
+              top: 100%;
+              left: 5%;
+              margin: 5px 0px 0px 0px; 
+              z-index: 1;
+              line-height: 18px;
+              font-weight: bold;
+            }
+            .bottomtooltiptext::after {
+              content: " ";
+              position: absolute;
+              bottom: 100%;
+              left: 10%;
+              margin-top: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: transparent transparent var(--m20e-darkGrey) transparent;
+            }
+        }
+        .tooltip-infos:hover .righttooltiptext {
+          visibility: visible;
+        }
+        .tooltip-infos:hover .bottomtooltiptext {
+          visibility: visible;
+        }
+    }
+  }
+  .dice-total{
+    color:var(--m20e-midGrey);
+  }
+  .dice-total.red-thingy {
+    color:var(--m20e-badRed);
+  }
+  .dice-total.green-thingy {
+    color:var(--m20e-goodGreen);
+  }
+}
+
+
+

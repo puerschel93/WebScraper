@@ -1,0 +1,234 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI
+$picture-bg:no;
+$picture-bg-url:'../images/dark_wall.png';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container:300;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:0;
+
+$margin-top-under-nav-fixe:110;
+
+// SIZE NAVIGATION
+$height-navigation:75;
+
+// VAR SITE TYPO
+$font-body:"Source Sans Pro",arial,verdana,sans-serif;
+$font-title:"Raleway",arial,verdana,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST >>>> FONT-SIZE-TEXT
+$font-size-text:1.5em;
+$font-size-title:1.8em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:uppercase;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:yes;
+
+// BORDER EFFECT ON NAV
+$border-nav:yes;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib6";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// IMPORT TEMPLATE ROME
+@import "../../../slagence_X_V5/sources/scss/templates/rome";
+
+// IMPORT MODULE ANNONCES
+@import "../../../slagence_X_V5/sources/scss/modules/annonces5";
+
+// IMPORT MODULE EXTRA
+//@import "../../../slagence_X_V5/sources/scss/extra/extra4";
+
+// SPRITE BLANC
+@import "../../../slagence_X_V5/sources/scss/sprites/social-blanc";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+// IMPORT MODULE SOUS MENU
+@import "../../../slagence_X_V5/sources/scss/sous_menu/lib3";
+
+
+
+body {
+	background-image:url('../images/bg-body.jpg');
+	background-color:$color-body;
+	background-position:top center;
+	background-repeat:no-repeat;
+}
+
+.menu-principal>li {
+	border-top:none;
+}
+
+.row-fluid .col-rome+.col-rome {
+	padding-right:15px;
+}
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------
+//		PERSO AZHA
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+//		GENERAL
+//---------------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.bg-container, .bg-container-100 {
+	width: auto;
+    max-width: 1280px;
+    @media only screen and (max-width : 1310px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		FOOTER
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.bg-secondary-footer {
+	display: none;
+}
+
+footer, .nav-footer.nav-pills.nav-stacked>li>a {
+	color: $color-nav-footer;
+}
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.menu-principal>li {
+	text-align: center;
+	line-height: 50px;
+	>a:hover {
+		color: $color-important;
+	}
+}
+
+//---------------------------------------------------------------------------------------------------------------------------
+//		INDEX
+//---------------------------------------------------------------------------------------------------------------------------
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		MINI MOTEUR
+	//---------------------------------------------------------------------------------------------------------------------------
+
+#Mini_Biens, #Mini_Villes, #Mini_Bouton {
+	margin:0px;	
+}
+
+#Mini_Bouton {
+	margin-top:-1px;
+}
+
+.form-inline{ 
+	margin-left: 35px;
+	select {
+		height:50px;
+		border:none;				
+		border-left: solid 1px $color-secondary;	    
+	    border-bottom: solid 1px $color-secondary;
+	    border-top: solid 1px $color-secondary;
+	    border-radius: 0;
+	}
+}
+
+.saisie-suggest {
+    -moz-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    border-radius: 0px !important;
+    height: 50px !important;    
+    border:none !important;
+    border-bottom: solid 1px $color-secondary !important;
+    border-left: solid 1px $color-secondary !important;	  
+    border-top: solid 1px $color-secondary !important;	  
+}
+
+.bouton-rechercher-moteur {
+	height: 50px;
+	line-height: 40px;
+	margin-top: 1px;
+}
+
+.bg-mini-moteur {
+	background:transparent;
+}
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		EXTRA
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.module-homepage-extra {
+	margin-top: -60px;	
+}
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		ENCART PA
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.module-homepage .ligne-titre {
+	margin-top: 40px;
+}
+
+.module-annonces-homepage .height-180 {
+	height: 220px;
+}
+
+	//---------------------------------------------------------------------------------------------------------------------------
+	//		SEO
+	//---------------------------------------------------------------------------------------------------------------------------
+
+.valeur-seo {
+	background: $color-block;
+	padding: 10px;
+	@include border-radius (4px);
+	border-bottom: solid 1px $color-important;
+}
+
+.page-agence-detail hr.margin-bottom-10 {
+	display: none;
+}

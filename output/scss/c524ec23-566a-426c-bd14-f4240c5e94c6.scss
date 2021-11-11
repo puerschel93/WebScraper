@@ -1,0 +1,149 @@
+.image--restaurant {
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 150px;
+    @include respond(tablet) {
+      height: 250px;
+    }
+    @include respond(desktop) {
+      height: 350px;
+    }
+  }
+}
+
+.card {
+  border-radius: 10px 10px 0 0;
+  section {
+    margin-bottom: 30px;
+    @include respond(desktop) {
+      margin: unset;
+    }
+    h3 {
+      border-bottom: 3px solid $color-tertiary;
+      width: 16%;
+      padding-bottom: 5px;
+      @include respond(tablet) {
+        width: 6%;
+        margin: 5% auto;
+      }
+      @include respond(desktop) {
+        width: 13%;
+      }
+    }
+  }
+  a {
+    display: flex;
+    text-decoration: none;
+    color: $color-black;
+  }
+  .card--counter {
+    border-radius: 25px 25px 0 0;
+    background-color: $color-body;
+    position: relative;
+    bottom: 25px;
+    .card--title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        font-family: "Shrikhand", sans-serif;
+        @include respond(tablet) {
+          margin: 5% auto;
+        }
+      }
+    }
+  }
+  .flex--desktop {
+    @include respond(desktop) {
+      display: flex;
+    }
+  }
+  .selection {
+    animation: appear 2s 1 normal forwards;
+    animation-fill-mode: both;
+    animation-delay: 500ms;
+    animation-timing-function: ease-in-out;
+    @for $i from 1 through 21 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * 100ms;
+      }
+    }
+    border-radius: 10px;
+    background-color: $color-main;
+    box-shadow: 0 5px 5px $darken-main;
+    // padding: 2% 4%;
+    margin-bottom: 15px;
+    cursor: pointer;
+    @include respond(tablet) {
+      max-width: 60%;
+      margin: 5% auto;
+    }
+    @include respond(desktop) {
+      max-width: 85%;
+    }
+    &:hover .selection--hover {
+      width: 15%;
+    }
+    &:hover .selection--menu {
+      width: 70%;
+    }
+    a {
+      & > * {
+        transition: width 1s ease-in-out;
+      }
+      .selection--menu {
+        padding: 2% 4%;
+        width: 85%;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: space-between;
+        h4 {
+          margin: 10px 0;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        p {
+          margin: 0;
+          font-size: 0.8rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+      .price {
+        // padding-left: 10px;
+        font-weight: bold;
+        padding: 2% 4%;
+        display: flex;
+        align-items: flex-end;
+        width: 15%;
+      }
+      .selection--hover {
+        background-color: $color-tertiary;
+        // width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 10px 10px 0;
+        width: 0;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+// @for $i from 0 to 9 {
+//   .anim#{$i} {
+//     animation-delay: #{$i/10}s;
+//   }
+// }
+
+.button--page {
+  text-align: center;
+  margin: 30px 0;
+  @include respond(tablet) {
+    margin: 30px auto;
+  }
+}

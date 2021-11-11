@@ -1,0 +1,156 @@
+.podcasts {
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #ffa351;
+  align-items: center;
+  height: auto;
+  transition: all 0.5s;
+
+  .podcasts-cont {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 1.5em;
+    .podcasts-player {
+      width: 60%;
+      position: relative;
+      // padding: 1em 0;
+
+      .btn-icon {
+        transition: all 0.5s;
+        opacity: 0;
+        color: #ffa351;
+        font-size: 4em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        cursor: pointer;
+      }
+      .video {
+        width: 100%;
+        height: 60vh;
+        background-color: black;
+        cursor: pointer;
+        object-fit: contain;
+        margin: 1em 0;
+      }
+      &:hover {
+        .btn-icon {
+          // display: block !important;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .car-aud {
+    background-color: #f8de7e;
+    margin: 2em 0;
+    width: 80%;
+    height: auto;
+    padding: 2em 0;
+    z-index: 1;
+
+    .slide-3 {
+      display: flex;
+      justify-content: space-evenly;
+      height: auto;
+      padding-bottom: 2em;
+      .carvid-cont {
+        // background-color: pink;
+        height: 280px;
+        width: 60%;
+        .vid-title {
+          text-align: center;
+          margin: 1em 0;
+          font-size: 1em;
+        }
+        .car-video {
+          height: 80%;
+          position: relative;
+          width: 100%;
+
+          background-color: black;
+          border-radius: 10px;
+          transition: all 0.3s;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            max-width: 100%;
+          }
+
+          .car-play-btn {
+            color: #ffa351;
+            font-size: 3em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            cursor: pointer;
+            transition: all 0.5s;
+          }
+          &:hover {
+            .car-play-btn {
+              font-size: 4em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .react-reveal.podcasts {
+    min-height: fit-content;
+    .podcasts-cont {
+      .podcasts-player {
+      width: 70%;
+
+        .video {
+          height: 40vh;
+        }
+      }
+    }
+    height: auto;
+    margin-top: 2em;
+    .car-aud {
+      .slide-3 {
+        .carvid-cont {
+          .car-video {
+            height: 70%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .react-reveal.podcasts {
+    min-height: fit-content;
+
+    height: auto;
+    margin-top: 2em;
+    .car-aud {
+      .slide-3 {
+        .carvid-cont {
+          .car-video {
+            height: 60%;
+          }
+        }
+      }
+    }
+  }
+}

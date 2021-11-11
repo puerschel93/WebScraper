@@ -1,0 +1,502 @@
+.catalog-wrap
+	position: relative
+	display: grid
+	grid-template: auto 1fr \/ 243px 1fr
+	grid-gap: 0 33px
+	padding: 0 0 60px
+	margin-left: 0
+	transition: all 0.3s ease
+	&.hidden
+		margin-left: -243px
+		.catalog-filter
+			opacity: 0
+		.products-wrap
+			grid-template-columns: repeat(auto-fit, 320px)
+			width: 100%
+			&.lines
+				grid-template-columns: 100%
+				.product-item
+					width: 100%
+
+.sort-filter
+	grid-column: 2 \/ -1
+	flex(row, wrap, flex-end, center)
+	label
+		margin-right: 5px
+		color: $gray
+		fonts(12px, 16px)
+
+.sort-item
+	margin-right: 42px
+	&.input-field
+		margin-top: 0
+		margin-bottom: 0
+	&:last-of-type
+		margin-right: 0
+
+	label, select
+		fonts(12px, 16px)
+	label
+		color: $gray
+
+.grid-icon
+	width: 14px
+	height: 14px
+	margin: 0 10px
+	background: url('./../img/grid-icon.png') 50% 50%/100% no-repeat
+	&.active, &:hover
+		background-image: url('./../img/grid-icon-active.png')
+	&:focus
+		background-color: transparent
+
+.lines-icon
+	width: 16px
+	height: 14px
+	background: url('./../img/lines-icon.png') 50% 50%/100% no-repeat
+	&.active, &:hover
+		background-image: url('./../img/lines-icon-active.png')
+	&:focus
+		background-color: transparent
+
+.products-wrap
+	display: grid
+	grid-template-rows: auto
+	grid-template-columns: repeat(auto-fit, 280px)
+	grid-gap: 10px
+	justify-content: space-evenly
+	align-content: start
+	width: 100%
+	text-align: center
+	transition: all 0.5s ease
+	input[type="number"]
+		display: none
+
+.product-item
+	position: relative
+	flex(column, nowrap, flex-start, stretch)
+	padding: 34px 10px 28px
+	text-decoration: none
+	transition: all 0.3s ease
+	.small-button
+		order: 3
+		position: absolute
+		right: 10px
+		opacity: 0
+	.quantity-counter
+		order: 1
+		display: none
+		width: 100%
+		padding-bottom: 10px
+	.product-prices
+		order: 2
+	&:hover
+		box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.17)
+		text-decoration: none
+		.small-button
+			position: static
+			opacity: 1
+			transition: all 0.3s ease
+		.like-button
+			opacity: 1
+		.product-prices
+			flex-direction: column
+		.discount
+			padding: 0
+			font-size: 10px
+			line-height: 13px
+		.quantity-counter
+			display: flex
+
+.product-item-description, .quantity-counter
+	display: none
+
+.product-item-description  *, .product-item-description
+	order: 3
+	fonts(11px, 15px)
+
+.product-item-info
+	flex-grow: 2
+	position: relative
+	flex(column, nowrap, center, center)
+
+.quantity-counter
+	flex(row, nowrap, center, center)
+	margin-left: 9px
+	fonts(12px, 16px)
+	button
+		padding: 0
+		border: none
+		background: none
+		outline: none
+		box-shadow: none
+		fonts(12px, 16px)
+		&:hover
+			color: $violet
+			cursor: pointer
+		&:first-of-type
+			margin-left: 5px
+	input
+		width: 24px
+		padding: 0
+		border: none
+		background: none
+		outline: none
+		box-shadow: none
+		text-align: center
+		fonts(12px, 16px)
+
+.product-image
+	position: relative
+	flex(column, nowrap, center, center)
+	height: 162px
+	padding-bottom: 30px
+	img
+		max-width: 100%
+		max-height: 100%
+		width: auto
+		height: auto
+
+.product-labels
+	position: absolute
+	top: -20px
+	left: 0
+	z-index: 2
+	width: 100%
+
+.new-product-label, .cheap-product-label
+	display: inline-block
+	padding: 3px 10px
+	border: 1px solid $dark
+	fonts(8px, 10px, 600)
+	letter-spacing: 0.1em
+	text-align: center
+	text-transform: uppercase
+
+.new-product-label
+	border-color: $violet
+	color: $violet
+
+.cheap-product-label
+	border-color: $yellow
+	color: $yellow
+
+.like-button
+	position: absolute
+	top: 20px
+	left: 23px
+	z-index: 3
+	opacity: 0
+	transition: all 0.3s ease
+	.heart-icon:hover, .pressed
+		background-image: url('./../img/heart-icon-fill.png')
+
+.product-title
+	flex-grow: 2
+	padding-top: 10px
+	color: $black
+
+.product-bottom
+	flex(row, wrap, center, center)
+	min-height: 83px
+	padding: 10px 0 0
+.product-prices
+	flex(row, nowrap, center, center)
+	height: 47px
+.price, .discount
+	display: inline-block
+	padding: 9px 15px
+	color: $violet
+	font-weight: 700
+.discount
+	color: $gray
+	font-weight: 400
+	text-decoration: line-through
+
+.product-articul
+	display: none
+
+.catalog-filter
+	grid-row: 1 \/ -1
+	align-self: start
+	border: 1px solid #F0F0F0
+	transition: all 0.5s ease
+	.upper-title
+		margin: 0
+		padding: 14px
+		text-align: center
+		background: #F0F0F0
+
+.filter-form
+	flex(column, nowrap)
+	padding: 21px 15px 24px
+	.site-checkbox-label
+		margin-top: 10px
+		color: $gray
+	.short
+		width: 77px
+		margin-right: 18px
+	.site-input
+		fonts(12px, 16px)
+
+.filter-block
+	position: relative
+	flex(column, nowrap)
+	width: 100%
+	overflow: hidden
+	&.row
+		flex-direction: row
+	&.show
+		max-height: 100%!important
+
+.filter-submit-block
+	margin-top: 30px
+
+.filter-subtitle
+	position: relative
+	display: inline-block
+	padding: 0 10px 5px 0
+	fonts(12px, 16px)
+	color: $dark
+	&:nth-of-type(n+2)
+		margin-top: 30px
+
+.spread-all
+	position: relative
+	padding: 10px 10px 0 0
+	border: none
+	outline: none
+	background: none
+	box-shadow: none
+	fonts(12px, 12px)
+	color: $dark
+	cursor: pointer
+	&::after
+		content: ''
+		position: absolute
+		right: 0
+		top: 16px
+		z-index: 2
+		transform: rotate(-90deg)
+		display: block
+		width: 3px
+		height: 6px
+		background: url('./../img/little-arrow.png') 50% 50%/contain no-repeat
+	&.active::after
+		transform: rotate(90deg)
+	&:hover
+		color: $violet
+
+.filter-reset
+	background: none
+	box-shadow: none
+	color: $dark
+	&:hover
+		background: none
+		color: $violet
+
+.add-to-cart-popup
+	.popup-body
+		flex(column, nowrap, stretch, stretch)
+	.cart-list
+		overflow-y: auto
+		overflow-x: hidden
+		max-height: 80%
+	.block-title
+		margin-bottom: 50px
+		text-align: center
+	.product-item
+		display: grid
+		grid-template: auto \/ repeat(5, auto)
+		grid-gap: 30px
+		align-items: center
+		max-width: 100%
+		padding: 10px
+	.product-image
+		width: 87px
+		height: 54px
+		padding-bottom: 0
+	.product-prices
+		order: inherit
+	.product-title
+		padding-top: 0
+	.navigation-wrap
+		margin-top: 70px
+
+.popup-cross
+	position: relative
+	display: inline-block
+	width: 20px
+	height: 20px
+	&::before, &::after
+		content: ''
+		position: absolute
+		top: 50%
+		left: 0
+		z-index: 1
+		display: block
+		width: 100%
+		height: 2px
+		background: $gray
+	&::before
+		transform: translateY(-50%) rotate(45deg)
+	&::after
+		transform: translateY(-50%) rotate(-45deg)
+
+
+@media (min-width: 769px)
+	.products-wrap.lines
+		grid-template-columns: 100%
+		justify-items: stretch
+		padding-left: 10px
+		.product-item
+			flex(row, nowrap, space-between, center)
+			max-width: 100%
+			width: 100%
+			padding: 25px 15px
+			text-align: left
+			.product-prices
+				order: 1
+				flex-direction: column
+				height: auto
+			&:hover
+				.discount
+					padding: 0 10px 1px
+					fonts(10px, 13px)
+				.product-image
+					img
+						transform: scale(1.08)
+			.discount
+				padding: 0 10px 1px
+				fonts(10px, 13px)
+			.price
+				padding: 3px 10px 0
+		.quantity-counter
+			order: 2
+			display: flex
+			width: 90px
+			padding-bottom: 0
+		.product-item-description
+			display: block
+			margin-top: 10px
+			p
+				margin: 0
+		.product-articul
+			display: block
+			color: $gray
+			fonts(12px, 16px)
+		.small-button
+			position: static
+			margin-left: 20px
+			opacity: 1
+		.product-item-info
+			align-self: stretch
+			flex-shrink: 2
+			max-width: 330px
+			align-items: flex-start
+			justify-content: center
+
+		.product-title
+			flex-grow: 0
+			order: 1
+			padding: 0
+		.product-labels
+			position: static
+			padding-top: 10px
+			text-align: left
+			order: 2
+		.product-image
+			width: 190px
+			height: auto
+			padding: 0 40px 0 0
+			img
+				transform: scale(1)
+				max-height: 200px
+				transition: all 0.3s ease
+		.product-bottom
+			flex-wrap: nowrap
+			align-self: center
+			align-items: center
+			min-height: 0
+		.like-button
+			top: 18px
+			left: 12px
+
+	.catalog-wrap.hidden .products-wrap.lines .product-item-info
+		max-width: 100%
+		margin-right: 52px
+
+@media (max-width: 1160px)
+	.products-wrap
+		&.lines
+			padding-left: 10px
+			.product-bottom
+				flex-flow: column nowrap
+			.quantity-counter, .small-button, .price
+				margin-top: 10px
+
+@media (max-width: 768px)
+	.catalog-type-manage
+		display: none
+
+@media (max-width: 640px)
+	.catalog-wrap
+		grid-template: auto \/ 100%
+
+	.sort-filter
+		grid-column: 1
+		margin-top: 31px
+
+	.catalog-filter, .catalog-filter.hidden
+		width: 100%
+		margin-left: 0
+		opacity: 1
+		.upper-title::after
+			content: ''
+			transform: rotate(90deg)
+			display: inline-block
+			width: 7px
+			height: 12px
+			margin-left: 15px
+			background: url('./../img/little-arrow.png') 50% 50%/100% no-repeat
+		.filter-form
+			display: none
+		&.active
+			.filter-form
+				display: block
+	.add-to-cart-popup
+		.product-item
+			position: relative
+			grid-template: auto \/ repeat(3, auto)
+			grid-gap: 0 30px
+			padding-right: 40px
+		.product-title
+			grid-column: span 2
+		.popup-cross
+			position: absolute
+			right: 15px
+			top: 50%
+			transform: translateY(-50%)
+		.product-prices
+			grid-column: 2
+		.product-quantity
+			grid-column: 1
+@media (max-width: 450px)
+	.add-to-cart-popup
+		.product-item
+			grid-template: auto \/ repeat(2, auto)
+		.product-title
+			grid-column: 1 \/ -1
+			grid-row: 1
+			margin-bottom: 10px
+		.product-image
+			grid-row: 2 \/ span 2
+		.product-prices
+			grid-column: 2
+			.price
+				padding-left: 0
+			.discount
+				padding-left: 0
+		.product-quantity
+			grid-column: 2
+		.popup-body
+			padding: 10px

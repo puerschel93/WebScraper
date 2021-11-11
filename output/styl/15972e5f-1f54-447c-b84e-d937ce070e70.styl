@@ -1,0 +1,564 @@
+//core layout
+
+   
+    
+@media ttrigger
+    main, div#priNav-v2, div#priNav, div#secNav, div#carouselIndicator, div#slideNav
+        padding-left: padL    
+        padding-right: padL
+
+    main, body > footer
+        padding: padStd
+        padding-bottom: padXL
+    body > footer
+        padding-top: padM*1.5
+    main.home        
+        padding: padStd 
+
+
+    div#priNav,
+    div#priNav-v2
+        height: navHeightL
+    div#secNav
+        height: navHeight
+    div#slideNav 
+        padding-top: padXS
+        padding-bottom: padStd
+    
+    body > header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+        padding: padXS padXS
+        width:100%
+    body > header.fixed
+        min-height: 11vh
+        position: absolute
+        z-index: 2000
+    body > header.sticky
+        min-height: 8vh
+        position: fixed
+        z-index: 20000
+        padding: 0
+        display: none
+    body > header > *
+        margin-left: marXS
+        margin-right: marXS
+
+    div.content
+        display: flex
+        justify-content: space-between
+        flex: 1 1 auto
+    div.content > section
+        flex-basis: 70%
+        margin-right: marXS
+    div.content > section:last-child
+        margin-right: 0
+    article.grid div.content
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr))
+        column-gap: marM
+        row-gap: marM  
+    article.grid div.content > section
+        margin: 0
+    article.grid.allCols div.content
+        display: flex 
+        flex-wrap: wrap
+        justify-content: space-between
+        column-gap: 0
+        row-gap: 0
+    article.grid.allCols div.content > section
+        flex-basis: 47%
+    article.grid .picturefill-background
+        min-height: 35vw
+    article.grid .picturefill-background > div
+        min-height: 35vw
+
+    main > article        
+        margin: marStd auto
+        padding: padXXS 0 0 0
+        display: flex
+        justify-content: space-between
+    main > article.blog
+        display: block
+    main > article.subhead,
+    main > article.blog
+        margin-top: 0
+    main > article section
+        flex-basis: 47%
+        padding-left: padStd
+        padding-right: padStd
+    main > article.full section
+        flex-basis: auto
+    main > article section:first-child
+        padding-left: 0
+    main > article.sideBarLeft section:first-child
+        flex-basis: 25%
+    main > article section:last-child
+        padding-right: 0 
+    main > article.sideBarLeft section:last-child
+        flex-basis: 75%   
+    main > article.blog section
+        max-width:80%
+        padding:padXS padL 0 padL
+        margin:0px auto
+    main > article.blog section:first-child,
+    main > article.blog section:last-child
+        padding-right:padXL*2
+    main > article.contact
+        padding:padStd padXL padStd padXL
+    main > article.insetContent div.content
+        justify-content: center !important
+    main > article.insetContent section
+        flex-basis: 45%
+        padding-left: padStd
+        padding-right: padStd
+
+    body > footer
+        display: flex
+        justify-content: space-between 
+    body > footer section
+        flex-basis: 47%
+        padding-left: padM
+        padding-right: padM
+    body > footer section:first-child
+        padding-left: 0
+    body > footer section:last-child
+        padding-right: 0
+
+    div.catList > article
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+    div.catList > article section
+        flex-basis: 47%
+        padding-left: padM
+        padding-right: padM
+        padding-bottom: padStd
+    div.catList > article section:first-child
+        padding-left: 0
+    div.catList > article section:last-child
+        padding-right: 0
+
+
+@media lgdesktopRule
+    body > footer
+        padding-left: padXL
+        padding-right: padXL
+    main > article.blog section:first-child,
+    main > article.blog section:last-child
+        padding-right:padXL*3
+
+.picturefill-background
+    overflow hidden
+
+@media print
+    body > header
+        display: none
+
+// content
+div.contentHdr,    
+div.content
+    width: 100%
+    height: 100%
+div.contentHdr
+    position: relative
+    z-index: 2    
+div.content > section > div
+    padding: padL
+*.pullUp div.content > section > div
+    padding-top: 0
+*.inset div.content
+    justify-content: center
+*.inset div.content > section > div
+    padding: padM
+    padding-right: padL   
+*.fullH
+    height: fullH 
+*.largeH
+    height: largeH
+*.halfH
+    height: halfH
+*.smallH
+    height: smallH  
+.largeH div.content > section > div
+    padding-top: padL
+    padding-bottom: padL
+.halfH div.content > section > div
+    padding-top: padM
+    padding-bottom: padM
+.smallH div.content > section > div
+    padding-top: padXL*0.2
+    padding-bottom: padXL*0.2
+// image and content articles    
+article.imageContent div.content > section
+    margin-right: 0    
+article.imageContent.row div.content > section:last-child
+    background-color: blackAlp5
+article.imageContent section > div
+    padding: padL padM
+    min-height: 22vw
+article.grid section > div
+    padding: 0
+article.grid section > div:last-child,
+article.grid .picturefill-background
+    padding: padM padM
+article.grid.side-by-side section
+    display: flex
+    flex: 1 1 auto
+    align-items: center
+article.grid.side-by-side section > div
+    flex-basis: 40%
+article.grid.side-by-side section > div:last-child
+    flex-basis: 80%
+    padding: padXS 0 padStd padStd
+article > header
+    padding: padM
+
+
+
+// layout mods
+*.centerMe div.content
+    text-align: center 
+// positioning in image articles - default is left-top-left ie, no classing
+div.content.rC    
+    justify-content: center
+div.content.rE    
+    justify-content: center    
+div.content.cC    
+    align-items: center
+div.content.cE    
+    align-items: center        
+.rC > div,
+.rE > div,
+.cC > div
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+.rC > div
+    justify-content: center
+.rE > div
+    justify-content: flex-end
+.cC > div
+    justify-content: center
+    align-items: left
+    text-align: left 
+.tC
+    text-align: left
+.tR
+    text-align: left 
+  
+@media phoneRule  
+    div.content section > div
+        padding: padXL*1.5 padL*1.4 padXL*1.5 padL*1.5 !important
+    article > header
+        padding: padXL*1.5 padL*1.4 padL*1.5 padL*1.5 !important
+        border: none;
+    div.picturefill-background div.content
+        display: flex
+        //align-items: flex-end
+        align-items: flex-start
+        background-color: blackAlp25
+    div.picturefill-background div.content section
+        width:100%
+    div.picturefill-background div.content section > div
+        padding-top:7.5vh !important
+    .picturefill-background
+        min-height: halfH  
+    article.imageContent.row div.content > section:last-child
+        background: none
+    article.grid
+        margin-top: marL*2
+        margin-bottom: marL
+    article.grid section > div
+        padding: padL padL*1.5 !important
+    article.grid section > div:last-child
+        padding-bottom: padXL !important     
+    article.grid.side-by-side section > div:first-child
+        flex-basis: 30%
+        padding: padM padM padM padL*1.5
+    article.grid.side-by-side section > div:last-child
+        flex-basis: 70%
+        padding: padL padXL padM padM
+        font-size: 85%
+    article.grid .picturefill-background
+        min-height: halfH
+    article.grid .picturefill-background > div
+        min-height: halfH
+    article.imageContent
+        margin-bottom: 0
+    
+    .remSec section > div:first-child
+        display: none;
+    .remSec section > div
+        flex-basis: 100% !important
+        padding: padL padL*1.5 !important
+
+
+  
+
+
+    
+@media tabletRule
+    article.grid.side-by-side div.content
+        display: block
+    article.grid.side-by-side section
+        margin-bottom: marM !important
+    article.grid.side-by-side section > div
+        flex-basis: 20%
+    article.grid.side-by-side section > div:last-child
+        flex-basis: 80%
+    
+
+@media dtrigger 
+    div.content > section
+        flex-basis: 43%
+    article.grid.allCols div.content
+        display: flex 
+        flex-wrap: nowrap
+        justify-content: flex-start
+    article.grid.allCols div.content > section
+        margin-right: marXXS
+    article.grid.allCols div.content > section:last-child
+        margin-right: 0
+    article.grid .picturefill-background
+        min-height: 14.5vw
+    article.grid .picturefill-background > div
+        min-height: 14.5vw
+    article.grid.side-by-side div.content
+        grid-template-columns: repeat(auto-fill, minmax(35vw, 1fr))
+    article.grid.side-by-side div.content > section
+        padding-left: padM
+        padding-right: padM
+    div.content.rC    
+        justify-content: center
+    div.content.rE    
+        justify-content: flex-end    
+    div.content.cC    
+        align-items: center 
+    div.content.cE    
+        align-items: flex-end        
+    .rC > div,
+    .rE > div,
+    .cC > div
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+    .rC > div
+        justify-content: center
+    .rE > div
+        justify-content: flex-end
+    .cC > div
+        justify-content: center
+        align-items: center
+        text-align: center
+    .tC
+        text-align: center
+    .tR
+        text-align: right   
+    article > header
+        max-width: 40vw 
+
+    .row.flip div.content
+        flex-direction: row-reverse
+
+
+// do an IE version of grid in flex
+
+
+
+
+
+// desktop navigation
+div#masthead
+    background-color: halfDark
+    display: block
+    color: white
+div#priNav,
+div#priNav-v2
+    background-color: blackAlp75 
+    display: block
+div#slideNav
+    background-color: blackAlp75 
+div#secNav
+    background-color: blackAlp75    
+div#priNav, div#priNav-v2, div#secNav
+    display: flex
+    justify-content: space-between
+    align-items: center
+div#priNav > *, div#priNav-v2 > *, div#secNav > *
+    margin-top: marXXS
+    margin-bottom: marXXS
+div#priNav > nav, div#priNav-v2 > nav
+    display: flex
+    justify-content: flex-start
+    flex-basis: 75%
+div#priNav > nav > *
+    flex-basis: 17%    
+    margin-right: marXS
+div#priNav > div,
+div#priNav-v2 > div
+    flex-basis: 10%
+div#secNav > nav
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
+    flex-basis: 60%
+div#secNav > nav > *
+    margin-left: marStd
+div#secNav > div
+    display: flex
+    flex-basis: 15%
+div#secNav > div > nav
+    display: flex
+div#secNav > div a
+    margin-right: marStd
+div#slideNav 
+    display: none    
+div#slideNav > div
+    padding-left: 14.5%
+    display: flex
+div#slideNav > div > nav
+    display: flex
+    flex-direction: column
+    margin-right: marXL
+div#slideNav > div > nav > *
+    margin-bottom: marXS*.8
+
+
+div#priNav-v2 > nav a:not(:first-child)
+    border-bottom: 1px solid
+    border-bottom-color: whiteAlp50
+    padding-left: 3px
+    padding-bottom: 7px
+    color: whiteAlp75
+    align-self: center
+
+div#priNav-v2 > nav a:first-child
+    flex-basis:25%
+@media smallDesktop
+    div#priNav > nav,
+    div#priNav-v2 > nav, div#carouselIndicator > div:first-child
+        flex-basis: 100%
+    div#priNav > nav > *,
+    div#priNav-v2 > nav > *, div#carouselIndicator > div:first-child > div
+        flex-basis: 20%    
+        margin-right: marM
+    div#priNav-v2 > div,
+    div#priNav > div
+        display: none
+    div#slideNav > div
+        padding-left: 20%
+
+
+
+
+
+// mobile nav
+.navHeight
+    height: navSpacer
+
+#navMobile
+    position: fixed
+    bottom: marStd
+    right: marStd
+    z-index: 6000
+    display: none
+#navHeader
+    position: fixed
+    z-index: 7000
+    background-color: white
+    border-bottom:1px solid brand1
+    width:100vw
+    padding-left: 5vw
+    padding-right: 5vw
+    display: flex
+    align-items: center
+    justify-content: space-between
+    box-shadow: 0 5px 20px 5px blackAlp10
+#navHeader div#mblNavControl
+    display: flex 
+#navHeader div#mblNavControl a
+    margin-left: marM
+#navHeader div#mblNavControl a i
+    font-size:1.2em  
+div.mblnav
+    display: none;
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 6001
+    background-color: white
+div.mblnavContainer
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    /* The main point: */
+    overflow-y: auto
+    /* Optional but highly reccomended: enables momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch
+    background-color: white
+.open
+    opacity: 1 !important
+div.containMNav
+    padding: padXL padXL
+div.containMNav > *
+    margin-bottom: marL
+div.containMNav nav
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-around
+div.containMNav nav a
+    flex-basis: 48%
+    padding: padM*1.5 padM 
+    line-height: 120%
+    font-size:0.9em !important
+    margin: 2px 0
+    background-color: rgba(0,0,0,0.05)
+div.containMNav h6
+    font-size: 1em
+    margin-top: marStd
+    margin-bottom: marL
+@media mtrigger
+    html.noscroll 
+        overflow: hidden 
+    body.noscroll
+        overflow: visible
+        height: 100%
+
+
+@media print
+    #navHeader
+        display: none
+
+
+
+
+// responsive
+
+@media phoneRule
+    main > div.catList
+    main > article div.content section > div 
+    footer
+        padding:7vw !important
+    main > article > section
+        padding:10vw 7vw 0 7vw !important
+
+    main > .ctaButton:first-of-type
+        margin-left: 7vw
+
+    footer
+        padding-top:10vw !important
+        padding-bottom:10vw !important
+    body > footer section
+        margin-bottom: 10vw
+    main
+        padding-bottom: 15vw
+    main > article
+        margin-bottom: 10vw

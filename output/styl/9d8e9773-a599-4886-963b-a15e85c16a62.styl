@@ -1,0 +1,232 @@
+@import '{styles-base}/variables.styl'
+@import 'nib'
+
+menuBorder($color)
+  border-top 1px solid $color
+  border-bottom 1px solid $color
+
+.help--modal
+  z-index $modal-z-index
+  color white
+  h1
+    font-weight 800
+    margin-top 0
+  h2
+    font-size 1.5em
+  h3
+  h4
+    font-size 1.1em
+    font-weight 600
+
+  a
+    text-decoration none
+    cursor pointer
+  .fa
+    margin-right 5px
+
+.help--logo
+  background url(../../../../images/flirt-logo-simple.svg) no-repeat
+  background-size cover
+  height 52px
+  width 58px
+  display inline-block
+
+.help--modal-backdrop
+  background white
+  &.in
+    opacity .75
+
+.help--modal-dialog
+  min-width 70%
+  margin-top 50px
+
+.help--modal-content
+  border-radius 3px
+  box-shadow 0 5px 15px rgba(0, 0, 0, .2)
+  border 0
+  background rgba(62, 106, 137, .9)
+  .close
+    position absolute
+    right 10px
+    top 10px
+    z-index 1
+    font-size 2.5em
+    cursor pointer
+    color alpha($primary-d, 90%)
+    opacity 1
+    text-shadow none
+    &:focus
+      color darken(alpha($primary-d, 100%), 50%)
+      outline 0
+      box-shadow none
+    &:hover
+      color darken(alpha($primary-d, 100%), 50%)
+    &:active
+    &:active:focus
+      color alpha($primary-d, 100%)
+
+.help--content-wrapper
+  margin 0 -20px
+
+.help--modal-body
+  padding 20px
+  padding-bottom 0
+
+.help--intro
+  margin-bottom 25px
+
+.help--mode-selector
+  display flex
+  margin 0 -5px
+  background rgba(80, 115, 140, 1)
+  border-radius 3px
+  a
+    flex 1 1 100%
+    font-size 1em
+    border-right 1px solid $transparent-white
+    color white
+    text-align center
+    padding 10px 15px
+    menuBorder($transparent-white)
+    font-weight 600
+    &:last-of-type
+      border-right 0
+    &.active
+    &.active:hover
+    &:hover
+      background $secondary
+      color $primary-d
+      menuBorder(@background)
+    &:hover
+      background $primary-d
+      color white
+    &.featured
+      padding 15px
+      font-size 1.2em
+
+.note
+  display block
+  margin-top 15px
+  &::before
+    display inline-block
+    margin-right 5px
+    content '\f249'
+    font-family 'FontAwesome'
+
+.help--app-modes
+  background rgba(0, 0, 0, .2)
+  padding-bottom 20px
+
+.help--app-mode-wrapper
+  display none
+  &.active
+    display block
+    padding 20px
+    .help--app-mode
+      padding 0
+
+.help--app-mode
+  &.featured
+    padding 0 20px 20px
+  &.featured
+    padding 0 20px 20px
+
+  h2
+    margin 0 -25px 20px -25px
+    padding 15px 20px
+    background $secondary
+    font-weight 700
+    color $primary-d
+
+.help--app-mode-link
+  position relative
+  &.active
+    &::after
+      display block
+      position absolute
+      top 100%
+      left 50%
+      width 0
+      height 0
+      transform translate(-50%, 0)
+      border-color $secondary transparent transparent transparent
+      border-style solid
+      border-width 10px
+      content ''
+
+p a
+.show-more-info
+  display inline
+  color $secondary
+  &:hover
+    color darken($primary-d, 20%)
+
+p
+li
+  .fa
+    margin-left 3px
+    margin-right 3px
+
+.extended-info
+  margin-top 15px
+
+.inline
+  display inline
+
+.supplemental
+  font-size 95%
+  display block
+
+.help-link
+  cursor pointer
+  color #CCC
+
+  &.inline
+    display inline-block
+    vertical-align middle
+    margin 0 3px
+
+  &.block
+    text-align center
+    display block
+    margin-top 20px
+    font-size 2em
+
+  &.contrast
+    color alpha($primary-d, 85%)
+    &:hover
+      color $primary-d
+
+  &.help-link--sidebar
+    color $transparent-white
+    &:hover
+      color white
+
+  &.large
+    font-size 1.5em
+    margin 0 5px
+
+  &::before
+    content '\f05a'
+    font-family 'FontAwesome'
+    font-size 1em
+
+  &:hover
+    color $secondary
+
+  &:active
+    color darken($secondary, 20%)
+
+.help--feedback-links
+  margin-top 20px
+  text-align center
+  a
+    color $ll-gray
+    margin-right 10%
+    font-weight 300
+    &:last-of-type
+      margin 0
+    &:hover
+      color $secondary
+    &:active
+      color $secondary-d

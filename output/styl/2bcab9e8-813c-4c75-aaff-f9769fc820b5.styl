@@ -1,0 +1,496 @@
+:root 
+  --orange: #f88601;
+
+
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text')
+@font-face 
+    font-family: Brandon
+    src: url(../fonts/Brandon_reg.otf)
+
+@font-face 
+    font-family: Brandon Bold
+    src: url(../fonts/Brandon_bld.otf)
+
+
+body
+	margin 0
+	
+a
+	text-decoration none
+	color inherit
+	text-transform uppercase
+	
+.cta
+	display inline-block
+	position relative
+	overflow hidden
+	
+	border 1px solid white
+	border-radius 3px
+	
+	padding 1.25em 1.5em
+		
+	color transparent
+	font-family "Brandon Bold", sans-serif
+	font-size 18px
+	line-height 1.2em
+	letter-spacing .15em
+	
+	&:before, &:after
+		content ""
+		display flex
+		justify-content center
+		align-items center
+		position absolute
+		height 100%
+		width 100%
+		left 0
+		transition transform .3s ease-in
+		
+		color var(--orange)
+		background-color white
+		
+		top -100%
+		z-index 1
+	
+	&:after
+		color white
+		background-color transparent
+		
+		top 0
+	
+	&:hover 
+		&:before, &:after
+			transform translateY(100%)
+
+.nav
+	position fixed
+	top 0
+	left 0
+	
+	display flex
+	justify-content space-between
+	
+	width 100%
+	
+	z-index 100			
+	
+	.logo
+		display flex
+		justify-content center
+		align-items center
+		
+		height 110px
+		width 110px
+		
+		color transparent
+		
+		background-color var(--orange)
+		background-image url(../images/clique.svg)
+		background-position center
+		background-repeat no-repeat
+		background-size 72px
+		
+		z-index 1000
+		
+	.menu
+		display flex
+		align-items center
+		flex 1
+		
+		transition transform 2s ease
+		
+		li
+			list-style-type none
+			color white		
+			font-family "Brandon Bold", sans-serif
+			font-size 13px
+			font-weight bold
+			letter-spacing .15em
+			text-transform uppercase
+			text-shadow 0 0 12px rgba(0,0,0,.5)
+			
+			border-bottom 2px transparent solid
+			
+			margin-right 5em
+			padding 1.5em 0
+			
+			&.selected
+				border-bottom 2px var(--orange) solid
+	
+
+	
+	.call
+		background-color rgba(255,255,255,.15)
+		border-radius 3px
+		
+		color white
+		letter-spacing .05em
+			
+		padding 1em
+		margin auto 3em
+			
+nav.hidden
+	.menu	
+		transform translateX(-100%)
+	.nav
+		&:hover
+			.menu
+				transform translateX(0%)	
+		
+header
+	display flex
+	flex-direction column
+	justify-content center
+	align-items flex-start
+	
+	padding 0 150px
+	height 100vh
+
+	background-image url(../images/Layer18.png)
+	background-color #666
+	background-position center
+	background-size cover
+	
+	color white
+	
+	h2
+		font-family 'Crimson Text', serif
+		font-size 60px
+		line-height 1.5em
+		font-weight normal
+		
+		margin-bottom 2em
+		
+		a
+			background-color rgba(255,255,255,.25)
+			border-radius 5px
+			padding .5em 1em
+			margin 0 .25em
+			
+			font-family "Brandon Bold", sans-serif
+			font-size 32px
+			font-weight bold
+			letter-spacing .05em
+	
+	p
+		font-family "Brandon Bold", sans-serif
+		font-size 24px
+		font-weight bold
+		letter-spacing .1em
+		text-transform uppercase
+		
+		border-bottom 2px white solid
+		padding-bottom .75em
+		margin-bottom 3em
+	
+.work, .contact
+	height 400px
+	padding-left 150px
+	
+	display flex
+	align-items center
+	
+	background-image url(../images/Rectangle33.png)
+	
+	.txt		
+		border-left 2px var(--orange) solid
+		padding-left 3em
+		
+		h2
+			font-family 'Crimson Text', serif
+			font-size 48px
+			font-weight normal
+			margin 0
+			
+		p
+			font-family 'Crimson Text', serif
+			font-size 24px
+			margin 0
+	
+.main
+	position relative
+	display flex
+	height 100vh
+	overflow hidden
+	
+	.container
+		position absolute
+		height 100%
+		width 100%
+		
+		background-position center
+		background-size cover
+		
+		clip rect(0, auto, auto, 0)
+	
+		.txt
+			position fixed
+			display flex
+			flex-direction column
+			justify-content space-between
+			align-items flex-start
+			
+			
+			left 150px
+			top 200px
+			right calc(50% + 100px)
+			bottom 110px
+
+			color white
+			
+			.logo
+				
+				img
+					position absolute
+					left 20px
+					max-width 100%
+			
+			h2
+				flex 1
+				
+				font-family "Brandon Bold", sans-serif
+				font-size 60px
+				line-height 1.2em
+				letter-spacing .075em
+				
+				text-transform uppercase
+				white-space pre-line
+				
+				margin-top 0
+				
+			p
+				flex 1
+				
+				font-family 'Crimson Text' serif
+				font-size 24px
+				line-height 1.3em
+				letter-spacing .075em
+				
+			.cta
+				flex none
+			
+		.img
+			position absolute
+			right 0
+			bottom 0
+			width 50vw
+			
+			img
+				position absolute
+				bottom 0
+				right 0
+				max-width 100%
+				
+				transition 1s ease
+				
+	&.hidden
+		.img
+			img
+				opacity 0
+				transform translateY(150px) translateX(50px)
+	&.visable
+		.img
+			img
+				opacity 1
+				transform translateY(0px) translateX(0px)
+		
+	&.healthy .container
+		background-image url(../images/lol-bg.png)
+		background-color #0d3479
+	&.educational .container
+		background-image url(../images/kc-bg.png)
+		background-color #bf163f
+	&.financial .container
+		background-image url(../images/fib-bg.png)
+		background-color #1297d0
+	&.environmental	.container
+		background-image url(../images/cnec-bg.png)
+		background-color #18b05b
+	&.delicious .container
+		background-image url(../images/mp-bg.png)
+		background-color #1a1a1d
+	&.charitable .container
+		background-image url(../images/soc-bg.png)
+		background-color #d63541
+	&.inventive .container
+		background-image url(../images/lg-bg.png)
+		background-color #1d1d1d
+	&.holistic .container
+		background-image url(../images/rf-bg.png)
+		background-color #1490bd
+	&.luxurious .container
+		background-image url(../images/denali-bg.png)
+		background-color #1d4859
+
+
+
+.gallery
+	display flex
+	flex-wrap wrap
+	max-width 1160px
+	margin 150px auto
+	
+	.square
+		display flex
+		justify-content center
+		align-items center
+		position relative
+		
+		margin 5px
+		min-height 280px
+		min-width 280px
+		
+		background-color #cac
+		
+		
+		transition filter 1s ease
+		filter saturate(0) brightness(1.2)
+			
+		&:hover
+			filter saturate(1) brightness(1)
+				
+			.study, .link
+				opacity 1
+				
+		.gallerybg
+			position absolute
+			width 100%
+			height 100%
+			top 0
+			left 0
+			
+		.logo
+			z-index 1		
+		
+		.study, .link
+			display flex
+			justify-content center
+			align-items center
+			
+			position absolute
+			bottom 0
+			height 50px
+			width 50px
+			
+			background-color rgba(0,0,0,.25)
+			
+			opacity 0
+			transition opacity 1s ease
+		
+		.study
+			right 51px
+		
+		.link
+			right 0
+.contact
+	flex-direction column
+	justify-content center
+	
+	h2
+		font-family "Crimson Text"
+		font-size 48px
+		
+		margin-bottom 1m
+	
+	.buttons
+		.cta
+			display inline-block
+			margin 0 1em
+			padding 1.25em 2.5em
+			border-color var(--orange)
+			color transparent
+			position relative
+			overflow hidden
+			
+			&:before, &:after
+				content ""
+				display flex
+				justify-content center
+				align-items center
+				position absolute
+				height 100%
+				width 100%
+				left 0
+				transition transform .3s ease-in
+				
+				color white
+				background-color var(--orange)
+				
+				top -100%
+				z-index 1
+			
+			&:after
+				color var(--orange)
+				background-color transparent
+				
+				top 0
+			
+			&:hover 
+				&:before, &:after
+					transform translateY(100%)
+.info
+	display flex
+	align-items center
+	
+	font-family "Brandon"
+	font-size 13px
+	letter-spacing .1em
+	text-transform uppercase
+	
+	padding 5em 150px
+	
+	.phone-number
+		margin auto 3em
+		&:before
+			content url(../images/phoneicon.png)
+			margin-right .5em
+	
+	.address
+		&:before
+			content url(../images/mapicon.png)
+			margin-right .5em
+	
+	.social
+		flex 1
+		
+		display flex
+		justify-content flex-end
+		
+		a
+			display inline-block
+			height 36px
+			width 36px
+			margin .25em
+
+			color transparent
+			background-position center
+			background-repeat no-repeat
+		
+		.facebook
+			background-image url(../images/facebook.png)
+			
+		.youtube
+			background-image url(../images/youtube.png)
+			
+		.flickr
+			background-image url(../images/flickr.png)
+			
+		.twitter
+			background-image url(../images/twitter.png)
+			
+		.linkedin
+			background-image url(../images/linkedin.png)
+			
+.arrow
+	&:after, &:before
+		content "\2193"
+.case-study
+	&:after, &:before
+		content "View Case Study"
+#phone-number
+	&:after, &:before
+		content "312-379-9329"
+#message-us
+	&:after, &:before
+		content "Message Us"

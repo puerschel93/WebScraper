@@ -1,0 +1,321 @@
+
+$incidentRed: #920000;
+
+/***** Wildfire Commander Header *******/
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: $incidentRed;
+}
+
+.headerTitle {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-family: Merriweather;
+  font-size: 68px;
+}
+
+.headerSubtitle {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-family: Merriweather;
+  font-size: 28px;
+}
+
+
+/***GreetingImage***/
+.greetingImage {
+  position: fixed;
+  margin-top: 0; 
+  margin-left: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+
+
+/***NavBar***/
+.navbar {
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  height: 80px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+.sectionTitle{
+  font-family: 'Merriweather', serif;
+  grid-area: incidentLabels;
+  font-weight: 900;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2em;
+}
+
+
+
+.incidentPageContainer {
+  display: grid;
+  gap: 20px;
+  grid-template-areas: 
+    "incidentName"
+    "incidentNumber"
+    "incidentMap"
+    "incidentLabels"
+    "incidentSummary"
+    "incidentWeather";
+    justify-items: center;
+}
+
+
+/****Incident Title *****/
+.incidentTitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // background-color: pink;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3em;
+  color: #922222;
+  grid-area: incidentName;
+}
+
+.incidentNumber {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // background-color: green;
+  color: #922222;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+  grid-area: incidentNumber;
+}
+/****Incident Map *****/
+
+.map {
+  display: inline;
+  width: 600px;
+  height: 400px; 
+  justify-content: center;
+  grid-area: incidentMap;
+}
+
+
+/////*** Incident Summary Cards ******////@at-root
+.summaryContainer {
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 75%;
+  flex-wrap: wrap;
+  grid-area: incidentSummary;
+}
+
+.card {
+    transform-style: preserve-3d;
+    border-radius: 30px;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+    // box-shadow: 2px 2px 15px 3px rgba(0,0,0,0.25), -10px -10px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+    transition: transform 250ms;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+.cardFuels {
+  transform-style: preserve-3d;
+  border-radius: 30px;
+  margin: 20px auto;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+  // box-shadow: 2px 2px 15px 3px rgba(0,0,0,0.25), -10px -10px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+  transition: transform 250ms;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+.cardFuels:hover {
+  transform: translateY(-10px);
+}
+
+
+.cardIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 52px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color:#3A3B3C;
+}
+.cardTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+h4 {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  color: $incidentRed;
+}
+h5 {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+}
+.cardTitleEvacations {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+/////*** Current Weather Card ******////@at-root
+
+.weatherContainer {
+  // background-color: pink;
+  display: flex;
+  justify-content: flex-start;
+  width: 420px;
+  margin-left: 20px;
+  flex-wrap: wrap;
+  grid-area: incidentMap;
+}
+
+.weatherCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transform-style: preserve-3d;
+  border-radius: 30px;
+  margin: 20px auto;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+  // box-shadow: 2px 2px 15px 3px rgba(0,0,0,0.25), -10px -10px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+  transition: transform 250ms;
+}
+.weatherCard:hover {
+  transform: translateY(-10px);
+}
+
+.weatherCardIcon {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: no-wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 52px;
+  margin-top: 30px;
+  color:#3A3B3C;
+}
+.weatherCardTitle {
+  padding-top: 20px;
+  margin-left: 20px;
+
+  p {
+    display: flex;
+    justify-content: center;
+    color: $incidentRed;
+    font-size: 48px;
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+.weatherCardTitle h4 {
+  display: flex;
+  justify-content: center;
+  color: $incidentRed;
+  font-size: 48px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.weatherSubtitle {
+  color: $incidentRed;
+  font-size:32px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.weatherIcon {
+  color: $incidentRed;
+  font-size: 48px;
+}
+
+
+@media (max-width: 720px){
+  .headerTitle {font-size: 46px;}
+  .headerSubtitle {font-size: 24px;}
+}
+
+@media (max-width: 550px){
+  .headerTitle {font-size: 46px;}
+  .headerSubtitle {font-size: 18px;}
+  // ---------------
+    .incidentPageContainer {
+      display: grid;
+      margin-top: 150px;
+      gap: 20px;
+      grid-template-areas: 
+        "incidentName"
+        "incidentNumber"
+        "incidentMap"
+        "incidentLabels"
+        "incidentSummary"
+        "incidentWeather";
+        justify-content: center;
+    }
+    .weatherContainer { 
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .summaryContainer {
+      display: inline-flex;
+      justify-content: space-evenly;
+      width: 50%;
+      flex-wrap: wrap;
+      grid-area: incidentSummary;
+  }
+  .map {
+    display: inline;
+    width: 400px;
+    height: 250px; 
+    justify-content: center;
+    grid-area: incidentMap;
+  }
+}
+@media (max-width: 376px){
+  .headerTitle {font-size: 46px;}
+  .headerSubtitle {font-size: 18px;}
+}
+@media (max-width: 412px){
+  .headerTitle {font-size: 46px;}
+  .headerSubtitle {font-size: 14px;}
+}
+@media (max-width: 320px){
+  .headerTitle {font-size: 46px;}
+  .headerSubtitle {font-size: 12px;}
+}

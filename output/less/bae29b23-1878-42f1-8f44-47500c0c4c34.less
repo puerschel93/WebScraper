@@ -1,0 +1,165 @@
+@baseColor: "colorWrite"; //白蓝主题
+// @baseColor: 'color'; //黑色主题
+@import "./@{baseColor}.less";
+@import "./font.less";
+@import "./reset.less";
+@import "./icon.less";
+@import "./elementUIchange.less";
+@import "./change.less";
+@import "./window1.less";
+@import "./components/Kline/Kline.less";
+@import "./usdt.less";
+@import "./coupons.less";
+@import "./futures.less";
+@import "./popup.less";
+@import "./active.less";
+@import "./safe.less";
+@import "./ctb.less";
+
+body {
+  background-color: @bodyBg !important;
+}
+
+.daojishi {
+  color: @color999;
+  box-sizing: border-box;
+  font-size: 0.28rem;
+  display: inline-block;
+  overflow: hidden;
+  letter-spacing: 2px;
+}
+
+//0.5下划线
+.line05 {
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #e8ecef;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+  }
+}
+.line6 {
+  height: 0.12rem;
+  background: #f7f7fa;
+}
+.line10 {
+  height: 10px;
+  background: #f7f7fa;
+}
+@supports (bottom: env(safe-area-inset-bottom)) {
+  body,
+  .tabberWarp {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .order-main {
+    .order-list {
+      padding-bottom: calc(~"1.7rem + constant(safe-area-inset-bottom)");
+      padding-bottom: calc(~"1.7rem + env(safe-area-inset-bottom)");
+    }
+  }
+}
+
+@supports (top: env(safe-area-inset-top)) {
+  // body {
+  //     padding-top: constant(safe-area-inset-top);
+  //     padding-top: env(safe-area-inset-top);
+  // }
+
+  .home-layout,
+  .flex-full__body,
+  .usdt-main,
+  .download-box,
+  .close-download,
+  .fast-body,
+  .vux-popup-dialog.vux-popup-left {
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+  .yd-popup-left {
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: constant(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-top);
+  }
+
+  .yd-popup-left,
+  .yd-popup-right {
+    overflow: hidden;
+  }
+  .top-meng {
+    height: constant(safe-area-inset-top);
+    height: env(safe-area-inset-top);
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .yindao {
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .weui-toast.vux-toast-top {
+    top: 50px;
+  }
+}
+
+.top-meng {
+  background: @topMengBg;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 0px;
+  z-index: 1550;
+  width: 100%;
+}
+
+.tabberWarp {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.98rem;
+  background-color: @bodyBg;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: content-box;
+  box-shadow: 0 -0.5px 0 0 rgba(240, 242, 243, 1);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .itemWarp {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+
+    .font {
+      font-size: 12px;
+      color: @txtColor;
+
+      &.color {
+        color: @blueColor;
+      }
+    }
+  }
+}
+.green {
+  color: @fontColor !important;
+}
+.red {
+  color: @fontRedColor!important;
+}

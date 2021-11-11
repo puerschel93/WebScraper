@@ -1,0 +1,76 @@
+//
+// Main Style
+// --------------------------------------------------
+
+
+// Variables
+// -------------------------
+/* - Font Folder - */
+font-folder		= "../../../assets/fonts/structure/"
+
+/* - Image Folder - */
+img-folder		= "../../../assets/img/dist/"
+
+/* - Breakpoints - */
+width-mobilelandscape	= 480px /*34em*/
+width-tabletportrait	= 768px /*48em*/
+width-tabletlandscape	= 992px /*62em*/
+width-desktop			= 1280px /*75em*/
+
+/* - Site Content Width - */
+width-mobilelandscape-content	= 460px
+width-tabletportrait-content	= 748px
+width-tabletlandscape-content	= 972px
+width-desktop-content			= 1140px
+
+/* - Site Common Colors - */
+/* http://www.colorhexa.com */
+site-black			= #000
+site-white			= #fff
+site-grey			= #e3e3e3
+site-dark-grey		= #333
+site-green			= #00ffbc
+
+
+// Mixins
+// -------------------------
+/* - SVG background fallback to png for IE8 - */
+svg-bg-with-fallback(img,svg,xpos,ypos)
+	background url(img-folder img) xpos ypos no-repeat
+	background none, url(img-folder svg) xpos ypos no-repeat
+
+/* - Responsive image - */
+responsiveImg()
+	display block
+	height auto
+	max-width 100%
+	width 100%
+	
+/* - Hide on Tablet Portrait - */
+hideonTabletPortrait()
+	@media (min-width: width-tabletportrait)
+		display none
+		
+/* - Show on Tablet Portrait - */
+showonTabletPortrait()
+	display none
+	
+	@media (min-width: width-tabletportrait)
+		display block
+		
+/* - Hide on Tablet Landscape - */
+hideonTabletLandscape()
+	@media (min-width: width-tabletlandscape)
+		display none
+		
+/* - Show on Tablet Landscape - */
+showonTabletLandscape()
+	display none
+	
+	@media (min-width: width-tabletlandscape)
+		display block
+
+
+// Import
+// -------------------------
+@import "nib";

@@ -1,0 +1,254 @@
+.reviews {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	margin-bottom: em(70);
+
+	&__title {
+		margin-bottom: em(45, 36.7);
+	}
+
+	&__slider {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		height: auto;
+		overflow-x: clip;
+
+		.swiper-scrollbar {
+			display: none;
+		}
+	}
+
+	&__wrap {
+		position: relative;
+		display: flex;
+		height: auto;
+	}
+
+	&__item {
+		background: #FFFFFF;
+		box-shadow: 0px em(10) em(20) rgba(6, 2, 19, 0.79);
+		border-radius: em(10);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: #211E34;
+		padding: em(50) em(70) em(39);
+		width: em(400);
+		min-width: em(400);
+		min-height: em(384);
+		position: relative;
+
+		&::after {
+			content: attr(aria-label);
+			position: absolute;
+			top: em(19, 12);
+			right: em(37, 12);
+			font-size: em(12);
+			line-height: em(17, 12);
+			color: #8DA5B5;
+		}
+
+		&-logo {
+			width: em(76);
+			margin-bottom: em(22);
+
+			img {
+				border-radius: 50%;
+			}
+		}
+
+		&-name {
+			font-size: em(18);
+			line-height: em(22, 18);
+			text-align: center;
+			font-weight: 600;
+			margin-bottom: em(22);
+		}
+
+		&-text {
+			font-size: em(14);
+			line-height: em(17, 14);
+			text-align: center;
+			color: #8DA5B5;
+		}
+	}
+
+	.reviews__slider .swiper-button-prev {
+		left: auto;
+		right: em(56);
+		top: em(-65);
+		background: transparent;
+		border: em(1) solid #F5FBFF;
+		border-radius: 50%;
+		box-shadow: 0px em(4) em(4) rgba(0, 0, 0, 0.25);
+		width: em(43);
+		height: em(43);
+		cursor: pointer;
+
+		&:after {
+			content: "";
+			font-size: 2.4em;
+			position: absolute;
+			min-width: em(4);
+			min-height: em(4);
+			display: block;
+			border-left: unset;
+			border-top: unset;
+			border-right: em(.55) solid #f5fbff;
+			border-bottom: em(.55) solid #f5fbff;
+			top: 50%;
+			left: 50%;
+			transform: translate(-30%, -50%) rotate(136deg);
+		}
+
+		&:hover {
+			border: em(1) solid #FFD84E;
+
+			&:after {
+				border-right: em(.55) solid #FFD84E;
+				border-bottom: em(.55) solid #FFD84E;
+			}
+		}
+
+		&:active {
+			border: em(1) solid #FFD84E;
+
+			&:after {
+				border-right: em(.55) solid #FFD84E;
+				border-bottom: em(.55) solid #FFD84E;
+			}
+		}
+
+
+	}
+
+	.reviews__slider .swiper-button-next {
+		right: em(1);
+		top: em(-65);
+		background: transparent;
+		border: em(1) solid #F5FBFF;
+		border-radius: 50%;
+		box-shadow: 0px em(4) em(4) rgba(0, 0, 0, 0.25);
+		width: em(43);
+		height: em(43);
+		cursor: pointer;
+
+		&:after {
+			content: "";
+			font-size: 2.4em;
+			position: absolute;
+			min-width: em(4);
+			min-height: em(4);
+			display: block;
+			border-left: unset;
+			border-top: unset;
+			border-right: em(.55) solid #f5fbff;
+			border-bottom: em(.55) solid #f5fbff;
+			top: 50%;
+			left: 50%;
+			transform: translate(-70%, -50%) rotate(-46deg);
+		}
+
+		&:after {
+			content: "";
+			font-size: 2.4em;
+			position: absolute;
+			min-width: em(4);
+			min-height: em(4);
+			display: block;
+			border-left: unset;
+			border-top: unset;
+			border-right: em(.55) solid #f5fbff;
+			border-bottom: em(.55) solid #f5fbff;
+			top: 50%;
+			left: 50%;
+			transform: translate(-70%, -50%) rotate(-46deg);
+		}
+
+		&:hover {
+			border: em(1) solid #FFD84E;
+
+			&:after {
+				border-right: em(.55) solid #FFD84E;
+				border-bottom: em(.55) solid #FFD84E;
+			}
+		}
+
+		&:active {
+			border: em(1) solid #FFD84E;
+
+			&:after {
+				border-right: em(.55) solid #FFD84E;
+				border-bottom: em(.55) solid #FFD84E;
+			}
+		}
+	}
+
+	@media (max-width: 551px) {
+		font-size: 1.31em;
+		align-items: center;
+		margin-top: .4em;
+		margin-bottom: 3.575em;
+
+		&._container {
+			max-width: 100%;
+		}
+
+		&__title {
+			text-align: center;
+			font-size: 3.05em;
+			margin-bottom: 0.9em;
+		}
+
+		&__wrap {
+			padding: 0 1.5em;
+			width: auto;
+		}
+
+		&__slider {
+			// padding: 0 1.5em 3.7em;
+			padding-bottom: 3.7em;
+			max-width: 100%;
+
+			.swiper-button-next,
+			.swiper-button-prev {
+				display: none;
+			}
+
+			.swiper-scrollbar {
+				display: block;
+				background-color: #1A2645;
+				width: 92%;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.swiper-scrollbar-drag {
+				background-color: #FFD84E;
+			}
+		}
+
+		&__item {
+			font-size: 1.26em;
+			// min-width: 19.7em;
+			padding: 2.125em 1.575em 1.1em;
+			min-height: 14em;
+			max-width: 40em;
+			min-width: unset;
+			width: auto;
+			height: auto;
+
+			&-name {
+				margin-bottom: 0.975em;
+			}
+
+			&-text {
+				line-height: 1.4em;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,174 @@
+@import "color";
+// BG SOLO
+$bg-uni:yes;
+
+// CHOIX UNIQUE // PICTURE BG OU DEGRADE CSS BG COLOR PRIMARY vs SECONDARY vs BLOCK > SI NO ALL = BG BODY UNI 
+$picture-bg:no;
+$picture-bg-url:'../images/bg_moteur.jpg';
+$picture-bg-repeat-horizontal:no;
+$degrade-bg-primary:no;
+$degrade-bg-secondary:no;
+$degrade-bg-block:no;
+
+// SIZE PICTURE AREA : FULLSCREEN OR NOT > UTILE SI PHOTO (TYPE SITE 1)
+$height-container:0;
+
+// PLACEMENT TOP CONTENT > UTILE SI PHOTO (TYPE SITE 1)
+$placement-top-content:0;
+
+// SIZE NAVIGATION
+$height-navigation:145;
+
+$margin-top-under-nav-fixe:170;
+
+// VARIABLE SITE TYPO
+$font-body:"Open Sans",arial,verdana,sans-serif;
+$font-title:georgia,arial,sans-serif;
+
+// REFINE DEPENDS OF YOUR TYPO, DEFINE FIRST > FONT-SIZE-TEXT
+$font-size-text:1.3em;
+$font-size-title:2.5em;
+
+// TYPE TITLE = CAPITALIZE, UPPERCASE, LOWERCASE, NONE
+$type-title:none;
+
+// WEIGHT TITLE = BOLD, NORMAL, etc..
+$weight-title:normal;
+
+// ARRONDI POUR LES EFFETS SUR LI > A:HOVER/FIL ARIANE/BOUTON
+$arrondi:no;
+
+// BORDER EFFECT ON NAV
+$border-nav:no;
+
+// TYPE MENU : FLAT = COLOR BANNER BEHIND, NO FLAT = SHAPE OR NOT
+// LINK TO VAR ID3X >>> MENU_TYPE
+$type-menu:no-flat;
+
+// STYLE NAV : IF YES = SHAPE BEHIND WORD, IF NO SHAPE BEHIND WORD ON HOVER
+$shape:no;
+
+// IMPORT ALL = FUNCTIONS SASS/COMPASS
+@import "../../../slagence_X_V5/sources/scss/all";
+
+// IMPORT PICTOS
+@import "../../../slagence_X_V5/sources/scss/typicons/icov5/icov5";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_social/social_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general/general_foundicons";
+@import "../../../slagence_X_V5/sources/scss/typicons/fundicons/foundation_icons_general_enclosed/general_enclosed_foundicons";
+
+// IMPORT BOUTONS LIB1
+@import "../../../slagence_X_V5/sources/scss/boutons/lib1";
+
+// IMPORT PUB LIB BOITE
+@import "../../../slagence_X_V5/sources/scss/pubs/lib1";
+
+// IMPORT PUB LIB2
+@import "../../../slagence_X_V5/sources/scss/pubs/lib3";
+
+// IMPORT TEMPLATE PARIS
+@import "../../../slagence_X_V5/sources/scss/templates/paris";
+
+// IMPORT MODULE ANNONCES3
+@import "../../../slagence_X_V5/sources/scss/modules/annonces3";
+
+// IMPORT MODULE EXTRA
+@import "../../../slagence_X_V5/sources/scss/extra/extra6";
+
+// IMPORT MEDIA QUERY ALL
+@import "../../../slagence_X_V5/sources/scss/media";
+
+// IMPORT IE FIXING
+@import "../../../slagence_X_V5/sources/scss/ie";
+
+
+
+//-----------------------------------------------------------------------------------------------
+//		PERSO LAFOMT8
+//-----------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------
+//		GENERAL
+//-----------------------------------------------------------------------------------------------
+
+.bg-picture {
+	background-image:url('../images/bg-body.jpg');
+	background-position:center 100px;
+	background-repeat:no-repeat;
+	background-color:$color-body;
+	background-attachment:fixed
+}
+
+
+	//-----------------------------------------------------------------------------------------------
+	//		CONTAINER
+	//-----------------------------------------------------------------------------------------------
+.container {
+	width:1200px;
+	@media only screen and (max-width : 1200px) {
+		width:960px;
+	}
+}
+
+	//-----------------------------------------------------------------------------------------------
+	//		MENU & NAV
+	//-----------------------------------------------------------------------------------------------
+
+.logo img {
+	margin-left: -40px;
+	margin-top: 10px;
+}
+
+.navigation {
+	border-top:none;
+	@include border-navigation(184px, 3px, $color-secondary);
+	@include box-shadow(rgba(0, 0, 0, 0.3) 0px 8px 12px -10px);
+}
+
+.menu-principal>li>a {
+	padding: 8px 16px;
+	&:hover {
+		color:$color-important;
+	}
+}
+
+//-----------------------------------------------------------------------------------------------
+//		INDEX
+//-----------------------------------------------------------------------------------------------
+
+.module-homepage {
+	margin-top: 40px;
+}
+
+	//-----------------------------------------------------------------------------------------------
+	//		FIX EXTRA & NAV FIXE
+	//-----------------------------------------------------------------------------------------------
+.module-annonces-homepage-extra .z150 {
+	z-index:25;
+}
+
+.bg-module-annonces-homepage-extra {
+	@include box-shadow(rgba(0, 0, 0, 0.3) 0px 8px 12px -10px);
+}
+	
+	//-----------------------------------------------------------------------------------------------
+	//		PUB
+	//-----------------------------------------------------------------------------------------------
+	
+.zone-pub {
+	background:$color-block;
+	padding:10px;
+}
+
+	//-----------------------------------------------------------------------------------------------
+	//		MODULE PA
+	//-----------------------------------------------------------------------------------------------
+.hr-module {
+	display:none;
+}
+
+
+	//-----------------------------------------------------------------------------------------------
+	//		ESTIMATION
+	//-----------------------------------------------------------------------------------------------
+

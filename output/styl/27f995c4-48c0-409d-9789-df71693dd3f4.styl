@@ -1,0 +1,97 @@
+@import "nodeca.core/client/common/_variables"
+
+
+.navbar
+  box-shadow 0 1px 3px rgba(0, 0, 0, 0.05)
+
+// Override toggler style
+.navbar-dark .navbar-toggler
+  background-image none
+  border-color transparent
+  color $navbar-dark-color
+  padding .5rem
+
+.navbar .page-actions
+  margin-left auto
+
+.navbar__right
+  margin-left auto
+
+.navbar-brand
+  text-transform uppercase
+  margin-right $spacer * 2
+
+.navbar-persistent
+  display flex
+  flex-wrap nowrap
+  flex-direction row
+
+.navbar__level-up
+  padding-left .8rem !important
+  padding-right .8rem !important
+  margin-left -.8rem
+  margin-right .7rem // -.7rem + 2 rem - .5rem
+
+//
+// Alternate navigation. Shown when `navbar__m-secondary` modifier is added
+//
+.navbar-primary
+  .navbar-inner
+    opacity 1
+    transition opacity .3s linear
+
+.navbar-alt
+  top -($nav-panel-height)
+  background-color transparent !important
+  transition top .001s linear .3s
+  .navbar-inner
+    opacity 0
+    transition opacity .3s linear
+
+.navbar-alt .hidden-nav-alt
+  display none !important
+
+.page-head .hidden-page-head
+  display none !important
+
+.navbar__m-secondary
+  .navbar-collapse
+    display none  // hide expanded menu
+  &.navbar-primary .navbar-inner
+    opacity 0
+  &.navbar-alt
+    top 0px
+    transition top .001s linear
+    .navbar-inner
+      opacity 1
+
+.navbar-alt__title
+  padding-right 1rem
+  shortable()
+
+.navbar-alt .btn
+  opacity .5
+
+
+// Fix for dropdown positioning in alt navbar inside toolbars
+// (in forum, blogs, dialogs); bootstrap requires .navbar-nav class which
+// which don't always have, https://github.com/twbs/bootstrap/issues/23479
+//
+.navbar-alt .page-actions .dropdown-menu-end
+  right 0
+  left auto
+
+
+//
+// Alternate header (progress bar instead of a brand).
+// Shown when `navbar__m-progress` modifier is added
+//
+.navbar-progress
+  display none
+
+.navbar__m-progress
+  .navbar-brand
+    display none
+
+  .navbar-progress
+    display block

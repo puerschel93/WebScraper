@@ -1,0 +1,99 @@
+/* login page */ @import (reference) '../ui.less';
+
+@login-page-forms-container-bg:         hsl(255, 57%, 97%);
+@login-page-forms-container-bg-dark:    transparent;
+
+@login-page-container-bg:               hsl(261, 100%, 91%);
+@login-page-container-bg-dark:          hsl(262, 39%, 20%);
+
+@login-page-holder-bg:                  linear-gradient(110deg, hsl(263, 37%, 42%), hsl(242, 88%, 17%), hsl(331, 73%, 25%));
+@login-page-holder-bg-dark:             linear-gradient(110deg, hsl(262, 100%, 72%), hsl(242, 46%, 31%), hsl(331, 60%, 39%));
+
+@login-page-login-btn-bg:               linear-gradient(130deg, hsl(135, 72%, 60%),hsl(135, 62%, 46%));
+@login-page-login-btn-bg-dark:          linear-gradient(130deg, hsl(135, 62%, 46%),hsl(135, 77%, 31%));
+
+@login-page-signup-btn-bg:              linear-gradient(130deg, hsl(261, 37%, 56%),hsl(331, 73%, 25%));
+@login-page-signup-btn-bg-dark:         linear-gradient(130deg, hsl(262, 100%, 72%),hsl(331, 60%, 39%));
+
+._login-page-vars () {
+    --ui-login-page-forms-container-bg: @login-page-forms-container-bg;
+    --ui-login-page-container-bg: @login-page-container-bg;
+    --ui-login-page-holder-bg: @login-page-holder-bg;
+
+    --ui-login-page-login-btn-bg: @login-page-login-btn-bg;
+    --ui-login-page-signup-btn-bg: @login-page-signup-btn-bg;
+}
+._login-page-vars-dark () {
+    --ui-login-page-forms-container-bg: @login-page-forms-container-bg-dark;
+    --ui-login-page-container-bg: @login-page-container-bg-dark;
+    --ui-login-page-holder-bg: @login-page-holder-bg-dark;
+
+    --ui-login-page-login-btn-bg: @login-page-login-btn-bg-dark;
+    --ui-login-page-signup-btn-bg: @login-page-signup-btn-bg-dark;
+}
+
+& when (@dark-mode = true) {
+    & when (@dark-mode-auto-switcher = true) {
+        @media (prefers-color-scheme: light) {
+            :root { ._login-page-vars(); }
+        }
+        @media (prefers-color-scheme: dark) {
+            :root { ._login-page-vars-dark(); }
+        }
+    }
+    & when (@dark-mode-auto-switcher = false) {
+        [data-ui-mode="light"] { ._login-page-vars(); }
+        [data-ui-mode="dark"] { ._login-page-vars-dark(); }
+    }
+}
+
+.login {
+    &-holder {
+        ._gradient-var(login-page-holder-bg);
+
+        & > .ui-set-absolute { z-index: 1; }
+    }
+
+    &-btn { min-width: 26%; ._gradient-var(login-page-login-btn-bg); z-index: 1; }
+
+    &-forms-container { ._bg-var(login-page-forms-container-bg); }
+    &-container {
+        ._bg-var(login-page-container-bg);
+
+        & > .ui-icon { width: 160px; height: 160px; position: absolute; top: 14%; right: 22%; transform: rotate(-12deg); }
+    }
+
+    &-icons {
+        .ui-icon {
+            position: absolute;
+
+            &:nth-child(1) { width: 52px; height: 52px; bottom: 112px; left: 82px; opacity: .65; transform: rotate(12deg); }
+            &:nth-child(2) { width: 28px; height: 28px; bottom: 32px; left: 24px; opacity: .15; transform: rotate(-12deg); }
+            &:nth-child(3) { width: 84px; height: 84px; top: 20%; left: 10%; opacity: .15; transform: rotate(-12deg); }
+            &:nth-child(4) { width: 106px; height: 106px; bottom: 18px; right: 92px; opacity: .3; transform: rotate(-12deg); }
+            &:nth-child(5) { width: 38px; height: 38px; top: 72px; right: 20%; opacity: .15; transform: rotate(12deg); }
+        }
+    }
+}
+
+.go-signup-btn { ._gradient-var(login-page-signup-btn-bg); }
+
+@media (@lg-start) {
+    .login-forms-container { padding: 8% 0 8% 14% !important; }
+    .login-container { padding: 8% 14% 8% 0 !important; }
+}
+@media (@md-start) and (@default-finish){
+    .login-forms-container { padding: 50px 0 10px 10px !important; }
+    .login-container { padding: 50px 10px 10px 0 !important; }
+}
+@media (@md-start) {
+    .forms-holder,.login-holder { min-height: 560px; height: 100%; }
+    .forms-holder,.login-holder > .ui-set-absolute { padding: 10%; }
+}
+@media (@sm-finish) {
+    .login-holder { min-height: @layout-min; }
+    .forms-holder,.login-holder > .ui-set-absolute { padding: 30px; }
+
+    .login-forms-container { padding: 10px 10px 0 10px !important; }
+    .login-container { padding: 0 10px 10px 10px !important; }
+}

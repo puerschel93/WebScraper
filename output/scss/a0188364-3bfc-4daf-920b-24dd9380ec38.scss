@@ -1,0 +1,119 @@
+// Custom implementation based on node_modules/@voerro/vue-tagsinput/dist/style.css
+.floating-tags-input {
+  .tags-input {
+    @extend .form-control;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1.125rem $form-floating-padding-x;
+
+    &.active {
+      color: $input-focus-color;
+      background-color: $input-focus-bg;
+      border-color: $input-focus-border-color;
+      outline: 0;
+    }
+
+    .tags-input-badge {
+      background: map-get($grays, "100");
+      border: 1px solid $input-border-color;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: .2rem .3rem;
+      font-size: .875rem;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      border-radius: 15px;
+      margin-right: .2rem;
+      margin-bottom: .2rem;
+
+      .tags-input-remove {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: $primary;
+        border-radius: 15px;
+        transition: $transition-base;
+        cursor: pointer;
+        position: relative;
+        margin-left: .3rem;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:hover {
+          background: map-get($grays, "300");
+        }
+
+        &::after {
+          content: '✕';
+          position: absolute;
+          right: .3rem;
+        }
+      }
+    }
+
+    input {
+      background: transparent;
+      border: none;
+      height: 1.125rem;
+      padding: 0;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .typeahead-dropdown {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    z-index: $zindex-dropdown;
+    border: 1px solid $input-border-color;
+    overflow-y: scroll;
+    max-height: 300px;
+
+    li {
+      cursor: pointer;
+      padding: .5rem $form-floating-padding-x;
+      font-size: 1rem;
+      background: $white;
+
+      &.tags-input-typeahead-item-highlighted-default {
+        background: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  &.is-focused {
+    .tags-input {
+      padding-top: $form-floating-input-padding-t;
+      padding-bottom: $form-floating-input-padding-b;
+    }
+
+    > label {
+      transform: $form-floating-label-transform;
+    }
+  }
+
+  &.with-tags {
+    .tags-input {
+      padding-top: 2rem;
+
+      input {
+        margin-top: .125rem;
+      }
+    }
+
+    > label {
+      transform: $form-floating-label-transform;
+    }
+  }
+}

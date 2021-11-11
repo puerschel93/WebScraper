@@ -1,0 +1,549 @@
+$mainFont: dnp-shuei-mgothic-std, sans-serif;
+$headingFont: vdl-megamaru, sans-serif;
+$fontSize: 1em;
+$headingFontSize: 1.8em;
+$mainFontColor: #3d3d3d;
+$backgroundColor: #F7FDFF;
+$subColor01: #288ade;
+$subColor02: #ECF5FA;
+$mobile-max: 520px;
+
+@mixin small {
+  @media screen and (max-width: $mobile-max) {
+    @content;
+  }
+}
+
+/* common
+================ */
+
+body {
+  font-size: $fontSize;
+  font-family: $mainFont;
+  color: $mainFontColor;
+}
+
+select {
+  border: 1px solid #707070;
+  border-radius: 3px;
+  text-align: center;
+}
+
+input {
+  border: 1px solid #707070;
+  border-radius: 3px;
+  text-align: center;
+}
+
+/* header 
+================ */
+
+.header {
+  background: $subColor01;
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  &__contents {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto; 
+  }
+  &__logo {
+    font-family: $headingFont;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 15px 0 10px;
+    line-height: 1.2;
+  }
+}
+/* nav */
+.nav {
+  font-family: $headingFont;
+  @include small {
+    position:fixed;
+    z-index: 999;
+    top:0;
+    right: -120%;
+    width:100%;
+    height: 100vh;
+    background:rgba(48, 119, 226, 0.897);
+    transition: all 0.6s;
+    &.panelactive {
+      right: -40%;
+    }
+  }
+  &__logo {
+    display: none;
+    @include small {
+      display: block;
+      font-size: 1.3em;
+      margin-left: 15px;
+    }
+    &__title {
+      @include small {
+        margin-top: 50px;
+        margin-left: 10px;
+      }
+    }
+  }
+  &List {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include small {
+      display: block;
+      width: 65%;
+    }
+    &__item {
+      border-left: 1px dashed $mainFontColor;
+      padding: 5px 30px;
+      margin: 20px 0;
+      @include small {
+        text-align: left;
+        width: 100%;
+        margin: 10px 0 10px;
+        border-left: none;
+        padding: 0;
+      }
+      &--border {
+        border-right: 1px dashed $mainFontColor;
+        @include small {
+          border-right: none;
+        }
+      }
+      &__link {
+        position: relative;
+        display: block;
+        @include small {
+          color: #fff;
+          display: block;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          font-weight: bold;
+          margin-left: 30px;
+        }
+        & img {
+          display: none;
+          // display: block;
+          // width: 50px;
+          // margin: 0 auto;
+          @include small {
+            display: inline-block;
+            width: 40px;
+          }
+        }
+        &__text {
+          display: block;
+          font-size: 1.3em;
+          text-align: center;
+          @include small {
+            display: inline-block;
+            line-height: 2;
+            text-align: left;
+            font-size: .9em;
+          }
+          &--size {
+            font-size: 1.2em;
+            line-height: 1;
+            @include small {
+              font-size: .8em;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__btn {
+    display: none;
+    @include small {
+      display: block;
+      background: #fff;
+      color: $mainFontColor;
+      width: 45%;
+      padding: 10px 20px;
+      text-align: center;
+      margin: 20px 20px 20px 30px;
+      border-radius: 8px;
+      font-size: .8em;
+    }
+  }
+}
+
+@include small {
+  .openbtn {
+    position:fixed;
+    z-index: 9999;
+    top:10px;
+    right: 10px;
+    width: 50px;
+    height:50px;
+    @include small {
+      right: 0;
+      width: 70px;
+      height: 70px;
+    }
+    & span{
+      display: inline-block;
+      transition: all .4s;
+      position: absolute;
+      left: 14px;
+      height: 3px;
+      border-radius: 2px;
+      background: #fff;
+      width: 45%;
+      &:nth-of-type(1) {
+        top:15px;	
+      }
+      &:nth-of-type(2) {
+        top:25px;
+      }
+      &:nth-of-type(3) {
+        top:35px;
+      }
+    }
+    &.active span:nth-of-type(1) {
+      top: 8px;
+      left: 30px;
+      transform: translateY(6px) rotate(-45deg);
+      width: 30%;
+    }
+    &.active span:nth-of-type(2) {
+      opacity: 0;
+    }
+    &.active span:nth-of-type(3){
+      top: 20px;
+      left: 30px;
+      transform: translateY(-6px) rotate(45deg);
+      width: 30%;
+    }
+  }
+}
+
+/* main visual
+================ */
+.main {
+  position: relative;
+  &__visual {
+    position: relative;
+    display: flex;
+    padding-top: 81px;
+    @include small {
+      padding-top: 61px;
+    }
+    &__title {
+      font-family: $headingFont;
+      font-size: 2.5em;
+      text-align: center;
+      background: url(../images/bg.jpg)no-repeat;
+      background-size: cover;
+      width: 100%;
+      color: #fff;
+      height: 400px;
+      padding: 130px 0 150px;
+      @include small {
+        font-size: 2em;
+        height: 300px;
+        padding: 110px 0 150px; 
+      }
+    }
+    &__wave {
+      position: absolute;
+      top: 395px;
+      width: 100%;
+      height: 3%;
+      fill: #fff;
+      @include small {
+        display: none;
+      }
+    }
+  }
+}
+
+/* breadcrumb
+================ */
+
+.breadcrumb {
+  width: 75%;
+  margin: 50px auto 50px;
+  list-style: none;
+  // font-size: .9em;
+  @include small {
+    margin: 30px auto;
+    font-size: .8em;
+  }
+  &__item {
+    display: inline;
+    &::after {
+      content: ">";
+      color: rgb(161, 161, 161);
+      margin-right: 5px;
+    }
+    &--last::after {
+      content: "";
+    }
+    &__link {
+      padding-right: 15px;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* contents
+================ */
+
+.contentsWrapper {
+  width: 75%;
+  margin: 0 auto;
+  &__heading {
+    font-size: 2em;
+    border-bottom: 1px dashed #707070;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    @include small {
+      font-size: 1.3em;
+    }
+    & .fas {
+      padding-right: 10px;
+    }
+  }
+  &__desc {
+    &__text {
+      list-style: disc;
+      list-style-position: inside;
+      text-indent: 1em;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      @include small {
+        font-size: .8em;
+      }
+    }
+  }
+}
+
+
+/* register
+================ */
+.register {
+  &__heading {
+  background: $subColor02;
+  padding: 15px;
+  margin-bottom: 30px;
+  }
+  &__form {
+    padding: 10px 0 10px 20px;
+    margin-bottom: 60px;
+    width: 50%;
+    @include small {
+      padding: 10px 0 10px 3px;
+      width: 100%;
+    }
+    &--width {
+      width: 100%;
+    }
+  }
+  &__kinds {
+    padding: 30px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #707070;
+    &__price {
+      font-size: 1.1em;
+      @include small {
+        font-size: $fontSize;
+      }
+      & span {
+        color: $subColor01;
+        display: block;
+        font-size: .9em;
+      }
+    }
+    &__sheets {
+      display: flex;
+      align-items: center;
+      &__select {
+        border: 1px solid #707070;
+        width: 130px;
+        text-align: center;
+        padding: 10px 20px;
+        margin-right: 15px;
+        @include small {
+          padding: 10px;
+          width: auto;
+        }
+      }
+      & p {
+        font-size: 1.2em;
+      }
+    }
+  }
+  &__attention {
+    padding: 20px 0 60px;
+    @include small {
+      font-size: .8em;
+    }
+  }
+  &__item {
+    margin-bottom: 20px;
+    &__text {
+      color: $subColor01;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      &--width {
+        width: 200px;
+      }
+    }
+    & input {
+      margin-right: 20px;
+      width: 250px;
+      height: 30px;
+      @include small {
+        width: 35%;
+      }
+    }
+    & select {
+      margin-right: 20px;
+      @include small {
+        margin-right: 0;
+      }
+    }
+    &--email {
+      & input {
+        width: 525px;
+        @include small {
+          width: 80%;
+        }
+      }
+    }
+    &--passeword {
+      & input {
+        width: 525px;
+        @include small {
+          width: 80%;
+        }
+      }
+    }
+    &--postalCod {
+      & input {
+      margin-right: 0;
+      width: 160px;
+      @include small {
+        width: 32%;
+      }
+      }
+      & span {
+        padding: 0 10px;
+      }
+    }
+    &--pref {
+      & select {
+        width: 365px;
+        height: 30px;
+        @include small {
+          width: 80%;
+        }
+      }
+    }
+    &--address {
+      & input {
+        width: 525px;
+        @include small {
+          width: 80%;
+        }
+      }
+    }
+    &--tel {
+      & input {
+        width: 525px;
+        @include small {
+          width: 80%;
+        }
+      }
+    }
+    &--gender {
+      & input {
+        margin-right: 10px;
+        width: 20px;
+      }
+      & label {
+        margin-right: 10px;
+      }
+    }
+    &--birthday {
+      & select {
+        width: 120px;
+        height: 30px;
+        @include small {
+          width: 25%;
+        }
+      }
+    }
+  }
+  &__payment {
+    margin-bottom: 50px;
+    & label {
+      display: block;
+      border: 1px solid #707070;
+      border-radius: 3px;
+      padding: 10px;
+      margin-bottom: 15px;
+      & input {
+        margin-right: 10px;
+        width: 20px;
+        height: 30px;
+      }
+    }
+  }
+  &__total {
+    background: #484848;
+    font-size: 1.1em;
+    color: #fff;
+    padding: 7px 30px;
+    margin-bottom: 70px;
+    border: 10px solid #707070;
+    border-radius: 3px;
+    @include small {
+      padding: 7px 10px;
+    }
+    &__text {
+      display: flex;
+      justify-content: space-between;
+      & span {
+        text-align: right;
+      }
+    }
+  }
+  &__verification {
+    background: #484848;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 15px 70px;
+    text-align: center;
+    width: 45%;
+    margin: 0 auto 60px; 
+    border-radius: 3px;
+    transition: .3s;
+    @include small {
+      width: 100%;
+      padding: 10px 50px;
+    }
+    &:hover {
+      background: #9b9b9b;
+    }
+    &__link {
+      display: block;
+    }
+  }
+}
+
+/* footer 
+================ */
+
+.footer {
+  background: $subColor01;
+  color: #fff;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 2;
+}

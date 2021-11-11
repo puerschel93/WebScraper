@@ -1,0 +1,436 @@
+/* You can add global styles to this file, and also import other style files */
+$icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+$fa-font-path: '../node_modules/font-awesome/fonts';
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/font-awesome/scss/font-awesome';
+@import '../node_modules/dragula/dist/dragula';
+@import 'mixins';
+@import 'variables';
+@import 'normalize';
+@import 'fonts';
+@import 'is-busy';
+@import "~nouislider/distribute/nouislider.min.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/******************************************************************/
+/* CSS Resets
+/******************************************************************/
+* {
+  box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: $base-line-height;
+  color: $body-text-color;
+  height: $body-height;
+  font-size: $base-font-size;
+  font-family: "San Francisco", Arial, sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.body-content:before {
+  box-shadow: inset $body-box-negative-shadow-width 0 $body-box-shadow-width $body-box-negative-shadow-width rgba(0, 0, 0, 0.5);
+  content: "";
+  height: 100%;
+  left: $body-box-negative-shadow-width;
+  position: absolute;
+  top: 0;
+  width: $body-box-shadow-width;
+}
+
+.body-content:after {
+  box-shadow: inset $body-box-shadow-width 0 $body-box-shadow-width $body-box-negative-shadow-width rgba(0, 0, 0, 0.5);
+  content: "";
+  height: 100%;
+  position: absolute;
+  right: $body-box-negative-shadow-width;
+  width: $body-box-shadow-width;
+  top: 0;
+}
+
+.body-content {
+  background: none repeat scroll 0 0 $white;
+  padding: 0;
+  min-height: calc(1024px - #{$header-height} - #{$footer-height} - #{$base-top-bottom-spacing});
+  height: calc(100% - 76px);
+  // max-width: $max-body-width;
+  position: relative;
+}
+
+.sidebar-content {
+  background-color: $body-content-background-color;
+}
+
+.no-gutters {
+  margin: 0;
+  padding: 0;
+}
+
+.component-body {
+  padding: $base-top-bottom-spacing $base-side-padding;
+}
+
+strong {
+  font-family: "San Francisco Bold", Arial, sans-serif;
+  font-weight: normal;
+}
+
+/******************************************************************/
+/* Error Message Styles
+/******************************************************************/
+.ng-invalid:not(form).ng-touched  {
+  border-color: $psp-red;
+  border-width: 2px;
+}
+
+.error-message {
+  color: $psp-red;
+  font-family: "San Francisco Medium", Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.0;
+}
+
+/******************************************************************/
+/* Discover Pages Global Styles
+/******************************************************************/
+.handwriting-text {
+  font-family: 'caveat-regular', cursive;
+  color: $medium-gray;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 18px;
+}
+
+.arrow,
+.handwriting-text {
+  &.hide {
+    visibility: hidden;
+  }
+
+  &.show {
+    visibility: visible;
+  }
+}
+
+/******************************************************************/
+/* Sidebar Menu Override Styles
+/******************************************************************/
+.sidebar-content {
+  overflow-x: hidden;
+}
+
+.main-menu {
+  background-color: $white;
+  padding: 35px 5px 35px 15px;
+  width: 300px;
+
+  @media (min-width: 380px) {
+    padding: 35px 5px 35px 30px;
+    width: 350px;
+  }
+
+  &.ng-sidebar--opened.ng-sidebar--push,
+  &.ng-sidebar--opened.ng-sidebar--slide,
+  &.ng-sidebar--opened.ng-sidebar--over {
+    box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+  }
+}
+
+/******************************************************************/
+/* Bootstrap Alert Styles
+/******************************************************************/
+.alert {
+  width: 80%;
+  margin: 10px auto;
+  padding-right: 25px;
+  font-family: "San Francisco";
+  font-size: 14px;
+  position: absolute;
+  z-index: 1;
+  left: 25%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
+  &.alert-success {
+    color: $alert-success-text-color;
+    background-color: $alert-success-background-color;
+    border-color: $alert-success-border-color;
+  }
+
+  &.alert-info {
+    color: $alert-info-text-color;
+    background-color: $alert-info-background-color;
+    border-color: $alert-info-border-color;
+  }
+
+  &.alert-warning {
+    color: $alert-warning-text-color;
+    background-color: $alert-warning-background-color;
+    border-color: $alert-warning-border-color;
+  }
+
+  &.alert-error {
+    color: $alert-error-text-color;
+    background-color: $alert-error-background-color;
+    border-color: $alert-error-border-color;
+  }
+}
+
+.alert-dismissible .close {
+  padding: 0 5px;
+  margin-top: -4px;
+}
+
+/******************************************************************/
+/* Bootstrap Progress Bar Override Styles
+/******************************************************************/
+.progress {
+  height: 6px;
+  margin-top: 3px;
+  border-radius: 3px;
+}
+
+.progress-bar {
+  background-color: $lime-green;
+}
+
+/********************************************/
+/* Bootstrap Tab Overrides
+/********************************************/
+ul.nav-pills {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+ul.nav-pills li.nav-item {
+  text-align: center;
+  display: inline-block;
+}
+
+ul.nav-pills li.nav-item a.nav-link {
+  text-decoration: none;
+  padding: 0;
+}
+
+ul.nav-pills li.nav-item a.nav-link span {
+  font-size: 13px;
+  font-family: "San Francisco Medium", Arial, sans-serif;
+  background-color: $extra-light-gray;
+  color: $very-dark-gray;
+  display: block;
+  padding: 10px 7px;
+  width: 100px;
+}
+
+ul.nav-pills li.nav-item a.nav-link.active span {
+  background-color: $very-dark-gray;
+  color: $white;
+}
+
+span.left-tab {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+span.right-tab {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/********************************************/
+/* Bootstrap Form Control Overrides         */
+/********************************************/
+.form-control {
+  font-family: "San Francisco", Arial, sans-serif;
+  font-size: 15px;
+  color: $very-dark-gray;
+  line-height: 17px;
+  height: 40px;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+/********************************************/
+/* Custom Global Styles */
+/********************************************/
+.flex-1 {
+  flex: 1;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.medium-card {
+  width: $medium-card-width;
+  // height: $medium-card-height;
+  border-radius: 20px;
+  box-shadow: 0 2px 24px 3px rgba(193,207,209,0.47);
+  padding: 40px;
+  // margin: 85px 185px;
+}
+
+.card-title {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 38px;
+  color: $black;
+  margin-bottom: 24px;
+  padding-right: 60px;
+}
+
+.card-subtitle {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33px;
+  color: $very-dark-gray;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+
+.card-input {
+  width: 656px;
+  padding-bottom: 24px;
+
+  label {
+    color: $black;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+
+    &.invalid {
+      color: $dark-red;      
+    }
+  }
+
+  input, select {
+    border: 2px solid $almost-white;
+    border-radius: 10px;
+    background-color: $white;
+    margin-bottom: 10px;
+
+    &.ng-invalid {
+      // border-color: $dark-red;
+      color: $dark-red;
+    }
+  }
+
+  .form-field-error {
+    color: $dark-red;
+    font-size: 10px;
+    margin: 2px;
+  }
+}
+
+.common-rounded-button {
+  @include app-button(300px, 60px, 30px, 32px, $psp-red);
+  
+  &:disabled {
+    background-color: $dark-red;
+  }
+  
+  i {
+    padding-right: 10px;
+  }
+
+  &.primary,
+  &.alter {
+    background-image: linear-gradient(to left, $color-primary, $color-secondary);
+
+    border: 0;
+    box-shadow: none;
+    color: #fff;
+
+    &.success {
+      background-image: linear-gradient(to left, $color-dark-green, $color-light-green);
+    }
+
+    &.white {
+      color: $color-primary !important;
+      border: solid 1px $color-primary !important;
+      background: white !important;
+    }
+  }
+}
+
+// .float-white-button {
+//   @include app-button(140px, 40px, 12px, 20px, $white);
+//   color: $psp-red;
+
+//   &:disabled {
+//     background-color: $dark-red;
+//   }
+  
+//   i {
+//     padding-right: 10px;
+//   }
+// }
+
+.custom-checkbox {
+  @include app-label-checkbox($very-dark-gray, $dark-gray, 30px);
+}
+
+.custom-radio-button {
+  @include app-label-checkbox($very-dark-gray, $dark-gray, 12px);
+}
+
+// PhotoBook
+.icon-user {
+  padding-bottom: 22px;
+  &:before {
+    @include icon-grid-svg-display();
+    @include icon-grid-svg(-1em, 0, 30px);
+  }
+}
+
+.icon-email {
+  padding-bottom: 22px;
+  &:before {
+    @include icon-grid-svg-display();
+    @include icon-grid-svg(-2em, 0, 30px);
+  }
+}
+
+.icon-password {
+  padding-bottom: 22px;
+  &:before {
+    @include icon-grid-svg-display();
+    @include icon-grid-svg(-3em, 0, 30px);
+  }
+}

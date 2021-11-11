@@ -1,0 +1,144 @@
+/* Configuration */
+sidebarMinWidth = 200px
+sidebarDefaultWidth = 300px
+
+mainMinWidth = 300px
+mainMaxWidth = 420px
+
+readerMinWidth = 300px
+
+.page {
+    overflow: hidden
+    overflow: clip
+}
+
+html:global(.extension:not(.sidebar):not(.mobile)) .page {
+    width: var(--screen-max-width);
+    height: var(--screen-max-height);
+}
+
+html:global(.mobile) .splitview {
+    @supports (-webkit-overflow-scrolling: touch) {
+        height: -webkit-fill-available
+    }
+}
+
+/* Wrapper */
+.splitview {
+    width: 100%
+    height: 100vh
+    display: flex
+    flex-direction: row
+    overflow: hidden
+    overflow: clip
+}
+
+/* Helpers */
+invisible() {
+    visibility: hidden;
+    position: absolute;
+    top: -100vw;
+    left: -100vw;
+    height: 100vh;
+    width: 33vw;
+}
+
+/* Panels */
+:global(.svSidebar) {
+    z-index: 20;
+    min-width: sidebarMinWidth;
+    width: var(--sidebar-width, sidebarDefaultWidth);
+}
+
+:global(.svMain), :global(.svReader) {
+    flex: 1;
+    min-width: 0;
+}
+
+:global(.svSidebarBackdrop) {
+    z-index: 20
+}
+
+/* Max width's */
+.s :global(.svSidebar) {
+    max-width: 40%
+}
+.s.r :global(.svSidebar) {
+    max-width: 25%
+}
+.r :global(.svMain) {
+    max-width: mainMaxWidth;
+}
+
+/* Buttons */
+.s :global(.svSidebarShowButton),
+:global(.svSidebarCloseButton) {
+    display: none
+}
+
+/* Hide panels when they not required */
+.splitview:not(.s) :global(.svSidebar),
+.splitview:not(.r) :global(.svReader),
+.r.f :global(.svMain), .r.f :global(.svSidebar),
+.splitview:not(.s) :global(.svSidebarBackdrop) {
+    invisible()
+}
+
+/* Full-screen reader when not enough width */
+@media screen and (max-width mainMinWidth+readerMinWidth )
+    .r :global(.svMain) {
+        invisible()
+    }
+
+    :global(.svReaderFullscreenButton) {
+        display: none !important
+    }
+
+/* Hide sidebar when not enough space */
+@media screen and (min-width: sidebarMinWidth+mainMinWidth) and (max-width: sidebarMinWidth+mainMinWidth+readerMinWidth+200px)
+    .s.r {
+        :global(.svSidebar) {
+            invisible()
+        }
+    }
+    .r {
+        :global(.svMain) {
+            --background-color: var(--sidebar-background-color)
+            background-color: var(--background-color)
+        }
+    }
+
+/* Force show sidebar when super small screen */
+@media screen and (max-width sidebarMinWidth+mainMinWidth )
+    .s:not(.r) {
+        :global(.svSidebar) {
+            max-width: 70%;
+
+            visibility: visible;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        :global(.svSidebarBackdrop) {
+            left: 70%;
+
+            visibility: visible;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    .s[data-variant='splash'] {
+        :global(.svSidebar), :global(.svSidebarBackdrop) {
+            display: none
+        }
+    }
+
+    :global(.svSidebarCloseButton) {
+        display: block
+    }
