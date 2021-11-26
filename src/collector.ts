@@ -52,7 +52,10 @@ class Collector {
 	};
 
 	/**
-	 * TODO: write description
+	 * This Function collects the file-links from the GitHub Search Page.
+	 * If not all possible Links are rendered from the browser, the function
+	 * reloads the page by calling itself until the browser renders all 10 possible
+	 * links on the page.
 	 */
 	collectdata = async (): Promise<any> => {
 		try {
