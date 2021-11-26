@@ -20,7 +20,7 @@ class Downloader {
 	 * @param filetype the filetypes that are the target of the download
 	 * @returns void
 	 */
-	download = (url: string, filetype: string) => {
+	static download = (url: string, filetype: string) => {
 		try {
 			https.get(url, (res) => {
 				try {
@@ -40,7 +40,7 @@ class Downloader {
 	 * @param res an http response containing the file to write
 	 * @param filetype the filetype containing the directory where the files have to be saved
 	 */
-	saveFileFromHttpResponse = (res: any, filetype: string) => {
+	static saveFileFromHttpResponse = (res: any, filetype: string) => {
 		try {
 			const PATH = `./output/${filetype}`;
 			const id = uuidv4();
@@ -53,6 +53,4 @@ class Downloader {
 	};
 }
 
-const downloader = new Downloader();
-
-export default downloader;
+export default Downloader;
