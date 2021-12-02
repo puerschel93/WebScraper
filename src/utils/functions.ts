@@ -10,8 +10,8 @@
 import Logger from './logger';
 
 class Helpers {
-	sleeptime: number = 10 * 1000;
-	ranges: string[] = [
+	static sleeptime: number = 10 * 1000;
+	static ranges: string[] = [
 		'500..1000',
 		'1000..1500',
 		'1501..2000',
@@ -40,7 +40,7 @@ class Helpers {
 	 * giving input before elements are rendered.
 	 * @param ms - time in milliseconds
 	 */
-	sleep = async (ms?: number) => {
+	static sleep = async (ms?: number) => {
 		const time = ms ?? this.sleeptime;
 		await new Promise((resolve) => setTimeout(resolve, time));
 		Logger.info(`Slept for ${time / 1000} seconds.`);
@@ -48,6 +48,4 @@ class Helpers {
 	};
 }
 
-const helper = new Helpers();
-
-export default helper;
+export default Helpers;

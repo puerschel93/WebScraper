@@ -10,21 +10,19 @@
 import Colors from './colors';
 
 class Logger {
-	clear = () => console.clear();
+	static clear = () => console.clear();
 
-	info = (message: string): void =>
+	static info = (message: string): void =>
 		console.log(Colors.cyan, 'INFO:\t\t', Colors.white, `${message}`);
 
-	warn = (message: string): void =>
+	static warn = (message: string): void =>
 		console.log(Colors.yellow, 'WARNING:\t', Colors.white, `${message}`);
 
-	error = (message: string): void =>
+	static error = (message: string): void =>
 		console.log(Colors.red, 'ERROR:\t\t', Colors.white, `${message}`);
 
-	success = (message: string): void =>
+	static success = (message: string): void =>
 		console.log(Colors.green, 'DONE:\t\t', Colors.white, `${message}`);
 }
 
-const logger = new Logger();
-
-export default logger;
+export default Logger;
